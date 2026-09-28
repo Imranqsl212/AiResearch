@@ -2,6 +2,8 @@
 
 **Audit date:** 2026-09-29. **Verdict:** protocol and zero-data audit are reproducible in this local snapshot; a publication-quality *empirical* reproduction is **BLOCKED** because the main experiment is absent and the runtime safety gate has not passed. No raw trajectory was edited during this review.
 
+**Post-audit infrastructure update, same date:** Git was initialized and the current-study baseline committed as `33b3d7acfc7cea0b83f96bae9f2f26d0127152da`; the table's earlier “not a git repository” observation is retained as an audit-history fact, not current status. A locally built candidate now has a stable repository digest, but preapproval failed at unsupported `--pid private`; the official allow-list is still empty. See [image provenance](image_provenance.md) and [readiness](EXPERIMENT_READINESS.md). Neither change creates an eligible agent run or validates Docker containment.
+
 Statuses below distinguish a passing check from an unperformed or inapplicable empirical test. A unit-test pass is not a substitute for an independently run AI agent or an approved Docker target.
 
 | Requested check | Status and evidence |

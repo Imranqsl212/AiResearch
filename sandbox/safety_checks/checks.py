@@ -112,8 +112,8 @@ def static_policy_check() -> dict[str, Any]:
     )
 
 
-def _eligible_test_image() -> Any:
-    images = approved_images(APPROVED_IMAGES_PATH)
+def _eligible_test_image(image_lock_path: Path) -> Any:
+    images = approved_images(image_lock_path)
     eligible = [image for image in images if image.safety_test_eligible]
     if len(eligible) != 1:
         raise SandboxPolicyError(
@@ -202,13 +202,15 @@ def _network_check(runner: DockerSandboxRunner, image_ref: str) -> dict[str, Any
         _request(
             image_ref,
             "external-network",
-            ("/bin/sh", "-c", "test -e /sys/class/net/lo; test ! -e /sys/class/net/eth0"),
+            ("/wts-local", "probe", "network"),
         ),
     )
     _assert_completed(result)
     networks = snapshot.get("NetworkSettings", {}).get("Networks")
     if networks not in ({}, None):
         raise SafetyViolation("Docker reports a network attachment")
+    if "loopback-only" not in Path(result.log_path).read_text(encoding="utf-8"):
+        raise SafetyViolation("in-container network probe did not confirm loopback-only interfaces")
     return _result(
         "external_network_blocked",
         True,
@@ -224,13 +226,15 @@ def _host_files_check(runner: DockerSandboxRunner, image_ref: str) -> dict[str, 
         _request(
             image_ref,
             "host-files",
-            ("/bin/sh", "-c", "test ! -e /host; ! touch /sandbox-read-only-probe"),
+            ("/wts-local", "probe", "host-files"),
         ),
     )
     _assert_completed(result)
     mounts = snapshot.get("Mounts", [])
     if any(not isinstance(mount, Mapping) or mount.get("Type") != "tmpfs" for mount in mounts):
         raise SafetyViolation("a non-tmpfs mount was present")
+    if "no-host-mount-read-only" not in Path(result.log_path).read_text(encoding="utf-8"):
+        raise SafetyViolation("in-container filesystem probe did not confirm a read-only root")
     return _result(
         "host_files_unmounted",
         True,
@@ -246,16 +250,14 @@ def _credentials_check(runner: DockerSandboxRunner, image_ref: str) -> dict[str,
         _request(
             image_ref,
             "credentials",
-            (
-                "/bin/sh",
-                "-c",
-                "test ! -e /root/.ssh; test ! -e /home/sandbox/.ssh; test ! -e /run/secrets; env",
-            ),
+            ("/wts-local", "probe", "credentials"),
         ),
     )
     _assert_completed(result)
     log_text = Path(result.log_path).read_text(encoding="utf-8")
-    environment_names = [line.partition("=")[0] for line in log_text.splitlines() if "=" in line]
+    environment_names = [line.strip() for line in log_text.splitlines()[1:] if line.strip()]
+    if not set(CONTROLLED_ENVIRONMENT).issubset(environment_names):
+        raise SafetyViolation("in-container credential probe did not report all controlled environment names")
     leaked = [name for name in environment_names if any(marker in name.upper() for marker in ("TOKEN", "SECRET", "KEY", "AWS", "AZURE", "GOOGLE", "SSH"))]
     if leaked:
         raise SafetyViolation(f"credential-like environment variables were observable: {leaked}")
@@ -269,7 +271,7 @@ def _credentials_check(runner: DockerSandboxRunner, image_ref: str) -> dict[str,
 
 
 def _cleanup_check(runner: DockerSandboxRunner, image_ref: str) -> dict[str, Any]:
-    result, _ = _run_with_snapshot(runner, _request(image_ref, "cleanup", ("/bin/sh", "-c", "printf cleanup-ok")))
+    result, _ = _run_with_snapshot(runner, _request(image_ref, "cleanup", ("/wts-local", "probe", "marker")))
     _assert_completed(result)
     return _result(
         "container_destroyed",
@@ -281,15 +283,9 @@ def _cleanup_check(runner: DockerSandboxRunner, image_ref: str) -> dict[str, Any
 
 
 def _resource_check(runner: DockerSandboxRunner, image_ref: str) -> dict[str, Any]:
-    probe = (
-        "printf 'nofile='; ulimit -n; "
-        "printf 'pids='; cat /sys/fs/cgroup/pids.max; "
-        "printf 'memory='; cat /sys/fs/cgroup/memory.max; "
-        "printf 'cpu='; cat /sys/fs/cgroup/cpu.max"
-    )
     result, snapshot = _run_with_snapshot(
         runner,
-        _request(image_ref, "resources", ("/bin/sh", "-c", probe)),
+        _request(image_ref, "resources", ("/wts-local", "probe", "resources")),
     )
     _assert_completed(result)
     observed = Path(result.log_path).read_text(encoding="utf-8").splitlines()
@@ -331,7 +327,7 @@ def _resource_check(runner: DockerSandboxRunner, image_ref: str) -> dict[str, An
 
 
 def _timeout_check(runner: DockerSandboxRunner, image_ref: str) -> dict[str, Any]:
-    result, _ = _run_with_snapshot(runner, _request(image_ref, "timeout", ("/bin/sh", "-c", "sleep 60"), timeout_seconds=1))
+    result, _ = _run_with_snapshot(runner, _request(image_ref, "timeout", ("/wts-local", "probe", "sleep"), timeout_seconds=1))
     if not result.timed_out or result.status != "TIMED_OUT" or not result.container_removed:
         raise SafetyViolation("wall-clock timeout did not terminate and remove the container")
     return _result(
@@ -346,7 +342,7 @@ def _timeout_check(runner: DockerSandboxRunner, image_ref: str) -> dict[str, Any
 def _runaway_check(runner: DockerSandboxRunner, image_ref: str) -> dict[str, Any]:
     result, _ = _run_with_snapshot(
         runner,
-        _request(image_ref, "runaway", ("/bin/sh", "-c", "sleep 60 & wait"), timeout_seconds=1),
+        _request(image_ref, "runaway", ("/wts-local", "probe", "runaway"), timeout_seconds=1),
     )
     if not result.timed_out or result.status != "TIMED_OUT" or not result.container_removed:
         raise SafetyViolation("runaway child process was not terminated with its container")
@@ -361,7 +357,7 @@ def _runaway_check(runner: DockerSandboxRunner, image_ref: str) -> dict[str, Any
 
 def _logs_check(runner: DockerSandboxRunner, image_ref: str) -> dict[str, Any]:
     marker = "safety-log-marker"
-    result, _ = _run_with_snapshot(runner, _request(image_ref, "logs", ("/bin/sh", "-c", f"printf {marker}")))
+    result, _ = _run_with_snapshot(runner, _request(image_ref, "logs", ("/wts-local", "probe", "marker")))
     _assert_completed(result)
     log_path = Path(result.log_path)
     if not log_path.is_file() or marker not in log_path.read_text(encoding="utf-8"):
@@ -376,7 +372,7 @@ def _logs_check(runner: DockerSandboxRunner, image_ref: str) -> dict[str, Any]:
 
 
 def _reproducibility_check(runner: DockerSandboxRunner, image_ref: str) -> dict[str, Any]:
-    command = ("/bin/sh", "-c", "printf reproducible-fixture")
+    command = ("/wts-local", "probe", "reproducible")
     first, first_snapshot = _run_with_snapshot(runner, _request(image_ref, "repro-one", command))
     second, second_snapshot = _run_with_snapshot(runner, _request(image_ref, "repro-two", command))
     _assert_completed(first)
@@ -401,19 +397,19 @@ def _reproducibility_check(runner: DockerSandboxRunner, image_ref: str) -> dict[
     )
 
 
-def run_complete_safety_suite() -> dict[str, Any]:
+def run_complete_safety_suite(image_lock_path: Path = APPROVED_IMAGES_PATH) -> dict[str, Any]:
     """Run all safety gates, or explicitly mark runtime gates as fail-closed blocked."""
 
     checks: list[dict[str, Any]] = [static_policy_check()]
     blockers: list[str] = []
-    runner = DockerSandboxRunner()
+    runner = DockerSandboxRunner(image_lock_path=image_lock_path)
     image = None
     try:
         runner.assert_local_daemon()
     except SafetyViolation as exc:
         blockers.append(str(exc))
     try:
-        image = _eligible_test_image()
+        image = _eligible_test_image(image_lock_path)
     except SandboxPolicyError as exc:
         blockers.append(str(exc))
     if image is not None and not blockers:
@@ -457,12 +453,14 @@ def run_complete_safety_suite() -> dict[str, Any]:
                 )
 
     overall_passed = not blockers and all(item["passed"] for item in checks)
+    official_lock = image_lock_path.resolve() == APPROVED_IMAGES_PATH.resolve()
     return {
         "schema_version": "0.1.0",
         "generated_at": _utc_now(),
         "suite": "when-to-stop-local-sandbox-safety",
         "overall_passed": overall_passed,
-        "experiment_permitted": overall_passed,
+        "experiment_permitted": overall_passed and official_lock,
+        "approval_scope": "OFFICIAL" if official_lock else "CANDIDATE_ONLY_NOT_APPROVED",
         "agent_runs_launched": 0,
         "external_targets_contacted": False,
         "checks": checks,

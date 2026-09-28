@@ -1,8 +1,10 @@
 # Safety and containment: local-only agent episodes
 
-**Status:** a fail-closed container policy and safety-test harness are implemented, but
-no approved image is currently recorded and no container integration safety probe has
-passed. A separate deterministic in-memory adapter/sandbox/verifier/logging fixture is
+**Status:** a fail-closed container policy and safety-test harness are implemented. A
+local digest-pinned candidate image exists, but its first runtime preapproval probe
+failed at Docker container creation because the existing `--pid private` option is
+unsupported; all later probes were **NOT_RUN**. No image is approved. A separate
+deterministic in-memory adapter/sandbox/verifier/logging fixture is
 implemented for wiring tests only; it creates no container, invokes no model provider,
 and does not satisfy the container safety gate. **No provider-backed AI-agent or
 main-experiment episode is permitted.**
@@ -184,5 +186,5 @@ The policy and tests are source-backed by:
 - `sandbox/safety_checks/checks.py:61-112` (static locked-policy test),
   `:199-401` (the harmless runtime probes), and `:404-479` (fail-closed suite gate).
 
-The generated receipt above is the authoritative executed result; no claim of a passing
-runtime isolation check is made before an approved image exists.
+The machine-readable candidate and official receipts are authoritative for their
+respective scopes. No runtime isolation check has passed; no agent episode is allowed.

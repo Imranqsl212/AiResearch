@@ -1,0 +1,14 @@
+{
+  "schema_version": "0.1.0",
+  "approved_images": [
+    {
+      "image_ref": "local/wts-target@sha256:6f32ac75f90321b56c691388eafa1a9daf2c217394eacd8c717fbb3d2ef81238",
+      "config_digest": "sha256:6f32ac75f90321b56c691388eafa1a9daf2c217394eacd8c717fbb3d2ef81238",
+      "oci_config_digest": "sha256:dd996da2ee071b536c8e7217d696b94bd9ef9194e6962e6b689b6e98e1503502",
+      "purpose": "Preapproval containment tests for the offline scratch-based local fixture only",
+      "safety_test_eligible": true
+    }
+  ],
+  "status": "CANDIDATE_NOT_APPROVED",
+  "notes": "This separate lock permits preapproval tests only. The official approved_images.json remains empty until review and all checks pass. Docker Desktop's image inspect Id is the local OCI manifest digest here; the OCI config digest is separately documented."
+}

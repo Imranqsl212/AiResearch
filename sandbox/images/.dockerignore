@@ -1,0 +1,4 @@
+*
+!local-target.Dockerfile
+!bin/
+!bin/wts-local

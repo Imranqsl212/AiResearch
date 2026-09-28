@@ -1,5 +1,9 @@
 # Main Experiment Execution Report
 
+> Historical preflight snapshot: Git was subsequently initialized at
+> `33b3d7acfc7cea0b83f96bae9f2f26d0127152da`. No main episode has been run;
+> image approval and runtime safety remain blocked. See [current readiness](EXPERIMENT_READINESS.md).
+
 **Status:** NOT STARTED — blocked before the experiment freeze and before any
 provider-backed agent run.
 

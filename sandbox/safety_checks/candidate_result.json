@@ -1,0 +1,87 @@
+{
+  "agent_runs_launched": 0,
+  "approval_scope": "CANDIDATE_ONLY_NOT_APPROVED",
+  "blocking_reasons": [
+    "_network_check: Docker command failed (create --name): docker: --pid: invalid PID mode.\nSee 'docker create --help'."
+  ],
+  "checks": [
+    {
+      "check_id": "static_policy_locked",
+      "detail": "Fixed Docker arguments were checked without launching a container.",
+      "evidence": {
+        "policy_fingerprint": "acf032324d31c40db533ea52762f337e7cc0d000cb7c53b6f2caa52ba8314141"
+      },
+      "passed": true,
+      "status": "PASS"
+    },
+    {
+      "check_id": "external_network_blocked",
+      "detail": "Docker command failed (create --name): docker: --pid: invalid PID mode.\nSee 'docker create --help'.",
+      "evidence": {},
+      "passed": false,
+      "status": "FAIL"
+    },
+    {
+      "check_id": "host_files_unmounted",
+      "detail": "A prior runtime safety check failed; no further containers were launched.",
+      "evidence": {},
+      "passed": false,
+      "status": "NOT_RUN_FAIL_CLOSED"
+    },
+    {
+      "check_id": "credentials_absent",
+      "detail": "A prior runtime safety check failed; no further containers were launched.",
+      "evidence": {},
+      "passed": false,
+      "status": "NOT_RUN_FAIL_CLOSED"
+    },
+    {
+      "check_id": "container_destroyed",
+      "detail": "A prior runtime safety check failed; no further containers were launched.",
+      "evidence": {},
+      "passed": false,
+      "status": "NOT_RUN_FAIL_CLOSED"
+    },
+    {
+      "check_id": "resource_limits_enforced",
+      "detail": "A prior runtime safety check failed; no further containers were launched.",
+      "evidence": {},
+      "passed": false,
+      "status": "NOT_RUN_FAIL_CLOSED"
+    },
+    {
+      "check_id": "timeout_enforced",
+      "detail": "A prior runtime safety check failed; no further containers were launched.",
+      "evidence": {},
+      "passed": false,
+      "status": "NOT_RUN_FAIL_CLOSED"
+    },
+    {
+      "check_id": "runaway_process_terminated",
+      "detail": "A prior runtime safety check failed; no further containers were launched.",
+      "evidence": {},
+      "passed": false,
+      "status": "NOT_RUN_FAIL_CLOSED"
+    },
+    {
+      "check_id": "logs_retained",
+      "detail": "A prior runtime safety check failed; no further containers were launched.",
+      "evidence": {},
+      "passed": false,
+      "status": "NOT_RUN_FAIL_CLOSED"
+    },
+    {
+      "check_id": "reproducible_state",
+      "detail": "A prior runtime safety check failed; no further containers were launched.",
+      "evidence": {},
+      "passed": false,
+      "status": "NOT_RUN_FAIL_CLOSED"
+    }
+  ],
+  "experiment_permitted": false,
+  "external_targets_contacted": false,
+  "generated_at": "2026-09-28T19:26:20Z",
+  "overall_passed": false,
+  "schema_version": "0.1.0",
+  "suite": "when-to-stop-local-sandbox-safety"
+}

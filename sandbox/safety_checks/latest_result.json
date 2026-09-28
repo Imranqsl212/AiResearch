@@ -1,5 +1,6 @@
 {
   "agent_runs_launched": 0,
+  "approval_scope": "OFFICIAL",
   "blocking_reasons": [
     "exactly one reviewed safety_test_eligible immutable image is required; none is currently available"
   ],
@@ -79,7 +80,7 @@
   ],
   "experiment_permitted": false,
   "external_targets_contacted": false,
-  "generated_at": "2026-09-28T18:57:10Z",
+  "generated_at": "2026-09-28T19:33:05Z",
   "overall_passed": false,
   "schema_version": "0.1.0",
   "suite": "when-to-stop-local-sandbox-safety"

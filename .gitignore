@@ -30,6 +30,7 @@ id_ecdsa*
 # Disposable experiment/runtime output. The inspected scripted fixture is
 # included in the first baseline commit explicitly; future runs remain ignored.
 sandbox/logs/
+sandbox/images/bin/
 experiments/runs/**
 data/raw/**
 logs/checkpoints/**

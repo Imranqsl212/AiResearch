@@ -19,10 +19,14 @@ It records:
 - date and timestamp; and
 - the Git commit when available.
 
-This checkout is not a Git repository. Rather than invent a revision, manifests record
-`git_commit: "UNAVAILABLE_NO_GIT"`. That sentinel is a reproducibility limitation, not
-a source hash. Before a main study, the source must be placed in version control and
-the exact commit plus uncommitted-state policy must be frozen.
+Git was initialized without altering any pre-existing history (none existed), and the
+first inspected When-to-Stop infrastructure baseline was committed as
+`33b3d7acfc7cea0b83f96bae9f2f26d0127152da` (`git rev-parse HEAD` immediately
+after the initial commit). This records code and documentation, **not** a frozen
+experimental configuration. The older scripted fixture was created before Git and
+retains `git_commit: "UNAVAILABLE_NO_GIT"`; its receipt must not be retroactively
+rewritten. Every future real run must record its own exact commit and a clean or
+explicitly archived working-tree state.
 
 Manifests and run records are immutable at the path level: manifest configuration may
 only be reused if it is identical; logs and receipts are created with exclusive mode;
@@ -89,8 +93,9 @@ PYTHONDONTWRITEBYTECODE=1 python3 -m experiments.validate_artifacts \
   --json
 ```
 
-Use `--require-git` for a collection gate: in this checkout it correctly fails because
-the source revision is unavailable, rather than presenting the sentinel as provenance.
+Use `--require-git` for a collection gate: it correctly rejects the pre-Git fixture's
+sentinel even though the repository now has a baseline commit. This preserves the
+historical provenance boundary rather than laundering an old trace into main data.
 
 For any future replayable main episode, preserve the manifest, task manifest hash,
 image/config digest, policy fingerprint, adapter source revision, all public action and

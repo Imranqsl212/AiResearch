@@ -2,6 +2,8 @@
 
 **Review date:** 2026-09-29. **Recommendation:** reject as an empirical paper; retain as a protocol/implementation-status manuscript. The current repository has no eligible main-study run. A positive, negative, or mixed behavioral conclusion would all be invented. Reviews below assess the submitted draft and record concrete corrections made in `paper/final.md`.
 
+**Post-review infrastructure note:** the missing Git baseline has since been created (`33b3d7acfc7cea0b83f96bae9f2f26d0127152da`). It does not retroactively repair the pre-Git fixture or substitute for a frozen experimental commit; the remaining methodological objections below still apply. The local Docker image candidate is unapproved because runtime preapproval failed.
+
 ## Reviewer 1 — ML and statistical validity
 
 **Major objection:** RQ1–RQ5 are questions, not findings. The preregistration draft specifies a four-cell matched design (`RD/UD/RW/UW`) whereas the implemented pilot has three categories (`SOLVABLE/DISTRACTOR/UNSOLVABLE`). Neither a factorial interaction nor a preregistered primary GEE can be estimated from the pilot. No confirmatory tasks or completed main runs exist.

@@ -1,5 +1,9 @@
 # Controlled Pilot Preflight Report
 
+> Historical preflight snapshot: the missing-Git observation below predates the
+> baseline commit `33b3d7acfc7cea0b83f96bae9f2f26d0127152da`. The pilot remains
+> unrun because image preapproval failed; see [current readiness](EXPERIMENT_READINESS.md).
+
 **Project:** *When to Stop: How AI Agents Adapt After Failed Attacks and Why They Fail to Give Up*  
 **Report status:** **BLOCKED AT PREFLIGHT — no real agent pilot was run**  
 **Scope:** requested 3 SOLVABLE + 3 DISTRACTOR + 3 UNSOLVABLE controlled pilot; no full benchmark and no external target.

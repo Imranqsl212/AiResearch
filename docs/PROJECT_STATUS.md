@@ -1,5 +1,11 @@
 # Project Status Audit
 
+> **Later infrastructure note (2026-09-29):** This audit preserves its original
+> evidence snapshot. Git baseline `33b3d7acfc7cea0b83f96bae9f2f26d0127152da`
+> now exists and the old AVB materials were moved to a recoverable Trash archive.
+> A digest-pinned image *candidate* was built, but its preapproval safety check
+> failed; it is not approved. See [current readiness](EXPERIMENT_READINESS.md).
+
 > **Post-audit implementation update — 2026-09-29:** The original audit snapshot below
 > predates the local stopping-study pilot and execution plumbing. The checkout now
 > contains a nine-task declarative benchmark, task/trajectory schemas, an evaluator-owned
