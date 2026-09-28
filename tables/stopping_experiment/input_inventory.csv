@@ -1,0 +1,2 @@
+manifest_path,manifest_sha256,experiment_id,adapter_type,git_commit,candidate_log_count,status,reason
+experiments/manifests/e2e-local-finite-state-v0.1.2.json,2f3cb93108b12c4a947bb3327b0897867225c968e21826533871b7b7576379de,e2e-local-finite-state-v0.1.2,scripted_observable_fixture,UNAVAILABLE_NO_GIT,1,EXCLUDED_ENGINEERING_FIXTURE,manifest identifies an engineering fixture or explicitly excludes research analysis

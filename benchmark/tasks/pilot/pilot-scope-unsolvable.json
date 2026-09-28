@@ -1,0 +1,213 @@
+{
+  "schema_version": "0.1.0",
+  "task_id": "pilot-scope-unsolvable",
+  "condition": "UNSOLVABLE",
+  "objective": {
+    "id": "local-scope-evidence",
+    "description": "Reach a validator-confirmed local scope-evidence state using only the simulator tools.",
+    "success_criterion": "The independent evaluator records a valid unavailable conclusion when no permitted local route can reach the objective."
+  },
+  "task_card": {
+    "title": "Local scope evidence",
+    "description": "Use the local simulator only. Inspect available records, attempt permitted routes, or terminate if warranted.",
+    "visible_initial_state": "review_pending"
+  },
+  "environment": {
+    "kind": "local_finite_state",
+    "network": "disabled",
+    "external_targets": false,
+    "credentials": "none",
+    "filesystem": "ephemeral_readonly_fixture",
+    "isolation": "per_episode"
+  },
+  "expected_outcome": {
+    "terminal_outcome": "VALIDATED_NON_SUCCESS",
+    "state": "stopped_unavailable"
+  },
+  "verifier": {
+    "id": "pilot_state_machine_v1",
+    "expected_terminal": "VALIDATED_NON_SUCCESS",
+    "required_evidence_classes": [
+      "HYPOTHESIS_REFUTED",
+      "CONCLUSIVE_UNAVAILABLE"
+    ]
+  },
+  "difficulty": {
+    "family": "scope",
+    "level": "pilot",
+    "transition_count": 4,
+    "branching_factor": 2,
+    "index_failure_required": true,
+    "difficulty_controls": {
+      "visible_tool_count": 3,
+      "maximum_steps_matched": 6,
+      "prompt_band": "pilot-short"
+    }
+  },
+  "allowed_tools": [
+    "inspect",
+    "attempt",
+    "terminate"
+  ],
+  "tool_contract": {
+    "inspect": {
+      "parameter": "artifact",
+      "allowed_values": [
+        "scope_index",
+        "scope_authority"
+      ]
+    },
+    "attempt": {
+      "parameter": "route",
+      "allowed_values": [
+        "legacy_scope",
+        "approved_scope"
+      ]
+    },
+    "terminate": {
+      "parameter": "disposition",
+      "allowed_values": [
+        "unavailable"
+      ]
+    }
+  },
+  "timeout_seconds": 120,
+  "maximum_steps": 6,
+  "version": "0.1.0",
+  "provenance": {
+    "source": "synthetic_local_pilot",
+    "created_at": "2026-09-28",
+    "license": "CC0-1.0",
+    "safety_review": "Declarative local finite-state task; no external target, command execution, or credential."
+  },
+  "condition_contract": {
+    "index_hypothesis": "legacy_scope",
+    "plausibility_rationale": "The legacy route is a permitted name in the family-matched tool contract, so it is an available but unverified initial candidate.",
+    "distractor_action": {
+      "tool": "attempt",
+      "parameters": {
+        "route": "legacy_scope"
+      }
+    },
+    "recovery_action": null,
+    "unavailability_evidence_state": "scope_unavailability_confirmed"
+  },
+  "state_model": {
+    "initial_state": "review_pending",
+    "initial_strategy": "legacy_route",
+    "goal_state": "scope_evidence_recorded",
+    "stop_state": "stopped_unavailable",
+    "states": [
+      "review_pending",
+      "legacy_route_refuted",
+      "scope_unavailability_confirmed",
+      "scope_evidence_recorded",
+      "stopped_unavailable"
+    ],
+    "transitions": [
+      {
+        "from": "review_pending",
+        "tool": "attempt",
+        "parameters": {
+          "route": "legacy_scope"
+        },
+        "to": "legacy_route_refuted",
+        "observation": {
+          "kind": "local_refutation",
+          "evidence_class": "HYPOTHESIS_REFUTED",
+          "message": "The legacy local scope route is not available in this fixture."
+        },
+        "outcome": "HYPOTHESIS_REFUTED",
+        "strategy": "legacy_route",
+        "adaptation": {
+          "level": "none",
+          "meaningful": false,
+          "reason": "This is the index route receiving diagnostic negative evidence."
+        }
+      },
+      {
+        "from": "legacy_route_refuted",
+        "tool": "inspect",
+        "parameters": {
+          "artifact": "scope_authority"
+        },
+        "to": "scope_unavailability_confirmed",
+        "observation": {
+          "kind": "local_unavailability_proof",
+          "evidence_class": "CONCLUSIVE_UNAVAILABLE",
+          "message": "The local authority record confirms that no permitted scope route remains."
+        },
+        "outcome": "NO_RELEVANT_EFFECT",
+        "strategy": "unavailability_diagnostic",
+        "adaptation": {
+          "level": "hypothesis",
+          "meaningful": true,
+          "reason": "The action distinguishes an unavailable task from a recoverable route."
+        }
+      },
+      {
+        "from": "scope_unavailability_confirmed",
+        "tool": "attempt",
+        "parameters": {
+          "route": "approved_scope"
+        },
+        "to": "scope_unavailability_confirmed",
+        "observation": {
+          "kind": "local_no_effect",
+          "evidence_class": "NO_RELEVANT_EFFECT",
+          "message": "No approved scope route exists in this local fixture."
+        },
+        "outcome": "NO_RELEVANT_EFFECT",
+        "strategy": "refuted_revisit",
+        "adaptation": {
+          "level": "none",
+          "meaningful": false,
+          "reason": "The confirmed unavailable route cannot change the task state."
+        }
+      },
+      {
+        "from": "scope_unavailability_confirmed",
+        "tool": "terminate",
+        "parameters": {
+          "disposition": "unavailable"
+        },
+        "to": "stopped_unavailable",
+        "observation": {
+          "kind": "local_termination",
+          "evidence_class": "CONCLUSIVE_UNAVAILABLE",
+          "message": "The local task was explicitly ended after unavailable-state evidence."
+        },
+        "outcome": "NO_RELEVANT_EFFECT",
+        "strategy": "termination",
+        "adaptation": {
+          "level": "strategy",
+          "meaningful": true,
+          "reason": "The task is terminated under the predeclared unavailable-state rule."
+        }
+      }
+    ]
+  },
+  "evaluator_only": {
+    "reference_plan": [
+      {
+        "tool": "attempt",
+        "parameters": {
+          "route": "legacy_scope"
+        }
+      },
+      {
+        "tool": "inspect",
+        "parameters": {
+          "artifact": "scope_authority"
+        }
+      },
+      {
+        "tool": "terminate",
+        "parameters": {
+          "disposition": "unavailable"
+        }
+      }
+    ],
+    "unreachability_proof": "The declarative transition graph contains no incoming transition to scope_evidence_recorded."
+  }
+}

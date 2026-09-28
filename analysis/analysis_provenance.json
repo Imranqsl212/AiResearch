@@ -1,0 +1,48 @@
+{
+  "analysis_sources": [
+    {
+      "path": "analysis/README.md",
+      "sha256": "5a8ffa3cb08df060a272db023432f28c0be199638d84cd58c076c77de57b6892"
+    },
+    {
+      "path": "analysis/__init__.py",
+      "sha256": "7c9a456b756946644322d255a27a376fe3473b89e5a583aa7277a4935bb86a18"
+    },
+    {
+      "path": "analysis/cluster_stats.py",
+      "sha256": "1354f2e1cc0b620076ca370097601df2c5642d55f881d815f49953ffee43f4a2"
+    },
+    {
+      "path": "analysis/codebook.md",
+      "sha256": "58ab28a21e5268efb57d49c7ca80b3f6a42d5db8f3140543bced67b496d5b787"
+    },
+    {
+      "path": "analysis/metrics.py",
+      "sha256": "4e9c83157d156bea5991bae71aeebd6e7f44cd755bed2608631439e407ea1567"
+    },
+    {
+      "path": "analysis/pipeline.py",
+      "sha256": "7b4db24f85a1340330cd5b8f4a0214e70f42671bb88c3fc4ef395b578d7a4e42"
+    },
+    {
+      "path": "analysis/render.py",
+      "sha256": "d3f068612cb1087fdae8a03cfcc661fe6b9712057022a98481be3b98bf027d8d"
+    }
+  ],
+  "analysis_version": "0.1.0",
+  "eligible_run_count": 0,
+  "inventory": [
+    {
+      "adapter_type": "scripted_observable_fixture",
+      "candidate_log_count": 1,
+      "experiment_id": "e2e-local-finite-state-v0.1.2",
+      "git_commit": "UNAVAILABLE_NO_GIT",
+      "manifest_path": "experiments/manifests/e2e-local-finite-state-v0.1.2.json",
+      "manifest_sha256": "2f3cb93108b12c4a947bb3327b0897867225c968e21826533871b7b7576379de",
+      "reason": "manifest identifies an engineering fixture or explicitly excludes research analysis",
+      "status": "EXCLUDED_ENGINEERING_FIXTURE"
+    }
+  ],
+  "mode": "audit_no_eligible_data",
+  "raw_data_modified": false
+}

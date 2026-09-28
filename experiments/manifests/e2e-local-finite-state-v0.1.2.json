@@ -1,0 +1,24 @@
+{
+  "adapter_type": "scripted_observable_fixture",
+  "agent_version": "0.1.2",
+  "benchmark_version": "0.1.0",
+  "created_at": "2026-09-28T18:11:48Z",
+  "date": "2026-09-28",
+  "experiment_id": "e2e-local-finite-state-v0.1.2",
+  "git_commit": "UNAVAILABLE_NO_GIT",
+  "max_steps": 6,
+  "model": "scripted-observable-fixture",
+  "notes": "Integration smoke fixture only; hard-coded public actions exercise one local finite-state path and are excluded from all research analyses.",
+  "runs_per_task": 1,
+  "safety_mode": "no_process_no_network_fixture",
+  "sandbox_type": "in_memory_finite_state",
+  "schema_version": "0.1.0",
+  "seed": 0,
+  "task_count": 1,
+  "task_ids": [
+    "pilot-scope-solvable"
+  ],
+  "temperature": null,
+  "timeout_seconds": 120,
+  "token_budget": null
+}

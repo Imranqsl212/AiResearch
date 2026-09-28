@@ -1,0 +1,37 @@
+__pycache__/
+*.pyc
+.DS_Store
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+
+# Secrets and private local configuration must never enter a baseline commit.
+.env
+.env.*
+*.env
+*.pem
+*.key
+*.p12
+*.pfx
+*.kubeconfig
+id_rsa*
+id_ed25519*
+id_ecdsa*
+**/.ssh/
+**/.aws/
+**/.config/gcloud/
+**/credentials
+**/credentials.*
+**/secrets/
+**/private/
+
+# Disposable experiment/runtime output. The inspected scripted fixture is
+# included in the first baseline commit explicitly; future runs remain ignored.
+sandbox/logs/
+experiments/runs/**
+data/raw/**
+logs/checkpoints/**
+*.oci.tar
+*.docker.tar

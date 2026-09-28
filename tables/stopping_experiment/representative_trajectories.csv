@@ -1,0 +1,1 @@
+selection_rank,selection_stratum,run_id,task_id,task_family,condition,trajectory_class,logical_actions,failures_before_stop,first_strategy_switch_action_index,terminal_class,log_path,log_sha256

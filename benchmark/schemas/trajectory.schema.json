@@ -1,0 +1,303 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://when-to-stop-bench.org/schema/trajectory-0.1.0.json",
+  "title": "When to Stop trajectory",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "trajectory_id",
+    "task_id",
+    "task_version",
+    "configuration",
+    "events",
+    "terminal"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "0.1.0"
+    },
+    "trajectory_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "task_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "task_version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "configuration": {
+      "type": "object"
+    },
+    "events": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/event"
+      }
+    },
+    "terminal": {
+      "$ref": "#/$defs/terminal"
+    }
+  },
+  "$defs": {
+    "action": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "tool",
+        "parameters"
+      ],
+      "properties": {
+        "tool": {
+          "enum": [
+            "inspect",
+            "attempt",
+            "terminate"
+          ]
+        },
+        "parameters": {
+          "type": "object"
+        }
+      }
+    },
+    "observation": {
+      "type": "object",
+      "required": [
+        "kind",
+        "evidence_class",
+        "message"
+      ],
+      "properties": {
+        "kind": {
+          "type": "string"
+        },
+        "evidence_class": {
+          "enum": [
+            "INFO",
+            "EFFECT_CONFIRMED",
+            "HYPOTHESIS_REFUTED",
+            "WEAK_NEGATIVE_EVIDENCE",
+            "CONCLUSIVE_UNAVAILABLE",
+            "NO_RELEVANT_EFFECT",
+            "AGENT_ACTION_ERROR",
+            "TOOL_OR_PLATFORM_ERROR",
+            "AMBIGUOUS_OBSERVATION"
+          ]
+        },
+        "message": {
+          "type": "string"
+        }
+      }
+    },
+    "strategy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "previous",
+        "next",
+        "source"
+      ],
+      "properties": {
+        "previous": {
+          "type": "string"
+        },
+        "next": {
+          "type": "string"
+        },
+        "source": {
+          "enum": [
+            "task_manifest",
+            "automated_classifier",
+            "human_adjudication"
+          ]
+        }
+      }
+    },
+    "adaptation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "level",
+        "meaningful",
+        "reason"
+      ],
+      "properties": {
+        "level": {
+          "enum": [
+            "none",
+            "action",
+            "parameter",
+            "tool",
+            "implementation",
+            "hypothesis",
+            "strategy"
+          ]
+        },
+        "meaningful": {
+          "type": "boolean"
+        },
+        "reason": {
+          "type": "string"
+        }
+      }
+    },
+    "event": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "event_id",
+        "sequence",
+        "raw_action",
+        "tool",
+        "parameters",
+        "observation",
+        "outcome",
+        "strategy",
+        "adaptation",
+        "previous_state",
+        "next_state"
+      ],
+      "properties": {
+        "event_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sequence": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "raw_action": {
+          "$ref": "#/$defs/action"
+        },
+        "tool": {
+          "enum": [
+            "inspect",
+            "attempt",
+            "terminate"
+          ]
+        },
+        "parameters": {
+          "type": "object"
+        },
+        "observation": {
+          "$ref": "#/$defs/observation"
+        },
+        "outcome": {
+          "enum": [
+            "EFFECT_CONFIRMED",
+            "PARTIAL_PROGRESS",
+            "HYPOTHESIS_REFUTED",
+            "WEAK_NEGATIVE_EVIDENCE",
+            "NO_RELEVANT_EFFECT",
+            "AGENT_ACTION_ERROR",
+            "TOOL_OR_PLATFORM_ERROR",
+            "AMBIGUOUS_OBSERVATION"
+          ]
+        },
+        "strategy": {
+          "$ref": "#/$defs/strategy"
+        },
+        "adaptation": {
+          "$ref": "#/$defs/adaptation"
+        },
+        "previous_state": {
+          "type": "string"
+        },
+        "next_state": {
+          "type": "string"
+        }
+      }
+    },
+    "verifier_receipt": {
+      "type": "object",
+      "required": [
+        "verifier_id",
+        "verifier_version",
+        "task_id",
+        "passed",
+        "terminal_outcome",
+        "claim_supported",
+        "observed_evidence_classes",
+        "reason"
+      ],
+      "properties": {
+        "verifier_id": {
+          "type": "string"
+        },
+        "verifier_version": {
+          "type": "string"
+        },
+        "task_id": {
+          "type": "string"
+        },
+        "passed": {
+          "type": "boolean"
+        },
+        "terminal_outcome": {
+          "enum": [
+            "VALIDATED_SUCCESS",
+            "VALIDATED_NON_SUCCESS",
+            "UNSUPPORTED_SUCCESS",
+            "UNKNOWN",
+            "INVALID_TASK"
+          ]
+        },
+        "claim_supported": {
+          "type": "boolean"
+        },
+        "observed_evidence_classes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "reason": {
+          "type": "string"
+        }
+      }
+    },
+    "terminal": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "agent_claim",
+        "termination_source",
+        "outcome",
+        "verifier_receipt"
+      ],
+      "properties": {
+        "agent_claim": {
+          "type": "object"
+        },
+        "termination_source": {
+          "enum": [
+            "AGENT",
+            "BUDGET",
+            "TIMEOUT",
+            "INFRASTRUCTURE",
+            "SCRIPTED_FIXTURE"
+          ]
+        },
+        "outcome": {
+          "enum": [
+            "VALIDATED_SUCCESS",
+            "VALIDATED_PARTIAL_SUCCESS",
+            "VALIDATED_NON_SUCCESS",
+            "UNSUPPORTED_SUCCESS",
+            "BUDGET_STOP",
+            "TIMEOUT",
+            "INFRASTRUCTURE_ABORT",
+            "UNKNOWN",
+            "INVALID_TASK"
+          ]
+        },
+        "verifier_receipt": {
+          "$ref": "#/$defs/verifier_receipt"
+        }
+      }
+    }
+  }
+}

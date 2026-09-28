@@ -1,0 +1,68 @@
+{
+  "figures": [
+    {
+      "file": "01_success_by_condition.svg",
+      "reason": "no immutable analysis input lock and no eligible provider-backed main trajectory",
+      "sample_size": "n = 0 eligible main-experiment runs",
+      "source_table": "condition_summary.csv",
+      "status": "NOT_GENERATED_NO_ELIGIBLE_MAIN_EXPERIMENT",
+      "title": "Success by condition"
+    },
+    {
+      "file": "02_actions_before_stopping.svg",
+      "reason": "no immutable analysis input lock and no eligible provider-backed main trajectory",
+      "sample_size": "n = 0 eligible main-experiment runs",
+      "source_table": "condition_summary.csv",
+      "status": "NOT_GENERATED_NO_ELIGIBLE_MAIN_EXPERIMENT",
+      "title": "Actions before stopping"
+    },
+    {
+      "file": "03_failures_before_strategy_switch.svg",
+      "reason": "no immutable analysis input lock and no eligible provider-backed main trajectory",
+      "sample_size": "n = 0 eligible main-experiment runs",
+      "source_table": "condition_summary.csv",
+      "status": "NOT_GENERATED_NO_ELIGIBLE_MAIN_EXPERIMENT",
+      "title": "Failures before strategy switch"
+    },
+    {
+      "file": "04_strategy_transition_graph.svg",
+      "reason": "no immutable analysis input lock and no eligible provider-backed main trajectory",
+      "sample_size": "n = 0 eligible main-experiment runs",
+      "source_table": "run_level_metrics.csv",
+      "status": "NOT_GENERATED_NO_ELIGIBLE_MAIN_EXPERIMENT",
+      "title": "Strategy transition graph"
+    },
+    {
+      "file": "05_repetition_vs_adaptation.svg",
+      "reason": "no immutable analysis input lock and no eligible provider-backed main trajectory",
+      "sample_size": "n = 0 eligible main-experiment runs",
+      "source_table": "condition_summary.csv",
+      "status": "NOT_GENERATED_NO_ELIGIBLE_MAIN_EXPERIMENT",
+      "title": "Repetition versus adaptation"
+    },
+    {
+      "file": "06_stopping_behavior.svg",
+      "reason": "no immutable analysis input lock and no eligible provider-backed main trajectory",
+      "sample_size": "n = 0 eligible main-experiment runs",
+      "source_table": "run_level_metrics.csv",
+      "status": "NOT_GENERATED_NO_ELIGIBLE_MAIN_EXPERIMENT",
+      "title": "Stopping behavior"
+    },
+    {
+      "file": "07_false_success_rate.svg",
+      "reason": "no immutable analysis input lock and no eligible provider-backed main trajectory",
+      "sample_size": "n = 0 eligible main-experiment runs",
+      "source_table": "condition_summary.csv",
+      "status": "NOT_GENERATED_NO_ELIGIBLE_MAIN_EXPERIMENT",
+      "title": "False-success rate"
+    },
+    {
+      "file": "08_representative_trajectories.svg",
+      "reason": "no immutable analysis input lock and no eligible provider-backed main trajectory",
+      "sample_size": "n = 0 eligible main-experiment runs",
+      "source_table": "representative_trajectories.csv",
+      "status": "NOT_GENERATED_NO_ELIGIBLE_MAIN_EXPERIMENT",
+      "title": "Representative trajectories"
+    }
+  ]
+}

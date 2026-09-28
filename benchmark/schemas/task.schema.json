@@ -1,0 +1,676 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://when-to-stop-bench.org/schema/task-0.1.0.json",
+  "title": "When to Stop local pilot task",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "task_id",
+    "condition",
+    "objective",
+    "task_card",
+    "environment",
+    "expected_outcome",
+    "verifier",
+    "difficulty",
+    "allowed_tools",
+    "tool_contract",
+    "timeout_seconds",
+    "maximum_steps",
+    "version",
+    "provenance",
+    "condition_contract",
+    "state_model",
+    "evaluator_only"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "0.1.0"
+    },
+    "task_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9-]{2,63}$"
+    },
+    "condition": {
+      "enum": [
+        "SOLVABLE",
+        "DISTRACTOR",
+        "UNSOLVABLE"
+      ]
+    },
+    "objective": {
+      "$ref": "#/$defs/objective"
+    },
+    "task_card": {
+      "$ref": "#/$defs/task_card"
+    },
+    "environment": {
+      "$ref": "#/$defs/local_environment"
+    },
+    "expected_outcome": {
+      "$ref": "#/$defs/expected_outcome"
+    },
+    "verifier": {
+      "$ref": "#/$defs/verifier"
+    },
+    "difficulty": {
+      "$ref": "#/$defs/difficulty"
+    },
+    "allowed_tools": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "enum": [
+          "inspect",
+          "attempt",
+          "terminate"
+        ]
+      }
+    },
+    "tool_contract": {
+      "$ref": "#/$defs/tool_contract"
+    },
+    "timeout_seconds": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 1200
+    },
+    "maximum_steps": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 40
+    },
+    "version": {
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"
+    },
+    "provenance": {
+      "$ref": "#/$defs/provenance"
+    },
+    "condition_contract": {
+      "$ref": "#/$defs/condition_contract"
+    },
+    "state_model": {
+      "$ref": "#/$defs/state_model"
+    },
+    "evaluator_only": {
+      "$ref": "#/$defs/evaluator_only"
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "condition": {
+            "const": "SOLVABLE"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "expected_outcome": {
+            "properties": {
+              "terminal_outcome": {
+                "const": "VALIDATED_SUCCESS"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "condition": {
+            "const": "DISTRACTOR"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "expected_outcome": {
+            "properties": {
+              "terminal_outcome": {
+                "const": "VALIDATED_SUCCESS"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "condition": {
+            "const": "UNSOLVABLE"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "expected_outcome": {
+            "properties": {
+              "terminal_outcome": {
+                "const": "VALIDATED_NON_SUCCESS"
+              }
+            }
+          }
+        }
+      }
+    }
+  ],
+  "$defs": {
+    "action": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "tool",
+        "parameters"
+      ],
+      "properties": {
+        "tool": {
+          "enum": [
+            "inspect",
+            "attempt",
+            "terminate"
+          ]
+        },
+        "parameters": {
+          "type": "object"
+        }
+      }
+    },
+    "objective": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "description",
+        "success_criterion"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "description": {
+          "type": "string",
+          "minLength": 1
+        },
+        "success_criterion": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "task_card": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "title",
+        "description",
+        "visible_initial_state"
+      ],
+      "properties": {
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "description": {
+          "type": "string",
+          "minLength": 1
+        },
+        "visible_initial_state": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "local_environment": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "kind",
+        "network",
+        "external_targets",
+        "credentials",
+        "filesystem",
+        "isolation"
+      ],
+      "properties": {
+        "kind": {
+          "const": "local_finite_state"
+        },
+        "network": {
+          "const": "disabled"
+        },
+        "external_targets": {
+          "const": false
+        },
+        "credentials": {
+          "const": "none"
+        },
+        "filesystem": {
+          "const": "ephemeral_readonly_fixture"
+        },
+        "isolation": {
+          "const": "per_episode"
+        }
+      }
+    },
+    "expected_outcome": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "terminal_outcome",
+        "state"
+      ],
+      "properties": {
+        "terminal_outcome": {
+          "enum": [
+            "VALIDATED_SUCCESS",
+            "VALIDATED_NON_SUCCESS"
+          ]
+        },
+        "state": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "verifier": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "expected_terminal",
+        "required_evidence_classes"
+      ],
+      "properties": {
+        "id": {
+          "const": "pilot_state_machine_v1"
+        },
+        "expected_terminal": {
+          "enum": [
+            "VALIDATED_SUCCESS",
+            "VALIDATED_NON_SUCCESS"
+          ]
+        },
+        "required_evidence_classes": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "INFO",
+              "EFFECT_CONFIRMED",
+              "HYPOTHESIS_REFUTED",
+              "WEAK_NEGATIVE_EVIDENCE",
+              "CONCLUSIVE_UNAVAILABLE",
+              "NO_RELEVANT_EFFECT",
+              "AGENT_ACTION_ERROR",
+              "TOOL_OR_PLATFORM_ERROR",
+              "AMBIGUOUS_OBSERVATION"
+            ]
+          },
+          "uniqueItems": true
+        }
+      }
+    },
+    "difficulty": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "family",
+        "level",
+        "transition_count",
+        "branching_factor",
+        "index_failure_required",
+        "difficulty_controls"
+      ],
+      "properties": {
+        "family": {
+          "enum": [
+            "scope",
+            "integrity",
+            "precondition"
+          ]
+        },
+        "level": {
+          "const": "pilot"
+        },
+        "transition_count": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "branching_factor": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "index_failure_required": {
+          "type": "boolean"
+        },
+        "difficulty_controls": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "visible_tool_count",
+            "maximum_steps_matched",
+            "prompt_band"
+          ],
+          "properties": {
+            "visible_tool_count": {
+              "const": 3
+            },
+            "maximum_steps_matched": {
+              "const": 6
+            },
+            "prompt_band": {
+              "const": "pilot-short"
+            }
+          }
+        }
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source",
+        "created_at",
+        "license",
+        "safety_review"
+      ],
+      "properties": {
+        "source": {
+          "const": "synthetic_local_pilot"
+        },
+        "created_at": {
+          "type": "string",
+          "format": "date"
+        },
+        "license": {
+          "const": "CC0-1.0"
+        },
+        "safety_review": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "condition_contract": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "index_hypothesis",
+        "plausibility_rationale",
+        "distractor_action",
+        "recovery_action",
+        "unavailability_evidence_state"
+      ],
+      "properties": {
+        "index_hypothesis": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "plausibility_rationale": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "distractor_action": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/action"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "recovery_action": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/action"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "unavailability_evidence_state": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "tool_contract_entry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "parameter",
+        "allowed_values"
+      ],
+      "properties": {
+        "parameter": {
+          "type": "string",
+          "minLength": 1
+        },
+        "allowed_values": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "tool_contract": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "inspect",
+        "attempt",
+        "terminate"
+      ],
+      "properties": {
+        "inspect": {
+          "$ref": "#/$defs/tool_contract_entry"
+        },
+        "attempt": {
+          "$ref": "#/$defs/tool_contract_entry"
+        },
+        "terminate": {
+          "$ref": "#/$defs/tool_contract_entry"
+        }
+      }
+    },
+    "observation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "kind",
+        "evidence_class",
+        "message"
+      ],
+      "properties": {
+        "kind": {
+          "type": "string",
+          "minLength": 1
+        },
+        "evidence_class": {
+          "enum": [
+            "INFO",
+            "EFFECT_CONFIRMED",
+            "HYPOTHESIS_REFUTED",
+            "WEAK_NEGATIVE_EVIDENCE",
+            "CONCLUSIVE_UNAVAILABLE",
+            "NO_RELEVANT_EFFECT",
+            "AGENT_ACTION_ERROR",
+            "TOOL_OR_PLATFORM_ERROR",
+            "AMBIGUOUS_OBSERVATION"
+          ]
+        },
+        "message": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "adaptation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "level",
+        "meaningful",
+        "reason"
+      ],
+      "properties": {
+        "level": {
+          "enum": [
+            "none",
+            "action",
+            "parameter",
+            "tool",
+            "implementation",
+            "hypothesis",
+            "strategy"
+          ]
+        },
+        "meaningful": {
+          "type": "boolean"
+        },
+        "reason": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "transition": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "from",
+        "tool",
+        "parameters",
+        "to",
+        "observation",
+        "outcome",
+        "strategy",
+        "adaptation"
+      ],
+      "properties": {
+        "from": {
+          "type": "string"
+        },
+        "tool": {
+          "enum": [
+            "inspect",
+            "attempt",
+            "terminate"
+          ]
+        },
+        "parameters": {
+          "type": "object"
+        },
+        "to": {
+          "type": "string"
+        },
+        "observation": {
+          "$ref": "#/$defs/observation"
+        },
+        "outcome": {
+          "enum": [
+            "EFFECT_CONFIRMED",
+            "PARTIAL_PROGRESS",
+            "HYPOTHESIS_REFUTED",
+            "WEAK_NEGATIVE_EVIDENCE",
+            "NO_RELEVANT_EFFECT",
+            "AGENT_ACTION_ERROR",
+            "TOOL_OR_PLATFORM_ERROR",
+            "AMBIGUOUS_OBSERVATION"
+          ]
+        },
+        "strategy": {
+          "type": "string",
+          "minLength": 1
+        },
+        "adaptation": {
+          "$ref": "#/$defs/adaptation"
+        }
+      }
+    },
+    "state_model": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "initial_state",
+        "initial_strategy",
+        "goal_state",
+        "stop_state",
+        "states",
+        "transitions"
+      ],
+      "properties": {
+        "initial_state": {
+          "type": "string"
+        },
+        "initial_strategy": {
+          "type": "string"
+        },
+        "goal_state": {
+          "type": "string"
+        },
+        "stop_state": {
+          "type": "string"
+        },
+        "states": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "transitions": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/transition"
+          }
+        }
+      }
+    },
+    "evaluator_only": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "reference_plan",
+        "unreachability_proof"
+      ],
+      "properties": {
+        "reference_plan": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/action"
+          }
+        },
+        "unreachability_proof": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    }
+  }
+}

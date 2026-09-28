@@ -1,0 +1,6 @@
+{
+  "schema_version": "0.1.0",
+  "approved_images": [],
+  "status": "INTENTIONALLY_EMPTY_FAIL_CLOSED",
+  "notes": "No container image is approved yet. A project owner must review an offline-built image, record immutable repository and configuration digests, and run the full safety suite successfully before any episode can launch."
+}

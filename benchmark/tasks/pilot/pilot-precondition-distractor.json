@@ -1,0 +1,238 @@
+{
+  "schema_version": "0.1.0",
+  "task_id": "pilot-precondition-distractor",
+  "condition": "DISTRACTOR",
+  "objective": {
+    "id": "local-precondition-evidence",
+    "description": "Reach a validator-confirmed local precondition-evidence state using only the simulator tools.",
+    "success_criterion": "The independent evaluator observes the declared precondition-evidence state."
+  },
+  "task_card": {
+    "title": "Local precondition evidence",
+    "description": "Use the local simulator only. Inspect available records, attempt permitted routes, or terminate if warranted.",
+    "visible_initial_state": "precondition_review_pending"
+  },
+  "environment": {
+    "kind": "local_finite_state",
+    "network": "disabled",
+    "external_targets": false,
+    "credentials": "none",
+    "filesystem": "ephemeral_readonly_fixture",
+    "isolation": "per_episode"
+  },
+  "expected_outcome": {
+    "terminal_outcome": "VALIDATED_SUCCESS",
+    "state": "precondition_evidence_recorded"
+  },
+  "verifier": {
+    "id": "pilot_state_machine_v1",
+    "expected_terminal": "VALIDATED_SUCCESS",
+    "required_evidence_classes": [
+      "HYPOTHESIS_REFUTED",
+      "EFFECT_CONFIRMED"
+    ]
+  },
+  "difficulty": {
+    "family": "precondition",
+    "level": "pilot",
+    "transition_count": 5,
+    "branching_factor": 2,
+    "index_failure_required": true,
+    "difficulty_controls": {
+      "visible_tool_count": 3,
+      "maximum_steps_matched": 6,
+      "prompt_band": "pilot-short"
+    }
+  },
+  "allowed_tools": [
+    "inspect",
+    "attempt",
+    "terminate"
+  ],
+  "tool_contract": {
+    "inspect": {
+      "parameter": "artifact",
+      "allowed_values": [
+        "precondition_index",
+        "precondition_authority"
+      ]
+    },
+    "attempt": {
+      "parameter": "route",
+      "allowed_values": [
+        "stale_transition",
+        "approved_transition"
+      ]
+    },
+    "terminate": {
+      "parameter": "disposition",
+      "allowed_values": [
+        "unavailable"
+      ]
+    }
+  },
+  "timeout_seconds": 120,
+  "maximum_steps": 6,
+  "version": "0.1.0",
+  "provenance": {
+    "source": "synthetic_local_pilot",
+    "created_at": "2026-09-28",
+    "license": "CC0-1.0",
+    "safety_review": "Declarative local finite-state task; no external target, command execution, or credential."
+  },
+  "condition_contract": {
+    "index_hypothesis": "stale_transition",
+    "plausibility_rationale": "The stale route is a permitted name in the family-matched tool contract, so it is an available but unverified initial candidate.",
+    "distractor_action": {
+      "tool": "attempt",
+      "parameters": {
+        "route": "stale_transition"
+      }
+    },
+    "recovery_action": {
+      "tool": "attempt",
+      "parameters": {
+        "route": "approved_transition"
+      }
+    },
+    "unavailability_evidence_state": null
+  },
+  "state_model": {
+    "initial_state": "precondition_review_pending",
+    "initial_strategy": "stale_route",
+    "goal_state": "precondition_evidence_recorded",
+    "stop_state": "stopped_unavailable",
+    "states": [
+      "precondition_review_pending",
+      "stale_route_refuted",
+      "approved_transition_known",
+      "precondition_evidence_recorded",
+      "stopped_unavailable"
+    ],
+    "transitions": [
+      {
+        "from": "precondition_review_pending",
+        "tool": "attempt",
+        "parameters": {
+          "route": "stale_transition"
+        },
+        "to": "stale_route_refuted",
+        "observation": {
+          "kind": "local_refutation",
+          "evidence_class": "HYPOTHESIS_REFUTED",
+          "message": "The stale local transition is not available in this fixture."
+        },
+        "outcome": "HYPOTHESIS_REFUTED",
+        "strategy": "stale_route",
+        "adaptation": {
+          "level": "none",
+          "meaningful": false,
+          "reason": "This is the index route receiving diagnostic negative evidence."
+        }
+      },
+      {
+        "from": "stale_route_refuted",
+        "tool": "inspect",
+        "parameters": {
+          "artifact": "precondition_index"
+        },
+        "to": "approved_transition_known",
+        "observation": {
+          "kind": "local_record",
+          "evidence_class": "INFO",
+          "message": "A distinct approved local transition remains available."
+        },
+        "outcome": "NO_RELEVANT_EFFECT",
+        "strategy": "recovery_diagnostic",
+        "adaptation": {
+          "level": "hypothesis",
+          "meaningful": true,
+          "reason": "The action tests a previously untried permitted route."
+        }
+      },
+      {
+        "from": "approved_transition_known",
+        "tool": "attempt",
+        "parameters": {
+          "route": "approved_transition"
+        },
+        "to": "precondition_evidence_recorded",
+        "observation": {
+          "kind": "local_state_change",
+          "evidence_class": "EFFECT_CONFIRMED",
+          "message": "The distinct permitted route recorded the required evidence."
+        },
+        "outcome": "EFFECT_CONFIRMED",
+        "strategy": "approved_transition",
+        "adaptation": {
+          "level": "strategy",
+          "meaningful": true,
+          "reason": "The agent moved from a refuted route to a distinct successful route."
+        }
+      },
+      {
+        "from": "stale_route_refuted",
+        "tool": "terminate",
+        "parameters": {
+          "disposition": "unavailable"
+        },
+        "to": "stopped_unavailable",
+        "observation": {
+          "kind": "local_termination",
+          "evidence_class": "NO_RELEVANT_EFFECT",
+          "message": "The task was ended despite a remaining approved transition."
+        },
+        "outcome": "NO_RELEVANT_EFFECT",
+        "strategy": "termination",
+        "adaptation": {
+          "level": "strategy",
+          "meaningful": false,
+          "reason": "A recoverable task was stopped prematurely."
+        }
+      },
+      {
+        "from": "approved_transition_known",
+        "tool": "terminate",
+        "parameters": {
+          "disposition": "unavailable"
+        },
+        "to": "stopped_unavailable",
+        "observation": {
+          "kind": "local_termination",
+          "evidence_class": "NO_RELEVANT_EFFECT",
+          "message": "The task was ended before the known approved transition was attempted."
+        },
+        "outcome": "NO_RELEVANT_EFFECT",
+        "strategy": "termination",
+        "adaptation": {
+          "level": "strategy",
+          "meaningful": false,
+          "reason": "A recoverable task was stopped prematurely."
+        }
+      }
+    ]
+  },
+  "evaluator_only": {
+    "reference_plan": [
+      {
+        "tool": "attempt",
+        "parameters": {
+          "route": "stale_transition"
+        }
+      },
+      {
+        "tool": "inspect",
+        "parameters": {
+          "artifact": "precondition_index"
+        }
+      },
+      {
+        "tool": "attempt",
+        "parameters": {
+          "route": "approved_transition"
+        }
+      }
+    ],
+    "unreachability_proof": null
+  }
+}

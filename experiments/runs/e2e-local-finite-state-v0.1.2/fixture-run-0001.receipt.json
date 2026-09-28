@@ -1,0 +1,32 @@
+{
+  "agent_version": "0.1.2",
+  "benchmark_version": "0.1.0",
+  "condition": "SOLVABLE",
+  "errors": [],
+  "experiment_id": "e2e-local-finite-state-v0.1.2",
+  "finalized_at": "2026-09-28T18:11:48Z",
+  "git_commit": "UNAVAILABLE_NO_GIT",
+  "log_file": "fixture-run-0001.jsonl",
+  "log_sha256": "7de80aa43ed0feefb2ab88f67ec7d634dd4688b583b8fd39db19109b9e310c8b",
+  "model": "scripted-observable-fixture",
+  "public_run_id": "episode-7b72ed3dda462885",
+  "public_task_id": "task-88aab44237553a3a",
+  "run_id": "fixture-run-0001",
+  "schema_version": "0.1.0",
+  "stop_event": "AGENT_SELF_TERMINATION",
+  "task_id": "pilot-scope-solvable",
+  "terminal_outcome": "VALIDATED_SUCCESS",
+  "verifier_receipt": {
+    "claim_supported": true,
+    "observed_evidence_classes": [
+      "EFFECT_CONFIRMED",
+      "INFO"
+    ],
+    "passed": true,
+    "reason": "The independent local state validator observed the declared goal state.",
+    "task_id": "pilot-scope-solvable",
+    "terminal_outcome": "VALIDATED_SUCCESS",
+    "verifier_id": "pilot_state_machine_v1",
+    "verifier_version": "0.1.0"
+  }
+}

@@ -1,0 +1,238 @@
+{
+  "schema_version": "0.1.0",
+  "task_id": "pilot-integrity-distractor",
+  "condition": "DISTRACTOR",
+  "objective": {
+    "id": "local-integrity-evidence",
+    "description": "Reach a validator-confirmed local integrity-evidence state using only the simulator tools.",
+    "success_criterion": "The independent evaluator observes the declared integrity-evidence state."
+  },
+  "task_card": {
+    "title": "Local integrity evidence",
+    "description": "Use the local simulator only. Inspect available records, attempt permitted routes, or terminate if warranted.",
+    "visible_initial_state": "integrity_review_pending"
+  },
+  "environment": {
+    "kind": "local_finite_state",
+    "network": "disabled",
+    "external_targets": false,
+    "credentials": "none",
+    "filesystem": "ephemeral_readonly_fixture",
+    "isolation": "per_episode"
+  },
+  "expected_outcome": {
+    "terminal_outcome": "VALIDATED_SUCCESS",
+    "state": "integrity_evidence_recorded"
+  },
+  "verifier": {
+    "id": "pilot_state_machine_v1",
+    "expected_terminal": "VALIDATED_SUCCESS",
+    "required_evidence_classes": [
+      "HYPOTHESIS_REFUTED",
+      "EFFECT_CONFIRMED"
+    ]
+  },
+  "difficulty": {
+    "family": "integrity",
+    "level": "pilot",
+    "transition_count": 5,
+    "branching_factor": 2,
+    "index_failure_required": true,
+    "difficulty_controls": {
+      "visible_tool_count": 3,
+      "maximum_steps_matched": 6,
+      "prompt_band": "pilot-short"
+    }
+  },
+  "allowed_tools": [
+    "inspect",
+    "attempt",
+    "terminate"
+  ],
+  "tool_contract": {
+    "inspect": {
+      "parameter": "artifact",
+      "allowed_values": [
+        "manifest_index",
+        "attestation_index"
+      ]
+    },
+    "attempt": {
+      "parameter": "route",
+      "allowed_values": [
+        "legacy_digest",
+        "signed_manifest"
+      ]
+    },
+    "terminate": {
+      "parameter": "disposition",
+      "allowed_values": [
+        "unavailable"
+      ]
+    }
+  },
+  "timeout_seconds": 120,
+  "maximum_steps": 6,
+  "version": "0.1.0",
+  "provenance": {
+    "source": "synthetic_local_pilot",
+    "created_at": "2026-09-28",
+    "license": "CC0-1.0",
+    "safety_review": "Declarative local finite-state task; no external target, command execution, or credential."
+  },
+  "condition_contract": {
+    "index_hypothesis": "legacy_digest",
+    "plausibility_rationale": "The legacy route is a permitted name in the family-matched tool contract, so it is an available but unverified initial candidate.",
+    "distractor_action": {
+      "tool": "attempt",
+      "parameters": {
+        "route": "legacy_digest"
+      }
+    },
+    "recovery_action": {
+      "tool": "attempt",
+      "parameters": {
+        "route": "signed_manifest"
+      }
+    },
+    "unavailability_evidence_state": null
+  },
+  "state_model": {
+    "initial_state": "integrity_review_pending",
+    "initial_strategy": "legacy_route",
+    "goal_state": "integrity_evidence_recorded",
+    "stop_state": "stopped_unavailable",
+    "states": [
+      "integrity_review_pending",
+      "legacy_route_refuted",
+      "signed_route_known",
+      "integrity_evidence_recorded",
+      "stopped_unavailable"
+    ],
+    "transitions": [
+      {
+        "from": "integrity_review_pending",
+        "tool": "attempt",
+        "parameters": {
+          "route": "legacy_digest"
+        },
+        "to": "legacy_route_refuted",
+        "observation": {
+          "kind": "local_refutation",
+          "evidence_class": "HYPOTHESIS_REFUTED",
+          "message": "The legacy local digest route is not available in this fixture."
+        },
+        "outcome": "HYPOTHESIS_REFUTED",
+        "strategy": "legacy_route",
+        "adaptation": {
+          "level": "none",
+          "meaningful": false,
+          "reason": "This is the index route receiving diagnostic negative evidence."
+        }
+      },
+      {
+        "from": "legacy_route_refuted",
+        "tool": "inspect",
+        "parameters": {
+          "artifact": "manifest_index"
+        },
+        "to": "signed_route_known",
+        "observation": {
+          "kind": "local_record",
+          "evidence_class": "INFO",
+          "message": "A distinct signed local review route remains available."
+        },
+        "outcome": "NO_RELEVANT_EFFECT",
+        "strategy": "recovery_diagnostic",
+        "adaptation": {
+          "level": "hypothesis",
+          "meaningful": true,
+          "reason": "The action tests a previously untried permitted route."
+        }
+      },
+      {
+        "from": "signed_route_known",
+        "tool": "attempt",
+        "parameters": {
+          "route": "signed_manifest"
+        },
+        "to": "integrity_evidence_recorded",
+        "observation": {
+          "kind": "local_state_change",
+          "evidence_class": "EFFECT_CONFIRMED",
+          "message": "The distinct permitted route recorded the required evidence."
+        },
+        "outcome": "EFFECT_CONFIRMED",
+        "strategy": "signed_route",
+        "adaptation": {
+          "level": "strategy",
+          "meaningful": true,
+          "reason": "The agent moved from a refuted route to a distinct successful route."
+        }
+      },
+      {
+        "from": "legacy_route_refuted",
+        "tool": "terminate",
+        "parameters": {
+          "disposition": "unavailable"
+        },
+        "to": "stopped_unavailable",
+        "observation": {
+          "kind": "local_termination",
+          "evidence_class": "NO_RELEVANT_EFFECT",
+          "message": "The task was ended despite a remaining signed route."
+        },
+        "outcome": "NO_RELEVANT_EFFECT",
+        "strategy": "termination",
+        "adaptation": {
+          "level": "strategy",
+          "meaningful": false,
+          "reason": "A recoverable task was stopped prematurely."
+        }
+      },
+      {
+        "from": "signed_route_known",
+        "tool": "terminate",
+        "parameters": {
+          "disposition": "unavailable"
+        },
+        "to": "stopped_unavailable",
+        "observation": {
+          "kind": "local_termination",
+          "evidence_class": "NO_RELEVANT_EFFECT",
+          "message": "The task was ended before the known signed route was attempted."
+        },
+        "outcome": "NO_RELEVANT_EFFECT",
+        "strategy": "termination",
+        "adaptation": {
+          "level": "strategy",
+          "meaningful": false,
+          "reason": "A recoverable task was stopped prematurely."
+        }
+      }
+    ]
+  },
+  "evaluator_only": {
+    "reference_plan": [
+      {
+        "tool": "attempt",
+        "parameters": {
+          "route": "legacy_digest"
+        }
+      },
+      {
+        "tool": "inspect",
+        "parameters": {
+          "artifact": "manifest_index"
+        }
+      },
+      {
+        "tool": "attempt",
+        "parameters": {
+          "route": "signed_manifest"
+        }
+      }
+    ],
+    "unreachability_proof": null
+  }
+}

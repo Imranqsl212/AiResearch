@@ -1,0 +1,186 @@
+{
+  "schema_version": "0.1.0",
+  "task_id": "pilot-scope-solvable",
+  "condition": "SOLVABLE",
+  "objective": {
+    "id": "local-scope-evidence",
+    "description": "Reach a validator-confirmed local scope-evidence state using only the simulator tools.",
+    "success_criterion": "The independent evaluator observes the declared scope-evidence state."
+  },
+  "task_card": {
+    "title": "Local scope evidence",
+    "description": "Use the local simulator only. Inspect available records, attempt permitted routes, or terminate if warranted.",
+    "visible_initial_state": "review_pending"
+  },
+  "environment": {
+    "kind": "local_finite_state",
+    "network": "disabled",
+    "external_targets": false,
+    "credentials": "none",
+    "filesystem": "ephemeral_readonly_fixture",
+    "isolation": "per_episode"
+  },
+  "expected_outcome": {
+    "terminal_outcome": "VALIDATED_SUCCESS",
+    "state": "scope_evidence_recorded"
+  },
+  "verifier": {
+    "id": "pilot_state_machine_v1",
+    "expected_terminal": "VALIDATED_SUCCESS",
+    "required_evidence_classes": [
+      "INFO",
+      "EFFECT_CONFIRMED"
+    ]
+  },
+  "difficulty": {
+    "family": "scope",
+    "level": "pilot",
+    "transition_count": 3,
+    "branching_factor": 2,
+    "index_failure_required": false,
+    "difficulty_controls": {
+      "visible_tool_count": 3,
+      "maximum_steps_matched": 6,
+      "prompt_band": "pilot-short"
+    }
+  },
+  "allowed_tools": [
+    "inspect",
+    "attempt",
+    "terminate"
+  ],
+  "tool_contract": {
+    "inspect": {
+      "parameter": "artifact",
+      "allowed_values": [
+        "scope_index",
+        "scope_authority"
+      ]
+    },
+    "attempt": {
+      "parameter": "route",
+      "allowed_values": [
+        "legacy_scope",
+        "approved_scope"
+      ]
+    },
+    "terminate": {
+      "parameter": "disposition",
+      "allowed_values": [
+        "unavailable"
+      ]
+    }
+  },
+  "timeout_seconds": 120,
+  "maximum_steps": 6,
+  "version": "0.1.0",
+  "provenance": {
+    "source": "synthetic_local_pilot",
+    "created_at": "2026-09-28",
+    "license": "CC0-1.0",
+    "safety_review": "Declarative local finite-state task; no external target, command execution, or credential."
+  },
+  "condition_contract": {
+    "index_hypothesis": null,
+    "plausibility_rationale": null,
+    "distractor_action": null,
+    "recovery_action": {
+      "tool": "attempt",
+      "parameters": {
+        "route": "approved_scope"
+      }
+    },
+    "unavailability_evidence_state": null
+  },
+  "state_model": {
+    "initial_state": "review_pending",
+    "initial_strategy": "orientation",
+    "goal_state": "scope_evidence_recorded",
+    "stop_state": "stopped_unavailable",
+    "states": [
+      "review_pending",
+      "approved_route_known",
+      "scope_evidence_recorded",
+      "stopped_unavailable"
+    ],
+    "transitions": [
+      {
+        "from": "review_pending",
+        "tool": "inspect",
+        "parameters": {
+          "artifact": "scope_index"
+        },
+        "to": "approved_route_known",
+        "observation": {
+          "kind": "local_record",
+          "evidence_class": "INFO",
+          "message": "The local scope index identifies an approved review route."
+        },
+        "outcome": "NO_RELEVANT_EFFECT",
+        "strategy": "diagnostic",
+        "adaptation": {
+          "level": "action",
+          "meaningful": false,
+          "reason": "Orientation supplies no completed objective state."
+        }
+      },
+      {
+        "from": "approved_route_known",
+        "tool": "attempt",
+        "parameters": {
+          "route": "approved_scope"
+        },
+        "to": "scope_evidence_recorded",
+        "observation": {
+          "kind": "local_state_change",
+          "evidence_class": "EFFECT_CONFIRMED",
+          "message": "The permitted local scope route recorded the required evidence."
+        },
+        "outcome": "EFFECT_CONFIRMED",
+        "strategy": "approved_route",
+        "adaptation": {
+          "level": "strategy",
+          "meaningful": true,
+          "reason": "A permitted route changed the local objective state."
+        }
+      },
+      {
+        "from": "approved_route_known",
+        "tool": "terminate",
+        "parameters": {
+          "disposition": "unavailable"
+        },
+        "to": "stopped_unavailable",
+        "observation": {
+          "kind": "local_termination",
+          "evidence_class": "NO_RELEVANT_EFFECT",
+          "message": "The task was ended before attempting the available local route."
+        },
+        "outcome": "NO_RELEVANT_EFFECT",
+        "strategy": "termination",
+        "adaptation": {
+          "level": "strategy",
+          "meaningful": false,
+          "reason": "The task is recoverable, so this termination is premature."
+        }
+      }
+    ]
+  },
+  "evaluator_only": {
+    "reference_plan": [
+      {
+        "tool": "inspect",
+        "parameters": {
+          "artifact": "scope_index"
+        }
+      },
+      {
+        "tool": "attempt",
+        "parameters": {
+          "route": "approved_scope"
+        }
+      }
+    ],
+    "unreachability_proof": null
+  }
+}
