@@ -1,58 +1,37 @@
 # Benchmark quality gates
 
-**Scope:** the nine-task local pilot, not the main experiment.
+The active quality command is:
 
-## Automated checks
+```sh
+PYTHONDONTWRITEBYTECODE=1 python3 -B -m benchmark.quality_four_cell --json
+```
 
-Run:
+It is a static, no-agent check for the 12-task crypto development suite.
 
-~~~sh
-python3 -m benchmark.quality --json
-~~~
+## Required gates
 
-The command is a static evaluator check with agent_runs_launched equal to zero. It
-validates:
-
-| Gate | What fails it |
+| Gate | Requirement |
 | --- | --- |
-| Manifest shape | Missing required fields, invalid condition, unsafe tool name, malformed task metadata. |
-| Local safety | Network, external-target, credential, filesystem, or execution-marker violation. |
-| State graph | Unknown states, duplicate transitions, undeclared tool, graph/count mismatch. |
-| Independent verification | Reference plan rejected by the validator or expected state/outcome mismatch. |
-| Determinism | Two reference executions yield different result/receipt records. |
-| SOLVABLE correctness | No graph path to the goal state. |
-| DISTRACTOR correctness | No declared refuted index path, no meaningful adaptation, or no strategy shift to success. |
-| UNSOLVABLE correctness | Any permitted path reaches the goal, unavailable evidence is absent, or explicit stop fails. |
-| Suite balance | Not exactly 3 tasks in each condition or not exactly one of each condition per family. |
+| schema | every manifest is valid version `0.3.0` |
+| scope | domain, mechanism, tools, and safety boundary are crypto-specific and local |
+| balance | each family has exactly one RD, UD, RW, and UW task |
+| parity | paired tasks share public interface, budget, and visible initial context |
+| oracle | expected terminal class and invariant receipts match the independent registry |
+| reachability | repairable paths are reachable; unavailable paths have no permitted route |
+| determinism | repeated reference evaluation produces identical state and receipt |
+| leakage | condition, oracle, verifier, and evaluator state are absent from agent view |
+| safety | no public IP, credential, host mount, shell, or external process capability |
 
-## Quality principles
+Passing this command does not authorize model execution. The executable Docker target,
+runtime safety gate, provider configuration, logging integrity, and smoke test are
+separate prerequisites.
 
-1. **No infrastructure-as-ground-truth.** The task model has no network/process
-   dependency, so an unavailable result cannot be caused by a service outage.
-2. **No self-certification.** The verifier checks state, not an agent claim.
-3. **No silent repair.** A task whose oracle/graph is invalid is removed from a
-   confirmatory denominator and kept in an invalidation ledger.
-4. **Family blocking.** Scope, integrity, and precondition tasks are organized as
-   semantic blocks, not nine independent observations.
-5. **No raw action pseudoreplication.** Events create trajectory labels; future analysis
-   clusters outcomes by task family.
-6. **No hidden condition leakage.** The future agent-facing view excludes evaluator-only
-   fields and condition labels.
+## Interpretation rules
 
-## Pilot limitations
+An invalid task is removed from the confirmatory denominator and recorded in an
+invalidation ledger. A build or runtime failure is not silently converted into an
+unsolvable crypto task. Raw action counts are descriptive only; the primary unit for
+inference is the matched task family with repeated runs nested below it.
 
-The finite-state design correctly tests architecture, trace semantics, verifier
-separation, and unreachability proof mechanics. It does **not** test:
-
-- an agent runner or model integration;
-- container isolation or true egress enforcement;
-- language/runtime failures;
-- real-code vulnerability discovery;
-- task difficulty equivalence beyond declared matched controls;
-- annotation agreement; or
-- the preregistered 32-family statistical study.
-
-Those remain freeze gates in [preregistration.md](preregistration.md). The pilot must
-pass independent task/validator review before it becomes a development fixture for the
-larger benchmark.
-
+The old generic nine-task pilot remains available for regression/audit purposes but is
+not part of the active crypto suite.

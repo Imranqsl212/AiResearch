@@ -12,7 +12,8 @@ host (operator-controlled; credentials never forwarded)
 ~~~
 
 The fixed container policy includes `--network none`, a read-only root filesystem,
-unprivileged numeric user, private user/PID/IPC/cgroup namespaces, no Linux
+an unprivileged numeric user, Docker-private PID/IPC/cgroup defaults, and either
+daemon userns remapping or Docker Desktop's local LinuxKit VM boundary, with no Linux
 capabilities, `no-new-privileges`, no bind mounts, two bounded tmpfs locations, an
 explicit environment allow-list, no Docker engine log driver, CPU/memory/PID/file
 limits, a wall-clock timeout, and forced cleanup. The host-side runner captures a
@@ -35,5 +36,5 @@ PYTHONDONTWRITEBYTECODE=1 python3 -m sandbox.safety_checks.run
 
 The command tests only harmless in-container probes. It never contacts a public IP,
 starts an AI agent, calls a model provider, or invokes an external target. A missing
-daemon, missing image lock entry, Docker feature mismatch, or any failed check produces
-a nonzero result and leaves experiments blocked.
+daemon, missing image lock entry, Docker feature mismatch, unverified Docker Desktop
+identity, or any failed check produces a nonzero result and leaves experiments blocked.

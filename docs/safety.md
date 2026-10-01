@@ -1,9 +1,11 @@
 # Safety and containment: local-only agent episodes
 
 **Status:** a fail-closed container policy and safety-test harness are implemented. A
-local digest-pinned candidate image exists, but its first runtime preapproval probe
-failed at Docker container creation because the existing `--pid private` option is
-unsupported; all later probes were **NOT_RUN**. No image is approved. A separate
+digest-pinned local image is approved for the fixed runner after all nine runtime
+probes passed under the explicitly recorded Docker Desktop LinuxKit VM boundary. The
+revised policy requires daemon user-namespace remapping on native Linux, or that
+verified Docker Desktop boundary on macOS/Windows. This is not a guarantee against a
+Docker Desktop/VM escape vulnerability. A separate
 deterministic in-memory adapter/sandbox/verifier/logging fixture is
 implemented for wiring tests only; it creates no container, invokes no model provider,
 and does not satisfy the container safety gate. **No provider-backed AI-agent or
@@ -71,15 +73,15 @@ are rejected before Docker is contacted.
 | Control | Enforcement |
 | --- | --- |
 | Local Docker only | The runner rejects `DOCKER_HOST` or Docker context endpoints that are not a local Unix socket. |
-| Immutable reviewed image | The image must be present in `sandbox/images/approved_images.json`, use a manifest digest, and match a separately locked Docker config digest. Tag-only references are rejected. |
+| Immutable reviewed image | Ordinary episodes require the official allow-list **and** a passing official safety receipt bound to the image, policy, safety-code fingerprint, image-lock hash, and selected daemon identity/configuration fields. The last launch point repeats authorization. Candidate images can run only fixed local safety probes. Tag-only references are rejected. |
 | No automatic downloads | Container creation uses `--pull=never`. The runner refuses a missing local image rather than pulling it. |
 | Network isolation | `--network none`; no published ports, links, DNS overrides, or Docker network attachment. Loopback remains local to the container. |
-| Filesystem isolation | Read-only root filesystem; no bind/volume flags; only two bounded tmpfs mounts at `/tmp` and `/work`. The approved image itself may not declare a volume. |
+| Filesystem isolation | Read-only root filesystem; no bind/volume flags; only two bounded tmpfs mounts at `/tmp` and `/work`. `/work` requests UID/GID 65532 with mode 0700 per [Docker tmpfs options](https://docs.docker.com/engine/storage/tmpfs/); runtime writability is NOT TESTED. The approved image itself may not declare a volume. |
 | Credential isolation | The container receives an explicit allow-list of non-secret environment values, not the host environment. The approved image is rejected if its image config contains a credential-like environment name. |
-| Privilege reduction | Docker daemon must report built-in seccomp protection; the container uses numeric unprivileged user `65532:65532`, private user/PID/IPC/cgroup namespaces, all Linux capabilities dropped, `no-new-privileges`, no devices, no privileged mode, and no restart policy. |
+| Privilege reduction | Docker daemon must report seccomp and either daemon-level user-namespace remapping or the verified Docker Desktop `desktop-linux` LinuxKit VM boundary. Docker's private PID/default user behavior is required at effective inspection, with numeric user `65532:65532`, private IPC/cgroup namespaces, no added capabilities, `no-new-privileges`, no devices, no privileged mode, and no restart policy. Runtime enforcement is NOT VERIFIED. |
 | Resource containment | Fixed 0.50 CPU, 256 MiB memory plus equal swap ceiling, 64 PIDs, 128 file descriptors, 16 MiB noexec tmpfs locations, 1 MiB retained log ceiling, and a maximum 120-second requested wall timeout. |
 | Pre-start verification | Docker creates the container, the runner inspects Docker's **effective** configuration, and only then starts it. A mismatch removes the container without running the target. |
-| Disposal and evidence | Docker auto-removes a normally exited container; the runner additionally force-removes its named container on every terminal path, verifies absence, and saves a bounded/redacted host-side log and JSON receipt. Docker engine logging is disabled to avoid an uncontrolled secondary log path. |
+| Disposal and evidence | Docker auto-removes a normally exited container; the runner additionally force-removes its named container on every terminal path, verifies absence, and saves a bounded/redacted host-side log and JSON receipt. Retained output is assembled up to 1 MiB before redaction so a credential assignment split across read chunks cannot evade the regex; files require 0600 and their directory 0700. Docker engine logging is disabled. Redaction is still best effort. |
 
 ## Threat model
 
@@ -115,14 +117,14 @@ components for this design; the evaluator is trusted but must not be agent-visib
 
 ### Assumptions and non-guarantees
 
-Docker containers are a strong process-isolation layer, not a substitute for a hardened
-VM boundary. This implementation requires the daemon to report its built-in seccomp
-protection and assumes a patched, trusted local Docker daemon and host/virtualization
-stack, a trusted reviewed base image, no daemon socket or
-host-path exposure inside the image, and no undisclosed kernel/container escape. It
-does not claim to protect against an operator with host/Docker privileges, a malicious
-Docker daemon, or a zero-day container escape. A study that needs stronger isolation
-must use a separately reviewed VM/microVM design; it must not weaken this policy.
+Docker containers are a strong process-isolation layer. The accepted macOS/Windows
+Docker Desktop mode relies on Docker Desktop's LinuxKit VM as the outer boundary rather
+than claiming daemon-level userns remapping. The runner accepts it only when the local
+`desktop-linux` context, Linux OSType, and Docker Desktop/LinuxKit identity are reported
+by the daemon. A native Linux Engine without userns remapping remains blocked. The
+residual assumption is that Docker Desktop, its LinuxKit VM, kernel, and daemon are
+patched and trusted. This does not protect against an operator with host/Docker
+privileges, a malicious daemon, or a VM/container escape vulnerability.
 
 ## Failure-closed procedure and incident response
 
@@ -160,31 +162,23 @@ nonzero, and no container is created. The generated receipt is
 
 ## Current verification status
 
-The complete suite was run on 2026-09-28. The static policy gate passed and the local
-Docker daemon was reachable. `docker ps` found no running container, and the only local
-image lacked a repository digest; it therefore could not meet the immutable-image
-policy. Because `sandbox/images/approved_images.json` is intentionally empty, the nine
-runtime checks were all recorded as `NOT_RUN_FAIL_CLOSED`. No container safety probe,
-AI-agent episode, or external target interaction occurred; `experiment_permitted` is
-`false`.
+The official suite passed on 2026-09-30 with static policy `PASS`, all nine runtime
+checks `PASS`, `experiment_permitted=true`, the approved immutable image digest, and
+`isolation_mode=docker-desktop-linuxkit-vm`. No provider-backed AI-agent episode,
+smoke test, pilot, main experiment, or external target interaction occurred.
 
 The exact receipt is
 [`sandbox/safety_checks/latest_result.json`](../sandbox/safety_checks/latest_result.json).
-This blocks the main experiment rather than allowing a fallback to an uncontained host
-process. A new run is required after an owner has reviewed, locally preloaded, and
-pinned exactly one eligible image.
+The remaining scientific and provider gates still block the main experiment rather than
+allowing a fallback to an uncontained host process. A new candidate and official run
+are required after any image, policy, safety-code, or daemon change.
 
 ## Source anchors
 
-The policy and tests are source-backed by:
-
-- `sandbox/policy.py:36-52` (complete container environment allow-list),
-  `:113-144` (request validation), and `:180-251` (fixed Docker creation arguments);
-- `sandbox/runner.py:98-191` (effective-configuration verification), `:237-375`
-  (preflight, inspect-before-start, bounded logs, timeout, cleanup, receipt), and
-  `:377-475` (local endpoint, seccomp, approved-image, and cleanup checks); and
-- `sandbox/safety_checks/checks.py:61-112` (static locked-policy test),
-  `:199-401` (the harmless runtime probes), and `:404-479` (fail-closed suite gate).
+The source anchors are `sandbox/policy.py` (fixed Docker arguments),
+`sandbox/runner.py` (launch authorization, effective inspection, bounded logs,
+cleanup), and `sandbox/safety_checks/checks.py` (static and runtime gate).
 
 The machine-readable candidate and official receipts are authoritative for their
-respective scopes. No runtime isolation check has passed; no agent episode is allowed.
+respective scopes. Runtime isolation checks have passed for this exact local image and
+daemon fingerprint; no provider-backed agent or scientific episode is yet allowed.

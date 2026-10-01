@@ -44,6 +44,7 @@
     "safety_mode": {"type": "string"},
     "seed": {"type": ["integer", "null"], "minimum": 0},
     "token_budget": {"type": ["integer", "null"], "minimum": 0},
+    "schedule_sha256": {"type": ["string", "null"], "pattern": "^[0-9a-f]{64}$"},
     "notes": {"type": "string"},
     "created_at": {"type": "string"},
     "date": {"type": "string"}

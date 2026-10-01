@@ -46,8 +46,8 @@ def cluster_bootstrap_mean(
     if len(values) == 1:
         return {
             "estimate": estimate,
-            "ci_low": estimate,
-            "ci_high": estimate,
+            "ci_low": None,
+            "ci_high": None,
             "n_families": 1,
         }
     rng = random.Random(_seed(label))
@@ -165,7 +165,9 @@ def paired_cluster_comparison(
         permutations=permutations,
         label=f"permutation:{metric}:{condition_a}:{condition_b}",
     )
-    odds_ratio = _odds_ratio(fmean(list(a.values())), fmean(list(b.values())))
+    odds_ratio = _odds_ratio(
+        fmean([a[family] for family in families]), fmean([b[family] for family in families])
+    )
     return {
         "metric": metric,
         "condition_a": condition_a,
@@ -211,7 +213,7 @@ def _odds_ratio(probability_a: float, probability_b: float) -> float | None:
     return (probability_a / (1.0 - probability_a)) / (probability_b / (1.0 - probability_b))
 
 
-def holm_adjust(rows: Sequence[Mapping[str, Any]]) -> list[dict[str, Any]]:
+def holm_adjust(rows: Sequence[Mapping[str, Any]], *, planned_family_size: int | None = None) -> list[dict[str, Any]]:
     """Return Holm-adjusted p-values without changing the original row order."""
 
     adjusted = [dict(row) for row in rows]
@@ -219,7 +221,7 @@ def holm_adjust(rows: Sequence[Mapping[str, Any]]) -> list[dict[str, Any]]:
         ((index, row["p_value"]) for index, row in enumerate(adjusted) if isinstance(row.get("p_value"), float)),
         key=lambda item: item[1],
     )
-    total = len(eligible)
+    total = max(len(eligible), planned_family_size or 0)
     running = 0.0
     for rank, (index, p_value) in enumerate(eligible):
         candidate = min(1.0, (total - rank) * p_value)
@@ -230,31 +232,42 @@ def holm_adjust(rows: Sequence[Mapping[str, Any]]) -> list[dict[str, Any]]:
     return adjusted
 
 
-def calibration_pair_scores(run_metrics: Sequence[Mapping[str, Any]]) -> list[dict[str, Any]]:
-    """Compute preregistered RD/UD family calibration summaries when both exist."""
+def _h1_component_cells(
+    run_metrics: Sequence[Mapping[str, Any]],
+) -> dict[str, dict[str, list[float]]]:
+    """Collect only failure-exposed, interpretable H1 run endpoints by family."""
 
-    by_family: dict[str, dict[str, list[Mapping[str, Any]]]] = defaultdict(lambda: defaultdict(list))
+    by_family: dict[str, dict[str, list[float]]] = defaultdict(lambda: defaultdict(list))
     for row in run_metrics:
         family = row.get("task_family")
         condition = row.get("condition")
-        if isinstance(family, str) and family != "UNRESOLVED_FAMILY" and isinstance(condition, str):
-            by_family[family][condition].append(row)
+        if not isinstance(family, str) or not family or family == "UNRESOLVED_FAMILY":
+            continue
+        if row.get("failure_exposed") is not True or row.get("analysis_eligible") is False:
+            continue
+        metric = (
+            "recovered_after_meaningful_adaptation" if condition == "RD"
+            else "operationally_justified_stop" if condition == "UD" else None
+        )
+        if metric is None:
+            continue
+        value = row.get(metric)
+        if value is None:
+            continue
+        if not isinstance(value, bool):
+            raise ValueError(f"H1 {metric} must be a boolean run endpoint")
+        by_family[family][condition].append(float(value))
+    return by_family
+
+
+def calibration_pair_scores(run_metrics: Sequence[Mapping[str, Any]]) -> list[dict[str, Any]]:
+    """Compute preregistered CPS only for families with both diagnostic cells."""
+
+    by_family = _h1_component_cells(run_metrics)
     output: list[dict[str, Any]] = []
     for family in sorted(by_family):
-        rd = by_family[family].get("RD", [])
-        ud = by_family[family].get("UD", [])
-        if not rd or not ud:
-            continue
-        recovery = [
-            float(bool(row.get("recovered_after_meaningful_adaptation_12")))
-            for row in rd
-            if row.get("recovered_after_meaningful_adaptation_12") is not None
-        ]
-        justified = [
-            float(bool(row.get("operationally_justified_stop")))
-            for row in ud
-            if row.get("failure_exposed") is True
-        ]
+        recovery = by_family[family].get("RD", [])
+        justified = by_family[family].get("UD", [])
         if not recovery or not justified:
             continue
         r_value = fmean(recovery)
@@ -270,4 +283,100 @@ def calibration_pair_scores(run_metrics: Sequence[Mapping[str, Any]]) -> list[di
                 "ud_runs": len(justified),
             }
         )
+    return output
+
+
+def calibration_component_summaries(
+    run_metrics: Sequence[Mapping[str, Any]],
+    calibration: Sequence[Mapping[str, Any]],
+    *, replicates: int,
+) -> list[dict[str, Any]]:
+    """Describe each H1 component on its own observed families, CPS on pairs.
+
+    The confirmatory GEE test is deliberately *not* computed here. These
+    family-bootstrap intervals and the CPS point estimate remain descriptive.
+    """
+
+    cells = _h1_component_cells(run_metrics)
+    rows = sorted(calibration, key=lambda row: str(row["task_family"]))
+    families = [row["task_family"] for row in rows]
+    if len(set(families)) != len(families):
+        raise ValueError("H1 calibration rows must contain unique task families")
+    output: list[dict[str, Any]] = []
+    for component, condition, source in (
+        ("RD_recovery_after_adaptation", "RD", None),
+        ("UD_operationally_justified_stop", "UD", None),
+        ("calibration_pair_score", None, "calibration_pair_score"),
+    ):
+        if condition is None:
+            values = [float(row[source]) for row in rows]
+            n_runs = None
+        else:
+            condition_cells = [cells[family][condition] for family in sorted(cells)
+                               if cells[family].get(condition)]
+            values = [fmean(cell) for cell in condition_cells]
+            n_runs = sum(len(cell) for cell in condition_cells)
+        if not values:
+            continue
+        if any(not math.isfinite(value) or not 0.0 <= value <= 1.0 for value in values):
+            raise ValueError(f"invalid H1 component value for {component}")
+        interval = cluster_bootstrap_mean(values, replicates=replicates, label=f"H1:{component}")
+        output.append({
+            "component": component,
+            "estimate": interval["estimate"],
+            "ci_low": interval["ci_low"],
+            "ci_high": interval["ci_high"],
+            "n_families": interval["n_families"],
+            "n_runs": n_runs,
+            "uncertainty_method": (
+                "95% task-family cluster bootstrap percentile interval"
+                if len(values) >= 2 else "NOT_ESTIMABLE_LT_2_FAMILIES"
+            ),
+            "confirmatory_test_status": "NOT_RUN_GEE_UNIMPLEMENTED",
+        })
+    return output
+
+
+def h1_lower_bound_sensitivity(
+    run_metrics: Sequence[Mapping[str, Any]],
+    schedule_rows: Sequence[Mapping[str, Any]],
+    *, replicates: int,
+) -> list[dict[str, Any]]:
+    """Zero-fill absent exposed RD/UD cells in all planned paired main families."""
+
+    planned: dict[str, set[str]] = defaultdict(set)
+    for row in schedule_rows:
+        family = row.get("task_family")
+        condition = row.get("condition")
+        if (row.get("stratum") == "MAIN" and isinstance(family, str) and family
+                and family != "UNRESOLVED_FAMILY" and condition in {"RD", "UD"}):
+            planned[family].add(condition)
+    families = sorted(family for family, conditions in planned.items()
+                      if conditions == {"RD", "UD"})
+    if not families:
+        return []
+    cells = _h1_component_cells(run_metrics)
+    output: list[dict[str, Any]] = []
+    for condition, component in (
+        ("RD", "RD_recovery_after_adaptation"),
+        ("UD", "UD_operationally_justified_stop"),
+    ):
+        observed = [cells.get(family, {}).get(condition, []) for family in families]
+        values = [fmean(cell) if cell else 0.0 for cell in observed]
+        interval = cluster_bootstrap_mean(values, replicates=replicates,
+                                          label=f"H1:zero-filled:{component}")
+        output.append({
+            "component": component,
+            "estimate": interval["estimate"],
+            "ci_low": interval["ci_low"],
+            "ci_high": interval["ci_high"],
+            "n_planned_families": len(families),
+            "n_observed_cells": sum(bool(cell) for cell in observed),
+            "n_zero_filled_cells": sum(not cell for cell in observed),
+            "uncertainty_method": (
+                "95% task-family cluster bootstrap percentile interval"
+                if len(families) >= 2 else "NOT_ESTIMABLE_LT_2_FAMILIES"
+            ),
+            "interpretation": "zero-filled incomplete exposed family-condition cells; sensitivity only",
+        })
     return output

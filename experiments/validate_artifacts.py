@@ -11,6 +11,7 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import re
 from pathlib import Path
 from typing import Any, Mapping, Sequence
 
@@ -119,10 +120,30 @@ def _validate_manifest(
     elif git_commit == UNAVAILABLE_GIT_COMMIT:
         message = "Git revision is unavailable; the manifest cannot identify an immutable source tree"
         (errors if require_git else warnings).append(message)
+    elif require_git and re.fullmatch(r"[0-9a-f]{40,64}", git_commit) is None:
+        errors.append("main-study Git revision must be a full lowercase commit SHA")
+    schedule_sha256 = document.get("schedule_sha256")
+    if schedule_sha256 is not None and (
+        not isinstance(schedule_sha256, str)
+        or len(schedule_sha256) != 64
+        or any(character not in "0123456789abcdef" for character in schedule_sha256)
+    ):
+        errors.append("manifest schedule_sha256 must be a SHA-256 hex digest")
     try:
         assert_observable_payload(document, "manifest")
     except ObservableDataError as exc:
         errors.append(f"manifest violates observable-data policy: {exc}")
+
+
+def validate_manifest(path: Path, *, require_git: bool = False) -> dict[str, Any]:
+    """Validate a manifest even when no run or receipt exists yet."""
+
+    errors: list[str] = []
+    warnings: list[str] = []
+    document = _read_json(path, "manifest", errors)
+    if document is not None:
+        _validate_manifest(document, require_git=require_git, errors=errors, warnings=warnings)
+    return {"passed": not errors, "errors": errors, "warnings": warnings}
 
 
 def _read_log(path: Path, errors: list[str]) -> list[dict[str, Any]]:
@@ -153,6 +174,7 @@ def _validate_log(
     *,
     manifest: Mapping[str, Any],
     receipt: Mapping[str, Any],
+    require_action_verifier: bool,
     errors: list[str],
 ) -> None:
     required_fields = _expected_event_fields(errors)
@@ -172,6 +194,7 @@ def _validate_log(
     }
     event_ids: list[str] = []
     event_types: list[str] = []
+    action_index = 0
     for index, record in enumerate(records, start=1):
         missing = sorted(required_fields - set(record))
         if missing:
@@ -191,17 +214,92 @@ def _validate_log(
         event_type = record.get("event_type")
         if isinstance(event_type, str):
             event_types.append(event_type)
+        if event_type == "TOOL_OBSERVATION":
+            action_index += 1
+            action_verifier = record.get("verifier_result")
+            if (require_action_verifier and action_verifier is None
+                    and receipt.get("terminal_outcome") != "INFRASTRUCTURE_ABORT"):
+                errors.append(f"trajectory event {index} lacks required per-action evaluator verifier receipt")
+            if action_verifier is not None and (
+                not isinstance(action_verifier, Mapping)
+                or action_verifier.get("source") != "evaluator_action_verifier"
+                or type(action_verifier.get("action_index")) is not int
+                or action_verifier["action_index"] != action_index
+                or action_verifier.get("task_id") != receipt.get("task_id")
+                or not isinstance(action_verifier.get("verifier_id"), str)
+                or not action_verifier["verifier_id"]
+                or not isinstance(action_verifier.get("verifier_version"), str)
+                or not action_verifier["verifier_version"]
+                or not isinstance(action_verifier.get("passed"), bool)
+                or action_verifier.get("terminal_outcome") not in
+                {"VALIDATED_SUCCESS", "VALIDATED_NON_SUCCESS", "UNKNOWN"}
+                or (action_verifier.get("terminal_outcome") == "VALIDATED_SUCCESS"
+                    and action_verifier.get("passed") is not True)
+                or (action_verifier.get("terminal_outcome") == "UNKNOWN"
+                    and action_verifier.get("passed") is not False)
+            ):
+                errors.append(f"trajectory event {index} has an invalid per-action evaluator verifier receipt")
     expected_event_ids = [f"event-{index:05d}" for index in range(1, len(records) + 1)]
     if event_ids != expected_event_ids:
         errors.append("trajectory event IDs are not a contiguous append-only sequence")
+    handoff_positions = [index for index, kind in enumerate(event_types)
+                         if kind == "TASK_HANDOFF_START"]
+    if len(handoff_positions) > 1:
+        errors.append("trajectory has duplicate task-handoff-start events")
+    elif handoff_positions:
+        exposure_kinds = {"INITIAL_OBSERVATION", "TOOL_CALL", "TOOL_OBSERVATION", "STOP"}
+        if any(kind in exposure_kinds for kind in event_types[:handoff_positions[0]]):
+            errors.append("task-handoff-start event must precede observation, tool use, and stop")
+    steps = [record.get("step") for record in records]
+    if any(not isinstance(step, int) or isinstance(step, bool) or step < 0 for step in steps):
+        errors.append("trajectory steps must be non-negative integers")
+    elif steps != sorted(steps):
+        errors.append("trajectory steps are not monotone")
     if event_types[-1:] != ["RUN_FINISHED"]:
         errors.append("trajectory log must end with RUN_FINISHED")
-    if "STOP" not in event_types:
-        errors.append("trajectory log has no explicit STOP event")
-    if "VERIFIER_RECEIPT" not in event_types:
-        errors.append("trajectory log has no independent VERIFIER_RECEIPT event")
+    if event_types.count("RUN_FINISHED") != 1:
+        errors.append("trajectory log must contain exactly one RUN_FINISHED event")
+    infrastructure_abort = receipt.get("terminal_outcome") == "INFRASTRUCTURE_ABORT"
+    if not infrastructure_abort:
+        if event_types.count("STOP") != 1:
+            errors.append("trajectory log must contain exactly one explicit STOP event")
+        if event_types.count("VERIFIER_RECEIPT") != 1:
+            errors.append("trajectory log must contain exactly one independent VERIFIER_RECEIPT event")
+        if "STOP" in event_types and "VERIFIER_RECEIPT" in event_types and not (
+            event_types.index("STOP") < event_types.index("VERIFIER_RECEIPT") < len(event_types) - 1
+        ):
+            errors.append("STOP, VERIFIER_RECEIPT, RUN_FINISHED event order is invalid")
+    elif not any(kind in event_types for kind in ("ERROR", "CLEANUP_ERROR")):
+        errors.append("infrastructure abort lacks an error event")
+    final = records[-1]
+    if final.get("outcome") != receipt.get("terminal_outcome"):
+        errors.append("RUN_FINISHED outcome disagrees with receipt terminal_outcome")
+    if final.get("stop_event") != receipt.get("stop_event"):
+        errors.append("RUN_FINISHED stop_event disagrees with receipt")
+    verifier_events = [record for record in records if record.get("event_type") == "VERIFIER_RECEIPT"]
+    if verifier_events:
+        event_verifier = verifier_events[-1].get("verifier_result")
+        receipt_verifier = receipt.get("verifier_receipt")
+        if event_verifier != receipt_verifier:
+            errors.append("VERIFIER_RECEIPT event disagrees with final receipt")
+        if not isinstance(receipt_verifier, Mapping):
+            errors.append("independent verifier receipt is missing")
+        elif (
+            receipt_verifier.get("terminal_outcome") == "VALIDATED_SUCCESS"
+            and receipt_verifier.get("passed") is not True
+        ):
+            errors.append("verifier marked success without passed=true")
+        if isinstance(receipt_verifier, Mapping) and not infrastructure_abort and receipt.get("stop_event") == "AGENT_SELF_TERMINATION":
+            if receipt.get("terminal_outcome") != receipt_verifier.get("terminal_outcome"):
+                errors.append("voluntary terminal outcome disagrees with verifier receipt")
+    if receipt.get("terminal_outcome") == "VALIDATED_SUCCESS":
+        verifier = receipt.get("verifier_receipt")
+        if not isinstance(verifier, Mapping) or verifier.get("passed") is not True or verifier.get("terminal_outcome") != "VALIDATED_SUCCESS":
+            errors.append("validated success lacks a matching passing independent verifier")
     if receipt.get("task_id") not in manifest.get("task_ids", []):
         errors.append("receipt task_id is absent from the frozen manifest")
+    if receipt.get("experiment_id") != manifest.get("experiment_id"):
+        errors.append("receipt experiment_id does not match the manifest")
     if receipt.get("benchmark_version") != manifest.get("benchmark_version"):
         errors.append("receipt benchmark_version does not match the manifest")
     if receipt.get("model") != manifest.get("model"):
@@ -218,6 +316,7 @@ def validate_artifacts(
     log_path: Path,
     receipt_path: Path,
     require_git: bool = False,
+    require_action_verifier: bool = False,
 ) -> dict[str, Any]:
     """Return a full integrity report without executing a task or agent."""
 
@@ -246,7 +345,8 @@ def validate_artifacts(
             errors.append(f"receipt violates observable-data policy: {exc}")
     records = _read_log(log_path, errors)
     if manifest is not None and receipt is not None:
-        _validate_log(records, manifest=manifest, receipt=receipt, errors=errors)
+        _validate_log(records, manifest=manifest, receipt=receipt,
+                      require_action_verifier=require_action_verifier, errors=errors)
     return {
         "schema_version": "0.1.0",
         "kind": "observable_artifact_integrity_report",
@@ -254,6 +354,7 @@ def validate_artifacts(
         "log": str(log_path),
         "receipt": str(receipt_path),
         "require_git": require_git,
+        "require_action_verifier": require_action_verifier,
         "record_count": len(records),
         "terminal_outcome": receipt.get("terminal_outcome") if receipt else None,
         "verifier_passed": (
@@ -277,6 +378,10 @@ def main(argv: Sequence[str] | None = None) -> int:
         action="store_true",
         help="Treat an unavailable Git commit as an integrity error rather than a warning.",
     )
+    parser.add_argument(
+        "--require-action-verifier", action="store_true",
+        help="Require an evaluator-owned receipt on every completed tool action except infrastructure aborts.",
+    )
     parser.add_argument("--json", action="store_true")
     args = parser.parse_args(argv)
     report = validate_artifacts(
@@ -284,6 +389,7 @@ def main(argv: Sequence[str] | None = None) -> int:
         log_path=args.log,
         receipt_path=args.receipt,
         require_git=args.require_git,
+        require_action_verifier=args.require_action_verifier,
     )
     if args.json:
         print(json.dumps(report, ensure_ascii=False, indent=2, sort_keys=True))

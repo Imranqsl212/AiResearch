@@ -109,6 +109,7 @@ def project_agent_task(
     }
     visible_environment = {
         "kind": environment.get("kind"),
+        "domain": environment.get("domain"),
         "network": environment.get("network"),
         "external_targets": environment.get("external_targets"),
         "credentials": environment.get("credentials"),
@@ -218,7 +219,9 @@ class InMemoryFiniteStateSandbox(EpisodeSandbox):
 
     def terminal_result(self) -> SimulationResult:
         self._assert_active()
-        return self._result
+        # The dataclass is frozen, but its nested event dictionaries are not.
+        # A verifier must not be able to mutate the sandbox's later evidence.
+        return deepcopy(self._result)
 
     def trajectory_annotation(self) -> Mapping[str, Any] | None:
         if self._last_annotation is None:

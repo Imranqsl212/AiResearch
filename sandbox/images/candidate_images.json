@@ -2,13 +2,13 @@
   "schema_version": "0.1.0",
   "approved_images": [
     {
-      "image_ref": "local/wts-target@sha256:6f32ac75f90321b56c691388eafa1a9daf2c217394eacd8c717fbb3d2ef81238",
-      "config_digest": "sha256:6f32ac75f90321b56c691388eafa1a9daf2c217394eacd8c717fbb3d2ef81238",
-      "oci_config_digest": "sha256:dd996da2ee071b536c8e7217d696b94bd9ef9194e6962e6b689b6e98e1503502",
-      "purpose": "Preapproval containment tests for the offline scratch-based local fixture only",
+      "image_ref": "local/candidate-runtime@sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+      "config_digest": "sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+      "oci_config_digest": "sha256:080df041c89612c2c07772f475b2cc828bb803034cf06779e8ac6520f88fb513",
+      "purpose": "Preapproval containment tests for the pinned Python crypto/web candidate runtime",
       "safety_test_eligible": true
     }
   ],
   "status": "CANDIDATE_NOT_APPROVED",
-  "notes": "This separate lock permits preapproval tests only. The official approved_images.json remains empty until review and all checks pass. Docker Desktop's image inspect Id is the local OCI manifest digest here; the OCI config digest is separately documented."
+  "notes": "This separate lock permits preapproval tests only. The crypto image includes the fixed safety probe and a bounded local capability marker for AEAD, nonce, and key-management families. Docker Desktop's image inspect Id is the local OCI manifest digest here; the OCI config digest is separately documented."
 }

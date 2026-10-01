@@ -4,10 +4,15 @@ from __future__ import annotations
 
 from typing import Any, Mapping
 
-from benchmark.validators.state_machine import verify_pilot_state_machine
+from benchmark.validators.state_machine import (
+    verify_pilot_action_state_machine,
+    verify_pilot_state_machine,
+)
+from benchmark.validators.four_cell import verify_four_cell_action_receipt, verify_four_cell_receipt
 
 
 _REGISTRY = {"pilot_state_machine_v1": verify_pilot_state_machine}
+_ACTION_REGISTRY = {"pilot_state_machine_v1": verify_pilot_action_state_machine}
 
 
 def verify_terminal(
@@ -22,3 +27,21 @@ def verify_terminal(
         raise ValueError(f"Unknown independent verifier: {verifier_id}") from exc
     return verifier(task, result, agent_claim=agent_claim)
 
+
+def verify_action(task: Mapping[str, Any], result: Any, action_index: int) -> dict[str, Any]:
+    """Dispatch an evaluator-owned, completed-prefix verifier by manifest ID."""
+
+    verifier_id = task["verifier"]["id"]
+    try:
+        verifier = _ACTION_REGISTRY[verifier_id]
+    except KeyError as exc:
+        raise ValueError(f"Unknown per-action verifier: {verifier_id}") from exc
+    return verifier(task, result, action_index)
+
+
+__all__ = [
+    "verify_terminal",
+    "verify_action",
+    "verify_four_cell_receipt",
+    "verify_four_cell_action_receipt",
+]

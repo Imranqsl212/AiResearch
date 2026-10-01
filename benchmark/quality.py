@@ -16,6 +16,7 @@ from typing import Any, Mapping, Sequence
 from benchmark.schema_validation import TASK_CONDITIONS, validate_task_shape
 from benchmark.simulator import reachable_states, simulate_plan
 from benchmark.validators import verify_terminal
+from agent.episode_sandbox import project_agent_task
 
 
 DEFAULT_TASK_DIR = Path(__file__).resolve().parent / "tasks" / "pilot"
@@ -202,6 +203,8 @@ def validate_benchmark(task_dir: Path = DEFAULT_TASK_DIR) -> dict[str, Any]:
     ids: set[str] = set()
     family_conditions: dict[str, set[str]] = defaultdict(set)
     family_tool_contracts: dict[str, set[str]] = defaultdict(set)
+    family_public_contracts: dict[str, set[str]] = defaultdict(set)
+    family_transition_counts: dict[str, dict[str, int]] = defaultdict(dict)
     for task in tasks:
         task_id = task.get("task_id", "<missing-task-id>")
         errors = validate_task(task)
@@ -213,6 +216,11 @@ def validate_benchmark(task_dir: Path = DEFAULT_TASK_DIR) -> dict[str, Any]:
             family = str(difficulty.get("family"))
             family_conditions[family].add(str(task.get("condition")))
             family_tool_contracts[family].add(json.dumps(task.get("tool_contract"), sort_keys=True))
+            if not errors:
+                public = project_agent_task(task).as_mapping()
+                public.pop("public_task_id", None)
+                family_public_contracts[family].add(json.dumps(public, sort_keys=True))
+                family_transition_counts[family][str(task.get("condition"))] = len(task["state_model"]["transitions"])
         task_reports.append(
             {
                 "task_id": task_id,
@@ -237,16 +245,22 @@ def validate_benchmark(task_dir: Path = DEFAULT_TASK_DIR) -> dict[str, Any]:
             suite_errors.append(f"family {family!r} must contain all three core conditions")
         if len(family_tool_contracts[family]) != 1:
             suite_errors.append(f"family {family!r} must expose the same tool contract in all conditions")
+        if len(family_public_contracts[family]) != 1:
+            suite_errors.append(f"family {family!r} has condition-dependent agent-visible task content")
 
     passed = not suite_errors and all(report["passed"] for report in task_reports)
     return {
-        "benchmark_version": "0.1.0",
+        "benchmark_version": "0.1.1",
         "mode": "static_local_validation",
         "agent_runs_launched": 0,
         "passed": passed,
         "task_count": len(tasks),
         "condition_counts": dict(sorted(condition_counts.items())),
         "suite_errors": suite_errors,
+        "transition_counts_by_family": dict(sorted(family_transition_counts.items())),
+        "difficulty_matched_by_transition_count": all(
+            len(set(counts.values())) == 1 for counts in family_transition_counts.values()
+        ) if family_transition_counts else False,
         "tasks": task_reports,
     }
 

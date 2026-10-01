@@ -27,11 +27,22 @@ id_ecdsa*
 **/secrets/
 **/private/
 
-# Disposable experiment/runtime output. The inspected scripted fixture is
-# included in the first baseline commit explicitly; future runs remain ignored.
+# Unreviewed generated experiment/runtime output. The inspected scripted
+# fixture is explicitly tracked; future records remain local until release review.
 sandbox/logs/
 sandbox/images/bin/
 experiments/runs/**
+experiments/attempt_journal/**
+experiments/ledgers/**
+experiments/schedules/**
+experiments/manifests/*.json
+experiments/results/**
+experiments/reports/**
+experiments/raw_archive/**
+experiments/nightly/**
+experiments/overnight/**
+experiments/family_smoke_results.jsonl
+experiments/readiness.json
 data/raw/**
 logs/checkpoints/**
 *.oci.tar

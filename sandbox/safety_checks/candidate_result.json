@@ -1,87 +1,127 @@
 {
   "agent_runs_launched": 0,
   "approval_scope": "CANDIDATE_ONLY_NOT_APPROVED",
-  "blocking_reasons": [
-    "_network_check: Docker command failed (create --name): docker: --pid: invalid PID mode.\nSee 'docker create --help'."
-  ],
+  "blocking_reasons": [],
   "checks": [
     {
       "check_id": "static_policy_locked",
       "detail": "Fixed Docker arguments were checked without launching a container.",
       "evidence": {
-        "policy_fingerprint": "acf032324d31c40db533ea52762f337e7cc0d000cb7c53b6f2caa52ba8314141"
+        "policy_fingerprint": "b4d94b4347d696be538c6670970c2dd1ae9b93c26ab329a0f41aa6aa51a878fd"
       },
       "passed": true,
       "status": "PASS"
     },
     {
       "check_id": "external_network_blocked",
-      "detail": "Docker command failed (create --name): docker: --pid: invalid PID mode.\nSee 'docker create --help'.",
-      "evidence": {},
-      "passed": false,
-      "status": "FAIL"
+      "detail": "The container had network mode none, no active non-loopback interface, and no route. No public address was contacted.",
+      "evidence": {
+        "container_removed": true
+      },
+      "passed": true,
+      "status": "PASS"
     },
     {
       "check_id": "host_files_unmounted",
-      "detail": "A prior runtime safety check failed; no further containers were launched.",
-      "evidence": {},
-      "passed": false,
-      "status": "NOT_RUN_FAIL_CLOSED"
+      "detail": "Docker inspect found only the exact bounded /tmp and /work tmpfs policy; the read-only root probe could not write a host-like path.",
+      "evidence": {
+        "mounts": [
+          "/tmp",
+          "/work"
+        ]
+      },
+      "passed": true,
+      "status": "PASS"
     },
     {
       "check_id": "credentials_absent",
-      "detail": "A prior runtime safety check failed; no further containers were launched.",
-      "evidence": {},
-      "passed": false,
-      "status": "NOT_RUN_FAIL_CLOSED"
+      "detail": "Standard SSH and secret paths were absent and the observed controlled environment contained no credential-like names.",
+      "evidence": {
+        "log_path": "/Users/imranmzakirov/Desktop/research/sandbox/logs/safety-credentials-f4f717e98703.log"
+      },
+      "passed": true,
+      "status": "PASS"
     },
     {
       "check_id": "container_destroyed",
-      "detail": "A prior runtime safety check failed; no further containers were launched.",
-      "evidence": {},
-      "passed": false,
-      "status": "NOT_RUN_FAIL_CLOSED"
+      "detail": "The runner force-removed the named disposable container and verified its absence.",
+      "evidence": {
+        "container_name": "wts-sandbox-safety-cleanup-1f7cf377b311"
+      },
+      "passed": true,
+      "status": "PASS"
     },
     {
       "check_id": "resource_limits_enforced",
-      "detail": "A prior runtime safety check failed; no further containers were launched.",
-      "evidence": {},
-      "passed": false,
-      "status": "NOT_RUN_FAIL_CLOSED"
+      "detail": "Docker inspect and in-container cgroup/ulimit probes matched the fixed CPU, memory, PID, and file-descriptor policy.",
+      "evidence": {
+        "observed_cpu": "50000 100000",
+        "observed_memory": 268435456,
+        "observed_nofile": 128,
+        "observed_pids": 64
+      },
+      "passed": true,
+      "status": "PASS"
     },
     {
       "check_id": "timeout_enforced",
-      "detail": "A prior runtime safety check failed; no further containers were launched.",
-      "evidence": {},
-      "passed": false,
-      "status": "NOT_RUN_FAIL_CLOSED"
+      "detail": "A harmless sleeping process exceeded one second, then the runner force-removed its container.",
+      "evidence": {
+        "exit_code": 137
+      },
+      "passed": true,
+      "status": "PASS"
     },
     {
       "check_id": "runaway_process_terminated",
-      "detail": "A prior runtime safety check failed; no further containers were launched.",
-      "evidence": {},
-      "passed": false,
-      "status": "NOT_RUN_FAIL_CLOSED"
+      "detail": "A background sleeper was placed in a timed-out container; container removal terminated the process namespace.",
+      "evidence": {
+        "exit_code": 137
+      },
+      "passed": true,
+      "status": "PASS"
     },
     {
       "check_id": "logs_retained",
-      "detail": "A prior runtime safety check failed; no further containers were launched.",
-      "evidence": {},
-      "passed": false,
-      "status": "NOT_RUN_FAIL_CLOSED"
+      "detail": "The bounded, runner-owned log remained available after the container was removed.",
+      "evidence": {
+        "log_path": "/Users/imranmzakirov/Desktop/research/sandbox/logs/safety-logs-6fa1e84b8c45.log"
+      },
+      "passed": true,
+      "status": "PASS"
     },
     {
       "check_id": "reproducible_state",
-      "detail": "A prior runtime safety check failed; no further containers were launched.",
-      "evidence": {},
-      "passed": false,
-      "status": "NOT_RUN_FAIL_CLOSED"
+      "detail": "Two identical local probes used the same image digest, policy fingerprint, effective configuration, and output.",
+      "evidence": {
+        "image_config_digest": "sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+        "policy_fingerprint": "b4d94b4347d696be538c6670970c2dd1ae9b93c26ab329a0f41aa6aa51a878fd"
+      },
+      "passed": true,
+      "status": "PASS"
+    },
+    {
+      "check_id": "candidate_runtime_isolated",
+      "detail": "The exact Python candidate RPC path ran with network blocked, no visible host workspace, and disposable cleanup.",
+      "evidence": {
+        "container_removed": true,
+        "runtime_configuration": "{\"config\":{\"Env\":[\"ALL_PROXY=\",\"HOME=/nonexistent\",\"HTTPS_PROXY=\",\"HTTP_PROXY=\",\"LANG=C.UTF-8\",\"LC_ALL=C.UTF-8\",\"NO_PROXY=*\",\"PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin\",\"SANDBOX_MODE=local-only\",\"all_proxy=\",\"http_proxy=\",\"https_proxy=\",\"no_proxy=*\"],\"Image\":\"local/candidate-runtime@sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9\",\"User\":\"65532:65532\",\"WorkingDir\":\"/work\"},\"host\":{\"AutoRemove\":true,\"CapDrop\":[\"ALL\"],\"CgroupnsMode\":\"private\",\"Init\":true,\"IpcMode\":\"none\",\"LogConfig\":{\"Config\":{},\"Type\":\"none\"},\"Memory\":268435456,\"MemorySwap\":268435456,\"NanoCpus\":500000000,\"NetworkMode\":\"none\",\"PidMode\":\"\",\"PidsLimit\":64,\"ReadonlyRootfs\":true,\"SecurityOpt\":[\"no-new-privileges=true\"],\"UsernsMode\":\"\"},\"mounts\":[]}"
+      },
+      "passed": true,
+      "status": "PASS"
     }
   ],
+  "daemon_fingerprint": "35ef097a7dce8f05d9e73c6f060141e9dc666aed744ef8ed14fe0179ea13aeb1",
   "experiment_permitted": false,
   "external_targets_contacted": false,
-  "generated_at": "2026-09-28T19:26:20Z",
-  "overall_passed": false,
+  "generated_at": "2026-09-30T17:47:12Z",
+  "image_config_digest": "sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+  "image_lock_sha256": "5d7f4b4ef9d37ad251787d9cc2516483945fbf073e08a2e73887f12d45c10544",
+  "image_ref": "local/candidate-runtime@sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+  "isolation_mode": "docker-desktop-linuxkit-vm",
+  "overall_passed": true,
+  "policy_fingerprint": "b4d94b4347d696be538c6670970c2dd1ae9b93c26ab329a0f41aa6aa51a878fd",
+  "safety_code_fingerprint": "84c473c149f4b1adde5a1ee48502c784126a7dea9db38a1fdd6b39b155b86f3b",
   "schema_version": "0.1.0",
   "suite": "when-to-stop-local-sandbox-safety"
 }

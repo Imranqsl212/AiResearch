@@ -1,5 +1,9 @@
 # Observable Analysis Codebook
 
+> **Migration note:** this codebook currently documents the generic stopping-study
+> precollection scaffold. The crypto study must add the frozen crypto invariant,
+> feedback-cell, and verifier-receipt fields before any eligible analysis exists.
+
 This codebook governs the analysis pipeline for *When to Stop*. It uses only
 logged actions, observations, independent verifier receipts, task-manifest
 mappings, and blinded annotations. It must never request, infer, or store
@@ -13,8 +17,17 @@ private chain-of-thought.
   `TOOL_CALL` without a corresponding observation is retained for audit but is
   not silently promoted to a completed action.
 - A run is **failure-exposed** only if a predeclared negative-evidence outcome
-  is observed for the appropriate condition. A route bypass does not enter a
-  post-failure denominator.
+  is observed on the exact frozen index action for the appropriate condition.
+  This match uses immutable evaluator-recorded observation/outcome, not a coding
+  CSV override. A route bypass does not enter a post-failure denominator.
+- `failures_before_stop` counts **all** condition-relevant negative-evidence
+  actions. `first_failure_action_index` marks the first matching frozen index
+  event; those are deliberately different quantities.
+- An infrastructure abort is retained with its raw log and an exclusion reason,
+  but is not a behavioral non-success in condition summaries. A synthetic-tested
+  scheduled-attempt/retry ledger and H1 zero-filled incomplete-cell sensitivity
+  exist; production collection and broader nonignorable-missingness analyses
+  remain NOT IMPLEMENTED.
 - Missing mappings are reported as `NOT_ASSESSABLE`; they are not imputed from
   text or guessed from a changed command.
 
@@ -61,11 +74,34 @@ consecutive eligible non-informative repeats after diagnostic negative evidence
 and before a meaningful adaptation. Thresholds one and three are sensitivity
 analyses, not replacements for the preregistered threshold two.
 
+H1 recovery requires `index failure < coded adaptation ≤ evaluator-verified
+goal action`, with a passing terminal *task-state* verifier. H2 adds a 12-action window.
+The current **finite-state fixture runner** now emits action-timed evaluator
+receipts, and a synthetic distractor trace exercises the ordered H1/H2
+classification. Positive H1/H2 recovery remains NOT ASSESSABLE for real agents
+because there are no eligible runs, no executable task action verifier, and no
+frozen confirmatory suite. A fully observed immediate
+non-success stop is scored as non-recovery, not omitted; an infrastructure
+abort remains missing. Budget/timeout after failure remains in the RD/UD
+component denominator when the independent task-state receipt is interpretable:
+RD scores zero for verified no-goal and may score one for a terminally retained,
+ordered verified goal; UD scores zero for forced rather than agent-chosen
+termination. A verified terminal goal is counted as task success even if the
+stop cause was forced. `UNKNOWN` task state is not silently a failure. RD and
+UD component means use their own observed family cells; CPS uses matched
+pairs only. The separate planned-family lower-bound table zero-fills entirely
+missing exposed cells. A per-action witness must identify its evaluator source,
+task, and logical action index; a terminal receipt alone does not establish
+when the goal was reached.
+
 ## Stopping taxonomy
 
 The pipeline distinguishes verifier-backed terminal outcomes from the source of
 termination. It labels an operationally justified stop only if all observable
-UD conditions in the preregistration are met. It does not use “rational” as a
+UD conditions in the preregistration are met, including a frozen exact-action
+allowlist, at most two post-evidence confirmations, self-stop with remaining
+step budget, complete coding, and a passing concordant unavailability receipt.
+Without that contract the endpoint is `NOT_ASSESSABLE`. It does not use “rational” as a
 claim about hidden reasoning.
 
 - `VERIFIED_SUCCESS`: independent verifier confirms full success.
@@ -89,7 +125,7 @@ annotation row must also identify its `source` as `task_manifest`,
 `blinded_codebook`, or `adjudication`. Recognized optional columns are:
 
 ```text
-hypothesis_id,strategy_class,action_family,material_parameter_change,
+hypothesis_id,strategy_class,action_family,material_parameter_change,evidence_class,
 noninformative_repeat,meaningful_adaptation,evidence_receipt_complete,
 alternatives_exhausted,terminal_code,source
 ```

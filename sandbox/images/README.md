@@ -1,11 +1,11 @@
 # Approved local images
 
-`approved_images.json` is intentionally empty. That is an active safety gate, not a
-placeholder: `sandbox.runner.DockerSandboxRunner` refuses every scored run until a
-reviewed image is explicitly recorded. A separate, locally built `scratch` candidate
-and fixed preapproval lock exist, but the candidate failed the first runtime
-containment check because Docker rejected the existing `--pid private` flag. It is
-**not approved**. See [`docs/image_provenance.md`](../../docs/image_provenance.md).
+`approved_images.json` contains exactly one digest-pinned local `scratch` crypto image. It was
+approved only after the fixed candidate suite passed all nine runtime containment
+checks on Docker Desktop's explicitly recorded LinuxKit VM boundary. This approval is
+for the local crypto self-test and runner policy; it does not approve a provider-backed
+agent, benchmark pilot, or main study.
+See [`docs/image_provenance.md`](../../docs/image_provenance.md).
 
 An approved image must satisfy all of the following before it is added:
 
@@ -27,6 +27,6 @@ An approved image must satisfy all of the following before it is added:
 image by itself and must not be changed into an online build path. Passing a tag such
 as `latest` is rejected by the runner.
 
-The current benchmark's finite-state pilot remains a host-side static artifact. A
-candidate image exists, but no container target has been approved and no model client
-or agent episode has been produced from this directory.
+The current benchmark's finite-state pilot remains a host-side static artifact. The
+crypto image is approved for the bounded self-test, but no Docker-backed agent episode
+or pilot has been produced from this directory.

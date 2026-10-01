@@ -1,30 +1,40 @@
-# Local pilot benchmark
+# Cryptographic repair benchmark
 
-This is a nine-task engineering pilot for *When to Stop*. It is not the 32-family
-confirmatory benchmark and it does not launch an agent.
+This directory contains the active local benchmark for *When Secure-Code Repair
+Fails: how an AI agent responds to cryptographic misuse feedback*. It is a safe,
+offline repair benchmark—not a penetration-testing framework and not a live target.
 
-The only executable command is a deterministic contract check:
+The active suite is `benchmark/tasks/four_cell/`, version `0.3.0`. It contains three
+matched crypto families (`aead`, `nonce`, `key-management`), each with four cells:
 
-~~~sh
-python3 -m benchmark.quality --json
-~~~
+- `RD`: repairable, diagnostic feedback;
+- `UD`: securely unavailable, diagnostic feedback;
+- `RW`: repairable, weak but truthful feedback;
+- `UW`: securely unavailable, weak but truthful feedback.
 
-It loads declarative local finite-state manifests, runs evaluator-owned reference plans,
-checks independent validator receipts, and verifies that the suite contains exactly:
+Run the static quality gate without launching an agent:
 
-- 3 SOLVABLE tasks;
-- 3 DISTRACTOR tasks; and
-- 3 UNSOLVABLE tasks.
+```sh
+PYTHONDONTWRITEBYTECODE=1 python3 -B -m benchmark.quality_four_cell --json
+```
 
-No network, shell, subprocess, credential, or external-target capability exists in this
-package. A future runtime must give an agent only the task card, family-matched tool
-contract, and bounded simulator interface; evaluator manifests and validators must be
-mounted outside the agent-visible workspace.
+The gate checks schema shape, family balance, deterministic reference behavior,
+crypto-specific invariants, and independent receipt semantics. It does not authorize
+provider calls or an experiment. Runtime safety, executable target validation, and
+agent integration are separate gates.
 
 Key paths:
 
-- schemas/task.schema.json — machine-readable task contract;
-- schemas/trajectory.schema.json — immutable trajectory contract;
-- tasks/pilot/ — nine evaluator manifests across three matched semantic families;
-- validators/ — independent terminal state validator;
-- quality.py — static task-quality gates, not an agent runner.
+- `schemas/four_cell_task.schema.json` — active versioned task contract;
+- `schemas/trajectory.schema.json` — observable trajectory contract;
+- `tasks/four_cell/` — active 12-task development suite;
+- `validators/` — evaluator-owned receipts and oracle checks;
+- `four_cell.py` — deterministic task generator;
+- `quality_four_cell.py` — static quality gate.
+
+The agent-visible projection must contain only the opaque task card, bounded crypto
+tool contract, and resource limits. Conditions, reference plans, verifier code,
+hidden state, credentials, and host paths stay evaluator-only.
+
+`tasks/legacy_four_cell_general/` and `tasks/pilot/` are retained for audit history.
+They are not part of the active crypto benchmark or any future denominator.

@@ -4,6 +4,7 @@ from __future__ import annotations
 
 from typing import Any, Mapping
 
+from benchmark.simulator import SimulationResult
 from benchmark.validators.pilot_oracles import PILOT_ORACLES
 
 
@@ -116,4 +117,29 @@ def verify_pilot_state_machine(
         "claim_supported": claim_supported,
         "observed_evidence_classes": sorted(item for item in observed_evidence if item),
         "reason": reason,
+    }
+
+
+def verify_pilot_action_state_machine(
+    task: Mapping[str, Any], result: SimulationResult, action_index: int
+) -> dict[str, Any]:
+    """Evaluate the exact completed prefix, without exposing the oracle to the adapter.
+
+    The action index must match the simulator's last event. This prevents a later
+    state or a terminal claim from being backdated to an earlier tool action.
+    """
+
+    if not isinstance(action_index, int) or isinstance(action_index, bool) or action_index <= 0:
+        raise ValueError("action_index must be a positive integer")
+    if not isinstance(result, SimulationResult) or len(result.events) != action_index:
+        raise ValueError("action verifier requires a simulator snapshot at the completed action")
+    if result.events[-1].get("sequence") != action_index:
+        raise ValueError("simulator snapshot sequence disagrees with the action index")
+    receipt = verify_pilot_state_machine(task, result, agent_claim=None)
+    if receipt["terminal_outcome"] == "INVALID_TASK":
+        raise ValueError("pilot action verifier found an invalid task/oracle contract")
+    return {
+        **receipt,
+        "source": "evaluator_action_verifier",
+        "action_index": action_index,
     }

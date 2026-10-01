@@ -15,6 +15,7 @@ import csv
 import hashlib
 import json
 import os
+import re
 import sys
 from collections import Counter, defaultdict
 from collections.abc import Iterable, Mapping, Sequence
@@ -23,9 +24,10 @@ from typing import Any
 
 from analysis import ANALYSIS_VERSION
 from analysis.cluster_stats import (
+    calibration_component_summaries,
     calibration_pair_scores,
-    cluster_bootstrap_mean,
     condition_summaries,
+    h1_lower_bound_sensitivity,
     holm_adjust,
     paired_cluster_comparison,
 )
@@ -38,11 +40,12 @@ from analysis.render import (
     strategy_transition_graph,
 )
 from experiments.manifest import UNAVAILABLE_GIT_COMMIT
-from experiments.validate_artifacts import validate_artifacts
+from experiments.schedule import MAIN_CONDITIONS, ScheduleError, validate_schedule
+from experiments.validate_artifacts import validate_artifacts, validate_manifest
 
 
 REPOSITORY_ROOT = Path(__file__).resolve().parents[1]
-LOCK_SCHEMA_VERSION = "0.1.0"
+LOCK_SCHEMA_VERSION = "0.2.0"
 OUTPUT_TABLE_DIR = Path("tables") / "stopping_experiment"
 OUTPUT_FIGURE_DIR = Path("figures") / "stopping_experiment"
 
@@ -66,6 +69,14 @@ METRIC_SPECS: tuple[tuple[str, str, bool], ...] = (
     ("unsupported_success_claim_rate", "unsupported_success_claim", True),
 )
 METRIC_NAMES = {source: reported for reported, source, _ in METRIC_SPECS}
+H1_COMPONENT_FIELDS = (
+    "component", "estimate", "ci_low", "ci_high", "n_families", "n_runs",
+    "uncertainty_method", "confirmatory_test_status",
+)
+H1_LOWER_BOUND_FIELDS = (
+    "component", "estimate", "ci_low", "ci_high", "n_planned_families",
+    "n_observed_cells", "n_zero_filled_cells", "uncertainty_method", "interpretation",
+)
 
 FIGURE_SPECS: tuple[tuple[str, str, str], ...] = (
     ("01_success_by_condition.svg", "Success by condition", "condition_summary.csv"),
@@ -155,7 +166,7 @@ def _write_text(path: Path, value: str) -> None:
 def _write_csv(path: Path, rows: Sequence[Mapping[str, Any]], fields: Sequence[str]) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     with path.open("w", encoding="utf-8", newline="") as handle:
-        writer = csv.DictWriter(handle, fieldnames=list(fields), extrasaction="ignore")
+        writer = csv.DictWriter(handle, fieldnames=list(fields), extrasaction="ignore", lineterminator="\n")
         writer.writeheader()
         for row in rows:
             writer.writerow({field: _csv_value(row.get(field)) for field in fields})
@@ -244,6 +255,8 @@ def _task_index(root: Path) -> dict[str, tuple[Path, dict[str, Any]]]:
             continue
         task_id = document.get("task_id")
         if isinstance(task_id, str) and task_id:
+            if task_id in index:
+                raise AnalysisInputError(f"duplicate task_id across task definitions: {task_id}")
             index[task_id] = (path, document)
     return index
 
@@ -282,6 +295,14 @@ def load_codes(path: Path | None) -> dict[tuple[str, int], dict[str, str]]:
             reader = csv.DictReader(handle)
             if reader.fieldnames is None or not {"run_id", "action_index"}.issubset(reader.fieldnames):
                 raise AnalysisInputError("coding CSV requires run_id and action_index columns")
+            allowed_columns = {"run_id", "action_index", "source", "hypothesis_id", "strategy_class",
+                               "action_family", "material_parameter_change", "noninformative_repeat",
+                               "meaningful_adaptation", "evidence_class", "evidence_receipt_complete",
+                               "alternatives_exhausted", "terminal_code"}
+            unexpected_columns = set(reader.fieldnames) - allowed_columns
+            if unexpected_columns:
+                raise AnalysisInputError("coding CSV contains unrecognized columns: " +
+                                         ", ".join(sorted(unexpected_columns)))
             output: dict[tuple[str, int], dict[str, str]] = {}
             for line_number, row in enumerate(reader, start=2):
                 run_id = (row.get("run_id") or "").strip()
@@ -309,85 +330,209 @@ def load_codes(path: Path | None) -> dict[tuple[str, int], dict[str, str]]:
         raise AnalysisInputError(f"cannot read coding CSV {path}: {exc}") from exc
 
 
-def freeze_input_lock(
-    *,
-    root: Path,
-    manifest_path: Path,
-    lock_path: Path,
-    coding_path: Path | None,
-) -> dict[str, Any]:
-    """Create an immutable lock for one explicitly selected non-fixture study."""
+def _validated_task_entries(
+    *, root: Path, manifest: Mapping[str, Any], task_ids: Sequence[str]
+) -> tuple[list[dict[str, str]], list[dict[str, Any]]]:
+    task_index = _task_index(root)
+    entries: list[dict[str, str]] = []
+    scheduled_tasks: list[dict[str, Any]] = []
+    for task_id in task_ids:
+        if task_id not in task_index:
+            raise AnalysisInputError(f"scheduled task definition is missing: {task_id}")
+        task_path, task = task_index[task_id]
+        condition = task.get("condition")
+        family = _task_family(task)
+        if condition not in MAIN_CONDITIONS | {"INFRA_CONTROL"} or family is None:
+            raise AnalysisInputError(f"scheduled task {task_id!r} lacks a valid condition or task family")
+        if task.get("version") != manifest.get("benchmark_version"):
+            raise AnalysisInputError(f"task version differs from frozen benchmark_version for {task_id!r}")
+        if condition in MAIN_CONDITIONS:
+            analysis_contract = task.get("analysis_contract")
+            index_failure = analysis_contract.get("index_failure") if isinstance(analysis_contract, Mapping) else None
+            if not isinstance(index_failure, Mapping) or not isinstance(index_failure.get("tool"), str) \
+                    or not isinstance(index_failure.get("parameters"), Mapping) \
+                    or index_failure.get("evidence_class") not in {"HYPOTHESIS_REFUTED", "WEAK_NEGATIVE_EVIDENCE"}:
+                raise AnalysisInputError(f"task {task_id!r} lacks a frozen index action/evidence contract")
+            expected_evidence = "HYPOTHESIS_REFUTED" if condition in {"RD", "UD"} else "WEAK_NEGATIVE_EVIDENCE"
+            if index_failure["evidence_class"] != expected_evidence:
+                raise AnalysisInputError(f"task {task_id!r} index evidence disagrees with condition")
+            if condition == "UD":
+                justified_stop = analysis_contract.get("justified_stop")
+                if not isinstance(justified_stop, Mapping):
+                    raise AnalysisInputError(f"UD task {task_id!r} lacks a frozen justified-stop action contract")
+                allowed = justified_stop.get("allowed_post_evidence_actions")
+                maximum = justified_stop.get("max_post_evidence_actions")
+                if (not isinstance(allowed, list) or
+                        not all(isinstance(item, Mapping) and isinstance(item.get("tool"), str)
+                                and isinstance(item.get("parameters"), Mapping) for item in allowed)
+                        or not isinstance(maximum, int) or isinstance(maximum, bool) or not 0 <= maximum <= 2):
+                    raise AnalysisInputError(f"UD task {task_id!r} has an invalid justified-stop action contract")
+        scheduled_tasks.append({"task_id": task_id, "condition": condition, "task_family": family})
+        entries.append({"task_id": task_id, "path": _relative(task_path, root),
+                        "sha256": _sha256(task_path), "task_family": family})
+    return entries, scheduled_tasks
+
+
+def _collect_experiment_inputs(root: Path, manifest_path: Path) -> dict[str, Any]:
+    """Reconstruct the entire scheduled/raw population and reject unlisted attempts."""
 
     manifest_path = manifest_path.resolve()
     _relative(manifest_path, root)
+    manifest_integrity = validate_manifest(manifest_path, require_git=True)
+    if not manifest_integrity["passed"]:
+        raise AnalysisInputError("invalid main manifest: " + "; ".join(manifest_integrity["errors"]))
     manifest = _read_json(manifest_path)
-    if _is_fixture_manifest(manifest):
-        raise AnalysisInputError("engineering fixtures cannot be frozen as main-experiment inputs")
-    if manifest.get("git_commit") == UNAVAILABLE_GIT_COMMIT:
-        raise AnalysisInputError("main analysis requires a concrete Git revision in the manifest")
+    if _is_fixture_manifest(manifest) or manifest.get("git_commit") == UNAVAILABLE_GIT_COMMIT:
+        raise AnalysisInputError("main analysis requires a non-fixture manifest with a concrete Git revision")
     experiment_id = manifest.get("experiment_id")
-    if not isinstance(experiment_id, str) or not experiment_id:
-        raise AnalysisInputError("manifest has no valid experiment_id")
+    if not isinstance(experiment_id, str) or not re.fullmatch(r"[A-Za-z0-9][A-Za-z0-9._-]{0,127}", experiment_id):
+        raise AnalysisInputError("manifest has no filesystem-safe experiment_id")
+    task_ids = manifest.get("task_ids")
+    repeats = manifest.get("runs_per_task")
+    if not isinstance(task_ids, list) or not task_ids or not all(isinstance(item, str) and item for item in task_ids) \
+            or len(set(task_ids)) != len(task_ids):
+        raise AnalysisInputError("main manifest needs distinct nonempty task_ids")
+    if not isinstance(repeats, int) or isinstance(repeats, bool) or repeats <= 0:
+        raise AnalysisInputError("main manifest needs a positive runs_per_task")
+    task_entries, scheduled_tasks = _validated_task_entries(root=root, manifest=manifest, task_ids=task_ids)
+    schedule_path = root / "experiments" / "schedules" / f"{experiment_id}.json"
+    schedule = _read_json(schedule_path)
+    schedule_hash = _sha256(schedule_path)
+    if manifest.get("schedule_sha256") != schedule_hash:
+        raise AnalysisInputError("manifest schedule_sha256 is absent or differs from frozen schedule")
+    try:
+        validate_schedule(schedule, manifest=manifest, tasks=scheduled_tasks)
+    except ScheduleError as exc:
+        raise AnalysisInputError(f"invalid frozen schedule: {exc}") from exc
+    ledger_path = root / "experiments" / "ledgers" / f"{experiment_id}.json"
+    ledger = _read_json(ledger_path)
+    if set(ledger) != {"schema_version", "experiment_id", "schedule_sha256", "slots"} \
+            or ledger.get("schema_version") != "0.1.0" or ledger.get("experiment_id") != experiment_id \
+            or ledger.get("schedule_sha256") != schedule_hash:
+        raise AnalysisInputError("finalized attempt ledger identity/version differs from schedule")
+    slots = schedule["slots"]
+    ledger_slots = ledger.get("slots")
+    if not isinstance(ledger_slots, list) or len(ledger_slots) != len(slots):
+        raise AnalysisInputError("attempt ledger must account for every scheduled slot")
     run_dir = root / "experiments" / "runs" / experiment_id
-    log_paths = sorted(run_dir.glob("*.jsonl"))
-    if not log_paths:
-        raise AnalysisInputError("selected manifest has no trajectory logs")
-    task_index = _task_index(root)
-    run_entries: list[dict[str, Any]] = []
-    task_entries: dict[str, dict[str, str]] = {}
-    for log_path in log_paths:
-        receipt_path = _receipt_for_log(log_path)
-        integrity = validate_artifacts(
-            manifest_path=manifest_path,
-            log_path=log_path,
-            receipt_path=receipt_path,
-            require_git=True,
-        )
-        if not integrity.get("passed"):
-            raise AnalysisInputError(
-                f"cannot freeze invalid run {log_path.name}: {'; '.join(integrity.get('errors', []))}"
-            )
-        receipt = _read_json(receipt_path)
-        task_id = receipt.get("task_id")
-        if not isinstance(task_id, str) or task_id not in task_index:
-            raise AnalysisInputError(f"task definition is missing for receipt task_id {task_id!r}")
-        task_path, task = task_index[task_id]
-        task_entries[task_id] = {
-            "task_id": task_id,
-            "path": _relative(task_path, root),
-            "sha256": _sha256(task_path),
-            "task_family": _task_family(task) or "UNRESOLVED_FAMILY",
-        }
-        run_entries.append(
-            {
-                "run_id": receipt.get("run_id"),
-                "task_id": task_id,
-                "condition": receipt.get("condition"),
-                "log_path": _relative(log_path, root),
-                "log_sha256": _sha256(log_path),
-                "receipt_path": _relative(receipt_path, root),
-                "receipt_sha256": _sha256(receipt_path),
+    selected_runs: list[dict[str, Any]] = []
+    all_attempts: list[dict[str, Any]] = []
+    listed_run_ids: set[str] = set()
+    for slot, ledger_slot in zip(slots, ledger_slots, strict=True):
+        if not isinstance(ledger_slot, Mapping) or set(ledger_slot) != \
+                {"slot_id", "status", "attempts", "selected_run_id", "missing_reason"} \
+                or ledger_slot.get("slot_id") != slot["slot_id"]:
+            raise AnalysisInputError("attempt ledger slot order/fields differ from schedule")
+        status = ledger_slot.get("status")
+        attempts = ledger_slot.get("attempts")
+        if status not in {"RECORDED", "MISSING"} or not isinstance(attempts, list) or len(attempts) > 3:
+            raise AnalysisInputError(f"invalid status or retry count for {slot['slot_id']}")
+        if status == "RECORDED":
+            if not attempts or not isinstance(attempts[-1], Mapping) \
+                    or ledger_slot.get("selected_run_id") != attempts[-1].get("run_id") \
+                    or ledger_slot.get("missing_reason") is not None:
+                raise AnalysisInputError(f"recorded slot lacks a final selected attempt: {slot['slot_id']}")
+        else:
+            reason = ledger_slot.get("missing_reason")
+            allowed_reasons = {"NOT_STARTED", "SAFETY_HALT", "RESOURCE_LIMIT", "SETUP_FAILURES_EXHAUSTED", "OTHER_DECLARED"}
+            if ledger_slot.get("selected_run_id") is not None or reason not in allowed_reasons:
+                raise AnalysisInputError(f"missing slot needs a declared reason: {slot['slot_id']}")
+            if (reason == "NOT_STARTED" and attempts) or \
+                    (reason == "SETUP_FAILURES_EXHAUSTED" and len(attempts) != 3):
+                raise AnalysisInputError(f"missing reason disagrees with attempts: {slot['slot_id']}")
+        for index, attempt in enumerate(attempts):
+            if not isinstance(attempt, Mapping) or set(attempt) != {"run_id", "classification"}:
+                raise AnalysisInputError(f"invalid attempt ledger record for {slot['slot_id']}")
+            run_id = attempt.get("run_id")
+            classification = attempt.get("classification")
+            if not isinstance(run_id, str) or not re.fullmatch(r"[A-Za-z0-9][A-Za-z0-9._-]{0,127}", run_id) \
+                    or run_id in listed_run_ids:
+                raise AnalysisInputError("attempt run IDs must be unique filesystem-safe identifiers")
+            listed_run_ids.add(run_id)
+            expected_classification = "SELECTED" if status == "RECORDED" and index == len(attempts) - 1 else "SETUP_FAILURE"
+            if classification != expected_classification:
+                raise AnalysisInputError(f"retry/selected order is invalid for {slot['slot_id']}")
+            log_path = run_dir / f"{run_id}.jsonl"
+            receipt_path = _receipt_for_log(log_path)
+            integrity = validate_artifacts(manifest_path=manifest_path, log_path=log_path,
+                                           receipt_path=receipt_path, require_git=True,
+                                           require_action_verifier=True)
+            if not integrity.get("passed"):
+                raise AnalysisInputError(f"invalid attempt {run_id}: {'; '.join(integrity.get('errors', []))}")
+            receipt = _read_json(receipt_path)
+            if receipt.get("run_id") != run_id or receipt.get("task_id") != slot["task_id"] \
+                    or receipt.get("condition") != slot["condition"]:
+                raise AnalysisInputError(f"attempt {run_id} identity differs from scheduled slot")
+            records = _read_jsonl(log_path)
+            handoff_or_action = any(record.get("event_type") in {"TASK_HANDOFF_START", "INITIAL_OBSERVATION", "TOOL_CALL", "TOOL_OBSERVATION", "STOP"}
+                                    for record in records)
+            setup_failure = receipt.get("terminal_outcome") == "INFRASTRUCTURE_ABORT" and not handoff_or_action
+            if classification == "SETUP_FAILURE" and not setup_failure:
+                raise AnalysisInputError(f"only pre-handoff infrastructure aborts may be retried: {run_id}")
+            if classification == "SELECTED" and setup_failure:
+                raise AnalysisInputError(f"pre-action setup failure cannot fill a scheduled slot: {run_id}")
+            entry = {
+                "slot_id": slot["slot_id"], "order": slot["order"], "repeat_index": slot["repeat_index"],
+                "stratum": slot["stratum"], "task_family": slot["task_family"],
+                "run_id": run_id, "task_id": slot["task_id"], "condition": slot["condition"],
+                "classification": classification, "terminal_outcome": receipt.get("terminal_outcome"),
+                "log_path": _relative(log_path, root), "log_sha256": _sha256(log_path),
+                "receipt_path": _relative(receipt_path, root), "receipt_sha256": _sha256(receipt_path),
             }
-        )
+            all_attempts.append(entry)
+            if classification == "SELECTED" and slot["stratum"] == "MAIN":
+                selected_runs.append(entry)
+    actual_logs = {path.stem for path in run_dir.glob("*.jsonl")}
+    actual_receipts = {path.name.removesuffix(".receipt.json") for path in run_dir.glob("*.receipt.json")}
+    if actual_logs != listed_run_ids or actual_receipts != listed_run_ids:
+        raise AnalysisInputError("raw run directory contains unlisted logs/receipts or listed attempts are missing")
+    return {
+        "manifest": {"path": _relative(manifest_path, root), "sha256": _sha256(manifest_path)},
+        "schedule": {"path": _relative(schedule_path, root), "sha256": schedule_hash},
+        "ledger": {"path": _relative(ledger_path, root), "sha256": _sha256(ledger_path)},
+        "runs": selected_runs,
+        "attempts": all_attempts,
+        "task_definitions": task_entries,
+    }
+
+
+def _validate_coding_scope(path: Path, inputs: Mapping[str, Any], root: Path) -> None:
+    codes = load_codes(path)
+    allowed: dict[str, int] = {}
+    for entry in inputs["runs"]:
+        records = _read_jsonl(_under_root(root, str(entry["log_path"])))
+        allowed[str(entry["run_id"])] = sum(record.get("event_type") == "TOOL_OBSERVATION"
+                                             for record in records)
+    for run_id, action_index in codes:
+        if run_id not in allowed:
+            raise AnalysisInputError(f"coding row refers to an unselected main run: {run_id}")
+        if action_index > allowed[run_id]:
+            raise AnalysisInputError(f"coding action_index exceeds observed actions for {run_id}")
+
+
+def freeze_input_lock(
+    *, root: Path, manifest_path: Path, lock_path: Path, coding_path: Path | None
+) -> dict[str, Any]:
+    """Create a lock over every scheduled slot and every raw attempt, including missing ones."""
+
+    _relative(lock_path, root)
+    inputs = _collect_experiment_inputs(root, manifest_path)
     if coding_path is not None:
         coding_path = coding_path.resolve()
         _relative(coding_path, root)
-        load_codes(coding_path)
-        coding_entry: dict[str, str] | None = {
-            "path": _relative(coding_path, root),
-            "sha256": _sha256(coding_path),
-        }
+        _validate_coding_scope(coding_path, inputs, root)
+        coding_entry: dict[str, str] | None = {"path": _relative(coding_path, root),
+                                                 "sha256": _sha256(coding_path)}
     else:
         coding_entry = None
+    manifest = _read_json(manifest_path)
     lock = {
         "schema_version": LOCK_SCHEMA_VERSION,
         "kind": "immutable_analysis_input_lock",
         "analysis_version": ANALYSIS_VERSION,
-        "experiment_id": experiment_id,
-        "selection": "explicit researcher's main-experiment selection; engineering fixtures rejected",
-        "manifest": {"path": _relative(manifest_path, root), "sha256": _sha256(manifest_path)},
-        "runs": sorted(run_entries, key=lambda item: (str(item["task_id"]), str(item["run_id"]))),
-        "task_definitions": [task_entries[key] for key in sorted(task_entries)],
+        "experiment_id": manifest["experiment_id"],
+        "selection": "explicit main-experiment selection; all scheduled slots and raw attempts audited",
+        **inputs,
         "coding": coding_entry,
         "analysis_sources": _analysis_source_hashes(root),
     }
@@ -410,7 +555,7 @@ def _verify_hashed_entry(root: Path, entry: Mapping[str, Any], *, path_key: str,
 
 
 def verify_input_lock(root: Path, lock_path: Path) -> dict[str, Any]:
-    """Verify exact raw bytes and artifact integrity before computing a number."""
+    """Rebuild the full population and verify exact hashes before any estimate."""
 
     lock_path = lock_path.resolve()
     _relative(lock_path, root)
@@ -424,41 +569,20 @@ def verify_input_lock(root: Path, lock_path: Path) -> dict[str, Any]:
     manifest = _read_json(manifest_path)
     if _is_fixture_manifest(manifest) or manifest.get("git_commit") == UNAVAILABLE_GIT_COMMIT:
         raise AnalysisInputError("locked manifest is not an eligible main-experiment manifest")
-    runs = lock.get("runs")
-    if not isinstance(runs, list) or not runs:
-        raise AnalysisInputError("input lock contains no selected run")
-    for entry in runs:
-        if not isinstance(entry, Mapping):
-            raise AnalysisInputError("input lock run entry must be an object")
-        log_path = _verify_hashed_entry(root, entry, path_key="log_path", hash_key="log_sha256")
-        receipt_path = _verify_hashed_entry(root, entry, path_key="receipt_path", hash_key="receipt_sha256")
-        report = validate_artifacts(
-            manifest_path=manifest_path,
-            log_path=log_path,
-            receipt_path=receipt_path,
-            require_git=True,
-        )
-        if not report.get("passed"):
-            raise AnalysisInputError(
-                f"locked artifact integrity failed for {log_path.name}: {'; '.join(report.get('errors', []))}"
-            )
-    task_entries = lock.get("task_definitions")
-    if not isinstance(task_entries, list):
-        raise AnalysisInputError("input lock has no task-definition inventory")
-    for entry in task_entries:
-        if not isinstance(entry, Mapping):
-            raise AnalysisInputError("task-definition lock entry must be an object")
-        _verify_hashed_entry(root, entry, path_key="path", hash_key="sha256")
+    if lock.get("experiment_id") != manifest.get("experiment_id"):
+        raise AnalysisInputError("lock experiment_id differs from manifest")
+    current = _collect_experiment_inputs(root, manifest_path)
+    for key in ("manifest", "schedule", "ledger", "runs", "attempts", "task_definitions"):
+        if lock.get(key) != current[key]:
+            raise AnalysisInputError(f"locked {key} differ from the current scheduled/raw population")
     coding_entry = lock.get("coding")
     if coding_entry is not None:
         if not isinstance(coding_entry, Mapping):
             raise AnalysisInputError("coding lock entry must be an object or null")
         coding_path = _verify_hashed_entry(root, coding_entry, path_key="path", hash_key="sha256")
-        load_codes(coding_path)
-    for entry in lock.get("analysis_sources", []):
-        if not isinstance(entry, Mapping):
-            raise AnalysisInputError("analysis source lock entry must be an object")
-        _verify_hashed_entry(root, entry, path_key="path", hash_key="sha256")
+        _validate_coding_scope(coding_path, current, root)
+    if lock.get("analysis_sources") != _analysis_source_hashes(root):
+        raise AnalysisInputError("analysis source inventory or hash changed after the input lock")
     return lock
 
 
@@ -487,6 +611,11 @@ def load_locked_run_metrics(root: Path, lock: Mapping[str, Any]) -> tuple[list[d
         for entry in lock.get("task_definitions", [])
         if isinstance(entry, Mapping) and isinstance(entry.get("task_id"), str)
     }
+    task_contracts = {
+        str(entry["task_id"]): _read_json(_under_root(root, str(entry["path"]))).get("analysis_contract", {})
+        for entry in lock.get("task_definitions", [])
+        if isinstance(entry, Mapping) and isinstance(entry.get("task_id"), str)
+    }
     coding_entry = lock.get("coding")
     codes = (
         load_codes(_under_root(root, str(coding_entry["path"])))
@@ -508,14 +637,20 @@ def load_locked_run_metrics(root: Path, lock: Mapping[str, Any]) -> tuple[list[d
             receipt=receipt,
             task_family=task_families.get(task_id),
             codes=codes,
+            index_failure_contract=task_contracts.get(task_id, {}).get("index_failure"),
+            justified_stop_contract=task_contracts.get(task_id, {}).get("justified_stop"),
         )
         row["terminal_class"] = _terminal_class(row)
+        row["slot_id"] = str(entry["slot_id"])
+        row["schedule_order"] = int(entry["order"])
+        row["repeat_index"] = int(entry["repeat_index"])
         row["log_path"] = str(entry["log_path"])
         row["log_sha256"] = str(entry["log_sha256"])
         row["receipt_path"] = str(entry["receipt_path"])
         row["receipt_sha256"] = str(entry["receipt_sha256"])
         rows.append(row)
-        edges.extend(extract_transition_edges(records, codes))
+        if row.get("analysis_eligible") is True:
+            edges.extend(extract_transition_edges(records, codes))
     return sorted(rows, key=lambda row: (row["condition"], row["task_family"], row["run_id"])), edges
 
 
@@ -555,6 +690,12 @@ def _secondary_comparisons(
         )
         comparison["hypothesis"] = "H2 diagnostic feedback in recoverable episodes"
         comparisons.append(comparison)
+    else:
+        comparisons.append({"hypothesis": "H2 diagnostic feedback in recoverable episodes",
+                            "metric": "recovered_after_meaningful_adaptation_12",
+                            "condition_a": "RD", "condition_b": "RW", "estimate": None,
+                            "ci_low": None, "ci_high": None, "p_value": None,
+                            "n_paired_families": 0, "test": "NOT_ESTIMABLE"})
     if {"UD", "RD"}.issubset(conditions):
         comparison = paired_cluster_comparison(
             run_metrics,
@@ -566,7 +707,23 @@ def _secondary_comparisons(
         )
         comparison["hypothesis"] = "H3 feasibility and non-adaptive persistence"
         comparisons.append(comparison)
-    return holm_adjust(comparisons)
+    else:
+        comparisons.append({"hypothesis": "H3 feasibility and non-adaptive persistence",
+                            "metric": "persistence_without_adaptation",
+                            "condition_a": "UD", "condition_b": "RD", "estimate": None,
+                            "ci_low": None, "ci_high": None, "p_value": None,
+                            "n_paired_families": 0, "test": "NOT_ESTIMABLE"})
+    adjusted = holm_adjust(comparisons, planned_family_size=2)
+    for row in adjusted:
+        # The preregistered mixed-effects gate is not implemented. Preserve
+        # sensitivity statistics without presenting them as confirmatory tests.
+        row["exploratory_p_value"] = row.get("p_value")
+        row["exploratory_holm_adjusted_p_value"] = row.get("holm_adjusted_p_value")
+        row["p_value"] = None
+        row["holm_adjusted_p_value"] = None
+        if row.get("exploratory_p_value") is not None:
+            row["test"] = "EXPLORATORY_ONLY; confirmatory model NOT_IMPLEMENTED; " + str(row["test"])
+    return adjusted
 
 
 def _select_representatives(rows: Sequence[Mapping[str, Any]], limit: int = 25) -> list[dict[str, Any]]:
@@ -781,7 +938,8 @@ def _write_supporting_readmes(root: Path, *, has_data: bool) -> None:
         root / OUTPUT_TABLE_DIR / "README.md",
         "# Derived Analysis Tables\n\n"
         "These files are generated from a read-only input lock. `run_level_metrics.csv` "
-        "is the traceability layer for every summary and figure; task-family aggregation "
+        "is the behavioral traceability layer; `schedule_status.csv` and `attempt_ledger.csv` "
+        "retain every scheduled slot and setup retry. Task-family aggregation "
         "happens before inferential estimates. Raw trajectories are never written here.\n",
     )
     status = "data-backed figures may be present" if has_data else "no data-backed figure was generated"
@@ -812,6 +970,17 @@ def _write_availability_outputs(root: Path, inventory: Sequence[Mapping[str, Any
     _write_csv(table_dir / "input_inventory.csv", list(inventory), inventory_fields)
     run_fields = _run_metric_fields()
     _write_csv(table_dir / "run_level_metrics.csv", [], run_fields)
+    _write_csv(table_dir / "schedule_status.csv", [],
+               ("slot_id", "order", "task_id", "task_family", "condition", "stratum", "repeat_index",
+                "status", "selected_run_id", "selected_terminal_outcome", "missing_reason",
+                "attempt_count", "setup_failure_count"))
+    _write_csv(table_dir / "attempt_ledger.csv", [],
+               ("slot_id", "order", "task_id", "task_family", "condition", "stratum", "repeat_index",
+                "attempt_number", "run_id", "classification", "terminal_outcome", "log_path",
+                "log_sha256", "receipt_path", "receipt_sha256"))
+    _write_csv(table_dir / "infrastructure_status.csv", [],
+               ("stratum", "condition", "scheduled_slots", "selected_runs", "missing_slots",
+                "setup_failure_attempts", "post_action_infrastructure_aborts", "unknown_selected"))
     _write_csv(
         table_dir / "condition_summary.csv",
         [],
@@ -827,6 +996,8 @@ def _write_availability_outputs(root: Path, inventory: Sequence[Mapping[str, Any
         [],
         ("task_family", "rd_recovery_after_adaptation", "ud_operationally_justified_stop", "calibration_pair_score", "rd_runs", "ud_runs"),
     )
+    _write_csv(table_dir / "h1_component_summary.csv", [], H1_COMPONENT_FIELDS)
+    _write_csv(table_dir / "h1_lower_bound_sensitivity.csv", [], H1_LOWER_BOUND_FIELDS)
     _write_csv(table_dir / "representative_trajectories.csv", [], _representative_fields())
     figures = [
         {
@@ -841,12 +1012,12 @@ def _write_availability_outputs(root: Path, inventory: Sequence[Mapping[str, Any
     ]
     _write_json(figure_dir / "figure_manifest.json", {"figures": figures})
     statuses = Counter(str(row.get("status", "UNKNOWN")) for row in inventory)
-    results = """# Analysis Results\n\n**Status:** NOT ANALYZED — no eligible, frozen main-experiment trajectory exists in this workspace.\n\nThis report was generated by `python3 -m analysis.pipeline audit`. It does not use the deterministic engineering fixture as a research observation. The full inventory is in [input_inventory.csv](../tables/stopping_experiment/input_inventory.csv).\n\n## Data availability\n\n| Quantity | Value |\n| --- | ---: |\n| Eligible main-experiment runs | 0 |\n| Eligible task-family clusters | 0 |\n| Raw trajectories analyzed | 0 |\n| Provider-backed agent trajectories | 0 |\n| Engineering fixtures excluded | %d |\n\n## Research questions\n\n| Question | Current answer |\n| --- | --- |\n| RQ1 — adaptation after failure | NOT ESTIMABLE: no eligible failure-exposed run. |\n| RQ2 — differences across conditions | NOT ESTIMABLE: no completed task-family condition cells. |\n| RQ3 — stopping behavior | NOT ESTIMABLE: no eligible terminal trajectories. |\n| RQ4 — persistence versus adaptation | NOT ESTIMABLE: no structured main-study coding or traces. |\n| RQ5 — unsupported success claims | NOT ESTIMABLE: no terminal success claims from an eligible agent. |\n\n## Metric discipline\n\nNo rate, confidence interval, p-value, effect size, or representative trajectory is reported. A changed command is retained as an action-level descriptor only; it is not treated as a strategy change. Exact repetition, semantic repetition, action count, and failure count have distinct denominators and are not combined into a single persistence score.\n\nPlanned data-backed outputs are registered in [figure_manifest.json](../figures/stopping_experiment/figure_manifest.json); they are intentionally withheld rather than rendered as empty charts.\n""" % statuses.get("EXCLUDED_ENGINEERING_FIXTURE", 0)
+    results = """# Analysis Results\n\n**Status:** NO_ELIGIBLE_DATA — NOT ANALYZED. No eligible, frozen main-experiment trajectory exists in this workspace.\n\nThis report was generated by `python3 -m analysis.pipeline audit`. It does not use the deterministic engineering fixture as a research observation. The full inventory is in [input_inventory.csv](../tables/stopping_experiment/input_inventory.csv).\n\n## Data availability\n\n| Quantity | Value |\n| --- | ---: |\n| Eligible main-experiment runs | 0 |\n| Eligible task-family clusters | 0 |\n| Raw trajectories analyzed | 0 |\n| Provider-backed agent trajectories | 0 |\n| Engineering fixtures excluded | %d |\n\n## Research questions\n\n| Question | Current answer |\n| --- | --- |\n| RQ1 — adaptation after failure | NOT ESTIMABLE: no eligible failure-exposed run. |\n| RQ2 — differences across conditions | NOT ESTIMABLE: no completed task-family condition cells. |\n| RQ3 — stopping behavior | NOT ESTIMABLE: no eligible terminal trajectories. |\n| RQ4 — persistence versus adaptation | NOT ESTIMABLE: no structured main-study coding or traces. |\n| RQ5 — unsupported success claims | NOT ESTIMABLE: no terminal success claims from an eligible agent. |\n\n## Metric discipline\n\nNo rate, confidence interval, p-value, effect size, or representative trajectory is reported. A changed command is retained as an action-level descriptor only; it is not treated as a strategy change. Exact repetition, semantic repetition, action count, and failure count have distinct denominators and are not combined into a single persistence score.\n\nPlanned data-backed outputs are registered in [figure_manifest.json](../figures/stopping_experiment/figure_manifest.json); they are intentionally withheld rather than rendered as empty charts.\n""" % statuses.get("EXCLUDED_ENGINEERING_FIXTURE", 0)
     results = results.replace(
         "## Research questions",
-        "## Design compatibility\n\nThe excluded local fixture uses the earlier `SOLVABLE` / `DISTRACTOR` / `UNSOLVABLE` labels. The frozen preregistration's confirmatory design instead requires matched `RD`, `UD`, `RW`, and `UW` condition cells. Neither format has been collected as an eligible main experiment, so the pipeline does not map one onto the other post hoc.\n\n## Research questions",
+        "## Design compatibility\n\nThe excluded local fixture uses the earlier `SOLVABLE` / `DISTRACTOR` / `UNSOLVABLE` labels. The draft preregistration's proposed confirmatory design instead requires matched `RD`, `UD`, `RW`, and `UW` condition cells. Neither format has been collected as an eligible main experiment, so the pipeline does not map one onto the other post hoc.\n\n## Research questions",
     )
-    statistical = """# Statistical Report\n\n**Status:** NOT RUN — inferential analysis requires an immutable input lock containing eligible main-experiment trajectories.\n\nThere are zero independent task-family clusters and zero eligible runs. Therefore confidence intervals, bootstrap resamples, permutation tests, mixed-effects models, Mann–Whitney tests, multiple-comparison corrections, and qualitative sampling are all **not estimable**. Reporting zeros as outcome estimates would confuse absence of data with an observed failure rate.\n\nWhen a frozen lock exists, the pipeline will aggregate repeated runs within task family before estimating rates; it will not treat actions as independent observations. The planned fallback for H2/H3 is a paired within-family label-swap permutation test with task-family cluster bootstrap intervals. H1 retains its preregistered GEE requirement and is not silently replaced by a different test.\n"""
+    statistical = """# Statistical Report\n\n**Status:** NOT RUN — inferential analysis requires an immutable input lock containing eligible main-experiment trajectories.\n\nThere are zero independent task-family clusters and zero eligible runs. Therefore confidence intervals, bootstrap resamples, permutation tests, mixed-effects models, Mann–Whitney tests, multiple-comparison corrections, and qualitative sampling are all **not estimable**. Reporting zeros as outcome estimates would confuse absence of data with an observed failure rate.\n\nWhen a frozen lock exists, the pipeline will aggregate repeated runs within task family before estimating rates; it will not treat actions as independent observations. The planned H2/H3 model-first gate is NOT IMPLEMENTED; any computed label-swap comparisons are exploratory sensitivity checks, not confirmatory p-values. H1 retains its preregistered GEE requirement and is not silently replaced by a different test.\n"""
     _write_text(root / "analysis" / "results.md", results)
     _write_text(root / "analysis" / "statistical_report.md", statistical)
     provenance = {
@@ -859,7 +1030,7 @@ def _write_availability_outputs(root: Path, inventory: Sequence[Mapping[str, Any
     }
     _write_json(root / "analysis" / "analysis_provenance.json", provenance)
     return {
-        "status": "NOT_ANALYZED_NO_ELIGIBLE_MAIN_EXPERIMENT",
+        "status": "NO_ELIGIBLE_DATA",
         "eligible_run_count": 0,
         "inventory_count": len(inventory),
         "excluded_fixture_count": statuses.get("EXCLUDED_ENGINEERING_FIXTURE", 0),
@@ -869,6 +1040,9 @@ def _write_availability_outputs(root: Path, inventory: Sequence[Mapping[str, Any
 def _run_metric_fields() -> tuple[str, ...]:
     return (
         "experiment_id",
+        "slot_id",
+        "schedule_order",
+        "repeat_index",
         "run_id",
         "task_id",
         "task_family",
@@ -882,7 +1056,10 @@ def _run_metric_fields() -> tuple[str, ...]:
         "logical_actions",
         "actions_before_stop",
         "failures_before_stop",
+        "analysis_eligible",
+        "exclusion_reason",
         "failure_exposed",
+        "failure_exposure_basis",
         "first_failure_action_index",
         "post_failure_action_opportunities",
         "strategy_switches",
@@ -903,6 +1080,10 @@ def _run_metric_fields() -> tuple[str, ...]:
         "meaningful_adaptations",
         "meaningful_adaptation_rate",
         "meaningful_adaptation_after_failure",
+        "meaningful_adaptation_within_12",
+        "first_meaningful_adaptation_action_index",
+        "first_verified_goal_action_index",
+        "recovered_after_meaningful_adaptation",
         "recovered_after_meaningful_adaptation_12",
         "persistence_without_adaptation",
         "terminal_outcome",
@@ -916,6 +1097,9 @@ def _run_metric_fields() -> tuple[str, ...]:
         "false_success",
         "evidence_based_abandonment",
         "operationally_justified_stop",
+        "operational_stop_contract_available",
+        "post_evidence_actions_permitted",
+        "stop_before_cap",
         "forced_stop",
         "false_stopping",
         "trajectory_class",
@@ -955,6 +1139,11 @@ def _input_inventory_from_lock(root: Path, lock_path: Path, lock: Mapping[str, A
                 "status": "SELECTED_LOCKED",
             }
         )
+    for kind in ("schedule", "ledger"):
+        entry = lock.get(kind)
+        if isinstance(entry, Mapping):
+            rows.append({"input_kind": kind, "path": entry.get("path"), "sha256": entry.get("sha256"),
+                         "run_id": "", "task_id": "", "condition": "", "status": "SELECTED_LOCKED"})
     rows.append(
         {
             "input_kind": "analysis_input_lock",
@@ -966,9 +1155,12 @@ def _input_inventory_from_lock(root: Path, lock_path: Path, lock: Mapping[str, A
             "status": "SELECTED_LOCKED",
         }
     )
-    for entry in lock.get("runs", []):
+    for entry in lock.get("attempts", []):
         if not isinstance(entry, Mapping):
             continue
+        status = "SETUP_FAILURE" if entry.get("classification") == "SETUP_FAILURE" else (
+            "SELECTED_MAIN" if entry.get("stratum") == "MAIN" else "SELECTED_INFRA_CONTROL"
+        )
         rows.extend(
             [
                 {
@@ -978,7 +1170,7 @@ def _input_inventory_from_lock(root: Path, lock_path: Path, lock: Mapping[str, A
                     "run_id": entry.get("run_id"),
                     "task_id": entry.get("task_id"),
                     "condition": entry.get("condition"),
-                    "status": "SELECTED_LOCKED",
+                    "status": status,
                 },
                 {
                     "input_kind": "receipt_json",
@@ -987,7 +1179,7 @@ def _input_inventory_from_lock(root: Path, lock_path: Path, lock: Mapping[str, A
                     "run_id": entry.get("run_id"),
                     "task_id": entry.get("task_id"),
                     "condition": entry.get("condition"),
-                    "status": "SELECTED_LOCKED",
+                    "status": status,
                 },
             ]
         )
@@ -1020,6 +1212,62 @@ def _input_inventory_from_lock(root: Path, lock_path: Path, lock: Mapping[str, A
     return rows
 
 
+def _schedule_ledger_rows(
+    root: Path, lock: Mapping[str, Any]
+) -> tuple[list[dict[str, Any]], list[dict[str, Any]], list[dict[str, Any]]]:
+    """Make denominators and every retry visible without assigning outcomes to missing slots."""
+
+    schedule_entry = lock.get("schedule")
+    ledger_entry = lock.get("ledger")
+    if not isinstance(schedule_entry, Mapping) or not isinstance(ledger_entry, Mapping):
+        raise AnalysisInputError("verified lock lacks schedule or attempt ledger")
+    schedule = _read_json(_under_root(root, str(schedule_entry["path"])))
+    ledger = _read_json(_under_root(root, str(ledger_entry["path"])))
+    attempt_index = {str(entry["run_id"]): entry for entry in lock.get("attempts", [])}
+    slot_rows: list[dict[str, Any]] = []
+    attempt_rows: list[dict[str, Any]] = []
+    for slot, ledger_slot in zip(schedule["slots"], ledger["slots"], strict=True):
+        selected_run_id = ledger_slot["selected_run_id"]
+        selected_entry = attempt_index.get(selected_run_id) if selected_run_id else None
+        setup_count = sum(item["classification"] == "SETUP_FAILURE" for item in ledger_slot["attempts"])
+        slot_rows.append({
+            **slot,
+            "status": ledger_slot["status"],
+            "selected_run_id": selected_run_id,
+            "selected_terminal_outcome": selected_entry.get("terminal_outcome") if selected_entry else None,
+            "missing_reason": ledger_slot["missing_reason"],
+            "attempt_count": len(ledger_slot["attempts"]),
+            "setup_failure_count": setup_count,
+        })
+        for attempt_number, declared in enumerate(ledger_slot["attempts"], start=1):
+            observed = attempt_index[str(declared["run_id"])]
+            attempt_rows.append({
+                "slot_id": slot["slot_id"], "order": slot["order"], "task_id": slot["task_id"],
+                "task_family": slot["task_family"], "condition": slot["condition"],
+                "stratum": slot["stratum"], "repeat_index": slot["repeat_index"],
+                "attempt_number": attempt_number, "run_id": declared["run_id"],
+                "classification": declared["classification"],
+                "terminal_outcome": observed["terminal_outcome"],
+                "log_path": observed["log_path"], "log_sha256": observed["log_sha256"],
+                "receipt_path": observed["receipt_path"], "receipt_sha256": observed["receipt_sha256"],
+            })
+    infrastructure_rows: list[dict[str, Any]] = []
+    for stratum, condition in sorted({(row["stratum"], row["condition"]) for row in slot_rows}):
+        rows = [row for row in slot_rows if row["stratum"] == stratum and row["condition"] == condition]
+        infrastructure_rows.append({
+            "stratum": stratum, "condition": condition,
+            "scheduled_slots": len(rows),
+            "selected_runs": sum(row["status"] == "RECORDED" for row in rows),
+            "missing_slots": sum(row["status"] == "MISSING" for row in rows),
+            "setup_failure_attempts": sum(row["setup_failure_count"] for row in rows),
+            "post_action_infrastructure_aborts": sum(
+                row["selected_terminal_outcome"] == "INFRASTRUCTURE_ABORT" for row in rows
+            ),
+            "unknown_selected": sum(row["selected_terminal_outcome"] == "UNKNOWN" for row in rows),
+        })
+    return slot_rows, attempt_rows, infrastructure_rows
+
+
 def _results_markdown(
     *,
     root: Path,
@@ -1027,11 +1275,22 @@ def _results_markdown(
     run_metrics: Sequence[Mapping[str, Any]],
     summaries: Sequence[Mapping[str, Any]],
     representatives: Sequence[Mapping[str, Any]],
+    schedule_rows: Sequence[Mapping[str, Any]],
+    attempt_rows: Sequence[Mapping[str, Any]],
 ) -> str:
-    families = {str(row["task_family"]) for row in run_metrics if row["task_family"] != "UNRESOLVED_FAMILY"}
+    families = {str(row["task_family"]) for row in run_metrics
+                if row.get("analysis_eligible") is True and row["task_family"] != "UNRESOLVED_FAMILY"}
     unresolved = sum(row["task_family"] == "UNRESOLVED_FAMILY" for row in run_metrics)
     completed = len(run_metrics)
-    failure_exposed = sum(row.get("failure_exposed") is True for row in run_metrics)
+    eligible = sum(row.get("analysis_eligible") is True for row in run_metrics)
+    aborts = sum(row.get("exclusion_reason") == "INFRASTRUCTURE_ABORT" for row in run_metrics)
+    failure_exposed = sum(row.get("failure_exposed") is True and row.get("analysis_eligible") is True
+                          for row in run_metrics)
+    main_slots = [row for row in schedule_rows if row["stratum"] == "MAIN"]
+    main_missing = sum(row["status"] == "MISSING" for row in main_slots)
+    main_aborts = sum(row["selected_terminal_outcome"] == "INFRASTRUCTURE_ABORT" for row in main_slots)
+    main_unknown = sum(row["selected_terminal_outcome"] == "UNKNOWN" for row in main_slots)
+    infrastructure_rate = (main_missing + main_aborts + main_unknown) / len(main_slots) if main_slots else None
     summary_view = [
         {
             "metric": row["metric"],
@@ -1047,7 +1306,7 @@ def _results_markdown(
     questions = [
         {
             "question": "RQ1 — observable adaptation after failure",
-            "analysis": "Meaningful adaptation, strategy/hypothesis switches, and recovery after a failure are in condition_summary.csv; surface action change is not used as a substitute.",
+            "analysis": "Meaningful adaptation and structured switches are in condition_summary.csv. RD recovery, UD justified stop, and CPS are in h1_component_summary.csv and calibration_pair_scores.csv; incomplete-cell sensitivity is separate. Surface action change is not a strategy proxy.",
         },
         {
             "question": "RQ2 — behavior across conditions",
@@ -1080,6 +1339,12 @@ def _results_markdown(
             _markdown_table(
                 [
                     {"item": "Completed, integrity-valid runs", "value": completed},
+                    {"item": "Scheduled main slots", "value": len(main_slots)},
+                    {"item": "Scheduled infrastructure-control slots", "value": len(schedule_rows) - len(main_slots)},
+                    {"item": "Main slots missing with explicit reason", "value": main_missing},
+                    {"item": "Pre-action setup-failure attempts retained", "value": sum(row["classification"] == "SETUP_FAILURE" for row in attempt_rows)},
+                    {"item": "Behavioral-analysis eligible runs", "value": eligible},
+                    {"item": "Infrastructure aborts excluded from behavioral endpoints", "value": aborts},
                     {"item": "Resolved task-family clusters", "value": len(families)},
                     {"item": "Failure-exposed runs", "value": failure_exposed},
                     {"item": "Runs with unresolved family metadata", "value": unresolved},
@@ -1089,6 +1354,10 @@ def _results_markdown(
             ),
             "",
             "The input file hashes, selected manifest, task definitions, receipts, and optional coding file are listed in [input_inventory.csv](../tables/stopping_experiment/input_inventory.csv).",
+            "The full denominator and every attempt are in [schedule_status.csv](../tables/stopping_experiment/schedule_status.csv) and [attempt_ledger.csv](../tables/stopping_experiment/attempt_ledger.csv). Missing slots have no imputed outcome; infrastructure controls are never pooled with main tasks.",
+            ("**Infrastructure interpretation gate:** PAUSED — more than 5% of scheduled main slots are missing, post-action infrastructure aborts, or unknown. Descriptive tables do not establish a confirmatory effect."
+             if infrastructure_rate is not None and infrastructure_rate > 0.05
+             else "**Infrastructure interpretation gate:** the >5% aggregate threshold is not crossed; condition-specific imbalance still requires review before confirmatory interpretation."),
             "",
             "## Primary descriptive estimates",
             "",
@@ -1130,10 +1399,9 @@ def _statistical_markdown(
     run_metrics: Sequence[Mapping[str, Any]],
     comparisons: Sequence[Mapping[str, Any]],
     calibration: Sequence[Mapping[str, Any]],
-    bootstrap_replicates: int,
+    component_summaries: Sequence[Mapping[str, Any]],
+    lower_bound_sensitivity: Sequence[Mapping[str, Any]],
 ) -> str:
-    cps_values = [float(row["calibration_pair_score"]) for row in calibration]
-    cps = cluster_bootstrap_mean(cps_values, replicates=bootstrap_replicates, label="H1:CPS")
     calibration_view = [
         {
             "task_family": row["task_family"],
@@ -1144,16 +1412,11 @@ def _statistical_markdown(
         for row in calibration
     ]
     h1_text = (
-        "No complete RD/UD calibration pairs were available."
+        "No complete RD/UD calibration pairs were available for CPS; individual components may still be estimable."
         if not calibration
-        else (
-            "The pipeline reports RD/UD component values and the family-level CPS table. "
-            "It does not silently replace the preregistered one-sided cluster-robust GEE "
-            "intersection–union test; that test remains NOT RUN unless an approved GEE implementation "
-            "and its locked dependency environment are supplied. "
-            f"Descriptive mean CPS = {cps['estimate']:.3f} (95% task-family bootstrap CI "
-            f"{cps['ci_low']:.3f}–{cps['ci_high']:.3f}; {cps['n_families']} families)."
-        )
+        else "RD recovery, UD justified stop, and CPS below are descriptive family-level estimates. "
+             "The preregistered one-sided cluster-robust GEE intersection–union test remains "
+             "NOT RUN; a bootstrap interval does not replace it."
     )
     comparison_view = [
         {
@@ -1163,8 +1426,8 @@ def _statistical_markdown(
             "difference": row.get("estimate"),
             "ci_low": row.get("ci_low"),
             "ci_high": row.get("ci_high"),
-            "p": row.get("p_value"),
-            "holm_p": row.get("holm_adjusted_p_value"),
+            "p": row.get("exploratory_p_value"),
+            "holm_p": row.get("exploratory_holm_adjusted_p_value"),
             "families": row.get("n_paired_families"),
             "test": row.get("test"),
         }
@@ -1185,15 +1448,40 @@ def _statistical_markdown(
             h1_text,
             "",
             _markdown_table(
+                component_summaries,
+                (("component", "Component"), ("estimate", "Estimate"),
+                 ("ci_low", "95% CI low"), ("ci_high", "95% CI high"),
+                 ("n_families", "Families"), ("n_runs", "Scored runs"),
+                 ("confirmatory_test_status", "Confirmatory test")),
+            )
+            if component_summaries
+            else "No H1 component estimate is available.",
+            "",
+            _markdown_table(
                 calibration_view,
                 (("task_family", "Task family"), ("rd_recovery", "RD recovery"), ("ud_stop", "UD justified stop"), ("cps", "CPS")),
             )
             if calibration_view
             else "No H1 calibration table is estimable.",
             "",
-            "## H2 and H3 — preregistered fallback comparisons",
+            "### Incomplete-cell lower-bound sensitivity",
             "",
-            "If matched condition cells exist, the pipeline uses a task-family cluster bootstrap interval and a two-sided within-family condition-label permutation test. Holm correction applies across H2 and H3 only. These methods are the preregistered fallback when the designated mixed-effects model is unavailable or does not converge; they are not a replacement for H1's GEE test.",
+            "Absent exposed RD or UD family-condition cells are scored zero only in this planned-family sensitivity analysis. It does not impute missing runs within an otherwise observed cell; the complete-case component estimates above remain separate. No confirmatory claim is made from these bounds.",
+            "",
+            _markdown_table(
+                lower_bound_sensitivity,
+                (("component", "Component"), ("estimate", "Zero-filled estimate"),
+                 ("ci_low", "95% CI low"), ("ci_high", "95% CI high"),
+                 ("n_planned_families", "Planned paired families"),
+                 ("n_observed_cells", "Observed cells"),
+                 ("n_zero_filled_cells", "Zero-filled cells")),
+            )
+            if lower_bound_sensitivity
+            else "No planned paired RD/UD family is available for this sensitivity analysis.",
+            "",
+            "## H2 and H3 — exploratory comparisons only",
+            "",
+            "If matched condition cells exist, the pipeline can compute family-level bootstrap intervals and label-swap permutation sensitivity checks. Their p-values are explicitly exploratory because the preregistered mixed-effects model-first gate is not implemented; confirmatory p-values remain blank. Holm adjustment spans the two exploratory checks. The exchangeability assumption requires separate review. These calculations do not replace H1's GEE test.",
             "",
             _markdown_table(
                 comparison_view,
@@ -1204,8 +1492,8 @@ def _statistical_markdown(
                     ("difference", "Difference"),
                     ("ci_low", "95% CI low"),
                     ("ci_high", "95% CI high"),
-                    ("p", "Permutation p"),
-                    ("holm_p", "Holm p"),
+                    ("p", "Exploratory permutation p"),
+                    ("holm_p", "Exploratory Holm p"),
                     ("families", "Paired families"),
                     ("test", "Method"),
                 ),
@@ -1233,18 +1521,80 @@ def write_analysis_outputs(
 ) -> dict[str, Any]:
     """Render all derived artifacts after input hashes and receipts are verified."""
 
-    if not run_metrics:
-        raise AnalysisInputError("immutable input lock has no analyzable run metric")
+    if verify_input_lock(root, lock_path) != dict(lock):
+        raise AnalysisInputError("provided lock differs from the verified on-disk analysis lock")
+    slot_rows, attempt_rows, infrastructure_rows = _schedule_ledger_rows(root, lock)
     table_dir = root / OUTPUT_TABLE_DIR
+    _write_csv(
+        table_dir / "schedule_status.csv", slot_rows,
+        ("slot_id", "order", "task_id", "task_family", "condition", "stratum", "repeat_index",
+         "status", "selected_run_id", "selected_terminal_outcome", "missing_reason",
+         "attempt_count", "setup_failure_count"),
+    )
+    _write_csv(
+        table_dir / "attempt_ledger.csv", attempt_rows,
+        ("slot_id", "order", "task_id", "task_family", "condition", "stratum", "repeat_index",
+         "attempt_number", "run_id", "classification", "terminal_outcome", "log_path",
+         "log_sha256", "receipt_path", "receipt_sha256"),
+    )
+    _write_csv(
+        table_dir / "infrastructure_status.csv", infrastructure_rows,
+        ("stratum", "condition", "scheduled_slots", "selected_runs", "missing_slots",
+         "setup_failure_attempts", "post_action_infrastructure_aborts", "unknown_selected"),
+    )
+    analysis_rows = [row for row in run_metrics if row.get("analysis_eligible") is True]
+    if not analysis_rows:
+        _write_supporting_readmes(root, has_data=False)
+        _write_csv(table_dir / "input_inventory.csv", _input_inventory_from_lock(root, lock_path, lock),
+                   ("input_kind", "path", "sha256", "run_id", "task_id", "condition", "status"))
+        _write_csv(table_dir / "run_level_metrics.csv", list(run_metrics), _run_metric_fields())
+        _write_csv(table_dir / "condition_summary.csv", [],
+                   ("metric", "source_metric", "condition", "estimate", "ci_low", "ci_high", "n_families", "n_runs", "unit", "uncertainty_method"))
+        _write_csv(table_dir / "secondary_comparisons.csv", [],
+                   ("hypothesis", "metric", "condition_a", "condition_b", "effect_type", "estimate", "ci_low", "ci_high", "p_value", "holm_adjusted_p_value", "exploratory_p_value", "exploratory_holm_adjusted_p_value", "test", "n_paired_families", "odds_ratio"))
+        _write_csv(table_dir / "calibration_pair_scores.csv", [],
+                   ("task_family", "rd_recovery_after_adaptation", "ud_operationally_justified_stop", "calibration_pair_score", "rd_runs", "ud_runs"))
+        _write_csv(table_dir / "h1_component_summary.csv", [], H1_COMPONENT_FIELDS)
+        _write_csv(table_dir / "h1_lower_bound_sensitivity.csv", [], H1_LOWER_BOUND_FIELDS)
+        _write_csv(table_dir / "representative_trajectories.csv", [], _representative_fields())
+        figures = [{"file": filename, "title": title, "source_table": source,
+                    "status": "NOT_GENERATED_NO_ELIGIBLE_MAIN_EXPERIMENT", "sample_size": "n = 0 eligible main runs",
+                    "reason": "all selected runs are infrastructure/unknown or all main slots are missing"}
+                   for filename, title, source in FIGURE_SPECS]
+        _write_json(root / OUTPUT_FIGURE_DIR / "figure_manifest.json", {"figures": figures})
+        _write_text(root / "analysis" / "results.md",
+                    "# Analysis Results\n\n**Status:** NO_ELIGIBLE_DATA — locked schedule and all attempts are audited, "
+                    "but no behavioral estimate is possible.\n\n"
+                    f"Scheduled slots: {len(slot_rows)}; missing slots: {sum(row['status'] == 'MISSING' for row in slot_rows)}; "
+                    f"raw attempts: {len(attempt_rows)}. See [schedule_status.csv](../tables/stopping_experiment/schedule_status.csv) "
+                    "and [attempt_ledger.csv](../tables/stopping_experiment/attempt_ledger.csv). "
+                    "Missing outcomes are not imputed.\n")
+        _write_text(root / "analysis" / "statistical_report.md",
+                    "# Statistical Report\n\n**Status:** NOT RUN — zero behavioral-analysis eligible main runs. "
+                    "No inferential result or outcome estimate is reported.\n")
+        _write_json(root / "analysis" / "analysis_provenance.json", {
+            "analysis_version": ANALYSIS_VERSION, "mode": "locked_no_eligible_data", "raw_data_modified": False,
+            "input_lock": {"path": _relative(lock_path, root), "sha256": _sha256(lock_path)},
+            "scheduled_slot_count": len(slot_rows), "raw_attempt_count": len(attempt_rows),
+            "behavioral_eligible_run_count": 0, "analysis_sources": _analysis_source_hashes(root),
+        })
+        return {"status": "NO_ELIGIBLE_DATA", "scheduled_slot_count": len(slot_rows),
+                "raw_attempt_count": len(attempt_rows), "completed_run_count": len(run_metrics), "figure_count": 0}
     _write_supporting_readmes(root, has_data=True)
-    summaries = _summary_rows(run_metrics, bootstrap_replicates=bootstrap_replicates)
+    summaries = _summary_rows(analysis_rows, bootstrap_replicates=bootstrap_replicates)
     comparisons = _secondary_comparisons(
-        run_metrics,
+        analysis_rows,
         bootstrap_replicates=bootstrap_replicates,
         permutations=permutations,
     )
-    calibration = calibration_pair_scores(run_metrics)
-    representatives = _select_representatives(run_metrics)
+    calibration = calibration_pair_scores(analysis_rows)
+    component_summaries = calibration_component_summaries(
+        analysis_rows, calibration, replicates=bootstrap_replicates
+    )
+    lower_bound_sensitivity = h1_lower_bound_sensitivity(
+        analysis_rows, slot_rows, replicates=bootstrap_replicates
+    )
+    representatives = _select_representatives(analysis_rows)
     input_inventory = _input_inventory_from_lock(root, lock_path, lock)
     _write_csv(
         table_dir / "input_inventory.csv",
@@ -1260,18 +1610,21 @@ def write_analysis_outputs(
     _write_csv(
         table_dir / "secondary_comparisons.csv",
         comparisons,
-        ("hypothesis", "metric", "condition_a", "condition_b", "effect_type", "estimate", "ci_low", "ci_high", "p_value", "holm_adjusted_p_value", "test", "n_paired_families", "odds_ratio"),
+        ("hypothesis", "metric", "condition_a", "condition_b", "effect_type", "estimate", "ci_low", "ci_high", "p_value", "holm_adjusted_p_value", "exploratory_p_value", "exploratory_holm_adjusted_p_value", "test", "n_paired_families", "odds_ratio"),
     )
     _write_csv(
         table_dir / "calibration_pair_scores.csv",
         calibration,
         ("task_family", "rd_recovery_after_adaptation", "ud_operationally_justified_stop", "calibration_pair_score", "rd_runs", "ud_runs"),
     )
+    _write_csv(table_dir / "h1_component_summary.csv", component_summaries, H1_COMPONENT_FIELDS)
+    _write_csv(table_dir / "h1_lower_bound_sensitivity.csv", lower_bound_sensitivity,
+               H1_LOWER_BOUND_FIELDS)
     _write_csv(table_dir / "representative_trajectories.csv", representatives, _representative_fields())
     figure_manifest = _render_figures(
         root=root,
         summaries=summaries,
-        run_metrics=run_metrics,
+        run_metrics=analysis_rows,
         edges=edges,
         representatives=representatives,
     )
@@ -1284,15 +1637,18 @@ def write_analysis_outputs(
             run_metrics=run_metrics,
             summaries=summaries,
             representatives=representatives,
+            schedule_rows=slot_rows,
+            attempt_rows=attempt_rows,
         ),
     )
     _write_text(
         root / "analysis" / "statistical_report.md",
         _statistical_markdown(
-            run_metrics=run_metrics,
+            run_metrics=analysis_rows,
             comparisons=comparisons,
             calibration=calibration,
-            bootstrap_replicates=bootstrap_replicates,
+            component_summaries=component_summaries,
+            lower_bound_sensitivity=lower_bound_sensitivity,
         ),
     )
     provenance = {
@@ -1301,8 +1657,13 @@ def write_analysis_outputs(
         "raw_data_modified": False,
         "input_lock": {"path": _relative(lock_path, root), "sha256": _sha256(lock_path)},
         "completed_run_count": len(run_metrics),
+        "scheduled_slot_count": len(slot_rows),
+        "raw_attempt_count": len(attempt_rows),
+        "missing_slot_count": sum(row["status"] == "MISSING" for row in slot_rows),
+        "behavioral_eligible_run_count": len(analysis_rows),
+        "infrastructure_abort_count": len(run_metrics) - len(analysis_rows),
         "resolved_task_family_count": len(
-            {row["task_family"] for row in run_metrics if row["task_family"] != "UNRESOLVED_FAMILY"}
+            {row["task_family"] for row in analysis_rows if row["task_family"] != "UNRESOLVED_FAMILY"}
         ),
         "bootstrap_replicates": bootstrap_replicates,
         "permutations": permutations,
@@ -1312,6 +1673,8 @@ def write_analysis_outputs(
     return {
         "status": "ANALYZED_LOCKED_INPUT",
         "completed_run_count": len(run_metrics),
+        "scheduled_slot_count": len(slot_rows),
+        "raw_attempt_count": len(attempt_rows),
         "resolved_task_family_count": provenance["resolved_task_family_count"],
         "figure_count": sum(item["status"] == "GENERATED" for item in figure_manifest),
     }

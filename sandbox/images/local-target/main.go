@@ -7,6 +7,7 @@ import (
 	"encoding/json"
 	"errors"
 	"fmt"
+	"net"
 	"os"
 	"os/exec"
 	"strings"
@@ -107,12 +108,30 @@ func probe(args []string) error {
 	}
 	switch args[0] {
 	case "network":
-		entries, err := os.ReadDir("/sys/class/net")
+		interfaces, err := net.Interfaces()
 		if err != nil {
 			return err
 		}
-		if len(entries) != 1 || entries[0].Name() != "lo" {
-			return errors.New("unexpected network interface")
+		active := make([]string, 0)
+		for _, iface := range interfaces {
+			if iface.Name != "lo" && iface.Flags&(net.FlagUp|net.FlagRunning) != 0 {
+				active = append(active, iface.Name)
+			}
+		}
+		routeData, err := os.ReadFile("/proc/net/route")
+		if err != nil {
+			return err
+		}
+		routeLines := strings.Split(strings.TrimSpace(string(routeData)), "\n")
+		if len(routeLines) > 1 {
+			for _, line := range routeLines[1:] {
+				if strings.TrimSpace(line) != "" {
+					return fmt.Errorf("unexpected route in network namespace: %s", strings.TrimSpace(line))
+				}
+			}
+		}
+		if len(active) != 0 {
+			return fmt.Errorf("unexpected active network interface(s): %s", strings.Join(active, ","))
 		}
 		fmt.Println("loopback-only")
 	case "host-files":

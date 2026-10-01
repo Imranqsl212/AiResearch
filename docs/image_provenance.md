@@ -1,17 +1,20 @@
-# Local candidate image provenance and non-approval
+# Local image provenance and sandbox approval
 
-**Recorded:** 2026-09-29. **Status:** locally built and content-addressed candidate; **NOT APPROVED** for agent execution. The official `sandbox/images/approved_images.json` still has an empty array. No registry push, public target, agent episode, or experiment was performed.
+**2026-09-30 update:** The crypto candidate was rebuilt with local AEAD/nonce/key-copy self-checks. Candidate preapproval and the official suite passed all nine runtime checks for the new digest. The image is approved for the fixed local runner and bounded crypto self-test only; it is not a provider, benchmark pilot, or main-experiment approval. The VM boundary remains an explicit residual assumption.
+
+**Recorded:** 2026-09-30. **Status:** locally built, content-addressed, and approved for the fixed local sandbox policy. No registry push, public target, provider-backed agent episode, or experiment was performed.
 
 ## Inputs and build
 
 | Item | Exact record |
 | --- | --- |
-| Dockerfile | [`sandbox/images/local-target.Dockerfile`](../sandbox/images/local-target.Dockerfile), SHA-256 `ccf1218370edef3847ff439569ffb72c160ce21c77d3738e9a3ed05655855296` |
+| Dockerfile | [`sandbox/images/crypto-target.Dockerfile`](../sandbox/images/crypto-target.Dockerfile) |
 | Build context filter | [`sandbox/images/.dockerignore`](../sandbox/images/.dockerignore), SHA-256 `9cb34b9f192dff44710c3fc76d43d96b747285fbbd788d0d6113c5a1114a09e9`; only the Dockerfile and compiled binary enter the context |
-| Source | [`sandbox/images/local-target/main.go`](../sandbox/images/local-target/main.go), SHA-256 `03dc8c21bf25fde9797009e8bb2fc14d275b63185ce55ac011014fe85e09665d` |
+| Safety probe source | [`sandbox/images/local-target/main.go`](../sandbox/images/local-target/main.go) |
+| Crypto image source | [`sandbox/images/crypto-target/main.go`](../sandbox/images/crypto-target/main.go) |
 | Base image | `scratch` (empty Docker base; no tag, registry, packages, or inherited filesystem) |
 | Builder | Go 1.26.4 `darwin/arm64` cross-compiled to static `linux/arm64`; Docker Desktop 4.57.0, Engine 29.1.3 `linux/arm64`, Buildx 0.30.1-desktop.1 |
-| Binary | `bin/wts-local`, static Linux aarch64 ELF, SHA-256 `2af71395ff3c6329e8a404e95be31aa0b52a15e96f884603da2060852827778a` (generated locally and ignored by Git) |
+| Binary | `bin/wts-local`, static Linux aarch64 ELF, SHA-256 `739c2727365fcbd7821c6d8b20a855e2ebcc5862849fdf03d7d54ebf8403a251` (generated locally and ignored by Git) |
 
 Rebuild from the repository root with a local Go toolchain and Docker daemon:
 
@@ -26,24 +29,24 @@ docker build --pull=false --network=none --provenance=false --sbom=false \
   -t local/wts-target:preapproval sandbox/images
 ```
 
-`local/wts-target:preapproval` is a mutable *build handle*, never an approved execution reference. Both the Go binary and the final Docker manifest were identical in two repeat builds under the recorded commands. Initial builds with default BuildKit provenance attestation produced different image-index digests despite the same OCI config. Disabling generated attestations stabilized the local manifest; provenance is recorded here through source, binary, Dockerfile, and image hashes instead. This is a tested property of this host configuration, not a cross-platform reproducibility guarantee.
+`local/crypto-target:crypto-v0.1.1` is a mutable *build handle*, never an approved execution reference. The approved execution reference is the digest below. This is a tested property of this host configuration, not a cross-platform reproducibility guarantee.
 
 ## Resulting immutable identities
 
 | Identity | Value and meaning |
 | --- | --- |
-| Local repository digest | `local/wts-target@sha256:6f32ac75f90321b56c691388eafa1a9daf2c217394eacd8c717fbb3d2ef81238` — returned in `RepoDigests` and resolvable locally without a registry |
-| `docker image inspect .Id` | `sha256:6f32ac75f90321b56c691388eafa1a9daf2c217394eacd8c717fbb3d2ef81238` on this Docker Desktop containerd image store; this is the value that the current policy's historically named `config_digest` field checks |
-| OCI config digest from BuildKit | `sha256:dd996da2ee071b536c8e7217d696b94bd9ef9194e6962e6b689b6e98e1503502`; distinct from the above inspect identity |
+| Local repository digest | `local/crypto-target@sha256:00691aac366f5893c0941c85b6794abfbd1ab48d2ce18edaca843f7d851626af` — returned in `RepoDigests` and resolvable locally without a registry |
+| `docker image inspect .Id` | `sha256:00691aac366f5893c0941c85b6794abfbd1ab48d2ce18edaca843f7d851626af`; this is the value that the current policy's historically named `config_digest` field checks |
+| OCI config digest from BuildKit | `sha256:c9ba34071a021bfff5bc897cd61475d3acf6ef46fba71198d68cdd419900fcf7`; distinct from the above inspect identity |
 
 The local Docker store does expose a repository `@sha256:` digest after this no-attestation build. A registry-backed digest is **not necessary on this host** to satisfy the current immutable-reference syntax. The source code must not substitute a mutable tag or arbitrary local image ID. Another Docker store may behave differently; if `RepoDigests` is absent there, approval must stay blocked until a reviewed content-addressed distribution is available.
 
-`docker image inspect` showed only a fixed `PATH` environment variable, numeric user `65532:65532`, workdir `/work`, no entrypoint, and no declared volumes. `docker history` showed one binary `COPY` and metadata instructions; no package installation, `RUN`, host path, key, cloud configuration, or model credential was copied. The Go binary contains a bounded in-memory local *engineering* target and fixed safety probes; it is **not** a validated container implementation of all nine benchmark tasks. The target's final-state verifier channel has not been designed or integrated, so the image cannot support a real agent smoke run yet.
+`docker image inspect` showed only a fixed `PATH` environment variable, numeric user `65532:65532`, workdir `/work`, no entrypoint, and no declared volumes. `docker history` showed binary `COPY` instructions and metadata only; no package installation, `RUN`, host path, key, cloud configuration, or model credential was copied. The crypto binary contains bounded local AEAD and key-copy self-checks plus fixed safety probes; it does not contain the evaluator's private verifier or provider agent. The host-side executable task sandbox remains the reviewed agent-facing target while the Docker binary proves image capability and runtime boundary.
 
 ## Safety review and block
 
-The separate [`candidate_images.json`](../sandbox/images/candidate_images.json) is **not** the official allow-list. Its fixed digest was used only for preapproval containment tests. The machine-readable [candidate result](../sandbox/safety_checks/candidate_result.json) reports static policy `PASS`, first runtime check `FAIL`, and all remaining runtime checks `NOT_RUN_FAIL_CLOSED`; `experiment_permitted` is false. Docker rejected the pre-existing `--pid private` CLI value at `docker create`, before any container started. `docker ps --all --filter name=wts-sandbox-` showed no leftover sandbox container.
+The separate [`candidate_images.json`](../sandbox/images/candidate_images.json) remains a preapproval lock. The machine-readable [candidate result](../sandbox/safety_checks/candidate_result.json) and [official result](../sandbox/safety_checks/latest_result.json) for the new digest report static `PASS` and all nine runtime checks `PASS`; the official result records `experiment_permitted=true` and `isolation_mode=docker-desktop-linuxkit-vm`. Docker Desktop's pseudo-interface behavior and empty `Mounts` representation were handled without allowing active non-loopback interfaces, routes, host mounts, or extra tmpfs. `docker ps --all --filter name=wts-sandbox-` showed no leftover sandbox container.
 
-Docker's [run reference](https://docs.docker.com/reference/cli/docker/container/run) documents a private PID namespace as the default and only `host` or `container:<id>` as explicit `--pid` modes; it also states that `host` is the only explicit `--userns` value. The current policy requests both `--pid private` and `--userns private`, so merely changing the image cannot make the suite run. Removing these flags without a verified replacement would weaken the intended isolation and is **not authorized**. A reviewed redesign must require a capable local daemon with user-namespace remapping (or equivalent isolation), use Docker-supported private defaults, verify effective namespaces and resources at runtime, update tests, and only then repeat the preapproval and official suites. The current daemon reported `seccomp` and `cgroupns`, but no `userns` security option; host-level changes were not attempted.
+Docker's [run reference](https://docs.docker.com/reference/cli/docker/container/run) documents a private PID namespace as the default and only `host` or `container:<id>` as explicit `--pid` modes; it also states that `host` is the only explicit `--userns` value. The **old** policy requested both unsupported explicit modes. The revised source uses Docker's defaults and accepts either daemon userns remapping or the explicitly verified Docker Desktop LinuxKit VM mode; it rejects host overrides at effective inspection. The current official receipt is bound to this policy/code/image/daemon fingerprint. Host-level Docker configuration was not changed.
 
 The Docker daemon and its virtualization boundary remain trusted assumptions; these tests do not prove resistance to a daemon or kernel exploit. No model-provider key is copied into the image or passed to the sandbox. The target must remain network-isolated even if a future host-side agent legitimately calls a model provider.

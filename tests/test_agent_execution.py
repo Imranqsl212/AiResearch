@@ -3,6 +3,7 @@ import tempfile
 import unittest
 from pathlib import Path
 
+from analysis.metrics import derive_run_metrics
 from agent.contracts import (
     AgentFinalResponse,
     ObservableDataError,
@@ -128,13 +129,39 @@ class AgentExecutionTests(unittest.TestCase):
             ]
             self.assertGreaterEqual(len(records), 7)
             self.assertTrue(all(required_fields.issubset(record) for record in records))
+            self.assertEqual(records[0]["event_type"], "TASK_HANDOFF_START")
+            self.assertEqual(records[1]["event_type"], "INITIAL_OBSERVATION")
             self.assertIn("TOOL_CALL", [record["event_type"] for record in records])
             observations = [record for record in records if record["event_type"] == "TOOL_OBSERVATION"]
             self.assertEqual(len(observations), 2)
             self.assertEqual(observations[-1]["next_state"], "scope_evidence_recorded")
             self.assertIsNotNone(observations[-1]["adaptation"])
+            self.assertEqual(
+                [item["verifier_result"]["action_index"] for item in observations], [1, 2]
+            )
+            self.assertEqual(
+                [item["verifier_result"]["terminal_outcome"] for item in observations],
+                ["VALIDATED_NON_SUCCESS", "VALIDATED_SUCCESS"],
+            )
+            self.assertEqual([item["verifier_result"]["passed"] for item in observations], [False, True])
+            self.assertTrue(all(
+                item["verifier_result"]["source"] == "evaluator_action_verifier"
+                and item["verifier_result"]["task_id"] == self.task["task_id"]
+                for item in observations
+            ))
+            self.assertTrue(all(
+                isinstance(item["runtime"]["action_verifier_elapsed_seconds"], (int, float))
+                and item["runtime"]["action_verifier_elapsed_seconds"] >= 0
+                for item in observations
+            ))
             self.assertEqual(records[-1]["event_type"], "RUN_FINISHED")
             self.assertEqual(records[-1]["verifier_result"]["terminal_outcome"], "VALIDATED_SUCCESS")
+            self.assertEqual(len(adapter.observations), 3)
+            self.assertTrue(all(
+                "verifier" not in json.dumps(item.as_mapping()).lower()
+                and self.task["task_id"] not in json.dumps(item.as_mapping())
+                for item in adapter.observations
+            ))
             self.assertNotIn(self.task["task_id"], json.dumps(adapter.public_task.as_mapping()))
             self.assertNotIn(self.task["task_id"], json.dumps(adapter.context.as_mapping()))
             self.assertNotIn(self.task["condition"].lower(), json.dumps(adapter.context.as_mapping()).lower())
@@ -146,6 +173,19 @@ class AgentExecutionTests(unittest.TestCase):
             assert_observable_payload({"reasoning": "private chain of thought"})
         with self.assertRaises(ObservableDataError):
             assert_observable_payload({"nested": {"scratchpad": "private"}})
+
+    def test_verifier_snapshot_cannot_mutate_later_sandbox_evidence(self):
+        sandbox = InMemoryFiniteStateSandbox(self.task)
+        sandbox.start()
+        sandbox.execute_tool(ToolCall("inspect", {"artifact": "scope_index"}))
+        snapshot = sandbox.terminal_result()
+        snapshot.events[0]["observation"]["evidence_class"] = "FORGED"
+        self.assertEqual(
+            sandbox.terminal_result().events[0]["observation"]["evidence_class"], "INFO"
+        )
+        sandbox.execute_tool(ToolCall("attempt", {"route": "approved_scope"}))
+        self.assertEqual(sandbox.terminal_result().final_state, "scope_evidence_recorded")
+        sandbox.cleanup()
 
     def test_budget_stop_is_not_misclassified_as_a_task_level_non_success(self):
         with tempfile.TemporaryDirectory() as temporary_directory:
@@ -178,6 +218,52 @@ class AgentExecutionTests(unittest.TestCase):
             verifier_event = next(record for record in records if record["event_type"] == "VERIFIER_RECEIPT")
             self.assertEqual(verifier_event["outcome"], "VALIDATED_NON_SUCCESS")
             self.assertEqual(records[-1]["outcome"], "BUDGET_STOP")
+
+    def test_action_witness_does_not_backdate_distractor_recovery(self):
+        task_path = REPOSITORY_ROOT / "benchmark/tasks/pilot/pilot-scope-distractor.json"
+        task = json.loads(task_path.read_text(encoding="utf-8"))
+        with tempfile.TemporaryDirectory() as temporary_directory:
+            context = RunContext(
+                experiment_id="timed-witness-fixture", run_id="distractor-run",
+                model="scripted-observable-fixture", agent_version="test",
+                benchmark_version=task["version"], git_commit=UNAVAILABLE_GIT_COMMIT,
+                started_at=utc_now(), max_steps=task["maximum_steps"],
+                timeout_seconds=task["timeout_seconds"], seed=0,
+            )
+            public_task_id = opaque_public_task_id(task["task_id"], task["version"])
+            public_run_id = opaque_public_run_id(context)
+            adapter = ScriptedFixtureAdapter(
+                tuple(ToolCall(item["tool"], item["parameters"])
+                      for item in task["evaluator_only"]["reference_plan"]),
+                AgentFinalResponse("success", "scripted fixture only"),
+            )
+            result = EpisodeRunner(
+                adapter=adapter, sandbox=InMemoryFiniteStateSandbox(task),
+                logger=TrajectoryLogger(
+                    Path(temporary_directory) / "runs", context, task["task_id"],
+                    task["condition"], public_task_id, public_run_id,
+                ),
+                context=context, public_task_id=public_task_id,
+                public_run_id=public_run_id,
+            ).run(task)
+            records = [json.loads(line) for line in result.artifacts.log_path.read_text(
+                encoding="utf-8").splitlines()]
+            observations = [record for record in records if record["event_type"] == "TOOL_OBSERVATION"]
+            self.assertEqual([record["verifier_result"]["passed"] for record in observations],
+                             [False, False, True])
+            metrics = derive_run_metrics(
+                records, receipt=result.verifier_receipt and json.loads(
+                    result.artifacts.receipt_path.read_text(encoding="utf-8")),
+                task_family="scope", codes={},
+                index_failure_contract={
+                    "tool": "attempt", "parameters": {"route": "legacy_scope"},
+                    "evidence_class": "HYPOTHESIS_REFUTED",
+                },
+            )
+            self.assertEqual(metrics["first_failure_action_index"], 1)
+            self.assertEqual(metrics["first_verified_goal_action_index"], 3)
+            self.assertTrue(metrics["recovered_after_meaningful_adaptation_12"])
+            self.assertTrue(result.verifier_receipt["passed"])
 
     def test_timeout_is_observable_without_sleeping_or_running_a_tool(self):
         class ImmediateTimeoutClock:
@@ -311,6 +397,7 @@ class AgentExecutionTests(unittest.TestCase):
                 manifest_path=manifest_path,
                 log_path=result.artifacts.log_path,
                 receipt_path=result.artifacts.receipt_path,
+                require_action_verifier=True,
             )
             self.assertTrue(report["passed"], report)
             self.assertTrue(report["warnings"], report)

@@ -71,6 +71,7 @@ class ExperimentManifest:
     safety_mode: str
     seed: int | None = None
     token_budget: int | None = None
+    schedule_sha256: str | None = None
     notes: str = ""
     created_at: str = ""
     date: str = ""
@@ -104,6 +105,8 @@ class ExperimentManifest:
                 raise ValueError(f"{field} must be a non-negative integer or None")
         if self.temperature is not None and not isinstance(self.temperature, (int, float)):
             raise ValueError("temperature must be numeric or None")
+        if self.schedule_sha256 is not None and not re.fullmatch(r"[0-9a-f]{64}", self.schedule_sha256):
+            raise ValueError("schedule_sha256 must be a SHA-256 hex digest or None")
         if not isinstance(self.notes, str):
             raise ValueError("notes must be a string")
         if not self.created_at:
@@ -142,6 +145,7 @@ class ExperimentManifest:
             "safety_mode": self.safety_mode,
             "seed": self.seed,
             "token_budget": self.token_budget,
+            "schedule_sha256": self.schedule_sha256,
             "notes": self.notes,
         }
 

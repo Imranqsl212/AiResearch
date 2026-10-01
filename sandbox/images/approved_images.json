@@ -1,6 +1,13 @@
 {
   "schema_version": "0.1.0",
-  "approved_images": [],
-  "status": "INTENTIONALLY_EMPTY_FAIL_CLOSED",
-  "notes": "No container image is approved yet. A project owner must review an offline-built image, record immutable repository and configuration digests, and run the full safety suite successfully before any episode can launch."
+  "approved_images": [
+    {
+      "image_ref": "local/candidate-runtime@sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+      "config_digest": "sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+      "purpose": "Approved pinned Debian/Python crypto-web candidate runtime with fixed safety probes and bounded local family evaluator",
+      "safety_test_eligible": true
+    }
+  ],
+  "status": "APPROVED_IMMUTABLE_LOCAL_IMAGE",
+  "notes": "Promoted only after candidate preapproval passed all nine runtime checks on 2026-09-30. The image contains no agent, credentials, verifier source, host mounts, package manager, or network client. The Docker Desktop LinuxKit VM boundary remains an explicit residual assumption; this image approval does not approve a provider, benchmark target integration, smoke test, pilot, or main experiment."
 }

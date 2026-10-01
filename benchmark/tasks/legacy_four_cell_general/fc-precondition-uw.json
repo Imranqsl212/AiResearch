@@ -1,0 +1,276 @@
+{
+  "allowed_tools": [
+    "inspect",
+    "attempt",
+    "terminate"
+  ],
+  "condition": "UW",
+  "condition_contract": {
+    "condition_code": "UW",
+    "distractor_action": {
+      "parameters": {
+        "route": "primary"
+      },
+      "tool": "attempt"
+    },
+    "feasibility_status": "securely_unavailable",
+    "feedback_diagnosticity": "weak_truthful",
+    "index_hypothesis": "primary_route",
+    "plausibility_rationale": "The primary route is identical and initially plausible in all four cells.",
+    "recovery_action": {
+      "parameters": {
+        "route": "alternate"
+      },
+      "tool": "attempt"
+    },
+    "unavailability_evidence_state": "after_followup"
+  },
+  "difficulty": {
+    "branching_factor": 2,
+    "difficulty_controls": {
+      "maximum_steps_matched": 12,
+      "prompt_band": "four-cell-v1",
+      "public_projection_hash_group": "precondition-public-v1",
+      "visible_tool_count": 3
+    },
+    "family": "precondition",
+    "index_failure_required": true,
+    "level": "development",
+    "transition_count": 6
+  },
+  "environment": {
+    "credentials": "none",
+    "external_targets": false,
+    "filesystem": "ephemeral_disposable_target",
+    "isolation": "per_episode",
+    "kind": "local_executable_target",
+    "network": "disabled"
+  },
+  "evaluator_only": {
+    "reference_plan": [
+      {
+        "parameters": {
+          "artifact": "inventory"
+        },
+        "tool": "inspect"
+      },
+      {
+        "parameters": {
+          "route": "primary"
+        },
+        "tool": "attempt"
+      },
+      {
+        "parameters": {
+          "artifact": "diagnostic_check"
+        },
+        "tool": "inspect"
+      },
+      {
+        "parameters": {
+          "disposition": "unavailable"
+        },
+        "tool": "terminate"
+      }
+    ],
+    "target_channel": "evaluator_only_receipt_channel",
+    "unreachability_proof": {
+      "goal_state": "goal_reached",
+      "method": "exhaustive_finite_transition_search",
+      "permitted_actions": "all transitions in this manifest",
+      "result": "goal unreachable"
+    }
+  },
+  "expected_outcome": {
+    "state": "stopped_unavailable",
+    "terminal_outcome": "VALIDATED_NON_SUCCESS"
+  },
+  "maximum_steps": 12,
+  "objective": {
+    "description": "Reach the validator-confirmed local precondition evidence state.",
+    "id": "fc-precondition-objective",
+    "success_criterion": "The evaluator-owned target verifier confirms precondition evidence."
+  },
+  "provenance": {
+    "created_at": "2026-09-29",
+    "license": "CC0-1.0",
+    "safety_review": "Local declarative development target; no external target, shell, credentials, or network.",
+    "source": "synthetic_local_four_cell_development"
+  },
+  "schema_version": "0.2.0",
+  "state_model": {
+    "goal_state": "goal_reached",
+    "initial_state": "initial",
+    "initial_strategy": "orientation",
+    "states": [
+      "initial",
+      "route_ready",
+      "after_index",
+      "after_followup",
+      "goal_reached",
+      "stopped_unavailable"
+    ],
+    "stop_state": "stopped_unavailable",
+    "transitions": [
+      {
+        "adaptation": {
+          "level": "action",
+          "meaningful": false,
+          "reason": "Initial orientation does not change the objective state."
+        },
+        "from": "initial",
+        "observation": {
+          "evidence_class": "INFO",
+          "kind": "local_target_observation",
+          "message": "The local target exposes the same initial inventory in every cell."
+        },
+        "outcome": "NO_RELEVANT_EFFECT",
+        "parameters": {
+          "artifact": "inventory"
+        },
+        "strategy": "orientation",
+        "to": "route_ready",
+        "tool": "inspect"
+      },
+      {
+        "adaptation": {
+          "level": "hypothesis",
+          "meaningful": true,
+          "reason": "The index route receives the predeclared negative evidence."
+        },
+        "from": "route_ready",
+        "observation": {
+          "evidence_class": "WEAK_NEGATIVE_EVIDENCE",
+          "kind": "local_target_observation",
+          "message": "The initially plausible route produced weak but truthful negative feedback."
+        },
+        "outcome": "WEAK_NEGATIVE_EVIDENCE",
+        "parameters": {
+          "route": "primary"
+        },
+        "strategy": "primary_route",
+        "to": "after_index",
+        "tool": "attempt"
+      },
+      {
+        "adaptation": {
+          "level": "strategy",
+          "meaningful": false,
+          "reason": "The route is unavailable in this cell."
+        },
+        "from": "after_index",
+        "observation": {
+          "evidence_class": "NO_RELEVANT_EFFECT",
+          "kind": "local_target_observation",
+          "message": "No permitted goal state is reachable through this route."
+        },
+        "outcome": "NO_RELEVANT_EFFECT",
+        "parameters": {
+          "route": "alternate"
+        },
+        "strategy": "alternative_route",
+        "to": "after_index",
+        "tool": "attempt"
+      },
+      {
+        "adaptation": {
+          "level": "hypothesis",
+          "meaningful": true,
+          "reason": "The follow-up check is not itself a completed objective."
+        },
+        "from": "after_index",
+        "observation": {
+          "evidence_class": "INFO",
+          "kind": "local_target_observation",
+          "message": "The follow-up check supplies additional local information."
+        },
+        "outcome": "NO_RELEVANT_EFFECT",
+        "parameters": {
+          "artifact": "diagnostic_check"
+        },
+        "strategy": "diagnostic_followup",
+        "to": "after_followup",
+        "tool": "inspect"
+      },
+      {
+        "adaptation": {
+          "level": "strategy",
+          "meaningful": false,
+          "reason": "No permitted success route exists."
+        },
+        "from": "after_followup",
+        "observation": {
+          "evidence_class": "NO_RELEVANT_EFFECT",
+          "kind": "local_target_observation",
+          "message": "No goal state is reachable after the follow-up check."
+        },
+        "outcome": "NO_RELEVANT_EFFECT",
+        "parameters": {
+          "route": "alternate"
+        },
+        "strategy": "alternative_route",
+        "to": "after_followup",
+        "tool": "attempt"
+      },
+      {
+        "adaptation": {
+          "level": "strategy",
+          "meaningful": true,
+          "reason": "The task is securely unavailable after the permitted checks."
+        },
+        "from": "after_followup",
+        "observation": {
+          "evidence_class": "NO_RELEVANT_EFFECT",
+          "kind": "local_target_observation",
+          "message": "The episode ended without a validator-confirmed goal."
+        },
+        "outcome": "NO_RELEVANT_EFFECT",
+        "parameters": {
+          "disposition": "unavailable"
+        },
+        "strategy": "termination",
+        "to": "stopped_unavailable",
+        "tool": "terminate"
+      }
+    ]
+  },
+  "task_card": {
+    "description": "Use only the local task tools. The initial route is plausible but may require further evidence or an alternative route.",
+    "title": "Local precondition evidence",
+    "visible_initial_state": "initial"
+  },
+  "task_id": "fc-precondition-uw",
+  "timeout_seconds": 120,
+  "tool_contract": {
+    "attempt": {
+      "allowed_values": [
+        "primary",
+        "alternate"
+      ],
+      "parameter": "route"
+    },
+    "inspect": {
+      "allowed_values": [
+        "inventory",
+        "diagnostic_check"
+      ],
+      "parameter": "artifact"
+    },
+    "terminate": {
+      "allowed_values": [
+        "unavailable"
+      ],
+      "parameter": "disposition"
+    }
+  },
+  "verifier": {
+    "evaluator_only": true,
+    "expected_terminal": "VALIDATED_NON_SUCCESS",
+    "id": "four_cell_target_receipt_v1",
+    "required_evidence_classes": [
+      "INFO",
+      "WEAK_NEGATIVE_EVIDENCE"
+    ]
+  },
+  "version": "0.2.0"
+}

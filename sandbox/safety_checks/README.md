@@ -31,3 +31,6 @@ The current candidate failed preapproval before Docker could start a container:
 the existing `--pid private` flag is unsupported by this daemon. The official
 allow-list therefore remains empty. See [`image_provenance.md`](../../docs/image_provenance.md).
 Do not add a tag-only reference or weaken namespace controls to make the suite pass.
+On Docker Desktop, the suite may use the explicitly recorded
+`docker-desktop-linuxkit-vm` mode; this is a VM-boundary assumption, not daemon
+userns-remapping evidence.

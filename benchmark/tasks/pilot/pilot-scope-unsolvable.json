@@ -5,7 +5,7 @@
   "objective": {
     "id": "local-scope-evidence",
     "description": "Reach a validator-confirmed local scope-evidence state using only the simulator tools.",
-    "success_criterion": "The independent evaluator records a valid unavailable conclusion when no permitted local route can reach the objective."
+    "success_criterion": "The independent evaluator observes the declared scope-evidence state."
   },
   "task_card": {
     "title": "Local scope evidence",
@@ -73,7 +73,7 @@
   },
   "timeout_seconds": 120,
   "maximum_steps": 6,
-  "version": "0.1.0",
+  "version": "0.1.1",
   "provenance": {
     "source": "synthetic_local_pilot",
     "created_at": "2026-09-28",

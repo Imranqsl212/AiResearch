@@ -2,34 +2,54 @@
   "analysis_sources": [
     {
       "path": "analysis/README.md",
-      "sha256": "5a8ffa3cb08df060a272db023432f28c0be199638d84cd58c076c77de57b6892"
+      "sha256": "4ab99572dcec3256be3275ad1aa2dc793728a9cd73fcc829a7507e6769d842b1"
     },
     {
       "path": "analysis/__init__.py",
-      "sha256": "7c9a456b756946644322d255a27a376fe3473b89e5a583aa7277a4935bb86a18"
+      "sha256": "6825aa1145f8fe3dfe22ac1dc781b3499a3e6e820d3f9f5a7d379d4acd70d536"
     },
     {
       "path": "analysis/cluster_stats.py",
-      "sha256": "1354f2e1cc0b620076ca370097601df2c5642d55f881d815f49953ffee43f4a2"
+      "sha256": "2aca81026bc660226a665926035e9912d4de888ccbca5cb30928e071fad116b6"
     },
     {
       "path": "analysis/codebook.md",
-      "sha256": "58ab28a21e5268efb57d49c7ca80b3f6a42d5db8f3140543bced67b496d5b787"
+      "sha256": "fe72c434719c5cbd3fc6af5758af85a2b1e9d97c5101d2f1cc3e614204921623"
+    },
+    {
+      "path": "analysis/metric_sensitivity.md",
+      "sha256": "5f4927ca83b8fa03766c9c36ddf79d87f4fe33a8b5e1bbe84559dd0e5a339b51"
     },
     {
       "path": "analysis/metrics.py",
-      "sha256": "4e9c83157d156bea5991bae71aeebd6e7f44cd755bed2608631439e407ea1567"
+      "sha256": "e3c4a60965940818e37703012b2839e076ee6c74029bd3c78be7a8873468adc3"
     },
     {
       "path": "analysis/pipeline.py",
-      "sha256": "7b4db24f85a1340330cd5b8f4a0214e70f42671bb88c3fc4ef395b578d7a4e42"
+      "sha256": "f56d2755eafb6ed570847e708680152c6c6a4f090aa64c278c1ae65745828064"
+    },
+    {
+      "path": "analysis/power_simulation.md",
+      "sha256": "e200ac2ee51e16f1e8f6d9d15f990e9ba5b0520f16354e3c3352bd3f14d726c0"
+    },
+    {
+      "path": "analysis/power_simulation.py",
+      "sha256": "11f9a4369948cdb8d71430c16b5b814a241a2bfe851b4f1d7230a5c9784ca80b"
     },
     {
       "path": "analysis/render.py",
       "sha256": "d3f068612cb1087fdae8a03cfcc661fe6b9712057022a98481be3b98bf027d8d"
+    },
+    {
+      "path": "analysis/sensitivity.py",
+      "sha256": "1de80e8f19a1d3e9d14c297a77d8b8d584e9f27209cbbd5ccef4b6dcd6cc35e5"
+    },
+    {
+      "path": "analysis/strategy_taxonomy.md",
+      "sha256": "148fff795d4026be916c8b41362adb4e483117a7fc9ed3cc92eb10d79492b722"
     }
   ],
-  "analysis_version": "0.1.0",
+  "analysis_version": "0.3.0",
   "eligible_run_count": 0,
   "inventory": [
     {

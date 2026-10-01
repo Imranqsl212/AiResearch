@@ -39,7 +39,7 @@ agent behavior data.
 | --- | --- | --- |
 | Benchmark task pool | BLOCKED | Only nine tasks exist (three per condition), rather than a reviewed 30–40-task pool. |
 | Task and verifier validation | PARTIAL | Static task-quality and verifier checks pass for the nine local fixture tasks only. |
-| Safety validation | BLOCKED | The safety suite fails closed: all nine runtime checks are `NOT_RUN_FAIL_CLOSED` because the approved-image lock contains no reviewed, immutable, safety-test-eligible image. |
+| Safety validation | BLOCKED | The safety suite fails closed: all nine runtime checks are `NOT_RUN_FAIL_CLOSED` because the Docker socket is inaccessible in this permission profile and the approved-image lock contains no reviewed, immutable, safety-test-eligible image. |
 | Agent implementation | BLOCKED | The only installed adapter is the deterministic `ScriptedFixtureAdapter`; no provider-backed research-agent adapter is configured. |
 | Final configuration manifest | NOT CREATED | A main-study manifest cannot truthfully freeze an unavailable agent, incomplete task pool, or absent Git revision. |
 | Preregistration freeze | NOT READY | The current preregistration describes the planned study, but a final execution snapshot has not been frozen alongside a valid manifest. |

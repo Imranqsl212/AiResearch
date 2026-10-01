@@ -4,7 +4,7 @@ On 2026-09-29, at the user's direction, legacy **AVB-Bench / Beyond Automated Sc
 
 `/Users/imranmzakirov/.Trash/when-to-stop-legacy-avb-2026-09-29/`
 
-This was a move, not permanent deletion. No file was overwritten. The archive retains 47 top-level entries plus `docs/` (8 files), `figures/` (10 files), and `tests/` (1 file): 66 direct archived entries in total. Some top-level entries are directories containing additional files. Emptying the macOS Trash would make recovery harder; restore from this folder if any item is needed later.
+This was a move, not permanent deletion. No file was overwritten. After the additional cleanup below, the archive retains 48 top-level entries plus `docs/` (9 files), `figures/` (10 files), and `tests/` (1 file): 68 direct archived entries in total. Some top-level entries are directories containing additional files. Emptying the macOS Trash would make recovery harder; restore from this folder if any item is needed later.
 
 ## What was moved
 
@@ -16,3 +16,14 @@ This was a move, not permanent deletion. No file was overwritten. The archive re
 - The former AVB-v2 test `tests/test_v2_pipeline.py`; the current When-to-Stop test suite remains.
 
 The current `agent/`, `analysis/`, `benchmark/`, `docs/`, `experiments/`, `literature/`, `paper/`, `sandbox/`, `tables/`, and relevant `figures/` files were retained. The cleanup changes project scope, not the preregistered hypotheses. Raw experiment data were not discarded; the only current stored trajectory is the scripted fixture.
+
+## Additional stale current-project files moved
+
+After reviewing Git references and contents, two more tracked files were moved
+recoverably to the same Trash archive: the outdated `docs/PROJECT_STATUS.md`
+(which described the removed AVB-Bench package as the *current* checkout) and
+the redundant `paper/draft.md` (archived there as `paper-draft-legacy.md`).
+The live roadmap was updated instead of removed because the literature review
+and research-gap assessment link to it. The current manuscript remains
+`paper/final.md`. These two moves are uncommitted working-tree deletions;
+GitHub will not change until the project owner reviews and commits/pushes them.

@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+import hashlib
 import uuid
 from datetime import UTC, datetime
 from pathlib import Path
@@ -17,12 +18,15 @@ from sandbox.policy import (
     approved_images,
     docker_create_arguments,
     policy_fingerprint,
+    safety_code_fingerprint,
+    tmpfs_mount_options,
 )
 from sandbox.runner import DockerSandboxRunner, SafetyViolation, SandboxRunResult
 
 
 SAFETY_CHECK_ROOT = Path(__file__).resolve().parent
 LATEST_REPORT_PATH = SAFETY_CHECK_ROOT / "latest_result.json"
+CANDIDATE_LOCK_PATH = SAFETY_CHECK_ROOT.parent / "images" / "candidate_images.json"
 RUNTIME_CHECK_IDS = (
     "external_network_blocked",
     "host_files_unmounted",
@@ -33,6 +37,7 @@ RUNTIME_CHECK_IDS = (
     "runaway_process_terminated",
     "logs_retained",
     "reproducible_state",
+    "candidate_runtime_isolated",
 )
 
 
@@ -81,15 +86,15 @@ def static_policy_check() -> dict[str, Any]:
         "--memory-swap": str(LIMITS.memory_bytes),
         "--cpus": f"{LIMITS.cpu_cores:.2f}",
         "--ipc": "none",
-        "--pid": "private",
         "--cgroupns": "private",
-        "--userns": "private",
         "--restart": "no",
         "--log-driver": "none",
     }
     for flag, expected in expected_pairs.items():
         if _argument_value(arguments, flag) != [expected]:
             errors.append(f"{flag} is not fixed to {expected!r}")
+    if "--pid" in arguments or "--userns" in arguments:
+        errors.append("Docker PID/user namespaces must inherit reviewed private daemon defaults")
     if "--read-only" not in arguments or "--pull=never" not in arguments or "--rm" not in arguments or "--init" not in arguments:
         errors.append("read-only root filesystem, no-pull policy, auto-removal, or init process is absent")
     if any(flag in arguments for flag in ("--privileged", "--mount", "--volume", "-v", "--device", "--add-host")):
@@ -122,13 +127,14 @@ def _eligible_test_image(image_lock_path: Path) -> Any:
     return eligible[0]
 
 
-def _request(image_ref: str, check_id: str, command: tuple[str, ...], timeout_seconds: int = 10) -> SandboxRunRequest:
+def _request(image_ref: str, check_id: str, command: tuple[str, ...], timeout_seconds: int = 10, stdin_payload: bytes = b"") -> SandboxRunRequest:
     return SandboxRunRequest(
         run_id=f"safety-{check_id[:24]}-{uuid.uuid4().hex[:12]}",
         task_id="safety-fixture",
         image_ref=image_ref,
         command=command,
         timeout_seconds=timeout_seconds,
+        stdin_payload=stdin_payload,
     )
 
 
@@ -136,7 +142,7 @@ def _run_with_snapshot(
     runner: DockerSandboxRunner, request: SandboxRunRequest
 ) -> tuple[SandboxRunResult, Mapping[str, Any]]:
     snapshots: list[Mapping[str, Any]] = []
-    result = runner.run(request, on_prestart=snapshots.append)
+    result = runner.run_safety_probe(request, on_prestart=snapshots.append)
     if len(snapshots) != 1:
         raise SafetyViolation("container did not produce exactly one pre-start inspected configuration")
     return result, snapshots[0]
@@ -148,7 +154,10 @@ def _runtime_fingerprint(snapshot: Mapping[str, Any]) -> str:
     mounts = snapshot.get("Mounts", [])
     canonical = {
         "config": {
-            "Env": config.get("Env"),
+            # Docker Desktop may return the exact allow-list in a different
+            # order on otherwise identical creates; order is not a security
+            # property and must not fail reproducibility.
+            "Env": sorted(config.get("Env") or []),
             "Image": config.get("Image"),
             "User": config.get("User"),
             "WorkingDir": config.get("WorkingDir"),
@@ -207,15 +216,27 @@ def _network_check(runner: DockerSandboxRunner, image_ref: str) -> dict[str, Any
     )
     _assert_completed(result)
     networks = snapshot.get("NetworkSettings", {}).get("Networks")
-    if networks not in ({}, None):
-        raise SafetyViolation("Docker reports a network attachment")
+    if networks:
+        if not isinstance(networks, Mapping) or set(networks) != {"none"}:
+            raise SafetyViolation("Docker reports a network attachment")
+        none_network = networks.get("none")
+        if not isinstance(none_network, Mapping):
+            raise SafetyViolation("Docker none network record is invalid")
+        nonempty = {
+            key: value
+            for key, value in none_network.items()
+            if key not in {"Aliases", "DNSNames", "DriverOpts", "IPAMConfig", "Links"}
+            and value not in (None, "", [], {}, 0, False)
+        }
+        if nonempty:
+            raise SafetyViolation("Docker none network has an endpoint or address")
     if "loopback-only" not in Path(result.log_path).read_text(encoding="utf-8"):
         raise SafetyViolation("in-container network probe did not confirm loopback-only interfaces")
     return _result(
         "external_network_blocked",
         True,
         "PASS",
-        "The container had network mode none, no Docker network attachment, and no eth0 interface. No public address was contacted.",
+        "The container had network mode none, no active non-loopback interface, and no route. No public address was contacted.",
         container_removed=result.container_removed,
     )
 
@@ -231,16 +252,21 @@ def _host_files_check(runner: DockerSandboxRunner, image_ref: str) -> dict[str, 
     )
     _assert_completed(result)
     mounts = snapshot.get("Mounts", [])
-    if any(not isinstance(mount, Mapping) or mount.get("Type") != "tmpfs" for mount in mounts):
-        raise SafetyViolation("a non-tmpfs mount was present")
+    if mounts:
+        if any(not isinstance(mount, Mapping) or mount.get("Type") != "tmpfs" for mount in mounts):
+            raise SafetyViolation("a non-tmpfs mount was present")
+    else:
+        host_config = snapshot.get("HostConfig", {})
+        if not isinstance(host_config, Mapping) or host_config.get("Tmpfs") != tmpfs_mount_options():
+            raise SafetyViolation("Docker did not expose the exact bounded tmpfs policy")
     if "no-host-mount-read-only" not in Path(result.log_path).read_text(encoding="utf-8"):
         raise SafetyViolation("in-container filesystem probe did not confirm a read-only root")
     return _result(
         "host_files_unmounted",
         True,
         "PASS",
-        "Docker inspect found only /tmp and /work tmpfs mounts; the read-only root probe could not write a host-like path.",
-        mounts=[mount.get("Destination") for mount in mounts if isinstance(mount, Mapping)],
+        "Docker inspect found only the exact bounded /tmp and /work tmpfs policy; the read-only root probe could not write a host-like path.",
+        mounts=[mount.get("Destination") for mount in mounts if isinstance(mount, Mapping)] or sorted(tmpfs_mount_options()),
     )
 
 
@@ -397,21 +423,56 @@ def _reproducibility_check(runner: DockerSandboxRunner, image_ref: str) -> dict[
     )
 
 
+def _candidate_runtime_check(runner: DockerSandboxRunner, image_ref: str) -> dict[str, Any]:
+    """Exercise the exact stdin/runtime path used for model-submitted source."""
+
+    result, snapshot = _run_with_snapshot(
+        runner,
+        _request(
+            image_ref,
+            "candidate-runtime",
+            ("/usr/bin/python3", "-I", "/opt/candidate_runtime.py"),
+            stdin_payload=b'{"kind":"runtime_probe"}\n',
+        ),
+    )
+    _assert_completed(result)
+    payload = json.loads(_log_payload(Path(result.log_path)).strip())
+    if payload.get("passed") is not True or payload.get("network") != "blocked" or payload.get("host_path_visible") is not False:
+        raise SafetyViolation("candidate runtime probe did not prove network and host-path isolation")
+    return _result(
+        "candidate_runtime_isolated",
+        True,
+        "PASS",
+        "The exact Python candidate RPC path ran with network blocked, no visible host workspace, and disposable cleanup.",
+        container_removed=result.container_removed,
+        runtime_configuration=_runtime_fingerprint(snapshot),
+    )
+
+
 def run_complete_safety_suite(image_lock_path: Path = APPROVED_IMAGES_PATH) -> dict[str, Any]:
     """Run all safety gates, or explicitly mark runtime gates as fail-closed blocked."""
 
     checks: list[dict[str, Any]] = [static_policy_check()]
     blockers: list[str] = []
+    if not checks[0]["passed"]:
+        blockers.append("static safety policy check failed; runtime probes prohibited")
     runner = DockerSandboxRunner(image_lock_path=image_lock_path)
     image = None
-    try:
-        runner.assert_local_daemon()
-    except SafetyViolation as exc:
-        blockers.append(str(exc))
-    try:
-        image = _eligible_test_image(image_lock_path)
-    except SandboxPolicyError as exc:
-        blockers.append(str(exc))
+    daemon_fingerprint: str | None = None
+    isolation_mode: str | None = None
+    if image_lock_path.resolve() not in {APPROVED_IMAGES_PATH.resolve(), CANDIDATE_LOCK_PATH.resolve()}:
+        blockers.append("safety suite requires the fixed official or candidate image lock")
+    if not blockers:
+        try:
+            runner.assert_local_daemon()
+            isolation_mode = runner.daemon_isolation_mode()
+            daemon_fingerprint = runner.daemon_fingerprint()
+        except SafetyViolation as exc:
+            blockers.append(str(exc))
+        try:
+            image = _eligible_test_image(image_lock_path)
+        except SandboxPolicyError as exc:
+            blockers.append(str(exc))
     if image is not None and not blockers:
         try:
             runner.preflight(image.image_ref)
@@ -432,6 +493,7 @@ def run_complete_safety_suite(image_lock_path: Path = APPROVED_IMAGES_PATH) -> d
             ("runaway_process_terminated", _runaway_check),
             ("logs_retained", _logs_check),
             ("reproducible_state", _reproducibility_check),
+            ("candidate_runtime_isolated", _candidate_runtime_check),
         )
         for check_id, check in runtime_checks:
             try:
@@ -461,6 +523,13 @@ def run_complete_safety_suite(image_lock_path: Path = APPROVED_IMAGES_PATH) -> d
         "overall_passed": overall_passed,
         "experiment_permitted": overall_passed and official_lock,
         "approval_scope": "OFFICIAL" if official_lock else "CANDIDATE_ONLY_NOT_APPROVED",
+        "image_ref": image.image_ref if image is not None else None,
+        "image_config_digest": image.config_digest if image is not None else None,
+        "image_lock_sha256": hashlib.sha256(image_lock_path.read_bytes()).hexdigest() if image_lock_path.is_file() else None,
+        "policy_fingerprint": policy_fingerprint(),
+        "safety_code_fingerprint": safety_code_fingerprint(),
+        "daemon_fingerprint": daemon_fingerprint,
+        "isolation_mode": isolation_mode,
         "agent_runs_launched": 0,
         "external_targets_contacted": False,
         "checks": checks,

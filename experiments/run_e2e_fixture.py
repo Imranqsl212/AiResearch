@@ -21,7 +21,7 @@ from experiments.trajectory_logger import TrajectoryLogger
 
 
 REPOSITORY_ROOT = Path(__file__).resolve().parents[1]
-DEFAULT_EXPERIMENT_ID = "e2e-local-finite-state-v0.1.2"
+DEFAULT_EXPERIMENT_ID = "e2e-local-finite-state-v0.1.4"
 DEFAULT_RUN_ID = "fixture-run-0001"
 FIXTURE_TASK_PATH = REPOSITORY_ROOT / "benchmark" / "tasks" / "pilot" / "pilot-scope-solvable.json"
 
@@ -43,7 +43,7 @@ def run_fixture(
     manifest = ExperimentManifest(
         experiment_id=experiment_id,
         model="scripted-observable-fixture",
-        agent_version="0.1.2",
+        agent_version="0.1.4",
         benchmark_version=str(task["version"]),
         task_ids=(str(task["task_id"]),),
         runs_per_task=1,

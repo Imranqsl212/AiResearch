@@ -19,6 +19,19 @@ It records:
 - date and timestamp; and
 - the Git commit when available.
 
+For future main studies the manifest must also carry a `schedule_sha256`.
+The seeded, family/repeat-blocked schedule is written before collection;
+the finalized all-attempt ledger is written after it. The analysis input lock
+now verifies both artifacts, every scheduled slot, all attempts (including
+setup failures), and all raw file hashes. This prevents complete-case analysis
+from silently forgetting missing slots. A metadata-only create-once
+reservation/completion journal now emits a lock-compatible final ledger and
+has synthetic failure-injection tests. It rejects an unresolved reservation
+after restart, raw mutation, duplicate run IDs, orphan files, and retries
+after task handoff starts. This is not a signed or access-controlled archive:
+filesystem owners can still change records. No real study schedule, provider
+orchestration, immutable raw archive, or collection freeze exists yet.
+
 Git was initialized without altering any pre-existing history (none existed), and the
 first inspected When-to-Stop infrastructure baseline was committed as
 `33b3d7acfc7cea0b83f96bae9f2f26d0127152da` (`git rev-parse HEAD` immediately
@@ -41,7 +54,7 @@ run ID. A different configuration requires a new experiment ID.
 | Adapter/sandbox integration fixture | Implemented | `ScriptedFixtureAdapter` has a fixed action list; `InMemoryFiniteStateSandbox` has no process, network, credential, or mutable host state. |
 | Containerized local episode | **NOT IMPLEMENTED / blocked** | Reviewed immutable image/config digest, passing complete safety suite, policy fingerprint, and reproducible task state. |
 | Provider-backed agent run | **NOT IMPLEMENTED** | Frozen model/revision, prompts, tools, permissions, SDK/runtime, sampling settings, provider region/endpoint policy, retries, and provider response metadata. |
-| Confirmatory main experiment | **NOT STARTED** | All preregistration freeze gates, approved task suite, randomization schedule, provenance ledger, and safety sign-off. |
+| Confirmatory main experiment | **NOT STARTED** | All preregistration freeze gates, approved task suite, actual pre-run randomization schedule and finalized provenance ledger, and safety sign-off. |
 
 The smoke fixture is deterministic because its adapter is a hard-coded test double, not
 because real language-model behavior is assumed deterministic. Its seed is recorded as
@@ -66,11 +79,16 @@ the sandbox.
 
 ## Replay procedure for the implemented fixture
 
-From the repository root, run:
+The committed fixture predates Git and uses benchmark v0.1.0. It must remain immutable. The current task manifests are v0.1.1, so the **old default experiment ID cannot be reused** with a current Git commit; merely changing the run ID does not resolve the manifest conflict. From the repository root, create a fresh disposable output root and a distinct engineering-only experiment ID:
 
 ```sh
-PYTHONDONTWRITEBYTECODE=1 python3 -m experiments.run_e2e_fixture --json
+fixture_output_root="$(mktemp -d)"
+PYTHONDONTWRITEBYTECODE=1 python3 -B -m experiments.run_e2e_fixture \
+  --output-root "$fixture_output_root" \
+  --experiment-id engineering-replay-v011 --run-id replay-0001 --json
 ```
+
+This writes only under the new temporary root; it does not overwrite the tracked v0.1.0 fixture. Compare semantic event sequence and verifier outcome, not timestamps, opaque identifiers, Git hash, or version fields. This is **not** a provider-agent or Docker reproduction.
 
 The command performs one local finite-state path through:
 
@@ -96,6 +114,9 @@ PYTHONDONTWRITEBYTECODE=1 python3 -m experiments.validate_artifacts \
 Use `--require-git` for a collection gate: it correctly rejects the pre-Git fixture's
 sentinel even though the repository now has a baseline commit. This preserves the
 historical provenance boundary rather than laundering an old trace into main data.
+The v0.1.4 [fixture reproduction command](../experiments/README.md) instead
+writes to a fresh temporary directory and checks `--require-action-verifier`;
+the main analysis input lock requires that check for non-aborted attempts.
 
 For any future replayable main episode, preserve the manifest, task manifest hash,
 image/config digest, policy fingerprint, adapter source revision, all public action and

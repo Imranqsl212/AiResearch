@@ -1,6 +1,8 @@
-# Experiment readiness — 2026-09-29
+# Experiment readiness — 2026-09-30
 
 **Overall: NOT READY.** No real-agent smoke run, 3×3 pilot, or main study was launched. The engineering fixture is not an agent result. Statuses below are gates, not task-success outcomes. A failed or unrun safety check is never counted as passed.
+
+**Safety update (same date):** [Machine-readable readiness](../experiments/readiness.json) remains `NOT_READY` overall, but the safety gate is now `PASS`. Docker Desktop reports context `desktop-linux`, LinuxKit kernel, `OSType=linux`, Docker Desktop identity, and seccomp; the policy records this as `docker-desktop-linuxkit-vm`, not daemon userns-remapping. The official suite passed all nine runtime checks for the exact immutable image digest and records `experiment_permitted=true`. This clears only the sandbox gate. The v0.1.1 engineering pilot remains condition-confounded; the four-cell development suite, executable verifier, provider agent, protocol freeze, and scientific readiness are still incomplete. Passing safety tests does not establish scientific readiness.
 
 ## Git
 
@@ -8,33 +10,49 @@
 
 ## Immutable Image
 
-**FAIL for approval; PASS for local candidate identity.** An offline `scratch`-based Linux/arm64 image was built from a Go 1.26.4 static binary. The local Docker store resolves `local/wts-target@sha256:6f32ac75f90321b56c691388eafa1a9daf2c217394eacd8c717fbb3d2ef81238` by repository digest, not by a mutable tag or arbitrary image ID. Repeating the no-attestation build retained that manifest digest. The image config has no entrypoint, volume, copied credentials, or package layer. Its [provenance](image_provenance.md) records source, binary, Dockerfile, builder versions, the distinct OCI config digest, and assumptions. **`approved_images.json` remains empty** because required runtime validation did not pass.
+**PASS for sandbox approval; not scientific readiness.** An offline `scratch`-based Linux/arm64 image was rebuilt from a Go static binary. The local Docker store resolves `local/wts-target@sha256:1f02d5aae10c93fac5b1a19264ad05f4b2112271549fb161921c14ce26853636` by immutable digest. The image config has no entrypoint, volume, copied credentials, or package layer. Its [provenance](image_provenance.md) records source, binary, Dockerfile, builder versions, and assumptions. The approval covers only the fixed local runner/safety-probe policy.
 
 ## Safety Suite
 
-**FAIL.** [Candidate machine-readable result](../sandbox/safety_checks/candidate_result.json): static policy `PASS`; first runtime check `FAIL` at `docker create` because Docker rejects the existing `--pid private` option; the other eight runtime checks are `NOT_RUN_FAIL_CLOSED`. This is an unsupported invocation, **not** evidence that external network access occurred. No candidate container started, and a read-only `docker ps` check found no leftover sandbox container. The [official safety receipt](../sandbox/safety_checks/latest_result.json) remains fail-closed with zero approved images and no runtime pass. Current Docker daemon security options report `seccomp` and `cgroupns`, not daemon user-namespace remapping. No weaker flags were substituted.
+**PASS — sandbox gate only.** The [candidate result](../sandbox/safety_checks/candidate_result.json) and [current official safety receipt](../sandbox/safety_checks/latest_result.json) record static `PASS` and **all nine runtime checks `PASS`** for the new digest. The receipt records `experiment_permitted=true`, `agent_runs_launched=0`, `external_targets_contacted=false`, and `isolation_mode=docker-desktop-linuxkit-vm`. No provider-backed agent or scientific episode was launched. Docker Desktop VM escape resistance remains an explicit residual assumption.
 
 | Required property | Current measurement |
 | --- | --- |
-| External network blocked | **FAIL to execute** first probe; actual containment NOT VERIFIED |
-| Host filesystem inaccessible | **NOT_RUN** |
-| Credentials absent inside runtime | **NOT_RUN** |
-| Resource/CPU limits | **NOT_RUN** |
-| Memory limit | **NOT_RUN** |
-| Process/PID limit | **NOT_RUN** |
-| Timeout termination | **NOT_RUN** |
-| Cleanup after a started container | **NOT_RUN**; the rejected creation left no container |
-| Reproducible runtime state | **NOT_RUN** |
-| Log persistence | **NOT_RUN** |
-| Fail-closed gate | **PASS**: no image was approved, `experiment_permitted` is false, and no agent episode launched |
+| External network blocked | **PASS** |
+| Host filesystem inaccessible | **PASS** |
+| Credentials absent inside runtime | **PASS** |
+| Resource/CPU limits | **PASS** |
+| Memory limit | **PASS** |
+| Process/PID limit | **PASS** |
+| Timeout termination | **PASS** |
+| Cleanup after a started container | **PASS** |
+| Reproducible runtime state | **PASS** |
+| Log persistence | **PASS** |
+| Fail-closed gate | **PASS**: exact image/policy/daemon receipt is valid; no agent episode launched |
 
 ## Benchmark
 
-**FAIL for scientific pilot readiness; PASS for static contracts.** `python3 -m benchmark.quality --json` validates nine finite-state task definitions: three `SOLVABLE`, three `DISTRACTOR`, three `UNSOLVABLE`, with reference-plan and declared unreachability checks. This does not establish executable target correctness, distractor plausibility, or matched difficulty. In each of three task families, declared transition counts are 3/5/4 by condition, although branching factor two and six-step caps are common. Condition therefore predicts a structural difficulty proxy. No task was changed after seeing this; an independently reviewed, versioned redesign and preregistration reconciliation are required before a real pilot.
+**FAIL for scientific pilot readiness; PASS for static contracts.** The legacy
+`python3 -m benchmark.quality --json` validates nine v0.1.1 finite-state engineering
+tasks. A separate `python3 -m benchmark.quality_four_cell --json` now validates a
+12-manifest v0.2.0 development suite with three families and exactly one `RD`, `UD`,
+`RW`, and `UW` cell per family, identical public projections, tool contracts, and
+transition counts. This is progress on the matched-design blocker, not proof of
+executable target correctness, distractor validity, unreachability, or agent behavior.
+The Docker-backed target, independent runtime verifier, and preregistration freeze are
+still required before a real pilot.
 
 ## Agent Adapter
 
 **FAIL for a real agent.** `agent/adapter.py` defines a provider-neutral public-task lifecycle and the scripted test double verifies opaque identifiers; `agent/README.md` confirms no model SDK, network client, credentials, or provider-backed implementation. No approved provider integration, model revision, terms/budget check, or Docker-backed adapter exists. No key value was inspected or forwarded. A host-side provider client could be designed only after the safety gate and provider terms are resolved; the target would remain network-isolated.
+
+**Finite-state timing instrumentation only:** the v0.1.4 scripted fixture now logs
+an evaluator-owned task-handoff marker before provisioning and a completed-prefix
+verifier receipt after each tool action.
+Temporary replay and strict artifact validation pass, and the main input lock
+requires such receipts for non-aborted runs. The authored graph is still its
+own oracle; no independently reviewed executable-target action verifier or
+provider-backed behavior has been measured. This does not change `NOT_READY`.
 
 ## Smoke Test
 

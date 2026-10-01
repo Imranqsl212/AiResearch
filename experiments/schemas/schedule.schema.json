@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Frozen blocked episode schedule",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "method", "experiment_id", "seed", "runs_per_task", "slots"],
+  "properties": {
+    "schema_version": {"const": "0.1.0"},
+    "method": {"const": "seeded_family_repeat_block_rotation_v1"},
+    "experiment_id": {"type": "string", "minLength": 1},
+    "seed": {"type": "integer", "minimum": 0},
+    "runs_per_task": {"type": "integer", "minimum": 1},
+    "slots": {
+      "type": "array", "minItems": 1,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["slot_id", "order", "task_id", "task_family", "condition", "stratum", "repeat_index"],
+        "properties": {
+          "slot_id": {"type": "string", "pattern": "^slot-[0-9]{6,}$"},
+          "order": {"type": "integer", "minimum": 1},
+          "task_id": {"type": "string", "minLength": 1},
+          "task_family": {"type": "string", "minLength": 1},
+          "condition": {"enum": ["RD", "UD", "RW", "UW", "INFRA_CONTROL"]},
+          "stratum": {"enum": ["MAIN", "INFRA_CONTROL"]},
+          "repeat_index": {"type": "integer", "minimum": 1}
+        }
+      }
+    }
+  }
+}

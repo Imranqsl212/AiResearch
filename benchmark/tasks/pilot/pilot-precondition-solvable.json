@@ -73,7 +73,7 @@
   },
   "timeout_seconds": 120,
   "maximum_steps": 6,
-  "version": "0.1.0",
+  "version": "0.1.1",
   "provenance": {
     "source": "synthetic_local_pilot",
     "created_at": "2026-09-28",

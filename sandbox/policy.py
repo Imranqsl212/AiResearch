@@ -19,6 +19,13 @@ SANDBOX_ROOT = Path(__file__).resolve().parent
 APPROVED_IMAGES_PATH = SANDBOX_ROOT / "images" / "approved_images.json"
 LOG_ROOT = SANDBOX_ROOT / "logs"
 
+# Ordinary Docker Desktop on macOS/Windows runs the Linux engine inside a
+# dedicated LinuxKit VM.  It does not normally expose daemon-level userns
+# remapping in `docker info`; the runner may accept that VM boundary only when
+# Docker Desktop's local context and LinuxKit/desktop identity are verified.
+ISOLATION_MODE_USERNS_REMAP = "daemon-userns-remap"
+ISOLATION_MODE_DOCKER_DESKTOP_VM = "docker-desktop-linuxkit-vm"
+
 IMAGE_REFERENCE_RE = re.compile(r"^[A-Za-z0-9][A-Za-z0-9._:/-]*@sha256:[a-fA-F0-9]{64}$")
 CONFIG_DIGEST_RE = re.compile(r"^sha256:[a-fA-F0-9]{64}$")
 IDENTIFIER_RE = re.compile(r"^[a-z0-9][a-z0-9_.-]{0,63}$")
@@ -119,6 +126,7 @@ class SandboxRunRequest:
     image_ref: str
     command: tuple[str, ...]
     timeout_seconds: int
+    stdin_payload: bytes = b""
 
     def __post_init__(self) -> None:
         if not IDENTIFIER_RE.fullmatch(self.run_id):
@@ -142,6 +150,8 @@ class SandboxRunRequest:
             raise SandboxPolicyError(
                 f"timeout_seconds must be between 1 and {LIMITS.wall_timeout_seconds} under the fixed policy"
             )
+        if not isinstance(self.stdin_payload, bytes) or len(self.stdin_payload) > 128 * 1024:
+            raise SandboxPolicyError("stdin payload must be bytes no larger than 128 KiB")
 
 
 def approved_images(path: Path = APPROVED_IMAGES_PATH) -> tuple[ApprovedImage, ...]:
@@ -188,6 +198,7 @@ def docker_create_arguments(request: SandboxRunRequest) -> list[str]:
     container_name = container_name_for(request.run_id)
     arguments = [
         "create",
+        "--interactive",
         "--name",
         container_name,
         "--rm",
@@ -217,11 +228,7 @@ def docker_create_arguments(request: SandboxRunRequest) -> list[str]:
         f"nproc={LIMITS.pids_limit}:{LIMITS.pids_limit}",
         "--ipc",
         "none",
-        "--pid",
-        "private",
         "--cgroupns",
-        "private",
-        "--userns",
         "private",
         "--restart",
         "no",
@@ -247,7 +254,7 @@ def tmpfs_mount_options() -> dict[str, str]:
     size = str(LIMITS.tmpfs_bytes)
     return {
         "/tmp": f"rw,noexec,nosuid,nodev,size={size},mode=1777",
-        "/work": f"rw,noexec,nosuid,nodev,size={size},mode=0700",
+        "/work": f"rw,noexec,nosuid,nodev,size={size},mode=0700,uid=65532,gid=65532",
     }
 
 
@@ -265,7 +272,7 @@ def policy_fingerprint() -> str:
     canonical = {
         "controlled_environment": CONTROLLED_ENVIRONMENT,
         "limits": LIMITS.__dict__,
-        "protocol": "docker-local-only-v0.1.0",
+            "protocol": "docker-local-only-v0.3.0",
         "restrictions": {
             "auto_remove": True,
             "cap_drop": "ALL",
@@ -273,17 +280,28 @@ def policy_fingerprint() -> str:
             "init": True,
             "ipc": "none",
             "network": "none",
-            "pid": "private",
+            "pid": "daemon-default-private; host/container PID modes forbidden by inspect",
             "pull": "never",
             "read_only_root": True,
             "restart": "no",
             "tmpfs": tmpfs_mount_options(),
             "user": "65532:65532",
-            "userns": "private",
+            "userns": "daemon-remap-or-docker-desktop-linuxkit-vm; host override forbidden by inspect",
         },
     }
     encoded = json.dumps(canonical, sort_keys=True, separators=(",", ":")).encode("utf-8")
     return hashlib.sha256(encoded).hexdigest()
+
+
+def safety_code_fingerprint() -> str:
+    """Bind a passing safety receipt to the exact implementation checked."""
+
+    digest = hashlib.sha256()
+    for relative in ("policy.py", "runner.py", "safety_checks/checks.py"):
+        path = SANDBOX_ROOT / relative
+        digest.update(relative.encode("utf-8"))
+        digest.update(hashlib.sha256(path.read_bytes()).digest())
+    return digest.hexdigest()
 
 
 def contains_forbidden_environment_name(name: str) -> bool:

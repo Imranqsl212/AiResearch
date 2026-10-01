@@ -18,7 +18,7 @@ from agent.contracts import (
     ToolCall,
 )
 from agent.episode_sandbox import EpisodeSandbox, project_agent_task
-from benchmark.validators import verify_terminal
+from benchmark.validators import verify_action, verify_terminal
 from experiments.trajectory_logger import LogArtifacts, TrajectoryLogger
 
 
@@ -134,6 +134,7 @@ class EpisodeRunner:
         public_run_id: str | None = None,
         clock: Callable[[], float] = time.monotonic,
         terminal_verifier: Callable[[Mapping[str, Any], Any, Mapping[str, Any] | None], dict[str, Any]] = verify_terminal,
+        action_verifier: Callable[[Mapping[str, Any], Any, int], Mapping[str, Any]] = verify_action,
     ) -> None:
         self.adapter = adapter
         self.sandbox = sandbox
@@ -143,6 +144,7 @@ class EpisodeRunner:
         self.public_run_id = public_run_id or opaque_public_run_id(context)
         self.clock = clock
         self.terminal_verifier = terminal_verifier
+        self.action_verifier = action_verifier
 
     def run(self, evaluator_task: Mapping[str, Any]) -> EpisodeResult:
         """Run a single bounded episode and always retain an observable receipt.
@@ -194,9 +196,12 @@ class EpisodeRunner:
             budget.update(token_ledger.snapshot(self.context))
             return budget
 
-        def log_event(**kwargs: Any) -> None:
+        def log_event(*, runtime_details: Mapping[str, float] | None = None, **kwargs: Any) -> None:
+            runtime = runtime_snapshot()
+            if runtime_details:
+                runtime.update(runtime_details)
             self.logger.log_event(
-                runtime=runtime_snapshot(),
+                runtime=runtime,
                 environment_state=self.sandbox.environment_state(),
                 available_budget=budget_snapshot(),
                 **kwargs,
@@ -240,6 +245,14 @@ class EpisodeRunner:
                 )
             )
             adapter_initialized = True
+            # Durably record the start of task handoff before calling the
+            # adapter. If handoff raises, we conservatively forbid a retry:
+            # the adapter may already have observed the task.
+            log_event(
+                event_type="TASK_HANDOFF_START",
+                step=0,
+                outcome="TASK_HANDOFF_STARTED",
+            )
             self.adapter.provide_task(public_task)
             initial_observation = self.sandbox.start()
             sandbox_started = True
@@ -271,7 +284,6 @@ class EpisodeRunner:
 
                 steps_executed += 1
                 token_ledger.observe(decision.token_usage)
-                self.adapter.tool_call(decision)
                 log_event(
                     event_type="TOOL_CALL",
                     step=steps_executed,
@@ -281,8 +293,28 @@ class EpisodeRunner:
                     outcome="TOOL_CALL_DISPATCHED",
                     token_usage=decision.token_usage,
                 )
+                # The callback could fail after observing the accepted call;
+                # preserve the action boundary before any callback/dispatch.
+                self.adapter.tool_call(decision)
                 observation = self.sandbox.execute_tool(decision)
                 annotation = self.sandbox.trajectory_annotation() or {}
+                action_receipt: Mapping[str, Any] | None = None
+                action_verifier_error: Exception | None = None
+                action_verifier_started = self.clock()
+                try:
+                    candidate_receipt = self.action_verifier(
+                        evaluator_task, self.sandbox.terminal_result(), steps_executed
+                    )
+                    self._validate_action_receipt(
+                        candidate_receipt, task_id=task_id,
+                        verifier_id=evaluator_task["verifier"]["id"], action_index=steps_executed,
+                    )
+                    action_receipt = candidate_receipt
+                except Exception as exc:
+                    # Preserve the public observation even when evaluator-side
+                    # verification fails; do not deliver it or continue the run.
+                    action_verifier_error = exc
+                action_verifier_elapsed = max(0.0, self.clock() - action_verifier_started)
                 log_event(
                     event_type="TOOL_OBSERVATION",
                     step=steps_executed,
@@ -295,7 +327,11 @@ class EpisodeRunner:
                     adaptation=annotation.get("adaptation"),
                     previous_state=annotation.get("previous_state"),
                     next_state=annotation.get("next_state"),
+                    verifier_result=action_receipt,
+                    runtime_details={"action_verifier_elapsed_seconds": round(action_verifier_elapsed, 6)},
                 )
+                if action_verifier_error is not None:
+                    raise action_verifier_error
                 self.adapter.receive_observation(observation)
 
             if final_response is None:
@@ -303,6 +339,21 @@ class EpisodeRunner:
             verifier_receipt = self.terminal_verifier(
                 evaluator_task, self.sandbox.terminal_result(), final_response.as_claim()
             )
+            if not isinstance(verifier_receipt, Mapping):
+                raise AdapterProtocolError("terminal verifier must return a structured receipt")
+            if not isinstance(verifier_receipt.get("passed"), bool):
+                raise AdapterProtocolError("terminal verifier receipt lacks a boolean passed field")
+            if not isinstance(verifier_receipt.get("claim_supported"), bool):
+                raise AdapterProtocolError("terminal verifier receipt lacks a boolean claim_supported field")
+            if verifier_receipt.get("terminal_outcome") not in {
+                "VALIDATED_SUCCESS", "VALIDATED_NON_SUCCESS", "UNKNOWN", "INVALID_TASK"
+            }:
+                raise AdapterProtocolError("terminal verifier receipt has an invalid outcome")
+            if (
+                verifier_receipt["terminal_outcome"] == "VALIDATED_SUCCESS"
+                and verifier_receipt["passed"] is not True
+            ):
+                raise AdapterProtocolError("terminal verifier claimed success without passing")
             verifier_terminal_outcome = str(verifier_receipt.get("terminal_outcome", "UNKNOWN"))
             if stop_event == StopReason.AGENT_SELF_TERMINATION.value:
                 terminal_outcome = verifier_terminal_outcome
@@ -426,3 +477,26 @@ class EpisodeRunner:
         if not isinstance(value, int) or isinstance(value, bool) or value <= 0:
             raise AdapterProtocolError(f"evaluator task field {field!r} must be a positive integer")
         return value
+
+    @staticmethod
+    def _validate_action_receipt(
+        receipt: Any, *, task_id: str, verifier_id: str, action_index: int
+    ) -> None:
+        if not isinstance(receipt, Mapping):
+            raise AdapterProtocolError("action verifier must return a structured receipt")
+        if (
+            receipt.get("source") != "evaluator_action_verifier"
+            or receipt.get("task_id") != task_id
+            or receipt.get("verifier_id") != verifier_id
+            or not isinstance(receipt.get("verifier_version"), str)
+            or not receipt["verifier_version"]
+            or type(receipt.get("action_index")) is not int
+            or receipt["action_index"] != action_index
+            or not isinstance(receipt.get("passed"), bool)
+            or not isinstance(receipt.get("claim_supported"), bool)
+            or receipt.get("terminal_outcome") not in
+            {"VALIDATED_SUCCESS", "VALIDATED_NON_SUCCESS", "UNKNOWN"}
+            or (receipt.get("terminal_outcome") == "VALIDATED_SUCCESS" and receipt["passed"] is not True)
+            or (receipt.get("terminal_outcome") == "UNKNOWN" and receipt["passed"] is not False)
+        ):
+            raise AdapterProtocolError("action verifier receipt failed evaluator integrity checks")

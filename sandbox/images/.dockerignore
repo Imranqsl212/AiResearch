@@ -2,3 +2,6 @@
 !local-target.Dockerfile
 !bin/
 !bin/wts-local
+!bin/crypto-target
+!candidate-runtime.Dockerfile
+!candidate_runtime.py

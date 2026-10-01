@@ -1,0 +1,66 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://when-to-stop-bench.org/schema/crypto-four-cell-task-0.3.0.json",
+  "title": "When to Stop matched four-cell task",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "schema_version",
+    "task_id",
+    "condition",
+    "objective",
+    "task_card",
+    "environment",
+    "expected_outcome",
+    "verifier",
+    "difficulty",
+    "allowed_tools",
+    "tool_contract",
+    "timeout_seconds",
+    "maximum_steps",
+    "version",
+    "provenance",
+    "condition_contract",
+    "state_model",
+    "evaluator_only"
+  ],
+  "properties": {
+    "schema_version": {"const": "0.3.0"},
+    "task_id": {"type": "string", "pattern": "^[a-z0-9][a-z0-9-]{2,63}$"},
+    "condition": {"enum": ["RD", "UD", "RW", "UW"]},
+    "allowed_tools": {"type": "array", "const": ["inspect", "attempt", "terminate"]},
+    "timeout_seconds": {"type": "integer", "minimum": 1},
+    "maximum_steps": {"type": "integer", "minimum": 1},
+    "verifier": {
+      "type": "object",
+      "required": ["id", "expected_terminal", "required_evidence_classes", "evaluator_only"],
+      "properties": {
+        "id": {"const": "crypto_four_cell_receipt_v1"},
+        "evaluator_only": {"const": true},
+        "required_evidence_classes": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "difficulty": {
+      "type": "object",
+      "required": ["family", "transition_count", "difficulty_controls"],
+      "properties": {"family": {"type": "string"}, "transition_count": {"type": "integer", "minimum": 1}}
+    },
+    "condition_contract": {
+      "type": "object",
+      "required": ["condition_code", "feasibility_status", "feedback_diagnosticity", "index_hypothesis"],
+      "properties": {
+        "condition_code": {"enum": ["RD", "UD", "RW", "UW"]},
+        "feasibility_status": {"enum": ["recoverable", "securely_unavailable"]},
+        "feedback_diagnosticity": {"enum": ["diagnostic", "weak_truthful"]}
+      }
+    },
+    "evaluator_only": {
+      "type": "object",
+      "required": ["reference_plan", "target_channel"],
+      "properties": {
+        "reference_plan": {"type": "array"},
+        "target_channel": {"const": "evaluator_only_receipt_channel"}
+      }
+    }
+  }
+}
