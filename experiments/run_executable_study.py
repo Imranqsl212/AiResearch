@@ -64,8 +64,10 @@ def _sha256(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
-def _experiment_id(phase: str, benchmark_version: str) -> str:
-    return f"executable-{phase}-{benchmark_version.replace('.', '-') }"
+def _experiment_id(
+    phase: str, benchmark_version: str, prefix: str = "executable"
+) -> str:
+    return f"{prefix}-{phase}-{benchmark_version.replace('.', '-') }"
 
 
 def select_tasks(rows: Sequence[dict[str, Any]], phase: str, pilot_families: Sequence[str]) -> list[dict[str, Any]]:
@@ -111,9 +113,19 @@ def _write_json_once(path: Path, value: dict[str, Any]) -> None:
 def prepare_study(
     *, phase: str, model: str, runs_per_task: int, timeout_seconds: int,
     max_steps: int, pilot_families: Sequence[str], output_root: Path,
+    task_rows: Sequence[dict[str, Any]] | None = None,
+    experiment_prefix: str = "executable",
 ) -> tuple[Path, Path, ExperimentManifest, list[dict[str, Any]]]:
-    rows = select_tasks(load_catalog(), phase, pilot_families)
-    experiment_id = _experiment_id(phase, EXECUTABLE_BENCHMARK_VERSION)
+    rows = (
+        list(task_rows)
+        if task_rows is not None
+        else select_tasks(load_catalog(), phase, pilot_families)
+    )
+    if not rows:
+        raise ValueError("study requires at least one task row")
+    experiment_id = _experiment_id(
+        phase, EXECUTABLE_BENCHMARK_VERSION, experiment_prefix
+    )
     schedules = output_root / "schedules"
     manifests = output_root / "manifests"
     schedule_path = schedules / f"{experiment_id}.json"
@@ -236,6 +248,13 @@ def _run_one(
         "task_state": (result.verifier_receipt or {}).get("task_state") if result.verifier_receipt else None,
         "expected_task_state": (result.verifier_receipt or {}).get("expected_task_state") if result.verifier_receipt else None,
         "claim_supported": (result.verifier_receipt or {}).get("claim_supported") if result.verifier_receipt else None,
+        "base_task_id": task.get("base_task_id", task["task_id"]),
+        "retrieval_mode": task.get("retrieval_mode", "not_applicable"),
+        "retrieval_context_sha256": (
+            task.get("retrieval_context", {}).get("corpus_sha256")
+            if isinstance(task.get("retrieval_context"), dict)
+            else None
+        ),
     })
     return mapping
 
@@ -244,6 +263,8 @@ def run_study(
     *, phase: str, model: str, runs_per_task: int, request_timeout: float,
     timeout_seconds: int, max_steps: int, pilot_families: Sequence[str],
     output_root: Path,
+    task_rows: Sequence[dict[str, Any]] | None = None,
+    experiment_prefix: str = "executable",
 ) -> dict[str, Any]:
     expected_output_root = (ROOT / "experiments").resolve()
     if output_root.resolve() != expected_output_root:
@@ -254,6 +275,7 @@ def run_study(
         phase=phase, model=model, runs_per_task=runs_per_task,
         timeout_seconds=timeout_seconds, max_steps=max_steps,
         pilot_families=pilot_families, output_root=output_root,
+        task_rows=task_rows, experiment_prefix=experiment_prefix,
     )
     schedule = _load_json(schedule_path)
     task_by_id = {str(row["task_id"]): row for row in tasks}

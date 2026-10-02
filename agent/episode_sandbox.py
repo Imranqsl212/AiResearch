@@ -116,6 +116,9 @@ def project_agent_task(
         "filesystem": environment.get("filesystem"),
         "isolation": environment.get("isolation"),
     }
+    retrieval_context = task.get("retrieval_context")
+    if retrieval_context is not None and not isinstance(retrieval_context, Mapping):
+        raise EpisodeSandboxError("retrieval_context must be an object when present")
     return AgentTask(
         public_task_id=public_task_id or opaque_public_task_id(task_id, version),
         task_version=version,
@@ -126,6 +129,9 @@ def project_agent_task(
         tool_contract=json_copy(tool_contract),
         maximum_steps=maximum_steps,
         timeout_seconds=timeout_seconds,
+        retrieval_context=(
+            json_copy(retrieval_context) if retrieval_context is not None else None
+        ),
     )
 
 

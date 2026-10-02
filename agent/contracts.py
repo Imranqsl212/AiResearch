@@ -258,6 +258,7 @@ class AgentTask:
     tool_contract: Mapping[str, Any]
     maximum_steps: int
     timeout_seconds: int
+    retrieval_context: Mapping[str, Any] | None = None
 
     def __post_init__(self) -> None:
         _require_nonempty(self.public_task_id, "public_task_id")
@@ -273,9 +274,15 @@ class AgentTask:
             if not isinstance(value, Mapping):
                 raise ValueError(f"{field} must be a mapping")
             assert_observable_payload(value, f"AgentTask.{field}")
+        if self.retrieval_context is not None:
+            if not isinstance(self.retrieval_context, Mapping):
+                raise ValueError("retrieval_context must be a mapping or None")
+            assert_observable_payload(
+                self.retrieval_context, "AgentTask.retrieval_context"
+            )
 
     def as_mapping(self) -> dict[str, Any]:
-        return {
+        document = {
             "public_task_id": self.public_task_id,
             "task_version": self.task_version,
             "objective": json_copy(self.objective),
@@ -286,6 +293,9 @@ class AgentTask:
             "maximum_steps": self.maximum_steps,
             "timeout_seconds": self.timeout_seconds,
         }
+        if self.retrieval_context is not None:
+            document["retrieval_context"] = json_copy(self.retrieval_context)
+        return document
 
 
 @dataclass(frozen=True)

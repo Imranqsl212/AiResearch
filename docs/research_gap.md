@@ -1,71 +1,140 @@
-# Research gap: post-failure adaptation in cryptographic repair
+# Research gap: from successful repair to evidence-sensitive adaptation
 
-## Narrowed problem
+## Precise claim
 
-The project does not claim that agents have never been studied after failure. Agent
-recovery, abstention, self-correction, process evaluation, false-success detection,
-and cyber benchmarks already cover important parts of that space. The question is
-narrower:
+The project must **not** claim that post-failure behavior, iterative repair, feedback
+quality, or tool-based self-correction have never been studied. They have. The defensible
+gap is the absence of a controlled security-repair study that combines all of the
+following:
 
-> After an independent checker reports that a cryptographic implementation is not
-> secure, does an agent change the security design, merely mutate surface parameters,
-> or continue without a valid path—and does it stop only when the evidence supports
-> stopping?
+1. orthogonal assignment of retrieval knowledge and verifier feedback;
+2. matched repairable and deliberately unavailable tasks;
+3. observable action-, parameter-, implementation-, hypothesis-, and strategy-level
+   transition labels;
+4. explicit terminal-decision and persistence measures;
+5. independent executable receipts used to detect unsupported success claims.
 
-The first domain is local application-level cryptographic misuse involving
-authenticated encryption: AEAD use, nonce handling, and key management.
+## Existing work measures X
 
-## What existing work measures
+- Sriram et al. (2026) measure final compilation, CodeQL, and KLEE error rates after a
+  combined RAG + multi-tool + iterative workflow.
+- VRpilot measures compilable, plausible, and correct vulnerability patches and
+  ablates reasoning and patch-validation feedback.
+- FeedbackEval measures `Repair@k` under six feedback modalities and several prompting
+  strategies.
+- Self-Debugging, CRITIC, Reflexion, and Self-Refine measure final task performance
+  after one or more revision loops.
+- ReflecTool-Bench measures detection, classification, explanation, and correction of
+  injected tool-use errors.
+- Agent recovery and abstention benchmarks measure alternative-plan discovery or
+  act/abstain decisions.
 
-| Existing line | What it establishes | What it does not isolate here |
-| --- | --- | --- |
-| ReAct, Reflexion, Self-Refine | Tool feedback can support iterative revision. | Whether a cryptographic failure causes a validated strategy change rather than another edit. |
-| Agent recovery and abstention benchmarks | Agents can be tested on backup paths, unavailable tasks, and act/abstain decisions. | Crypto-specific invariant repair with a trace taxonomy separating parameter edits from design changes. |
-| Crypto misuse research and API guidance | Unsafe API patterns and secure invariants can be specified. | Post-feedback behavior, stopping, and unsupported success claims of a tool-using agent. |
-| Cyber/code benchmarks | Endpoint success and patch quality can be evaluated in sandboxed environments. | A matched repairable/unavailable design with diagnostic versus weak truthful feedback. |
-| State-based verification work | Natural-language completion claims are weaker than independent state checks. | A crypto-repair trajectory measure linking claims, evidence, and stopping events. |
+## Existing work observes Y
 
-## Proposed contribution (Z)
+- Reliable external feedback often improves final repair outcomes.
+- Intrinsic prompted self-correction is unreliable on many general tasks.
+- Feedback quality and task context change repair rates, and gains often plateau after
+  a few iterations.
+- Detecting an error is easier than actually correcting some self-originated errors.
+- More iterations can help, but can also waste compute or damage an initially correct
+  answer.
 
-The study proposes a controlled, local measurement layer with four matched cells per
-crypto family:
+## Existing work does not adequately measure Z
 
-1. `RD`: repairable with diagnostic feedback;
-2. `UD`: unavailable with diagnostic feedback;
-3. `RW`: repairable with weak but truthful feedback;
-4. `UW`: unavailable with weak but truthful feedback.
+The literature rarely asks whether a post-failure edit is a *new security strategy* or
+only another implementation of the same flawed idea. The closest secure-code baseline
+bundles retrieval, tool feedback, and iteration, so their separate causal contributions
+are unknown. Most datasets contain only solvable instances, making persistence look
+useful by construction and preventing measurement of evidence-supported stopping.
+Finally, final output quality is usually authoritative; the model's explicit success
+claim is not separately compared with a hidden executable security oracle.
 
-The outcome is not just success. The trace records whether the agent repeats a
-hypothesis, mutates a relevant parameter, changes implementation, changes hypothesis,
-changes security strategy, stops voluntarily, stops because of budget/timeout, or
-claims success without an independent cryptographic receipt.
+## Our proposed Z
 
-## Alternative explanations for novelty
+Use a predeclared 2×2×2 factorial benchmark:
 
-1. **Generic self-correction may already answer the question.** If prior agents
-   already record edits after failed tests, this project would add value only if the
-   crypto-specific invariant and strategy codebook reveal behavior that generic pass
-   rates hide.
-2. **Crypto tasks may be API memorization, not reasoning.** The result could reflect
-   whether a model remembers AEAD/nonce rules. We therefore need matched families,
-   diagnosticity controls, negative cases, and a separate analysis of design-level
-   changes—not claim general cyber reasoning.
-3. **Feedback wording or task difficulty may explain the effect.** The four-cell
-   design controls feedback diagnosticity and feasibility within family, while public
-   task cards, budgets, and tools remain matched. Residual difficulty remains a
-   limitation and must be measured.
-4. **Verifier artifacts may create false labels.** Independent executable checks,
-   alternate-route validation, receipt hashes, and invalid-task exclusions are needed
-   before interpretation.
-5. **Budget may explain stopping.** Voluntary stop, budget stop, timeout, tool error,
-   and infrastructure abort are separate terminal classes; stopping analyses must
-   condition on remaining budget.
+- feasibility: repairable vs securely unavailable;
+- feedback: diagnostic vs weak truthful;
+- retrieval: frozen relevant security guidance vs no retrieved document.
+
+The primary outcome is not raw success. It is an evaluator-coded, outcome-changing
+strategy transition after the first verifier-confirmed failure. Secondary outcomes are
+verified success, same-strategy repetition, actions/failures before stop,
+evidence-supported stopping, budget/timeout stopping, and unsupported success claims.
+
+## Alternative explanations and novelty objections
+
+### Objection 1: This is only FeedbackEval with security examples
+
+FeedbackEval already compares multiple feedback types over three iterations. This
+objection is strong. The gap survives only if the project makes strategy depth,
+unavailable tasks, independent false-success detection, and the orthogonal RAG factor
+central. If the study reports only `Repair@k`, it is not novel enough.
+
+### Objection 2: This is only an ablation of the Sriram et al. pipeline
+
+The baseline already combines RAG and multi-tool feedback. A simple on/off ablation
+would be incremental. The gap survives because the proposed dependent variables are
+trajectory-level adaptation and stopping, not only defect reduction, and because RAG
+and feedback are randomized independently under matched feasibility.
+
+### Objection 3: Strategy labels are subjective relabeling of code edits
+
+This could invalidate the contribution. The gap survives only with a frozen codebook,
+observable evidence, blinded double-coding on a stratified sample, agreement reporting,
+and sensitivity analyses under narrower and broader strategy definitions. Different
+source text cannot automatically count as a strategy switch.
+
+### Objection 4: Unavailable tasks are artificially broken tasks
+
+If unavailability is caused by infrastructure failure, stopping behavior is
+uninterpretable. The design therefore requires validated reference routes,
+infrastructure controls, hidden condition assignment, and a distinct infrastructure
+failure class. The current evaluator-enforced unavailability is suitable for a pilot
+but has limited external validity and should be acknowledged.
+
+### Objection 5: Rich feedback simply leaks the answer
+
+Recent structured-feedback work shows that listing admissible alternatives can explain
+most gains. Therefore diagnostic feedback must report the violated invariant without
+providing reference source, exact patch, or hidden route. RAG documents contain only
+family-level principles. The project will measure both success and the depth/cost of
+adaptation so that solution disclosure is not mistaken for reasoning.
 
 ## Does the gap survive?
 
-Conditionally, yes. The broad claim does not survive. A defensible claim is that the
-study combines a cryptographic misuse domain, matched feasibility/feedback cells,
-independent executable verification, and an observable adaptation taxonomy. The gap
-survives only if the final implementation demonstrates that task difficulty, checker
-errors, interface cues, and forced termination do not fully explain the observed
-contrasts. Until then, this is a proposed gap, not an established finding.
+**Yes, narrowly and conditionally.** No reviewed source jointly provides the proposed
+factorial isolation, security-specific strategy-transition taxonomy, infeasibility
+control, and claim-versus-receipt stopping analysis. The contribution is not a new
+repair algorithm. It is a controlled behavioral measurement framework for determining
+*how* and *when* an agent changes course after security failure.
+
+## Refined research questions
+
+- **RQ1:** What observable action, implementation, hypothesis, and strategy transitions
+  follow verifier-confirmed security failures?
+- **RQ2:** What are the separate and joint effects of diagnostic feedback and relevant
+  retrieval context on genuine strategy adaptation and verified repair?
+- **RQ3:** How does feasibility moderate persistence, stopping, and return to previously
+  rejected strategies?
+- **RQ4:** How often does action diversity overstate strategy diversity?
+- **RQ5:** How often do terminal success claims lack independent executable evidence,
+  and under which treatment arms?
+
+## Falsifiable hypotheses
+
+- **H1:** Diagnostic feedback increases the probability of an outcome-changing
+  strategy transition relative to weak truthful feedback.
+- **H2:** Relevant retrieval improves first-attempt strategy selection more than
+  post-failure strategy switching.
+- **H3:** The interaction between retrieval and diagnostic feedback is sub-additive if
+  they deliver redundant security information; a positive synergy is possible but is
+  not assumed.
+- **H4:** Unavailable tasks increase same-strategy persistence and non-evidence-based
+  stopping relative to matched repairable tasks.
+- **H5:** Raw action diversity exceeds evaluator-coded strategy diversity.
+- **H6:** The unsupported-success rate is non-zero.
+
+All six hypotheses may be unsupported. Pilot outcomes may change measurement quality
+or task construction, but not be used to rewrite confirmatory hypotheses after the
+main data are observed.
