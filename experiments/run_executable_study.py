@@ -113,6 +113,7 @@ def _write_json_once(path: Path, value: dict[str, Any]) -> None:
 def prepare_study(
     *, phase: str, model: str, runs_per_task: int, timeout_seconds: int,
     max_steps: int, pilot_families: Sequence[str], output_root: Path,
+    request_timeout: float = 300.0,
     task_rows: Sequence[dict[str, Any]] | None = None,
     experiment_prefix: str = "executable",
 ) -> tuple[Path, Path, ExperimentManifest, list[dict[str, Any]]]:
@@ -123,6 +124,8 @@ def prepare_study(
     )
     if not rows:
         raise ValueError("study requires at least one task row")
+    if request_timeout <= 0:
+        raise ValueError("request_timeout must be positive")
     experiment_id = _experiment_id(
         phase, EXECUTABLE_BENCHMARK_VERSION, experiment_prefix
     )
@@ -146,6 +149,11 @@ def prepare_study(
             "timeout_seconds": timeout_seconds,
         }
         mismatches = {key: (manifest_document.get(key), value) for key, value in immutable_expected.items() if manifest_document.get(key) != value}
+        frozen_notes = str(manifest_document.get("notes", ""))
+        timeout_marker = f"provider_request_timeout_seconds={request_timeout:g}"
+        note_fields = {part.strip() for part in frozen_notes.split(";")}
+        if any(part.startswith("provider_request_timeout_seconds=") for part in note_fields) and timeout_marker not in note_fields:
+            mismatches["provider_request_timeout_seconds"] = (frozen_notes, request_timeout)
         if mismatches:
             raise RuntimeError(f"existing frozen study configuration differs: {mismatches}")
         manifest = ExperimentManifest(
@@ -175,6 +183,7 @@ def prepare_study(
         sandbox_type="docker_candidate_runtime", safety_mode="local_no_external_target_fail_closed",
         seed=DEFAULT_SEED, token_budget=None, schedule_sha256=schedule_hash,
         notes=(f"{phase} study; evaluator-owned Docker target; {len(rows)} tasks; "
+               f"provider_request_timeout_seconds={request_timeout:g}; "
                "raw trajectories and receipts are excluded from Git and must be archived separately."),
     )
     write_manifest(manifest, manifests)
@@ -265,6 +274,7 @@ def run_study(
     output_root: Path,
     task_rows: Sequence[dict[str, Any]] | None = None,
     experiment_prefix: str = "executable",
+    fail_on_infrastructure_abort: bool = False,
 ) -> dict[str, Any]:
     expected_output_root = (ROOT / "experiments").resolve()
     if output_root.resolve() != expected_output_root:
@@ -274,6 +284,7 @@ def run_study(
     manifest_path, schedule_path, manifest, tasks = prepare_study(
         phase=phase, model=model, runs_per_task=runs_per_task,
         timeout_seconds=timeout_seconds, max_steps=max_steps,
+        request_timeout=request_timeout,
         pilot_families=pilot_families, output_root=output_root,
         task_rows=task_rows, experiment_prefix=experiment_prefix,
     )
@@ -307,6 +318,8 @@ def run_study(
         archive_run(Path(mapping["log_path"]), archive_root, run_id)
         completed += 1
         print(json.dumps({"event": "FINISH", "slot_id": slot_id, "run_id": run_id, "terminal_outcome": mapping["terminal_outcome"], "verifier_terminal_outcome": mapping["verifier_terminal_outcome"], "task_state": mapping["task_state"], "stop_event": mapping["stop_event"], "steps": mapping["steps_executed"]}, sort_keys=True), flush=True)
+        if fail_on_infrastructure_abort and mapping["terminal_outcome"] == "INFRASTRUCTURE_ABORT":
+            raise RuntimeError(f"infrastructure abort in {slot_id}; run preserved; further slots halted")
     ledger_path = ledger.finalize()
     archive_manifest = seal_archive(archive_root, experiment_id=manifest.experiment_id, manifest_version=manifest.schema_version)
     report = {

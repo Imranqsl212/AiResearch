@@ -16,13 +16,15 @@ from typing import Any, Sequence
 
 from benchmark.executable_catalog import EXECUTABLE_BENCHMARK_VERSION
 from benchmark.retrieval import MODES, augment_task
+from experiments.accounting import write_snapshot
 from experiments.run_executable_study import ROOT, load_catalog, run_study, select_tasks
 from experiments.run_nightly_study import _ollama_preflight, _run_check, _write_report
 from experiments.run_rag_factorial_study import validate_retrieval_design
+from experiments.validate_artifacts import validate_artifacts
 
 
-PROFILE_VERSION = "1.0.0"
-EXPERIMENT_PREFIX = "rag-overnight-v1"
+PROFILE_VERSION = "2.0.0"
+EXPERIMENT_PREFIX = "rag-overnight-v2"
 PILOT_FAMILIES = ("aead",)
 MAIN_FAMILIES = ("key-derivation", "nonce", "weak-randomness", "sqli", "xss")
 EXPECTED_CONDITIONS = {"RD", "UD", "RW", "UW"}
@@ -96,6 +98,19 @@ def _integrity_gate(results_path: Path, expected_rows: int) -> dict[str, Any]:
             value = row.get(field)
             if not isinstance(value, str) or not Path(value).is_file():
                 errors.append(f"missing {field} for {slot}")
+        log, receipt = row.get("log_path"), row.get("receipt_path")
+        if isinstance(log, str) and isinstance(receipt, str) and Path(log).is_file() and Path(receipt).is_file():
+            experiment_id = row.get("experiment_id")
+            if not isinstance(experiment_id, str):
+                errors.append(f"missing experiment_id for {slot}")
+                continue
+            integrity = validate_artifacts(
+                manifest_path=ROOT / "experiments" / "manifests" / f"{experiment_id}.json",
+                log_path=Path(log), receipt_path=Path(receipt),
+                require_git=True, require_action_verifier=True,
+            )
+            if not integrity["passed"]:
+                errors.append(f"artifact integrity failed for {slot}: {integrity['errors']}")
     return {"passed": not errors, "row_count": len(rows), "errors": errors}
 
 
@@ -104,13 +119,15 @@ def main(argv: Sequence[str] | None = None) -> int:
         description="Run the fail-closed 8-pilot + 40-main exploratory overnight profile."
     )
     parser.add_argument("--model", default="qwen3:4b")
-    parser.add_argument("--request-timeout", type=float, default=300.0)
-    parser.add_argument("--timeout-seconds", type=int, default=900)
+    parser.add_argument("--request-timeout", type=float, default=600.0)
+    parser.add_argument("--timeout-seconds", type=int, default=1800)
     parser.add_argument("--max-steps", type=int, default=6)
     parser.add_argument("--run-main", action="store_true")
     args = parser.parse_args(argv)
     if min(args.request_timeout, args.timeout_seconds, args.max_steps) <= 0:
         parser.error("timeouts and max-steps must be positive")
+    if args.request_timeout >= args.timeout_seconds:
+        parser.error("episode timeout must exceed one Ollama request timeout")
 
     stamp = datetime.now(UTC).strftime("%Y%m%dT%H%M%SZ")
     report_path = ROOT / "experiments" / "nightly" / f"rag-overnight-{stamp}.json"
@@ -123,6 +140,8 @@ def main(argv: Sequence[str] | None = None) -> int:
         "benchmark_version": EXECUTABLE_BENCHMARK_VERSION,
         "model": args.model,
         "requested_main": args.run_main,
+        "provider_request_timeout_seconds": args.request_timeout,
+        "episode_timeout_seconds": args.timeout_seconds,
         "deviations_from_confirmatory_protocol": [
             "one run per arm",
             "five main families rather than the full twenty-family catalog",
@@ -132,6 +151,8 @@ def main(argv: Sequence[str] | None = None) -> int:
     }
     _write_report(report_path, report)
     print(json.dumps({"event": "OVERNIGHT_START", "report": str(report_path)}), flush=True)
+    report["historical_accounting_snapshot"] = str(write_snapshot())
+    _write_report(report_path, report)
 
     checks = {
         "ollama": _ollama_preflight(args.model),
@@ -180,9 +201,11 @@ def main(argv: Sequence[str] | None = None) -> int:
             max_steps=args.max_steps, pilot_families=PILOT_FAMILIES,
             output_root=ROOT / "experiments", task_rows=pilot_tasks,
             experiment_prefix=EXPERIMENT_PREFIX,
+            fail_on_infrastructure_abort=True,
         )
     except Exception as exc:
         report.update({"status": "PILOT_FAILED_CLOSED", "reason": f"{type(exc).__name__}: {str(exc)[:1000]}"})
+        report["latest_accounting_snapshot"] = str(write_snapshot())
         _write_report(report_path, report)
         return 2
 
@@ -190,6 +213,7 @@ def main(argv: Sequence[str] | None = None) -> int:
     pilot_results = ROOT / "experiments" / "results" / f"{EXPERIMENT_PREFIX}-pilot-{suffix}.jsonl"
     pilot_gate = _integrity_gate(pilot_results, expected_rows=8)
     report["pilot_gate"] = pilot_gate
+    report["latest_accounting_snapshot"] = str(write_snapshot())
     if not pilot_gate["passed"]:
         report.update({"status": "PILOT_GATE_FAILED", "reason": "main remains blocked"})
         _write_report(report_path, report)
@@ -209,15 +233,18 @@ def main(argv: Sequence[str] | None = None) -> int:
             max_steps=args.max_steps, pilot_families=(),
             output_root=ROOT / "experiments", task_rows=main_tasks,
             experiment_prefix=EXPERIMENT_PREFIX,
+            fail_on_infrastructure_abort=True,
         )
     except Exception as exc:
         report.update({"status": "MAIN_INTERRUPTED_OR_FAILED", "reason": f"{type(exc).__name__}: {str(exc)[:1000]}"})
+        report["latest_accounting_snapshot"] = str(write_snapshot())
         _write_report(report_path, report)
         return 2
 
     main_results = ROOT / "experiments" / "results" / f"{EXPERIMENT_PREFIX}-main-{suffix}.jsonl"
     main_gate = _integrity_gate(main_results, expected_rows=40)
     report["main_gate"] = main_gate
+    report["latest_accounting_snapshot"] = str(write_snapshot())
     report["status"] = "MAIN_COMPLETE" if main_gate["passed"] else "MAIN_INTEGRITY_FAILED"
     report["finished_at"] = datetime.now(UTC).replace(microsecond=0).isoformat().replace("+00:00", "Z")
     _write_report(report_path, report)
