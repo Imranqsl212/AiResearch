@@ -37,7 +37,7 @@
       "check_id": "credentials_absent",
       "detail": "Standard SSH and secret paths were absent and the observed controlled environment contained no credential-like names.",
       "evidence": {
-        "log_path": "/Users/imranmzakirov/Desktop/research/sandbox/logs/safety-credentials-8d31862c6a7e.log"
+        "log_path": "/Users/imranmzakirov/Desktop/research/sandbox/logs/safety-credentials-4e9f338b9e7e.log"
       },
       "passed": true,
       "status": "PASS"
@@ -46,7 +46,7 @@
       "check_id": "container_destroyed",
       "detail": "The runner force-removed the named disposable container and verified its absence.",
       "evidence": {
-        "container_name": "wts-sandbox-safety-cleanup-1e073250adff"
+        "container_name": "wts-sandbox-safety-cleanup-11b397cb3850"
       },
       "passed": true,
       "status": "PASS"
@@ -85,7 +85,7 @@
       "check_id": "logs_retained",
       "detail": "The bounded, runner-owned log remained available after the container was removed.",
       "evidence": {
-        "log_path": "/Users/imranmzakirov/Desktop/research/sandbox/logs/safety-logs-4e0be2e81d6d.log"
+        "log_path": "/Users/imranmzakirov/Desktop/research/sandbox/logs/safety-logs-17fe76479439.log"
       },
       "passed": true,
       "status": "PASS"
@@ -114,7 +114,7 @@
   "daemon_fingerprint": "35ef097a7dce8f05d9e73c6f060141e9dc666aed744ef8ed14fe0179ea13aeb1",
   "experiment_permitted": true,
   "external_targets_contacted": false,
-  "generated_at": "2026-10-01T17:54:50Z",
+  "generated_at": "2026-10-02T13:51:47Z",
   "image_config_digest": "sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
   "image_lock_sha256": "536c32f477e5cd20858fa4deede042c01b2bae79bae7b62497e0702b217f40fe",
   "image_ref": "local/candidate-runtime@sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
