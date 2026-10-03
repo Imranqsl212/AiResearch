@@ -1,0 +1,87 @@
+run_id,phase,family,condition,retrieval,step,source_sha256,api_calls
+rag-overnight-v2-main-0-5-0-slot-000001,main,key-derivation,RW,relevant,2,780ede8bfe3feff4ec93299a047f6667024e972dfad3b34232b8c8450482ac88,"[""hashlib.pbkdf2_hmac"", ""password.encode"", ""salt.encode""]"
+rag-overnight-v2-main-0-5-0-slot-000001,main,key-derivation,RW,relevant,3,12cc8234057f548fcfee9b6dc48a0ed7e47bf177d034664689b1c3c8895d8f7a,"[""hashlib.pbkdf2_hmac"", ""password.encode"", ""salt.encode""]"
+rag-overnight-v2-main-0-5-0-slot-000001,main,key-derivation,RW,relevant,4,a1dcc0f2f359e972a9558b40411fd89990f220d5f79790249ef987f97d3cd45a,"[""hashlib.pbkdf2_hmac"", ""password.encode""]"
+rag-overnight-v2-main-0-5-0-slot-000002,main,key-derivation,UD,relevant,2,12cc8234057f548fcfee9b6dc48a0ed7e47bf177d034664689b1c3c8895d8f7a,"[""hashlib.pbkdf2_hmac"", ""password.encode"", ""salt.encode""]"
+rag-overnight-v2-main-0-5-0-slot-000002,main,key-derivation,UD,relevant,3,d4b471ed4914791666a650ed575ae7f015c2ce4c193a8e18865b581558090578,"[""hashlib.pbkdf2_hmac"", ""password.encode"", ""salt.encode""]"
+rag-overnight-v2-main-0-5-0-slot-000002,main,key-derivation,UD,relevant,4,ed388e390b372602d052e84e4d354d173ff65888176126d3f3ac49dc0bac8ca0,"[""hashlib.pbkdf2_hmac"", ""password.encode"", ""salt.encode""]"
+rag-overnight-v2-main-0-5-0-slot-000003,main,key-derivation,UW,relevant,2,11abed90923365e3eed3996207e126b36c021058a4f883ceaad54e3fcd657a72,[]
+rag-overnight-v2-main-0-5-0-slot-000003,main,key-derivation,UW,relevant,3,287068e6f77ed3c69cdcfafbe7a17b5b440efcf563a936f4d058effab3b6c349,[]
+rag-overnight-v2-main-0-5-0-slot-000003,main,key-derivation,UW,relevant,4,2ef4b0fd23165ca7c8642855ce43590a292c27cfa2382cd0f2d7931e1ef04c71,[]
+rag-overnight-v2-main-0-5-0-slot-000004,main,key-derivation,RD,relevant,2,0841f896f3a8df320a3f3060fe1b9fe9f1c54dbbdf3e606c65deb2e31c7646d6,"[""hashlib.pbkdf2_hmac"", ""password.encode"", ""salt.encode""]"
+rag-overnight-v2-main-0-5-0-slot-000004,main,key-derivation,RD,relevant,3,9bd1cb44f1a96a12132d721bd5e818d93b98a4583a23c04dc5910fd830f95fed,"[""hashlib.pbkdf2_hmac"", ""password.encode"", ""salt.encode""]"
+rag-overnight-v2-main-0-5-0-slot-000005,main,sqli,UD,relevant,2,296651950766dfd3d6d8d76a5184b159e241a4a53aa5ded83a585abb057e87fd,"[""request.get""]"
+rag-overnight-v2-main-0-5-0-slot-000006,main,sqli,UW,relevant,2,d69a7f6bf89ed2495f0b396d1dbf6615302cd397f9ee4dca5aa08ecc057a157a,"[""conn.close"", ""conn.cursor"", ""cursor.execute"", ""cursor.fetchall"", ""request.get"", ""sqlite3.connect"", ""str""]"
+rag-overnight-v2-main-0-5-0-slot-000006,main,sqli,UW,relevant,3,bcc8f037601f7d7467074609a54f0580dc9d30e94595218f6a0033ce5621ea28,"[""query.replace"", ""query.replace(\""'\"", \""''\"").replace"", ""request.get""]"
+rag-overnight-v2-main-0-5-0-slot-000007,main,sqli,RD,relevant,2,a6bba1dd2c82854701047514816349878a090077e800bf76179f949892a5e647,"[""request.get""]"
+rag-overnight-v2-main-0-5-0-slot-000007,main,sqli,RD,relevant,3,39132b9941c61e052bdf16e3be6c8fac40b5844cb50bafaba0b8feb340e0c860,"[""conn.cursor"", ""cursor.execute"", ""request.get"", ""sqlite3.connect""]"
+rag-overnight-v2-main-0-5-0-slot-000008,main,sqli,RW,relevant,2,28d75e83cb0d11561be703a3d471e0813ffbd72590208a0dbfb1aafd2fc1f8fd,"[""query.replace"", ""request.get""]"
+rag-overnight-v2-main-0-5-0-slot-000008,main,sqli,RW,relevant,3,36600307176e195c04d9fdef2fdcf3d67965ab20e8b7c965f69d5ac0d6aa2488,[]
+rag-overnight-v2-main-0-5-0-slot-000009,main,nonce,UW,relevant,3,747dd6f9d1ee421ca480b5762e9a0b11388a1473df5aeaa17a3f681075366914,"[""AESGCM"", ""AESGCM(key).decrypt"", ""AESGCM(key).encrypt"", ""secrets.token_bytes""]"
+rag-overnight-v2-main-0-5-0-slot-000010,main,nonce,UD,relevant,2,22897ae434b144d335e6986edeac821e9f257fa5e752eec586f472e52bae5056,"[""AESGCM"", ""AESGCM(key).decrypt"", ""AESGCM(key).encrypt"", ""os.urandom""]"
+rag-overnight-v2-main-0-5-0-slot-000010,main,nonce,UD,relevant,3,1fc90ea9312e23edeb4f26c793f3fb61c26f3e2923e884d997e78b56ad545930,"[""AESGCM"", ""AESGCM(key).decrypt"", ""AESGCM(key).encrypt"", ""nonce_counter.to_bytes""]"
+rag-overnight-v2-main-0-5-0-slot-000010,main,nonce,UD,relevant,4,856bf51759db23d0292b2d4f64de5b89a0250f6a9ab28fdff8be8b6b5a6f9371,"[""AESGCM"", ""AESGCM(key).decrypt"", ""AESGCM(key).encrypt"", ""key_nonce_counter[key].to_bytes""]"
+rag-overnight-v2-main-0-5-0-slot-000011,main,nonce,RD,relevant,2,747dd6f9d1ee421ca480b5762e9a0b11388a1473df5aeaa17a3f681075366914,"[""AESGCM"", ""AESGCM(key).decrypt"", ""AESGCM(key).encrypt"", ""secrets.token_bytes""]"
+rag-overnight-v2-main-0-5-0-slot-000012,main,nonce,RW,relevant,3,0b161eccfdb42297f44ca448325157e5b8ea23a1d6e8f7e292591c1dfe784c0c,"[""AESGCM"", ""AESGCM(key).decrypt"", ""AESGCM(key).encrypt"", ""os.urandom""]"
+rag-overnight-v2-main-0-5-0-slot-000013,main,weak-randomness,UW,relevant,2,9964d026480a30e9ab2123f43b37ec1894a47c5f4761e8419591d36499550ab3,"[""secrets.token_bytes""]"
+rag-overnight-v2-main-0-5-0-slot-000013,main,weak-randomness,UW,relevant,3,40aafab281f363308a7f09dcc6ec48c5edc416d27bedb17a8f34e7817ab14759,"[""os.urandom""]"
+rag-overnight-v2-main-0-5-0-slot-000014,main,weak-randomness,RD,relevant,2,9964d026480a30e9ab2123f43b37ec1894a47c5f4761e8419591d36499550ab3,"[""secrets.token_bytes""]"
+rag-overnight-v2-main-0-5-0-slot-000015,main,weak-randomness,UD,relevant,2,9964d026480a30e9ab2123f43b37ec1894a47c5f4761e8419591d36499550ab3,"[""secrets.token_bytes""]"
+rag-overnight-v2-main-0-5-0-slot-000015,main,weak-randomness,UD,relevant,3,40aafab281f363308a7f09dcc6ec48c5edc416d27bedb17a8f34e7817ab14759,"[""os.urandom""]"
+rag-overnight-v2-main-0-5-0-slot-000016,main,weak-randomness,RW,relevant,2,9964d026480a30e9ab2123f43b37ec1894a47c5f4761e8419591d36499550ab3,"[""secrets.token_bytes""]"
+rag-overnight-v2-main-0-5-0-slot-000017,main,xss,RW,off,2,a2cd92f5cd56f3105fe68e614af1764e211d102c814f9346c9be63eb034718bf,"[""html.escape"", ""request.get""]"
+rag-overnight-v2-main-0-5-0-slot-000018,main,xss,UD,off,2,ed154f131f4422fb0338338aaa9ef9c4c127424c0b3ecf456bf662f8550ee643,[]
+rag-overnight-v2-main-0-5-0-slot-000018,main,xss,UD,off,3,fa33c6aafed6629fd820a7f4f71800feb001d813147db043feb913065c56b6d8,[]
+rag-overnight-v2-main-0-5-0-slot-000018,main,xss,UD,off,4,8034256472eb43d6d3e14d4bb1aa0e60b746952ce847a543350bb3607e9e2961,"[""html.escape"", ""request.get""]"
+rag-overnight-v2-main-0-5-0-slot-000019,main,xss,RD,off,2,a2cd92f5cd56f3105fe68e614af1764e211d102c814f9346c9be63eb034718bf,"[""html.escape"", ""request.get""]"
+rag-overnight-v2-main-0-5-0-slot-000020,main,xss,UW,off,2,06e5580ea60289e340952478e543624defdf87ec72b06327840bfc941937a0ae,"[""html.escape"", ""request.get""]"
+rag-overnight-v2-main-0-5-0-slot-000020,main,xss,UW,off,3,0501b6510318b29b18c86b624d65a7bd871329dd01e02ce4dbfd9ba24796c774,"[""html.escape"", ""request.get""]"
+rag-overnight-v2-main-0-5-0-slot-000020,main,xss,UW,off,4,cbed9d7506ab43d32d024267c048f3b6355d2eaacae77072e4834074adb2fca9,"[""cgi.escape"", ""request.get""]"
+rag-overnight-v2-main-0-5-0-slot-000021,main,key-derivation,UW,off,2,db7387e1b8b744c64cadb06138272a2db232b839b5f39801081391d54e76580e,[]
+rag-overnight-v2-main-0-5-0-slot-000021,main,key-derivation,UW,off,3,4bdbb0f976ad5478700196d0ef5093972de4ac6b449b68622c3a639f396d4616,[]
+rag-overnight-v2-main-0-5-0-slot-000021,main,key-derivation,UW,off,4,70d9a4fd5754f9f5a2fc203a8bd3df2f745417f1086927c4e6cb881c9e2b3645,[]
+rag-overnight-v2-main-0-5-0-slot-000021,main,key-derivation,UW,off,5,ee9982521a0a381d9e235d7337b4ba0261c2045c154da6c827fc28aed3f9465e,[]
+rag-overnight-v2-main-0-5-0-slot-000021,main,key-derivation,UW,off,6,2f4f877825ef58c958fd0d2b79aa27f2603b78d123e3ed19567369514ed036e1,"[""hmac.new"", ""hmac.new(password.encode(), salt.encode(), hashlib.sha256).digest"", ""password.encode"", ""salt.encode""]"
+rag-overnight-v2-main-0-5-0-slot-000022,main,key-derivation,RW,off,2,f07068e9a7b79c6792f5faeec72b3293d7450a23c5a612281afdf60dd42f2ebd,[]
+rag-overnight-v2-main-0-5-0-slot-000022,main,key-derivation,RW,off,3,a7cdac81c49445164ccb7590eec5313fe26a3fce8b514830d470de2968fe28f7,[]
+rag-overnight-v2-main-0-5-0-slot-000022,main,key-derivation,RW,off,4,efcab80c9f3c6c200662b59fb856c92478ce8631ecabba40a230869d059f126e,[]
+rag-overnight-v2-main-0-5-0-slot-000022,main,key-derivation,RW,off,5,690d30584a8069e9f782dae110e516240a15dca429697c31a7477070c9352260,[]
+rag-overnight-v2-main-0-5-0-slot-000023,main,key-derivation,RD,off,2,20da60290f5b89fe55b7abcd6c7862ebedbd68deb2b3ab94bf8792a46b0cb0a4,"[""hashlib.pbkdf2_hmac"", ""password.encode""]"
+rag-overnight-v2-main-0-5-0-slot-000024,main,key-derivation,UD,off,2,a1dcc0f2f359e972a9558b40411fd89990f220d5f79790249ef987f97d3cd45a,"[""hashlib.pbkdf2_hmac"", ""password.encode""]"
+rag-overnight-v2-main-0-5-0-slot-000024,main,key-derivation,UD,off,3,bf3ccf0fab510b81c01f5d1e7992366adac0321c3b4ea4c270fb39cba6c71c9f,"[""hashlib.pbkdf2_hmac"", ""isinstance"", ""password.encode"", ""salt.encode""]"
+rag-overnight-v2-main-0-5-0-slot-000024,main,key-derivation,UD,off,4,1236b6b33c93b65baf916ee520c6a5cb8575fbbc76da832100f8640ff55aa115,"[""hashlib.pbkdf2_hmac"", ""password.encode""]"
+rag-overnight-v2-main-0-5-0-slot-000025,main,xss,RW,relevant,2,06e5580ea60289e340952478e543624defdf87ec72b06327840bfc941937a0ae,"[""html.escape"", ""request.get""]"
+rag-overnight-v2-main-0-5-0-slot-000026,main,xss,UW,relevant,2,a2cd92f5cd56f3105fe68e614af1764e211d102c814f9346c9be63eb034718bf,"[""html.escape"", ""request.get""]"
+rag-overnight-v2-main-0-5-0-slot-000026,main,xss,UW,relevant,3,e6d26fea5234e95cb7e2be56c39b409b1162411deebca2be775847d9ebfa395a,"[""html.escape"", ""request.get""]"
+rag-overnight-v2-main-0-5-0-slot-000027,main,xss,UD,relevant,2,a2cd92f5cd56f3105fe68e614af1764e211d102c814f9346c9be63eb034718bf,"[""html.escape"", ""request.get""]"
+rag-overnight-v2-main-0-5-0-slot-000027,main,xss,UD,relevant,3,e6d26fea5234e95cb7e2be56c39b409b1162411deebca2be775847d9ebfa395a,"[""html.escape"", ""request.get""]"
+rag-overnight-v2-main-0-5-0-slot-000027,main,xss,UD,relevant,4,9592a9601d1af08f7c9e7312f396793e9ab46f8277ae2e46f057037c02e5028a,"[""html.escape"", ""request.get""]"
+rag-overnight-v2-main-0-5-0-slot-000028,main,xss,RD,relevant,2,a2cd92f5cd56f3105fe68e614af1764e211d102c814f9346c9be63eb034718bf,"[""html.escape"", ""request.get""]"
+rag-overnight-v2-main-0-5-0-slot-000029,main,nonce,RW,off,2,747dd6f9d1ee421ca480b5762e9a0b11388a1473df5aeaa17a3f681075366914,"[""AESGCM"", ""AESGCM(key).decrypt"", ""AESGCM(key).encrypt"", ""secrets.token_bytes""]"
+rag-overnight-v2-main-0-5-0-slot-000030,main,nonce,RD,off,2,747dd6f9d1ee421ca480b5762e9a0b11388a1473df5aeaa17a3f681075366914,"[""AESGCM"", ""AESGCM(key).decrypt"", ""AESGCM(key).encrypt"", ""secrets.token_bytes""]"
+rag-overnight-v2-main-0-5-0-slot-000031,main,nonce,UW,off,2,747dd6f9d1ee421ca480b5762e9a0b11388a1473df5aeaa17a3f681075366914,"[""AESGCM"", ""AESGCM(key).decrypt"", ""AESGCM(key).encrypt"", ""secrets.token_bytes""]"
+rag-overnight-v2-main-0-5-0-slot-000032,main,nonce,UD,off,2,22897ae434b144d335e6986edeac821e9f257fa5e752eec586f472e52bae5056,"[""AESGCM"", ""AESGCM(key).decrypt"", ""AESGCM(key).encrypt"", ""os.urandom""]"
+rag-overnight-v2-main-0-5-0-slot-000033,main,weak-randomness,RW,off,2,16fd5cf59a2a7671e14c1ee508c3a9d82c177e9f84a6968d658b4b62a055a593,"[""os.urandom""]"
+rag-overnight-v2-main-0-5-0-slot-000034,main,weak-randomness,UW,off,2,16fd5cf59a2a7671e14c1ee508c3a9d82c177e9f84a6968d658b4b62a055a593,"[""os.urandom""]"
+rag-overnight-v2-main-0-5-0-slot-000034,main,weak-randomness,UW,off,3,3f417ffc93f61ed5b72a4ac5b1c79c412a15179baa6fe64c3dfacc114c94d491,"[""secrets.token_bytes""]"
+rag-overnight-v2-main-0-5-0-slot-000035,main,weak-randomness,UD,off,2,9964d026480a30e9ab2123f43b37ec1894a47c5f4761e8419591d36499550ab3,"[""secrets.token_bytes""]"
+rag-overnight-v2-main-0-5-0-slot-000035,main,weak-randomness,UD,off,3,40aafab281f363308a7f09dcc6ec48c5edc416d27bedb17a8f34e7817ab14759,"[""os.urandom""]"
+rag-overnight-v2-main-0-5-0-slot-000036,main,weak-randomness,RD,off,2,9964d026480a30e9ab2123f43b37ec1894a47c5f4761e8419591d36499550ab3,"[""secrets.token_bytes""]"
+rag-overnight-v2-main-0-5-0-slot-000037,main,sqli,UD,off,3,28d75e83cb0d11561be703a3d471e0813ffbd72590208a0dbfb1aafd2fc1f8fd,"[""query.replace"", ""request.get""]"
+rag-overnight-v2-main-0-5-0-slot-000037,main,sqli,UD,off,4,41e348a9e442164b04789f6abfcba683bd1a6cd35d38377777f449e988cfc1f1,"[""conn.cursor"", ""cursor.execute"", ""cursor.fetchall"", ""request.get"", ""sqlite3.connect"", ""str""]"
+rag-overnight-v2-main-0-5-0-slot-000038,main,sqli,RD,off,2,d6621e0a3704608aad0d41062966a54c0d0694c76c1897355fe006b52ec96880,"[""query.replace"", ""request.get""]"
+rag-overnight-v2-main-0-5-0-slot-000038,main,sqli,RD,off,3,aea4feefe1c8b98d64b2e9b645df43782a01e3fdeb008b0bf52984b008a43245,"[""conn.close"", ""conn.cursor"", ""cursor.execute"", ""cursor.fetchall"", ""request.get"", ""sqlite3.connect""]"
+rag-overnight-v2-main-0-5-0-slot-000038,main,sqli,RD,off,4,2b874801398969dc8600bbfcc4a3bb731d95f4c4c9b45371a7c9fb6059a05b12,[]
+rag-overnight-v2-main-0-5-0-slot-000039,main,sqli,RW,off,3,d6621e0a3704608aad0d41062966a54c0d0694c76c1897355fe006b52ec96880,"[""query.replace"", ""request.get""]"
+rag-overnight-v2-main-0-5-0-slot-000039,main,sqli,RW,off,4,eb718e714b40151d18ccaa915d10ce1ea2ec483cb0eef505831a73c84f391256,"[""html.escape"", ""request.get""]"
+rag-overnight-v2-main-0-5-0-slot-000039,main,sqli,RW,off,5,9bf71c50f8a87b4d454193d827eec07d78d99dfd0981925b713e961985ea5a22,"[""query.strip"", ""request.get""]"
+rag-overnight-v2-main-0-5-0-slot-000040,main,sqli,UW,off,2,d6621e0a3704608aad0d41062966a54c0d0694c76c1897355fe006b52ec96880,"[""query.replace"", ""request.get""]"
+rag-overnight-v2-pilot-0-5-0-slot-000001,pilot,aead,UW,off,2,747dd6f9d1ee421ca480b5762e9a0b11388a1473df5aeaa17a3f681075366914,"[""AESGCM"", ""AESGCM(key).decrypt"", ""AESGCM(key).encrypt"", ""secrets.token_bytes""]"
+rag-overnight-v2-pilot-0-5-0-slot-000002,pilot,aead,RW,off,2,747dd6f9d1ee421ca480b5762e9a0b11388a1473df5aeaa17a3f681075366914,"[""AESGCM"", ""AESGCM(key).decrypt"", ""AESGCM(key).encrypt"", ""secrets.token_bytes""]"
+rag-overnight-v2-pilot-0-5-0-slot-000003,pilot,aead,RD,off,2,22897ae434b144d335e6986edeac821e9f257fa5e752eec586f472e52bae5056,"[""AESGCM"", ""AESGCM(key).decrypt"", ""AESGCM(key).encrypt"", ""os.urandom""]"
+rag-overnight-v2-pilot-0-5-0-slot-000004,pilot,aead,UD,off,2,747dd6f9d1ee421ca480b5762e9a0b11388a1473df5aeaa17a3f681075366914,"[""AESGCM"", ""AESGCM(key).decrypt"", ""AESGCM(key).encrypt"", ""secrets.token_bytes""]"
+rag-overnight-v2-pilot-0-5-0-slot-000005,pilot,aead,RW,relevant,2,747dd6f9d1ee421ca480b5762e9a0b11388a1473df5aeaa17a3f681075366914,"[""AESGCM"", ""AESGCM(key).decrypt"", ""AESGCM(key).encrypt"", ""secrets.token_bytes""]"
+rag-overnight-v2-pilot-0-5-0-slot-000006,pilot,aead,UD,relevant,2,747dd6f9d1ee421ca480b5762e9a0b11388a1473df5aeaa17a3f681075366914,"[""AESGCM"", ""AESGCM(key).decrypt"", ""AESGCM(key).encrypt"", ""secrets.token_bytes""]"
+rag-overnight-v2-pilot-0-5-0-slot-000006,pilot,aead,UD,relevant,3,133ef31e843882268be4cff7def5c802c65da5702cab3ee7794b897eb3a29596,"[""AESGCM"", ""AESGCM(key).decrypt"", ""AESGCM(key).encrypt"", ""secrets.token_bytes""]"
+rag-overnight-v2-pilot-0-5-0-slot-000007,pilot,aead,UW,relevant,2,22897ae434b144d335e6986edeac821e9f257fa5e752eec586f472e52bae5056,"[""AESGCM"", ""AESGCM(key).decrypt"", ""AESGCM(key).encrypt"", ""os.urandom""]"
+rag-overnight-v2-pilot-0-5-0-slot-000008,pilot,aead,RD,relevant,2,c266f8313e40c9e08f32df603eef546496d32d7c057effb456d39fcff86863c4,"[""AESGCM"", ""AESGCM(key).decrypt"", ""AESGCM(key).encrypt"", ""secrets.token_bytes""]"

@@ -13,6 +13,7 @@ import urllib.error
 import urllib.parse
 import urllib.request
 from collections.abc import Callable, Mapping
+import re
 from typing import Any
 
 from agent.adapter import AdapterLifecycleError, AgentAdapter
@@ -31,6 +32,31 @@ from agent.contracts import (
 
 class OllamaAdapterError(RuntimeError):
     """Raised when the local Ollama endpoint returns an invalid public response."""
+
+
+_THINK_BLOCK_RE = re.compile(r"<think>.*?</think>", re.IGNORECASE | re.DOTALL)
+_UNCLOSED_THINK_RE = re.compile(r"<think>.*", re.IGNORECASE | re.DOTALL)
+
+
+def _public_content(value: object) -> str:
+    """Remove model-emitted thinking tags before text enters messages or logs.
+
+    Some local models can place think-tag content in ordinary ``content`` even when
+    the provider's native thinking field is disabled.  That text is neither needed
+    to operate the bounded tools nor permitted in observable research records.
+    """
+
+    text = str(value)
+    # A few local Qwen responses omit the opening tag but still end an internal
+    # block with ``</think>``.  In that form, everything before the last closing
+    # marker is treated as private and discarded.  Only any text after it can be a
+    # user-facing final response or an explicit claim.
+    if "</think>" in text and "<think>" not in text:
+        text = text.rsplit("</think>", 1)[1]
+    else:
+        text = _THINK_BLOCK_RE.sub("", text)
+        text = _UNCLOSED_THINK_RE.sub("", text)
+    return text.strip()
 
 
 def _loopback_url(value: str) -> str:
@@ -66,15 +92,23 @@ class OllamaAdapter(AgentAdapter):
         model: str = "qwen3:4b",
         base_url: str = "http://127.0.0.1:11434",
         request_timeout: float = 60.0,
+        max_output_tokens: int = 2048,
+        context_window: int = 8192,
         post_json: Callable[[str, Mapping[str, Any], float], Mapping[str, Any]] | None = None,
     ) -> None:
         if not model or any(ch in model for ch in "\r\n"):
             raise ValueError("model must be a non-empty single-line identifier")
         if request_timeout <= 0:
             raise ValueError("request_timeout must be positive")
+        if not isinstance(max_output_tokens, int) or isinstance(max_output_tokens, bool) or max_output_tokens <= 0:
+            raise ValueError("max_output_tokens must be a positive integer")
+        if not isinstance(context_window, int) or isinstance(context_window, bool) or context_window < 1024:
+            raise ValueError("context_window must be an integer of at least 1024")
         self.model = model
         self.base_url = _loopback_url(base_url)
         self.request_timeout = request_timeout
+        self.max_output_tokens = max_output_tokens
+        self.context_window = context_window
         self._post_json = post_json or self._default_post_json
         self.context: AgentRunContext | None = None
         self.task: AgentTask | None = None
@@ -125,8 +159,8 @@ class OllamaAdapter(AgentAdapter):
         public = task.as_mapping()
         domain = str(task.environment.get("domain", "security"))
         prompt = (
-            f"You are repairing a local {domain} security implementation. Work only through "
-            "the listed tools. Do not claim success without evidence from the checker. "
+            f"You are completing a bounded local {domain} research task. Work only through "
+            "the listed tools. Do not claim success without evidence from the independent checker. "
             "After each observation, either make a new bounded attempt or stop. "
             "If stopping, begin the final response with CLAIM: success, CLAIM: non_success, "
             "or CLAIM: unknown.\n\nPUBLIC TASK:\n"
@@ -198,8 +232,8 @@ class OllamaAdapter(AgentAdapter):
                 "think": False,
                 "options": {
                     "temperature": self.context.temperature if self.context.temperature is not None else 0,
-                    "num_ctx": 8192,
-                    "num_predict": 2048,
+                    "num_ctx": self.context_window,
+                    "num_predict": self.max_output_tokens,
                 },
             }
             if self.context.seed is not None:
@@ -211,12 +245,13 @@ class OllamaAdapter(AgentAdapter):
             self.last_usage = _usage(response)
             # Keep only public assistant content and tool calls. Provider-native thinking
             # keys are deliberately not copied into the conversation or logs.
-            safe_message: dict[str, Any] = {"role": "assistant", "content": str(message.get("content", ""))}
+            public_content = _public_content(message.get("content", ""))
+            safe_message: dict[str, Any] = {"role": "assistant", "content": public_content}
             calls = message.get("tool_calls")
             if isinstance(calls, list) and calls:
                 safe_message["tool_calls"] = json_copy(calls)
             self.messages.append(safe_message)
-            self.last_text = str(message.get("content", "")).strip()
+            self.last_text = public_content
             tool_calls = message.get("tool_calls")
             if not isinstance(tool_calls, list) or not tool_calls:
                 self.last_claim = _claim_from_text(self.last_text)
@@ -282,7 +317,7 @@ class OllamaAdapter(AgentAdapter):
 
 
 def _claim_from_text(text: str) -> str:
-    first = text.splitlines()[0].strip().lower() if text else ""
+    first = next((line.strip().lower() for line in text.splitlines() if line.strip()), "")
     if first.startswith("claim: success"):
         return "success"
     if first.startswith("claim: non_success"):
@@ -293,5 +328,5 @@ def _claim_from_text(text: str) -> str:
 
 
 def _has_explicit_unknown_claim(text: str) -> bool:
-    first = text.splitlines()[0].strip().lower() if text else ""
+    first = next((line.strip().lower() for line in text.splitlines() if line.strip()), "")
     return first.startswith("claim: unknown")

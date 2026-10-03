@@ -1,5 +1,10 @@
 # Analysis Results
 
+> **Historical document (2026-09-29).** The completed 2026-10-02/03 exploratory
+> crypto/web pilot and main cohort is reported in [paper/final.md](../paper/final.md)
+> and reconstructed by [paper_pipeline.py](paper_pipeline.py). Statements below
+> describe an earlier generic scaffold and are not the present project status.
+
 > **Scope notice:** this is a zero-data report from the earlier generic stopping
 > scaffold. It is not an analysis of the crypto benchmark and contains no empirical
 > crypto-agent result.

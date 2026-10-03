@@ -19,7 +19,8 @@ The suite checks, in order:
 8. the same timeout removes a container containing a background child process;
 9. runner-owned logs remain after cleanup; and
 10. identical probes retain the same image digest, policy/configuration fingerprint,
-    and output.
+    and output; and
+11. the candidate-runtime image remains isolated under the approved policy.
 
 If Docker is unavailable, the official approved-image lock is empty, or the image is
 not cached, every runtime check is `NOT_RUN_FAIL_CLOSED` and the suite exits nonzero.
@@ -27,10 +28,14 @@ If a runtime check fails, that check is `FAIL`, all later checks are
 `NOT_RUN_FAIL_CLOSED`, and no agent run is permitted. The official latest receipt is
 `latest_result.json`; `candidate_result.json` records preapproval separately.
 
-The current candidate failed preapproval before Docker could start a container:
-the existing `--pid private` flag is unsupported by this daemon. The official
-allow-list therefore remains empty. See [`image_provenance.md`](../../docs/image_provenance.md).
+An earlier candidate preapproval failure involving `--pid private` is historical,
+not the current gate state. The official allow-list now contains the pinned
+candidate-runtime image in `sandbox/images/approved_images.json`; the latest
+local gate run passed all eleven checks on 3 October 2026. See
+[`image_provenance.md`](../../docs/image_provenance.md) and the current
+`latest_result.json` for the exact image, daemon fingerprint, and evidence.
 Do not add a tag-only reference or weaken namespace controls to make the suite pass.
 On Docker Desktop, the suite may use the explicitly recorded
 `docker-desktop-linuxkit-vm` mode; this is a VM-boundary assumption, not daemon
-userns-remapping evidence.
+userns-remapping evidence. A previous passing receipt does not replace a new
+gate run before any future agent execution.

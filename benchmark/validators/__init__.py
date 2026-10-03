@@ -9,10 +9,20 @@ from benchmark.validators.state_machine import (
     verify_pilot_state_machine,
 )
 from benchmark.validators.four_cell import verify_four_cell_action_receipt, verify_four_cell_receipt
+from benchmark.validators.containment_lab import (
+    verify_containment_lab_action,
+    verify_containment_lab_terminal,
+)
 
 
-_REGISTRY = {"pilot_state_machine_v1": verify_pilot_state_machine}
-_ACTION_REGISTRY = {"pilot_state_machine_v1": verify_pilot_action_state_machine}
+_REGISTRY = {
+    "pilot_state_machine_v1": verify_pilot_state_machine,
+    "containment_lab_state_machine_v1": verify_containment_lab_terminal,
+}
+_ACTION_REGISTRY = {
+    "pilot_state_machine_v1": verify_pilot_action_state_machine,
+    "containment_lab_state_machine_v1": verify_containment_lab_action,
+}
 
 
 def verify_terminal(
@@ -44,4 +54,6 @@ __all__ = [
     "verify_action",
     "verify_four_cell_receipt",
     "verify_four_cell_action_receipt",
+    "verify_containment_lab_terminal",
+    "verify_containment_lab_action",
 ]

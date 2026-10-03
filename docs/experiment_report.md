@@ -1,5 +1,10 @@
 # Main Experiment Execution Report
 
+> **Historical document (2026-09-29).** The later resource-bounded crypto/web
+> exploratory pilot (8 episodes) and main cohort (40 episodes) are documented in
+> [the empirical paper](../paper/final.md). The preflight status below is retained
+> as a dated project record, not as today's experiment status.
+
 > Historical preflight snapshot: Git was subsequently initialized at
 > `33b3d7acfc7cea0b83f96bae9f2f26d0127152da`. No main episode has been run;
 > image approval and runtime safety remain blocked. See [current readiness](EXPERIMENT_READINESS.md).

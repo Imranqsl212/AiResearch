@@ -1,124 +1,53 @@
-# When Secure-Code Repair Fails
+# When the Tests Pass but the Benchmark Says No
 
-**How AI coding agents adapt after crypto/web security feedback**
+An exploratory research project on what a local coding agent does after security feedback rejects its cryptographic or web code. The completed study used an Ollama `qwen3:4b` agent, synthetic local Python tasks, bounded tools, and a Docker candidate runtime.
 
-This project studies whether an AI coding agent genuinely changes its security
-strategy after an independent checker rejects a security implementation, or
-merely mutates parameters and repeats the same approach.
+**Current manuscript:** [full paper (Markdown)](paper/final.md), [PDF](paper/submission/full_paper.pdf), [editable Word file](paper/submission/full_paper.docx). The paper contains six generated figures, three tables, limitations, 22 linked primary sources, and reproduction instructions.
 
-The study separates three factors: whether a task is repairable, whether checker
-feedback is diagnostic or weak, and whether the agent receives frozen relevant
-security guidance through a controlled RAG context. The project does not contact real
-systems.
+## What was actually collected
 
-Current status: the Docker Desktop sandbox gate passes for the exact local image. An
-executable local crypto/web capability catalog, independent verifiers, Ollama adapter,
-and resumable pilot/main pipeline now exist. The official safety suite and the
-80-task executable catalog validation pass. Two excluded Docker-backed Qwen3:4b
-integration smokes completed; no pilot or main experiment has run.
+The executable catalog contains 80 task definitions (20 families × four condition cards). The resource bounded overnight study used **five** main families with four condition cards and guidance on/off: **40 episodes**, one per arm. A separate AEAD pilot used **eight** episodes. The remaining catalog definitions were validated as fixtures but were not part of this main empirical cohort. Older smokes and a separate containment *simulation* are retained as engineering records; they are not pooled with this study.
 
-For a non-technical Russian explanation of the research, the experiment design, what
-the agent can and cannot see, and the exact overnight command, read
-[`docs/RESEARCH_GUIDE_RU.md`](docs/RESEARCH_GUIDE_RU.md).
+The final code passed the benchmark's limited checks in 16/20 nominally repairable main episodes. In 9/20 nominally unavailable episodes the same family checks passed, but a hidden acceptance rule rejected the result. Thus this dataset cannot establish that the agent recognized genuinely impossible tasks. Only five families and one run per arm were collected; the planned confirmatory GEE analysis was not run. See [paper/final.md](paper/final.md) for definitions, denominators, and caveats.
 
-## Research question
+**The memorable finding:** a hidden veto can make an agent's continued attempts look like stubbornness, while the benchmark itself withholds the reason that no code change will be accepted. The paper measures this evaluation conflict directly and makes its limits explicit.
 
-> After an independent cryptographic security checker rejects an agent's code, does
-> the agent change its underlying security design, or only perform surface-level
-> edits and repeated attempts?
+## Reproduce the reported numbers
 
-Secondary questions concern the separate effects of RAG and feedback, new
-vulnerabilities, stopping after repeated failures, budget/timeout termination, and
-unsupported success claims.
+The analysis reads saved local logs and receipts without executing model generated code:
 
-## Active benchmark
-
-`benchmark/tasks/four_cell/` is the original four-cell development suite. The expanded
-executable catalog is in `benchmark/tasks/executable/catalog.jsonl`:
-
-- 12 crypto families × 4 cells = 48 records;
-- 8 local web-security families × 4 cells = 32 records;
-- 80 records total, validated by independent vulnerable/secure references;
-- catalog/verifier version `0.5.0`;
-- no network, credentials, shell, or real targets.
-
-`RD`/`RW` are repairable; `UD`/`UW` are securely unavailable. `D` means diagnostic
-feedback and `W` means weak but truthful feedback. The old generic finite-state
-tasks remain only as legacy regression fixtures.
-
-The RAG ablation uses [`benchmark/retrieval_corpus.jsonl`](benchmark/retrieval_corpus.jsonl):
-20 reviewed family-level guidance documents with a frozen hash. It never contains
-secure reference code, hidden condition labels, or verifier internals. Crossing RAG
-on/off with the four target cells produces eight treatment arms per family.
-
-Validate the active suite without launching an agent:
-
-```bash
-PYTHONDONTWRITEBYTECODE=1 python3 -B -m benchmark.quality_four_cell --json
+```sh
+python3 -B -m analysis.paper_pipeline --output paper/artifacts
 ```
 
-## Safety gate
+This creates [results.json](paper/artifacts/results.json), [per-run metrics](paper/artifacts/run_metrics.csv), condition and family tables, a [historical cohort inventory](paper/artifacts/historical_inventory.csv), and an [input hash ledger](paper/artifacts/input_hashes.csv). The pipeline validates the main and pilot manifests, source archive checksums, and per-run receipts. Original inputs in `experiments/runs/` and `experiments/raw_archive/` remain untouched. Those raw directories are excluded from Git pending a privacy and code release review; a clone without them cannot reproduce the counts from raw data. The derived tables in this workspace support inspection but are not a substitute for the original traces.
 
-The local Docker runner uses a digest-pinned candidate image, `--network none`, no host
-mounts or credentials, dropped capabilities, bounded resources, timeouts, and forced
-cleanup. On macOS Docker Desktop, the outer boundary is explicitly recorded as the
-Docker Desktop LinuxKit VM; this is not daemon-level `userns-remap` and remains a
-documented residual assumption.
+Build the PDF, Word file, and six figures after running the analysis:
 
-```bash
-PYTHONDONTWRITEBYTECODE=1 python3 -B -m sandbox.safety_checks.run --json
+```sh
+/Users/imranmzakirov/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3 -B -m paper.build_submission
 ```
 
-The official receipt must have all checks passing before any agent execution. The
-current receipt records no agent runs.
+This machine specific command uses the bundled Python environment with Pillow, ReportLab, python-docx, and pypdf. On another computer, use Python with those four libraries installed; no Docker or Ollama call occurs during analysis or paper rendering. The frozen experiment source commit was `98a4dcf414672c1725e4acdb9f08045370aa7f64`; `analysis/paper_pipeline.py` is post collection analysis code. Detailed steps and checks are in [paper/README.md](paper/README.md).
 
-## Execution readiness
+## Для соавтора и ментора
 
-The candidate path is Docker-isolated through the approved pinned Python runtime; the
-official suite validates the exact RPC path and excluded Ollama smokes have passed.
-The 20-family legacy smoke batch remains engineering evidence only. The factorial
-launcher runs fresh safety/catalog/RAG gates, one Docker-backed smoke, a 24-arm pilot,
-and—only with explicit `--run-main`—the resumable main series. See
-[`docs/OVERNIGHT_READINESS.md`](docs/OVERNIGHT_READINESS.md).
+Мы исследуем, что делает локальный AI агент после сообщения об ошибке безопасности: исправляет ли программу, подбирает похожие варианты или прекращает попытки. Для каждой задачи у него есть небольшой фрагмент криптографического или веб кода, ограниченные инструменты и проверка в изолированном контейнере. Часть задач даёт подробную обратную связь, часть — короткую; в половине запусков агент получает заранее подготовленную справку по теме.
 
-Validate the factorial design without calling Ollama:
+Ночной запуск уже завершён: 8 отдельных пилотных и 40 основных эпизодов. Статья показывает конкретные действия агента и ограничения нашего checker’а. Самое существенное: метка «нерешаемая задача» сейчас реализована скрытым отказом принять ответ, даже если внутренние тесты пройдены. Поэтому мы честно не утверждаем, что доказали способность агента понять, когда нужно остановиться. Это полноценный отчёт о состоявшемся исследовании и одновременно основание для улучшения следующего эксперимента.
 
-```bash
-PYTHONDONTWRITEBYTECODE=1 python3 -B -m unittest tests.test_rag_factorial
-```
-
-Run the gated pilot and main pipeline:
-
-```bash
-PYTHONDONTWRITEBYTECODE=1 python3 -B -m experiments.run_rag_factorial_nightly --run-main
-```
-
-The main phase starts only if the 24-arm pilot passes its integrity gate.
+Начните с [PDF статьи](paper/submission/full_paper.pdf). Для простого русского объяснения исходного замысла есть [исследовательский гид](docs/RESEARCH_GUIDE_RU.md); его старые оперативные статусы могут не соответствовать нынешним результатам. Источники и текущие выводы проверяйте по новой статье.
 
 ## Repository map
 
 | Path | Purpose |
 | --- | --- |
-| `benchmark/` | Crypto/web task catalog, schemas, retrieval corpus, quality checks, and evaluator-only receipts. |
-| `agent/` | Provider-neutral adapter, Ollama loopback adapter, and observable trajectory boundary. |
-| `crypto_target/` | Local crypto targets, evaluator receipts, and Docker-backed smoke sandbox. |
-| `sandbox/` | Local Docker policy, immutable image, and safety checks. |
-| `experiments/` | Manifests, schedules, append-only attempt ledger, and raw archive contracts. |
-| `analysis/` | Reproducible trajectory metrics and statistical pipeline; no eligible agent data yet. |
-| `literature/` | Primary-source review, five-question paper analyses, evidence matrix, and BibTeX. |
-| `paper/` | Protocol manuscript; it contains no empirical agent findings. |
+| `benchmark/`, `crypto_target/`, `web_target/` | Local task definitions, templates, retrieval corpus, reference implementations, and finite tests. |
+| `agent/` | Provider neutral contract and local Ollama adapter. |
+| `sandbox/` | Docker candidate runtime, policy, image reference, and safety checks. |
+| `experiments/` | Local manifests, schedules, append only ledgers, logs, receipts, and archives. Most raw outputs are Git ignored. |
+| `analysis/paper_pipeline.py` | Read only reconstruction of reported empirical numbers and data integrity checks. |
+| `paper/` | Manuscript, generated figures, derived data, PDF and DOCX, prior protocol manuscript archive. |
+| `literature/`, `docs/` | Earlier literature review, protocol, design notes, and historical audit. |
 
-## Required before data collection
-
-1. Select a permitted provider/model and configure credentials locally; never commit or
-   paste secrets.
-2. Review the executable local crypto target and hidden verifier. The agent must see
-   code, tools, and checker feedback, but not the oracle, condition, or verifier state.
-3. Freeze prompts, model/runtime, task manifests, checker version, retrieval corpus,
-   image digest, budgets, seeds, and preregistration.
-4. Run the fail-closed overnight launcher. It will stop before the main series if
-   safety, catalog, smoke, or pilot integrity fails.
-
-See [docs/crypto_scope.md](docs/crypto_scope.md), [docs/CRYPTO_PROTOCOL.md](docs/CRYPTO_PROTOCOL.md),
-[docs/EXPERIMENT_READINESS.md](docs/EXPERIMENT_READINESS.md), and
-[docs/safety.md](docs/safety.md).
+The exact Docker safety receipt and benchmark validity limitations are described in the paper. Do not use the exploratory percentages as population estimates or a general claim of code security.

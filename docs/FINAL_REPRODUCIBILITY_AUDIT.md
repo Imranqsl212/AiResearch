@@ -1,5 +1,9 @@
 # Final reproducibility audit — 2026-09-29 hardening worktree
 
+> **Historical audit.** For the completed 2026-10-02/03 exploratory cohort and
+> paper reproducibility review, see [PAPER_SUBMISSION_AUDIT.md](PAPER_SUBMISSION_AUDIT.md).
+> The findings below refer to the earlier hardening worktree.
+
 **Verdict: NOT READY for empirical reproduction.** The repository now has an auditable source baseline and a reproducible engineering-only fixture, but no eligible agent trajectory, clean experimental freeze, approved image, passing runtime safety suite, or completed confirmatory pipeline. This audit reports checks at their actual scope; it does not convert an unrun containment test into a pass.
 
 ## Source and environment

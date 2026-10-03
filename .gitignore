@@ -39,6 +39,7 @@ experiments/manifests/*.json
 experiments/results/**
 experiments/reports/**
 experiments/raw_archive/**
+experiments/continuations/**
 experiments/nightly/**
 experiments/overnight/**
 experiments/family_smoke_results.jsonl

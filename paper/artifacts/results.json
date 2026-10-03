@@ -1,0 +1,1423 @@
+{
+  "analysis_kind": "post_collection_exploratory",
+  "analysis_version": "paper-exploratory-analysis-1.0.0",
+  "by_arm": [
+    {
+      "accepted": 4,
+      "action_raw_check_receipts_total": 0,
+      "actions_max": 4,
+      "actions_mean": 3.2,
+      "actions_median": 3,
+      "actions_min": 3,
+      "actions_total": 16,
+      "api_inventory_change_pairs": 2,
+      "ast_repetition_pairs": 0,
+      "attempts_mean": 1.4,
+      "attempts_total": 7,
+      "check_observations_total": 7,
+      "claim_counts": {
+        "unknown": 5
+      },
+      "condition": "RD",
+      "exact_repetition_pairs": 0,
+      "failure_exposed_runs": 1,
+      "failure_observations_total": 3,
+      "family_count": 5,
+      "final_source_hash_mismatches": 0,
+      "hidden_policy_veto": 0,
+      "multiple_submission_runs": 1,
+      "n": 5,
+      "parseable_source_pairs": 2,
+      "post_failure_submission_runs": 1,
+      "raw_checks_pass": 4,
+      "recovered_claim_counts": {
+        "non_success": 1,
+        "success": 4
+      },
+      "recovered_unsupported_success": 0,
+      "retrieval": "off",
+      "runtime_median_seconds": 349.770503,
+      "runtime_total_seconds": 2281.361189,
+      "source_pairs": 2,
+      "stop_counts": {
+        "AGENT_SELF_TERMINATION": 5
+      },
+      "test_gate_discordance": 0,
+      "unparseable_logged_sources": 0,
+      "unparseable_with_redaction_marker": 0,
+      "unsupported_success": 0
+    },
+    {
+      "accepted": 3,
+      "action_raw_check_receipts_total": 0,
+      "actions_max": 3,
+      "actions_mean": 3,
+      "actions_median": 3,
+      "actions_min": 3,
+      "actions_total": 15,
+      "api_inventory_change_pairs": 1,
+      "ast_repetition_pairs": 0,
+      "attempts_mean": 1.4,
+      "attempts_total": 7,
+      "check_observations_total": 7,
+      "claim_counts": {
+        "unknown": 5
+      },
+      "condition": "RD",
+      "exact_repetition_pairs": 0,
+      "failure_exposed_runs": 2,
+      "failure_observations_total": 4,
+      "family_count": 5,
+      "final_source_hash_mismatches": 0,
+      "hidden_policy_veto": 0,
+      "multiple_submission_runs": 2,
+      "n": 5,
+      "parseable_source_pairs": 2,
+      "post_failure_submission_runs": 2,
+      "raw_checks_pass": 3,
+      "recovered_claim_counts": {
+        "non_success": 2,
+        "success": 3
+      },
+      "recovered_unsupported_success": 0,
+      "retrieval": "relevant",
+      "runtime_median_seconds": 416.497281,
+      "runtime_total_seconds": 2451.657125,
+      "source_pairs": 2,
+      "stop_counts": {
+        "AGENT_SELF_TERMINATION": 5
+      },
+      "test_gate_discordance": 0,
+      "unparseable_logged_sources": 0,
+      "unparseable_with_redaction_marker": 0,
+      "unsupported_success": 0
+    },
+    {
+      "accepted": 5,
+      "action_raw_check_receipts_total": 0,
+      "actions_max": 6,
+      "actions_mean": 4.2,
+      "actions_median": 4,
+      "actions_min": 3,
+      "actions_total": 21,
+      "api_inventory_change_pairs": 2,
+      "ast_repetition_pairs": 0,
+      "attempts_mean": 2,
+      "attempts_total": 10,
+      "check_observations_total": 11,
+      "claim_counts": {
+        "unknown": 5
+      },
+      "condition": "RW",
+      "exact_repetition_pairs": 0,
+      "failure_exposed_runs": 2,
+      "failure_observations_total": 6,
+      "family_count": 5,
+      "final_source_hash_mismatches": 1,
+      "hidden_policy_veto": 0,
+      "multiple_submission_runs": 2,
+      "n": 5,
+      "parseable_source_pairs": 2,
+      "post_failure_submission_runs": 2,
+      "raw_checks_pass": 5,
+      "recovered_claim_counts": {
+        "UNRECOVERED": 1,
+        "success": 4
+      },
+      "recovered_unsupported_success": 0,
+      "retrieval": "off",
+      "runtime_median_seconds": 447.392223,
+      "runtime_total_seconds": 2736.541358,
+      "source_pairs": 5,
+      "stop_counts": {
+        "AGENT_SELF_TERMINATION": 4,
+        "TIMEOUT": 1
+      },
+      "test_gate_discordance": 0,
+      "unparseable_logged_sources": 4,
+      "unparseable_with_redaction_marker": 4,
+      "unsupported_success": 0
+    },
+    {
+      "accepted": 4,
+      "action_raw_check_receipts_total": 0,
+      "actions_max": 4,
+      "actions_mean": 3.4,
+      "actions_median": 3,
+      "actions_min": 3,
+      "actions_total": 17,
+      "api_inventory_change_pairs": 1,
+      "ast_repetition_pairs": 0,
+      "attempts_mean": 1.6,
+      "attempts_total": 8,
+      "check_observations_total": 9,
+      "claim_counts": {
+        "unknown": 5
+      },
+      "condition": "RW",
+      "exact_repetition_pairs": 0,
+      "failure_exposed_runs": 3,
+      "failure_observations_total": 5,
+      "family_count": 5,
+      "final_source_hash_mismatches": 0,
+      "hidden_policy_veto": 0,
+      "multiple_submission_runs": 2,
+      "n": 5,
+      "parseable_source_pairs": 2,
+      "post_failure_submission_runs": 3,
+      "raw_checks_pass": 4,
+      "recovered_claim_counts": {
+        "non_success": 1,
+        "success": 4
+      },
+      "recovered_unsupported_success": 0,
+      "retrieval": "relevant",
+      "runtime_median_seconds": 472.950341,
+      "runtime_total_seconds": 2520.969511,
+      "source_pairs": 3,
+      "stop_counts": {
+        "AGENT_SELF_TERMINATION": 5
+      },
+      "test_gate_discordance": 0,
+      "unparseable_logged_sources": 1,
+      "unparseable_with_redaction_marker": 0,
+      "unsupported_success": 0
+    },
+    {
+      "accepted": 0,
+      "action_raw_check_receipts_total": 0,
+      "actions_max": 4,
+      "actions_mean": 3.4,
+      "actions_median": 4,
+      "actions_min": 2,
+      "actions_total": 17,
+      "api_inventory_change_pairs": 4,
+      "ast_repetition_pairs": 0,
+      "attempts_mean": 2.2,
+      "attempts_total": 11,
+      "check_observations_total": 12,
+      "claim_counts": {
+        "unknown": 5
+      },
+      "condition": "UD",
+      "exact_repetition_pairs": 0,
+      "failure_exposed_runs": 5,
+      "failure_observations_total": 12,
+      "family_count": 5,
+      "final_source_hash_mismatches": 0,
+      "hidden_policy_veto": 3,
+      "multiple_submission_runs": 4,
+      "n": 5,
+      "parseable_source_pairs": 4,
+      "post_failure_submission_runs": 4,
+      "raw_checks_pass": 3,
+      "recovered_claim_counts": {
+        "UNRECOVERED": 1,
+        "non_success": 4
+      },
+      "recovered_unsupported_success": 0,
+      "retrieval": "off",
+      "runtime_median_seconds": 788.053121,
+      "runtime_total_seconds": 3762.85509,
+      "source_pairs": 6,
+      "stop_counts": {
+        "AGENT_SELF_TERMINATION": 5
+      },
+      "test_gate_discordance": 3,
+      "unparseable_logged_sources": 2,
+      "unparseable_with_redaction_marker": 0,
+      "unsupported_success": 0
+    },
+    {
+      "accepted": 0,
+      "action_raw_check_receipts_total": 0,
+      "actions_max": 4,
+      "actions_mean": 3.4,
+      "actions_median": 4,
+      "actions_min": 2,
+      "actions_total": 17,
+      "api_inventory_change_pairs": 3,
+      "ast_repetition_pairs": 0,
+      "attempts_mean": 2.4,
+      "attempts_total": 12,
+      "check_observations_total": 12,
+      "claim_counts": {
+        "unknown": 5
+      },
+      "condition": "UD",
+      "exact_repetition_pairs": 0,
+      "failure_exposed_runs": 5,
+      "failure_observations_total": 12,
+      "family_count": 5,
+      "final_source_hash_mismatches": 0,
+      "hidden_policy_veto": 2,
+      "multiple_submission_runs": 4,
+      "n": 5,
+      "parseable_source_pairs": 7,
+      "post_failure_submission_runs": 4,
+      "raw_checks_pass": 2,
+      "recovered_claim_counts": {
+        "non_success": 5
+      },
+      "recovered_unsupported_success": 0,
+      "retrieval": "relevant",
+      "runtime_median_seconds": 782.845242,
+      "runtime_total_seconds": 4093.356727,
+      "source_pairs": 7,
+      "stop_counts": {
+        "AGENT_SELF_TERMINATION": 5
+      },
+      "test_gate_discordance": 2,
+      "unparseable_logged_sources": 0,
+      "unparseable_with_redaction_marker": 0,
+      "unsupported_success": 0
+    },
+    {
+      "accepted": 0,
+      "action_raw_check_receipts_total": 0,
+      "actions_max": 6,
+      "actions_mean": 3.4,
+      "actions_median": 3,
+      "actions_min": 2,
+      "actions_total": 17,
+      "api_inventory_change_pairs": 2,
+      "ast_repetition_pairs": 0,
+      "attempts_mean": 2.4,
+      "attempts_total": 12,
+      "check_observations_total": 12,
+      "claim_counts": {
+        "unknown": 5
+      },
+      "condition": "UW",
+      "exact_repetition_pairs": 0,
+      "failure_exposed_runs": 5,
+      "failure_observations_total": 12,
+      "family_count": 5,
+      "final_source_hash_mismatches": 0,
+      "hidden_policy_veto": 2,
+      "multiple_submission_runs": 3,
+      "n": 5,
+      "parseable_source_pairs": 3,
+      "post_failure_submission_runs": 3,
+      "raw_checks_pass": 2,
+      "recovered_claim_counts": {
+        "UNRECOVERED": 2,
+        "non_success": 3
+      },
+      "recovered_unsupported_success": 0,
+      "retrieval": "off",
+      "runtime_median_seconds": 655.740628,
+      "runtime_total_seconds": 3271.54153,
+      "source_pairs": 7,
+      "stop_counts": {
+        "AGENT_SELF_TERMINATION": 4,
+        "BUDGET_STOP": 1
+      },
+      "test_gate_discordance": 2,
+      "unparseable_logged_sources": 4,
+      "unparseable_with_redaction_marker": 4,
+      "unsupported_success": 0
+    },
+    {
+      "accepted": 0,
+      "action_raw_check_receipts_total": 0,
+      "actions_max": 4,
+      "actions_mean": 3.2,
+      "actions_median": 3,
+      "actions_min": 3,
+      "actions_total": 16,
+      "api_inventory_change_pairs": 2,
+      "ast_repetition_pairs": 0,
+      "attempts_mean": 2,
+      "attempts_total": 10,
+      "check_observations_total": 11,
+      "claim_counts": {
+        "unknown": 5
+      },
+      "condition": "UW",
+      "exact_repetition_pairs": 0,
+      "failure_exposed_runs": 5,
+      "failure_observations_total": 11,
+      "family_count": 5,
+      "final_source_hash_mismatches": 1,
+      "hidden_policy_veto": 2,
+      "multiple_submission_runs": 4,
+      "n": 5,
+      "parseable_source_pairs": 3,
+      "post_failure_submission_runs": 5,
+      "raw_checks_pass": 2,
+      "recovered_claim_counts": {
+        "UNRECOVERED": 1,
+        "non_success": 4
+      },
+      "recovered_unsupported_success": 0,
+      "retrieval": "relevant",
+      "runtime_median_seconds": 672.191577,
+      "runtime_total_seconds": 3421.579946,
+      "source_pairs": 5,
+      "stop_counts": {
+        "AGENT_SELF_TERMINATION": 5
+      },
+      "test_gate_discordance": 2,
+      "unparseable_logged_sources": 3,
+      "unparseable_with_redaction_marker": 3,
+      "unsupported_success": 0
+    }
+  ],
+  "by_condition": [
+    {
+      "accepted": 7,
+      "action_raw_check_receipts_total": 0,
+      "actions_max": 4,
+      "actions_mean": 3.1,
+      "actions_median": 3.0,
+      "actions_min": 3,
+      "actions_total": 31,
+      "api_inventory_change_pairs": 3,
+      "ast_repetition_pairs": 0,
+      "attempts_mean": 1.4,
+      "attempts_total": 14,
+      "check_observations_total": 14,
+      "claim_counts": {
+        "unknown": 10
+      },
+      "condition": "RD",
+      "exact_repetition_pairs": 0,
+      "failure_exposed_runs": 3,
+      "failure_observations_total": 7,
+      "family_count": 5,
+      "final_source_hash_mismatches": 0,
+      "hidden_policy_veto": 0,
+      "multiple_submission_runs": 3,
+      "n": 10,
+      "parseable_source_pairs": 4,
+      "post_failure_submission_runs": 3,
+      "raw_checks_pass": 7,
+      "recovered_claim_counts": {
+        "non_success": 3,
+        "success": 7
+      },
+      "recovered_unsupported_success": 0,
+      "runtime_median_seconds": 383.133892,
+      "runtime_total_seconds": 4733.018314,
+      "source_pairs": 4,
+      "stop_counts": {
+        "AGENT_SELF_TERMINATION": 10
+      },
+      "test_gate_discordance": 0,
+      "unparseable_logged_sources": 0,
+      "unparseable_with_redaction_marker": 0,
+      "unsupported_success": 0
+    },
+    {
+      "accepted": 9,
+      "action_raw_check_receipts_total": 0,
+      "actions_max": 6,
+      "actions_mean": 3.8,
+      "actions_median": 3.5,
+      "actions_min": 3,
+      "actions_total": 38,
+      "api_inventory_change_pairs": 3,
+      "ast_repetition_pairs": 0,
+      "attempts_mean": 1.8,
+      "attempts_total": 18,
+      "check_observations_total": 20,
+      "claim_counts": {
+        "unknown": 10
+      },
+      "condition": "RW",
+      "exact_repetition_pairs": 0,
+      "failure_exposed_runs": 5,
+      "failure_observations_total": 11,
+      "family_count": 5,
+      "final_source_hash_mismatches": 1,
+      "hidden_policy_veto": 0,
+      "multiple_submission_runs": 4,
+      "n": 10,
+      "parseable_source_pairs": 4,
+      "post_failure_submission_runs": 5,
+      "raw_checks_pass": 9,
+      "recovered_claim_counts": {
+        "UNRECOVERED": 1,
+        "non_success": 1,
+        "success": 8
+      },
+      "recovered_unsupported_success": 0,
+      "runtime_median_seconds": 460.171282,
+      "runtime_total_seconds": 5257.510869,
+      "source_pairs": 8,
+      "stop_counts": {
+        "AGENT_SELF_TERMINATION": 9,
+        "TIMEOUT": 1
+      },
+      "test_gate_discordance": 0,
+      "unparseable_logged_sources": 5,
+      "unparseable_with_redaction_marker": 4,
+      "unsupported_success": 0
+    },
+    {
+      "accepted": 0,
+      "action_raw_check_receipts_total": 0,
+      "actions_max": 4,
+      "actions_mean": 3.4,
+      "actions_median": 4.0,
+      "actions_min": 2,
+      "actions_total": 34,
+      "api_inventory_change_pairs": 7,
+      "ast_repetition_pairs": 0,
+      "attempts_mean": 2.3,
+      "attempts_total": 23,
+      "check_observations_total": 24,
+      "claim_counts": {
+        "unknown": 10
+      },
+      "condition": "UD",
+      "exact_repetition_pairs": 0,
+      "failure_exposed_runs": 10,
+      "failure_observations_total": 24,
+      "family_count": 5,
+      "final_source_hash_mismatches": 0,
+      "hidden_policy_veto": 5,
+      "multiple_submission_runs": 8,
+      "n": 10,
+      "parseable_source_pairs": 11,
+      "post_failure_submission_runs": 8,
+      "raw_checks_pass": 5,
+      "recovered_claim_counts": {
+        "UNRECOVERED": 1,
+        "non_success": 9
+      },
+      "recovered_unsupported_success": 0,
+      "runtime_median_seconds": 785.4491815,
+      "runtime_total_seconds": 7856.211817,
+      "source_pairs": 13,
+      "stop_counts": {
+        "AGENT_SELF_TERMINATION": 10
+      },
+      "test_gate_discordance": 5,
+      "unparseable_logged_sources": 2,
+      "unparseable_with_redaction_marker": 0,
+      "unsupported_success": 0
+    },
+    {
+      "accepted": 0,
+      "action_raw_check_receipts_total": 0,
+      "actions_max": 6,
+      "actions_mean": 3.3,
+      "actions_median": 3.0,
+      "actions_min": 2,
+      "actions_total": 33,
+      "api_inventory_change_pairs": 4,
+      "ast_repetition_pairs": 0,
+      "attempts_mean": 2.2,
+      "attempts_total": 22,
+      "check_observations_total": 23,
+      "claim_counts": {
+        "unknown": 10
+      },
+      "condition": "UW",
+      "exact_repetition_pairs": 0,
+      "failure_exposed_runs": 10,
+      "failure_observations_total": 23,
+      "family_count": 5,
+      "final_source_hash_mismatches": 1,
+      "hidden_policy_veto": 4,
+      "multiple_submission_runs": 7,
+      "n": 10,
+      "parseable_source_pairs": 6,
+      "post_failure_submission_runs": 8,
+      "raw_checks_pass": 4,
+      "recovered_claim_counts": {
+        "UNRECOVERED": 3,
+        "non_success": 7
+      },
+      "recovered_unsupported_success": 0,
+      "runtime_median_seconds": 663.9661025,
+      "runtime_total_seconds": 6693.121476,
+      "source_pairs": 12,
+      "stop_counts": {
+        "AGENT_SELF_TERMINATION": 9,
+        "BUDGET_STOP": 1
+      },
+      "test_gate_discordance": 4,
+      "unparseable_logged_sources": 7,
+      "unparseable_with_redaction_marker": 7,
+      "unsupported_success": 0
+    }
+  ],
+  "confirmatory_GEE": "NOT ESTIMABLE / NOT RUN",
+  "corpus_document_count": 20,
+  "corpus_sha256": "3d1a662cf4e40208d95a0d30aae0cfc00aa07544e942c117ba66921e4e77461f",
+  "effective_episode_timeouts": [
+    900
+  ],
+  "exploratory_contrasts": [
+    {
+      "contrast": "relevant minus off",
+      "estimate": -0.2,
+      "exploratory_bootstrap_percentile_95": [
+        -0.4,
+        0.0
+      ],
+      "factor": "retrieval",
+      "family_clusters": 5,
+      "family_differences": [
+        {
+          "difference": -0.5,
+          "family": "key-derivation"
+        },
+        {
+          "difference": 0.0,
+          "family": "nonce"
+        },
+        {
+          "difference": -0.5,
+          "family": "sqli"
+        },
+        {
+          "difference": 0.0,
+          "family": "weak-randomness"
+        },
+        {
+          "difference": 0.0,
+          "family": "xss"
+        }
+      ],
+      "field": "accepted_final_candidate",
+      "warning": "Post-collection, five selected clusters; descriptive sensitivity, no confirmatory or population inference."
+    },
+    {
+      "contrast": "D minus W",
+      "estimate": -0.2,
+      "exploratory_bootstrap_percentile_95": [
+        -0.4,
+        0.0
+      ],
+      "factor": "feedback",
+      "family_clusters": 5,
+      "family_differences": [
+        {
+          "difference": -0.5,
+          "family": "key-derivation"
+        },
+        {
+          "difference": 0.0,
+          "family": "nonce"
+        },
+        {
+          "difference": -0.5,
+          "family": "sqli"
+        },
+        {
+          "difference": 0.0,
+          "family": "weak-randomness"
+        },
+        {
+          "difference": 0.0,
+          "family": "xss"
+        }
+      ],
+      "field": "accepted_final_candidate",
+      "warning": "Post-collection, five selected clusters; descriptive sensitivity, no confirmatory or population inference."
+    },
+    {
+      "contrast": "relevant minus off",
+      "estimate": -0.3,
+      "exploratory_bootstrap_percentile_95": [
+        -0.85,
+        0.35
+      ],
+      "factor": "retrieval",
+      "family_clusters": 5,
+      "family_differences": [
+        {
+          "difference": -1.0,
+          "family": "key-derivation"
+        },
+        {
+          "difference": 1.0,
+          "family": "nonce"
+        },
+        {
+          "difference": -1.0,
+          "family": "sqli"
+        },
+        {
+          "difference": -0.25,
+          "family": "weak-randomness"
+        },
+        {
+          "difference": -0.25,
+          "family": "xss"
+        }
+      ],
+      "field": "actions",
+      "warning": "Post-collection, five selected clusters; descriptive sensitivity, no confirmatory or population inference."
+    },
+    {
+      "contrast": "U minus R",
+      "estimate": -0.1,
+      "exploratory_bootstrap_percentile_95": [
+        -0.65,
+        0.45
+      ],
+      "factor": "feasibility",
+      "family_clusters": 5,
+      "family_differences": [
+        {
+          "difference": 0.5,
+          "family": "key-derivation"
+        },
+        {
+          "difference": -0.5,
+          "family": "nonce"
+        },
+        {
+          "difference": -1.0,
+          "family": "sqli"
+        },
+        {
+          "difference": -0.25,
+          "family": "weak-randomness"
+        },
+        {
+          "difference": 0.75,
+          "family": "xss"
+        }
+      ],
+      "field": "actions",
+      "warning": "Post-collection, five selected clusters; descriptive sensitivity, no confirmatory or population inference."
+    }
+  ],
+  "family_repairable_by_retrieval": [
+    {
+      "accepted": 2,
+      "action_raw_check_receipts_total": 0,
+      "actions_max": 6,
+      "actions_mean": 4.5,
+      "actions_median": 4.5,
+      "actions_min": 3,
+      "actions_total": 9,
+      "api_inventory_change_pairs": 0,
+      "ast_repetition_pairs": 0,
+      "attempts_mean": 2.5,
+      "attempts_total": 5,
+      "check_observations_total": 5,
+      "claim_counts": {
+        "unknown": 2
+      },
+      "exact_repetition_pairs": 0,
+      "failure_exposed_runs": 1,
+      "failure_observations_total": 3,
+      "family": "key-derivation",
+      "family_count": 1,
+      "final_source_hash_mismatches": 1,
+      "hidden_policy_veto": 0,
+      "multiple_submission_runs": 1,
+      "n": 2,
+      "parseable_source_pairs": 0,
+      "post_failure_submission_runs": 1,
+      "raw_checks_pass": 2,
+      "recovered_claim_counts": {
+        "UNRECOVERED": 1,
+        "success": 1
+      },
+      "recovered_unsupported_success": 0,
+      "retrieval": "off",
+      "runtime_median_seconds": 693.6766555,
+      "runtime_total_seconds": 1387.353311,
+      "source_pairs": 3,
+      "stop_counts": {
+        "AGENT_SELF_TERMINATION": 1,
+        "TIMEOUT": 1
+      },
+      "test_gate_discordance": 0,
+      "unparseable_logged_sources": 4,
+      "unparseable_with_redaction_marker": 4,
+      "unsupported_success": 0
+    },
+    {
+      "accepted": 1,
+      "action_raw_check_receipts_total": 0,
+      "actions_max": 4,
+      "actions_mean": 3.5,
+      "actions_median": 3.5,
+      "actions_min": 3,
+      "actions_total": 7,
+      "api_inventory_change_pairs": 1,
+      "ast_repetition_pairs": 0,
+      "attempts_mean": 2.5,
+      "attempts_total": 5,
+      "check_observations_total": 5,
+      "claim_counts": {
+        "unknown": 2
+      },
+      "exact_repetition_pairs": 0,
+      "failure_exposed_runs": 2,
+      "failure_observations_total": 4,
+      "family": "key-derivation",
+      "family_count": 1,
+      "final_source_hash_mismatches": 0,
+      "hidden_policy_veto": 0,
+      "multiple_submission_runs": 2,
+      "n": 2,
+      "parseable_source_pairs": 3,
+      "post_failure_submission_runs": 2,
+      "raw_checks_pass": 1,
+      "recovered_claim_counts": {
+        "non_success": 1,
+        "success": 1
+      },
+      "recovered_unsupported_success": 0,
+      "retrieval": "relevant",
+      "runtime_median_seconds": 664.3087155000001,
+      "runtime_total_seconds": 1328.617431,
+      "source_pairs": 3,
+      "stop_counts": {
+        "AGENT_SELF_TERMINATION": 2
+      },
+      "test_gate_discordance": 0,
+      "unparseable_logged_sources": 0,
+      "unparseable_with_redaction_marker": 0,
+      "unsupported_success": 0
+    },
+    {
+      "accepted": 2,
+      "action_raw_check_receipts_total": 0,
+      "actions_max": 3,
+      "actions_mean": 3,
+      "actions_median": 3.0,
+      "actions_min": 3,
+      "actions_total": 6,
+      "api_inventory_change_pairs": 0,
+      "ast_repetition_pairs": 0,
+      "attempts_mean": 1,
+      "attempts_total": 2,
+      "check_observations_total": 2,
+      "claim_counts": {
+        "unknown": 2
+      },
+      "exact_repetition_pairs": 0,
+      "failure_exposed_runs": 0,
+      "failure_observations_total": 0,
+      "family": "nonce",
+      "family_count": 1,
+      "final_source_hash_mismatches": 0,
+      "hidden_policy_veto": 0,
+      "multiple_submission_runs": 0,
+      "n": 2,
+      "parseable_source_pairs": 0,
+      "post_failure_submission_runs": 0,
+      "raw_checks_pass": 2,
+      "recovered_claim_counts": {
+        "success": 2
+      },
+      "recovered_unsupported_success": 0,
+      "retrieval": "off",
+      "runtime_median_seconds": 355.1567375,
+      "runtime_total_seconds": 710.313475,
+      "source_pairs": 0,
+      "stop_counts": {
+        "AGENT_SELF_TERMINATION": 2
+      },
+      "test_gate_discordance": 0,
+      "unparseable_logged_sources": 0,
+      "unparseable_with_redaction_marker": 0,
+      "unsupported_success": 0
+    },
+    {
+      "accepted": 2,
+      "action_raw_check_receipts_total": 0,
+      "actions_max": 4,
+      "actions_mean": 3.5,
+      "actions_median": 3.5,
+      "actions_min": 3,
+      "actions_total": 7,
+      "api_inventory_change_pairs": 0,
+      "ast_repetition_pairs": 0,
+      "attempts_mean": 1,
+      "attempts_total": 2,
+      "check_observations_total": 3,
+      "claim_counts": {
+        "unknown": 2
+      },
+      "exact_repetition_pairs": 0,
+      "failure_exposed_runs": 1,
+      "failure_observations_total": 1,
+      "family": "nonce",
+      "family_count": 1,
+      "final_source_hash_mismatches": 0,
+      "hidden_policy_veto": 0,
+      "multiple_submission_runs": 0,
+      "n": 2,
+      "parseable_source_pairs": 0,
+      "post_failure_submission_runs": 1,
+      "raw_checks_pass": 2,
+      "recovered_claim_counts": {
+        "success": 2
+      },
+      "recovered_unsupported_success": 0,
+      "retrieval": "relevant",
+      "runtime_median_seconds": 411.232509,
+      "runtime_total_seconds": 822.465018,
+      "source_pairs": 0,
+      "stop_counts": {
+        "AGENT_SELF_TERMINATION": 2
+      },
+      "test_gate_discordance": 0,
+      "unparseable_logged_sources": 0,
+      "unparseable_with_redaction_marker": 0,
+      "unsupported_success": 0
+    },
+    {
+      "accepted": 1,
+      "action_raw_check_receipts_total": 0,
+      "actions_max": 5,
+      "actions_mean": 4.5,
+      "actions_median": 4.5,
+      "actions_min": 4,
+      "actions_total": 9,
+      "api_inventory_change_pairs": 4,
+      "ast_repetition_pairs": 0,
+      "attempts_mean": 3,
+      "attempts_total": 6,
+      "check_observations_total": 7,
+      "claim_counts": {
+        "unknown": 2
+      },
+      "exact_repetition_pairs": 0,
+      "failure_exposed_runs": 2,
+      "failure_observations_total": 6,
+      "family": "sqli",
+      "family_count": 1,
+      "final_source_hash_mismatches": 0,
+      "hidden_policy_veto": 0,
+      "multiple_submission_runs": 2,
+      "n": 2,
+      "parseable_source_pairs": 4,
+      "post_failure_submission_runs": 2,
+      "raw_checks_pass": 1,
+      "recovered_claim_counts": {
+        "non_success": 1,
+        "success": 1
+      },
+      "recovered_unsupported_success": 0,
+      "retrieval": "off",
+      "runtime_median_seconds": 761.4813385,
+      "runtime_total_seconds": 1522.962677,
+      "source_pairs": 4,
+      "stop_counts": {
+        "AGENT_SELF_TERMINATION": 2
+      },
+      "test_gate_discordance": 0,
+      "unparseable_logged_sources": 0,
+      "unparseable_with_redaction_marker": 0,
+      "unsupported_success": 0
+    },
+    {
+      "accepted": 0,
+      "action_raw_check_receipts_total": 0,
+      "actions_max": 3,
+      "actions_mean": 3,
+      "actions_median": 3.0,
+      "actions_min": 3,
+      "actions_total": 6,
+      "api_inventory_change_pairs": 1,
+      "ast_repetition_pairs": 0,
+      "attempts_mean": 2,
+      "attempts_total": 4,
+      "check_observations_total": 4,
+      "claim_counts": {
+        "unknown": 2
+      },
+      "exact_repetition_pairs": 0,
+      "failure_exposed_runs": 2,
+      "failure_observations_total": 4,
+      "family": "sqli",
+      "family_count": 1,
+      "final_source_hash_mismatches": 0,
+      "hidden_policy_veto": 0,
+      "multiple_submission_runs": 2,
+      "n": 2,
+      "parseable_source_pairs": 1,
+      "post_failure_submission_runs": 2,
+      "raw_checks_pass": 0,
+      "recovered_claim_counts": {
+        "non_success": 2
+      },
+      "recovered_unsupported_success": 0,
+      "retrieval": "relevant",
+      "runtime_median_seconds": 719.763089,
+      "runtime_total_seconds": 1439.526178,
+      "source_pairs": 2,
+      "stop_counts": {
+        "AGENT_SELF_TERMINATION": 2
+      },
+      "test_gate_discordance": 0,
+      "unparseable_logged_sources": 1,
+      "unparseable_with_redaction_marker": 0,
+      "unsupported_success": 0
+    },
+    {
+      "accepted": 2,
+      "action_raw_check_receipts_total": 0,
+      "actions_max": 4,
+      "actions_mean": 3.5,
+      "actions_median": 3.5,
+      "actions_min": 3,
+      "actions_total": 7,
+      "api_inventory_change_pairs": 0,
+      "ast_repetition_pairs": 0,
+      "attempts_mean": 1,
+      "attempts_total": 2,
+      "check_observations_total": 2,
+      "claim_counts": {
+        "unknown": 2
+      },
+      "exact_repetition_pairs": 0,
+      "failure_exposed_runs": 0,
+      "failure_observations_total": 0,
+      "family": "weak-randomness",
+      "family_count": 1,
+      "final_source_hash_mismatches": 0,
+      "hidden_policy_veto": 0,
+      "multiple_submission_runs": 0,
+      "n": 2,
+      "parseable_source_pairs": 0,
+      "post_failure_submission_runs": 0,
+      "raw_checks_pass": 2,
+      "recovered_claim_counts": {
+        "success": 2
+      },
+      "recovered_unsupported_success": 0,
+      "retrieval": "off",
+      "runtime_median_seconds": 367.74708050000004,
+      "runtime_total_seconds": 735.494161,
+      "source_pairs": 0,
+      "stop_counts": {
+        "AGENT_SELF_TERMINATION": 2
+      },
+      "test_gate_discordance": 0,
+      "unparseable_logged_sources": 0,
+      "unparseable_with_redaction_marker": 0,
+      "unsupported_success": 0
+    },
+    {
+      "accepted": 2,
+      "action_raw_check_receipts_total": 0,
+      "actions_max": 3,
+      "actions_mean": 3,
+      "actions_median": 3.0,
+      "actions_min": 3,
+      "actions_total": 6,
+      "api_inventory_change_pairs": 0,
+      "ast_repetition_pairs": 0,
+      "attempts_mean": 1,
+      "attempts_total": 2,
+      "check_observations_total": 2,
+      "claim_counts": {
+        "unknown": 2
+      },
+      "exact_repetition_pairs": 0,
+      "failure_exposed_runs": 0,
+      "failure_observations_total": 0,
+      "family": "weak-randomness",
+      "family_count": 1,
+      "final_source_hash_mismatches": 0,
+      "hidden_policy_veto": 0,
+      "multiple_submission_runs": 0,
+      "n": 2,
+      "parseable_source_pairs": 0,
+      "post_failure_submission_runs": 0,
+      "raw_checks_pass": 2,
+      "recovered_claim_counts": {
+        "success": 2
+      },
+      "recovered_unsupported_success": 0,
+      "retrieval": "relevant",
+      "runtime_median_seconds": 355.17866300000003,
+      "runtime_total_seconds": 710.357326,
+      "source_pairs": 0,
+      "stop_counts": {
+        "AGENT_SELF_TERMINATION": 2
+      },
+      "test_gate_discordance": 0,
+      "unparseable_logged_sources": 0,
+      "unparseable_with_redaction_marker": 0,
+      "unsupported_success": 0
+    },
+    {
+      "accepted": 2,
+      "action_raw_check_receipts_total": 0,
+      "actions_max": 3,
+      "actions_mean": 3,
+      "actions_median": 3.0,
+      "actions_min": 3,
+      "actions_total": 6,
+      "api_inventory_change_pairs": 0,
+      "ast_repetition_pairs": 0,
+      "attempts_mean": 1,
+      "attempts_total": 2,
+      "check_observations_total": 2,
+      "claim_counts": {
+        "unknown": 2
+      },
+      "exact_repetition_pairs": 0,
+      "failure_exposed_runs": 0,
+      "failure_observations_total": 0,
+      "family": "xss",
+      "family_count": 1,
+      "final_source_hash_mismatches": 0,
+      "hidden_policy_veto": 0,
+      "multiple_submission_runs": 0,
+      "n": 2,
+      "parseable_source_pairs": 0,
+      "post_failure_submission_runs": 0,
+      "raw_checks_pass": 2,
+      "recovered_claim_counts": {
+        "success": 2
+      },
+      "recovered_unsupported_success": 0,
+      "retrieval": "off",
+      "runtime_median_seconds": 330.88946150000004,
+      "runtime_total_seconds": 661.778923,
+      "source_pairs": 0,
+      "stop_counts": {
+        "AGENT_SELF_TERMINATION": 2
+      },
+      "test_gate_discordance": 0,
+      "unparseable_logged_sources": 0,
+      "unparseable_with_redaction_marker": 0,
+      "unsupported_success": 0
+    },
+    {
+      "accepted": 2,
+      "action_raw_check_receipts_total": 0,
+      "actions_max": 3,
+      "actions_mean": 3,
+      "actions_median": 3.0,
+      "actions_min": 3,
+      "actions_total": 6,
+      "api_inventory_change_pairs": 0,
+      "ast_repetition_pairs": 0,
+      "attempts_mean": 1,
+      "attempts_total": 2,
+      "check_observations_total": 2,
+      "claim_counts": {
+        "unknown": 2
+      },
+      "exact_repetition_pairs": 0,
+      "failure_exposed_runs": 0,
+      "failure_observations_total": 0,
+      "family": "xss",
+      "family_count": 1,
+      "final_source_hash_mismatches": 0,
+      "hidden_policy_veto": 0,
+      "multiple_submission_runs": 0,
+      "n": 2,
+      "parseable_source_pairs": 0,
+      "post_failure_submission_runs": 0,
+      "raw_checks_pass": 2,
+      "recovered_claim_counts": {
+        "success": 2
+      },
+      "recovered_unsupported_success": 0,
+      "retrieval": "relevant",
+      "runtime_median_seconds": 335.83034150000003,
+      "runtime_total_seconds": 671.660683,
+      "source_pairs": 0,
+      "stop_counts": {
+        "AGENT_SELF_TERMINATION": 2
+      },
+      "test_gate_discordance": 0,
+      "unparseable_logged_sources": 0,
+      "unparseable_with_redaction_marker": 0,
+      "unsupported_success": 0
+    }
+  ],
+  "genuine_strategy_transition_rate": null,
+  "historical_artifact_validator_passes": 87,
+  "historical_cohort_counts": {
+    "containment_development_smoke": 3,
+    "engineering_fixture": 1,
+    "engineering_smoke": 25,
+    "exploratory_main": 40,
+    "exploratory_pilot": 8,
+    "separate_containment_simulation": 13,
+    "superseded_pilot": 11
+  },
+  "historical_outcome_counts": {
+    "BUDGET_STOP": 1,
+    "INFRASTRUCTURE_ABORT": 14,
+    "TIMEOUT": 1,
+    "UNKNOWN": 4,
+    "VALIDATED_NON_SUCCESS": 43,
+    "VALIDATED_SUCCESS": 38
+  },
+  "historical_receipts": 101,
+  "historical_safety_receipt": {
+    "generated_at": "2026-10-02T17:49:32Z",
+    "image_ref": "local/candidate-runtime@sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+    "isolation_mode": "docker-desktop-linuxkit-vm",
+    "overall_passed": true,
+    "policy_fingerprint": "b4d94b4347d696be538c6670970c2dd1ae9b93c26ab329a0f41aa6aa51a878fd"
+  },
+  "leave_one_family_out": [
+    {
+      "guidance_acceptance_difference": -0.125,
+      "omitted_family": "key-derivation"
+    },
+    {
+      "guidance_acceptance_difference": -0.25,
+      "omitted_family": "nonce"
+    },
+    {
+      "guidance_acceptance_difference": -0.125,
+      "omitted_family": "sqli"
+    },
+    {
+      "guidance_acceptance_difference": -0.25,
+      "omitted_family": "weak-randomness"
+    },
+    {
+      "guidance_acceptance_difference": -0.25,
+      "omitted_family": "xss"
+    }
+  ],
+  "main": {
+    "accepted": 16,
+    "action_raw_check_receipts_total": 0,
+    "actions_max": 6,
+    "actions_mean": 3.4,
+    "actions_median": 3.0,
+    "actions_min": 2,
+    "actions_total": 136,
+    "api_inventory_change_pairs": 17,
+    "ast_repetition_pairs": 0,
+    "attempts_mean": 1.925,
+    "attempts_total": 77,
+    "check_observations_total": 81,
+    "claim_counts": {
+      "unknown": 40
+    },
+    "exact_repetition_pairs": 0,
+    "failure_exposed_runs": 28,
+    "failure_observations_total": 65,
+    "family_count": 5,
+    "final_source_hash_mismatches": 2,
+    "hidden_policy_veto": 9,
+    "multiple_submission_runs": 22,
+    "n": 40,
+    "parseable_source_pairs": 25,
+    "post_failure_submission_runs": 24,
+    "raw_checks_pass": 25,
+    "recovered_claim_counts": {
+      "UNRECOVERED": 5,
+      "non_success": 20,
+      "success": 15
+    },
+    "recovered_unsupported_success": 0,
+    "runtime_median_seconds": 647.4309069999999,
+    "runtime_total_seconds": 24539.862476,
+    "source_pairs": 37,
+    "stop_counts": {
+      "AGENT_SELF_TERMINATION": 38,
+      "BUDGET_STOP": 1,
+      "TIMEOUT": 1
+    },
+    "test_gate_discordance": 9,
+    "unparseable_logged_sources": 14,
+    "unparseable_with_redaction_marker": 11,
+    "unsupported_success": 0
+  },
+  "main_integrity_gate": {
+    "errors": [],
+    "passed": true,
+    "row_count": 40
+  },
+  "pilot": {
+    "accepted": 3,
+    "action_raw_check_receipts_total": 0,
+    "actions_max": 3,
+    "actions_mean": 2.375,
+    "actions_median": 2.0,
+    "actions_min": 2,
+    "actions_total": 19,
+    "api_inventory_change_pairs": 0,
+    "ast_repetition_pairs": 0,
+    "attempts_mean": 1.125,
+    "attempts_total": 9,
+    "check_observations_total": 9,
+    "claim_counts": {
+      "unknown": 8
+    },
+    "exact_repetition_pairs": 0,
+    "failure_exposed_runs": 5,
+    "failure_observations_total": 6,
+    "family_count": 1,
+    "final_source_hash_mismatches": 0,
+    "hidden_policy_veto": 3,
+    "multiple_submission_runs": 1,
+    "n": 8,
+    "parseable_source_pairs": 1,
+    "post_failure_submission_runs": 1,
+    "raw_checks_pass": 6,
+    "recovered_claim_counts": {
+      "UNRECOVERED": 2,
+      "non_success": 3,
+      "success": 3
+    },
+    "recovered_unsupported_success": 0,
+    "runtime_median_seconds": 750.4121605,
+    "runtime_total_seconds": 5366.243925,
+    "source_pairs": 1,
+    "stop_counts": {
+      "AGENT_SELF_TERMINATION": 8
+    },
+    "test_gate_discordance": 3,
+    "unparseable_logged_sources": 0,
+    "unparseable_with_redaction_marker": 0,
+    "unsupported_success": 0
+  },
+  "pilot_integrity_gate": {
+    "errors": [],
+    "passed": true,
+    "row_count": 8
+  },
+  "policy_rejected": {
+    "accepted": 0,
+    "action_raw_check_receipts_total": 0,
+    "actions_max": 6,
+    "actions_mean": 3.35,
+    "actions_median": 3.0,
+    "actions_min": 2,
+    "actions_total": 67,
+    "api_inventory_change_pairs": 11,
+    "ast_repetition_pairs": 0,
+    "attempts_mean": 2.25,
+    "attempts_total": 45,
+    "check_observations_total": 47,
+    "claim_counts": {
+      "unknown": 20
+    },
+    "exact_repetition_pairs": 0,
+    "failure_exposed_runs": 20,
+    "failure_observations_total": 47,
+    "family_count": 5,
+    "final_source_hash_mismatches": 1,
+    "hidden_policy_veto": 9,
+    "multiple_submission_runs": 15,
+    "n": 20,
+    "parseable_source_pairs": 17,
+    "post_failure_submission_runs": 16,
+    "raw_checks_pass": 9,
+    "recovered_claim_counts": {
+      "UNRECOVERED": 4,
+      "non_success": 16
+    },
+    "recovered_unsupported_success": 0,
+    "runtime_median_seconds": 728.2388805,
+    "runtime_total_seconds": 14549.333293,
+    "source_pairs": 25,
+    "stop_counts": {
+      "AGENT_SELF_TERMINATION": 19,
+      "BUDGET_STOP": 1
+    },
+    "test_gate_discordance": 9,
+    "unparseable_logged_sources": 9,
+    "unparseable_with_redaction_marker": 7,
+    "unsupported_success": 0
+  },
+  "rational_stopping_rate": null,
+  "read_only_inputs_verified": true,
+  "repairable": {
+    "accepted": 16,
+    "action_raw_check_receipts_total": 0,
+    "actions_max": 6,
+    "actions_mean": 3.45,
+    "actions_median": 3.0,
+    "actions_min": 3,
+    "actions_total": 69,
+    "api_inventory_change_pairs": 6,
+    "ast_repetition_pairs": 0,
+    "attempts_mean": 1.6,
+    "attempts_total": 32,
+    "check_observations_total": 34,
+    "claim_counts": {
+      "unknown": 20
+    },
+    "exact_repetition_pairs": 0,
+    "failure_exposed_runs": 8,
+    "failure_observations_total": 18,
+    "family_count": 5,
+    "final_source_hash_mismatches": 1,
+    "hidden_policy_veto": 0,
+    "multiple_submission_runs": 7,
+    "n": 20,
+    "parseable_source_pairs": 8,
+    "post_failure_submission_runs": 8,
+    "raw_checks_pass": 16,
+    "recovered_claim_counts": {
+      "UNRECOVERED": 1,
+      "non_success": 4,
+      "success": 15
+    },
+    "recovered_unsupported_success": 0,
+    "runtime_median_seconds": 431.944752,
+    "runtime_total_seconds": 9990.529183,
+    "source_pairs": 12,
+    "stop_counts": {
+      "AGENT_SELF_TERMINATION": 19,
+      "TIMEOUT": 1
+    },
+    "test_gate_discordance": 0,
+    "unparseable_logged_sources": 5,
+    "unparseable_with_redaction_marker": 4,
+    "unsupported_success": 0
+  },
+  "repairable_excluding_timeout": {
+    "accepted": 15,
+    "action_raw_check_receipts_total": 0,
+    "actions_max": 5,
+    "actions_mean": 3.315789,
+    "actions_median": 3,
+    "actions_min": 3,
+    "actions_total": 63,
+    "api_inventory_change_pairs": 6,
+    "ast_repetition_pairs": 0,
+    "attempts_mean": 1.473684,
+    "attempts_total": 28,
+    "check_observations_total": 30,
+    "claim_counts": {
+      "unknown": 19
+    },
+    "exact_repetition_pairs": 0,
+    "failure_exposed_runs": 7,
+    "failure_observations_total": 15,
+    "family_count": 5,
+    "final_source_hash_mismatches": 0,
+    "hidden_policy_veto": 0,
+    "multiple_submission_runs": 6,
+    "n": 19,
+    "parseable_source_pairs": 8,
+    "post_failure_submission_runs": 7,
+    "raw_checks_pass": 15,
+    "recovered_claim_counts": {
+      "non_success": 4,
+      "success": 15
+    },
+    "recovered_unsupported_success": 0,
+    "runtime_median_seconds": 416.497281,
+    "runtime_total_seconds": 9077.149642,
+    "source_pairs": 9,
+    "stop_counts": {
+      "AGENT_SELF_TERMINATION": 19
+    },
+    "test_gate_discordance": 0,
+    "unparseable_logged_sources": 1,
+    "unparseable_with_redaction_marker": 0,
+    "unsupported_success": 0
+  },
+  "scheduled_episode_timeout_seconds": 1800,
+  "study_source_commit": "98a4dcf414672c1725e4acdb9f08045370aa7f64"
+}

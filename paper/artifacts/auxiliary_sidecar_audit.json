@@ -1,0 +1,14 @@
+{
+  "action_check_count": 81,
+  "conflicting_sidecar_results": 0,
+  "interpretation": "Source-hash matches alone do not identify an action's Docker execution or reconstruct its raw-check timeline.",
+  "matched_by_source_hash": 37,
+  "multiple_sidecar_matches": 37,
+  "read_only_inputs_unchanged": true,
+  "scope": "auxiliary local logs; not the sealed trajectory archive",
+  "sidecar_json_errors": 0,
+  "sidecar_log_files_scanned": 881,
+  "study": "rag-overnight-v2-main-0-5-0",
+  "unique_sidecar_matches": 0,
+  "unmatched_by_source_hash": 44
+}
