@@ -162,7 +162,9 @@ def validate_freeze(manifest_path: Path, root: Path = ROOT) -> dict[str, Any]:
                         errors.append("freeze commit must change only experiment_manifest.json from source git_sha")
             if not _tracked_manifest_matches_worktree(root, manifest_path):
                 errors.append("manifest bytes do not match committed HEAD:experiment_manifest.json")
-            if experiment.get("clean_tree") is not True or dirty:
+            if experiment.get("clean_tree") is not True:
+                errors.append("manifest experiment.clean_tree is not true")
+            if dirty:
                 errors.append("source tree is not clean")
 
     readiness = document.get("readiness")
