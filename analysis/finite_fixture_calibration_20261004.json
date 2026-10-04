@@ -1,0 +1,1977 @@
+{
+  "candidate_condition_pairs": 1430,
+  "causal_effects": null,
+  "eligible_main_episodes": 0,
+  "families": [
+    {
+      "benchmark_gate_vs_finite_oracle": {
+        "assessable_decisions": 40,
+        "confusion_matrix": {
+          "FN": 1,
+          "FP": 0,
+          "TN": 37,
+          "TP": 2
+        },
+        "excluded_decisions": {},
+        "false_acceptance_rate": 0.0,
+        "false_rejection_rate": 0.3333333333333333,
+        "insecure_test_pass_gate_fail": 2,
+        "precision": 1.0,
+        "raw_test_gate_oracle": [
+          {
+            "benchmark_verdict": "FAIL",
+            "count": 35,
+            "raw_test_result": "FAIL",
+            "security_oracle_result": "INSECURE"
+          },
+          {
+            "benchmark_verdict": "FAIL",
+            "count": 2,
+            "raw_test_result": "PASS",
+            "security_oracle_result": "INSECURE"
+          },
+          {
+            "benchmark_verdict": "FAIL",
+            "count": 1,
+            "raw_test_result": "PASS",
+            "security_oracle_result": "SECURE"
+          },
+          {
+            "benchmark_verdict": "PASS",
+            "count": 2,
+            "raw_test_result": "PASS",
+            "security_oracle_result": "SECURE"
+          }
+        ],
+        "recall": 0.6666666666666666,
+        "secure_test_pass_gate_fail": 1,
+        "specificity": 1.0,
+        "test_gate_discordance": 3,
+        "total_decisions": 40
+      },
+      "c1_mutation_challenge": {
+        "denominator": 2,
+        "gate_detected": 2,
+        "gate_mutation_score": 1.0,
+        "mutations": [
+          {
+            "benchmark_gate_verdict": "FAIL",
+            "candidate_sha256": "6e0646f8b789b1a723b753a0a602c508587bb7229889983a7c855271036e4a02",
+            "finite_oracle_result": "INSECURE",
+            "mutation_id": "insecure_mutation_allow_all",
+            "weak_raw_test_result": "FAIL"
+          },
+          {
+            "benchmark_gate_verdict": "FAIL",
+            "candidate_sha256": "c414e41f9775ad0ad1ccea1b8935ab0668687731a3a600668d872b64b8d6c9ea",
+            "finite_oracle_result": "INSECURE",
+            "mutation_id": "insecure_mutation_deny_all",
+            "weak_raw_test_result": "FAIL"
+          }
+        ],
+        "weak_detected": 2,
+        "weak_mutation_score": 1.0
+      },
+      "candidate_condition_pairs": 40,
+      "condition_rows": [
+        {
+          "benchmark_gate_vs_finite_oracle": {
+            "assessable_decisions": 8,
+            "confusion_matrix": {
+              "FN": 0,
+              "FP": 0,
+              "TN": 7,
+              "TP": 1
+            },
+            "excluded_decisions": {},
+            "false_acceptance_rate": 0.0,
+            "false_rejection_rate": 0.0,
+            "insecure_test_pass_gate_fail": 0,
+            "precision": 1.0,
+            "raw_test_gate_oracle": [
+              {
+                "benchmark_verdict": "FAIL",
+                "count": 7,
+                "raw_test_result": "FAIL",
+                "security_oracle_result": "INSECURE"
+              },
+              {
+                "benchmark_verdict": "PASS",
+                "count": 1,
+                "raw_test_result": "PASS",
+                "security_oracle_result": "SECURE"
+              }
+            ],
+            "recall": 1.0,
+            "secure_test_pass_gate_fail": 0,
+            "specificity": 1.0,
+            "test_gate_discordance": 0,
+            "total_decisions": 8
+          },
+          "candidate_space_size": 8,
+          "condition": "C1",
+          "ground_truth_state": "REPAIRABLE",
+          "weak_raw_test_vs_finite_oracle": {
+            "assessable_decisions": 8,
+            "confusion_matrix": {
+              "FN": 0,
+              "FP": 0,
+              "TN": 7,
+              "TP": 1
+            },
+            "excluded_decisions": {},
+            "false_acceptance_rate": 0.0,
+            "false_rejection_rate": 0.0,
+            "insecure_test_pass_gate_fail": 0,
+            "precision": 1.0,
+            "raw_test_gate_oracle": [
+              {
+                "benchmark_verdict": "FAIL",
+                "count": 7,
+                "raw_test_result": "FAIL",
+                "security_oracle_result": "INSECURE"
+              },
+              {
+                "benchmark_verdict": "PASS",
+                "count": 1,
+                "raw_test_result": "PASS",
+                "security_oracle_result": "SECURE"
+              }
+            ],
+            "recall": 1.0,
+            "secure_test_pass_gate_fail": 0,
+            "specificity": 1.0,
+            "test_gate_discordance": 0,
+            "total_decisions": 8
+          }
+        },
+        {
+          "benchmark_gate_vs_finite_oracle": {
+            "assessable_decisions": 8,
+            "confusion_matrix": {
+              "FN": 0,
+              "FP": 0,
+              "TN": 7,
+              "TP": 1
+            },
+            "excluded_decisions": {},
+            "false_acceptance_rate": 0.0,
+            "false_rejection_rate": 0.0,
+            "insecure_test_pass_gate_fail": 0,
+            "precision": 1.0,
+            "raw_test_gate_oracle": [
+              {
+                "benchmark_verdict": "FAIL",
+                "count": 7,
+                "raw_test_result": "FAIL",
+                "security_oracle_result": "INSECURE"
+              },
+              {
+                "benchmark_verdict": "PASS",
+                "count": 1,
+                "raw_test_result": "PASS",
+                "security_oracle_result": "SECURE"
+              }
+            ],
+            "recall": 1.0,
+            "secure_test_pass_gate_fail": 0,
+            "specificity": 1.0,
+            "test_gate_discordance": 0,
+            "total_decisions": 8
+          },
+          "candidate_space_size": 8,
+          "condition": "C2",
+          "ground_truth_state": "REPAIRABLE",
+          "weak_raw_test_vs_finite_oracle": {
+            "assessable_decisions": 8,
+            "confusion_matrix": {
+              "FN": 0,
+              "FP": 0,
+              "TN": 7,
+              "TP": 1
+            },
+            "excluded_decisions": {},
+            "false_acceptance_rate": 0.0,
+            "false_rejection_rate": 0.0,
+            "insecure_test_pass_gate_fail": 0,
+            "precision": 1.0,
+            "raw_test_gate_oracle": [
+              {
+                "benchmark_verdict": "FAIL",
+                "count": 7,
+                "raw_test_result": "FAIL",
+                "security_oracle_result": "INSECURE"
+              },
+              {
+                "benchmark_verdict": "PASS",
+                "count": 1,
+                "raw_test_result": "PASS",
+                "security_oracle_result": "SECURE"
+              }
+            ],
+            "recall": 1.0,
+            "secure_test_pass_gate_fail": 0,
+            "specificity": 1.0,
+            "test_gate_discordance": 0,
+            "total_decisions": 8
+          }
+        },
+        {
+          "benchmark_gate_vs_finite_oracle": {
+            "assessable_decisions": 8,
+            "confusion_matrix": {
+              "FN": 0,
+              "FP": 0,
+              "TN": 8,
+              "TP": 0
+            },
+            "excluded_decisions": {},
+            "false_acceptance_rate": 0.0,
+            "false_rejection_rate": null,
+            "insecure_test_pass_gate_fail": 1,
+            "precision": null,
+            "raw_test_gate_oracle": [
+              {
+                "benchmark_verdict": "FAIL",
+                "count": 7,
+                "raw_test_result": "FAIL",
+                "security_oracle_result": "INSECURE"
+              },
+              {
+                "benchmark_verdict": "FAIL",
+                "count": 1,
+                "raw_test_result": "PASS",
+                "security_oracle_result": "INSECURE"
+              }
+            ],
+            "recall": null,
+            "secure_test_pass_gate_fail": 0,
+            "specificity": 1.0,
+            "test_gate_discordance": 1,
+            "total_decisions": 8
+          },
+          "candidate_space_size": 8,
+          "condition": "C3",
+          "ground_truth_state": "UNREPAIRABLE",
+          "weak_raw_test_vs_finite_oracle": {
+            "assessable_decisions": 8,
+            "confusion_matrix": {
+              "FN": 0,
+              "FP": 1,
+              "TN": 7,
+              "TP": 0
+            },
+            "excluded_decisions": {},
+            "false_acceptance_rate": 0.125,
+            "false_rejection_rate": null,
+            "insecure_test_pass_gate_fail": 0,
+            "precision": 0.0,
+            "raw_test_gate_oracle": [
+              {
+                "benchmark_verdict": "FAIL",
+                "count": 7,
+                "raw_test_result": "FAIL",
+                "security_oracle_result": "INSECURE"
+              },
+              {
+                "benchmark_verdict": "PASS",
+                "count": 1,
+                "raw_test_result": "PASS",
+                "security_oracle_result": "INSECURE"
+              }
+            ],
+            "recall": null,
+            "secure_test_pass_gate_fail": 0,
+            "specificity": 0.875,
+            "test_gate_discordance": 0,
+            "total_decisions": 8
+          }
+        },
+        {
+          "benchmark_gate_vs_finite_oracle": {
+            "assessable_decisions": 8,
+            "confusion_matrix": {
+              "FN": 0,
+              "FP": 0,
+              "TN": 8,
+              "TP": 0
+            },
+            "excluded_decisions": {},
+            "false_acceptance_rate": 0.0,
+            "false_rejection_rate": null,
+            "insecure_test_pass_gate_fail": 1,
+            "precision": null,
+            "raw_test_gate_oracle": [
+              {
+                "benchmark_verdict": "FAIL",
+                "count": 7,
+                "raw_test_result": "FAIL",
+                "security_oracle_result": "INSECURE"
+              },
+              {
+                "benchmark_verdict": "FAIL",
+                "count": 1,
+                "raw_test_result": "PASS",
+                "security_oracle_result": "INSECURE"
+              }
+            ],
+            "recall": null,
+            "secure_test_pass_gate_fail": 0,
+            "specificity": 1.0,
+            "test_gate_discordance": 1,
+            "total_decisions": 8
+          },
+          "candidate_space_size": 8,
+          "condition": "C4",
+          "ground_truth_state": "UNREPAIRABLE",
+          "weak_raw_test_vs_finite_oracle": {
+            "assessable_decisions": 8,
+            "confusion_matrix": {
+              "FN": 0,
+              "FP": 1,
+              "TN": 7,
+              "TP": 0
+            },
+            "excluded_decisions": {},
+            "false_acceptance_rate": 0.125,
+            "false_rejection_rate": null,
+            "insecure_test_pass_gate_fail": 0,
+            "precision": 0.0,
+            "raw_test_gate_oracle": [
+              {
+                "benchmark_verdict": "FAIL",
+                "count": 7,
+                "raw_test_result": "FAIL",
+                "security_oracle_result": "INSECURE"
+              },
+              {
+                "benchmark_verdict": "PASS",
+                "count": 1,
+                "raw_test_result": "PASS",
+                "security_oracle_result": "INSECURE"
+              }
+            ],
+            "recall": null,
+            "secure_test_pass_gate_fail": 0,
+            "specificity": 0.875,
+            "test_gate_discordance": 0,
+            "total_decisions": 8
+          }
+        },
+        {
+          "benchmark_gate_vs_finite_oracle": {
+            "assessable_decisions": 8,
+            "confusion_matrix": {
+              "FN": 1,
+              "FP": 0,
+              "TN": 7,
+              "TP": 0
+            },
+            "excluded_decisions": {},
+            "false_acceptance_rate": 0.0,
+            "false_rejection_rate": 1.0,
+            "insecure_test_pass_gate_fail": 0,
+            "precision": null,
+            "raw_test_gate_oracle": [
+              {
+                "benchmark_verdict": "FAIL",
+                "count": 7,
+                "raw_test_result": "FAIL",
+                "security_oracle_result": "INSECURE"
+              },
+              {
+                "benchmark_verdict": "FAIL",
+                "count": 1,
+                "raw_test_result": "PASS",
+                "security_oracle_result": "SECURE"
+              }
+            ],
+            "recall": 0.0,
+            "secure_test_pass_gate_fail": 1,
+            "specificity": 1.0,
+            "test_gate_discordance": 1,
+            "total_decisions": 8
+          },
+          "candidate_space_size": 8,
+          "condition": "C5",
+          "ground_truth_state": "EVALUATOR_MISMATCH",
+          "weak_raw_test_vs_finite_oracle": {
+            "assessable_decisions": 8,
+            "confusion_matrix": {
+              "FN": 0,
+              "FP": 0,
+              "TN": 7,
+              "TP": 1
+            },
+            "excluded_decisions": {},
+            "false_acceptance_rate": 0.0,
+            "false_rejection_rate": 0.0,
+            "insecure_test_pass_gate_fail": 0,
+            "precision": 1.0,
+            "raw_test_gate_oracle": [
+              {
+                "benchmark_verdict": "FAIL",
+                "count": 7,
+                "raw_test_result": "FAIL",
+                "security_oracle_result": "INSECURE"
+              },
+              {
+                "benchmark_verdict": "PASS",
+                "count": 1,
+                "raw_test_result": "PASS",
+                "security_oracle_result": "SECURE"
+              }
+            ],
+            "recall": 1.0,
+            "secure_test_pass_gate_fail": 0,
+            "specificity": 1.0,
+            "test_gate_discordance": 0,
+            "total_decisions": 8
+          }
+        }
+      ],
+      "family": "authorization",
+      "saved_file_sha256": {
+        "authorization.references.json": "7ed05ba8e4b25c0b20e9337f5a16c29646de29666a5e94e140c6b749bc5e7b69",
+        "fp-authorization-c1.proof.json": "1c2e407fb7d2fc5cd993c7980a5973e13dd3ea71df9a474c7b425ebf947092c1",
+        "fp-authorization-c1.task.json": "4e31546fbffc248e9422a5c2573935594ea0183c2fdc2c3c93cdcf06cb8578fe",
+        "fp-authorization-c2.proof.json": "2fc7e58381350a5a9831fccb033d0fd8a08c2815ae8f1caf595bbc2e399749eb",
+        "fp-authorization-c2.task.json": "8129d2eab3f6c10d560c4d0ef0500eccf9777457b189b8db4dd9c9bac636a88b",
+        "fp-authorization-c3.proof.json": "f5973ccfeaf7e4f36b81b150072a7ceaab2c23ed3d15a687e16b0461989c8afa",
+        "fp-authorization-c3.task.json": "87eb10d66d64492659d6587580524423a1606b8c6e4e47a720d52511d283fc87",
+        "fp-authorization-c4.proof.json": "d9204fc9ad1c6fe2fc2b84294972a916abf38bf60642153f445c39cd0ee65726",
+        "fp-authorization-c4.task.json": "01ec1e9163f360a619a433fc5b8c174a0eaf3b2e78d0ebf2814a547d6ab2e79b",
+        "fp-authorization-c5.proof.json": "1f267ecda80d2a5c9b4aeb57a443b01c390d59dca08a87f2b8eac57c635e3ecc",
+        "fp-authorization-c5.task.json": "6d432f1ca2de29e6f816e59376d53532348aaa2a27d5018d0b61867b63b009d5"
+      },
+      "scope": "exhaustive_finite_policy_domain_only",
+      "weak_raw_test_vs_finite_oracle": {
+        "assessable_decisions": 40,
+        "confusion_matrix": {
+          "FN": 0,
+          "FP": 2,
+          "TN": 35,
+          "TP": 3
+        },
+        "excluded_decisions": {},
+        "false_acceptance_rate": 0.05405405405405406,
+        "false_rejection_rate": 0.0,
+        "insecure_test_pass_gate_fail": 0,
+        "precision": 0.6,
+        "raw_test_gate_oracle": [
+          {
+            "benchmark_verdict": "FAIL",
+            "count": 35,
+            "raw_test_result": "FAIL",
+            "security_oracle_result": "INSECURE"
+          },
+          {
+            "benchmark_verdict": "PASS",
+            "count": 2,
+            "raw_test_result": "PASS",
+            "security_oracle_result": "INSECURE"
+          },
+          {
+            "benchmark_verdict": "PASS",
+            "count": 3,
+            "raw_test_result": "PASS",
+            "security_oracle_result": "SECURE"
+          }
+        ],
+        "recall": 1.0,
+        "secure_test_pass_gate_fail": 0,
+        "specificity": 0.9459459459459459,
+        "test_gate_discordance": 0,
+        "total_decisions": 40
+      }
+    },
+    {
+      "benchmark_gate_vs_finite_oracle": {
+        "assessable_decisions": 1280,
+        "confusion_matrix": {
+          "FN": 1,
+          "FP": 0,
+          "TN": 1277,
+          "TP": 2
+        },
+        "excluded_decisions": {},
+        "false_acceptance_rate": 0.0,
+        "false_rejection_rate": 0.3333333333333333,
+        "insecure_test_pass_gate_fail": 2,
+        "precision": 1.0,
+        "raw_test_gate_oracle": [
+          {
+            "benchmark_verdict": "FAIL",
+            "count": 1275,
+            "raw_test_result": "FAIL",
+            "security_oracle_result": "INSECURE"
+          },
+          {
+            "benchmark_verdict": "FAIL",
+            "count": 2,
+            "raw_test_result": "PASS",
+            "security_oracle_result": "INSECURE"
+          },
+          {
+            "benchmark_verdict": "FAIL",
+            "count": 1,
+            "raw_test_result": "PASS",
+            "security_oracle_result": "SECURE"
+          },
+          {
+            "benchmark_verdict": "PASS",
+            "count": 2,
+            "raw_test_result": "PASS",
+            "security_oracle_result": "SECURE"
+          }
+        ],
+        "recall": 0.6666666666666666,
+        "secure_test_pass_gate_fail": 1,
+        "specificity": 1.0,
+        "test_gate_discordance": 3,
+        "total_decisions": 1280
+      },
+      "c1_mutation_challenge": {
+        "denominator": 2,
+        "gate_detected": 2,
+        "gate_mutation_score": 1.0,
+        "mutations": [
+          {
+            "benchmark_gate_verdict": "FAIL",
+            "candidate_sha256": "59911d30e450b4a350a8ea652de2a099c0c49e4d8541f505b7a632819436d056",
+            "finite_oracle_result": "INSECURE",
+            "mutation_id": "insecure_mutation_lexical_traversal",
+            "weak_raw_test_result": "FAIL"
+          },
+          {
+            "benchmark_gate_verdict": "FAIL",
+            "candidate_sha256": "185e9e069bb7d6bf860bad817b6b9ba6567a38dc282949d9ed7b56089fef9220",
+            "finite_oracle_result": "INSECURE",
+            "mutation_id": "insecure_mutation_reject_all",
+            "weak_raw_test_result": "FAIL"
+          }
+        ],
+        "weak_detected": 2,
+        "weak_mutation_score": 1.0
+      },
+      "candidate_condition_pairs": 1280,
+      "condition_rows": [
+        {
+          "benchmark_gate_vs_finite_oracle": {
+            "assessable_decisions": 256,
+            "confusion_matrix": {
+              "FN": 0,
+              "FP": 0,
+              "TN": 255,
+              "TP": 1
+            },
+            "excluded_decisions": {},
+            "false_acceptance_rate": 0.0,
+            "false_rejection_rate": 0.0,
+            "insecure_test_pass_gate_fail": 0,
+            "precision": 1.0,
+            "raw_test_gate_oracle": [
+              {
+                "benchmark_verdict": "FAIL",
+                "count": 255,
+                "raw_test_result": "FAIL",
+                "security_oracle_result": "INSECURE"
+              },
+              {
+                "benchmark_verdict": "PASS",
+                "count": 1,
+                "raw_test_result": "PASS",
+                "security_oracle_result": "SECURE"
+              }
+            ],
+            "recall": 1.0,
+            "secure_test_pass_gate_fail": 0,
+            "specificity": 1.0,
+            "test_gate_discordance": 0,
+            "total_decisions": 256
+          },
+          "candidate_space_size": 256,
+          "condition": "C1",
+          "ground_truth_state": "REPAIRABLE",
+          "weak_raw_test_vs_finite_oracle": {
+            "assessable_decisions": 256,
+            "confusion_matrix": {
+              "FN": 0,
+              "FP": 0,
+              "TN": 255,
+              "TP": 1
+            },
+            "excluded_decisions": {},
+            "false_acceptance_rate": 0.0,
+            "false_rejection_rate": 0.0,
+            "insecure_test_pass_gate_fail": 0,
+            "precision": 1.0,
+            "raw_test_gate_oracle": [
+              {
+                "benchmark_verdict": "FAIL",
+                "count": 255,
+                "raw_test_result": "FAIL",
+                "security_oracle_result": "INSECURE"
+              },
+              {
+                "benchmark_verdict": "PASS",
+                "count": 1,
+                "raw_test_result": "PASS",
+                "security_oracle_result": "SECURE"
+              }
+            ],
+            "recall": 1.0,
+            "secure_test_pass_gate_fail": 0,
+            "specificity": 1.0,
+            "test_gate_discordance": 0,
+            "total_decisions": 256
+          }
+        },
+        {
+          "benchmark_gate_vs_finite_oracle": {
+            "assessable_decisions": 256,
+            "confusion_matrix": {
+              "FN": 0,
+              "FP": 0,
+              "TN": 255,
+              "TP": 1
+            },
+            "excluded_decisions": {},
+            "false_acceptance_rate": 0.0,
+            "false_rejection_rate": 0.0,
+            "insecure_test_pass_gate_fail": 0,
+            "precision": 1.0,
+            "raw_test_gate_oracle": [
+              {
+                "benchmark_verdict": "FAIL",
+                "count": 255,
+                "raw_test_result": "FAIL",
+                "security_oracle_result": "INSECURE"
+              },
+              {
+                "benchmark_verdict": "PASS",
+                "count": 1,
+                "raw_test_result": "PASS",
+                "security_oracle_result": "SECURE"
+              }
+            ],
+            "recall": 1.0,
+            "secure_test_pass_gate_fail": 0,
+            "specificity": 1.0,
+            "test_gate_discordance": 0,
+            "total_decisions": 256
+          },
+          "candidate_space_size": 256,
+          "condition": "C2",
+          "ground_truth_state": "REPAIRABLE",
+          "weak_raw_test_vs_finite_oracle": {
+            "assessable_decisions": 256,
+            "confusion_matrix": {
+              "FN": 0,
+              "FP": 0,
+              "TN": 255,
+              "TP": 1
+            },
+            "excluded_decisions": {},
+            "false_acceptance_rate": 0.0,
+            "false_rejection_rate": 0.0,
+            "insecure_test_pass_gate_fail": 0,
+            "precision": 1.0,
+            "raw_test_gate_oracle": [
+              {
+                "benchmark_verdict": "FAIL",
+                "count": 255,
+                "raw_test_result": "FAIL",
+                "security_oracle_result": "INSECURE"
+              },
+              {
+                "benchmark_verdict": "PASS",
+                "count": 1,
+                "raw_test_result": "PASS",
+                "security_oracle_result": "SECURE"
+              }
+            ],
+            "recall": 1.0,
+            "secure_test_pass_gate_fail": 0,
+            "specificity": 1.0,
+            "test_gate_discordance": 0,
+            "total_decisions": 256
+          }
+        },
+        {
+          "benchmark_gate_vs_finite_oracle": {
+            "assessable_decisions": 256,
+            "confusion_matrix": {
+              "FN": 0,
+              "FP": 0,
+              "TN": 256,
+              "TP": 0
+            },
+            "excluded_decisions": {},
+            "false_acceptance_rate": 0.0,
+            "false_rejection_rate": null,
+            "insecure_test_pass_gate_fail": 1,
+            "precision": null,
+            "raw_test_gate_oracle": [
+              {
+                "benchmark_verdict": "FAIL",
+                "count": 255,
+                "raw_test_result": "FAIL",
+                "security_oracle_result": "INSECURE"
+              },
+              {
+                "benchmark_verdict": "FAIL",
+                "count": 1,
+                "raw_test_result": "PASS",
+                "security_oracle_result": "INSECURE"
+              }
+            ],
+            "recall": null,
+            "secure_test_pass_gate_fail": 0,
+            "specificity": 1.0,
+            "test_gate_discordance": 1,
+            "total_decisions": 256
+          },
+          "candidate_space_size": 256,
+          "condition": "C3",
+          "ground_truth_state": "UNREPAIRABLE",
+          "weak_raw_test_vs_finite_oracle": {
+            "assessable_decisions": 256,
+            "confusion_matrix": {
+              "FN": 0,
+              "FP": 1,
+              "TN": 255,
+              "TP": 0
+            },
+            "excluded_decisions": {},
+            "false_acceptance_rate": 0.00390625,
+            "false_rejection_rate": null,
+            "insecure_test_pass_gate_fail": 0,
+            "precision": 0.0,
+            "raw_test_gate_oracle": [
+              {
+                "benchmark_verdict": "FAIL",
+                "count": 255,
+                "raw_test_result": "FAIL",
+                "security_oracle_result": "INSECURE"
+              },
+              {
+                "benchmark_verdict": "PASS",
+                "count": 1,
+                "raw_test_result": "PASS",
+                "security_oracle_result": "INSECURE"
+              }
+            ],
+            "recall": null,
+            "secure_test_pass_gate_fail": 0,
+            "specificity": 0.99609375,
+            "test_gate_discordance": 0,
+            "total_decisions": 256
+          }
+        },
+        {
+          "benchmark_gate_vs_finite_oracle": {
+            "assessable_decisions": 256,
+            "confusion_matrix": {
+              "FN": 0,
+              "FP": 0,
+              "TN": 256,
+              "TP": 0
+            },
+            "excluded_decisions": {},
+            "false_acceptance_rate": 0.0,
+            "false_rejection_rate": null,
+            "insecure_test_pass_gate_fail": 1,
+            "precision": null,
+            "raw_test_gate_oracle": [
+              {
+                "benchmark_verdict": "FAIL",
+                "count": 255,
+                "raw_test_result": "FAIL",
+                "security_oracle_result": "INSECURE"
+              },
+              {
+                "benchmark_verdict": "FAIL",
+                "count": 1,
+                "raw_test_result": "PASS",
+                "security_oracle_result": "INSECURE"
+              }
+            ],
+            "recall": null,
+            "secure_test_pass_gate_fail": 0,
+            "specificity": 1.0,
+            "test_gate_discordance": 1,
+            "total_decisions": 256
+          },
+          "candidate_space_size": 256,
+          "condition": "C4",
+          "ground_truth_state": "UNREPAIRABLE",
+          "weak_raw_test_vs_finite_oracle": {
+            "assessable_decisions": 256,
+            "confusion_matrix": {
+              "FN": 0,
+              "FP": 1,
+              "TN": 255,
+              "TP": 0
+            },
+            "excluded_decisions": {},
+            "false_acceptance_rate": 0.00390625,
+            "false_rejection_rate": null,
+            "insecure_test_pass_gate_fail": 0,
+            "precision": 0.0,
+            "raw_test_gate_oracle": [
+              {
+                "benchmark_verdict": "FAIL",
+                "count": 255,
+                "raw_test_result": "FAIL",
+                "security_oracle_result": "INSECURE"
+              },
+              {
+                "benchmark_verdict": "PASS",
+                "count": 1,
+                "raw_test_result": "PASS",
+                "security_oracle_result": "INSECURE"
+              }
+            ],
+            "recall": null,
+            "secure_test_pass_gate_fail": 0,
+            "specificity": 0.99609375,
+            "test_gate_discordance": 0,
+            "total_decisions": 256
+          }
+        },
+        {
+          "benchmark_gate_vs_finite_oracle": {
+            "assessable_decisions": 256,
+            "confusion_matrix": {
+              "FN": 1,
+              "FP": 0,
+              "TN": 255,
+              "TP": 0
+            },
+            "excluded_decisions": {},
+            "false_acceptance_rate": 0.0,
+            "false_rejection_rate": 1.0,
+            "insecure_test_pass_gate_fail": 0,
+            "precision": null,
+            "raw_test_gate_oracle": [
+              {
+                "benchmark_verdict": "FAIL",
+                "count": 255,
+                "raw_test_result": "FAIL",
+                "security_oracle_result": "INSECURE"
+              },
+              {
+                "benchmark_verdict": "FAIL",
+                "count": 1,
+                "raw_test_result": "PASS",
+                "security_oracle_result": "SECURE"
+              }
+            ],
+            "recall": 0.0,
+            "secure_test_pass_gate_fail": 1,
+            "specificity": 1.0,
+            "test_gate_discordance": 1,
+            "total_decisions": 256
+          },
+          "candidate_space_size": 256,
+          "condition": "C5",
+          "ground_truth_state": "EVALUATOR_MISMATCH",
+          "weak_raw_test_vs_finite_oracle": {
+            "assessable_decisions": 256,
+            "confusion_matrix": {
+              "FN": 0,
+              "FP": 0,
+              "TN": 255,
+              "TP": 1
+            },
+            "excluded_decisions": {},
+            "false_acceptance_rate": 0.0,
+            "false_rejection_rate": 0.0,
+            "insecure_test_pass_gate_fail": 0,
+            "precision": 1.0,
+            "raw_test_gate_oracle": [
+              {
+                "benchmark_verdict": "FAIL",
+                "count": 255,
+                "raw_test_result": "FAIL",
+                "security_oracle_result": "INSECURE"
+              },
+              {
+                "benchmark_verdict": "PASS",
+                "count": 1,
+                "raw_test_result": "PASS",
+                "security_oracle_result": "SECURE"
+              }
+            ],
+            "recall": 1.0,
+            "secure_test_pass_gate_fail": 0,
+            "specificity": 1.0,
+            "test_gate_discordance": 0,
+            "total_decisions": 256
+          }
+        }
+      ],
+      "family": "path-boundary",
+      "saved_file_sha256": {
+        "fp-path-boundary-c1.proof.json": "eb675687a64eea62fdfe58b1d19afb56f6d235b643b0bb36e2b857356fedce62",
+        "fp-path-boundary-c1.task.json": "d0219ddf7ce00a2b0aed91b510fd073019801075bc18614605914c0c3f1efd08",
+        "fp-path-boundary-c2.proof.json": "cd9e3f5b2c4c6341e7acf2ce1e1bdb951df66da15cd407510b09f6e7867fc8f6",
+        "fp-path-boundary-c2.task.json": "b845d80dd6ba183a28902c60dcfdae553613edcea51c49c83e0d0afdf4df16a2",
+        "fp-path-boundary-c3.proof.json": "d1a4cec2d3b4252cf1249220863fee92ad6108cfaa3c89249438e393316d43ec",
+        "fp-path-boundary-c3.task.json": "a07b70b98c2039559ca13843550acd277eecd9425c835c70f78319e4d0731267",
+        "fp-path-boundary-c4.proof.json": "fd0bc955685ea2579e54f9893c37b63e2f8276c90fd8e98aa33d7ff5f5d34b3d",
+        "fp-path-boundary-c4.task.json": "37eb829ad6f96a8fb8d2385523ee23e269ed2e07c8fdb21bb2da5601c42042f8",
+        "fp-path-boundary-c5.proof.json": "3dff77daea1f2fa02089d365545ad24ae47a4c9bdce85c15f16f2ac86363328b",
+        "fp-path-boundary-c5.task.json": "0c94ea4f855cb369fded8412215eb7312ce48188a808e3619462e7554bbabaa3",
+        "path-boundary.references.json": "890a0747db849e626a0f9ec60731517dba7b6dac80a08298579a08cd0f5b4fab"
+      },
+      "scope": "exhaustive_finite_path_boundary_only",
+      "weak_raw_test_vs_finite_oracle": {
+        "assessable_decisions": 1280,
+        "confusion_matrix": {
+          "FN": 0,
+          "FP": 2,
+          "TN": 1275,
+          "TP": 3
+        },
+        "excluded_decisions": {},
+        "false_acceptance_rate": 0.0015661707126076742,
+        "false_rejection_rate": 0.0,
+        "insecure_test_pass_gate_fail": 0,
+        "precision": 0.6,
+        "raw_test_gate_oracle": [
+          {
+            "benchmark_verdict": "FAIL",
+            "count": 1275,
+            "raw_test_result": "FAIL",
+            "security_oracle_result": "INSECURE"
+          },
+          {
+            "benchmark_verdict": "PASS",
+            "count": 2,
+            "raw_test_result": "PASS",
+            "security_oracle_result": "INSECURE"
+          },
+          {
+            "benchmark_verdict": "PASS",
+            "count": 3,
+            "raw_test_result": "PASS",
+            "security_oracle_result": "SECURE"
+          }
+        ],
+        "recall": 1.0,
+        "secure_test_pass_gate_fail": 0,
+        "specificity": 0.9984338292873923,
+        "test_gate_discordance": 0,
+        "total_decisions": 1280
+      }
+    },
+    {
+      "benchmark_gate_vs_finite_oracle": {
+        "assessable_decisions": 80,
+        "confusion_matrix": {
+          "FN": 1,
+          "FP": 0,
+          "TN": 77,
+          "TP": 2
+        },
+        "excluded_decisions": {},
+        "false_acceptance_rate": 0.0,
+        "false_rejection_rate": 0.3333333333333333,
+        "insecure_test_pass_gate_fail": 37,
+        "precision": 1.0,
+        "raw_test_gate_oracle": [
+          {
+            "benchmark_verdict": "FAIL",
+            "count": 40,
+            "raw_test_result": "FAIL",
+            "security_oracle_result": "INSECURE"
+          },
+          {
+            "benchmark_verdict": "FAIL",
+            "count": 37,
+            "raw_test_result": "PASS",
+            "security_oracle_result": "INSECURE"
+          },
+          {
+            "benchmark_verdict": "FAIL",
+            "count": 1,
+            "raw_test_result": "PASS",
+            "security_oracle_result": "SECURE"
+          },
+          {
+            "benchmark_verdict": "PASS",
+            "count": 2,
+            "raw_test_result": "PASS",
+            "security_oracle_result": "SECURE"
+          }
+        ],
+        "recall": 0.6666666666666666,
+        "secure_test_pass_gate_fail": 1,
+        "specificity": 1.0,
+        "test_gate_discordance": 38,
+        "total_decisions": 80
+      },
+      "c1_mutation_challenge": {
+        "denominator": 2,
+        "gate_detected": 2,
+        "gate_mutation_score": 1.0,
+        "mutations": [
+          {
+            "benchmark_gate_verdict": "FAIL",
+            "candidate_sha256": "f960a225323bc65ee68059f0716e6aee5d9e33f57be22b23780a29b6bd2a28cf",
+            "finite_oracle_result": "INSECURE",
+            "mutation_id": "insecure_mutation_approve_all",
+            "weak_raw_test_result": "PASS"
+          },
+          {
+            "benchmark_gate_verdict": "FAIL",
+            "candidate_sha256": "88089acdeea8051515bc4d11e521f4e4b1c24c651b7292dc584bdbac752e65f3",
+            "finite_oracle_result": "INSECURE",
+            "mutation_id": "insecure_mutation_reapprove_third",
+            "weak_raw_test_result": "PASS"
+          }
+        ],
+        "weak_detected": 0,
+        "weak_mutation_score": 0.0
+      },
+      "candidate_condition_pairs": 80,
+      "condition_rows": [
+        {
+          "benchmark_gate_vs_finite_oracle": {
+            "assessable_decisions": 16,
+            "confusion_matrix": {
+              "FN": 0,
+              "FP": 0,
+              "TN": 15,
+              "TP": 1
+            },
+            "excluded_decisions": {},
+            "false_acceptance_rate": 0.0,
+            "false_rejection_rate": 0.0,
+            "insecure_test_pass_gate_fail": 7,
+            "precision": 1.0,
+            "raw_test_gate_oracle": [
+              {
+                "benchmark_verdict": "FAIL",
+                "count": 8,
+                "raw_test_result": "FAIL",
+                "security_oracle_result": "INSECURE"
+              },
+              {
+                "benchmark_verdict": "FAIL",
+                "count": 7,
+                "raw_test_result": "PASS",
+                "security_oracle_result": "INSECURE"
+              },
+              {
+                "benchmark_verdict": "PASS",
+                "count": 1,
+                "raw_test_result": "PASS",
+                "security_oracle_result": "SECURE"
+              }
+            ],
+            "recall": 1.0,
+            "secure_test_pass_gate_fail": 0,
+            "specificity": 1.0,
+            "test_gate_discordance": 7,
+            "total_decisions": 16
+          },
+          "candidate_space_size": 16,
+          "condition": "C1",
+          "ground_truth_state": "REPAIRABLE",
+          "weak_raw_test_vs_finite_oracle": {
+            "assessable_decisions": 16,
+            "confusion_matrix": {
+              "FN": 0,
+              "FP": 7,
+              "TN": 8,
+              "TP": 1
+            },
+            "excluded_decisions": {},
+            "false_acceptance_rate": 0.4666666666666667,
+            "false_rejection_rate": 0.0,
+            "insecure_test_pass_gate_fail": 0,
+            "precision": 0.125,
+            "raw_test_gate_oracle": [
+              {
+                "benchmark_verdict": "FAIL",
+                "count": 8,
+                "raw_test_result": "FAIL",
+                "security_oracle_result": "INSECURE"
+              },
+              {
+                "benchmark_verdict": "PASS",
+                "count": 7,
+                "raw_test_result": "PASS",
+                "security_oracle_result": "INSECURE"
+              },
+              {
+                "benchmark_verdict": "PASS",
+                "count": 1,
+                "raw_test_result": "PASS",
+                "security_oracle_result": "SECURE"
+              }
+            ],
+            "recall": 1.0,
+            "secure_test_pass_gate_fail": 0,
+            "specificity": 0.5333333333333333,
+            "test_gate_discordance": 0,
+            "total_decisions": 16
+          }
+        },
+        {
+          "benchmark_gate_vs_finite_oracle": {
+            "assessable_decisions": 16,
+            "confusion_matrix": {
+              "FN": 0,
+              "FP": 0,
+              "TN": 15,
+              "TP": 1
+            },
+            "excluded_decisions": {},
+            "false_acceptance_rate": 0.0,
+            "false_rejection_rate": 0.0,
+            "insecure_test_pass_gate_fail": 7,
+            "precision": 1.0,
+            "raw_test_gate_oracle": [
+              {
+                "benchmark_verdict": "FAIL",
+                "count": 8,
+                "raw_test_result": "FAIL",
+                "security_oracle_result": "INSECURE"
+              },
+              {
+                "benchmark_verdict": "FAIL",
+                "count": 7,
+                "raw_test_result": "PASS",
+                "security_oracle_result": "INSECURE"
+              },
+              {
+                "benchmark_verdict": "PASS",
+                "count": 1,
+                "raw_test_result": "PASS",
+                "security_oracle_result": "SECURE"
+              }
+            ],
+            "recall": 1.0,
+            "secure_test_pass_gate_fail": 0,
+            "specificity": 1.0,
+            "test_gate_discordance": 7,
+            "total_decisions": 16
+          },
+          "candidate_space_size": 16,
+          "condition": "C2",
+          "ground_truth_state": "REPAIRABLE",
+          "weak_raw_test_vs_finite_oracle": {
+            "assessable_decisions": 16,
+            "confusion_matrix": {
+              "FN": 0,
+              "FP": 7,
+              "TN": 8,
+              "TP": 1
+            },
+            "excluded_decisions": {},
+            "false_acceptance_rate": 0.4666666666666667,
+            "false_rejection_rate": 0.0,
+            "insecure_test_pass_gate_fail": 0,
+            "precision": 0.125,
+            "raw_test_gate_oracle": [
+              {
+                "benchmark_verdict": "FAIL",
+                "count": 8,
+                "raw_test_result": "FAIL",
+                "security_oracle_result": "INSECURE"
+              },
+              {
+                "benchmark_verdict": "PASS",
+                "count": 7,
+                "raw_test_result": "PASS",
+                "security_oracle_result": "INSECURE"
+              },
+              {
+                "benchmark_verdict": "PASS",
+                "count": 1,
+                "raw_test_result": "PASS",
+                "security_oracle_result": "SECURE"
+              }
+            ],
+            "recall": 1.0,
+            "secure_test_pass_gate_fail": 0,
+            "specificity": 0.5333333333333333,
+            "test_gate_discordance": 0,
+            "total_decisions": 16
+          }
+        },
+        {
+          "benchmark_gate_vs_finite_oracle": {
+            "assessable_decisions": 16,
+            "confusion_matrix": {
+              "FN": 0,
+              "FP": 0,
+              "TN": 16,
+              "TP": 0
+            },
+            "excluded_decisions": {},
+            "false_acceptance_rate": 0.0,
+            "false_rejection_rate": null,
+            "insecure_test_pass_gate_fail": 8,
+            "precision": null,
+            "raw_test_gate_oracle": [
+              {
+                "benchmark_verdict": "FAIL",
+                "count": 8,
+                "raw_test_result": "FAIL",
+                "security_oracle_result": "INSECURE"
+              },
+              {
+                "benchmark_verdict": "FAIL",
+                "count": 8,
+                "raw_test_result": "PASS",
+                "security_oracle_result": "INSECURE"
+              }
+            ],
+            "recall": null,
+            "secure_test_pass_gate_fail": 0,
+            "specificity": 1.0,
+            "test_gate_discordance": 8,
+            "total_decisions": 16
+          },
+          "candidate_space_size": 16,
+          "condition": "C3",
+          "ground_truth_state": "UNREPAIRABLE",
+          "weak_raw_test_vs_finite_oracle": {
+            "assessable_decisions": 16,
+            "confusion_matrix": {
+              "FN": 0,
+              "FP": 8,
+              "TN": 8,
+              "TP": 0
+            },
+            "excluded_decisions": {},
+            "false_acceptance_rate": 0.5,
+            "false_rejection_rate": null,
+            "insecure_test_pass_gate_fail": 0,
+            "precision": 0.0,
+            "raw_test_gate_oracle": [
+              {
+                "benchmark_verdict": "FAIL",
+                "count": 8,
+                "raw_test_result": "FAIL",
+                "security_oracle_result": "INSECURE"
+              },
+              {
+                "benchmark_verdict": "PASS",
+                "count": 8,
+                "raw_test_result": "PASS",
+                "security_oracle_result": "INSECURE"
+              }
+            ],
+            "recall": null,
+            "secure_test_pass_gate_fail": 0,
+            "specificity": 0.5,
+            "test_gate_discordance": 0,
+            "total_decisions": 16
+          }
+        },
+        {
+          "benchmark_gate_vs_finite_oracle": {
+            "assessable_decisions": 16,
+            "confusion_matrix": {
+              "FN": 0,
+              "FP": 0,
+              "TN": 16,
+              "TP": 0
+            },
+            "excluded_decisions": {},
+            "false_acceptance_rate": 0.0,
+            "false_rejection_rate": null,
+            "insecure_test_pass_gate_fail": 8,
+            "precision": null,
+            "raw_test_gate_oracle": [
+              {
+                "benchmark_verdict": "FAIL",
+                "count": 8,
+                "raw_test_result": "FAIL",
+                "security_oracle_result": "INSECURE"
+              },
+              {
+                "benchmark_verdict": "FAIL",
+                "count": 8,
+                "raw_test_result": "PASS",
+                "security_oracle_result": "INSECURE"
+              }
+            ],
+            "recall": null,
+            "secure_test_pass_gate_fail": 0,
+            "specificity": 1.0,
+            "test_gate_discordance": 8,
+            "total_decisions": 16
+          },
+          "candidate_space_size": 16,
+          "condition": "C4",
+          "ground_truth_state": "UNREPAIRABLE",
+          "weak_raw_test_vs_finite_oracle": {
+            "assessable_decisions": 16,
+            "confusion_matrix": {
+              "FN": 0,
+              "FP": 8,
+              "TN": 8,
+              "TP": 0
+            },
+            "excluded_decisions": {},
+            "false_acceptance_rate": 0.5,
+            "false_rejection_rate": null,
+            "insecure_test_pass_gate_fail": 0,
+            "precision": 0.0,
+            "raw_test_gate_oracle": [
+              {
+                "benchmark_verdict": "FAIL",
+                "count": 8,
+                "raw_test_result": "FAIL",
+                "security_oracle_result": "INSECURE"
+              },
+              {
+                "benchmark_verdict": "PASS",
+                "count": 8,
+                "raw_test_result": "PASS",
+                "security_oracle_result": "INSECURE"
+              }
+            ],
+            "recall": null,
+            "secure_test_pass_gate_fail": 0,
+            "specificity": 0.5,
+            "test_gate_discordance": 0,
+            "total_decisions": 16
+          }
+        },
+        {
+          "benchmark_gate_vs_finite_oracle": {
+            "assessable_decisions": 16,
+            "confusion_matrix": {
+              "FN": 1,
+              "FP": 0,
+              "TN": 15,
+              "TP": 0
+            },
+            "excluded_decisions": {},
+            "false_acceptance_rate": 0.0,
+            "false_rejection_rate": 1.0,
+            "insecure_test_pass_gate_fail": 7,
+            "precision": null,
+            "raw_test_gate_oracle": [
+              {
+                "benchmark_verdict": "FAIL",
+                "count": 8,
+                "raw_test_result": "FAIL",
+                "security_oracle_result": "INSECURE"
+              },
+              {
+                "benchmark_verdict": "FAIL",
+                "count": 7,
+                "raw_test_result": "PASS",
+                "security_oracle_result": "INSECURE"
+              },
+              {
+                "benchmark_verdict": "FAIL",
+                "count": 1,
+                "raw_test_result": "PASS",
+                "security_oracle_result": "SECURE"
+              }
+            ],
+            "recall": 0.0,
+            "secure_test_pass_gate_fail": 1,
+            "specificity": 1.0,
+            "test_gate_discordance": 8,
+            "total_decisions": 16
+          },
+          "candidate_space_size": 16,
+          "condition": "C5",
+          "ground_truth_state": "EVALUATOR_MISMATCH",
+          "weak_raw_test_vs_finite_oracle": {
+            "assessable_decisions": 16,
+            "confusion_matrix": {
+              "FN": 0,
+              "FP": 7,
+              "TN": 8,
+              "TP": 1
+            },
+            "excluded_decisions": {},
+            "false_acceptance_rate": 0.4666666666666667,
+            "false_rejection_rate": 0.0,
+            "insecure_test_pass_gate_fail": 0,
+            "precision": 0.125,
+            "raw_test_gate_oracle": [
+              {
+                "benchmark_verdict": "FAIL",
+                "count": 8,
+                "raw_test_result": "FAIL",
+                "security_oracle_result": "INSECURE"
+              },
+              {
+                "benchmark_verdict": "PASS",
+                "count": 7,
+                "raw_test_result": "PASS",
+                "security_oracle_result": "INSECURE"
+              },
+              {
+                "benchmark_verdict": "PASS",
+                "count": 1,
+                "raw_test_result": "PASS",
+                "security_oracle_result": "SECURE"
+              }
+            ],
+            "recall": 1.0,
+            "secure_test_pass_gate_fail": 0,
+            "specificity": 0.5333333333333333,
+            "test_gate_discordance": 0,
+            "total_decisions": 16
+          }
+        }
+      ],
+      "family": "transaction_replay",
+      "saved_file_sha256": {
+        "fr-transaction-replay-c1.proof.json": "aa297996191369b72f2c9c4e0a95305ab12d4aec4bb0d156d2e819e2895485f5",
+        "fr-transaction-replay-c1.task.json": "ee0393eff091041b8208d28eeddf5878604b3c7374a8f6fc1655328cfa3d5533",
+        "fr-transaction-replay-c2.proof.json": "acae1d35007f558dd1b9a7d8379f8eb6e77341b891ecceaad02a82bd5eecb123",
+        "fr-transaction-replay-c2.task.json": "0a7b646fa8a5ef8e2fd530be32b896360d89d7667fe6c2a63c1f9974d88001ba",
+        "fr-transaction-replay-c3.proof.json": "36a0f99738ced173b3cb2b288a00a1db9d2ee22de4874e36c9cbf86c8d08205b",
+        "fr-transaction-replay-c3.task.json": "38612463a9ecb90e21d7305fcad0edec6d7dc51045c7c4010413c2a86dcf4346",
+        "fr-transaction-replay-c4.proof.json": "ad9cf08f981bbfb350d2fb0ac1111b52b2539182b04db31902740ffe79bdc94f",
+        "fr-transaction-replay-c4.task.json": "e0bf30212cf0badc3d18547d05360f02b7d63a5fc8e4a5c58085deb4c9c1ce03",
+        "fr-transaction-replay-c5.proof.json": "9587b48dc95d4f5cd4cf5086eec30142faa03b60f219209bfef0e50644f1c405",
+        "fr-transaction-replay-c5.task.json": "7c6304133e1ac703faa0460360d9331cb74a022a24f4740c5447720e11edc3cb",
+        "transaction-replay.references.json": "7248f2ee72059360e5d2bbe1437e4031a2514c59f15a2d199b0acc4496c0a774"
+      },
+      "scope": "bounded_two_state_transaction_replay_only",
+      "weak_raw_test_vs_finite_oracle": {
+        "assessable_decisions": 80,
+        "confusion_matrix": {
+          "FN": 0,
+          "FP": 37,
+          "TN": 40,
+          "TP": 3
+        },
+        "excluded_decisions": {},
+        "false_acceptance_rate": 0.4805194805194805,
+        "false_rejection_rate": 0.0,
+        "insecure_test_pass_gate_fail": 0,
+        "precision": 0.075,
+        "raw_test_gate_oracle": [
+          {
+            "benchmark_verdict": "FAIL",
+            "count": 40,
+            "raw_test_result": "FAIL",
+            "security_oracle_result": "INSECURE"
+          },
+          {
+            "benchmark_verdict": "PASS",
+            "count": 37,
+            "raw_test_result": "PASS",
+            "security_oracle_result": "INSECURE"
+          },
+          {
+            "benchmark_verdict": "PASS",
+            "count": 3,
+            "raw_test_result": "PASS",
+            "security_oracle_result": "SECURE"
+          }
+        ],
+        "recall": 1.0,
+        "secure_test_pass_gate_fail": 0,
+        "specificity": 0.5194805194805194,
+        "test_gate_discordance": 0,
+        "total_decisions": 80
+      }
+    },
+    {
+      "benchmark_gate_vs_finite_oracle": {
+        "assessable_decisions": 30,
+        "confusion_matrix": {
+          "FN": 4,
+          "FP": 0,
+          "TN": 18,
+          "TP": 8
+        },
+        "excluded_decisions": {},
+        "false_acceptance_rate": 0.0,
+        "false_rejection_rate": 0.3333333333333333,
+        "insecure_test_pass_gate_fail": 12,
+        "precision": 1.0,
+        "raw_test_gate_oracle": [
+          {
+            "benchmark_verdict": "FAIL",
+            "count": 6,
+            "raw_test_result": "FAIL",
+            "security_oracle_result": "INSECURE"
+          },
+          {
+            "benchmark_verdict": "FAIL",
+            "count": 12,
+            "raw_test_result": "PASS",
+            "security_oracle_result": "INSECURE"
+          },
+          {
+            "benchmark_verdict": "FAIL",
+            "count": 4,
+            "raw_test_result": "PASS",
+            "security_oracle_result": "SECURE"
+          },
+          {
+            "benchmark_verdict": "PASS",
+            "count": 8,
+            "raw_test_result": "PASS",
+            "security_oracle_result": "SECURE"
+          }
+        ],
+        "recall": 0.6666666666666666,
+        "secure_test_pass_gate_fail": 4,
+        "specificity": 1.0,
+        "test_gate_discordance": 16,
+        "total_decisions": 30
+      },
+      "c1_mutation_challenge": {
+        "denominator": 2,
+        "gate_detected": 2,
+        "gate_mutation_score": 1.0,
+        "mutations": [
+          {
+            "benchmark_gate_verdict": "FAIL",
+            "candidate_sha256": "6e8a3ed261b6c8da31aa7bcaefedc00b1cc61f4904095b841a96b53561584651",
+            "finite_oracle_result": "INSECURE",
+            "mutation_id": "insecure_mutation_nonatomic",
+            "weak_raw_test_result": "PASS"
+          },
+          {
+            "benchmark_gate_verdict": "FAIL",
+            "candidate_sha256": "850d3adf8f96f504d631f6dca3404efa2becdef029d32c76d5f73095c340fa8f",
+            "finite_oracle_result": "INSECURE",
+            "mutation_id": "insecure_mutation_request_mutex",
+            "weak_raw_test_result": "PASS"
+          }
+        ],
+        "weak_detected": 0,
+        "weak_mutation_score": 0.0
+      },
+      "candidate_condition_pairs": 30,
+      "condition_rows": [
+        {
+          "benchmark_gate_vs_finite_oracle": {
+            "assessable_decisions": 6,
+            "confusion_matrix": {
+              "FN": 0,
+              "FP": 0,
+              "TN": 2,
+              "TP": 4
+            },
+            "excluded_decisions": {},
+            "false_acceptance_rate": 0.0,
+            "false_rejection_rate": 0.0,
+            "insecure_test_pass_gate_fail": 2,
+            "precision": 1.0,
+            "raw_test_gate_oracle": [
+              {
+                "benchmark_verdict": "FAIL",
+                "count": 2,
+                "raw_test_result": "PASS",
+                "security_oracle_result": "INSECURE"
+              },
+              {
+                "benchmark_verdict": "PASS",
+                "count": 4,
+                "raw_test_result": "PASS",
+                "security_oracle_result": "SECURE"
+              }
+            ],
+            "recall": 1.0,
+            "secure_test_pass_gate_fail": 0,
+            "specificity": 1.0,
+            "test_gate_discordance": 2,
+            "total_decisions": 6
+          },
+          "candidate_space_size": 6,
+          "condition": "C1",
+          "ground_truth_state": "REPAIRABLE",
+          "weak_raw_test_vs_finite_oracle": {
+            "assessable_decisions": 6,
+            "confusion_matrix": {
+              "FN": 0,
+              "FP": 2,
+              "TN": 0,
+              "TP": 4
+            },
+            "excluded_decisions": {},
+            "false_acceptance_rate": 1.0,
+            "false_rejection_rate": 0.0,
+            "insecure_test_pass_gate_fail": 0,
+            "precision": 0.6666666666666666,
+            "raw_test_gate_oracle": [
+              {
+                "benchmark_verdict": "PASS",
+                "count": 2,
+                "raw_test_result": "PASS",
+                "security_oracle_result": "INSECURE"
+              },
+              {
+                "benchmark_verdict": "PASS",
+                "count": 4,
+                "raw_test_result": "PASS",
+                "security_oracle_result": "SECURE"
+              }
+            ],
+            "recall": 1.0,
+            "secure_test_pass_gate_fail": 0,
+            "specificity": 0.0,
+            "test_gate_discordance": 0,
+            "total_decisions": 6
+          }
+        },
+        {
+          "benchmark_gate_vs_finite_oracle": {
+            "assessable_decisions": 6,
+            "confusion_matrix": {
+              "FN": 0,
+              "FP": 0,
+              "TN": 2,
+              "TP": 4
+            },
+            "excluded_decisions": {},
+            "false_acceptance_rate": 0.0,
+            "false_rejection_rate": 0.0,
+            "insecure_test_pass_gate_fail": 2,
+            "precision": 1.0,
+            "raw_test_gate_oracle": [
+              {
+                "benchmark_verdict": "FAIL",
+                "count": 2,
+                "raw_test_result": "PASS",
+                "security_oracle_result": "INSECURE"
+              },
+              {
+                "benchmark_verdict": "PASS",
+                "count": 4,
+                "raw_test_result": "PASS",
+                "security_oracle_result": "SECURE"
+              }
+            ],
+            "recall": 1.0,
+            "secure_test_pass_gate_fail": 0,
+            "specificity": 1.0,
+            "test_gate_discordance": 2,
+            "total_decisions": 6
+          },
+          "candidate_space_size": 6,
+          "condition": "C2",
+          "ground_truth_state": "REPAIRABLE",
+          "weak_raw_test_vs_finite_oracle": {
+            "assessable_decisions": 6,
+            "confusion_matrix": {
+              "FN": 0,
+              "FP": 2,
+              "TN": 0,
+              "TP": 4
+            },
+            "excluded_decisions": {},
+            "false_acceptance_rate": 1.0,
+            "false_rejection_rate": 0.0,
+            "insecure_test_pass_gate_fail": 0,
+            "precision": 0.6666666666666666,
+            "raw_test_gate_oracle": [
+              {
+                "benchmark_verdict": "PASS",
+                "count": 2,
+                "raw_test_result": "PASS",
+                "security_oracle_result": "INSECURE"
+              },
+              {
+                "benchmark_verdict": "PASS",
+                "count": 4,
+                "raw_test_result": "PASS",
+                "security_oracle_result": "SECURE"
+              }
+            ],
+            "recall": 1.0,
+            "secure_test_pass_gate_fail": 0,
+            "specificity": 0.0,
+            "test_gate_discordance": 0,
+            "total_decisions": 6
+          }
+        },
+        {
+          "benchmark_gate_vs_finite_oracle": {
+            "assessable_decisions": 6,
+            "confusion_matrix": {
+              "FN": 0,
+              "FP": 0,
+              "TN": 6,
+              "TP": 0
+            },
+            "excluded_decisions": {},
+            "false_acceptance_rate": 0.0,
+            "false_rejection_rate": null,
+            "insecure_test_pass_gate_fail": 3,
+            "precision": null,
+            "raw_test_gate_oracle": [
+              {
+                "benchmark_verdict": "FAIL",
+                "count": 3,
+                "raw_test_result": "FAIL",
+                "security_oracle_result": "INSECURE"
+              },
+              {
+                "benchmark_verdict": "FAIL",
+                "count": 3,
+                "raw_test_result": "PASS",
+                "security_oracle_result": "INSECURE"
+              }
+            ],
+            "recall": null,
+            "secure_test_pass_gate_fail": 0,
+            "specificity": 1.0,
+            "test_gate_discordance": 3,
+            "total_decisions": 6
+          },
+          "candidate_space_size": 6,
+          "condition": "C3",
+          "ground_truth_state": "UNREPAIRABLE",
+          "weak_raw_test_vs_finite_oracle": {
+            "assessable_decisions": 6,
+            "confusion_matrix": {
+              "FN": 0,
+              "FP": 3,
+              "TN": 3,
+              "TP": 0
+            },
+            "excluded_decisions": {},
+            "false_acceptance_rate": 0.5,
+            "false_rejection_rate": null,
+            "insecure_test_pass_gate_fail": 0,
+            "precision": 0.0,
+            "raw_test_gate_oracle": [
+              {
+                "benchmark_verdict": "FAIL",
+                "count": 3,
+                "raw_test_result": "FAIL",
+                "security_oracle_result": "INSECURE"
+              },
+              {
+                "benchmark_verdict": "PASS",
+                "count": 3,
+                "raw_test_result": "PASS",
+                "security_oracle_result": "INSECURE"
+              }
+            ],
+            "recall": null,
+            "secure_test_pass_gate_fail": 0,
+            "specificity": 0.5,
+            "test_gate_discordance": 0,
+            "total_decisions": 6
+          }
+        },
+        {
+          "benchmark_gate_vs_finite_oracle": {
+            "assessable_decisions": 6,
+            "confusion_matrix": {
+              "FN": 0,
+              "FP": 0,
+              "TN": 6,
+              "TP": 0
+            },
+            "excluded_decisions": {},
+            "false_acceptance_rate": 0.0,
+            "false_rejection_rate": null,
+            "insecure_test_pass_gate_fail": 3,
+            "precision": null,
+            "raw_test_gate_oracle": [
+              {
+                "benchmark_verdict": "FAIL",
+                "count": 3,
+                "raw_test_result": "FAIL",
+                "security_oracle_result": "INSECURE"
+              },
+              {
+                "benchmark_verdict": "FAIL",
+                "count": 3,
+                "raw_test_result": "PASS",
+                "security_oracle_result": "INSECURE"
+              }
+            ],
+            "recall": null,
+            "secure_test_pass_gate_fail": 0,
+            "specificity": 1.0,
+            "test_gate_discordance": 3,
+            "total_decisions": 6
+          },
+          "candidate_space_size": 6,
+          "condition": "C4",
+          "ground_truth_state": "UNREPAIRABLE",
+          "weak_raw_test_vs_finite_oracle": {
+            "assessable_decisions": 6,
+            "confusion_matrix": {
+              "FN": 0,
+              "FP": 3,
+              "TN": 3,
+              "TP": 0
+            },
+            "excluded_decisions": {},
+            "false_acceptance_rate": 0.5,
+            "false_rejection_rate": null,
+            "insecure_test_pass_gate_fail": 0,
+            "precision": 0.0,
+            "raw_test_gate_oracle": [
+              {
+                "benchmark_verdict": "FAIL",
+                "count": 3,
+                "raw_test_result": "FAIL",
+                "security_oracle_result": "INSECURE"
+              },
+              {
+                "benchmark_verdict": "PASS",
+                "count": 3,
+                "raw_test_result": "PASS",
+                "security_oracle_result": "INSECURE"
+              }
+            ],
+            "recall": null,
+            "secure_test_pass_gate_fail": 0,
+            "specificity": 0.5,
+            "test_gate_discordance": 0,
+            "total_decisions": 6
+          }
+        },
+        {
+          "benchmark_gate_vs_finite_oracle": {
+            "assessable_decisions": 6,
+            "confusion_matrix": {
+              "FN": 4,
+              "FP": 0,
+              "TN": 2,
+              "TP": 0
+            },
+            "excluded_decisions": {},
+            "false_acceptance_rate": 0.0,
+            "false_rejection_rate": 1.0,
+            "insecure_test_pass_gate_fail": 2,
+            "precision": null,
+            "raw_test_gate_oracle": [
+              {
+                "benchmark_verdict": "FAIL",
+                "count": 2,
+                "raw_test_result": "PASS",
+                "security_oracle_result": "INSECURE"
+              },
+              {
+                "benchmark_verdict": "FAIL",
+                "count": 4,
+                "raw_test_result": "PASS",
+                "security_oracle_result": "SECURE"
+              }
+            ],
+            "recall": 0.0,
+            "secure_test_pass_gate_fail": 4,
+            "specificity": 1.0,
+            "test_gate_discordance": 6,
+            "total_decisions": 6
+          },
+          "candidate_space_size": 6,
+          "condition": "C5",
+          "ground_truth_state": "EVALUATOR_MISMATCH",
+          "weak_raw_test_vs_finite_oracle": {
+            "assessable_decisions": 6,
+            "confusion_matrix": {
+              "FN": 0,
+              "FP": 2,
+              "TN": 0,
+              "TP": 4
+            },
+            "excluded_decisions": {},
+            "false_acceptance_rate": 1.0,
+            "false_rejection_rate": 0.0,
+            "insecure_test_pass_gate_fail": 0,
+            "precision": 0.6666666666666666,
+            "raw_test_gate_oracle": [
+              {
+                "benchmark_verdict": "PASS",
+                "count": 2,
+                "raw_test_result": "PASS",
+                "security_oracle_result": "INSECURE"
+              },
+              {
+                "benchmark_verdict": "PASS",
+                "count": 4,
+                "raw_test_result": "PASS",
+                "security_oracle_result": "SECURE"
+              }
+            ],
+            "recall": 1.0,
+            "secure_test_pass_gate_fail": 0,
+            "specificity": 0.0,
+            "test_gate_discordance": 0,
+            "total_decisions": 6
+          }
+        }
+      ],
+      "family": "counter_race",
+      "saved_file_sha256": {
+        "counter-race.references.json": "058ec7ac93a315168e9ce09e8c42f18ff7145ce94bca6c51ec1f5cae2fb08853",
+        "fr-counter-race-c1.proof.json": "68b5c21fa87ee885598e9dd9d19b256290e6dc2cc565b01b6067f980b45355d3",
+        "fr-counter-race-c1.task.json": "d0f0a05159e02fabc9edf3b20a815df9c03f4466d1c1f2df00d0c833cadfd433",
+        "fr-counter-race-c2.proof.json": "fcb16e32104724ca491105611b4e0db4678fe9bf9ec3cf00a6019eba39a2ad87",
+        "fr-counter-race-c2.task.json": "93657cff187dbb583c3acdf34897c75ab959b2bbd2cafd141155bcecdc8bba86",
+        "fr-counter-race-c3.proof.json": "f9c4f1c6be1cc109ded1200ed6493a4960bbba7af490f229d10fa9c60ef1bbbe",
+        "fr-counter-race-c3.task.json": "e2c507f9d1884ee0beb34149e0765d4ae1b832d68d10235d05a91fb758eb46e5",
+        "fr-counter-race-c4.proof.json": "f6eda6017b04afcd0c03ad38021aabc2d7d469298593352fa67b84ce2df594e1",
+        "fr-counter-race-c4.task.json": "e31e5b15ac8255a307a5a1f154cf34d4a40259ece377d66d9d3becca64d3ca4b",
+        "fr-counter-race-c5.proof.json": "69826549d529319d4f3a873a33328d978d323dbc874eccc1c651860823cad670",
+        "fr-counter-race-c5.task.json": "fbe386c6e08939caf241b0dc320cf05918be8657800a67c7e5ba75cd0eaaa55a"
+      },
+      "scope": "bounded_two_request_counter_updates_only",
+      "weak_raw_test_vs_finite_oracle": {
+        "assessable_decisions": 30,
+        "confusion_matrix": {
+          "FN": 0,
+          "FP": 12,
+          "TN": 6,
+          "TP": 12
+        },
+        "excluded_decisions": {},
+        "false_acceptance_rate": 0.6666666666666666,
+        "false_rejection_rate": 0.0,
+        "insecure_test_pass_gate_fail": 0,
+        "precision": 0.5,
+        "raw_test_gate_oracle": [
+          {
+            "benchmark_verdict": "FAIL",
+            "count": 6,
+            "raw_test_result": "FAIL",
+            "security_oracle_result": "INSECURE"
+          },
+          {
+            "benchmark_verdict": "PASS",
+            "count": 12,
+            "raw_test_result": "PASS",
+            "security_oracle_result": "INSECURE"
+          },
+          {
+            "benchmark_verdict": "PASS",
+            "count": 12,
+            "raw_test_result": "PASS",
+            "security_oracle_result": "SECURE"
+          }
+        ],
+        "recall": 1.0,
+        "secure_test_pass_gate_fail": 0,
+        "specificity": 0.3333333333333333,
+        "test_gate_discordance": 0,
+        "total_decisions": 30
+      }
+    }
+  ],
+  "family_count": 4,
+  "interpretation_limit": "Exhaustive counts over four authored finite candidate languages. Repeated C1-C5 tasks and candidates are not independent real-code observations; designed C5 false rejections are calibration cases.",
+  "p_values": null,
+  "population_error_rates": null,
+  "proofs_verified": 20,
+  "status": "FINITE_FIXTURE_CALIBRATION_ONLY"
+}

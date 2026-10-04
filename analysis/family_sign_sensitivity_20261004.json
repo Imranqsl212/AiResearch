@@ -1,0 +1,249 @@
+{
+  "assumptions": {
+    "actual_preregistered_gee_modelled": false,
+    "alternative_positive_sign_probability_is_common_across_families": true,
+    "condition_on_non_ties": true,
+    "effect_magnitudes_used": false,
+    "familywise_alpha_fraction": "1/20",
+    "illustrative_secondary_contrasts": 3,
+    "independent_family_signs": true,
+    "missingness_modelled": false,
+    "null_positive_sign_probability_fraction": "1/2"
+  },
+  "holm_steps_at_20_non_tied_families": [
+    {
+      "attained_null_p_decimal": 0.00590896606445,
+      "attained_null_p_fraction": "1549/262144",
+      "holm_alpha_decimal": 0.0166666666667,
+      "holm_alpha_fraction": "1/60",
+      "minimum_favorable_families": 16,
+      "one_below_attained_null_p_decimal": 0.020694732666,
+      "one_below_attained_null_p_fraction": "5425/262144",
+      "rank": 1
+    },
+    {
+      "attained_null_p_decimal": 0.020694732666,
+      "attained_null_p_fraction": "5425/262144",
+      "holm_alpha_decimal": 0.025,
+      "holm_alpha_fraction": "1/40",
+      "minimum_favorable_families": 15,
+      "one_below_attained_null_p_decimal": 0.0576591491699,
+      "one_below_attained_null_p_fraction": "15115/262144",
+      "rank": 2
+    },
+    {
+      "attained_null_p_decimal": 0.020694732666,
+      "attained_null_p_fraction": "5425/262144",
+      "holm_alpha_decimal": 0.05,
+      "holm_alpha_fraction": "1/20",
+      "minimum_favorable_families": 15,
+      "one_below_attained_null_p_decimal": 0.0576591491699,
+      "one_below_attained_null_p_fraction": "15115/262144",
+      "rank": 3
+    }
+  ],
+  "kind": "illustrative_precollection_family_sign_sensitivity_not_agent_data",
+  "main_ready": false,
+  "method": "one-sided exact sign-flip test on one matched, nonzero contrast per independent family",
+  "minimum_master_design": {
+    "core_conditions": 4,
+    "core_episode_count": 400,
+    "fresh_repeats_per_condition": 5,
+    "independent_families": 20,
+    "independent_signs_per_matched_contrast_before_ties": 20
+  },
+  "pilot_data_used": false,
+  "pseudo_replication_illustration": {
+    "actual_family_concordance": "16/20",
+    "correct_family_p_decimal": 0.00590896606445,
+    "correct_family_p_fraction": "1549/262144",
+    "hypothetical_identical_five_repeat_signs": "80/100",
+    "incorrect_independent_repeat_p_decimal": 5.57954452863e-10,
+    "incorrect_independent_repeat_p_fraction": "88411412133910648087/158456325028528675187087900672"
+  },
+  "schema_version": "1.0",
+  "seven_contrast_first_step_at_20_non_tied_families": {
+    "alpha_fraction": "1/140",
+    "attained_null_p_fraction": "1549/262144",
+    "minimum_favorable_families": 16
+  },
+  "source_sha256": "259d4e3bb6dfa19a94d1102903ebe5d88a64b9e0ca3de964a39b59384bd89fa7",
+  "strict_first_step_scenarios": [
+    {
+      "attained_null_p_decimal": 0.00369262695312,
+      "attained_null_p_fraction": "121/32768",
+      "concordance_probability_decimal": 0.6,
+      "concordance_probability_fraction": "3/5",
+      "minimum_favorable_families": 13,
+      "non_tied_families": 15,
+      "rejection_probability_decimal": 0.0271140007772,
+      "rejection_probability_fraction": "827453637/30517578125",
+      "strict_first_step_alpha_fraction": "1/60"
+    },
+    {
+      "attained_null_p_decimal": 0.00369262695312,
+      "attained_null_p_fraction": "121/32768",
+      "concordance_probability_decimal": 0.7,
+      "concordance_probability_fraction": "7/10",
+      "minimum_favorable_families": 13,
+      "non_tied_families": 15,
+      "rejection_probability_decimal": 0.126827714623,
+      "rejection_probability_fraction": "126827714622763/1000000000000000",
+      "strict_first_step_alpha_fraction": "1/60"
+    },
+    {
+      "attained_null_p_decimal": 0.00369262695312,
+      "attained_null_p_fraction": "121/32768",
+      "concordance_probability_decimal": 0.75,
+      "concordance_probability_fraction": "3/4",
+      "minimum_favorable_families": 13,
+      "non_tied_families": 15,
+      "rejection_probability_decimal": 0.236087811179,
+      "rejection_probability_fraction": "253497357/1073741824",
+      "strict_first_step_alpha_fraction": "1/60"
+    },
+    {
+      "attained_null_p_decimal": 0.00369262695312,
+      "attained_null_p_fraction": "121/32768",
+      "concordance_probability_decimal": 0.8,
+      "concordance_probability_fraction": "4/5",
+      "minimum_favorable_families": 13,
+      "non_tied_families": 15,
+      "rejection_probability_decimal": 0.398023209255,
+      "rejection_probability_fraction": "12146704384/30517578125",
+      "strict_first_step_alpha_fraction": "1/60"
+    },
+    {
+      "attained_null_p_decimal": 0.00590896606445,
+      "attained_null_p_fraction": "1549/262144",
+      "concordance_probability_decimal": 0.6,
+      "concordance_probability_fraction": "3/5",
+      "minimum_favorable_families": 16,
+      "non_tied_families": 20,
+      "rejection_probability_decimal": 0.0509519531942,
+      "rejection_probability_fraction": "4859156913201/95367431640625",
+      "strict_first_step_alpha_fraction": "1/60"
+    },
+    {
+      "attained_null_p_decimal": 0.00590896606445,
+      "attained_null_p_fraction": "1549/262144",
+      "concordance_probability_decimal": 0.7,
+      "concordance_probability_fraction": "7/10",
+      "minimum_favorable_families": 16,
+      "non_tied_families": 20,
+      "rejection_probability_decimal": 0.237507778878,
+      "rejection_probability_fraction": "5937694471940041069/25000000000000000000",
+      "strict_first_step_alpha_fraction": "1/60"
+    },
+    {
+      "attained_null_p_decimal": 0.00590896606445,
+      "attained_null_p_fraction": "1549/262144",
+      "concordance_probability_decimal": 0.75,
+      "concordance_probability_fraction": "3/4",
+      "minimum_favorable_families": 16,
+      "non_tied_families": 20,
+      "rejection_probability_decimal": 0.41484150253,
+      "rejection_probability_fraction": "114030763929/274877906944",
+      "strict_first_step_alpha_fraction": "1/60"
+    },
+    {
+      "attained_null_p_decimal": 0.00590896606445,
+      "attained_null_p_fraction": "1549/262144",
+      "concordance_probability_decimal": 0.8,
+      "concordance_probability_fraction": "4/5",
+      "minimum_favorable_families": 16,
+      "non_tied_families": 20,
+      "rejection_probability_decimal": 0.629648263903,
+      "rejection_probability_fraction": "60047937765376/95367431640625",
+      "strict_first_step_alpha_fraction": "1/60"
+    },
+    {
+      "attained_null_p_decimal": 0.00806240085512,
+      "attained_null_p_fraction": "8656937/1073741824",
+      "concordance_probability_decimal": 0.6,
+      "concordance_probability_fraction": "3/5",
+      "minimum_favorable_families": 22,
+      "non_tied_families": 30,
+      "rejection_probability_decimal": 0.0940112158301,
+      "rejection_probability_fraction": "17510953513923124821/186264514923095703125",
+      "strict_first_step_alpha_fraction": "1/60"
+    },
+    {
+      "attained_null_p_decimal": 0.00806240085512,
+      "attained_null_p_fraction": "8656937/1073741824",
+      "concordance_probability_decimal": 0.7,
+      "concordance_probability_fraction": "7/10",
+      "minimum_favorable_families": 22,
+      "non_tied_families": 30,
+      "rejection_probability_decimal": 0.431517906283,
+      "rejection_probability_fraction": "86303581256588614112261186021/200000000000000000000000000000",
+      "strict_first_step_alpha_fraction": "1/60"
+    },
+    {
+      "attained_null_p_decimal": 0.00806240085512,
+      "attained_null_p_fraction": "8656937/1073741824",
+      "concordance_probability_decimal": 0.75,
+      "concordance_probability_fraction": "3/4",
+      "minimum_favorable_families": 22,
+      "non_tied_families": 30,
+      "rejection_probability_decimal": 0.673599150724,
+      "rejection_probability_fraction": "776606946354655497/1152921504606846976",
+      "strict_first_step_alpha_fraction": "1/60"
+    },
+    {
+      "attained_null_p_decimal": 0.00806240085512,
+      "attained_null_p_fraction": "8656937/1073741824",
+      "concordance_probability_decimal": 0.8,
+      "concordance_probability_fraction": "4/5",
+      "minimum_favorable_families": 22,
+      "non_tied_families": 30,
+      "rejection_probability_decimal": 0.871349246086,
+      "rejection_probability_fraction": "162301444650805755904/186264514923095703125",
+      "strict_first_step_alpha_fraction": "1/60"
+    },
+    {
+      "attained_null_p_decimal": 0.00829450168749,
+      "attained_null_p_fraction": "2279975263/274877906944",
+      "concordance_probability_decimal": 0.6,
+      "concordance_probability_fraction": "3/5",
+      "minimum_favorable_families": 28,
+      "non_tied_families": 40,
+      "rejection_probability_decimal": 0.128509678071,
+      "rejection_probability_fraction": "1168788713318319802356856161/9094947017729282379150390625",
+      "strict_first_step_alpha_fraction": "1/60"
+    },
+    {
+      "attained_null_p_decimal": 0.00829450168749,
+      "attained_null_p_fraction": "2279975263/274877906944",
+      "concordance_probability_decimal": 0.7,
+      "concordance_probability_fraction": "7/10",
+      "minimum_favorable_families": 28,
+      "non_tied_families": 40,
+      "rejection_probability_decimal": 0.577180924503,
+      "rejection_probability_fraction": "1442952311258594126762904808106655644959/2500000000000000000000000000000000000000",
+      "strict_first_step_alpha_fraction": "1/60"
+    },
+    {
+      "attained_null_p_decimal": 0.00829450168749,
+      "attained_null_p_fraction": "2279975263/274877906944",
+      "concordance_probability_decimal": 0.75,
+      "concordance_probability_fraction": "3/4",
+      "minimum_favorable_families": 28,
+      "non_tied_families": 40,
+      "rejection_probability_decimal": 0.820865757654,
+      "rejection_probability_fraction": "248091452216348906455551/302231454903657293676544",
+      "strict_first_step_alpha_fraction": "1/60"
+    },
+    {
+      "attained_null_p_decimal": 0.00829450168749,
+      "attained_null_p_fraction": "2279975263/274877906944",
+      "concordance_probability_decimal": 0.8,
+      "concordance_probability_fraction": "4/5",
+      "minimum_favorable_families": 28,
+      "non_tied_families": 40,
+      "rejection_probability_decimal": 0.956758377624,
+      "rejection_probability_fraction": "8701666753255962125151502336/9094947017729282379150390625",
+      "strict_first_step_alpha_fraction": "1/60"
+    }
+  ]
+}

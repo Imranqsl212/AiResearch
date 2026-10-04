@@ -32,6 +32,7 @@ id_ecdsa*
 sandbox/logs/
 sandbox/images/bin/
 experiments/runs/**
+experiments/v1_live_json_pilot_*/
 experiments/attempt_journal/**
 experiments/ledgers/**
 experiments/schedules/**

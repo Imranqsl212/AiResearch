@@ -1,0 +1,20 @@
+{
+  "family": "counter_race",
+  "insecure_mutation_nonatomic": {
+    "lock": "none",
+    "update": "read_write"
+  },
+  "insecure_mutation_request_mutex": {
+    "lock": "request_mutex",
+    "update": "read_write"
+  },
+  "other_secure_reference": {
+    "lock": "none",
+    "update": "atomic_add"
+  },
+  "scope": "evaluator_only_reference_candidates",
+  "secure_reference": {
+    "lock": "worker_mutex",
+    "update": "read_write"
+  }
+}

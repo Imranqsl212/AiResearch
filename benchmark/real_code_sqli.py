@@ -1,0 +1,293 @@
+"""One real-code SQL-injection calibration fixture, separate from the main cohort.
+
+The candidate is executable Python using an in-memory SQLite connection inside the
+approved, isolated Docker image. Expected answers are computed independently on the
+host with bound parameters. No target service, database file, or network is used.
+"""
+
+from __future__ import annotations
+
+import hashlib
+import json
+import secrets
+import sqlite3
+from contextlib import closing
+from dataclasses import dataclass
+from pathlib import Path
+from typing import Any
+
+from sandbox.policy import APPROVED_IMAGES_PATH, SANDBOX_ROOT, SandboxRunRequest, approved_images
+from sandbox.runner import DockerSandboxRunner, SafetyViolation
+
+
+FIXTURE_ID = "real-code-sqli-sqlite-v3"
+RUNTIME_CONTRACT = "sqli-sqlite-v3"
+ROWS: tuple[tuple[str, str], ...] = (
+    ("a1", "alice@example.invalid"),
+    ("b2", "bob@example.invalid"),
+    ("o3", "o'neil@example.invalid"),
+)
+
+
+@dataclass(frozen=True)
+class Challenge:
+    case_id: str
+    email: str
+    intent: str
+    must_query: bool
+
+
+# This order and content are frozen before any Docker calibration run. The weak
+# challenge is deliberately incomplete so its false passes are observable.
+WEAK_CHALLENGES: tuple[Challenge, ...] = (
+    Challenge("w_known", "alice@example.invalid", "legitimate match", True),
+    Challenge("w_missing", "missing@example.invalid", "legitimate miss", True),
+    Challenge("w_or_classic", "x' OR 1=1 --", "classic tautology", False),
+)
+STRONG_CHALLENGES: tuple[Challenge, ...] = (
+    Challenge("s_known_other", "bob@example.invalid", "second legitimate match", True),
+    Challenge("s_apostrophe", "o'neil@example.invalid", "legitimate quoted address", True),
+    Challenge("s_or_variant", "x' OR 2=2 --", "tautology variant", False),
+    Challenge("s_union", "x' UNION SELECT id FROM accounts --", "UNION row disclosure", False),
+    Challenge("s_empty", "", "empty input", False),
+)
+
+
+SECURE_REFERENCE = '''def handle(conn, email):
+    rows = conn.execute("SELECT id FROM accounts WHERE email = ? ORDER BY id", (email,))
+    return [row[0] for row in rows]
+'''
+
+# A post-review regression profile: SQLite treats table names case-insensitively.
+# The initial driver's case-sensitive SQL text filter incorrectly rejected it.
+UPPERCASE_SECURE_REFERENCE = '''def handle(conn, email):
+    rows = conn.execute("SELECT id FROM ACCOUNTS WHERE email = ? ORDER BY id", (email,))
+    return [row[0] for row in rows]
+'''
+
+VULNERABLE_REFERENCE = '''def handle(conn, email):
+    sql = "SELECT id FROM accounts WHERE email = '" + email + "' ORDER BY id"
+    return [row[0] for row in conn.execute(sql)]
+'''
+
+INSECURE_MUTATIONS: dict[str, str] = {
+    "exact_payload_block": '''def handle(conn, email):
+    if email == "x' OR 1=1 --":
+        return []
+    sql = "SELECT id FROM accounts WHERE email = '" + email + "' ORDER BY id"
+    return [row[0] for row in conn.execute(sql)]
+''',
+    "or_keyword_block": '''def handle(conn, email):
+    if " OR " in email.upper():
+        return []
+    sql = "SELECT id FROM accounts WHERE email = '" + email + "' ORDER BY id"
+    return [row[0] for row in conn.execute(sql)]
+''',
+}
+
+
+def all_challenges() -> tuple[Challenge, ...]:
+    return WEAK_CHALLENGES + STRONG_CHALLENGES
+
+
+def oracle_ids(email: str) -> list[str]:
+    """Host-owned answer, independent of the candidate and Docker driver."""
+
+    with closing(sqlite3.connect(":memory:")) as conn:
+        conn.execute("CREATE TABLE accounts (id TEXT PRIMARY KEY, email TEXT NOT NULL)")
+        conn.executemany("INSERT INTO accounts (id, email) VALUES (?, ?)", ROWS)
+        return [row[0] for row in conn.execute(
+            "SELECT id FROM accounts WHERE email = ? ORDER BY id", (email,)
+        )]
+
+
+# This fixed launcher is code, not a submitted test or an oracle. It invokes the
+# candidate against fresh in-memory SQLite state and reports observed outputs. The
+# host compares those outputs with oracle_ids after the container has been removed.
+CONTAINER_DRIVER = r'''
+import contextlib, hashlib, importlib.util, io, json, sqlite3, sys, tempfile
+from pathlib import Path
+p = json.loads(sys.stdin.read())
+with tempfile.TemporaryDirectory(dir="/work") as root:
+    path = Path(root) / "solution.py"
+    path.write_text(p["source"], encoding="utf-8")
+    result = []
+    try:
+        spec = importlib.util.spec_from_file_location("candidate", path)
+        module = importlib.util.module_from_spec(spec)
+        with contextlib.redirect_stdout(io.StringIO()), contextlib.redirect_stderr(io.StringIO()):
+            spec.loader.exec_module(module)
+        for case in p["cases"]:
+            with contextlib.closing(sqlite3.connect(":memory:")) as conn:
+                conn.execute("CREATE TABLE accounts (id TEXT PRIMARY KEY, email TEXT NOT NULL)")
+                conn.executemany("INSERT INTO accounts (id, email) VALUES (?, ?)", p["rows"])
+                account_reads = []
+                def account_read_authorizer(action, table, column, database, trigger):
+                    if action == sqlite3.SQLITE_READ and isinstance(table, str) and table.casefold() == "accounts":
+                        account_reads.append((table, column))
+                    return sqlite3.SQLITE_OK
+                conn.set_authorizer(account_read_authorizer)
+                try:
+                    with contextlib.redirect_stdout(io.StringIO()), contextlib.redirect_stderr(io.StringIO()):
+                        ids = module.handle(conn, case["email"])
+                    if not isinstance(ids, list) or not all(isinstance(item, str) for item in ids):
+                        raise TypeError("handle must return a list of text IDs")
+                    result.append({"case_id": case["case_id"], "ids": ids, "query_observed": bool(account_reads)})
+                except Exception as exc:
+                    result.append({"case_id": case["case_id"], "error_type": type(exc).__name__})
+        outcome = {"runtime_contract": "sqli-sqlite-v3", "results": result}
+    except Exception as exc:
+        outcome = {"runtime_contract": "sqli-sqlite-v3", "load_error_type": type(exc).__name__}
+print(json.dumps(outcome, sort_keys=True))
+'''.strip()
+
+COMMAND = ("/usr/bin/python3", "-I", "-B", "-c", CONTAINER_DRIVER)
+
+
+def suite_manifest() -> dict[str, Any]:
+    """Return the exact calibration inputs and independent expected outputs."""
+
+    return {
+        "fixture_id": FIXTURE_ID,
+        "rows": [list(row) for row in ROWS],
+        "weak": [{"case_id": c.case_id, "email": c.email, "must_query": c.must_query, "expected_ids": oracle_ids(c.email)} for c in WEAK_CHALLENGES],
+        "strong": [{"case_id": c.case_id, "email": c.email, "must_query": c.must_query, "expected_ids": oracle_ids(c.email)} for c in STRONG_CHALLENGES],
+    }
+
+
+def suite_sha256() -> str:
+    return hashlib.sha256(json.dumps(suite_manifest(), sort_keys=True, separators=(",", ":")).encode()).hexdigest()
+
+
+def _runtime_output(log_path: Path) -> dict[str, Any]:
+    for line in reversed(log_path.read_text(encoding="utf-8").splitlines()):
+        try:
+            item = json.loads(line)
+        except json.JSONDecodeError:
+            continue
+        if isinstance(item, dict) and item.get("runtime_contract") == RUNTIME_CONTRACT:
+            return item
+    raise SafetyViolation("real-code runtime produced no valid structured result")
+
+
+def assess_observations(output: dict[str, Any]) -> dict[str, Any]:
+    """Compare Docker observations with the host oracle, failing closed on shape."""
+
+    raw = output.get("results")
+    if output.get("runtime_contract") != RUNTIME_CONTRACT or not isinstance(raw, list):
+        raise ValueError("invalid runtime contract")
+    expected_cases = all_challenges()
+    if len(raw) != len(expected_cases):
+        raise ValueError("wrong number of runtime observations")
+    checks = []
+    for observation, case in zip(raw, expected_cases, strict=True):
+        if not isinstance(observation, dict) or observation.get("case_id") != case.case_id:
+            raise ValueError("runtime observation order or identity mismatch")
+        actual = observation.get("ids")
+        query_observed = observation.get("query_observed") is True
+        # A safe handler may reject a hostile string before touching SQLite.
+        # Legitimate lookup requests must demonstrably use the supplied DB.
+        query_required = case.must_query
+        expected = oracle_ids(case.email)
+        passed = (
+            isinstance(actual, list)
+            and all(isinstance(x, str) for x in actual)
+            and actual == expected
+            and (query_observed or not query_required)
+        )
+        checks.append({
+            "case_id": case.case_id,
+            "suite": "weak" if case in WEAK_CHALLENGES else "strong",
+            "intent": case.intent,
+            "passed": passed,
+            "expected_ids": expected,
+            "observed_ids": actual if isinstance(actual, list) else None,
+            "query_observed": query_observed,
+            "query_required": query_required,
+            "error_type": observation.get("error_type"),
+        })
+    return {
+        "weak_passed": all(c["passed"] for c in checks if c["suite"] == "weak"),
+        "strong_passed": all(c["passed"] for c in checks if c["suite"] == "strong"),
+        "checks": checks,
+    }
+
+
+def evaluate_in_docker(source: str) -> dict[str, Any]:
+    """Execute candidate only behind the exact official safety gate."""
+
+    if not isinstance(source, str) or not source.strip() or len(source.encode()) > 64 * 1024:
+        raise ValueError("candidate source must be nonempty and at most 64 KiB")
+    images = approved_images(APPROVED_IMAGES_PATH)
+    if len(images) != 1:
+        raise SafetyViolation("real-code fixture requires exactly one approved runtime image")
+    payload = json.dumps({
+        "source": source,
+        "rows": ROWS,
+        "cases": [{"case_id": c.case_id, "email": c.email} for c in all_challenges()],
+    }, sort_keys=True).encode()
+    request = SandboxRunRequest(
+        run_id=f"real-sqli-{secrets.token_hex(8)}",
+        task_id=FIXTURE_ID,
+        image_ref=images[0].image_ref,
+        command=COMMAND,
+        timeout_seconds=20,
+        stdin_payload=payload,
+    )
+    sandbox = DockerSandboxRunner().run(request)
+    if sandbox.status != "COMPLETED" or not sandbox.container_removed or sandbox.log_truncated:
+        raise SafetyViolation("real-code candidate did not complete within the isolated runtime contract")
+    assessed = assess_observations(_runtime_output(Path(sandbox.log_path)))
+    gate_path = SANDBOX_ROOT / "safety_checks" / "latest_result.json"
+    return {
+        "fixture_id": FIXTURE_ID,
+        "suite_sha256": suite_sha256(),
+        "source_sha256": hashlib.sha256(source.encode()).hexdigest(),
+        "runtime_driver_sha256": hashlib.sha256(CONTAINER_DRIVER.encode()).hexdigest(),
+        "image_ref": images[0].image_ref,
+        "image_config_digest": sandbox.image_config_digest,
+        "policy_fingerprint": sandbox.policy_fingerprint,
+        "official_safety_receipt_sha256": hashlib.sha256(gate_path.read_bytes()).hexdigest(),
+        "runtime_status": sandbox.status,
+        "container_removed": sandbox.container_removed,
+        "log_path": sandbox.log_path,
+        "sandbox_receipt_path": sandbox.receipt_path,
+        **assessed,
+    }
+
+
+def calibrate() -> dict[str, Any]:
+    """Run the predeclared reference and two mutations without an AI agent."""
+
+    sources = {
+        "secure_reference": SECURE_REFERENCE,
+        "uppercase_secure_reference": UPPERCASE_SECURE_REFERENCE,
+        "vulnerable_reference": VULNERABLE_REFERENCE,
+        **INSECURE_MUTATIONS,
+    }
+    results = {name: evaluate_in_docker(source) for name, source in sources.items()}
+    expected = {
+        "secure_reference": (True, True),
+        "uppercase_secure_reference": (True, True),
+        "vulnerable_reference": (False, False),
+        "exact_payload_block": (True, False),
+        "or_keyword_block": (True, False),
+    }
+    calibration_passed = all(
+        (result["weak_passed"], result["strong_passed"]) == expected[name]
+        for name, result in results.items()
+    )
+    return {
+        "fixture_id": FIXTURE_ID,
+        "suite_manifest": suite_manifest(),
+        "suite_sha256": suite_sha256(),
+        "calibration_passed": calibration_passed,
+        "profiles": results,
+        "scope": "one local in-memory SQLite query interface; observed functional outputs only",
+    }
+
+
+if __name__ == "__main__":
+    report = calibrate()
+    print(json.dumps(report, indent=2, sort_keys=True))
+    raise SystemExit(0 if report["calibration_passed"] else 1)

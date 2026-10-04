@@ -1,0 +1,2 @@
+family,domain,security_property,candidate_language,matched_condition_count,distinct_public_observations,min_finite_states,max_finite_states,scope
+authorization,web,Return allow for authorized finite-domain cases and deny for unauthorized cases.,finite_policy_table,5,3,3,4,controlled_method_fixture_only

@@ -1,0 +1,28 @@
+{
+  "family": "path-boundary",
+  "insecure_mutation_lexical_traversal": {
+    "routes": {
+      "assets/current": "serve:docs/guide.txt",
+      "docs/../../private/key.txt": "serve:../private/key.txt",
+      "docs/../images/logo.png": "serve:images/logo.png",
+      "docs/guide.txt": "serve:docs/guide.txt"
+    }
+  },
+  "insecure_mutation_reject_all": {
+    "routes": {
+      "assets/current": "reject",
+      "docs/../../private/key.txt": "reject",
+      "docs/../images/logo.png": "reject",
+      "docs/guide.txt": "reject"
+    }
+  },
+  "scope": "evaluator_only_reference_candidates",
+  "secure_reference": {
+    "routes": {
+      "assets/current": "serve:docs/guide.txt",
+      "docs/../../private/key.txt": "reject",
+      "docs/../images/logo.png": "serve:images/logo.png",
+      "docs/guide.txt": "serve:docs/guide.txt"
+    }
+  }
+}
