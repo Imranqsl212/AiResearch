@@ -1,0 +1,12 @@
+{
+  "condition": "C5",
+  "family": "webhook_integrity",
+  "gate_mode": "reject_secure",
+  "schema_version": "5.0.0",
+  "sensor_mode": "complete",
+  "starter_candidate": {
+    "mode": "parsed_hmac"
+  },
+  "task_id": "fb-webhook-integrity-c5",
+  "version": "5.0.0"
+}

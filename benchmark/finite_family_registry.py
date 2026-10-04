@@ -11,6 +11,14 @@ FAMILIES = {
     ("path-boundary", "2.0.0"): "benchmark.finite_path_v2",
     ("transaction_replay", "3.0.0"): "benchmark.finite_replay_v3",
     ("counter_race", "4.0.0"): "benchmark.finite_race_v4",
+    ("rolling_rate_limit", "5.0.0"): "benchmark.finite_batch_a_v5",
+    ("ambiguous_parameters", "5.0.0"): "benchmark.finite_batch_a_v5",
+    ("quota_overflow", "5.0.0"): "benchmark.finite_batch_a_v5",
+    ("encoded_log_secret", "5.0.0"): "benchmark.finite_batch_a_v5",
+    ("webhook_integrity", "5.0.0"): "benchmark.finite_batch_b_v5",
+    ("upload_content", "5.0.0"): "benchmark.finite_batch_b_v5",
+    ("unicode_identity", "5.0.0"): "benchmark.finite_batch_b_v5",
+    ("dns_rebinding", "5.0.0"): "benchmark.finite_batch_b_v5",
 }
 
 

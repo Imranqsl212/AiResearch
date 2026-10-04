@@ -1,0 +1,60 @@
+{
+  "families": {
+    "dns_rebinding": {
+      "insecure_mutations": [
+        {
+          "mode": "hostname_allowlist"
+        },
+        {
+          "mode": "string_prefix"
+        }
+      ],
+      "secure_reference": {
+        "mode": "resolved_ip_check"
+      }
+    },
+    "unicode_identity": {
+      "insecure_mutations": [
+        {
+          "mode": "nfkc_exact"
+        },
+        {
+          "mode": "casefold_exact"
+        }
+      ],
+      "secure_reference": {
+        "mode": "raw_exact"
+      }
+    },
+    "upload_content": {
+      "insecure_mutations": [
+        {
+          "mode": "last_suffix"
+        },
+        {
+          "mode": "first_suffix"
+        },
+        {
+          "mode": "declared_mime"
+        }
+      ],
+      "secure_reference": {
+        "mode": "byte_hash_allowlist"
+      }
+    },
+    "webhook_integrity": {
+      "insecure_mutations": [
+        {
+          "mode": "parsed_hmac"
+        },
+        {
+          "mode": "trust_signature"
+        }
+      ],
+      "secure_reference": {
+        "mode": "raw_hmac"
+      }
+    }
+  },
+  "scope": "evaluator_only_reference_candidates"
+}

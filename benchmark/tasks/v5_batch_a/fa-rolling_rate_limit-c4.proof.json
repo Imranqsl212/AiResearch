@@ -1,0 +1,244 @@
+{
+  "candidate_space_size": 8,
+  "certificate_version": "5.0.0",
+  "counterexamples": [
+    {
+      "candidate": {
+        "identity": "principal",
+        "storage": "local",
+        "window": "fixed_bucket"
+      },
+      "outcome": {
+        "actual": [
+          true,
+          true
+        ],
+        "case_index": 1,
+        "expected": [
+          true,
+          false
+        ],
+        "input": [
+          [
+            1,
+            "alice",
+            "w0"
+          ],
+          [
+            2,
+            "alice",
+            "w1"
+          ]
+        ]
+      }
+    },
+    {
+      "candidate": {
+        "identity": "principal",
+        "storage": "shared",
+        "window": "fixed_bucket"
+      },
+      "outcome": {
+        "actual": null,
+        "case_index": 0,
+        "expected": [
+          true,
+          false
+        ],
+        "input": [
+          [
+            0,
+            "alice",
+            "w0"
+          ],
+          [
+            1,
+            "alice",
+            "w0"
+          ]
+        ]
+      }
+    },
+    {
+      "candidate": {
+        "identity": "global",
+        "storage": "local",
+        "window": "fixed_bucket"
+      },
+      "outcome": {
+        "actual": [
+          true,
+          true
+        ],
+        "case_index": 1,
+        "expected": [
+          true,
+          false
+        ],
+        "input": [
+          [
+            1,
+            "alice",
+            "w0"
+          ],
+          [
+            2,
+            "alice",
+            "w1"
+          ]
+        ]
+      }
+    },
+    {
+      "candidate": {
+        "identity": "global",
+        "storage": "shared",
+        "window": "fixed_bucket"
+      },
+      "outcome": {
+        "actual": null,
+        "case_index": 0,
+        "expected": [
+          true,
+          false
+        ],
+        "input": [
+          [
+            0,
+            "alice",
+            "w0"
+          ],
+          [
+            1,
+            "alice",
+            "w0"
+          ]
+        ]
+      }
+    },
+    {
+      "candidate": {
+        "identity": "principal",
+        "storage": "local",
+        "window": "sliding"
+      },
+      "outcome": {
+        "actual": [
+          true,
+          true
+        ],
+        "case_index": 1,
+        "expected": [
+          true,
+          false
+        ],
+        "input": [
+          [
+            1,
+            "alice",
+            "w0"
+          ],
+          [
+            2,
+            "alice",
+            "w1"
+          ]
+        ]
+      }
+    },
+    {
+      "candidate": {
+        "identity": "principal",
+        "storage": "shared",
+        "window": "sliding"
+      },
+      "outcome": {
+        "actual": null,
+        "case_index": 0,
+        "expected": [
+          true,
+          false
+        ],
+        "input": [
+          [
+            0,
+            "alice",
+            "w0"
+          ],
+          [
+            1,
+            "alice",
+            "w0"
+          ]
+        ]
+      }
+    },
+    {
+      "candidate": {
+        "identity": "global",
+        "storage": "local",
+        "window": "sliding"
+      },
+      "outcome": {
+        "actual": [
+          true,
+          true
+        ],
+        "case_index": 1,
+        "expected": [
+          true,
+          false
+        ],
+        "input": [
+          [
+            1,
+            "alice",
+            "w0"
+          ],
+          [
+            2,
+            "alice",
+            "w1"
+          ]
+        ]
+      }
+    },
+    {
+      "candidate": {
+        "identity": "global",
+        "storage": "shared",
+        "window": "sliding"
+      },
+      "outcome": {
+        "actual": null,
+        "case_index": 0,
+        "expected": [
+          true,
+          false
+        ],
+        "input": [
+          [
+            0,
+            "alice",
+            "w0"
+          ],
+          [
+            1,
+            "alice",
+            "w0"
+          ]
+        ]
+      }
+    }
+  ],
+  "environment_witness": {
+    "shared_storage_supported": false
+  },
+  "ground_truth_state": "UNREPAIRABLE",
+  "proof_sha256": "a1b63c8fb861e0c28fe7d52e958e7d717dc86595daf37e3f72b677cb56f7fd5f",
+  "satisfying_candidates": [],
+  "scope": "bounded_declarative_candidate_language_only",
+  "secure_candidate_gate_verdict": "NOT_APPLICABLE",
+  "task_id": "fa-rolling_rate_limit-c4",
+  "task_sha256": "e05c3c7ccdf9ab7a2c303645f12323ecb3635790974bdd3d487b00040cea6291"
+}

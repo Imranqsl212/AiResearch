@@ -1,0 +1,142 @@
+{
+  "errors": [],
+  "families": {
+    "ambiguous_parameters": {
+      "module": "benchmark.finite_batch_a_v5",
+      "task_ids": [
+        "fa-ambiguous_parameters-c1",
+        "fa-ambiguous_parameters-c2",
+        "fa-ambiguous_parameters-c3",
+        "fa-ambiguous_parameters-c4",
+        "fa-ambiguous_parameters-c5"
+      ],
+      "version": "5.0.0"
+    },
+    "authorization": {
+      "module": "benchmark.finite_policy_v1",
+      "task_ids": [
+        "fp-authorization-c1",
+        "fp-authorization-c2",
+        "fp-authorization-c3",
+        "fp-authorization-c4",
+        "fp-authorization-c5"
+      ],
+      "version": "1.0.0"
+    },
+    "counter_race": {
+      "module": "benchmark.finite_race_v4",
+      "task_ids": [
+        "fr-counter-race-c1",
+        "fr-counter-race-c2",
+        "fr-counter-race-c3",
+        "fr-counter-race-c4",
+        "fr-counter-race-c5"
+      ],
+      "version": "4.0.0"
+    },
+    "dns_rebinding": {
+      "module": "benchmark.finite_batch_b_v5",
+      "task_ids": [
+        "fb-dns-rebinding-c1",
+        "fb-dns-rebinding-c2",
+        "fb-dns-rebinding-c3",
+        "fb-dns-rebinding-c4",
+        "fb-dns-rebinding-c5"
+      ],
+      "version": "5.0.0"
+    },
+    "encoded_log_secret": {
+      "module": "benchmark.finite_batch_a_v5",
+      "task_ids": [
+        "fa-encoded_log_secret-c1",
+        "fa-encoded_log_secret-c2",
+        "fa-encoded_log_secret-c3",
+        "fa-encoded_log_secret-c4",
+        "fa-encoded_log_secret-c5"
+      ],
+      "version": "5.0.0"
+    },
+    "path-boundary": {
+      "module": "benchmark.finite_path_v2",
+      "task_ids": [
+        "fp-path-boundary-c1",
+        "fp-path-boundary-c2",
+        "fp-path-boundary-c3",
+        "fp-path-boundary-c4",
+        "fp-path-boundary-c5"
+      ],
+      "version": "2.0.0"
+    },
+    "quota_overflow": {
+      "module": "benchmark.finite_batch_a_v5",
+      "task_ids": [
+        "fa-quota_overflow-c1",
+        "fa-quota_overflow-c2",
+        "fa-quota_overflow-c3",
+        "fa-quota_overflow-c4",
+        "fa-quota_overflow-c5"
+      ],
+      "version": "5.0.0"
+    },
+    "rolling_rate_limit": {
+      "module": "benchmark.finite_batch_a_v5",
+      "task_ids": [
+        "fa-rolling_rate_limit-c1",
+        "fa-rolling_rate_limit-c2",
+        "fa-rolling_rate_limit-c3",
+        "fa-rolling_rate_limit-c4",
+        "fa-rolling_rate_limit-c5"
+      ],
+      "version": "5.0.0"
+    },
+    "transaction_replay": {
+      "module": "benchmark.finite_replay_v3",
+      "task_ids": [
+        "fr-transaction-replay-c1",
+        "fr-transaction-replay-c2",
+        "fr-transaction-replay-c3",
+        "fr-transaction-replay-c4",
+        "fr-transaction-replay-c5"
+      ],
+      "version": "3.0.0"
+    },
+    "unicode_identity": {
+      "module": "benchmark.finite_batch_b_v5",
+      "task_ids": [
+        "fb-unicode-identity-c1",
+        "fb-unicode-identity-c2",
+        "fb-unicode-identity-c3",
+        "fb-unicode-identity-c4",
+        "fb-unicode-identity-c5"
+      ],
+      "version": "5.0.0"
+    },
+    "upload_content": {
+      "module": "benchmark.finite_batch_b_v5",
+      "task_ids": [
+        "fb-upload-content-c1",
+        "fb-upload-content-c2",
+        "fb-upload-content-c3",
+        "fb-upload-content-c4",
+        "fb-upload-content-c5"
+      ],
+      "version": "5.0.0"
+    },
+    "webhook_integrity": {
+      "module": "benchmark.finite_batch_b_v5",
+      "task_ids": [
+        "fb-webhook-integrity-c1",
+        "fb-webhook-integrity-c2",
+        "fb-webhook-integrity-c3",
+        "fb-webhook-integrity-c4",
+        "fb-webhook-integrity-c5"
+      ],
+      "version": "5.0.0"
+    }
+  },
+  "family_count": 12,
+  "human_admission_review": "MISSING",
+  "scope": "authored finite artifacts only; no human review, model trajectory, or real-code admission",
+  "status": "CONDITIONAL",
+  "task_condition_rows_checked": 60
+}

@@ -15,6 +15,11 @@ python3 -B tests/test_finite_replay_v3.py
 python3 -B -m benchmark.validate_finite_replay_v3
 python3 -B tests/test_finite_race_v4.py
 python3 -B -m benchmark.validate_finite_race_v4
+python3 -B tests/test_finite_batch_a_v5.py
+python3 -B -m benchmark.validate_finite_batch_a_v5
+python3 -B tests/test_finite_batch_b_v5.py
+python3 -B -m benchmark.validate_finite_batch_b_v5
+python3 -B -m analysis.admission_review --json-out /tmp/admission_review_reproduced.json
 
 # Recompute the finite confusion matrices and mutation checks from the saved
 # fixtures. The comparison fails if the checked-in calibration becomes stale.
@@ -46,10 +51,14 @@ python3 -B -m unittest \
   tests.test_c5_false_failure_probe_v1 \
   tests.test_c5_onset_probe_v1 \
   tests.test_real_code_sqli \
+  tests.test_real_code_command_injection \
+  tests.test_admission_review \
+  tests.test_main_orchestrator \
   tests.test_family_sign_sensitivity
 
 # SQLite connection lifecycle regression: ResourceWarning is a hard failure.
 python3 -B -W error::ResourceWarning -m unittest tests.test_real_code_sqli
+python3 -B -W error::ResourceWarning -m unittest tests.test_real_code_command_injection
 
 # This produces NO_ELIGIBLE_DATA until a locked, validated main cohort exists.
 python3 -B -m analysis.v1_pipeline --manifest-dir experiments/v1/manifests

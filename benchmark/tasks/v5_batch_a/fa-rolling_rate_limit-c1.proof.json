@@ -1,0 +1,230 @@
+{
+  "candidate_space_size": 8,
+  "certificate_version": "5.0.0",
+  "counterexamples": [
+    {
+      "candidate": {
+        "identity": "principal",
+        "storage": "local",
+        "window": "fixed_bucket"
+      },
+      "outcome": {
+        "actual": [
+          true,
+          true
+        ],
+        "case_index": 1,
+        "expected": [
+          true,
+          false
+        ],
+        "input": [
+          [
+            1,
+            "alice",
+            "w0"
+          ],
+          [
+            2,
+            "alice",
+            "w1"
+          ]
+        ]
+      }
+    },
+    {
+      "candidate": {
+        "identity": "principal",
+        "storage": "shared",
+        "window": "fixed_bucket"
+      },
+      "outcome": {
+        "actual": [
+          true,
+          true
+        ],
+        "case_index": 1,
+        "expected": [
+          true,
+          false
+        ],
+        "input": [
+          [
+            1,
+            "alice",
+            "w0"
+          ],
+          [
+            2,
+            "alice",
+            "w1"
+          ]
+        ]
+      }
+    },
+    {
+      "candidate": {
+        "identity": "global",
+        "storage": "local",
+        "window": "fixed_bucket"
+      },
+      "outcome": {
+        "actual": [
+          true,
+          true
+        ],
+        "case_index": 1,
+        "expected": [
+          true,
+          false
+        ],
+        "input": [
+          [
+            1,
+            "alice",
+            "w0"
+          ],
+          [
+            2,
+            "alice",
+            "w1"
+          ]
+        ]
+      }
+    },
+    {
+      "candidate": {
+        "identity": "global",
+        "storage": "shared",
+        "window": "fixed_bucket"
+      },
+      "outcome": {
+        "actual": [
+          true,
+          true
+        ],
+        "case_index": 1,
+        "expected": [
+          true,
+          false
+        ],
+        "input": [
+          [
+            1,
+            "alice",
+            "w0"
+          ],
+          [
+            2,
+            "alice",
+            "w1"
+          ]
+        ]
+      }
+    },
+    {
+      "candidate": {
+        "identity": "principal",
+        "storage": "local",
+        "window": "sliding"
+      },
+      "outcome": {
+        "actual": [
+          true,
+          true
+        ],
+        "case_index": 1,
+        "expected": [
+          true,
+          false
+        ],
+        "input": [
+          [
+            1,
+            "alice",
+            "w0"
+          ],
+          [
+            2,
+            "alice",
+            "w1"
+          ]
+        ]
+      }
+    },
+    {
+      "candidate": {
+        "identity": "global",
+        "storage": "local",
+        "window": "sliding"
+      },
+      "outcome": {
+        "actual": [
+          true,
+          true
+        ],
+        "case_index": 1,
+        "expected": [
+          true,
+          false
+        ],
+        "input": [
+          [
+            1,
+            "alice",
+            "w0"
+          ],
+          [
+            2,
+            "alice",
+            "w1"
+          ]
+        ]
+      }
+    },
+    {
+      "candidate": {
+        "identity": "global",
+        "storage": "shared",
+        "window": "sliding"
+      },
+      "outcome": {
+        "actual": [
+          true,
+          false
+        ],
+        "case_index": 2,
+        "expected": [
+          true,
+          true
+        ],
+        "input": [
+          [
+            0,
+            "alice",
+            "w0"
+          ],
+          [
+            1,
+            "bob",
+            "w0"
+          ]
+        ]
+      }
+    }
+  ],
+  "environment_witness": null,
+  "ground_truth_state": "REPAIRABLE",
+  "proof_sha256": "5f36cce771f753c7ddd92fe07607d9017a83c4de7d827162a90a7c30233ac5d0",
+  "satisfying_candidates": [
+    {
+      "identity": "principal",
+      "storage": "shared",
+      "window": "sliding"
+    }
+  ],
+  "scope": "bounded_declarative_candidate_language_only",
+  "secure_candidate_gate_verdict": "PASS",
+  "task_id": "fa-rolling_rate_limit-c1",
+  "task_sha256": "6a811342ad3309c918ab1e67171564d5b674e688e23223c8ad58f1e26a52bbf9"
+}
