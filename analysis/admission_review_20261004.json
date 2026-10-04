@@ -34,6 +34,28 @@
       ],
       "version": "4.0.0"
     },
+    "csrf_origin": {
+      "module": "benchmark.finite_batch_c_v6",
+      "task_ids": [
+        "fc-csrf_origin-c1",
+        "fc-csrf_origin-c2",
+        "fc-csrf_origin-c3",
+        "fc-csrf_origin-c4",
+        "fc-csrf_origin-c5"
+      ],
+      "version": "6.0.0"
+    },
+    "deserialization_allowlist": {
+      "module": "benchmark.finite_batch_c_v6",
+      "task_ids": [
+        "fc-deserialization_allowlist-c1",
+        "fc-deserialization_allowlist-c2",
+        "fc-deserialization_allowlist-c3",
+        "fc-deserialization_allowlist-c4",
+        "fc-deserialization_allowlist-c5"
+      ],
+      "version": "6.0.0"
+    },
     "dns_rebinding": {
       "module": "benchmark.finite_batch_b_v5",
       "task_ids": [
@@ -55,6 +77,50 @@
         "fa-encoded_log_secret-c5"
       ],
       "version": "5.0.0"
+    },
+    "environment_injection": {
+      "module": "benchmark.finite_batch_c_v6",
+      "task_ids": [
+        "fc-environment_injection-c1",
+        "fc-environment_injection-c2",
+        "fc-environment_injection-c3",
+        "fc-environment_injection-c4",
+        "fc-environment_injection-c5"
+      ],
+      "version": "6.0.0"
+    },
+    "kdf_salt": {
+      "module": "benchmark.finite_batch_c_v6",
+      "task_ids": [
+        "fc-kdf_salt-c1",
+        "fc-kdf_salt-c2",
+        "fc-kdf_salt-c3",
+        "fc-kdf_salt-c4",
+        "fc-kdf_salt-c5"
+      ],
+      "version": "6.0.0"
+    },
+    "key_rotation": {
+      "module": "benchmark.finite_batch_c_v6",
+      "task_ids": [
+        "fc-key_rotation-c1",
+        "fc-key_rotation-c2",
+        "fc-key_rotation-c3",
+        "fc-key_rotation-c4",
+        "fc-key_rotation-c5"
+      ],
+      "version": "6.0.0"
+    },
+    "nonce_uniqueness": {
+      "module": "benchmark.finite_batch_c_v6",
+      "task_ids": [
+        "fc-nonce_uniqueness-c1",
+        "fc-nonce_uniqueness-c2",
+        "fc-nonce_uniqueness-c3",
+        "fc-nonce_uniqueness-c4",
+        "fc-nonce_uniqueness-c5"
+      ],
+      "version": "6.0.0"
     },
     "path-boundary": {
       "module": "benchmark.finite_path_v2",
@@ -88,6 +154,28 @@
         "fa-rolling_rate_limit-c5"
       ],
       "version": "5.0.0"
+    },
+    "signature_algorithm": {
+      "module": "benchmark.finite_batch_c_v6",
+      "task_ids": [
+        "fc-signature_algorithm-c1",
+        "fc-signature_algorithm-c2",
+        "fc-signature_algorithm-c3",
+        "fc-signature_algorithm-c4",
+        "fc-signature_algorithm-c5"
+      ],
+      "version": "6.0.0"
+    },
+    "tls_hostname": {
+      "module": "benchmark.finite_batch_c_v6",
+      "task_ids": [
+        "fc-tls_hostname-c1",
+        "fc-tls_hostname-c2",
+        "fc-tls_hostname-c3",
+        "fc-tls_hostname-c4",
+        "fc-tls_hostname-c5"
+      ],
+      "version": "6.0.0"
     },
     "transaction_replay": {
       "module": "benchmark.finite_replay_v3",
@@ -134,9 +222,9 @@
       "version": "5.0.0"
     }
   },
-  "family_count": 12,
+  "family_count": 20,
   "human_admission_review": "MISSING",
   "scope": "authored finite artifacts only; no human review, model trajectory, or real-code admission",
   "status": "CONDITIONAL",
-  "task_condition_rows_checked": 60
+  "task_condition_rows_checked": 100
 }

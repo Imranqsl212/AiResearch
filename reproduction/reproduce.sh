@@ -19,6 +19,8 @@ python3 -B tests/test_finite_batch_a_v5.py
 python3 -B -m benchmark.validate_finite_batch_a_v5
 python3 -B tests/test_finite_batch_b_v5.py
 python3 -B -m benchmark.validate_finite_batch_b_v5
+python3 -B tests/test_finite_batch_c_v6.py
+python3 -B -m benchmark.validate_finite_batch_c_v6
 python3 -B -m analysis.admission_review --json-out /tmp/admission_review_reproduced.json
 
 # Recompute the finite confusion matrices and mutation checks from the saved
@@ -52,6 +54,7 @@ python3 -B -m unittest \
   tests.test_c5_onset_probe_v1 \
   tests.test_real_code_sqli \
   tests.test_real_code_command_injection \
+  tests.test_finite_batch_c_v6 \
   tests.test_admission_review \
   tests.test_main_orchestrator \
   tests.test_family_sign_sensitivity

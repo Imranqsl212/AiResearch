@@ -113,8 +113,9 @@ def _catalog(index_paths: Sequence[str], root: Path) -> list[dict[str, str]]:
         index_path = _local(root, relative)
         index = _read(index_path)
         rows = index.get("tasks")
-        if not isinstance(rows, list) or len(rows) != len(CONDITIONS):
-            raise MainOrchestrationError(f"index needs five condition rows: {relative}")
+        if (not isinstance(rows, list) or len(rows) < len(CONDITIONS)
+                or len(rows) % len(CONDITIONS) != 0):
+            raise MainOrchestrationError(f"index needs a whole number of five-condition families: {relative}")
         for row in rows:
             if not isinstance(row, dict):
                 raise MainOrchestrationError("task-index row must be an object")

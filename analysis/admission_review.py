@@ -26,6 +26,7 @@ INDEXES = (
     "benchmark/tasks/v4_race/index.json",
     "benchmark/tasks/v5_batch_a/index.json",
     "benchmark/tasks/v5_batch_b/index.json",
+    "benchmark/tasks/v6_batch_c/index.json",
 )
 CONDITIONS = ("C1", "C2", "C3", "C4", "C5")
 STATES = {

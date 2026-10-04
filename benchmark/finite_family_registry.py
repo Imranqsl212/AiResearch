@@ -19,6 +19,14 @@ FAMILIES = {
     ("upload_content", "5.0.0"): "benchmark.finite_batch_b_v5",
     ("unicode_identity", "5.0.0"): "benchmark.finite_batch_b_v5",
     ("dns_rebinding", "5.0.0"): "benchmark.finite_batch_b_v5",
+    ("csrf_origin", "6.0.0"): "benchmark.finite_batch_c_v6",
+    ("nonce_uniqueness", "6.0.0"): "benchmark.finite_batch_c_v6",
+    ("signature_algorithm", "6.0.0"): "benchmark.finite_batch_c_v6",
+    ("deserialization_allowlist", "6.0.0"): "benchmark.finite_batch_c_v6",
+    ("tls_hostname", "6.0.0"): "benchmark.finite_batch_c_v6",
+    ("key_rotation", "6.0.0"): "benchmark.finite_batch_c_v6",
+    ("kdf_salt", "6.0.0"): "benchmark.finite_batch_c_v6",
+    ("environment_injection", "6.0.0"): "benchmark.finite_batch_c_v6",
 }
 
 

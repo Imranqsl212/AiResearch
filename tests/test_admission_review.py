@@ -8,8 +8,8 @@ class AdmissionReviewTests(unittest.TestCase):
         report = review()
         self.assertEqual(report["status"], "CONDITIONAL")
         self.assertEqual(report["human_admission_review"], "MISSING")
-        self.assertEqual(report["family_count"], 12)
-        self.assertEqual(report["task_condition_rows_checked"], 60)
+        self.assertEqual(report["family_count"], 20)
+        self.assertEqual(report["task_condition_rows_checked"], 100)
         self.assertEqual(report["errors"], [])
 
 
