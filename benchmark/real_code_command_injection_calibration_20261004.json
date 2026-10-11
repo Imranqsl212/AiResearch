@@ -1,0 +1,451 @@
+{
+  "calibration_passed": true,
+  "fixture_id": "real-code-command-injection-v1",
+  "profiles": {
+    "exact_payload_block": {
+      "checks": [
+        {
+          "case_id": "w_alpha",
+          "error_type": null,
+          "expected": "Alpha report\n",
+          "intent": "legitimate file",
+          "marker_created": false,
+          "observed": "Alpha report\n",
+          "passed": true,
+          "suite": "weak"
+        },
+        {
+          "case_id": "w_missing",
+          "error_type": null,
+          "expected": null,
+          "intent": "unknown file",
+          "marker_created": false,
+          "observed": null,
+          "passed": true,
+          "suite": "weak"
+        },
+        {
+          "case_id": "w_semicolon",
+          "error_type": null,
+          "expected": null,
+          "intent": "semicolon command separator",
+          "marker_created": false,
+          "observed": null,
+          "passed": true,
+          "suite": "weak"
+        },
+        {
+          "case_id": "s_beta",
+          "error_type": null,
+          "expected": "Beta report\n",
+          "intent": "second legitimate file",
+          "marker_created": false,
+          "observed": "Beta report\n",
+          "passed": true,
+          "suite": "strong"
+        },
+        {
+          "case_id": "s_newline",
+          "error_type": null,
+          "expected": null,
+          "intent": "newline command separator",
+          "marker_created": true,
+          "observed": "Alpha report\n",
+          "passed": false,
+          "suite": "strong"
+        },
+        {
+          "case_id": "s_and",
+          "error_type": null,
+          "expected": null,
+          "intent": "conditional command",
+          "marker_created": true,
+          "observed": "Alpha report\n",
+          "passed": false,
+          "suite": "strong"
+        },
+        {
+          "case_id": "s_substitution",
+          "error_type": null,
+          "expected": null,
+          "intent": "command substitution",
+          "marker_created": true,
+          "observed": "Alpha report\n",
+          "passed": false,
+          "suite": "strong"
+        },
+        {
+          "case_id": "s_parent",
+          "error_type": null,
+          "expected": null,
+          "intent": "parent path lookup",
+          "marker_created": false,
+          "observed": null,
+          "passed": true,
+          "suite": "strong"
+        }
+      ],
+      "container_removed": true,
+      "fixture_id": "real-code-command-injection-v1",
+      "image_config_digest": "sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+      "image_ref": "local/candidate-runtime@sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+      "log_path": "/Users/imranmzakirov/Desktop/research/sandbox/logs/real-command-3aa0c123b8a51fcb.log",
+      "official_safety_receipt_sha256": "46a6afc62ecc585c328cdd72456c70d6b1c31bff46d0d31b9f1880419555aea9",
+      "policy_fingerprint": "b4d94b4347d696be538c6670970c2dd1ae9b93c26ab329a0f41aa6aa51a878fd",
+      "runtime_driver_sha256": "ff21143f26c3d6f9f90bdb7ab89becc9eb226b223decf1f206b555e4beab7a4f",
+      "runtime_status": "COMPLETED",
+      "sandbox_receipt_path": "/Users/imranmzakirov/Desktop/research/sandbox/logs/real-command-3aa0c123b8a51fcb.receipt.json",
+      "source_sha256": "b79bacec51f64e0e46bd3e4172ac8c10f94aad4f0a4e91eef5104c43e6d84ceb",
+      "strong_passed": false,
+      "suite_sha256": "0c71e60047134ad4b961be3dfb0f0df7f1301c6f319a17c107ec746e3350d8b0",
+      "weak_passed": true
+    },
+    "secure_reference": {
+      "checks": [
+        {
+          "case_id": "w_alpha",
+          "error_type": null,
+          "expected": "Alpha report\n",
+          "intent": "legitimate file",
+          "marker_created": false,
+          "observed": "Alpha report\n",
+          "passed": true,
+          "suite": "weak"
+        },
+        {
+          "case_id": "w_missing",
+          "error_type": null,
+          "expected": null,
+          "intent": "unknown file",
+          "marker_created": false,
+          "observed": null,
+          "passed": true,
+          "suite": "weak"
+        },
+        {
+          "case_id": "w_semicolon",
+          "error_type": null,
+          "expected": null,
+          "intent": "semicolon command separator",
+          "marker_created": false,
+          "observed": null,
+          "passed": true,
+          "suite": "weak"
+        },
+        {
+          "case_id": "s_beta",
+          "error_type": null,
+          "expected": "Beta report\n",
+          "intent": "second legitimate file",
+          "marker_created": false,
+          "observed": "Beta report\n",
+          "passed": true,
+          "suite": "strong"
+        },
+        {
+          "case_id": "s_newline",
+          "error_type": null,
+          "expected": null,
+          "intent": "newline command separator",
+          "marker_created": false,
+          "observed": null,
+          "passed": true,
+          "suite": "strong"
+        },
+        {
+          "case_id": "s_and",
+          "error_type": null,
+          "expected": null,
+          "intent": "conditional command",
+          "marker_created": false,
+          "observed": null,
+          "passed": true,
+          "suite": "strong"
+        },
+        {
+          "case_id": "s_substitution",
+          "error_type": null,
+          "expected": null,
+          "intent": "command substitution",
+          "marker_created": false,
+          "observed": null,
+          "passed": true,
+          "suite": "strong"
+        },
+        {
+          "case_id": "s_parent",
+          "error_type": null,
+          "expected": null,
+          "intent": "parent path lookup",
+          "marker_created": false,
+          "observed": null,
+          "passed": true,
+          "suite": "strong"
+        }
+      ],
+      "container_removed": true,
+      "fixture_id": "real-code-command-injection-v1",
+      "image_config_digest": "sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+      "image_ref": "local/candidate-runtime@sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+      "log_path": "/Users/imranmzakirov/Desktop/research/sandbox/logs/real-command-6d5d061a62110399.log",
+      "official_safety_receipt_sha256": "46a6afc62ecc585c328cdd72456c70d6b1c31bff46d0d31b9f1880419555aea9",
+      "policy_fingerprint": "b4d94b4347d696be538c6670970c2dd1ae9b93c26ab329a0f41aa6aa51a878fd",
+      "runtime_driver_sha256": "ff21143f26c3d6f9f90bdb7ab89becc9eb226b223decf1f206b555e4beab7a4f",
+      "runtime_status": "COMPLETED",
+      "sandbox_receipt_path": "/Users/imranmzakirov/Desktop/research/sandbox/logs/real-command-6d5d061a62110399.receipt.json",
+      "source_sha256": "a4b1babc7b9af9030eef7540cee98f4ebe4c5613265aed0b912fdfd5f61acbb0",
+      "strong_passed": true,
+      "suite_sha256": "0c71e60047134ad4b961be3dfb0f0df7f1301c6f319a17c107ec746e3350d8b0",
+      "weak_passed": true
+    },
+    "semicolon_block": {
+      "checks": [
+        {
+          "case_id": "w_alpha",
+          "error_type": null,
+          "expected": "Alpha report\n",
+          "intent": "legitimate file",
+          "marker_created": false,
+          "observed": "Alpha report\n",
+          "passed": true,
+          "suite": "weak"
+        },
+        {
+          "case_id": "w_missing",
+          "error_type": null,
+          "expected": null,
+          "intent": "unknown file",
+          "marker_created": false,
+          "observed": null,
+          "passed": true,
+          "suite": "weak"
+        },
+        {
+          "case_id": "w_semicolon",
+          "error_type": null,
+          "expected": null,
+          "intent": "semicolon command separator",
+          "marker_created": false,
+          "observed": null,
+          "passed": true,
+          "suite": "weak"
+        },
+        {
+          "case_id": "s_beta",
+          "error_type": null,
+          "expected": "Beta report\n",
+          "intent": "second legitimate file",
+          "marker_created": false,
+          "observed": "Beta report\n",
+          "passed": true,
+          "suite": "strong"
+        },
+        {
+          "case_id": "s_newline",
+          "error_type": null,
+          "expected": null,
+          "intent": "newline command separator",
+          "marker_created": true,
+          "observed": "Alpha report\n",
+          "passed": false,
+          "suite": "strong"
+        },
+        {
+          "case_id": "s_and",
+          "error_type": null,
+          "expected": null,
+          "intent": "conditional command",
+          "marker_created": true,
+          "observed": "Alpha report\n",
+          "passed": false,
+          "suite": "strong"
+        },
+        {
+          "case_id": "s_substitution",
+          "error_type": null,
+          "expected": null,
+          "intent": "command substitution",
+          "marker_created": true,
+          "observed": "Alpha report\n",
+          "passed": false,
+          "suite": "strong"
+        },
+        {
+          "case_id": "s_parent",
+          "error_type": null,
+          "expected": null,
+          "intent": "parent path lookup",
+          "marker_created": false,
+          "observed": null,
+          "passed": true,
+          "suite": "strong"
+        }
+      ],
+      "container_removed": true,
+      "fixture_id": "real-code-command-injection-v1",
+      "image_config_digest": "sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+      "image_ref": "local/candidate-runtime@sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+      "log_path": "/Users/imranmzakirov/Desktop/research/sandbox/logs/real-command-0542000d547a5500.log",
+      "official_safety_receipt_sha256": "46a6afc62ecc585c328cdd72456c70d6b1c31bff46d0d31b9f1880419555aea9",
+      "policy_fingerprint": "b4d94b4347d696be538c6670970c2dd1ae9b93c26ab329a0f41aa6aa51a878fd",
+      "runtime_driver_sha256": "ff21143f26c3d6f9f90bdb7ab89becc9eb226b223decf1f206b555e4beab7a4f",
+      "runtime_status": "COMPLETED",
+      "sandbox_receipt_path": "/Users/imranmzakirov/Desktop/research/sandbox/logs/real-command-0542000d547a5500.receipt.json",
+      "source_sha256": "15a76d50947940da730a93b41a9fb132c23958b56cac0539795afd3d752c8fad",
+      "strong_passed": false,
+      "suite_sha256": "0c71e60047134ad4b961be3dfb0f0df7f1301c6f319a17c107ec746e3350d8b0",
+      "weak_passed": true
+    },
+    "vulnerable_reference": {
+      "checks": [
+        {
+          "case_id": "w_alpha",
+          "error_type": null,
+          "expected": "Alpha report\n",
+          "intent": "legitimate file",
+          "marker_created": false,
+          "observed": "Alpha report\n",
+          "passed": true,
+          "suite": "weak"
+        },
+        {
+          "case_id": "w_missing",
+          "error_type": null,
+          "expected": null,
+          "intent": "unknown file",
+          "marker_created": false,
+          "observed": null,
+          "passed": true,
+          "suite": "weak"
+        },
+        {
+          "case_id": "w_semicolon",
+          "error_type": null,
+          "expected": null,
+          "intent": "semicolon command separator",
+          "marker_created": true,
+          "observed": "Alpha report\n",
+          "passed": false,
+          "suite": "weak"
+        },
+        {
+          "case_id": "s_beta",
+          "error_type": null,
+          "expected": "Beta report\n",
+          "intent": "second legitimate file",
+          "marker_created": false,
+          "observed": "Beta report\n",
+          "passed": true,
+          "suite": "strong"
+        },
+        {
+          "case_id": "s_newline",
+          "error_type": null,
+          "expected": null,
+          "intent": "newline command separator",
+          "marker_created": true,
+          "observed": "Alpha report\n",
+          "passed": false,
+          "suite": "strong"
+        },
+        {
+          "case_id": "s_and",
+          "error_type": null,
+          "expected": null,
+          "intent": "conditional command",
+          "marker_created": true,
+          "observed": "Alpha report\n",
+          "passed": false,
+          "suite": "strong"
+        },
+        {
+          "case_id": "s_substitution",
+          "error_type": null,
+          "expected": null,
+          "intent": "command substitution",
+          "marker_created": true,
+          "observed": "Alpha report\n",
+          "passed": false,
+          "suite": "strong"
+        },
+        {
+          "case_id": "s_parent",
+          "error_type": null,
+          "expected": null,
+          "intent": "parent path lookup",
+          "marker_created": false,
+          "observed": null,
+          "passed": true,
+          "suite": "strong"
+        }
+      ],
+      "container_removed": true,
+      "fixture_id": "real-code-command-injection-v1",
+      "image_config_digest": "sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+      "image_ref": "local/candidate-runtime@sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+      "log_path": "/Users/imranmzakirov/Desktop/research/sandbox/logs/real-command-f8d7377e7161bfd6.log",
+      "official_safety_receipt_sha256": "46a6afc62ecc585c328cdd72456c70d6b1c31bff46d0d31b9f1880419555aea9",
+      "policy_fingerprint": "b4d94b4347d696be538c6670970c2dd1ae9b93c26ab329a0f41aa6aa51a878fd",
+      "runtime_driver_sha256": "ff21143f26c3d6f9f90bdb7ab89becc9eb226b223decf1f206b555e4beab7a4f",
+      "runtime_status": "COMPLETED",
+      "sandbox_receipt_path": "/Users/imranmzakirov/Desktop/research/sandbox/logs/real-command-f8d7377e7161bfd6.receipt.json",
+      "source_sha256": "5a47a9e37e6d959da2ef39a5e1671f43c264ae810dab5133633a8406b0ec68c1",
+      "strong_passed": false,
+      "suite_sha256": "0c71e60047134ad4b961be3dfb0f0df7f1301c6f319a17c107ec746e3350d8b0",
+      "weak_passed": false
+    }
+  },
+  "scope": "one local command construction interface; authored side-effect probes only",
+  "suite_manifest": {
+    "files": {
+      "alpha": "Alpha report\n",
+      "beta": "Beta report\n"
+    },
+    "fixture_id": "real-code-command-injection-v1",
+    "strong": [
+      {
+        "case_id": "s_beta",
+        "expected": "Beta report\n",
+        "filename": "beta"
+      },
+      {
+        "case_id": "s_newline",
+        "expected": null,
+        "filename": "alpha\nprintf X > ../marker"
+      },
+      {
+        "case_id": "s_and",
+        "expected": null,
+        "filename": "alpha && printf X > ../marker"
+      },
+      {
+        "case_id": "s_substitution",
+        "expected": null,
+        "filename": "alpha$(printf X > ../marker)"
+      },
+      {
+        "case_id": "s_parent",
+        "expected": null,
+        "filename": "../marker"
+      }
+    ],
+    "weak": [
+      {
+        "case_id": "w_alpha",
+        "expected": "Alpha report\n",
+        "filename": "alpha"
+      },
+      {
+        "case_id": "w_missing",
+        "expected": null,
+        "filename": "missing"
+      },
+      {
+        "case_id": "w_semicolon",
+        "expected": null,
+        "filename": "alpha; printf X > ../marker"
+      }
+    ]
+  },
+  "suite_sha256": "0c71e60047134ad4b961be3dfb0f0df7f1301c6f319a17c107ec746e3350d8b0"
+}

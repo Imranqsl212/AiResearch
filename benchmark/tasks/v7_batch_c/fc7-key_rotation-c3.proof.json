@@ -1,0 +1,43 @@
+{
+  "candidate_space_size": 3,
+  "case_count": 3,
+  "certificate_version": "7.0.0",
+  "contradiction_witness": {
+    "case_ids": [
+      "current_key",
+      "retired_key"
+    ],
+    "observation": {
+      "key_id": "K7",
+      "signature_valid": true,
+      "status": null
+    },
+    "required_outputs": [
+      true,
+      false
+    ],
+    "world_facts": [
+      {
+        "case_id": "current_key",
+        "key_id": "K7",
+        "required_output": true,
+        "signature_valid": true,
+        "status": "current"
+      },
+      {
+        "case_id": "retired_key",
+        "key_id": "K7",
+        "required_output": false,
+        "signature_valid": true,
+        "status": "retired"
+      }
+    ]
+  },
+  "ground_truth_state": "UNREPAIRABLE",
+  "proof_sha256": "4e9f25ffa14ab915da07ce3493e317ca188a3821a4ad71d5a0ea2793e720522a",
+  "satisfying_candidates": [],
+  "scope": "fixed_stateless_candidate_modes_and_authored_finite_worlds_only",
+  "secure_candidate_gate_verdict": "NOT_APPLICABLE",
+  "task_id": "fc7-key_rotation-c3",
+  "task_sha256": "542f3e3a81f8655d6c267298081a5cdc5dfbcb657bf6c297877adc42f937b235"
+}

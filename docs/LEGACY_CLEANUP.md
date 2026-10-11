@@ -2,7 +2,7 @@
 
 On 2026-09-29, at the user's direction, legacy **AVB-Bench / Beyond Automated Scanning** materials were moved out of this repository into the macOS Trash folder:
 
-`/Users/imranmzakirov/.Trash/when-to-stop-legacy-avb-2026-09-29/`
+`~/.Trash/when-to-stop-legacy-avb-2026-09-29/`
 
 This was a move, not permanent deletion. No file was overwritten. After the additional cleanup below, the archive retains 48 top-level entries plus `docs/` (9 files), `figures/` (10 files), and `tests/` (1 file): 68 direct archived entries in total. Some top-level entries are directories containing additional files. Emptying the macOS Trash would make recovery harder; restore from this folder if any item is needed later.
 

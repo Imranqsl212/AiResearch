@@ -1,0 +1,1341 @@
+{
+  "analysis_version": "source-fidelity-v1",
+  "archive_manifest_sha256": "07bf61e0db8d23aa7bfdf4481fad9b2f6b1ed867870cd17f8e230560f4e6d950",
+  "cohort": "rag-overnight-v2-main-0-5-0",
+  "final_hash_mismatch_run_ids": [
+    "rag-overnight-v2-main-0-5-0-slot-000003",
+    "rag-overnight-v2-main-0-5-0-slot-000022"
+  ],
+  "inputs": [
+    {
+      "log_sha256": "329f5d5bcdd90ac5ac019a939a5cd325c1468a0d9d0e629436fcda766841cc61",
+      "receipt_sha256": "2ac70c7ab7e62ec93abfd557b904823cc8765534138b943518f1c443851a9ea7",
+      "run_id": "rag-overnight-v2-main-0-5-0-slot-000001"
+    },
+    {
+      "log_sha256": "2396c2bf155ed6d2fc94007cf1a4f2d18c651f0ec83f1c882e16cc9ef89e2faf",
+      "receipt_sha256": "f2f14d94125f433a1d63da9dc0ff0fa5cabd04174cf3d0fbfee6ba0cda0a63b0",
+      "run_id": "rag-overnight-v2-main-0-5-0-slot-000002"
+    },
+    {
+      "log_sha256": "08a9e35924db192014c5948e9c23f14ec35dbf09348d8894c309e6965b62d86d",
+      "receipt_sha256": "816bf340cb52e580e97c8d119fb949f054b6ad76f82a1f73e44b6b22574d39fa",
+      "run_id": "rag-overnight-v2-main-0-5-0-slot-000003"
+    },
+    {
+      "log_sha256": "5944163b8d6985438b1b4cbba851e874688fd978f40e78ef4a6970ebd6be3d3b",
+      "receipt_sha256": "e658ab6e858e78abde8fa97a24309c45ea9eba80af7a13bdbf136a9dc97709a1",
+      "run_id": "rag-overnight-v2-main-0-5-0-slot-000004"
+    },
+    {
+      "log_sha256": "5ab96aacdb2384804cba0a69041bbaee5a49c015d92a1f7922f08289e0696bd5",
+      "receipt_sha256": "b72bdd84c1cbd47526df9d8f13db223e1931c35630c20b54804e12c09b35ae04",
+      "run_id": "rag-overnight-v2-main-0-5-0-slot-000005"
+    },
+    {
+      "log_sha256": "9087095041e37f80033d3456100ee7e40b0f37b23abccd2235b80780f1880f59",
+      "receipt_sha256": "eeaff7c4572ca4eac1675a28aa780d8cc25509628edfc9b9b42db1458bac32ca",
+      "run_id": "rag-overnight-v2-main-0-5-0-slot-000006"
+    },
+    {
+      "log_sha256": "03975d2962f9ddd717de70be640e884b8aac84dfb3e83aa77720f70c2e942a28",
+      "receipt_sha256": "7d733f3c3082ce8ecb3d9ee261b3d4267f7546e660ca08644c9b16257c1f3de6",
+      "run_id": "rag-overnight-v2-main-0-5-0-slot-000007"
+    },
+    {
+      "log_sha256": "b9e27793d48dcf91bbc3e65a074ffb5ea431c48d7760cfb1e76b8ea2e94172fa",
+      "receipt_sha256": "f776ceeed78ac5daadf472d70a8820157e03dd9ae6757f386b3c67ce317a95e8",
+      "run_id": "rag-overnight-v2-main-0-5-0-slot-000008"
+    },
+    {
+      "log_sha256": "37e8a2ba7590a45cdc4aaeb3a7d9f22d232e0993ed8d4d2dc13349ad76feb088",
+      "receipt_sha256": "8cad1102d9b5a5f6a1a8212bad973a2c6ebca4591a047f27bfe6717746eb0a4a",
+      "run_id": "rag-overnight-v2-main-0-5-0-slot-000009"
+    },
+    {
+      "log_sha256": "aca14cf156c97dd65bdc65fecb945e81971fa3e201227cf827da07a8280758f0",
+      "receipt_sha256": "64f8fdd67f2ea2760d1a0da997e7b43b9b25d3faa29e566d9efa3588ce00f55b",
+      "run_id": "rag-overnight-v2-main-0-5-0-slot-000010"
+    },
+    {
+      "log_sha256": "7af465a5102172627f97cc5996cda7b3de8402fdf8e073605a20fd11c67e998a",
+      "receipt_sha256": "5502849d534c36d0abcf01830a1cff81437a1d37d20550fc6deaa3225b524457",
+      "run_id": "rag-overnight-v2-main-0-5-0-slot-000011"
+    },
+    {
+      "log_sha256": "b99b98a3f12a7b425ee949040dd4857b24c2f69eb22787679d541ce0956264ed",
+      "receipt_sha256": "d39762bb6820a9652857f515327d1bb6c4e0611d8a26c06157c28ab8b5f02abb",
+      "run_id": "rag-overnight-v2-main-0-5-0-slot-000012"
+    },
+    {
+      "log_sha256": "0cc72dd4fb78afcc377fe313b91f1fb7f0f309268c9603096303a3ee697cd200",
+      "receipt_sha256": "9f8ec9ef338d6a5a165ea662c59531e476a6feddbe243c1a5d536d5c49db7cc6",
+      "run_id": "rag-overnight-v2-main-0-5-0-slot-000013"
+    },
+    {
+      "log_sha256": "e38bda89ba317adb69d41761ce4ed8e6c9341bc59e439717fe17f0ac8cb1a4d9",
+      "receipt_sha256": "56130a1a7817002828fd556a97da3cf77a50f7070335e0435aaf5237f86ab796",
+      "run_id": "rag-overnight-v2-main-0-5-0-slot-000014"
+    },
+    {
+      "log_sha256": "a9f4cb942c42357c4e34b9a1a6d54da92a331b791be62d7a65d0fadbe7f194ca",
+      "receipt_sha256": "656c792db64eb96a40f1f33618ba441a7ecb0ec9c12352f360c6653e52f577c3",
+      "run_id": "rag-overnight-v2-main-0-5-0-slot-000015"
+    },
+    {
+      "log_sha256": "f5f73fec72ab4f10f0a151991f262203ea56f83239a8c003ca2fb20c86e5a2b0",
+      "receipt_sha256": "fd2a5835046fca52c4ed28235be1f6dccb7c7a85fc90db1b6c9e414c93ff7aae",
+      "run_id": "rag-overnight-v2-main-0-5-0-slot-000016"
+    },
+    {
+      "log_sha256": "ee943fb1b4c8d8afdf4e1ad94196d23714212ad61d58eca6ff0404b404a6d539",
+      "receipt_sha256": "30003bb52fccb8651578c850d446de18538a7c4531eb4d68d281fba9103cc132",
+      "run_id": "rag-overnight-v2-main-0-5-0-slot-000017"
+    },
+    {
+      "log_sha256": "1e584dfced54b4e0f6966b9238f9ee8a0f14969ec91d8dd8f9b1be022c9207cb",
+      "receipt_sha256": "1396c918b68bb2e2d48a9b7d0f60b377133b45b58e832c723e022b04acdbbaf4",
+      "run_id": "rag-overnight-v2-main-0-5-0-slot-000018"
+    },
+    {
+      "log_sha256": "7032a0e1a93a965802326a664ca35b50113ea6d071cb964db6698e7fcc01d8e2",
+      "receipt_sha256": "3134dd3cbb72c66e9ff61b2cbae0a78a8e3f9cdbbb7ed3b6dca7f6849f5e9dac",
+      "run_id": "rag-overnight-v2-main-0-5-0-slot-000019"
+    },
+    {
+      "log_sha256": "c6649f107843be5364640e20814d8bb6772ac3aab4eb8f206cf1e21308df8539",
+      "receipt_sha256": "c868255a1c074596e3140dd883b6a751fbeaa7c21c1b5d06050cca51c1b5fd0f",
+      "run_id": "rag-overnight-v2-main-0-5-0-slot-000020"
+    },
+    {
+      "log_sha256": "88d26fca5ab1267c481de463c86ee8367de06487049487680deda2b9138ea271",
+      "receipt_sha256": "0e909546a7b727a88046b81d2d821da0ea9571373b391b5566e7eb940d428a17",
+      "run_id": "rag-overnight-v2-main-0-5-0-slot-000021"
+    },
+    {
+      "log_sha256": "093adc1be31fe8d780479d30b492691b4cf247b7e26ad54b71b09551f6ba541b",
+      "receipt_sha256": "bcee887e6666bbc245e060ec28256bcd522c22cbed95ec2a1238de33316a9e87",
+      "run_id": "rag-overnight-v2-main-0-5-0-slot-000022"
+    },
+    {
+      "log_sha256": "1ceab3b55786f4ed92f28c488fab0d2c53375699e4fb954b3fbd681dcb41bd7c",
+      "receipt_sha256": "b107b15dd5ce80b7486cd1a9a079dd801530b4e07bdcde437b85d63d965d73c2",
+      "run_id": "rag-overnight-v2-main-0-5-0-slot-000023"
+    },
+    {
+      "log_sha256": "e0f70ed6cd5cbf346f80666ee0349296380fe50c035fc6c04f0028f485204c76",
+      "receipt_sha256": "c7872d2db67adb10117c7a6eb55b383bd431bdf973a1a2af564b3b0d638fe48b",
+      "run_id": "rag-overnight-v2-main-0-5-0-slot-000024"
+    },
+    {
+      "log_sha256": "c286d9a0059c4ba0ad27504c792e393bfadceb4c0486885e3262cbf3f5df6499",
+      "receipt_sha256": "180b90ba37736ea980e692ad43e174679ce16252c22a59ecf70e0a953f10b672",
+      "run_id": "rag-overnight-v2-main-0-5-0-slot-000025"
+    },
+    {
+      "log_sha256": "2232e945f463f1dd6b0254901629cb77eb2178470cc05d5155e09491dfac4414",
+      "receipt_sha256": "8751ff98dfe57e4cf39fe37d0f0505580f16579de3fd2835c0ae759c478de8d6",
+      "run_id": "rag-overnight-v2-main-0-5-0-slot-000026"
+    },
+    {
+      "log_sha256": "d4a4289c66de5f57707154206ab05271fb0131a2ecda693f411019c1a89041db",
+      "receipt_sha256": "68cb45027030f846871c74b408e7c482c47d4b8d9328a3925db8a95c41ef0528",
+      "run_id": "rag-overnight-v2-main-0-5-0-slot-000027"
+    },
+    {
+      "log_sha256": "fb06a4766d4772879af665522f463cbf976cc71c08ff17763b1ffb431ff9edb4",
+      "receipt_sha256": "3469cfcd8436245615b86a6d50aa7038414efc194ddc1427a973c3eb00be8a59",
+      "run_id": "rag-overnight-v2-main-0-5-0-slot-000028"
+    },
+    {
+      "log_sha256": "e63a4f1211625e6bc50c4b6a3b83566878f58932d6ad629e24d6eb9e2f9ae884",
+      "receipt_sha256": "68b257a2383887b22e5e7c00d31df9a72acf71124a3fc8a7cede85ce9c993527",
+      "run_id": "rag-overnight-v2-main-0-5-0-slot-000029"
+    },
+    {
+      "log_sha256": "38fe4df557b4d57132052a7d8c4ab1a7ca4a546c63cbd915c4043e874d2db535",
+      "receipt_sha256": "a00dba3147c185b1a06232ab9ed68bda34c312355ab10980024045c3619edb4e",
+      "run_id": "rag-overnight-v2-main-0-5-0-slot-000030"
+    },
+    {
+      "log_sha256": "1562becb7d4155b72b7baa6deed7d6ac635f21e5c5b72418b8b95d070b3d5a1f",
+      "receipt_sha256": "042ec4512a798ca0122117f88d576e42c37e09b77441604b9703393233a74a29",
+      "run_id": "rag-overnight-v2-main-0-5-0-slot-000031"
+    },
+    {
+      "log_sha256": "df0860219dca973f65759bde530d4fcade1e50155dd1fb08644d4538c81598e0",
+      "receipt_sha256": "147b9cd5d45fefd3bff65c0bd92a7b804ba658129655cc56e9c8d2e735c8b048",
+      "run_id": "rag-overnight-v2-main-0-5-0-slot-000032"
+    },
+    {
+      "log_sha256": "dbd48e0a1c510b6e261108ca1e0729ae34e4036c7ed89f0873603e8e0c3914a3",
+      "receipt_sha256": "e79518fdb00a1ea6a4154dfee2edf7e8b733ec08dafefbfa4e3cfb1b90cf231e",
+      "run_id": "rag-overnight-v2-main-0-5-0-slot-000033"
+    },
+    {
+      "log_sha256": "29fe687887f3280f873e1c1b8f392346df05fbb026d1627c01a2051735e47681",
+      "receipt_sha256": "a0be36fb960ed13bceda2ccb5a25a0ef00d818ba8fece2deea5fec49cdcc6f74",
+      "run_id": "rag-overnight-v2-main-0-5-0-slot-000034"
+    },
+    {
+      "log_sha256": "b675062d5e0b3d0e06a51f1827193806a4d6e5c0bde371013978a76060be1e50",
+      "receipt_sha256": "4858d47feabb5e78dae2e9b13bc29ee76b690f435b20f78fa9d04fa9cd9e1706",
+      "run_id": "rag-overnight-v2-main-0-5-0-slot-000035"
+    },
+    {
+      "log_sha256": "956557a14b7daa33f92d4c4d25e0cd25f29fdac8e69ed345ba9752e6df6bfe3b",
+      "receipt_sha256": "f59e3d158f0cf290027c913abb49adae1af3a170f62bbd0bc69cdf6fe9fa30fc",
+      "run_id": "rag-overnight-v2-main-0-5-0-slot-000036"
+    },
+    {
+      "log_sha256": "4a811d0e29f44a980e4248ffc4eae0ab87c4a039eeb47eebeac44300c3078b47",
+      "receipt_sha256": "b12db6ce3a405c47ce44e72cd5d0c6dafd612ee8c25c8bc71d3387463e82a1ca",
+      "run_id": "rag-overnight-v2-main-0-5-0-slot-000037"
+    },
+    {
+      "log_sha256": "14f59ea489ede2c54b72efcd0396bedf009bf356d3f7578a368c6b018c2d4b34",
+      "receipt_sha256": "b2dbc157cf474210e70e2faba462fa993a368efff3a27383f85c9365c2c9c245",
+      "run_id": "rag-overnight-v2-main-0-5-0-slot-000038"
+    },
+    {
+      "log_sha256": "55e9f13d1081cf9d59145cf5a4e22e3745999435a15a07ca0b7534f8da0e380c",
+      "receipt_sha256": "f08b29f0ed76157ff9f5cf4a4850b4b0bd0b88d5c939b9b25d798bf42cc3dd69",
+      "run_id": "rag-overnight-v2-main-0-5-0-slot-000039"
+    },
+    {
+      "log_sha256": "dae1543ef0b338dc4008e2c9dc77a99cf895123f072fd5b73e94d86d0e7ec79c",
+      "receipt_sha256": "6149693508cdcb9e7dd44ec4334e37753fb15f6baefd07bf84587aadbce39c99",
+      "run_id": "rag-overnight-v2-main-0-5-0-slot-000040"
+    }
+  ],
+  "notes": [
+    "Hashes and AST comparisons describe logged source strings, not reconstructed originals.",
+    "A quoted marker is a fictitious placeholder. Its parseability does not recover the original expression or AST.",
+    "The sealed raw archive and live trajectory logs have identical bytes for every run."
+  ],
+  "pairs": [
+    {
+      "both_logged_sources_parseable": true,
+      "called_api_inventory_changed": false,
+      "left_source_id": "slot-000001-step-002",
+      "logged_byte_repeat": false,
+      "normalized_ast_repeat": false,
+      "pair_id": "slot-000001-step-002__slot-000001-step-003",
+      "right_source_id": "slot-000001-step-003"
+    },
+    {
+      "both_logged_sources_parseable": true,
+      "called_api_inventory_changed": true,
+      "left_source_id": "slot-000001-step-003",
+      "logged_byte_repeat": false,
+      "normalized_ast_repeat": false,
+      "pair_id": "slot-000001-step-003__slot-000001-step-004",
+      "right_source_id": "slot-000001-step-004"
+    },
+    {
+      "both_logged_sources_parseable": true,
+      "called_api_inventory_changed": false,
+      "left_source_id": "slot-000002-step-002",
+      "logged_byte_repeat": false,
+      "normalized_ast_repeat": false,
+      "pair_id": "slot-000002-step-002__slot-000002-step-003",
+      "right_source_id": "slot-000002-step-003"
+    },
+    {
+      "both_logged_sources_parseable": true,
+      "called_api_inventory_changed": false,
+      "left_source_id": "slot-000002-step-003",
+      "logged_byte_repeat": false,
+      "normalized_ast_repeat": false,
+      "pair_id": "slot-000002-step-003__slot-000002-step-004",
+      "right_source_id": "slot-000002-step-004"
+    },
+    {
+      "both_logged_sources_parseable": false,
+      "called_api_inventory_changed": null,
+      "left_source_id": "slot-000003-step-002",
+      "logged_byte_repeat": false,
+      "normalized_ast_repeat": null,
+      "pair_id": "slot-000003-step-002__slot-000003-step-003",
+      "right_source_id": "slot-000003-step-003"
+    },
+    {
+      "both_logged_sources_parseable": false,
+      "called_api_inventory_changed": null,
+      "left_source_id": "slot-000003-step-003",
+      "logged_byte_repeat": false,
+      "normalized_ast_repeat": null,
+      "pair_id": "slot-000003-step-003__slot-000003-step-004",
+      "right_source_id": "slot-000003-step-004"
+    },
+    {
+      "both_logged_sources_parseable": true,
+      "called_api_inventory_changed": false,
+      "left_source_id": "slot-000004-step-002",
+      "logged_byte_repeat": false,
+      "normalized_ast_repeat": false,
+      "pair_id": "slot-000004-step-002__slot-000004-step-003",
+      "right_source_id": "slot-000004-step-003"
+    },
+    {
+      "both_logged_sources_parseable": true,
+      "called_api_inventory_changed": true,
+      "left_source_id": "slot-000006-step-002",
+      "logged_byte_repeat": false,
+      "normalized_ast_repeat": false,
+      "pair_id": "slot-000006-step-002__slot-000006-step-003",
+      "right_source_id": "slot-000006-step-003"
+    },
+    {
+      "both_logged_sources_parseable": true,
+      "called_api_inventory_changed": true,
+      "left_source_id": "slot-000007-step-002",
+      "logged_byte_repeat": false,
+      "normalized_ast_repeat": false,
+      "pair_id": "slot-000007-step-002__slot-000007-step-003",
+      "right_source_id": "slot-000007-step-003"
+    },
+    {
+      "both_logged_sources_parseable": false,
+      "called_api_inventory_changed": null,
+      "left_source_id": "slot-000008-step-002",
+      "logged_byte_repeat": false,
+      "normalized_ast_repeat": null,
+      "pair_id": "slot-000008-step-002__slot-000008-step-003",
+      "right_source_id": "slot-000008-step-003"
+    },
+    {
+      "both_logged_sources_parseable": true,
+      "called_api_inventory_changed": true,
+      "left_source_id": "slot-000010-step-002",
+      "logged_byte_repeat": false,
+      "normalized_ast_repeat": false,
+      "pair_id": "slot-000010-step-002__slot-000010-step-003",
+      "right_source_id": "slot-000010-step-003"
+    },
+    {
+      "both_logged_sources_parseable": true,
+      "called_api_inventory_changed": true,
+      "left_source_id": "slot-000010-step-003",
+      "logged_byte_repeat": false,
+      "normalized_ast_repeat": false,
+      "pair_id": "slot-000010-step-003__slot-000010-step-004",
+      "right_source_id": "slot-000010-step-004"
+    },
+    {
+      "both_logged_sources_parseable": true,
+      "called_api_inventory_changed": true,
+      "left_source_id": "slot-000013-step-002",
+      "logged_byte_repeat": false,
+      "normalized_ast_repeat": false,
+      "pair_id": "slot-000013-step-002__slot-000013-step-003",
+      "right_source_id": "slot-000013-step-003"
+    },
+    {
+      "both_logged_sources_parseable": true,
+      "called_api_inventory_changed": true,
+      "left_source_id": "slot-000015-step-002",
+      "logged_byte_repeat": false,
+      "normalized_ast_repeat": false,
+      "pair_id": "slot-000015-step-002__slot-000015-step-003",
+      "right_source_id": "slot-000015-step-003"
+    },
+    {
+      "both_logged_sources_parseable": false,
+      "called_api_inventory_changed": null,
+      "left_source_id": "slot-000018-step-002",
+      "logged_byte_repeat": false,
+      "normalized_ast_repeat": null,
+      "pair_id": "slot-000018-step-002__slot-000018-step-003",
+      "right_source_id": "slot-000018-step-003"
+    },
+    {
+      "both_logged_sources_parseable": false,
+      "called_api_inventory_changed": null,
+      "left_source_id": "slot-000018-step-003",
+      "logged_byte_repeat": false,
+      "normalized_ast_repeat": null,
+      "pair_id": "slot-000018-step-003__slot-000018-step-004",
+      "right_source_id": "slot-000018-step-004"
+    },
+    {
+      "both_logged_sources_parseable": true,
+      "called_api_inventory_changed": false,
+      "left_source_id": "slot-000020-step-002",
+      "logged_byte_repeat": false,
+      "normalized_ast_repeat": false,
+      "pair_id": "slot-000020-step-002__slot-000020-step-003",
+      "right_source_id": "slot-000020-step-003"
+    },
+    {
+      "both_logged_sources_parseable": true,
+      "called_api_inventory_changed": true,
+      "left_source_id": "slot-000020-step-003",
+      "logged_byte_repeat": false,
+      "normalized_ast_repeat": false,
+      "pair_id": "slot-000020-step-003__slot-000020-step-004",
+      "right_source_id": "slot-000020-step-004"
+    },
+    {
+      "both_logged_sources_parseable": false,
+      "called_api_inventory_changed": null,
+      "left_source_id": "slot-000021-step-002",
+      "logged_byte_repeat": false,
+      "normalized_ast_repeat": null,
+      "pair_id": "slot-000021-step-002__slot-000021-step-003",
+      "right_source_id": "slot-000021-step-003"
+    },
+    {
+      "both_logged_sources_parseable": false,
+      "called_api_inventory_changed": null,
+      "left_source_id": "slot-000021-step-003",
+      "logged_byte_repeat": false,
+      "normalized_ast_repeat": null,
+      "pair_id": "slot-000021-step-003__slot-000021-step-004",
+      "right_source_id": "slot-000021-step-004"
+    },
+    {
+      "both_logged_sources_parseable": false,
+      "called_api_inventory_changed": null,
+      "left_source_id": "slot-000021-step-004",
+      "logged_byte_repeat": false,
+      "normalized_ast_repeat": null,
+      "pair_id": "slot-000021-step-004__slot-000021-step-005",
+      "right_source_id": "slot-000021-step-005"
+    },
+    {
+      "both_logged_sources_parseable": false,
+      "called_api_inventory_changed": null,
+      "left_source_id": "slot-000021-step-005",
+      "logged_byte_repeat": false,
+      "normalized_ast_repeat": null,
+      "pair_id": "slot-000021-step-005__slot-000021-step-006",
+      "right_source_id": "slot-000021-step-006"
+    },
+    {
+      "both_logged_sources_parseable": false,
+      "called_api_inventory_changed": null,
+      "left_source_id": "slot-000022-step-002",
+      "logged_byte_repeat": false,
+      "normalized_ast_repeat": null,
+      "pair_id": "slot-000022-step-002__slot-000022-step-003",
+      "right_source_id": "slot-000022-step-003"
+    },
+    {
+      "both_logged_sources_parseable": false,
+      "called_api_inventory_changed": null,
+      "left_source_id": "slot-000022-step-003",
+      "logged_byte_repeat": false,
+      "normalized_ast_repeat": null,
+      "pair_id": "slot-000022-step-003__slot-000022-step-004",
+      "right_source_id": "slot-000022-step-004"
+    },
+    {
+      "both_logged_sources_parseable": false,
+      "called_api_inventory_changed": null,
+      "left_source_id": "slot-000022-step-004",
+      "logged_byte_repeat": false,
+      "normalized_ast_repeat": null,
+      "pair_id": "slot-000022-step-004__slot-000022-step-005",
+      "right_source_id": "slot-000022-step-005"
+    },
+    {
+      "both_logged_sources_parseable": true,
+      "called_api_inventory_changed": true,
+      "left_source_id": "slot-000024-step-002",
+      "logged_byte_repeat": false,
+      "normalized_ast_repeat": false,
+      "pair_id": "slot-000024-step-002__slot-000024-step-003",
+      "right_source_id": "slot-000024-step-003"
+    },
+    {
+      "both_logged_sources_parseable": true,
+      "called_api_inventory_changed": true,
+      "left_source_id": "slot-000024-step-003",
+      "logged_byte_repeat": false,
+      "normalized_ast_repeat": false,
+      "pair_id": "slot-000024-step-003__slot-000024-step-004",
+      "right_source_id": "slot-000024-step-004"
+    },
+    {
+      "both_logged_sources_parseable": true,
+      "called_api_inventory_changed": false,
+      "left_source_id": "slot-000026-step-002",
+      "logged_byte_repeat": false,
+      "normalized_ast_repeat": false,
+      "pair_id": "slot-000026-step-002__slot-000026-step-003",
+      "right_source_id": "slot-000026-step-003"
+    },
+    {
+      "both_logged_sources_parseable": true,
+      "called_api_inventory_changed": false,
+      "left_source_id": "slot-000027-step-002",
+      "logged_byte_repeat": false,
+      "normalized_ast_repeat": false,
+      "pair_id": "slot-000027-step-002__slot-000027-step-003",
+      "right_source_id": "slot-000027-step-003"
+    },
+    {
+      "both_logged_sources_parseable": true,
+      "called_api_inventory_changed": false,
+      "left_source_id": "slot-000027-step-003",
+      "logged_byte_repeat": false,
+      "normalized_ast_repeat": false,
+      "pair_id": "slot-000027-step-003__slot-000027-step-004",
+      "right_source_id": "slot-000027-step-004"
+    },
+    {
+      "both_logged_sources_parseable": true,
+      "called_api_inventory_changed": true,
+      "left_source_id": "slot-000034-step-002",
+      "logged_byte_repeat": false,
+      "normalized_ast_repeat": false,
+      "pair_id": "slot-000034-step-002__slot-000034-step-003",
+      "right_source_id": "slot-000034-step-003"
+    },
+    {
+      "both_logged_sources_parseable": true,
+      "called_api_inventory_changed": true,
+      "left_source_id": "slot-000035-step-002",
+      "logged_byte_repeat": false,
+      "normalized_ast_repeat": false,
+      "pair_id": "slot-000035-step-002__slot-000035-step-003",
+      "right_source_id": "slot-000035-step-003"
+    },
+    {
+      "both_logged_sources_parseable": true,
+      "called_api_inventory_changed": true,
+      "left_source_id": "slot-000037-step-003",
+      "logged_byte_repeat": false,
+      "normalized_ast_repeat": false,
+      "pair_id": "slot-000037-step-003__slot-000037-step-004",
+      "right_source_id": "slot-000037-step-004"
+    },
+    {
+      "both_logged_sources_parseable": true,
+      "called_api_inventory_changed": true,
+      "left_source_id": "slot-000038-step-002",
+      "logged_byte_repeat": false,
+      "normalized_ast_repeat": false,
+      "pair_id": "slot-000038-step-002__slot-000038-step-003",
+      "right_source_id": "slot-000038-step-003"
+    },
+    {
+      "both_logged_sources_parseable": true,
+      "called_api_inventory_changed": true,
+      "left_source_id": "slot-000038-step-003",
+      "logged_byte_repeat": false,
+      "normalized_ast_repeat": false,
+      "pair_id": "slot-000038-step-003__slot-000038-step-004",
+      "right_source_id": "slot-000038-step-004"
+    },
+    {
+      "both_logged_sources_parseable": true,
+      "called_api_inventory_changed": true,
+      "left_source_id": "slot-000039-step-003",
+      "logged_byte_repeat": false,
+      "normalized_ast_repeat": false,
+      "pair_id": "slot-000039-step-003__slot-000039-step-004",
+      "right_source_id": "slot-000039-step-004"
+    },
+    {
+      "both_logged_sources_parseable": true,
+      "called_api_inventory_changed": true,
+      "left_source_id": "slot-000039-step-004",
+      "logged_byte_repeat": false,
+      "normalized_ast_repeat": false,
+      "pair_id": "slot-000039-step-004__slot-000039-step-005",
+      "right_source_id": "slot-000039-step-005"
+    }
+  ],
+  "sources": [
+    {
+      "logged_ast_available": true,
+      "logged_source_bytes": 129,
+      "logged_source_sha256": "780ede8bfe3feff4ec93299a047f6667024e972dfad3b34232b8c8450482ac88",
+      "redaction_marker_count": 0,
+      "run_id": "rag-overnight-v2-main-0-5-0-slot-000001",
+      "source_id": "slot-000001-step-002",
+      "step": 2,
+      "syntax_category": "parseable_logged_source"
+    },
+    {
+      "logged_ast_available": true,
+      "logged_source_bytes": 130,
+      "logged_source_sha256": "12cc8234057f548fcfee9b6dc48a0ed7e47bf177d034664689b1c3c8895d8f7a",
+      "redaction_marker_count": 0,
+      "run_id": "rag-overnight-v2-main-0-5-0-slot-000001",
+      "source_id": "slot-000001-step-003",
+      "step": 3,
+      "syntax_category": "parseable_logged_source"
+    },
+    {
+      "logged_ast_available": true,
+      "logged_source_bytes": 121,
+      "logged_source_sha256": "a1dcc0f2f359e972a9558b40411fd89990f220d5f79790249ef987f97d3cd45a",
+      "redaction_marker_count": 0,
+      "run_id": "rag-overnight-v2-main-0-5-0-slot-000001",
+      "source_id": "slot-000001-step-004",
+      "step": 4,
+      "syntax_category": "parseable_logged_source"
+    },
+    {
+      "logged_ast_available": true,
+      "logged_source_bytes": 130,
+      "logged_source_sha256": "12cc8234057f548fcfee9b6dc48a0ed7e47bf177d034664689b1c3c8895d8f7a",
+      "redaction_marker_count": 0,
+      "run_id": "rag-overnight-v2-main-0-5-0-slot-000002",
+      "source_id": "slot-000002-step-002",
+      "step": 2,
+      "syntax_category": "parseable_logged_source"
+    },
+    {
+      "logged_ast_available": true,
+      "logged_source_bytes": 131,
+      "logged_source_sha256": "d4b471ed4914791666a650ed575ae7f015c2ce4c193a8e18865b581558090578",
+      "redaction_marker_count": 0,
+      "run_id": "rag-overnight-v2-main-0-5-0-slot-000002",
+      "source_id": "slot-000002-step-003",
+      "step": 3,
+      "syntax_category": "parseable_logged_source"
+    },
+    {
+      "logged_ast_available": true,
+      "logged_source_bytes": 133,
+      "logged_source_sha256": "ed388e390b372602d052e84e4d354d173ff65888176126d3f3ac49dc0bac8ca0",
+      "redaction_marker_count": 0,
+      "run_id": "rag-overnight-v2-main-0-5-0-slot-000002",
+      "source_id": "slot-000002-step-004",
+      "step": 4,
+      "syntax_category": "parseable_logged_source"
+    },
+    {
+      "logged_ast_available": false,
+      "logged_source_bytes": 198,
+      "logged_source_sha256": "11abed90923365e3eed3996207e126b36c021058a4f883ceaad54e3fcd657a72",
+      "redaction_marker_count": 1,
+      "run_id": "rag-overnight-v2-main-0-5-0-slot-000003",
+      "source_id": "slot-000003-step-002",
+      "step": 2,
+      "syntax_category": "redaction_marker_syntax_error"
+    },
+    {
+      "logged_ast_available": false,
+      "logged_source_bytes": 199,
+      "logged_source_sha256": "287068e6f77ed3c69cdcfafbe7a17b5b440efcf563a936f4d058effab3b6c349",
+      "redaction_marker_count": 1,
+      "run_id": "rag-overnight-v2-main-0-5-0-slot-000003",
+      "source_id": "slot-000003-step-003",
+      "step": 3,
+      "syntax_category": "redaction_marker_syntax_error"
+    },
+    {
+      "logged_ast_available": false,
+      "logged_source_bytes": 200,
+      "logged_source_sha256": "2ef4b0fd23165ca7c8642855ce43590a292c27cfa2382cd0f2d7931e1ef04c71",
+      "redaction_marker_count": 1,
+      "run_id": "rag-overnight-v2-main-0-5-0-slot-000003",
+      "source_id": "slot-000003-step-004",
+      "step": 4,
+      "syntax_category": "redaction_marker_syntax_error"
+    },
+    {
+      "logged_ast_available": true,
+      "logged_source_bytes": 158,
+      "logged_source_sha256": "0841f896f3a8df320a3f3060fe1b9fe9f1c54dbbdf3e606c65deb2e31c7646d6",
+      "redaction_marker_count": 0,
+      "run_id": "rag-overnight-v2-main-0-5-0-slot-000004",
+      "source_id": "slot-000004-step-002",
+      "step": 2,
+      "syntax_category": "parseable_logged_source"
+    },
+    {
+      "logged_ast_available": true,
+      "logged_source_bytes": 159,
+      "logged_source_sha256": "9bd1cb44f1a96a12132d721bd5e818d93b98a4583a23c04dc5910fd830f95fed",
+      "redaction_marker_count": 0,
+      "run_id": "rag-overnight-v2-main-0-5-0-slot-000004",
+      "source_id": "slot-000004-step-003",
+      "step": 3,
+      "syntax_category": "parseable_logged_source"
+    },
+    {
+      "logged_ast_available": true,
+      "logged_source_bytes": 107,
+      "logged_source_sha256": "296651950766dfd3d6d8d76a5184b159e241a4a53aa5ded83a585abb057e87fd",
+      "redaction_marker_count": 0,
+      "run_id": "rag-overnight-v2-main-0-5-0-slot-000005",
+      "source_id": "slot-000005-step-002",
+      "step": 2,
+      "syntax_category": "parseable_logged_source"
+    },
+    {
+      "logged_ast_available": true,
+      "logged_source_bytes": 427,
+      "logged_source_sha256": "d69a7f6bf89ed2495f0b396d1dbf6615302cd397f9ee4dca5aa08ecc057a157a",
+      "redaction_marker_count": 0,
+      "run_id": "rag-overnight-v2-main-0-5-0-slot-000006",
+      "source_id": "slot-000006-step-002",
+      "step": 2,
+      "syntax_category": "parseable_logged_source"
+    },
+    {
+      "logged_ast_available": true,
+      "logged_source_bytes": 167,
+      "logged_source_sha256": "bcc8f037601f7d7467074609a54f0580dc9d30e94595218f6a0033ce5621ea28",
+      "redaction_marker_count": 0,
+      "run_id": "rag-overnight-v2-main-0-5-0-slot-000006",
+      "source_id": "slot-000006-step-003",
+      "step": 3,
+      "syntax_category": "parseable_logged_source"
+    },
+    {
+      "logged_ast_available": true,
+      "logged_source_bytes": 150,
+      "logged_source_sha256": "a6bba1dd2c82854701047514816349878a090077e800bf76179f949892a5e647",
+      "redaction_marker_count": 0,
+      "run_id": "rag-overnight-v2-main-0-5-0-slot-000007",
+      "source_id": "slot-000007-step-002",
+      "step": 2,
+      "syntax_category": "parseable_logged_source"
+    },
+    {
+      "logged_ast_available": true,
+      "logged_source_bytes": 251,
+      "logged_source_sha256": "39132b9941c61e052bdf16e3be6c8fac40b5844cb50bafaba0b8feb340e0c860",
+      "redaction_marker_count": 0,
+      "run_id": "rag-overnight-v2-main-0-5-0-slot-000007",
+      "source_id": "slot-000007-step-003",
+      "step": 3,
+      "syntax_category": "parseable_logged_source"
+    },
+    {
+      "logged_ast_available": true,
+      "logged_source_bytes": 155,
+      "logged_source_sha256": "28d75e83cb0d11561be703a3d471e0813ffbd72590208a0dbfb1aafd2fc1f8fd",
+      "redaction_marker_count": 0,
+      "run_id": "rag-overnight-v2-main-0-5-0-slot-000008",
+      "source_id": "slot-000008-step-002",
+      "step": 2,
+      "syntax_category": "parseable_logged_source"
+    },
+    {
+      "logged_ast_available": false,
+      "logged_source_bytes": 412,
+      "logged_source_sha256": "36600307176e195c04d9fdef2fdcf3d67965ab20e8b7c965f69d5ac0d6aa2488",
+      "redaction_marker_count": 0,
+      "run_id": "rag-overnight-v2-main-0-5-0-slot-000008",
+      "source_id": "slot-000008-step-003",
+      "step": 3,
+      "syntax_category": "unmatched_closing_brace"
+    },
+    {
+      "logged_ast_available": true,
+      "logged_source_bytes": 382,
+      "logged_source_sha256": "747dd6f9d1ee421ca480b5762e9a0b11388a1473df5aeaa17a3f681075366914",
+      "redaction_marker_count": 0,
+      "run_id": "rag-overnight-v2-main-0-5-0-slot-000009",
+      "source_id": "slot-000009-step-003",
+      "step": 3,
+      "syntax_category": "parseable_logged_source"
+    },
+    {
+      "logged_ast_available": true,
+      "logged_source_bytes": 368,
+      "logged_source_sha256": "22897ae434b144d335e6986edeac821e9f257fa5e752eec586f472e52bae5056",
+      "redaction_marker_count": 0,
+      "run_id": "rag-overnight-v2-main-0-5-0-slot-000010",
+      "source_id": "slot-000010-step-002",
+      "step": 2,
+      "syntax_category": "parseable_logged_source"
+    },
+    {
+      "logged_ast_available": true,
+      "logged_source_bytes": 454,
+      "logged_source_sha256": "1fc90ea9312e23edeb4f26c793f3fb61c26f3e2923e884d997e78b56ad545930",
+      "redaction_marker_count": 0,
+      "run_id": "rag-overnight-v2-main-0-5-0-slot-000010",
+      "source_id": "slot-000010-step-003",
+      "step": 3,
+      "syntax_category": "parseable_logged_source"
+    },
+    {
+      "logged_ast_available": true,
+      "logged_source_bytes": 522,
+      "logged_source_sha256": "856bf51759db23d0292b2d4f64de5b89a0250f6a9ab28fdff8be8b6b5a6f9371",
+      "redaction_marker_count": 0,
+      "run_id": "rag-overnight-v2-main-0-5-0-slot-000010",
+      "source_id": "slot-000010-step-004",
+      "step": 4,
+      "syntax_category": "parseable_logged_source"
+    },
+    {
+      "logged_ast_available": true,
+      "logged_source_bytes": 382,
+      "logged_source_sha256": "747dd6f9d1ee421ca480b5762e9a0b11388a1473df5aeaa17a3f681075366914",
+      "redaction_marker_count": 0,
+      "run_id": "rag-overnight-v2-main-0-5-0-slot-000011",
+      "source_id": "slot-000011-step-002",
+      "step": 2,
+      "syntax_category": "parseable_logged_source"
+    },
+    {
+      "logged_ast_available": true,
+      "logged_source_bytes": 368,
+      "logged_source_sha256": "0b161eccfdb42297f44ca448325157e5b8ea23a1d6e8f7e292591c1dfe784c0c",
+      "redaction_marker_count": 0,
+      "run_id": "rag-overnight-v2-main-0-5-0-slot-000012",
+      "source_id": "slot-000012-step-003",
+      "step": 3,
+      "syntax_category": "parseable_logged_source"
+    },
+    {
+      "logged_ast_available": true,
+      "logged_source_bytes": 72,
+      "logged_source_sha256": "9964d026480a30e9ab2123f43b37ec1894a47c5f4761e8419591d36499550ab3",
+      "redaction_marker_count": 0,
+      "run_id": "rag-overnight-v2-main-0-5-0-slot-000013",
+      "source_id": "slot-000013-step-002",
+      "step": 2,
+      "syntax_category": "parseable_logged_source"
+    },
+    {
+      "logged_ast_available": true,
+      "logged_source_bytes": 58,
+      "logged_source_sha256": "40aafab281f363308a7f09dcc6ec48c5edc416d27bedb17a8f34e7817ab14759",
+      "redaction_marker_count": 0,
+      "run_id": "rag-overnight-v2-main-0-5-0-slot-000013",
+      "source_id": "slot-000013-step-003",
+      "step": 3,
+      "syntax_category": "parseable_logged_source"
+    },
+    {
+      "logged_ast_available": true,
+      "logged_source_bytes": 72,
+      "logged_source_sha256": "9964d026480a30e9ab2123f43b37ec1894a47c5f4761e8419591d36499550ab3",
+      "redaction_marker_count": 0,
+      "run_id": "rag-overnight-v2-main-0-5-0-slot-000014",
+      "source_id": "slot-000014-step-002",
+      "step": 2,
+      "syntax_category": "parseable_logged_source"
+    },
+    {
+      "logged_ast_available": true,
+      "logged_source_bytes": 72,
+      "logged_source_sha256": "9964d026480a30e9ab2123f43b37ec1894a47c5f4761e8419591d36499550ab3",
+      "redaction_marker_count": 0,
+      "run_id": "rag-overnight-v2-main-0-5-0-slot-000015",
+      "source_id": "slot-000015-step-002",
+      "step": 2,
+      "syntax_category": "parseable_logged_source"
+    },
+    {
+      "logged_ast_available": true,
+      "logged_source_bytes": 58,
+      "logged_source_sha256": "40aafab281f363308a7f09dcc6ec48c5edc416d27bedb17a8f34e7817ab14759",
+      "redaction_marker_count": 0,
+      "run_id": "rag-overnight-v2-main-0-5-0-slot-000015",
+      "source_id": "slot-000015-step-003",
+      "step": 3,
+      "syntax_category": "parseable_logged_source"
+    },
+    {
+      "logged_ast_available": true,
+      "logged_source_bytes": 72,
+      "logged_source_sha256": "9964d026480a30e9ab2123f43b37ec1894a47c5f4761e8419591d36499550ab3",
+      "redaction_marker_count": 0,
+      "run_id": "rag-overnight-v2-main-0-5-0-slot-000016",
+      "source_id": "slot-000016-step-002",
+      "step": 2,
+      "syntax_category": "parseable_logged_source"
+    },
+    {
+      "logged_ast_available": true,
+      "logged_source_bytes": 110,
+      "logged_source_sha256": "a2cd92f5cd56f3105fe68e614af1764e211d102c814f9346c9be63eb034718bf",
+      "redaction_marker_count": 0,
+      "run_id": "rag-overnight-v2-main-0-5-0-slot-000017",
+      "source_id": "slot-000017-step-002",
+      "step": 2,
+      "syntax_category": "parseable_logged_source"
+    },
+    {
+      "logged_ast_available": false,
+      "logged_source_bytes": 83,
+      "logged_source_sha256": "ed154f131f4422fb0338338aaa9ef9c4c127424c0b3ecf456bf662f8550ee643",
+      "redaction_marker_count": 0,
+      "run_id": "rag-overnight-v2-main-0-5-0-slot-000018",
+      "source_id": "slot-000018-step-002",
+      "step": 2,
+      "syntax_category": "compound_statement_after_semicolon"
+    },
+    {
+      "logged_ast_available": false,
+      "logged_source_bytes": 81,
+      "logged_source_sha256": "fa33c6aafed6629fd820a7f4f71800feb001d813147db043feb913065c56b6d8",
+      "redaction_marker_count": 0,
+      "run_id": "rag-overnight-v2-main-0-5-0-slot-000018",
+      "source_id": "slot-000018-step-003",
+      "step": 3,
+      "syntax_category": "compound_statement_after_semicolon"
+    },
+    {
+      "logged_ast_available": true,
+      "logged_source_bytes": 63,
+      "logged_source_sha256": "8034256472eb43d6d3e14d4bb1aa0e60b746952ce847a543350bb3607e9e2961",
+      "redaction_marker_count": 0,
+      "run_id": "rag-overnight-v2-main-0-5-0-slot-000018",
+      "source_id": "slot-000018-step-004",
+      "step": 4,
+      "syntax_category": "parseable_logged_source"
+    },
+    {
+      "logged_ast_available": true,
+      "logged_source_bytes": 110,
+      "logged_source_sha256": "a2cd92f5cd56f3105fe68e614af1764e211d102c814f9346c9be63eb034718bf",
+      "redaction_marker_count": 0,
+      "run_id": "rag-overnight-v2-main-0-5-0-slot-000019",
+      "source_id": "slot-000019-step-002",
+      "step": 2,
+      "syntax_category": "parseable_logged_source"
+    },
+    {
+      "logged_ast_available": true,
+      "logged_source_bytes": 92,
+      "logged_source_sha256": "06e5580ea60289e340952478e543624defdf87ec72b06327840bfc941937a0ae",
+      "redaction_marker_count": 0,
+      "run_id": "rag-overnight-v2-main-0-5-0-slot-000020",
+      "source_id": "slot-000020-step-002",
+      "step": 2,
+      "syntax_category": "parseable_logged_source"
+    },
+    {
+      "logged_ast_available": true,
+      "logged_source_bytes": 82,
+      "logged_source_sha256": "0501b6510318b29b18c86b624d65a7bd871329dd01e02ce4dbfd9ba24796c774",
+      "redaction_marker_count": 0,
+      "run_id": "rag-overnight-v2-main-0-5-0-slot-000020",
+      "source_id": "slot-000020-step-003",
+      "step": 3,
+      "syntax_category": "parseable_logged_source"
+    },
+    {
+      "logged_ast_available": true,
+      "logged_source_bytes": 80,
+      "logged_source_sha256": "cbed9d7506ab43d32d024267c048f3b6355d2eaacae77072e4834074adb2fca9",
+      "redaction_marker_count": 0,
+      "run_id": "rag-overnight-v2-main-0-5-0-slot-000020",
+      "source_id": "slot-000020-step-004",
+      "step": 4,
+      "syntax_category": "parseable_logged_source"
+    },
+    {
+      "logged_ast_available": false,
+      "logged_source_bytes": 198,
+      "logged_source_sha256": "db7387e1b8b744c64cadb06138272a2db232b839b5f39801081391d54e76580e",
+      "redaction_marker_count": 1,
+      "run_id": "rag-overnight-v2-main-0-5-0-slot-000021",
+      "source_id": "slot-000021-step-002",
+      "step": 2,
+      "syntax_category": "redaction_marker_syntax_error"
+    },
+    {
+      "logged_ast_available": false,
+      "logged_source_bytes": 199,
+      "logged_source_sha256": "4bdbb0f976ad5478700196d0ef5093972de4ac6b449b68622c3a639f396d4616",
+      "redaction_marker_count": 1,
+      "run_id": "rag-overnight-v2-main-0-5-0-slot-000021",
+      "source_id": "slot-000021-step-003",
+      "step": 3,
+      "syntax_category": "redaction_marker_syntax_error"
+    },
+    {
+      "logged_ast_available": false,
+      "logged_source_bytes": 199,
+      "logged_source_sha256": "70d9a4fd5754f9f5a2fc203a8bd3df2f745417f1086927c4e6cb881c9e2b3645",
+      "redaction_marker_count": 1,
+      "run_id": "rag-overnight-v2-main-0-5-0-slot-000021",
+      "source_id": "slot-000021-step-004",
+      "step": 4,
+      "syntax_category": "redaction_marker_syntax_error"
+    },
+    {
+      "logged_ast_available": false,
+      "logged_source_bytes": 200,
+      "logged_source_sha256": "ee9982521a0a381d9e235d7337b4ba0261c2045c154da6c827fc28aed3f9465e",
+      "redaction_marker_count": 1,
+      "run_id": "rag-overnight-v2-main-0-5-0-slot-000021",
+      "source_id": "slot-000021-step-005",
+      "step": 5,
+      "syntax_category": "redaction_marker_syntax_error"
+    },
+    {
+      "logged_ast_available": true,
+      "logged_source_bytes": 138,
+      "logged_source_sha256": "2f4f877825ef58c958fd0d2b79aa27f2603b78d123e3ed19567369514ed036e1",
+      "redaction_marker_count": 0,
+      "run_id": "rag-overnight-v2-main-0-5-0-slot-000021",
+      "source_id": "slot-000021-step-006",
+      "step": 6,
+      "syntax_category": "parseable_logged_source"
+    },
+    {
+      "logged_ast_available": false,
+      "logged_source_bytes": 171,
+      "logged_source_sha256": "f07068e9a7b79c6792f5faeec72b3293d7450a23c5a612281afdf60dd42f2ebd",
+      "redaction_marker_count": 1,
+      "run_id": "rag-overnight-v2-main-0-5-0-slot-000022",
+      "source_id": "slot-000022-step-002",
+      "step": 2,
+      "syntax_category": "redaction_marker_syntax_error"
+    },
+    {
+      "logged_ast_available": false,
+      "logged_source_bytes": 167,
+      "logged_source_sha256": "a7cdac81c49445164ccb7590eec5313fe26a3fce8b514830d470de2968fe28f7",
+      "redaction_marker_count": 1,
+      "run_id": "rag-overnight-v2-main-0-5-0-slot-000022",
+      "source_id": "slot-000022-step-003",
+      "step": 3,
+      "syntax_category": "redaction_marker_syntax_error"
+    },
+    {
+      "logged_ast_available": false,
+      "logged_source_bytes": 185,
+      "logged_source_sha256": "efcab80c9f3c6c200662b59fb856c92478ce8631ecabba40a230869d059f126e",
+      "redaction_marker_count": 1,
+      "run_id": "rag-overnight-v2-main-0-5-0-slot-000022",
+      "source_id": "slot-000022-step-004",
+      "step": 4,
+      "syntax_category": "redaction_marker_syntax_error"
+    },
+    {
+      "logged_ast_available": false,
+      "logged_source_bytes": 148,
+      "logged_source_sha256": "690d30584a8069e9f782dae110e516240a15dca429697c31a7477070c9352260",
+      "redaction_marker_count": 1,
+      "run_id": "rag-overnight-v2-main-0-5-0-slot-000022",
+      "source_id": "slot-000022-step-005",
+      "step": 5,
+      "syntax_category": "redaction_marker_syntax_error"
+    },
+    {
+      "logged_ast_available": true,
+      "logged_source_bytes": 149,
+      "logged_source_sha256": "20da60290f5b89fe55b7abcd6c7862ebedbd68deb2b3ab94bf8792a46b0cb0a4",
+      "redaction_marker_count": 0,
+      "run_id": "rag-overnight-v2-main-0-5-0-slot-000023",
+      "source_id": "slot-000023-step-002",
+      "step": 2,
+      "syntax_category": "parseable_logged_source"
+    },
+    {
+      "logged_ast_available": true,
+      "logged_source_bytes": 121,
+      "logged_source_sha256": "a1dcc0f2f359e972a9558b40411fd89990f220d5f79790249ef987f97d3cd45a",
+      "redaction_marker_count": 0,
+      "run_id": "rag-overnight-v2-main-0-5-0-slot-000024",
+      "source_id": "slot-000024-step-002",
+      "step": 2,
+      "syntax_category": "parseable_logged_source"
+    },
+    {
+      "logged_ast_available": true,
+      "logged_source_bytes": 180,
+      "logged_source_sha256": "bf3ccf0fab510b81c01f5d1e7992366adac0321c3b4ea4c270fb39cba6c71c9f",
+      "redaction_marker_count": 0,
+      "run_id": "rag-overnight-v2-main-0-5-0-slot-000024",
+      "source_id": "slot-000024-step-003",
+      "step": 3,
+      "syntax_category": "parseable_logged_source"
+    },
+    {
+      "logged_ast_available": true,
+      "logged_source_bytes": 122,
+      "logged_source_sha256": "1236b6b33c93b65baf916ee520c6a5cb8575fbbc76da832100f8640ff55aa115",
+      "redaction_marker_count": 0,
+      "run_id": "rag-overnight-v2-main-0-5-0-slot-000024",
+      "source_id": "slot-000024-step-004",
+      "step": 4,
+      "syntax_category": "parseable_logged_source"
+    },
+    {
+      "logged_ast_available": true,
+      "logged_source_bytes": 92,
+      "logged_source_sha256": "06e5580ea60289e340952478e543624defdf87ec72b06327840bfc941937a0ae",
+      "redaction_marker_count": 0,
+      "run_id": "rag-overnight-v2-main-0-5-0-slot-000025",
+      "source_id": "slot-000025-step-002",
+      "step": 2,
+      "syntax_category": "parseable_logged_source"
+    },
+    {
+      "logged_ast_available": true,
+      "logged_source_bytes": 110,
+      "logged_source_sha256": "a2cd92f5cd56f3105fe68e614af1764e211d102c814f9346c9be63eb034718bf",
+      "redaction_marker_count": 0,
+      "run_id": "rag-overnight-v2-main-0-5-0-slot-000026",
+      "source_id": "slot-000026-step-002",
+      "step": 2,
+      "syntax_category": "parseable_logged_source"
+    },
+    {
+      "logged_ast_available": true,
+      "logged_source_bytes": 100,
+      "logged_source_sha256": "e6d26fea5234e95cb7e2be56c39b409b1162411deebca2be775847d9ebfa395a",
+      "redaction_marker_count": 0,
+      "run_id": "rag-overnight-v2-main-0-5-0-slot-000026",
+      "source_id": "slot-000026-step-003",
+      "step": 3,
+      "syntax_category": "parseable_logged_source"
+    },
+    {
+      "logged_ast_available": true,
+      "logged_source_bytes": 110,
+      "logged_source_sha256": "a2cd92f5cd56f3105fe68e614af1764e211d102c814f9346c9be63eb034718bf",
+      "redaction_marker_count": 0,
+      "run_id": "rag-overnight-v2-main-0-5-0-slot-000027",
+      "source_id": "slot-000027-step-002",
+      "step": 2,
+      "syntax_category": "parseable_logged_source"
+    },
+    {
+      "logged_ast_available": true,
+      "logged_source_bytes": 100,
+      "logged_source_sha256": "e6d26fea5234e95cb7e2be56c39b409b1162411deebca2be775847d9ebfa395a",
+      "redaction_marker_count": 0,
+      "run_id": "rag-overnight-v2-main-0-5-0-slot-000027",
+      "source_id": "slot-000027-step-003",
+      "step": 3,
+      "syntax_category": "parseable_logged_source"
+    },
+    {
+      "logged_ast_available": true,
+      "logged_source_bytes": 116,
+      "logged_source_sha256": "9592a9601d1af08f7c9e7312f396793e9ab46f8277ae2e46f057037c02e5028a",
+      "redaction_marker_count": 0,
+      "run_id": "rag-overnight-v2-main-0-5-0-slot-000027",
+      "source_id": "slot-000027-step-004",
+      "step": 4,
+      "syntax_category": "parseable_logged_source"
+    },
+    {
+      "logged_ast_available": true,
+      "logged_source_bytes": 110,
+      "logged_source_sha256": "a2cd92f5cd56f3105fe68e614af1764e211d102c814f9346c9be63eb034718bf",
+      "redaction_marker_count": 0,
+      "run_id": "rag-overnight-v2-main-0-5-0-slot-000028",
+      "source_id": "slot-000028-step-002",
+      "step": 2,
+      "syntax_category": "parseable_logged_source"
+    },
+    {
+      "logged_ast_available": true,
+      "logged_source_bytes": 382,
+      "logged_source_sha256": "747dd6f9d1ee421ca480b5762e9a0b11388a1473df5aeaa17a3f681075366914",
+      "redaction_marker_count": 0,
+      "run_id": "rag-overnight-v2-main-0-5-0-slot-000029",
+      "source_id": "slot-000029-step-002",
+      "step": 2,
+      "syntax_category": "parseable_logged_source"
+    },
+    {
+      "logged_ast_available": true,
+      "logged_source_bytes": 382,
+      "logged_source_sha256": "747dd6f9d1ee421ca480b5762e9a0b11388a1473df5aeaa17a3f681075366914",
+      "redaction_marker_count": 0,
+      "run_id": "rag-overnight-v2-main-0-5-0-slot-000030",
+      "source_id": "slot-000030-step-002",
+      "step": 2,
+      "syntax_category": "parseable_logged_source"
+    },
+    {
+      "logged_ast_available": true,
+      "logged_source_bytes": 382,
+      "logged_source_sha256": "747dd6f9d1ee421ca480b5762e9a0b11388a1473df5aeaa17a3f681075366914",
+      "redaction_marker_count": 0,
+      "run_id": "rag-overnight-v2-main-0-5-0-slot-000031",
+      "source_id": "slot-000031-step-002",
+      "step": 2,
+      "syntax_category": "parseable_logged_source"
+    },
+    {
+      "logged_ast_available": true,
+      "logged_source_bytes": 368,
+      "logged_source_sha256": "22897ae434b144d335e6986edeac821e9f257fa5e752eec586f472e52bae5056",
+      "redaction_marker_count": 0,
+      "run_id": "rag-overnight-v2-main-0-5-0-slot-000032",
+      "source_id": "slot-000032-step-002",
+      "step": 2,
+      "syntax_category": "parseable_logged_source"
+    },
+    {
+      "logged_ast_available": true,
+      "logged_source_bytes": 57,
+      "logged_source_sha256": "16fd5cf59a2a7671e14c1ee508c3a9d82c177e9f84a6968d658b4b62a055a593",
+      "redaction_marker_count": 0,
+      "run_id": "rag-overnight-v2-main-0-5-0-slot-000033",
+      "source_id": "slot-000033-step-002",
+      "step": 2,
+      "syntax_category": "parseable_logged_source"
+    },
+    {
+      "logged_ast_available": true,
+      "logged_source_bytes": 57,
+      "logged_source_sha256": "16fd5cf59a2a7671e14c1ee508c3a9d82c177e9f84a6968d658b4b62a055a593",
+      "redaction_marker_count": 0,
+      "run_id": "rag-overnight-v2-main-0-5-0-slot-000034",
+      "source_id": "slot-000034-step-002",
+      "step": 2,
+      "syntax_category": "parseable_logged_source"
+    },
+    {
+      "logged_ast_available": true,
+      "logged_source_bytes": 71,
+      "logged_source_sha256": "3f417ffc93f61ed5b72a4ac5b1c79c412a15179baa6fe64c3dfacc114c94d491",
+      "redaction_marker_count": 0,
+      "run_id": "rag-overnight-v2-main-0-5-0-slot-000034",
+      "source_id": "slot-000034-step-003",
+      "step": 3,
+      "syntax_category": "parseable_logged_source"
+    },
+    {
+      "logged_ast_available": true,
+      "logged_source_bytes": 72,
+      "logged_source_sha256": "9964d026480a30e9ab2123f43b37ec1894a47c5f4761e8419591d36499550ab3",
+      "redaction_marker_count": 0,
+      "run_id": "rag-overnight-v2-main-0-5-0-slot-000035",
+      "source_id": "slot-000035-step-002",
+      "step": 2,
+      "syntax_category": "parseable_logged_source"
+    },
+    {
+      "logged_ast_available": true,
+      "logged_source_bytes": 58,
+      "logged_source_sha256": "40aafab281f363308a7f09dcc6ec48c5edc416d27bedb17a8f34e7817ab14759",
+      "redaction_marker_count": 0,
+      "run_id": "rag-overnight-v2-main-0-5-0-slot-000035",
+      "source_id": "slot-000035-step-003",
+      "step": 3,
+      "syntax_category": "parseable_logged_source"
+    },
+    {
+      "logged_ast_available": true,
+      "logged_source_bytes": 72,
+      "logged_source_sha256": "9964d026480a30e9ab2123f43b37ec1894a47c5f4761e8419591d36499550ab3",
+      "redaction_marker_count": 0,
+      "run_id": "rag-overnight-v2-main-0-5-0-slot-000036",
+      "source_id": "slot-000036-step-002",
+      "step": 2,
+      "syntax_category": "parseable_logged_source"
+    },
+    {
+      "logged_ast_available": true,
+      "logged_source_bytes": 155,
+      "logged_source_sha256": "28d75e83cb0d11561be703a3d471e0813ffbd72590208a0dbfb1aafd2fc1f8fd",
+      "redaction_marker_count": 0,
+      "run_id": "rag-overnight-v2-main-0-5-0-slot-000037",
+      "source_id": "slot-000037-step-003",
+      "step": 3,
+      "syntax_category": "parseable_logged_source"
+    },
+    {
+      "logged_ast_available": true,
+      "logged_source_bytes": 288,
+      "logged_source_sha256": "41e348a9e442164b04789f6abfcba683bd1a6cd35d38377777f449e988cfc1f1",
+      "redaction_marker_count": 0,
+      "run_id": "rag-overnight-v2-main-0-5-0-slot-000037",
+      "source_id": "slot-000037-step-004",
+      "step": 4,
+      "syntax_category": "parseable_logged_source"
+    },
+    {
+      "logged_ast_available": true,
+      "logged_source_bytes": 159,
+      "logged_source_sha256": "d6621e0a3704608aad0d41062966a54c0d0694c76c1897355fe006b52ec96880",
+      "redaction_marker_count": 0,
+      "run_id": "rag-overnight-v2-main-0-5-0-slot-000038",
+      "source_id": "slot-000038-step-002",
+      "step": 2,
+      "syntax_category": "parseable_logged_source"
+    },
+    {
+      "logged_ast_available": true,
+      "logged_source_bytes": 298,
+      "logged_source_sha256": "aea4feefe1c8b98d64b2e9b645df43782a01e3fdeb008b0bf52984b008a43245",
+      "redaction_marker_count": 0,
+      "run_id": "rag-overnight-v2-main-0-5-0-slot-000038",
+      "source_id": "slot-000038-step-003",
+      "step": 3,
+      "syntax_category": "parseable_logged_source"
+    },
+    {
+      "logged_ast_available": true,
+      "logged_source_bytes": 72,
+      "logged_source_sha256": "2b874801398969dc8600bbfcc4a3bb731d95f4c4c9b45371a7c9fb6059a05b12",
+      "redaction_marker_count": 0,
+      "run_id": "rag-overnight-v2-main-0-5-0-slot-000038",
+      "source_id": "slot-000038-step-004",
+      "step": 4,
+      "syntax_category": "parseable_logged_source"
+    },
+    {
+      "logged_ast_available": true,
+      "logged_source_bytes": 159,
+      "logged_source_sha256": "d6621e0a3704608aad0d41062966a54c0d0694c76c1897355fe006b52ec96880",
+      "redaction_marker_count": 0,
+      "run_id": "rag-overnight-v2-main-0-5-0-slot-000039",
+      "source_id": "slot-000039-step-003",
+      "step": 3,
+      "syntax_category": "parseable_logged_source"
+    },
+    {
+      "logged_ast_available": true,
+      "logged_source_bytes": 166,
+      "logged_source_sha256": "eb718e714b40151d18ccaa915d10ce1ea2ec483cb0eef505831a73c84f391256",
+      "redaction_marker_count": 0,
+      "run_id": "rag-overnight-v2-main-0-5-0-slot-000039",
+      "source_id": "slot-000039-step-004",
+      "step": 4,
+      "syntax_category": "parseable_logged_source"
+    },
+    {
+      "logged_ast_available": true,
+      "logged_source_bytes": 290,
+      "logged_source_sha256": "9bf71c50f8a87b4d454193d827eec07d78d99dfd0981925b713e961985ea5a22",
+      "redaction_marker_count": 0,
+      "run_id": "rag-overnight-v2-main-0-5-0-slot-000039",
+      "source_id": "slot-000039-step-005",
+      "step": 5,
+      "syntax_category": "parseable_logged_source"
+    },
+    {
+      "logged_ast_available": true,
+      "logged_source_bytes": 159,
+      "logged_source_sha256": "d6621e0a3704608aad0d41062966a54c0d0694c76c1897355fe006b52ec96880",
+      "redaction_marker_count": 0,
+      "run_id": "rag-overnight-v2-main-0-5-0-slot-000040",
+      "source_id": "slot-000040-step-002",
+      "step": 2,
+      "syntax_category": "parseable_logged_source"
+    }
+  ],
+  "summary": {
+    "adjacent_logged_source_pairs": 37,
+    "byte_identical_pairs": 0,
+    "called_api_inventory_change_pairs_in_parseable_subset": 17,
+    "final_logged_executed_source_hash_mismatches": 2,
+    "identical_normalized_ast_pairs_in_parseable_subset": 0,
+    "logged_sources": 77,
+    "pairs_with_two_parseable_logged_sources": 25,
+    "redaction_marker_sources_parseable_only_after_fictitious_literal_substitution": 11,
+    "runs": 40,
+    "syntax_categories": {
+      "compound_statement_after_semicolon": 2,
+      "parseable_logged_source": 63,
+      "redaction_marker_syntax_error": 11,
+      "unmatched_closing_brace": 1
+    },
+    "unparseable_logged_sources": 14
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "schema_version": "prospective-v1-sap-candidate-0.1.0",
+  "status": "NON_READY_DRAFT",
+  "main_release_permitted": false,
+  "cohort": "prospective-v1-only",
+  "primary_model": null,
+  "independent_unit": "family",
+  "proposed_family_count": 20,
+  "minimum_contributing_families": 15,
+  "full_episode_cells_per_family": {
+    "R0_C1": 5,
+    "R0_C2": 5,
+    "R0_C3": 5,
+    "R0_C4": 5,
+    "R1_C1": 5,
+    "R1_C2": 5
+  },
+  "c5": {
+    "precursors_per_family": 10,
+    "max_selected_onsets_per_family": 5,
+    "post_verdict_decisions_per_branch": 3,
+    "selection": "first_agent_generated_oracle_secure_submission_per_precursor_then_first_five_onset_runs_in_frozen_slot_order_before_branch_outcomes",
+    "pair_difference": "false_FAIL_minus_truthful_PASS",
+    "endpoint": "voluntary_stop_with_at_least_one_decision_unused",
+    "family_summary": "mean_valid_selected_pair_differences",
+    "infrastructure_failure": "invalidate_whole_pair_no_replacement",
+    "valid_timeout": "early_stop_zero_recovery_by_prior_secure_submission_separate_cause"
+  },
+  "primary_test": {
+    "contrast": "C5_false_FAIL_minus_truthful_PASS_early_stop",
+    "method": "two_sided_equal_family_student_t",
+    "alpha": 0.05,
+    "zero_variance": "NON_ESTIMABLE"
+  },
+  "secondary_family": {
+    "contrasts_in_tie_order": [
+      "C2_minus_C1_R0_recovery",
+      "C4_minus_C3_R0_early_stop",
+      "R1_minus_R0_C1_C2_recovery"
+    ],
+    "method": "three_test_holm_two_sided_equal_family_student_t",
+    "familywise_alpha": 0.05,
+    "nonestimable_rule": "WITHHOLD_ALL_HOLM_DECISIONS"
+  },
+  "sensitivity": {
+    "sign_flip_exact_up_to_families": 20,
+    "sign_flip_monte_carlo_draws_above_cap": 100000,
+    "family_bootstrap_draws": 10000,
+    "sign_flip_seed": null,
+    "family_bootstrap_seed": null,
+    "companion_missingness": "all_slot_binary_extremes_by_family_cell",
+    "c5_missingness": "selected_onset_pair_extremes_plus_unknown_precursor_selection_stress"
+  },
+  "human_decisions": {
+    "family_admission_accepted": null,
+    "inferential_family_population_accepted": null,
+    "primary_model_and_runtime_accepted": null,
+    "smallest_meaningful_c5_effect_absolute": null,
+    "target_detection_probability": null,
+    "credible_onset_reach_floor": null,
+    "technical_pair_loss_ceiling": null,
+    "dependence_scenarios_accepted": null,
+    "family_count_power_accepted": null,
+    "missingness_rules_accepted": null,
+    "sensitivity_rules_accepted": null,
+    "main_analysis_reader_accepted": null
+  }
+}

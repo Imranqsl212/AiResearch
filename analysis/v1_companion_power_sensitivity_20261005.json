@@ -1,0 +1,3539 @@
+{
+  "master_seed": 20261005,
+  "note": "R1-R0 shares C1/C2 R0 cells with C2-C1 in each simulated dataset",
+  "protocol": "docs/preregistration_v1_20261005.md",
+  "rule": "two-sided equal-family paired-difference t tests, three-test Holm alpha=0.05",
+  "scenarios": [
+    {
+      "all_three_monte_carlo_95pct_wilson": [
+        1.0842021724855044e-19,
+        0.001917047281252934
+      ],
+      "any_rejection_monte_carlo_95pct_wilson": [
+        0.03495107254461269,
+        0.05280110867045247
+      ],
+      "holm_rejection_monte_carlo_95pct_wilson_by_contrast": {
+        "C2_minus_C1_recovery": [
+          0.010527098037106688,
+          0.021332437825708653
+        ],
+        "C4_minus_C3_early_stop": [
+          0.010527098037106688,
+          0.021332437825708653
+        ],
+        "R1_minus_R0_recovery": [
+          0.010940972933704062,
+          0.021916645881830028
+        ]
+      },
+      "holm_rejection_probability_by_contrast": {
+        "C2_minus_C1_recovery": 0.015,
+        "C4_minus_C3_early_stop": 0.015,
+        "R1_minus_R0_recovery": 0.0155
+      },
+      "mean_contributing_families": {
+        "C2_minus_C1_recovery": 20.0,
+        "C4_minus_C3_early_stop": 20.0,
+        "R1_minus_R0_recovery": 20.0
+      },
+      "nonestimable_replicates": 0,
+      "probability_all_three_holm_rejections": 0.0,
+      "probability_any_holm_rejection": 0.043,
+      "replicates": 2000,
+      "scenario": {
+        "coupling": "shared",
+        "diagnostic_effect": 0.0,
+        "families": 20,
+        "family_baseline_shift": 0.08,
+        "family_effect_shift": 0.08,
+        "proof_effect": 0.0,
+        "rag_effect": 0.0,
+        "repeats": 5,
+        "technical_run_loss": 0.0
+      }
+    },
+    {
+      "all_three_monte_carlo_95pct_wilson": [
+        1.0842021724855044e-19,
+        0.001917047281252934
+      ],
+      "any_rejection_monte_carlo_95pct_wilson": [
+        0.03810906851120825,
+        0.056629693372888146
+      ],
+      "holm_rejection_monte_carlo_95pct_wilson_by_contrast": {
+        "C2_minus_C1_recovery": [
+          0.01011467734679028,
+          0.020746775563306317
+        ],
+        "C4_minus_C3_early_stop": [
+          0.012190680521843938,
+          0.023661187151846397
+        ],
+        "R1_minus_R0_recovery": [
+          0.013873784918301425,
+          0.025970414566263898
+        ]
+      },
+      "holm_rejection_probability_by_contrast": {
+        "C2_minus_C1_recovery": 0.0145,
+        "C4_minus_C3_early_stop": 0.017,
+        "R1_minus_R0_recovery": 0.019
+      },
+      "mean_contributing_families": {
+        "C2_minus_C1_recovery": 20.0,
+        "C4_minus_C3_early_stop": 20.0,
+        "R1_minus_R0_recovery": 20.0
+      },
+      "nonestimable_replicates": 0,
+      "probability_all_three_holm_rejections": 0.0,
+      "probability_any_holm_rejection": 0.0465,
+      "replicates": 2000,
+      "scenario": {
+        "coupling": "independent",
+        "diagnostic_effect": 0.0,
+        "families": 20,
+        "family_baseline_shift": 0.08,
+        "family_effect_shift": 0.08,
+        "proof_effect": 0.0,
+        "rag_effect": 0.0,
+        "repeats": 5,
+        "technical_run_loss": 0.0
+      }
+    },
+    {
+      "all_three_monte_carlo_95pct_wilson": [
+        0.019882087677964753,
+        0.033935273144663027
+      ],
+      "any_rejection_monte_carlo_95pct_wilson": [
+        0.5306280875269165,
+        0.5741706225085519
+      ],
+      "holm_rejection_monte_carlo_95pct_wilson_by_contrast": {
+        "C2_minus_C1_recovery": [
+          0.15129549177258156,
+          0.18398126171673285
+        ],
+        "C4_minus_C3_early_stop": [
+          0.44571646184835706,
+          0.4894081462249243
+        ],
+        "R1_minus_R0_recovery": [
+          0.07963506675642809,
+          0.10493116087235554
+        ]
+      },
+      "holm_rejection_probability_by_contrast": {
+        "C2_minus_C1_recovery": 0.167,
+        "C4_minus_C3_early_stop": 0.4675,
+        "R1_minus_R0_recovery": 0.0915
+      },
+      "mean_contributing_families": {
+        "C2_minus_C1_recovery": 20.0,
+        "C4_minus_C3_early_stop": 20.0,
+        "R1_minus_R0_recovery": 20.0
+      },
+      "nonestimable_replicates": 0,
+      "probability_all_three_holm_rejections": 0.026,
+      "probability_any_holm_rejection": 0.5525,
+      "replicates": 2000,
+      "scenario": {
+        "coupling": "shared",
+        "diagnostic_effect": 0.1,
+        "families": 20,
+        "family_baseline_shift": 0.08,
+        "family_effect_shift": 0.08,
+        "proof_effect": 0.15,
+        "rag_effect": 0.05,
+        "repeats": 5,
+        "technical_run_loss": 0.0
+      }
+    },
+    {
+      "all_three_monte_carlo_95pct_wilson": [
+        0.013451349814109871,
+        0.025394766717736703
+      ],
+      "any_rejection_monte_carlo_95pct_wilson": [
+        0.5115928272302488,
+        0.5552787306019071
+      ],
+      "holm_rejection_monte_carlo_95pct_wilson_by_contrast": {
+        "C2_minus_C1_recovery": [
+          0.1565736585228646,
+          0.189682007446356
+        ],
+        "C4_minus_C3_early_stop": [
+          0.4064737042260029,
+          0.44980235058249746
+        ],
+        "R1_minus_R0_recovery": [
+          0.0712277086526822,
+          0.09537302582716399
+        ]
+      },
+      "holm_rejection_probability_by_contrast": {
+        "C2_minus_C1_recovery": 0.1725,
+        "C4_minus_C3_early_stop": 0.428,
+        "R1_minus_R0_recovery": 0.0825
+      },
+      "mean_contributing_families": {
+        "C2_minus_C1_recovery": 20.0,
+        "C4_minus_C3_early_stop": 20.0,
+        "R1_minus_R0_recovery": 20.0
+      },
+      "nonestimable_replicates": 0,
+      "probability_all_three_holm_rejections": 0.0185,
+      "probability_any_holm_rejection": 0.5335,
+      "replicates": 2000,
+      "scenario": {
+        "coupling": "independent",
+        "diagnostic_effect": 0.1,
+        "families": 20,
+        "family_baseline_shift": 0.08,
+        "family_effect_shift": 0.08,
+        "proof_effect": 0.15,
+        "rag_effect": 0.05,
+        "repeats": 5,
+        "technical_run_loss": 0.0
+      }
+    },
+    {
+      "all_three_monte_carlo_95pct_wilson": [
+        0.3614450903394054,
+        0.4040054157716889
+      ],
+      "any_rejection_monte_carlo_95pct_wilson": [
+        0.9852096168457007,
+        0.9939097597713902
+      ],
+      "holm_rejection_monte_carlo_95pct_wilson_by_contrast": {
+        "C2_minus_C1_recovery": [
+          0.696856785116098,
+          0.7363112163638381
+        ],
+        "C4_minus_C3_early_stop": [
+          0.9786675621742913,
+          0.9894729019628932
+        ],
+        "R1_minus_R0_recovery": [
+          0.4288101840637623,
+          0.4723796036170817
+        ]
+      },
+      "holm_rejection_probability_by_contrast": {
+        "C2_minus_C1_recovery": 0.717,
+        "C4_minus_C3_early_stop": 0.985,
+        "R1_minus_R0_recovery": 0.4505
+      },
+      "mean_contributing_families": {
+        "C2_minus_C1_recovery": 20.0,
+        "C4_minus_C3_early_stop": 20.0,
+        "R1_minus_R0_recovery": 20.0
+      },
+      "nonestimable_replicates": 0,
+      "probability_all_three_holm_rejections": 0.3825,
+      "probability_any_holm_rejection": 0.9905,
+      "replicates": 2000,
+      "scenario": {
+        "coupling": "shared",
+        "diagnostic_effect": 0.2,
+        "families": 20,
+        "family_baseline_shift": 0.08,
+        "family_effect_shift": 0.08,
+        "proof_effect": 0.3,
+        "rag_effect": 0.1,
+        "repeats": 5,
+        "technical_run_loss": 0.0
+      }
+    },
+    {
+      "all_three_monte_carlo_95pct_wilson": [
+        0.3180886772887613,
+        0.3595305289830834
+      ],
+      "any_rejection_monte_carlo_95pct_wilson": [
+        0.9876620858637751,
+        0.9954496225641908
+      ],
+      "holm_rejection_monte_carlo_95pct_wilson_by_contrast": {
+        "C2_minus_C1_recovery": [
+          0.6744641857496321,
+          0.7147881658106792
+        ],
+        "C4_minus_C3_early_stop": [
+          0.9746052332822633,
+          0.9865486501858901
+        ],
+        "R1_minus_R0_recovery": [
+          0.3985428052945065,
+          0.4417639222704939
+        ]
+      },
+      "holm_rejection_probability_by_contrast": {
+        "C2_minus_C1_recovery": 0.695,
+        "C4_minus_C3_early_stop": 0.9815,
+        "R1_minus_R0_recovery": 0.42
+      },
+      "mean_contributing_families": {
+        "C2_minus_C1_recovery": 20.0,
+        "C4_minus_C3_early_stop": 20.0,
+        "R1_minus_R0_recovery": 20.0
+      },
+      "nonestimable_replicates": 0,
+      "probability_all_three_holm_rejections": 0.3385,
+      "probability_any_holm_rejection": 0.9925,
+      "replicates": 2000,
+      "scenario": {
+        "coupling": "independent",
+        "diagnostic_effect": 0.2,
+        "families": 20,
+        "family_baseline_shift": 0.08,
+        "family_effect_shift": 0.08,
+        "proof_effect": 0.3,
+        "rag_effect": 0.1,
+        "repeats": 5,
+        "technical_run_loss": 0.0
+      }
+    },
+    {
+      "all_three_monte_carlo_95pct_wilson": [
+        0.6101250460309638,
+        0.6523707705340666
+      ],
+      "any_rejection_monte_carlo_95pct_wilson": [
+        0.9798404131888422,
+        0.9902962168537798
+      ],
+      "holm_rejection_monte_carlo_95pct_wilson_by_contrast": {
+        "C2_minus_C1_recovery": [
+          0.7269748622020896,
+          0.7650800334882527
+        ],
+        "C4_minus_C3_early_stop": [
+          0.78241724767193,
+          0.817430606912037
+        ],
+        "R1_minus_R0_recovery": [
+          0.9406443633026171,
+          0.9596264600496927
+        ]
+      },
+      "holm_rejection_probability_by_contrast": {
+        "C2_minus_C1_recovery": 0.7465,
+        "C4_minus_C3_early_stop": 0.8005,
+        "R1_minus_R0_recovery": 0.951
+      },
+      "mean_contributing_families": {
+        "C2_minus_C1_recovery": 20.0,
+        "C4_minus_C3_early_stop": 20.0,
+        "R1_minus_R0_recovery": 20.0
+      },
+      "nonestimable_replicates": 0,
+      "probability_all_three_holm_rejections": 0.6315,
+      "probability_any_holm_rejection": 0.986,
+      "replicates": 2000,
+      "scenario": {
+        "coupling": "shared",
+        "diagnostic_effect": 0.2,
+        "families": 20,
+        "family_baseline_shift": 0.08,
+        "family_effect_shift": 0.08,
+        "proof_effect": 0.2,
+        "rag_effect": 0.2,
+        "repeats": 5,
+        "technical_run_loss": 0.0
+      }
+    },
+    {
+      "all_three_monte_carlo_95pct_wilson": [
+        0.6015435902777672,
+        0.6439848160910445
+      ],
+      "any_rejection_monte_carlo_95pct_wilson": [
+        0.9804292069930002,
+        0.9907055060023408
+      ],
+      "holm_rejection_monte_carlo_95pct_wilson_by_contrast": {
+        "C2_minus_C1_recovery": [
+          0.7336261337518181,
+          0.771403840323868
+        ],
+        "C4_minus_C3_early_stop": [
+          0.7860265415595997,
+          0.8208078936933985
+        ],
+        "R1_minus_R0_recovery": [
+          0.9411889997479057,
+          0.9600799065571228
+        ]
+      },
+      "holm_rejection_probability_by_contrast": {
+        "C2_minus_C1_recovery": 0.753,
+        "C4_minus_C3_early_stop": 0.804,
+        "R1_minus_R0_recovery": 0.9515
+      },
+      "mean_contributing_families": {
+        "C2_minus_C1_recovery": 20.0,
+        "C4_minus_C3_early_stop": 20.0,
+        "R1_minus_R0_recovery": 20.0
+      },
+      "nonestimable_replicates": 0,
+      "probability_all_three_holm_rejections": 0.623,
+      "probability_any_holm_rejection": 0.9865,
+      "replicates": 2000,
+      "scenario": {
+        "coupling": "independent",
+        "diagnostic_effect": 0.2,
+        "families": 20,
+        "family_baseline_shift": 0.08,
+        "family_effect_shift": 0.08,
+        "proof_effect": 0.2,
+        "rag_effect": 0.2,
+        "repeats": 5,
+        "technical_run_loss": 0.0
+      }
+    },
+    {
+      "all_three_monte_carlo_95pct_wilson": [
+        1.0842021724855044e-19,
+        0.001917047281252934
+      ],
+      "any_rejection_monte_carlo_95pct_wilson": [
+        0.03495107254461269,
+        0.05280110867045247
+      ],
+      "holm_rejection_monte_carlo_95pct_wilson_by_contrast": {
+        "C2_minus_C1_recovery": [
+          0.008481081388571086,
+          0.018388039710650523
+        ],
+        "C4_minus_C3_early_stop": [
+          0.012190680521843938,
+          0.023661187151846397
+        ],
+        "R1_minus_R0_recovery": [
+          0.011356235350080627,
+          0.02249946641817221
+        ]
+      },
+      "holm_rejection_probability_by_contrast": {
+        "C2_minus_C1_recovery": 0.0125,
+        "C4_minus_C3_early_stop": 0.017,
+        "R1_minus_R0_recovery": 0.016
+      },
+      "mean_contributing_families": {
+        "C2_minus_C1_recovery": 20.0,
+        "C4_minus_C3_early_stop": 20.0,
+        "R1_minus_R0_recovery": 20.0
+      },
+      "nonestimable_replicates": 0,
+      "probability_all_three_holm_rejections": 0.0,
+      "probability_any_holm_rejection": 0.043,
+      "replicates": 2000,
+      "scenario": {
+        "coupling": "shared",
+        "diagnostic_effect": 0.0,
+        "families": 20,
+        "family_baseline_shift": 0.08,
+        "family_effect_shift": 0.08,
+        "proof_effect": 0.0,
+        "rag_effect": 0.0,
+        "repeats": 5,
+        "technical_run_loss": 0.05
+      }
+    },
+    {
+      "all_three_monte_carlo_95pct_wilson": [
+        1.0842021724855044e-19,
+        0.001917047281252934
+      ],
+      "any_rejection_monte_carlo_95pct_wilson": [
+        0.038561402365168564,
+        0.05717544247164658
+      ],
+      "holm_rejection_monte_carlo_95pct_wilson_by_contrast": {
+        "C2_minus_C1_recovery": [
+          0.010527098037106688,
+          0.021332437825708653
+        ],
+        "C4_minus_C3_early_stop": [
+          0.011356235350080627,
+          0.02249946641817221
+        ],
+        "R1_minus_R0_recovery": [
+          0.012609752959581211,
+          0.024240197666827872
+        ]
+      },
+      "holm_rejection_probability_by_contrast": {
+        "C2_minus_C1_recovery": 0.015,
+        "C4_minus_C3_early_stop": 0.016,
+        "R1_minus_R0_recovery": 0.0175
+      },
+      "mean_contributing_families": {
+        "C2_minus_C1_recovery": 20.0,
+        "C4_minus_C3_early_stop": 20.0,
+        "R1_minus_R0_recovery": 20.0
+      },
+      "nonestimable_replicates": 0,
+      "probability_all_three_holm_rejections": 0.0,
+      "probability_any_holm_rejection": 0.047,
+      "replicates": 2000,
+      "scenario": {
+        "coupling": "independent",
+        "diagnostic_effect": 0.0,
+        "families": 20,
+        "family_baseline_shift": 0.08,
+        "family_effect_shift": 0.08,
+        "proof_effect": 0.0,
+        "rag_effect": 0.0,
+        "repeats": 5,
+        "technical_run_loss": 0.05
+      }
+    },
+    {
+      "all_three_monte_carlo_95pct_wilson": [
+        0.0164289081143177,
+        0.0294037890865601
+      ],
+      "any_rejection_monte_carlo_95pct_wilson": [
+        0.4910904157100915,
+        0.534859741060596
+      ],
+      "holm_rejection_monte_carlo_95pct_wilson_by_contrast": {
+        "C2_minus_C1_recovery": [
+          0.13932371296507043,
+          0.17100096670627532
+        ],
+        "C4_minus_C3_early_stop": [
+          0.40597785350991,
+          0.4493001183458716
+        ],
+        "R1_minus_R0_recovery": [
+          0.06564592724758744,
+          0.0889778117996338
+        ]
+      },
+      "holm_rejection_probability_by_contrast": {
+        "C2_minus_C1_recovery": 0.1545,
+        "C4_minus_C3_early_stop": 0.4275,
+        "R1_minus_R0_recovery": 0.0765
+      },
+      "mean_contributing_families": {
+        "C2_minus_C1_recovery": 20.0,
+        "C4_minus_C3_early_stop": 20.0,
+        "R1_minus_R0_recovery": 20.0
+      },
+      "nonestimable_replicates": 0,
+      "probability_all_three_holm_rejections": 0.022,
+      "probability_any_holm_rejection": 0.513,
+      "replicates": 2000,
+      "scenario": {
+        "coupling": "shared",
+        "diagnostic_effect": 0.1,
+        "families": 20,
+        "family_baseline_shift": 0.08,
+        "family_effect_shift": 0.08,
+        "proof_effect": 0.15,
+        "rag_effect": 0.05,
+        "repeats": 5,
+        "technical_run_loss": 0.05
+      }
+    },
+    {
+      "all_three_monte_carlo_95pct_wilson": [
+        0.012609752959581211,
+        0.024240197666827872
+      ],
+      "any_rejection_monte_carlo_95pct_wilson": [
+        0.47012608411848256,
+        0.5139045886380174
+      ],
+      "holm_rejection_monte_carlo_95pct_wilson_by_contrast": {
+        "C2_minus_C1_recovery": [
+          0.1302491199839655,
+          0.16111198358572404
+        ],
+        "C4_minus_C3_early_stop": [
+          0.3797303175272388,
+          0.42264925783444923
+        ],
+        "R1_minus_R0_recovery": [
+          0.06703950613485772,
+          0.09057848177051976
+        ]
+      },
+      "holm_rejection_probability_by_contrast": {
+        "C2_minus_C1_recovery": 0.145,
+        "C4_minus_C3_early_stop": 0.401,
+        "R1_minus_R0_recovery": 0.078
+      },
+      "mean_contributing_families": {
+        "C2_minus_C1_recovery": 20.0,
+        "C4_minus_C3_early_stop": 20.0,
+        "R1_minus_R0_recovery": 20.0
+      },
+      "nonestimable_replicates": 0,
+      "probability_all_three_holm_rejections": 0.0175,
+      "probability_any_holm_rejection": 0.492,
+      "replicates": 2000,
+      "scenario": {
+        "coupling": "independent",
+        "diagnostic_effect": 0.1,
+        "families": 20,
+        "family_baseline_shift": 0.08,
+        "family_effect_shift": 0.08,
+        "proof_effect": 0.15,
+        "rag_effect": 0.05,
+        "repeats": 5,
+        "technical_run_loss": 0.05
+      }
+    },
+    {
+      "all_three_monte_carlo_95pct_wilson": [
+        0.32153040213120593,
+        0.36307538480967
+      ],
+      "any_rejection_monte_carlo_95pct_wilson": [
+        0.9810196914827969,
+        0.9911131044652626
+      ],
+      "holm_rejection_monte_carlo_95pct_wilson_by_contrast": {
+        "C2_minus_C1_recovery": [
+          0.6749724939649412,
+          0.7152779405480888
+        ],
+        "C4_minus_C3_early_stop": [
+          0.9677585183176651,
+          0.9814183697178633
+        ],
+        "R1_minus_R0_recovery": [
+          0.3960655898394469,
+          0.4392507229619597
+        ]
+      },
+      "holm_rejection_probability_by_contrast": {
+        "C2_minus_C1_recovery": 0.6955,
+        "C4_minus_C3_early_stop": 0.9755,
+        "R1_minus_R0_recovery": 0.4175
+      },
+      "mean_contributing_families": {
+        "C2_minus_C1_recovery": 20.0,
+        "C4_minus_C3_early_stop": 20.0,
+        "R1_minus_R0_recovery": 20.0
+      },
+      "nonestimable_replicates": 0,
+      "probability_all_three_holm_rejections": 0.342,
+      "probability_any_holm_rejection": 0.987,
+      "replicates": 2000,
+      "scenario": {
+        "coupling": "shared",
+        "diagnostic_effect": 0.2,
+        "families": 20,
+        "family_baseline_shift": 0.08,
+        "family_effect_shift": 0.08,
+        "proof_effect": 0.3,
+        "rag_effect": 0.1,
+        "repeats": 5,
+        "technical_run_loss": 0.05
+      }
+    },
+    {
+      "all_three_monte_carlo_95pct_wilson": [
+        0.28423231272438626,
+        0.3245191698098648
+      ],
+      "any_rejection_monte_carlo_95pct_wilson": [
+        0.9763388128481535,
+        0.987809319478156
+      ],
+      "holm_rejection_monte_carlo_95pct_wilson_by_contrast": {
+        "C2_minus_C1_recovery": [
+          0.6409759818445158,
+          0.6824028948363583
+        ],
+        "C4_minus_C3_early_stop": [
+          0.9538001190471888,
+          0.9704246951703708
+        ],
+        "R1_minus_R0_recovery": [
+          0.3678659620080682,
+          0.41055962248836986
+        ]
+      },
+      "holm_rejection_probability_by_contrast": {
+        "C2_minus_C1_recovery": 0.662,
+        "C4_minus_C3_early_stop": 0.963,
+        "R1_minus_R0_recovery": 0.389
+      },
+      "mean_contributing_families": {
+        "C2_minus_C1_recovery": 20.0,
+        "C4_minus_C3_early_stop": 20.0,
+        "R1_minus_R0_recovery": 20.0
+      },
+      "nonestimable_replicates": 0,
+      "probability_all_three_holm_rejections": 0.304,
+      "probability_any_holm_rejection": 0.983,
+      "replicates": 2000,
+      "scenario": {
+        "coupling": "independent",
+        "diagnostic_effect": 0.2,
+        "families": 20,
+        "family_baseline_shift": 0.08,
+        "family_effect_shift": 0.08,
+        "proof_effect": 0.3,
+        "rag_effect": 0.1,
+        "repeats": 5,
+        "technical_run_loss": 0.05
+      }
+    },
+    {
+      "all_three_monte_carlo_95pct_wilson": [
+        0.584905185237529,
+        0.6276864836915642
+      ],
+      "any_rejection_monte_carlo_95pct_wilson": [
+        0.9822061161295197,
+        0.9919228457239773
+      ],
+      "holm_rejection_monte_carlo_95pct_wilson_by_contrast": {
+        "C2_minus_C1_recovery": [
+          0.7136889900470432,
+          0.7524157488726116
+        ],
+        "C4_minus_C3_early_stop": [
+          0.769029316309502,
+          0.8048683815037775
+        ],
+        "R1_minus_R0_recovery": [
+          0.9352121487009426,
+          0.9550778451241797
+        ]
+      },
+      "holm_rejection_probability_by_contrast": {
+        "C2_minus_C1_recovery": 0.7335,
+        "C4_minus_C3_early_stop": 0.7875,
+        "R1_minus_R0_recovery": 0.946
+      },
+      "mean_contributing_families": {
+        "C2_minus_C1_recovery": 20.0,
+        "C4_minus_C3_early_stop": 20.0,
+        "R1_minus_R0_recovery": 20.0
+      },
+      "nonestimable_replicates": 0,
+      "probability_all_three_holm_rejections": 0.6065,
+      "probability_any_holm_rejection": 0.988,
+      "replicates": 2000,
+      "scenario": {
+        "coupling": "shared",
+        "diagnostic_effect": 0.2,
+        "families": 20,
+        "family_baseline_shift": 0.08,
+        "family_effect_shift": 0.08,
+        "proof_effect": 0.2,
+        "rag_effect": 0.2,
+        "repeats": 5,
+        "technical_run_loss": 0.05
+      }
+    },
+    {
+      "all_three_monte_carlo_95pct_wilson": [
+        0.5411613153020641,
+        0.584597136740498
+      ],
+      "any_rejection_monte_carlo_95pct_wilson": [
+        0.9822061161295197,
+        0.9919228457239773
+      ],
+      "holm_rejection_monte_carlo_95pct_wilson_by_contrast": {
+        "C2_minus_C1_recovery": [
+          0.6815830639748468,
+          0.7216424489235269
+        ],
+        "C4_minus_C3_early_stop": [
+          0.7608040997991641,
+          0.7971242707706154
+        ],
+        "R1_minus_R0_recovery": [
+          0.9217283654429757,
+          0.9436095545641779
+        ]
+      },
+      "holm_rejection_probability_by_contrast": {
+        "C2_minus_C1_recovery": 0.702,
+        "C4_minus_C3_early_stop": 0.7795,
+        "R1_minus_R0_recovery": 0.9335
+      },
+      "mean_contributing_families": {
+        "C2_minus_C1_recovery": 20.0,
+        "C4_minus_C3_early_stop": 20.0,
+        "R1_minus_R0_recovery": 20.0
+      },
+      "nonestimable_replicates": 0,
+      "probability_all_three_holm_rejections": 0.563,
+      "probability_any_holm_rejection": 0.988,
+      "replicates": 2000,
+      "scenario": {
+        "coupling": "independent",
+        "diagnostic_effect": 0.2,
+        "families": 20,
+        "family_baseline_shift": 0.08,
+        "family_effect_shift": 0.08,
+        "proof_effect": 0.2,
+        "rag_effect": 0.2,
+        "repeats": 5,
+        "technical_run_loss": 0.05
+      }
+    },
+    {
+      "all_three_monte_carlo_95pct_wilson": [
+        1.0842021724855044e-19,
+        0.001917047281252934
+      ],
+      "any_rejection_monte_carlo_95pct_wilson": [
+        0.04674833393876454,
+        0.06695400404698805
+      ],
+      "holm_rejection_monte_carlo_95pct_wilson_by_contrast": {
+        "C2_minus_C1_recovery": [
+          0.013873784918301425,
+          0.025970414566263898
+        ],
+        "C4_minus_C3_early_stop": [
+          0.01302999144428223,
+          0.024818042134845595
+        ],
+        "R1_minus_R0_recovery": [
+          0.016000780509074646,
+          0.028833833739084404
+        ]
+      },
+      "holm_rejection_probability_by_contrast": {
+        "C2_minus_C1_recovery": 0.019,
+        "C4_minus_C3_early_stop": 0.018,
+        "R1_minus_R0_recovery": 0.0215
+      },
+      "mean_contributing_families": {
+        "C2_minus_C1_recovery": 19.9995,
+        "C4_minus_C3_early_stop": 19.9995,
+        "R1_minus_R0_recovery": 19.9985
+      },
+      "nonestimable_replicates": 0,
+      "probability_all_three_holm_rejections": 0.0,
+      "probability_any_holm_rejection": 0.056,
+      "replicates": 2000,
+      "scenario": {
+        "coupling": "shared",
+        "diagnostic_effect": 0.0,
+        "families": 20,
+        "family_baseline_shift": 0.08,
+        "family_effect_shift": 0.08,
+        "proof_effect": 0.0,
+        "rag_effect": 0.0,
+        "repeats": 5,
+        "technical_run_loss": 0.1
+      }
+    },
+    {
+      "all_three_monte_carlo_95pct_wilson": [
+        1.0842021724855044e-19,
+        0.001917047281252934
+      ],
+      "any_rejection_monte_carlo_95pct_wilson": [
+        0.03720527135020145,
+        0.05553732462845745
+      ],
+      "holm_rejection_monte_carlo_95pct_wilson_by_contrast": {
+        "C2_minus_C1_recovery": [
+          0.009703783146220175,
+          0.020159586811157672
+        ],
+        "C4_minus_C3_early_stop": [
+          0.010527098037106688,
+          0.021332437825708653
+        ],
+        "R1_minus_R0_recovery": [
+          0.012609752959581211,
+          0.024240197666827872
+        ]
+      },
+      "holm_rejection_probability_by_contrast": {
+        "C2_minus_C1_recovery": 0.014,
+        "C4_minus_C3_early_stop": 0.015,
+        "R1_minus_R0_recovery": 0.0175
+      },
+      "mean_contributing_families": {
+        "C2_minus_C1_recovery": 19.9995,
+        "C4_minus_C3_early_stop": 19.9995,
+        "R1_minus_R0_recovery": 19.9995
+      },
+      "nonestimable_replicates": 0,
+      "probability_all_three_holm_rejections": 0.0,
+      "probability_any_holm_rejection": 0.0455,
+      "replicates": 2000,
+      "scenario": {
+        "coupling": "independent",
+        "diagnostic_effect": 0.0,
+        "families": 20,
+        "family_baseline_shift": 0.08,
+        "family_effect_shift": 0.08,
+        "proof_effect": 0.0,
+        "rag_effect": 0.0,
+        "repeats": 5,
+        "technical_run_loss": 0.1
+      }
+    },
+    {
+      "all_three_monte_carlo_95pct_wilson": [
+        0.014297256348690845,
+        0.026545026088593226
+      ],
+      "any_rejection_monte_carlo_95pct_wilson": [
+        0.46613724904660636,
+        0.5099087600881436
+      ],
+      "holm_rejection_monte_carlo_95pct_wilson_by_contrast": {
+        "C2_minus_C1_recovery": [
+          0.12214880212972688,
+          0.152244891243744
+        ],
+        "C4_minus_C3_early_stop": [
+          0.38121430570705017,
+          0.4241595185127941
+        ],
+        "R1_minus_R0_recovery": [
+          0.06936493417594901,
+          0.09324346849302219
+        ]
+      },
+      "holm_rejection_probability_by_contrast": {
+        "C2_minus_C1_recovery": 0.1365,
+        "C4_minus_C3_early_stop": 0.4025,
+        "R1_minus_R0_recovery": 0.0805
+      },
+      "mean_contributing_families": {
+        "C2_minus_C1_recovery": 19.9995,
+        "C4_minus_C3_early_stop": 20.0,
+        "R1_minus_R0_recovery": 19.9995
+      },
+      "nonestimable_replicates": 0,
+      "probability_all_three_holm_rejections": 0.0195,
+      "probability_any_holm_rejection": 0.488,
+      "replicates": 2000,
+      "scenario": {
+        "coupling": "shared",
+        "diagnostic_effect": 0.1,
+        "families": 20,
+        "family_baseline_shift": 0.08,
+        "family_effect_shift": 0.08,
+        "proof_effect": 0.15,
+        "rag_effect": 0.05,
+        "repeats": 5,
+        "technical_run_loss": 0.1
+      }
+    },
+    {
+      "all_three_monte_carlo_95pct_wilson": [
+        0.009703783146220175,
+        0.020159586811157672
+      ],
+      "any_rejection_monte_carlo_95pct_wilson": [
+        0.46514025893940397,
+        0.5089095842899085
+      ],
+      "holm_rejection_monte_carlo_95pct_wilson_by_contrast": {
+        "C2_minus_C1_recovery": [
+          0.12643487619659935,
+          0.1569415637513402
+        ],
+        "C4_minus_C3_early_stop": [
+          0.37379645659243443,
+          0.4166061233366286
+        ],
+        "R1_minus_R0_recovery": [
+          0.06332620153509969,
+          0.08630712274852781
+        ]
+      },
+      "holm_rejection_probability_by_contrast": {
+        "C2_minus_C1_recovery": 0.141,
+        "C4_minus_C3_early_stop": 0.395,
+        "R1_minus_R0_recovery": 0.074
+      },
+      "mean_contributing_families": {
+        "C2_minus_C1_recovery": 19.999,
+        "C4_minus_C3_early_stop": 20.0,
+        "R1_minus_R0_recovery": 19.999
+      },
+      "nonestimable_replicates": 0,
+      "probability_all_three_holm_rejections": 0.014,
+      "probability_any_holm_rejection": 0.487,
+      "replicates": 2000,
+      "scenario": {
+        "coupling": "independent",
+        "diagnostic_effect": 0.1,
+        "families": 20,
+        "family_baseline_shift": 0.08,
+        "family_effect_shift": 0.08,
+        "proof_effect": 0.15,
+        "rag_effect": 0.05,
+        "repeats": 5,
+        "technical_run_loss": 0.1
+      }
+    },
+    {
+      "all_three_monte_carlo_95pct_wilson": [
+        0.29501315290779584,
+        0.33569615458626767
+      ],
+      "any_rejection_monte_carlo_95pct_wilson": [
+        0.9804292069930002,
+        0.9907055060023408
+      ],
+      "holm_rejection_monte_carlo_95pct_wilson_by_contrast": {
+        "C2_minus_C1_recovery": [
+          0.633887165202872,
+          0.6755185501399396
+        ],
+        "C4_minus_C3_early_stop": [
+          0.9593447689480386,
+          0.9748608747967085
+        ],
+        "R1_minus_R0_recovery": [
+          0.37725746805292776,
+          0.4201316925451665
+        ]
+      },
+      "holm_rejection_probability_by_contrast": {
+        "C2_minus_C1_recovery": 0.655,
+        "C4_minus_C3_early_stop": 0.968,
+        "R1_minus_R0_recovery": 0.3985
+      },
+      "mean_contributing_families": {
+        "C2_minus_C1_recovery": 19.9995,
+        "C4_minus_C3_early_stop": 19.9985,
+        "R1_minus_R0_recovery": 19.9995
+      },
+      "nonestimable_replicates": 0,
+      "probability_all_three_holm_rejections": 0.315,
+      "probability_any_holm_rejection": 0.9865,
+      "replicates": 2000,
+      "scenario": {
+        "coupling": "shared",
+        "diagnostic_effect": 0.2,
+        "families": 20,
+        "family_baseline_shift": 0.08,
+        "family_effect_shift": 0.08,
+        "proof_effect": 0.3,
+        "rag_effect": 0.1,
+        "repeats": 5,
+        "technical_run_loss": 0.1
+      }
+    },
+    {
+      "all_three_monte_carlo_95pct_wilson": [
+        0.25490034657137967,
+        0.2939661587997466
+      ],
+      "any_rejection_monte_carlo_95pct_wilson": [
+        0.9655014766396225,
+        0.979683079585031
+      ],
+      "holm_rejection_monte_carlo_95pct_wilson_by_contrast": {
+        "C2_minus_C1_recovery": [
+          0.6151762388440337,
+          0.6573004072481842
+        ],
+        "C4_minus_C3_early_stop": [
+          0.9471988913295474,
+          0.9650489274553872
+        ],
+        "R1_minus_R0_recovery": [
+          0.33777240975588907,
+          0.37977011462470545
+        ]
+      },
+      "holm_rejection_probability_by_contrast": {
+        "C2_minus_C1_recovery": 0.6365,
+        "C4_minus_C3_early_stop": 0.957,
+        "R1_minus_R0_recovery": 0.3585
+      },
+      "mean_contributing_families": {
+        "C2_minus_C1_recovery": 19.9995,
+        "C4_minus_C3_early_stop": 19.999,
+        "R1_minus_R0_recovery": 19.999
+      },
+      "nonestimable_replicates": 0,
+      "probability_all_three_holm_rejections": 0.274,
+      "probability_any_holm_rejection": 0.9735,
+      "replicates": 2000,
+      "scenario": {
+        "coupling": "independent",
+        "diagnostic_effect": 0.2,
+        "families": 20,
+        "family_baseline_shift": 0.08,
+        "family_effect_shift": 0.08,
+        "proof_effect": 0.3,
+        "rag_effect": 0.1,
+        "repeats": 5,
+        "technical_run_loss": 0.1
+      }
+    },
+    {
+      "all_three_monte_carlo_95pct_wilson": [
+        0.5221083682982768,
+        0.5657229315409731
+      ],
+      "any_rejection_monte_carlo_95pct_wilson": [
+        0.9615758302685604,
+        0.9766221452870616
+      ],
+      "holm_rejection_monte_carlo_95pct_wilson_by_contrast": {
+        "C2_minus_C1_recovery": [
+          0.6551688639842418,
+          0.6961563353727572
+        ],
+        "C4_minus_C3_early_stop": [
+          0.7366978813702131,
+          0.7743205904217855
+        ],
+        "R1_minus_R0_recovery": [
+          0.897719973128375,
+          0.9227042140064351
+        ]
+      },
+      "holm_rejection_probability_by_contrast": {
+        "C2_minus_C1_recovery": 0.676,
+        "C4_minus_C3_early_stop": 0.756,
+        "R1_minus_R0_recovery": 0.911
+      },
+      "mean_contributing_families": {
+        "C2_minus_C1_recovery": 19.9995,
+        "C4_minus_C3_early_stop": 20.0,
+        "R1_minus_R0_recovery": 19.999
+      },
+      "nonestimable_replicates": 0,
+      "probability_all_three_holm_rejections": 0.544,
+      "probability_any_holm_rejection": 0.97,
+      "replicates": 2000,
+      "scenario": {
+        "coupling": "shared",
+        "diagnostic_effect": 0.2,
+        "families": 20,
+        "family_baseline_shift": 0.08,
+        "family_effect_shift": 0.08,
+        "proof_effect": 0.2,
+        "rag_effect": 0.2,
+        "repeats": 5,
+        "technical_run_loss": 0.1
+      }
+    },
+    {
+      "all_three_monte_carlo_95pct_wilson": [
+        0.4930890297875422,
+        0.5368534587940202
+      ],
+      "any_rejection_monte_carlo_95pct_wilson": [
+        0.9638155173143411,
+        0.9783747900521559
+      ],
+      "holm_rejection_monte_carlo_95pct_wilson_by_contrast": {
+        "C2_minus_C1_recovery": [
+          0.6424956692163982,
+          0.6838774563226321
+        ],
+        "C4_minus_C3_early_stop": [
+          0.705013681566209,
+          0.7441236471572271
+        ],
+        "R1_minus_R0_recovery": [
+          0.897189514623585,
+          0.9222365895585062
+        ]
+      },
+      "holm_rejection_probability_by_contrast": {
+        "C2_minus_C1_recovery": 0.6635,
+        "C4_minus_C3_early_stop": 0.725,
+        "R1_minus_R0_recovery": 0.9105
+      },
+      "mean_contributing_families": {
+        "C2_minus_C1_recovery": 20.0,
+        "C4_minus_C3_early_stop": 20.0,
+        "R1_minus_R0_recovery": 19.9995
+      },
+      "nonestimable_replicates": 0,
+      "probability_all_three_holm_rejections": 0.515,
+      "probability_any_holm_rejection": 0.972,
+      "replicates": 2000,
+      "scenario": {
+        "coupling": "independent",
+        "diagnostic_effect": 0.2,
+        "families": 20,
+        "family_baseline_shift": 0.08,
+        "family_effect_shift": 0.08,
+        "proof_effect": 0.2,
+        "rag_effect": 0.2,
+        "repeats": 5,
+        "technical_run_loss": 0.1
+      }
+    },
+    {
+      "all_three_monte_carlo_95pct_wilson": [
+        8.826773070546787e-05,
+        0.0028268625032662133
+      ],
+      "any_rejection_monte_carlo_95pct_wilson": [
+        0.04218996991731548,
+        0.06153153854124964
+      ],
+      "holm_rejection_monte_carlo_95pct_wilson_by_contrast": {
+        "C2_minus_C1_recovery": [
+          0.013451349814109871,
+          0.025394766717736703
+        ],
+        "C4_minus_C3_early_stop": [
+          0.014721726201265444,
+          0.027118639188737373
+        ],
+        "R1_minus_R0_recovery": [
+          0.010527098037106688,
+          0.021332437825708653
+        ]
+      },
+      "holm_rejection_probability_by_contrast": {
+        "C2_minus_C1_recovery": 0.0185,
+        "C4_minus_C3_early_stop": 0.02,
+        "R1_minus_R0_recovery": 0.015
+      },
+      "mean_contributing_families": {
+        "C2_minus_C1_recovery": 30.0,
+        "C4_minus_C3_early_stop": 30.0,
+        "R1_minus_R0_recovery": 30.0
+      },
+      "nonestimable_replicates": 0,
+      "probability_all_three_holm_rejections": 0.0005,
+      "probability_any_holm_rejection": 0.051,
+      "replicates": 2000,
+      "scenario": {
+        "coupling": "shared",
+        "diagnostic_effect": 0.0,
+        "families": 30,
+        "family_baseline_shift": 0.08,
+        "family_effect_shift": 0.08,
+        "proof_effect": 0.0,
+        "rag_effect": 0.0,
+        "repeats": 5,
+        "technical_run_loss": 0.0
+      }
+    },
+    {
+      "all_three_monte_carlo_95pct_wilson": [
+        1.0842021724855044e-19,
+        0.001917047281252934
+      ],
+      "any_rejection_monte_carlo_95pct_wilson": [
+        0.043099720209557914,
+        0.06261795415444468
+      ],
+      "holm_rejection_monte_carlo_95pct_wilson_by_contrast": {
+        "C2_minus_C1_recovery": [
+          0.013873784918301425,
+          0.025970414566263898
+        ],
+        "C4_minus_C3_early_stop": [
+          0.009703783146220175,
+          0.020159586811157672
+        ],
+        "R1_minus_R0_recovery": [
+          0.01514715886374858,
+          0.02769128947897298
+        ]
+      },
+      "holm_rejection_probability_by_contrast": {
+        "C2_minus_C1_recovery": 0.019,
+        "C4_minus_C3_early_stop": 0.014,
+        "R1_minus_R0_recovery": 0.0205
+      },
+      "mean_contributing_families": {
+        "C2_minus_C1_recovery": 30.0,
+        "C4_minus_C3_early_stop": 30.0,
+        "R1_minus_R0_recovery": 30.0
+      },
+      "nonestimable_replicates": 0,
+      "probability_all_three_holm_rejections": 0.0,
+      "probability_any_holm_rejection": 0.052,
+      "replicates": 2000,
+      "scenario": {
+        "coupling": "independent",
+        "diagnostic_effect": 0.0,
+        "families": 30,
+        "family_baseline_shift": 0.08,
+        "family_effect_shift": 0.08,
+        "proof_effect": 0.0,
+        "rag_effect": 0.0,
+        "repeats": 5,
+        "technical_run_loss": 0.0
+      }
+    },
+    {
+      "all_three_monte_carlo_95pct_wilson": [
+        0.06703950613485772,
+        0.09057848177051976
+      ],
+      "any_rejection_monte_carlo_95pct_wilson": [
+        0.728509268546739,
+        0.7665398760017595
+      ],
+      "holm_rejection_monte_carlo_95pct_wilson_by_contrast": {
+        "C2_minus_C1_recovery": [
+          0.27053093918630444,
+          0.31027422067182164
+        ],
+        "C4_minus_C3_early_stop": [
+          0.6541544022367746,
+          0.695174631214787
+        ],
+        "R1_minus_R0_recovery": [
+          0.14123686235693383,
+          0.1730801491252869
+        ]
+      },
+      "holm_rejection_probability_by_contrast": {
+        "C2_minus_C1_recovery": 0.29,
+        "C4_minus_C3_early_stop": 0.675,
+        "R1_minus_R0_recovery": 0.1565
+      },
+      "mean_contributing_families": {
+        "C2_minus_C1_recovery": 30.0,
+        "C4_minus_C3_early_stop": 30.0,
+        "R1_minus_R0_recovery": 30.0
+      },
+      "nonestimable_replicates": 0,
+      "probability_all_three_holm_rejections": 0.078,
+      "probability_any_holm_rejection": 0.748,
+      "replicates": 2000,
+      "scenario": {
+        "coupling": "shared",
+        "diagnostic_effect": 0.1,
+        "families": 30,
+        "family_baseline_shift": 0.08,
+        "family_effect_shift": 0.08,
+        "proof_effect": 0.15,
+        "rag_effect": 0.05,
+        "repeats": 5,
+        "technical_run_loss": 0.0
+      }
+    },
+    {
+      "all_three_monte_carlo_95pct_wilson": [
+        0.043099720209557914,
+        0.06261795415444468
+      ],
+      "any_rejection_monte_carlo_95pct_wilson": [
+        0.7351618535412222,
+        0.7728623693926199
+      ],
+      "holm_rejection_monte_carlo_95pct_wilson_by_contrast": {
+        "C2_minus_C1_recovery": [
+          0.2509975561876622,
+          0.2898842855617142
+        ],
+        "C4_minus_C3_early_stop": [
+          0.6440155895147363,
+          0.6853517848824503
+        ],
+        "R1_minus_R0_recovery": [
+          0.12643487619659935,
+          0.1569415637513402
+        ]
+      },
+      "holm_rejection_probability_by_contrast": {
+        "C2_minus_C1_recovery": 0.27,
+        "C4_minus_C3_early_stop": 0.665,
+        "R1_minus_R0_recovery": 0.141
+      },
+      "mean_contributing_families": {
+        "C2_minus_C1_recovery": 30.0,
+        "C4_minus_C3_early_stop": 30.0,
+        "R1_minus_R0_recovery": 30.0
+      },
+      "nonestimable_replicates": 0,
+      "probability_all_three_holm_rejections": 0.052,
+      "probability_any_holm_rejection": 0.7545,
+      "replicates": 2000,
+      "scenario": {
+        "coupling": "independent",
+        "diagnostic_effect": 0.1,
+        "families": 30,
+        "family_baseline_shift": 0.08,
+        "family_effect_shift": 0.08,
+        "proof_effect": 0.15,
+        "rag_effect": 0.05,
+        "repeats": 5,
+        "technical_run_loss": 0.0
+      }
+    },
+    {
+      "all_three_monte_carlo_95pct_wilson": [
+        0.6177027540317526,
+        0.6597643068240591
+      ],
+      "any_rejection_monte_carlo_95pct_wilson": [
+        0.9980829527187469,
+        0.9999999999999998
+      ],
+      "holm_rejection_monte_carlo_95pct_wilson_by_contrast": {
+        "C2_minus_C1_recovery": [
+          0.8961289468949059,
+          0.9213009913817478
+        ],
+        "C4_minus_C3_early_stop": [
+          0.9963610657309615,
+          0.9997257210823479
+        ],
+        "R1_minus_R0_recovery": [
+          0.6516187123098238,
+          0.692719906378144
+        ]
+      },
+      "holm_rejection_probability_by_contrast": {
+        "C2_minus_C1_recovery": 0.9095,
+        "C4_minus_C3_early_stop": 0.999,
+        "R1_minus_R0_recovery": 0.6725
+      },
+      "mean_contributing_families": {
+        "C2_minus_C1_recovery": 30.0,
+        "C4_minus_C3_early_stop": 30.0,
+        "R1_minus_R0_recovery": 30.0
+      },
+      "nonestimable_replicates": 0,
+      "probability_all_three_holm_rejections": 0.639,
+      "probability_any_holm_rejection": 1.0,
+      "replicates": 2000,
+      "scenario": {
+        "coupling": "shared",
+        "diagnostic_effect": 0.2,
+        "families": 30,
+        "family_baseline_shift": 0.08,
+        "family_effect_shift": 0.08,
+        "proof_effect": 0.3,
+        "rag_effect": 0.1,
+        "repeats": 5,
+        "technical_run_loss": 0.0
+      }
+    },
+    {
+      "all_three_monte_carlo_95pct_wilson": [
+        0.5496954397272684,
+        0.5930304225115124
+      ],
+      "any_rejection_monte_carlo_95pct_wilson": [
+        0.9980829527187469,
+        0.9999999999999998
+      ],
+      "holm_rejection_monte_carlo_95pct_wilson_by_contrast": {
+        "C2_minus_C1_recovery": [
+          0.8781646699770789,
+          0.9053304479071373
+        ],
+        "C4_minus_C3_early_stop": [
+          0.9971731374967338,
+          0.9999117322692944
+        ],
+        "R1_minus_R0_recovery": [
+          0.58944037751163,
+          0.6321340379919317
+        ]
+      },
+      "holm_rejection_probability_by_contrast": {
+        "C2_minus_C1_recovery": 0.8925,
+        "C4_minus_C3_early_stop": 0.9995,
+        "R1_minus_R0_recovery": 0.611
+      },
+      "mean_contributing_families": {
+        "C2_minus_C1_recovery": 30.0,
+        "C4_minus_C3_early_stop": 30.0,
+        "R1_minus_R0_recovery": 30.0
+      },
+      "nonestimable_replicates": 0,
+      "probability_all_three_holm_rejections": 0.5715,
+      "probability_any_holm_rejection": 1.0,
+      "replicates": 2000,
+      "scenario": {
+        "coupling": "independent",
+        "diagnostic_effect": 0.2,
+        "families": 30,
+        "family_baseline_shift": 0.08,
+        "family_effect_shift": 0.08,
+        "proof_effect": 0.3,
+        "rag_effect": 0.1,
+        "repeats": 5,
+        "technical_run_loss": 0.0
+      }
+    },
+    {
+      "all_three_monte_carlo_95pct_wilson": [
+        0.8871320405740596,
+        0.9133304875063756
+      ],
+      "any_rejection_monte_carlo_95pct_wilson": [
+        0.9971731374967338,
+        0.9999117322692944
+      ],
+      "holm_rejection_monte_carlo_95pct_wilson_by_contrast": {
+        "C2_minus_C1_recovery": [
+          0.9136928772514722,
+          0.9366737984649004
+        ],
+        "C4_minus_C3_early_stop": [
+          0.9582322305395993,
+          0.9739772472997102
+        ],
+        "R1_minus_R0_recovery": [
+          0.9941608466835673,
+          0.9989316912715861
+        ]
+      },
+      "holm_rejection_probability_by_contrast": {
+        "C2_minus_C1_recovery": 0.926,
+        "C4_minus_C3_early_stop": 0.967,
+        "R1_minus_R0_recovery": 0.9975
+      },
+      "mean_contributing_families": {
+        "C2_minus_C1_recovery": 30.0,
+        "C4_minus_C3_early_stop": 30.0,
+        "R1_minus_R0_recovery": 30.0
+      },
+      "nonestimable_replicates": 0,
+      "probability_all_three_holm_rejections": 0.901,
+      "probability_any_holm_rejection": 0.9995,
+      "replicates": 2000,
+      "scenario": {
+        "coupling": "shared",
+        "diagnostic_effect": 0.2,
+        "families": 30,
+        "family_baseline_shift": 0.08,
+        "family_effect_shift": 0.08,
+        "proof_effect": 0.2,
+        "rag_effect": 0.2,
+        "repeats": 5,
+        "technical_run_loss": 0.0
+      }
+    },
+    {
+      "all_three_monte_carlo_95pct_wilson": [
+        0.8624029252920606,
+        0.8911497040105931
+      ],
+      "any_rejection_monte_carlo_95pct_wilson": [
+        0.9971731374967338,
+        0.9999117322692944
+      ],
+      "holm_rejection_monte_carlo_95pct_wilson_by_contrast": {
+        "C2_minus_C1_recovery": [
+          0.9051591653543039,
+          0.9292381831185688
+        ],
+        "C4_minus_C3_early_stop": [
+          0.9444626753715425,
+          0.9627947286497985
+        ],
+        "R1_minus_R0_recovery": [
+          0.9914694867812403,
+          0.9976307193630382
+        ]
+      },
+      "holm_rejection_probability_by_contrast": {
+        "C2_minus_C1_recovery": 0.918,
+        "C4_minus_C3_early_stop": 0.9545,
+        "R1_minus_R0_recovery": 0.9955
+      },
+      "mean_contributing_families": {
+        "C2_minus_C1_recovery": 30.0,
+        "C4_minus_C3_early_stop": 30.0,
+        "R1_minus_R0_recovery": 30.0
+      },
+      "nonestimable_replicates": 0,
+      "probability_all_three_holm_rejections": 0.8775,
+      "probability_any_holm_rejection": 0.9995,
+      "replicates": 2000,
+      "scenario": {
+        "coupling": "independent",
+        "diagnostic_effect": 0.2,
+        "families": 30,
+        "family_baseline_shift": 0.08,
+        "family_effect_shift": 0.08,
+        "proof_effect": 0.2,
+        "rag_effect": 0.2,
+        "repeats": 5,
+        "technical_run_loss": 0.0
+      }
+    },
+    {
+      "all_three_monte_carlo_95pct_wilson": [
+        1.0842021724855044e-19,
+        0.001917047281252934
+      ],
+      "any_rejection_monte_carlo_95pct_wilson": [
+        0.045378356153563185,
+        0.06532973297403316
+      ],
+      "holm_rejection_monte_carlo_95pct_wilson_by_contrast": {
+        "C2_minus_C1_recovery": [
+          0.012190680521843938,
+          0.023661187151846397
+        ],
+        "C4_minus_C3_early_stop": [
+          0.010940972933704062,
+          0.021916645881830028
+        ],
+        "R1_minus_R0_recovery": [
+          0.017718224361690932,
+          0.031108721697343113
+        ]
+      },
+      "holm_rejection_probability_by_contrast": {
+        "C2_minus_C1_recovery": 0.017,
+        "C4_minus_C3_early_stop": 0.0155,
+        "R1_minus_R0_recovery": 0.0235
+      },
+      "mean_contributing_families": {
+        "C2_minus_C1_recovery": 30.0,
+        "C4_minus_C3_early_stop": 30.0,
+        "R1_minus_R0_recovery": 30.0
+      },
+      "nonestimable_replicates": 0,
+      "probability_all_three_holm_rejections": 0.0,
+      "probability_any_holm_rejection": 0.0545,
+      "replicates": 2000,
+      "scenario": {
+        "coupling": "shared",
+        "diagnostic_effect": 0.0,
+        "families": 30,
+        "family_baseline_shift": 0.08,
+        "family_effect_shift": 0.08,
+        "proof_effect": 0.0,
+        "rag_effect": 0.0,
+        "repeats": 5,
+        "technical_run_loss": 0.05
+      }
+    },
+    {
+      "all_three_monte_carlo_95pct_wilson": [
+        1.0842021724855044e-19,
+        0.001917047281252934
+      ],
+      "any_rejection_monte_carlo_95pct_wilson": [
+        0.03450117971009799,
+        0.05225291855224844
+      ],
+      "holm_rejection_monte_carlo_95pct_wilson_by_contrast": {
+        "C2_minus_C1_recovery": [
+          0.009703783146220175,
+          0.020159586811157672
+        ],
+        "C4_minus_C3_early_stop": [
+          0.01177282360725337,
+          0.023080961113718216
+        ],
+        "R1_minus_R0_recovery": [
+          0.008886895534737305,
+          0.01898030851720305
+        ]
+      },
+      "holm_rejection_probability_by_contrast": {
+        "C2_minus_C1_recovery": 0.014,
+        "C4_minus_C3_early_stop": 0.0165,
+        "R1_minus_R0_recovery": 0.013
+      },
+      "mean_contributing_families": {
+        "C2_minus_C1_recovery": 30.0,
+        "C4_minus_C3_early_stop": 30.0,
+        "R1_minus_R0_recovery": 30.0
+      },
+      "nonestimable_replicates": 0,
+      "probability_all_three_holm_rejections": 0.0,
+      "probability_any_holm_rejection": 0.0425,
+      "replicates": 2000,
+      "scenario": {
+        "coupling": "independent",
+        "diagnostic_effect": 0.0,
+        "families": 30,
+        "family_baseline_shift": 0.08,
+        "family_effect_shift": 0.08,
+        "proof_effect": 0.0,
+        "rag_effect": 0.0,
+        "repeats": 5,
+        "technical_run_loss": 0.05
+      }
+    },
+    {
+      "all_three_monte_carlo_95pct_wilson": [
+        0.05639044543582205,
+        0.07827163455702424
+      ],
+      "any_rejection_monte_carlo_95pct_wilson": [
+        0.696347234985025,
+        0.7358226835421924
+      ],
+      "holm_rejection_monte_carlo_95pct_wilson_by_contrast": {
+        "C2_minus_C1_recovery": [
+          0.25490034657137967,
+          0.2939661587997466
+        ],
+        "C4_minus_C3_early_stop": [
+          0.6126503370684756,
+          0.6548358942601485
+        ],
+        "R1_minus_R0_recovery": [
+          0.12167290401775677,
+          0.15172270640299534
+        ]
+      },
+      "holm_rejection_probability_by_contrast": {
+        "C2_minus_C1_recovery": 0.274,
+        "C4_minus_C3_early_stop": 0.634,
+        "R1_minus_R0_recovery": 0.136
+      },
+      "mean_contributing_families": {
+        "C2_minus_C1_recovery": 30.0,
+        "C4_minus_C3_early_stop": 30.0,
+        "R1_minus_R0_recovery": 30.0
+      },
+      "nonestimable_replicates": 0,
+      "probability_all_three_holm_rejections": 0.0665,
+      "probability_any_holm_rejection": 0.7165,
+      "replicates": 2000,
+      "scenario": {
+        "coupling": "shared",
+        "diagnostic_effect": 0.1,
+        "families": 30,
+        "family_baseline_shift": 0.08,
+        "family_effect_shift": 0.08,
+        "proof_effect": 0.15,
+        "rag_effect": 0.05,
+        "repeats": 5,
+        "technical_run_loss": 0.05
+      }
+    },
+    {
+      "all_three_monte_carlo_95pct_wilson": [
+        0.04583478836864504,
+        0.06587138371167006
+      ],
+      "any_rejection_monte_carlo_95pct_wilson": [
+        0.696347234985025,
+        0.7358226835421924
+      ],
+      "holm_rejection_monte_carlo_95pct_wilson_by_contrast": {
+        "C2_minus_C1_recovery": [
+          0.2470967619787775,
+          0.2858004161488489
+        ],
+        "C4_minus_C3_early_stop": [
+          0.6035621290799567,
+          0.64595860909973
+        ],
+        "R1_minus_R0_recovery": [
+          0.12738805517520033,
+          0.1579845506781767
+        ]
+      },
+      "holm_rejection_probability_by_contrast": {
+        "C2_minus_C1_recovery": 0.266,
+        "C4_minus_C3_early_stop": 0.625,
+        "R1_minus_R0_recovery": 0.142
+      },
+      "mean_contributing_families": {
+        "C2_minus_C1_recovery": 30.0,
+        "C4_minus_C3_early_stop": 30.0,
+        "R1_minus_R0_recovery": 30.0
+      },
+      "nonestimable_replicates": 0,
+      "probability_all_three_holm_rejections": 0.055,
+      "probability_any_holm_rejection": 0.7165,
+      "replicates": 2000,
+      "scenario": {
+        "coupling": "independent",
+        "diagnostic_effect": 0.1,
+        "families": 30,
+        "family_baseline_shift": 0.08,
+        "family_effect_shift": 0.08,
+        "proof_effect": 0.15,
+        "rag_effect": 0.05,
+        "repeats": 5,
+        "technical_run_loss": 0.05
+      }
+    },
+    {
+      "all_three_monte_carlo_95pct_wilson": [
+        0.5783576985854537,
+        0.6212588919582955
+      ],
+      "any_rejection_monte_carlo_95pct_wilson": [
+        0.9980829527187469,
+        0.9999999999999998
+      ],
+      "holm_rejection_monte_carlo_95pct_wilson_by_contrast": {
+        "C2_minus_C1_recovery": [
+          0.8707997785503712,
+          0.8987221779957826
+        ],
+        "C4_minus_C3_early_stop": [
+          0.9971731374967338,
+          0.9999117322692944
+        ],
+        "R1_minus_R0_recovery": [
+          0.6141658046756455,
+          0.6563146755111349
+        ]
+      },
+      "holm_rejection_probability_by_contrast": {
+        "C2_minus_C1_recovery": 0.8855,
+        "C4_minus_C3_early_stop": 0.9995,
+        "R1_minus_R0_recovery": 0.6355
+      },
+      "mean_contributing_families": {
+        "C2_minus_C1_recovery": 30.0,
+        "C4_minus_C3_early_stop": 30.0,
+        "R1_minus_R0_recovery": 30.0
+      },
+      "nonestimable_replicates": 0,
+      "probability_all_three_holm_rejections": 0.6,
+      "probability_any_holm_rejection": 1.0,
+      "replicates": 2000,
+      "scenario": {
+        "coupling": "shared",
+        "diagnostic_effect": 0.2,
+        "families": 30,
+        "family_baseline_shift": 0.08,
+        "family_effect_shift": 0.08,
+        "proof_effect": 0.3,
+        "rag_effect": 0.1,
+        "repeats": 5,
+        "technical_run_loss": 0.05
+      }
+    },
+    {
+      "all_three_monte_carlo_95pct_wilson": [
+        0.5331351076872679,
+        0.5766540171117944
+      ],
+      "any_rejection_monte_carlo_95pct_wilson": [
+        0.9971731374967338,
+        0.9999117322692944
+      ],
+      "holm_rejection_monte_carlo_95pct_wilson_by_contrast": {
+        "C2_minus_C1_recovery": [
+          0.846710940600441,
+          0.8768992001206507
+        ],
+        "C4_minus_C3_early_stop": [
+          0.9955989674442294,
+          0.9994897364163615
+        ],
+        "R1_minus_R0_recovery": [
+          0.5828901539119635,
+          0.6257091832062547
+        ]
+      },
+      "holm_rejection_probability_by_contrast": {
+        "C2_minus_C1_recovery": 0.8625,
+        "C4_minus_C3_early_stop": 0.9985,
+        "R1_minus_R0_recovery": 0.6045
+      },
+      "mean_contributing_families": {
+        "C2_minus_C1_recovery": 30.0,
+        "C4_minus_C3_early_stop": 30.0,
+        "R1_minus_R0_recovery": 30.0
+      },
+      "nonestimable_replicates": 0,
+      "probability_all_three_holm_rejections": 0.555,
+      "probability_any_holm_rejection": 0.9995,
+      "replicates": 2000,
+      "scenario": {
+        "coupling": "independent",
+        "diagnostic_effect": 0.2,
+        "families": 30,
+        "family_baseline_shift": 0.08,
+        "family_effect_shift": 0.08,
+        "proof_effect": 0.3,
+        "rag_effect": 0.1,
+        "repeats": 5,
+        "technical_run_loss": 0.05
+      }
+    },
+    {
+      "all_three_monte_carlo_95pct_wilson": [
+        0.8529800370090288,
+        0.8826070991446877
+      ],
+      "any_rejection_monte_carlo_95pct_wilson": [
+        0.9963610657309615,
+        0.9997257210823479
+      ],
+      "holm_rejection_monte_carlo_95pct_wilson_by_contrast": {
+        "C2_minus_C1_recovery": [
+          0.889774970136178,
+          0.9156779727078507
+        ],
+        "C4_minus_C3_early_stop": [
+          0.9428245575283534,
+          0.9614385976348314
+        ],
+        "R1_minus_R0_recovery": [
+          0.9864293102622139,
+          0.9946862322603145
+        ]
+      },
+      "holm_rejection_probability_by_contrast": {
+        "C2_minus_C1_recovery": 0.9035,
+        "C4_minus_C3_early_stop": 0.953,
+        "R1_minus_R0_recovery": 0.9915
+      },
+      "mean_contributing_families": {
+        "C2_minus_C1_recovery": 30.0,
+        "C4_minus_C3_early_stop": 30.0,
+        "R1_minus_R0_recovery": 30.0
+      },
+      "nonestimable_replicates": 0,
+      "probability_all_three_holm_rejections": 0.8685,
+      "probability_any_holm_rejection": 0.999,
+      "replicates": 2000,
+      "scenario": {
+        "coupling": "shared",
+        "diagnostic_effect": 0.2,
+        "families": 30,
+        "family_baseline_shift": 0.08,
+        "family_effect_shift": 0.08,
+        "proof_effect": 0.2,
+        "rag_effect": 0.2,
+        "repeats": 5,
+        "technical_run_loss": 0.05
+      }
+    },
+    {
+      "all_three_monte_carlo_95pct_wilson": [
+        0.8305590251580556,
+        0.8621105440287548
+      ],
+      "any_rejection_monte_carlo_95pct_wilson": [
+        0.9980829527187469,
+        0.9999999999999998
+      ],
+      "holm_rejection_monte_carlo_95pct_wilson_by_contrast": {
+        "C2_minus_C1_recovery": [
+          0.8871320405740596,
+          0.9133304875063756
+        ],
+        "C4_minus_C3_early_stop": [
+          0.9271069197684697,
+          0.9482118297658714
+        ],
+        "R1_minus_R0_recovery": [
+          0.9852096168457007,
+          0.9939097597713902
+        ]
+      },
+      "holm_rejection_probability_by_contrast": {
+        "C2_minus_C1_recovery": 0.901,
+        "C4_minus_C3_early_stop": 0.9385,
+        "R1_minus_R0_recovery": 0.9905
+      },
+      "mean_contributing_families": {
+        "C2_minus_C1_recovery": 30.0,
+        "C4_minus_C3_early_stop": 30.0,
+        "R1_minus_R0_recovery": 30.0
+      },
+      "nonestimable_replicates": 0,
+      "probability_all_three_holm_rejections": 0.847,
+      "probability_any_holm_rejection": 1.0,
+      "replicates": 2000,
+      "scenario": {
+        "coupling": "independent",
+        "diagnostic_effect": 0.2,
+        "families": 30,
+        "family_baseline_shift": 0.08,
+        "family_effect_shift": 0.08,
+        "proof_effect": 0.2,
+        "rag_effect": 0.2,
+        "repeats": 5,
+        "technical_run_loss": 0.05
+      }
+    },
+    {
+      "all_three_monte_carlo_95pct_wilson": [
+        1.0842021724855044e-19,
+        0.001917047281252934
+      ],
+      "any_rejection_monte_carlo_95pct_wilson": [
+        0.03630266512840682,
+        0.054443764944814586
+      ],
+      "holm_rejection_monte_carlo_95pct_wilson_by_contrast": {
+        "C2_minus_C1_recovery": [
+          0.012190680521843938,
+          0.023661187151846397
+        ],
+        "C4_minus_C3_early_stop": [
+          0.008077154276022635,
+          0.017793883870480226
+        ],
+        "R1_minus_R0_recovery": [
+          0.01302999144428223,
+          0.024818042134845595
+        ]
+      },
+      "holm_rejection_probability_by_contrast": {
+        "C2_minus_C1_recovery": 0.017,
+        "C4_minus_C3_early_stop": 0.012,
+        "R1_minus_R0_recovery": 0.018
+      },
+      "mean_contributing_families": {
+        "C2_minus_C1_recovery": 29.9995,
+        "C4_minus_C3_early_stop": 30.0,
+        "R1_minus_R0_recovery": 29.9995
+      },
+      "nonestimable_replicates": 0,
+      "probability_all_three_holm_rejections": 0.0,
+      "probability_any_holm_rejection": 0.0445,
+      "replicates": 2000,
+      "scenario": {
+        "coupling": "shared",
+        "diagnostic_effect": 0.0,
+        "families": 30,
+        "family_baseline_shift": 0.08,
+        "family_effect_shift": 0.08,
+        "proof_effect": 0.0,
+        "rag_effect": 0.0,
+        "repeats": 5,
+        "technical_run_loss": 0.1
+      }
+    },
+    {
+      "all_three_monte_carlo_95pct_wilson": [
+        1.0842021724855044e-19,
+        0.001917047281252934
+      ],
+      "any_rejection_monte_carlo_95pct_wilson": [
+        0.0340516147420547,
+        0.05170440056757297
+      ],
+      "holm_rejection_monte_carlo_95pct_wilson_by_contrast": {
+        "C2_minus_C1_recovery": [
+          0.008077154276022635,
+          0.017793883870480226
+        ],
+        "C4_minus_C3_early_stop": [
+          0.011356235350080627,
+          0.02249946641817221
+        ],
+        "R1_minus_R0_recovery": [
+          0.01177282360725337,
+          0.023080961113718216
+        ]
+      },
+      "holm_rejection_probability_by_contrast": {
+        "C2_minus_C1_recovery": 0.012,
+        "C4_minus_C3_early_stop": 0.016,
+        "R1_minus_R0_recovery": 0.0165
+      },
+      "mean_contributing_families": {
+        "C2_minus_C1_recovery": 29.9985,
+        "C4_minus_C3_early_stop": 30.0,
+        "R1_minus_R0_recovery": 29.998
+      },
+      "nonestimable_replicates": 0,
+      "probability_all_three_holm_rejections": 0.0,
+      "probability_any_holm_rejection": 0.042,
+      "replicates": 2000,
+      "scenario": {
+        "coupling": "independent",
+        "diagnostic_effect": 0.0,
+        "families": 30,
+        "family_baseline_shift": 0.08,
+        "family_effect_shift": 0.08,
+        "proof_effect": 0.0,
+        "rag_effect": 0.0,
+        "repeats": 5,
+        "technical_run_loss": 0.1
+      }
+    },
+    {
+      "all_three_monte_carlo_95pct_wilson": [
+        0.04720544161779262,
+        0.06749497932067872
+      ],
+      "any_rejection_monte_carlo_95pct_wilson": [
+        0.6836180513785682,
+        0.7235997933306805
+      ],
+      "holm_rejection_monte_carlo_95pct_wilson_by_contrast": {
+        "C2_minus_C1_recovery": [
+          0.22082092237035653,
+          0.2581797763104574
+        ],
+        "C4_minus_C3_early_stop": [
+          0.5934732617830178,
+          0.6360858173422939
+        ],
+        "R1_minus_R0_recovery": [
+          0.12977211830402138,
+          0.1605909023129494
+        ]
+      },
+      "holm_rejection_probability_by_contrast": {
+        "C2_minus_C1_recovery": 0.239,
+        "C4_minus_C3_early_stop": 0.615,
+        "R1_minus_R0_recovery": 0.1445
+      },
+      "mean_contributing_families": {
+        "C2_minus_C1_recovery": 30.0,
+        "C4_minus_C3_early_stop": 29.9995,
+        "R1_minus_R0_recovery": 29.9995
+      },
+      "nonestimable_replicates": 0,
+      "probability_all_three_holm_rejections": 0.0565,
+      "probability_any_holm_rejection": 0.704,
+      "replicates": 2000,
+      "scenario": {
+        "coupling": "shared",
+        "diagnostic_effect": 0.1,
+        "families": 30,
+        "family_baseline_shift": 0.08,
+        "family_effect_shift": 0.08,
+        "proof_effect": 0.15,
+        "rag_effect": 0.05,
+        "repeats": 5,
+        "technical_run_loss": 0.1
+      }
+    },
+    {
+      "all_three_monte_carlo_95pct_wilson": [
+        0.03180890787160705,
+        0.0489566926744269
+      ],
+      "any_rejection_monte_carlo_95pct_wilson": [
+        0.6719230634767615,
+        0.712338873319956
+      ],
+      "holm_rejection_monte_carlo_95pct_wilson_by_contrast": {
+        "C2_minus_C1_recovery": [
+          0.22276389933057889,
+          0.26022913116111007
+        ],
+        "C4_minus_C3_early_stop": [
+          0.5647715806895062,
+          0.6078967701308371
+        ],
+        "R1_minus_R0_recovery": [
+          0.10553480426223787,
+          0.13392598576607684
+        ]
+      },
+      "holm_rejection_probability_by_contrast": {
+        "C2_minus_C1_recovery": 0.241,
+        "C4_minus_C3_early_stop": 0.5865,
+        "R1_minus_R0_recovery": 0.119
+      },
+      "mean_contributing_families": {
+        "C2_minus_C1_recovery": 29.9995,
+        "C4_minus_C3_early_stop": 29.9995,
+        "R1_minus_R0_recovery": 29.999
+      },
+      "nonestimable_replicates": 0,
+      "probability_all_three_holm_rejections": 0.0395,
+      "probability_any_holm_rejection": 0.6925,
+      "replicates": 2000,
+      "scenario": {
+        "coupling": "independent",
+        "diagnostic_effect": 0.1,
+        "families": 30,
+        "family_baseline_shift": 0.08,
+        "family_effect_shift": 0.08,
+        "proof_effect": 0.15,
+        "rag_effect": 0.05,
+        "repeats": 5,
+        "technical_run_loss": 0.1
+      }
+    },
+    {
+      "all_three_monte_carlo_95pct_wilson": [
+        0.532633659180582,
+        0.5761573826657613
+      ],
+      "any_rejection_monte_carlo_95pct_wilson": [
+        0.9980829527187469,
+        0.9999999999999998
+      ],
+      "holm_rejection_monte_carlo_95pct_wilson_by_contrast": {
+        "C2_minus_C1_recovery": [
+          0.8399302416150259,
+          0.8707048207207219
+        ],
+        "C4_minus_C3_early_stop": [
+          0.9980829527187469,
+          0.9999999999999998
+        ],
+        "R1_minus_R0_recovery": [
+          0.5783576985854537,
+          0.6212588919582955
+        ]
+      },
+      "holm_rejection_probability_by_contrast": {
+        "C2_minus_C1_recovery": 0.856,
+        "C4_minus_C3_early_stop": 1.0,
+        "R1_minus_R0_recovery": 0.6
+      },
+      "mean_contributing_families": {
+        "C2_minus_C1_recovery": 29.9995,
+        "C4_minus_C3_early_stop": 30.0,
+        "R1_minus_R0_recovery": 29.9995
+      },
+      "nonestimable_replicates": 0,
+      "probability_all_three_holm_rejections": 0.5545,
+      "probability_any_holm_rejection": 1.0,
+      "replicates": 2000,
+      "scenario": {
+        "coupling": "shared",
+        "diagnostic_effect": 0.2,
+        "families": 30,
+        "family_baseline_shift": 0.08,
+        "family_effect_shift": 0.08,
+        "proof_effect": 0.3,
+        "rag_effect": 0.1,
+        "repeats": 5,
+        "technical_run_loss": 0.1
+      }
+    },
+    {
+      "all_three_monte_carlo_95pct_wilson": [
+        0.4965874468695184,
+        0.5403416223810751
+      ],
+      "any_rejection_monte_carlo_95pct_wilson": [
+        0.9980829527187469,
+        0.9999999999999998
+      ],
+      "holm_rejection_monte_carlo_95pct_wilson_by_contrast": {
+        "C2_minus_C1_recovery": [
+          0.8305590251580556,
+          0.8621105440287548
+        ],
+        "C4_minus_C3_early_stop": [
+          0.9963610657309615,
+          0.9997257210823479
+        ],
+        "R1_minus_R0_recovery": [
+          0.5542161394561803,
+          0.5974924693570692
+        ]
+      },
+      "holm_rejection_probability_by_contrast": {
+        "C2_minus_C1_recovery": 0.847,
+        "C4_minus_C3_early_stop": 0.999,
+        "R1_minus_R0_recovery": 0.576
+      },
+      "mean_contributing_families": {
+        "C2_minus_C1_recovery": 29.9995,
+        "C4_minus_C3_early_stop": 29.9995,
+        "R1_minus_R0_recovery": 29.9995
+      },
+      "nonestimable_replicates": 0,
+      "probability_all_three_holm_rejections": 0.5185,
+      "probability_any_holm_rejection": 1.0,
+      "replicates": 2000,
+      "scenario": {
+        "coupling": "independent",
+        "diagnostic_effect": 0.2,
+        "families": 30,
+        "family_baseline_shift": 0.08,
+        "family_effect_shift": 0.08,
+        "proof_effect": 0.3,
+        "rag_effect": 0.1,
+        "repeats": 5,
+        "technical_run_loss": 0.1
+      }
+    },
+    {
+      "all_three_monte_carlo_95pct_wilson": [
+        0.8098000496879411,
+        0.8429462013901193
+      ],
+      "any_rejection_monte_carlo_95pct_wilson": [
+        0.9955989674442294,
+        0.9994897364163615
+      ],
+      "holm_rejection_monte_carlo_95pct_wilson_by_contrast": {
+        "C2_minus_C1_recovery": [
+          0.8571650426124494,
+          0.8864067571630171
+        ],
+        "C4_minus_C3_early_stop": [
+          0.9254914002053398,
+          0.9468331004708452
+        ],
+        "R1_minus_R0_recovery": [
+          0.9882841374366056,
+          0.9958256539440788
+        ]
+      },
+      "holm_rejection_probability_by_contrast": {
+        "C2_minus_C1_recovery": 0.8725,
+        "C4_minus_C3_early_stop": 0.937,
+        "R1_minus_R0_recovery": 0.993
+      },
+      "mean_contributing_families": {
+        "C2_minus_C1_recovery": 29.9995,
+        "C4_minus_C3_early_stop": 29.9995,
+        "R1_minus_R0_recovery": 29.9985
+      },
+      "nonestimable_replicates": 0,
+      "probability_all_three_holm_rejections": 0.827,
+      "probability_any_holm_rejection": 0.9985,
+      "replicates": 2000,
+      "scenario": {
+        "coupling": "shared",
+        "diagnostic_effect": 0.2,
+        "families": 30,
+        "family_baseline_shift": 0.08,
+        "family_effect_shift": 0.08,
+        "proof_effect": 0.2,
+        "rag_effect": 0.2,
+        "repeats": 5,
+        "technical_run_loss": 0.1
+      }
+    },
+    {
+      "all_three_monte_carlo_95pct_wilson": [
+        0.7927352161406862,
+        0.8270742974976557
+      ],
+      "any_rejection_monte_carlo_95pct_wilson": [
+        0.9971731374967338,
+        0.9999117322692944
+      ],
+      "holm_rejection_monte_carlo_95pct_wilson_by_contrast": {
+        "C2_minus_C1_recovery": [
+          0.8582120203166588,
+          0.8873559453642452
+        ],
+        "C4_minus_C3_early_stop": [
+          0.9009052255315119,
+          0.9255074593196108
+        ],
+        "R1_minus_R0_recovery": [
+          0.9876620858637751,
+          0.9954496225641908
+        ]
+      },
+      "holm_rejection_probability_by_contrast": {
+        "C2_minus_C1_recovery": 0.8735,
+        "C4_minus_C3_early_stop": 0.914,
+        "R1_minus_R0_recovery": 0.9925
+      },
+      "mean_contributing_families": {
+        "C2_minus_C1_recovery": 30.0,
+        "C4_minus_C3_early_stop": 29.9985,
+        "R1_minus_R0_recovery": 29.999
+      },
+      "nonestimable_replicates": 0,
+      "probability_all_three_holm_rejections": 0.8105,
+      "probability_any_holm_rejection": 0.9995,
+      "replicates": 2000,
+      "scenario": {
+        "coupling": "independent",
+        "diagnostic_effect": 0.2,
+        "families": 30,
+        "family_baseline_shift": 0.08,
+        "family_effect_shift": 0.08,
+        "proof_effect": 0.2,
+        "rag_effect": 0.2,
+        "repeats": 5,
+        "technical_run_loss": 0.1
+      }
+    },
+    {
+      "all_three_monte_carlo_95pct_wilson": [
+        8.826773070546787e-05,
+        0.0028268625032662133
+      ],
+      "any_rejection_monte_carlo_95pct_wilson": [
+        0.03946691899074102,
+        0.05826609175151162
+      ],
+      "holm_rejection_monte_carlo_95pct_wilson_by_contrast": {
+        "C2_minus_C1_recovery": [
+          0.012609752959581211,
+          0.024240197666827872
+        ],
+        "C4_minus_C3_early_stop": [
+          0.013873784918301425,
+          0.025970414566263898
+        ],
+        "R1_minus_R0_recovery": [
+          0.01011467734679028,
+          0.020746775563306317
+        ]
+      },
+      "holm_rejection_probability_by_contrast": {
+        "C2_minus_C1_recovery": 0.0175,
+        "C4_minus_C3_early_stop": 0.019,
+        "R1_minus_R0_recovery": 0.0145
+      },
+      "mean_contributing_families": {
+        "C2_minus_C1_recovery": 40.0,
+        "C4_minus_C3_early_stop": 40.0,
+        "R1_minus_R0_recovery": 40.0
+      },
+      "nonestimable_replicates": 0,
+      "probability_all_three_holm_rejections": 0.0005,
+      "probability_any_holm_rejection": 0.048,
+      "replicates": 2000,
+      "scenario": {
+        "coupling": "shared",
+        "diagnostic_effect": 0.0,
+        "families": 40,
+        "family_baseline_shift": 0.08,
+        "family_effect_shift": 0.08,
+        "proof_effect": 0.0,
+        "rag_effect": 0.0,
+        "repeats": 5,
+        "technical_run_loss": 0.0
+      }
+    },
+    {
+      "all_three_monte_carlo_95pct_wilson": [
+        1.0842021724855044e-19,
+        0.001917047281252934
+      ],
+      "any_rejection_monte_carlo_95pct_wilson": [
+        0.043099720209557914,
+        0.06261795415444468
+      ],
+      "holm_rejection_monte_carlo_95pct_wilson_by_contrast": {
+        "C2_minus_C1_recovery": [
+          0.014297256348690845,
+          0.026545026088593226
+        ],
+        "C4_minus_C3_early_stop": [
+          0.013451349814109871,
+          0.025394766717736703
+        ],
+        "R1_minus_R0_recovery": [
+          0.01177282360725337,
+          0.023080961113718216
+        ]
+      },
+      "holm_rejection_probability_by_contrast": {
+        "C2_minus_C1_recovery": 0.0195,
+        "C4_minus_C3_early_stop": 0.0185,
+        "R1_minus_R0_recovery": 0.0165
+      },
+      "mean_contributing_families": {
+        "C2_minus_C1_recovery": 40.0,
+        "C4_minus_C3_early_stop": 40.0,
+        "R1_minus_R0_recovery": 40.0
+      },
+      "nonestimable_replicates": 0,
+      "probability_all_three_holm_rejections": 0.0,
+      "probability_any_holm_rejection": 0.052,
+      "replicates": 2000,
+      "scenario": {
+        "coupling": "independent",
+        "diagnostic_effect": 0.0,
+        "families": 40,
+        "family_baseline_shift": 0.08,
+        "family_effect_shift": 0.08,
+        "proof_effect": 0.0,
+        "rag_effect": 0.0,
+        "repeats": 5,
+        "technical_run_loss": 0.0
+      }
+    },
+    {
+      "all_three_monte_carlo_95pct_wilson": [
+        0.11976999062102056,
+        0.14963328798885656
+      ],
+      "any_rejection_monte_carlo_95pct_wilson": [
+        0.8792182266916742,
+        0.9062730570979796
+      ],
+      "holm_rejection_monte_carlo_95pct_wilson_by_contrast": {
+        "C2_minus_C1_recovery": [
+          0.39903831657585415,
+          0.44226649394186496
+        ],
+        "C4_minus_C3_early_stop": [
+          0.8191308990416238,
+          0.851580845185374
+        ],
+        "R1_minus_R0_recovery": [
+          0.20529779188563124,
+          0.24176425230818283
+        ]
+      },
+      "holm_rejection_probability_by_contrast": {
+        "C2_minus_C1_recovery": 0.4205,
+        "C4_minus_C3_early_stop": 0.836,
+        "R1_minus_R0_recovery": 0.223
+      },
+      "mean_contributing_families": {
+        "C2_minus_C1_recovery": 40.0,
+        "C4_minus_C3_early_stop": 40.0,
+        "R1_minus_R0_recovery": 40.0
+      },
+      "nonestimable_replicates": 0,
+      "probability_all_three_holm_rejections": 0.134,
+      "probability_any_holm_rejection": 0.8935,
+      "replicates": 2000,
+      "scenario": {
+        "coupling": "shared",
+        "diagnostic_effect": 0.1,
+        "families": 40,
+        "family_baseline_shift": 0.08,
+        "family_effect_shift": 0.08,
+        "proof_effect": 0.15,
+        "rag_effect": 0.05,
+        "repeats": 5,
+        "technical_run_loss": 0.0
+      }
+    },
+    {
+      "all_three_monte_carlo_95pct_wilson": [
+        0.09325577694146077,
+        0.12025485631616652
+      ],
+      "any_rejection_monte_carlo_95pct_wilson": [
+        0.8671236116591076,
+        0.8954117642180152
+      ],
+      "holm_rejection_monte_carlo_95pct_wilson_by_contrast": {
+        "C2_minus_C1_recovery": [
+          0.3723135163084358,
+          0.415094814762471
+        ],
+        "C4_minus_C3_early_stop": [
+          0.8066934441394626,
+          0.8400643092222853
+        ],
+        "R1_minus_R0_recovery": [
+          0.18739771047635959,
+          0.22273526446686084
+        ]
+      },
+      "holm_rejection_probability_by_contrast": {
+        "C2_minus_C1_recovery": 0.3935,
+        "C4_minus_C3_early_stop": 0.824,
+        "R1_minus_R0_recovery": 0.2045
+      },
+      "mean_contributing_families": {
+        "C2_minus_C1_recovery": 40.0,
+        "C4_minus_C3_early_stop": 40.0,
+        "R1_minus_R0_recovery": 40.0
+      },
+      "nonestimable_replicates": 0,
+      "probability_all_three_holm_rejections": 0.106,
+      "probability_any_holm_rejection": 0.882,
+      "replicates": 2000,
+      "scenario": {
+        "coupling": "independent",
+        "diagnostic_effect": 0.1,
+        "families": 40,
+        "family_baseline_shift": 0.08,
+        "family_effect_shift": 0.08,
+        "proof_effect": 0.15,
+        "rag_effect": 0.05,
+        "repeats": 5,
+        "technical_run_loss": 0.0
+      }
+    },
+    {
+      "all_three_monte_carlo_95pct_wilson": [
+        0.7685149457171953,
+        0.8043846691433655
+      ],
+      "any_rejection_monte_carlo_95pct_wilson": [
+        0.9980829527187469,
+        0.9999999999999998
+      ],
+      "holm_rejection_monte_carlo_95pct_wilson_by_contrast": {
+        "C2_minus_C1_recovery": [
+          0.9543526494507533,
+          0.9708702477195252
+        ],
+        "C4_minus_C3_early_stop": [
+          0.9980829527187469,
+          0.9999999999999998
+        ],
+        "R1_minus_R0_recovery": [
+          0.7855107983788351,
+          0.8203255539214444
+        ]
+      },
+      "holm_rejection_probability_by_contrast": {
+        "C2_minus_C1_recovery": 0.9635,
+        "C4_minus_C3_early_stop": 1.0,
+        "R1_minus_R0_recovery": 0.8035
+      },
+      "mean_contributing_families": {
+        "C2_minus_C1_recovery": 40.0,
+        "C4_minus_C3_early_stop": 40.0,
+        "R1_minus_R0_recovery": 40.0
+      },
+      "nonestimable_replicates": 0,
+      "probability_all_three_holm_rejections": 0.787,
+      "probability_any_holm_rejection": 1.0,
+      "replicates": 2000,
+      "scenario": {
+        "coupling": "shared",
+        "diagnostic_effect": 0.2,
+        "families": 40,
+        "family_baseline_shift": 0.08,
+        "family_effect_shift": 0.08,
+        "proof_effect": 0.3,
+        "rag_effect": 0.1,
+        "repeats": 5,
+        "technical_run_loss": 0.0
+      }
+    },
+    {
+      "all_three_monte_carlo_95pct_wilson": [
+        0.728509268546739,
+        0.7665398760017595
+      ],
+      "any_rejection_monte_carlo_95pct_wilson": [
+        0.9980829527187469,
+        0.9999999999999998
+      ],
+      "holm_rejection_monte_carlo_95pct_wilson_by_contrast": {
+        "C2_minus_C1_recovery": [
+          0.9671932285868021,
+          0.9809855764960074
+        ],
+        "C4_minus_C3_early_stop": [
+          0.9980829527187469,
+          0.9999999999999998
+        ],
+        "R1_minus_R0_recovery": [
+          0.7443827092504036,
+          0.7816070068323759
+        ]
+      },
+      "holm_rejection_probability_by_contrast": {
+        "C2_minus_C1_recovery": 0.975,
+        "C4_minus_C3_early_stop": 1.0,
+        "R1_minus_R0_recovery": 0.7635
+      },
+      "mean_contributing_families": {
+        "C2_minus_C1_recovery": 40.0,
+        "C4_minus_C3_early_stop": 40.0,
+        "R1_minus_R0_recovery": 40.0
+      },
+      "nonestimable_replicates": 0,
+      "probability_all_three_holm_rejections": 0.748,
+      "probability_any_holm_rejection": 1.0,
+      "replicates": 2000,
+      "scenario": {
+        "coupling": "independent",
+        "diagnostic_effect": 0.2,
+        "families": 40,
+        "family_baseline_shift": 0.08,
+        "family_effect_shift": 0.08,
+        "proof_effect": 0.3,
+        "rag_effect": 0.1,
+        "repeats": 5,
+        "technical_run_loss": 0.0
+      }
+    },
+    {
+      "all_three_monte_carlo_95pct_wilson": [
+        0.9576766713572294,
+        0.9735347235293615
+      ],
+      "any_rejection_monte_carlo_95pct_wilson": [
+        0.9980829527187469,
+        0.9999999999999998
+      ],
+      "holm_rejection_monte_carlo_95pct_wilson_by_contrast": {
+        "C2_minus_C1_recovery": [
+          0.9660647268553368,
+          0.9801179123220352
+        ],
+        "C4_minus_C3_early_stop": [
+          0.9852096168457007,
+          0.9939097597713902
+        ],
+        "R1_minus_R0_recovery": [
+          0.9980829527187469,
+          0.9999999999999998
+        ]
+      },
+      "holm_rejection_probability_by_contrast": {
+        "C2_minus_C1_recovery": 0.974,
+        "C4_minus_C3_early_stop": 0.9905,
+        "R1_minus_R0_recovery": 1.0
+      },
+      "mean_contributing_families": {
+        "C2_minus_C1_recovery": 40.0,
+        "C4_minus_C3_early_stop": 40.0,
+        "R1_minus_R0_recovery": 40.0
+      },
+      "nonestimable_replicates": 0,
+      "probability_all_three_holm_rejections": 0.9665,
+      "probability_any_holm_rejection": 1.0,
+      "replicates": 2000,
+      "scenario": {
+        "coupling": "shared",
+        "diagnostic_effect": 0.2,
+        "families": 40,
+        "family_baseline_shift": 0.08,
+        "family_effect_shift": 0.08,
+        "proof_effect": 0.2,
+        "rag_effect": 0.2,
+        "repeats": 5,
+        "technical_run_loss": 0.0
+      }
+    },
+    {
+      "all_three_monte_carlo_95pct_wilson": [
+        0.9571215720934327,
+        0.9730917398404393
+      ],
+      "any_rejection_monte_carlo_95pct_wilson": [
+        0.9980829527187469,
+        0.9999999999999998
+      ],
+      "holm_rejection_monte_carlo_95pct_wilson_by_contrast": {
+        "C2_minus_C1_recovery": [
+          0.9671932285868021,
+          0.9809855764960074
+        ],
+        "C4_minus_C3_early_stop": [
+          0.9858179592983869,
+          0.9942995002714226
+        ],
+        "R1_minus_R0_recovery": [
+          0.9980829527187469,
+          0.9999999999999998
+        ]
+      },
+      "holm_rejection_probability_by_contrast": {
+        "C2_minus_C1_recovery": 0.975,
+        "C4_minus_C3_early_stop": 0.991,
+        "R1_minus_R0_recovery": 1.0
+      },
+      "mean_contributing_families": {
+        "C2_minus_C1_recovery": 40.0,
+        "C4_minus_C3_early_stop": 40.0,
+        "R1_minus_R0_recovery": 40.0
+      },
+      "nonestimable_replicates": 0,
+      "probability_all_three_holm_rejections": 0.966,
+      "probability_any_holm_rejection": 1.0,
+      "replicates": 2000,
+      "scenario": {
+        "coupling": "independent",
+        "diagnostic_effect": 0.2,
+        "families": 40,
+        "family_baseline_shift": 0.08,
+        "family_effect_shift": 0.08,
+        "proof_effect": 0.2,
+        "rag_effect": 0.2,
+        "repeats": 5,
+        "technical_run_loss": 0.0
+      }
+    },
+    {
+      "all_three_monte_carlo_95pct_wilson": [
+        1.0842021724855044e-19,
+        0.001917047281252934
+      ],
+      "any_rejection_monte_carlo_95pct_wilson": [
+        0.03630266512840682,
+        0.054443764944814586
+      ],
+      "holm_rejection_monte_carlo_95pct_wilson_by_contrast": {
+        "C2_minus_C1_recovery": [
+          0.008481081388571086,
+          0.018388039710650523
+        ],
+        "C4_minus_C3_early_stop": [
+          0.01011467734679028,
+          0.020746775563306317
+        ],
+        "R1_minus_R0_recovery": [
+          0.014297256348690845,
+          0.026545026088593226
+        ]
+      },
+      "holm_rejection_probability_by_contrast": {
+        "C2_minus_C1_recovery": 0.0125,
+        "C4_minus_C3_early_stop": 0.0145,
+        "R1_minus_R0_recovery": 0.0195
+      },
+      "mean_contributing_families": {
+        "C2_minus_C1_recovery": 40.0,
+        "C4_minus_C3_early_stop": 40.0,
+        "R1_minus_R0_recovery": 40.0
+      },
+      "nonestimable_replicates": 0,
+      "probability_all_three_holm_rejections": 0.0,
+      "probability_any_holm_rejection": 0.0445,
+      "replicates": 2000,
+      "scenario": {
+        "coupling": "shared",
+        "diagnostic_effect": 0.0,
+        "families": 40,
+        "family_baseline_shift": 0.08,
+        "family_effect_shift": 0.08,
+        "proof_effect": 0.0,
+        "rag_effect": 0.0,
+        "repeats": 5,
+        "technical_run_loss": 0.05
+      }
+    },
+    {
+      "all_three_monte_carlo_95pct_wilson": [
+        1.0842021724855044e-19,
+        0.001917047281252934
+      ],
+      "any_rejection_monte_carlo_95pct_wilson": [
+        0.03946691899074102,
+        0.05826609175151162
+      ],
+      "holm_rejection_monte_carlo_95pct_wilson_by_contrast": {
+        "C2_minus_C1_recovery": [
+          0.01514715886374858,
+          0.02769128947897298
+        ],
+        "C4_minus_C3_early_stop": [
+          0.009703783146220175,
+          0.020159586811157672
+        ],
+        "R1_minus_R0_recovery": [
+          0.010527098037106688,
+          0.021332437825708653
+        ]
+      },
+      "holm_rejection_probability_by_contrast": {
+        "C2_minus_C1_recovery": 0.0205,
+        "C4_minus_C3_early_stop": 0.014,
+        "R1_minus_R0_recovery": 0.015
+      },
+      "mean_contributing_families": {
+        "C2_minus_C1_recovery": 40.0,
+        "C4_minus_C3_early_stop": 40.0,
+        "R1_minus_R0_recovery": 40.0
+      },
+      "nonestimable_replicates": 0,
+      "probability_all_three_holm_rejections": 0.0,
+      "probability_any_holm_rejection": 0.048,
+      "replicates": 2000,
+      "scenario": {
+        "coupling": "independent",
+        "diagnostic_effect": 0.0,
+        "families": 40,
+        "family_baseline_shift": 0.08,
+        "family_effect_shift": 0.08,
+        "proof_effect": 0.0,
+        "rag_effect": 0.0,
+        "repeats": 5,
+        "technical_run_loss": 0.05
+      }
+    },
+    {
+      "all_three_monte_carlo_95pct_wilson": [
+        0.10885029598940679,
+        0.13759707470793917
+      ],
+      "any_rejection_monte_carlo_95pct_wilson": [
+        0.8487995460272093,
+        0.8788029265047572
+      ],
+      "holm_rejection_monte_carlo_95pct_wilson_by_contrast": {
+        "C2_minus_C1_recovery": [
+          0.3579893607671193,
+          0.4004745646749438
+        ],
+        "C4_minus_C3_early_stop": [
+          0.7979009292610314,
+          0.831889413904498
+        ],
+        "R1_minus_R0_recovery": [
+          0.191263362602218,
+          0.22685427596275237
+        ]
+      },
+      "holm_rejection_probability_by_contrast": {
+        "C2_minus_C1_recovery": 0.379,
+        "C4_minus_C3_early_stop": 0.8155,
+        "R1_minus_R0_recovery": 0.2085
+      },
+      "mean_contributing_families": {
+        "C2_minus_C1_recovery": 40.0,
+        "C4_minus_C3_early_stop": 40.0,
+        "R1_minus_R0_recovery": 40.0
+      },
+      "nonestimable_replicates": 0,
+      "probability_all_three_holm_rejections": 0.1225,
+      "probability_any_holm_rejection": 0.8645,
+      "replicates": 2000,
+      "scenario": {
+        "coupling": "shared",
+        "diagnostic_effect": 0.1,
+        "families": 40,
+        "family_baseline_shift": 0.08,
+        "family_effect_shift": 0.08,
+        "proof_effect": 0.15,
+        "rag_effect": 0.05,
+        "repeats": 5,
+        "technical_run_loss": 0.05
+      }
+    },
+    {
+      "all_three_monte_carlo_95pct_wilson": [
+        0.07916698061730579,
+        0.1044011640587591
+      ],
+      "any_rejection_monte_carlo_95pct_wilson": [
+        0.8508892379702966,
+        0.8807055663725449
+      ],
+      "holm_rejection_monte_carlo_95pct_wilson_by_contrast": {
+        "C2_minus_C1_recovery": [
+          0.3338324449400018,
+          0.3757254158188427
+        ],
+        "C4_minus_C3_early_stop": [
+          0.7917026214984505,
+          0.8261107262344539
+        ],
+        "R1_minus_R0_recovery": [
+          0.17629898745996453,
+          0.21087807957072474
+        ]
+      },
+      "holm_rejection_probability_by_contrast": {
+        "C2_minus_C1_recovery": 0.3545,
+        "C4_minus_C3_early_stop": 0.8095,
+        "R1_minus_R0_recovery": 0.193
+      },
+      "mean_contributing_families": {
+        "C2_minus_C1_recovery": 40.0,
+        "C4_minus_C3_early_stop": 40.0,
+        "R1_minus_R0_recovery": 40.0
+      },
+      "nonestimable_replicates": 0,
+      "probability_all_three_holm_rejections": 0.091,
+      "probability_any_holm_rejection": 0.8665,
+      "replicates": 2000,
+      "scenario": {
+        "coupling": "independent",
+        "diagnostic_effect": 0.1,
+        "families": 40,
+        "family_baseline_shift": 0.08,
+        "family_effect_shift": 0.08,
+        "proof_effect": 0.15,
+        "rag_effect": 0.05,
+        "repeats": 5,
+        "technical_run_loss": 0.05
+      }
+    },
+    {
+      "all_three_monte_carlo_95pct_wilson": [
+        0.7351618535412222,
+        0.7728623693926199
+      ],
+      "any_rejection_monte_carlo_95pct_wilson": [
+        0.9980829527187469,
+        0.9999999999999998
+      ],
+      "holm_rejection_monte_carlo_95pct_wilson_by_contrast": {
+        "C2_minus_C1_recovery": [
+          0.9538001190471888,
+          0.9704246951703708
+        ],
+        "C4_minus_C3_early_stop": [
+          0.9980829527187469,
+          0.9999999999999998
+        ],
+        "R1_minus_R0_recovery": [
+          0.7489974299982998,
+          0.7859750326589487
+        ]
+      },
+      "holm_rejection_probability_by_contrast": {
+        "C2_minus_C1_recovery": 0.963,
+        "C4_minus_C3_early_stop": 1.0,
+        "R1_minus_R0_recovery": 0.768
+      },
+      "mean_contributing_families": {
+        "C2_minus_C1_recovery": 40.0,
+        "C4_minus_C3_early_stop": 40.0,
+        "R1_minus_R0_recovery": 40.0
+      },
+      "nonestimable_replicates": 0,
+      "probability_all_three_holm_rejections": 0.7545,
+      "probability_any_holm_rejection": 1.0,
+      "replicates": 2000,
+      "scenario": {
+        "coupling": "shared",
+        "diagnostic_effect": 0.2,
+        "families": 40,
+        "family_baseline_shift": 0.08,
+        "family_effect_shift": 0.08,
+        "proof_effect": 0.3,
+        "rag_effect": 0.1,
+        "repeats": 5,
+        "technical_run_loss": 0.05
+      }
+    },
+    {
+      "all_three_monte_carlo_95pct_wilson": [
+        0.6912533656986213,
+        0.7309357233014087
+      ],
+      "any_rejection_monte_carlo_95pct_wilson": [
+        0.9980829527187469,
+        0.9999999999999998
+      ],
+      "holm_rejection_monte_carlo_95pct_wilson_by_contrast": {
+        "C2_minus_C1_recovery": [
+          0.9488444508284481,
+          0.9663976168146429
+        ],
+        "C4_minus_C3_early_stop": [
+          0.9980829527187469,
+          0.9999999999999998
+        ],
+        "R1_minus_R0_recovery": [
+          0.7141995838511511,
+          0.7529032380212225
+        ]
+      },
+      "holm_rejection_probability_by_contrast": {
+        "C2_minus_C1_recovery": 0.9585,
+        "C4_minus_C3_early_stop": 1.0,
+        "R1_minus_R0_recovery": 0.734
+      },
+      "mean_contributing_families": {
+        "C2_minus_C1_recovery": 40.0,
+        "C4_minus_C3_early_stop": 40.0,
+        "R1_minus_R0_recovery": 40.0
+      },
+      "nonestimable_replicates": 0,
+      "probability_all_three_holm_rejections": 0.7115,
+      "probability_any_holm_rejection": 1.0,
+      "replicates": 2000,
+      "scenario": {
+        "coupling": "independent",
+        "diagnostic_effect": 0.2,
+        "families": 40,
+        "family_baseline_shift": 0.08,
+        "family_effect_shift": 0.08,
+        "proof_effect": 0.3,
+        "rag_effect": 0.1,
+        "repeats": 5,
+        "technical_run_loss": 0.05
+      }
+    },
+    {
+      "all_three_monte_carlo_95pct_wilson": [
+        0.9488444508284481,
+        0.9663976168146429
+      ],
+      "any_rejection_monte_carlo_95pct_wilson": [
+        0.9980829527187469,
+        0.9999999999999998
+      ],
+      "holm_rejection_monte_carlo_95pct_wilson_by_contrast": {
+        "C2_minus_C1_recovery": [
+          0.9638155173143411,
+          0.9783747900521559
+        ],
+        "C4_minus_C3_early_stop": [
+          0.9775005335818276,
+          0.9886437646499193
+        ],
+        "R1_minus_R0_recovery": [
+          0.9971731374967338,
+          0.9999117322692944
+        ]
+      },
+      "holm_rejection_probability_by_contrast": {
+        "C2_minus_C1_recovery": 0.972,
+        "C4_minus_C3_early_stop": 0.984,
+        "R1_minus_R0_recovery": 0.9995
+      },
+      "mean_contributing_families": {
+        "C2_minus_C1_recovery": 40.0,
+        "C4_minus_C3_early_stop": 40.0,
+        "R1_minus_R0_recovery": 40.0
+      },
+      "nonestimable_replicates": 0,
+      "probability_all_three_holm_rejections": 0.9585,
+      "probability_any_holm_rejection": 1.0,
+      "replicates": 2000,
+      "scenario": {
+        "coupling": "shared",
+        "diagnostic_effect": 0.2,
+        "families": 40,
+        "family_baseline_shift": 0.08,
+        "family_effect_shift": 0.08,
+        "proof_effect": 0.2,
+        "rag_effect": 0.2,
+        "repeats": 5,
+        "technical_run_loss": 0.05
+      }
+    },
+    {
+      "all_three_monte_carlo_95pct_wilson": [
+        0.9379251286390549,
+        0.9573552799496612
+      ],
+      "any_rejection_monte_carlo_95pct_wilson": [
+        0.9980829527187469,
+        0.9999999999999998
+      ],
+      "holm_rejection_monte_carlo_95pct_wilson_by_contrast": {
+        "C2_minus_C1_recovery": [
+          0.9565669231288751,
+          0.9726483058522783
+        ],
+        "C4_minus_C3_early_stop": [
+          0.9763388128481535,
+          0.987809319478156
+        ],
+        "R1_minus_R0_recovery": [
+          0.9963610657309615,
+          0.9997257210823479
+        ]
+      },
+      "holm_rejection_probability_by_contrast": {
+        "C2_minus_C1_recovery": 0.9655,
+        "C4_minus_C3_early_stop": 0.983,
+        "R1_minus_R0_recovery": 0.999
+      },
+      "mean_contributing_families": {
+        "C2_minus_C1_recovery": 40.0,
+        "C4_minus_C3_early_stop": 40.0,
+        "R1_minus_R0_recovery": 40.0
+      },
+      "nonestimable_replicates": 0,
+      "probability_all_three_holm_rejections": 0.9485,
+      "probability_any_holm_rejection": 1.0,
+      "replicates": 2000,
+      "scenario": {
+        "coupling": "independent",
+        "diagnostic_effect": 0.2,
+        "families": 40,
+        "family_baseline_shift": 0.08,
+        "family_effect_shift": 0.08,
+        "proof_effect": 0.2,
+        "rag_effect": 0.2,
+        "repeats": 5,
+        "technical_run_loss": 0.05
+      }
+    },
+    {
+      "all_three_monte_carlo_95pct_wilson": [
+        1.0842021724855044e-19,
+        0.001917047281252934
+      ],
+      "any_rejection_monte_carlo_95pct_wilson": [
+        0.045378356153563185,
+        0.06532973297403316
+      ],
+      "holm_rejection_monte_carlo_95pct_wilson_by_contrast": {
+        "C2_minus_C1_recovery": [
+          0.012609752959581211,
+          0.024240197666827872
+        ],
+        "C4_minus_C3_early_stop": [
+          0.013451349814109871,
+          0.025394766717736703
+        ],
+        "R1_minus_R0_recovery": [
+          0.016000780509074646,
+          0.028833833739084404
+        ]
+      },
+      "holm_rejection_probability_by_contrast": {
+        "C2_minus_C1_recovery": 0.0175,
+        "C4_minus_C3_early_stop": 0.0185,
+        "R1_minus_R0_recovery": 0.0215
+      },
+      "mean_contributing_families": {
+        "C2_minus_C1_recovery": 39.9995,
+        "C4_minus_C3_early_stop": 39.9995,
+        "R1_minus_R0_recovery": 39.9985
+      },
+      "nonestimable_replicates": 0,
+      "probability_all_three_holm_rejections": 0.0,
+      "probability_any_holm_rejection": 0.0545,
+      "replicates": 2000,
+      "scenario": {
+        "coupling": "shared",
+        "diagnostic_effect": 0.0,
+        "families": 40,
+        "family_baseline_shift": 0.08,
+        "family_effect_shift": 0.08,
+        "proof_effect": 0.0,
+        "rag_effect": 0.0,
+        "repeats": 5,
+        "technical_run_loss": 0.1
+      }
+    },
+    {
+      "all_three_monte_carlo_95pct_wilson": [
+        1.0842021724855044e-19,
+        0.001917047281252934
+      ],
+      "any_rejection_monte_carlo_95pct_wilson": [
+        0.03992009344287708,
+        0.05881100025209431
+      ],
+      "holm_rejection_monte_carlo_95pct_wilson_by_contrast": {
+        "C2_minus_C1_recovery": [
+          0.013873784918301425,
+          0.025970414566263898
+        ],
+        "C4_minus_C3_early_stop": [
+          0.01177282360725337,
+          0.023080961113718216
+        ],
+        "R1_minus_R0_recovery": [
+          0.010527098037106688,
+          0.021332437825708653
+        ]
+      },
+      "holm_rejection_probability_by_contrast": {
+        "C2_minus_C1_recovery": 0.019,
+        "C4_minus_C3_early_stop": 0.0165,
+        "R1_minus_R0_recovery": 0.015
+      },
+      "mean_contributing_families": {
+        "C2_minus_C1_recovery": 39.999,
+        "C4_minus_C3_early_stop": 39.9985,
+        "R1_minus_R0_recovery": 39.9985
+      },
+      "nonestimable_replicates": 0,
+      "probability_all_three_holm_rejections": 0.0,
+      "probability_any_holm_rejection": 0.0485,
+      "replicates": 2000,
+      "scenario": {
+        "coupling": "independent",
+        "diagnostic_effect": 0.0,
+        "families": 40,
+        "family_baseline_shift": 0.08,
+        "family_effect_shift": 0.08,
+        "proof_effect": 0.0,
+        "rag_effect": 0.0,
+        "repeats": 5,
+        "technical_run_loss": 0.1
+      }
+    },
+    {
+      "all_three_monte_carlo_95pct_wilson": [
+        0.08526070981102837,
+        0.11128251325038024
+      ],
+      "any_rejection_monte_carlo_95pct_wilson": [
+        0.8357628296825353,
+        0.8668875690314625
+      ],
+      "holm_rejection_monte_carlo_95pct_wilson_by_contrast": {
+        "C2_minus_C1_recovery": [
+          0.31907189881601794,
+          0.36054347336126424
+        ],
+        "C4_minus_C3_early_stop": [
+          0.7710871981211036,
+          0.8068028315030509
+        ],
+        "R1_minus_R0_recovery": [
+          0.1743711269973035,
+          0.20881360822251077
+        ]
+      },
+      "holm_rejection_probability_by_contrast": {
+        "C2_minus_C1_recovery": 0.3395,
+        "C4_minus_C3_early_stop": 0.7895,
+        "R1_minus_R0_recovery": 0.191
+      },
+      "mean_contributing_families": {
+        "C2_minus_C1_recovery": 39.9985,
+        "C4_minus_C3_early_stop": 39.9985,
+        "R1_minus_R0_recovery": 39.998
+      },
+      "nonestimable_replicates": 0,
+      "probability_all_three_holm_rejections": 0.0975,
+      "probability_any_holm_rejection": 0.852,
+      "replicates": 2000,
+      "scenario": {
+        "coupling": "shared",
+        "diagnostic_effect": 0.1,
+        "families": 40,
+        "family_baseline_shift": 0.08,
+        "family_effect_shift": 0.08,
+        "proof_effect": 0.15,
+        "rag_effect": 0.05,
+        "repeats": 5,
+        "technical_run_loss": 0.1
+      }
+    },
+    {
+      "all_three_monte_carlo_95pct_wilson": [
+        0.07963506675642809,
+        0.10493116087235554
+      ],
+      "any_rejection_monte_carlo_95pct_wilson": [
+        0.8149817735563052,
+        0.8477453070489427
+      ],
+      "holm_rejection_monte_carlo_95pct_wilson_by_contrast": {
+        "C2_minus_C1_recovery": [
+          0.3333400613425479,
+          0.3752197164635779
+        ],
+        "C4_minus_C3_early_stop": [
+          0.7387464009628544,
+          0.7762644026400192
+        ],
+        "R1_minus_R0_recovery": [
+          0.17003608019071192,
+          0.20416590845463362
+        ]
+      },
+      "holm_rejection_probability_by_contrast": {
+        "C2_minus_C1_recovery": 0.354,
+        "C4_minus_C3_early_stop": 0.758,
+        "R1_minus_R0_recovery": 0.1865
+      },
+      "mean_contributing_families": {
+        "C2_minus_C1_recovery": 39.9995,
+        "C4_minus_C3_early_stop": 39.999,
+        "R1_minus_R0_recovery": 39.9995
+      },
+      "nonestimable_replicates": 0,
+      "probability_all_three_holm_rejections": 0.0915,
+      "probability_any_holm_rejection": 0.832,
+      "replicates": 2000,
+      "scenario": {
+        "coupling": "independent",
+        "diagnostic_effect": 0.1,
+        "families": 40,
+        "family_baseline_shift": 0.08,
+        "family_effect_shift": 0.08,
+        "proof_effect": 0.15,
+        "rag_effect": 0.05,
+        "repeats": 5,
+        "technical_run_loss": 0.1
+      }
+    },
+    {
+      "all_three_monte_carlo_95pct_wilson": [
+        0.6800571231251532,
+        0.7201741409150643
+      ],
+      "any_rejection_monte_carlo_95pct_wilson": [
+        0.9980829527187469,
+        0.9999999999999998
+      ],
+      "holm_rejection_monte_carlo_95pct_wilson_by_contrast": {
+        "C2_minus_C1_recovery": [
+          0.9335871935538151,
+          0.9537085514131509
+        ],
+        "C4_minus_C3_early_stop": [
+          0.9980829527187469,
+          0.9999999999999998
+        ],
+        "R1_minus_R0_recovery": [
+          0.705523746028404,
+          0.7446116656477509
+        ]
+      },
+      "holm_rejection_probability_by_contrast": {
+        "C2_minus_C1_recovery": 0.9445,
+        "C4_minus_C3_early_stop": 1.0,
+        "R1_minus_R0_recovery": 0.7255
+      },
+      "mean_contributing_families": {
+        "C2_minus_C1_recovery": 39.9985,
+        "C4_minus_C3_early_stop": 39.9995,
+        "R1_minus_R0_recovery": 39.997
+      },
+      "nonestimable_replicates": 0,
+      "probability_all_three_holm_rejections": 0.7005,
+      "probability_any_holm_rejection": 1.0,
+      "replicates": 2000,
+      "scenario": {
+        "coupling": "shared",
+        "diagnostic_effect": 0.2,
+        "families": 40,
+        "family_baseline_shift": 0.08,
+        "family_effect_shift": 0.08,
+        "proof_effect": 0.3,
+        "rag_effect": 0.1,
+        "repeats": 5,
+        "technical_run_loss": 0.1
+      }
+    },
+    {
+      "all_three_monte_carlo_95pct_wilson": [
+        0.677514455968432,
+        0.7177263933081918
+      ],
+      "any_rejection_monte_carlo_95pct_wilson": [
+        0.9980829527187469,
+        0.9999999999999998
+      ],
+      "holm_rejection_monte_carlo_95pct_wilson_by_contrast": {
+        "C2_minus_C1_recovery": [
+          0.9276458135951825,
+          0.9486710188918773
+        ],
+        "C4_minus_C3_early_stop": [
+          0.9980829527187469,
+          0.9999999999999998
+        ],
+        "R1_minus_R0_recovery": [
+          0.7080745300314736,
+          0.7470512964082751
+        ]
+      },
+      "holm_rejection_probability_by_contrast": {
+        "C2_minus_C1_recovery": 0.939,
+        "C4_minus_C3_early_stop": 1.0,
+        "R1_minus_R0_recovery": 0.728
+      },
+      "mean_contributing_families": {
+        "C2_minus_C1_recovery": 39.9995,
+        "C4_minus_C3_early_stop": 39.9995,
+        "R1_minus_R0_recovery": 39.9975
+      },
+      "nonestimable_replicates": 0,
+      "probability_all_three_holm_rejections": 0.698,
+      "probability_any_holm_rejection": 1.0,
+      "replicates": 2000,
+      "scenario": {
+        "coupling": "independent",
+        "diagnostic_effect": 0.2,
+        "families": 40,
+        "family_baseline_shift": 0.08,
+        "family_effect_shift": 0.08,
+        "proof_effect": 0.3,
+        "rag_effect": 0.1,
+        "repeats": 5,
+        "technical_run_loss": 0.1
+      }
+    },
+    {
+      "all_three_monte_carlo_95pct_wilson": [
+        0.935754264314357,
+        0.955533812463484
+      ],
+      "any_rejection_monte_carlo_95pct_wilson": [
+        0.9980829527187469,
+        0.9999999999999998
+      ],
+      "holm_rejection_monte_carlo_95pct_wilson_by_contrast": {
+        "C2_minus_C1_recovery": [
+          0.9504930634412283,
+          0.9677432530600187
+        ],
+        "C4_minus_C3_early_stop": [
+          0.9792532244366937,
+          0.9898853226532097
+        ],
+        "R1_minus_R0_recovery": [
+          0.9963610657309615,
+          0.9997257210823479
+        ]
+      },
+      "holm_rejection_probability_by_contrast": {
+        "C2_minus_C1_recovery": 0.96,
+        "C4_minus_C3_early_stop": 0.9855,
+        "R1_minus_R0_recovery": 0.999
+      },
+      "mean_contributing_families": {
+        "C2_minus_C1_recovery": 39.999,
+        "C4_minus_C3_early_stop": 39.9995,
+        "R1_minus_R0_recovery": 39.999
+      },
+      "nonestimable_replicates": 0,
+      "probability_all_three_holm_rejections": 0.9465,
+      "probability_any_holm_rejection": 1.0,
+      "replicates": 2000,
+      "scenario": {
+        "coupling": "shared",
+        "diagnostic_effect": 0.2,
+        "families": 40,
+        "family_baseline_shift": 0.08,
+        "family_effect_shift": 0.08,
+        "proof_effect": 0.2,
+        "rag_effect": 0.2,
+        "repeats": 5,
+        "technical_run_loss": 0.1
+      }
+    },
+    {
+      "all_three_monte_carlo_95pct_wilson": [
+        0.9062239429175495,
+        0.9301695714607606
+      ],
+      "any_rejection_monte_carlo_95pct_wilson": [
+        0.9980829527187469,
+        0.9999999999999998
+      ],
+      "holm_rejection_monte_carlo_95pct_wilson_by_contrast": {
+        "C2_minus_C1_recovery": [
+          0.9352121487009426,
+          0.9550778451241797
+        ],
+        "C4_minus_C3_early_stop": [
+          0.9599017692818405,
+          0.9753019574156255
+        ],
+        "R1_minus_R0_recovery": [
+          0.994868648214923,
+          0.9992219726929489
+        ]
+      },
+      "holm_rejection_probability_by_contrast": {
+        "C2_minus_C1_recovery": 0.946,
+        "C4_minus_C3_early_stop": 0.9685,
+        "R1_minus_R0_recovery": 0.998
+      },
+      "mean_contributing_families": {
+        "C2_minus_C1_recovery": 39.9985,
+        "C4_minus_C3_early_stop": 39.999,
+        "R1_minus_R0_recovery": 39.997
+      },
+      "nonestimable_replicates": 0,
+      "probability_all_three_holm_rejections": 0.919,
+      "probability_any_holm_rejection": 1.0,
+      "replicates": 2000,
+      "scenario": {
+        "coupling": "independent",
+        "diagnostic_effect": 0.2,
+        "families": 40,
+        "family_baseline_shift": 0.08,
+        "family_effect_shift": 0.08,
+        "proof_effect": 0.2,
+        "rag_effect": 0.2,
+        "repeats": 5,
+        "technical_run_loss": 0.1
+      }
+    }
+  ],
+  "source_sha256": "a22903294e6e1a51ef8045bdebb14d922b3d671a5b678dfe0d1fc571c6350575",
+  "status": "SYNTHETIC_PLANNING_ONLY_NOT_READY",
+  "version": "v1-companion-holm-power-1.0.0"
+}

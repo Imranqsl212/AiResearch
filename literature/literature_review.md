@@ -1,6 +1,6 @@
 # Literature review: adaptation after failed secure-code repair
 
-**Review date:** 2026-10-02
+**Review date:** 2026-10-04
 **Project:** *When to Stop: How AI Agents Adapt After Failed Attacks and Why They Fail to Give Up*
 **Active scope:** local, independently verified repair of cryptographic and web-security code.
 
@@ -28,11 +28,31 @@ baselines. Third, feedback quality matters, but most studies reduce adaptation t
 measure error recognition and correction, so it would be inaccurate to claim that
 nobody studies post-failure behavior.
 
-The surviving gap is narrower. Existing secure-code studies do not jointly isolate
-RAG from feedback, classify observable strategy transitions, include matched
-recoverable and unrecoverable cases, and compare an agent's success claim with an
-independent security receipt. This project therefore studies the *trajectory* between
-failure and termination, not only whether the final patch passes.
+The surviving question is narrower. Studies already examine stopping, tool-use
+reflection, false success, and benchmark defects. The prospective study would need
+to show what changes when a coding agent receives truthful diagnostic evidence or
+an incorrect checker verdict on a matched, independently validated repair task.
+Observable revisions, stopping, and final security outcomes must be measured
+separately. The historical 40-episode cohort cannot answer that causal question.
+
+### 4 October 2026 benchmark-validity update
+
+- [SWE-Bench+](https://arxiv.org/abs/2410.06992) reports answer leakage and weak
+  tests among screened coding-agent successes. Its result warns against treating
+  a test-passing patch as ground-truth correctness across other benchmarks.
+- [PatchBench](https://arxiv.org/abs/2609.04075) shows that a proof-of-concept-only
+  crash check can inflate vulnerability-patching scores; it motivates independent
+  security and semantic checks on submitted repairs.
+- [Silent Failures in Agentic Security Evaluation](https://arxiv.org/abs/2609.32691)
+  audits a prompt-injection harness and reports payload-delivery, scoring,
+  false-rejection, and trace-persistence faults. Benchmark-audit and
+  false-rejection novelty claims must therefore be restricted to the exact
+  security-repair setting and measurement mechanism studied here.
+
+These are primary-source reports, not replications by this project. The present
+manuscript's 9/20 test–gate discordance is a case-specific evaluator finding; the
+new C1–C5 finite pilots are excluded engineering evidence and do not supply a
+population estimate or a confirmatory effect.
 
 ## Core papers: five-question analysis
 
@@ -356,12 +376,16 @@ reduces search.
 
 ## Design implications for this repository
 
-The current four cells remain useful: repairable/diagnostic (`RD`),
-unavailable/diagnostic (`UD`), repairable/weak (`RW`), and unavailable/weak (`UW`).
-The literature motivates an orthogonal `RAG off/relevant` factor, producing a 2×2×2
-design. RAG must be frozen before collection and must not contain the reference patch,
-verifier internals, or the hidden feasibility label. Pilot analysis should treat task
-family—not individual actions—as the cluster.
+The older `RD`/`UD`/`RW`/`UW` by guidance design belongs to the exploratory cohort
+and its protocol history; its `U` label was an evaluator veto rather than a proof of
+unrepairability. The prospective C1–C5 design instead needs independently checked
+repairability or a contradiction witness, with C5 deliberately introducing a false
+failure after an oracle-secure candidate. Retrieval remains an orthogonal,
+pre-frozen factor. Its corpus must exclude exact answers, verifier internals,
+hidden conditions, and proof labels. The exact task set, model snapshots, prompts,
+budgets, analysis plan, and family-level uncertainty method must be frozen before
+eligible collection; action-level counts are nested observations, not independent
+replications.
 
 ## Primary-source links
 
@@ -377,6 +401,9 @@ family—not individual actions—as the cluster.
 - [Lewis et al., 2020](https://proceedings.neurips.cc/paper/2020/hash/6b493230-Abstract.html)
 - [ReflecTool-Bench](https://aclanthology.org/2026.findings-acl.86/)
 - [Ray and Goyal, 2026](https://arxiv.org/abs/2607.14167)
+- [SWE-Bench+](https://arxiv.org/abs/2410.06992)
+- [PatchBench](https://arxiv.org/abs/2609.04075)
+- [Silent Failures in Agentic Security Evaluation](https://arxiv.org/abs/2609.32691)
 
 The machine-readable evidence table is
 [`literature_matrix.csv`](literature_matrix.csv), and citation metadata is in

@@ -114,6 +114,9 @@ class ExecutableCatalogSandbox(EpisodeSandbox):
 
     def execute_tool(self, call: ToolCall) -> ToolObservation:
         self._assert_active()
+        # A receipt belongs to this action only. Without resetting it,
+        # inspect/terminate can inherit the prior attempt's verifier result.
+        self._last_receipt = None
         if call.tool == "inspect":
             observation, outcome = {
                 "kind": "code_inventory", "files": ["solution.py"], "language": "python",

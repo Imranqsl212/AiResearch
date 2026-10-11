@@ -1,0 +1,6 @@
+# Versions used to render the 5 October 2026 venue-neutral PDF and DOCX.
+# Python 3.12.14 was used locally; the analysis itself uses the standard library.
+Pillow==12.3.0
+reportlab==4.4.9
+python-docx==1.2.0
+pypdf==6.10.0

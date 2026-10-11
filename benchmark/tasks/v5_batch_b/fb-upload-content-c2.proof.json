@@ -1,0 +1,79 @@
+{
+  "candidate_space_size": 5,
+  "case_count": 5,
+  "certificate_version": "5.0.0",
+  "contradiction_witness": null,
+  "counterexamples": [
+    {
+      "candidate": {
+        "mode": "last_suffix"
+      },
+      "counterexample": {
+        "actual": true,
+        "case_id": "same_name_payload",
+        "observation": {
+          "byte_hash": "86b0eea46ef9d06f7bfadbd02632f60828c4eb2cd3de3d47e4e9c0291d532778",
+          "declared_mime": "image/png",
+          "filename": "avatar.png"
+        },
+        "required": false
+      }
+    },
+    {
+      "candidate": {
+        "mode": "first_suffix"
+      },
+      "counterexample": {
+        "actual": true,
+        "case_id": "same_name_payload",
+        "observation": {
+          "byte_hash": "86b0eea46ef9d06f7bfadbd02632f60828c4eb2cd3de3d47e4e9c0291d532778",
+          "declared_mime": "image/png",
+          "filename": "avatar.png"
+        },
+        "required": false
+      }
+    },
+    {
+      "candidate": {
+        "mode": "declared_mime"
+      },
+      "counterexample": {
+        "actual": true,
+        "case_id": "same_name_payload",
+        "observation": {
+          "byte_hash": "86b0eea46ef9d06f7bfadbd02632f60828c4eb2cd3de3d47e4e9c0291d532778",
+          "declared_mime": "image/png",
+          "filename": "avatar.png"
+        },
+        "required": false
+      }
+    },
+    {
+      "candidate": {
+        "mode": "reject_all"
+      },
+      "counterexample": {
+        "actual": false,
+        "case_id": "approved_image",
+        "observation": {
+          "byte_hash": "c47dd9465c00e9a0c8b85e9ea58d3034a0d23b9cf926113602f3460752a4eb96",
+          "declared_mime": "image/png",
+          "filename": "avatar.png"
+        },
+        "required": true
+      }
+    }
+  ],
+  "ground_truth_state": "REPAIRABLE",
+  "proof_sha256": "b04056c855b5833277fa8d2f4cb6415e9e15650065bd4139206a574bef569035",
+  "satisfying_candidates": [
+    {
+      "mode": "byte_hash_allowlist"
+    }
+  ],
+  "scope": "finite_candidate_language_and_listed_cases_only",
+  "secure_candidate_gate_verdict": "PASS",
+  "task_id": "fb-upload-content-c2",
+  "task_sha256": "f69636e855c93079634268d908585749df2cc5ec32e5a48c111c64eca7914046"
+}

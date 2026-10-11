@@ -1,0 +1,9 @@
+{
+  "archived_source": "benchmark/real_code_sqli_v2_source.py.txt",
+  "associated_calibration": "benchmark/real_code_sqli_calibration_v2_20261004.json",
+  "original_path": "benchmark/real_code_sqli.py",
+  "reason": "Preserve exact reviewed v2 source before SQLite lifecycle fix and v3 calibration.",
+  "schema_version": "1.0",
+  "source_bytes": 12584,
+  "source_sha256": "30b0f20829054ab71aa5f94bd6f9730dd78419dc52d78375b53db952d11da1b4"
+}

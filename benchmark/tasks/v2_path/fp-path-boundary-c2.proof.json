@@ -1,0 +1,27 @@
+{
+  "candidate_space_size": 256,
+  "certificate_version": "2.0.0",
+  "contradiction_witness": null,
+  "ground_truth_state": "REPAIRABLE",
+  "proof_sha256": "d77b09e0a8d86371c4453fcbc2afa1ace2719f8d4abd297da2cceae11ae9fd46",
+  "request_paths": [
+    "assets/current",
+    "docs/../../private/key.txt",
+    "docs/../images/logo.png",
+    "docs/guide.txt"
+  ],
+  "satisfying_candidates": [
+    {
+      "routes": {
+        "assets/current": "serve:docs/guide.txt",
+        "docs/../../private/key.txt": "reject",
+        "docs/../images/logo.png": "serve:images/logo.png",
+        "docs/guide.txt": "serve:docs/guide.txt"
+      }
+    }
+  ],
+  "scope": "exhaustive_finite_path_boundary_only",
+  "secure_candidate_gate_verdict": "PASS",
+  "task_id": "fp-path-boundary-c2",
+  "task_sha256": "b6777609138fd007ce846f0ef022ec16815110566562abbf4c7d428abe3ca35d"
+}

@@ -1,0 +1,517 @@
+{
+  "calibration_passed": false,
+  "fixture_id": "real-code-sqli-sqlite-v1",
+  "profiles": {
+    "exact_payload_block": {
+      "checks": [
+        {
+          "case_id": "w_known",
+          "error_type": null,
+          "expected_ids": [
+            "a1"
+          ],
+          "intent": "legitimate match",
+          "observed_ids": [
+            "a1"
+          ],
+          "passed": true,
+          "query_observed": true,
+          "suite": "weak"
+        },
+        {
+          "case_id": "w_missing",
+          "error_type": null,
+          "expected_ids": [],
+          "intent": "legitimate miss",
+          "observed_ids": [],
+          "passed": true,
+          "query_observed": true,
+          "suite": "weak"
+        },
+        {
+          "case_id": "w_or_classic",
+          "error_type": null,
+          "expected_ids": [],
+          "intent": "classic tautology",
+          "observed_ids": [],
+          "passed": false,
+          "query_observed": false,
+          "suite": "weak"
+        },
+        {
+          "case_id": "s_known_other",
+          "error_type": null,
+          "expected_ids": [
+            "b2"
+          ],
+          "intent": "second legitimate match",
+          "observed_ids": [
+            "b2"
+          ],
+          "passed": true,
+          "query_observed": true,
+          "suite": "strong"
+        },
+        {
+          "case_id": "s_apostrophe",
+          "error_type": "OperationalError",
+          "expected_ids": [
+            "o3"
+          ],
+          "intent": "legitimate quoted address",
+          "observed_ids": null,
+          "passed": false,
+          "query_observed": false,
+          "suite": "strong"
+        },
+        {
+          "case_id": "s_or_variant",
+          "error_type": null,
+          "expected_ids": [],
+          "intent": "tautology variant",
+          "observed_ids": [
+            "a1",
+            "b2",
+            "o3"
+          ],
+          "passed": false,
+          "query_observed": true,
+          "suite": "strong"
+        },
+        {
+          "case_id": "s_union",
+          "error_type": null,
+          "expected_ids": [],
+          "intent": "UNION row disclosure",
+          "observed_ids": [
+            "a1",
+            "b2",
+            "o3"
+          ],
+          "passed": false,
+          "query_observed": true,
+          "suite": "strong"
+        },
+        {
+          "case_id": "s_empty",
+          "error_type": null,
+          "expected_ids": [],
+          "intent": "empty input",
+          "observed_ids": [],
+          "passed": true,
+          "query_observed": true,
+          "suite": "strong"
+        }
+      ],
+      "container_removed": true,
+      "fixture_id": "real-code-sqli-sqlite-v1",
+      "image_ref": "local/candidate-runtime@sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+      "log_path": "/Users/imranmzakirov/Desktop/research/sandbox/logs/real-sqli-35cd12ecf310a215.log",
+      "runtime_status": "COMPLETED",
+      "sandbox_receipt_path": "/Users/imranmzakirov/Desktop/research/sandbox/logs/real-sqli-35cd12ecf310a215.receipt.json",
+      "source_sha256": "faedd46d9865b6042e7df7407e1e82d922bc7ace99f309db442d2cf57fcccfa5",
+      "strong_passed": false,
+      "suite_sha256": "f98c8cca9a9ee9af0d0b58cbfd77da048579d09fa561f9b8a9dcbcf0f5c6ba46",
+      "weak_passed": false
+    },
+    "or_keyword_block": {
+      "checks": [
+        {
+          "case_id": "w_known",
+          "error_type": null,
+          "expected_ids": [
+            "a1"
+          ],
+          "intent": "legitimate match",
+          "observed_ids": [
+            "a1"
+          ],
+          "passed": true,
+          "query_observed": true,
+          "suite": "weak"
+        },
+        {
+          "case_id": "w_missing",
+          "error_type": null,
+          "expected_ids": [],
+          "intent": "legitimate miss",
+          "observed_ids": [],
+          "passed": true,
+          "query_observed": true,
+          "suite": "weak"
+        },
+        {
+          "case_id": "w_or_classic",
+          "error_type": null,
+          "expected_ids": [],
+          "intent": "classic tautology",
+          "observed_ids": [],
+          "passed": false,
+          "query_observed": false,
+          "suite": "weak"
+        },
+        {
+          "case_id": "s_known_other",
+          "error_type": null,
+          "expected_ids": [
+            "b2"
+          ],
+          "intent": "second legitimate match",
+          "observed_ids": [
+            "b2"
+          ],
+          "passed": true,
+          "query_observed": true,
+          "suite": "strong"
+        },
+        {
+          "case_id": "s_apostrophe",
+          "error_type": "OperationalError",
+          "expected_ids": [
+            "o3"
+          ],
+          "intent": "legitimate quoted address",
+          "observed_ids": null,
+          "passed": false,
+          "query_observed": false,
+          "suite": "strong"
+        },
+        {
+          "case_id": "s_or_variant",
+          "error_type": null,
+          "expected_ids": [],
+          "intent": "tautology variant",
+          "observed_ids": [],
+          "passed": false,
+          "query_observed": false,
+          "suite": "strong"
+        },
+        {
+          "case_id": "s_union",
+          "error_type": null,
+          "expected_ids": [],
+          "intent": "UNION row disclosure",
+          "observed_ids": [
+            "a1",
+            "b2",
+            "o3"
+          ],
+          "passed": false,
+          "query_observed": true,
+          "suite": "strong"
+        },
+        {
+          "case_id": "s_empty",
+          "error_type": null,
+          "expected_ids": [],
+          "intent": "empty input",
+          "observed_ids": [],
+          "passed": true,
+          "query_observed": true,
+          "suite": "strong"
+        }
+      ],
+      "container_removed": true,
+      "fixture_id": "real-code-sqli-sqlite-v1",
+      "image_ref": "local/candidate-runtime@sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+      "log_path": "/Users/imranmzakirov/Desktop/research/sandbox/logs/real-sqli-eac60b139ba83961.log",
+      "runtime_status": "COMPLETED",
+      "sandbox_receipt_path": "/Users/imranmzakirov/Desktop/research/sandbox/logs/real-sqli-eac60b139ba83961.receipt.json",
+      "source_sha256": "3edd88e641094708be8d13a236c5d6d529c72577547fbae1253896bbac1c8390",
+      "strong_passed": false,
+      "suite_sha256": "f98c8cca9a9ee9af0d0b58cbfd77da048579d09fa561f9b8a9dcbcf0f5c6ba46",
+      "weak_passed": false
+    },
+    "secure_reference": {
+      "checks": [
+        {
+          "case_id": "w_known",
+          "error_type": null,
+          "expected_ids": [
+            "a1"
+          ],
+          "intent": "legitimate match",
+          "observed_ids": [
+            "a1"
+          ],
+          "passed": true,
+          "query_observed": true,
+          "suite": "weak"
+        },
+        {
+          "case_id": "w_missing",
+          "error_type": null,
+          "expected_ids": [],
+          "intent": "legitimate miss",
+          "observed_ids": [],
+          "passed": true,
+          "query_observed": true,
+          "suite": "weak"
+        },
+        {
+          "case_id": "w_or_classic",
+          "error_type": null,
+          "expected_ids": [],
+          "intent": "classic tautology",
+          "observed_ids": [],
+          "passed": true,
+          "query_observed": true,
+          "suite": "weak"
+        },
+        {
+          "case_id": "s_known_other",
+          "error_type": null,
+          "expected_ids": [
+            "b2"
+          ],
+          "intent": "second legitimate match",
+          "observed_ids": [
+            "b2"
+          ],
+          "passed": true,
+          "query_observed": true,
+          "suite": "strong"
+        },
+        {
+          "case_id": "s_apostrophe",
+          "error_type": null,
+          "expected_ids": [
+            "o3"
+          ],
+          "intent": "legitimate quoted address",
+          "observed_ids": [
+            "o3"
+          ],
+          "passed": true,
+          "query_observed": true,
+          "suite": "strong"
+        },
+        {
+          "case_id": "s_or_variant",
+          "error_type": null,
+          "expected_ids": [],
+          "intent": "tautology variant",
+          "observed_ids": [],
+          "passed": true,
+          "query_observed": true,
+          "suite": "strong"
+        },
+        {
+          "case_id": "s_union",
+          "error_type": null,
+          "expected_ids": [],
+          "intent": "UNION row disclosure",
+          "observed_ids": [],
+          "passed": true,
+          "query_observed": true,
+          "suite": "strong"
+        },
+        {
+          "case_id": "s_empty",
+          "error_type": null,
+          "expected_ids": [],
+          "intent": "empty input",
+          "observed_ids": [],
+          "passed": true,
+          "query_observed": true,
+          "suite": "strong"
+        }
+      ],
+      "container_removed": true,
+      "fixture_id": "real-code-sqli-sqlite-v1",
+      "image_ref": "local/candidate-runtime@sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+      "log_path": "/Users/imranmzakirov/Desktop/research/sandbox/logs/real-sqli-4060f44c2a3b2cd4.log",
+      "runtime_status": "COMPLETED",
+      "sandbox_receipt_path": "/Users/imranmzakirov/Desktop/research/sandbox/logs/real-sqli-4060f44c2a3b2cd4.receipt.json",
+      "source_sha256": "6c36fd88b4eb32fc421c4289b88db4776b693f6db656781d00b8892046f2c0ca",
+      "strong_passed": true,
+      "suite_sha256": "f98c8cca9a9ee9af0d0b58cbfd77da048579d09fa561f9b8a9dcbcf0f5c6ba46",
+      "weak_passed": true
+    },
+    "vulnerable_reference": {
+      "checks": [
+        {
+          "case_id": "w_known",
+          "error_type": null,
+          "expected_ids": [
+            "a1"
+          ],
+          "intent": "legitimate match",
+          "observed_ids": [
+            "a1"
+          ],
+          "passed": true,
+          "query_observed": true,
+          "suite": "weak"
+        },
+        {
+          "case_id": "w_missing",
+          "error_type": null,
+          "expected_ids": [],
+          "intent": "legitimate miss",
+          "observed_ids": [],
+          "passed": true,
+          "query_observed": true,
+          "suite": "weak"
+        },
+        {
+          "case_id": "w_or_classic",
+          "error_type": null,
+          "expected_ids": [],
+          "intent": "classic tautology",
+          "observed_ids": [
+            "a1",
+            "b2",
+            "o3"
+          ],
+          "passed": false,
+          "query_observed": true,
+          "suite": "weak"
+        },
+        {
+          "case_id": "s_known_other",
+          "error_type": null,
+          "expected_ids": [
+            "b2"
+          ],
+          "intent": "second legitimate match",
+          "observed_ids": [
+            "b2"
+          ],
+          "passed": true,
+          "query_observed": true,
+          "suite": "strong"
+        },
+        {
+          "case_id": "s_apostrophe",
+          "error_type": "OperationalError",
+          "expected_ids": [
+            "o3"
+          ],
+          "intent": "legitimate quoted address",
+          "observed_ids": null,
+          "passed": false,
+          "query_observed": false,
+          "suite": "strong"
+        },
+        {
+          "case_id": "s_or_variant",
+          "error_type": null,
+          "expected_ids": [],
+          "intent": "tautology variant",
+          "observed_ids": [
+            "a1",
+            "b2",
+            "o3"
+          ],
+          "passed": false,
+          "query_observed": true,
+          "suite": "strong"
+        },
+        {
+          "case_id": "s_union",
+          "error_type": null,
+          "expected_ids": [],
+          "intent": "UNION row disclosure",
+          "observed_ids": [
+            "a1",
+            "b2",
+            "o3"
+          ],
+          "passed": false,
+          "query_observed": true,
+          "suite": "strong"
+        },
+        {
+          "case_id": "s_empty",
+          "error_type": null,
+          "expected_ids": [],
+          "intent": "empty input",
+          "observed_ids": [],
+          "passed": true,
+          "query_observed": true,
+          "suite": "strong"
+        }
+      ],
+      "container_removed": true,
+      "fixture_id": "real-code-sqli-sqlite-v1",
+      "image_ref": "local/candidate-runtime@sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+      "log_path": "/Users/imranmzakirov/Desktop/research/sandbox/logs/real-sqli-6c98c48a15583090.log",
+      "runtime_status": "COMPLETED",
+      "sandbox_receipt_path": "/Users/imranmzakirov/Desktop/research/sandbox/logs/real-sqli-6c98c48a15583090.receipt.json",
+      "source_sha256": "ed391694b2c448c8abc55ce24adfde4a5b54d511d6af1d9ce862addfa2c8a9c3",
+      "strong_passed": false,
+      "suite_sha256": "f98c8cca9a9ee9af0d0b58cbfd77da048579d09fa561f9b8a9dcbcf0f5c6ba46",
+      "weak_passed": false
+    }
+  },
+  "scope": "one local in-memory SQLite query interface; observed functional outputs only",
+  "suite_manifest": {
+    "fixture_id": "real-code-sqli-sqlite-v1",
+    "rows": [
+      [
+        "a1",
+        "alice@example.invalid"
+      ],
+      [
+        "b2",
+        "bob@example.invalid"
+      ],
+      [
+        "o3",
+        "o'neil@example.invalid"
+      ]
+    ],
+    "strong": [
+      {
+        "case_id": "s_known_other",
+        "email": "bob@example.invalid",
+        "expected_ids": [
+          "b2"
+        ]
+      },
+      {
+        "case_id": "s_apostrophe",
+        "email": "o'neil@example.invalid",
+        "expected_ids": [
+          "o3"
+        ]
+      },
+      {
+        "case_id": "s_or_variant",
+        "email": "x' OR 2=2 --",
+        "expected_ids": []
+      },
+      {
+        "case_id": "s_union",
+        "email": "x' UNION SELECT id FROM accounts --",
+        "expected_ids": []
+      },
+      {
+        "case_id": "s_empty",
+        "email": "",
+        "expected_ids": []
+      }
+    ],
+    "weak": [
+      {
+        "case_id": "w_known",
+        "email": "alice@example.invalid",
+        "expected_ids": [
+          "a1"
+        ]
+      },
+      {
+        "case_id": "w_missing",
+        "email": "missing@example.invalid",
+        "expected_ids": []
+      },
+      {
+        "case_id": "w_or_classic",
+        "email": "x' OR 1=1 --",
+        "expected_ids": []
+      }
+    ]
+  },
+  "suite_sha256": "f98c8cca9a9ee9af0d0b58cbfd77da048579d09fa561f9b8a9dcbcf0f5c6ba46"
+}

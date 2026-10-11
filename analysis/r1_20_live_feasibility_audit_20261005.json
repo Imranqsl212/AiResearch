@@ -1,0 +1,671 @@
+{
+  "both_secure_pairs_r0_earlier": 1,
+  "both_secure_pairs_r1_earlier": 1,
+  "both_secure_pairs_same_first_step": 10,
+  "eligible_for_main_analysis": false,
+  "error_type_counts": {
+    "AGENT_PROTOCOL_NO_ACTION": 2
+  },
+  "families": 20,
+  "first_request_extra_utf8_bytes_r1_minus_r0_valid_pairs": {
+    "max": 462,
+    "median": 373,
+    "min": 306
+  },
+  "incomplete_pairs": 1,
+  "invalidated_slots": 2,
+  "limitations": [
+    "The per-family documents are unreviewed and curated for these task cards.",
+    "Only C2 has one matched seed per family; invalidations remain in the denominator.",
+    "R1 changes delivered content and input length together.",
+    "The model digest was checked at block start and again after completion, not attested per slot.",
+    "No main eligibility, confirmatory inference, or evidence of actual document use."
+  ],
+  "paired_outcomes": {
+    "R0_0_R1_0": 6,
+    "R0_1_R1_0": 1,
+    "R0_1_R1_1": 12
+  },
+  "pairs_with_identical_candidate_hash_sequences": 15,
+  "r0_secure_onsets": 13,
+  "r0_valid": 19,
+  "r1_secure_onsets": 12,
+  "r1_valid": 19,
+  "rows": [
+    {
+      "candidate_hash_sequence": [],
+      "error_types": [
+        "AGENT_PROTOCOL_NO_ACTION"
+      ],
+      "family": "transaction_replay",
+      "first_request_envelope_sha256": "c37e9b8a92adddc3a2caa88cedb0b809d0ee16326a0237de6fd589415c4df9d2",
+      "first_request_utf8_bytes": 3528,
+      "first_secure_step": null,
+      "retrieval_mode": "R0",
+      "secure_onset": false,
+      "slot_id": "slot-000001",
+      "status": "INVALIDATED",
+      "stop_reason_or_error": "ERROR"
+    },
+    {
+      "candidate_hash_sequence": [],
+      "error_types": [
+        "AGENT_PROTOCOL_NO_ACTION"
+      ],
+      "family": "transaction_replay",
+      "first_request_envelope_sha256": "c37e9b8a92adddc3a2caa88cedb0b809d0ee16326a0237de6fd589415c4df9d2",
+      "first_request_utf8_bytes": 3958,
+      "first_secure_step": null,
+      "retrieval_mode": "R1",
+      "secure_onset": false,
+      "slot_id": "slot-000002",
+      "status": "INVALIDATED",
+      "stop_reason_or_error": "ERROR"
+    },
+    {
+      "candidate_hash_sequence": [
+        "f63f8b56a7dd26a26d84f316cd5d8e6f458a677253784e7cb4eb8fbe4fc13bad",
+        "f63f8b56a7dd26a26d84f316cd5d8e6f458a677253784e7cb4eb8fbe4fc13bad",
+        "f63f8b56a7dd26a26d84f316cd5d8e6f458a677253784e7cb4eb8fbe4fc13bad"
+      ],
+      "error_types": [],
+      "family": "upload_content",
+      "first_request_envelope_sha256": "04afe820dd1ef519c216c6d0992a7478c76bf137494444a3699be5259bdd2c2c",
+      "first_request_utf8_bytes": 3605,
+      "first_secure_step": null,
+      "retrieval_mode": "R0",
+      "secure_onset": false,
+      "slot_id": "slot-000003",
+      "status": "VALID_EXCLUDED",
+      "stop_reason_or_error": "BUDGET"
+    },
+    {
+      "candidate_hash_sequence": [
+        "f63f8b56a7dd26a26d84f316cd5d8e6f458a677253784e7cb4eb8fbe4fc13bad",
+        "f63f8b56a7dd26a26d84f316cd5d8e6f458a677253784e7cb4eb8fbe4fc13bad",
+        "f63f8b56a7dd26a26d84f316cd5d8e6f458a677253784e7cb4eb8fbe4fc13bad"
+      ],
+      "error_types": [],
+      "family": "upload_content",
+      "first_request_envelope_sha256": "04afe820dd1ef519c216c6d0992a7478c76bf137494444a3699be5259bdd2c2c",
+      "first_request_utf8_bytes": 3978,
+      "first_secure_step": null,
+      "retrieval_mode": "R1",
+      "secure_onset": false,
+      "slot_id": "slot-000004",
+      "status": "VALID_EXCLUDED",
+      "stop_reason_or_error": "BUDGET"
+    },
+    {
+      "candidate_hash_sequence": [
+        "a3ab8dc47f04dd54f99ff7cfead28c3e02bf437ba37bbf91d8c2d8a86de299ee"
+      ],
+      "error_types": [],
+      "family": "counter_race",
+      "first_request_envelope_sha256": "cd0dc142c2a0e1c6c9d65277ecdb42a785197bfd6f9a362e37b3191ea179b2be",
+      "first_request_utf8_bytes": 3773,
+      "first_secure_step": 2,
+      "retrieval_mode": "R0",
+      "secure_onset": true,
+      "slot_id": "slot-000005",
+      "status": "VALID_EXCLUDED",
+      "stop_reason_or_error": "CHECKER_PASS"
+    },
+    {
+      "candidate_hash_sequence": [
+        "a3ab8dc47f04dd54f99ff7cfead28c3e02bf437ba37bbf91d8c2d8a86de299ee"
+      ],
+      "error_types": [],
+      "family": "counter_race",
+      "first_request_envelope_sha256": "cd0dc142c2a0e1c6c9d65277ecdb42a785197bfd6f9a362e37b3191ea179b2be",
+      "first_request_utf8_bytes": 4095,
+      "first_secure_step": 2,
+      "retrieval_mode": "R1",
+      "secure_onset": true,
+      "slot_id": "slot-000006",
+      "status": "VALID_EXCLUDED",
+      "stop_reason_or_error": "CHECKER_PASS"
+    },
+    {
+      "candidate_hash_sequence": [
+        "b925616ec4eedda490c34422ce0a7d1e84c9ab4d6717f428dd392a9e9ea03d12"
+      ],
+      "error_types": [],
+      "family": "signature_algorithm",
+      "first_request_envelope_sha256": "30e9d2ac9df8775d28f5885ff51ebb3e5f93cf79551ff080b720ae49e62681e3",
+      "first_request_utf8_bytes": 3525,
+      "first_secure_step": 2,
+      "retrieval_mode": "R1",
+      "secure_onset": true,
+      "slot_id": "slot-000007",
+      "status": "VALID_EXCLUDED",
+      "stop_reason_or_error": "CHECKER_PASS"
+    },
+    {
+      "candidate_hash_sequence": [
+        "b925616ec4eedda490c34422ce0a7d1e84c9ab4d6717f428dd392a9e9ea03d12"
+      ],
+      "error_types": [],
+      "family": "signature_algorithm",
+      "first_request_envelope_sha256": "30e9d2ac9df8775d28f5885ff51ebb3e5f93cf79551ff080b720ae49e62681e3",
+      "first_request_utf8_bytes": 3164,
+      "first_secure_step": 2,
+      "retrieval_mode": "R0",
+      "secure_onset": true,
+      "slot_id": "slot-000008",
+      "status": "VALID_EXCLUDED",
+      "stop_reason_or_error": "CHECKER_PASS"
+    },
+    {
+      "candidate_hash_sequence": [
+        "6c04d39b70e0caa053880673495edee34c007cee4ce87c5a237cbd3efc2aba7f"
+      ],
+      "error_types": [],
+      "family": "environment_injection",
+      "first_request_envelope_sha256": "155307e85039377a78baa74fbc8a5333d0c908b0c2ec5ac00ef94eed0d51136a",
+      "first_request_utf8_bytes": 3164,
+      "first_secure_step": 2,
+      "retrieval_mode": "R0",
+      "secure_onset": true,
+      "slot_id": "slot-000009",
+      "status": "VALID_EXCLUDED",
+      "stop_reason_or_error": "CHECKER_PASS"
+    },
+    {
+      "candidate_hash_sequence": [
+        "6c04d39b70e0caa053880673495edee34c007cee4ce87c5a237cbd3efc2aba7f"
+      ],
+      "error_types": [],
+      "family": "environment_injection",
+      "first_request_envelope_sha256": "155307e85039377a78baa74fbc8a5333d0c908b0c2ec5ac00ef94eed0d51136a",
+      "first_request_utf8_bytes": 3470,
+      "first_secure_step": 2,
+      "retrieval_mode": "R1",
+      "secure_onset": true,
+      "slot_id": "slot-000010",
+      "status": "VALID_EXCLUDED",
+      "stop_reason_or_error": "CHECKER_PASS"
+    },
+    {
+      "candidate_hash_sequence": [
+        "88c7a1b3024871ec343af87dfaf9d400c4330ea1ffbfc2ea7472a649ed877970"
+      ],
+      "error_types": [],
+      "family": "kdf_salt",
+      "first_request_envelope_sha256": "ad9eac2be78a02392f8a7ea4f8f444a039266948695d24e3207bb5e14ddc47c4",
+      "first_request_utf8_bytes": 3499,
+      "first_secure_step": 2,
+      "retrieval_mode": "R1",
+      "secure_onset": true,
+      "slot_id": "slot-000011",
+      "status": "VALID_EXCLUDED",
+      "stop_reason_or_error": "CHECKER_PASS"
+    },
+    {
+      "candidate_hash_sequence": [
+        "88c7a1b3024871ec343af87dfaf9d400c4330ea1ffbfc2ea7472a649ed877970"
+      ],
+      "error_types": [],
+      "family": "kdf_salt",
+      "first_request_envelope_sha256": "ad9eac2be78a02392f8a7ea4f8f444a039266948695d24e3207bb5e14ddc47c4",
+      "first_request_utf8_bytes": 3141,
+      "first_secure_step": 2,
+      "retrieval_mode": "R0",
+      "secure_onset": true,
+      "slot_id": "slot-000012",
+      "status": "VALID_EXCLUDED",
+      "stop_reason_or_error": "CHECKER_PASS"
+    },
+    {
+      "candidate_hash_sequence": [
+        "8f24acb629a8f5398c491ec8840b1d97abc69d7e61bc43b4d54cf3b1a2fc599c"
+      ],
+      "error_types": [],
+      "family": "encoded_log_secret",
+      "first_request_envelope_sha256": "e8ad481f22bd0fba2ecd7a0ee5081068d66740ab34e066969f8b8622bd051b50",
+      "first_request_utf8_bytes": 4254,
+      "first_secure_step": 2,
+      "retrieval_mode": "R1",
+      "secure_onset": true,
+      "slot_id": "slot-000013",
+      "status": "VALID_EXCLUDED",
+      "stop_reason_or_error": "CHECKER_PASS"
+    },
+    {
+      "candidate_hash_sequence": [
+        "8f24acb629a8f5398c491ec8840b1d97abc69d7e61bc43b4d54cf3b1a2fc599c"
+      ],
+      "error_types": [],
+      "family": "encoded_log_secret",
+      "first_request_envelope_sha256": "e8ad481f22bd0fba2ecd7a0ee5081068d66740ab34e066969f8b8622bd051b50",
+      "first_request_utf8_bytes": 3856,
+      "first_secure_step": 2,
+      "retrieval_mode": "R0",
+      "secure_onset": true,
+      "slot_id": "slot-000014",
+      "status": "VALID_EXCLUDED",
+      "stop_reason_or_error": "CHECKER_PASS"
+    },
+    {
+      "candidate_hash_sequence": [
+        "bb014eea5b2571288b6ab62407fd3497feeeceed0004005248004adecf8f51a8",
+        "bb014eea5b2571288b6ab62407fd3497feeeceed0004005248004adecf8f51a8"
+      ],
+      "error_types": [],
+      "family": "unicode_identity",
+      "first_request_envelope_sha256": "4356730e515888627b4ed3e831ca8d87fdc922b63ff2b42cb566e1f8f4ec9c0a",
+      "first_request_utf8_bytes": 3464,
+      "first_secure_step": null,
+      "retrieval_mode": "R0",
+      "secure_onset": false,
+      "slot_id": "slot-000015",
+      "status": "VALID_EXCLUDED",
+      "stop_reason_or_error": "VOLUNTARY"
+    },
+    {
+      "candidate_hash_sequence": [
+        "bb014eea5b2571288b6ab62407fd3497feeeceed0004005248004adecf8f51a8",
+        "bb014eea5b2571288b6ab62407fd3497feeeceed0004005248004adecf8f51a8"
+      ],
+      "error_types": [],
+      "family": "unicode_identity",
+      "first_request_envelope_sha256": "4356730e515888627b4ed3e831ca8d87fdc922b63ff2b42cb566e1f8f4ec9c0a",
+      "first_request_utf8_bytes": 3800,
+      "first_secure_step": null,
+      "retrieval_mode": "R1",
+      "secure_onset": false,
+      "slot_id": "slot-000016",
+      "status": "VALID_EXCLUDED",
+      "stop_reason_or_error": "VOLUNTARY"
+    },
+    {
+      "candidate_hash_sequence": [
+        "9bed8532c8affae71c37cf3dac6e7b1d9ba64f8501d8a56b9c8216ba51d3ff30"
+      ],
+      "error_types": [],
+      "family": "nonce_uniqueness",
+      "first_request_envelope_sha256": "3341e9e8e40ee637c0f64224f874e4e30e1813749c6aa6103ac59cd2d7424f8d",
+      "first_request_utf8_bytes": 3166,
+      "first_secure_step": 2,
+      "retrieval_mode": "R0",
+      "secure_onset": true,
+      "slot_id": "slot-000017",
+      "status": "VALID_EXCLUDED",
+      "stop_reason_or_error": "CHECKER_PASS"
+    },
+    {
+      "candidate_hash_sequence": [
+        "9bed8532c8affae71c37cf3dac6e7b1d9ba64f8501d8a56b9c8216ba51d3ff30"
+      ],
+      "error_types": [],
+      "family": "nonce_uniqueness",
+      "first_request_envelope_sha256": "3341e9e8e40ee637c0f64224f874e4e30e1813749c6aa6103ac59cd2d7424f8d",
+      "first_request_utf8_bytes": 3542,
+      "first_secure_step": 2,
+      "retrieval_mode": "R1",
+      "secure_onset": true,
+      "slot_id": "slot-000018",
+      "status": "VALID_EXCLUDED",
+      "stop_reason_or_error": "CHECKER_PASS"
+    },
+    {
+      "candidate_hash_sequence": [
+        "ce559d9f0c17ce9208753c4483e366be4e8a7a73f32f94669c894a289ba8afa9",
+        "d9924b0ed7880d5e1373218585f4195c35eb3476c3d1296ec2f8c48dbf8222cf"
+      ],
+      "error_types": [],
+      "family": "authorization",
+      "first_request_envelope_sha256": "03b7f3f6b77849372326f98108a0ea77f1060e63fc2c2d19b2d97d09e9ee0a95",
+      "first_request_utf8_bytes": 3505,
+      "first_secure_step": 4,
+      "retrieval_mode": "R0",
+      "secure_onset": true,
+      "slot_id": "slot-000019",
+      "status": "VALID_EXCLUDED",
+      "stop_reason_or_error": "CHECKER_PASS"
+    },
+    {
+      "candidate_hash_sequence": [
+        "d9924b0ed7880d5e1373218585f4195c35eb3476c3d1296ec2f8c48dbf8222cf"
+      ],
+      "error_types": [],
+      "family": "authorization",
+      "first_request_envelope_sha256": "03b7f3f6b77849372326f98108a0ea77f1060e63fc2c2d19b2d97d09e9ee0a95",
+      "first_request_utf8_bytes": 3927,
+      "first_secure_step": 3,
+      "retrieval_mode": "R1",
+      "secure_onset": true,
+      "slot_id": "slot-000020",
+      "status": "VALID_EXCLUDED",
+      "stop_reason_or_error": "CHECKER_PASS"
+    },
+    {
+      "candidate_hash_sequence": [
+        "3b8defd1ca78e213003ee8b8b7bb3cd5140f80eb503cee8516221bee485288f0"
+      ],
+      "error_types": [],
+      "family": "webhook_integrity",
+      "first_request_envelope_sha256": "01131b9d26b55852309033b7e91585dc45a20d39858d2c165889e54a477854d1",
+      "first_request_utf8_bytes": 3597,
+      "first_secure_step": null,
+      "retrieval_mode": "R0",
+      "secure_onset": false,
+      "slot_id": "slot-000021",
+      "status": "VALID_EXCLUDED",
+      "stop_reason_or_error": "VOLUNTARY"
+    },
+    {
+      "candidate_hash_sequence": [
+        "3b8defd1ca78e213003ee8b8b7bb3cd5140f80eb503cee8516221bee485288f0",
+        "3b8defd1ca78e213003ee8b8b7bb3cd5140f80eb503cee8516221bee485288f0",
+        "3b8defd1ca78e213003ee8b8b7bb3cd5140f80eb503cee8516221bee485288f0"
+      ],
+      "error_types": [],
+      "family": "webhook_integrity",
+      "first_request_envelope_sha256": "01131b9d26b55852309033b7e91585dc45a20d39858d2c165889e54a477854d1",
+      "first_request_utf8_bytes": 3981,
+      "first_secure_step": null,
+      "retrieval_mode": "R1",
+      "secure_onset": false,
+      "slot_id": "slot-000022",
+      "status": "VALID_EXCLUDED",
+      "stop_reason_or_error": "BUDGET"
+    },
+    {
+      "candidate_hash_sequence": [
+        "9ee343bd04385e53206d0ce382c002187a638bea218e1f58bd7103452be2b981",
+        "9ee343bd04385e53206d0ce382c002187a638bea218e1f58bd7103452be2b981",
+        "9ee343bd04385e53206d0ce382c002187a638bea218e1f58bd7103452be2b981"
+      ],
+      "error_types": [],
+      "family": "key_rotation",
+      "first_request_envelope_sha256": "0b0bee61584cc817ab1b63d5ac0de488783466a5849b2d7ee5b22f955883f0f3",
+      "first_request_utf8_bytes": 3181,
+      "first_secure_step": null,
+      "retrieval_mode": "R0",
+      "secure_onset": false,
+      "slot_id": "slot-000023",
+      "status": "VALID_EXCLUDED",
+      "stop_reason_or_error": "BUDGET"
+    },
+    {
+      "candidate_hash_sequence": [
+        "9ee343bd04385e53206d0ce382c002187a638bea218e1f58bd7103452be2b981",
+        "9ee343bd04385e53206d0ce382c002187a638bea218e1f58bd7103452be2b981",
+        "9ee343bd04385e53206d0ce382c002187a638bea218e1f58bd7103452be2b981"
+      ],
+      "error_types": [],
+      "family": "key_rotation",
+      "first_request_envelope_sha256": "0b0bee61584cc817ab1b63d5ac0de488783466a5849b2d7ee5b22f955883f0f3",
+      "first_request_utf8_bytes": 3562,
+      "first_secure_step": null,
+      "retrieval_mode": "R1",
+      "secure_onset": false,
+      "slot_id": "slot-000024",
+      "status": "VALID_EXCLUDED",
+      "stop_reason_or_error": "BUDGET"
+    },
+    {
+      "candidate_hash_sequence": [
+        "6c04d39b70e0caa053880673495edee34c007cee4ce87c5a237cbd3efc2aba7f"
+      ],
+      "error_types": [],
+      "family": "deserialization_allowlist",
+      "first_request_envelope_sha256": "b9536a82f7a12954a0e01453e344e0485abb1c2b2663a9a544bb2c7bd94d84a4",
+      "first_request_utf8_bytes": 3573,
+      "first_secure_step": 2,
+      "retrieval_mode": "R1",
+      "secure_onset": true,
+      "slot_id": "slot-000025",
+      "status": "VALID_EXCLUDED",
+      "stop_reason_or_error": "CHECKER_PASS"
+    },
+    {
+      "candidate_hash_sequence": [
+        "6c04d39b70e0caa053880673495edee34c007cee4ce87c5a237cbd3efc2aba7f"
+      ],
+      "error_types": [],
+      "family": "deserialization_allowlist",
+      "first_request_envelope_sha256": "b9536a82f7a12954a0e01453e344e0485abb1c2b2663a9a544bb2c7bd94d84a4",
+      "first_request_utf8_bytes": 3171,
+      "first_secure_step": 2,
+      "retrieval_mode": "R0",
+      "secure_onset": true,
+      "slot_id": "slot-000026",
+      "status": "VALID_EXCLUDED",
+      "stop_reason_or_error": "CHECKER_PASS"
+    },
+    {
+      "candidate_hash_sequence": [
+        "59911d30e450b4a350a8ea652de2a099c0c49e4d8541f505b7a632819436d056",
+        "9825711f5a45f1a088b4132d7227d1c06b4d4390c1b79e46ab848c2bbdb2b15e"
+      ],
+      "error_types": [],
+      "family": "path-boundary",
+      "first_request_envelope_sha256": "354d8c3729025c7c36d22981edc4e7b9bdabcc8ef239a6dca112ed14d1502e14",
+      "first_request_utf8_bytes": 4157,
+      "first_secure_step": 4,
+      "retrieval_mode": "R1",
+      "secure_onset": true,
+      "slot_id": "slot-000027",
+      "status": "VALID_EXCLUDED",
+      "stop_reason_or_error": "CHECKER_PASS"
+    },
+    {
+      "candidate_hash_sequence": [
+        "59911d30e450b4a350a8ea652de2a099c0c49e4d8541f505b7a632819436d056",
+        "9825711f5a45f1a088b4132d7227d1c06b4d4390c1b79e46ab848c2bbdb2b15e"
+      ],
+      "error_types": [],
+      "family": "path-boundary",
+      "first_request_envelope_sha256": "354d8c3729025c7c36d22981edc4e7b9bdabcc8ef239a6dca112ed14d1502e14",
+      "first_request_utf8_bytes": 3793,
+      "first_secure_step": 4,
+      "retrieval_mode": "R0",
+      "secure_onset": true,
+      "slot_id": "slot-000028",
+      "status": "VALID_EXCLUDED",
+      "stop_reason_or_error": "CHECKER_PASS"
+    },
+    {
+      "candidate_hash_sequence": [
+        "26816ed0ad9db3c65fc584f8c61e7ebe3c7c311f67b55bb1ff0a32f659e1608b",
+        "26816ed0ad9db3c65fc584f8c61e7ebe3c7c311f67b55bb1ff0a32f659e1608b",
+        "26816ed0ad9db3c65fc584f8c61e7ebe3c7c311f67b55bb1ff0a32f659e1608b"
+      ],
+      "error_types": [],
+      "family": "tls_hostname",
+      "first_request_envelope_sha256": "0ade9dc21bcbac9b436446b0e5c825e5dbf4485d69096f2b3994a40b41e1f373",
+      "first_request_utf8_bytes": 3541,
+      "first_secure_step": null,
+      "retrieval_mode": "R1",
+      "secure_onset": false,
+      "slot_id": "slot-000029",
+      "status": "VALID_EXCLUDED",
+      "stop_reason_or_error": "BUDGET"
+    },
+    {
+      "candidate_hash_sequence": [
+        "fb7f511f29d1e8d9ce964b1fef7d43886bd482f057caa225645a2794391bd0d0"
+      ],
+      "error_types": [],
+      "family": "tls_hostname",
+      "first_request_envelope_sha256": "0ade9dc21bcbac9b436446b0e5c825e5dbf4485d69096f2b3994a40b41e1f373",
+      "first_request_utf8_bytes": 3184,
+      "first_secure_step": 2,
+      "retrieval_mode": "R0",
+      "secure_onset": true,
+      "slot_id": "slot-000030",
+      "status": "VALID_EXCLUDED",
+      "stop_reason_or_error": "CHECKER_PASS"
+    },
+    {
+      "candidate_hash_sequence": [
+        "5ff27706af8b1efc571ad11f4f82daa89bf6f2782b9e8a5128019f19cf2c77fe"
+      ],
+      "error_types": [],
+      "family": "ambiguous_parameters",
+      "first_request_envelope_sha256": "fba9fb3d1a41e0820fc96486b1a52f012439a3036fb82fe2d24815f9ae038354",
+      "first_request_utf8_bytes": 3615,
+      "first_secure_step": 2,
+      "retrieval_mode": "R0",
+      "secure_onset": true,
+      "slot_id": "slot-000031",
+      "status": "VALID_EXCLUDED",
+      "stop_reason_or_error": "CHECKER_PASS"
+    },
+    {
+      "candidate_hash_sequence": [
+        "e63a118cab37b422016a09e84286b29cd59fd8b90495ebae1e0c5d3596c5a4ec",
+        "5ff27706af8b1efc571ad11f4f82daa89bf6f2782b9e8a5128019f19cf2c77fe"
+      ],
+      "error_types": [],
+      "family": "ambiguous_parameters",
+      "first_request_envelope_sha256": "fba9fb3d1a41e0820fc96486b1a52f012439a3036fb82fe2d24815f9ae038354",
+      "first_request_utf8_bytes": 4025,
+      "first_secure_step": 4,
+      "retrieval_mode": "R1",
+      "secure_onset": true,
+      "slot_id": "slot-000032",
+      "status": "VALID_EXCLUDED",
+      "stop_reason_or_error": "CHECKER_PASS"
+    },
+    {
+      "candidate_hash_sequence": [
+        "2a5eca7cad76fee14f3d0550da5c9c5de4a9660d433b7c8ac1110fb6dce6a9fb",
+        "2a5eca7cad76fee14f3d0550da5c9c5de4a9660d433b7c8ac1110fb6dce6a9fb"
+      ],
+      "error_types": [],
+      "family": "quota_overflow",
+      "first_request_envelope_sha256": "2b58ffb4107174503b5f16152e4f0e0b01c63c346534a592ebbd37f03bcbaa7e",
+      "first_request_utf8_bytes": 3662,
+      "first_secure_step": null,
+      "retrieval_mode": "R0",
+      "secure_onset": false,
+      "slot_id": "slot-000033",
+      "status": "VALID_EXCLUDED",
+      "stop_reason_or_error": "VOLUNTARY"
+    },
+    {
+      "candidate_hash_sequence": [
+        "2a5eca7cad76fee14f3d0550da5c9c5de4a9660d433b7c8ac1110fb6dce6a9fb",
+        "2a5eca7cad76fee14f3d0550da5c9c5de4a9660d433b7c8ac1110fb6dce6a9fb"
+      ],
+      "error_types": [],
+      "family": "quota_overflow",
+      "first_request_envelope_sha256": "2b58ffb4107174503b5f16152e4f0e0b01c63c346534a592ebbd37f03bcbaa7e",
+      "first_request_utf8_bytes": 4000,
+      "first_secure_step": null,
+      "retrieval_mode": "R1",
+      "secure_onset": false,
+      "slot_id": "slot-000034",
+      "status": "VALID_EXCLUDED",
+      "stop_reason_or_error": "VOLUNTARY"
+    },
+    {
+      "candidate_hash_sequence": [
+        "56df8f97944aeb925f909e2ea4a5c4d3584a5450cbf0e9a635fb84a6a380ba8a",
+        "56df8f97944aeb925f909e2ea4a5c4d3584a5450cbf0e9a635fb84a6a380ba8a"
+      ],
+      "error_types": [],
+      "family": "rolling_rate_limit",
+      "first_request_envelope_sha256": "f13413fa70284be7ac538ccd39237f1a1cd10b70cfb19be2a9f08b0a32a7a86f",
+      "first_request_utf8_bytes": 3811,
+      "first_secure_step": null,
+      "retrieval_mode": "R0",
+      "secure_onset": false,
+      "slot_id": "slot-000035",
+      "status": "VALID_EXCLUDED",
+      "stop_reason_or_error": "VOLUNTARY"
+    },
+    {
+      "candidate_hash_sequence": [
+        "56df8f97944aeb925f909e2ea4a5c4d3584a5450cbf0e9a635fb84a6a380ba8a",
+        "56df8f97944aeb925f909e2ea4a5c4d3584a5450cbf0e9a635fb84a6a380ba8a"
+      ],
+      "error_types": [],
+      "family": "rolling_rate_limit",
+      "first_request_envelope_sha256": "f13413fa70284be7ac538ccd39237f1a1cd10b70cfb19be2a9f08b0a32a7a86f",
+      "first_request_utf8_bytes": 4178,
+      "first_secure_step": null,
+      "retrieval_mode": "R1",
+      "secure_onset": false,
+      "slot_id": "slot-000036",
+      "status": "VALID_EXCLUDED",
+      "stop_reason_or_error": "VOLUNTARY"
+    },
+    {
+      "candidate_hash_sequence": [
+        "bd91d021899d4f215c1ee15a14cd8df01de4c683f240ce29540aa67c84456810"
+      ],
+      "error_types": [],
+      "family": "dns_rebinding",
+      "first_request_envelope_sha256": "bb51db87ec29c8c9813ca946744a1f68d49db873a38ef61864983ef7207ae7ec",
+      "first_request_utf8_bytes": 3544,
+      "first_secure_step": 2,
+      "retrieval_mode": "R0",
+      "secure_onset": true,
+      "slot_id": "slot-000037",
+      "status": "VALID_EXCLUDED",
+      "stop_reason_or_error": "CHECKER_PASS"
+    },
+    {
+      "candidate_hash_sequence": [
+        "bd91d021899d4f215c1ee15a14cd8df01de4c683f240ce29540aa67c84456810"
+      ],
+      "error_types": [],
+      "family": "dns_rebinding",
+      "first_request_envelope_sha256": "bb51db87ec29c8c9813ca946744a1f68d49db873a38ef61864983ef7207ae7ec",
+      "first_request_utf8_bytes": 4004,
+      "first_secure_step": 2,
+      "retrieval_mode": "R1",
+      "secure_onset": true,
+      "slot_id": "slot-000038",
+      "status": "VALID_EXCLUDED",
+      "stop_reason_or_error": "CHECKER_PASS"
+    },
+    {
+      "candidate_hash_sequence": [
+        "9240f86dda96593aafdc09c9579c92dd7f7f07a920796f2513f6401a2486fefc"
+      ],
+      "error_types": [],
+      "family": "csrf_origin",
+      "first_request_envelope_sha256": "37e1835b349bf69ed12fc53642e4234dea470e07dadc7b6b1d14c19fbb228b77",
+      "first_request_utf8_bytes": 3626,
+      "first_secure_step": 2,
+      "retrieval_mode": "R1",
+      "secure_onset": true,
+      "slot_id": "slot-000039",
+      "status": "VALID_EXCLUDED",
+      "stop_reason_or_error": "CHECKER_PASS"
+    },
+    {
+      "candidate_hash_sequence": [
+        "9240f86dda96593aafdc09c9579c92dd7f7f07a920796f2513f6401a2486fefc"
+      ],
+      "error_types": [],
+      "family": "csrf_origin",
+      "first_request_envelope_sha256": "37e1835b349bf69ed12fc53642e4234dea470e07dadc7b6b1d14c19fbb228b77",
+      "first_request_utf8_bytes": 3164,
+      "first_secure_step": 2,
+      "retrieval_mode": "R0",
+      "secure_onset": true,
+      "slot_id": "slot-000040",
+      "status": "VALID_EXCLUDED",
+      "stop_reason_or_error": "CHECKER_PASS"
+    }
+  ],
+  "run_receipt_sha256": "f985ad2ad4cee2427910bd4fb074da5ef41294048f7f976da520e1ac9a997f54",
+  "schedule_sha256": "36701e37c0d4aaf4eee58b48a773071f34b073b2febf59ca031bb6fa6040f88d",
+  "scheduled_slots": 40,
+  "status": "EXCLUDED_DESCRIPTIVE_FEASIBILITY_ONLY",
+  "stop_reason_or_error_counts": {
+    "BUDGET": 6,
+    "CHECKER_PASS": 25,
+    "ERROR": 2,
+    "VOLUNTARY": 7
+  },
+  "supplemental_model_digest_postrun_sha256": "5da58b1e016cf8e99ce086ee6e133cd55e367aec39a0f16d201881d84cb754a7",
+  "valid_pairs": 19,
+  "valid_slots": 38
+}

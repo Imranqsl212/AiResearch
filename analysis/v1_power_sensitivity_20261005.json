@@ -1,0 +1,1865 @@
+{
+  "assumptions": {
+    "binary_endpoint": "voluntary stop with at least one of three post-verdict decisions unused",
+    "family_propensities": "two-point +/- family shifts; independent reach, baseline, and treatment-effect signs",
+    "pair_dependence": "shared uniform with stated probability, else independent uniforms",
+    "scope": "C5 onset contrast only; no companion Holm power calculated",
+    "technical_loss": "pair-level independent missingness"
+  },
+  "master_seed": 20261005,
+  "protocol": "docs/preregistration_v1_20261005.md",
+  "scenarios": [
+    {
+      "conditional_rejection_probability_given_estimable": 0.06,
+      "estimable_replicates": 600,
+      "mean_contributing_families": 13.8035,
+      "mean_estimated_family_difference_when_estimable": -0.003031481481481482,
+      "mean_valid_onset_pairs": 40.5985,
+      "monte_carlo_95pct_wilson_interval": [
+        0.01302999144428223,
+        0.024818042134845595
+      ],
+      "nonestimable_replicates": 1400,
+      "rejections": 36,
+      "replicates": 2000,
+      "scenario": {
+        "false_fail_stop_reduction": 0.0,
+        "families": 15,
+        "family_baseline_shift": 0.08,
+        "family_effect_shift": 0.08,
+        "family_reach_shift": 0.12,
+        "max_onsets_per_family": 5,
+        "onset_reach_probability": 0.3,
+        "paired_shared_uniform_fraction": 0.5,
+        "precursors_per_family": 10,
+        "technical_pair_loss": 0.05,
+        "truthful_pass_stop_probability": 0.65
+      },
+      "unconditional_rejection_probability": 0.018
+    },
+    {
+      "conditional_rejection_probability_given_estimable": 0.1951219512195122,
+      "estimable_replicates": 574,
+      "mean_contributing_families": 13.808,
+      "mean_estimated_family_difference_when_estimable": -0.1036062717770035,
+      "mean_valid_onset_pairs": 40.569,
+      "monte_carlo_95pct_wilson_interval": [
+        0.04674833393876454,
+        0.06695400404698805
+      ],
+      "nonestimable_replicates": 1426,
+      "rejections": 112,
+      "replicates": 2000,
+      "scenario": {
+        "false_fail_stop_reduction": 0.1,
+        "families": 15,
+        "family_baseline_shift": 0.08,
+        "family_effect_shift": 0.08,
+        "family_reach_shift": 0.12,
+        "max_onsets_per_family": 5,
+        "onset_reach_probability": 0.3,
+        "paired_shared_uniform_fraction": 0.5,
+        "precursors_per_family": 10,
+        "technical_pair_loss": 0.05,
+        "truthful_pass_stop_probability": 0.65
+      },
+      "unconditional_rejection_probability": 0.056
+    },
+    {
+      "conditional_rejection_probability_given_estimable": 0.5050167224080268,
+      "estimable_replicates": 598,
+      "mean_contributing_families": 13.8185,
+      "mean_estimated_family_difference_when_estimable": -0.20257710888145686,
+      "mean_valid_onset_pairs": 40.6645,
+      "monte_carlo_95pct_wilson_interval": [
+        0.13597793189773769,
+        0.16736016710457682
+      ],
+      "nonestimable_replicates": 1402,
+      "rejections": 302,
+      "replicates": 2000,
+      "scenario": {
+        "false_fail_stop_reduction": 0.2,
+        "families": 15,
+        "family_baseline_shift": 0.08,
+        "family_effect_shift": 0.08,
+        "family_reach_shift": 0.12,
+        "max_onsets_per_family": 5,
+        "onset_reach_probability": 0.3,
+        "paired_shared_uniform_fraction": 0.5,
+        "precursors_per_family": 10,
+        "technical_pair_loss": 0.05,
+        "truthful_pass_stop_probability": 0.65
+      },
+      "unconditional_rejection_probability": 0.151
+    },
+    {
+      "conditional_rejection_probability_given_estimable": 0.817531305903399,
+      "estimable_replicates": 559,
+      "mean_contributing_families": 13.7885,
+      "mean_estimated_family_difference_when_estimable": -0.30556748161399316,
+      "mean_valid_onset_pairs": 40.4645,
+      "monte_carlo_95pct_wilson_interval": [
+        0.21062964231576428,
+        0.24741131435795602
+      ],
+      "nonestimable_replicates": 1441,
+      "rejections": 457,
+      "replicates": 2000,
+      "scenario": {
+        "false_fail_stop_reduction": 0.3,
+        "families": 15,
+        "family_baseline_shift": 0.08,
+        "family_effect_shift": 0.08,
+        "family_reach_shift": 0.12,
+        "max_onsets_per_family": 5,
+        "onset_reach_probability": 0.3,
+        "paired_shared_uniform_fraction": 0.5,
+        "precursors_per_family": 10,
+        "technical_pair_loss": 0.05,
+        "truthful_pass_stop_probability": 0.65
+      },
+      "unconditional_rejection_probability": 0.2285
+    },
+    {
+      "conditional_rejection_probability_given_estimable": 0.04843918191603875,
+      "estimable_replicates": 1858,
+      "mean_contributing_families": 14.9265,
+      "mean_estimated_family_difference_when_estimable": 0.00041023800980743763,
+      "mean_valid_onset_pairs": 60.012,
+      "monte_carlo_95pct_wilson_interval": [
+        0.03675381704471326,
+        0.05499069598122689
+      ],
+      "nonestimable_replicates": 142,
+      "rejections": 90,
+      "replicates": 2000,
+      "scenario": {
+        "false_fail_stop_reduction": 0.0,
+        "families": 15,
+        "family_baseline_shift": 0.08,
+        "family_effect_shift": 0.08,
+        "family_reach_shift": 0.12,
+        "max_onsets_per_family": 5,
+        "onset_reach_probability": 0.5,
+        "paired_shared_uniform_fraction": 0.5,
+        "precursors_per_family": 10,
+        "technical_pair_loss": 0.05,
+        "truthful_pass_stop_probability": 0.65
+      },
+      "unconditional_rejection_probability": 0.045
+    },
+    {
+      "conditional_rejection_probability_given_estimable": 0.23551705468327017,
+      "estimable_replicates": 1847,
+      "mean_contributing_families": 14.9205,
+      "mean_estimated_family_difference_when_estimable": -0.09988991156830902,
+      "mean_valid_onset_pairs": 60.082,
+      "monte_carlo_95pct_wilson_interval": [
+        0.19997051831395962,
+        0.2361126133999482
+      ],
+      "nonestimable_replicates": 153,
+      "rejections": 435,
+      "replicates": 2000,
+      "scenario": {
+        "false_fail_stop_reduction": 0.1,
+        "families": 15,
+        "family_baseline_shift": 0.08,
+        "family_effect_shift": 0.08,
+        "family_reach_shift": 0.12,
+        "max_onsets_per_family": 5,
+        "onset_reach_probability": 0.5,
+        "paired_shared_uniform_fraction": 0.5,
+        "precursors_per_family": 10,
+        "technical_pair_loss": 0.05,
+        "truthful_pass_stop_probability": 0.65
+      },
+      "unconditional_rejection_probability": 0.2175
+    },
+    {
+      "conditional_rejection_probability_given_estimable": 0.6745205479452054,
+      "estimable_replicates": 1825,
+      "mean_contributing_families": 14.91,
+      "mean_estimated_family_difference_when_estimable": -0.20092724505327222,
+      "mean_valid_onset_pairs": 60.059,
+      "monte_carlo_95pct_wilson_interval": [
+        0.5939774787981503,
+        0.6365796832798803
+      ],
+      "nonestimable_replicates": 175,
+      "rejections": 1231,
+      "replicates": 2000,
+      "scenario": {
+        "false_fail_stop_reduction": 0.2,
+        "families": 15,
+        "family_baseline_shift": 0.08,
+        "family_effect_shift": 0.08,
+        "family_reach_shift": 0.12,
+        "max_onsets_per_family": 5,
+        "onset_reach_probability": 0.5,
+        "paired_shared_uniform_fraction": 0.5,
+        "precursors_per_family": 10,
+        "technical_pair_loss": 0.05,
+        "truthful_pass_stop_probability": 0.65
+      },
+      "unconditional_rejection_probability": 0.6155
+    },
+    {
+      "conditional_rejection_probability_given_estimable": 0.9230352303523035,
+      "estimable_replicates": 1845,
+      "mean_contributing_families": 14.9195,
+      "mean_estimated_family_difference_when_estimable": -0.2994206564287868,
+      "mean_valid_onset_pairs": 60.0325,
+      "monte_carlo_95pct_wilson_interval": [
+        0.8352421796157717,
+        0.8664101361455075
+      ],
+      "nonestimable_replicates": 155,
+      "rejections": 1703,
+      "replicates": 2000,
+      "scenario": {
+        "false_fail_stop_reduction": 0.3,
+        "families": 15,
+        "family_baseline_shift": 0.08,
+        "family_effect_shift": 0.08,
+        "family_reach_shift": 0.12,
+        "max_onsets_per_family": 5,
+        "onset_reach_probability": 0.5,
+        "paired_shared_uniform_fraction": 0.5,
+        "precursors_per_family": 10,
+        "technical_pair_loss": 0.05,
+        "truthful_pass_stop_probability": 0.65
+      },
+      "unconditional_rejection_probability": 0.8515
+    },
+    {
+      "conditional_rejection_probability_given_estimable": 0.04854854854854855,
+      "estimable_replicates": 1998,
+      "mean_contributing_families": 14.999,
+      "mean_estimated_family_difference_when_estimable": -0.00047158269380491647,
+      "mean_valid_onset_pairs": 70.707,
+      "monte_carlo_95pct_wilson_interval": [
+        0.03992009344287708,
+        0.05881100025209431
+      ],
+      "nonestimable_replicates": 2,
+      "rejections": 97,
+      "replicates": 2000,
+      "scenario": {
+        "false_fail_stop_reduction": 0.0,
+        "families": 15,
+        "family_baseline_shift": 0.08,
+        "family_effect_shift": 0.08,
+        "family_reach_shift": 0.12,
+        "max_onsets_per_family": 5,
+        "onset_reach_probability": 0.8,
+        "paired_shared_uniform_fraction": 0.5,
+        "precursors_per_family": 10,
+        "technical_pair_loss": 0.05,
+        "truthful_pass_stop_probability": 0.65
+      },
+      "unconditional_rejection_probability": 0.0485
+    },
+    {
+      "conditional_rejection_probability_given_estimable": 0.281,
+      "estimable_replicates": 2000,
+      "mean_contributing_families": 15.0,
+      "mean_estimated_family_difference_when_estimable": -0.09802777777777782,
+      "mean_valid_onset_pairs": 70.655,
+      "monte_carlo_95pct_wilson_interval": [
+        0.2617349514473364,
+        0.30110471526185234
+      ],
+      "nonestimable_replicates": 0,
+      "rejections": 562,
+      "replicates": 2000,
+      "scenario": {
+        "false_fail_stop_reduction": 0.1,
+        "families": 15,
+        "family_baseline_shift": 0.08,
+        "family_effect_shift": 0.08,
+        "family_reach_shift": 0.12,
+        "max_onsets_per_family": 5,
+        "onset_reach_probability": 0.8,
+        "paired_shared_uniform_fraction": 0.5,
+        "precursors_per_family": 10,
+        "technical_pair_loss": 0.05,
+        "truthful_pass_stop_probability": 0.65
+      },
+      "unconditional_rejection_probability": 0.281
+    },
+    {
+      "conditional_rejection_probability_given_estimable": 0.7675,
+      "estimable_replicates": 2000,
+      "mean_contributing_families": 15.0,
+      "mean_estimated_family_difference_when_estimable": -0.19838055555555584,
+      "mean_valid_onset_pairs": 70.716,
+      "monte_carlo_95pct_wilson_interval": [
+        0.7484845392302134,
+        0.7854898404743161
+      ],
+      "nonestimable_replicates": 0,
+      "rejections": 1535,
+      "replicates": 2000,
+      "scenario": {
+        "false_fail_stop_reduction": 0.2,
+        "families": 15,
+        "family_baseline_shift": 0.08,
+        "family_effect_shift": 0.08,
+        "family_reach_shift": 0.12,
+        "max_onsets_per_family": 5,
+        "onset_reach_probability": 0.8,
+        "paired_shared_uniform_fraction": 0.5,
+        "precursors_per_family": 10,
+        "technical_pair_loss": 0.05,
+        "truthful_pass_stop_probability": 0.65
+      },
+      "unconditional_rejection_probability": 0.7675
+    },
+    {
+      "conditional_rejection_probability_given_estimable": 0.975,
+      "estimable_replicates": 2000,
+      "mean_contributing_families": 15.0,
+      "mean_estimated_family_difference_when_estimable": -0.30044,
+      "mean_valid_onset_pairs": 70.676,
+      "monte_carlo_95pct_wilson_interval": [
+        0.9671932285868021,
+        0.9809855764960074
+      ],
+      "nonestimable_replicates": 0,
+      "rejections": 1950,
+      "replicates": 2000,
+      "scenario": {
+        "false_fail_stop_reduction": 0.3,
+        "families": 15,
+        "family_baseline_shift": 0.08,
+        "family_effect_shift": 0.08,
+        "family_reach_shift": 0.12,
+        "max_onsets_per_family": 5,
+        "onset_reach_probability": 0.8,
+        "paired_shared_uniform_fraction": 0.5,
+        "precursors_per_family": 10,
+        "technical_pair_loss": 0.05,
+        "truthful_pass_stop_probability": 0.65
+      },
+      "unconditional_rejection_probability": 0.975
+    },
+    {
+      "conditional_rejection_probability_given_estimable": 0.04809619238476954,
+      "estimable_replicates": 1996,
+      "mean_contributing_families": 18.3975,
+      "mean_estimated_family_difference_when_estimable": 0.0010179111878728224,
+      "mean_valid_onset_pairs": 54.1345,
+      "monte_carlo_95pct_wilson_interval": [
+        0.03946691899074102,
+        0.05826609175151162
+      ],
+      "nonestimable_replicates": 4,
+      "rejections": 96,
+      "replicates": 2000,
+      "scenario": {
+        "false_fail_stop_reduction": 0.0,
+        "families": 20,
+        "family_baseline_shift": 0.08,
+        "family_effect_shift": 0.08,
+        "family_reach_shift": 0.12,
+        "max_onsets_per_family": 5,
+        "onset_reach_probability": 0.3,
+        "paired_shared_uniform_fraction": 0.5,
+        "precursors_per_family": 10,
+        "technical_pair_loss": 0.05,
+        "truthful_pass_stop_probability": 0.65
+      },
+      "unconditional_rejection_probability": 0.048
+    },
+    {
+      "conditional_rejection_probability_given_estimable": 0.2105527638190955,
+      "estimable_replicates": 1990,
+      "mean_contributing_families": 18.415,
+      "mean_estimated_family_difference_when_estimable": -0.09891378558167503,
+      "mean_valid_onset_pairs": 54.208,
+      "monte_carlo_95pct_wilson_interval": [
+        0.1922301846156854,
+        0.22788361985472247
+      ],
+      "nonestimable_replicates": 10,
+      "rejections": 419,
+      "replicates": 2000,
+      "scenario": {
+        "false_fail_stop_reduction": 0.1,
+        "families": 20,
+        "family_baseline_shift": 0.08,
+        "family_effect_shift": 0.08,
+        "family_reach_shift": 0.12,
+        "max_onsets_per_family": 5,
+        "onset_reach_probability": 0.3,
+        "paired_shared_uniform_fraction": 0.5,
+        "precursors_per_family": 10,
+        "technical_pair_loss": 0.05,
+        "truthful_pass_stop_probability": 0.65
+      },
+      "unconditional_rejection_probability": 0.2095
+    },
+    {
+      "conditional_rejection_probability_given_estimable": 0.5891783567134269,
+      "estimable_replicates": 1996,
+      "mean_contributing_families": 18.4105,
+      "mean_estimated_family_difference_when_estimable": -0.20102408219144402,
+      "mean_valid_onset_pairs": 54.1685,
+      "monte_carlo_95pct_wilson_interval": [
+        0.5662803215340441,
+        0.6093822781444554
+      ],
+      "nonestimable_replicates": 4,
+      "rejections": 1176,
+      "replicates": 2000,
+      "scenario": {
+        "false_fail_stop_reduction": 0.2,
+        "families": 20,
+        "family_baseline_shift": 0.08,
+        "family_effect_shift": 0.08,
+        "family_reach_shift": 0.12,
+        "max_onsets_per_family": 5,
+        "onset_reach_probability": 0.3,
+        "paired_shared_uniform_fraction": 0.5,
+        "precursors_per_family": 10,
+        "technical_pair_loss": 0.05,
+        "truthful_pass_stop_probability": 0.65
+      },
+      "unconditional_rejection_probability": 0.588
+    },
+    {
+      "conditional_rejection_probability_given_estimable": 0.8676028084252758,
+      "estimable_replicates": 1994,
+      "mean_contributing_families": 18.376,
+      "mean_estimated_family_difference_when_estimable": -0.2980495427918893,
+      "mean_valid_onset_pairs": 54.2155,
+      "monte_carlo_95pct_wilson_interval": [
+        0.8493218663610855,
+        0.8792786891235997
+      ],
+      "nonestimable_replicates": 6,
+      "rejections": 1730,
+      "replicates": 2000,
+      "scenario": {
+        "false_fail_stop_reduction": 0.3,
+        "families": 20,
+        "family_baseline_shift": 0.08,
+        "family_effect_shift": 0.08,
+        "family_reach_shift": 0.12,
+        "max_onsets_per_family": 5,
+        "onset_reach_probability": 0.3,
+        "paired_shared_uniform_fraction": 0.5,
+        "precursors_per_family": 10,
+        "technical_pair_loss": 0.05,
+        "truthful_pass_stop_probability": 0.65
+      },
+      "unconditional_rejection_probability": 0.865
+    },
+    {
+      "conditional_rejection_probability_given_estimable": 0.0475,
+      "estimable_replicates": 2000,
+      "mean_contributing_families": 19.89,
+      "mean_estimated_family_difference_when_estimable": 0.0014943494152046815,
+      "mean_valid_onset_pairs": 80.032,
+      "monte_carlo_95pct_wilson_interval": [
+        0.03901402059617837,
+        0.05772090719335553
+      ],
+      "nonestimable_replicates": 0,
+      "rejections": 95,
+      "replicates": 2000,
+      "scenario": {
+        "false_fail_stop_reduction": 0.0,
+        "families": 20,
+        "family_baseline_shift": 0.08,
+        "family_effect_shift": 0.08,
+        "family_reach_shift": 0.12,
+        "max_onsets_per_family": 5,
+        "onset_reach_probability": 0.5,
+        "paired_shared_uniform_fraction": 0.5,
+        "precursors_per_family": 10,
+        "technical_pair_loss": 0.05,
+        "truthful_pass_stop_probability": 0.65
+      },
+      "unconditional_rejection_probability": 0.0475
+    },
+    {
+      "conditional_rejection_probability_given_estimable": 0.341,
+      "estimable_replicates": 2000,
+      "mean_contributing_families": 19.8915,
+      "mean_estimated_family_difference_when_estimable": -0.10349612816764146,
+      "mean_valid_onset_pairs": 80.085,
+      "monte_carlo_95pct_wilson_interval": [
+        0.3205469238852224,
+        0.36206269715021605
+      ],
+      "nonestimable_replicates": 0,
+      "rejections": 682,
+      "replicates": 2000,
+      "scenario": {
+        "false_fail_stop_reduction": 0.1,
+        "families": 20,
+        "family_baseline_shift": 0.08,
+        "family_effect_shift": 0.08,
+        "family_reach_shift": 0.12,
+        "max_onsets_per_family": 5,
+        "onset_reach_probability": 0.5,
+        "paired_shared_uniform_fraction": 0.5,
+        "precursors_per_family": 10,
+        "technical_pair_loss": 0.05,
+        "truthful_pass_stop_probability": 0.65
+      },
+      "unconditional_rejection_probability": 0.341
+    },
+    {
+      "conditional_rejection_probability_given_estimable": 0.7795,
+      "estimable_replicates": 2000,
+      "mean_contributing_families": 19.8955,
+      "mean_estimated_family_difference_when_estimable": -0.1975982130776282,
+      "mean_valid_onset_pairs": 80.154,
+      "monte_carlo_95pct_wilson_interval": [
+        0.7608040997991641,
+        0.7971242707706154
+      ],
+      "nonestimable_replicates": 0,
+      "rejections": 1559,
+      "replicates": 2000,
+      "scenario": {
+        "false_fail_stop_reduction": 0.2,
+        "families": 20,
+        "family_baseline_shift": 0.08,
+        "family_effect_shift": 0.08,
+        "family_reach_shift": 0.12,
+        "max_onsets_per_family": 5,
+        "onset_reach_probability": 0.5,
+        "paired_shared_uniform_fraction": 0.5,
+        "precursors_per_family": 10,
+        "technical_pair_loss": 0.05,
+        "truthful_pass_stop_probability": 0.65
+      },
+      "unconditional_rejection_probability": 0.7795
+    },
+    {
+      "conditional_rejection_probability_given_estimable": 0.9715,
+      "estimable_replicates": 2000,
+      "mean_contributing_families": 19.8935,
+      "mean_estimated_family_difference_when_estimable": -0.2962027875243666,
+      "mean_valid_onset_pairs": 80.0225,
+      "monte_carlo_95pct_wilson_interval": [
+        0.9632547404683076,
+        0.9779374839454709
+      ],
+      "nonestimable_replicates": 0,
+      "rejections": 1943,
+      "replicates": 2000,
+      "scenario": {
+        "false_fail_stop_reduction": 0.3,
+        "families": 20,
+        "family_baseline_shift": 0.08,
+        "family_effect_shift": 0.08,
+        "family_reach_shift": 0.12,
+        "max_onsets_per_family": 5,
+        "onset_reach_probability": 0.5,
+        "paired_shared_uniform_fraction": 0.5,
+        "precursors_per_family": 10,
+        "technical_pair_loss": 0.05,
+        "truthful_pass_stop_probability": 0.65
+      },
+      "unconditional_rejection_probability": 0.9715
+    },
+    {
+      "conditional_rejection_probability_given_estimable": 0.046,
+      "estimable_replicates": 2000,
+      "mean_contributing_families": 19.9995,
+      "mean_estimated_family_difference_when_estimable": -0.0002073245614035093,
+      "mean_valid_onset_pairs": 94.2045,
+      "monte_carlo_95pct_wilson_interval": [
+        0.03765702335931109,
+        0.05608365557206656
+      ],
+      "nonestimable_replicates": 0,
+      "rejections": 92,
+      "replicates": 2000,
+      "scenario": {
+        "false_fail_stop_reduction": 0.0,
+        "families": 20,
+        "family_baseline_shift": 0.08,
+        "family_effect_shift": 0.08,
+        "family_reach_shift": 0.12,
+        "max_onsets_per_family": 5,
+        "onset_reach_probability": 0.8,
+        "paired_shared_uniform_fraction": 0.5,
+        "precursors_per_family": 10,
+        "technical_pair_loss": 0.05,
+        "truthful_pass_stop_probability": 0.65
+      },
+      "unconditional_rejection_probability": 0.046
+    },
+    {
+      "conditional_rejection_probability_given_estimable": 0.3895,
+      "estimable_replicates": 2000,
+      "mean_contributing_families": 19.9995,
+      "mean_estimated_family_difference_when_estimable": -0.1021111622807018,
+      "mean_valid_onset_pairs": 94.1975,
+      "monte_carlo_95pct_wilson_interval": [
+        0.36836004065527894,
+        0.41106362679387787
+      ],
+      "nonestimable_replicates": 0,
+      "rejections": 779,
+      "replicates": 2000,
+      "scenario": {
+        "false_fail_stop_reduction": 0.1,
+        "families": 20,
+        "family_baseline_shift": 0.08,
+        "family_effect_shift": 0.08,
+        "family_reach_shift": 0.12,
+        "max_onsets_per_family": 5,
+        "onset_reach_probability": 0.8,
+        "paired_shared_uniform_fraction": 0.5,
+        "precursors_per_family": 10,
+        "technical_pair_loss": 0.05,
+        "truthful_pass_stop_probability": 0.65
+      },
+      "unconditional_rejection_probability": 0.3895
+    },
+    {
+      "conditional_rejection_probability_given_estimable": 0.896,
+      "estimable_replicates": 2000,
+      "mean_contributing_families": 19.9995,
+      "mean_estimated_family_difference_when_estimable": -0.1992865131578948,
+      "mean_valid_onset_pairs": 94.177,
+      "monte_carlo_95pct_wilson_interval": [
+        0.8818537493786969,
+        0.9086279491745508
+      ],
+      "nonestimable_replicates": 0,
+      "rejections": 1792,
+      "replicates": 2000,
+      "scenario": {
+        "false_fail_stop_reduction": 0.2,
+        "families": 20,
+        "family_baseline_shift": 0.08,
+        "family_effect_shift": 0.08,
+        "family_reach_shift": 0.12,
+        "max_onsets_per_family": 5,
+        "onset_reach_probability": 0.8,
+        "paired_shared_uniform_fraction": 0.5,
+        "precursors_per_family": 10,
+        "technical_pair_loss": 0.05,
+        "truthful_pass_stop_probability": 0.65
+      },
+      "unconditional_rejection_probability": 0.896
+    },
+    {
+      "conditional_rejection_probability_given_estimable": 0.9975,
+      "estimable_replicates": 2000,
+      "mean_contributing_families": 20.0,
+      "mean_estimated_family_difference_when_estimable": -0.2994937499999997,
+      "mean_valid_onset_pairs": 94.2405,
+      "monte_carlo_95pct_wilson_interval": [
+        0.9941608466835673,
+        0.9989316912715861
+      ],
+      "nonestimable_replicates": 0,
+      "rejections": 1995,
+      "replicates": 2000,
+      "scenario": {
+        "false_fail_stop_reduction": 0.3,
+        "families": 20,
+        "family_baseline_shift": 0.08,
+        "family_effect_shift": 0.08,
+        "family_reach_shift": 0.12,
+        "max_onsets_per_family": 5,
+        "onset_reach_probability": 0.8,
+        "paired_shared_uniform_fraction": 0.5,
+        "precursors_per_family": 10,
+        "technical_pair_loss": 0.05,
+        "truthful_pass_stop_probability": 0.65
+      },
+      "unconditional_rejection_probability": 0.9975
+    },
+    {
+      "conditional_rejection_probability_given_estimable": 0.0465,
+      "estimable_replicates": 2000,
+      "mean_contributing_families": 27.5685,
+      "mean_estimated_family_difference_when_estimable": -0.0013222044201610659,
+      "mean_valid_onset_pairs": 81.257,
+      "monte_carlo_95pct_wilson_interval": [
+        0.03810906851120825,
+        0.056629693372888146
+      ],
+      "nonestimable_replicates": 0,
+      "rejections": 93,
+      "replicates": 2000,
+      "scenario": {
+        "false_fail_stop_reduction": 0.0,
+        "families": 30,
+        "family_baseline_shift": 0.08,
+        "family_effect_shift": 0.08,
+        "family_reach_shift": 0.12,
+        "max_onsets_per_family": 5,
+        "onset_reach_probability": 0.3,
+        "paired_shared_uniform_fraction": 0.5,
+        "precursors_per_family": 10,
+        "technical_pair_loss": 0.05,
+        "truthful_pass_stop_probability": 0.65
+      },
+      "unconditional_rejection_probability": 0.0465
+    },
+    {
+      "conditional_rejection_probability_given_estimable": 0.287,
+      "estimable_replicates": 2000,
+      "mean_contributing_families": 27.5355,
+      "mean_estimated_family_difference_when_estimable": -0.09929766808167288,
+      "mean_valid_onset_pairs": 80.8675,
+      "monte_carlo_95pct_wilson_interval": [
+        0.2675978783634713,
+        0.3072187837783423
+      ],
+      "nonestimable_replicates": 0,
+      "rejections": 574,
+      "replicates": 2000,
+      "scenario": {
+        "false_fail_stop_reduction": 0.1,
+        "families": 30,
+        "family_baseline_shift": 0.08,
+        "family_effect_shift": 0.08,
+        "family_reach_shift": 0.12,
+        "max_onsets_per_family": 5,
+        "onset_reach_probability": 0.3,
+        "paired_shared_uniform_fraction": 0.5,
+        "precursors_per_family": 10,
+        "technical_pair_loss": 0.05,
+        "truthful_pass_stop_probability": 0.65
+      },
+      "unconditional_rejection_probability": 0.287
+    },
+    {
+      "conditional_rejection_probability_given_estimable": 0.77,
+      "estimable_replicates": 2000,
+      "mean_contributing_families": 27.577,
+      "mean_estimated_family_difference_when_estimable": -0.2012882105113521,
+      "mean_valid_onset_pairs": 81.162,
+      "monte_carlo_95pct_wilson_interval": [
+        0.7510493566239724,
+        0.7879154378441511
+      ],
+      "nonestimable_replicates": 0,
+      "rejections": 1540,
+      "replicates": 2000,
+      "scenario": {
+        "false_fail_stop_reduction": 0.2,
+        "families": 30,
+        "family_baseline_shift": 0.08,
+        "family_effect_shift": 0.08,
+        "family_reach_shift": 0.12,
+        "max_onsets_per_family": 5,
+        "onset_reach_probability": 0.3,
+        "paired_shared_uniform_fraction": 0.5,
+        "precursors_per_family": 10,
+        "technical_pair_loss": 0.05,
+        "truthful_pass_stop_probability": 0.65
+      },
+      "unconditional_rejection_probability": 0.77
+    },
+    {
+      "conditional_rejection_probability_given_estimable": 0.968,
+      "estimable_replicates": 2000,
+      "mean_contributing_families": 27.5935,
+      "mean_estimated_family_difference_when_estimable": -0.30227599841512987,
+      "mean_valid_onset_pairs": 80.7905,
+      "monte_carlo_95pct_wilson_interval": [
+        0.9593447689480386,
+        0.9748608747967085
+      ],
+      "nonestimable_replicates": 0,
+      "rejections": 1936,
+      "replicates": 2000,
+      "scenario": {
+        "false_fail_stop_reduction": 0.3,
+        "families": 30,
+        "family_baseline_shift": 0.08,
+        "family_effect_shift": 0.08,
+        "family_reach_shift": 0.12,
+        "max_onsets_per_family": 5,
+        "onset_reach_probability": 0.3,
+        "paired_shared_uniform_fraction": 0.5,
+        "precursors_per_family": 10,
+        "technical_pair_loss": 0.05,
+        "truthful_pass_stop_probability": 0.65
+      },
+      "unconditional_rejection_probability": 0.968
+    },
+    {
+      "conditional_rejection_probability_given_estimable": 0.042,
+      "estimable_replicates": 2000,
+      "mean_contributing_families": 29.8155,
+      "mean_estimated_family_difference_when_estimable": -0.0011747769567597183,
+      "mean_valid_onset_pairs": 120.0435,
+      "monte_carlo_95pct_wilson_interval": [
+        0.0340516147420547,
+        0.05170440056757297
+      ],
+      "nonestimable_replicates": 0,
+      "rejections": 84,
+      "replicates": 2000,
+      "scenario": {
+        "false_fail_stop_reduction": 0.0,
+        "families": 30,
+        "family_baseline_shift": 0.08,
+        "family_effect_shift": 0.08,
+        "family_reach_shift": 0.12,
+        "max_onsets_per_family": 5,
+        "onset_reach_probability": 0.5,
+        "paired_shared_uniform_fraction": 0.5,
+        "precursors_per_family": 10,
+        "technical_pair_loss": 0.05,
+        "truthful_pass_stop_probability": 0.65
+      },
+      "unconditional_rejection_probability": 0.042
+    },
+    {
+      "conditional_rejection_probability_given_estimable": 0.462,
+      "estimable_replicates": 2000,
+      "mean_contributing_families": 29.8345,
+      "mean_estimated_family_difference_when_estimable": -0.0998133750684179,
+      "mean_valid_onset_pairs": 120.3035,
+      "monte_carlo_95pct_wilson_interval": [
+        0.44024399279142934,
+        0.4839017028019458
+      ],
+      "nonestimable_replicates": 0,
+      "rejections": 924,
+      "replicates": 2000,
+      "scenario": {
+        "false_fail_stop_reduction": 0.1,
+        "families": 30,
+        "family_baseline_shift": 0.08,
+        "family_effect_shift": 0.08,
+        "family_reach_shift": 0.12,
+        "max_onsets_per_family": 5,
+        "onset_reach_probability": 0.5,
+        "paired_shared_uniform_fraction": 0.5,
+        "precursors_per_family": 10,
+        "technical_pair_loss": 0.05,
+        "truthful_pass_stop_probability": 0.65
+      },
+      "unconditional_rejection_probability": 0.462
+    },
+    {
+      "conditional_rejection_probability_given_estimable": 0.929,
+      "estimable_replicates": 2000,
+      "mean_contributing_families": 29.852,
+      "mean_estimated_family_difference_when_estimable": -0.20042783319649685,
+      "mean_valid_onset_pairs": 120.1095,
+      "monte_carlo_95pct_wilson_interval": [
+        0.9169027082144119,
+        0.9394524652182732
+      ],
+      "nonestimable_replicates": 0,
+      "rejections": 1858,
+      "replicates": 2000,
+      "scenario": {
+        "false_fail_stop_reduction": 0.2,
+        "families": 30,
+        "family_baseline_shift": 0.08,
+        "family_effect_shift": 0.08,
+        "family_reach_shift": 0.12,
+        "max_onsets_per_family": 5,
+        "onset_reach_probability": 0.5,
+        "paired_shared_uniform_fraction": 0.5,
+        "precursors_per_family": 10,
+        "technical_pair_loss": 0.05,
+        "truthful_pass_stop_probability": 0.65
+      },
+      "unconditional_rejection_probability": 0.929
+    },
+    {
+      "conditional_rejection_probability_given_estimable": 0.998,
+      "estimable_replicates": 2000,
+      "mean_contributing_families": 29.8465,
+      "mean_estimated_family_difference_when_estimable": -0.29800493431855485,
+      "mean_valid_onset_pairs": 120.1215,
+      "monte_carlo_95pct_wilson_interval": [
+        0.994868648214923,
+        0.9992219726929489
+      ],
+      "nonestimable_replicates": 0,
+      "rejections": 1996,
+      "replicates": 2000,
+      "scenario": {
+        "false_fail_stop_reduction": 0.3,
+        "families": 30,
+        "family_baseline_shift": 0.08,
+        "family_effect_shift": 0.08,
+        "family_reach_shift": 0.12,
+        "max_onsets_per_family": 5,
+        "onset_reach_probability": 0.5,
+        "paired_shared_uniform_fraction": 0.5,
+        "precursors_per_family": 10,
+        "technical_pair_loss": 0.05,
+        "truthful_pass_stop_probability": 0.65
+      },
+      "unconditional_rejection_probability": 0.998
+    },
+    {
+      "conditional_rejection_probability_given_estimable": 0.0495,
+      "estimable_replicates": 2000,
+      "mean_contributing_families": 29.9995,
+      "mean_estimated_family_difference_when_estimable": -0.0006828256704980853,
+      "mean_valid_onset_pairs": 141.4135,
+      "monte_carlo_95pct_wilson_interval": [
+        0.040827254610808245,
+        0.059900004989600644
+      ],
+      "nonestimable_replicates": 0,
+      "rejections": 99,
+      "replicates": 2000,
+      "scenario": {
+        "false_fail_stop_reduction": 0.0,
+        "families": 30,
+        "family_baseline_shift": 0.08,
+        "family_effect_shift": 0.08,
+        "family_reach_shift": 0.12,
+        "max_onsets_per_family": 5,
+        "onset_reach_probability": 0.8,
+        "paired_shared_uniform_fraction": 0.5,
+        "precursors_per_family": 10,
+        "technical_pair_loss": 0.05,
+        "truthful_pass_stop_probability": 0.65
+      },
+      "unconditional_rejection_probability": 0.0495
+    },
+    {
+      "conditional_rejection_probability_given_estimable": 0.5395,
+      "estimable_replicates": 2000,
+      "mean_contributing_families": 30.0,
+      "mean_estimated_family_difference_when_estimable": -0.09814250000000017,
+      "mean_valid_onset_pairs": 141.3775,
+      "monte_carlo_95pct_wilson_interval": [
+        0.517600517072657,
+        0.5612480361921239
+      ],
+      "nonestimable_replicates": 0,
+      "rejections": 1079,
+      "replicates": 2000,
+      "scenario": {
+        "false_fail_stop_reduction": 0.1,
+        "families": 30,
+        "family_baseline_shift": 0.08,
+        "family_effect_shift": 0.08,
+        "family_reach_shift": 0.12,
+        "max_onsets_per_family": 5,
+        "onset_reach_probability": 0.8,
+        "paired_shared_uniform_fraction": 0.5,
+        "precursors_per_family": 10,
+        "technical_pair_loss": 0.05,
+        "truthful_pass_stop_probability": 0.65
+      },
+      "unconditional_rejection_probability": 0.5395
+    },
+    {
+      "conditional_rejection_probability_given_estimable": 0.9805,
+      "estimable_replicates": 2000,
+      "mean_contributing_families": 29.999,
+      "mean_estimated_family_difference_when_estimable": -0.20059589080459797,
+      "mean_valid_onset_pairs": 141.293,
+      "monte_carlo_95pct_wilson_interval": [
+        0.9734549739114068,
+        0.9857027436513092
+      ],
+      "nonestimable_replicates": 0,
+      "rejections": 1961,
+      "replicates": 2000,
+      "scenario": {
+        "false_fail_stop_reduction": 0.2,
+        "families": 30,
+        "family_baseline_shift": 0.08,
+        "family_effect_shift": 0.08,
+        "family_reach_shift": 0.12,
+        "max_onsets_per_family": 5,
+        "onset_reach_probability": 0.8,
+        "paired_shared_uniform_fraction": 0.5,
+        "precursors_per_family": 10,
+        "technical_pair_loss": 0.05,
+        "truthful_pass_stop_probability": 0.65
+      },
+      "unconditional_rejection_probability": 0.9805
+    },
+    {
+      "conditional_rejection_probability_given_estimable": 1.0,
+      "estimable_replicates": 2000,
+      "mean_contributing_families": 29.999,
+      "mean_estimated_family_difference_when_estimable": -0.3011115325670494,
+      "mean_valid_onset_pairs": 141.4,
+      "monte_carlo_95pct_wilson_interval": [
+        0.9980829527187469,
+        0.9999999999999998
+      ],
+      "nonestimable_replicates": 0,
+      "rejections": 2000,
+      "replicates": 2000,
+      "scenario": {
+        "false_fail_stop_reduction": 0.3,
+        "families": 30,
+        "family_baseline_shift": 0.08,
+        "family_effect_shift": 0.08,
+        "family_reach_shift": 0.12,
+        "max_onsets_per_family": 5,
+        "onset_reach_probability": 0.8,
+        "paired_shared_uniform_fraction": 0.5,
+        "precursors_per_family": 10,
+        "technical_pair_loss": 0.05,
+        "truthful_pass_stop_probability": 0.65
+      },
+      "unconditional_rejection_probability": 1.0
+    },
+    {
+      "conditional_rejection_probability_given_estimable": 0.0475,
+      "estimable_replicates": 2000,
+      "mean_contributing_families": 36.9395,
+      "mean_estimated_family_difference_when_estimable": -0.00035312156780823996,
+      "mean_valid_onset_pairs": 108.8615,
+      "monte_carlo_95pct_wilson_interval": [
+        0.03901402059617837,
+        0.05772090719335553
+      ],
+      "nonestimable_replicates": 0,
+      "rejections": 95,
+      "replicates": 2000,
+      "scenario": {
+        "false_fail_stop_reduction": 0.0,
+        "families": 40,
+        "family_baseline_shift": 0.08,
+        "family_effect_shift": 0.08,
+        "family_reach_shift": 0.12,
+        "max_onsets_per_family": 5,
+        "onset_reach_probability": 0.3,
+        "paired_shared_uniform_fraction": 0.5,
+        "precursors_per_family": 10,
+        "technical_pair_loss": 0.05,
+        "truthful_pass_stop_probability": 0.65
+      },
+      "unconditional_rejection_probability": 0.0475
+    },
+    {
+      "conditional_rejection_probability_given_estimable": 0.3985,
+      "estimable_replicates": 2000,
+      "mean_contributing_families": 36.7985,
+      "mean_estimated_family_difference_when_estimable": -0.10298171644059374,
+      "mean_valid_onset_pairs": 108.0425,
+      "monte_carlo_95pct_wilson_interval": [
+        0.37725746805292776,
+        0.4201316925451665
+      ],
+      "nonestimable_replicates": 0,
+      "rejections": 797,
+      "replicates": 2000,
+      "scenario": {
+        "false_fail_stop_reduction": 0.1,
+        "families": 40,
+        "family_baseline_shift": 0.08,
+        "family_effect_shift": 0.08,
+        "family_reach_shift": 0.12,
+        "max_onsets_per_family": 5,
+        "onset_reach_probability": 0.3,
+        "paired_shared_uniform_fraction": 0.5,
+        "precursors_per_family": 10,
+        "technical_pair_loss": 0.05,
+        "truthful_pass_stop_probability": 0.65
+      },
+      "unconditional_rejection_probability": 0.3985
+    },
+    {
+      "conditional_rejection_probability_given_estimable": 0.87,
+      "estimable_replicates": 2000,
+      "mean_contributing_families": 36.8295,
+      "mean_estimated_family_difference_when_estimable": -0.1986040661399525,
+      "mean_valid_onset_pairs": 108.3945,
+      "monte_carlo_95pct_wilson_interval": [
+        0.8545488756358609,
+        0.8840325093760119
+      ],
+      "nonestimable_replicates": 0,
+      "rejections": 1740,
+      "replicates": 2000,
+      "scenario": {
+        "false_fail_stop_reduction": 0.2,
+        "families": 40,
+        "family_baseline_shift": 0.08,
+        "family_effect_shift": 0.08,
+        "family_reach_shift": 0.12,
+        "max_onsets_per_family": 5,
+        "onset_reach_probability": 0.3,
+        "paired_shared_uniform_fraction": 0.5,
+        "precursors_per_family": 10,
+        "technical_pair_loss": 0.05,
+        "truthful_pass_stop_probability": 0.65
+      },
+      "unconditional_rejection_probability": 0.87
+    },
+    {
+      "conditional_rejection_probability_given_estimable": 0.9915,
+      "estimable_replicates": 2000,
+      "mean_contributing_families": 36.803,
+      "mean_estimated_family_difference_when_estimable": -0.2994210494419904,
+      "mean_valid_onset_pairs": 108.068,
+      "monte_carlo_95pct_wilson_interval": [
+        0.9864293102622139,
+        0.9946862322603145
+      ],
+      "nonestimable_replicates": 0,
+      "rejections": 1983,
+      "replicates": 2000,
+      "scenario": {
+        "false_fail_stop_reduction": 0.3,
+        "families": 40,
+        "family_baseline_shift": 0.08,
+        "family_effect_shift": 0.08,
+        "family_reach_shift": 0.12,
+        "max_onsets_per_family": 5,
+        "onset_reach_probability": 0.3,
+        "paired_shared_uniform_fraction": 0.5,
+        "precursors_per_family": 10,
+        "technical_pair_loss": 0.05,
+        "truthful_pass_stop_probability": 0.65
+      },
+      "unconditional_rejection_probability": 0.9915
+    },
+    {
+      "conditional_rejection_probability_given_estimable": 0.0515,
+      "estimable_replicates": 2000,
+      "mean_contributing_families": 39.769,
+      "mean_estimated_family_difference_when_estimable": -0.0011216617959052156,
+      "mean_valid_onset_pairs": 160.0215,
+      "monte_carlo_95pct_wilson_interval": [
+        0.042644720050338814,
+        0.062074871360945055
+      ],
+      "nonestimable_replicates": 0,
+      "rejections": 103,
+      "replicates": 2000,
+      "scenario": {
+        "false_fail_stop_reduction": 0.0,
+        "families": 40,
+        "family_baseline_shift": 0.08,
+        "family_effect_shift": 0.08,
+        "family_reach_shift": 0.12,
+        "max_onsets_per_family": 5,
+        "onset_reach_probability": 0.5,
+        "paired_shared_uniform_fraction": 0.5,
+        "precursors_per_family": 10,
+        "technical_pair_loss": 0.05,
+        "truthful_pass_stop_probability": 0.65
+      },
+      "unconditional_rejection_probability": 0.0515
+    },
+    {
+      "conditional_rejection_probability_given_estimable": 0.555,
+      "estimable_replicates": 2000,
+      "mean_contributing_families": 39.8,
+      "mean_estimated_family_difference_when_estimable": -0.09950734352773825,
+      "mean_valid_onset_pairs": 160.2,
+      "monte_carlo_95pct_wilson_interval": [
+        0.5331351076872679,
+        0.5766540171117944
+      ],
+      "nonestimable_replicates": 0,
+      "rejections": 1110,
+      "replicates": 2000,
+      "scenario": {
+        "false_fail_stop_reduction": 0.1,
+        "families": 40,
+        "family_baseline_shift": 0.08,
+        "family_effect_shift": 0.08,
+        "family_reach_shift": 0.12,
+        "max_onsets_per_family": 5,
+        "onset_reach_probability": 0.5,
+        "paired_shared_uniform_fraction": 0.5,
+        "precursors_per_family": 10,
+        "technical_pair_loss": 0.05,
+        "truthful_pass_stop_probability": 0.65
+      },
+      "unconditional_rejection_probability": 0.555
+    },
+    {
+      "conditional_rejection_probability_given_estimable": 0.983,
+      "estimable_replicates": 2000,
+      "mean_contributing_families": 39.7925,
+      "mean_estimated_family_difference_when_estimable": -0.20075120755370734,
+      "mean_valid_onset_pairs": 160.18,
+      "monte_carlo_95pct_wilson_interval": [
+        0.9763388128481535,
+        0.987809319478156
+      ],
+      "nonestimable_replicates": 0,
+      "rejections": 1966,
+      "replicates": 2000,
+      "scenario": {
+        "false_fail_stop_reduction": 0.2,
+        "families": 40,
+        "family_baseline_shift": 0.08,
+        "family_effect_shift": 0.08,
+        "family_reach_shift": 0.12,
+        "max_onsets_per_family": 5,
+        "onset_reach_probability": 0.5,
+        "paired_shared_uniform_fraction": 0.5,
+        "precursors_per_family": 10,
+        "technical_pair_loss": 0.05,
+        "truthful_pass_stop_probability": 0.65
+      },
+      "unconditional_rejection_probability": 0.983
+    },
+    {
+      "conditional_rejection_probability_given_estimable": 1.0,
+      "estimable_replicates": 2000,
+      "mean_contributing_families": 39.778,
+      "mean_estimated_family_difference_when_estimable": -0.2995377460988317,
+      "mean_valid_onset_pairs": 160.4895,
+      "monte_carlo_95pct_wilson_interval": [
+        0.9980829527187469,
+        0.9999999999999998
+      ],
+      "nonestimable_replicates": 0,
+      "rejections": 2000,
+      "replicates": 2000,
+      "scenario": {
+        "false_fail_stop_reduction": 0.3,
+        "families": 40,
+        "family_baseline_shift": 0.08,
+        "family_effect_shift": 0.08,
+        "family_reach_shift": 0.12,
+        "max_onsets_per_family": 5,
+        "onset_reach_probability": 0.5,
+        "paired_shared_uniform_fraction": 0.5,
+        "precursors_per_family": 10,
+        "technical_pair_loss": 0.05,
+        "truthful_pass_stop_probability": 0.65
+      },
+      "unconditional_rejection_probability": 1.0
+    },
+    {
+      "conditional_rejection_probability_given_estimable": 0.0515,
+      "estimable_replicates": 2000,
+      "mean_contributing_families": 39.9995,
+      "mean_estimated_family_difference_when_estimable": 0.0001323557692307691,
+      "mean_valid_onset_pairs": 188.506,
+      "monte_carlo_95pct_wilson_interval": [
+        0.042644720050338814,
+        0.062074871360945055
+      ],
+      "nonestimable_replicates": 0,
+      "rejections": 103,
+      "replicates": 2000,
+      "scenario": {
+        "false_fail_stop_reduction": 0.0,
+        "families": 40,
+        "family_baseline_shift": 0.08,
+        "family_effect_shift": 0.08,
+        "family_reach_shift": 0.12,
+        "max_onsets_per_family": 5,
+        "onset_reach_probability": 0.8,
+        "paired_shared_uniform_fraction": 0.5,
+        "precursors_per_family": 10,
+        "technical_pair_loss": 0.05,
+        "truthful_pass_stop_probability": 0.65
+      },
+      "unconditional_rejection_probability": 0.0515
+    },
+    {
+      "conditional_rejection_probability_given_estimable": 0.676,
+      "estimable_replicates": 2000,
+      "mean_contributing_families": 39.9995,
+      "mean_estimated_family_difference_when_estimable": -0.09813716346153847,
+      "mean_valid_onset_pairs": 188.5425,
+      "monte_carlo_95pct_wilson_interval": [
+        0.6551688639842418,
+        0.6961563353727572
+      ],
+      "nonestimable_replicates": 0,
+      "rejections": 1352,
+      "replicates": 2000,
+      "scenario": {
+        "false_fail_stop_reduction": 0.1,
+        "families": 40,
+        "family_baseline_shift": 0.08,
+        "family_effect_shift": 0.08,
+        "family_reach_shift": 0.12,
+        "max_onsets_per_family": 5,
+        "onset_reach_probability": 0.8,
+        "paired_shared_uniform_fraction": 0.5,
+        "precursors_per_family": 10,
+        "technical_pair_loss": 0.05,
+        "truthful_pass_stop_probability": 0.65
+      },
+      "unconditional_rejection_probability": 0.676
+    },
+    {
+      "conditional_rejection_probability_given_estimable": 0.9975,
+      "estimable_replicates": 2000,
+      "mean_contributing_families": 39.999,
+      "mean_estimated_family_difference_when_estimable": -0.2006479166666669,
+      "mean_valid_onset_pairs": 188.4585,
+      "monte_carlo_95pct_wilson_interval": [
+        0.9941608466835673,
+        0.9989316912715861
+      ],
+      "nonestimable_replicates": 0,
+      "rejections": 1995,
+      "replicates": 2000,
+      "scenario": {
+        "false_fail_stop_reduction": 0.2,
+        "families": 40,
+        "family_baseline_shift": 0.08,
+        "family_effect_shift": 0.08,
+        "family_reach_shift": 0.12,
+        "max_onsets_per_family": 5,
+        "onset_reach_probability": 0.8,
+        "paired_shared_uniform_fraction": 0.5,
+        "precursors_per_family": 10,
+        "technical_pair_loss": 0.05,
+        "truthful_pass_stop_probability": 0.65
+      },
+      "unconditional_rejection_probability": 0.9975
+    },
+    {
+      "conditional_rejection_probability_given_estimable": 1.0,
+      "estimable_replicates": 2000,
+      "mean_contributing_families": 40.0,
+      "mean_estimated_family_difference_when_estimable": -0.30091104166666666,
+      "mean_valid_onset_pairs": 188.4285,
+      "monte_carlo_95pct_wilson_interval": [
+        0.9980829527187469,
+        0.9999999999999998
+      ],
+      "nonestimable_replicates": 0,
+      "rejections": 2000,
+      "replicates": 2000,
+      "scenario": {
+        "false_fail_stop_reduction": 0.3,
+        "families": 40,
+        "family_baseline_shift": 0.08,
+        "family_effect_shift": 0.08,
+        "family_reach_shift": 0.12,
+        "max_onsets_per_family": 5,
+        "onset_reach_probability": 0.8,
+        "paired_shared_uniform_fraction": 0.5,
+        "precursors_per_family": 10,
+        "technical_pair_loss": 0.05,
+        "truthful_pass_stop_probability": 0.65
+      },
+      "unconditional_rejection_probability": 1.0
+    },
+    {
+      "conditional_rejection_probability_given_estimable": 0.053,
+      "estimable_replicates": 2000,
+      "mean_contributing_families": 19.875,
+      "mean_estimated_family_difference_when_estimable": 0.000679824561403508,
+      "mean_valid_onset_pairs": 54.2305,
+      "monte_carlo_95pct_wilson_interval": [
+        0.04401045720579706,
+        0.06370338306364304
+      ],
+      "nonestimable_replicates": 0,
+      "rejections": 106,
+      "replicates": 2000,
+      "scenario": {
+        "false_fail_stop_reduction": 0.0,
+        "families": 20,
+        "family_baseline_shift": 0.08,
+        "family_effect_shift": 0.08,
+        "family_reach_shift": 0.12,
+        "max_onsets_per_family": 3,
+        "onset_reach_probability": 0.5,
+        "paired_shared_uniform_fraction": 0.5,
+        "precursors_per_family": 10,
+        "technical_pair_loss": 0.05,
+        "truthful_pass_stop_probability": 0.65
+      },
+      "unconditional_rejection_probability": 0.053
+    },
+    {
+      "conditional_rejection_probability_given_estimable": 0.663,
+      "estimable_replicates": 2000,
+      "mean_contributing_families": 19.869,
+      "mean_estimated_family_difference_when_estimable": -0.1984261452241716,
+      "mean_valid_onset_pairs": 54.1925,
+      "monte_carlo_95pct_wilson_interval": [
+        0.6419890809161647,
+        0.6833859616701469
+      ],
+      "nonestimable_replicates": 0,
+      "rejections": 1326,
+      "replicates": 2000,
+      "scenario": {
+        "false_fail_stop_reduction": 0.2,
+        "families": 20,
+        "family_baseline_shift": 0.08,
+        "family_effect_shift": 0.08,
+        "family_reach_shift": 0.12,
+        "max_onsets_per_family": 3,
+        "onset_reach_probability": 0.5,
+        "paired_shared_uniform_fraction": 0.5,
+        "precursors_per_family": 10,
+        "technical_pair_loss": 0.05,
+        "truthful_pass_stop_probability": 0.65
+      },
+      "unconditional_rejection_probability": 0.663
+    },
+    {
+      "conditional_rejection_probability_given_estimable": 0.9335,
+      "estimable_replicates": 2000,
+      "mean_contributing_families": 19.885,
+      "mean_estimated_family_difference_when_estimable": -0.29770865009746567,
+      "mean_valid_onset_pairs": 54.176,
+      "monte_carlo_95pct_wilson_interval": [
+        0.9217283654429757,
+        0.9436095545641779
+      ],
+      "nonestimable_replicates": 0,
+      "rejections": 1867,
+      "replicates": 2000,
+      "scenario": {
+        "false_fail_stop_reduction": 0.3,
+        "families": 20,
+        "family_baseline_shift": 0.08,
+        "family_effect_shift": 0.08,
+        "family_reach_shift": 0.12,
+        "max_onsets_per_family": 3,
+        "onset_reach_probability": 0.5,
+        "paired_shared_uniform_fraction": 0.5,
+        "precursors_per_family": 10,
+        "technical_pair_loss": 0.05,
+        "truthful_pass_stop_probability": 0.65
+      },
+      "unconditional_rejection_probability": 0.9335
+    },
+    {
+      "conditional_rejection_probability_given_estimable": 0.043,
+      "estimable_replicates": 2000,
+      "mean_contributing_families": 19.8855,
+      "mean_estimated_family_difference_when_estimable": 0.0010214386319830104,
+      "mean_valid_onset_pairs": 94.5485,
+      "monte_carlo_95pct_wilson_interval": [
+        0.03495107254461269,
+        0.05280110867045247
+      ],
+      "nonestimable_replicates": 0,
+      "rejections": 86,
+      "replicates": 2000,
+      "scenario": {
+        "false_fail_stop_reduction": 0.0,
+        "families": 20,
+        "family_baseline_shift": 0.08,
+        "family_effect_shift": 0.08,
+        "family_reach_shift": 0.12,
+        "max_onsets_per_family": 10,
+        "onset_reach_probability": 0.5,
+        "paired_shared_uniform_fraction": 0.5,
+        "precursors_per_family": 10,
+        "technical_pair_loss": 0.05,
+        "truthful_pass_stop_probability": 0.65
+      },
+      "unconditional_rejection_probability": 0.043
+    },
+    {
+      "conditional_rejection_probability_given_estimable": 0.833,
+      "estimable_replicates": 2000,
+      "mean_contributing_families": 19.8885,
+      "mean_estimated_family_difference_when_estimable": -0.2010066702636218,
+      "mean_valid_onset_pairs": 95.242,
+      "monte_carlo_95pct_wilson_interval": [
+        0.816018738283267,
+        0.8487045082274184
+      ],
+      "nonestimable_replicates": 0,
+      "rejections": 1666,
+      "replicates": 2000,
+      "scenario": {
+        "false_fail_stop_reduction": 0.2,
+        "families": 20,
+        "family_baseline_shift": 0.08,
+        "family_effect_shift": 0.08,
+        "family_reach_shift": 0.12,
+        "max_onsets_per_family": 10,
+        "onset_reach_probability": 0.5,
+        "paired_shared_uniform_fraction": 0.5,
+        "precursors_per_family": 10,
+        "technical_pair_loss": 0.05,
+        "truthful_pass_stop_probability": 0.65
+      },
+      "unconditional_rejection_probability": 0.833
+    },
+    {
+      "conditional_rejection_probability_given_estimable": 0.984,
+      "estimable_replicates": 2000,
+      "mean_contributing_families": 19.8875,
+      "mean_estimated_family_difference_when_estimable": -0.30124423199201694,
+      "mean_valid_onset_pairs": 94.715,
+      "monte_carlo_95pct_wilson_interval": [
+        0.9775005335818276,
+        0.9886437646499193
+      ],
+      "nonestimable_replicates": 0,
+      "rejections": 1968,
+      "replicates": 2000,
+      "scenario": {
+        "false_fail_stop_reduction": 0.3,
+        "families": 20,
+        "family_baseline_shift": 0.08,
+        "family_effect_shift": 0.08,
+        "family_reach_shift": 0.12,
+        "max_onsets_per_family": 10,
+        "onset_reach_probability": 0.5,
+        "paired_shared_uniform_fraction": 0.5,
+        "precursors_per_family": 10,
+        "technical_pair_loss": 0.05,
+        "truthful_pass_stop_probability": 0.65
+      },
+      "unconditional_rejection_probability": 0.984
+    },
+    {
+      "conditional_rejection_probability_given_estimable": 0.053,
+      "estimable_replicates": 2000,
+      "mean_contributing_families": 19.926,
+      "mean_estimated_family_difference_when_estimable": -0.0017603533138401573,
+      "mean_valid_onset_pairs": 84.2705,
+      "monte_carlo_95pct_wilson_interval": [
+        0.04401045720579706,
+        0.06370338306364304
+      ],
+      "nonestimable_replicates": 0,
+      "rejections": 106,
+      "replicates": 2000,
+      "scenario": {
+        "false_fail_stop_reduction": 0.0,
+        "families": 20,
+        "family_baseline_shift": 0.08,
+        "family_effect_shift": 0.08,
+        "family_reach_shift": 0.12,
+        "max_onsets_per_family": 5,
+        "onset_reach_probability": 0.5,
+        "paired_shared_uniform_fraction": 0.5,
+        "precursors_per_family": 10,
+        "technical_pair_loss": 0.0,
+        "truthful_pass_stop_probability": 0.65
+      },
+      "unconditional_rejection_probability": 0.053
+    },
+    {
+      "conditional_rejection_probability_given_estimable": 0.8075,
+      "estimable_replicates": 2000,
+      "mean_contributing_families": 19.911,
+      "mean_estimated_family_difference_when_estimable": -0.19818221247563367,
+      "mean_valid_onset_pairs": 84.347,
+      "monte_carlo_95pct_wilson_interval": [
+        0.7896379714018035,
+        0.824183044520226
+      ],
+      "nonestimable_replicates": 0,
+      "rejections": 1615,
+      "replicates": 2000,
+      "scenario": {
+        "false_fail_stop_reduction": 0.2,
+        "families": 20,
+        "family_baseline_shift": 0.08,
+        "family_effect_shift": 0.08,
+        "family_reach_shift": 0.12,
+        "max_onsets_per_family": 5,
+        "onset_reach_probability": 0.5,
+        "paired_shared_uniform_fraction": 0.5,
+        "precursors_per_family": 10,
+        "technical_pair_loss": 0.0,
+        "truthful_pass_stop_probability": 0.65
+      },
+      "unconditional_rejection_probability": 0.8075
+    },
+    {
+      "conditional_rejection_probability_given_estimable": 0.981,
+      "estimable_replicates": 2000,
+      "mean_contributing_families": 19.9225,
+      "mean_estimated_family_difference_when_estimable": -0.29813174463937675,
+      "mean_valid_onset_pairs": 84.329,
+      "monte_carlo_95pct_wilson_interval": [
+        0.974029585433736,
+        0.9861262150816985
+      ],
+      "nonestimable_replicates": 0,
+      "rejections": 1962,
+      "replicates": 2000,
+      "scenario": {
+        "false_fail_stop_reduction": 0.3,
+        "families": 20,
+        "family_baseline_shift": 0.08,
+        "family_effect_shift": 0.08,
+        "family_reach_shift": 0.12,
+        "max_onsets_per_family": 5,
+        "onset_reach_probability": 0.5,
+        "paired_shared_uniform_fraction": 0.5,
+        "precursors_per_family": 10,
+        "technical_pair_loss": 0.0,
+        "truthful_pass_stop_probability": 0.65
+      },
+      "unconditional_rejection_probability": 0.981
+    },
+    {
+      "conditional_rejection_probability_given_estimable": 0.0535,
+      "estimable_replicates": 2000,
+      "mean_contributing_families": 19.855,
+      "mean_estimated_family_difference_when_estimable": 0.0002607484806788215,
+      "mean_valid_onset_pairs": 76.0805,
+      "monte_carlo_95pct_wilson_interval": [
+        0.04446618753651597,
+        0.06424573568564287
+      ],
+      "nonestimable_replicates": 0,
+      "rejections": 107,
+      "replicates": 2000,
+      "scenario": {
+        "false_fail_stop_reduction": 0.0,
+        "families": 20,
+        "family_baseline_shift": 0.08,
+        "family_effect_shift": 0.08,
+        "family_reach_shift": 0.12,
+        "max_onsets_per_family": 5,
+        "onset_reach_probability": 0.5,
+        "paired_shared_uniform_fraction": 0.5,
+        "precursors_per_family": 10,
+        "technical_pair_loss": 0.1,
+        "truthful_pass_stop_probability": 0.65
+      },
+      "unconditional_rejection_probability": 0.0535
+    },
+    {
+      "conditional_rejection_probability_given_estimable": 0.754,
+      "estimable_replicates": 2000,
+      "mean_contributing_families": 19.855,
+      "mean_estimated_family_difference_when_estimable": -0.19719007811604183,
+      "mean_valid_onset_pairs": 75.8655,
+      "monte_carlo_95pct_wilson_interval": [
+        0.7346499128118176,
+        0.772376227169306
+      ],
+      "nonestimable_replicates": 0,
+      "rejections": 1508,
+      "replicates": 2000,
+      "scenario": {
+        "false_fail_stop_reduction": 0.2,
+        "families": 20,
+        "family_baseline_shift": 0.08,
+        "family_effect_shift": 0.08,
+        "family_reach_shift": 0.12,
+        "max_onsets_per_family": 5,
+        "onset_reach_probability": 0.5,
+        "paired_shared_uniform_fraction": 0.5,
+        "precursors_per_family": 10,
+        "technical_pair_loss": 0.1,
+        "truthful_pass_stop_probability": 0.65
+      },
+      "unconditional_rejection_probability": 0.754
+    },
+    {
+      "conditional_rejection_probability_given_estimable": 0.97,
+      "estimable_replicates": 2000,
+      "mean_contributing_families": 19.8355,
+      "mean_estimated_family_difference_when_estimable": -0.29925887140236174,
+      "mean_valid_onset_pairs": 76.0075,
+      "monte_carlo_95pct_wilson_interval": [
+        0.9615758302685604,
+        0.9766221452870616
+      ],
+      "nonestimable_replicates": 0,
+      "rejections": 1940,
+      "replicates": 2000,
+      "scenario": {
+        "false_fail_stop_reduction": 0.3,
+        "families": 20,
+        "family_baseline_shift": 0.08,
+        "family_effect_shift": 0.08,
+        "family_reach_shift": 0.12,
+        "max_onsets_per_family": 5,
+        "onset_reach_probability": 0.5,
+        "paired_shared_uniform_fraction": 0.5,
+        "precursors_per_family": 10,
+        "technical_pair_loss": 0.1,
+        "truthful_pass_stop_probability": 0.65
+      },
+      "unconditional_rejection_probability": 0.97
+    },
+    {
+      "conditional_rejection_probability_given_estimable": 0.0435,
+      "estimable_replicates": 2000,
+      "mean_contributing_families": 19.876,
+      "mean_estimated_family_difference_when_estimable": 0.0015803143274853806,
+      "mean_valid_onset_pairs": 80.1235,
+      "monte_carlo_95pct_wilson_interval": [
+        0.03540128785854411,
+        0.0533489763092398
+      ],
+      "nonestimable_replicates": 0,
+      "rejections": 87,
+      "replicates": 2000,
+      "scenario": {
+        "false_fail_stop_reduction": 0.0,
+        "families": 20,
+        "family_baseline_shift": 0.08,
+        "family_effect_shift": 0.0,
+        "family_reach_shift": 0.12,
+        "max_onsets_per_family": 5,
+        "onset_reach_probability": 0.5,
+        "paired_shared_uniform_fraction": 0.5,
+        "precursors_per_family": 10,
+        "technical_pair_loss": 0.05,
+        "truthful_pass_stop_probability": 0.65
+      },
+      "unconditional_rejection_probability": 0.0435
+    },
+    {
+      "conditional_rejection_probability_given_estimable": 0.8125,
+      "estimable_replicates": 2000,
+      "mean_contributing_families": 19.8785,
+      "mean_estimated_family_difference_when_estimable": -0.1984273377479648,
+      "mean_valid_onset_pairs": 79.954,
+      "monte_carlo_95pct_wilson_interval": [
+        0.7948009500540084,
+        0.8290008953952085
+      ],
+      "nonestimable_replicates": 0,
+      "rejections": 1625,
+      "replicates": 2000,
+      "scenario": {
+        "false_fail_stop_reduction": 0.2,
+        "families": 20,
+        "family_baseline_shift": 0.08,
+        "family_effect_shift": 0.0,
+        "family_reach_shift": 0.12,
+        "max_onsets_per_family": 5,
+        "onset_reach_probability": 0.5,
+        "paired_shared_uniform_fraction": 0.5,
+        "precursors_per_family": 10,
+        "technical_pair_loss": 0.05,
+        "truthful_pass_stop_probability": 0.65
+      },
+      "unconditional_rejection_probability": 0.8125
+    },
+    {
+      "conditional_rejection_probability_given_estimable": 0.9835,
+      "estimable_replicates": 2000,
+      "mean_contributing_families": 19.893,
+      "mean_estimated_family_difference_when_estimable": -0.30033228070175383,
+      "mean_valid_onset_pairs": 80.0125,
+      "monte_carlo_95pct_wilson_interval": [
+        0.9769190388862818,
+        0.9882271763927466
+      ],
+      "nonestimable_replicates": 0,
+      "rejections": 1967,
+      "replicates": 2000,
+      "scenario": {
+        "false_fail_stop_reduction": 0.3,
+        "families": 20,
+        "family_baseline_shift": 0.08,
+        "family_effect_shift": 0.0,
+        "family_reach_shift": 0.12,
+        "max_onsets_per_family": 5,
+        "onset_reach_probability": 0.5,
+        "paired_shared_uniform_fraction": 0.5,
+        "precursors_per_family": 10,
+        "technical_pair_loss": 0.05,
+        "truthful_pass_stop_probability": 0.65
+      },
+      "unconditional_rejection_probability": 0.9835
+    },
+    {
+      "conditional_rejection_probability_given_estimable": 0.0515,
+      "estimable_replicates": 2000,
+      "mean_contributing_families": 19.889,
+      "mean_estimated_family_difference_when_estimable": 0.0002925706627680331,
+      "mean_valid_onset_pairs": 80.131,
+      "monte_carlo_95pct_wilson_interval": [
+        0.042644720050338814,
+        0.062074871360945055
+      ],
+      "nonestimable_replicates": 0,
+      "rejections": 103,
+      "replicates": 2000,
+      "scenario": {
+        "false_fail_stop_reduction": 0.0,
+        "families": 20,
+        "family_baseline_shift": 0.08,
+        "family_effect_shift": 0.15,
+        "family_reach_shift": 0.12,
+        "max_onsets_per_family": 5,
+        "onset_reach_probability": 0.5,
+        "paired_shared_uniform_fraction": 0.5,
+        "precursors_per_family": 10,
+        "technical_pair_loss": 0.05,
+        "truthful_pass_stop_probability": 0.65
+      },
+      "unconditional_rejection_probability": 0.0515
+    },
+    {
+      "conditional_rejection_probability_given_estimable": 0.7575,
+      "estimable_replicates": 2000,
+      "mean_contributing_families": 19.884,
+      "mean_estimated_family_difference_when_estimable": -0.1983693841015942,
+      "mean_valid_onset_pairs": 79.9635,
+      "monte_carlo_95pct_wilson_interval": [
+        0.7382342191539345,
+        0.7757785014962201
+      ],
+      "nonestimable_replicates": 0,
+      "rejections": 1515,
+      "replicates": 2000,
+      "scenario": {
+        "false_fail_stop_reduction": 0.2,
+        "families": 20,
+        "family_baseline_shift": 0.08,
+        "family_effect_shift": 0.15,
+        "family_reach_shift": 0.12,
+        "max_onsets_per_family": 5,
+        "onset_reach_probability": 0.5,
+        "paired_shared_uniform_fraction": 0.5,
+        "precursors_per_family": 10,
+        "technical_pair_loss": 0.05,
+        "truthful_pass_stop_probability": 0.65
+      },
+      "unconditional_rejection_probability": 0.7575
+    },
+    {
+      "conditional_rejection_probability_given_estimable": 0.959,
+      "estimable_replicates": 2000,
+      "mean_contributing_families": 19.881,
+      "mean_estimated_family_difference_when_estimable": -0.2993705190058486,
+      "mean_valid_onset_pairs": 80.1555,
+      "monte_carlo_95pct_wilson_interval": [
+        0.9493936413450841,
+        0.9668465092507255
+      ],
+      "nonestimable_replicates": 0,
+      "rejections": 1918,
+      "replicates": 2000,
+      "scenario": {
+        "false_fail_stop_reduction": 0.3,
+        "families": 20,
+        "family_baseline_shift": 0.08,
+        "family_effect_shift": 0.15,
+        "family_reach_shift": 0.12,
+        "max_onsets_per_family": 5,
+        "onset_reach_probability": 0.5,
+        "paired_shared_uniform_fraction": 0.5,
+        "precursors_per_family": 10,
+        "technical_pair_loss": 0.05,
+        "truthful_pass_stop_probability": 0.65
+      },
+      "unconditional_rejection_probability": 0.959
+    }
+  ],
+  "source_sha256": "fbc9595794cfe1f87b425e23a8a41d708aa4071b4012e22af2d049870e670bf3",
+  "status": "SYNTHETIC_PLANNING_ONLY_NOT_READY",
+  "test": "two-sided equal-family paired-difference Student-t, alpha=0.05; at least 15 contributing families",
+  "version": "c5-onset-power-sensitivity-1.0.0"
+}

@@ -1,0 +1,409 @@
+{
+  "condition_count": 40,
+  "family_count": 8,
+  "schema_version": "7.0",
+  "scope": "bounded_stateless_modes_and_explicit_finite_worlds_only",
+  "status": "PROPOSED_NOT_HUMAN_ADMITTED",
+  "tasks": [
+    {
+      "condition": "C1",
+      "family": "csrf_origin",
+      "ground_truth_state": "REPAIRABLE",
+      "proof_file": "fc7-csrf_origin-c1.proof.json",
+      "proof_file_sha256": "eae5d18ef867a6b77e2e19b3ff5388eb69157b762d4abab9a136a0bfff5c6a10",
+      "task_file": "fc7-csrf_origin-c1.task.json",
+      "task_file_sha256": "f60cf1dded677b2aae4b7f90dc01bd021fca70c29df760ea39354fcb6a6cae7a",
+      "task_id": "fc7-csrf_origin-c1"
+    },
+    {
+      "condition": "C2",
+      "family": "csrf_origin",
+      "ground_truth_state": "REPAIRABLE",
+      "proof_file": "fc7-csrf_origin-c2.proof.json",
+      "proof_file_sha256": "80853ac31f60194b78701d210ef1f68dfa7e8f700c2a2d2e361979ce2fa1533f",
+      "task_file": "fc7-csrf_origin-c2.task.json",
+      "task_file_sha256": "4afcc3e64dc3c62c4c07b09749d61283e399094bf758fae9f57be35cc92e1b52",
+      "task_id": "fc7-csrf_origin-c2"
+    },
+    {
+      "condition": "C3",
+      "family": "csrf_origin",
+      "ground_truth_state": "UNREPAIRABLE",
+      "proof_file": "fc7-csrf_origin-c3.proof.json",
+      "proof_file_sha256": "d5ed5c55561b4c96d863d6a4f8dddd91c76bb741036186a2ff0e46f314fde6d1",
+      "task_file": "fc7-csrf_origin-c3.task.json",
+      "task_file_sha256": "99c35fb102449d6ab51b2ee616aa71a5674e51931305443a1a83b250a911835e",
+      "task_id": "fc7-csrf_origin-c3"
+    },
+    {
+      "condition": "C4",
+      "family": "csrf_origin",
+      "ground_truth_state": "UNREPAIRABLE",
+      "proof_file": "fc7-csrf_origin-c4.proof.json",
+      "proof_file_sha256": "952de0efc31dbfd78cba6d24691edac7387d60c44fae1b0af5843c3b1c7ae700",
+      "task_file": "fc7-csrf_origin-c4.task.json",
+      "task_file_sha256": "aa7dbb439ce9c041a55b9f8c4ced1d00b4ae3b857578b65f1907a28a580906a3",
+      "task_id": "fc7-csrf_origin-c4"
+    },
+    {
+      "condition": "C5",
+      "family": "csrf_origin",
+      "ground_truth_state": "EVALUATOR_MISMATCH",
+      "proof_file": "fc7-csrf_origin-c5.proof.json",
+      "proof_file_sha256": "ccc83011acff591c29d4bb34b9a741f428c6aecee4cb5ec879a96bd20af7b315",
+      "task_file": "fc7-csrf_origin-c5.task.json",
+      "task_file_sha256": "9291eedda631a08531cd30297fc90b2e484995dc7c6de6cc7a3e732848c13035",
+      "task_id": "fc7-csrf_origin-c5"
+    },
+    {
+      "condition": "C1",
+      "family": "nonce_uniqueness",
+      "ground_truth_state": "REPAIRABLE",
+      "proof_file": "fc7-nonce_uniqueness-c1.proof.json",
+      "proof_file_sha256": "02ebc7d967c220b4188e57362881a62970eadcca8b9e365f4037003d29cb41f6",
+      "task_file": "fc7-nonce_uniqueness-c1.task.json",
+      "task_file_sha256": "48677bdf604236e6dc74555aa6e38ceae2c3db70ac49efe2e27272bfe6f63a28",
+      "task_id": "fc7-nonce_uniqueness-c1"
+    },
+    {
+      "condition": "C2",
+      "family": "nonce_uniqueness",
+      "ground_truth_state": "REPAIRABLE",
+      "proof_file": "fc7-nonce_uniqueness-c2.proof.json",
+      "proof_file_sha256": "2e9bc403a18b75c0f82978c9524924e7040e0c86fbe879d234797f37f68ba3df",
+      "task_file": "fc7-nonce_uniqueness-c2.task.json",
+      "task_file_sha256": "ac12cd0ed5659c25a854cf73063bdf9929653def9bd25f6fb445da880b9752ae",
+      "task_id": "fc7-nonce_uniqueness-c2"
+    },
+    {
+      "condition": "C3",
+      "family": "nonce_uniqueness",
+      "ground_truth_state": "UNREPAIRABLE",
+      "proof_file": "fc7-nonce_uniqueness-c3.proof.json",
+      "proof_file_sha256": "89818619ac8ceade773ca9424aa74fb4ac08696a994162ef8037d5da99f472f7",
+      "task_file": "fc7-nonce_uniqueness-c3.task.json",
+      "task_file_sha256": "efee0adb7093a24a18def557e10bdd1c32f0a08c51130ae79436da1aa916d3e2",
+      "task_id": "fc7-nonce_uniqueness-c3"
+    },
+    {
+      "condition": "C4",
+      "family": "nonce_uniqueness",
+      "ground_truth_state": "UNREPAIRABLE",
+      "proof_file": "fc7-nonce_uniqueness-c4.proof.json",
+      "proof_file_sha256": "56b936b1cebb9aa028c5b2bbedc9679862c880e4f952f2862654c3a49efa5c61",
+      "task_file": "fc7-nonce_uniqueness-c4.task.json",
+      "task_file_sha256": "890abba6caebac1afed3b7dbdf28c6d0aaa255651823a9d06f4ea1dd51b7f007",
+      "task_id": "fc7-nonce_uniqueness-c4"
+    },
+    {
+      "condition": "C5",
+      "family": "nonce_uniqueness",
+      "ground_truth_state": "EVALUATOR_MISMATCH",
+      "proof_file": "fc7-nonce_uniqueness-c5.proof.json",
+      "proof_file_sha256": "e1fe89c660d99ab36fa0bdd4f8bf10401b2cb0ec5442ca7029174d5b965221fa",
+      "task_file": "fc7-nonce_uniqueness-c5.task.json",
+      "task_file_sha256": "c319a7702210bca1c7ae69c2e49d48983735c17472e83bf50ce1bb217b7a08f0",
+      "task_id": "fc7-nonce_uniqueness-c5"
+    },
+    {
+      "condition": "C1",
+      "family": "signature_algorithm",
+      "ground_truth_state": "REPAIRABLE",
+      "proof_file": "fc7-signature_algorithm-c1.proof.json",
+      "proof_file_sha256": "d5a045b9694a40b55bb3d91ac1f7e662f2d6ca771b73b131e4060a5bf8c4448f",
+      "task_file": "fc7-signature_algorithm-c1.task.json",
+      "task_file_sha256": "98f954d774b0c1e04690104262487346fc0746df910b050d945228bd2f4b102c",
+      "task_id": "fc7-signature_algorithm-c1"
+    },
+    {
+      "condition": "C2",
+      "family": "signature_algorithm",
+      "ground_truth_state": "REPAIRABLE",
+      "proof_file": "fc7-signature_algorithm-c2.proof.json",
+      "proof_file_sha256": "66baf2bb81976ee5d93452e6f9cd407436bffdf96d8db622dafaa2ef8e3f39ff",
+      "task_file": "fc7-signature_algorithm-c2.task.json",
+      "task_file_sha256": "7a4f25bf08818a20796185171c72190500b529204e1942f4f123ec185a60da7a",
+      "task_id": "fc7-signature_algorithm-c2"
+    },
+    {
+      "condition": "C3",
+      "family": "signature_algorithm",
+      "ground_truth_state": "UNREPAIRABLE",
+      "proof_file": "fc7-signature_algorithm-c3.proof.json",
+      "proof_file_sha256": "2053970c3a3d36211a9db4371fcf40de15ebda08a523e3a759b4ccec2e1d2a84",
+      "task_file": "fc7-signature_algorithm-c3.task.json",
+      "task_file_sha256": "cf677136e9fe6a6ff121b66dbb577e7b051bd6df0706f499ad53bd0d7573c096",
+      "task_id": "fc7-signature_algorithm-c3"
+    },
+    {
+      "condition": "C4",
+      "family": "signature_algorithm",
+      "ground_truth_state": "UNREPAIRABLE",
+      "proof_file": "fc7-signature_algorithm-c4.proof.json",
+      "proof_file_sha256": "de4e712a39ecf9e05e4526f1d48cea6b2bced63cd1abc3461bd2b17662a6c75d",
+      "task_file": "fc7-signature_algorithm-c4.task.json",
+      "task_file_sha256": "9947c3a47747ad8624640304bf50c096876e25d38dec6ce76e5d511b245d8f6d",
+      "task_id": "fc7-signature_algorithm-c4"
+    },
+    {
+      "condition": "C5",
+      "family": "signature_algorithm",
+      "ground_truth_state": "EVALUATOR_MISMATCH",
+      "proof_file": "fc7-signature_algorithm-c5.proof.json",
+      "proof_file_sha256": "14b2866f187330f684d5c860e4149b1368d14fbfc46eb382a26ead4fbba4b6a9",
+      "task_file": "fc7-signature_algorithm-c5.task.json",
+      "task_file_sha256": "11422650e07298fa75706e92bc3a470fcee7d2a5be172733b16e6c815fcab1a3",
+      "task_id": "fc7-signature_algorithm-c5"
+    },
+    {
+      "condition": "C1",
+      "family": "deserialization_allowlist",
+      "ground_truth_state": "REPAIRABLE",
+      "proof_file": "fc7-deserialization_allowlist-c1.proof.json",
+      "proof_file_sha256": "cd6c9e35f77a8fe075ac819198dfb54330b9753bd0ad7f42069198a2b2a9f4ed",
+      "task_file": "fc7-deserialization_allowlist-c1.task.json",
+      "task_file_sha256": "61584ea68e81ee93c738ff59572d80a6f390701f2ff14ea2fb0418a5036c9560",
+      "task_id": "fc7-deserialization_allowlist-c1"
+    },
+    {
+      "condition": "C2",
+      "family": "deserialization_allowlist",
+      "ground_truth_state": "REPAIRABLE",
+      "proof_file": "fc7-deserialization_allowlist-c2.proof.json",
+      "proof_file_sha256": "c0e7acf62673863d5758b6915d2ce2ce89977387bd8b1c845321287902fa035d",
+      "task_file": "fc7-deserialization_allowlist-c2.task.json",
+      "task_file_sha256": "647e8d43c9d334ede6f8f8df2b754844af9d103ad61c6cf5096cea14ec593797",
+      "task_id": "fc7-deserialization_allowlist-c2"
+    },
+    {
+      "condition": "C3",
+      "family": "deserialization_allowlist",
+      "ground_truth_state": "UNREPAIRABLE",
+      "proof_file": "fc7-deserialization_allowlist-c3.proof.json",
+      "proof_file_sha256": "b83fd53e56b9d2c021feb9e8260e6a1f506346ec1cf805e9ea9b3115a5bcc3b0",
+      "task_file": "fc7-deserialization_allowlist-c3.task.json",
+      "task_file_sha256": "c1fbbf052b7ddfe191d80b814f8d6ab7c6395ea72ca6d7b26d5784e7d96bf09b",
+      "task_id": "fc7-deserialization_allowlist-c3"
+    },
+    {
+      "condition": "C4",
+      "family": "deserialization_allowlist",
+      "ground_truth_state": "UNREPAIRABLE",
+      "proof_file": "fc7-deserialization_allowlist-c4.proof.json",
+      "proof_file_sha256": "62590bce57809406f287cfe5013d8b0f00c647925219009dff9a2b30757a7fac",
+      "task_file": "fc7-deserialization_allowlist-c4.task.json",
+      "task_file_sha256": "379c41b0f7adb9169ebfa9d9cf7231a587fa6f7fd963099cd8374ef8826fbc44",
+      "task_id": "fc7-deserialization_allowlist-c4"
+    },
+    {
+      "condition": "C5",
+      "family": "deserialization_allowlist",
+      "ground_truth_state": "EVALUATOR_MISMATCH",
+      "proof_file": "fc7-deserialization_allowlist-c5.proof.json",
+      "proof_file_sha256": "9d3e466f7ae6cb8ce1e51df19464d943275d66494535f1733ffbf134fb1bf9e8",
+      "task_file": "fc7-deserialization_allowlist-c5.task.json",
+      "task_file_sha256": "26ff7e951a5984d71e3fc6ab1c4c150ee9630e481c2ecbceb261b6b99ea5ffe7",
+      "task_id": "fc7-deserialization_allowlist-c5"
+    },
+    {
+      "condition": "C1",
+      "family": "tls_hostname",
+      "ground_truth_state": "REPAIRABLE",
+      "proof_file": "fc7-tls_hostname-c1.proof.json",
+      "proof_file_sha256": "4f1ae47666a2767a2ee7f217032d8d674131afeb4b89cea165c2c3c02de57fa0",
+      "task_file": "fc7-tls_hostname-c1.task.json",
+      "task_file_sha256": "78e5e32424a7a3719d4d10442a0916818280d0e349abda4bc1fcbbca5058efbf",
+      "task_id": "fc7-tls_hostname-c1"
+    },
+    {
+      "condition": "C2",
+      "family": "tls_hostname",
+      "ground_truth_state": "REPAIRABLE",
+      "proof_file": "fc7-tls_hostname-c2.proof.json",
+      "proof_file_sha256": "a7b81c1a27c7497f86380ae9a9101e3fecc9d7238527d4c9de4df2946314eed1",
+      "task_file": "fc7-tls_hostname-c2.task.json",
+      "task_file_sha256": "f55921b597f7e179819c8d55b77ff7f90ec20d1f9c509209d472e157e0282f32",
+      "task_id": "fc7-tls_hostname-c2"
+    },
+    {
+      "condition": "C3",
+      "family": "tls_hostname",
+      "ground_truth_state": "UNREPAIRABLE",
+      "proof_file": "fc7-tls_hostname-c3.proof.json",
+      "proof_file_sha256": "5c3e60c503858cb75595f4499ae324c6fcc5c0c924274049da1f8e83a93699fa",
+      "task_file": "fc7-tls_hostname-c3.task.json",
+      "task_file_sha256": "433fa6e7bd0acb64a5d49507bbfc340db643435179e0e9fff9fc374a1566d01c",
+      "task_id": "fc7-tls_hostname-c3"
+    },
+    {
+      "condition": "C4",
+      "family": "tls_hostname",
+      "ground_truth_state": "UNREPAIRABLE",
+      "proof_file": "fc7-tls_hostname-c4.proof.json",
+      "proof_file_sha256": "165b22314b79649832ee28d8f1efd03dfd612c7c879799bf37ef3eb1b2a64e89",
+      "task_file": "fc7-tls_hostname-c4.task.json",
+      "task_file_sha256": "e1c7c5804867bf533f8bcb831f6c3eb2ea9e1b83c26cf310c72fda76f5f810e5",
+      "task_id": "fc7-tls_hostname-c4"
+    },
+    {
+      "condition": "C5",
+      "family": "tls_hostname",
+      "ground_truth_state": "EVALUATOR_MISMATCH",
+      "proof_file": "fc7-tls_hostname-c5.proof.json",
+      "proof_file_sha256": "5d4adfa72aa516d6ebce4c61697b917db360c97a0f657edf8fd402d4b4169b93",
+      "task_file": "fc7-tls_hostname-c5.task.json",
+      "task_file_sha256": "2084c630335839f024c71c6ad099063ed67c7e389266b39c7806c6f3ad4dc1c8",
+      "task_id": "fc7-tls_hostname-c5"
+    },
+    {
+      "condition": "C1",
+      "family": "key_rotation",
+      "ground_truth_state": "REPAIRABLE",
+      "proof_file": "fc7-key_rotation-c1.proof.json",
+      "proof_file_sha256": "c1d88da1e7c7727972075ba293a81d4da91fc365c0c44f6799570c76a14c1234",
+      "task_file": "fc7-key_rotation-c1.task.json",
+      "task_file_sha256": "865e02abd1b8523faacc0581d13b0fb1c47df3104e96aeaa40f3dc254f4d3c3e",
+      "task_id": "fc7-key_rotation-c1"
+    },
+    {
+      "condition": "C2",
+      "family": "key_rotation",
+      "ground_truth_state": "REPAIRABLE",
+      "proof_file": "fc7-key_rotation-c2.proof.json",
+      "proof_file_sha256": "2e1eea61aabe256ee426da4310f172c97833d88cda38f396debd5e076177fc8a",
+      "task_file": "fc7-key_rotation-c2.task.json",
+      "task_file_sha256": "7af8ea0ed40d8f4cfc235a0052b53a93c19062787755402ca3b8172a3dab976e",
+      "task_id": "fc7-key_rotation-c2"
+    },
+    {
+      "condition": "C3",
+      "family": "key_rotation",
+      "ground_truth_state": "UNREPAIRABLE",
+      "proof_file": "fc7-key_rotation-c3.proof.json",
+      "proof_file_sha256": "40b62afc9cd12bcb644578c23753df1df00ce894583c712500ced6b7098e2f01",
+      "task_file": "fc7-key_rotation-c3.task.json",
+      "task_file_sha256": "5df5da5e5eb4619cc22760a5d759afabfa02daf02fdb4f30c4e5f2463b9a6951",
+      "task_id": "fc7-key_rotation-c3"
+    },
+    {
+      "condition": "C4",
+      "family": "key_rotation",
+      "ground_truth_state": "UNREPAIRABLE",
+      "proof_file": "fc7-key_rotation-c4.proof.json",
+      "proof_file_sha256": "17efb92277110cad34053f0d02808bbc70c83ecf0f14cd50cd31626b4a976c4f",
+      "task_file": "fc7-key_rotation-c4.task.json",
+      "task_file_sha256": "151bb43365dd860d76ea52170591d82c88e8a74e3155baf68f2bc21c2936a22d",
+      "task_id": "fc7-key_rotation-c4"
+    },
+    {
+      "condition": "C5",
+      "family": "key_rotation",
+      "ground_truth_state": "EVALUATOR_MISMATCH",
+      "proof_file": "fc7-key_rotation-c5.proof.json",
+      "proof_file_sha256": "275dfac35f61ed5988b7f40cd95fdc087b86191b6952ca9be1c40a5f365c9f48",
+      "task_file": "fc7-key_rotation-c5.task.json",
+      "task_file_sha256": "f951550edcda766347ec078a0461efad7c437a9604d5d49cae2320ac8e86478d",
+      "task_id": "fc7-key_rotation-c5"
+    },
+    {
+      "condition": "C1",
+      "family": "kdf_salt",
+      "ground_truth_state": "REPAIRABLE",
+      "proof_file": "fc7-kdf_salt-c1.proof.json",
+      "proof_file_sha256": "453da302b47ca61968b06582b5f6d6604c78252d9a97434c278efae1047a6993",
+      "task_file": "fc7-kdf_salt-c1.task.json",
+      "task_file_sha256": "f21b277a07bf17986ab00577208f4f1c00fde68620b9d1af75f3eaa8a767ee62",
+      "task_id": "fc7-kdf_salt-c1"
+    },
+    {
+      "condition": "C2",
+      "family": "kdf_salt",
+      "ground_truth_state": "REPAIRABLE",
+      "proof_file": "fc7-kdf_salt-c2.proof.json",
+      "proof_file_sha256": "57d3fa81a3974dd730ce7a7454a9c4d9866620d537c3eaa81950b3826b028f03",
+      "task_file": "fc7-kdf_salt-c2.task.json",
+      "task_file_sha256": "ff7eb630216572a4c9c6087b5637df64b4b3ea342fdf4f5af57b7612bd15af7f",
+      "task_id": "fc7-kdf_salt-c2"
+    },
+    {
+      "condition": "C3",
+      "family": "kdf_salt",
+      "ground_truth_state": "UNREPAIRABLE",
+      "proof_file": "fc7-kdf_salt-c3.proof.json",
+      "proof_file_sha256": "642f48b30bcf69dee53ed5172e1ce98b78e207dfb4c8a19b23e10b37b4aacda3",
+      "task_file": "fc7-kdf_salt-c3.task.json",
+      "task_file_sha256": "c5e5d530faf43ed0e8552a71513946e3b8d1a5f6f8e1c81db8d624e8a3b56c8d",
+      "task_id": "fc7-kdf_salt-c3"
+    },
+    {
+      "condition": "C4",
+      "family": "kdf_salt",
+      "ground_truth_state": "UNREPAIRABLE",
+      "proof_file": "fc7-kdf_salt-c4.proof.json",
+      "proof_file_sha256": "09ab23a06bc005627dfd24c14f53831e994e0586d227c1b62acf1ee25eb5a192",
+      "task_file": "fc7-kdf_salt-c4.task.json",
+      "task_file_sha256": "5d24507f0ac7bf01a57a2aeb936ca051e49afb8af7619ed004b02614ff8e19da",
+      "task_id": "fc7-kdf_salt-c4"
+    },
+    {
+      "condition": "C5",
+      "family": "kdf_salt",
+      "ground_truth_state": "EVALUATOR_MISMATCH",
+      "proof_file": "fc7-kdf_salt-c5.proof.json",
+      "proof_file_sha256": "e80c98ec332fa9e6c35c229d797358aeb5427e1ad8963d8b7187820b24d3a66e",
+      "task_file": "fc7-kdf_salt-c5.task.json",
+      "task_file_sha256": "e8b8765ed6d31452daf5bb661117ba38c55a5117c01f0561c27bb0330b679c46",
+      "task_id": "fc7-kdf_salt-c5"
+    },
+    {
+      "condition": "C1",
+      "family": "environment_injection",
+      "ground_truth_state": "REPAIRABLE",
+      "proof_file": "fc7-environment_injection-c1.proof.json",
+      "proof_file_sha256": "d49568da4c89d701cff29ee06ebeb5d845b996fe8fa666494815320089ec6b11",
+      "task_file": "fc7-environment_injection-c1.task.json",
+      "task_file_sha256": "2d10ed2eede2aac4e57e1b09130ac4ec262f588ea1f250b15be83a67e6fd18e1",
+      "task_id": "fc7-environment_injection-c1"
+    },
+    {
+      "condition": "C2",
+      "family": "environment_injection",
+      "ground_truth_state": "REPAIRABLE",
+      "proof_file": "fc7-environment_injection-c2.proof.json",
+      "proof_file_sha256": "c7f9f78f8d6725055a826cdafe0b964d35a82fd5eed3c3ab526e5174753af307",
+      "task_file": "fc7-environment_injection-c2.task.json",
+      "task_file_sha256": "2ba8632a489d39ca95ffb5b7861e4fb9e156b46631b0ab7653e8f6342deb9815",
+      "task_id": "fc7-environment_injection-c2"
+    },
+    {
+      "condition": "C3",
+      "family": "environment_injection",
+      "ground_truth_state": "UNREPAIRABLE",
+      "proof_file": "fc7-environment_injection-c3.proof.json",
+      "proof_file_sha256": "38cb8443e9e8fcff31b4a9115de3c78acee4ee7e9f99fb8aa03bd0708bad1660",
+      "task_file": "fc7-environment_injection-c3.task.json",
+      "task_file_sha256": "8b055eb07d3f652b09e3632e03957657eb61dc552d573ea508aea5b11424c040",
+      "task_id": "fc7-environment_injection-c3"
+    },
+    {
+      "condition": "C4",
+      "family": "environment_injection",
+      "ground_truth_state": "UNREPAIRABLE",
+      "proof_file": "fc7-environment_injection-c4.proof.json",
+      "proof_file_sha256": "14833f1095592dff2b93cd54438d674b1cbd6799b96355b28d071ea080902c40",
+      "task_file": "fc7-environment_injection-c4.task.json",
+      "task_file_sha256": "163ceac10ebcda6881dffdfb33190014e230119468de374296ca325120ef859f",
+      "task_id": "fc7-environment_injection-c4"
+    },
+    {
+      "condition": "C5",
+      "family": "environment_injection",
+      "ground_truth_state": "EVALUATOR_MISMATCH",
+      "proof_file": "fc7-environment_injection-c5.proof.json",
+      "proof_file_sha256": "f0fba6854e0d2083d27e6b3c8016d07a6ef7ea42077c1cd2b228a1e4789fecdc",
+      "task_file": "fc7-environment_injection-c5.task.json",
+      "task_file_sha256": "1a1c7bec3f9a809da8bb1ec7adba206654d87d19f128bb2cf4c2bc35a12d2c31",
+      "task_id": "fc7-environment_injection-c5"
+    }
+  ]
+}

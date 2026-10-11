@@ -1,0 +1,14 @@
+{
+  "condition": "C4",
+  "environment": {
+    "complete_observation": false
+  },
+  "family": "deserialization_allowlist",
+  "gate_mode": "normal",
+  "schema_version": "6.0.0",
+  "starter_candidate": {
+    "mode": "allow_all"
+  },
+  "task_id": "fc-deserialization_allowlist-c4",
+  "version": "6.0.0"
+}

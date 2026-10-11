@@ -1,0 +1,22 @@
+{
+  "family": "transaction_replay",
+  "scope": "evaluator_only_reference_candidates",
+  "secure_reference": {
+    "transitions": {
+      "fresh": {"decision": "approve", "next": "seen"},
+      "seen": {"decision": "reject", "next": "seen"}
+    }
+  },
+  "insecure_mutation_approve_all": {
+    "transitions": {
+      "fresh": {"decision": "approve", "next": "fresh"},
+      "seen": {"decision": "approve", "next": "fresh"}
+    }
+  },
+  "insecure_mutation_reapprove_third": {
+    "transitions": {
+      "fresh": {"decision": "approve", "next": "seen"},
+      "seen": {"decision": "reject", "next": "fresh"}
+    }
+  }
+}

@@ -1,6 +1,6 @@
-# Paper submission audit — 3 October 2026
+# Paper submission audit — 3 October 2026, updated 5 October 2026
 
-**Artifact reviewed:** `paper/final.md` and derived PDF/DOCX, built from the completed exploratory cohort. **Verdict:** complete manuscript suitable for mentor review or submission as a clearly labeled exploratory report, once author names and affiliation are supplied. It must not be presented as a confirmatory or validated secure code benchmark study. A particular journal or conference style file has not been specified.
+**Artifact reviewed:** `paper/final.md` and derived PDF/DOCX, built from the completed exploratory cohort. **Verdict:** complete manuscript suitable for mentor review as a clearly labeled exploratory report. A journal submission still requires author-supplied identities and disclosures, a selected venue and its formatting, and a reviewed raw-data availability plan; see [`paper/SUBMISSION_HANDOFF_20261005.md`](../paper/SUBMISSION_HANDOFF_20261005.md). It must not be presented as a confirmatory or validated secure code benchmark study.
 
 ## Dataset and traceability
 
@@ -13,7 +13,7 @@
 | Raw source preservation | Original raw files remain unmodified. Analysis records per-file hashes and checks them again before writing derived output. Raw paths are Git ignored pending reviewed release. |
 | Analysis outputs | `paper/artifacts/results.json`, run CSV, factor summaries, family contrasts, historical inventory, source API inventory, and input hashes. Six figures are generated from these outputs. |
 | Numerical consistency | Manuscript anchors `40`, `8`, `16/20`, `9/20`, `24/28`, `17/25`, `15/20/5`, and `0/81` are present in derived records. Builder refuses a stale main data summary. |
-| Article format | Approximately 6,900 source words including references, 248-word abstract, 22 numbered references with direct primary links, six figures with captions, three tables, data availability and ethics sections. PDF text extraction confirms key sections and values. |
+| Article format | Approximately 7,100 source words including references, 238-word abstract, 25 numbered references with direct primary links, six figures with captions, three tables, data availability and ethics sections. PDF text extraction confirms key sections and values. |
 | Repository tests | `python3 -B -m unittest discover -s tests -q` passed **164 tests** in 67.427 seconds with Docker daemon access on 3 October 2026. An initial run while Docker was off failed only the three Docker-dependent catalog tests; rerunning after Docker became available passed all 164. No main experiment was relaunched. |
 | Re-render | `paper.build_submission` generated the 16-page PDF, DOCX, and all six PNG figures. Table captions and tables were checked on the same PDF pages. `git diff --check` passed; the derived data hashes matched across two identical analysis runs. The official Docker safety gate separately passed all eleven checks on 3 October 2026; its local receipt was not used to alter historical study results. |
 
@@ -57,3 +57,33 @@ The local analysis verifies saved receipts, logs, schedule hash, and archive fil
 2. Select the target venue or course template and apply its formatting, length, and disclosure requirements. The PDF is a clean neutral A4 manuscript, not an assumed publisher template.
 3. Decide whether the reviewed raw archive can be released and, if so, publish it with checksums, licensing, privacy review, and matching analysis commit. Until then, describe raw availability accurately.
 4. If the goal is a confirmatory paper on rational stopping or RAG effects, redesign the unavailable task mechanism and verifier, then collect a new, repeated dataset under a new protocol. Do not reinterpret these exploratory runs as that dataset.
+
+## 5 October 2026 update
+
+The paper's related work now cites SWE-Bench+, PatchBench, and a recent audit of an
+agentic-security harness, and explicitly avoids claiming that benchmark defects
+or false rejection were first found here. New C1–C5 pilots remain excluded.
+
+The historical inventory now reads a frozen list of its original 101 receipt
+paths. This fixes a reproduction failure caused by later pilot receipts with a
+different schema appearing in `experiments/runs/`; the 40 main and eight AEAD
+pilot episode counts and all substantive paper results remain unchanged.
+`analysis.paper_pipeline` completed against the frozen list and verified its
+read-only inputs. The venue-neutral PDF/DOCX were regenerated on 5 October;
+the PDF has 16 pages and the Word file has three tables and six figures.
+The complete local test suite was rerun after the latest 5 October changes:
+**453/453 tests passed** in 143.476 seconds. The paper pipeline again reconstructed 40
+historical exploratory episodes, eight separate AEAD pilots, and nine of 20
+terminal test–gate disagreements in nominally unavailable main cells. The
+manuscript now has six keywords. An independent check matched its numerical
+anchors to `paper/artifacts/results.json`; two claims were narrowed to observable
+post-failure submissions, and the 16-page PDF/DOCX were rebuilt after those edits.
+The private exact-input bundle and separate sanitized review candidate are
+documented in the [submission handoff](../paper/SUBMISSION_HANDOFF_20261005.md);
+the latter now reproduces 13 paper result sections from transformed bytes.
+Neither is yet approved as a public replication package.
+The renderer now fixes ReportLab metadata and DOCX ZIP timestamps. Two
+consecutive local builds produced identical 16-page PDF and DOCX hashes,
+recorded in the [author decision form](../paper/AUTHOR_SUBMISSION_DECISIONS_20261005.md).
+This checks same-workspace rendering only; font and platform portability are
+still limited.

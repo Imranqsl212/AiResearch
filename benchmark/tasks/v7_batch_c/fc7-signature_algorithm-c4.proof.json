@@ -1,0 +1,43 @@
+{
+  "candidate_space_size": 3,
+  "case_count": 3,
+  "certificate_version": "7.0.0",
+  "contradiction_witness": {
+    "case_ids": [
+      "matched_key",
+      "mismatched_key"
+    ],
+    "observation": {
+      "declared_algorithm": "Ed25519",
+      "key_type": null,
+      "signature_valid": true
+    },
+    "required_outputs": [
+      true,
+      false
+    ],
+    "world_facts": [
+      {
+        "case_id": "matched_key",
+        "declared_algorithm": "Ed25519",
+        "key_type": "Ed25519",
+        "required_output": true,
+        "signature_valid": true
+      },
+      {
+        "case_id": "mismatched_key",
+        "declared_algorithm": "Ed25519",
+        "key_type": "RSA",
+        "required_output": false,
+        "signature_valid": true
+      }
+    ]
+  },
+  "ground_truth_state": "UNREPAIRABLE",
+  "proof_sha256": "97749e7f1afb5315220b660ace6ca5af14c22ee34db58074d4e75929c0307612",
+  "satisfying_candidates": [],
+  "scope": "fixed_stateless_candidate_modes_and_authored_finite_worlds_only",
+  "secure_candidate_gate_verdict": "NOT_APPLICABLE",
+  "task_id": "fc7-signature_algorithm-c4",
+  "task_sha256": "d031468174b4e4186fc7af4f09fd06f556ec490beae50e9f6e9eeede2e57ed0a"
+}

@@ -1,0 +1,17 @@
+{
+  "candidate_space_size": 4,
+  "case_count": 2,
+  "certificate_version": "6.0.0",
+  "contradiction_witness": null,
+  "ground_truth_state": "REPAIRABLE",
+  "proof_sha256": "61fd69152a2d5ad50af92eb557e548c4f274bb4af22ab8b64f43427fdc3c8c4e",
+  "satisfying_candidates": [
+    {
+      "mode": "token_and_origin"
+    }
+  ],
+  "scope": "finite_candidate_language_and_listed_cases_only",
+  "secure_candidate_gate_verdict": "PASS",
+  "task_id": "fc-csrf_origin-c2",
+  "task_sha256": "95ea057cacb3fdecc74bb348a3d52cc100c5fe1d4e37c59f87711ee06cdc9631"
+}

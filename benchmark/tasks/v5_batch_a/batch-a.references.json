@@ -1,0 +1,86 @@
+{
+  "ambiguous_parameters": {
+    "insecure_mutations": [
+      {
+        "decode": "percent",
+        "duplicates": "first"
+      },
+      {
+        "decode": "percent",
+        "duplicates": "last"
+      },
+      {
+        "decode": "raw",
+        "duplicates": "reject"
+      }
+    ],
+    "secure_reference": {
+      "decode": "percent",
+      "duplicates": "reject"
+    }
+  },
+  "encoded_log_secret": {
+    "insecure_mutations": [
+      {
+        "placement": "before_fanout",
+        "redactor": "literal"
+      },
+      {
+        "placement": "before_fanout",
+        "redactor": "decode_once"
+      },
+      {
+        "placement": "app_only",
+        "redactor": "decode_twice"
+      }
+    ],
+    "secure_reference": {
+      "placement": "before_fanout",
+      "redactor": "decode_twice"
+    }
+  },
+  "quota_overflow": {
+    "insecure_mutations": [
+      {
+        "arithmetic": "wrap8",
+        "commit": "precheck"
+      },
+      {
+        "arithmetic": "saturating",
+        "commit": "postcheck"
+      },
+      {
+        "arithmetic": "checked",
+        "commit": "postcheck"
+      }
+    ],
+    "secure_reference": {
+      "arithmetic": "checked",
+      "commit": "precheck"
+    }
+  },
+  "rolling_rate_limit": {
+    "insecure_mutations": [
+      {
+        "identity": "principal",
+        "storage": "shared",
+        "window": "fixed_bucket"
+      },
+      {
+        "identity": "global",
+        "storage": "shared",
+        "window": "sliding"
+      },
+      {
+        "identity": "principal",
+        "storage": "local",
+        "window": "sliding"
+      }
+    ],
+    "secure_reference": {
+      "identity": "principal",
+      "storage": "shared",
+      "window": "sliding"
+    }
+  }
+}

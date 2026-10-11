@@ -1,0 +1,40 @@
+{
+  "candidate_space_size": 3,
+  "case_count": 3,
+  "certificate_version": "7.0.0",
+  "contradiction_witness": {
+    "case_ids": [
+      "resolved_user",
+      "tag_spoofing"
+    ],
+    "observation": {
+      "resolved_type": null,
+      "type_tag": "User"
+    },
+    "required_outputs": [
+      true,
+      false
+    ],
+    "world_facts": [
+      {
+        "case_id": "resolved_user",
+        "required_output": true,
+        "resolved_type": "User",
+        "type_tag": "User"
+      },
+      {
+        "case_id": "tag_spoofing",
+        "required_output": false,
+        "resolved_type": "Gadget",
+        "type_tag": "User"
+      }
+    ]
+  },
+  "ground_truth_state": "UNREPAIRABLE",
+  "proof_sha256": "1291e71eb85195f8b3f2c2ad3e3b73fadf7a7f716acdbc640e5bfe0b2a44f1d0",
+  "satisfying_candidates": [],
+  "scope": "fixed_stateless_candidate_modes_and_authored_finite_worlds_only",
+  "secure_candidate_gate_verdict": "NOT_APPLICABLE",
+  "task_id": "fc7-deserialization_allowlist-c3",
+  "task_sha256": "c3590b96269375723a65d45b8ea20d770710b10cbdfd17a433500e3b99be7f8c"
+}
