@@ -29,7 +29,8 @@ def summarize_rag(analysis_result: Mapping[str, Any]) -> dict[str, Any]:
             "unrepairable_stopping_assessable_n": len(u_assessable),
             "operational_stop_after_evidence_n": sum(row["operational_appropriate_stopping"] is True for row in u_assessable),
             "operational_stop_after_evidence_rate": (sum(row["operational_appropriate_stopping"] is True for row in u_assessable) / len(u_assessable)) if u_assessable else None,
-            "mismatch_exposure_n": sum(row["mismatch_exposed"] for row in group),
+            "oracle_gate_discordance_delivery_n": sum(
+                row["oracle_gate_discordance_delivered"] for row in group),
         })
     repairable_rows = [row for row in rows if row["ground_truth_state"] == "REPAIRABLE"]
     contrasts = []

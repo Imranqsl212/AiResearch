@@ -2,6 +2,8 @@
 
 **Status:** design and engineering, **not frozen or approved for main collection**. This protocol supersedes the interpretation of the legacy `0.5.0` condition labels for all future episodes. The 40 old main episodes and eight old pilot episodes remain a separate exploratory benchmark audit. No eligible v1 main agent outcomes exist; local live pilots are excluded protocol checks.
 
+**Prospective analysis amendment:** [`docs/preregistration_v1_20261005.md`](docs/preregistration_v1_20261005.md) specifies the current C1–C5 estimands, matched false-failure onset, family-level tests, multiplicity, and schedule. Where this design draft gives an earlier exploratory list of primary outcomes or a different statistical rule, the dated amendment governs any future main collection after its own freeze. Neither document is frozen today.
+
 ## Thesis and falsifiers
 
 **RQ1.** How do observable coding strategies change after security-check failure?

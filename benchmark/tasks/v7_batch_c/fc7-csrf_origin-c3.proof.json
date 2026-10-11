@@ -1,0 +1,40 @@
+{
+  "candidate_space_size": 4,
+  "case_count": 3,
+  "certificate_version": "7.0.0",
+  "contradiction_witness": {
+    "case_ids": [
+      "trusted_request",
+      "cross_site_request"
+    ],
+    "observation": {
+      "origin": null,
+      "token_valid": true
+    },
+    "required_outputs": [
+      true,
+      false
+    ],
+    "world_facts": [
+      {
+        "case_id": "trusted_request",
+        "origin": "trusted.example",
+        "required_output": true,
+        "token_valid": true
+      },
+      {
+        "case_id": "cross_site_request",
+        "origin": "evil.example",
+        "required_output": false,
+        "token_valid": true
+      }
+    ]
+  },
+  "ground_truth_state": "UNREPAIRABLE",
+  "proof_sha256": "cfadb4c84b6cfed63a734bc617d57f7378a2b07de6d9f5e99a31acb1d5eedea3",
+  "satisfying_candidates": [],
+  "scope": "fixed_stateless_candidate_modes_and_authored_finite_worlds_only",
+  "secure_candidate_gate_verdict": "NOT_APPLICABLE",
+  "task_id": "fc7-csrf_origin-c3",
+  "task_sha256": "dea1a62753cdf46179f4fcb2893b6b13ac28c81a4eb08fa22f466a3a442685e8"
+}

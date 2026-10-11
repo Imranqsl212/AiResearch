@@ -1,0 +1,232 @@
+{
+  "C1_C5_identical_first_requests": 6,
+  "analysis_version": "excluded-v7-decisive-audit-1.0.0",
+  "assigned_slots": 30,
+  "cells": [
+    {
+      "assigned": 3,
+      "condition": "C1",
+      "early_voluntary_stops": 0,
+      "family": "csrf_origin",
+      "invalidated": 0,
+      "oracle_secure_episodes": 0,
+      "secure_oracle_gate_discordant_episodes": 0,
+      "stop_reasons": {
+        "BUDGET": 3
+      },
+      "submitted_candidates_mean": 2,
+      "submitted_candidates_sample_sd": 0.0,
+      "submitted_candidates_total": 6,
+      "valid": 3,
+      "voluntary_stops_including_budget_edge": 0
+    },
+    {
+      "assigned": 3,
+      "condition": "C2",
+      "early_voluntary_stops": 0,
+      "family": "csrf_origin",
+      "invalidated": 0,
+      "oracle_secure_episodes": 3,
+      "secure_oracle_gate_discordant_episodes": 0,
+      "stop_reasons": {
+        "CHECKER_PASS": 3
+      },
+      "submitted_candidates_mean": 1,
+      "submitted_candidates_sample_sd": 0.0,
+      "submitted_candidates_total": 3,
+      "valid": 3,
+      "voluntary_stops_including_budget_edge": 0
+    },
+    {
+      "assigned": 3,
+      "condition": "C3",
+      "early_voluntary_stops": 0,
+      "family": "csrf_origin",
+      "invalidated": 0,
+      "oracle_secure_episodes": 0,
+      "secure_oracle_gate_discordant_episodes": 0,
+      "stop_reasons": {
+        "BUDGET": 3
+      },
+      "submitted_candidates_mean": 2,
+      "submitted_candidates_sample_sd": 0.0,
+      "submitted_candidates_total": 6,
+      "valid": 3,
+      "voluntary_stops_including_budget_edge": 0
+    },
+    {
+      "assigned": 3,
+      "condition": "C4",
+      "early_voluntary_stops": 0,
+      "family": "csrf_origin",
+      "invalidated": 0,
+      "oracle_secure_episodes": 0,
+      "secure_oracle_gate_discordant_episodes": 0,
+      "stop_reasons": {
+        "BUDGET": 3
+      },
+      "submitted_candidates_mean": 2,
+      "submitted_candidates_sample_sd": 0.0,
+      "submitted_candidates_total": 6,
+      "valid": 3,
+      "voluntary_stops_including_budget_edge": 0
+    },
+    {
+      "assigned": 3,
+      "condition": "C5",
+      "early_voluntary_stops": 0,
+      "family": "csrf_origin",
+      "invalidated": 0,
+      "oracle_secure_episodes": 0,
+      "secure_oracle_gate_discordant_episodes": 0,
+      "stop_reasons": {
+        "BUDGET": 3
+      },
+      "submitted_candidates_mean": 2,
+      "submitted_candidates_sample_sd": 0.0,
+      "submitted_candidates_total": 6,
+      "valid": 3,
+      "voluntary_stops_including_budget_edge": 0
+    },
+    {
+      "assigned": 3,
+      "condition": "C1",
+      "early_voluntary_stops": 0,
+      "family": "environment_injection",
+      "invalidated": 0,
+      "oracle_secure_episodes": 1,
+      "secure_oracle_gate_discordant_episodes": 0,
+      "stop_reasons": {
+        "BUDGET": 2,
+        "CHECKER_PASS": 1
+      },
+      "submitted_candidates_mean": 2,
+      "submitted_candidates_sample_sd": 0.0,
+      "submitted_candidates_total": 6,
+      "valid": 3,
+      "voluntary_stops_including_budget_edge": 0
+    },
+    {
+      "assigned": 3,
+      "condition": "C2",
+      "early_voluntary_stops": 0,
+      "family": "environment_injection",
+      "invalidated": 0,
+      "oracle_secure_episodes": 3,
+      "secure_oracle_gate_discordant_episodes": 0,
+      "stop_reasons": {
+        "CHECKER_PASS": 3
+      },
+      "submitted_candidates_mean": 1,
+      "submitted_candidates_sample_sd": 0.0,
+      "submitted_candidates_total": 3,
+      "valid": 3,
+      "voluntary_stops_including_budget_edge": 0
+    },
+    {
+      "assigned": 3,
+      "condition": "C3",
+      "early_voluntary_stops": 0,
+      "family": "environment_injection",
+      "invalidated": 0,
+      "oracle_secure_episodes": 0,
+      "secure_oracle_gate_discordant_episodes": 0,
+      "stop_reasons": {
+        "BUDGET": 3
+      },
+      "submitted_candidates_mean": 2,
+      "submitted_candidates_sample_sd": 0.0,
+      "submitted_candidates_total": 6,
+      "valid": 3,
+      "voluntary_stops_including_budget_edge": 0
+    },
+    {
+      "assigned": 3,
+      "condition": "C4",
+      "early_voluntary_stops": 0,
+      "family": "environment_injection",
+      "invalidated": 0,
+      "oracle_secure_episodes": 0,
+      "secure_oracle_gate_discordant_episodes": 0,
+      "stop_reasons": {
+        "BUDGET": 1,
+        "VOLUNTARY": 2
+      },
+      "submitted_candidates_mean": 2,
+      "submitted_candidates_sample_sd": 0.0,
+      "submitted_candidates_total": 6,
+      "valid": 3,
+      "voluntary_stops_including_budget_edge": 2
+    },
+    {
+      "assigned": 3,
+      "condition": "C5",
+      "early_voluntary_stops": 0,
+      "family": "environment_injection",
+      "invalidated": 0,
+      "oracle_secure_episodes": 1,
+      "secure_oracle_gate_discordant_episodes": 1,
+      "stop_reasons": {
+        "BUDGET": 3
+      },
+      "submitted_candidates_mean": 2,
+      "submitted_candidates_sample_sd": 0.0,
+      "submitted_candidates_total": 6,
+      "valid": 3,
+      "voluntary_stops_including_budget_edge": 0
+    }
+  ],
+  "eligible_for_main_analysis": false,
+  "inference": null,
+  "interpretation": "Three seeds per cell in two authored finite families do not provide a family-population confidence interval or a main effect estimate. C1 stops automatically on PASS, so full-episode C1/C5 submission counts are not a clean agent stopping contrast.",
+  "invalidated_slots": 0,
+  "paired_C4_C3": [
+    {
+      "C4_minus_C3_early_stops": 0,
+      "C4_minus_C3_submissions": 0,
+      "both_valid": true,
+      "family": "csrf_origin",
+      "repeat": 1
+    },
+    {
+      "C4_minus_C3_early_stops": 0,
+      "C4_minus_C3_submissions": 0,
+      "both_valid": true,
+      "family": "csrf_origin",
+      "repeat": 2
+    },
+    {
+      "C4_minus_C3_early_stops": 0,
+      "C4_minus_C3_submissions": 0,
+      "both_valid": true,
+      "family": "csrf_origin",
+      "repeat": 3
+    },
+    {
+      "C4_minus_C3_early_stops": 0,
+      "C4_minus_C3_submissions": 0,
+      "both_valid": true,
+      "family": "environment_injection",
+      "repeat": 1
+    },
+    {
+      "C4_minus_C3_early_stops": 0,
+      "C4_minus_C3_submissions": 0,
+      "both_valid": true,
+      "family": "environment_injection",
+      "repeat": 2
+    },
+    {
+      "C4_minus_C3_early_stops": 0,
+      "C4_minus_C3_submissions": 0,
+      "both_valid": true,
+      "family": "environment_injection",
+      "repeat": 3
+    }
+  ],
+  "run_receipt_sha256": "0ef77fa3b3fa647b04ff696ecb421a322f12cfb713deae19e27c113ab1b36c47",
+  "schedule_sha256": "4efb650914ec232cba956322dab71244a4a57a57df9021d130eaf15fb7cd3dbc",
+  "source_file_count": 56,
+  "status": "EXCLUDED_DESCRIPTIVE_ONLY",
+  "valid_slots": 30
+}

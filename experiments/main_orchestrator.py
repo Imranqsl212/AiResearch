@@ -16,7 +16,7 @@ import os
 import random
 import re
 import subprocess
-from collections import defaultdict
+from collections import Counter, defaultdict
 from datetime import UTC, datetime
 from pathlib import Path
 from typing import Any, Mapping, Sequence
@@ -24,6 +24,7 @@ from typing import Any, Mapping, Sequence
 from agent.contracts import AgentFinalResponse, ToolCall
 from agent.scripted_fixture import ScriptedFixtureAdapter
 from analysis.v1_pipeline import analyze_manifests, load_episode
+from benchmark import retrieval_r1_20_candidate as candidate_r1_20
 from benchmark.finite_family_registry import family_module
 from benchmark.retrieval_v1 import CORPUS_PATH, freeze_retrieval_manifest, validate_retrieval_manifest
 from experiments.v1_collector import _IMPLEMENTATION_FILES, collect_episode
@@ -32,20 +33,58 @@ from reproduction.preflight import validate_freeze
 
 ROOT = Path(__file__).resolve().parents[1]
 VERSION = "prospective-main-orchestrator-0.1.0"
+MAIN_PLAN_VERSION = "prospective-primary-main-plan-0.2.0"
+FINAL_MAIN_PLAN_VERSION = "prospective-primary-main-schedule-0.3.0"
+FINAL_MAIN_PLAN_STATUS = "SOURCE_COMMIT_BOUND_SCHEDULE_UNGATED"
+FINAL_DESIGN_ROLES = frozenset({
+    "preregistration", "family_review", "family_adjudication",
+    "retrieval_review", "annotation_protocol", "primary_power",
+    "companion_power",
+})
+MAIN_FAMILIES = 20
+MAIN_REPETITIONS = 5
+MAIN_FULL_DECISIONS = 6
+C5_ONSET_CAP_PER_FAMILY = 5
+C5_POST_VERDICT_DECISIONS = 3
+C5_DRY_RUN_VERSION = "prospective-c5-structural-dry-run-0.1.0"
+MAIN_SOURCE_ARCHIVE_VERSION = "proposed-main-source-archive-0.1.0"
+C5_SIMULATED_STATUSES = (
+    "SIMULATED_SECURE_ONSET", "SIMULATED_NO_ONSET", "SIMULATED_PRE_VERDICT_INVALIDATED",
+)
 CONDITIONS = ("C1", "C2", "C3", "C4", "C5")
 GROUND_TRUTH = {
     "C1": "REPAIRABLE", "C2": "REPAIRABLE", "C3": "UNREPAIRABLE",
     "C4": "UNREPAIRABLE", "C5": "EVALUATOR_MISMATCH",
 }
 MODES = ("R0", "R1", "R2")
+ALL_FINITE_INDEXES = (
+    "benchmark/tasks/v1/index.json",
+    "benchmark/tasks/v2_path/index.json",
+    "benchmark/tasks/v3_replay/index.json",
+    "benchmark/tasks/v4_race/index.json",
+    "benchmark/tasks/v5_batch_a/index.json",
+    "benchmark/tasks/v5_batch_b/index.json",
+    "benchmark/tasks/v6_batch_c/index.json",
+)
 _HEX64 = re.compile(r"[0-9a-f]{64}\Z")
 _SAFE_ID = re.compile(r"[A-Za-z0-9][A-Za-z0-9._-]{0,127}\Z")
 _MODEL_NAME = re.compile(r"[A-Za-z0-9][A-Za-z0-9._:/+-]{0,127}\Z")
 _SOURCE_FILES = tuple(sorted(set(_IMPLEMENTATION_FILES) | {
     "experiments/main_orchestrator.py", "analysis/v1_pipeline.py",
+    "experiments/main_collector.py", "experiments/main_c5_fork_scaffold.py",
+    "experiments/main_schedule_consumer.py",
     "reproduction/preflight.py", "benchmark/retrieval_manifest_v1.json",
     "benchmark/retrieval_v1.py", "agent/scripted_fixture.py",
 }))
+# Preserve the 20-family R1 prototype for review without claiming that the
+# proposed plan has selected or admitted it as its main retrieval provider.
+_MAIN_ARCHIVE_EXTRA_FILES = (
+    "agent/adapter.py",
+    "benchmark/retrieval_r1_20_candidate.py",
+    "benchmark/retrieval_corpus_r1_20_candidate.jsonl",
+    "benchmark/retrieval_manifest_r1_20_candidate.json",
+    "benchmark/retrieval_corpus_v2.jsonl",
+)
 
 
 class MainOrchestrationError(ValueError):
@@ -90,6 +129,15 @@ def _git_sha() -> str:
     result = subprocess.run(("git", "rev-parse", "--verify", "HEAD"), cwd=ROOT,
                             capture_output=True, text=True, check=True, timeout=10)
     return result.stdout.strip()
+
+
+def _git_bytes(root: Path, *arguments: str) -> bytes:
+    try:
+        result = subprocess.run(("git", *arguments), cwd=root, capture_output=True,
+                                check=True, timeout=15)
+    except (OSError, subprocess.CalledProcessError, subprocess.TimeoutExpired) as exc:
+        raise MainOrchestrationError(f"Git source identity unavailable: {' '.join(arguments)}") from exc
+    return result.stdout
 
 
 def _local(root: Path, relative: str) -> Path:
@@ -192,13 +240,98 @@ def _scheduled_slots(*, tasks: Sequence[Mapping[str, str]], models: Sequence[Map
     return slots
 
 
+def _scheduled_primary_main_slots(*, tasks: Sequence[Mapping[str, str]],
+                                  model: Mapping[str, str], seed: int) -> list[dict[str, Any]]:
+    """Preschedule C1–C4 R0 and matched C1/C2 R1 for one primary model."""
+
+    by_family: dict[str, dict[str, Mapping[str, str]]] = defaultdict(dict)
+    for task in tasks:
+        by_family[task["family"]][task["condition"]] = task
+    rng = random.Random(seed)
+    blocks: list[list[dict[str, Any]]] = []
+    for family in sorted(by_family):
+        for repeat in range(1, MAIN_REPETITIONS + 1):
+            condition_seeds = {condition: rng.randrange(0, 2**31)
+                               for condition in ("C1", "C2", "C3", "C4")}
+            block: list[dict[str, Any]] = []
+            for mode, conditions in (("R0", ("C1", "C2", "C3", "C4")),
+                                     ("R1", ("C1", "C2"))):
+                for condition in conditions:
+                    block.append({
+                        **by_family[family][condition],
+                        "model": model["name"], "model_digest": model["digest"],
+                        "retrieval_mode": mode, "repeat_index": repeat,
+                        "episode_seed": condition_seeds[condition],
+                    })
+            rng.shuffle(block)
+            blocks.append(block)
+    rng.shuffle(blocks)
+    slots = [slot for block in blocks for slot in block]
+    for index, slot in enumerate(slots, 1):
+        slot["slot_id"] = f"slot-{index:06d}"
+        slot["episode_id"] = f"episode-{index:06d}"
+        slot["order"] = index
+    return slots
+
+
+def _scheduled_c5_reservations(*, slots: Sequence[Mapping[str, Any]],
+                               model: Mapping[str, str], seed: int
+                               ) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
+    """Freeze conditional onset-pair capacity, orientation, and execution order."""
+
+    rng = random.Random(seed ^ 0xC5C5)
+    families = sorted({slot["family"] for slot in slots})
+    pairs: list[dict[str, Any]] = []
+    continuations: list[dict[str, Any]] = []
+    for family in families:
+        precursors = [slot["slot_id"] for slot in slots
+                      if slot["family"] == family and slot["condition"] in {"C1", "C2"}
+                      and slot["retrieval_mode"] == "R0"]
+        if len(precursors) != 2 * MAIN_REPETITIONS:
+            raise MainOrchestrationError("C5 needs ten R0 C1/C2 precursor slots per family")
+        # Concealed A/B-to-verdict orientation is fixed within a family. This
+        # source plan remains inaccessible to the agent at execution time.
+        a_verdict = "PASS" if rng.getrandbits(1) == 0 else "FALSE_FAIL"
+        for onset_rank in range(1, C5_ONSET_CAP_PER_FAMILY + 1):
+            pair_id = f"c5-pair-{len(pairs) + 1:06d}"
+            branch_seed = rng.randrange(0, 2**31)
+            execution_order = ["A", "B"] if rng.getrandbits(1) == 0 else ["B", "A"]
+            pairs.append({
+                "pair_id": pair_id, "family": family, "onset_rank": onset_rank,
+                "eligible_precursor_slot_ids_in_frozen_order": precursors,
+                "arm_a_verdict": a_verdict,
+                "arm_b_verdict": "FALSE_FAIL" if a_verdict == "PASS" else "PASS",
+                "arm_execution_order": execution_order,
+                "branch_seed": branch_seed,
+                "allocation_status": "RESERVED_CONDITIONAL_ON_AGENT_SECURE_ONSET",
+            })
+            for arm in ("A", "B"):
+                continuations.append({
+                    "continuation_id": f"continuation-{len(continuations) + 1:06d}",
+                    "pair_id": pair_id, "family": family, "onset_rank": onset_rank,
+                    "arm": arm,
+                    "public_verdict": (a_verdict if arm == "A" else pairs[-1]["arm_b_verdict"]),
+                    "execution_rank_within_pair": execution_order.index(arm) + 1,
+                    "model": model["name"], "model_digest": model["digest"],
+                    "retrieval_mode": "R0", "episode_seed": branch_seed,
+                    "post_verdict_decision_cap": C5_POST_VERDICT_DECISIONS,
+                    "allocation_status": "RESERVED_CONDITIONAL_ON_AGENT_SECURE_ONSET",
+                })
+    dispatch_ids = [pair["pair_id"] for pair in pairs]
+    rng.shuffle(dispatch_ids)
+    dispatch_rank = {pair_id: rank for rank, pair_id in enumerate(dispatch_ids, 1)}
+    for pair in pairs:
+        pair["dispatch_priority_when_ready"] = dispatch_rank[pair["pair_id"]]
+    return pairs, continuations
+
+
 def build_plan(
     *, experiment_id: str, phase: str, index_paths: Sequence[str],
     models: Sequence[Mapping[str, Any]], retrieval_modes: Sequence[str],
     repetitions: int, seed: int, root: Path = ROOT,
     inference_config: Mapping[str, Any] | None = None,
 ) -> dict[str, Any]:
-    """Deterministically preschedule the complete declared factorial before calls."""
+    """Preschedule an excluded rehearsal or proposed primary-model main design."""
 
     root = Path(root).resolve()
     if not _SAFE_ID.fullmatch(experiment_id) or phase not in {"main", "pilot"}:
@@ -211,9 +344,11 @@ def build_plan(
     tasks = _catalog(index_paths, root)
     cleaned_models = _validate_models(models, phase=phase)
     families = {row["family"] for row in tasks}
-    if phase == "main" and (len(families) < 20 or repetitions < 5 or
-                            not {"R0", "R1"}.issubset(ordered_modes) or len(cleaned_models) < 2):
-        raise MainOrchestrationError("main design requires >=20 families, >=5 repeats, R0/R1 and >=2 models")
+    if phase == "main" and (len(families) != MAIN_FAMILIES or repetitions != MAIN_REPETITIONS
+                            or ordered_modes != ["R0", "R1"] or len(cleaned_models) != 1):
+        raise MainOrchestrationError(
+            "primary main design requires exactly 20 families, 5 repeats, R0/R1 only and one frozen model"
+        )
     if inference_config is None:
         if phase == "main":
             raise MainOrchestrationError("main inference budgets and protocol must be explicit")
@@ -238,14 +373,31 @@ def build_plan(
                 or not isinstance(inference["protocol_version"], str)
                 or not inference["protocol_version"]):
             raise MainOrchestrationError("inference configuration contains invalid budgets/protocol")
+        if inference["max_steps"] != MAIN_FULL_DECISIONS:
+            raise MainOrchestrationError("primary main full episodes require exactly six model decisions")
     retrieval_manifest = freeze_retrieval_manifest()
     validate_retrieval_manifest(retrieval_manifest, CORPUS_PATH)
     source_hashes = {relative: _hash(_local(root, relative)) for relative in _SOURCE_FILES}
     source_hashes["benchmark/retrieval_corpus_v1.jsonl"] = _hash(CORPUS_PATH)
-    slots = _scheduled_slots(tasks=tasks, models=cleaned_models, modes=ordered_modes,
-                             repetitions=repetitions, seed=seed)
-    return {
-        "schema_version": VERSION, "phase": phase, "eligible_for_main_analysis": False,
+    # Bind the exact index bytes as well as each referenced task/proof. Index
+    # metadata could otherwise drift between planning and source archiving.
+    for relative in index_paths:
+        source_hashes[relative] = _hash(_local(root, relative))
+    if phase == "main":
+        source_hashes["docs/preregistration_v1_20261005.md"] = _hash(
+            _local(root, "docs/preregistration_v1_20261005.md"))
+        for task in tasks:
+            source_hashes[task["task_path"]] = task["task_sha256"]
+            source_hashes[task["proof_path"]] = task["proof_sha256"]
+        slots = _scheduled_primary_main_slots(tasks=tasks, model=cleaned_models[0], seed=seed)
+        branch_pairs, continuations = _scheduled_c5_reservations(
+            slots=slots, model=cleaned_models[0], seed=seed)
+    else:
+        slots = _scheduled_slots(tasks=tasks, models=cleaned_models, modes=ordered_modes,
+                                 repetitions=repetitions, seed=seed)
+    plan = {
+        "schema_version": MAIN_PLAN_VERSION if phase == "main" else VERSION,
+        "phase": phase, "eligible_for_main_analysis": False,
         "experiment_id": experiment_id, "source_git_commit": _git_sha(),
         "source_file_sha256s": source_hashes,
         "root_manifest_sha256": _hash(root / "experiment_manifest.json"),
@@ -258,10 +410,29 @@ def build_plan(
         "status": "PROPOSED_MAIN_UNGATED" if phase == "main" else "EXCLUDED_REHEARSAL_PLAN",
         "slots": slots,
     }
+    if phase == "main":
+        plan.update({
+            "primary_model": cleaned_models[0]["name"],
+            "design": "20-family primary C1-C4 R0 plus C1/C2 R1; C5 paired onset reservations",
+            "planned_full_episode_count": len(slots),
+            "planned_c5_pair_capacity": len(branch_pairs),
+            "planned_c5_continuation_capacity": len(continuations),
+            "maximum_full_episodes_plus_continuations": len(slots) + len(continuations),
+            "c5_onset_allocation_policy": (
+                "first five agent-generated oracle-secure onsets per family in frozen R0 C1/C2 "
+                "precursor slot order; retain nonreach and invalidation without replacement"
+            ),
+            "c5_branch_pair_reservations": branch_pairs,
+            "c5_continuation_reservations": continuations,
+            "main_execution_implemented": False,
+        })
+    return plan
 
 
 def verify_plan(plan: Mapping[str, Any], *, root: Path = ROOT) -> None:
-    if plan.get("schema_version") != VERSION or plan.get("phase") not in {"main", "pilot"}:
+    phase = plan.get("phase")
+    expected_version = MAIN_PLAN_VERSION if phase == "main" else VERSION
+    if plan.get("schema_version") != expected_version or phase not in {"main", "pilot"}:
         raise MainOrchestrationError("unsupported plan version or phase")
     rebuilt = build_plan(
         experiment_id=plan["experiment_id"], phase=plan["phase"],
@@ -272,6 +443,539 @@ def verify_plan(plan: Mapping[str, Any], *, root: Path = ROOT) -> None:
     )
     if dict(plan) != rebuilt:
         raise MainOrchestrationError("prescheduled slots or bound source/task/retrieval hashes changed")
+
+
+def _final_design_artifacts(paths: Mapping[str, str], root: Path) -> dict[str, dict[str, str]]:
+    if not isinstance(paths, Mapping) or set(paths) != FINAL_DESIGN_ROLES:
+        raise MainOrchestrationError("final schedule needs every named design artifact")
+    rows: dict[str, dict[str, str]] = {}
+    for role in sorted(FINAL_DESIGN_ROLES):
+        relative = paths[role]
+        if (not isinstance(relative, str) or relative == "experiment_manifest.json"
+                or ":" in relative or ".." in Path(relative).parts):
+            raise MainOrchestrationError(f"unsafe or circular final design path: {role}")
+        rows[role] = {"path": relative, "sha256": _hash(_local(root, relative))}
+    return rows
+
+
+def _as_final_main_schedule(
+    proposal: Mapping[str, Any], *, source_commit: str,
+    design_artifacts: Mapping[str, Mapping[str, str]],
+) -> dict[str, Any]:
+    """Derive an ungated schedule whose identity never includes the root lock."""
+
+    final = dict(proposal)
+    final.pop("root_manifest_sha256")
+    final["schema_version"] = FINAL_MAIN_PLAN_VERSION
+    final["status"] = FINAL_MAIN_PLAN_STATUS
+    final["source_git_commit"] = source_commit
+    final["root_manifest_binding"] = "SCHEDULE_FIRST_THEN_MANIFEST_ONLY_FREEZE"
+    final["design_artifact_sha256s"] = dict(design_artifacts)
+    source_hashes = dict(proposal["source_file_sha256s"])
+    for record in design_artifacts.values():
+        relative, digest = record["path"], record["sha256"]
+        if relative in source_hashes and source_hashes[relative] != digest:
+            raise MainOrchestrationError(f"design artifact differs from source inventory: {relative}")
+        source_hashes[relative] = digest
+    final["source_file_sha256s"] = source_hashes
+    return final
+
+
+def _verify_final_source_commit(plan: Mapping[str, Any], root: Path) -> None:
+    commit = plan["source_git_commit"]
+    if not isinstance(commit, str) or not re.fullmatch(r"[0-9a-f]{40,64}", commit):
+        raise MainOrchestrationError("final schedule lacks a full source Git commit")
+    resolved = _git_bytes(root, "rev-parse", "--verify", f"{commit}^{{commit}}").decode().strip()
+    if resolved != commit:
+        raise MainOrchestrationError("final schedule source commit is not canonical")
+    _git_bytes(root, "merge-base", "--is-ancestor", commit, "HEAD")
+    changed = _git_bytes(root, "diff", "--name-only", commit, "HEAD", "--").decode().splitlines()
+    if changed not in ([], ["experiment_manifest.json"]):
+        raise MainOrchestrationError("source commit to current HEAD changed more than the root manifest")
+    if _git_bytes(root, "status", "--porcelain=v1", "--untracked-files=all").strip():
+        raise MainOrchestrationError("final schedule requires a clean source checkout")
+    for relative, digest in sorted(plan["source_file_sha256s"].items()):
+        if _hash(_local(root, relative)) != digest:
+            raise MainOrchestrationError(f"final schedule current source drift: {relative}")
+        committed = _git_bytes(root, "show", f"{commit}:{relative}")
+        if hashlib.sha256(committed).hexdigest() != digest:
+            raise MainOrchestrationError(f"final schedule source is not in the source commit: {relative}")
+
+
+def build_final_main_schedule(
+    proposal: Mapping[str, Any], *, design_artifact_paths: Mapping[str, str],
+    root: Path = ROOT,
+) -> dict[str, Any]:
+    """Build a source-commit-bound schedule, still ineligible for main dispatch.
+
+    Call this after committing implementation/design bytes and before the sole
+    root-manifest freeze commit. A SHA of the draft root manifest is deliberately
+    removed: the future frozen root manifest will hash this schedule instead.
+    Hash identity does not certify human admission, R1, runtime, or safety gates.
+    """
+
+    root = Path(root).resolve()
+    if proposal.get("phase") != "main" or proposal.get("schema_version") != MAIN_PLAN_VERSION:
+        raise MainOrchestrationError("final schedule input must be a proposed v0.2 main plan")
+    verify_plan(proposal, root=root)
+    design = _final_design_artifacts(design_artifact_paths, root)
+    final = _as_final_main_schedule(
+        proposal, source_commit=proposal["source_git_commit"], design_artifacts=design,
+    )
+    verify_final_main_schedule(final, root=root)
+    return final
+
+
+def prepare_final_main_schedule(
+    *, proposal_path: Path, design_artifacts_path: Path, output_dir: Path,
+    root: Path = ROOT,
+) -> dict[str, Any]:
+    """Write one ungated schedule after the source commit, before root freeze."""
+
+    output_dir = Path(output_dir).resolve()
+    if output_dir.exists():
+        raise MainOrchestrationError("final schedule output exists; refusing overwrite")
+    proposal_path, design_artifacts_path = Path(proposal_path), Path(design_artifacts_path)
+    _hash(proposal_path)
+    _hash(design_artifacts_path)
+    plan = build_final_main_schedule(
+        _read(proposal_path), design_artifact_paths=_read(design_artifacts_path), root=root,
+    )
+    output_dir.mkdir(parents=True, exist_ok=False)
+    schedule_path = output_dir / "schedule.json"
+    _write_once(schedule_path, plan)
+    return {
+        "status": plan["status"], "eligible_for_main_analysis": False,
+        "main_dispatch_allowed": False,
+        "planned_full_episode_count": plan["planned_full_episode_count"],
+        "planned_c5_pair_capacity": plan["planned_c5_pair_capacity"],
+        "planned_c5_continuation_capacity": plan["planned_c5_continuation_capacity"],
+        "source_git_commit": plan["source_git_commit"],
+        "schedule_path": str(schedule_path), "schedule_sha256": _hash(schedule_path),
+    }
+
+
+def verify_final_main_schedule(plan: Mapping[str, Any], *, root: Path = ROOT) -> None:
+    """Rebuild the schedule after either source or manifest-only freeze commit."""
+
+    root = Path(root).resolve()
+    if (plan.get("schema_version") != FINAL_MAIN_PLAN_VERSION
+            or plan.get("status") != FINAL_MAIN_PLAN_STATUS
+            or plan.get("phase") != "main"
+            or plan.get("eligible_for_main_analysis") is not False
+            or plan.get("main_execution_implemented") is not False
+            or plan.get("root_manifest_binding") != "SCHEDULE_FIRST_THEN_MANIFEST_ONLY_FREEZE"
+            or "root_manifest_sha256" in plan):
+        raise MainOrchestrationError("final schedule version, status, or non-circular binding differs")
+    design = plan.get("design_artifact_sha256s")
+    if (not isinstance(design, dict) or set(design) != FINAL_DESIGN_ROLES
+            or any(not isinstance(row, dict) or set(row) != {"path", "sha256"}
+                   for row in design.values())):
+        raise MainOrchestrationError("final schedule design artifact inventory is incomplete")
+    paths = {role: row["path"] for role, row in design.items()}
+    current_design = _final_design_artifacts(paths, root)
+    if design != current_design:
+        raise MainOrchestrationError("final schedule design artifact bytes drifted")
+    try:
+        rebuilt = build_plan(
+            experiment_id=plan["experiment_id"], phase="main", index_paths=plan["index_paths"],
+            models=plan["models"], retrieval_modes=plan["retrieval_modes"],
+            repetitions=plan["repetitions"], seed=plan["seed"], root=root,
+            inference_config=plan["inference_config"],
+        )
+    except (KeyError, TypeError) as exc:
+        raise MainOrchestrationError("final schedule is incomplete") from exc
+    expected = _as_final_main_schedule(
+        rebuilt, source_commit=plan["source_git_commit"], design_artifacts=current_design,
+    )
+    if dict(plan) != expected:
+        raise MainOrchestrationError("final schedule differs from deterministic 600/100/200 design")
+    _verify_final_source_commit(plan, root)
+
+
+def verify_manifest_only_freeze_sequence(
+    schedule_path: Path, *, root: Path = ROOT,
+) -> dict[str, Any]:
+    """Check source commit → schedule → root-only commit, not scientific readiness."""
+
+    requested_schedule = Path(schedule_path)
+    if requested_schedule.is_symlink():
+        raise MainOrchestrationError("final schedule path is redirected")
+    root, schedule_path = Path(root).resolve(), requested_schedule.resolve()
+    if not schedule_path.is_relative_to(root):
+        raise MainOrchestrationError("final schedule path must stay inside the source checkout")
+    schedule = _read(schedule_path)
+    verify_final_main_schedule(schedule, root=root)
+    manifest_path = root / "experiment_manifest.json"
+    manifest = _read(manifest_path)
+    experiment, paths = manifest.get("experiment"), manifest.get("artifact_paths")
+    if (manifest.get("schema_version") != "1.0" or manifest.get("status") != "FROZEN"
+            or not isinstance(experiment, dict) or not isinstance(paths, dict)
+            or experiment.get("git_sha") != schedule["source_git_commit"]
+            or experiment.get("schedule_hash") != _hash(schedule_path)
+            or paths.get("schedule") != schedule_path.relative_to(root).as_posix()):
+        raise MainOrchestrationError("root freeze does not bind the source commit and exact final schedule")
+    freeze_commit = _git_bytes(root, "rev-parse", "--verify", "HEAD").decode().strip()
+    if freeze_commit == schedule["source_git_commit"]:
+        raise MainOrchestrationError("root manifest-only freeze commit has not occurred")
+    changed = _git_bytes(root, "diff", "--name-only", schedule["source_git_commit"],
+                         freeze_commit, "--").decode().splitlines()
+    if changed != ["experiment_manifest.json"]:
+        raise MainOrchestrationError("freeze commit changed files other than root manifest")
+    if _git_bytes(root, "show", "HEAD:experiment_manifest.json") != manifest_path.read_bytes():
+        raise MainOrchestrationError("working root manifest differs from freeze commit")
+    return {
+        "status": "EXCLUDED_STRUCTURAL_FREEZE_SEQUENCE_VERIFIED",
+        "structural_sequence_verified": True,
+        "scientific_admission_verified": False,
+        "main_dispatch_allowed": False,
+        "source_git_commit": schedule["source_git_commit"],
+        "freeze_git_commit": freeze_commit,
+        "schedule_sha256": _hash(schedule_path),
+        "root_manifest_sha256": _hash(manifest_path),
+    }
+
+
+def dry_run_c5_allocation(
+    plan: Mapping[str, Any], precursor_ledger: Mapping[str, Any], *, root: Path = ROOT,
+) -> dict[str, Any]:
+    """Audit C5 reservation accounting with synthetic statuses; collect no data.
+
+    The input deliberately cannot contain observed outcomes. Each status is
+    captured *before* delivery of a C5 verdict: later branch failure cannot
+    erase an already observed secure onset. This checks that the frozen
+    precursor order consumes only the first five simulated secure onsets in
+    each family, while every other precursor and unused reservation remains
+    visible. It does not validate an agent-generated candidate or authorize
+    any main branch.
+    """
+
+    if (plan.get("phase") != "main" or plan.get("status") != "PROPOSED_MAIN_UNGATED"
+            or plan.get("eligible_for_main_analysis") is not False
+            or plan.get("main_execution_implemented") is not False):
+        raise MainOrchestrationError("C5 structural dry-run needs an ungated proposed main plan")
+    try:
+        verify_plan(plan, root=root)
+    except (KeyError, TypeError) as exc:
+        raise MainOrchestrationError("proposed main plan is incomplete") from exc
+    if (not isinstance(precursor_ledger, Mapping)
+            or set(precursor_ledger) != {"schema_version", "phase", "eligible_for_main_analysis",
+                                          "precursor_slots"}
+            or precursor_ledger["schema_version"] != C5_DRY_RUN_VERSION
+            or precursor_ledger["phase"] != "pilot"
+            or precursor_ledger["eligible_for_main_analysis"] is not False
+            or not isinstance(precursor_ledger["precursor_slots"], list)):
+        raise MainOrchestrationError("C5 input must be a complete excluded synthetic precursor ledger")
+
+    expected_ids = {
+        slot["slot_id"] for slot in plan["slots"]
+        if slot["retrieval_mode"] == "R0" and slot["condition"] in {"C1", "C2"}
+    }
+    statuses: dict[str, str] = {}
+    for row in precursor_ledger["precursor_slots"]:
+        if (not isinstance(row, dict) or set(row) != {"slot_id", "simulated_status"}
+                or not isinstance(row["slot_id"], str)
+                or row["simulated_status"] not in C5_SIMULATED_STATUSES
+                or row["slot_id"] in statuses):
+            raise MainOrchestrationError("C5 synthetic precursor row is duplicate or malformed")
+        statuses[row["slot_id"]] = row["simulated_status"]
+    if set(statuses) != expected_ids or len(expected_ids) != MAIN_FAMILIES * 2 * MAIN_REPETITIONS:
+        raise MainOrchestrationError("C5 synthetic ledger must account for exactly every R0 C1/C2 precursor")
+
+    branches_by_pair: dict[str, list[Mapping[str, Any]]] = defaultdict(list)
+    for branch in plan["c5_continuation_reservations"]:
+        branches_by_pair[branch["pair_id"]].append(branch)
+    pairs_by_family: dict[str, list[Mapping[str, Any]]] = defaultdict(list)
+    for pair in plan["c5_branch_pair_reservations"]:
+        pairs_by_family[pair["family"]].append(pair)
+
+    pair_allocations: list[dict[str, Any]] = []
+    family_accounting: list[dict[str, Any]] = []
+    for family in sorted(pairs_by_family):
+        reservations = sorted(pairs_by_family[family], key=lambda row: row["onset_rank"])
+        if len(reservations) != C5_ONSET_CAP_PER_FAMILY:
+            raise MainOrchestrationError("C5 family reservation count differs")
+        precursor_ids = reservations[0]["eligible_precursor_slot_ids_in_frozen_order"]
+        if (len(precursor_ids) != 2 * MAIN_REPETITIONS or len(set(precursor_ids)) != len(precursor_ids)
+                or any(pair["eligible_precursor_slot_ids_in_frozen_order"] != precursor_ids
+                       for pair in reservations)):
+            raise MainOrchestrationError("C5 family precursor order differs across reservations")
+        secure_ids = [slot_id for slot_id in precursor_ids
+                      if statuses[slot_id] == "SIMULATED_SECURE_ONSET"]
+        selected = secure_ids[:C5_ONSET_CAP_PER_FAMILY]
+        family_accounting.append({
+            "family": family,
+            "precursor_slots_in_frozen_order": [
+                {"slot_id": slot_id, "simulated_status": statuses[slot_id]}
+                for slot_id in precursor_ids
+            ],
+            "allocated_simulated_onset_slot_ids": selected,
+            "exploratory_simulated_onset_slot_ids": secure_ids[C5_ONSET_CAP_PER_FAMILY:],
+            "simulated_invalidated_precursor_slot_ids": [
+                slot_id for slot_id in precursor_ids
+                if statuses[slot_id] == "SIMULATED_PRE_VERDICT_INVALIDATED"
+            ],
+        })
+        for rank, pair in enumerate(reservations, 1):
+            branches = sorted(branches_by_pair[pair["pair_id"]],
+                              key=lambda row: row["execution_rank_within_pair"])
+            if len(branches) != 2:
+                raise MainOrchestrationError("C5 pair does not have exactly two frozen continuations")
+            allocated = rank <= len(selected)
+            pair_allocations.append({
+                "pair_id": pair["pair_id"], "family": family, "onset_rank": rank,
+                "simulated_precursor_slot_id": selected[rank - 1] if allocated else None,
+                "allocation_status": "SIMULATED_ALLOCATED" if allocated else "SIMULATED_UNUSED_NO_ONSET",
+                "continuation_ids_in_frozen_execution_order": [
+                    branch["continuation_id"] for branch in branches
+                ] if allocated else [],
+            })
+    if (len(family_accounting) != MAIN_FAMILIES
+            or len(pair_allocations) != MAIN_FAMILIES * C5_ONSET_CAP_PER_FAMILY):
+        raise MainOrchestrationError("C5 dry-run did not account for every family and pair")
+    counts = Counter(statuses.values())
+    allocated_count = sum(row["allocation_status"] == "SIMULATED_ALLOCATED"
+                          for row in pair_allocations)
+    return {
+        "schema_version": C5_DRY_RUN_VERSION, "phase": "pilot",
+        "status": "EXCLUDED_STRUCTURAL_DRY_RUN", "eligible_for_main_analysis": False,
+        "semantic_onset_validation_performed": False, "model_calls": 0,
+        "plan_content_sha256": hashlib.sha256(_canonical(plan)).hexdigest(),
+        "precursor_ledger_content_sha256": hashlib.sha256(_canonical(precursor_ledger)).hexdigest(),
+        "precursor_slot_count": len(statuses),
+        "simulated_precursor_status_counts": {key: counts[key] for key in C5_SIMULATED_STATUSES},
+        "reserved_pair_count": len(pair_allocations),
+        "simulated_allocated_pair_count": allocated_count,
+        "simulated_unused_pair_count": len(pair_allocations) - allocated_count,
+        "simulated_exploratory_onset_count": sum(
+            len(row["exploratory_simulated_onset_slot_ids"]) for row in family_accounting
+        ),
+        "simulated_continuation_count": 2 * allocated_count,
+        "family_accounting": family_accounting,
+        "pair_allocations": pair_allocations,
+    }
+
+
+def save_c5_allocation_dry_run(
+    *, plan_path: Path, precursor_ledger_path: Path, output_dir: Path, root: Path = ROOT,
+) -> dict[str, Any]:
+    """Preserve the exact dry-run inputs and a write-once structural report."""
+
+    plan_path, precursor_ledger_path = Path(plan_path), Path(precursor_ledger_path)
+    output_dir = Path(output_dir).resolve()
+    if output_dir.exists():
+        raise MainOrchestrationError("C5 dry-run output exists; refusing overwrite")
+    plan_hash, ledger_hash = _hash(plan_path), _hash(precursor_ledger_path)
+    plan, ledger = _read(plan_path), _read(precursor_ledger_path)
+    report = dry_run_c5_allocation(plan, ledger, root=root)
+    plan_bytes, ledger_bytes = plan_path.read_bytes(), precursor_ledger_path.read_bytes()
+    try:
+        same_content = json.loads(plan_bytes) == plan and json.loads(ledger_bytes) == ledger
+    except (UnicodeError, json.JSONDecodeError) as exc:
+        raise MainOrchestrationError("C5 dry-run input changed during validation") from exc
+    if (hashlib.sha256(plan_bytes).hexdigest() != plan_hash
+            or hashlib.sha256(ledger_bytes).hexdigest() != ledger_hash or not same_content):
+        raise MainOrchestrationError("C5 dry-run input changed during validation")
+    report["input_file_sha256s"] = {
+        "plan.json": plan_hash, "precursor_ledger.json": ledger_hash,
+    }
+    report["created_at_utc"] = _utc_now()
+    report["report_sha256"] = hashlib.sha256(_canonical(report)).hexdigest()
+    output_dir.mkdir(parents=True, exist_ok=False)
+    _write_once(output_dir / "plan.json", plan_bytes)
+    _write_once(output_dir / "precursor_ledger.json", ledger_bytes)
+    _write_once(output_dir / "c5_dry_run.json", report)
+    return {
+        "status": report["status"], "precursor_slot_count": report["precursor_slot_count"],
+        "simulated_allocated_pair_count": report["simulated_allocated_pair_count"],
+        "simulated_unused_pair_count": report["simulated_unused_pair_count"],
+        "simulated_continuation_count": report["simulated_continuation_count"],
+        "report_sha256": _hash(output_dir / "c5_dry_run.json"),
+        "output_dir": str(output_dir),
+    }
+
+
+def _proposed_main_source_files(plan: Mapping[str, Any]) -> set[str]:
+    if (plan.get("phase") != "main" or plan.get("status") != "PROPOSED_MAIN_UNGATED"
+            or plan.get("eligible_for_main_analysis") is not False
+            or plan.get("main_execution_implemented") is not False
+            or plan.get("planned_full_episode_count") != 600
+            or plan.get("planned_c5_pair_capacity") != 100
+            or plan.get("planned_c5_continuation_capacity") != 200):
+        raise MainOrchestrationError("source archive requires the exact ungated 600/100/200 proposal")
+    source_hashes = plan.get("source_file_sha256s")
+    if (not isinstance(source_hashes, dict) or not source_hashes
+            or any(not isinstance(name, str) or not isinstance(digest, str)
+                   or not _HEX64.fullmatch(digest) for name, digest in source_hashes.items())):
+        raise MainOrchestrationError("proposed plan lacks exact source file hashes")
+    task_files = {slot["task_path"] for slot in plan["slots"]}
+    proof_files = {slot["proof_path"] for slot in plan["slots"]}
+    if not (set(plan["index_paths"]) | task_files | proof_files).issubset(source_hashes):
+        raise MainOrchestrationError("proposed plan does not bind every index, task, and oracle proof")
+    if not {
+        "experiments/v1_collector.py", "benchmark/retrieval_v1.py",
+        "benchmark/retrieval_corpus_v1.jsonl", "benchmark/retrieval_manifest_v1.json",
+        "agent/v1_ollama_adapter.py", "agent/v1_baselines.py",
+        "benchmark/finite_family_registry.py", "analysis/v1_pipeline.py",
+        "docs/preregistration_v1_20261005.md",
+    }.issubset(source_hashes):
+        raise MainOrchestrationError("proposed plan omits collector, retrieval, prompt, or oracle code")
+    if not any(name.startswith("agent/prompts/") for name in source_hashes):
+        raise MainOrchestrationError("proposed plan omits prompt templates")
+    return set(source_hashes) | {"experiment_manifest.json"} | set(_MAIN_ARCHIVE_EXTRA_FILES)
+
+
+def prepare_proposed_main_source_archive(
+    *, plan_path: Path, output_dir: Path, root: Path = ROOT,
+) -> dict[str, Any]:
+    """Save exact proposal/source bytes before dispatch; never grant main access."""
+
+    root, plan_path, output_dir = Path(root).resolve(), Path(plan_path), Path(output_dir).resolve()
+    if output_dir.exists():
+        raise MainOrchestrationError("proposed main archive exists; refusing overwrite")
+    plan_sha256 = _hash(plan_path)
+    plan_bytes = plan_path.read_bytes()
+    if hashlib.sha256(plan_bytes).hexdigest() != plan_sha256:
+        raise MainOrchestrationError("proposed plan changed during archive preparation")
+    try:
+        plan = json.loads(plan_bytes)
+    except (UnicodeError, json.JSONDecodeError) as exc:
+        raise MainOrchestrationError("proposed plan is unreadable") from exc
+    if not isinstance(plan, dict):
+        raise MainOrchestrationError("proposed plan must be a JSON object")
+    source_files = _proposed_main_source_files(plan)
+    verify_plan(plan, root=root)
+    candidate_manifest = _read(root / "benchmark/retrieval_manifest_r1_20_candidate.json")
+    if (candidate_manifest != candidate_r1_20.freeze_candidate_manifest()
+            or candidate_manifest.get("status") != "EXCLUDED_PROTOTYPE_UNREVIEWED"):
+        raise MainOrchestrationError("R1 candidate manifest or corpus differs from exact candidate source")
+    source_bytes: dict[str, bytes] = {}
+    source_hashes: dict[str, str] = {}
+    for relative in sorted(source_files):
+        path = _local(root, relative)
+        digest = _hash(path)
+        raw = path.read_bytes()
+        if hashlib.sha256(raw).hexdigest() != digest:
+            raise MainOrchestrationError(f"source changed while archiving: {relative}")
+        expected = (plan["root_manifest_sha256"] if relative == "experiment_manifest.json"
+                    else plan["source_file_sha256s"].get(relative))
+        if expected is not None and digest != expected:
+            raise MainOrchestrationError(f"proposed plan source differs: {relative}")
+        source_bytes[relative], source_hashes[relative] = raw, digest
+    preflight = {
+        "schema_version": MAIN_SOURCE_ARCHIVE_VERSION,
+        "status": "PREPARED_PROPOSED_SOURCE_ARCHIVE_EXCLUDED", "phase": "main",
+        "eligible_for_main_analysis": False, "main_dispatch_allowed": False,
+        "model_calls": 0, "candidate_runs": 0,
+        "schedule_sha256": plan_sha256,
+        "source_archive_sha256s": source_hashes,
+        "source_archive_inventory_sha256": hashlib.sha256(_canonical(source_hashes)).hexdigest(),
+        "source_git_commit": plan["source_git_commit"],
+        "planned_full_episode_count": 600, "planned_c5_pair_capacity": 100,
+        "planned_c5_continuation_capacity": 200,
+        "r1_candidate_status": candidate_manifest["status"],
+        "r1_candidate_admitted_for_main": False,
+        "r1_candidate_bound_as_main_provider": False,
+        "main_collector_capability": False,
+        "plan_retrieval_manifest_sha256": plan["retrieval_manifest_sha256"],
+        "r1_candidate_manifest_file_sha256": source_hashes[
+            "benchmark/retrieval_manifest_r1_20_candidate.json"],
+        "source_snapshot_cannot_replace_main_gate": True,
+        "created_at_utc": _utc_now(),
+    }
+    preflight["preflight_sha256"] = hashlib.sha256(_canonical(preflight)).hexdigest()
+    output_dir.mkdir(parents=True, exist_ok=False)
+    _write_once(output_dir / "schedule.json", plan_bytes)
+    for relative, raw in source_bytes.items():
+        _write_once(output_dir / "source_archive" / relative, raw)
+    _write_once(output_dir / "preflight.json", preflight)
+    verified = verify_proposed_main_source_archive(output_dir, root=root)
+    if verified["current_source_matches_pre_run_archive"] is not True:
+        raise MainOrchestrationError("source changed before proposed archive pre-dispatch verification")
+    return verified
+
+
+def verify_proposed_main_source_archive(
+    output_dir: Path, *, root: Path = ROOT,
+) -> dict[str, Any]:
+    """Check archived proposal bytes and current source identity without dispatch."""
+
+    output_dir, root = Path(output_dir).resolve(), Path(root).resolve()
+    if {path.name for path in output_dir.iterdir()} != {
+            "schedule.json", "source_archive", "preflight.json"}:
+        raise MainOrchestrationError("proposed archive has missing or unplanned root artifacts")
+    plan = _read(output_dir / "schedule.json")
+    preflight = _read(output_dir / "preflight.json")
+    source_files = _proposed_main_source_files(plan)
+    if (preflight.get("schema_version") != MAIN_SOURCE_ARCHIVE_VERSION
+            or preflight.get("status") != "PREPARED_PROPOSED_SOURCE_ARCHIVE_EXCLUDED"
+            or preflight.get("phase") != "main"
+            or preflight.get("eligible_for_main_analysis") is not False
+            or preflight.get("main_dispatch_allowed") is not False
+            or preflight.get("model_calls") != 0 or preflight.get("candidate_runs") != 0
+            or preflight.get("schedule_sha256") != _hash(output_dir / "schedule.json")
+            or preflight.get("source_git_commit") != plan["source_git_commit"]
+            or preflight.get("planned_full_episode_count") != 600
+            or preflight.get("planned_c5_pair_capacity") != 100
+            or preflight.get("planned_c5_continuation_capacity") != 200
+            or preflight.get("r1_candidate_status") != "EXCLUDED_PROTOTYPE_UNREVIEWED"
+            or preflight.get("r1_candidate_admitted_for_main") is not False
+            or preflight.get("r1_candidate_bound_as_main_provider") is not False
+            or preflight.get("main_collector_capability") is not False
+            or preflight.get("plan_retrieval_manifest_sha256") != plan["retrieval_manifest_sha256"]
+            or preflight.get("source_snapshot_cannot_replace_main_gate") is not True):
+        raise MainOrchestrationError("proposed main archive preflight differs")
+    saved_preflight_hash = preflight.pop("preflight_sha256", None)
+    if saved_preflight_hash != hashlib.sha256(_canonical(preflight)).hexdigest():
+        raise MainOrchestrationError("proposed main preflight hash differs")
+    preflight["preflight_sha256"] = saved_preflight_hash
+    source_hashes = preflight.get("source_archive_sha256s")
+    if (not isinstance(source_hashes, dict) or set(source_hashes) != source_files
+            or preflight.get("source_archive_inventory_sha256") !=
+            hashlib.sha256(_canonical(source_hashes)).hexdigest()
+            or preflight.get("r1_candidate_manifest_file_sha256") != source_hashes.get(
+                "benchmark/retrieval_manifest_r1_20_candidate.json")):
+        raise MainOrchestrationError("proposed source archive inventory differs")
+    archive = output_dir / "source_archive"
+    if not archive.is_dir() or archive.is_symlink():
+        raise MainOrchestrationError("proposed source archive is missing or redirected")
+    entries = list(archive.rglob("*"))
+    if any(path.is_symlink() for path in entries):
+        raise MainOrchestrationError("proposed source archive contains a symlink")
+    archived_files = {path.relative_to(archive).as_posix() for path in entries if path.is_file()}
+    if archived_files != source_files:
+        raise MainOrchestrationError("proposed source archive has missing or unplanned files")
+    for relative in sorted(source_files):
+        archived_hash = _hash(_local(archive, relative))
+        expected = (plan["root_manifest_sha256"] if relative == "experiment_manifest.json"
+                    else plan["source_file_sha256s"].get(relative))
+        if archived_hash != source_hashes[relative] or (expected is not None and archived_hash != expected):
+            raise MainOrchestrationError(f"proposed source archive byte drift: {relative}")
+    try:
+        verify_plan(plan, root=root)
+        current_matches = all(_hash(_local(root, relative)) == source_hashes[relative]
+                              for relative in source_files)
+        current_matches = current_matches and (
+            _read(root / "benchmark/retrieval_manifest_r1_20_candidate.json") ==
+            candidate_r1_20.freeze_candidate_manifest()
+        )
+    except (MainOrchestrationError, KeyError, TypeError, OSError, ValueError):
+        current_matches = False
+    return {
+        "status": ("VERIFIED_PROPOSED_SOURCE_ARCHIVE_EXCLUDED" if current_matches else
+                   "ARCHIVE_INTEGRITY_VERIFIED_SOURCE_DRIFT"),
+        "phase": "main", "eligible_for_main_analysis": False,
+        "main_dispatch_allowed": False, "model_calls": 0, "candidate_runs": 0,
+        "planned_full_episode_count": 600, "planned_c5_pair_capacity": 100,
+        "planned_c5_continuation_capacity": 200,
+        "source_archive_file_count": len(source_files),
+        "current_source_matches_pre_run_archive": current_matches,
+        "r1_candidate_admitted_for_main": False,
+        "r1_candidate_bound_as_main_provider": False,
+        "main_collector_capability": False,
+        "preflight_sha256": _hash(output_dir / "preflight.json"),
+        "schedule_sha256": _hash(output_dir / "schedule.json"),
+    }
 
 
 def _verify_archived_rehearsal_plan(plan: Mapping[str, Any], archive: Path) -> None:
@@ -321,7 +1025,10 @@ def assess_main_gate(*, plan_path: Path | None = None, root: Path = ROOT) -> dic
     else:
         try:
             plan = _read(plan_path)
-            verify_plan(plan, root=root)
+            if plan.get("schema_version") == FINAL_MAIN_PLAN_VERSION:
+                verify_final_main_schedule(plan, root=root)
+            else:
+                verify_plan(plan, root=root)
             if plan["phase"] != "main":
                 raise MainOrchestrationError("an excluded pilot plan cannot be used for main")
             manifest = _read(root / "experiment_manifest.json")
@@ -364,17 +1071,19 @@ def refuse_main(*, output_dir: Path, plan_path: Path | None = None, root: Path =
     return receipt
 
 
-def prepare_rehearsal(output_dir: Path, *, seed: int = 20261004) -> dict[str, Any]:
-    """Freeze a 5 × 3 scripted plan. Its output is excluded by construction."""
+def prepare_rehearsal(
+    output_dir: Path, *, seed: int = 20261004, full_catalog_r0: bool = False,
+) -> dict[str, Any]:
+    """Freeze an excluded scripted plan, optionally covering every finite family."""
 
     output_dir = Path(output_dir).resolve()
     if output_dir.exists():
         raise MainOrchestrationError("rehearsal output exists; refusing overwrite")
     plan = build_plan(
         experiment_id="excluded-main-path-rehearsal", phase="pilot",
-        index_paths=["benchmark/tasks/v1/index.json"],
+        index_paths=(ALL_FINITE_INDEXES if full_catalog_r0 else ["benchmark/tasks/v1/index.json"]),
         models=[{"name": "scripted-observable-fixture", "digest": "0" * 64}],
-        retrieval_modes=MODES, repetitions=1, seed=seed,
+        retrieval_modes=(("R0",) if full_catalog_r0 else MODES), repetitions=1, seed=seed,
     )
     output_dir.mkdir(parents=True, exist_ok=False)
     _write_once(output_dir / "schedule.json", plan)
@@ -596,24 +1305,69 @@ def verify_rehearsal(output_dir: Path) -> dict[str, Any]:
 def main(argv: Sequence[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("action", choices=("main-gate", "refuse-main", "prepare-rehearsal",
-                                           "run-rehearsal", "verify-rehearsal"))
+                                           "run-rehearsal", "verify-rehearsal",
+                                           "dry-run-c5-allocation",
+                                           "prepare-proposed-main-archive",
+                                           "verify-proposed-main-archive",
+                                           "prepare-final-main-schedule",
+                                           "verify-final-main-schedule",
+                                           "verify-manifest-only-freeze-sequence"))
     parser.add_argument("--output-dir", type=Path)
     parser.add_argument("--plan", type=Path)
+    parser.add_argument("--design-artifacts", type=Path)
+    parser.add_argument("--precursor-ledger", type=Path)
     parser.add_argument("--seed", type=int, default=20261004)
+    parser.add_argument("--all-families-r0", action="store_true",
+                        help="prepare a 100-slot excluded R0 rehearsal over all 20 finite families")
     args = parser.parse_args(argv)
     try:
         if args.action == "main-gate":
             result = assess_main_gate(plan_path=args.plan)
             code = 2
+        elif args.action == "verify-final-main-schedule":
+            if args.plan is None:
+                parser.error("--plan is required for final schedule verification")
+            verify_final_main_schedule(_read(args.plan))
+            result = {"status": "VERIFIED_FINAL_SCHEDULE_IDENTITY_UNGATED",
+                      "main_dispatch_allowed": False, "schedule_sha256": _hash(args.plan)}
+            code = 0
+        elif args.action == "verify-manifest-only-freeze-sequence":
+            if args.plan is None:
+                parser.error("--plan is required for manifest-only sequence verification")
+            result, code = verify_manifest_only_freeze_sequence(args.plan), 0
         else:
             if args.output_dir is None:
                 parser.error("--output-dir is required for this action")
             if args.action == "refuse-main":
                 result, code = refuse_main(output_dir=args.output_dir, plan_path=args.plan), 2
             elif args.action == "prepare-rehearsal":
-                result, code = prepare_rehearsal(args.output_dir, seed=args.seed), 0
+                result, code = prepare_rehearsal(
+                    args.output_dir, seed=args.seed, full_catalog_r0=args.all_families_r0
+                ), 0
             elif args.action == "run-rehearsal":
                 result, code = execute_rehearsal(args.output_dir), 0
+            elif args.action == "dry-run-c5-allocation":
+                if args.plan is None or args.precursor_ledger is None:
+                    parser.error("--plan and --precursor-ledger are required for a C5 dry-run")
+                result, code = save_c5_allocation_dry_run(
+                    plan_path=args.plan, precursor_ledger_path=args.precursor_ledger,
+                    output_dir=args.output_dir,
+                ), 0
+            elif args.action == "prepare-proposed-main-archive":
+                if args.plan is None:
+                    parser.error("--plan is required for a proposed main source archive")
+                result, code = prepare_proposed_main_source_archive(
+                    plan_path=args.plan, output_dir=args.output_dir,
+                ), 0
+            elif args.action == "verify-proposed-main-archive":
+                result, code = verify_proposed_main_source_archive(args.output_dir), 0
+            elif args.action == "prepare-final-main-schedule":
+                if args.plan is None or args.design_artifacts is None:
+                    parser.error("--plan and --design-artifacts are required for final schedule preparation")
+                result, code = prepare_final_main_schedule(
+                    proposal_path=args.plan, design_artifacts_path=args.design_artifacts,
+                    output_dir=args.output_dir,
+                ), 0
             else:
                 result, code = verify_rehearsal(args.output_dir), 0
     except (MainOrchestrationError, OSError, ValueError, KeyError, TypeError) as exc:

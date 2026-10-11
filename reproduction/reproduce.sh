@@ -21,7 +21,14 @@ python3 -B tests/test_finite_batch_b_v5.py
 python3 -B -m benchmark.validate_finite_batch_b_v5
 python3 -B tests/test_finite_batch_c_v6.py
 python3 -B -m benchmark.validate_finite_batch_c_v6
+# The separately versioned v7 candidate remains outside the admission set.
+python3 -B -m benchmark.validate_finite_batch_c_v7
 python3 -B -m analysis.admission_review --json-out /tmp/admission_review_reproduced.json
+python3 -B -m analysis.validate_human_admission_register --catalog v6-current
+python3 -B -m analysis.validate_human_admission_register --catalog v7-candidate
+# Requires the private, Git-ignored v0.2 page snapshots in this workspace.
+python3 -B -m analysis.validate_r1_v2_source_review
+python3 -B -m analysis.validate_statistical_plan_candidate
 
 # Recompute the finite confusion matrices and mutation checks from the saved
 # fixtures. The comparison fails if the checked-in calibration becomes stale.
@@ -54,10 +61,34 @@ python3 -B -m unittest \
   tests.test_c5_onset_probe_v1 \
   tests.test_real_code_sqli \
   tests.test_real_code_command_injection \
+  tests.test_finite_batch_b_v5 \
   tests.test_finite_batch_c_v6 \
   tests.test_admission_review \
   tests.test_main_orchestrator \
-  tests.test_family_sign_sensitivity
+  tests.test_family_sign_sensitivity \
+  tests.test_full_catalog_live_feasibility \
+  tests.test_c5_agent_onset_fork \
+  tests.test_retrieval_r1_20_candidate \
+  tests.test_r1_20_live_feasibility \
+  tests.test_private_excluded_pilot_bundle \
+  tests.test_human_admission_register \
+  tests.test_v1_power_sensitivity \
+  tests.test_v1_companion_power_sensitivity \
+  tests.test_finite_batch_c_v7 \
+  tests.test_retrieval_r1_20_candidate_v2 \
+  tests.test_r1_source_snapshots_v2 \
+  tests.test_validate_r1_v2_source_review \
+  tests.test_statistical_plan_candidate \
+  tests.test_main_collector \
+  tests.test_main_c5_fork_scaffold \
+  tests.test_main_c5_precursor_bridge \
+  tests.test_c5_raw_archive_reader \
+  tests.test_main_live_dispatch_excluded \
+  tests.test_main_ollama_transport_excluded \
+  tests.test_excluded_live_dispatch_crash_audit \
+  tests.test_v7_excluded_integration \
+  tests.test_c5_family_ledger \
+  paper.test_author_review_bundle
 
 # SQLite connection lifecycle regression: ResourceWarning is a hard failure.
 python3 -B -W error::ResourceWarning -m unittest tests.test_real_code_sqli

@@ -95,7 +95,7 @@ Pilot и main используют create-once manifest, deterministic schedule,
 Из корня проекта:
 
 ```bash
-cd /Users/imranmzakirov/Desktop/research && \
+cd /path/to/research && \
 PYTHONDONTWRITEBYTECODE=1 python3 -u -B -m experiments.run_nightly_study \
   --model qwen3:4b \
   --pilot-runs 1 \

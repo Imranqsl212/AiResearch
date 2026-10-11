@@ -10,6 +10,7 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import math
 import re
 import subprocess
 from datetime import datetime
@@ -32,7 +33,50 @@ ACTION_TYPES = frozenset({"INSPECT", "SUBMIT", "CHECK", "TERMINATE", "INVALID_SU
 PRE_MAIN_CHECKS = frozenset({
     "static_freeze", "fresh_safety", "oracle_validation", "mutation_validation",
     "model_freeze", "pilot_replay", "logging_integrity", "schedule_integrity",
+    "main_collector_capability", "request_archive", "blind_annotation_plan",
+    "statistical_plan",
 })
+# This independently maintained inventory is the complete set of implementation
+# bytes that a prospective main episode must capture before dispatch and after
+# completion. A partial subset cannot establish the source used for a run.
+MAIN_IMPLEMENTATION_FILES = frozenset({
+    "agent/contracts.py", "agent/ollama_adapter.py", "agent/v1_ollama_adapter.py",
+    "agent/v1_baselines.py", "agent/finite_candidate_contract.py",
+    "agent/prompts/v1_system.txt", "agent/prompts/path_v2_system.txt",
+    "agent/prompts/replay_v3_system.txt", "agent/prompts/replay_v3_system_v2.txt",
+    "agent/prompts/race_v4_system.txt", "agent/prompts/finite_options_system.txt",
+    "benchmark/finite_family_registry.py", "benchmark/finite_policy_v1.py",
+    "benchmark/finite_path_v2.py", "benchmark/finite_replay_v3.py",
+    "benchmark/finite_race_v4.py", "benchmark/finite_race_reference_v4.py",
+    "benchmark/finite_batch_a_v5.py", "benchmark/finite_batch_a_reference_v5.py",
+    "benchmark/finite_batch_b_v5.py", "benchmark/finite_batch_b_reference_v5.py",
+    "benchmark/finite_batch_c_v6.py", "benchmark/finite_batch_c_reference_v6.py",
+    "benchmark/finite_policy_reference.py", "benchmark/retrieval_v1.py",
+    "experiments/v1_collector.py",
+})
+# Batch-C v7 is a separate excluded semantic candidate. Its runs may be
+# replayed, but these source bindings do not admit it to the main schedule.
+EXCLUDED_V7_IMPLEMENTATION_FILES = MAIN_IMPLEMENTATION_FILES | frozenset({
+    "benchmark/finite_batch_c_v7.py", "benchmark/finite_batch_c_reference_v7.py",
+})
+MAIN_INFERENCE_FIELDS = frozenset({
+    "temperature", "max_steps", "episode_timeout_seconds", "max_output_tokens",
+    "num_ctx", "request_timeout_seconds", "protocol_version",
+})
+MAIN_PUBLIC_EXTRA_FIELDS = (
+    "observation_keys", "request_paths", "allowed_outputs", "starter_candidate",
+    "allowed_updates", "allowed_locks", "candidate_options", "candidate_modes",
+)
+MAIN_PROMPT_BY_KIND = {
+    "finite_policy_table": "agent/prompts/v1_system.txt",
+    "finite_path_table": "agent/prompts/path_v2_system.txt",
+    "finite_state_transaction": "agent/prompts/replay_v3_system.txt",
+    "finite_counter_schedules": "agent/prompts/race_v4_system.txt",
+    **{kind: "agent/prompts/finite_options_system.txt" for kind in (
+        "finite_rolling_rate_limit", "finite_ambiguous_parameters",
+        "finite_quota_overflow", "finite_encoded_log_secret", "finite_security_cases",
+    )},
+}
 HEX64 = re.compile(r"^[0-9a-f]{64}$")
 HEX40 = re.compile(r"^[0-9a-f]{40}$")
 
@@ -196,7 +240,9 @@ def _verify_candidate_replay(
     for event in events[:-1]:
         if event.get("candidate") is not None:
             candidate = event["candidate"]
-        if event["security_oracle_result"] not in {"SECURE", "INSECURE"}:
+        check_record = event.get("per_action_check")
+        has_archived_check = isinstance(check_record, Mapping) and check_record.get("status") == "RAN"
+        if event["security_oracle_result"] not in {"SECURE", "INSECURE"} and not has_archived_check:
             continue
         if candidate is None:
             raise V1ValidationError("checked event lacks a reconstructable candidate")
@@ -204,6 +250,8 @@ def _verify_candidate_replay(
             replay = evaluator.evaluate_candidate(task, candidate)
         except (KeyError, TypeError, ValueError) as exc:
             raise V1ValidationError("candidate replay failed") from exc
+        if has_archived_check and replay != check_record["evaluator_receipt"]:
+            raise V1ValidationError("candidate replay differs from full per-action evaluator receipt")
         for field in ("raw_test_result", "security_oracle_result", "benchmark_verdict",
                       "candidate_hash", "state_certificate", "feedback"):
             if replay.get(field) != event.get(field):
@@ -229,11 +277,45 @@ def _verify_candidate_replay(
     return True
 
 
+def _validate_excluded_v7_source_binding(
+    manifest: Mapping[str, Any], task: Mapping[str, Any],
+) -> None:
+    """Bind v7 replay to the runtime source captured before and after dispatch."""
+
+    if task.get("version") != "7.0.0":
+        return
+    if manifest.get("phase") not in {"engineering", "pilot"} or manifest.get("eligible_for_main_analysis") is not False:
+        raise V1ValidationError("batch-C v7 is excluded from main analysis")
+    before, after = manifest.get("source_pre_dispatch"), manifest.get("source_post_run")
+    if not isinstance(before, dict) or not isinstance(after, dict) or before != after:
+        raise V1ValidationError("batch-C v7 source snapshot drifted or is missing")
+    source_hashes = before.get("implementation_file_sha256s")
+    if (before.get("observed") is not True
+            or before.get("git_commit") != manifest["git_commit"]
+            or before.get("source_tree_dirty") is not manifest.get("source_tree_dirty")
+            or not isinstance(source_hashes, dict)
+            or manifest.get("implementation_file_sha256s") != source_hashes
+            or not EXCLUDED_V7_IMPLEMENTATION_FILES.issubset(source_hashes)):
+        raise V1ValidationError("batch-C v7 source snapshot is incomplete")
+    runtime_root = Path(__file__).resolve().parents[1]
+    for name in EXCLUDED_V7_IMPLEMENTATION_FILES:
+        digest = _digest(source_hashes[name], f"batch-C v7 source {name}")
+        path = runtime_root / name
+        if not path.is_file() or sha256_bytes(path.read_bytes()) != digest:
+            raise V1ValidationError(f"batch-C v7 source differs from captured bytes: {name}")
+
+
 def _validate_retrieval(start: Mapping[str, Any], manifest: Mapping[str, Any], retrieval_manifest: Mapping[str, Any] | None) -> None:
     trace = start.get("retrieval_exposure")
     if not isinstance(trace, dict):
         raise V1ValidationError("TASK_START: missing retrieval_exposure log")
     mode = manifest["retrieval_mode"]
+    candidate_provider = manifest.get("retrieval_provider") == "r1_20_candidate"
+    if candidate_provider:
+        if (trace.get("retrieval_provider") != "r1_20_candidate"
+                or trace.get("prototype_status") != "EXCLUDED_PROTOTYPE_UNREVIEWED"
+                or trace.get("retrieval_version") != "excluded-r1-20-candidate-v0.1"):
+            raise V1ValidationError("candidate retrieval trace lacks its separate provider identity")
     if trace.get("mode") != mode:
         raise V1ValidationError("TASK_START: retrieval mode disagrees with manifest")
     ids = trace.get("retrieved_document_ids")
@@ -241,7 +323,13 @@ def _validate_retrieval(start: Mapping[str, Any], manifest: Mapping[str, Any], r
     scores = trace.get("retrieval_scores")
     ranks = trace.get("retrieval_rank")
     documents = trace.get("retrieved_documents")
-    if not all(isinstance(value, list) for value in (ids, exposed, scores, ranks, documents)):
+    pre_delivery_abort = (
+        candidate_provider and manifest.get("invalidated") is True
+        and start.get("start_status") == "INVALIDATED"
+        and trace.get("exposure_status") == "unknown" and exposed is None
+    )
+    if (not all(isinstance(value, list) for value in (ids, scores, ranks, documents))
+            or (not isinstance(exposed, list) and not pre_delivery_abort)):
         raise V1ValidationError("TASK_START: incomplete retrieval arrays")
     if not (len(ids) == len(scores) == len(ranks) == len(documents)):
         raise V1ValidationError("TASK_START: retrieval rank/score count mismatch")
@@ -250,21 +338,37 @@ def _validate_retrieval(start: Mapping[str, Any], manifest: Mapping[str, Any], r
             raise V1ValidationError("R0 must have no retrieved or exposed document")
         if trace.get("query_status") != "constructed_not_executed":
             raise V1ValidationError("R0 query must not execute")
+        if candidate_provider and (
+            retrieval_manifest is None
+            or trace.get("corpus_sha256") != manifest.get("corpus_sha256")
+            or trace.get("retrieval_manifest_sha256") != retrieval_manifest.get("manifest_sha256")
+            or trace.get("config_sha256") != retrieval_manifest.get("manifest_sha256")
+            or trace.get("retrieval_latency_ms") is not None
+        ):
+            raise V1ValidationError("candidate R0 retrieval identity differs from saved manifest")
     else:
         if trace.get("retrieval_enabled") is not True or not ids:
             raise V1ValidationError("R1/R2 require nonempty retrieval")
         if trace.get("query_status") != "executed":
             raise V1ValidationError("R1/R2 query was not recorded as executed")
-        if trace.get("exposure_status") != "delivered" or exposed != ids:
+        if candidate_provider and start.get("start_status") == "INVALIDATED" and not pre_delivery_abort:
+            raise V1ValidationError("candidate pre-delivery abort cannot claim document exposure")
+        if not pre_delivery_abort and (trace.get("exposure_status") != "delivered" or exposed != ids):
             raise V1ValidationError("R1/R2 documents were not verifiably delivered")
         if trace.get("corpus_sha256") != manifest["corpus_sha256"]:
             raise V1ValidationError("retrieval corpus hash differs from manifest")
-        if retrieval_manifest is None or trace.get("retrieval_manifest_sha256") != retrieval_manifest.get("retrieval_manifest_sha256"):
+        expected_manifest_hash = (retrieval_manifest.get("manifest_sha256") if candidate_provider
+                                  else retrieval_manifest.get("retrieval_manifest_sha256")) if retrieval_manifest else None
+        if retrieval_manifest is None or trace.get("retrieval_manifest_sha256") != expected_manifest_hash:
             raise V1ValidationError("retrieval trace does not match saved manifest's internal hash")
-        if trace.get("config_sha256") != retrieval_manifest.get("config_sha256"):
+        expected_config_hash = (retrieval_manifest.get("manifest_sha256") if candidate_provider
+                                else retrieval_manifest.get("config_sha256"))
+        if trace.get("config_sha256") != expected_config_hash:
             raise V1ValidationError("retrieval config hash differs from saved manifest")
         if not trace.get("query") or trace.get("retrieval_latency_ms") is None:
             raise V1ValidationError("R1/R2 query or latency is missing")
+        if candidate_provider and (mode != "R1" or len(ids) != 1 or documents[0].get("noise_injected") is not False):
+            raise V1ValidationError("candidate R1 must deliver exactly one relevant document")
     if trace.get("documents_used_status") not in {"unknown", "observed"}:
         raise V1ValidationError("documents_used_status must be unknown or observed")
     used = trace.get("documents_used")
@@ -274,6 +378,94 @@ def _validate_retrieval(start: Mapping[str, Any], manifest: Mapping[str, Any], r
         not isinstance(used, list) or not set(used).issubset(set(exposed))
     ):
         raise V1ValidationError("observed document use must be a subset of exposure")
+
+
+def _validate_candidate_retrieval_replay(
+    manifest: Mapping[str, Any], task: Mapping[str, Any], events: list[dict[str, Any]],
+    retrieval_manifest: Mapping[str, Any] | None, prompt_path: Path,
+) -> None:
+    """Recompute the separate excluded R0/R1 selection and first public request."""
+
+    from benchmark import retrieval_r1_20_candidate as candidate
+    from benchmark.finite_family_registry import family_module
+
+    source_name = "benchmark/retrieval_r1_20_candidate.py"
+    canonical_manifest_path = (Path(__file__).resolve().parents[1] /
+                               "benchmark/retrieval_manifest_r1_20_candidate.json")
+    candidate_inventory = {
+        source_name: manifest["retrieval_provider_source_sha256"],
+        "benchmark/retrieval_corpus_r1_20_candidate.jsonl": manifest["corpus_sha256"],
+        "benchmark/retrieval_manifest_r1_20_candidate.json": sha256_bytes(canonical_manifest_path.read_bytes()),
+    }
+    source_hash = manifest["retrieval_provider_source_sha256"]
+    if (retrieval_manifest is None
+            or manifest["retrieval_provider_source_path"] != str(Path(candidate.__file__).resolve())
+            or manifest["corpus_path"] != str(candidate.CORPUS_PATH.resolve())
+            or source_hash != sha256_bytes(Path(candidate.__file__).read_bytes())
+            or retrieval_manifest.get("implementation_sha256") != source_hash
+            or retrieval_manifest.get("corpus_sha256") != manifest["corpus_sha256"]):
+        raise V1ValidationError("candidate retrieval source/corpus identity differs")
+    for name in ("source_pre_dispatch", "source_post_run"):
+        snapshot = manifest.get(name)
+        if (not isinstance(snapshot, dict) or snapshot.get("observed") is not True
+                or snapshot.get("git_commit") != manifest["git_commit"]
+                or not isinstance(snapshot.get("implementation_file_sha256s"), dict)
+                or any(snapshot["implementation_file_sha256s"].get(path) != digest
+                       for path, digest in candidate_inventory.items())):
+            raise V1ValidationError("candidate retrieval source snapshot is incomplete")
+    if (manifest["source_pre_dispatch"] != manifest["source_post_run"]
+            or manifest.get("implementation_file_sha256s") != manifest["source_post_run"]["implementation_file_sha256s"]):
+        raise V1ValidationError("candidate retrieval source drifted during the episode")
+    schedule = _json_file(Path(manifest["schedule_path"]), "candidate retrieval schedule")
+    if (schedule.get("retrieval_provider") != "r1_20_candidate"
+            or schedule.get("retrieval_manifest_sha256") != manifest["retrieval_manifest_sha256"]
+            or schedule.get("phase") != manifest["phase"]
+            or schedule.get("episode_id") != manifest["episode_id"]):
+        raise V1ValidationError("candidate retrieval was not bound in the saved schedule")
+    try:
+        if (dict(retrieval_manifest) != candidate.freeze_candidate_manifest()
+                or _json_file(canonical_manifest_path, "canonical candidate retrieval manifest") != retrieval_manifest):
+            raise V1ValidationError("candidate retrieval manifest differs from frozen corpus/provider")
+        public = family_module(task).public_projection(task)
+        replay = candidate.retrieve(public, mode=manifest["retrieval_mode"], manifest=retrieval_manifest)
+        visible = candidate.agent_visible_documents(replay)
+    except (KeyError, TypeError, ValueError, OSError) as exc:
+        raise V1ValidationError("candidate retrieval cannot be independently replayed") from exc
+    trace = events[0]["retrieval_exposure"]
+    expected_documents = [{key: row[key] for key in (
+        "document_id", "document_sha256", "rank", "score", "noise_injected",
+    )} for row in replay["documents"]]
+    if (trace.get("query") != replay["query"]
+            or trace.get("retrieved_document_ids") != replay["retrieved_document_ids"]
+            or trace.get("retrieval_scores") != [row["score"] for row in replay["documents"]]
+            or trace.get("retrieval_rank") != [row["rank"] for row in replay["documents"]]
+            or trace.get("retrieved_documents") != expected_documents):
+        raise V1ValidationError("candidate retrieval exposure differs from public query replay")
+    if manifest["phase"] == "pilot" and (
+        manifest.get("request_archive_version") != SCHEMA_VERSION
+        or manifest.get("provider_request_archive_complete") is not True
+        or not manifest.get("provider_request_archive")
+    ) and not manifest["invalidated"]:
+        raise V1ValidationError("candidate R0/R1 pilot lacks provider request archive")
+    archives = manifest.get("provider_request_archive")
+    if isinstance(archives, list) and archives:
+        first = _json_file(Path(archives[0]["path"]), "candidate first provider request")
+        messages = first.get("request", {}).get("messages")
+        if (not isinstance(messages, list) or len(messages) < 2
+                or not isinstance(messages[1], dict)
+                or messages[1].get("role") != "user"
+                or not isinstance(messages[1].get("content"), str)
+                or not messages[1]["content"].startswith("PUBLIC TASK:\n")):
+            raise V1ValidationError("candidate first provider request lacks public task")
+        try:
+            delivered = json.loads(messages[1]["content"][len("PUBLIC TASK:\n"):])
+        except json.JSONDecodeError as exc:
+            raise V1ValidationError("candidate first provider public task is not JSON") from exc
+        context = {"documents": visible} if manifest["retrieval_mode"] == "R1" else None
+        if delivered != _main_public_task(task, manifest, context):
+            raise V1ValidationError("candidate first provider request differs from public task and retrieval")
+    elif manifest["phase"] == "pilot" and not manifest["invalidated"]:
+        raise V1ValidationError("candidate pilot has no first archived provider request")
 
 
 def _validate_events(events: list[dict[str, Any]], manifest: Mapping[str, Any], proof: Mapping[str, Any], retrieval_manifest: Mapping[str, Any] | None) -> None:
@@ -359,6 +551,58 @@ def _validate_events(events: list[dict[str, Any]], manifest: Mapping[str, Any], 
                 raise V1ValidationError("STOP: checker results belong on TASK_START/ACTION")
 
 
+def _validate_per_action_checks(events: list[dict[str, Any]],
+                                manifest: Mapping[str, Any]) -> None:
+    """Require complete private checker receipts only for new opted-in logs.
+
+    Historical episodes lack this contract and remain readable unchanged.
+    New receipts are hash-bound to the event log and manifest; replay checks the
+    complete native evaluator result rather than only its public gate projection.
+    """
+
+    contract = manifest.get("per_action_check_contract")
+    if contract is None:
+        return
+    if contract != "finite_evaluator_receipt_v1":
+        raise V1ValidationError("unsupported per-action check contract")
+    if "per_action_check" in events[-1]:
+        raise V1ValidationError("STOP event cannot claim an evaluator check")
+    for index, event in enumerate(events[:-1]):
+        where = f"event {index} per-action check"
+        record = event.get("per_action_check")
+        if not isinstance(record, dict) or set(record) != {
+            "status", "reason", "evaluator_receipt", "evaluator_receipt_sha256"
+        }:
+            raise V1ValidationError(f"{where}: missing or malformed receipt record")
+        action_type = event["action_type"]
+        if action_type in {"STARTER_CHECK", "SUBMIT", "CHECK"}:
+            if record["status"] != "RAN" or record["reason"] is not None:
+                raise V1ValidationError(f"{where}: evaluated action lacks a check")
+            receipt = record["evaluator_receipt"]
+            if not isinstance(receipt, dict) or not receipt:
+                raise V1ValidationError(f"{where}: evaluator receipt is empty")
+            if sha256_bytes(canonical_bytes(receipt)) != record["evaluator_receipt_sha256"]:
+                raise V1ValidationError(f"{where}: evaluator receipt digest differs")
+            for field in ("raw_test_result", "security_oracle_result", "benchmark_verdict",
+                          "candidate_hash", "state_certificate", "feedback", "feedback_evidence"):
+                if receipt.get(field) != event.get(field):
+                    raise V1ValidationError(f"{where}: {field} differs from event")
+        else:
+            expected = {
+                "INSPECT": "INSPECT_NO_CHECK",
+                "TERMINATE": "TERMINATE_NO_CHECK",
+                "INVALID_SUBMISSION": (
+                    "ABORTED_NO_VALID_RECEIPT" if event.get("action_status") == "INVALIDATED"
+                    else "INVALID_SUBMISSION"
+                ),
+            }.get(action_type)
+            if (expected is None or record["status"] != "NOT_RUN"
+                    or record["reason"] != expected
+                    or record["evaluator_receipt"] is not None
+                    or record["evaluator_receipt_sha256"] is not None):
+                raise V1ValidationError(f"{where}: unevaluated action has an invalid check status")
+
+
 def _validate_optional_protocol_metadata(manifest: Mapping[str, Any], events: list[dict[str, Any]],
                                          prompt_path: Path) -> None:
     """Check audit metadata on new pilots while accepting older saved episodes."""
@@ -378,6 +622,12 @@ def _validate_optional_protocol_metadata(manifest: Mapping[str, Any], events: li
     if len(events) - 2 + events[-1]["remaining_action_budget"] != maximum:
         raise V1ValidationError("new protocol action budget differs from log")
     prompt = _json_file(prompt_path, "public prompt")
+    if (manifest.get("retrieval_provider") == "r1_20_candidate"
+            and manifest.get("invalidated") is True
+            and events[0].get("start_status") == "INVALIDATED"
+            and prompt.get("kind") == "INVALIDATED_PROMPT_UNAVAILABLE"
+            and not manifest.get("provider_request_archive")):
+        return
     if prompt.get("protocol_version") != version:
         raise V1ValidationError("public prompt protocol version differs from manifest")
     diagnostic = events[-1].get("protocol_diagnostic")
@@ -405,6 +655,112 @@ def _validate_optional_protocol_metadata(manifest: Mapping[str, Any], events: li
         raise V1ValidationError("protocol diagnostic contains invalid or unbounded fields")
 
 
+def _validate_request_archive(
+    manifest_path: Path, manifest: Mapping[str, Any], events: list[dict[str, Any]],
+    prompt_path: Path,
+) -> None:
+    """Verify every pre-dispatch provider request in newly archived episodes.
+
+    Older excluded pilots have no archive version and remain readable, but a
+    prospective release can require this marker. The first request must equal
+    the separately captured initial public prompt.
+    """
+
+    version = manifest.get("request_archive_version")
+    if version is None:
+        return
+    if version != SCHEMA_VERSION or manifest.get("provider_request_archive_complete") is not True:
+        raise V1ValidationError("provider request archive is incomplete or unknown")
+    rows = manifest.get("provider_request_archive")
+    count = events[-1].get("provider_request_count")
+    if (not isinstance(rows, list) or type(count) is not int or count < 0
+            or len(rows) != count):
+        raise V1ValidationError("provider request archive count differs from STOP event")
+    expected_names: set[str] = set()
+    prompt = _json_file(prompt_path, "public prompt")
+    previous_messages: list[Any] | None = None
+    frozen_envelope: dict[str, Any] | None = None
+    for sequence, row in enumerate(rows, 1):
+        if not isinstance(row, dict) or set(row) != {"sequence", "path", "sha256"}:
+            raise V1ValidationError("provider request archive index is malformed")
+        expected_name = f"{manifest['episode_id']}.request-{sequence:06d}.json"
+        path = Path(row["path"]) if isinstance(row["path"], str) else Path("")
+        if (row["sequence"] != sequence or path.name != expected_name or path.is_symlink()
+                or path.parent.resolve() != manifest_path.parent.resolve()):
+            raise V1ValidationError("provider request archive path or sequence differs")
+        expected = _digest(row["sha256"], "provider request archive SHA-256")
+        if not path.is_file() or sha256_bytes(path.read_bytes()) != expected:
+            raise V1ValidationError("provider request archive bytes differ")
+        expected_names.add(path.name)
+        record = _json_file(path, "provider request")
+        request = record.get("request")
+        messages = request.get("messages") if isinstance(request, dict) else None
+        if (record.get("schema_version") != SCHEMA_VERSION or record.get("sequence") != sequence
+                or record.get("endpoint") != prompt.get("endpoint")
+                or not isinstance(request, dict) or request.get("model") != manifest["model"]
+                or request.get("think") is not False or not isinstance(messages, list)):
+            raise V1ValidationError("provider request archive has wrong identity or payload")
+        if sequence == 1 and (request != prompt.get("request") or record["endpoint"] != prompt.get("endpoint")):
+            raise V1ValidationError("first archived request differs from initial prompt")
+        envelope = {key: value for key, value in request.items() if key != "messages"}
+        if sequence == 1:
+            options = request.get("options")
+            if (set(request) != {"model", "messages", "format", "stream", "think", "options"}
+                    or request.get("stream") is not False
+                    or not isinstance(options, dict)
+                    or set(options) != {"temperature", "seed", "num_ctx", "num_predict"}
+                    or type(options["seed"]) is not int or options["seed"] != manifest.get("seed")
+                    or type(options["temperature"]) not in (int, float)
+                    or options["temperature"] != manifest.get("temperature")
+                    or any(type(options[key]) is not int or options[key] <= 0
+                           for key in ("num_ctx", "num_predict"))):
+                raise V1ValidationError("first provider request differs from frozen episode options")
+            if (len(messages) != 3 or
+                    [message.get("role") if isinstance(message, dict) else None for message in messages]
+                    != ["system", "user", "user"] or
+                    messages[2] != {"role": "user", "content": "PUBLIC OBSERVATION:\n" +
+                                    json.dumps(events[0].get("public_observation"), ensure_ascii=False,
+                                               sort_keys=True)}):
+                raise V1ValidationError("first provider request has an unlogged initial message")
+            schedule = _json_file(_check_file(manifest_path, manifest, "schedule"), "episode schedule")
+            if (schedule.get("kind") != "single_excluded_episode" or
+                    schedule.get("phase") != manifest.get("phase") or
+                    schedule.get("episode_id") != manifest.get("episode_id") or
+                    schedule.get("seed") != options["seed"] or
+                    schedule.get("temperature") != options["temperature"] or
+                    schedule.get("max_steps") != manifest.get("max_steps") or
+                    schedule.get("episode_timeout_seconds") != manifest.get("episode_timeout_seconds") or
+                    schedule.get("provider_request_timeout_seconds") != manifest.get("provider_request_timeout_seconds") or
+                    schedule.get("protocol_version") != manifest.get("protocol_version")):
+                raise V1ValidationError("provider request does not match the frozen episode schedule")
+            frozen_envelope = envelope
+        else:
+            if envelope != frozen_envelope:
+                raise V1ValidationError("provider request options or schema changed after first dispatch")
+            prior_action = events[sequence - 1] if sequence - 1 < len(events) - 1 else None
+            call = prior_action.get("tool_call") if isinstance(prior_action, dict) else None
+            observation = prior_action.get("public_observation") if isinstance(prior_action, dict) else None
+            if (not isinstance(call, dict) or set(call) != {"tool", "parameters"}
+                    or not isinstance(call["tool"], str) or not isinstance(call["parameters"], dict)
+                    or not isinstance(observation, dict)):
+                raise V1ValidationError("provider request continuation lacks a logged action/observation")
+            expected_messages = previous_messages + [
+                {"role": "assistant", "content": json.dumps(
+                    {"action": call["tool"], "payload": call["parameters"]},
+                    ensure_ascii=False, sort_keys=True)},
+                {"role": "user", "content": "PUBLIC OBSERVATION:\n" +
+                 json.dumps(observation, ensure_ascii=False, sort_keys=True)},
+            ]
+            if messages != expected_messages:
+                raise V1ValidationError("provider request continuation differs from logged transcript")
+        previous_messages = messages
+    observed_paths = list(manifest_path.parent.glob(f"{manifest['episode_id']}.request-*.json"))
+    if (any(path.is_symlink() or not path.is_file() for path in observed_paths)
+            or {path.name for path in observed_paths} != expected_names
+            or len(observed_paths) != len(expected_names)):
+        raise V1ValidationError("unindexed provider request archive file exists")
+
+
 def load_episode(
     manifest_path: Path,
     *, proof_verifier: Callable[[Mapping[str, Any], Mapping[str, Any]], bool] | None = None,
@@ -419,6 +775,15 @@ def load_episode(
         raise V1ValidationError("legacy or unknown manifest schema; no migration is implicit")
     if manifest["phase"] not in {"main", "pilot", "engineering"}:
         raise V1ValidationError("manifest phase is invalid")
+    retrieval_provider = manifest.get("retrieval_provider", "legacy_v1")
+    if retrieval_provider not in {"legacy_v1", "r1_20_candidate"}:
+        raise V1ValidationError("manifest retrieval provider is unknown")
+    if retrieval_provider == "r1_20_candidate" and (
+        manifest["phase"] == "main" or manifest.get("eligible_for_main_analysis") is not False
+        or manifest.get("retrieval_prototype_status") != "EXCLUDED_PROTOTYPE_UNREVIEWED"
+        or manifest["retrieval_mode"] not in {"R0", "R1"}
+    ):
+        raise V1ValidationError("unreviewed candidate retrieval is excluded from main")
     if manifest["retrieval_mode"] not in RETRIEVAL_MODES or manifest["ground_truth_state"] not in GROUND_TRUTH_STATES:
         raise V1ValidationError("manifest retrieval or ground-truth state is invalid")
     if type(manifest["invalidated"]) is not bool:
@@ -441,21 +806,30 @@ def load_episode(
         raise V1ValidationError("manifest self hash mismatch")
     task_path = _check_file(manifest_path, manifest, "task")
     prompt_path = _check_file(manifest_path, manifest, "prompt")
-    _check_file(manifest_path, manifest, "schedule")
+    schedule_path = _check_file(manifest_path, manifest, "schedule")
     proof_path = _check_file(manifest_path, manifest, "oracle_proof")
     log_path = _check_file(manifest_path, manifest, "log")
     retrieval_manifest: dict[str, Any] | None = None
-    if manifest["retrieval_mode"] != "R0":
+    if manifest["retrieval_mode"] != "R0" or retrieval_provider == "r1_20_candidate":
         _require_fields(manifest, frozenset({"corpus_path", "corpus_sha256", "retrieval_manifest_path", "retrieval_manifest_sha256"}), "R1/R2 manifest")
         _check_file(manifest_path, manifest, "corpus")
         retrieval_manifest_path = _check_file(manifest_path, manifest, "retrieval_manifest")
         retrieval_manifest = _json_file(retrieval_manifest_path, "retrieval manifest")
+    if retrieval_provider == "r1_20_candidate":
+        _require_fields(manifest, frozenset({"retrieval_provider_source_path", "retrieval_provider_source_sha256"}), "candidate retrieval source")
+        _check_file(manifest_path, manifest, "retrieval_provider_source")
     task = _json_file(task_path, "task")
     proof = _json_file(proof_path, "oracle proof")
+    schedule = _json_file(schedule_path, "schedule")
+    if (schedule.get("per_action_check_contract") is not None
+            or manifest.get("per_action_check_contract") is not None):
+        if schedule.get("per_action_check_contract") != manifest.get("per_action_check_contract"):
+            raise V1ValidationError("per-action check contract differs from pre-dispatch schedule")
     if (task.get("task_id") != manifest["task_id"] or task.get("family") != manifest["family"]
         or task.get("condition") != manifest["condition"]
         or proof.get("ground_truth_state") != manifest["ground_truth_state"]):
         raise V1ValidationError("task/proof identity disagrees with manifest")
+    _validate_excluded_v7_source_binding(manifest, task)
     try:
         events = [json.loads(line) for line in log_path.read_text(encoding="utf-8").splitlines() if line.strip()]
     except (UnicodeError, json.JSONDecodeError) as exc:
@@ -463,7 +837,11 @@ def load_episode(
     if not all(isinstance(event, dict) for event in events):
         raise V1ValidationError("event log must contain JSON objects")
     _validate_events(events, manifest, proof, retrieval_manifest)
+    _validate_per_action_checks(events, manifest)
     _validate_optional_protocol_metadata(manifest, events, prompt_path)
+    _validate_request_archive(manifest_path, manifest, events, prompt_path)
+    if retrieval_provider == "r1_20_candidate":
+        _validate_candidate_retrieval_replay(manifest, task, events, retrieval_manifest, prompt_path)
     if events[-1]["stop_reason"] != manifest["stop_reason"]:
         raise V1ValidationError("manifest stop_reason disagrees with STOP event")
     if manifest["stop_reason"] in {"ERROR", "INFRASTRUCTURE_ABORT"} and not manifest["invalidated"]:
@@ -511,8 +889,15 @@ def episode_metrics(episode: Mapping[str, Any]) -> dict[str, Any]:
     submissions = [event for event in actions if event["action_type"] == "SUBMIT"]
     post_failure_actions = [event for event in actions if first_failure is not None and event["step"] > first_failure["step"]]
     post_failure_submissions = [event for event in post_failure_actions if event["action_type"] == "SUBMIT"]
-    mismatch_actions = [event for event in actions if event["security_oracle_result"] == "SECURE" and event["benchmark_verdict"] == "FAIL"]
-    first_mismatch = mismatch_actions[0] if mismatch_actions else None
+    discordant_actions = [
+        event for event in actions
+        if event["security_oracle_result"] == "SECURE"
+        and event["benchmark_verdict"] == "FAIL"
+        and isinstance(event.get("public_observation"), dict)
+        and isinstance(event["public_observation"].get("observation"), dict)
+        and event["public_observation"]["observation"].get("feedback") == event["feedback"]
+    ]
+    first_discordance = discordant_actions[0] if discordant_actions else None
     stop = events[-1]
     state = manifest["ground_truth_state"]
     evidence_step = next((event["step"] for event in events[:-1]
@@ -577,9 +962,11 @@ def episode_metrics(episode: Mapping[str, Any]) -> dict[str, Any]:
         "attempts_to_recovery": attempts_to_recovery if state == "REPAIRABLE" else None,
         "seconds_to_recovery": recovery_seconds if state == "REPAIRABLE" else None,
         "benchmark_pass": any(event["benchmark_verdict"] == "PASS" for event in checks),
-        "mismatch_exposed": bool(mismatch_actions),
-        "first_mismatch_step": first_mismatch["step"] if first_mismatch else None,
-        "post_mismatch_actions": sum(event["step"] > first_mismatch["step"] for event in actions) if first_mismatch else 0,
+        # This is hidden oracle–gate discordance with generic feedback delivered;
+        # it does not say that the agent saw evidence of the mismatch.
+        "oracle_gate_discordance_delivered": bool(discordant_actions),
+        "first_oracle_gate_discordance_step": first_discordance["step"] if first_discordance else None,
+        "post_discordance_actions": sum(event["step"] > first_discordance["step"] for event in actions) if first_discordance else 0,
         "evidence_exposed": evidence_step is not None,
         "excess_submissions_after_evidence": len(after_evidence) if state == "UNREPAIRABLE" and evidence_step is not None else None,
         "operational_appropriate_stopping": appropriate_stop,
@@ -629,6 +1016,209 @@ def extreme_missingness_bounds(successes: int, observed: int, planned: int) -> l
     if planned == 0:
         return None
     return [successes / planned, (successes + planned - observed) / planned]
+
+
+def _main_inference_config(schedule: Mapping[str, Any]) -> Mapping[str, Any]:
+    """Accept only the prespecified finite JSON main decoding and resource fields."""
+
+    config = schedule.get("inference_config")
+    if not isinstance(config, dict) or set(config) != MAIN_INFERENCE_FIELDS:
+        raise V1ValidationError("main schedule lacks exact inference configuration")
+    if (type(config["temperature"]) not in (int, float)
+            or not math.isfinite(config["temperature"])
+            or not 0 <= config["temperature"] <= 2
+            or any(type(config[key]) is not int or config[key] <= 0 for key in (
+                "max_steps", "episode_timeout_seconds", "max_output_tokens",
+                "num_ctx", "request_timeout_seconds"))
+            or config["num_ctx"] < 1024
+            or not isinstance(config["protocol_version"], str)
+            or config["protocol_version"] not in {"finite_json_v1", "finite_json_v2"}):
+        raise V1ValidationError("main schedule inference configuration is invalid")
+    return config
+
+
+def _validate_main_source_snapshot(
+    manifest: Mapping[str, Any], source_hashes: Mapping[str, str],
+    *, source_commit: str,
+) -> None:
+    """Require the entire independently enumerated implementation at both boundaries."""
+
+    if not MAIN_IMPLEMENTATION_FILES.issubset(source_hashes):
+        raise V1ValidationError("main schedule omits a required implementation file")
+    expected = {name: source_hashes[name] for name in MAIN_IMPLEMENTATION_FILES}
+    if (manifest.get("source_tree_dirty") is not False or
+            manifest.get("implementation_file_sha256s") != expected):
+        raise V1ValidationError("main episode implementation inventory is incomplete or dirty")
+    required = {"observed", "git_commit", "source_tree_dirty", "implementation_file_sha256s"}
+    for name in ("source_pre_dispatch", "source_post_run"):
+        snapshot = manifest.get(name)
+        if (not isinstance(snapshot, dict) or set(snapshot) != required
+                or snapshot["observed"] is not True
+                or snapshot["git_commit"] != source_commit
+                or snapshot["source_tree_dirty"] is not False
+                or snapshot["implementation_file_sha256s"] != expected):
+            raise V1ValidationError(f"main episode {name} is unobserved, dirty, or differs from frozen source")
+    if manifest["source_pre_dispatch"] != manifest["source_post_run"]:
+        raise V1ValidationError("main episode source drifted during model execution")
+
+
+def _validate_main_episode_inference(manifest: Mapping[str, Any],
+                                     config: Mapping[str, Any]) -> None:
+    if (type(manifest.get("max_steps")) is not int or
+            manifest["max_steps"] != config["max_steps"] or
+            type(manifest.get("episode_timeout_seconds")) is not int or
+            manifest["episode_timeout_seconds"] != config["episode_timeout_seconds"] or
+            type(manifest.get("temperature")) not in (int, float) or
+            manifest["temperature"] != config["temperature"] or
+            type(manifest.get("provider_request_timeout_seconds")) not in (int, float) or
+            manifest["provider_request_timeout_seconds"] != config["request_timeout_seconds"] or
+            manifest.get("protocol_version") != config["protocol_version"]):
+        raise V1ValidationError("main episode differs from frozen inference configuration")
+
+
+def _main_public_task(task: Mapping[str, Any], manifest: Mapping[str, Any],
+                      retrieval_context: Mapping[str, Any] | None) -> dict[str, Any]:
+    """Rebuild the adapter-visible task without consulting the saved prompt."""
+
+    try:
+        from benchmark.finite_family_registry import family_module
+        public = family_module(task).public_projection(task)
+    except (KeyError, TypeError, ValueError) as exc:
+        raise V1ValidationError("main public task projection cannot be reconstructed") from exc
+    required = {"public_task_id", "version", "objective", "task_card", "environment",
+                "allowed_tools", "tool_contract", "maximum_steps", "timeout_seconds"}
+    if (not isinstance(public, dict) or not required.issubset(public)
+            or set(public) - required - set(MAIN_PUBLIC_EXTRA_FIELDS)
+            or not isinstance(public["task_card"], dict)
+            or not isinstance(public["objective"], dict)
+            or not isinstance(public["environment"], dict)
+            or not isinstance(public["allowed_tools"], list)
+            or not isinstance(public["tool_contract"], dict)):
+        raise V1ValidationError("main public task projection has an unreviewed shape")
+    card = dict(public["task_card"])
+    for name in MAIN_PUBLIC_EXTRA_FIELDS:
+        if name in public:
+            card[name] = public[name]
+    result = {
+        "public_task_id": str(public["public_task_id"]),
+        "task_version": str(public["version"]),
+        "objective": public["objective"], "task_card": card,
+        "environment": public["environment"],
+        "allowed_tools": list(public["allowed_tools"]),
+        "tool_contract": public["tool_contract"],
+        "maximum_steps": manifest["max_steps"],
+        "timeout_seconds": manifest["episode_timeout_seconds"],
+    }
+    if retrieval_context is not None:
+        result["retrieval_context"] = dict(retrieval_context)
+    return result
+
+
+def _validate_main_public_request(
+    episode: Mapping[str, Any], *, source_root: Path, source_commit: str,
+    inference_config: Mapping[str, Any],
+) -> None:
+    """Rebuild first system/user/starter messages from frozen task and protocol.
+
+    The saved prompt and first archived request are evidence to compare against,
+    never the source of expected public content.
+    """
+
+    manifest, events = episode["manifest"], episode["events"]
+    task = _json_file(Path(manifest["task_path"]), "main task")
+    prompt = _json_file(Path(manifest["prompt_path"]), "main public prompt")
+    first = _json_file(Path(manifest["provider_request_archive"][0]["path"]),
+                       "first main provider request")
+    if manifest["retrieval_mode"] == "R0":
+        context = None
+    else:
+        try:
+            from benchmark.finite_family_registry import family_module
+            from benchmark.retrieval_v1 import agent_visible_documents, retrieve
+            from benchmark.retrieval_v1 import retrieval_log_record
+            retrieval_manifest = _json_file(Path(manifest["retrieval_manifest_path"]),
+                                            "main retrieval manifest")
+            projection = family_module(task).public_projection(task)
+            replay = retrieve({key: projection[key] for key in ("objective", "task_card", "environment")},
+                              mode=manifest["retrieval_mode"], manifest=retrieval_manifest,
+                              corpus_path=Path(manifest["corpus_path"]))
+            expected_trace = retrieval_log_record(replay, exposure_status="delivered")
+            actual_trace = events[0].get("retrieval_exposure")
+            if not isinstance(actual_trace, dict) or any(
+                actual_trace.get(key) != value for key, value in expected_trace.items()
+                if key != "retrieval_latency_ms"
+            ):
+                raise V1ValidationError("main retrieval exposure differs from frozen public query")
+            context = {"documents": agent_visible_documents(replay)}
+        except (KeyError, TypeError, ValueError) as exc:
+            raise V1ValidationError("main retrieval context cannot be reconstructed") from exc
+    public_task = _main_public_task(task, manifest, context)
+    kind = public_task["environment"].get("kind")
+    if not isinstance(kind, str):
+        raise V1ValidationError("main public task kind is invalid")
+    protocol = manifest["protocol_version"]
+    if protocol == "finite_json_v2":
+        if kind != "finite_state_transaction":
+            raise V1ValidationError("main JSON v2 protocol is scoped to transaction replay")
+        template_path = "agent/prompts/replay_v3_system_v2.txt"
+    else:
+        template_path = MAIN_PROMPT_BY_KIND.get(kind)
+        if template_path is None:
+            raise V1ValidationError("main public task kind has no frozen prompt template")
+    template = _git_bytes(source_root, "show", f"{source_commit}:{template_path}")
+    if prompt.get("prompt_template_sha256") != sha256_bytes(template):
+        raise V1ValidationError("main prompt template digest differs from frozen protocol")
+    try:
+        system_text = template.decode("utf-8").strip()
+    except UnicodeDecodeError as exc:
+        raise V1ValidationError("main frozen prompt template is not UTF-8") from exc
+    starter = task.get("starter_candidate")
+    try:
+        from benchmark.finite_family_registry import family_module
+        starter_receipt = family_module(task).evaluate_candidate(task, starter)
+    except (KeyError, TypeError, ValueError) as exc:
+        raise V1ValidationError("main starter observation cannot be reconstructed") from exc
+    retry = {"B0": "", "B1": "Try again.",
+             "B2": "Explain what went wrong and revise the solution.",
+             "B3": "", "B4": "", "B5": ""}.get(manifest.get("baseline"))
+    if retry is None:
+        raise V1ValidationError("main baseline lacks a frozen starter instruction")
+    observation = {"feedback": starter_receipt["feedback"],
+                   "feedback_evidence": starter_receipt.get("feedback_evidence")}
+    if retry:
+        observation["retry_instruction"] = retry
+    starter_public = {"step": 0, "tool": None, "observation": observation,
+                      "outcome": "SECURITY_CHECK_PASSED" if starter_receipt["benchmark_verdict"] == "PASS"
+                      else "SECURITY_CHECK_FAILED"}
+    if events[0].get("public_observation") != starter_public:
+        raise V1ValidationError("main starter public observation differs from finite task/baseline")
+    actions = [name for name in ("inspect", "attempt", "terminate")
+               if name in public_task["allowed_tools"]]
+    expected = {
+        "model": manifest["model"],
+        "messages": [
+            {"role": "system", "content": system_text},
+            {"role": "user", "content": "PUBLIC TASK:\n" +
+             json.dumps(public_task, ensure_ascii=False, sort_keys=True)},
+            {"role": "user", "content": "PUBLIC OBSERVATION:\n" +
+             json.dumps(starter_public, ensure_ascii=False, sort_keys=True)},
+        ],
+        "format": {"type": "object", "properties": {
+            "action": {"type": "string", "enum": actions + ["claim"]},
+            "payload": {"type": "object"}},
+            "required": ["action", "payload"], "additionalProperties": False},
+        "stream": False, "think": False,
+        "options": {"temperature": float(inference_config["temperature"]),
+                    "num_ctx": inference_config["num_ctx"],
+                    "num_predict": inference_config["max_output_tokens"],
+                    "seed": manifest["seed"]},
+    }
+    if (prompt.get("protocol_version") != protocol
+            or not isinstance(prompt.get("request"), dict)
+            or not isinstance(first.get("request"), dict)
+            or canonical_bytes(prompt["request"]) != canonical_bytes(expected)
+            or canonical_bytes(first["request"]) != canonical_bytes(expected)):
+        raise V1ValidationError("first main public request differs from frozen task/protocol")
 
 
 def _validate_main_release_gate(
@@ -682,6 +1272,9 @@ def _validate_main_release_gate(
             manifest["git_commit"] != lock["git_commit"] or
             manifest["schedule_sha256"] != lock["schedule_sha256"]):
             raise V1ValidationError("main episode differs from frozen experiment/schedule")
+        if (manifest.get("request_archive_version") != SCHEMA_VERSION or
+                manifest.get("provider_request_archive_complete") is not True):
+            raise V1ValidationError("main episode lacks a complete provider request archive")
     root_manifest_path = _check_file(study_lock_path, {
         "root_experiment_manifest_path": lock["root_experiment_manifest_path"],
         "root_experiment_manifest_sha256": lock["root_experiment_manifest_sha256"],
@@ -725,6 +1318,51 @@ def _validate_main_release_gate(
         for slot in slots
     ):
         raise V1ValidationError("frozen main schedule lacks explicit episode IDs")
+    source_hashes = schedule.get("source_file_sha256s")
+    if (schedule.get("source_git_commit") != lock["git_commit"] or
+            not isinstance(source_hashes, dict) or not source_hashes):
+        raise V1ValidationError("main schedule lacks a Git-bound source inventory")
+    for relative, digest in source_hashes.items():
+        if (not isinstance(relative, str) or not relative or
+                Path(relative).is_absolute() or ".." in Path(relative).parts or
+                not isinstance(digest, str) or not HEX64.fullmatch(digest)):
+            raise V1ValidationError("main schedule contains an unsafe source entry")
+        committed = _git_bytes(source_root, "show", f"{lock['git_commit']}:{relative}")
+        if sha256_bytes(committed) != digest:
+            raise V1ValidationError(f"main schedule source differs from frozen commit: {relative}")
+    if not MAIN_IMPLEMENTATION_FILES.issubset(source_hashes):
+        raise V1ValidationError("main schedule omits a required implementation file")
+    # Public-task and retrieval reconstruction below execute current Python.
+    # It must be the same reviewed implementation captured by the source commit.
+    for relative in MAIN_IMPLEMENTATION_FILES:
+        path = source_root / relative
+        if (path.is_symlink() or not path.is_file() or
+                sha256_bytes(path.read_bytes()) != source_hashes[relative]):
+            raise V1ValidationError(f"main analysis checkout differs from frozen implementation: {relative}")
+    inference_config = _main_inference_config(schedule)
+    slots_by_id = {slot["episode_id"]: slot for slot in slots}
+    if len(slots_by_id) != len(slots):
+        raise V1ValidationError("main schedule repeats an episode ID")
+    for episode in main:
+        manifest = episode["manifest"]
+        slot = slots_by_id.get(manifest["episode_id"])
+        if (slot is None or
+                manifest.get("seed") != slot.get("episode_seed") or
+                manifest.get("model") != slot.get("model") or
+                manifest.get("condition") != slot.get("condition") or
+                manifest.get("family") != slot.get("family") or
+                manifest.get("retrieval_mode") != slot.get("retrieval_mode") or
+                manifest.get("baseline") != ("B3" if slot.get("retrieval_mode") == "R0" else "B5") or
+                manifest.get("task_sha256") != slot.get("task_sha256") or
+                manifest.get("oracle_proof_sha256") != slot.get("proof_sha256") or
+                episode["events"][-1].get("provider_request_count", 0) < 1):
+            raise V1ValidationError("main episode source, slot, or provider exposure is unproven")
+        _validate_main_source_snapshot(manifest, source_hashes, source_commit=lock["git_commit"])
+        _validate_main_episode_inference(manifest, inference_config)
+        _validate_main_public_request(
+            episode, source_root=source_root, source_commit=lock["git_commit"],
+            inference_config=inference_config,
+        )
     planned_ids = [slot["episode_id"] for slot in slots]
     validate_slot_partition(planned_ids, recorded, invalidated)
     invalidated_inventory: list[dict[str, str]] = []
@@ -838,7 +1476,7 @@ def analyze_manifests(
     unrepairable = [row for row in rows if row["ground_truth_state"] == "UNREPAIRABLE"]
     failure_exposed = [row for row in rows if row["first_public_failure_step"] is not None]
     unrepairable_with_evidence = [row for row in unrepairable if row["excess_submissions_after_evidence"] is not None]
-    mismatch_exposed = [row for row in rows if row["mismatch_exposed"]]
+    discordance_delivered = [row for row in rows if row["oracle_gate_discordance_delivered"]]
     all_slot_n = len(main) + len(invalidated_slots)
     secure_candidate_count = sum(row["oracle_secure_candidate_reached"] for row in rows)
     return {
@@ -860,8 +1498,8 @@ def analyze_manifests(
             "excess_submissions_after_evidence_mean": (sum(row["excess_submissions_after_evidence"] for row in unrepairable_with_evidence) / len(unrepairable_with_evidence)) if unrepairable_with_evidence else None,
             "evidence_based_explanation_rate": None,  # Requires blind annotation.
             "genuine_strategy_change_rate": None,  # Requires blind annotation.
-            "evaluator_mismatch_exposure_count": len(mismatch_exposed),
-            "post_mismatch_actions_total": sum(row["post_mismatch_actions"] for row in mismatch_exposed),
+            "oracle_gate_discordance_delivery_count": len(discordance_delivered),
+            "post_discordance_actions_total": sum(row["post_discordance_actions"] for row in discordance_delivered),
         },
         "evaluator_validity": confusion_matrix(decision_records),
         "stopping_survival": kaplan_meier(survival_records),

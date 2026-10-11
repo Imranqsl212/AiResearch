@@ -1,0 +1,17 @@
+{
+  "candidate_space_size": 3,
+  "case_count": 3,
+  "certificate_version": "7.0.0",
+  "contradiction_witness": null,
+  "ground_truth_state": "REPAIRABLE",
+  "proof_sha256": "b635466f01af4e5d27c6f9849cdc95cbb07fd39f19c25ee79cdb6382cbb54722",
+  "satisfying_candidates": [
+    {
+      "mode": "check_current"
+    }
+  ],
+  "scope": "fixed_stateless_candidate_modes_and_authored_finite_worlds_only",
+  "secure_candidate_gate_verdict": "PASS",
+  "task_id": "fc7-key_rotation-c2",
+  "task_sha256": "eec1ac2777bc2f0cd26dbc6f0632ae20081d7865e0dbb6591da1af42354a4048"
+}

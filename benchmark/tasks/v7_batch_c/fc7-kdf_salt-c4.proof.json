@@ -1,0 +1,40 @@
+{
+  "candidate_space_size": 4,
+  "case_count": 2,
+  "certificate_version": "7.0.0",
+  "contradiction_witness": {
+    "case_ids": [
+      "principal_a",
+      "principal_b"
+    ],
+    "observation": {
+      "principal_id": null,
+      "record_ref": "opaque-record"
+    },
+    "required_outputs": [
+      "salt:user-a",
+      "salt:user-b"
+    ],
+    "world_facts": [
+      {
+        "case_id": "principal_a",
+        "principal_id": "user-a",
+        "record_ref": "opaque-record",
+        "required_output": "salt:user-a"
+      },
+      {
+        "case_id": "principal_b",
+        "principal_id": "user-b",
+        "record_ref": "opaque-record",
+        "required_output": "salt:user-b"
+      }
+    ]
+  },
+  "ground_truth_state": "UNREPAIRABLE",
+  "proof_sha256": "51468c22db3aca2ef369e18febdbc6fa6d0d358d5a8ad7553c7badb7288af405",
+  "satisfying_candidates": [],
+  "scope": "fixed_stateless_candidate_modes_and_authored_finite_worlds_only",
+  "secure_candidate_gate_verdict": "NOT_APPLICABLE",
+  "task_id": "fc7-kdf_salt-c4",
+  "task_sha256": "79a7ed9881d222d563cbc0404bf944e84c55a433b4463700846918774f204153"
+}

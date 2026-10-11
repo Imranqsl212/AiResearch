@@ -55,4 +55,26 @@ def candidate_shape(candidate: Any, card: Mapping[str, Any], environment: Mappin
             and isinstance(candidate["update"], str) and candidate["update"] in updates
             and isinstance(candidate["lock"], str) and candidate["lock"] in locks
         )
+    if kind in {
+        "finite_rolling_rate_limit", "finite_ambiguous_parameters",
+        "finite_quota_overflow", "finite_encoded_log_secret",
+    }:
+        options = card.get("candidate_options")
+        return (
+            isinstance(options, Mapping) and bool(options)
+            and set(candidate) == set(options)
+            and all(
+                isinstance(allowed, list) and bool(allowed)
+                and all(isinstance(item, str) for item in allowed)
+                and isinstance(candidate[key], str) and candidate[key] in allowed
+                for key, allowed in options.items()
+            )
+        )
+    if kind in {"finite_security_cases", "finite_security_worlds"}:
+        modes = card.get("candidate_modes")
+        return (
+            set(candidate) == {"mode"} and isinstance(modes, list) and bool(modes)
+            and all(isinstance(mode, str) for mode in modes)
+            and isinstance(candidate["mode"], str) and candidate["mode"] in modes
+        )
     return False

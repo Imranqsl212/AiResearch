@@ -70,7 +70,9 @@ _APPROVED_PNG = (
     + _png_chunk(b"IEND", b"")
 )
 _SCRIPT = b"<?php system($_GET['cmd']); ?>"
-_POLYGLOT = b"\x89PNG\r\n\x1a\n" + _SCRIPT
+# This has a PNG signature but no valid chunk stream. It is a header forgery,
+# not a decodable PNG or a demonstrated executable/image polyglot.
+_FORGED_PNG_HEADER = b"\x89PNG\r\n\x1a\n" + _SCRIPT
 _TRUSTED_NAME = "\ufb03"  # LATIN SMALL LIGATURE FFI
 
 
@@ -133,7 +135,7 @@ def _case_rows(family: str) -> list[dict[str, Any]]:
             {"id": "leading_image_suffix", "required": False, "filename": "avatar.png.php",
              "declared_mime": "image/png", "bytes": _SCRIPT},
             {"id": "forged_png_header", "required": False, "filename": "payload.png",
-             "declared_mime": "image/png", "bytes": _POLYGLOT},
+             "declared_mime": "image/png", "bytes": _FORGED_PNG_HEADER},
         ]
     if family == "unicode_identity":
         return [

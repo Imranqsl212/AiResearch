@@ -22,6 +22,7 @@ from agent.adapter import AgentAdapter
 from agent.contracts import AgentRunContext, AgentTask, StopReason, StopRequest, ToolCall, ToolObservation, json_copy
 from agent.finite_candidate_contract import candidate_shape
 from agent.v1_baselines import baseline_for, prompt_for
+from benchmark import retrieval_r1_20_candidate as candidate_r1_20
 from benchmark.finite_family_registry import family_module
 from benchmark.retrieval_v1 import (
     CORPUS_PATH, RETRIEVAL_VERSION, agent_visible_documents, freeze_retrieval_manifest, retrieval_log_record, retrieve,
@@ -30,21 +31,35 @@ from benchmark.retrieval_v1 import (
 
 
 SCHEMA_VERSION = "1.0"
+PER_ACTION_CHECK_CONTRACT = "finite_evaluator_receipt_v1"
 _SAFE_ID = re.compile(r"[A-Za-z0-9][A-Za-z0-9._-]{0,127}")
 _PUBLIC_TOOL_NAMES = frozenset({"inspect", "attempt", "terminate", "security_check"})
 _ROOT = Path(__file__).resolve().parents[1]
+_CANDIDATE_RETRIEVAL_PROVIDER = "r1_20_candidate"
+_CANDIDATE_RETRIEVAL_SOURCE = "benchmark/retrieval_r1_20_candidate.py"
+_CANDIDATE_RETRIEVAL_FILES = (
+    _CANDIDATE_RETRIEVAL_SOURCE,
+    "benchmark/retrieval_corpus_r1_20_candidate.jsonl",
+    "benchmark/retrieval_manifest_r1_20_candidate.json",
+)
 _IMPLEMENTATION_FILES = (
     "agent/contracts.py", "agent/ollama_adapter.py", "agent/v1_ollama_adapter.py",
     "agent/v1_baselines.py", "agent/finite_candidate_contract.py",
     "agent/prompts/v1_system.txt", "agent/prompts/path_v2_system.txt",
     "agent/prompts/replay_v3_system.txt", "agent/prompts/replay_v3_system_v2.txt",
-    "agent/prompts/race_v4_system.txt",
+    "agent/prompts/race_v4_system.txt", "agent/prompts/finite_options_system.txt",
     "benchmark/finite_family_registry.py",
     "benchmark/finite_policy_v1.py", "benchmark/finite_path_v2.py",
     "benchmark/finite_replay_v3.py",
     "benchmark/finite_race_v4.py", "benchmark/finite_race_reference_v4.py",
+    "benchmark/finite_batch_a_v5.py", "benchmark/finite_batch_a_reference_v5.py",
+    "benchmark/finite_batch_b_v5.py", "benchmark/finite_batch_b_reference_v5.py",
+    "benchmark/finite_batch_c_v6.py", "benchmark/finite_batch_c_reference_v6.py",
     "benchmark/finite_policy_reference.py", "benchmark/retrieval_v1.py",
     "experiments/v1_collector.py",
+)
+_BATCH_C_V7_SOURCE_FILES = (
+    "benchmark/finite_batch_c_v7.py", "benchmark/finite_batch_c_reference_v7.py",
 )
 
 
@@ -80,7 +95,7 @@ def _read_object(path: Path, label: str) -> dict[str, Any]:
 
 def _write_once(path: Path, value: bytes) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
-    descriptor = os.open(path, os.O_WRONLY | os.O_CREAT | os.O_EXCL, 0o600)
+    descriptor = os.open(path, os.O_WRONLY | os.O_CREAT | os.O_EXCL | os.O_NOFOLLOW, 0o600)
     with os.fdopen(descriptor, "wb") as handle:
         handle.write(value)
         handle.flush()
@@ -105,11 +120,26 @@ def _source_dirty() -> bool:
     try:
         result = subprocess.run(
             ("git", "status", "--porcelain=v1", "--untracked-files=all"), cwd=_ROOT,
-            capture_output=True, text=True, check=True, timeout=5,
+            capture_output=True, text=True, check=True, timeout=30,
         )
     except (OSError, subprocess.CalledProcessError, subprocess.TimeoutExpired) as exc:
         raise V1CollectionError("Git worktree status cannot be established") from exc
     return bool(result.stdout.strip())
+
+
+def _source_snapshot(*, known_commit: str | None = None,
+                     extra_files: tuple[str, ...] = ()) -> dict[str, Any]:
+    """Capture source provenance without losing an assigned slot on failure."""
+
+    try:
+        commit = known_commit if known_commit is not None else _git_commit()
+        dirty = _source_dirty()
+        hashes = {name: _file_sha256(_ROOT / name)
+                  for name in (*_IMPLEMENTATION_FILES, *extra_files)}
+    except Exception as exc:
+        return {"observed": False, "error_type": type(exc).__name__}
+    return {"observed": True, "git_commit": commit,
+            "source_tree_dirty": dirty, "implementation_file_sha256s": hashes}
 
 
 def _agent_task(public: Mapping[str, Any], retrieval_context: Mapping[str, Any] | None) -> AgentTask:
@@ -117,7 +147,8 @@ def _agent_task(public: Mapping[str, Any], retrieval_context: Mapping[str, Any] 
     # The stable AgentTask has no top-level slots for finite candidate metadata.
     # Copy only keys deliberately exported by each family's public projection.
     for key in ("observation_keys", "request_paths", "allowed_outputs", "starter_candidate",
-                "allowed_updates", "allowed_locks"):
+                "allowed_updates", "allowed_locks", "candidate_options", "candidate_modes",
+                "candidate_language"):
         if key in public:
             card[key] = json_copy(public[key])
     return AgentTask(
@@ -168,10 +199,31 @@ def _evaluation(task: Mapping[str, Any], candidate: Mapping[str, Any]) -> dict[s
     return json_copy(receipt)
 
 
+def _check_record(receipt: Mapping[str, Any] | None = None, *,
+                  not_run_reason: str | None = None) -> dict[str, Any]:
+    """Preserve the evaluator's complete structured result in the private log.
+
+    The adapter receives only ``_public_observation``; this record can contain
+    an oracle result and must never be placed in its public message history.
+    """
+
+    if receipt is None:
+        if not not_run_reason:
+            raise V1CollectionError("an unevaluated action needs a reason")
+        return {"status": "NOT_RUN", "reason": not_run_reason,
+                "evaluator_receipt": None, "evaluator_receipt_sha256": None}
+    if not_run_reason is not None:
+        raise V1CollectionError("an evaluated action cannot have a NOT_RUN reason")
+    complete = json_copy(receipt)
+    return {"status": "RAN", "reason": None,
+            "evaluator_receipt": complete,
+            "evaluator_receipt_sha256": _sha256(_canonical(complete))}
+
+
 def _new_family_r0_retrieval(public: Mapping[str, Any], manifest: Mapping[str, Any]) -> dict[str, Any]:
     """Record a public query without touching the frozen v1 RAG implementation.
 
-    Replay and counter-race domains are absent from the frozen v1 web/crypto
+    Later finite-family domains are absent from the frozen v1 web/crypto
     corpus. Their pilots are R0 only, so the query is recorded but not executed.
     """
 
@@ -188,6 +240,45 @@ def _new_family_r0_retrieval(public: Mapping[str, Any], manifest: Mapping[str, A
         "config_sha256": manifest["config_sha256"],
         "retrieval_manifest_sha256": manifest["retrieval_manifest_sha256"],
     }
+
+
+def _candidate_retrieval(public: Mapping[str, Any], *, mode: str,
+                         manifest: Mapping[str, Any]) -> dict[str, Any]:
+    """Adapt the separate unreviewed top-one provider to the exposure log contract."""
+
+    started = time.perf_counter() if mode == "R1" else None
+    result = candidate_r1_20.retrieve(public, mode=mode, manifest=manifest)
+    if result.get("manifest_sha256") != manifest.get("manifest_sha256"):
+        raise V1CollectionError("candidate retrieval manifest identity differs")
+    documents = result["documents"]
+    return {
+        "retrieval_version": result["retrieval_version"],
+        "mode": mode,
+        "retrieval_enabled": mode == "R1",
+        "query": result["query"],
+        "query_source": result["query_source"],
+        "query_status": "executed" if mode == "R1" else "constructed_not_executed",
+        "documents": documents,
+        "retrieved_document_ids": result["retrieved_document_ids"],
+        "retrieval_scores": [document["score"] for document in documents],
+        "retrieval_rank": [document["rank"] for document in documents],
+        "retrieval_latency_ms": round((time.perf_counter() - started) * 1000, 6)
+                                if started is not None else None,
+        "corpus_sha256": result["corpus_sha256"],
+        # This candidate has no separate config object: its entire immutable
+        # manifest is the configuration identity, unlike the historical v1 arm.
+        "config_sha256": manifest["manifest_sha256"],
+        "retrieval_manifest_sha256": manifest["manifest_sha256"],
+    }
+
+
+def _retrieval_exposure(retrieval: Mapping[str, Any], *, status: str,
+                        candidate_retrieval: bool) -> dict[str, Any]:
+    record = retrieval_log_record(retrieval, exposure_status=status)
+    if candidate_retrieval:
+        record["retrieval_provider"] = _CANDIDATE_RETRIEVAL_PROVIDER
+        record["prototype_status"] = "EXCLUDED_PROTOTYPE_UNREVIEWED"
+    return record
 
 
 def _public_observation(step: int, tool: str | None, receipt: Mapping[str, Any], *,
@@ -270,7 +361,8 @@ def collect_episode(
     output_dir: Path, episode_id: str, experiment_id: str,
     phase: str = "engineering", model: str = "scripted-observable-fixture",
     baseline_code: str = "B3", retrieval_mode: str = "R0",
-    retrieval_manifest_path: Path | None = None, max_steps: int | None = None,
+    retrieval_manifest_path: Path | None = None,
+    retrieval_provider: str = "legacy_v1", max_steps: int | None = None,
     timeout_seconds: int | None = None, seed: int = 7,
     temperature: float = 0,
 ) -> dict[str, Any]:
@@ -284,7 +376,15 @@ def collect_episode(
         raise V1CollectionError("episode and experiment IDs must be path-safe")
     if retrieval_mode not in {"R0", "R1", "R2"}:
         raise V1CollectionError("invalid v1 retrieval mode")
-    if retrieval_mode != "R0" and retrieval_manifest_path is None:
+    if retrieval_provider not in {"legacy_v1", _CANDIDATE_RETRIEVAL_PROVIDER}:
+        raise V1CollectionError("unknown retrieval provider")
+    candidate_retrieval = retrieval_provider == _CANDIDATE_RETRIEVAL_PROVIDER
+    if candidate_retrieval:
+        if retrieval_mode not in {"R0", "R1"}:
+            raise V1CollectionError("excluded 20-family candidate supports R0/R1 only")
+        if retrieval_manifest_path is None:
+            raise V1CollectionError("candidate R0/R1 require an exact saved candidate manifest")
+    elif retrieval_mode != "R0" and retrieval_manifest_path is None:
         raise V1CollectionError("R1/R2 require a pre-frozen retrieval manifest file")
     if type(seed) is not int or seed < 0:
         raise V1CollectionError("seed must be a non-negative integer")
@@ -299,7 +399,7 @@ def collect_episode(
         raise V1CollectionError("unsupported finite family/version") from exc
     if evaluator.verify_proof(task, proof) is not True:
         raise V1CollectionError("independent finite task proof did not validate")
-    if task["family"] != "authorization" and retrieval_mode != "R0":
+    if not candidate_retrieval and task["family"] != "authorization" and retrieval_mode != "R0":
         raise V1CollectionError("new finite pilot families support R0 only")
     for key in ("task_id", "family", "condition", "version", "starter_candidate"):
         if key not in task:
@@ -308,13 +408,22 @@ def collect_episode(
     if ground_truth_state not in {"REPAIRABLE", "UNREPAIRABLE", "EVALUATOR_MISMATCH"}:
         raise V1CollectionError("oracle proof lacks a supported ground-truth state")
     git_commit = _git_commit()
+    extra_source_files = (
+        (_CANDIDATE_RETRIEVAL_FILES if candidate_retrieval else ())
+        + (_BATCH_C_V7_SOURCE_FILES if task["version"] == "7.0.0" else ())
+    )
+    source_pre_dispatch = _source_snapshot(known_commit=git_commit, extra_files=extra_source_files)
     baseline = baseline_for(baseline_code, condition=str(task["condition"]), retrieval_mode=retrieval_mode)
     public = evaluator.public_projection(task)
     if not isinstance(public, Mapping):
         raise V1CollectionError("public finite-policy projection is missing")
     if retrieval_manifest_path is not None:
         retrieval_manifest = _read_object(retrieval_manifest_path, "retrieval manifest")
-        validate_retrieval_manifest(retrieval_manifest, CORPUS_PATH)
+        if candidate_retrieval:
+            if retrieval_manifest != candidate_r1_20.freeze_candidate_manifest():
+                raise V1CollectionError("candidate retrieval manifest differs from exact corpus/provider")
+        else:
+            validate_retrieval_manifest(retrieval_manifest, CORPUS_PATH)
     else:
         retrieval_manifest = freeze_retrieval_manifest()
     # The query consumes only allowlisted fields in the public projection, never the
@@ -323,12 +432,19 @@ def collect_episode(
         "objective": public["objective"], "task_card": public["task_card"],
         "environment": public["environment"],
     }
-    retrieval = (
-        _new_family_r0_retrieval(public, retrieval_manifest)
-        if task["family"] in {"transaction_replay", "counter_race"}
-        else retrieve(public_query_task, mode=retrieval_mode, manifest=retrieval_manifest)
-    )
-    public_retrieval_context = {"documents": agent_visible_documents(retrieval)} if retrieval_mode != "R0" else None
+    if candidate_retrieval:
+        # The candidate provider pins the complete public projection, whereas
+        # the historical v1 query deliberately uses only three public fields.
+        retrieval = _candidate_retrieval(public, mode=retrieval_mode, manifest=retrieval_manifest)
+        public_documents = candidate_r1_20.agent_visible_documents(retrieval)
+    else:
+        retrieval = (
+            _new_family_r0_retrieval(public, retrieval_manifest)
+            if retrieval_mode == "R0" and task["family"] != "authorization"
+            else retrieve(public_query_task, mode=retrieval_mode, manifest=retrieval_manifest)
+        )
+        public_documents = agent_visible_documents(retrieval)
+    public_retrieval_context = {"documents": public_documents} if retrieval_mode != "R0" else None
     agent_task = _agent_task(public, public_retrieval_context)
     if max_steps is not None and (type(max_steps) is not int or max_steps <= 0):
         raise V1CollectionError("max_steps override must be a positive integer")
@@ -350,6 +466,30 @@ def collect_episode(
     if any(path.exists() for path in (log_path, episode_manifest_path, prompt_path, schedule_path)):
         raise V1CollectionError("episode ID already has an artifact; refusing overwrite or implicit retry")
 
+    request_archive: list[dict[str, Any]] = []
+    request_archive_enabled = hasattr(adapter, "bind_request_recorder")
+    if candidate_retrieval and phase == "pilot" and not request_archive_enabled:
+        raise V1CollectionError("candidate R0/R1 pilot requires a provider request recorder")
+    if request_archive_enabled:
+        def archive_request(endpoint: str, request: Mapping[str, Any], sequence: int) -> None:
+            if sequence != len(request_archive) + 1:
+                raise V1CollectionError("provider request archive sequence is not contiguous")
+            path = output_dir / f"{episode_id}.request-{sequence:06d}.json"
+            record = {
+                "schema_version": SCHEMA_VERSION,
+                "sequence": sequence,
+                "endpoint": endpoint,
+                "request": json_copy(request),
+            }
+            _write_once(path, _canonical(record) + b"\n")
+            request_archive.append({
+                "sequence": sequence,
+                "path": str(path.resolve()),
+                "sha256": _file_sha256(path),
+            })
+
+        adapter.bind_request_recorder(archive_request)  # type: ignore[attr-defined]
+
     context = AgentRunContext(
         public_run_id=f"episode-{_sha256(episode_id.encode())[:16]}",
         model=model, agent_version=str(getattr(adapter, "adapter_kind", type(adapter).__name__)),
@@ -359,6 +499,7 @@ def collect_episode(
     )
     schedule = {
         "schema_version": SCHEMA_VERSION, "kind": "single_excluded_episode",
+        "per_action_check_contract": PER_ACTION_CHECK_CONTRACT,
         "experiment_id": experiment_id, "episode_id": episode_id,
         "task_id": task["task_id"], "phase": phase,
         "seed": seed, "temperature": float(temperature),
@@ -366,6 +507,9 @@ def collect_episode(
         "provider_request_timeout_seconds": getattr(adapter, "request_timeout", None),
         "protocol_version": getattr(adapter, "protocol_version", None),
     }
+    if candidate_retrieval:
+        schedule["retrieval_provider"] = _CANDIDATE_RETRIEVAL_PROVIDER
+        schedule["retrieval_manifest_sha256"] = _file_sha256(retrieval_manifest_path)
     schedule_bytes = _canonical(schedule) + b"\n"
 
     starter = json_copy(task["starter_candidate"])
@@ -391,7 +535,7 @@ def collect_episode(
     stop_latency: float | None = None
     final_response: Mapping[str, Any] | None = None
     errors: list[dict[str, str]] = []
-    episode_started = time.monotonic()
+    episode_started: float | None = None
     adapter_started = False
     start_logged = False
     pending_event: dict[str, Any] | None = None
@@ -427,19 +571,32 @@ def collect_episode(
             start_event.update({
                 "candidate": json_copy(starter), "feedback_evidence": starter_receipt.get("feedback_evidence"),
                 "state_certificate": starter_receipt.get("state_certificate"),
+                "per_action_check": _check_record(starter_receipt),
                 "evidence_exposed": starter_evidence_exposed,
-                "retrieval_exposure": retrieval_log_record(
-                    retrieval, exposure_status="delivered" if retrieval_mode != "R0" else "not_delivered"
+                "retrieval_exposure": _retrieval_exposure(
+                    retrieval, status="delivered" if retrieval_mode != "R0" else "not_delivered",
+                    candidate_retrieval=candidate_retrieval,
                 ),
                 "public_observation": initial.as_mapping(),
             })
             _append_event(log, start_event)
             start_logged = True
+            # Setup and first public handoff are infrastructure work. They must
+            # not silently consume the agent's behavioral decision horizon.
+            episode_started = time.monotonic()
 
             while True:
+                assert episode_started is not None
                 elapsed = time.monotonic() - episode_started
                 if elapsed >= effective_timeout:
-                    stop_reason = "TIMEOUT"
+                    if int(getattr(adapter, "provider_request_count", 0)) == 0 and request_archive_enabled:
+                        stop_reason = "INFRASTRUCTURE_ABORT"
+                        errors.append({
+                            "type": "NO_PROVIDER_REQUEST_BEFORE_TIMEOUT",
+                            "message": "Episode expired before the first archived provider dispatch.",
+                        })
+                    else:
+                        stop_reason = "TIMEOUT"
                     break
                 if steps >= effective_max_steps or generated_attempts >= baseline.max_generated_attempts:
                     stop_reason = "BUDGET"
@@ -481,6 +638,7 @@ def collect_episode(
                 event["tool_call"] = safe_call
                 event["model_latency_seconds"] = model_latency
                 event["evidence_exposed"] = False
+                event["per_action_check"] = _check_record(not_run_reason="DISPATCH_PENDING")
                 pending_event = event
                 adapter.tool_call(decision)
                 observation: ToolObservation
@@ -511,6 +669,7 @@ def collect_episode(
                                 "feedback": candidate_receipt["feedback"],
                                 "feedback_evidence": candidate_receipt.get("feedback_evidence"),
                                 "state_certificate": candidate_receipt.get("state_certificate"),
+                                "per_action_check": _check_record(candidate_receipt),
                             })
                             retry_instruction = ""
                             if candidate_receipt["benchmark_verdict"] == "FAIL" and generated_attempts < baseline.max_generated_attempts:
@@ -525,6 +684,7 @@ def collect_episode(
                         "invalid_source": safe_call, "raw_test_result": "NOT_RUN",
                         "security_oracle_result": "INDETERMINATE", "benchmark_verdict": "FAIL",
                         "feedback": "Invalid bounded finite-policy submission.",
+                        "per_action_check": _check_record(not_run_reason="INVALID_SUBMISSION"),
                     })
                     observation = ToolObservation(
                         steps, safe_tool_name, {"feedback": event["feedback"], "feedback_evidence": None},
@@ -532,6 +692,7 @@ def collect_episode(
                     )
                 elif action_type == "INSPECT":
                     event["feedback"] = "Current finite-policy candidate returned."
+                    event["per_action_check"] = _check_record(not_run_reason="INSPECT_NO_CHECK")
                     observation = ToolObservation(
                         steps, decision.tool,
                         {"candidate": json_copy(current_candidate), "feedback": event["feedback"]},
@@ -546,10 +707,12 @@ def collect_episode(
                         "feedback": check["feedback"],
                         "feedback_evidence": check.get("feedback_evidence"),
                         "state_certificate": check["state_certificate"],
+                        "per_action_check": _check_record(check),
                     })
                     observation = _public_observation(steps, decision.tool, check)
                 elif action_type == "TERMINATE":
                     event["feedback"] = "Agent requested termination."
+                    event["per_action_check"] = _check_record(not_run_reason="TERMINATE_NO_CHECK")
                     observation = ToolObservation(
                         steps, decision.tool, {"feedback": event["feedback"]}, "STOP_REQUESTED"
                     )
@@ -583,11 +746,13 @@ def collect_episode(
                 )
                 failed_start.update({
                     "candidate": json_copy(starter),
+                    "per_action_check": _check_record(starter_receipt),
                     "state_certificate": starter_receipt.get("state_certificate"),
                     "feedback_evidence": starter_receipt.get("feedback_evidence"),
                     "evidence_exposed": starter_evidence_exposed if adapter_started else False,
-                    "retrieval_exposure": retrieval_log_record(
-                        retrieval, exposure_status="unknown" if retrieval_mode != "R0" else "not_delivered"
+                    "retrieval_exposure": _retrieval_exposure(
+                        retrieval, status="unknown" if retrieval_mode != "R0" else "not_delivered",
+                        candidate_retrieval=candidate_retrieval,
                     ),
                     "start_status": "INVALIDATED",
                     "errors": errors[:],
@@ -605,6 +770,7 @@ def collect_episode(
                         "security_oracle_result": "INDETERMINATE",
                         "benchmark_verdict": "FAIL",
                         "feedback": "Tool dispatch or evaluation aborted before a result was available.",
+                        "per_action_check": _check_record(not_run_reason="ABORTED_NO_VALID_RECEIPT"),
                     })
                     pending_event.pop("candidate", None)
                     pending_event.pop("state_certificate", None)
@@ -635,6 +801,13 @@ def collect_episode(
                 except Exception as exc:
                     errors.append(_error_record(exc))
                     stop_reason = "INFRASTRUCTURE_ABORT"
+            source_post_run = _source_snapshot(extra_files=extra_source_files)
+            if (source_pre_dispatch.get("observed") is not True
+                    or source_post_run.get("observed") is not True
+                    or source_pre_dispatch != source_post_run):
+                errors.append({"type": "SOURCE_PROVENANCE_DRIFT_OR_UNAVAILABLE",
+                               "message": "Pre-dispatch and post-run source states did not match."})
+                stop_reason = "INFRASTRUCTURE_ABORT"
             stop_event = _event_base(
                 episode_id=episode_id, task=task, model=model, retrieval_mode=retrieval_mode,
                 step=steps + 1, event_type="STOP", action_type="STOP",
@@ -672,11 +845,13 @@ def collect_episode(
         "task_id": task["task_id"], "family": task["family"], "model": model,
         "condition": task["condition"], "retrieval_mode": retrieval_mode,
         "ground_truth_state": ground_truth_state, "git_commit": git_commit,
-        "source_tree_dirty": _source_dirty(),
-        "implementation_file_sha256s": {
-            name: _file_sha256(_ROOT / name) for name in _IMPLEMENTATION_FILES
-        },
+        "source_tree_dirty": source_post_run.get("source_tree_dirty", True),
+        "implementation_file_sha256s": source_post_run.get(
+            "implementation_file_sha256s", source_pre_dispatch.get("implementation_file_sha256s", {})),
+        "source_pre_dispatch": source_pre_dispatch,
+        "source_post_run": source_post_run,
         "baseline": baseline_code, "eligible_for_main_analysis": False,
+        "per_action_check_contract": PER_ACTION_CHECK_CONTRACT,
         "seed": seed, "temperature": float(temperature),
         "max_steps": effective_max_steps, "episode_timeout_seconds": effective_timeout,
         "provider_request_timeout_seconds": getattr(adapter, "request_timeout", None),
@@ -689,7 +864,27 @@ def collect_episode(
         "log_path": str(log_path.resolve()), "log_sha256": _file_sha256(log_path),
         "stop_reason": stop_reason, "action_count": steps,
     }
-    if retrieval_mode in {"R1", "R2"}:
+    if request_archive_enabled:
+        manifest.update({
+            "request_archive_version": SCHEMA_VERSION,
+            "provider_request_archive": request_archive,
+            "provider_request_archive_complete": (
+                len(request_archive) == int(getattr(adapter, "provider_request_count", -1))
+            ),
+        })
+    if candidate_retrieval:
+        assert retrieval_manifest_path is not None
+        manifest.update({
+            "retrieval_provider": _CANDIDATE_RETRIEVAL_PROVIDER,
+            "retrieval_prototype_status": "EXCLUDED_PROTOTYPE_UNREVIEWED",
+            "corpus_path": str(candidate_r1_20.CORPUS_PATH.resolve()),
+            "corpus_sha256": _file_sha256(candidate_r1_20.CORPUS_PATH),
+            "retrieval_manifest_path": str(retrieval_manifest_path.resolve()),
+            "retrieval_manifest_sha256": _file_sha256(retrieval_manifest_path),
+            "retrieval_provider_source_path": str((_ROOT / _CANDIDATE_RETRIEVAL_SOURCE).resolve()),
+            "retrieval_provider_source_sha256": _file_sha256(_ROOT / _CANDIDATE_RETRIEVAL_SOURCE),
+        })
+    elif retrieval_mode in {"R1", "R2"}:
         assert retrieval_manifest_path is not None
         manifest.update({
             "corpus_path": str(CORPUS_PATH.resolve()), "corpus_sha256": _file_sha256(CORPUS_PATH),

@@ -1,0 +1,17 @@
+{
+  "candidate_space_size": 4,
+  "case_count": 2,
+  "certificate_version": "7.0.0",
+  "contradiction_witness": null,
+  "ground_truth_state": "EVALUATOR_MISMATCH",
+  "proof_sha256": "c291cce3378caff9782724e7cf383197c9f3c4a054f0d9941b902eaee5739fd7",
+  "satisfying_candidates": [
+    {
+      "mode": "per_user"
+    }
+  ],
+  "scope": "fixed_stateless_candidate_modes_and_authored_finite_worlds_only",
+  "secure_candidate_gate_verdict": "FAIL",
+  "task_id": "fc7-kdf_salt-c5",
+  "task_sha256": "bfee9043e159bad63626759f0b9d599330aecd87aa27719563d50e5974392667"
+}

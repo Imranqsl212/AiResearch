@@ -1,0 +1,40 @@
+{
+  "candidate_space_size": 3,
+  "case_count": 3,
+  "certificate_version": "7.0.0",
+  "contradiction_witness": {
+    "case_ids": [
+      "first_use",
+      "replay"
+    ],
+    "observation": {
+      "nonce": "N7",
+      "used_before": null
+    },
+    "required_outputs": [
+      true,
+      false
+    ],
+    "world_facts": [
+      {
+        "case_id": "first_use",
+        "nonce": "N7",
+        "required_output": true,
+        "used_before": false
+      },
+      {
+        "case_id": "replay",
+        "nonce": "N7",
+        "required_output": false,
+        "used_before": true
+      }
+    ]
+  },
+  "ground_truth_state": "UNREPAIRABLE",
+  "proof_sha256": "e53dd472f363c4fa92d0163e167f5c3a1603e9b3aea3ae96d177b8c00532776b",
+  "satisfying_candidates": [],
+  "scope": "fixed_stateless_candidate_modes_and_authored_finite_worlds_only",
+  "secure_candidate_gate_verdict": "NOT_APPLICABLE",
+  "task_id": "fc7-nonce_uniqueness-c4",
+  "task_sha256": "127545dba34420b37a7f91a378252d8329277e220c8de9dbc4ccfd610aef1e2c"
+}

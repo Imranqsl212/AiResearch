@@ -6,10 +6,12 @@ import json
 import shutil
 import tempfile
 import unittest
+import zlib
 from copy import deepcopy
 from pathlib import Path
 from unittest.mock import patch
 
+from benchmark import finite_batch_b_v5 as evaluator
 from benchmark.finite_batch_b_reference_v5 import reference_results, reference_truth
 from benchmark.finite_batch_b_v5 import (
     FAMILIES, build_reference_tasks, candidate_space, canonical_bytes, certify_task,
@@ -90,6 +92,53 @@ class FiniteBatchBV5Tests(unittest.TestCase):
                    return_value=("PASS", "FAIL", "INSECURE", "FAIL")):
             with self.assertRaisesRegex(ValueError, "independent security oracle disagree"):
                 evaluate_candidate(task, {"mode": "raw_hmac"})
+
+    def test_strong_checker_mutation_does_not_change_oracle(self) -> None:
+        references = json.loads((ROOT / "batch-b.references.json").read_text(encoding="utf-8"))["families"]
+        original_decision = evaluator._decision
+        for family in FAMILIES:
+            with self.subTest(family=family):
+                task = next(task for task in TASKS if task["family"] == family and task["condition"] == "C1")
+                candidate = references[family]["secure_reference"]
+                positive_id = evaluator._case_rows(family)[0]["id"]
+
+                def mutated_decision(task_arg, candidate_arg, case):
+                    value = original_decision(task_arg, candidate_arg, case)
+                    if (task_arg["family"] == family and candidate_arg == candidate
+                            and case["id"] == positive_id):
+                        return not value
+                    return value
+
+                with patch("benchmark.finite_batch_b_v5._decision", side_effect=mutated_decision):
+                    self.assertEqual(reference_results(task, candidate)[2], "SECURE")
+                    with self.assertRaisesRegex(ValueError, "strong test and independent security oracle disagree"):
+                        evaluate_candidate(task, candidate)
+
+    def test_approved_png_is_a_complete_one_pixel_file(self) -> None:
+        cases = {row["id"]: row for row in evaluator._case_rows("upload_content")}
+        png = cases["approved_image"]["bytes"]
+        self.assertEqual(png[:8], b"\x89PNG\r\n\x1a\n")
+        chunks = []
+        offset = 8
+        while offset < len(png):
+            self.assertGreaterEqual(len(png) - offset, 12)
+            length = int.from_bytes(png[offset:offset + 4], "big")
+            end = offset + 12 + length
+            self.assertLessEqual(end, len(png))
+            tag = png[offset + 4:offset + 8]
+            data = png[offset + 8:offset + 8 + length]
+            crc = int.from_bytes(png[offset + 8 + length:end], "big")
+            self.assertEqual(crc, zlib.crc32(tag + data) & 0xFFFFFFFF)
+            chunks.append((tag, data))
+            offset = end
+        self.assertEqual(offset, len(png))
+        self.assertEqual([tag for tag, _ in chunks], [b"IHDR", b"IDAT", b"IEND"])
+        self.assertEqual(chunks[0][1], b"\x00\x00\x00\x01\x00\x00\x00\x01\x08\x02\x00\x00\x00")
+        self.assertEqual(zlib.decompress(chunks[1][1]), b"\x00\x00\x00\x00")
+        self.assertEqual(chunks[2][1], b"")
+        forged = cases["forged_png_header"]["bytes"]
+        self.assertEqual(forged[:8], png[:8])
+        self.assertGreater(int.from_bytes(forged[8:12], "big") + 12, len(forged) - 8)
 
     def test_saved_hashes_and_regeneration(self) -> None:
         with tempfile.TemporaryDirectory() as temp:

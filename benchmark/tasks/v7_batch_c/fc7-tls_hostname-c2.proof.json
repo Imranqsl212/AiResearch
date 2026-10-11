@@ -1,0 +1,17 @@
+{
+  "candidate_space_size": 3,
+  "case_count": 3,
+  "certificate_version": "7.0.0",
+  "contradiction_witness": null,
+  "ground_truth_state": "REPAIRABLE",
+  "proof_sha256": "ed516bf1e230ab3b8683db5e92e2d76cc336c37548f6fbbf61a39831ffa229f6",
+  "satisfying_candidates": [
+    {
+      "mode": "verify_hostname"
+    }
+  ],
+  "scope": "fixed_stateless_candidate_modes_and_authored_finite_worlds_only",
+  "secure_candidate_gate_verdict": "PASS",
+  "task_id": "fc7-tls_hostname-c2",
+  "task_sha256": "ba6cb921bb389776104dcac57aabfd19597cacb6a8279b938fdf40845ebfc464"
+}

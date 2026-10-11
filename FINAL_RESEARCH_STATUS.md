@@ -1,4 +1,87 @@
-# Research status — 4 October 2026
+# Research status — 5 October 2026
+
+**Current verdict: prospective v1 NOT_READY; zero eligible main episodes.**
+The [5 October readiness decision](docs/READINESS_UPDATE_20261005.md) supersedes
+the dated baseline below. A 40-slot, 20-family live feasibility block produced
+30 valid excluded episodes, 10 invalidations, and 14 agent-generated secure
+onsets in 10 families. [All 14 onset forks](docs/C5_ALL_ONSETS_EXCLUDED_AUDIT_20261005.md)
+completed without invalidation: early voluntary stops were 3 after truthful
+PASS and 0 after false FAIL, while later candidate submissions were 28 versus
+17. These are selected, descriptive engineering results, not a prospective
+main effect. A separate [20-family R1 live feasibility block](docs/R1_TWENTY_LIVE_FEASIBILITY_20261005.md)
+assigned 40 C2 R0/R1 slots, retained two invalidations and yielded 19
+complete pairs: 12 both secure, six neither secure, one R0 only and zero R1
+only. Its unreviewed retrieval corpus and unequal request lengths prevent a
+RAG-effect claim. A [source-support spotcheck](docs/R1_SOURCE_SUPPORT_SPOTCHECK_20261005.md)
+found citation/task-rule mismatches and answer-cue review questions across
+the 20-family candidate; the reviewer register remains pending. The manuscript for the older 40-episode exploratory
+audit is available for author review, with [submission gaps](paper/SUBMISSION_HANDOFF_20261005.md)
+recorded separately. A [local author-review bundle](paper/AUTHOR_REVIEW_BUNDLE_20261005.md)
+packages exact manuscript and result files without private raw archives.
+Its [sanitized review candidate](paper/SANITIZED_REVIEW_CANDIDATE_20261005.md)
+now recomputes 13 saved result sections from transformed bytes but still needs
+privacy/provenance review before release. The root manifest remains a draft and the collector
+continues to reject `main`.
+
+A separate [corrected-oracle v7 live pilot](docs/V7_DECISIVE_EXCLUDED_PILOT_20261005.md)
+completed **30/30** excluded slots in two authored families: three seeded
+repeats of each C1–C5 cell at temperature 0.3. Across six matched C3/C4
+seed blocks, candidate-submission counts and early voluntary stopping were
+identical. Two C4 voluntary stops occurred only on the last allowed decision.
+One selected agent-generated secure onset had a matched C5 continuation:
+truthful PASS stopped after one decision; false FAIL used all three and
+submitted one further candidate. The [saved audit](analysis/v7_decisive_excluded_audit_20261005.json)
+and [fork audit](analysis/v7_decisive_c5_fork_audit_20261005.json) replay the
+private source-bound records. Two families and one selected fork do not yield
+a population confidence interval or a causal estimate for main.
+
+The [historical source-fidelity audit](docs/EXPLORATORY_SOURCE_FIDELITY_20261005.md)
+finds **63/77** logged Python attempts parseable, **11** with syntax-breaking
+logger redaction markers, and **three** other malformed strings. The erased
+expressions cannot be recovered from the archived logs, so all 77 executed
+ASTs cannot be reconstructed. [Future per-action finite check logging](docs/PER_ACTION_CHECK_LOGGING_20261005.md)
+now retains each complete structured evaluator receipt or an explicit
+no-valid-receipt reason, without changing historical records or opening main.
+
+A [batch-C semantic audit](docs/BATCH_C_SEMANTIC_ADMISSION_BLOCKER_20261005.md)
+found that eight current C3/C4 impossibility certificates rely on a shared
+`complete_observation=false` gate and schematic witnesses. Their machine
+precheck is insufficient for admission; replacement artifacts need independent
+review. A separate [v7 candidate](docs/BATCH_C_V7_SEMANTIC_CANDIDATE_20261005.md)
+now encodes explicit same-observation conflicts for those eight families but
+remains unadmitted and outside main. The agent-task mapping now delivers its
+public mode semantics and the shape guard accepts its modes. A separate
+[excluded fake-provider integration](docs/BATCH_C_V7_EXCLUDED_INTEGRATION_20261005.md)
+routes v7 through the versioned registry and replays its source-bound logs,
+but end-to-end main dispatch is still absent. A separate
+[R1 v0.2 candidate](docs/R1_TWENTY_CANDIDATE_V2_20261005.md) repairs seven
+source paragraphs without changing the excluded v0.1 pilot; its
+[22 cited pages](docs/R1_V2_PRIVATE_SOURCE_SNAPSHOTS_20261005.md) now have
+private byte snapshots. It has no model observations or human admission. A
+[version-bound v0.2 reviewer packet](docs/R1_V2_SOURCE_REVIEW_PACKET_20261005.md)
+has 40 pending reviews, 20 pending adjudications, and zero recorded `KEEP`
+decisions. A
+[v0.3 final-schedule contract](docs/FINAL_MAIN_SCHEDULE_CONTRACT_20261005.md)
+now resolves the schedule/root-manifest hash cycle in a temporary Git test,
+while [collector](docs/MAIN_COLLECTOR_SCAFFOLD_20261005.md) and
+[C5 family-ledger](docs/C5_FAMILY_LEDGER_SCAFFOLD_20261005.md) scaffolds test
+excluded fixtures only. A [C5 branch scaffold](docs/MAIN_C5_FORK_SCAFFOLD_20261005.md)
+also checks fixture reservation and A/B trace shape, without an independent
+live onset oracle. An [excluded precursor bridge](docs/MAIN_LIVE_PATH_CONTRACT_AUDIT_20261005.md)
+links scripted precursor and fork archives by saved bytes. None releases main
+dispatch or inference. An [excluded C5 raw reader](docs/C5_RAW_ARCHIVE_READER_20261005.md)
+checks fixture branch bytes and nonestimability conditions. A separate
+[live-dispatch recorder](docs/MAIN_LIVE_DISPATCH_EXCLUDED_20261005.md)
+archives requests before injected fake transport and responses before parsing;
+an opt-in [loopback transport](docs/MAIN_OLLAMA_TRANSPORT_EXCLUDED_20261005.md)
+passes fake HTTP byte/identity tests. No real provider call or independent
+oracle was bound. A [read-only crash audit](docs/EXCLUDED_LIVE_DISPATCH_CRASH_AUDIT_20261005.md)
+classifies partial excluded slots without retry or main promotion. A
+[NON_READY statistical plan candidate](docs/STATISTICAL_ANALYSIS_PLAN_CANDIDATE_20261005.md)
+specifies estimands and missingness rules but still needs scientific sign-off,
+power decisions and a real main reader.
+
+## Earlier 4 October baseline (retained for audit history)
 
 **Prospective main study: `NOT_READY`.** Twenty controlled finite families are now represented: the original four plus three authored batches. The machine admission pre-review checks 100 C1–C5 task rows, proof hashes, public parity, and declared domain uniqueness, but records human admission as missing. These artifacts still do not supply 20 independently reviewed families or any eligible main observation. [`experiment_manifest.json`](experiment_manifest.json) remains a draft; the main collector rejects `phase="main"`, and [`analysis/v1_pipeline.py`](analysis/v1_pipeline.py) returns `NO_ELIGIBLE_DATA`.
 
@@ -8,7 +91,7 @@ The completed 40-episode legacy cohort is a separate exploratory [benchmark audi
 
 | Area | Current evidence | Limit |
 | --- | --- | --- |
-| Finite tasks and evaluators | The original four versioned mechanisms have five matched C1–C5 pairs each and [1,430 exhaustive checks](docs/FINITE_FIXTURE_CALIBRATION_20261004.md). Batch A adds four families with 140 checks, batch B four with 90, and batch C eight with 160. The [machine admission pre-review](analysis/admission_review_20261004.json) finds no hash, parity, or proof errors across 20 families and 100 rows, while explicitly recording missing human review. | These are authored finite languages, not population error rates for real software. No family is human-admitted or main-admitted. |
+| Finite tasks and evaluators | The original four versioned mechanisms have five matched C1–C5 pairs each and [1,430 exhaustive checks](docs/FINITE_FIXTURE_CALIBRATION_20261004.md). Batch A adds four families with 140 checks, batch B four with 90, and batch C eight with 160. The [machine admission pre-review](analysis/admission_review_20261004.json) finds no hash, parity, or *structural* proof errors across 20 families and 100 rows, while explicitly recording missing human review. | These are authored finite languages, not population error rates for real software. The [batch-C semantic blocker](docs/BATCH_C_SEMANTIC_ADMISSION_BLOCKER_20261005.md) remains despite the structural pass. No family is human-admitted or main-admitted. |
 | Executable-code external validity | The [SQLite injection calibration](benchmark/real_code_sqli_notes.md) and new [command-injection calibration](benchmark/real_code_command_injection_notes.md) each use a separate host oracle and disposable digest-pinned Docker containers. The command fixture checks both returned content and unintended marker-file side effects; secure, vulnerable, and two weak-passing mutation profiles completed and were removed. | These are two hand-authored calibration fixtures with no agent-written repair, no broad repository coverage, and no tamper-resistant oracle claim. |
 | Runtime containment | The [official safety receipt](sandbox/safety_checks/latest_result.json) reports **11/11 PASS** and `experiment_permitted=true` for the exact current image, policy, and daemon. | A future frozen main runtime and integrated executable tasks need their own binding and fresh check if any identity changes. |
 | Source and retrieval | The [v1 corpus review](docs/RETRIEVAL_CORPUS_REVIEW_20261004.md) checked 20 rows for exact answer and hidden-label leakage. A separate [v2 corpus](docs/RETRIEVAL_CORPUS_V2.md) has 22 source-linked rows, including payments guidance, and deterministic R0/R1/R2 tests. | Source URLs are not pinned page snapshots; semantic contamination and input-length controls remain open. The live RAG blocks used v1, not the new v2 corpus. |
@@ -27,10 +110,42 @@ No excluded pilot is promoted to main data. Counts above describe saved cells an
 
 ## What still blocks READY
 
-The [independent readiness audit](docs/READINESS_BLOCKERS_20261004.md) and [gate matrix](docs/V1_GATE_MATRIX.md) give acceptance evidence for each gate. The largest gaps are independent admission review of every family, a broader executable-code security tier with held-out mutation challenges, C5 false-failure onset on oracle-secure submissions across families, context-controlled and repeated RAG/model comparisons, two independent strategy annotators, a frozen power-informed analysis, a reviewed raw-data archive, and the manifest-only main freeze. A dry-run main schedule now expands to 20 families and 2,000 slots across two models, R0/R1 and five repetitions, but remains explicitly ungated. A main runner must retain invalidations without replacement and pass both static and live release checks before collection.
+The [independent readiness audit](docs/READINESS_BLOCKERS_20261004.md) and
+[gate matrix](docs/V1_GATE_MATRIX.md) give acceptance evidence for each gate.
+The largest gaps are independent admission review of every family, a broader
+executable-code security tier with held-out mutation challenges,
+context-controlled and repeated RAG/model comparisons, two independent
+strategy annotators, a frozen power-informed analysis, a reviewed raw-data
+archive, and the manifest-only main freeze. The newer
+[draft preregistration](docs/preregistration_v1_20261005.md) and orchestrator
+propose 20 families × five repeats × four R0 core conditions (400 episodes),
+plus C1/C2 R1 on the same repeats (200 episodes), and capacity for up to 100
+conditional C5 onset pairs (200 branch continuations). This 600-episode
+primary-model schedule remains ungated; live C5 branches are not implemented
+for main collection. An [excluded C5 structural dry-run](docs/MAIN_C5_STRUCTURAL_DRY_RUN_20261005.md)
+has checked allocation of 200 synthetic precursor statuses into the 100 pair
+reservations, with zero model calls. It does not validate secure onsets or
+enable main dispatch. A separate [proposed main source archive](docs/PROPOSED_MAIN_SOURCE_ARCHIVE_20261005.md)
+checks 246 exact task, proof and implementation files while explicitly leaving
+R1 unadmitted and main dispatch disabled. A main runner must retain invalidations without
+replacement and pass both static and live release checks before collection.
 
-The [static preflight](reproduction/preflight.py) correctly exits 2 on the draft: model, runtime, RAG, statistics, artifact hashes, source revision, nine readiness flags, and safety-receipt binding are not frozen. The engineering source is committed in a local branch, but this is not a main release or a manifest-only freeze. The current official safety pass and excluded pilots cannot substitute for those fields. The proposed minimum of 20 families × 4 core conditions × 5 repeats is about 400 core episodes before C5, RAG, and model strata. This is a design target, not collected data.
+The [static preflight](reproduction/preflight.py) correctly exits 2 on the draft: model, runtime, RAG, statistics, artifact hashes, source revision, nine readiness flags, and safety-receipt binding are not frozen. The current working tree is not a reviewed clean main release or a manifest-only freeze. The official safety pass and excluded pilots cannot substitute for those fields. All planned counts are design targets, not collected main data.
 
 ## Reproduction record
 
-[`reproduction/reproduce.sh`](reproduction/reproduce.sh) passes on this workspace: it validates all 20 finite task families, the 1,820-row combined calibration, the machine admission pre-review, the command-injection contract, the family-sign artifact, **128 offline unit/integration tests** plus focused real-code regressions, generates methods-only tables, confirms `NO_ELIGIBLE_DATA`, and displays the expected `NOT_READY` preflight. It needs no ignored pilot archive, Ollama call, or Docker run. The official 11-check Docker safety run and live excluded pilots have their separate receipts. Most raw pilot logs are Git ignored; a clean clone needs a reviewed archive to reconstruct their descriptive counts. The current [paper](paper/final.md) remains the historical exploratory report and has not been rewritten as a prospective result.
+[`reproduction/reproduce.sh`](reproduction/reproduce.sh) passes on this
+workspace. It validates all 20 finite task families, the 1,820-row combined
+calibration, machine admission pre-review, the family-sign artifact, 285
+offline unit/integration tests plus six focused real-code regressions, and
+methods-only tables. It confirms `NO_ELIGIBLE_DATA` and the expected
+`NOT_READY` preflight. The expanded full suite passed **460/460 tests**
+with Docker access for the executable-catalog checks; the subsequent v4
+author-bundle change passed its eight focused tests. The official 11-check
+Docker safety run and live
+excluded pilots have separate receipts. Most raw pilot logs are Git ignored;
+the [private excluded-pilot bundle](docs/PRIVATE_EXCLUDED_PILOT_BUNDLE_20261005.md)
+now preserves and replays them locally, but requires content review before
+sharing with a clean clone. The current [paper](paper/final.md) presents the
+historical exploratory audit and a separately labeled, excluded v7 feasibility
+pilot; neither is a prospective main result.

@@ -4,7 +4,7 @@ from __future__ import annotations
 
 import hashlib
 import json
-from collections.abc import Mapping
+from collections.abc import Callable, Mapping
 from pathlib import Path
 from typing import Any
 
@@ -19,6 +19,13 @@ _PROMPT_BY_KIND = {
     "finite_state_transaction": Path(__file__).resolve().parent / "prompts" / "replay_v3_system.txt",
     "finite_counter_schedules": Path(__file__).resolve().parent / "prompts" / "race_v4_system.txt",
 }
+_OPTIONS_PROMPT = Path(__file__).resolve().parent / "prompts" / "finite_options_system.txt"
+for _kind in (
+    "finite_rolling_rate_limit", "finite_ambiguous_parameters",
+    "finite_quota_overflow", "finite_encoded_log_secret", "finite_security_cases",
+    "finite_security_worlds",
+):
+    _PROMPT_BY_KIND[_kind] = _OPTIONS_PROMPT
 _REPLAY_V2_PROMPT = Path(__file__).resolve().parent / "prompts" / "replay_v3_system_v2.txt"
 _CLAIMS = frozenset({"success", "non_success", "unknown"})
 _MAX_RESPONSE_CHARACTERS = 8192
@@ -55,6 +62,22 @@ class V1OllamaAdapter(OllamaAdapter):
         self.last_protocol_failure = False
         self.last_protocol_diagnostic: dict[str, Any] | None = None
         self.provider_request_count = 0
+        self._request_recorder: Callable[[str, Mapping[str, Any], int], None] | None = None
+
+    def bind_request_recorder(
+        self, recorder: Callable[[str, Mapping[str, Any], int], None]
+    ) -> None:
+        """Bind a write-once archive callback before any provider request.
+
+        An archive failure must abort the episode before the request is sent.
+        Direct adapter tests may omit the callback; the episode collector binds it.
+        """
+
+        if self.provider_request_count or self._request_recorder is not None:
+            raise ValueError("request recorder must be bound once before dispatch")
+        if not callable(recorder):
+            raise TypeError("request recorder must be callable")
+        self._request_recorder = recorder
 
     def provide_task(self, task: AgentTask) -> None:
         super().provide_task(task)
@@ -212,8 +235,12 @@ class V1OllamaAdapter(OllamaAdapter):
         self.last_protocol_failure = False
         self.last_protocol_diagnostic = None
         request = self._request_payload()
+        endpoint = f"{self.base_url}/api/chat"
+        sequence = self.provider_request_count + 1
+        if self._request_recorder is not None:
+            self._request_recorder(endpoint, request, sequence)
         self.provider_request_count += 1
-        response = self._post_json(f"{self.base_url}/api/chat", request, self.request_timeout)
+        response = self._post_json(endpoint, request, self.request_timeout)
         if not isinstance(response, Mapping) or not isinstance(response.get("message"), Mapping):
             raise OllamaAdapterError("Ollama response lacks a message object")
         self.last_usage = _usage(response)

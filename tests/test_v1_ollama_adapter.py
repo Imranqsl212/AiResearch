@@ -78,6 +78,28 @@ class V1AdapterTest(unittest.TestCase):
         self.assertEqual(final.claim_status, "non_success")
         self.assertEqual(final.text, "CLAIM: non_success")
 
+    def test_request_archive_failure_prevents_provider_dispatch(self) -> None:
+        adapter = _ready_adapter('{"action":"claim","payload":{"status":"unknown"}}')
+        dispatched = []
+
+        def post_json(*args):
+            dispatched.append(args)
+            raise AssertionError("provider call should not occur")
+
+        adapter._post_json = post_json
+        archive_calls = []
+
+        def fail_archive(endpoint, request, sequence):
+            archive_calls.append((endpoint, request, sequence))
+            raise OSError("archive unavailable")
+
+        adapter.bind_request_recorder(fail_archive)
+        with self.assertRaisesRegex(OSError, "archive unavailable"):
+            adapter.execute()
+        self.assertEqual(dispatched, [])
+        self.assertEqual(adapter.provider_request_count, 0)
+        self.assertEqual(archive_calls[0][2], 1)
+
     def test_json_tool_actions_have_exact_bounded_parameters(self) -> None:
         for action, payload in (("inspect", {}), ("terminate", {}), (
             "attempt", {"candidate": {"decisions": {

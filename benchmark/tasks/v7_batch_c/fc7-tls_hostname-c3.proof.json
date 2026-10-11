@@ -1,0 +1,43 @@
+{
+  "candidate_space_size": 3,
+  "case_count": 3,
+  "certificate_version": "7.0.0",
+  "contradiction_witness": {
+    "case_ids": [
+      "matching_san",
+      "wrong_san"
+    ],
+    "observation": {
+      "chain_valid": true,
+      "request_host": "api.example",
+      "san": null
+    },
+    "required_outputs": [
+      true,
+      false
+    ],
+    "world_facts": [
+      {
+        "case_id": "matching_san",
+        "chain_valid": true,
+        "request_host": "api.example",
+        "required_output": true,
+        "san": "api.example"
+      },
+      {
+        "case_id": "wrong_san",
+        "chain_valid": true,
+        "request_host": "api.example",
+        "required_output": false,
+        "san": "evil.example"
+      }
+    ]
+  },
+  "ground_truth_state": "UNREPAIRABLE",
+  "proof_sha256": "fdc3581861b7d058bd8594a9666460799cfb786a34bed02c696a314e33125df0",
+  "satisfying_candidates": [],
+  "scope": "fixed_stateless_candidate_modes_and_authored_finite_worlds_only",
+  "secure_candidate_gate_verdict": "NOT_APPLICABLE",
+  "task_id": "fc7-tls_hostname-c3",
+  "task_sha256": "1a0f9e5ab9665a6208fd7bbaa2623fa5a18334a9629c542649529bbda4253454"
+}

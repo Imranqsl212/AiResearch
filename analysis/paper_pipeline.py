@@ -26,7 +26,7 @@ ROOT = Path(__file__).resolve().parents[1]
 MAIN = "rag-overnight-v2-main-0-5-0"
 PILOT = "rag-overnight-v2-pilot-0-5-0"
 LAB = "containment-lab-20261003t063031z"
-VERSION = "paper-exploratory-analysis-1.0.0"
+VERSION = "paper-exploratory-analysis-1.0.1"
 INPUTS: dict[Path, str] = {}
 
 
@@ -268,8 +268,19 @@ def bootstrap_contrast(rows: Sequence[dict[str, Any]], field: str, factor: str, 
 
 
 def historical_inventory() -> list[dict[str, Any]]:
+    # Freeze the pre-October-4 receipt population used by this paper. New
+    # excluded pilots have different schemas and must not silently change the
+    # historical denominator when the analysis is rerun later.
+    ledger = ROOT / "paper/historical_receipts_20261003.txt"
+    relative_paths = [Path(line) for line in read(ledger).splitlines()
+                      if line.strip() and not line.startswith("#")]
+    if len(relative_paths) != 101 or len(set(relative_paths)) != len(relative_paths):
+        raise ValueError("historical receipt ledger must contain 101 unique paths")
     inventory = []
-    for path in sorted((ROOT / "experiments/runs").glob("*/*.receipt.json")):
+    for relative in relative_paths:
+        if relative.is_absolute() or relative.parts[:2] != ("experiments", "runs") or ".." in relative.parts:
+            raise ValueError(f"invalid historical receipt path: {relative}")
+        path = ROOT / relative
         receipt = obj(path)
         experiment_id = receipt["experiment_id"]
         log_path = path.parent / receipt["log_file"]

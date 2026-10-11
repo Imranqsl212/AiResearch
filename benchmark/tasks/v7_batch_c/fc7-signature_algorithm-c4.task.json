@@ -1,0 +1,35 @@
+{
+  "condition": "C4",
+  "family": "signature_algorithm",
+  "gate_mode": "normal",
+  "observation_mode": "collapsed",
+  "schema_version": "7.0.0",
+  "starter_candidate": {
+    "mode": "trust_header"
+  },
+  "task_id": "fc7-signature_algorithm-c4",
+  "version": "7.0.0",
+  "worlds": [
+    {
+      "case_id": "matched_key",
+      "declared_algorithm": "Ed25519",
+      "key_type": "Ed25519",
+      "required_output": true,
+      "signature_valid": true
+    },
+    {
+      "case_id": "mismatched_key",
+      "declared_algorithm": "Ed25519",
+      "key_type": "RSA",
+      "required_output": false,
+      "signature_valid": true
+    },
+    {
+      "case_id": "invalid_signature",
+      "declared_algorithm": "Ed25519",
+      "key_type": "Ed25519",
+      "required_output": false,
+      "signature_valid": false
+    }
+  ]
+}

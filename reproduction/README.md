@@ -18,7 +18,22 @@ The pipeline validates the old indexed main and pilot inputs, checks local hashe
 
 The repository root [experiment_manifest.json](../experiment_manifest.json) deliberately has `status: NOT_READY` and null freeze fields. It is a template, not a fabricated experiment lock. A main-run preflight must refuse that manifest and require real proof artifacts, evaluator/security-oracle agreement tests, an exact model/runtime freeze, complete logs, and a clean source revision.
 
-Run [reproduce.sh](reproduce.sh) from this workspace to check all four separately versioned controlled fixtures, retrieval and baseline units, the finite evaluator calibration, the v1 analysis status, and the static main preflight. It verifies five proofs each for authorization, [path boundary](../docs/FINITE_PATH_V2.md), [temporal replay](../docs/FINITE_REPLAY_V3.md), and [counter race](../docs/FINITE_RACE_V4.md), with 1,430 candidate/condition checks across the four small languages. Each now has an excluded live collector pilot. The script's 119 unit/integration tests, four focused SQLite `ResourceWarning` checks, and fixture validators need no ignored pilot logs, Docker run, or Ollama call. It prints `NO_ELIGIBLE_DATA` and `NOT_READY` for the current design-stage repository. These are successful **integrity checks of an incomplete study**, not agent results.
+Run [reproduce.sh](reproduce.sh) from this workspace to check the 20 authored
+finite families, retrieval and baseline units, evaluator calibration, the v1
+analysis status, and the static main preflight. The families have 100 C1–C5
+task/proof rows and 1,820 recorded finite candidate/condition checks across
+the four original mechanisms and three later batches. It also checks the
+separate, unadmitted batch-C v7 and R1 v0.2 candidates and excluded main-path
+scaffolds. The script's 285
+offline unit/integration tests, six focused real-code regressions, and fixture
+validators need no ignored model pilot logs, Docker run, or Ollama call. The
+R1 v0.2 source-review validator does require the separately saved, Git-ignored
+[22-page private snapshot archive](../docs/R1_V2_PRIVATE_SOURCE_SNAPSHOTS_20261005.md)
+in this workspace; a fresh clone needs that archive supplied for the same
+full validation. It prints
+`NO_ELIGIBLE_DATA` and `NOT_READY` for the current design-stage repository.
+These are successful **integrity checks of an incomplete study**, not agent
+results or independent human task admission.
 
 For a future checked-in freeze, `experiment.git_sha` identifies the clean **source commit before the freeze file is finalized**. The next freeze commit may change only `experiment_manifest.json`; preflight compares its current bytes with the tracked freeze blob, verifies all artifact digests, and requires a clean tree. This two-commit scheme avoids placing a commit hash inside the same commit that it names. A fresh runtime safety receipt and completed pilot remain separate live gates.
 
@@ -27,6 +42,15 @@ Only an excluded engineering or pilot run may be used to test the new collection
 The local scripted wiring pilot can be reconstructed with `python3 -B -m experiments.run_v1_engineering_pilot --output-dir experiments/runs/<new-name>`. It creates 15 **scripted, non-agent** episodes covering five conditions and R0/R1/R2, refuses an existing output directory, and saves a prespecified engineering schedule and retrieval manifest. Run it a second time under another new directory, then use `python3 -B -m reproduction.compare_v1_pilots <first-dir> <second-dir>` to compare deterministic fields after each episode's hashes and proofs are revalidated. The two local runs on 3 October 2026 matched all 15 deterministic traces; timestamps and latencies are intentionally excluded. Their ignored raw files are not a public release, and this replay is not a model replication or a passed main-run gate.
 
 New engineering episode manifests also record whether the source tree was dirty and SHA-256 digests of the evaluator, retrieval, collector, adapter, and contract files. A Git commit by itself does not identify an uncommitted engineering implementation. These digests improve local traceability but do not replace a clean committed main freeze.
+
+The newer [private excluded-pilot bundle](../docs/PRIVATE_EXCLUDED_PILOT_BUNDLE_20261005.md)
+preserves raw records for the 40-slot full-catalog, 14-pair C5, and 40-slot
+R1 C2 pilots. Run
+`python3 -B -m analysis.build_private_excluded_pilot_bundle verify` in the
+original workspace to recheck its member hashes and
+descriptive counts without a model call. It is Git ignored, contains raw local
+paths and provider text, and requires privacy/content review before sharing.
+Its verification is separate from the legacy paper and prospective main study.
 
 `experiments.run_v1_live_pilot` is a separate, **excluded** single-episode Ollama smoke path. Earlier local `qwen3:4b` C4 checks exposed unstructured-prose capture and a no-action response mislabeled as voluntary stopping. The first two traces have invalidation sidecars; the third correctly records `ERROR` and `AGENT_PROTOCOL_NO_ACTION`. A later [strict JSON-action pilot](../docs/V1_LIVE_JSON_PROTOCOL_PILOT.md) produced one valid live `INSPECT` after the public C4 witness, then stopped because its deliberately limited action budget was exhausted. Subsequent [C1 trajectory checks](../docs/V1_LIVE_C1_TRAJECTORY_PILOT.md) captured `INSPECT`, `SUBMIT`, and `TERMINATE`: the submitted policy remained insecure, and the voluntary termination used the last available action. An initial C1 invocation without loopback access was retained as an invalidated infrastructure abort. These pilots demonstrate structured-action capture and separate stop causes; they do not establish repair or appropriate stopping. All remain excluded from main inference.
 

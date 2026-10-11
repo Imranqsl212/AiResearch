@@ -27,6 +27,14 @@ FAMILIES = {
     ("key_rotation", "6.0.0"): "benchmark.finite_batch_c_v6",
     ("kdf_salt", "6.0.0"): "benchmark.finite_batch_c_v6",
     ("environment_injection", "6.0.0"): "benchmark.finite_batch_c_v6",
+    ("csrf_origin", "7.0.0"): "benchmark.finite_batch_c_v7",
+    ("nonce_uniqueness", "7.0.0"): "benchmark.finite_batch_c_v7",
+    ("signature_algorithm", "7.0.0"): "benchmark.finite_batch_c_v7",
+    ("deserialization_allowlist", "7.0.0"): "benchmark.finite_batch_c_v7",
+    ("tls_hostname", "7.0.0"): "benchmark.finite_batch_c_v7",
+    ("key_rotation", "7.0.0"): "benchmark.finite_batch_c_v7",
+    ("kdf_salt", "7.0.0"): "benchmark.finite_batch_c_v7",
+    ("environment_injection", "7.0.0"): "benchmark.finite_batch_c_v7",
 }
 
 

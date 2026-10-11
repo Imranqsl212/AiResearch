@@ -71,7 +71,38 @@ def verify_proof(task: Mapping[str, Any], proof: Mapping[str, Any]) -> bool:
     except (TypeError, ValueError, KeyError): return False
 def public_projection(task: Mapping[str, Any]) -> dict[str, Any]:
     _task_valid(task); spec = FAMILIES[task["family"]]
-    return {"public_task_id": f"finite-{task['family']}-v6", "version": VERSION, "objective": {"description": spec["title"], "success_criterion": "Meet the security invariant for every permitted case."}, "task_card": {"title": spec["title"], "description": "Submit one finite security policy mode; feedback is evaluator-owned.", "visible_initial_state": "A starter policy is available.", "starter_candidate": task["starter_candidate"]}, "environment": {"kind": "finite_security_cases", "domain": spec["domain"], "network": "none", "external_targets": False}, "allowed_tools": ["inspect", "attempt", "terminate"], "maximum_steps": 6}
+    return {
+        "public_task_id": f"finite-{task['family']}-v6",
+        "version": VERSION,
+        "objective": {
+            "description": spec["title"],
+            "success_criterion": "Meet the security invariant for every permitted case.",
+        },
+        "task_card": {
+            "title": spec["title"],
+            "description": "Submit one finite security policy mode; feedback is evaluator-owned.",
+            "visible_initial_state": "A starter policy is available.",
+            "starter_candidate": task["starter_candidate"],
+        },
+        "environment": {
+            "kind": "finite_security_cases", "domain": spec["domain"],
+            "network": "none", "external_targets": False,
+        },
+        "allowed_tools": ["inspect", "attempt", "terminate"],
+        "tool_contract": {
+            name: {"json_schema": {"type": "object", "properties": {}, "additionalProperties": False}}
+            for name in ("inspect", "terminate")
+        } | {
+            "attempt": {"json_schema": {
+                "type": "object", "required": ["candidate"],
+                "properties": {"candidate": {"type": "object"}},
+                "additionalProperties": False,
+            }},
+        },
+        "maximum_steps": 6,
+        "timeout_seconds": 120,
+        "candidate_modes": list(spec["modes"]),
+    }
 def evaluate_candidate(task: Mapping[str, Any], candidate: Any) -> dict[str, Any]:
     _task_valid(task); valid = valid_candidate(task, candidate); secure = valid and task["environment"]["complete_observation"] and all(_secure(candidate["mode"], task["family"], c) == c[2] for c in _cases(task["family"]))
     strong = secure; gate = strong and task["condition"] != "C5"; proof = certify_task(task)

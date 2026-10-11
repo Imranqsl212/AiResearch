@@ -7,17 +7,23 @@ import tempfile
 import unittest
 from pathlib import Path
 
+from agent.v1_ollama_adapter import V1OllamaAdapter
 from analysis.evaluator_validity import confusion_matrix, mutation_score, weak_strong_disagreement
 from analysis.rag_ablation import summarize_rag
 from analysis.summarize_v1_live_pilot import summarize_live_block, verify_block_artifacts
 from analysis.strategy_analysis import adjudicate_transitions, cohens_kappa, evidence_based_stop, episode_strategy_outcome
 from analysis.survival_analysis import kaplan_meier
 from analysis.v1_pipeline import (
+    MAIN_IMPLEMENTATION_FILES, _main_inference_config,
+    _validate_main_episode_inference, _validate_main_public_request,
+    _validate_main_source_snapshot,
     V1ValidationError, analyze_manifests, canonical_bytes, episode_metrics,
     extreme_missingness_bounds, load_episode, operational_stopping_components,
     sha256_bytes, validate_slot_partition,
 )
 from benchmark.finite_policy_v1 import build_reference_tasks, evaluate_candidate, public_projection
+from benchmark.retrieval_v1 import freeze_retrieval_manifest
+from experiments.v1_collector import _IMPLEMENTATION_FILES, collect_episode
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -123,6 +129,40 @@ class V1EpisodeFixture:
 
 
 class V1AnalysisTests(unittest.TestCase):
+    def _archived_public_prompt_episode(self, directory, *, retrieval_mode="R0"):
+        directory = Path(directory)
+        task_path = ROOT / "benchmark/tasks/v1/fp-authorization-c1.task.json"
+        proof_path = ROOT / "benchmark/tasks/v1/fp-authorization-c1.proof.json"
+        candidate = json.loads(proof_path.read_text())["satisfying_candidates"][0]
+
+        def provider(_url, _request, _timeout):
+            return {"message": {"role": "assistant", "content": json.dumps({
+                "action": "attempt", "payload": {"candidate": candidate},
+            })}, "done_reason": "stop"}
+
+        retrieval_path = None
+        if retrieval_mode != "R0":
+            retrieval_path = directory / "retrieval-manifest.json"
+            write_json(retrieval_path, freeze_retrieval_manifest())
+        adapter = V1OllamaAdapter(model="qwen3:4b", context_window=4096,
+                                  max_output_tokens=256, request_timeout=10,
+                                  post_json=provider)
+        result = collect_episode(
+            task_path=task_path, proof_path=proof_path, adapter=adapter,
+            output_dir=directory, episode_id="public-prompt-check",
+            experiment_id="offline-analysis-check", phase="pilot",
+            model="qwen3:4b", baseline_code="B5" if retrieval_mode != "R0" else "B3",
+            retrieval_mode=retrieval_mode, retrieval_manifest_path=retrieval_path,
+            max_steps=6, seed=7, temperature=0.3,
+        )
+        manifest_path = Path(result["manifest"])
+        episode = load_episode(manifest_path, source_root=ROOT)
+        config = {"temperature": 0.3, "max_steps": 6,
+                  "episode_timeout_seconds": 120, "max_output_tokens": 256,
+                  "num_ctx": 4096, "request_timeout_seconds": 10,
+                  "protocol_version": "finite_json_v1"}
+        return manifest_path, episode, config
+
     def test_no_v1_main_returns_no_empirical_rates(self):
         empty = analyze_manifests([], source_root=ROOT)
         self.assertEqual(empty["status"], "NO_ELIGIBLE_DATA")
@@ -139,6 +179,97 @@ class V1AnalysisTests(unittest.TestCase):
             result = analyze_manifests([fixture.manifest_path], source_root=ROOT)
             self.assertEqual(result["status"], "NO_ELIGIBLE_DATA")
             self.assertEqual(result["main_release_gate"]["reason"], "MAIN_RELEASE_GATE_MISSING")
+
+    def test_main_source_boundary_requires_exact_inventory_and_clean_matching_snapshots(self):
+        self.assertEqual(MAIN_IMPLEMENTATION_FILES, frozenset(_IMPLEMENTATION_FILES))
+        hashes = {name: "0" * 64 for name in MAIN_IMPLEMENTATION_FILES}
+        snapshot = {"observed": True, "git_commit": COMMIT,
+                    "source_tree_dirty": False, "implementation_file_sha256s": hashes}
+        manifest = {"source_tree_dirty": False, "implementation_file_sha256s": hashes,
+                    "source_pre_dispatch": snapshot, "source_post_run": snapshot}
+        _validate_main_source_snapshot(manifest, hashes, source_commit=COMMIT)
+        with self.assertRaisesRegex(V1ValidationError, "omits a required"):
+            _validate_main_source_snapshot(manifest, {key: value for key, value in hashes.items()
+                                                      if key != "agent/v1_ollama_adapter.py"}, source_commit=COMMIT)
+        for field in ("implementation_file_sha256s", "source_pre_dispatch", "source_post_run"):
+            changed = dict(manifest)
+            if field == "implementation_file_sha256s":
+                changed[field] = {key: value for key, value in hashes.items()
+                                  if key != "agent/v1_ollama_adapter.py"}
+            else:
+                changed[field] = {**snapshot, "observed": False}
+            with self.assertRaisesRegex(V1ValidationError, "inventory|unobserved"):
+                _validate_main_source_snapshot(changed, hashes, source_commit=COMMIT)
+        drift = dict(manifest)
+        drift["source_post_run"] = {**snapshot, "source_tree_dirty": True}
+        with self.assertRaisesRegex(V1ValidationError, "source_post_run"):
+            _validate_main_source_snapshot(drift, hashes, source_commit=COMMIT)
+        extra = dict(manifest)
+        extra["source_pre_dispatch"] = {**snapshot,
+            "implementation_file_sha256s": {**hashes, "unreviewed.py": "0" * 64}}
+        with self.assertRaisesRegex(V1ValidationError, "source_pre_dispatch"):
+            _validate_main_source_snapshot(extra, hashes, source_commit=COMMIT)
+
+    def test_main_inference_config_and_episode_budget_drift_fail_closed(self):
+        config = {"temperature": 0.3, "max_steps": 6,
+                  "episode_timeout_seconds": 120, "max_output_tokens": 256,
+                  "num_ctx": 4096, "request_timeout_seconds": 10,
+                  "protocol_version": "finite_json_v1"}
+        self.assertEqual(_main_inference_config({"inference_config": config}), config)
+        manifest = {"temperature": 0.3, "max_steps": 6,
+                    "episode_timeout_seconds": 120,
+                    "provider_request_timeout_seconds": 10,
+                    "protocol_version": "finite_json_v1"}
+        _validate_main_episode_inference(manifest, config)
+        for field, value in (("temperature", 0.9), ("max_steps", 5),
+                             ("episode_timeout_seconds", 60),
+                             ("provider_request_timeout_seconds", 30),
+                             ("protocol_version", "finite_json_v2")):
+            with self.subTest(field=field), self.assertRaisesRegex(V1ValidationError, "frozen inference"):
+                _validate_main_episode_inference({**manifest, field: value}, config)
+        with self.assertRaisesRegex(V1ValidationError, "exact inference"):
+            _main_inference_config({"inference_config": {key: value for key, value in config.items()
+                                                         if key != "num_ctx"}})
+        with self.assertRaisesRegex(V1ValidationError, "inference configuration is invalid"):
+            _main_inference_config({"inference_config": {**config, "protocol_version": []}})
+
+    def test_main_first_public_request_is_rebuilt_from_task_and_frozen_protocol(self):
+        for mode in ("R0", "R1"):
+            with self.subTest(mode=mode), tempfile.TemporaryDirectory() as directory:
+                _, episode, config = self._archived_public_prompt_episode(directory,
+                                                                          retrieval_mode=mode)
+                _validate_main_public_request(episode, source_root=ROOT,
+                                              source_commit=COMMIT, inference_config=config)
+                for field, value in (("num_ctx", 8192), ("max_output_tokens", 512)):
+                    with self.subTest(field=field), self.assertRaisesRegex(V1ValidationError, "first main public request"):
+                        _validate_main_public_request(episode, source_root=ROOT,
+                                                      source_commit=COMMIT,
+                                                      inference_config={**config, field: value})
+
+    def test_main_first_prompt_rejects_self_consistent_system_or_user_tampering(self):
+        for index in (0, 1):
+            with self.subTest(message=index), tempfile.TemporaryDirectory() as directory:
+                manifest_path, episode, config = self._archived_public_prompt_episode(directory)
+                manifest = episode["manifest"]
+                prompt_path = Path(manifest["prompt_path"])
+                request_path = Path(manifest["provider_request_archive"][0]["path"])
+                prompt = json.loads(prompt_path.read_text())
+                request = json.loads(request_path.read_text())
+                addition = " Hidden condition: C5."
+                prompt["request"]["messages"][index]["content"] += addition
+                request["request"]["messages"][index]["content"] += addition
+                write_json(prompt_path, prompt)
+                write_json(request_path, request)
+                manifest["prompt_sha256"] = digest(prompt_path)
+                manifest["provider_request_archive"][0]["sha256"] = digest(request_path)
+                manifest["manifest_sha256"] = sha256_bytes(canonical_bytes({
+                    key: value for key, value in manifest.items() if key != "manifest_sha256"
+                }))
+                write_json(manifest_path, manifest)
+                reloaded = load_episode(manifest_path, source_root=ROOT)
+                with self.assertRaisesRegex(V1ValidationError, "first main public request"):
+                    _validate_main_public_request(reloaded, source_root=ROOT,
+                                                  source_commit=COMMIT, inference_config=config)
 
     def test_excluded_live_block_summary_requires_all_five_and_keeps_verdicts_distinct(self):
         with tempfile.TemporaryDirectory() as directory:
@@ -321,9 +452,9 @@ class V1AnalysisTests(unittest.TestCase):
             fixture = V1EpisodeFixture(directory, cell="c5")
             episode = load_episode(fixture.manifest_path, source_root=ROOT)
             metrics = episode_metrics(episode)
-            self.assertTrue(metrics["mismatch_exposed"])
+            self.assertTrue(metrics["oracle_gate_discordance_delivered"])
             self.assertIsNone(metrics["operational_appropriate_stopping"])
-            self.assertEqual(metrics["first_mismatch_step"], 1)
+            self.assertEqual(metrics["first_oracle_gate_discordance_step"], 1)
 
     def test_hash_and_schema_fail_closed(self):
         with tempfile.TemporaryDirectory() as directory:
@@ -444,7 +575,7 @@ class V1AnalysisTests(unittest.TestCase):
     def test_rag_contrast_requires_matched_condition_and_model(self):
         base = {"family": "authorization", "model": "m", "ground_truth_state": "REPAIRABLE",
                 "oracle_secure_recovery": True, "operational_appropriate_stopping": True,
-                "mismatch_exposed": False}
+                "oracle_gate_discordance_delivered": False}
         result = summarize_rag({"status": "DESCRIPTIVE_ONLY", "episodes": [
             {**base, "condition": "C1", "retrieval_mode": "R0"},
             {**base, "condition": "C2", "retrieval_mode": "R1", "oracle_secure_recovery": False},

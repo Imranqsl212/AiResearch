@@ -9,10 +9,13 @@ from __future__ import annotations
 
 import csv
 import html
+import io
 import json
 import re
+from copy import copy
 from collections import Counter
 from pathlib import Path
+from zipfile import ZipFile
 
 from PIL import Image, ImageDraw, ImageFont
 from docx import Document
@@ -43,6 +46,52 @@ ORANGE = "#C36E39"
 GRAY = "#687786"
 LIGHT = "#E9EFF3"
 INK = "#17212B"
+AUTHOR = "Imran Zakirov"
+PAGE_LIMIT = 20
+BODY_POINT_SIZE = 12
+
+
+def review_manuscript(markdown: str) -> str:
+    """Remove identity-bearing front matter and acknowledgments for review.
+
+    The scientific prose, results, tables, figures, and references come from the
+    same source for both versions. Fail closed if a known identifier remains.
+    """
+    kept: list[str] = []
+    in_acknowledgments = False
+    for line in markdown.splitlines():
+        heading = re.match(r"^(#{1,6})\s+(.+?)\s*$", line)
+        if heading and len(heading.group(1)) <= 2:
+            in_acknowledgments = bool(re.fullmatch(
+                r"Acknowledg(?:e)?ments", heading.group(2), re.IGNORECASE))
+            if in_acknowledgments:
+                kept.extend((line, "", "Acknowledgments and author disclosures are withheld "
+                             "during anonymous peer review.", ""))
+                continue
+        if in_acknowledgments:
+            continue
+        if re.match(r"^\*\*(?:Author(?: line)?|Authors|Affiliation(?:s)?|Correspondence|Corresponding author):\*\*",
+                    line, re.IGNORECASE):
+            continue
+        # The study commit may expose the author through its repository. Keep
+        # the substantive data-access limitation without a linkable revision.
+        if line.startswith("**Data and code:**"):
+            line = ("**Data and code:** Source trajectories are retained in a local "
+                    "archive; release and access are pending privacy review. "
+                    "Derived tables and analysis code are retained with the manuscript.")
+        line = line.replace("The frozen study commit is given above; paper analysis code is a post collection addition.",
+                            "Paper analysis code is a post collection addition.")
+        kept.append(line)
+    review = "\n".join(kept).rstrip() + "\n"
+    review = review.replace(
+        "The original study source commit is `98a4dcf414672c1725e4acdb9f08045370aa7f64`;",
+        "The original study source revision is withheld during anonymous review;",
+    )
+    review = review.replace("98a4dcf414672c1725e4acdb9f08045370aa7f64",
+                            "source revision withheld during anonymous review")
+    if re.search(r"(?i)\b(?:imran|zakirov)\b|zakirovimran333@gmail\.com", review):
+        raise ValueError("anonymized manuscript still contains a known author identifier")
+    return review
 
 
 def font(size: int, bold: bool = False) -> ImageFont.FreeTypeFont:
@@ -63,7 +112,7 @@ def canvas(title: str, subtitle: str, *, width: int = 1600, height: int = 900):
     label(draw, (105, 75), title, size=46, bold=True)
     label(draw, (105, 137), subtitle, size=25, fill=GRAY)
     draw.line((105, height - 80, width - 105, height - 80), fill=LIGHT, width=2)
-    label(draw, (105, height - 56), "AiResearch · exploratory local study · source: paper/artifacts/run_metrics.csv",
+    label(draw, (105, height - 56), "Exploratory local study · source: derived run metrics",
           size=19, fill=GRAY)
     return im, draw
 
@@ -104,8 +153,11 @@ def figure2(rows: list[dict]) -> None:
     im, d = canvas("Actions before stopping", "Observed tool calls per episode · R n=20; U n=20")
     counts = {(group, k): sum(r["feasibility"] == group and int(r["actions"]) == k for r in rows)
               for group in ("R", "U") for k in range(2, 7)}
-    for tick in range(0, 11, 2):
-        y = 690 - tick * 42
+    # Scale from the observed maximum so a tall bar cannot enter the title.
+    upper = max(16, 4 * ((max(counts.values()) + 3) // 4))
+    pixels_per_episode = 420 / upper
+    for tick in range(0, upper + 1, upper // 4):
+        y = 690 - tick * pixels_per_episode
         d.line((175, y, 1470, y), fill=LIGHT, width=2)
         label(d, (140, y), str(tick), size=26, anchor="rm")
     for i, step in enumerate(range(2, 7)):
@@ -113,8 +165,10 @@ def figure2(rows: list[dict]) -> None:
         for j, group in enumerate(("R", "U")):
             count = counts[(group, step)]
             x1 = cx + j * 82 - 78
-            d.rectangle((x1, 690 - count * 42, x1 + 72, 690), fill=NAVY if group == "R" else ORANGE)
-            label(d, (x1 + 36, 680 - count * 42), str(count), size=26, bold=True, anchor="mb")
+            d.rectangle((x1, 690 - count * pixels_per_episode, x1 + 72, 690),
+                        fill=NAVY if group == "R" else ORANGE)
+            label(d, (x1 + 36, 680 - count * pixels_per_episode), str(count),
+                  size=26, bold=True, anchor="mb")
         label(d, (cx, 715), str(step), size=31, anchor="mt")
     label(d, (950, 755), "Tool actions per episode", size=25, anchor="mm")
     label(d, (105, 750), "Episodes", size=25)
@@ -157,7 +211,7 @@ def figure4(rows: list[dict]) -> None:
                 d.rectangle((left, y, left + n * 60, y + 85), fill=color)
                 label(d, (left + n * 30, y + 42), str(n), size=30, bold=True, fill="white", anchor="mm")
                 left += n * 60
-        label(d, (1450, y + 45), "n=20", size=24, anchor="rm")
+        label(d, (1460, y + 45), "n=20", size=24, anchor="lm")
     x = 230
     for _, color, name in categories:
         d.rectangle((x, 730, x + 25, 755), fill=color)
@@ -285,36 +339,38 @@ def markdown_blocks(markdown: str):
         yield "paragraph", " ".join(paragraph)
 
 
-def make_pdf(markdown: str) -> int:
+def make_pdf(markdown: str, destination: Path, *, author: str) -> int:
     pdfmetrics.registerFont(TTFont("Body", str(FONT_REG)))
     pdfmetrics.registerFont(TTFont("BodyBold", str(FONT_BOLD if FONT_BOLD.is_file() else FONT_REG)))
     pdfmetrics.registerFontFamily("Body", normal="Body", bold="BodyBold", italic="Body", boldItalic="BodyBold")
     styles = getSampleStyleSheet()
     width, _ = A4
-    body = ParagraphStyle("BodyX", parent=styles["Normal"], fontName="Body", fontSize=9.8,
-                          leading=14, spaceAfter=8, textColor=colors.HexColor(INK))
-    head1 = ParagraphStyle("H1X", parent=body, fontName="BodyBold", fontSize=14,
-                           leading=18, spaceBefore=15, spaceAfter=7, keepWithNext=True,
+    body = ParagraphStyle("BodyX", parent=styles["Normal"], fontName="Body", fontSize=BODY_POINT_SIZE,
+                          leading=BODY_POINT_SIZE, spaceAfter=3, textColor=colors.HexColor(INK))
+    head1 = ParagraphStyle("H1X", parent=body, fontName="BodyBold", fontSize=BODY_POINT_SIZE,
+                           leading=BODY_POINT_SIZE, spaceBefore=7, spaceAfter=3, keepWithNext=True,
                            textColor=colors.HexColor(NAVY))
-    head2 = ParagraphStyle("H2X", parent=head1, fontSize=11.2, leading=15, spaceBefore=10)
-    title = ParagraphStyle("TitleX", parent=head1, fontSize=18.5, leading=23,
-                           alignment=TA_CENTER, spaceAfter=12)
-    caption = ParagraphStyle("CaptionX", parent=body, fontSize=8.8, leading=12,
-                             spaceBefore=5, spaceAfter=14, textColor=colors.HexColor(GRAY))
+    head2 = ParagraphStyle("H2X", parent=head1, spaceBefore=5)
+    head3 = ParagraphStyle("H3X", parent=head2, leftIndent=10,
+                           spaceBefore=3, textColor=colors.HexColor(INK))
+    title = ParagraphStyle("TitleX", parent=head1, alignment=TA_CENTER, spaceAfter=5)
+    caption = ParagraphStyle("CaptionX", parent=body, spaceBefore=2, spaceAfter=5,
+                             textColor=colors.HexColor(GRAY))
     table_caption = ParagraphStyle("TableCaptionX", parent=body, keepWithNext=True,
-                                   spaceBefore=7, spaceAfter=7)
+                                   spaceBefore=3, spaceAfter=3)
     story = []
     for kind, payload in markdown_blocks(markdown):
         if kind == "heading":
             depth, value = payload
-            story.append(Paragraph(inline(value), title if depth == 1 else head1 if depth == 2 else head2))
+            style = title if depth == 1 else head1 if depth == 2 else head2 if depth == 3 else head3
+            story.append(Paragraph(inline(value), style))
         elif kind == "paragraph":
             story.append(Paragraph(inline(payload), table_caption if payload.startswith("**Table ") else body))
         elif kind == "list":
             story.append(Paragraph(inline(payload), ParagraphStyle("ListX", parent=body, leftIndent=16, firstLineIndent=-16)))
         elif kind == "table":
-            widths = [6.75 * inch / len(payload[0])] * len(payload[0])
-            cell_style = ParagraphStyle("CellX", parent=body, fontSize=8.1, leading=10.5, spaceAfter=0)
+            widths = [7.1 * inch / len(payload[0])] * len(payload[0])
+            cell_style = ParagraphStyle("CellX", parent=body, spaceAfter=0)
             cells = [[Paragraph(inline(cell), cell_style) for cell in row] for row in payload]
             table = LongTable(cells, colWidths=widths, repeatRows=1, hAlign="LEFT")
             table.setStyle(TableStyle([
@@ -322,10 +378,10 @@ def make_pdf(markdown: str) -> int:
                 ("LINEBELOW", (0, 0), (-1, 0), 0.8, colors.HexColor(NAVY)),
                 ("ROWBACKGROUNDS", (0, 1), (-1, -1), [colors.white, colors.HexColor("#F7F9FB")]),
                 ("VALIGN", (0, 0), (-1, -1), "TOP"),
-                ("LEFTPADDING", (0, 0), (-1, -1), 7), ("RIGHTPADDING", (0, 0), (-1, -1), 7),
-                ("TOPPADDING", (0, 0), (-1, -1), 6), ("BOTTOMPADDING", (0, 0), (-1, -1), 6),
+                ("LEFTPADDING", (0, 0), (-1, -1), 3), ("RIGHTPADDING", (0, 0), (-1, -1), 3),
+                ("TOPPADDING", (0, 0), (-1, -1), 3), ("BOTTOMPADDING", (0, 0), (-1, -1), 3),
             ]))
-            story.extend([table, Spacer(1, 11)])
+            story.extend([table, Spacer(1, 4)])
         elif kind == "figure":
             figcaption, relative = payload
             image_path = PAPER / relative
@@ -333,20 +389,23 @@ def make_pdf(markdown: str) -> int:
                 raise FileNotFoundError(image_path)
             with Image.open(image_path) as im:
                 ratio = im.height / im.width
-            figure_width = 6.75 * inch
+            figure_width = 6.7 * inch
             story.append(PdfImage(str(image_path), width=figure_width, height=figure_width * ratio))
             story.append(Paragraph(inline(figcaption), caption))
-    destination = SUBMISSION / "full_paper.pdf"
-    doc = SimpleDocTemplate(str(destination), pagesize=A4, rightMargin=0.7*inch,
-                            leftMargin=0.7*inch, topMargin=0.7*inch, bottomMargin=0.7*inch,
-                            title="When the Tests Pass but the Benchmark Says No", author="AiResearch project")
+    title_match = re.search(r"^#\s+(.+)$", markdown, re.MULTILINE)
+    if title_match is None:
+        raise ValueError("manuscript title is missing")
+    doc = SimpleDocTemplate(str(destination), pagesize=A4, rightMargin=0.52*inch,
+                            leftMargin=0.52*inch, topMargin=0.52*inch, bottomMargin=0.52*inch,
+                            title=title_match.group(1), author=author,
+                            invariant=1)
 
     def footer(canv, document):
         canv.saveState()
-        canv.setFont("Body", 8)
+        canv.setFont("Body", BODY_POINT_SIZE)
         canv.setFillColor(colors.HexColor(GRAY))
-        canv.drawString(0.7*inch, 0.4*inch, "Exploratory study · 3 October 2026")
-        canv.drawRightString(width - 0.7*inch, 0.4*inch, f"{document.page}")
+        canv.drawString(0.52*inch, 0.3*inch, "Exploratory study")
+        canv.drawRightString(width - 0.52*inch, 0.3*inch, f"{document.page}")
         canv.restoreState()
 
     doc.build(story, onFirstPage=footer, onLaterPages=footer)
@@ -354,7 +413,8 @@ def make_pdf(markdown: str) -> int:
     pdf = PdfReader(str(destination))
     page_text = [page.extract_text() or "" for page in pdf.pages]
     extracted = "\n".join(page_text)
-    for required in ("Abstract", "16/20", "9/20", "References", "Conclusion", "Safety and Ethics"):
+    required_sections = ("Abstract", "Introduction", "Methods", "Results", "Discussion", "References")
+    for required in (*required_sections, "16/20", "9/20"):
         if required not in extracted:
             raise ValueError(f"PDF text extraction missing {required}")
     for caption, header in (("Table 1.", "Decision stage"), ("Table 2.", "Measure"),
@@ -364,24 +424,39 @@ def make_pdf(markdown: str) -> int:
     return len(pdf.pages)
 
 
-def make_docx(markdown: str) -> None:
+def make_docx(markdown: str, destination: Path, *, author: str) -> None:
     doc = Document()
+    title_match = re.search(r"^#\s+(.+)$", markdown, re.MULTILINE)
+    if title_match is None:
+        raise ValueError("manuscript title is missing")
+    doc.core_properties.title = title_match.group(1)
+    doc.core_properties.author = author
+    doc.core_properties.last_modified_by = ""
+    doc.core_properties.comments = ""
+    doc.core_properties.keywords = ""
+    doc.core_properties.subject = ""
     section = doc.sections[0]
-    section.top_margin = Inches(0.72); section.bottom_margin = Inches(0.72)
-    section.left_margin = Inches(0.72); section.right_margin = Inches(0.72)
-    normal = doc.styles["Normal"]
-    normal.font.name = "Arial"; normal.font.size = Pt(10.5)
-    normal.paragraph_format.space_after = Pt(7)
+    section.page_width = Pt(A4[0]); section.page_height = Pt(A4[1])
+    section.top_margin = Inches(0.52); section.bottom_margin = Inches(0.52)
+    section.left_margin = Inches(0.52); section.right_margin = Inches(0.52)
+    for name in ("Normal", "Title", "Heading 1", "Heading 2", "Heading 3"):
+        style = doc.styles[name]
+        style.font.name = "Arial"
+        style.font.size = Pt(BODY_POINT_SIZE)
+        style.paragraph_format.line_spacing = 1.0
+        style.paragraph_format.space_before = Pt(0)
+        style.paragraph_format.space_after = Pt(3 if name == "Normal" else 5)
     for kind, payload in markdown_blocks(markdown):
         if kind == "heading":
             depth, value = payload
-            doc.add_heading(value, level=0 if depth == 1 else 1 if depth == 2 else 2)
+            doc.add_heading(value, level=0 if depth == 1 else min(depth - 1, 3))
         elif kind in ("paragraph", "list"):
             p = doc.add_paragraph(style="Normal")
             text = payload if kind == "paragraph" else payload
             # Keep visible, editable prose and reference URLs in Word; Markdown
             # emphasis markers are removed only for display.
             text = re.sub(r"\[([^\]]+)\]\((https?://[^)]+)\)", r"\1 (\2)", text)
+            text = re.sub(r"(?<!\*)\*([^*]+)\*(?!\*)", r"\1", text)
             p.add_run(text.replace("**", "").replace("`", ""))
             if kind == "paragraph" and payload.startswith("**Table "):
                 p.paragraph_format.keep_with_next = True
@@ -396,14 +471,55 @@ def make_docx(markdown: str) -> None:
                 cells = table.add_row().cells
                 for j, value in enumerate(row):
                     cells[j].text = value.replace("`", "")
+            for row in table.rows:
+                for cell in row.cells:
+                    for paragraph in cell.paragraphs:
+                        paragraph.style = doc.styles["Normal"]
+                        paragraph.paragraph_format.space_after = Pt(0)
+                        paragraph.paragraph_format.line_spacing = 1.0
         elif kind == "figure":
             caption_text, relative = payload
             doc.add_picture(str(PAPER / relative), width=Inches(6.7))
             p = doc.add_paragraph(caption_text)
             p.alignment = WD_ALIGN_PARAGRAPH.CENTER
             for run in p.runs:
-                run.italic = True; run.font.size = Pt(9)
-    doc.save(SUBMISSION / "full_paper.docx")
+                run.italic = True; run.font.size = Pt(BODY_POINT_SIZE)
+    doc.save(destination)
+    # python-docx stamps every ZIP member with the wall clock. Keep the OOXML
+    # payloads and member metadata, but fix their ZIP timestamps for a stable
+    # artifact hash when the manuscript, figures, and renderer are unchanged.
+    normalized = io.BytesIO()
+    with ZipFile(destination, "r") as source, ZipFile(normalized, "w") as target:
+        for member in source.infolist():
+            fixed = copy(member)
+            fixed.date_time = (1980, 1, 1, 0, 0, 0)
+            target.writestr(fixed, source.read(member.filename))
+    destination.write_bytes(normalized.getvalue())
+
+
+def verify_anonymous_artifacts(pdf_path: Path, docx_path: Path) -> None:
+    """Check rendered text, package content, and document properties for identity."""
+    from pypdf import PdfReader
+
+    reader = PdfReader(str(pdf_path))
+    pdf_text = "\n".join(page.extract_text() or "" for page in reader.pages)
+    pdf_properties = "\n".join(str(value) for value in (reader.metadata or {}).values())
+    with ZipFile(docx_path) as archive:
+        docx_xml = "\n".join(
+            archive.read(name).decode("utf-8", errors="replace")
+            for name in archive.namelist() if name.endswith((".xml", ".rels"))
+        )
+    identity = re.compile(r"(?i)\b(?:imran|zakirov|bishkek)\b|zakirovimran333@gmail\.com|"
+                          r"98a4dcf414672c1725e4acdb9f08045370aa7f64")
+    for label, content in (("PDF text", pdf_text), ("PDF metadata", pdf_properties),
+                           ("DOCX XML and metadata", docx_xml)):
+        if identity.search(content):
+            raise ValueError(f"anonymous {label} contains an author identifier")
+    if reader.metadata and str(reader.metadata.get("/Author", "")).strip():
+        raise ValueError("anonymous PDF author metadata is not blank")
+    docx = Document(docx_path)
+    if docx.core_properties.author or docx.core_properties.last_modified_by:
+        raise ValueError("anonymous DOCX author metadata is not blank")
 
 
 def main() -> None:
@@ -412,12 +528,32 @@ def main() -> None:
     figure4(rows); figure5(rows); figure6(rows)
     SUBMISSION.mkdir(parents=True, exist_ok=True)
     markdown = (PAPER / "final.md").read_text(encoding="utf-8")
-    pages = make_pdf(markdown)
-    make_docx(markdown)
-    print(json.dumps({"status": "BUILT", "pdf_pages": pages, "figures": 6,
+    anonymous = review_manuscript(markdown)
+    displays = Counter(kind for kind, _ in markdown_blocks(markdown)
+                       if kind in ("figure", "table"))
+    if displays.total() < 5:
+        raise ValueError("research article requires at least five figures/tables")
+    paths = {
+        "identified_pdf": SUBMISSION / "full_paper.pdf",
+        "identified_docx": SUBMISSION / "full_paper.docx",
+        "anonymous_pdf": SUBMISSION / "full_paper_anonymous.pdf",
+        "anonymous_docx": SUBMISSION / "full_paper_anonymous.docx",
+    }
+    identified_pages = make_pdf(markdown, paths["identified_pdf"], author=AUTHOR)
+    make_docx(markdown, paths["identified_docx"], author=AUTHOR)
+    anonymous_pages = make_pdf(anonymous, paths["anonymous_pdf"], author="")
+    make_docx(anonymous, paths["anonymous_docx"], author="")
+    verify_anonymous_artifacts(paths["anonymous_pdf"], paths["anonymous_docx"])
+    pages = {"identified": identified_pages, "anonymous": anonymous_pages}
+    within_limit = all(count <= PAGE_LIMIT for count in pages.values())
+    print(json.dumps({"status": "BUILT" if within_limit else "PAGE_LIMIT_EXCEEDED",
+                      "pdf_pages": pages, "page_limit": PAGE_LIMIT,
+                      "body_font_pt": BODY_POINT_SIZE, "line_spacing": "single",
+                      "figures": displays["figure"], "tables": displays["table"],
                       "main_episodes": len(rows),
-                      "files": [str(path.relative_to(ROOT)) for path in
-                                [SUBMISSION / "full_paper.pdf", SUBMISSION / "full_paper.docx"]]}, indent=2))
+                      "files": {key: str(path.relative_to(ROOT)) for key, path in paths.items()}}, indent=2))
+    if not within_limit:
+        raise ValueError(f"20-page limit exceeded: {pages}; content and 12-point font retained")
 
 
 if __name__ == "__main__":

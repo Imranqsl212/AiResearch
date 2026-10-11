@@ -29,8 +29,8 @@ Retrieved documents were delivered in R1/R2 first prompts, but recorded document
 
 ## Source and archive provenance
 
-- Qwen archive: `/Users/imranmzakirov/Desktop/research/experiments/runs/v1_rag_matched_seed11_20261004_source_provenance/source_snapshot_recovered`; `post_run_source_snapshot_recovery`; index SHA-256 `1118f83ece7f042e28079c6d5e993b29d54583d9e4ca7b7a14fd777489abe5bd`.
-- Gemma archive: `/Users/imranmzakirov/Desktop/research/experiments/runs/v1_rag_gemma3_4b_seed11_20261004_source_provenance/source_snapshot`; `pre_run_source_snapshot`; index SHA-256 `5792e03c51cf35a92e72550404837fefd02ad2280480da05cf74345b51f7f501`.
+- Qwen archive: `experiments/runs/v1_rag_matched_seed11_20261004_source_provenance/source_snapshot_recovered` relative to the repository root; `post_run_source_snapshot_recovery`; index SHA-256 `1118f83ece7f042e28079c6d5e993b29d54583d9e4ca7b7a14fd777489abe5bd`.
+- Gemma archive: `experiments/runs/v1_rag_gemma3_4b_seed11_20261004_source_provenance/source_snapshot` relative to the repository root; `pre_run_source_snapshot`; index SHA-256 `5792e03c51cf35a92e72550404837fefd02ad2280480da05cf74345b51f7f501`.
 - Scheduled source SHA-256 differs in four files:
   - `agent/finite_candidate_contract.py`: Qwen `f821ee5ef7d10074ec8e13ffd044dbc05a02b46f903d18debf8857e892e9748e`, Gemma `27310ace929a5b4e6212cfc607221b6fe89e16d15a6e2f30b77ad302518c6948`.
   - `agent/v1_ollama_adapter.py`: Qwen `e9ede1f1464729bf4ab11a506206d8df91e506f03afd0ae1a1b31829b60ee9d7`, Gemma `0dde9844b5afcf0b1962da083fc55a2a31778a31180620a8bd31dfc964db74f7`.
