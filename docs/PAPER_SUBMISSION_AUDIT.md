@@ -10,7 +10,7 @@
 | Main denominator | 40 indexed episodes: five families × four condition cards × guidance on/off × one run. All 40 archived logs and receipts pass current integrity checks. |
 | Pilot denominator | Eight disjoint AEAD episodes. All eight pass current artifact integrity checks; they are never pooled into main estimates. |
 | Historical records | 101 receipts inventoried across incompatible cohorts; 87 pass the current validator. Older smokes, superseded pilot, and containment simulation are excluded from main estimates. |
-| Raw source preservation | Original raw files remain unmodified. Analysis records per-file hashes and checks them again before writing derived output. The current experimental branch tracks raw paths; their presence in Git does not establish privacy or journal release approval. |
+| Raw source preservation | Original raw files remain unmodified. Analysis records per-file hashes and checks them again before writing derived output. Public GitHub data revision `37074c198237ade67eb76921333b2835d329c863` tracks raw paths; their presence in Git does not establish privacy clearance or journal supplement approval. |
 | Analysis outputs | `paper/artifacts/results.json`, run CSV, factor summaries, family contrasts, historical inventory, source API inventory, and input hashes. Six figures are generated from these outputs. |
 | Numerical consistency | Manuscript anchors `40`, `8`, `16/20`, `9/20`, `24/28`, `17/25`, `15/20/5`, and `0/81` are present in derived records. Builder refuses a stale main data summary. |
 | Article format | 237-word abstract, 25 numbered references with direct primary links, six figures with captions, four tables, data availability and ethics sections. The identified PDF has 16 A4 pages. |
@@ -19,7 +19,7 @@
 
 ## Reviewer 1 — ML and experimental design
 
-The earlier protocol specifies falsifiable hypotheses and GEE on family clusters. The actual main has only five clusters and one observation per factorial arm. No genuine strategy outcome was independently coded. The manuscript **does not** run GEE, calculate p values, or treat 136 actions as independent observations. The five family bootstrap intervals are labeled descriptive sensitivity checks. Planned confirmatory claims, interactions, and statistical power are explicitly unresolved. Residual problem: five selected families and fixed block order cannot identify a population effect of guidance or feedback; this requires new data.
+The earlier protocol specifies falsifiable hypotheses, but the actual main has only five families and one observation per factorial arm. No genuine strategy outcome was independently coded. The manuscript reports exact descriptive counts without p values or treating 136 actions as independent observations. Planned confirmatory claims, interactions, and statistical power remain unresolved. Five selected families and fixed block order cannot identify a population effect of guidance or feedback; this requires new data.
 
 ## Reviewer 2 — cybersecurity and benchmark validity
 
@@ -44,19 +44,19 @@ The local analysis verifies saved receipts, logs, schedule hash, and archive fil
 | Potential false explanation | Test performed on saved artifacts | Finding |
 | --- | --- | --- |
 | Task difficulty explains the guidance contrast | Stratified by five families; inspected per-family acceptance and leave-one-family-out estimates. | Only key derivation and SQL injection show on/off differences; data do not resolve difficulty or order. |
-| Timeout masquerades as repair failure | Crossed terminal stop and candidate acceptance receipts. | One repairable episode had an accepted candidate and a terminal timeout. Reported separately. |
+| Recorded stop label is mistaken for agent intent | Compared runner code, terminal receipts, and elapsed event times. | Four main runs crossed the effective 900-second boundary before stop. Three were labeled `AGENT_SELF_TERMINATION` after the boundary. In slot `000022`, the agent called `terminate` at 909.5 seconds, but the runner later recorded `TIMEOUT`; its passing candidate and stop label are reported separately. Figure 4 displays recorded runner labels, not uncontaminated voluntary-stop decisions. |
 | Actions imply strategy changes | AST and called API inventory calculated only for 25 parseable adjacent pairs; inspected five examples. | 17 API inventories changed, but strategy transition remains unmeasured. |
 | Apparent false success comes from claim parser | Compared raw and conservative public claim recovery. | Raw field is 40/40 unknown; 15 recovered success statements had finite checker support, five remain unknown. |
 | Unavailable tasks were truly impossible | Inspected Docker candidate decision path and raw evaluator receipts. | Hidden veto explains nine raw passes; actual impossibility was not established. |
 | Verifier proves software security | Compared implemented test strings with the claimed properties and NIST guidance where applicable. | Sparse tests and an AEAD pilot negative test defect preclude this claim. |
-| Repeated actions inflate statistical confidence | Summaries computed per episode; uncertainty resampled only whole family clusters. | No action-level pseudoreplication or confirmatory significance statement. |
+| Repeated actions inflate statistical confidence | Checked the unit of each reported count against run and family identifiers. | Actions and source pairs are descriptive observations, not independent task-family replicates; no confirmatory significance statement is reported. |
 
 ## Required human finishing items
 
 1. Confirm the named author, independent-student affiliation wording, contribution statement, contact, acknowledgments, funding, conflicts, ethics, and AI-use disclosure.
 2. Select the target venue or course template and apply its formatting, length, and disclosure requirements. The PDF is a clean neutral A4 manuscript, not an assumed publisher template.
 3. Decide whether the reviewed raw archive can be released and, if so, publish it with checksums, licensing, privacy review, and matching analysis commit. Until then, describe raw availability accurately.
-4. If the goal is a confirmatory paper on rational stopping or RAG effects, redesign the unavailable task mechanism and verifier, then collect a new, repeated dataset under a new protocol. Do not reinterpret these exploratory runs as that dataset.
+4. If the goal is a confirmatory paper on rational stopping or static contextual guidance, redesign the unavailable task mechanism and verifier, then collect a new, repeated dataset under a new protocol. Do not reinterpret these exploratory runs as that dataset.
 
 ## 5 October 2026 update
 

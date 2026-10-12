@@ -4,7 +4,7 @@ The manuscript in [final.md](final.md) is an exploratory measurement audit with 
 
 ## Required local inputs
 
-The raw historical main and AEAD pilot episodes are under `../experiments/runs/`, with result indexes, manifests, schedules, ledgers, nightly gate report, and sealed archive records under `../experiments/`. The separate v7 corrected-oracle pilot and matched continuation have their own run archives. This research branch tracks these inputs. A complete checkout of this branch can rerun the listed local analyses from source trajectories; a partial export or a checkout lacking the archived inputs cannot. The derived tables in `artifacts/` and v7 audit JSON files do not substitute for raw evidence. Git availability does not approve the records for journal supplementary release.
+The raw historical main and AEAD pilot episodes are under `../experiments/runs/`, with result indexes, manifests, schedules, ledgers, nightly gate report, and sealed archive records under `../experiments/`. The separate v7 corrected-oracle pilot and matched continuation have their own run archives. The public repository's data revision `37074c198237ade67eb76921333b2835d329c863` tracks these inputs. A complete checkout containing them can rerun the listed local analyses from source trajectories; a partial export or a checkout lacking the archived inputs cannot. The derived tables in `artifacts/` and v7 audit JSON files do not substitute for raw evidence. GitHub availability does not approve the records for journal supplementary release.
 
 The 101 receipts in the paper's historical inventory are fixed in
 [`historical_receipts_20261003.txt`](historical_receipts_20261003.txt). The
@@ -32,7 +32,7 @@ The historical paper analysis uses the Python standard library. It validates eve
 A separate [sanitized review candidate](SANITIZED_REVIEW_CANDIDATE_20261005.md)
 now replays the path-independent paper table sections from transformed archive
 bytes using `python3 -B -m paper.replay_sanitized_candidate`. It does not
-revalidate original-byte provenance or approve the archive for public release.
+revalidate original-byte provenance or approve the archive as a journal supplement.
 An [independent terminal-receipt recount](INDEPENDENT_DISCORDANCE_CHECK_20261008.md)
 also verifies the central 9/20 test–gate disagreement from that transformed
 archive without importing the historical summary functions. The private
@@ -51,7 +51,7 @@ python3 -B -m unittest -q paper.test_audit_original_archive_provenance
 It verified 313 original archive members and their transformed counterparts
 locally. The archived input-ledger digest still differs from the current tracked
 ledger by one later source hash. This audit does not establish external chain
-of custody, rerun the model or evaluator, or clear either archive for release.
+of custody, rerun the model or evaluator, or clear either archive for a journal deposit.
 
 The separate auxiliary audit searches local, unsealed Docker sidecar logs by candidate-source hash. Its result is in `artifacts/auxiliary_sidecar_audit.json`. These logs are not uniquely tied to an action and are not used for any paper outcome or stopping metric. A clone without `sandbox/logs/` cannot reproduce this auxiliary check.
 
@@ -102,8 +102,9 @@ make the output bitwise reproducible across fonts and operating systems.
 - `9/20` policy rejected episodes pass the raw family tests and fail a hidden condition rule. They do not test whether the agent recognizes a genuinely impossible programming requirement.
 - `0/81` per-action check records preserve the raw family test result. The terminal disagreement cannot be assigned to an earlier action in the trajectory; extra revisions must not be described as occurring after a known raw pass.
 - `0/15` recovered explicit success statements contradict the limited benchmark receipt. Five main final claims were not recovered; the historical raw parser labeled all 40 unknown.
-- The five historical main families have one run per arm. Family resampling is descriptive; the planned GEE and independently coded strategy transition outcome are unavailable.
-- Of 77 historical logged source strings, 63 parse. Eleven have an unquoted logger redaction marker that causes a syntax error; two have an invalid compound `def` after a semicolon, and one has an unmatched closing brace. The logged archive cannot recover the erased expressions. Only 25/37 adjacent pairs have two parseable logged sources, and their AST/API features are not semantic strategy labels. See the [versioned source-fidelity audit](../docs/EXPLORATORY_SOURCE_FIDELITY_20261005.md).
+- The five historical main families have one run per arm. Factor comparisons are descriptive; independently coded strategy transitions and confirmatory hypothesis tests are unavailable.
+- Figure 4 counts the runner's recorded stop labels (38 self termination, one budget stop, one timeout), not verified agent intent. Four of 40 main runs crossed the effective 900-second boundary before the stop event. Three retained a self-termination label after the boundary; in slot `000022`, an explicit `terminate` call at 909.5 seconds preceded the recorded timeout. The accepted candidate in that run is counted separately from its stop label.
+- Of 77 historical logged source strings, 63 parse. Eleven have an unquoted logger redaction marker that causes a syntax error; all 11 become parseable if the marker is replaced with a quoted dummy value, but this produces a surrogate AST and does not recover the erased original expression. Two other strings have an invalid compound `def` after a semicolon, and one has an unmatched closing brace. Only 25/37 adjacent pairs have two parseable logged sources, and their AST/API features are not semantic strategy labels. See the [versioned source-fidelity audit](../docs/EXPLORATORY_SOURCE_FIDELITY_20261005.md).
 - The [excluded v7 corrected-oracle pilot](../docs/V7_DECISIVE_EXCLUDED_PILOT_20261005.md) completed 30/30 prescheduled episodes at temperature 0.3, with three seeds per cell across two authored families. C3 and C4 used two submissions each in all six matched blocks; one post-outcome-selected secure-onset fork differed under truthful PASS and false FAIL. These observations do not justify a population confidence interval or general feedback-effect claim, and no v7 episode is eligible for the prospective main study.
 - A prospective v1 logger now retains full finite-evaluator receipts on checked actions and explicit `NOT_RUN` reasons on non-check actions. This improves future excluded data fidelity; it cannot restore the 81 historical per-action raw results or change the prospective main study's `NOT_READY` status and zero eligible main episodes.
 
