@@ -58,5 +58,6 @@ terminal counts**. It cannot establish an external timestamp or chain of
 custody, rerun the original model/evaluator, prove the task oracle was fair,
 or establish real-world code safety. It is not a privacy review and does not
 approve journal upload of either archive. The original archive and the
-sanitized candidate are tracked in the current research branch; that fact
+sanitized candidate are tracked in public GitHub data revision
+`37074c198237ade67eb76921333b2835d329c863`; that fact
 does not change the audit's `REVIEW_ONLY` verdict.

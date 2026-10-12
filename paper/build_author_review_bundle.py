@@ -30,7 +30,8 @@ V4_OUTPUT = ROOT / "experiments/runs/paper_author_review_manuscript_20261005_v4.
 V5_OUTPUT = ROOT / "experiments/runs/paper_author_review_manuscript_20261008_v5.tar.gz"
 V6_OUTPUT = ROOT / "experiments/runs/paper_author_review_manuscript_20261008_v6.tar.gz"
 V7_OUTPUT = ROOT / "experiments/runs/paper_author_review_manuscript_20261012_v7.tar.gz"
-OUTPUT = V7_OUTPUT
+V8_OUTPUT = ROOT / "experiments/runs/paper_author_review_manuscript_20261012_v8.tar.gz"
+OUTPUT = V8_OUTPUT
 V1_VERSION = "paper-author-review-manuscript-1.0.0"
 V2_VERSION = "paper-author-review-manuscript-2.0.0"
 V3_VERSION = "paper-author-review-manuscript-3.0.0"
@@ -38,7 +39,8 @@ V4_VERSION = "paper-author-review-manuscript-4.0.0"
 V5_VERSION = "paper-author-review-manuscript-5.0.0"
 V6_VERSION = "paper-author-review-manuscript-6.0.0"
 V7_VERSION = "paper-author-review-manuscript-7.0.0"
-VERSION = V7_VERSION
+V8_VERSION = "paper-author-review-manuscript-8.0.0"
+VERSION = V8_VERSION
 README_NAME = "REVIEW_ONLY_README.md"
 MANIFEST_NAME = "SOURCE_HASH_MANIFEST.json"
 V1_SOURCE_NAMES = (
@@ -88,7 +90,8 @@ V6_SOURCE_NAMES = V5_SOURCE_NAMES + (
     "paper/ORIGINAL_ARCHIVE_PROVENANCE_AUDIT_20261008.md",
 )
 V7_SOURCE_NAMES = V6_SOURCE_NAMES
-SOURCE_NAMES = V7_SOURCE_NAMES
+V8_SOURCE_NAMES = V7_SOURCE_NAMES
+SOURCE_NAMES = V8_SOURCE_NAMES
 FORBIDDEN_MARKERS = {
     "mac_home": re.compile(rb"/Users/[^/\s\"'<>\\]+", re.I),
     "linux_home": re.compile(rb"/home/[^/\s\"'<>\\]+", re.I),
@@ -248,7 +251,50 @@ V7_README = V6_README.replace("bundle v6", "bundle v7").replace(
     "Scientific, privacy, venue, identity, declaration, and journal data-route "
     "decisions remain open.",
 )
-README = V7_README
+V8_README = """# Local author-review manuscript bundle v8
+
+**Status: REVIEW_ONLY. This filtered package is not an approved journal
+supplement or submission.**
+
+This package contains exact copies of the corrected exploratory manuscript,
+identified and anonymous PDF/DOCX files, six figures, references, historical
+derived tables, and separate audits for the excluded corrected-oracle pilot.
+It also contains the source-fidelity inventory, strategy-coding protocol,
+cover-letter template, data-availability options, and author decision form.
+The pilot is not pooled with the historical 40-episode denominator.
+
+The manuscript corrects the interpretation of the hidden acceptance veto,
+recorded stopping labels, logger-redacted source, and fixed family guidance.
+Some historical derived artifacts retain exploratory calculations that the
+current article omits or no longer interprets as population estimates. Those
+artifacts preserve the earlier analysis record; their presence is not a claim
+of statistical significance, verified stopping intent, or secure code.
+
+`SOURCE_HASH_MANIFEST.json` records each selected source file's SHA-256 and byte
+count. `paper/artifacts/input_hashes.csv` is the historical input ledger.
+Raw trajectories, original responses, source snapshots, original archives,
+and the sanitized review candidate are not inside this filtered package;
+they are tracked separately. The included audit scripts need those separate
+inputs for replay. This package alone cannot regenerate the reported results
+from raw traces.
+
+The builder screens selected bytes and expanded DOCX members for a small set
+of local path and account markers. This does not establish privacy clearance
+for all free text, metadata, images, or scientific validity. The anonymous
+files are review drafts. Author decisions on claims, declarations, journal
+data route, privacy, and venue requirements remain open.
+
+Verify against the local source tree with:
+
+    python3 -B -m paper.build_author_review_bundle verify \\
+      --archive experiments/runs/paper_author_review_manuscript_20261012_v8.tar.gz
+
+Use `--no-local-compare` to verify archived bytes and receipt after the
+workspace changes. No final Git revision, independent timestamp, or digital
+signature is bound to this package. A SHA-256 receipt detects accidental
+changes when checked against a trusted copy.
+"""
+README = V8_README
 
 
 @dataclass(frozen=True)
@@ -265,8 +311,9 @@ V4_SPEC = BundleSpec(V4_VERSION, V4_SOURCE_NAMES, V4_README)
 V5_SPEC = BundleSpec(V5_VERSION, V5_SOURCE_NAMES, V5_README)
 V6_SPEC = BundleSpec(V6_VERSION, V6_SOURCE_NAMES, V6_README)
 V7_SPEC = BundleSpec(V7_VERSION, V7_SOURCE_NAMES, V7_README)
+V8_SPEC = BundleSpec(V8_VERSION, V8_SOURCE_NAMES, V8_README)
 SPECS_BY_VERSION = {spec.version: spec for spec in
-                    (V1_SPEC, V2_SPEC, V3_SPEC, V4_SPEC, V5_SPEC, V6_SPEC, V7_SPEC)}
+                    (V1_SPEC, V2_SPEC, V3_SPEC, V4_SPEC, V5_SPEC, V6_SPEC, V7_SPEC, V8_SPEC)}
 
 
 class BundleError(RuntimeError):
@@ -314,7 +361,7 @@ def _decision_bound_names(spec: BundleSpec) -> tuple[str, ...]:
         "paper/submission/full_paper.docx",
         "paper/artifacts/results.json",
     )
-    if spec in (V2_SPEC, V3_SPEC, V4_SPEC, V5_SPEC, V6_SPEC, V7_SPEC):
+    if spec in (V2_SPEC, V3_SPEC, V4_SPEC, V5_SPEC, V6_SPEC, V7_SPEC, V8_SPEC):
         names += (
             "paper/submission/full_paper_anonymous.pdf",
             "paper/submission/full_paper_anonymous.docx",
@@ -333,7 +380,7 @@ def _check_decision_bindings(source: dict[str, bytes], spec: BundleSpec) -> None
             raise BundleError(f"author decision form does not identify current {name}")
 
 
-def _source_bytes(spec: BundleSpec = V7_SPEC) -> dict[str, bytes]:
+def _source_bytes(spec: BundleSpec = V8_SPEC) -> dict[str, bytes]:
     if len(set(spec.source_names)) != len(spec.source_names):
         raise BundleError("duplicate source allowlist member")
     source: dict[str, bytes] = {}
@@ -352,7 +399,7 @@ def _source_bytes(spec: BundleSpec = V7_SPEC) -> dict[str, bytes]:
     return source
 
 
-def _manifest(source: dict[str, bytes], readme: bytes, spec: BundleSpec = V7_SPEC) -> dict[str, Any]:
+def _manifest(source: dict[str, bytes], readme: bytes, spec: BundleSpec = V8_SPEC) -> dict[str, Any]:
     return {
         "version": spec.version,
         "status": "REVIEW_ONLY",
@@ -477,7 +524,7 @@ def verify(*, archive: Path = OUTPUT, compare_sources: bool = True) -> dict[str,
             "local_sources_match": True if compare_sources else None}
 
 
-def build(*, output: Path = OUTPUT, spec: BundleSpec = V7_SPEC) -> dict[str, Any]:
+def build(*, output: Path = OUTPUT, spec: BundleSpec = V8_SPEC) -> dict[str, Any]:
     output = Path(output)
     receipt_path = _receipt_path(output)
     if output.exists() or receipt_path.exists():

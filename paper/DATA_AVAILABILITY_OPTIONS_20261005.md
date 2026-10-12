@@ -1,28 +1,28 @@
 # Data availability for the exploratory manuscript — updated 12 October 2026
 
 These are **author-review notes**, not text approved for a journal submission.
-The current research branch tracks the historical raw trajectories, original
-archive, sanitized candidate, corrected-oracle pilot runs, code, and derived
-tables. Some filenames retain `PRIVATE` or `REVIEW_ONLY` from an earlier release
-workflow, but those labels do not make a committed file private. The author has
-chosen to publish the experimental artifacts on GitHub as they are. Availability
-to an external reader depends on pushing the branch and identifying the exact
-public revision; the default branch can lag. No data DOI or journal-specific
+The [public GitHub `main` data revision](https://github.com/Imranqsl212/AiResearch/tree/37074c198237ade67eb76921333b2835d329c863)
+(`37074c198237ade67eb76921333b2835d329c863`) tracks the historical raw
+trajectories, original archive, sanitized candidate, corrected-oracle pilot
+runs, code, and derived tables. Some filenames retain `PRIVATE` or
+`REVIEW_ONLY` from an earlier workflow; those labels do not make committed
+files private. Public GitHub availability does not establish privacy clearance
+or approval as a journal supplement. No data DOI or journal-specific
 supplementary package has been established.
 
-## Draft statement after the exact public revision is verified
+## Draft journal statement for author review
 
 > Analysis code, derived tables, and the archived trajectories used for the
 > historical and pilot counts are available in the project's public GitHub
-> repository at [exact revision and URL to be inserted after publication].
+> repository at [data revision `37074c198237ade67eb76921333b2835d329c863`](https://github.com/Imranqsl212/AiResearch/tree/37074c198237ade67eb76921333b2835d329c863).
 > The repository contains unredacted local path metadata and model-generated
 > outputs. The counts can be checked with the documented analysis commands,
 > subject to the recorded software and provenance limitations. No archival DOI
 > or independent rerun is claimed.
 
-Before using that statement, verify the public revision contains every cited
-input, run the checks from a fresh checkout, identify the journal's data and
-anonymity requirements, and obtain author sign-off on the exact wording.
+Before using that statement, confirm every cited input at the pinned revision
+and run the checks from a fresh checkout. Check the journal's data and anonymity
+requirements and obtain author sign-off on the exact wording.
 
 ## If the journal requires a separate supplementary deposit
 
