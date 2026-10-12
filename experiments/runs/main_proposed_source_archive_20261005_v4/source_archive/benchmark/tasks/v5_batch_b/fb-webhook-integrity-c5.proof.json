@@ -1,0 +1,70 @@
+{
+  "candidate_space_size": 4,
+  "case_count": 2,
+  "certificate_version": "5.0.0",
+  "contradiction_witness": null,
+  "counterexamples": [
+    {
+      "candidate": {
+        "mode": "parsed_hmac"
+      },
+      "counterexample": {
+        "actual": true,
+        "case_id": "altered_duplicate_key",
+        "observation": {
+          "parsed": {
+            "amount": 1
+          },
+          "raw_body_hex": "7b22616d6f756e74223a302c22616d6f756e74223a317d",
+          "signature": "625838ade917ea82e52c41434b7858e54d1342c1ea8520f437b281612b7332e1"
+        },
+        "required": false
+      }
+    },
+    {
+      "candidate": {
+        "mode": "trust_signature"
+      },
+      "counterexample": {
+        "actual": true,
+        "case_id": "altered_duplicate_key",
+        "observation": {
+          "parsed": {
+            "amount": 1
+          },
+          "raw_body_hex": "7b22616d6f756e74223a302c22616d6f756e74223a317d",
+          "signature": "625838ade917ea82e52c41434b7858e54d1342c1ea8520f437b281612b7332e1"
+        },
+        "required": false
+      }
+    },
+    {
+      "candidate": {
+        "mode": "reject_all"
+      },
+      "counterexample": {
+        "actual": false,
+        "case_id": "signed_original",
+        "observation": {
+          "parsed": {
+            "amount": 1
+          },
+          "raw_body_hex": "7b22616d6f756e74223a317d",
+          "signature": "625838ade917ea82e52c41434b7858e54d1342c1ea8520f437b281612b7332e1"
+        },
+        "required": true
+      }
+    }
+  ],
+  "ground_truth_state": "EVALUATOR_MISMATCH",
+  "proof_sha256": "2645f13f009bdd9ff64b0f202084cd44cfc2739d75f54cbb937e3578d8451152",
+  "satisfying_candidates": [
+    {
+      "mode": "raw_hmac"
+    }
+  ],
+  "scope": "finite_candidate_language_and_listed_cases_only",
+  "secure_candidate_gate_verdict": "FAIL",
+  "task_id": "fb-webhook-integrity-c5",
+  "task_sha256": "85dab8b7376e4a433ebc48a31b2f4c7a63cc34420f6219dfaabee8d36505367a"
+}

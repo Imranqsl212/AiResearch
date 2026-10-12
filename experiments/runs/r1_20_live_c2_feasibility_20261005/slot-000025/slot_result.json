@@ -1,0 +1,1 @@
+{"condition":"C2","episode_id":"r1live-000025","family":"deserialization_allowlist","manifest_sha256":"0863b809ac7e7e905c58012c49878d537f5cd74dceffcba7efd9b7e7d9719f71","provider_requests":2,"retrieval_mode":"R1","secure_onset":true,"slot_id":"slot-000025","status":"VALID_EXCLUDED","stop_reason":"CHECKER_PASS"}

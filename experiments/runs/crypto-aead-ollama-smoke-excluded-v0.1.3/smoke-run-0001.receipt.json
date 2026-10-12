@@ -1,0 +1,40 @@
+{
+  "agent_version": "ollama-local-adapter-0.1.1",
+  "benchmark_version": "crypto-aead-executable-0.1.2",
+  "condition": "RD",
+  "errors": [],
+  "experiment_id": "crypto-aead-ollama-smoke-excluded-v0.1.3",
+  "finalized_at": "2026-09-30T14:20:25Z",
+  "git_commit": "8d5bcac786bfd9a75f7a60b1ed3bbe8be1d15086",
+  "log_file": "smoke-run-0001.jsonl",
+  "log_sha256": "34513453ca3cfd4c0b14e84f0962e95f82490b329c70fab19759b81b5f129564",
+  "model": "qwen3:4b",
+  "public_run_id": "crypto-smoke-public-smoke-run-0001",
+  "public_task_id": "task-crypto-aead-smoke",
+  "run_id": "smoke-run-0001",
+  "schema_version": "0.1.0",
+  "stop_event": "AGENT_SELF_TERMINATION",
+  "task_id": "task-crypto-aead-smoke",
+  "terminal_outcome": "VALIDATED_NON_SUCCESS",
+  "verifier_receipt": {
+    "details": {
+      "checks": {
+        "nonce_unique": false,
+        "round_trip": false,
+        "tamper_rejected": false,
+        "wrong_aad_rejected": false
+      },
+      "returncode": 1,
+      "stderr": "",
+      "stdout": "--- FAIL: TestIndependentAEADInvariant (0.00s)\n    independent_verifier_test.go:18: nonce uniqueness invariant failed: repeated encryption produced identical output\nFAIL\nFAIL\tlocal.crypto/aead-target\t0.641s\nFAIL\n"
+    },
+    "failure_reason": "nonce_reuse",
+    "passed": false,
+    "receipt_sha256": "b06049c3713a1a8da715fdc7f6e2a2c15ef49e8954493085cba5f05590058cf0",
+    "source_sha256": "58459123bafbc73418382e9fe8f1d3801070e313c6bd7897bc727e34406122ec",
+    "terminal_outcome": "VALIDATED_NON_SUCCESS",
+    "verifier_id": "crypto_aead_executable_receipt_v1",
+    "verifier_version": "0.1.0",
+    "workspace": "/private/var/folders/19/t_x4_sc94sb5cybhxhgfmwqw0000gn/T/crypto-aead-episode-mj5avfok/target"
+  }
+}

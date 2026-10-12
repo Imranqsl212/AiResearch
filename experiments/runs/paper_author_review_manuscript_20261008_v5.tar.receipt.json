@@ -1,0 +1,11 @@
+{
+  "archive_bytes": 1797064,
+  "archive_members": 34,
+  "archive_sha256": "bea5a1006b73e67382e0b987983473a5c6e9d3e805e634b9e93c39b542bf1311",
+  "journal_submission_approved": false,
+  "manifest_sha256": "b1ee9e1a799875748e3b04380fd5a843c30d548f8885ed3f8617ddedf37db038",
+  "public_release_approved": false,
+  "source_file_count": 32,
+  "status": "REVIEW_ONLY",
+  "version": "paper-author-review-manuscript-5.0.0"
+}

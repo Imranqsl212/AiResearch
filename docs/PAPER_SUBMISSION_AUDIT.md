@@ -1,6 +1,6 @@
-# Paper submission audit — 3 October 2026, updated 5 October 2026
+# Paper submission audit — updated 12 October 2026
 
-**Artifact reviewed:** `paper/final.md` and derived PDF/DOCX, built from the completed exploratory cohort. **Verdict:** complete manuscript suitable for mentor review as a clearly labeled exploratory report. A journal submission still requires author-supplied identities and disclosures, a selected venue and its formatting, and a reviewed raw-data availability plan; see [`paper/SUBMISSION_HANDOFF_20261005.md`](../paper/SUBMISSION_HANDOFF_20261005.md). It must not be presented as a confirmatory or validated secure code benchmark study.
+**Artifact reviewed:** `paper/final.md` and derived PDF/DOCX, built from the completed exploratory cohort. **Verdict:** `REVIEW_ONLY`, suitable for mentor review as a clearly labeled exploratory report. A journal submission still requires author-approved declarations, a selected venue and its formatting, and a reviewed data-availability plan; see [`paper/SUBMISSION_HANDOFF_20261005.md`](../paper/SUBMISSION_HANDOFF_20261005.md). It must not be presented as a confirmatory or validated secure-code benchmark study. A separate corrected-oracle pilot contains 30 excluded episodes and is not pooled with the historical 40.
 
 ## Dataset and traceability
 
@@ -10,10 +10,10 @@
 | Main denominator | 40 indexed episodes: five families × four condition cards × guidance on/off × one run. All 40 archived logs and receipts pass current integrity checks. |
 | Pilot denominator | Eight disjoint AEAD episodes. All eight pass current artifact integrity checks; they are never pooled into main estimates. |
 | Historical records | 101 receipts inventoried across incompatible cohorts; 87 pass the current validator. Older smokes, superseded pilot, and containment simulation are excluded from main estimates. |
-| Raw source preservation | Original raw files remain unmodified. Analysis records per-file hashes and checks them again before writing derived output. Raw paths are Git ignored pending reviewed release. |
+| Raw source preservation | Original raw files remain unmodified. Analysis records per-file hashes and checks them again before writing derived output. The current experimental branch tracks raw paths; their presence in Git does not establish privacy or journal release approval. |
 | Analysis outputs | `paper/artifacts/results.json`, run CSV, factor summaries, family contrasts, historical inventory, source API inventory, and input hashes. Six figures are generated from these outputs. |
 | Numerical consistency | Manuscript anchors `40`, `8`, `16/20`, `9/20`, `24/28`, `17/25`, `15/20/5`, and `0/81` are present in derived records. Builder refuses a stale main data summary. |
-| Article format | Approximately 7,100 source words including references, 238-word abstract, 25 numbered references with direct primary links, six figures with captions, three tables, data availability and ethics sections. PDF text extraction confirms key sections and values. |
+| Article format | 237-word abstract, 25 numbered references with direct primary links, six figures with captions, four tables, data availability and ethics sections. The identified PDF has 16 A4 pages. |
 | Repository tests | `python3 -B -m unittest discover -s tests -q` passed **164 tests** in 67.427 seconds with Docker daemon access on 3 October 2026. An initial run while Docker was off failed only the three Docker-dependent catalog tests; rerunning after Docker became available passed all 164. No main experiment was relaunched. |
 | Re-render | `paper.build_submission` generated the 16-page PDF, DOCX, and all six PNG figures. Table captions and tables were checked on the same PDF pages. `git diff --check` passed; the derived data hashes matched across two identical analysis runs. The official Docker safety gate separately passed all eleven checks on 3 October 2026; its local receipt was not used to alter historical study results. |
 
@@ -29,7 +29,7 @@ The paper audits the exact executable evaluator and finds the nominally unavaila
 
 The strongest objection is construct failure: the intended phenomenon, choosing when to stop on truly unrecoverable security work, is not actually instantiated by the current `U` tasks. The corresponding core hypothesis cannot be tested. The manuscript treats this as a principal finding of a measurement audit and narrows the conclusion to observable actions and benchmark behavior. A second objection is the narrow test suite: 16 accepted candidates may be insecure. A third is that guidance and feedback contrasts are based on one local small model and five task families. None are resolved by stylistic edits; the manuscript documents them and specifies required next experiments.
 
-The revised paper foregrounds the **9/20 test–gate discordance** and labels it a post collection audit metric. Its title and conclusion describe a property of this evaluator. They do not claim the hidden veto caused any particular agent action. Section 8.3 states a falsifiable future test of feedback opacity versus agent stopping behavior.
+The revised paper foregrounds the **9/20 test–gate discordance** and labels it a post collection audit metric. Its title and conclusion describe a property of this evaluator. They do not claim the hidden veto caused any particular agent action. The Discussion states a falsifiable future test of feedback opacity versus agent stopping behavior.
 
 An additional receipt audit found that all 81 per-action check records omit the raw family-test outcome. Only final receipts expose it. The article therefore does not claim that a later revision followed an already passing raw check; the terminal nine cases and the post-failure resubmission counts are separate observations.
 
@@ -37,7 +37,7 @@ A read-only hash search of auxiliary Docker logs found possible matches for 37 o
 
 ## Reviewer 4 — reproducibility
 
-The local analysis verifies saved receipts, logs, schedule hash, and archive file hashes, and the renderer regenerates figures, PDF, and DOCX without executing candidate code. Tested source commands and versions are in `paper/README.md`. Limitations: raw trajectories are not included in Git, the exact Ollama binary/model weights digests were not frozen, the font path is macOS specific, two final logged source hashes differ from executed code, and 14/77 logged submissions do not parse (11 contain a redaction marker; three have no identified cause). A third party with only the public repository can inspect derived data but cannot fully reproduce the analysis from raw input. This is stated in the article and README rather than silently claiming full independent reproducibility.
+The local analysis verifies saved receipts, logs, schedule hash, and archive file hashes, and the renderer regenerates figures, PDF, and DOCX without executing candidate code. Tested source commands and versions are in `paper/README.md`. Limitations: the exact historical Ollama binary/model weights digests were not frozen, the font path is macOS specific, two final logged source hashes differ from executed code, and 14/77 logged submissions do not parse (11 contain a redaction marker, two contain malformed `;def` syntax, and one has an unmatched brace). A third party needs the exact source-bound archive and original historical source revision, not merely derived tables; public availability and privacy review must be recorded accurately at release.
 
 ## Conclusions challenged and retained
 
@@ -53,7 +53,7 @@ The local analysis verifies saved receipts, logs, schedule hash, and archive fil
 
 ## Required human finishing items
 
-1. Insert exact author names, affiliations, email/contact, acknowledgments, and funding/ethics statements only if verified by the research team.
+1. Confirm the named author, independent-student affiliation wording, contribution statement, contact, acknowledgments, funding, conflicts, ethics, and AI-use disclosure.
 2. Select the target venue or course template and apply its formatting, length, and disclosure requirements. The PDF is a clean neutral A4 manuscript, not an assumed publisher template.
 3. Decide whether the reviewed raw archive can be released and, if so, publish it with checksums, licensing, privacy review, and matching analysis commit. Until then, describe raw availability accurately.
 4. If the goal is a confirmatory paper on rational stopping or RAG effects, redesign the unavailable task mechanism and verifier, then collect a new, repeated dataset under a new protocol. Do not reinterpret these exploratory runs as that dataset.
@@ -70,7 +70,7 @@ different schema appearing in `experiments/runs/`; the 40 main and eight AEAD
 pilot episode counts and all substantive paper results remain unchanged.
 `analysis.paper_pipeline` completed against the frozen list and verified its
 read-only inputs. The venue-neutral PDF/DOCX were regenerated on 5 October;
-the PDF has 16 pages and the Word file has three tables and six figures.
+the PDF had 16 pages. The later current draft has four tables and six figures.
 The complete local test suite was rerun after the latest 5 October changes:
 **453/453 tests passed** in 143.476 seconds. The paper pipeline again reconstructed 40
 historical exploratory episodes, eight separate AEAD pilots, and nine of 20

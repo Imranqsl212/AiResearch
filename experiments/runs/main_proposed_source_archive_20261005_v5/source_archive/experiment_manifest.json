@@ -1,0 +1,79 @@
+{
+  "schema_version": "1.0-draft",
+  "status": "NOT_READY",
+  "main_run_permitted": false,
+  "cohort": "prospective-v1-only",
+  "model": {
+    "name": null,
+    "version": null,
+    "provider": null,
+    "weights_hash": null,
+    "inference_runtime_version": null,
+    "decoding_config_hash": null
+  },
+  "runtime": {
+    "os": null,
+    "python": null,
+    "docker": null,
+    "ollama": null,
+    "image_hash": null,
+    "sandbox_policy_hash": null,
+    "daemon_fingerprint": null,
+    "safety_receipt_hash": null
+  },
+  "experiment": {
+    "git_sha": null,
+    "clean_tree": false,
+    "task_manifest_hash": null,
+    "evaluator_hash": null,
+    "oracle_hash": null,
+    "oracle_proofs_hash": null,
+    "prompt_hash": null,
+    "guidance_hash": null,
+    "tool_schema_hash": null,
+    "schedule_hash": null,
+    "raw_log_schema_hash": null,
+    "protocol_hash": null,
+    "pilot_replay_hash": null
+  },
+  "artifact_paths": {
+    "task_manifest": null,
+    "evaluator": null,
+    "oracle": null,
+    "oracle_proofs": null,
+    "prompt": null,
+    "guidance": null,
+    "tool_schema": null,
+    "schedule": null,
+    "raw_log_schema": null,
+    "protocol": "experiment_design.md",
+    "pilot_replay": null
+  },
+  "rag": {
+    "enabled": null,
+    "corpus_hash": null,
+    "document_hash_manifest": null,
+    "embedding_model": "none-bm25-or-lexical-ranking-to-be-frozen",
+    "retrieval_config": null,
+    "top_k": null,
+    "reranker": null
+  },
+  "statistics": {
+    "analysis_version": null,
+    "seed": null,
+    "primary_outcomes_hash": null,
+    "contrast_plan_hash": null
+  },
+  "readiness": {
+    "independent_feasibility_proofs": "NOT_READY",
+    "independent_security_oracle": "NOT_READY",
+    "evaluator_mutation_score": "NOT_READY",
+    "candidate_oracle_isolation": "NOT_READY",
+    "task_label_leak_review": "NOT_READY",
+    "retrieval_freeze": "NOT_READY",
+    "complete_action_logging": "NOT_READY",
+    "model_freeze": "NOT_READY",
+    "pilot_reproducibility": "NOT_READY"
+  },
+  "legacy_data_policy": "Legacy benchmark 0.5.0 episodes are exploratory audit evidence only and are excluded from prospective v1 main analysis."
+}

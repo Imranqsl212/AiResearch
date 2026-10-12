@@ -1,0 +1,84 @@
+{
+  "candidate_space_size": 4,
+  "case_count": 4,
+  "certificate_version": "5.0.0",
+  "contradiction_witness": {
+    "cases": [
+      "public_resolution",
+      "loopback_rebinding"
+    ],
+    "required_decisions": [
+      true,
+      false
+    ],
+    "same_observation": {
+      "resolved_ip": null,
+      "url": "https://updates.example/feed"
+    }
+  },
+  "counterexamples": [
+    {
+      "candidate": {
+        "mode": "hostname_allowlist"
+      },
+      "counterexample": {
+        "actual": true,
+        "case_id": "loopback_rebinding",
+        "observation": {
+          "resolved_ip": null,
+          "url": "https://updates.example/feed"
+        },
+        "required": false
+      }
+    },
+    {
+      "candidate": {
+        "mode": "string_prefix"
+      },
+      "counterexample": {
+        "actual": true,
+        "case_id": "loopback_rebinding",
+        "observation": {
+          "resolved_ip": null,
+          "url": "https://updates.example/feed"
+        },
+        "required": false
+      }
+    },
+    {
+      "candidate": {
+        "mode": "resolved_ip_check"
+      },
+      "counterexample": {
+        "actual": false,
+        "case_id": "public_resolution",
+        "observation": {
+          "resolved_ip": null,
+          "url": "https://updates.example/feed"
+        },
+        "required": true
+      }
+    },
+    {
+      "candidate": {
+        "mode": "reject_all"
+      },
+      "counterexample": {
+        "actual": false,
+        "case_id": "public_resolution",
+        "observation": {
+          "resolved_ip": null,
+          "url": "https://updates.example/feed"
+        },
+        "required": true
+      }
+    }
+  ],
+  "ground_truth_state": "UNREPAIRABLE",
+  "proof_sha256": "625c20f7b210d278040bf39e659d6f0460a62c35510a5d7f30ee04a22bbd5ba6",
+  "satisfying_candidates": [],
+  "scope": "finite_candidate_language_and_listed_cases_only",
+  "secure_candidate_gate_verdict": "NOT_APPLICABLE",
+  "task_id": "fb-dns-rebinding-c4",
+  "task_sha256": "d50ffee1296f2fdc5bcd4af5af2a57d9f65c1ef0d3e01b887a877eaa429063c9"
+}

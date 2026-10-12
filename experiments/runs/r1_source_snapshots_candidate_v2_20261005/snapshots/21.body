@@ -1,0 +1,2954 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+    
+        
+
+
+    <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<?xml version="1.0" encoding="iso-8859-1"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head >
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="description" content="Common Weakness Enumeration (CWE) is a list of software weaknesses." />
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<link rel="shortcut icon" href="/favicon.ico" />
+	<link href="/css/main.css?version=4.0.022420" rel="stylesheet" type="text/css" />
+	<link href="/css/custom.css" rel="stylesheet" type="text/css" />
+	<!--[if IE]>
+	<link rel="stylesheet" type="text/css" href="/css/ie.css?version=1.7" />
+	<![endif]-->
+	
+	<script src="/includes/custom_filter.js" language="JavaScript" type="text/javascript"></script>
+	<script src="/includes/browserheight.js" language="JavaScript" type="text/javascript"></script>
+	<script src="/includes/jquery.js" language="JavaScript" type="text/javascript"></script>               	
+    	<script src="/includes/cwe_minimizer.js" language="JavaScript" type="text/javascript"></script>
+	<script src="/includes/cookie.js" language="JavaScript" type="text/javascript"></script>               	
+	<script src="/includes/includeglossarydef.js" language="JavaScript" type="text/javascript"></script>
+	<link href="/css/print.css?version=1.11" rel="stylesheet" media="print" type="text/css" />
+	<link href="/css/user_skins/complete.css" rel="stylesheet" type="text/css" />
+	<noscript>
+	<style type="text/css">
+		#script { visibility:collapse; visibility:hidden; font-size:0px; height:0px; width:0px  }
+		#noscript { visibility:visible; font-size:inherit;  height:inherit; width:inherit}
+	</style>
+	</noscript>
+	<title>CWE -
+
+    CWE-426: Untrusted Search Path (4.20)
+    </title>
+</head>
+<body onload="onloadCookie()">
+<a name="top" id="top"></a>
+	<div id="MastHead" style="width:100%">
+	
+	        <div style="width:62%;float:left;padding-top:15px;padding-left:10px;padding-bottom:2px;">
+	                <a href="/index.html" style="color:#32498D; text-decoration:none">
+	                <img src="/images/cwe-20years-logo.png" width="203" height="58" style="float:left;border:0;margin-right:6px" alt="CWE" />
+	                <h1 style="color:#314a8d;font-size:1.5em;font-family:'Verdana',sans-serif;#eee;margin: .1em auto">Common Weakness Enumeration</h1>
+	                <p style="color:#314a8d;font-family:'Times New Roman';font-style:italic;font-size:1em;#eee;margin:.1em auto 0 auto">Celebrating 20 years of community-developed cybersecurity weakness knowledge!</p>
+	                </a>
+	        </div>
+	<div style="float:right;padding-top:0px;text-align:right;padding-left:8px;padding-right:4px;padding-bottom:0px;"><a href="/about/new_to_cwe.html" title="New to CWE click here logo"><img src="/images/new_to_cwe/new_to_cwe_click_here.png" height="90" border="0" alt="New to CWE? click here!" style="text-align:center"/></a></div>
+	<div style="float:right;padding-top:0px;text-align:right;padding-left:0px;padding-right:4px;padding-bottom:0px;"><a href="/topHW/index.html" title="CWE Most Important Hardware Weaknesses"> <img src="/images/mihw_logo.svg" width="90" border="0" alt="CWE Most Important Hardware Weaknesses" style="vertical-align:bottom"/></a></div>
+	<div style="float:right;padding-top:0px;text-align:right;padding-left:0px;padding-right:4px;padding-bottom:0px;"><a href="/top25/" title="CWE Top 25"><img src="/images/cwe_top_25_logo_simple.svg" width="90" border="0" alt="CWE Top 25 Most Dangerous Weaknesses" style="vertical-align:bottom"/></a></div>
+
+	</div><!--End Masthead div-->
+
+
+<div id="HeaderBar" class="noprint">
+<table width="100%" border="0" cellpadding="0" cellspacing="0">  
+	<tr> 
+		<td width="100%" align="left" style="padding-left:10px; font-size:75%;"> 
+                <a href="/" >Home</a>  &gt;  <a href="/data/index.html" >CWE List</a>  &gt;  
+
+    CWE-426: Untrusted Search Path (4.20)
+    &nbsp;
+		</td>
+		<td align="right" nowrap="nowrap" style="padding-right:12px">
+		<!-- Begin /includes/search_cwe_id.html -->
+<div class="noprint">
+  <form action="/cgi-bin/jumpmenu.cgi" align="right" style="padding:0px; margin:0px">
+	ID <label for="id" style="padding-right:5px">Lookup:</label>
+    <input id="id" name="id" type="text" style="width:50px; font-size:80%" maxlength="10" />
+	<input value="Go" style="padding: 0px; font-size:80%" type="submit">
+  </form>
+</div>
+<!-- End /includes/search_cwe_id.html --> 
+		</td>
+	</tr>
+</table>
+</div> <!--//HeaderBar-->
+<div class="yesprint">
+<hr width="100%" size="1" style="clear:both" color="#000000" />
+</div>
+
+<div class="topnav">
+<ul>
+<li><a href="/index.html">Home</a></li>
+<li>
+        <div class="dropdown">
+          <button class="dropbtn">About &#x25BC;</button>
+          <div class="dropdown-content">
+            <a href="/about/index.html">Who We Are</a>             
+            <a href="/about/user_stories.html">User Stories</a>        
+            <a href="/about/history.html">History</a>                                                          
+            <a href="/about/documents.html">Documents</a>
+            <a href="/about/cwe_videos.html">Videos</a>
+          </div>
+        </div>
+</li>
+<li>
+        <div class="dropdown">
+          <button class="dropbtn">Learn &#x25BC;</button>
+          <div class="dropdown-content">
+            <a href="/about/new_to_cwe.html">Basics</a>
+            <div class="dropdown-sub-group">
+              <a href="/documents/cwe_usage/guidance.html">Root Cause Mapping &nbsp; &#x25BA;</a>
+              <div class="dropdown-content-submenu">
+                <a href="/documents/cwe_usage/guidance.html">Guidance</a>
+                <a href="/documents/cwe_usage/quick_tips.html">Quick Tips</a>
+                <a href="/documents/cwe_usage/mapping_examples.html">Examples</a>
+              </div>
+            </div>
+            <a href="/community/submissions/overview.html">How to Contribute Weakness Content</a>
+            <a href="/about/faq.html">FAQs</a>
+            <a href="/documents/glossary/index.html">Glossary</a>           
+          </div>
+        </div>
+</li>
+<li>
+        <div class="dropdown">
+          <button class="dropbtn">Access Content &#x25BC;</button>
+          <div class="dropdown-content">
+            <div class="dropdown-sub-group">
+              <a href="/scoring/index.html#top_n_lists">Top-N Lists &nbsp; &#x25BA;</a>
+              <div class="dropdown-content-submenu">
+                <a href="/top25/">Top 25 Software</a>
+                <a href="/topHW/index.html">Top Hardware</a>     
+                <a href="/top25/archive/2025/2025_kev_list.html">Top 10 KEV Weaknesses</a>
+              </div>
+            </div>
+            <div class="dropdown-sub-group">
+              <a href="/data/index.html">CWE List &nbsp; &#x25BA;</a>
+              <div class="dropdown-content-submenu">
+              <a href="/data/index.html">Current Version</a>                
+                <a href="/data/reports.html">Reports</a>
+                <a href="/data/pdfs.html">Visualizations</a>     
+                <a href="/data/archive.html">Releases Archive</a>
+              </div>
+            </div>
+            <a href="/data/downloads.html">Downloads</a>           
+            <a href="https://github.com/CWE-CAPEC/REST-API-wg/blob/main/Quick%20Start.md" target="_blank">REST API</a>
+          </div>
+        </div>
+</li>
+<li>
+        <div class="dropdown">
+          <button class="dropbtn">Community &#x25BC;</button>
+          <div class="dropdown-content">
+            <div class="dropdown-sub-group">
+              <a href="/news/">News &nbsp; &#x25BA;</a>
+              <div class="dropdown-content-submenu">
+                <a href="/news/archives/news2026.html">Current News</a>
+                <a href="https://medium.com/@CWE_CAPEC" target="_blank">Blog</a>
+                <a href="/news/podcast.html">Podcast</a>
+                <a href="/news/archives/index.html">News Archive</a>
+              </div>
+            </div>
+            <a href="/community/board.html">CWE Board</a>            
+            <a href="/community/working_groups.html">Working Groups &amp; Special Interest Groups</a>  
+            <a href="/community/registration.html">Email Lists</a>  
+          </div>
+        </div>
+</li>
+<li>
+        <div class="dropdown">
+          <button class="dropbtn">Search &#x25BC;</button>
+          <div class="dropdown-content">
+            <a href="/">Search CWE List</a>         
+            <a href="/find/index.html">Search Website</a>            
+        </div>
+</li>
+
+</ul>
+
+</div>
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0" id="MainPane">
+  <tr>
+	<!-- begin left side menu -->
+    <td valign="top" rowspan="2" id="LeftPane">
+	<!--include virtual="/includes/leftsidemenu.html" Removed 11212016--> 
+	<script type="text/javascript">browserheight();</script>
+	</td>
+	<!-- end left side menu -->
+    <td style="height:1px"></td>
+	<!-- begin right column -->
+	<td valign="top" align="center" rowspan="2" nowrap="nowrap" id="RightPane">
+
+
+    	</td>
+	<!-- end right side menu -->
+  </tr>
+  <tr>
+	<!-- begin content pane -->
+    <td valign="top" width="100%" id="Contentpane">
+	
+	<!--Glossary tags-->
+	
+<div id="styled_popup" name="styled_popup" style="display:none; position:fixed; top:300; height:auto; width:300px; z-index:1000">
+<table width="300" cellpadding="0" cellspacing="0" border="0" style="border:1px solid #32498D;">
+<tr style="background-color:#32498D; color:#ffffff;">
+<td width="100%" style="padding:1px 5px 1px 5px; border-bottom:1px solid #000000"><div width="100%" style="font-weight:bold;">CWE Glossary Definition</div></td>
+<td nowrap="nowrap" style="padding:1px; border-bottom:1px solid #000000" valign="top"><a href="javascript:styledPopupClose();"><img src="/images/layout/close.gif" border="0"  alt="x"></a></td>
+</tr>
+<tr><td colspan="2" style="background: url(/images/layout/ylgradient.jpg); background-repeat: repeat-x repeat-y; padding:5px; background-color:#FFFFCC; " valign="top">
+<div id="output" style="max-height:400px; overflow-y:auto"></div>
+</td></tr>
+</table>
+</div>
+
+    <script src="/includes/nav.js" language="JavaScript" type="text/javascript" /></script>
+    <noscript>
+      <style>div.collapseblock { display:inline} </style>
+    </noscript>
+    <link href="/css/indiv-entry.css" rel="stylesheet" type="text/css" />
+<!-- Start main content -->
+<html xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" encoding="iso-8859-1">
+<!-- Copyright (c) 2006-2025, The MITRE Corporation. CWE and the CWE logo are trademarks of The MITRE Corporation. -->
+<a xmlns:xhtml="http://www.w3.org/1999/xhtml" name="426"></a>
+<div style="overflow:auto;">
+        <h2 style="display:inline; margin:0px 0px 2px 0px; vertical-align: text-bottom">CWE-426: Untrusted Search Path</h2>
+        <div style="text-align:right; margin:5px 0px 0px 5px; padding-bottom:1px; white-space:nowrap;"></div>
+    </div>
+    <div xmlns:xhtml="http://www.w3.org/1999/xhtml" id="CWEDefinition" class="Weakness">
+        <div class="title">
+        <div class="status">
+            <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                <tbody>
+                    <tr>
+                        <td valign="top" align="left" width="33%" nowrap>
+                            <div style="font-weight:bold">
+                                Weakness ID: 426
+                                
+                            </div><span>
+
+                            
+                                <span style="font-weight:bold">
+                                    <a href="#Vulnerability_Mapping_Notes_426">Vulnerability Mapping</a>:<span class="tool">
+                                        <span style="color:#4E8F4A">ALLOWED</span>
+                                        <span class="tip">This CWE ID could be used to map to real-world vulnerabilities in limited situations requiring careful review</span>
+                                    </span>
+                                    
+                                     (with careful review of mapping notes)
+                                    
+                                </span>
+                                <br>
+                            
+                            
+                                <span class="tool">Abstraction:
+                                    <span style="font-weight:normal">Base</span>
+                                    <span class="tip">Base - a weakness that is still mostly independent of a resource or technology, but with sufficient details to provide specific methods for detection and prevention. Base level weaknesses typically describe issues in terms of 2 or 3 of the following dimensions: behavior, property, technology, language, and resource.</span>
+                                </span>
+                            
+                            
+
+                            </span>
+
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+    <div id="Filter_Menu" style="padding-bottom:10px;">
+    <div style="min-width:580px;display:inline-flex;" class="filterButtonList">
+	<div style="font-size:80%; color:#000066; font-style:italic; display:inline;height:40px;line-height:40px;min-width:200px;">View customized information: </div>
+	<span class="tool">
+		<button id="ConceptualButton" type="button" onclick="selectButtonSkin('conceptual');">Conceptual</button>
+		<span class='filter-tip'>For users who are interested in more notional aspects of a weakness. Example: educators, technical writers, and project/program managers.</span>
+	</span>
+	<span class="tool">
+		<button id="OperationalButton" type="button" onclick="selectButtonSkin('operational');">Operational</button>
+        	<span class='filter-tip'>For users who are concerned with the practical application and details about the nature of a weakness and how to prevent it from happening. Example: tool developers, security researchers, pen-testers, incident response analysts.</span>
+	</span>
+	<span class="tool">
+		<button id="MappingFriendlyButton" type="button" onclick="selectButtonSkin('mappingfriendly');">Mapping Friendly</button>
+        	<span class='filter-tip'>For users who are mapping an issue to CWE/CAPEC IDs, i.e., finding the most appropriate CWE for a specific issue (e.g., a CVE record).  Example: tool developers, security researchers.</span>
+	</span>
+	<span class="tool">
+		<button id="CompleteButton" type="button" onclick="selectButtonSkin('complete');">Complete</button>	
+        	<span class='filter-tip'>For users who wish to see all available information for the CWE/CAPEC entry.</span>
+	</span>
+	<span class="tool">
+		<button id="CustomButton" type="button" onclick="openCustomFilterModal();">Custom</button>
+        	<span class='filter-tip'>For users who want to customize what details are displayed.</span>
+	</span>
+</div>
+
+<!-- The Modal -->
+<div id="customFilterModal" class="custom-filter-modal">
+  <!-- Modal content -->
+  <div class="custom-filter-modal-content">
+    <span class="close" onclick="cancelCustomFilter();">&times;</span>
+    <br>
+    <h2 id="customFilterHeader" class="custom-filter-header">Edit Custom Filter</h2>
+    <div id="customFilterCategories" class="custom-filter-categories">
+        <button class="modalFilterButton" onclick="selectCategory('conceptual')" title="For users who are interested in more notional aspects of a weakness. Example: educators, technical writers, and project/program managers.">Conceptual</button>
+        <button class="modalFilterButton" onclick="selectCategory('operational')" title="For users who are concerned with the practical application and details about the nature of a weakness and how to prevent it from happening. Example: tool developers, security researchers, pen-testers, incident response analysts.">Operational</button>
+        <button class="modalFilterButton" onclick="selectCategory('mappingfriendly')" title="For users who are mapping an issue to CWE/CAPEC IDs, i.e., finding the most appropriate CWE for a specific issue (e.g., a CVE record).  Example: tool developers, security researchers.">Mapping Friendly</button>
+        <button class="modalFilterButton" onclick="selectCategory('complete')" title="For users who wish to see all available information for the CWE/CAPEC entry">Select All</button>
+    </div>
+    <div id="customFilterMainBox" class="custom-filter-main-box">
+        <div id="customFilterLeftBox">
+        </div>
+        <div id="customFilterRightBox">
+        </div>
+    </div>
+    <br>
+    <div id="customFilterButtons" class="custom-filter-buttons">
+        <button class="modalFilterButton" onclick="defaultCustomFilter()" title="Reset the selected elements to the current custom filter setting.">Reset</button>
+	<button class="modalFilterButton" onclick="clearCustomFilter();" title="Clear all the selected elements so that nothing is selected.">Clear</button>
+        <button class="modalFilterButton" onclick="submitCustomFilter();" title="Submit your changes for the custom filter">Submit</button>
+        <button class="modalFilterButton" onclick="cancelCustomFilter();" title="Cancel all changes made to the custom filter">Cancel</button>
+    </div>
+  </div>
+
+</div>
+
+<style>
+div.filterButtonList button {
+	height:25px;
+	border-radius:10px;
+	width: 150px; 
+	margin-left:15px;
+	margin-right:15px;
+}
+
+/* The Modal (background) */
+.custom-filter-modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  z-index: 9999;
+}
+
+/* Modal Content */
+.custom-filter-modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 800px;
+  min-width: 800px;
+  border-radius: 25px;	
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.custom-filter-header, 
+.custom-filter-categories,
+.custom-filter-main-box,
+.custom-filter-buttons {
+    padding: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#customFilterLeftBox {
+    float: left;
+    width: 250px;
+    min-width: 250px;
+    padding: 10px;
+    display: inline-block;
+}
+
+#customFilterRightBox {
+    float: right;
+    width: 250px;
+    min-width: 250px;
+    padding: 10px;
+    display: inline-block;
+}
+
+.modalFilterButton {
+        height:25px !important;
+        border-radius:12px !important;
+        width: 150px !important;
+        margin-left:10px !important;
+        margin-right:10px !important;
+}
+</style>
+
+<script> 
+
+// When the user clicks anywhere outside of the modal, close it
+var modal = document.getElementById("customFilterModal");
+window.onclick = function(event) {
+  if (event.target == document.getElementById("customFilterModal")) {
+	modal.style.display = "none";
+	document.getElementById("customFilterLeftBox").innerHTML = "";
+        document.getElementById("customFilterRightBox").innerHTML = "";
+  }
+}
+</script>
+
+    </div>
+
+
+
+
+
+    
+    
+        
+        
+    
+
+    
+    
+<div id="Description">
+    <div class="heading" id="Description_426">
+        <span>
+            <a href="javascript:toggleblocksOC('426_Description');">
+                <img id="ocimg_426_Description" src="/images/head_more.gif" border="0" alt="+"></a>
+        </span>Description
+    </div>
+    <div name="oc_426_Description" id="oc_426_Description" class="expandblock">
+        <div class="detail">
+            <div class="indent">The product searches for critical resources using an externally-supplied search path that can point to resources that are not under the product&#39;s direct control.</div>
+        </div>
+    </div>
+</div>
+
+    
+
+    
+    
+<div id="Extended_Description">
+    <div class="heading" id="Extended_Description_426">
+        <span>
+            <a href="javascript:toggleblocksOC('426_Extended_Description');">
+                <img id="ocimg_426_Extended_Description" src="/images/head_more.gif" border="0" alt="+"></a>
+        </span>Extended Description
+    </div>
+    <div name="oc_426_Extended_Description" id="oc_426_Extended_Description" class="expandblock">
+        <div class="detail">
+            <div class="indent">
+                
+            <p>This might allow attackers to execute their own programs, access unauthorized data files, or modify configuration in unexpected ways. If the product uses a search path to locate critical resources such as programs, then an attacker could modify that search path to point to a malicious program, which the targeted product would then execute. The problem extends to any type of critical resource that the product trusts.</p>
+            <p>Some of the most common variants of untrusted search path are:</p>
+               <ul>
+                  <li>In various UNIX and Linux-based systems, the PATH environment variable may be consulted to locate executable programs, and LD_PRELOAD may be used to locate a separate library.</li>
+                  <li>In various Microsoft-based systems, the PATH environment variable is consulted to locate a DLL, if the DLL is not found in other paths that appear earlier in the search order.</li>
+               </ul>
+         
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+    
+    
+<div id="Alternate_Terms">
+    <div class="heading" id="Alternate_Terms_426">
+        <span>
+            <a href="javascript:toggleblocksOC('426_Alternate_Terms');">
+                <img id="ocimg_426_Alternate_Terms" src="/images/head_more.gif" border="0" alt="+"></a>
+        </span>Alternate Terms
+    </div>
+    <div name="oc_426_Alternate_Terms" id="oc_426_Alternate_Terms" class="expandblock">
+        <div class="detail">
+            <div id="EntryStripedTable" class="indent">
+                <div id="Grouped">
+                    <table width="98%" cellpadding="0" cellspacing="0" border="0" class="Detail">
+                            
+                                
+                                <tr>
+                                    <td valign="top" width="25%" class="subheading">
+                                        Untrusted Path
+                                    </td>
+                                    <td valign="top" width="75%" style="border-left:solid #BAC5E3;">
+                                         
+                                    </td>  
+                                </tr>
+                                
+                                                  
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+    
+    
+<div id="Common_Consequences">
+    <div class="heading" id="Common_Consequences_426"><span><a href="javascript:toggleblocksOC('426_Common_Consequences');"><img
+                    id="ocimg_426_Common_Consequences" src="/images/head_more.gif" border="0" alt="+"></a>
+        </span>Common Consequences</div>
+    <div name="oc_426_Common_Consequences" id="oc_426_Common_Consequences" class="expandblock">
+        <div class="tabledetail">
+            <div id="EntryStripedTable" class="indent"><span class="section tool"><img src="/images/dictionary.gif"
+                        alt="Section Help"><span class="tip">This table specifies different individual consequences
+                        associated with the weakness. The Scope identifies the application security area that is
+                        violated, while the Impact describes the negative technical impact that arises if an
+                        adversary succeeds in exploiting this weakness. The Likelihood provides information about
+                        how likely the specific consequence is expected to be seen relative to the other
+                        consequences in the list. For example, there may be high likelihood that a weakness will be
+                        exploited to achieve a certain impact, but a low likelihood that it will be exploited to
+                        achieve a different impact.</span></span>
+              <table width="98%" cellpadding="0" cellspacing="0" border="0" id="Detail">
+                    <tr>
+                        <th valign="middle" width="135px" nowrap>Impact</th>
+                        <th valign="middle">Details</th>
+                    </tr>
+                            
+                        
+                        <tr>
+                        <td valign="middle" class="subheading">
+                                    <p class="smaller" style="font-weight:normal">
+                                        
+                                        
+                                        <span class="subheading"><i>Gain Privileges or Assume Identity; Execute Unauthorized Code or Commands</i></span>
+                                        
+                                    </p>
+                        </td>
+                        <td valign="middle">
+                            
+                            
+                            <span class="suboptheading">Scope: Integrity, Confidentiality, Availability, Access Control</span>
+                            
+                            <p/>
+                            
+                            <div style="padding-top:5px; padding-bottom:10px">There is the potential for arbitrary code execution with privileges of the vulnerable program.</div>    
+                        </td>
+                        </tr>
+                        
+                        <tr>
+                        <td valign="middle" class="subheading">
+                                    <p class="smaller" style="font-weight:normal">
+                                        
+                                        
+                                        <span class="subheading"><i>DoS: Crash, Exit, or Restart</i></span>
+                                        
+                                    </p>
+                        </td>
+                        <td valign="middle">
+                            
+                            
+                            <span class="suboptheading">Scope: Availability</span>
+                            
+                            <p/>
+                            
+                            <div style="padding-top:5px; padding-bottom:10px">The program could be redirected to the wrong files, potentially triggering a crash or hang when the targeted file is too large or does not have the expected format.</div>    
+                        </td>
+                        </tr>
+                        
+                        <tr>
+                        <td valign="middle" class="subheading">
+                                    <p class="smaller" style="font-weight:normal">
+                                        
+                                        
+                                        <span class="subheading"><i>Read Files or Directories</i></span>
+                                        
+                                    </p>
+                        </td>
+                        <td valign="middle">
+                            
+                            
+                            <span class="suboptheading">Scope: Confidentiality</span>
+                            
+                            <p/>
+                            
+                            <div style="padding-top:5px; padding-bottom:10px">The program could send the output of unauthorized files to the attacker.</div>    
+                        </td>
+                        </tr>
+                        
+                                   
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+    
+    
+<div id="Potential_Mitigations">
+    <div class="heading" id="Potential_Mitigations_426"><span><a href="javascript:toggleblocksOC('426_Potential_Mitigations');"><img
+                    id="ocimg_426_Potential_Mitigations" src="/images/head_more.gif" border="0" alt="+"></a>
+        </span>Potential Mitigations</div>
+    <div name="oc_426_Potential_Mitigations" id="oc_426_Potential_Mitigations" class="expandblock">
+        <div class="tabledetail">
+            <div id="EntryStripedTable" class="indent">
+                <div id="Grouped">
+                  <table width="98%" cellpadding="0" cellspacing="0" border="0" id="Detail">
+		    <tr>
+                      <th>Phase(s)</th>
+		      <th>Mitigation</th>
+		    </tr>
+                        
+                            
+                                <tr>
+                                    <td valign="top" style="border-bottom:solid #BAC5E3; padding-top:5px; padding-bottom:5px;">
+                                        
+                                            
+                                            <p class="subheading">Architecture and Design; Implementation</p>
+                                            
+                                        
+				    </td>
+				    <td valign="top" style="border-bottom:solid #BAC5E3; border-left:solid #BAC5E3; padding-top:5px; padding-bottom:5px;">
+                                        
+                                            <div style="padding-top:5px; padding-bottom:5px;">
+                                                <p class="suboptheading">Strategy: <i>Attack Surface Reduction</i></p>
+                                            </div>
+                                                          
+                                        <div style="text-indent:3em; padding-top:10px; padding-bottom:10px;">Hard-code the search path to a set of known-safe values (such as system directories), or only allow them to be specified by the administrator in a configuration file. Do not allow these settings to be modified by an external party. Be careful to avoid related weaknesses such as <a href="/data/definitions/426.html">CWE-426</a> and <a href="/data/definitions/428.html">CWE-428</a>.</div>
+                                        
+                                        
+                                    </td>
+                                </tr>
+                            
+                                <tr>
+                                    <td valign="top" style="border-bottom:solid #BAC5E3; padding-top:5px; padding-bottom:5px;">
+                                        
+                                            
+                                            <p class="subheading">Implementation</p>
+                                            
+                                        
+				    </td>
+				    <td valign="top" style="border-bottom:solid #BAC5E3; border-left:solid #BAC5E3; padding-top:5px; padding-bottom:5px;">
+                                                          
+                                        <div style="text-indent:3em; padding-top:10px; padding-bottom:10px;">When invoking other programs, specify those programs using fully-qualified pathnames. While this is an effective approach, code that uses fully-qualified pathnames might not be portable to other systems that do not use the same pathnames. The portability can be improved by locating the full-qualified paths in a centralized, easily-modifiable location within the source code, and having the code refer to these paths.</div>
+                                        
+                                        
+                                    </td>
+                                </tr>
+                            
+                                <tr>
+                                    <td valign="top" style="border-bottom:solid #BAC5E3; padding-top:5px; padding-bottom:5px;">
+                                        
+                                            
+                                            <p class="subheading">Implementation</p>
+                                            
+                                        
+				    </td>
+				    <td valign="top" style="border-bottom:solid #BAC5E3; border-left:solid #BAC5E3; padding-top:5px; padding-bottom:5px;">
+                                                          
+                                        <div style="text-indent:3em; padding-top:10px; padding-bottom:10px;">Remove or restrict all environment settings before invoking other programs. This includes the PATH environment variable, LD_LIBRARY_PATH, and other settings that identify the location of code libraries, and any application-specific search paths.</div>
+                                        
+                                        
+                                    </td>
+                                </tr>
+                            
+                                <tr>
+                                    <td valign="top" style="border-bottom:solid #BAC5E3; padding-top:5px; padding-bottom:5px;">
+                                        
+                                            
+                                            <p class="subheading">Implementation</p>
+                                            
+                                        
+				    </td>
+				    <td valign="top" style="border-bottom:solid #BAC5E3; border-left:solid #BAC5E3; padding-top:5px; padding-bottom:5px;">
+                                                          
+                                        <div style="text-indent:3em; padding-top:10px; padding-bottom:10px;">Check your search path before use and remove any elements that are likely to be unsafe, such as the current working directory or a temporary files directory.</div>
+                                        
+                                        
+                                    </td>
+                                </tr>
+                            
+                                <tr>
+                                    <td valign="top" style="border-bottom:solid #BAC5E3; padding-top:5px; padding-bottom:5px;">
+                                        
+                                            
+                                            <p class="subheading">Implementation</p>
+                                            
+                                        
+				    </td>
+				    <td valign="top" style="border-bottom:solid #BAC5E3; border-left:solid #BAC5E3; padding-top:5px; padding-bottom:5px;">
+                                                          
+                                        <div style="text-indent:3em; padding-top:10px; padding-bottom:10px;">Use other functions that require explicit paths. Making use of any of the other readily available functions that require explicit paths is a safe way to avoid this problem. For example, system() in C does not require a full path since the shell can take care of it, while execl() and execv() require a full path.</div>
+                                        
+                                        
+                                    </td>
+                                </tr>
+                            
+                        
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+    
+        
+        
+    
+
+    
+        
+
+
+
+
+
+
+    
+        
+    
+    
+    
+
+    
+    
+    
+
+    
+    
+    
+
+    
+    
+    
+
+    
+        
+    
+    
+    
+
+    
+        
+    
+    
+    
+
+    
+        
+    
+    
+    
+
+
+<div id="Relationships">
+    <div class="heading" id="Relationships_426">
+        <span>
+            <a href="javascript:toggleblocksOC('426_Relationships');"><img id="ocimg_426_Relationships" src="/images/head_more.gif" border="0" alt="+"></a>
+        </span>
+        Relationships
+    </div>
+    <div name="oc_426_Relationships" id="oc_426_Relationships" class="expandblock"> 
+                    <span class="section tool">
+                        <img src="/images/dictionary.gif" alt="Section Help">
+                        <span class="tip">This table shows the weaknesses and high level categories that are related to this
+                            weakness. These relationships are defined as ChildOf, ParentOf, MemberOf and give insight to
+                            similar items that may exist at higher and lower levels of abstraction. In addition,
+                            relationships such as PeerOf and CanAlsoBe are defined to show similar weaknesses that the user
+                            may want to explore.</span>
+                    </span>
+        <div class="detail">
+            <div class="indent">
+                
+                    
+                    <div id="relevant_table">
+                        <div class="reltable">
+                            <span><a href="javascript:toggleblocksOC('426_1000_relevant_table');">
+                                <img id="ocimg_426_1000_relevant_table" src="/images/head_more.gif" border="0" alt="+"></a>
+                            </span>Relevant to the view "Research Concepts" (View-1000)
+                            <div name="oc_426_1000_relevant_table" id="oc_426_1000_relevant_table" class="expandblock">
+                                <div class="tabledetail">
+                                    <div class="indent">
+                                        <div xmlns:saxon="http://saxon.sf.net/" xmlns:xalan="http://xml.apache.org/xalan"
+                                            class="tabledetail">
+                                            <table width="98%" cellpadding="0" cellspacing="0" border="0" id="Detail">
+                                                <tr>
+                                                    <th valign="top" width="110px">Nature</th>
+                                                    <th valign="top" width="40px">Type</th>
+                                                    <th valign="top" width="50px">ID</th>
+                                                    <th valign="top">Name</th>
+                                                </tr>
+                                                <tbody>
+                                                    
+                                                    
+                                                    
+                                                        
+                                                             
+                                                    <tr class="primary Weakness">
+                                                        <td valign="top">ChildOf</td> 
+                                                        <td valign="top" nowrap class="right" align="center" style="padding-top:1px">
+                                                            <span class="tool"><img
+                                                                    src="/images/icons/class.gif" alt="Class" class="icon">
+                                                                <span class="tip">Class - a weakness that is described in a very abstract fashion, typically independent of any specific language or technology. More specific than a Pillar Weakness, but more general than a Base Weakness. Class level weaknesses typically describe issues in terms of 1 or 2 of the following dimensions: behavior, property, and resource.</span>
+                                                            </span>
+                                                        </td>
+                                                        <td valign="top">
+                                                            <a href="/data/definitions/642.html" target="_blank" rel="noopener noreferrer">642</a>
+                                                        </td>
+                                                        <td valign="top">
+                                                            
+                                                            External Control of Critical State Data</a>
+                                                            
+                                                        </td>
+                                                    </tr>
+                                                    
+                                                    
+                                                    
+                                                        
+                                                             
+                                                    <tr class="primary Weakness">
+                                                        <td valign="top">ChildOf</td> 
+                                                        <td valign="top" nowrap class="right" align="center" style="padding-top:1px">
+                                                            <span class="tool"><img
+                                                                    src="/images/icons/class.gif" alt="Class" class="icon">
+                                                                <span class="tip">Class - a weakness that is described in a very abstract fashion, typically independent of any specific language or technology. More specific than a Pillar Weakness, but more general than a Base Weakness. Class level weaknesses typically describe issues in terms of 1 or 2 of the following dimensions: behavior, property, and resource.</span>
+                                                            </span>
+                                                        </td>
+                                                        <td valign="top">
+                                                            <a href="/data/definitions/673.html" target="_blank" rel="noopener noreferrer">673</a>
+                                                        </td>
+                                                        <td valign="top">
+                                                            
+                                                            External Influence of Sphere Definition</a>
+                                                            
+                                                        </td>
+                                                    </tr>
+                                                    
+                                                    
+                                                    
+                                                        
+                                                             
+                                                    <tr class="primary Weakness">
+                                                        <td valign="top">PeerOf</td> 
+                                                        <td valign="top" nowrap class="right" align="center" style="padding-top:1px">
+                                                            <span class="tool"><img
+                                                                    src="/images/icons/base.gif" alt="Base" class="icon">
+                                                                <span class="tip">Base - a weakness that is still mostly independent of a resource or technology, but with sufficient details to provide specific methods for detection and prevention. Base level weaknesses typically describe issues in terms of 2 or 3 of the following dimensions: behavior, property, technology, language, and resource.</span>
+                                                            </span>
+                                                        </td>
+                                                        <td valign="top">
+                                                            <a href="/data/definitions/427.html" target="_blank" rel="noopener noreferrer">427</a>
+                                                        </td>
+                                                        <td valign="top">
+                                                            
+                                                            Uncontrolled Search Path Element</a>
+                                                            
+                                                        </td>
+                                                    </tr>
+                                                    
+                                                    
+                                                    
+                                                        
+                                                             
+                                                    <tr class="primary Weakness">
+                                                        <td valign="top">PeerOf</td> 
+                                                        <td valign="top" nowrap class="right" align="center" style="padding-top:1px">
+                                                            <span class="tool"><img
+                                                                    src="/images/icons/base.gif" alt="Base" class="icon">
+                                                                <span class="tip">Base - a weakness that is still mostly independent of a resource or technology, but with sufficient details to provide specific methods for detection and prevention. Base level weaknesses typically describe issues in terms of 2 or 3 of the following dimensions: behavior, property, technology, language, and resource.</span>
+                                                            </span>
+                                                        </td>
+                                                        <td valign="top">
+                                                            <a href="/data/definitions/428.html" target="_blank" rel="noopener noreferrer">428</a>
+                                                        </td>
+                                                        <td valign="top">
+                                                            
+                                                            Unquoted Search Path or Element</a>
+                                                            
+                                                        </td>
+                                                    </tr>
+                                                    
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                
+                    
+                    <div id="relevant_table">
+                        <div class="reltable">
+                            <span><a href="javascript:toggleblocksOC('426_699_relevant_table');">
+                                <img id="ocimg_426_699_relevant_table" src="/images/head_more.gif" border="0" alt="+"></a>
+                            </span>Relevant to the view "Software Development" (View-699)
+                            <div name="oc_426_699_relevant_table" id="oc_426_699_relevant_table" class="expandblock">
+                                <div class="tabledetail">
+                                    <div class="indent">
+                                        <div xmlns:saxon="http://saxon.sf.net/" xmlns:xalan="http://xml.apache.org/xalan"
+                                            class="tabledetail">
+                                            <table width="98%" cellpadding="0" cellspacing="0" border="0" id="Detail">
+                                                <tr>
+                                                    <th valign="top" width="110px">Nature</th>
+                                                    <th valign="top" width="40px">Type</th>
+                                                    <th valign="top" width="50px">ID</th>
+                                                    <th valign="top">Name</th>
+                                                </tr>
+                                                <tbody>
+                                                    
+                                                    
+                                                    
+                                                        
+                                                             
+                                                    <tr class="primary Category">
+                                                        <td valign="top">MemberOf</td> 
+                                                        <td valign="top" nowrap class="right" align="center" style="padding-top:1px">
+                                                            <span class="tool"><img
+                                                                    src="/images/icons/category.gif" alt="Category" class="icon">
+                                                                <span class="tip">Category - a CWE entry that contains a set of other entries that share a common characteristic.</span>
+                                                            </span>
+                                                        </td>
+                                                        <td valign="top">
+                                                            <a href="/data/definitions/1219.html" target="_blank" rel="noopener noreferrer">1219</a>
+                                                        </td>
+                                                        <td valign="top">
+                                                            
+                                                            File Handling Issues</a>
+                                                            
+                                                        </td>
+                                                    </tr>
+                                                    
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                
+                    
+                    <div id="relevant_table">
+                        <div class="reltable">
+                            <span><a href="javascript:toggleblocksOC('426_1003_relevant_table');">
+                                <img id="ocimg_426_1003_relevant_table" src="/images/head_more.gif" border="0" alt="+"></a>
+                            </span>Relevant to the view "Weaknesses for Simplified Mapping of Published Vulnerabilities" (View-1003)
+                            <div name="oc_426_1003_relevant_table" id="oc_426_1003_relevant_table" class="expandblock">
+                                <div class="tabledetail">
+                                    <div class="indent">
+                                        <div xmlns:saxon="http://saxon.sf.net/" xmlns:xalan="http://xml.apache.org/xalan"
+                                            class="tabledetail">
+                                            <table width="98%" cellpadding="0" cellspacing="0" border="0" id="Detail">
+                                                <tr>
+                                                    <th valign="top" width="110px">Nature</th>
+                                                    <th valign="top" width="40px">Type</th>
+                                                    <th valign="top" width="50px">ID</th>
+                                                    <th valign="top">Name</th>
+                                                </tr>
+                                                <tbody>
+                                                    
+                                                    
+                                                    
+                                                        
+                                                             
+                                                    <tr class="primary Weakness">
+                                                        <td valign="top">ChildOf</td> 
+                                                        <td valign="top" nowrap class="right" align="center" style="padding-top:1px">
+                                                            <span class="tool"><img
+                                                                    src="/images/icons/class.gif" alt="Class" class="icon">
+                                                                <span class="tip">Class - a weakness that is described in a very abstract fashion, typically independent of any specific language or technology. More specific than a Pillar Weakness, but more general than a Base Weakness. Class level weaknesses typically describe issues in terms of 1 or 2 of the following dimensions: behavior, property, and resource.</span>
+                                                            </span>
+                                                        </td>
+                                                        <td valign="top">
+                                                            <a href="/data/definitions/668.html" target="_blank" rel="noopener noreferrer">668</a>
+                                                        </td>
+                                                        <td valign="top">
+                                                            
+                                                            Exposure of Resource to Wrong Sphere</a>
+                                                            
+                                                        </td>
+                                                    </tr>
+                                                    
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                
+                    
+                    <div id="relevant_table">
+                        <div class="reltable">
+                            <span><a href="javascript:toggleblocksOC('426_1008_relevant_table');">
+                                <img id="ocimg_426_1008_relevant_table" src="/images/head_more.gif" border="0" alt="+"></a>
+                            </span>Relevant to the view "Architectural Concepts" (View-1008)
+                            <div name="oc_426_1008_relevant_table" id="oc_426_1008_relevant_table" class="expandblock">
+                                <div class="tabledetail">
+                                    <div class="indent">
+                                        <div xmlns:saxon="http://saxon.sf.net/" xmlns:xalan="http://xml.apache.org/xalan"
+                                            class="tabledetail">
+                                            <table width="98%" cellpadding="0" cellspacing="0" border="0" id="Detail">
+                                                <tr>
+                                                    <th valign="top" width="110px">Nature</th>
+                                                    <th valign="top" width="40px">Type</th>
+                                                    <th valign="top" width="50px">ID</th>
+                                                    <th valign="top">Name</th>
+                                                </tr>
+                                                <tbody>
+                                                    
+                                                    
+                                                    
+                                                        
+                                                             
+                                                    <tr class="primary Category">
+                                                        <td valign="top">MemberOf</td> 
+                                                        <td valign="top" nowrap class="right" align="center" style="padding-top:1px">
+                                                            <span class="tool"><img
+                                                                    src="/images/icons/category.gif" alt="Category" class="icon">
+                                                                <span class="tip">Category - a CWE entry that contains a set of other entries that share a common characteristic.</span>
+                                                            </span>
+                                                        </td>
+                                                        <td valign="top">
+                                                            <a href="/data/definitions/1011.html" target="_blank" rel="noopener noreferrer">1011</a>
+                                                        </td>
+                                                        <td valign="top">
+                                                            
+                                                            Authorize Actors</a>
+                                                            
+                                                        </td>
+                                                    </tr>
+                                                    
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+    
+
+    
+    
+<div id="Modes_Of_Introduction">
+    <div class="heading" id="Modes_Of_Introduction_426"><span><a href="javascript:toggleblocksOC('426_Modes_Of_Introduction');"><img
+                    id="ocimg_426_Modes_Of_Introduction" src="/images/head_more.gif" border="0" alt="+"></a>
+        </span>Modes
+        Of Introduction</div>
+    <div name="oc_426_Modes_Of_Introduction" id="oc_426_Modes_Of_Introduction" class="expandblock">
+        <div class="tabledetail">
+            <div id="EntryStripedTable" class="indent"><span class="section tool"><img src="/images/dictionary.gif"
+                        alt="Section Help"><span class="tip">The different Modes of Introduction provide information
+                        about how and when this
+                        weakness may be introduced. The Phase identifies a point in the life cycle at which
+                        introduction
+                        may occur, while the Note provides a typical scenario related to introduction during the
+                        given
+                        phase.</span></span>
+                <table width="98%" cellpadding="0" cellspacing="0" border="0" id="Detail">
+                    <tr>
+                        <th valign="middle" width="110px">Phase</th>
+                        <th valign="middle">Note</th>
+                    </tr>
+                        
+                            
+                            <tr>
+                                <td valign="middle" nowrap class="subheading">Implementation</td>
+                                <td valign="middle" width="100%"></td>
+                            </tr>
+                            
+                        
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+    
+    
+
+<div id="Applicable_Platforms">
+    <div class="heading" id="Applicable_Platforms_426"><span><a href="javascript:toggleblocksOC('426_Applicable_Platforms');"><img
+                    id="ocimg_426_Applicable_Platforms" src="/images/head_more.gif" border="0" alt="+"></a>
+        </span>Applicable Platforms</div>
+    <div name="oc_426_Applicable_Platforms" id="oc_426_Applicable_Platforms" class="expandblock">
+        <div class="detail">
+            <div id="EntryStripedTable" class="indent"><span class="section tool"><img src="/images/dictionary.gif"
+                        alt="Section Help"><span class="tip">This listing shows possible areas for which the given
+                        weakness could appear. These
+                        may be for specific named Languages, Operating Systems, Architectures, Paradigms,
+                        Technologies,
+                        or a class of such platforms. The platform is listed along with how frequently the given
+                        weakness appears for that instance.</span></span>
+                <table width="98%" cellpadding="0" cellspacing="0" border="0" class="Detail">
+                
+                <tr><td valign="top" class="subheading">Languages</td>
+		  <td style="border-left:solid #BAC5E3;">
+                    
+                        <div>
+                            <p>  Class: Not Language-Specific
+                                
+                                
+                                <span class="smaller" style="font-style:italic">(Undetermined Prevalence)</span>
+                                
+                            </p>
+                        </div>
+                    
+                </td></tr>
+                
+                
+                <tr><td valign="top" class="subheading">Operating Systems</td>
+		  <td style="border-left:solid #BAC5E3;">
+                
+                    <div>
+                        <p>  Class: Not OS-Specific
+                            
+                            
+                            <span class="smaller" style="font-style:italic">(Undetermined Prevalence)</span>
+                            
+                        </p>
+                    </div>
+                
+            
+            
+                
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+    
+    <div id="Likelihood_Of_Exploit">
+    <div class="heading" id="Likelihood_Of_Exploit_426">
+        <span>
+            <a href="javascript:toggleblocksOC('426_Likelihood_Of_Exploit');"><img id="ocimg_426_Likelihood_Of_Exploit" src="/images/head_more.gif" border="0" alt="+"></a>
+        </span>Likelihood Of Exploit
+    </div>
+    <div name="oc_426_Likelihood_Of_Exploit" id="oc_426_Likelihood_Of_Exploit" class="expandblock">
+        <div class="detail">
+            <div class="indent">High</div>
+        </div>
+    </div>
+</div>
+
+    
+
+    
+    
+
+<div id="Demonstrative_Examples">
+    <div class="heading" id="Demonstrative_Examples_426"><span><a href="javascript:toggleblocksOC('426_Demonstrative_Examples');"><img
+                    id="ocimg_426_Demonstrative_Examples" src="/images/head_more.gif" border="0" alt="+"></a>
+        </span>Demonstrative Examples</div>
+    <div name="oc_426_Demonstrative_Examples" id="oc_426_Demonstrative_Examples" class="expandblock">
+        <div class="detail">
+            <div class="indent">
+            
+                <p class="subheading">Example 1</p>
+                <br/>
+                
+                <p>This program is intended to execute a command that lists the contents of a restricted directory, then performs other actions. Assume that it runs with setuid privileges in order to bypass the permissions check by the operating system.</p>
+                
+                
+                
+                
+                
+                
+                <div class="indent Bad">
+                    <div id="ExampleCode" style="clear:both; padding-top:5px; padding-bottom:5px;">
+                        <div class="shadow">
+                            <div class="CodeHead">
+                                <div style="float:right; font-style:italic; font-size:10px; color:#98A9B7">(bad code)</div>
+                                <div class="optheading smaller">
+                                    
+                                    <span style="font-weight:normal; font-style:italic">Example Language: </span>C&nbsp;
+                                    
+                                </div>
+                            </div>
+                            <div class="top">
+                                
+                  <div>#define DIR &#34;/restricted/directory&#34;<br/>
+                     <br/>char cmd[500];<br/>sprintf(cmd, &#34;ls -l %480s&#34;, DIR);<br/>
+                     <i>/* Raise privileges to those needed for accessing DIR. */</i>
+                     <br/>
+                     <br/>RaisePrivileges(...);<br/>system(cmd);<br/>DropPrivileges(...);<br/>...</div>
+               
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                
+                
+                
+                
+                <p>This code may look harmless at first, since both the directory and the command are set to fixed values that the attacker can&#39;t control. The attacker can only see the contents for DIR, which is the intended program behavior. Finally, the programmer is also careful to limit the code that executes with raised privileges.</p> 
+                
+                
+                
+                
+                <p>However, because the program does not modify the PATH environment variable, the following attack would work:</p> 
+                
+                
+                
+                
+                <div class="indent Attack">
+                    <div id="ExampleCode" style="clear:both; padding-top:5px; padding-bottom:5px;">
+                        <div class="shadow">
+                            <div class="CodeHead">
+                                <div style="float:right; font-style:italic; font-size:10px; color:#98A9B7">(attack code)</div>
+                                <div class="optheading smaller">
+                                    
+                                    &nbsp;
+                                    
+                                </div>
+                            </div>
+                            <div class="top">
+                                
+                  <ul>
+                     <li>The user sets the PATH to reference a directory under the attacker&#39;s control, such as &#34;/my/dir/&#34;.</li>
+                     <li>The attacker creates a malicious program called &#34;ls&#34;, and puts that program in /my/dir</li>
+                     <li>The user executes the program.</li>
+                     <li>When system() is executed, the shell consults the PATH to find the ls program</li>
+                     <li>The program finds the attacker&#39;s malicious program, &#34;/my/dir/ls&#34;. It doesn&#39;t find &#34;/bin/ls&#34; because PATH does not contain &#34;/bin/&#34;.</li>
+                     <li>The program executes the attacker&#39;s malicious program with the raised privileges.</li>
+                  </ul>
+               
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                
+                
+                <br/>
+                <p style="border-bottom:solid #BAC5E3; margin-bottom:10px"></p>
+                <br/>
+            
+                <p class="subheading">Example 2</p>
+                <br/>
+                
+                <p>The following code from a system utility uses the system property APPHOME to determine the directory in which it is installed and then executes an initialization script based on a relative path from the specified directory.</p>
+                
+                
+                
+                
+                
+                
+                <div class="indent Bad">
+                    <div id="ExampleCode" style="clear:both; padding-top:5px; padding-bottom:5px;">
+                        <div class="shadow">
+                            <div class="CodeHead">
+                                <div style="float:right; font-style:italic; font-size:10px; color:#98A9B7">(bad code)</div>
+                                <div class="optheading smaller">
+                                    
+                                    <span style="font-weight:normal; font-style:italic">Example Language: </span>Java&nbsp;
+                                    
+                                </div>
+                            </div>
+                            <div class="top">
+                                
+                  <div>...<br/>String home = System.getProperty(&#34;APPHOME&#34;);<br/>String cmd = home + INITCMD;<br/>java.lang.Runtime.getRuntime().exec(cmd);<br/>...</div>
+               
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                
+                
+                
+                
+                <p>The code above allows an attacker to execute arbitrary commands with the elevated privilege of the application by modifying the system property APPHOME to point to a different path containing a malicious version of INITCMD. Because the program does not validate the value read from the environment, if an attacker can control the value of the system property APPHOME, then they can fool the application into running malicious code and take control of the system.</p> 
+                
+                
+                <br/>
+                <p style="border-bottom:solid #BAC5E3; margin-bottom:10px"></p>
+                <br/>
+            
+                <p class="subheading">Example 3</p>
+                <br/>
+                
+                <p>This code prints all of the running processes belonging to the current user.</p>
+                
+                
+                
+                
+                
+                
+                <div class="indent Bad">
+                    <div id="ExampleCode" style="clear:both; padding-top:5px; padding-bottom:5px;">
+                        <div class="shadow">
+                            <div class="CodeHead">
+                                <div style="float:right; font-style:italic; font-size:10px; color:#98A9B7">(bad code)</div>
+                                <div class="optheading smaller">
+                                    
+                                    <span style="font-weight:normal; font-style:italic">Example Language: </span>PHP&nbsp;
+                                    
+                                </div>
+                            </div>
+                            <div class="top">
+                                
+                  <div>
+                     <br/>
+                     <i>//assume getCurrentUser() returns a username that is guaranteed to be alphanumeric (avoiding <a href="/data/definitions/78.html">CWE-78</a>)</i>
+                     <br/>$userName = getCurrentUser();<br/>$command = &#39;ps aux | grep &#39; . $userName;<br/>system($command);</div>
+               
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                
+                
+                
+                
+                <p>If invoked by an unauthorized web user, it is providing a web page of potentially sensitive information on the underlying system, such as command-line arguments (<a href="/data/definitions/497.html">CWE-497</a>). This program is also potentially vulnerable to a PATH based attack (<a href="/data/definitions/426.html">CWE-426</a>), as an attacker may be able to create malicious versions of the ps or grep commands. While the program does not explicitly raise privileges to run the system commands, the PHP interpreter may by default be running with higher privileges than users.</p> 
+                
+                
+                <br/>
+                <p style="border-bottom:solid #BAC5E3; margin-bottom:10px"></p>
+                <br/>
+            
+                <p class="subheading">Example 4</p>
+                <br/>
+                
+                <p>The following code is from a web application that allows users access to an interface through which they can update their password on the system. In this environment, user passwords can be managed using the Network Information System (NIS), which is commonly used on UNIX systems. When performing NIS updates, part of the process for updating passwords is to run a make command in the /var/yp directory. Performing NIS updates requires extra privileges.</p>
+                
+                
+                
+                
+                
+                
+                <div class="indent Bad">
+                    <div id="ExampleCode" style="clear:both; padding-top:5px; padding-bottom:5px;">
+                        <div class="shadow">
+                            <div class="CodeHead">
+                                <div style="float:right; font-style:italic; font-size:10px; color:#98A9B7">(bad code)</div>
+                                <div class="optheading smaller">
+                                    
+                                    <span style="font-weight:normal; font-style:italic">Example Language: </span>Java&nbsp;
+                                    
+                                </div>
+                            </div>
+                            <div class="top">
+                                
+                  <div>...<br/>System.Runtime.getRuntime().exec(&#34;make&#34;);<br/>...</div>
+               
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                
+                
+                
+                
+                <p>The problem here is that the program does not specify an absolute path for make and does not clean its environment prior to executing the call to Runtime.exec(). If an attacker can modify the $PATH variable to point to a malicious binary called make and cause the program to be executed in their environment, then the malicious binary will be loaded instead of the one intended. Because of the nature of the application, it runs with the privileges necessary to perform system operations, which means the attacker&#39;s make will now be run with these privileges, possibly giving the attacker complete control of the system.</p> 
+                
+                
+                <br/>
+                <p style="border-bottom:solid #BAC5E3; margin-bottom:10px"></p>
+                <br/>
+            
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+    
+    
+<div id="Observed_Examples">
+    <div class="heading" id="Observed_Examples_426"><span><a href="javascript:toggleblocksOC('426_Observed_Examples');"><img
+                    id="ocimg_426_Observed_Examples" src="/images/head_more.gif" border="0" alt="+"></a> </span>Selected Observed
+        Examples</div>
+    <div name="oc_426_Observed_Examples" id="oc_426_Observed_Examples" class="expandblock">
+        <div class="tabledetail">
+	  <p><i>Note: this is a curated list of examples for users to understand the variety of ways in which this
+	      weakness can be introduced. It is not a complete list of all CVEs that are related to this CWE entry.</i></p>
+            <div id="EntryStripedTable" class="indent">
+                <div style="margin-top: 10px; border-width: thin; border:solid #BAC5E3;">
+                  <table width="98%" cellpadding="0" cellspacing="0" border="0" class="Detail">
+                        <tr>
+                            <th valign="top" nowrap>Reference</th>
+                            <th valign="top">Description</th>
+                        </tr>
+                        
+                            
+                            <tr>
+                                <td valign="middle" style="padding-bottom:10px; border-width: 1px; border-bottom:solid #BAC5E3;" class="nowrap">
+                                    <div>
+                                        
+                                        <a href="https://www.cve.org/CVERecord?id=CVE-1999-1120" target="_blank" rel="noopener noreferrer">CVE-1999-1120</a>
+                                        
+                                    </div>
+                                </td>
+                                <td valign="middle" style="padding-bottom:10px; border-width: 1px; border-bottom:solid #BAC5E3; border-left:solid #BAC5E3;">
+                                    <div>Application relies on its PATH environment variable to find and execute program.</div>
+                                </td>
+                            </tr>
+                            
+                            <tr>
+                                <td valign="middle" style="padding-bottom:10px; border-width: 1px; border-bottom:solid #BAC5E3;" class="nowrap">
+                                    <div>
+                                        
+                                        <a href="https://www.cve.org/CVERecord?id=CVE-2008-1810" target="_blank" rel="noopener noreferrer">CVE-2008-1810</a>
+                                        
+                                    </div>
+                                </td>
+                                <td valign="middle" style="padding-bottom:10px; border-width: 1px; border-bottom:solid #BAC5E3; border-left:solid #BAC5E3;">
+                                    <div>Database application relies on its PATH environment variable to find and execute program.</div>
+                                </td>
+                            </tr>
+                            
+                            <tr>
+                                <td valign="middle" style="padding-bottom:10px; border-width: 1px; border-bottom:solid #BAC5E3;" class="nowrap">
+                                    <div>
+                                        
+                                        <a href="https://www.cve.org/CVERecord?id=CVE-2007-2027" target="_blank" rel="noopener noreferrer">CVE-2007-2027</a>
+                                        
+                                    </div>
+                                </td>
+                                <td valign="middle" style="padding-bottom:10px; border-width: 1px; border-bottom:solid #BAC5E3; border-left:solid #BAC5E3;">
+                                    <div>Chain: untrusted search path enabling resultant format string by loading malicious internationalization messages.</div>
+                                </td>
+                            </tr>
+                            
+                            <tr>
+                                <td valign="middle" style="padding-bottom:10px; border-width: 1px; border-bottom:solid #BAC5E3;" class="nowrap">
+                                    <div>
+                                        
+                                        <a href="https://www.cve.org/CVERecord?id=CVE-2008-3485" target="_blank" rel="noopener noreferrer">CVE-2008-3485</a>
+                                        
+                                    </div>
+                                </td>
+                                <td valign="middle" style="padding-bottom:10px; border-width: 1px; border-bottom:solid #BAC5E3; border-left:solid #BAC5E3;">
+                                    <div>Untrusted search path using malicious .EXE in Windows environment.</div>
+                                </td>
+                            </tr>
+                            
+                            <tr>
+                                <td valign="middle" style="padding-bottom:10px; border-width: 1px; border-bottom:solid #BAC5E3;" class="nowrap">
+                                    <div>
+                                        
+                                        <a href="https://www.cve.org/CVERecord?id=CVE-2008-2613" target="_blank" rel="noopener noreferrer">CVE-2008-2613</a>
+                                        
+                                    </div>
+                                </td>
+                                <td valign="middle" style="padding-bottom:10px; border-width: 1px; border-bottom:solid #BAC5E3; border-left:solid #BAC5E3;">
+                                    <div>setuid program allows compromise using path that finds and loads a malicious library.</div>
+                                </td>
+                            </tr>
+                            
+                            <tr>
+                                <td valign="middle" style="padding-bottom:10px; border-width: 1px; border-bottom:solid #BAC5E3;" class="nowrap">
+                                    <div>
+                                        
+                                        <a href="https://www.cve.org/CVERecord?id=CVE-2008-1319" target="_blank" rel="noopener noreferrer">CVE-2008-1319</a>
+                                        
+                                    </div>
+                                </td>
+                                <td valign="middle" style="padding-bottom:10px; border-width: 1px; border-bottom:solid #BAC5E3; border-left:solid #BAC5E3;">
+                                    <div>Server allows client to specify the search path, which can be modified to point to a program that the client has uploaded.</div>
+                                </td>
+                            </tr>
+                            
+                        
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+    
+    <div id="Weakness_Ordinalities">
+    <div class="heading" id="Weakness_Ordinalities_426"><span><a href="javascript:toggleblocksOC('426_Weakness_Ordinalities');"><img
+                    id="ocimg_426_Weakness_Ordinalities" src="/images/head_more.gif" border="0" alt="+"></a>
+        </span>Weakness Ordinalities</div>
+    <div name="oc_426_Weakness_Ordinalities" id="oc_426_Weakness_Ordinalities" class="expandblock">
+        <div class="tabledetail">
+            <div class="indent">
+                <div style="margin-top: 10px">
+                    <table width="98%" cellpadding="0" cellspacing="0" border="0" class="Detail">
+                        <tr>
+                            <th valign="top" nowrap>Ordinality</th>
+                            <th valign="top" width="100%">Description</th>
+                        </tr>
+                        <tr>
+                        
+                        
+                        
+                        
+                        
+                                <td valign="top">
+                                    <div style="font-size:90%;">Primary</div>
+                                </td>
+                                <td valign="top">
+                                    <div style="font-size:90%; font-style:italic; padding:5px;">
+                                        (where the weakness exists independent of other weaknesses)
+                                    </div>
+                                    
+                                </td>     
+                            </tr>
+                         
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+    
+    
+<div id="Detection_Methods">
+    <div class="heading" id="Detection_Methods_426"><span><a href="javascript:toggleblocksOC('426_Detection_Methods');"><img
+                    id="ocimg_426_Detection_Methods" src="/images/head_more.gif" border="0" alt="+"></a> </span>Detection
+        Methods</div>
+    <div name="oc_426_Detection_Methods" id="oc_426_Detection_Methods" class="expandblock">
+        <div class="tabledetail">
+            <div id="EntryStripedTable" class="indent">
+                    <table width="98%" cellpadding="0" cellspacing="0" border="0" id="Detail">
+                      <tr>
+			<th>Method</th>
+			<th>Details</th>
+                      </tr>
+                        
+                            
+                            <tr>
+                                <td valign="top">
+                                    <p class="subheading">Black Box</p>
+                                </td>
+				<td valign="top" style="border-left:solid #BAC5E3;">
+                                  <div style="p + p { text-indent:3em; }; padding-top:10px; padding-bottom:10px;">
+                                    
+                  <p>Use monitoring tools that examine the software&#39;s process as it interacts with the operating system and the network. This technique is useful in cases when source code is unavailable, if the software was not developed by you, or if you want to verify that the build phase did not introduce any new weaknesses. Examples include debuggers that directly attach to the running process; system-call tracing utilities such as truss (Solaris) and strace (Linux); system activity monitors such as FileMon, RegMon, Process Monitor, and other Sysinternals utilities (Windows); and sniffers and protocol analyzers that monitor network traffic.</p>
+                  <p>Attach the monitor to the process and look for library functions and system calls that suggest when a search path is being used. One pattern is when the program performs multiple accesses of the same file but in different directories, with repeated failures until the proper filename is found. Library calls such as getenv() or their equivalent can be checked to see if any path-related variables are being accessed.</p>
+               
+				    </div>
+                                    
+                                    
+                                </td>
+                            </tr>
+                            
+                            <tr>
+                                <td valign="top">
+                                    <p class="subheading">Automated Static Analysis</p>
+                                </td>
+				<td valign="top" style="border-left:solid #BAC5E3;">
+                                  <div style="p + p { text-indent:3em; }; padding-top:10px; padding-bottom:10px;">
+                                    Automated static analysis, commonly referred to as Static Application Security Testing (SAST), can find some instances of this weakness by analyzing source code (or binary/compiled code) without having to execute it. Typically, this is done by building a model of data flow and control flow, then searching for potentially-vulnerable patterns that connect &#34;sources&#34; (origins of input) with &#34;sinks&#34; (destinations where the data interacts with external components, a lower layer such as the OS, etc.)
+				    </div>
+                                    
+                                    <p class="suboptheading">Effectiveness: High</p>
+                                    
+                                    
+                                </td>
+                            </tr>
+                            
+                            <tr>
+                                <td valign="top">
+                                    <p class="subheading">Manual Analysis</p>
+                                </td>
+				<td valign="top" style="border-left:solid #BAC5E3;">
+                                  <div style="p + p { text-indent:3em; }; padding-top:10px; padding-bottom:10px;">
+                                    Use tools and techniques that require manual (human) analysis, such as penetration testing, threat modeling, and interactive tools that allow the tester to record and modify an active session. These may be more effective than strictly automated techniques. This is especially the case with weaknesses that are related to design and business rules.
+				    </div>
+                                    
+                                    
+                                </td>
+                            </tr>
+                            
+                        
+                    </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+    
+    <div id="Functional_Areas">
+    <div class="heading" id="Functional_Areas_426"><span><a href="javascript:toggleblocksOC('426_Functional_Areas');"><img
+                    id="ocimg_426_Functional_Areas" src="/images/head_more.gif" border="0" alt="+"></a>
+        </span>Functional Areas</div>
+    <div name="oc_426_Functional_Areas" id="oc_426_Functional_Areas" class="expandblock">
+        <div class="detail">
+            <div class="indent">
+                <ul>
+                    
+                        
+                        <li>Program Invocation</li>
+                        
+                        <li>Code Libraries</li>
+                        
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+    
+    <div id="Affected_Resources">
+    <div class="heading" id="Affected_Resources_426"><span><a href="javascript:toggleblocksOC('426_Affected_Resources');"><img
+                    id="ocimg_426_Affected_Resources" src="/images/head_more.gif" border="0" alt="+"></a>
+        </span>Affected Resources</div>
+    <div name="oc_426_Affected_Resources" id="oc_426_Affected_Resources" class="expandblock">
+        <div class="detail">
+            <div class="indent">
+                <ul>
+                    
+                        <li>System Process</li>
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+    
+    
+
+
+
+<div id="Memberships">
+    <div class="heading" id="Memberships_426"><span><a href="javascript:toggleblocksOC('426_Memberships');"><img
+                    id="ocimg_426_Memberships" src="/images/head_more.gif" border="0" alt="+"></a> </span>Memberships
+    </div>
+    <div name="oc_426_Memberships" id="oc_426_Memberships" class="expandblock">
+        <div class="detail">
+            <div id="EntryStripedTable" class="indent">
+                   <span class="section tool"><img src="/images/dictionary.gif" alt="Section Help"><span
+                                class="tip">This MemberOf Relationships table shows additional CWE Categories and Views that
+                                reference this weakness as a member. This information is often useful in understanding where a
+                                weakness fits within the context of external information sources.</span></span>
+                        <div xmlns:saxon="http://saxon.sf.net/" xmlns:xalan="http://xml.apache.org/xalan" class="tabledetail"
+                        style="padding-top:10px">
+                        <table width="98%" cellpadding="0" cellspacing="0" border="0" class="Detail">
+                            <tr>
+                                <th valign="top">Nature</th>
+                                <th valign="top">Type</th>
+                                <th valign="top">ID</th>
+                                <th valign="top">Name</th>
+                            </tr>
+                            <tbody>
+                            
+                                
+                                
+                                    
+                                         
+                                <tr class="primary Category">
+                                    <td valign="top">MemberOf</td>
+                                    <td valign="top" nowrap class="right" align="center" style="padding-top:5px; border-left:solid #BAC5E3;"><span
+                                            class="tool"><img src="/images/icons/category.gif" alt="Category"  class="icon"><span
+                                                class="tip">Category - a CWE entry that contains a set of other entries that share a common characteristic.</span></span></td>
+                                    <td valign="top" style="padding-top:5px; border-left:solid #BAC5E3;">
+                                        
+                                        <a href="/data/definitions/744.html" target="_blank" rel="noopener noreferrer">744</a>
+                                        
+				    </td>
+                                    <td valign="top" style="padding-top:5px; border-left:solid #BAC5E3;">
+				      CERT C Secure Coding Standard (2008) Chapter 11 - Environment (ENV)
+                                    </td>
+                                </tr>
+                            
+                                
+                                
+                                    
+                                         
+                                <tr class="primary Category">
+                                    <td valign="top">MemberOf</td>
+                                    <td valign="top" nowrap class="right" align="center" style="padding-top:5px; border-left:solid #BAC5E3;"><span
+                                            class="tool"><img src="/images/icons/category.gif" alt="Category"  class="icon"><span
+                                                class="tip">Category - a CWE entry that contains a set of other entries that share a common characteristic.</span></span></td>
+                                    <td valign="top" style="padding-top:5px; border-left:solid #BAC5E3;">
+                                        
+                                        <a href="/data/definitions/752.html" target="_blank" rel="noopener noreferrer">752</a>
+                                        
+				    </td>
+                                    <td valign="top" style="padding-top:5px; border-left:solid #BAC5E3;">
+				      2009 Top 25 - Risky Resource Management
+                                    </td>
+                                </tr>
+                            
+                                
+                                
+                                    
+                                         
+                                <tr class="primary Category">
+                                    <td valign="top">MemberOf</td>
+                                    <td valign="top" nowrap class="right" align="center" style="padding-top:5px; border-left:solid #BAC5E3;"><span
+                                            class="tool"><img src="/images/icons/category.gif" alt="Category"  class="icon"><span
+                                                class="tip">Category - a CWE entry that contains a set of other entries that share a common characteristic.</span></span></td>
+                                    <td valign="top" style="padding-top:5px; border-left:solid #BAC5E3;">
+                                        
+                                        <a href="/data/definitions/808.html" target="_blank" rel="noopener noreferrer">808</a>
+                                        
+				    </td>
+                                    <td valign="top" style="padding-top:5px; border-left:solid #BAC5E3;">
+				      2010 Top 25 - Weaknesses On the Cusp
+                                    </td>
+                                </tr>
+                            
+                                
+                                
+                                    
+                                         
+                                <tr class="primary Category">
+                                    <td valign="top">MemberOf</td>
+                                    <td valign="top" nowrap class="right" align="center" style="padding-top:5px; border-left:solid #BAC5E3;"><span
+                                            class="tool"><img src="/images/icons/category.gif" alt="Category"  class="icon"><span
+                                                class="tip">Category - a CWE entry that contains a set of other entries that share a common characteristic.</span></span></td>
+                                    <td valign="top" style="padding-top:5px; border-left:solid #BAC5E3;">
+                                        
+                                        <a href="/data/definitions/878.html" target="_blank" rel="noopener noreferrer">878</a>
+                                        
+				    </td>
+                                    <td valign="top" style="padding-top:5px; border-left:solid #BAC5E3;">
+				      CERT C&#43;&#43; Secure Coding Section 10 - Environment (ENV)
+                                    </td>
+                                </tr>
+                            
+                                
+                                
+                                          
+                                         
+                                <tr class="primary View">
+                                    <td valign="top">MemberOf</td>
+                                    <td valign="top" nowrap class="right" align="center" style="padding-top:5px; border-left:solid #BAC5E3;"><span
+                                            class="tool"><img src="/images/icons/view.gif" alt="View"  class="icon"><span
+                                                class="tip">View - a subset of CWE entries that provides a way of examining CWE content. The two main view structures are Slices (flat lists) and Graphs (containing relationships between entries).</span></span></td>
+                                    <td valign="top" style="padding-top:5px; border-left:solid #BAC5E3;">
+                                        
+                                        <a href="/data/definitions/1200.html" target="_blank" rel="noopener noreferrer">1200</a>
+                                        
+				    </td>
+                                    <td valign="top" style="padding-top:5px; border-left:solid #BAC5E3;">
+				      Weaknesses in the 2019 CWE Top 25 Most Dangerous Software Errors
+                                    </td>
+                                </tr>
+                            
+                                
+                                
+                                    
+                                         
+                                <tr class="primary Category">
+                                    <td valign="top">MemberOf</td>
+                                    <td valign="top" nowrap class="right" align="center" style="padding-top:5px; border-left:solid #BAC5E3;"><span
+                                            class="tool"><img src="/images/icons/category.gif" alt="Category"  class="icon"><span
+                                                class="tip">Category - a CWE entry that contains a set of other entries that share a common characteristic.</span></span></td>
+                                    <td valign="top" style="padding-top:5px; border-left:solid #BAC5E3;">
+                                        
+                                        <a href="/data/definitions/1354.html" target="_blank" rel="noopener noreferrer">1354</a>
+                                        
+				    </td>
+                                    <td valign="top" style="padding-top:5px; border-left:solid #BAC5E3;">
+				      OWASP Top Ten 2021 Category A08:2021 - Software and Data Integrity Failures
+                                    </td>
+                                </tr>
+                            
+                                
+                                
+                                    
+                                         
+                                <tr class="primary Category">
+                                    <td valign="top">MemberOf</td>
+                                    <td valign="top" nowrap class="right" align="center" style="padding-top:5px; border-left:solid #BAC5E3;"><span
+                                            class="tool"><img src="/images/icons/category.gif" alt="Category"  class="icon"><span
+                                                class="tip">Category - a CWE entry that contains a set of other entries that share a common characteristic.</span></span></td>
+                                    <td valign="top" style="padding-top:5px; border-left:solid #BAC5E3;">
+                                        
+                                        <a href="/data/definitions/1403.html" target="_blank" rel="noopener noreferrer">1403</a>
+                                        
+				    </td>
+                                    <td valign="top" style="padding-top:5px; border-left:solid #BAC5E3;">
+				      Comprehensive Categorization: Exposed Resource
+                                    </td>
+                                </tr>
+                            
+                                
+                                
+                                    
+                                         
+                                <tr class="primary Category">
+                                    <td valign="top">MemberOf</td>
+                                    <td valign="top" nowrap class="right" align="center" style="padding-top:5px; border-left:solid #BAC5E3;"><span
+                                            class="tool"><img src="/images/icons/category.gif" alt="Category"  class="icon"><span
+                                                class="tip">Category - a CWE entry that contains a set of other entries that share a common characteristic.</span></span></td>
+                                    <td valign="top" style="padding-top:5px; border-left:solid #BAC5E3;">
+                                        
+                                        <a href="/data/definitions/1443.html" target="_blank" rel="noopener noreferrer">1443</a>
+                                        
+				    </td>
+                                    <td valign="top" style="padding-top:5px; border-left:solid #BAC5E3;">
+				      OWASP Top Ten 2025 Category A08:2025 - Software or Data Integrity Failures
+                                    </td>
+                                </tr>
+                            
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+    
+    
+
+<div id="Vulnerability_Mapping_Notes">
+    <div class="heading" id="Vulnerability_Mapping_Notes_426"><span><a href="javascript:toggleblocksOC('426_Vulnerability_Mapping_Notes');"><img
+                    id="ocimg_426_Vulnerability_Mapping_Notes" src="/images/head_more.gif" border="0" alt="+"></a>
+        </span>Vulnerability Mapping Notes</div>
+    <div name="oc_426_Vulnerability_Mapping_Notes" id="oc_426_Vulnerability_Mapping_Notes" class="expandblock">
+        <div class="detail">
+            <div id="EntryStripedTable" class="indent">
+                <div id="Grouped">
+                  <table width="98%" cellpadding="0" cellspacing="0" border="0" class="Detail">
+		        <tr>
+  <td>
+    <span class="subheading" style="display:inline-block;">Usage</span>
+  </td>
+  <td style="border-left:solid #BAC5E3;">
+    <span style="color:#4E8F4A">
+        <b>ALLOWED-WITH-REVIEW</b>
+    </span>
+    <div style="font-size:90%; font-style:italic; padding:5px;display:inline-block;">
+      (this CWE ID could be used to map to real-world vulnerabilities in limited situations requiring careful review)
+    </div>
+  </td>
+</tr>
+
+
+                        <tr>
+                                    
+                                        
+                                        
+                                            <td valign="top"><span class="subheading">Reasons</span></td>
+                                            <td style="border-left:solid #BAC5E3;">
+                                            
+                                                
+                                                    Frequent Misinterpretation,
+                                                
+                                            
+                                                
+                                                    Abstraction,
+                                                
+                                            
+                                                
+                                                    Other
+                                                
+                                            
+                                            </td>
+                                        
+                                    
+                        </tr>
+                        <tr>
+                            <td>
+                              <p class="subheading"> Rationale </p>
+			    </td>
+			    <td style="border-left:solid #BAC5E3;">
+                                This CWE entry is often confused with another closely-related entry about search paths.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                              <p class="subheading"> Comments </p>
+			    </td>
+			    <td style="border-left:solid #BAC5E3;">
+			      <a href="/data/definitions/426.html">CWE-426</a> and <a href="/data/definitions/427.html">CWE-427</a> are often misused because they both mention search paths, although <a href="/data/definitions/426.html">CWE-426</a> is focused on attacker control of the search path itself, while <a href="/data/definitions/427.html">CWE-427</a> applies when the attacker cannot modify the search path but can write to one of the locations specified in the search path. Also, this entry is classified in a part of CWE&#39;s hierarchy that does not have sufficiently low-level coverage, which might reflect a lack of classification-oriented weakness research in the software security community. Conduct careful root cause analysis to determine the original mistake that led to this weakness. If closer analysis reveals that this weakness is appropriate, then this might be the best available CWE to use for mapping. If no other option is available, then it is acceptable to map to this CWE.
+                            </td>
+                        </tr>
+                        
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+    
+
+    
+    <div id="Taxonomy_Mappings">
+    <div class="heading" id="Taxonomy_Mappings_426"><span><a href="javascript:toggleblocksOC('426_Taxonomy_Mappings');"><img
+                    id="ocimg_426_Taxonomy_Mappings" src="/images/head_more.gif" border="0" alt="+"></a> </span>Taxonomy
+        Mappings</div>
+    <div name="oc_426_Taxonomy_Mappings" id="oc_426_Taxonomy_Mappings" class="expandblock">
+        <div class="tabledetail">
+            <div id="EntryStripedTable" class="indent">
+                <div style="margin-top: 10px">
+                    <table width="98%" cellpadding="0" cellspacing="0" border="0" class="Detail">
+                        <tr>
+                            <th valign="top" nowrap width="230px">Mapped Taxonomy Name</th>
+                            <th valign="top" nowrap width="100px">Node ID</th>
+                            <th valign="top" nowrap>Fit</th>
+                            <th valign="top">Mapped Node Name</th>
+                        </tr>
+                        
+                            
+                            <tr>
+                                <td valign="top">PLOVER</td>
+                                <td valign="top" style="border-left:solid #BAC5E3;"></td>
+                                <td valign="top" style="border-left:solid #BAC5E3;"></td>
+                                <td valign="top" style="border-left:solid #BAC5E3;">Untrusted Search Path</td>
+                            </tr>
+                            
+                            <tr>
+                                <td valign="top">CLASP</td>
+                                <td valign="top" style="border-left:solid #BAC5E3;"></td>
+                                <td valign="top" style="border-left:solid #BAC5E3;"></td>
+                                <td valign="top" style="border-left:solid #BAC5E3;">Relative path library search</td>
+                            </tr>
+                            
+                            <tr>
+                                <td valign="top">CERT C Secure Coding</td>
+                                <td valign="top" style="border-left:solid #BAC5E3;">ENV03-C</td>
+                                <td valign="top" style="border-left:solid #BAC5E3;"></td>
+                                <td valign="top" style="border-left:solid #BAC5E3;">Sanitize the environment when invoking external programs</td>
+                            </tr>
+                            
+                        
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+    
+    
+
+
+<div id="Related_Attack_Patterns">
+    <div class="heading" id="Related_Attack_Patterns_426"><span><a href="javascript:toggleblocksOC('426_Related_Attack_Patterns');"><img
+                    id="ocimg_426_Related_Attack_Patterns" src="/images/head_more.gif" border="0" alt="+"></a>
+        </span>Related Attack Patterns</div>
+    <div name="oc_426_Related_Attack_Patterns" id="oc_426_Related_Attack_Patterns" class="expandblock">
+        <div class="tabledetail">
+            <div id="EntryStripedTable" class="indent">
+                <div style="margin-top: 10px">
+                    <table width="98%" cellpadding="0" cellspacing="0" border="0" class="Detail">
+                        <tr>
+                            <th valign="top" nowrap width="110px">CAPEC-ID</th>
+                            <th valign="top">Attack Pattern Name</th>
+                        </tr>
+                        
+                            <tr>
+                                <td valign="top"><a href="http://capec.mitre.org/data/definitions/38.html" target="_blank"
+                                        rel="noopener noreferrer">CAPEC-38</a></td>
+                                <td valign="top" style="border-left:solid #BAC5E3;">Leveraging/Manipulating Configuration File Search Paths</td>
+                            </tr>
+                        
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+    
+    
+
+
+<div id="References">
+    <div class="heading" id="References_426"><span><a href="javascript:toggleblocksOC('426_References');"><img
+                    id="ocimg_426_References" src="/images/head_more.gif" border="0" alt="+"></a> </span>References</div>
+    <div name="oc_426_References" id="oc_426_References" class="expandblock">
+        <div class="detail">
+            <div id="EntryStripedTable" class="indent">
+                <div id="Grouped">
+                    <table width="98%" cellpadding="0" cellspacing="0" border="0" class="Detail">
+                        
+                            
+                                
+                                
+                                
+                                
+                                    <tr>
+                                            
+                                            
+                                                
+                                                    
+                                                
+                                            
+                                            
+                                            
+                                                
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                                
+                                            
+                                            <div id="REF-18_426">
+					      <td valign="top" class="nowrap">[REF-18]</td>
+					      <td style="border-left:solid #BAC5E3;">
+						Secure Software, Inc.. <i>&#34;The CLASP Application Security Process&#34;.</i>     2005.
+                                            
+                                                <br/>&lt;<a href="https://cwe.mitre.org/documents/sources/TheCLASPApplicationSecurityProcess.pdf" target="_blank" rel="noopener noreferrer">https://cwe.mitre.org/documents/sources/TheCLASPApplicationSecurityProcess.pdf</a>&gt;.
+                                            
+                                            
+                                                (<i>URL validated: 2024-11-17</i>)
+						
+					      </td>
+                                            </div>
+                                    </tr>
+                                
+                            
+                        
+                            
+                                
+                                
+                                
+                                
+                                    <tr>
+                                            
+                                            
+                                                
+                                                    
+                                                                                                    
+                                                
+                                            
+                                            
+                                            
+                                                
+                                            
+                                            
+                                                
+                                            
+                                            
+                                            
+                                                
+                                            
+                                            
+                                            
+                                            
+                                            
+                                                
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                                
+                                            
+                                            <div id="REF-62_426">
+					      <td valign="top" class="nowrap">[REF-62]</td>
+					      <td style="border-left:solid #BAC5E3;">
+						Mark Dowd, John McDonald and Justin Schuh. <i>&#34;The Art of Software Security Assessment&#34;.</i> Chapter 10, Process Attributes, page 603. 1st Edition.  Addison Wesley. 2006.
+                                            
+                                            
+					      </td>
+                                            </div>
+                                    </tr>
+                                
+                            
+                        
+                            
+                                
+                                
+                                
+                                
+                                    <tr>
+                                            
+                                            
+                                                
+                                                    
+                                                                                                    
+                                                
+                                            
+                                            
+                                            
+                                                
+                                            
+                                            
+                                                
+                                            
+                                            
+                                            
+                                                
+                                            
+                                            
+                                            
+                                            
+                                            
+                                                
+                                            
+                                            
+                                            
+                                                
+                                            
+                                            
+                                            
+                                                
+                                            
+                                            
+                                            
+                                                
+                                            
+                                            <div id="REF-176_426">
+					      <td valign="top" class="nowrap">[REF-176]</td>
+					      <td style="border-left:solid #BAC5E3;">
+						Michael Howard and David LeBlanc. <i>&#34;Writing Secure Code&#34;.</i> Chapter 8, &#34;Canonical Representation Issues.&#34; Page 229. 1st Edition.  Microsoft Press. 2001-11-13.
+                                            
+                                            
+					      </td>
+                                            </div>
+                                    </tr>
+                                
+                            
+                        
+                            
+                                
+                                
+                                
+                                
+                                    <tr>
+                                            
+                                            
+                                                
+                                                    
+                                                                                                    
+                                                
+                                            
+                                            
+                                            
+                                                
+                                            
+                                            
+                                                
+                                            
+                                            
+                                            
+                                                
+                                            
+                                            
+                                            
+                                            
+                                            
+                                                
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                                
+                                            
+                                            <div id="REF-207_426">
+					      <td valign="top" class="nowrap">[REF-207]</td>
+					      <td style="border-left:solid #BAC5E3;">
+						John Viega and Gary McGraw. <i>&#34;Building Secure Software: How to Avoid Security Problems the Right Way&#34;.</i> Chapter 12, &#34;Trust Management and Input Validation.&#34; Pages 317-320. 1st Edition.  Addison-Wesley. 2002.
+                                            
+                                            
+					      </td>
+                                            </div>
+                                    </tr>
+                                
+                            
+                        
+                            
+                                
+                                
+                                
+                                
+                                    <tr>
+                                            
+                                            
+                                                
+                                                    
+                                                                                                    
+                                                
+                                            
+                                            
+                                            
+                                                
+                                            
+                                            
+                                                
+                                            
+                                            
+                                            
+                                                
+                                            
+                                            
+                                            
+                                            
+                                            
+                                                
+                                            
+                                            
+                                            
+                                                
+                                            
+                                            
+                                            
+                                                
+                                            
+                                            
+                                            
+                                                
+                                            
+                                            <div id="REF-7_426">
+					      <td valign="top" class="nowrap">[REF-7]</td>
+					      <td style="border-left:solid #BAC5E3;">
+						Michael Howard and David LeBlanc. <i>&#34;Writing Secure Code&#34;.</i> Chapter 11, &#34;Don&#39;t Trust the PATH - Use Full Path Names&#34; Page 385. 2nd Edition.  Microsoft Press. 2002-12-04.
+                                            
+                                                <br/>&lt;<a href="https://www.microsoftpressstore.com/store/writing-secure-code-9780735617223" target="_blank" rel="noopener noreferrer">https://www.microsoftpressstore.com/store/writing-secure-code-9780735617223</a>&gt;.
+                                            
+                                            
+					      </td>
+                                            </div>
+                                    </tr>
+                                
+                            
+                        
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+    
+    <div id="Content_History">
+    <div class="heading" id="Content_History_426"><span><a href="javascript:toggleblocksOC('426_Content_History');"><img
+                    id="ocimg_426_Content_History" src="/images/head_more.gif" border="0" alt="+"></a> </span>Content
+        History</div>
+    <div name="oc_426_Content_History" id="oc_426_Content_History" class="expandblock">
+        <div class="tabledetail">
+            <div class="indent">
+                <div style="margin-top: 10px">
+                    <table width="98%" cellpadding="0" cellspacing="0" border="0" class="Detail">
+                        <thead class="Submissions">
+                            <tr>
+                                <th valign="top" colspan="3" class="title"><span><a
+                                            href="javascript:toggleblocksOC('426_Submissions');"><img
+                                                id="ocimg_426_Submissions" src="/images/head_more.gif" border="0"
+                                                alt="+"></a> </span>Submissions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="oc_426_Submissions" class="expandblock">
+                            <tr>
+                                <th valign="top" style="width:200px;">Submission Date</th>
+                                <th valign="top" nowrap>Submitter</th>
+                                <th valign="top" nowrap>Organization</th>
+                            </tr>
+                            <tr>
+                                <td valign="top" nowrap rowspan="2" style="border-bottom:1px solid #BAC5E3">
+                                    2006-07-19
+                                    
+                                        <br><span class="smaller" style="font-style:italic">(CWE Draft 3, 2006-07-19)</span>
+                                    
+                                    </td>
+                                <td valign="top">PLOVER</td>
+                                <td valign="top"></td>
+                            </tr>    
+                            <tr>
+                                <td valign="top" colspan="2" style="border-bottom:1px solid #BAC5E3; font-size:90%; background-color:#eeeeee">
+                                    <span class="smaller"><i></i></span>
+                                </td>
+                            </tr>
+                        </tbody>
+                        
+                        
+                            <thead class="Modifications">
+                                <tr>
+                                    <th valign="top" colspan="3" class="title"><span><a
+                                                href="javascript:toggleblocksOC('426_Modifications');"><img
+                                                    id="ocimg_426_Modifications" src="/images/head_less.gif" border="0"
+                                                    alt="+"></a> </span>Modifications</th>
+                                </tr>
+                            </thead>
+                            <tbody id="oc_426_Modifications" class="collapseblock">
+                                <tr>
+                                    <th valign="top">Modification Date</th>
+                                    <th valign="top" nowrap>Modifier</th>
+                                    <th valign="top" nowrap>Organization</th>
+                                </tr>
+                                
+                                    
+                                    <tr>
+                                        <td valign="top" nowrap rowspan="2" style="border-top:solid #BAC5E3; border-bottom:1px solid #BAC5E3">
+                                            2025-12-11
+                                            
+                                            <br><span class="smaller" style="font-style:italic">(CWE 4.19, 2025-12-11)</span>
+                                            
+                                        </td>
+                                        <td valign="top" style="border-top:solid #BAC5E3; border-left:solid #BAC5E3;">CWE Content Team</td>
+                                        <td valign="top" style="border-top:solid #BAC5E3; border-left:solid #BAC5E3;">MITRE</td>
+                                    </tr>
+                                    <tr>
+                                        <td valign="top" colspan="2" style="border-bottom:1px solid #BAC5E3; font-size:90%; background-color:#eeeeee; border-left:solid #BAC5E3;">
+                                            <span class="smaller"><i>updated Relationships, Weakness_Ordinalities</i></span>
+                                        </td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td valign="top" nowrap rowspan="2" style="border-top:solid #BAC5E3; border-bottom:1px solid #BAC5E3">
+                                            2025-04-03
+                                            
+                                            <br><span class="smaller" style="font-style:italic">(CWE 4.17, 2025-04-03)</span>
+                                            
+                                        </td>
+                                        <td valign="top" style="border-top:solid #BAC5E3; border-left:solid #BAC5E3;">CWE Content Team</td>
+                                        <td valign="top" style="border-top:solid #BAC5E3; border-left:solid #BAC5E3;">MITRE</td>
+                                    </tr>
+                                    <tr>
+                                        <td valign="top" colspan="2" style="border-bottom:1px solid #BAC5E3; font-size:90%; background-color:#eeeeee; border-left:solid #BAC5E3;">
+                                            <span class="smaller"><i>updated Mapping_Notes</i></span>
+                                        </td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td valign="top" nowrap rowspan="2" style="border-top:solid #BAC5E3; border-bottom:1px solid #BAC5E3">
+                                            2024-07-16
+                                            
+                                            <br><span class="smaller" style="font-style:italic">(CWE 4.15, 2024-07-16)</span>
+                                            
+                                        </td>
+                                        <td valign="top" style="border-top:solid #BAC5E3; border-left:solid #BAC5E3;">CWE Content Team</td>
+                                        <td valign="top" style="border-top:solid #BAC5E3; border-left:solid #BAC5E3;">MITRE</td>
+                                    </tr>
+                                    <tr>
+                                        <td valign="top" colspan="2" style="border-bottom:1px solid #BAC5E3; font-size:90%; background-color:#eeeeee; border-left:solid #BAC5E3;">
+                                            <span class="smaller"><i>updated Demonstrative_Examples</i></span>
+                                        </td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td valign="top" nowrap rowspan="2" style="border-top:solid #BAC5E3; border-bottom:1px solid #BAC5E3">
+                                            2023-06-29
+                                            
+                                            <br><span class="smaller" style="font-style:italic">(CWE 4.12, 2023-06-29)</span>
+                                            
+                                        </td>
+                                        <td valign="top" style="border-top:solid #BAC5E3; border-left:solid #BAC5E3;">CWE Content Team</td>
+                                        <td valign="top" style="border-top:solid #BAC5E3; border-left:solid #BAC5E3;">MITRE</td>
+                                    </tr>
+                                    <tr>
+                                        <td valign="top" colspan="2" style="border-bottom:1px solid #BAC5E3; font-size:90%; background-color:#eeeeee; border-left:solid #BAC5E3;">
+                                            <span class="smaller"><i>updated Mapping_Notes</i></span>
+                                        </td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td valign="top" nowrap rowspan="2" style="border-top:solid #BAC5E3; border-bottom:1px solid #BAC5E3">
+                                            2023-04-27
+                                            
+                                            <br><span class="smaller" style="font-style:italic">(CWE 4.11, 2023-04-27)</span>
+                                            
+                                        </td>
+                                        <td valign="top" style="border-top:solid #BAC5E3; border-left:solid #BAC5E3;">CWE Content Team</td>
+                                        <td valign="top" style="border-top:solid #BAC5E3; border-left:solid #BAC5E3;">MITRE</td>
+                                    </tr>
+                                    <tr>
+                                        <td valign="top" colspan="2" style="border-bottom:1px solid #BAC5E3; font-size:90%; background-color:#eeeeee; border-left:solid #BAC5E3;">
+                                            <span class="smaller"><i>updated Detection_Factors, Relationships, Time_of_Introduction</i></span>
+                                        </td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td valign="top" nowrap rowspan="2" style="border-top:solid #BAC5E3; border-bottom:1px solid #BAC5E3">
+                                            2023-01-31
+                                            
+                                            <br><span class="smaller" style="font-style:italic">(CWE 4.10, 2023-01-31)</span>
+                                            
+                                        </td>
+                                        <td valign="top" style="border-top:solid #BAC5E3; border-left:solid #BAC5E3;">CWE Content Team</td>
+                                        <td valign="top" style="border-top:solid #BAC5E3; border-left:solid #BAC5E3;">MITRE</td>
+                                    </tr>
+                                    <tr>
+                                        <td valign="top" colspan="2" style="border-bottom:1px solid #BAC5E3; font-size:90%; background-color:#eeeeee; border-left:solid #BAC5E3;">
+                                            <span class="smaller"><i>updated Description</i></span>
+                                        </td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td valign="top" nowrap rowspan="2" style="border-top:solid #BAC5E3; border-bottom:1px solid #BAC5E3">
+                                            2022-04-28
+                                            
+                                            <br><span class="smaller" style="font-style:italic">(CWE 4.7, 2022-04-28)</span>
+                                            
+                                        </td>
+                                        <td valign="top" style="border-top:solid #BAC5E3; border-left:solid #BAC5E3;">CWE Content Team</td>
+                                        <td valign="top" style="border-top:solid #BAC5E3; border-left:solid #BAC5E3;">MITRE</td>
+                                    </tr>
+                                    <tr>
+                                        <td valign="top" colspan="2" style="border-bottom:1px solid #BAC5E3; font-size:90%; background-color:#eeeeee; border-left:solid #BAC5E3;">
+                                            <span class="smaller"><i>updated Research_Gaps</i></span>
+                                        </td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td valign="top" nowrap rowspan="2" style="border-top:solid #BAC5E3; border-bottom:1px solid #BAC5E3">
+                                            2021-10-28
+                                            
+                                            <br><span class="smaller" style="font-style:italic">(CWE 4.6, 2021-10-28)</span>
+                                            
+                                        </td>
+                                        <td valign="top" style="border-top:solid #BAC5E3; border-left:solid #BAC5E3;">CWE Content Team</td>
+                                        <td valign="top" style="border-top:solid #BAC5E3; border-left:solid #BAC5E3;">MITRE</td>
+                                    </tr>
+                                    <tr>
+                                        <td valign="top" colspan="2" style="border-bottom:1px solid #BAC5E3; font-size:90%; background-color:#eeeeee; border-left:solid #BAC5E3;">
+                                            <span class="smaller"><i>updated Relationships</i></span>
+                                        </td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td valign="top" nowrap rowspan="2" style="border-top:solid #BAC5E3; border-bottom:1px solid #BAC5E3">
+                                            2021-03-15
+                                            
+                                            <br><span class="smaller" style="font-style:italic">(CWE 4.4, 2021-03-15)</span>
+                                            
+                                        </td>
+                                        <td valign="top" style="border-top:solid #BAC5E3; border-left:solid #BAC5E3;">CWE Content Team</td>
+                                        <td valign="top" style="border-top:solid #BAC5E3; border-left:solid #BAC5E3;">MITRE</td>
+                                    </tr>
+                                    <tr>
+                                        <td valign="top" colspan="2" style="border-bottom:1px solid #BAC5E3; font-size:90%; background-color:#eeeeee; border-left:solid #BAC5E3;">
+                                            <span class="smaller"><i>updated Demonstrative_Examples</i></span>
+                                        </td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td valign="top" nowrap rowspan="2" style="border-top:solid #BAC5E3; border-bottom:1px solid #BAC5E3">
+                                            2020-02-24
+                                            
+                                            <br><span class="smaller" style="font-style:italic">(CWE 4.0, 2020-02-24)</span>
+                                            
+                                        </td>
+                                        <td valign="top" style="border-top:solid #BAC5E3; border-left:solid #BAC5E3;">CWE Content Team</td>
+                                        <td valign="top" style="border-top:solid #BAC5E3; border-left:solid #BAC5E3;">MITRE</td>
+                                    </tr>
+                                    <tr>
+                                        <td valign="top" colspan="2" style="border-bottom:1px solid #BAC5E3; font-size:90%; background-color:#eeeeee; border-left:solid #BAC5E3;">
+                                            <span class="smaller"><i>updated References, Relationships</i></span>
+                                        </td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td valign="top" nowrap rowspan="2" style="border-top:solid #BAC5E3; border-bottom:1px solid #BAC5E3">
+                                            2019-09-19
+                                            
+                                            <br><span class="smaller" style="font-style:italic">(CWE 3.4, 2019-09-19)</span>
+                                            
+                                        </td>
+                                        <td valign="top" style="border-top:solid #BAC5E3; border-left:solid #BAC5E3;">CWE Content Team</td>
+                                        <td valign="top" style="border-top:solid #BAC5E3; border-left:solid #BAC5E3;">MITRE</td>
+                                    </tr>
+                                    <tr>
+                                        <td valign="top" colspan="2" style="border-bottom:1px solid #BAC5E3; font-size:90%; background-color:#eeeeee; border-left:solid #BAC5E3;">
+                                            <span class="smaller"><i>updated Relationships</i></span>
+                                        </td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td valign="top" nowrap rowspan="2" style="border-top:solid #BAC5E3; border-bottom:1px solid #BAC5E3">
+                                            2019-06-20
+                                            
+                                            <br><span class="smaller" style="font-style:italic">(CWE 3.3, 2019-06-20)</span>
+                                            
+                                        </td>
+                                        <td valign="top" style="border-top:solid #BAC5E3; border-left:solid #BAC5E3;">CWE Content Team</td>
+                                        <td valign="top" style="border-top:solid #BAC5E3; border-left:solid #BAC5E3;">MITRE</td>
+                                    </tr>
+                                    <tr>
+                                        <td valign="top" colspan="2" style="border-bottom:1px solid #BAC5E3; font-size:90%; background-color:#eeeeee; border-left:solid #BAC5E3;">
+                                            <span class="smaller"><i>updated Related_Attack_Patterns, Relationships</i></span>
+                                        </td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td valign="top" nowrap rowspan="2" style="border-top:solid #BAC5E3; border-bottom:1px solid #BAC5E3">
+                                            2019-01-03
+                                            
+                                            <br><span class="smaller" style="font-style:italic">(CWE 3.2, 2019-01-03)</span>
+                                            
+                                        </td>
+                                        <td valign="top" style="border-top:solid #BAC5E3; border-left:solid #BAC5E3;">CWE Content Team</td>
+                                        <td valign="top" style="border-top:solid #BAC5E3; border-left:solid #BAC5E3;">MITRE</td>
+                                    </tr>
+                                    <tr>
+                                        <td valign="top" colspan="2" style="border-bottom:1px solid #BAC5E3; font-size:90%; background-color:#eeeeee; border-left:solid #BAC5E3;">
+                                            <span class="smaller"><i>updated Related_Attack_Patterns</i></span>
+                                        </td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td valign="top" nowrap rowspan="2" style="border-top:solid #BAC5E3; border-bottom:1px solid #BAC5E3">
+                                            2018-03-27
+                                            
+                                            <br><span class="smaller" style="font-style:italic">(CWE 3.1, 2018-03-27)</span>
+                                            
+                                        </td>
+                                        <td valign="top" style="border-top:solid #BAC5E3; border-left:solid #BAC5E3;">CWE Content Team</td>
+                                        <td valign="top" style="border-top:solid #BAC5E3; border-left:solid #BAC5E3;">MITRE</td>
+                                    </tr>
+                                    <tr>
+                                        <td valign="top" colspan="2" style="border-bottom:1px solid #BAC5E3; font-size:90%; background-color:#eeeeee; border-left:solid #BAC5E3;">
+                                            <span class="smaller"><i>updated Demonstrative_Examples, References, Relationships, Type</i></span>
+                                        </td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td valign="top" nowrap rowspan="2" style="border-top:solid #BAC5E3; border-bottom:1px solid #BAC5E3">
+                                            2017-11-08
+                                            
+                                            <br><span class="smaller" style="font-style:italic">(CWE 3.0, 2017-11-08)</span>
+                                            
+                                        </td>
+                                        <td valign="top" style="border-top:solid #BAC5E3; border-left:solid #BAC5E3;">CWE Content Team</td>
+                                        <td valign="top" style="border-top:solid #BAC5E3; border-left:solid #BAC5E3;">MITRE</td>
+                                    </tr>
+                                    <tr>
+                                        <td valign="top" colspan="2" style="border-bottom:1px solid #BAC5E3; font-size:90%; background-color:#eeeeee; border-left:solid #BAC5E3;">
+                                            <span class="smaller"><i>updated Demonstrative_Examples, Modes_of_Introduction, References, Relationships, Taxonomy_Mappings</i></span>
+                                        </td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td valign="top" nowrap rowspan="2" style="border-top:solid #BAC5E3; border-bottom:1px solid #BAC5E3">
+                                            2015-12-07
+                                            
+                                            <br><span class="smaller" style="font-style:italic">(CWE 2.9, 2015-12-07)</span>
+                                            
+                                        </td>
+                                        <td valign="top" style="border-top:solid #BAC5E3; border-left:solid #BAC5E3;">CWE Content Team</td>
+                                        <td valign="top" style="border-top:solid #BAC5E3; border-left:solid #BAC5E3;">MITRE</td>
+                                    </tr>
+                                    <tr>
+                                        <td valign="top" colspan="2" style="border-bottom:1px solid #BAC5E3; font-size:90%; background-color:#eeeeee; border-left:solid #BAC5E3;">
+                                            <span class="smaller"><i>updated Relationships</i></span>
+                                        </td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td valign="top" nowrap rowspan="2" style="border-top:solid #BAC5E3; border-bottom:1px solid #BAC5E3">
+                                            2014-02-18
+                                            
+                                            <br><span class="smaller" style="font-style:italic">(CWE 2.6, 2014-02-19)</span>
+                                            
+                                        </td>
+                                        <td valign="top" style="border-top:solid #BAC5E3; border-left:solid #BAC5E3;">CWE Content Team</td>
+                                        <td valign="top" style="border-top:solid #BAC5E3; border-left:solid #BAC5E3;">MITRE</td>
+                                    </tr>
+                                    <tr>
+                                        <td valign="top" colspan="2" style="border-bottom:1px solid #BAC5E3; font-size:90%; background-color:#eeeeee; border-left:solid #BAC5E3;">
+                                            <span class="smaller"><i>updated Demonstrative_Examples, Detection_Factors, Potential_Mitigations</i></span>
+                                        </td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td valign="top" nowrap rowspan="2" style="border-top:solid #BAC5E3; border-bottom:1px solid #BAC5E3">
+                                            2012-05-11
+                                            
+                                            <br><span class="smaller" style="font-style:italic">(CWE 2.2, 2012-05-15)</span>
+                                            
+                                        </td>
+                                        <td valign="top" style="border-top:solid #BAC5E3; border-left:solid #BAC5E3;">CWE Content Team</td>
+                                        <td valign="top" style="border-top:solid #BAC5E3; border-left:solid #BAC5E3;">MITRE</td>
+                                    </tr>
+                                    <tr>
+                                        <td valign="top" colspan="2" style="border-bottom:1px solid #BAC5E3; font-size:90%; background-color:#eeeeee; border-left:solid #BAC5E3;">
+                                            <span class="smaller"><i>updated Demonstrative_Examples, References</i></span>
+                                        </td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td valign="top" nowrap rowspan="2" style="border-top:solid #BAC5E3; border-bottom:1px solid #BAC5E3">
+                                            2011-09-13
+                                            
+                                            <br><span class="smaller" style="font-style:italic">(CWE 2.1, 2011-09-13)</span>
+                                            
+                                        </td>
+                                        <td valign="top" style="border-top:solid #BAC5E3; border-left:solid #BAC5E3;">CWE Content Team</td>
+                                        <td valign="top" style="border-top:solid #BAC5E3; border-left:solid #BAC5E3;">MITRE</td>
+                                    </tr>
+                                    <tr>
+                                        <td valign="top" colspan="2" style="border-bottom:1px solid #BAC5E3; font-size:90%; background-color:#eeeeee; border-left:solid #BAC5E3;">
+                                            <span class="smaller"><i>updated Relationships, Taxonomy_Mappings</i></span>
+                                        </td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td valign="top" nowrap rowspan="2" style="border-top:solid #BAC5E3; border-bottom:1px solid #BAC5E3">
+                                            2011-06-01
+                                            
+                                            <br><span class="smaller" style="font-style:italic">(CWE 1.13, 2011-06-01)</span>
+                                            
+                                        </td>
+                                        <td valign="top" style="border-top:solid #BAC5E3; border-left:solid #BAC5E3;">CWE Content Team</td>
+                                        <td valign="top" style="border-top:solid #BAC5E3; border-left:solid #BAC5E3;">MITRE</td>
+                                    </tr>
+                                    <tr>
+                                        <td valign="top" colspan="2" style="border-bottom:1px solid #BAC5E3; font-size:90%; background-color:#eeeeee; border-left:solid #BAC5E3;">
+                                            <span class="smaller"><i>updated Common_Consequences</i></span>
+                                        </td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td valign="top" nowrap rowspan="2" style="border-top:solid #BAC5E3; border-bottom:1px solid #BAC5E3">
+                                            2011-03-29
+                                            
+                                            <br><span class="smaller" style="font-style:italic">(CWE 1.12, 2011-03-30)</span>
+                                            
+                                        </td>
+                                        <td valign="top" style="border-top:solid #BAC5E3; border-left:solid #BAC5E3;">CWE Content Team</td>
+                                        <td valign="top" style="border-top:solid #BAC5E3; border-left:solid #BAC5E3;">MITRE</td>
+                                    </tr>
+                                    <tr>
+                                        <td valign="top" colspan="2" style="border-bottom:1px solid #BAC5E3; font-size:90%; background-color:#eeeeee; border-left:solid #BAC5E3;">
+                                            <span class="smaller"><i>updated Demonstrative_Examples</i></span>
+                                        </td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td valign="top" nowrap rowspan="2" style="border-top:solid #BAC5E3; border-bottom:1px solid #BAC5E3">
+                                            2010-09-27
+                                            
+                                            <br><span class="smaller" style="font-style:italic">(CWE 1.10, 2010-09-27)</span>
+                                            
+                                        </td>
+                                        <td valign="top" style="border-top:solid #BAC5E3; border-left:solid #BAC5E3;">CWE Content Team</td>
+                                        <td valign="top" style="border-top:solid #BAC5E3; border-left:solid #BAC5E3;">MITRE</td>
+                                    </tr>
+                                    <tr>
+                                        <td valign="top" colspan="2" style="border-bottom:1px solid #BAC5E3; font-size:90%; background-color:#eeeeee; border-left:solid #BAC5E3;">
+                                            <span class="smaller"><i>updated Description, Relationships</i></span>
+                                        </td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td valign="top" nowrap rowspan="2" style="border-top:solid #BAC5E3; border-bottom:1px solid #BAC5E3">
+                                            2010-06-21
+                                            
+                                            <br><span class="smaller" style="font-style:italic">(CWE 1.9, 2010-06-21)</span>
+                                            
+                                        </td>
+                                        <td valign="top" style="border-top:solid #BAC5E3; border-left:solid #BAC5E3;">CWE Content Team</td>
+                                        <td valign="top" style="border-top:solid #BAC5E3; border-left:solid #BAC5E3;">MITRE</td>
+                                    </tr>
+                                    <tr>
+                                        <td valign="top" colspan="2" style="border-bottom:1px solid #BAC5E3; font-size:90%; background-color:#eeeeee; border-left:solid #BAC5E3;">
+                                            <span class="smaller"><i>updated Detection_Factors, Potential_Mitigations</i></span>
+                                        </td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td valign="top" nowrap rowspan="2" style="border-top:solid #BAC5E3; border-bottom:1px solid #BAC5E3">
+                                            2010-04-05
+                                            
+                                            <br><span class="smaller" style="font-style:italic">(CWE 1.8.1, 2010-04-05)</span>
+                                            
+                                        </td>
+                                        <td valign="top" style="border-top:solid #BAC5E3; border-left:solid #BAC5E3;">CWE Content Team</td>
+                                        <td valign="top" style="border-top:solid #BAC5E3; border-left:solid #BAC5E3;">MITRE</td>
+                                    </tr>
+                                    <tr>
+                                        <td valign="top" colspan="2" style="border-bottom:1px solid #BAC5E3; font-size:90%; background-color:#eeeeee; border-left:solid #BAC5E3;">
+                                            <span class="smaller"><i>updated Applicable_Platforms</i></span>
+                                        </td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td valign="top" nowrap rowspan="2" style="border-top:solid #BAC5E3; border-bottom:1px solid #BAC5E3">
+                                            2010-02-16
+                                            
+                                            <br><span class="smaller" style="font-style:italic">(CWE 1.8, 2010-02-16)</span>
+                                            
+                                        </td>
+                                        <td valign="top" style="border-top:solid #BAC5E3; border-left:solid #BAC5E3;">CWE Content Team</td>
+                                        <td valign="top" style="border-top:solid #BAC5E3; border-left:solid #BAC5E3;">MITRE</td>
+                                    </tr>
+                                    <tr>
+                                        <td valign="top" colspan="2" style="border-bottom:1px solid #BAC5E3; font-size:90%; background-color:#eeeeee; border-left:solid #BAC5E3;">
+                                            <span class="smaller"><i>updated References, Relationships</i></span>
+                                        </td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td valign="top" nowrap rowspan="2" style="border-top:solid #BAC5E3; border-bottom:1px solid #BAC5E3">
+                                            2009-12-28
+                                            
+                                            <br><span class="smaller" style="font-style:italic">(CWE 1.7, 2009-12-28)</span>
+                                            
+                                        </td>
+                                        <td valign="top" style="border-top:solid #BAC5E3; border-left:solid #BAC5E3;">CWE Content Team</td>
+                                        <td valign="top" style="border-top:solid #BAC5E3; border-left:solid #BAC5E3;">MITRE</td>
+                                    </tr>
+                                    <tr>
+                                        <td valign="top" colspan="2" style="border-bottom:1px solid #BAC5E3; font-size:90%; background-color:#eeeeee; border-left:solid #BAC5E3;">
+                                            <span class="smaller"><i>updated References</i></span>
+                                        </td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td valign="top" nowrap rowspan="2" style="border-top:solid #BAC5E3; border-bottom:1px solid #BAC5E3">
+                                            2009-03-10
+                                            
+                                            <br><span class="smaller" style="font-style:italic">(CWE 1.3, 2009-03-10)</span>
+                                            
+                                        </td>
+                                        <td valign="top" style="border-top:solid #BAC5E3; border-left:solid #BAC5E3;">CWE Content Team</td>
+                                        <td valign="top" style="border-top:solid #BAC5E3; border-left:solid #BAC5E3;">MITRE</td>
+                                    </tr>
+                                    <tr>
+                                        <td valign="top" colspan="2" style="border-bottom:1px solid #BAC5E3; font-size:90%; background-color:#eeeeee; border-left:solid #BAC5E3;">
+                                            <span class="smaller"><i>updated Demonstrative_Examples, Potential_Mitigations</i></span>
+                                        </td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td valign="top" nowrap rowspan="2" style="border-top:solid #BAC5E3; border-bottom:1px solid #BAC5E3">
+                                            2009-01-12
+                                            
+                                            <br><span class="smaller" style="font-style:italic">(CWE 1.2, 2009-01-12)</span>
+                                            
+                                        </td>
+                                        <td valign="top" style="border-top:solid #BAC5E3; border-left:solid #BAC5E3;">CWE Content Team</td>
+                                        <td valign="top" style="border-top:solid #BAC5E3; border-left:solid #BAC5E3;">MITRE</td>
+                                    </tr>
+                                    <tr>
+                                        <td valign="top" colspan="2" style="border-bottom:1px solid #BAC5E3; font-size:90%; background-color:#eeeeee; border-left:solid #BAC5E3;">
+                                            <span class="smaller"><i>updated Applicable_Platforms, Common_Consequences, Demonstrative_Examples, Description, Observed_Examples, Potential_Mitigations, Relationships, Time_of_Introduction</i></span>
+                                        </td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td valign="top" nowrap rowspan="2" style="border-top:solid #BAC5E3; border-bottom:1px solid #BAC5E3">
+                                            2008-11-24
+                                            
+                                            <br><span class="smaller" style="font-style:italic">(CWE 1.1, 2008-11-25)</span>
+                                            
+                                        </td>
+                                        <td valign="top" style="border-top:solid #BAC5E3; border-left:solid #BAC5E3;">CWE Content Team</td>
+                                        <td valign="top" style="border-top:solid #BAC5E3; border-left:solid #BAC5E3;">MITRE</td>
+                                    </tr>
+                                    <tr>
+                                        <td valign="top" colspan="2" style="border-bottom:1px solid #BAC5E3; font-size:90%; background-color:#eeeeee; border-left:solid #BAC5E3;">
+                                            <span class="smaller"><i>updated Relationships, Taxonomy_Mappings</i></span>
+                                        </td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td valign="top" nowrap rowspan="2" style="border-top:solid #BAC5E3; border-bottom:1px solid #BAC5E3">
+                                            2008-09-08
+                                            
+                                            <br><span class="smaller" style="font-style:italic">(CWE 1.0, 2008-09-09)</span>
+                                            
+                                        </td>
+                                        <td valign="top" style="border-top:solid #BAC5E3; border-left:solid #BAC5E3;">CWE Content Team</td>
+                                        <td valign="top" style="border-top:solid #BAC5E3; border-left:solid #BAC5E3;">MITRE</td>
+                                    </tr>
+                                    <tr>
+                                        <td valign="top" colspan="2" style="border-bottom:1px solid #BAC5E3; font-size:90%; background-color:#eeeeee; border-left:solid #BAC5E3;">
+                                            <span class="smaller"><i>updated Common_Consequences, Relationships, Taxonomy_Mappings</i></span>
+                                        </td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td valign="top" nowrap rowspan="2" style="border-top:solid #BAC5E3; border-bottom:1px solid #BAC5E3">
+                                            2008-07-01
+                                            
+                                            <br><span class="smaller" style="font-style:italic">(CWE 1.0, 2008-09-09)</span>
+                                            
+                                        </td>
+                                        <td valign="top" style="border-top:solid #BAC5E3; border-left:solid #BAC5E3;">Eric Dalci</td>
+                                        <td valign="top" style="border-top:solid #BAC5E3; border-left:solid #BAC5E3;">Cigital</td>
+                                    </tr>
+                                    <tr>
+                                        <td valign="top" colspan="2" style="border-bottom:1px solid #BAC5E3; font-size:90%; background-color:#eeeeee; border-left:solid #BAC5E3;">
+                                            <span class="smaller"><i>updated Time_of_Introduction</i></span>
+                                        </td>
+                                    </tr>
+                                    
+                                
+                            </tbody>
+                        
+                        
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</div>
+
+<!-- End main content -->
+	<div id="More_Message_Custom" style="display:none;">
+<div style="padding:15px 0px 0px 0px;color:#ff0000;font-size:95%;font-weight:bold;text-align:center;" >More information is available &mdash; Please edit the custom filter or select a different filter.</div></div>
+
+	</td>
+	<!-- end content pane -->
+  </tr>
+</table>
+<div id="FootPane" class="noprint">
+  <div id="footbar">
+    <b>Page Last Updated: </b>
+
+
+April 30, 2026
+  </div>
+  <div class="Footer noprint">
+  <a name="footer" id="footer"></a>
+    <table width="100%" cellpadding="0" cellspacing="0" border="0" class="ltgreybackground" style="clear:both">
+      <tr>
+        <td colspan="3" id="line"><div class="line">&nbsp;</div></td>
+      </tr>
+      <tr>
+        <td valign="middle" nowrap="nowrap">
+          <div id="footerlinks" class="footlogo">
+            <a href="http://www.mitre.org" target="_blank" rel="noopener noreferrer"><img src="/images/mitre_logo.gif" height="36" border="0" alt="MITRE" title="MITRE"/></a>
+          </div>
+        </td>
+        <td width="100%" valign="top" style="padding:6px 0px;">
+          <div id="footerlinks">
+            <a href="/sitemap.html">Site Map</a> | 
+            <a href="/about/termsofuse.html">Terms of Use</a> | 
+            <a href="#" onclick="Osano.cm.showDrawer('osano-cm-dom-info-dialog-open')">Manage Cookies</a> | 
+            <a href="/about/cookie_notice.html">Cookie Notice</a> | 
+            <a href="/about/privacy_policy.html">Privacy Policy</a> | 
+            <a href="mailto:cwe@mitre.org">Contact Us</a> | 
+            <a target="_blank" href="https://x.com/CweCapec"><img src="/images/x-logo-black.png" width="18" height="18" style="border:0;vertical-align:right;" alt="CWE on X" title="CWE on X"></a>
+            <a target="_blank" href="https://www.linkedin.com/showcase/cve-cwe-capec"><img src="/images/linkedin_sm.jpg" width="20" height="20" style="border:0;vertical-align:right;" alt="CWE on LinkedIn" title="CWE on LinkedIn"></a>
+            <a target="_blank" href="https://bsky.app/profile/cweprogram.bsky.social"><img src="/images/bluesky_logo_sm.png" width="18" height="18" style="border:0;vertical-align:right;" alt="CWE on Bluesky" title="Bluesky"></a>
+            <a target="_blank" href="https://mastodon.social/@CWE_Program"><img src="/images/mastodon-logo.png" width="20" height="20" style="border:0;vertical-align:right;" alt="CWE on Mastodon" title="CWE on Mastodon"></a>
+            <a target="_blank" href="https://www.youtube.com/channel/UCpY9VIpRmFK4ebD6orssifA"><img src="/images/youtube.png" width="20" height="20" style="border:0;vertical-align:right;" alt="CWE YouTube channel" title="CWE YouTube Channel"></a> 
+            <a href="/news/podcast.html"><img src="/images/out_of_bounds_read_logo.png" width="22" height="22" style="border:0;vertical-align:right;" alt="CWE Out-of-Bounds-Read Podcast" title="CWE Out-of-Bounds-Read Podcast"></a>       
+			      <a target="_blank" href="https://medium.com/@CWE_CAPEC"><img src="/images/medium.png" width="20" height="20" style="border:0;vertical-align:right;" alt="CWE Blog on Medium blog" title="CWE Blog on Medium"></a>   
+          </div>
+          <p>Use of the Common Weakness Enumeration (CWE&trade;) and the associated references from this website are subject to the <a href="/about/termsofuse.html">Terms of Use</a>. CWE is sponsored by the <a target="_blank" rel="noopener noreferrer" href="https://www.dhs.gov/">U.S. Department of Homeland Security</a> (DHS) <a target="_blank" rel="noopener noreferrer" href="https://www.dhs.gov/cisa/cybersecurity-division">Cybersecurity and Infrastructure Security Agency</a> (CISA) and managed by the <a href="https://www.dhs.gov/science-and-technology/hssedi" target="_blank" rel="noopener noreferrer">Homeland Security Systems Engineering and Development Institute</a> (HSSEDI) which is operated by <a target="_blank" rel="noopener noreferrer" href="http://www.mitre.org/">The MITRE Corporation</a> (MITRE). Copyright &copy; 2006&ndash;2026, The MITRE Corporation. CWE, CWSS, CWRAF, and the CWE logo are trademarks of The MITRE Corporation.</p>
+        </td>
+        <td valign="middle" nowrap="nowrap">
+          <div id="footerlinks" class="footlogo">
+            <a href="https://www.dhs.gov/science-and-technology/hssedi" target="_blank" rel="noopener noreferrer"><img src="/images/hssedi.png" height="36" border="0" alt="HSSEDI" title="HSSEDI"/></a>
+          </div>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TCLW30GNGV"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-TCLW30GNGV');
+</script>
+
+</body>
+</html>
+
+
+    
+    
+    
+
+
+</html>

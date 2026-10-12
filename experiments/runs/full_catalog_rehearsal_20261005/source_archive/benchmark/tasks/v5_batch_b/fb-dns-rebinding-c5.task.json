@@ -1,0 +1,12 @@
+{
+  "condition": "C5",
+  "family": "dns_rebinding",
+  "gate_mode": "reject_secure",
+  "schema_version": "5.0.0",
+  "sensor_mode": "complete",
+  "starter_candidate": {
+    "mode": "hostname_allowlist"
+  },
+  "task_id": "fb-dns-rebinding-c5",
+  "version": "5.0.0"
+}

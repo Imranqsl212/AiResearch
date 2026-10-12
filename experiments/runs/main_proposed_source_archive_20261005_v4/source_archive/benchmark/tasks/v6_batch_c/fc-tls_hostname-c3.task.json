@@ -1,0 +1,14 @@
+{
+  "condition": "C3",
+  "environment": {
+    "complete_observation": false
+  },
+  "family": "tls_hostname",
+  "gate_mode": "normal",
+  "schema_version": "6.0.0",
+  "starter_candidate": {
+    "mode": "chain_only"
+  },
+  "task_id": "fc-tls_hostname-c3",
+  "version": "6.0.0"
+}

@@ -1,0 +1,12 @@
+{
+  "condition": "C2",
+  "family": "upload_content",
+  "gate_mode": "normal",
+  "schema_version": "5.0.0",
+  "sensor_mode": "complete",
+  "starter_candidate": {
+    "mode": "last_suffix"
+  },
+  "task_id": "fb-upload-content-c2",
+  "version": "5.0.0"
+}

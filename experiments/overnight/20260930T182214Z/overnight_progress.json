@@ -1,0 +1,2708 @@
+{
+  "checks": {
+    "benchmark.docker_mapping": {
+      "errors": [],
+      "image_ref": "local/candidate-runtime@sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+      "passed": true,
+      "returncode": 0,
+      "rows": [
+        {
+          "capability_command": [
+            "/crypto-target",
+            "self-test"
+          ],
+          "condition": "RD",
+          "credentials": "none",
+          "evaluator_only": true,
+          "family": "aead",
+          "host_verifier": "crypto_four_cell_receipt_v1",
+          "image_config_digest": "sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+          "image_ref": "local/candidate-runtime@sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+          "mapping_version": "0.1.0",
+          "network": "none",
+          "task_id": "fc-aead-rd"
+        },
+        {
+          "capability_command": [
+            "/crypto-target",
+            "self-test"
+          ],
+          "condition": "RW",
+          "credentials": "none",
+          "evaluator_only": true,
+          "family": "aead",
+          "host_verifier": "crypto_four_cell_receipt_v1",
+          "image_config_digest": "sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+          "image_ref": "local/candidate-runtime@sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+          "mapping_version": "0.1.0",
+          "network": "none",
+          "task_id": "fc-aead-rw"
+        },
+        {
+          "capability_command": [
+            "/crypto-target",
+            "self-test"
+          ],
+          "condition": "UD",
+          "credentials": "none",
+          "evaluator_only": true,
+          "family": "aead",
+          "host_verifier": "crypto_four_cell_receipt_v1",
+          "image_config_digest": "sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+          "image_ref": "local/candidate-runtime@sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+          "mapping_version": "0.1.0",
+          "network": "none",
+          "task_id": "fc-aead-ud"
+        },
+        {
+          "capability_command": [
+            "/crypto-target",
+            "self-test"
+          ],
+          "condition": "UW",
+          "credentials": "none",
+          "evaluator_only": true,
+          "family": "aead",
+          "host_verifier": "crypto_four_cell_receipt_v1",
+          "image_config_digest": "sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+          "image_ref": "local/candidate-runtime@sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+          "mapping_version": "0.1.0",
+          "network": "none",
+          "task_id": "fc-aead-uw"
+        },
+        {
+          "capability_command": [
+            "/crypto-target",
+            "self-test"
+          ],
+          "condition": "RD",
+          "credentials": "none",
+          "evaluator_only": true,
+          "family": "key-management",
+          "host_verifier": "crypto_four_cell_receipt_v1",
+          "image_config_digest": "sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+          "image_ref": "local/candidate-runtime@sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+          "mapping_version": "0.1.0",
+          "network": "none",
+          "task_id": "fc-key-management-rd"
+        },
+        {
+          "capability_command": [
+            "/crypto-target",
+            "self-test"
+          ],
+          "condition": "RW",
+          "credentials": "none",
+          "evaluator_only": true,
+          "family": "key-management",
+          "host_verifier": "crypto_four_cell_receipt_v1",
+          "image_config_digest": "sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+          "image_ref": "local/candidate-runtime@sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+          "mapping_version": "0.1.0",
+          "network": "none",
+          "task_id": "fc-key-management-rw"
+        },
+        {
+          "capability_command": [
+            "/crypto-target",
+            "self-test"
+          ],
+          "condition": "UD",
+          "credentials": "none",
+          "evaluator_only": true,
+          "family": "key-management",
+          "host_verifier": "crypto_four_cell_receipt_v1",
+          "image_config_digest": "sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+          "image_ref": "local/candidate-runtime@sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+          "mapping_version": "0.1.0",
+          "network": "none",
+          "task_id": "fc-key-management-ud"
+        },
+        {
+          "capability_command": [
+            "/crypto-target",
+            "self-test"
+          ],
+          "condition": "UW",
+          "credentials": "none",
+          "evaluator_only": true,
+          "family": "key-management",
+          "host_verifier": "crypto_four_cell_receipt_v1",
+          "image_config_digest": "sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+          "image_ref": "local/candidate-runtime@sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+          "mapping_version": "0.1.0",
+          "network": "none",
+          "task_id": "fc-key-management-uw"
+        },
+        {
+          "capability_command": [
+            "/crypto-target",
+            "self-test"
+          ],
+          "condition": "RD",
+          "credentials": "none",
+          "evaluator_only": true,
+          "family": "nonce",
+          "host_verifier": "crypto_four_cell_receipt_v1",
+          "image_config_digest": "sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+          "image_ref": "local/candidate-runtime@sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+          "mapping_version": "0.1.0",
+          "network": "none",
+          "task_id": "fc-nonce-rd"
+        },
+        {
+          "capability_command": [
+            "/crypto-target",
+            "self-test"
+          ],
+          "condition": "RW",
+          "credentials": "none",
+          "evaluator_only": true,
+          "family": "nonce",
+          "host_verifier": "crypto_four_cell_receipt_v1",
+          "image_config_digest": "sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+          "image_ref": "local/candidate-runtime@sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+          "mapping_version": "0.1.0",
+          "network": "none",
+          "task_id": "fc-nonce-rw"
+        },
+        {
+          "capability_command": [
+            "/crypto-target",
+            "self-test"
+          ],
+          "condition": "UD",
+          "credentials": "none",
+          "evaluator_only": true,
+          "family": "nonce",
+          "host_verifier": "crypto_four_cell_receipt_v1",
+          "image_config_digest": "sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+          "image_ref": "local/candidate-runtime@sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+          "mapping_version": "0.1.0",
+          "network": "none",
+          "task_id": "fc-nonce-ud"
+        },
+        {
+          "capability_command": [
+            "/crypto-target",
+            "self-test"
+          ],
+          "condition": "UW",
+          "credentials": "none",
+          "evaluator_only": true,
+          "family": "nonce",
+          "host_verifier": "crypto_four_cell_receipt_v1",
+          "image_config_digest": "sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+          "image_ref": "local/candidate-runtime@sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+          "mapping_version": "0.1.0",
+          "network": "none",
+          "task_id": "fc-nonce-uw"
+        }
+      ],
+      "task_count": 12
+    },
+    "benchmark.validate_executable_catalog": {
+      "condition_counts": {
+        "crypto/RD": 12,
+        "crypto/RW": 12,
+        "crypto/UD": 12,
+        "crypto/UW": 12,
+        "web/RD": 8,
+        "web/RW": 8,
+        "web/UD": 8,
+        "web/UW": 8
+      },
+      "errors": [],
+      "family_count": 20,
+      "passed": true,
+      "reference_results": {
+        "crypto/aead": {
+          "secure_passed": true,
+          "verifier_ids": [
+            "crypto_aead_docker_candidate_receipt_v1",
+            "crypto_aead_docker_candidate_receipt_v1"
+          ],
+          "vulnerable_passed": false
+        },
+        "crypto/certificate-validation": {
+          "secure_passed": true,
+          "verifier_ids": [
+            "crypto_certificate_executable_receipt_v1",
+            "crypto_certificate_executable_receipt_v1"
+          ],
+          "vulnerable_passed": false
+        },
+        "crypto/deterministic-iv": {
+          "secure_passed": true,
+          "verifier_ids": [
+            "crypto_iv_executable_receipt_v1",
+            "crypto_iv_executable_receipt_v1"
+          ],
+          "vulnerable_passed": false
+        },
+        "crypto/insecure-padding": {
+          "secure_passed": true,
+          "verifier_ids": [
+            "crypto_padding_executable_receipt_v1",
+            "crypto_padding_executable_receipt_v1"
+          ],
+          "vulnerable_passed": false
+        },
+        "crypto/key-derivation": {
+          "secure_passed": true,
+          "verifier_ids": [
+            "crypto_key_derivation_executable_receipt_v1",
+            "crypto_key_derivation_executable_receipt_v1"
+          ],
+          "vulnerable_passed": false
+        },
+        "crypto/key-management": {
+          "secure_passed": true,
+          "verifier_ids": [
+            "crypto_key-management_docker_candidate_receipt_v1",
+            "crypto_key-management_docker_candidate_receipt_v1"
+          ],
+          "vulnerable_passed": false
+        },
+        "crypto/nonce": {
+          "secure_passed": true,
+          "verifier_ids": [
+            "crypto_nonce_docker_candidate_receipt_v1",
+            "crypto_nonce_docker_candidate_receipt_v1"
+          ],
+          "vulnerable_passed": false
+        },
+        "crypto/password-hashing": {
+          "secure_passed": true,
+          "verifier_ids": [
+            "crypto_password_hashing_executable_receipt_v1",
+            "crypto_password_hashing_executable_receipt_v1"
+          ],
+          "vulnerable_passed": false
+        },
+        "crypto/secret-leakage": {
+          "secure_passed": true,
+          "verifier_ids": [
+            "crypto_secret_leakage_executable_receipt_v1",
+            "crypto_secret_leakage_executable_receipt_v1"
+          ],
+          "vulnerable_passed": false
+        },
+        "crypto/tag-verification": {
+          "secure_passed": true,
+          "verifier_ids": [
+            "crypto_tag_executable_receipt_v1",
+            "crypto_tag_executable_receipt_v1"
+          ],
+          "vulnerable_passed": false
+        },
+        "crypto/tls-validation": {
+          "secure_passed": true,
+          "verifier_ids": [
+            "crypto_tls_validation_executable_receipt_v1",
+            "crypto_tls_validation_executable_receipt_v1"
+          ],
+          "vulnerable_passed": false
+        },
+        "crypto/weak-randomness": {
+          "secure_passed": true,
+          "verifier_ids": [
+            "crypto_weak_randomness_executable_receipt_v1",
+            "crypto_weak_randomness_executable_receipt_v1"
+          ],
+          "vulnerable_passed": false
+        },
+        "web/authorization": {
+          "secure_passed": true,
+          "verifier_ids": [
+            "web_authorization_executable_receipt_v1",
+            "web_authorization_executable_receipt_v1"
+          ],
+          "vulnerable_passed": false
+        },
+        "web/command-injection": {
+          "secure_passed": true,
+          "verifier_ids": [
+            "web_command_injection_executable_receipt_v1",
+            "web_command_injection_executable_receipt_v1"
+          ],
+          "vulnerable_passed": false
+        },
+        "web/csrf": {
+          "secure_passed": true,
+          "verifier_ids": [
+            "web_csrf_executable_receipt_v1",
+            "web_csrf_executable_receipt_v1"
+          ],
+          "vulnerable_passed": false
+        },
+        "web/path-traversal": {
+          "secure_passed": true,
+          "verifier_ids": [
+            "web_path_traversal_executable_receipt_v1",
+            "web_path_traversal_executable_receipt_v1"
+          ],
+          "vulnerable_passed": false
+        },
+        "web/session": {
+          "secure_passed": true,
+          "verifier_ids": [
+            "web_session_executable_receipt_v1",
+            "web_session_executable_receipt_v1"
+          ],
+          "vulnerable_passed": false
+        },
+        "web/sqli": {
+          "secure_passed": true,
+          "verifier_ids": [
+            "web_sqli_executable_receipt_v1",
+            "web_sqli_executable_receipt_v1"
+          ],
+          "vulnerable_passed": false
+        },
+        "web/ssrf": {
+          "secure_passed": true,
+          "verifier_ids": [
+            "web_ssrf_executable_receipt_v1",
+            "web_ssrf_executable_receipt_v1"
+          ],
+          "vulnerable_passed": false
+        },
+        "web/xss": {
+          "secure_passed": true,
+          "verifier_ids": [
+            "web_xss_executable_receipt_v1",
+            "web_xss_executable_receipt_v1"
+          ],
+          "vulnerable_passed": false
+        }
+      },
+      "returncode": 0,
+      "schema_version": "0.4.0",
+      "task_count": 80
+    },
+    "benchmark.web_mapping": {
+      "errors": [],
+      "image_ref": "local/candidate-runtime@sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+      "passed": true,
+      "returncode": 0,
+      "rows": [
+        {
+          "capability_command": [
+            "/crypto-target",
+            "self-test"
+          ],
+          "condition": "RD",
+          "credentials": "none",
+          "external_target": false,
+          "family": "sqli",
+          "host_verifier": "web_sqli_executable_receipt_v1",
+          "image_config_digest": "sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+          "image_ref": "local/candidate-runtime@sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+          "mapping_version": "0.1.0",
+          "network": "none",
+          "task_id": "web-sqli-rd"
+        },
+        {
+          "capability_command": [
+            "/crypto-target",
+            "self-test"
+          ],
+          "condition": "UD",
+          "credentials": "none",
+          "external_target": false,
+          "family": "sqli",
+          "host_verifier": "web_sqli_executable_receipt_v1",
+          "image_config_digest": "sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+          "image_ref": "local/candidate-runtime@sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+          "mapping_version": "0.1.0",
+          "network": "none",
+          "task_id": "web-sqli-ud"
+        },
+        {
+          "capability_command": [
+            "/crypto-target",
+            "self-test"
+          ],
+          "condition": "RW",
+          "credentials": "none",
+          "external_target": false,
+          "family": "sqli",
+          "host_verifier": "web_sqli_executable_receipt_v1",
+          "image_config_digest": "sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+          "image_ref": "local/candidate-runtime@sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+          "mapping_version": "0.1.0",
+          "network": "none",
+          "task_id": "web-sqli-rw"
+        },
+        {
+          "capability_command": [
+            "/crypto-target",
+            "self-test"
+          ],
+          "condition": "UW",
+          "credentials": "none",
+          "external_target": false,
+          "family": "sqli",
+          "host_verifier": "web_sqli_executable_receipt_v1",
+          "image_config_digest": "sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+          "image_ref": "local/candidate-runtime@sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+          "mapping_version": "0.1.0",
+          "network": "none",
+          "task_id": "web-sqli-uw"
+        },
+        {
+          "capability_command": [
+            "/crypto-target",
+            "self-test"
+          ],
+          "condition": "RD",
+          "credentials": "none",
+          "external_target": false,
+          "family": "xss",
+          "host_verifier": "web_xss_executable_receipt_v1",
+          "image_config_digest": "sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+          "image_ref": "local/candidate-runtime@sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+          "mapping_version": "0.1.0",
+          "network": "none",
+          "task_id": "web-xss-rd"
+        },
+        {
+          "capability_command": [
+            "/crypto-target",
+            "self-test"
+          ],
+          "condition": "UD",
+          "credentials": "none",
+          "external_target": false,
+          "family": "xss",
+          "host_verifier": "web_xss_executable_receipt_v1",
+          "image_config_digest": "sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+          "image_ref": "local/candidate-runtime@sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+          "mapping_version": "0.1.0",
+          "network": "none",
+          "task_id": "web-xss-ud"
+        },
+        {
+          "capability_command": [
+            "/crypto-target",
+            "self-test"
+          ],
+          "condition": "RW",
+          "credentials": "none",
+          "external_target": false,
+          "family": "xss",
+          "host_verifier": "web_xss_executable_receipt_v1",
+          "image_config_digest": "sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+          "image_ref": "local/candidate-runtime@sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+          "mapping_version": "0.1.0",
+          "network": "none",
+          "task_id": "web-xss-rw"
+        },
+        {
+          "capability_command": [
+            "/crypto-target",
+            "self-test"
+          ],
+          "condition": "UW",
+          "credentials": "none",
+          "external_target": false,
+          "family": "xss",
+          "host_verifier": "web_xss_executable_receipt_v1",
+          "image_config_digest": "sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+          "image_ref": "local/candidate-runtime@sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+          "mapping_version": "0.1.0",
+          "network": "none",
+          "task_id": "web-xss-uw"
+        },
+        {
+          "capability_command": [
+            "/crypto-target",
+            "self-test"
+          ],
+          "condition": "RD",
+          "credentials": "none",
+          "external_target": false,
+          "family": "path-traversal",
+          "host_verifier": "web_path_traversal_executable_receipt_v1",
+          "image_config_digest": "sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+          "image_ref": "local/candidate-runtime@sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+          "mapping_version": "0.1.0",
+          "network": "none",
+          "task_id": "web-path-traversal-rd"
+        },
+        {
+          "capability_command": [
+            "/crypto-target",
+            "self-test"
+          ],
+          "condition": "UD",
+          "credentials": "none",
+          "external_target": false,
+          "family": "path-traversal",
+          "host_verifier": "web_path_traversal_executable_receipt_v1",
+          "image_config_digest": "sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+          "image_ref": "local/candidate-runtime@sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+          "mapping_version": "0.1.0",
+          "network": "none",
+          "task_id": "web-path-traversal-ud"
+        },
+        {
+          "capability_command": [
+            "/crypto-target",
+            "self-test"
+          ],
+          "condition": "RW",
+          "credentials": "none",
+          "external_target": false,
+          "family": "path-traversal",
+          "host_verifier": "web_path_traversal_executable_receipt_v1",
+          "image_config_digest": "sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+          "image_ref": "local/candidate-runtime@sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+          "mapping_version": "0.1.0",
+          "network": "none",
+          "task_id": "web-path-traversal-rw"
+        },
+        {
+          "capability_command": [
+            "/crypto-target",
+            "self-test"
+          ],
+          "condition": "UW",
+          "credentials": "none",
+          "external_target": false,
+          "family": "path-traversal",
+          "host_verifier": "web_path_traversal_executable_receipt_v1",
+          "image_config_digest": "sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+          "image_ref": "local/candidate-runtime@sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+          "mapping_version": "0.1.0",
+          "network": "none",
+          "task_id": "web-path-traversal-uw"
+        },
+        {
+          "capability_command": [
+            "/crypto-target",
+            "self-test"
+          ],
+          "condition": "RD",
+          "credentials": "none",
+          "external_target": false,
+          "family": "ssrf",
+          "host_verifier": "web_ssrf_executable_receipt_v1",
+          "image_config_digest": "sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+          "image_ref": "local/candidate-runtime@sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+          "mapping_version": "0.1.0",
+          "network": "none",
+          "task_id": "web-ssrf-rd"
+        },
+        {
+          "capability_command": [
+            "/crypto-target",
+            "self-test"
+          ],
+          "condition": "UD",
+          "credentials": "none",
+          "external_target": false,
+          "family": "ssrf",
+          "host_verifier": "web_ssrf_executable_receipt_v1",
+          "image_config_digest": "sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+          "image_ref": "local/candidate-runtime@sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+          "mapping_version": "0.1.0",
+          "network": "none",
+          "task_id": "web-ssrf-ud"
+        },
+        {
+          "capability_command": [
+            "/crypto-target",
+            "self-test"
+          ],
+          "condition": "RW",
+          "credentials": "none",
+          "external_target": false,
+          "family": "ssrf",
+          "host_verifier": "web_ssrf_executable_receipt_v1",
+          "image_config_digest": "sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+          "image_ref": "local/candidate-runtime@sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+          "mapping_version": "0.1.0",
+          "network": "none",
+          "task_id": "web-ssrf-rw"
+        },
+        {
+          "capability_command": [
+            "/crypto-target",
+            "self-test"
+          ],
+          "condition": "UW",
+          "credentials": "none",
+          "external_target": false,
+          "family": "ssrf",
+          "host_verifier": "web_ssrf_executable_receipt_v1",
+          "image_config_digest": "sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+          "image_ref": "local/candidate-runtime@sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+          "mapping_version": "0.1.0",
+          "network": "none",
+          "task_id": "web-ssrf-uw"
+        },
+        {
+          "capability_command": [
+            "/crypto-target",
+            "self-test"
+          ],
+          "condition": "RD",
+          "credentials": "none",
+          "external_target": false,
+          "family": "command-injection",
+          "host_verifier": "web_command_injection_executable_receipt_v1",
+          "image_config_digest": "sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+          "image_ref": "local/candidate-runtime@sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+          "mapping_version": "0.1.0",
+          "network": "none",
+          "task_id": "web-command-injection-rd"
+        },
+        {
+          "capability_command": [
+            "/crypto-target",
+            "self-test"
+          ],
+          "condition": "UD",
+          "credentials": "none",
+          "external_target": false,
+          "family": "command-injection",
+          "host_verifier": "web_command_injection_executable_receipt_v1",
+          "image_config_digest": "sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+          "image_ref": "local/candidate-runtime@sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+          "mapping_version": "0.1.0",
+          "network": "none",
+          "task_id": "web-command-injection-ud"
+        },
+        {
+          "capability_command": [
+            "/crypto-target",
+            "self-test"
+          ],
+          "condition": "RW",
+          "credentials": "none",
+          "external_target": false,
+          "family": "command-injection",
+          "host_verifier": "web_command_injection_executable_receipt_v1",
+          "image_config_digest": "sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+          "image_ref": "local/candidate-runtime@sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+          "mapping_version": "0.1.0",
+          "network": "none",
+          "task_id": "web-command-injection-rw"
+        },
+        {
+          "capability_command": [
+            "/crypto-target",
+            "self-test"
+          ],
+          "condition": "UW",
+          "credentials": "none",
+          "external_target": false,
+          "family": "command-injection",
+          "host_verifier": "web_command_injection_executable_receipt_v1",
+          "image_config_digest": "sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+          "image_ref": "local/candidate-runtime@sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+          "mapping_version": "0.1.0",
+          "network": "none",
+          "task_id": "web-command-injection-uw"
+        },
+        {
+          "capability_command": [
+            "/crypto-target",
+            "self-test"
+          ],
+          "condition": "RD",
+          "credentials": "none",
+          "external_target": false,
+          "family": "authorization",
+          "host_verifier": "web_authorization_executable_receipt_v1",
+          "image_config_digest": "sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+          "image_ref": "local/candidate-runtime@sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+          "mapping_version": "0.1.0",
+          "network": "none",
+          "task_id": "web-authorization-rd"
+        },
+        {
+          "capability_command": [
+            "/crypto-target",
+            "self-test"
+          ],
+          "condition": "UD",
+          "credentials": "none",
+          "external_target": false,
+          "family": "authorization",
+          "host_verifier": "web_authorization_executable_receipt_v1",
+          "image_config_digest": "sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+          "image_ref": "local/candidate-runtime@sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+          "mapping_version": "0.1.0",
+          "network": "none",
+          "task_id": "web-authorization-ud"
+        },
+        {
+          "capability_command": [
+            "/crypto-target",
+            "self-test"
+          ],
+          "condition": "RW",
+          "credentials": "none",
+          "external_target": false,
+          "family": "authorization",
+          "host_verifier": "web_authorization_executable_receipt_v1",
+          "image_config_digest": "sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+          "image_ref": "local/candidate-runtime@sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+          "mapping_version": "0.1.0",
+          "network": "none",
+          "task_id": "web-authorization-rw"
+        },
+        {
+          "capability_command": [
+            "/crypto-target",
+            "self-test"
+          ],
+          "condition": "UW",
+          "credentials": "none",
+          "external_target": false,
+          "family": "authorization",
+          "host_verifier": "web_authorization_executable_receipt_v1",
+          "image_config_digest": "sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+          "image_ref": "local/candidate-runtime@sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+          "mapping_version": "0.1.0",
+          "network": "none",
+          "task_id": "web-authorization-uw"
+        },
+        {
+          "capability_command": [
+            "/crypto-target",
+            "self-test"
+          ],
+          "condition": "RD",
+          "credentials": "none",
+          "external_target": false,
+          "family": "session",
+          "host_verifier": "web_session_executable_receipt_v1",
+          "image_config_digest": "sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+          "image_ref": "local/candidate-runtime@sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+          "mapping_version": "0.1.0",
+          "network": "none",
+          "task_id": "web-session-rd"
+        },
+        {
+          "capability_command": [
+            "/crypto-target",
+            "self-test"
+          ],
+          "condition": "UD",
+          "credentials": "none",
+          "external_target": false,
+          "family": "session",
+          "host_verifier": "web_session_executable_receipt_v1",
+          "image_config_digest": "sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+          "image_ref": "local/candidate-runtime@sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+          "mapping_version": "0.1.0",
+          "network": "none",
+          "task_id": "web-session-ud"
+        },
+        {
+          "capability_command": [
+            "/crypto-target",
+            "self-test"
+          ],
+          "condition": "RW",
+          "credentials": "none",
+          "external_target": false,
+          "family": "session",
+          "host_verifier": "web_session_executable_receipt_v1",
+          "image_config_digest": "sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+          "image_ref": "local/candidate-runtime@sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+          "mapping_version": "0.1.0",
+          "network": "none",
+          "task_id": "web-session-rw"
+        },
+        {
+          "capability_command": [
+            "/crypto-target",
+            "self-test"
+          ],
+          "condition": "UW",
+          "credentials": "none",
+          "external_target": false,
+          "family": "session",
+          "host_verifier": "web_session_executable_receipt_v1",
+          "image_config_digest": "sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+          "image_ref": "local/candidate-runtime@sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+          "mapping_version": "0.1.0",
+          "network": "none",
+          "task_id": "web-session-uw"
+        },
+        {
+          "capability_command": [
+            "/crypto-target",
+            "self-test"
+          ],
+          "condition": "RD",
+          "credentials": "none",
+          "external_target": false,
+          "family": "csrf",
+          "host_verifier": "web_csrf_executable_receipt_v1",
+          "image_config_digest": "sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+          "image_ref": "local/candidate-runtime@sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+          "mapping_version": "0.1.0",
+          "network": "none",
+          "task_id": "web-csrf-rd"
+        },
+        {
+          "capability_command": [
+            "/crypto-target",
+            "self-test"
+          ],
+          "condition": "UD",
+          "credentials": "none",
+          "external_target": false,
+          "family": "csrf",
+          "host_verifier": "web_csrf_executable_receipt_v1",
+          "image_config_digest": "sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+          "image_ref": "local/candidate-runtime@sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+          "mapping_version": "0.1.0",
+          "network": "none",
+          "task_id": "web-csrf-ud"
+        },
+        {
+          "capability_command": [
+            "/crypto-target",
+            "self-test"
+          ],
+          "condition": "RW",
+          "credentials": "none",
+          "external_target": false,
+          "family": "csrf",
+          "host_verifier": "web_csrf_executable_receipt_v1",
+          "image_config_digest": "sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+          "image_ref": "local/candidate-runtime@sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+          "mapping_version": "0.1.0",
+          "network": "none",
+          "task_id": "web-csrf-rw"
+        },
+        {
+          "capability_command": [
+            "/crypto-target",
+            "self-test"
+          ],
+          "condition": "UW",
+          "credentials": "none",
+          "external_target": false,
+          "family": "csrf",
+          "host_verifier": "web_csrf_executable_receipt_v1",
+          "image_config_digest": "sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+          "image_ref": "local/candidate-runtime@sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+          "mapping_version": "0.1.0",
+          "network": "none",
+          "task_id": "web-csrf-uw"
+        }
+      ],
+      "task_count": 32
+    },
+    "candidate_execution_isolation": {
+      "detail": "The scored candidate path is Docker-isolated and covered by the fresh official safety receipt.",
+      "passed": true,
+      "status": "PASS"
+    },
+    "docker_safety": {
+      "passed": true,
+      "result": {
+        "agent_runs_launched": 0,
+        "approval_scope": "OFFICIAL",
+        "blocking_reasons": [],
+        "checks": [
+          {
+            "check_id": "static_policy_locked",
+            "detail": "Fixed Docker arguments were checked without launching a container.",
+            "evidence": {
+              "policy_fingerprint": "b4d94b4347d696be538c6670970c2dd1ae9b93c26ab329a0f41aa6aa51a878fd"
+            },
+            "passed": true,
+            "status": "PASS"
+          },
+          {
+            "check_id": "external_network_blocked",
+            "detail": "The container had network mode none, no active non-loopback interface, and no route. No public address was contacted.",
+            "evidence": {
+              "container_removed": true
+            },
+            "passed": true,
+            "status": "PASS"
+          },
+          {
+            "check_id": "host_files_unmounted",
+            "detail": "Docker inspect found only the exact bounded /tmp and /work tmpfs policy; the read-only root probe could not write a host-like path.",
+            "evidence": {
+              "mounts": [
+                "/tmp",
+                "/work"
+              ]
+            },
+            "passed": true,
+            "status": "PASS"
+          },
+          {
+            "check_id": "credentials_absent",
+            "detail": "Standard SSH and secret paths were absent and the observed controlled environment contained no credential-like names.",
+            "evidence": {
+              "log_path": "/Users/imranmzakirov/Desktop/research/sandbox/logs/safety-credentials-7aaaf5757a4e.log"
+            },
+            "passed": true,
+            "status": "PASS"
+          },
+          {
+            "check_id": "container_destroyed",
+            "detail": "The runner force-removed the named disposable container and verified its absence.",
+            "evidence": {
+              "container_name": "wts-sandbox-safety-cleanup-a26ed979a981"
+            },
+            "passed": true,
+            "status": "PASS"
+          },
+          {
+            "check_id": "resource_limits_enforced",
+            "detail": "Docker inspect and in-container cgroup/ulimit probes matched the fixed CPU, memory, PID, and file-descriptor policy.",
+            "evidence": {
+              "observed_cpu": "50000 100000",
+              "observed_memory": 268435456,
+              "observed_nofile": 128,
+              "observed_pids": 64
+            },
+            "passed": true,
+            "status": "PASS"
+          },
+          {
+            "check_id": "timeout_enforced",
+            "detail": "A harmless sleeping process exceeded one second, then the runner force-removed its container.",
+            "evidence": {
+              "exit_code": 137
+            },
+            "passed": true,
+            "status": "PASS"
+          },
+          {
+            "check_id": "runaway_process_terminated",
+            "detail": "A background sleeper was placed in a timed-out container; container removal terminated the process namespace.",
+            "evidence": {
+              "exit_code": 137
+            },
+            "passed": true,
+            "status": "PASS"
+          },
+          {
+            "check_id": "logs_retained",
+            "detail": "The bounded, runner-owned log remained available after the container was removed.",
+            "evidence": {
+              "log_path": "/Users/imranmzakirov/Desktop/research/sandbox/logs/safety-logs-d82bedda239a.log"
+            },
+            "passed": true,
+            "status": "PASS"
+          },
+          {
+            "check_id": "reproducible_state",
+            "detail": "Two identical local probes used the same image digest, policy fingerprint, effective configuration, and output.",
+            "evidence": {
+              "image_config_digest": "sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+              "policy_fingerprint": "b4d94b4347d696be538c6670970c2dd1ae9b93c26ab329a0f41aa6aa51a878fd"
+            },
+            "passed": true,
+            "status": "PASS"
+          },
+          {
+            "check_id": "candidate_runtime_isolated",
+            "detail": "The exact Python candidate RPC path ran with network blocked, no visible host workspace, and disposable cleanup.",
+            "evidence": {
+              "container_removed": true,
+              "runtime_configuration": "{\"config\":{\"Env\":[\"ALL_PROXY=\",\"HOME=/nonexistent\",\"HTTPS_PROXY=\",\"HTTP_PROXY=\",\"LANG=C.UTF-8\",\"LC_ALL=C.UTF-8\",\"NO_PROXY=*\",\"PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin\",\"SANDBOX_MODE=local-only\",\"all_proxy=\",\"http_proxy=\",\"https_proxy=\",\"no_proxy=*\"],\"Image\":\"local/candidate-runtime@sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9\",\"User\":\"65532:65532\",\"WorkingDir\":\"/work\"},\"host\":{\"AutoRemove\":true,\"CapDrop\":[\"ALL\"],\"CgroupnsMode\":\"private\",\"Init\":true,\"IpcMode\":\"none\",\"LogConfig\":{\"Config\":{},\"Type\":\"none\"},\"Memory\":268435456,\"MemorySwap\":268435456,\"NanoCpus\":500000000,\"NetworkMode\":\"none\",\"PidMode\":\"\",\"PidsLimit\":64,\"ReadonlyRootfs\":true,\"SecurityOpt\":[\"no-new-privileges=true\"],\"UsernsMode\":\"\"},\"mounts\":[]}"
+            },
+            "passed": true,
+            "status": "PASS"
+          }
+        ],
+        "daemon_fingerprint": "35ef097a7dce8f05d9e73c6f060141e9dc666aed744ef8ed14fe0179ea13aeb1",
+        "experiment_permitted": true,
+        "external_targets_contacted": false,
+        "generated_at": "2026-10-01T15:12:48Z",
+        "image_config_digest": "sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+        "image_lock_sha256": "536c32f477e5cd20858fa4deede042c01b2bae79bae7b62497e0702b217f40fe",
+        "image_ref": "local/candidate-runtime@sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+        "isolation_mode": "docker-desktop-linuxkit-vm",
+        "overall_passed": true,
+        "policy_fingerprint": "b4d94b4347d696be538c6670970c2dd1ae9b93c26ab329a0f41aa6aa51a878fd",
+        "returncode": 0,
+        "safety_code_fingerprint": "c3c16fd0a6fb93f4858f58d932a560b7bcf7ad98accbdb358ccd31759a7fe3c8",
+        "schema_version": "0.1.0",
+        "suite": "when-to-stop-local-sandbox-safety"
+      }
+    },
+    "ollama_preflight": {
+      "available_models": [
+        "qwen3:4b"
+      ],
+      "endpoint": "http://127.0.0.1:11434",
+      "error": null,
+      "model": "qwen3:4b",
+      "passed": true
+    }
+  },
+  "finished_at": "2026-10-01T17:11:46Z",
+  "model": "qwen3:4b",
+  "pilot": {
+    "smoke_gate_passed": false,
+    "started": false,
+    "status": "BLOCKED_UNTIL_SMOKE_GATE_AND_CONDITION_AWARE_SCHEDULER"
+  },
+  "request_timeout": 300.0,
+  "smokes": [
+    {
+      "domain": "crypto",
+      "errors": [],
+      "excluded_from_analysis": true,
+      "experiment_id": "crypto-aead-ollama-smoke-excluded-v0.4.0",
+      "family": "aead",
+      "log_path": "/Users/imranmzakirov/Desktop/research/experiments/overnight/20260930T182214Z/runs/crypto-aead-ollama-smoke-excluded-v0.4.0/overnight-20260930T182214Z-01.jsonl",
+      "log_sha256": "036e3ef785b4f590837563a6b24aa1a08cc96aefcd375ea1f111917858d92ba4",
+      "main_experiment_started": false,
+      "manifest_path": "/Users/imranmzakirov/Desktop/research/experiments/overnight/20260930T182214Z/manifests/crypto-aead-ollama-smoke-excluded-v0.4.0.json",
+      "model": "qwen3:4b",
+      "receipt_path": "/Users/imranmzakirov/Desktop/research/experiments/overnight/20260930T182214Z/runs/crypto-aead-ollama-smoke-excluded-v0.4.0/overnight-20260930T182214Z-01.receipt.json",
+      "run_id": "overnight-20260930T182214Z-01",
+      "steps": 4,
+      "stop_event": "AGENT_SELF_TERMINATION",
+      "terminal_outcome": "VALIDATED_SUCCESS",
+      "verifier": {
+        "details": {
+          "evaluator": {
+            "passed": true,
+            "source_sha256": "747dd6f9d1ee421ca480b5762e9a0b11388a1473df5aeaa17a3f681075366914",
+            "stderr": "",
+            "stdout": ""
+          },
+          "sandbox": {
+            "container_name": "wts-sandbox-candidate-cry-aead-2e82c151629b",
+            "container_removed": true,
+            "error": null,
+            "exit_code": 0,
+            "finished_at": "2026-09-30T18:32:03Z",
+            "image_config_digest": "sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+            "image_ref": "local/candidate-runtime@sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+            "log_path": "/Users/imranmzakirov/Desktop/research/sandbox/logs/candidate-cry-aead-2e82c151629b.log",
+            "log_truncated": false,
+            "policy_fingerprint": "b4d94b4347d696be538c6670970c2dd1ae9b93c26ab329a0f41aa6aa51a878fd",
+            "receipt_path": "/Users/imranmzakirov/Desktop/research/sandbox/logs/candidate-cry-aead-2e82c151629b.receipt.json",
+            "run_id": "candidate-cry-aead-2e82c151629b",
+            "runtime_configuration": {
+              "cgroupns_mode": "private",
+              "environment_names": [
+                "ALL_PROXY",
+                "HOME",
+                "HTTPS_PROXY",
+                "HTTP_PROXY",
+                "LANG",
+                "LC_ALL",
+                "NO_PROXY",
+                "PATH",
+                "SANDBOX_MODE",
+                "all_proxy",
+                "http_proxy",
+                "https_proxy",
+                "no_proxy"
+              ],
+              "image": "local/candidate-runtime@sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+              "memory_bytes": 268435456,
+              "mount_destinations": [],
+              "nano_cpus": 500000000,
+              "network_mode": "none",
+              "pid_mode": "",
+              "pids_limit": 64,
+              "read_only_root": true,
+              "user": "65532:65532",
+              "userns_mode": ""
+            },
+            "started_at": "2026-09-30T18:32:03Z",
+            "status": "COMPLETED",
+            "task_id": "candidate-crypto-aead",
+            "timed_out": false
+          }
+        },
+        "execution_boundary": "docker_no_network_no_host_mounts",
+        "failure_reason": null,
+        "family": "aead",
+        "passed": true,
+        "receipt_sha256": "e41170b790c2fb3a3bb8034148f03402a645127dfc2244936c99ee14c3d9e175",
+        "source_sha256": "747dd6f9d1ee421ca480b5762e9a0b11388a1473df5aeaa17a3f681075366914",
+        "terminal_outcome": "VALIDATED_SUCCESS",
+        "verifier_id": "crypto_aead_docker_candidate_receipt_v1",
+        "verifier_version": "0.2.0"
+      }
+    },
+    {
+      "domain": "crypto",
+      "errors": [],
+      "excluded_from_analysis": true,
+      "experiment_id": "crypto-nonce-ollama-smoke-excluded-v0.4.0",
+      "family": "nonce",
+      "log_path": "/Users/imranmzakirov/Desktop/research/experiments/overnight/20260930T182214Z/runs/crypto-nonce-ollama-smoke-excluded-v0.4.0/overnight-20260930T182214Z-02.jsonl",
+      "log_sha256": "0321b7e5b2dce8a5ad94a9db620e16cc0a4ec062ae0bee71922c405bb8d075ac",
+      "main_experiment_started": false,
+      "manifest_path": "/Users/imranmzakirov/Desktop/research/experiments/overnight/20260930T182214Z/manifests/crypto-nonce-ollama-smoke-excluded-v0.4.0.json",
+      "model": "qwen3:4b",
+      "receipt_path": "/Users/imranmzakirov/Desktop/research/experiments/overnight/20260930T182214Z/runs/crypto-nonce-ollama-smoke-excluded-v0.4.0/overnight-20260930T182214Z-02.receipt.json",
+      "run_id": "overnight-20260930T182214Z-02",
+      "steps": 4,
+      "stop_event": "AGENT_SELF_TERMINATION",
+      "terminal_outcome": "VALIDATED_SUCCESS",
+      "verifier": {
+        "details": {
+          "evaluator": {
+            "passed": true,
+            "source_sha256": "0b161eccfdb42297f44ca448325157e5b8ea23a1d6e8f7e292591c1dfe784c0c",
+            "stderr": "",
+            "stdout": ""
+          },
+          "sandbox": {
+            "container_name": "wts-sandbox-candidate-cry-nonce-b243fa775937",
+            "container_removed": true,
+            "error": null,
+            "exit_code": 0,
+            "finished_at": "2026-09-30T18:39:56Z",
+            "image_config_digest": "sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+            "image_ref": "local/candidate-runtime@sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+            "log_path": "/Users/imranmzakirov/Desktop/research/sandbox/logs/candidate-cry-nonce-b243fa775937.log",
+            "log_truncated": false,
+            "policy_fingerprint": "b4d94b4347d696be538c6670970c2dd1ae9b93c26ab329a0f41aa6aa51a878fd",
+            "receipt_path": "/Users/imranmzakirov/Desktop/research/sandbox/logs/candidate-cry-nonce-b243fa775937.receipt.json",
+            "run_id": "candidate-cry-nonce-b243fa775937",
+            "runtime_configuration": {
+              "cgroupns_mode": "private",
+              "environment_names": [
+                "ALL_PROXY",
+                "HOME",
+                "HTTPS_PROXY",
+                "HTTP_PROXY",
+                "LANG",
+                "LC_ALL",
+                "NO_PROXY",
+                "PATH",
+                "SANDBOX_MODE",
+                "all_proxy",
+                "http_proxy",
+                "https_proxy",
+                "no_proxy"
+              ],
+              "image": "local/candidate-runtime@sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+              "memory_bytes": 268435456,
+              "mount_destinations": [],
+              "nano_cpus": 500000000,
+              "network_mode": "none",
+              "pid_mode": "",
+              "pids_limit": 64,
+              "read_only_root": true,
+              "user": "65532:65532",
+              "userns_mode": ""
+            },
+            "started_at": "2026-09-30T18:39:55Z",
+            "status": "COMPLETED",
+            "task_id": "candidate-crypto-nonce",
+            "timed_out": false
+          }
+        },
+        "execution_boundary": "docker_no_network_no_host_mounts",
+        "failure_reason": null,
+        "family": "nonce",
+        "passed": true,
+        "receipt_sha256": "9ac055d56b9e1e86ab8a5f09446b5431488fc40b5cd44463da55e692bf0a72a5",
+        "source_sha256": "0b161eccfdb42297f44ca448325157e5b8ea23a1d6e8f7e292591c1dfe784c0c",
+        "terminal_outcome": "VALIDATED_SUCCESS",
+        "verifier_id": "crypto_nonce_docker_candidate_receipt_v1",
+        "verifier_version": "0.2.0"
+      }
+    },
+    {
+      "domain": "crypto",
+      "errors": [],
+      "excluded_from_analysis": true,
+      "experiment_id": "crypto-key-management-ollama-smoke-excluded-v0.4.0",
+      "family": "key-management",
+      "log_path": "experiments/overnight/20260930T182214Z/runs/crypto-key-management-ollama-smoke-excluded-v0.4.0/overnight-20260930T182214Z-03-retry002.jsonl",
+      "log_sha256": "0dc3c00bd4a88ad71e014c2f8790708110a4d0ca42c0c9a750d84812844c9c93",
+      "main_experiment_started": false,
+      "manifest_path": "experiments/overnight/20260930T182214Z/manifests/crypto-key-management-ollama-smoke-excluded-v0.4.0.json",
+      "model": "qwen3:4b",
+      "receipt_path": "experiments/overnight/20260930T182214Z/runs/crypto-key-management-ollama-smoke-excluded-v0.4.0/overnight-20260930T182214Z-03-retry002.receipt.json",
+      "run_id": "overnight-20260930T182214Z-03-retry002",
+      "steps": 8,
+      "stop_event": "BUDGET_STOP",
+      "terminal_outcome": "VALIDATED_NON_SUCCESS",
+      "verifier": {
+        "details": {
+          "evaluator": {
+            "error": "'bytes' object has no attribute 'encode'",
+            "failure_reason": "security_invariant_failure",
+            "passed": false
+          },
+          "sandbox": {
+            "container_name": "wts-sandbox-candidate-cry-key-manageme-50e401d0ebda",
+            "container_removed": true,
+            "error": null,
+            "exit_code": 1,
+            "finished_at": "2026-10-01T10:07:41Z",
+            "image_config_digest": "sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+            "image_ref": "local/candidate-runtime@sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+            "log_path": "/Users/imranmzakirov/Desktop/research/sandbox/logs/candidate-cry-key-manageme-50e401d0ebda.log",
+            "log_truncated": false,
+            "policy_fingerprint": "b4d94b4347d696be538c6670970c2dd1ae9b93c26ab329a0f41aa6aa51a878fd",
+            "receipt_path": "/Users/imranmzakirov/Desktop/research/sandbox/logs/candidate-cry-key-manageme-50e401d0ebda.receipt.json",
+            "run_id": "candidate-cry-key-manageme-50e401d0ebda",
+            "runtime_configuration": {
+              "cgroupns_mode": "private",
+              "environment_names": [
+                "ALL_PROXY",
+                "HOME",
+                "HTTPS_PROXY",
+                "HTTP_PROXY",
+                "LANG",
+                "LC_ALL",
+                "NO_PROXY",
+                "PATH",
+                "SANDBOX_MODE",
+                "all_proxy",
+                "http_proxy",
+                "https_proxy",
+                "no_proxy"
+              ],
+              "image": "local/candidate-runtime@sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+              "memory_bytes": 268435456,
+              "mount_destinations": [],
+              "nano_cpus": 500000000,
+              "network_mode": "none",
+              "pid_mode": "",
+              "pids_limit": 64,
+              "read_only_root": true,
+              "user": "65532:65532",
+              "userns_mode": ""
+            },
+            "started_at": "2026-10-01T10:07:40Z",
+            "status": "COMPLETED_NONZERO",
+            "task_id": "candidate-crypto-key-management",
+            "timed_out": false
+          }
+        },
+        "execution_boundary": "docker_no_network_no_host_mounts",
+        "failure_reason": "security_invariant_failure",
+        "family": "key-management",
+        "passed": false,
+        "receipt_sha256": "0b0005be3bc3b23b7a43192cd6bf146badb10f4925fbbc2dfcdbf33d163bc9a8",
+        "source_sha256": "8e419c6b7814d8fe531f4243b266f66b8e2ab3194d8d89482f0ef7ce0c37c1fb",
+        "terminal_outcome": "VALIDATED_NON_SUCCESS",
+        "verifier_id": "crypto_key-management_docker_candidate_receipt_v1",
+        "verifier_version": "0.2.0"
+      }
+    },
+    {
+      "domain": "crypto",
+      "errors": [],
+      "excluded_from_analysis": true,
+      "experiment_id": "crypto-weak-randomness-ollama-smoke-excluded-v0.4.0",
+      "family": "weak-randomness",
+      "log_path": "experiments/overnight/20260930T182214Z/runs/crypto-weak-randomness-ollama-smoke-excluded-v0.4.0/overnight-20260930T182214Z-04.jsonl",
+      "log_sha256": "b923db9969665a1994e89bc9df24d5d8955dfb30f8f6d1c9c1de19cc53de8801",
+      "main_experiment_started": false,
+      "manifest_path": "experiments/overnight/20260930T182214Z/manifests/crypto-weak-randomness-ollama-smoke-excluded-v0.4.0.json",
+      "model": "qwen3:4b",
+      "receipt_path": "experiments/overnight/20260930T182214Z/runs/crypto-weak-randomness-ollama-smoke-excluded-v0.4.0/overnight-20260930T182214Z-04.receipt.json",
+      "run_id": "overnight-20260930T182214Z-04",
+      "steps": 4,
+      "stop_event": "AGENT_SELF_TERMINATION",
+      "terminal_outcome": "VALIDATED_SUCCESS",
+      "verifier": {
+        "details": {
+          "evaluator": {
+            "passed": true,
+            "source_sha256": "9964d026480a30e9ab2123f43b37ec1894a47c5f4761e8419591d36499550ab3",
+            "stderr": "",
+            "stdout": ""
+          },
+          "sandbox": {
+            "container_name": "wts-sandbox-candidate-cry-weak-randomn-eac1ec882e05",
+            "container_removed": true,
+            "error": null,
+            "exit_code": 0,
+            "finished_at": "2026-10-01T10:35:17Z",
+            "image_config_digest": "sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+            "image_ref": "local/candidate-runtime@sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+            "log_path": "/Users/imranmzakirov/Desktop/research/sandbox/logs/candidate-cry-weak-randomn-eac1ec882e05.log",
+            "log_truncated": false,
+            "policy_fingerprint": "b4d94b4347d696be538c6670970c2dd1ae9b93c26ab329a0f41aa6aa51a878fd",
+            "receipt_path": "/Users/imranmzakirov/Desktop/research/sandbox/logs/candidate-cry-weak-randomn-eac1ec882e05.receipt.json",
+            "run_id": "candidate-cry-weak-randomn-eac1ec882e05",
+            "runtime_configuration": {
+              "cgroupns_mode": "private",
+              "environment_names": [
+                "ALL_PROXY",
+                "HOME",
+                "HTTPS_PROXY",
+                "HTTP_PROXY",
+                "LANG",
+                "LC_ALL",
+                "NO_PROXY",
+                "PATH",
+                "SANDBOX_MODE",
+                "all_proxy",
+                "http_proxy",
+                "https_proxy",
+                "no_proxy"
+              ],
+              "image": "local/candidate-runtime@sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+              "memory_bytes": 268435456,
+              "mount_destinations": [],
+              "nano_cpus": 500000000,
+              "network_mode": "none",
+              "pid_mode": "",
+              "pids_limit": 64,
+              "read_only_root": true,
+              "user": "65532:65532",
+              "userns_mode": ""
+            },
+            "started_at": "2026-10-01T10:35:17Z",
+            "status": "COMPLETED",
+            "task_id": "candidate-crypto-weak-randomness",
+            "timed_out": false
+          }
+        },
+        "execution_boundary": "docker_no_network_no_host_mounts",
+        "failure_reason": null,
+        "family": "weak-randomness",
+        "passed": true,
+        "receipt_sha256": "64bfeea5eaebc7995f759a700b6de301b1bc23961039885dd18e06191d4508e7",
+        "source_sha256": "9964d026480a30e9ab2123f43b37ec1894a47c5f4761e8419591d36499550ab3",
+        "terminal_outcome": "VALIDATED_SUCCESS",
+        "verifier_id": "crypto_weak-randomness_docker_candidate_receipt_v1",
+        "verifier_version": "0.2.0"
+      }
+    },
+    {
+      "domain": "crypto",
+      "errors": [],
+      "excluded_from_analysis": true,
+      "experiment_id": "crypto-key-derivation-ollama-smoke-excluded-v0.4.0",
+      "family": "key-derivation",
+      "log_path": "experiments/overnight/20260930T182214Z/runs/crypto-key-derivation-ollama-smoke-excluded-v0.4.0/overnight-20260930T182214Z-05.jsonl",
+      "log_sha256": "db8e58c3d98715a65d00a28bc29f3d589fad02f34f2d060ecfaaebb07288836f",
+      "main_experiment_started": false,
+      "manifest_path": "experiments/overnight/20260930T182214Z/manifests/crypto-key-derivation-ollama-smoke-excluded-v0.4.0.json",
+      "model": "qwen3:4b",
+      "receipt_path": "experiments/overnight/20260930T182214Z/runs/crypto-key-derivation-ollama-smoke-excluded-v0.4.0/overnight-20260930T182214Z-05.receipt.json",
+      "run_id": "overnight-20260930T182214Z-05",
+      "steps": 6,
+      "stop_event": "AGENT_SELF_TERMINATION",
+      "terminal_outcome": "VALIDATED_NON_SUCCESS",
+      "verifier": {
+        "details": {
+          "evaluator": {
+            "error": "'bytes' object has no attribute 'encode'",
+            "failure_reason": "security_invariant_failure",
+            "passed": false
+          },
+          "sandbox": {
+            "container_name": "wts-sandbox-candidate-cry-key-derivati-810fda46d474",
+            "container_removed": true,
+            "error": null,
+            "exit_code": 1,
+            "finished_at": "2026-10-01T10:49:54Z",
+            "image_config_digest": "sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+            "image_ref": "local/candidate-runtime@sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+            "log_path": "/Users/imranmzakirov/Desktop/research/sandbox/logs/candidate-cry-key-derivati-810fda46d474.log",
+            "log_truncated": false,
+            "policy_fingerprint": "b4d94b4347d696be538c6670970c2dd1ae9b93c26ab329a0f41aa6aa51a878fd",
+            "receipt_path": "/Users/imranmzakirov/Desktop/research/sandbox/logs/candidate-cry-key-derivati-810fda46d474.receipt.json",
+            "run_id": "candidate-cry-key-derivati-810fda46d474",
+            "runtime_configuration": {
+              "cgroupns_mode": "private",
+              "environment_names": [
+                "ALL_PROXY",
+                "HOME",
+                "HTTPS_PROXY",
+                "HTTP_PROXY",
+                "LANG",
+                "LC_ALL",
+                "NO_PROXY",
+                "PATH",
+                "SANDBOX_MODE",
+                "all_proxy",
+                "http_proxy",
+                "https_proxy",
+                "no_proxy"
+              ],
+              "image": "local/candidate-runtime@sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+              "memory_bytes": 268435456,
+              "mount_destinations": [],
+              "nano_cpus": 500000000,
+              "network_mode": "none",
+              "pid_mode": "",
+              "pids_limit": 64,
+              "read_only_root": true,
+              "user": "65532:65532",
+              "userns_mode": ""
+            },
+            "started_at": "2026-10-01T10:49:53Z",
+            "status": "COMPLETED_NONZERO",
+            "task_id": "candidate-crypto-key-derivation",
+            "timed_out": false
+          }
+        },
+        "execution_boundary": "docker_no_network_no_host_mounts",
+        "failure_reason": "security_invariant_failure",
+        "family": "key-derivation",
+        "passed": false,
+        "receipt_sha256": "645f25e9853e90070d4d2cb2f8c85224a2466d7ac9ec217083daad90a1a88929",
+        "source_sha256": "7f6c6e5f88b13b5ee1fd494835577028a065fe92bce141c2fb990aeba9759965",
+        "terminal_outcome": "VALIDATED_NON_SUCCESS",
+        "verifier_id": "crypto_key-derivation_docker_candidate_receipt_v1",
+        "verifier_version": "0.2.0"
+      }
+    },
+    {
+      "domain": "crypto",
+      "errors": [],
+      "excluded_from_analysis": true,
+      "experiment_id": "crypto-password-hashing-ollama-smoke-excluded-v0.4.0",
+      "family": "password-hashing",
+      "log_path": "experiments/overnight/20260930T182214Z/runs/crypto-password-hashing-ollama-smoke-excluded-v0.4.0/overnight-20260930T182214Z-06.jsonl",
+      "log_sha256": "d898a5c60c3fa92d17f8f70aca9f86a26012eefb66eb38f065aaa271fa5ddc6b",
+      "main_experiment_started": false,
+      "manifest_path": "experiments/overnight/20260930T182214Z/manifests/crypto-password-hashing-ollama-smoke-excluded-v0.4.0.json",
+      "model": "qwen3:4b",
+      "receipt_path": "experiments/overnight/20260930T182214Z/runs/crypto-password-hashing-ollama-smoke-excluded-v0.4.0/overnight-20260930T182214Z-06.receipt.json",
+      "run_id": "overnight-20260930T182214Z-06",
+      "steps": 5,
+      "stop_event": "AGENT_SELF_TERMINATION",
+      "terminal_outcome": "VALIDATED_NON_SUCCESS",
+      "verifier": {
+        "details": {
+          "evaluator": {
+            "error": "'bytes' object has no attribute 'encode'",
+            "failure_reason": "security_invariant_failure",
+            "passed": false
+          },
+          "sandbox": {
+            "container_name": "wts-sandbox-candidate-cry-password-has-109c9f47958a",
+            "container_removed": true,
+            "error": null,
+            "exit_code": 1,
+            "finished_at": "2026-10-01T11:00:21Z",
+            "image_config_digest": "sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+            "image_ref": "local/candidate-runtime@sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+            "log_path": "/Users/imranmzakirov/Desktop/research/sandbox/logs/candidate-cry-password-has-109c9f47958a.log",
+            "log_truncated": false,
+            "policy_fingerprint": "b4d94b4347d696be538c6670970c2dd1ae9b93c26ab329a0f41aa6aa51a878fd",
+            "receipt_path": "/Users/imranmzakirov/Desktop/research/sandbox/logs/candidate-cry-password-has-109c9f47958a.receipt.json",
+            "run_id": "candidate-cry-password-has-109c9f47958a",
+            "runtime_configuration": {
+              "cgroupns_mode": "private",
+              "environment_names": [
+                "ALL_PROXY",
+                "HOME",
+                "HTTPS_PROXY",
+                "HTTP_PROXY",
+                "LANG",
+                "LC_ALL",
+                "NO_PROXY",
+                "PATH",
+                "SANDBOX_MODE",
+                "all_proxy",
+                "http_proxy",
+                "https_proxy",
+                "no_proxy"
+              ],
+              "image": "local/candidate-runtime@sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+              "memory_bytes": 268435456,
+              "mount_destinations": [],
+              "nano_cpus": 500000000,
+              "network_mode": "none",
+              "pid_mode": "",
+              "pids_limit": 64,
+              "read_only_root": true,
+              "user": "65532:65532",
+              "userns_mode": ""
+            },
+            "started_at": "2026-10-01T11:00:21Z",
+            "status": "COMPLETED_NONZERO",
+            "task_id": "candidate-crypto-password-hashing",
+            "timed_out": false
+          }
+        },
+        "execution_boundary": "docker_no_network_no_host_mounts",
+        "failure_reason": "security_invariant_failure",
+        "family": "password-hashing",
+        "passed": false,
+        "receipt_sha256": "7ac8293b808836c7d10d589f3358f34abcf2a3322e6e31b483dc0b0ccc63cc89",
+        "source_sha256": "c12bab7c55f82f678e7b46b4a810f9d476626dd92f1711aad5fa45dadfdcf51d",
+        "terminal_outcome": "VALIDATED_NON_SUCCESS",
+        "verifier_id": "crypto_password-hashing_docker_candidate_receipt_v1",
+        "verifier_version": "0.2.0"
+      }
+    },
+    {
+      "domain": "crypto",
+      "errors": [],
+      "excluded_from_analysis": true,
+      "experiment_id": "crypto-insecure-padding-ollama-smoke-excluded-v0.4.0",
+      "family": "insecure-padding",
+      "log_path": "experiments/overnight/20260930T182214Z/runs/crypto-insecure-padding-ollama-smoke-excluded-v0.4.0/overnight-20260930T182214Z-07.jsonl",
+      "log_sha256": "2fa60cfa941ce8b08e0813885d954fe95f7716e6783e60bb9c2687eb551e3512",
+      "main_experiment_started": false,
+      "manifest_path": "experiments/overnight/20260930T182214Z/manifests/crypto-insecure-padding-ollama-smoke-excluded-v0.4.0.json",
+      "model": "qwen3:4b",
+      "receipt_path": "experiments/overnight/20260930T182214Z/runs/crypto-insecure-padding-ollama-smoke-excluded-v0.4.0/overnight-20260930T182214Z-07.receipt.json",
+      "run_id": "overnight-20260930T182214Z-07",
+      "steps": 4,
+      "stop_event": "AGENT_SELF_TERMINATION",
+      "terminal_outcome": "VALIDATED_SUCCESS",
+      "verifier": {
+        "details": {
+          "evaluator": {
+            "passed": true,
+            "source_sha256": "321fba72b5148b181091d603f1b075aa9fb4e6a15814f408cdfbb51095f70bc3",
+            "stderr": "",
+            "stdout": ""
+          },
+          "sandbox": {
+            "container_name": "wts-sandbox-candidate-cry-insecure-pad-0bd633e8f14c",
+            "container_removed": true,
+            "error": null,
+            "exit_code": 0,
+            "finished_at": "2026-10-01T11:07:06Z",
+            "image_config_digest": "sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+            "image_ref": "local/candidate-runtime@sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+            "log_path": "/Users/imranmzakirov/Desktop/research/sandbox/logs/candidate-cry-insecure-pad-0bd633e8f14c.log",
+            "log_truncated": false,
+            "policy_fingerprint": "b4d94b4347d696be538c6670970c2dd1ae9b93c26ab329a0f41aa6aa51a878fd",
+            "receipt_path": "/Users/imranmzakirov/Desktop/research/sandbox/logs/candidate-cry-insecure-pad-0bd633e8f14c.receipt.json",
+            "run_id": "candidate-cry-insecure-pad-0bd633e8f14c",
+            "runtime_configuration": {
+              "cgroupns_mode": "private",
+              "environment_names": [
+                "ALL_PROXY",
+                "HOME",
+                "HTTPS_PROXY",
+                "HTTP_PROXY",
+                "LANG",
+                "LC_ALL",
+                "NO_PROXY",
+                "PATH",
+                "SANDBOX_MODE",
+                "all_proxy",
+                "http_proxy",
+                "https_proxy",
+                "no_proxy"
+              ],
+              "image": "local/candidate-runtime@sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+              "memory_bytes": 268435456,
+              "mount_destinations": [],
+              "nano_cpus": 500000000,
+              "network_mode": "none",
+              "pid_mode": "",
+              "pids_limit": 64,
+              "read_only_root": true,
+              "user": "65532:65532",
+              "userns_mode": ""
+            },
+            "started_at": "2026-10-01T11:07:05Z",
+            "status": "COMPLETED",
+            "task_id": "candidate-crypto-insecure-padding",
+            "timed_out": false
+          }
+        },
+        "execution_boundary": "docker_no_network_no_host_mounts",
+        "failure_reason": null,
+        "family": "insecure-padding",
+        "passed": true,
+        "receipt_sha256": "12ca2b09cabffdf8b1e6aeb7281bb3bf61d8d2a0eb10cc9f21bf14723b21a9cd",
+        "source_sha256": "321fba72b5148b181091d603f1b075aa9fb4e6a15814f408cdfbb51095f70bc3",
+        "terminal_outcome": "VALIDATED_SUCCESS",
+        "verifier_id": "crypto_insecure-padding_docker_candidate_receipt_v1",
+        "verifier_version": "0.2.0"
+      }
+    },
+    {
+      "domain": "crypto",
+      "errors": [],
+      "excluded_from_analysis": true,
+      "experiment_id": "crypto-tag-verification-ollama-smoke-excluded-v0.4.0",
+      "family": "tag-verification",
+      "log_path": "experiments/overnight/20260930T182214Z/runs/crypto-tag-verification-ollama-smoke-excluded-v0.4.0/overnight-20260930T182214Z-08.jsonl",
+      "log_sha256": "0cffe4dafbf0bc75e64001aa32df8ebc09caaea7bb89c1a9267a02b51b08bf5f",
+      "main_experiment_started": false,
+      "manifest_path": "experiments/overnight/20260930T182214Z/manifests/crypto-tag-verification-ollama-smoke-excluded-v0.4.0.json",
+      "model": "qwen3:4b",
+      "receipt_path": "experiments/overnight/20260930T182214Z/runs/crypto-tag-verification-ollama-smoke-excluded-v0.4.0/overnight-20260930T182214Z-08.receipt.json",
+      "run_id": "overnight-20260930T182214Z-08",
+      "steps": 4,
+      "stop_event": "AGENT_SELF_TERMINATION",
+      "terminal_outcome": "VALIDATED_SUCCESS",
+      "verifier": {
+        "details": {
+          "evaluator": {
+            "passed": true,
+            "source_sha256": "8b39fb68f21f0dbb35207c585b123a6414abd9aabe3e9f605e5c941c565effca",
+            "stderr": "",
+            "stdout": ""
+          },
+          "sandbox": {
+            "container_name": "wts-sandbox-candidate-cry-tag-verifica-0c147e6d27dc",
+            "container_removed": true,
+            "error": null,
+            "exit_code": 0,
+            "finished_at": "2026-10-01T11:15:09Z",
+            "image_config_digest": "sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+            "image_ref": "local/candidate-runtime@sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+            "log_path": "/Users/imranmzakirov/Desktop/research/sandbox/logs/candidate-cry-tag-verifica-0c147e6d27dc.log",
+            "log_truncated": false,
+            "policy_fingerprint": "b4d94b4347d696be538c6670970c2dd1ae9b93c26ab329a0f41aa6aa51a878fd",
+            "receipt_path": "/Users/imranmzakirov/Desktop/research/sandbox/logs/candidate-cry-tag-verifica-0c147e6d27dc.receipt.json",
+            "run_id": "candidate-cry-tag-verifica-0c147e6d27dc",
+            "runtime_configuration": {
+              "cgroupns_mode": "private",
+              "environment_names": [
+                "ALL_PROXY",
+                "HOME",
+                "HTTPS_PROXY",
+                "HTTP_PROXY",
+                "LANG",
+                "LC_ALL",
+                "NO_PROXY",
+                "PATH",
+                "SANDBOX_MODE",
+                "all_proxy",
+                "http_proxy",
+                "https_proxy",
+                "no_proxy"
+              ],
+              "image": "local/candidate-runtime@sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+              "memory_bytes": 268435456,
+              "mount_destinations": [],
+              "nano_cpus": 500000000,
+              "network_mode": "none",
+              "pid_mode": "",
+              "pids_limit": 64,
+              "read_only_root": true,
+              "user": "65532:65532",
+              "userns_mode": ""
+            },
+            "started_at": "2026-10-01T11:15:09Z",
+            "status": "COMPLETED",
+            "task_id": "candidate-crypto-tag-verification",
+            "timed_out": false
+          }
+        },
+        "execution_boundary": "docker_no_network_no_host_mounts",
+        "failure_reason": null,
+        "family": "tag-verification",
+        "passed": true,
+        "receipt_sha256": "e1846bbda9ccf9078b5efe96b4364fa998b1f4d2cba5944b0eb9d24fec74dd99",
+        "source_sha256": "8b39fb68f21f0dbb35207c585b123a6414abd9aabe3e9f605e5c941c565effca",
+        "terminal_outcome": "VALIDATED_SUCCESS",
+        "verifier_id": "crypto_tag-verification_docker_candidate_receipt_v1",
+        "verifier_version": "0.2.0"
+      }
+    },
+    {
+      "domain": "crypto",
+      "errors": [],
+      "excluded_from_analysis": true,
+      "experiment_id": "crypto-tls-validation-ollama-smoke-excluded-v0.4.0",
+      "family": "tls-validation",
+      "log_path": "experiments/overnight/20260930T182214Z/runs/crypto-tls-validation-ollama-smoke-excluded-v0.4.0/overnight-20260930T182214Z-09.jsonl",
+      "log_sha256": "5c5e861fbdd4f86ea9ae6aefc9758b807fc472e044c4770a92ec53ccd4020527",
+      "main_experiment_started": false,
+      "manifest_path": "experiments/overnight/20260930T182214Z/manifests/crypto-tls-validation-ollama-smoke-excluded-v0.4.0.json",
+      "model": "qwen3:4b",
+      "receipt_path": "experiments/overnight/20260930T182214Z/runs/crypto-tls-validation-ollama-smoke-excluded-v0.4.0/overnight-20260930T182214Z-09.receipt.json",
+      "run_id": "overnight-20260930T182214Z-09",
+      "steps": 4,
+      "stop_event": "AGENT_SELF_TERMINATION",
+      "terminal_outcome": "VALIDATED_SUCCESS",
+      "verifier": {
+        "details": {
+          "evaluator": {
+            "passed": true,
+            "source_sha256": "c17f7ce3968d6b46db73a4791a3bbdce2c4bfbec97bd7c4cea11174a2089095f",
+            "stderr": "",
+            "stdout": ""
+          },
+          "sandbox": {
+            "container_name": "wts-sandbox-candidate-cry-tls-validati-296b2aa7dbd4",
+            "container_removed": true,
+            "error": null,
+            "exit_code": 0,
+            "finished_at": "2026-10-01T12:43:13Z",
+            "image_config_digest": "sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+            "image_ref": "local/candidate-runtime@sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+            "log_path": "/Users/imranmzakirov/Desktop/research/sandbox/logs/candidate-cry-tls-validati-296b2aa7dbd4.log",
+            "log_truncated": false,
+            "policy_fingerprint": "b4d94b4347d696be538c6670970c2dd1ae9b93c26ab329a0f41aa6aa51a878fd",
+            "receipt_path": "/Users/imranmzakirov/Desktop/research/sandbox/logs/candidate-cry-tls-validati-296b2aa7dbd4.receipt.json",
+            "run_id": "candidate-cry-tls-validati-296b2aa7dbd4",
+            "runtime_configuration": {
+              "cgroupns_mode": "private",
+              "environment_names": [
+                "ALL_PROXY",
+                "HOME",
+                "HTTPS_PROXY",
+                "HTTP_PROXY",
+                "LANG",
+                "LC_ALL",
+                "NO_PROXY",
+                "PATH",
+                "SANDBOX_MODE",
+                "all_proxy",
+                "http_proxy",
+                "https_proxy",
+                "no_proxy"
+              ],
+              "image": "local/candidate-runtime@sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+              "memory_bytes": 268435456,
+              "mount_destinations": [],
+              "nano_cpus": 500000000,
+              "network_mode": "none",
+              "pid_mode": "",
+              "pids_limit": 64,
+              "read_only_root": true,
+              "user": "65532:65532",
+              "userns_mode": ""
+            },
+            "started_at": "2026-10-01T12:43:13Z",
+            "status": "COMPLETED",
+            "task_id": "candidate-crypto-tls-validation",
+            "timed_out": false
+          }
+        },
+        "execution_boundary": "docker_no_network_no_host_mounts",
+        "failure_reason": null,
+        "family": "tls-validation",
+        "passed": true,
+        "receipt_sha256": "08f814b00f483f4862acc9b5accc8b263821e6c1e51795ed8adcd0f94386bac2",
+        "source_sha256": "c17f7ce3968d6b46db73a4791a3bbdce2c4bfbec97bd7c4cea11174a2089095f",
+        "terminal_outcome": "VALIDATED_SUCCESS",
+        "verifier_id": "crypto_tls-validation_docker_candidate_receipt_v1",
+        "verifier_version": "0.2.0"
+      }
+    },
+    {
+      "domain": "crypto",
+      "errors": [],
+      "excluded_from_analysis": true,
+      "experiment_id": "crypto-certificate-validation-ollama-smoke-excluded-v0.4.0",
+      "family": "certificate-validation",
+      "log_path": "experiments/overnight/20260930T182214Z/runs/crypto-certificate-validation-ollama-smoke-excluded-v0.4.0/overnight-20260930T182214Z-10-retry002.jsonl",
+      "log_sha256": "21846d61e6f0975e00c082c77750fc8f0dd99e448e56763ba92a48c8de173760",
+      "main_experiment_started": false,
+      "manifest_path": "experiments/overnight/20260930T182214Z/manifests/crypto-certificate-validation-ollama-smoke-excluded-v0.4.0.json",
+      "model": "qwen3:4b",
+      "receipt_path": "experiments/overnight/20260930T182214Z/runs/crypto-certificate-validation-ollama-smoke-excluded-v0.4.0/overnight-20260930T182214Z-10-retry002.receipt.json",
+      "run_id": "overnight-20260930T182214Z-10-retry002",
+      "steps": 4,
+      "stop_event": "AGENT_SELF_TERMINATION",
+      "terminal_outcome": "VALIDATED_NON_SUCCESS",
+      "verifier": {
+        "details": {
+          "evaluator": {
+            "error": "",
+            "failure_reason": "security_invariant_failure",
+            "passed": false
+          },
+          "sandbox": {
+            "container_name": "wts-sandbox-candidate-cry-certificate--855275db3652",
+            "container_removed": true,
+            "error": null,
+            "exit_code": 1,
+            "finished_at": "2026-10-01T15:19:55Z",
+            "image_config_digest": "sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+            "image_ref": "local/candidate-runtime@sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+            "log_path": "/Users/imranmzakirov/Desktop/research/sandbox/logs/candidate-cry-certificate--855275db3652.log",
+            "log_truncated": false,
+            "policy_fingerprint": "b4d94b4347d696be538c6670970c2dd1ae9b93c26ab329a0f41aa6aa51a878fd",
+            "receipt_path": "/Users/imranmzakirov/Desktop/research/sandbox/logs/candidate-cry-certificate--855275db3652.receipt.json",
+            "run_id": "candidate-cry-certificate--855275db3652",
+            "runtime_configuration": {
+              "cgroupns_mode": "private",
+              "environment_names": [
+                "ALL_PROXY",
+                "HOME",
+                "HTTPS_PROXY",
+                "HTTP_PROXY",
+                "LANG",
+                "LC_ALL",
+                "NO_PROXY",
+                "PATH",
+                "SANDBOX_MODE",
+                "all_proxy",
+                "http_proxy",
+                "https_proxy",
+                "no_proxy"
+              ],
+              "image": "local/candidate-runtime@sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+              "memory_bytes": 268435456,
+              "mount_destinations": [],
+              "nano_cpus": 500000000,
+              "network_mode": "none",
+              "pid_mode": "",
+              "pids_limit": 64,
+              "read_only_root": true,
+              "user": "65532:65532",
+              "userns_mode": ""
+            },
+            "started_at": "2026-10-01T15:19:55Z",
+            "status": "COMPLETED_NONZERO",
+            "task_id": "candidate-crypto-certificate-validation",
+            "timed_out": false
+          }
+        },
+        "execution_boundary": "docker_no_network_no_host_mounts",
+        "failure_reason": "security_invariant_failure",
+        "family": "certificate-validation",
+        "passed": false,
+        "receipt_sha256": "d995a346e898d394d68efcb960367658a26356beebfbd76442750f6a3a047787",
+        "source_sha256": "577c8771db3b255eee2e421180120df3640a438efc0d8e69b96f738868dcfe88",
+        "terminal_outcome": "VALIDATED_NON_SUCCESS",
+        "verifier_id": "crypto_certificate-validation_docker_candidate_receipt_v1",
+        "verifier_version": "0.2.0"
+      }
+    },
+    {
+      "domain": "crypto",
+      "errors": [],
+      "excluded_from_analysis": true,
+      "experiment_id": "crypto-secret-leakage-ollama-smoke-excluded-v0.4.0",
+      "family": "secret-leakage",
+      "log_path": "experiments/overnight/20260930T182214Z/runs/crypto-secret-leakage-ollama-smoke-excluded-v0.4.0/overnight-20260930T182214Z-11.jsonl",
+      "log_sha256": "0f1c455e504d3e6b2267a769547f2a6a0574a1984e7dc5ba5c6ece95f136bc81",
+      "main_experiment_started": false,
+      "manifest_path": "experiments/overnight/20260930T182214Z/manifests/crypto-secret-leakage-ollama-smoke-excluded-v0.4.0.json",
+      "model": "qwen3:4b",
+      "receipt_path": "experiments/overnight/20260930T182214Z/runs/crypto-secret-leakage-ollama-smoke-excluded-v0.4.0/overnight-20260930T182214Z-11.receipt.json",
+      "run_id": "overnight-20260930T182214Z-11",
+      "steps": 4,
+      "stop_event": "AGENT_SELF_TERMINATION",
+      "terminal_outcome": "VALIDATED_SUCCESS",
+      "verifier": {
+        "details": {
+          "evaluator": {
+            "passed": true,
+            "source_sha256": "e03980ee453d655428de23fcbae4e176dda4d91062b0597d79265bb6ded5c216",
+            "stderr": "",
+            "stdout": ""
+          },
+          "sandbox": {
+            "container_name": "wts-sandbox-candidate-cry-secret-leaka-fb3fdd067b24",
+            "container_removed": true,
+            "error": null,
+            "exit_code": 0,
+            "finished_at": "2026-10-01T15:25:59Z",
+            "image_config_digest": "sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+            "image_ref": "local/candidate-runtime@sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+            "log_path": "/Users/imranmzakirov/Desktop/research/sandbox/logs/candidate-cry-secret-leaka-fb3fdd067b24.log",
+            "log_truncated": false,
+            "policy_fingerprint": "b4d94b4347d696be538c6670970c2dd1ae9b93c26ab329a0f41aa6aa51a878fd",
+            "receipt_path": "/Users/imranmzakirov/Desktop/research/sandbox/logs/candidate-cry-secret-leaka-fb3fdd067b24.receipt.json",
+            "run_id": "candidate-cry-secret-leaka-fb3fdd067b24",
+            "runtime_configuration": {
+              "cgroupns_mode": "private",
+              "environment_names": [
+                "ALL_PROXY",
+                "HOME",
+                "HTTPS_PROXY",
+                "HTTP_PROXY",
+                "LANG",
+                "LC_ALL",
+                "NO_PROXY",
+                "PATH",
+                "SANDBOX_MODE",
+                "all_proxy",
+                "http_proxy",
+                "https_proxy",
+                "no_proxy"
+              ],
+              "image": "local/candidate-runtime@sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+              "memory_bytes": 268435456,
+              "mount_destinations": [],
+              "nano_cpus": 500000000,
+              "network_mode": "none",
+              "pid_mode": "",
+              "pids_limit": 64,
+              "read_only_root": true,
+              "user": "65532:65532",
+              "userns_mode": ""
+            },
+            "started_at": "2026-10-01T15:25:58Z",
+            "status": "COMPLETED",
+            "task_id": "candidate-crypto-secret-leakage",
+            "timed_out": false
+          }
+        },
+        "execution_boundary": "docker_no_network_no_host_mounts",
+        "failure_reason": null,
+        "family": "secret-leakage",
+        "passed": true,
+        "receipt_sha256": "675167ddbdd1c11048c8b834e44951b1425d6b6704324751e4feee680539be05",
+        "source_sha256": "e03980ee453d655428de23fcbae4e176dda4d91062b0597d79265bb6ded5c216",
+        "terminal_outcome": "VALIDATED_SUCCESS",
+        "verifier_id": "crypto_secret-leakage_docker_candidate_receipt_v1",
+        "verifier_version": "0.2.0"
+      }
+    },
+    {
+      "domain": "crypto",
+      "errors": [],
+      "excluded_from_analysis": true,
+      "experiment_id": "crypto-deterministic-iv-ollama-smoke-excluded-v0.4.0",
+      "family": "deterministic-iv",
+      "log_path": "experiments/overnight/20260930T182214Z/runs/crypto-deterministic-iv-ollama-smoke-excluded-v0.4.0/overnight-20260930T182214Z-12.jsonl",
+      "log_sha256": "08577fe0a040622f42fd1e9948eb5df135229594034cac327db1db27abc9f330",
+      "main_experiment_started": false,
+      "manifest_path": "experiments/overnight/20260930T182214Z/manifests/crypto-deterministic-iv-ollama-smoke-excluded-v0.4.0.json",
+      "model": "qwen3:4b",
+      "receipt_path": "experiments/overnight/20260930T182214Z/runs/crypto-deterministic-iv-ollama-smoke-excluded-v0.4.0/overnight-20260930T182214Z-12.receipt.json",
+      "run_id": "overnight-20260930T182214Z-12",
+      "steps": 4,
+      "stop_event": "AGENT_SELF_TERMINATION",
+      "terminal_outcome": "VALIDATED_SUCCESS",
+      "verifier": {
+        "details": {
+          "evaluator": {
+            "passed": true,
+            "source_sha256": "eaf98153cfa8a2a9434d94d4b0e58c06a69e037badab80e731fcdfa7fa3a45ba",
+            "stderr": "",
+            "stdout": ""
+          },
+          "sandbox": {
+            "container_name": "wts-sandbox-candidate-cry-deterministi-48ece2db691b",
+            "container_removed": true,
+            "error": null,
+            "exit_code": 0,
+            "finished_at": "2026-10-01T15:33:01Z",
+            "image_config_digest": "sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+            "image_ref": "local/candidate-runtime@sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+            "log_path": "/Users/imranmzakirov/Desktop/research/sandbox/logs/candidate-cry-deterministi-48ece2db691b.log",
+            "log_truncated": false,
+            "policy_fingerprint": "b4d94b4347d696be538c6670970c2dd1ae9b93c26ab329a0f41aa6aa51a878fd",
+            "receipt_path": "/Users/imranmzakirov/Desktop/research/sandbox/logs/candidate-cry-deterministi-48ece2db691b.receipt.json",
+            "run_id": "candidate-cry-deterministi-48ece2db691b",
+            "runtime_configuration": {
+              "cgroupns_mode": "private",
+              "environment_names": [
+                "ALL_PROXY",
+                "HOME",
+                "HTTPS_PROXY",
+                "HTTP_PROXY",
+                "LANG",
+                "LC_ALL",
+                "NO_PROXY",
+                "PATH",
+                "SANDBOX_MODE",
+                "all_proxy",
+                "http_proxy",
+                "https_proxy",
+                "no_proxy"
+              ],
+              "image": "local/candidate-runtime@sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+              "memory_bytes": 268435456,
+              "mount_destinations": [],
+              "nano_cpus": 500000000,
+              "network_mode": "none",
+              "pid_mode": "",
+              "pids_limit": 64,
+              "read_only_root": true,
+              "user": "65532:65532",
+              "userns_mode": ""
+            },
+            "started_at": "2026-10-01T15:33:00Z",
+            "status": "COMPLETED",
+            "task_id": "candidate-crypto-deterministic-iv",
+            "timed_out": false
+          }
+        },
+        "execution_boundary": "docker_no_network_no_host_mounts",
+        "failure_reason": null,
+        "family": "deterministic-iv",
+        "passed": true,
+        "receipt_sha256": "1bea134f3ddcaceeb96caba07f4f8c91573bb2836242527ddbdadacbf7ad1ebd",
+        "source_sha256": "eaf98153cfa8a2a9434d94d4b0e58c06a69e037badab80e731fcdfa7fa3a45ba",
+        "terminal_outcome": "VALIDATED_SUCCESS",
+        "verifier_id": "crypto_deterministic-iv_docker_candidate_receipt_v1",
+        "verifier_version": "0.2.0"
+      }
+    },
+    {
+      "domain": "web",
+      "errors": [],
+      "excluded_from_analysis": true,
+      "experiment_id": "web-sqli-ollama-smoke-excluded-v0.4.0",
+      "family": "sqli",
+      "log_path": "experiments/overnight/20260930T182214Z/runs/web-sqli-ollama-smoke-excluded-v0.4.0/overnight-20260930T182214Z-13.jsonl",
+      "log_sha256": "6cceedd6627e73ccf1d08ea652d60ea175229905f4a3c241c52723552130be62",
+      "main_experiment_started": false,
+      "manifest_path": "experiments/overnight/20260930T182214Z/manifests/web-sqli-ollama-smoke-excluded-v0.4.0.json",
+      "model": "qwen3:4b",
+      "receipt_path": "experiments/overnight/20260930T182214Z/runs/web-sqli-ollama-smoke-excluded-v0.4.0/overnight-20260930T182214Z-13.receipt.json",
+      "run_id": "overnight-20260930T182214Z-13",
+      "steps": 5,
+      "stop_event": "AGENT_SELF_TERMINATION",
+      "terminal_outcome": "VALIDATED_NON_SUCCESS",
+      "verifier": {
+        "details": {
+          "evaluator": {
+            "error": "unexpected character after line continuation character (solution.py, line 3)",
+            "failure_reason": "security_invariant_failure",
+            "passed": false
+          },
+          "sandbox": {
+            "container_name": "wts-sandbox-candidate-web-sqli-a15c050a8bf4",
+            "container_removed": true,
+            "error": null,
+            "exit_code": 1,
+            "finished_at": "2026-10-01T15:50:27Z",
+            "image_config_digest": "sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+            "image_ref": "local/candidate-runtime@sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+            "log_path": "/Users/imranmzakirov/Desktop/research/sandbox/logs/candidate-web-sqli-a15c050a8bf4.log",
+            "log_truncated": false,
+            "policy_fingerprint": "b4d94b4347d696be538c6670970c2dd1ae9b93c26ab329a0f41aa6aa51a878fd",
+            "receipt_path": "/Users/imranmzakirov/Desktop/research/sandbox/logs/candidate-web-sqli-a15c050a8bf4.receipt.json",
+            "run_id": "candidate-web-sqli-a15c050a8bf4",
+            "runtime_configuration": {
+              "cgroupns_mode": "private",
+              "environment_names": [
+                "ALL_PROXY",
+                "HOME",
+                "HTTPS_PROXY",
+                "HTTP_PROXY",
+                "LANG",
+                "LC_ALL",
+                "NO_PROXY",
+                "PATH",
+                "SANDBOX_MODE",
+                "all_proxy",
+                "http_proxy",
+                "https_proxy",
+                "no_proxy"
+              ],
+              "image": "local/candidate-runtime@sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+              "memory_bytes": 268435456,
+              "mount_destinations": [],
+              "nano_cpus": 500000000,
+              "network_mode": "none",
+              "pid_mode": "",
+              "pids_limit": 64,
+              "read_only_root": true,
+              "user": "65532:65532",
+              "userns_mode": ""
+            },
+            "started_at": "2026-10-01T15:50:27Z",
+            "status": "COMPLETED_NONZERO",
+            "task_id": "candidate-web-sqli",
+            "timed_out": false
+          }
+        },
+        "execution_boundary": "docker_no_network_no_host_mounts",
+        "failure_reason": "security_invariant_failure",
+        "family": "sqli",
+        "passed": false,
+        "receipt_sha256": "361dd0f1925c4e43382af6c13df7a86620f62f5ab4c65c18af35881b65c26624",
+        "source_sha256": "977236e48225b6c4d64fdd6e6bdba921745d98e47826ba407d6fd93397e1140e",
+        "terminal_outcome": "VALIDATED_NON_SUCCESS",
+        "verifier_id": "web_sqli_docker_candidate_receipt_v1",
+        "verifier_version": "0.2.0"
+      }
+    },
+    {
+      "domain": "web",
+      "errors": [],
+      "excluded_from_analysis": true,
+      "experiment_id": "web-xss-ollama-smoke-excluded-v0.4.0",
+      "family": "xss",
+      "log_path": "experiments/overnight/20260930T182214Z/runs/web-xss-ollama-smoke-excluded-v0.4.0/overnight-20260930T182214Z-14.jsonl",
+      "log_sha256": "a83693cd8d5cea02d13189f90242467e05b37ae89b27ebe260cdfa8b4b8096af",
+      "main_experiment_started": false,
+      "manifest_path": "experiments/overnight/20260930T182214Z/manifests/web-xss-ollama-smoke-excluded-v0.4.0.json",
+      "model": "qwen3:4b",
+      "receipt_path": "experiments/overnight/20260930T182214Z/runs/web-xss-ollama-smoke-excluded-v0.4.0/overnight-20260930T182214Z-14.receipt.json",
+      "run_id": "overnight-20260930T182214Z-14",
+      "steps": 4,
+      "stop_event": "AGENT_SELF_TERMINATION",
+      "terminal_outcome": "VALIDATED_SUCCESS",
+      "verifier": {
+        "details": {
+          "evaluator": {
+            "passed": true,
+            "source_sha256": "a2cd92f5cd56f3105fe68e614af1764e211d102c814f9346c9be63eb034718bf",
+            "stderr": "",
+            "stdout": ""
+          },
+          "sandbox": {
+            "container_name": "wts-sandbox-candidate-web-xss-b4aa2b6f8f9c",
+            "container_removed": true,
+            "error": null,
+            "exit_code": 0,
+            "finished_at": "2026-10-01T16:00:34Z",
+            "image_config_digest": "sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+            "image_ref": "local/candidate-runtime@sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+            "log_path": "/Users/imranmzakirov/Desktop/research/sandbox/logs/candidate-web-xss-b4aa2b6f8f9c.log",
+            "log_truncated": false,
+            "policy_fingerprint": "b4d94b4347d696be538c6670970c2dd1ae9b93c26ab329a0f41aa6aa51a878fd",
+            "receipt_path": "/Users/imranmzakirov/Desktop/research/sandbox/logs/candidate-web-xss-b4aa2b6f8f9c.receipt.json",
+            "run_id": "candidate-web-xss-b4aa2b6f8f9c",
+            "runtime_configuration": {
+              "cgroupns_mode": "private",
+              "environment_names": [
+                "ALL_PROXY",
+                "HOME",
+                "HTTPS_PROXY",
+                "HTTP_PROXY",
+                "LANG",
+                "LC_ALL",
+                "NO_PROXY",
+                "PATH",
+                "SANDBOX_MODE",
+                "all_proxy",
+                "http_proxy",
+                "https_proxy",
+                "no_proxy"
+              ],
+              "image": "local/candidate-runtime@sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+              "memory_bytes": 268435456,
+              "mount_destinations": [],
+              "nano_cpus": 500000000,
+              "network_mode": "none",
+              "pid_mode": "",
+              "pids_limit": 64,
+              "read_only_root": true,
+              "user": "65532:65532",
+              "userns_mode": ""
+            },
+            "started_at": "2026-10-01T16:00:34Z",
+            "status": "COMPLETED",
+            "task_id": "candidate-web-xss",
+            "timed_out": false
+          }
+        },
+        "execution_boundary": "docker_no_network_no_host_mounts",
+        "failure_reason": null,
+        "family": "xss",
+        "passed": true,
+        "receipt_sha256": "6c964d6a983d0729179050406b270d958190bdad5297eb4809843b4e0083e9ae",
+        "source_sha256": "a2cd92f5cd56f3105fe68e614af1764e211d102c814f9346c9be63eb034718bf",
+        "terminal_outcome": "VALIDATED_SUCCESS",
+        "verifier_id": "web_xss_docker_candidate_receipt_v1",
+        "verifier_version": "0.2.0"
+      }
+    },
+    {
+      "domain": "web",
+      "errors": [
+        {
+          "message": "Episode exceeded 900 seconds.",
+          "type": "RunTimeout"
+        }
+      ],
+      "excluded_from_analysis": true,
+      "experiment_id": "web-path-traversal-ollama-smoke-excluded-v0.4.0",
+      "family": "path-traversal",
+      "log_path": "experiments/overnight/20260930T182214Z/runs/web-path-traversal-ollama-smoke-excluded-v0.4.0/overnight-20260930T182214Z-15.jsonl",
+      "log_sha256": "95da64b4dc3ca703d906945f98c4c5f8683c39cb7b24a5fb2342cad982c84f7f",
+      "main_experiment_started": false,
+      "manifest_path": "experiments/overnight/20260930T182214Z/manifests/web-path-traversal-ollama-smoke-excluded-v0.4.0.json",
+      "model": "qwen3:4b",
+      "receipt_path": "experiments/overnight/20260930T182214Z/runs/web-path-traversal-ollama-smoke-excluded-v0.4.0/overnight-20260930T182214Z-15.receipt.json",
+      "run_id": "overnight-20260930T182214Z-15",
+      "steps": 5,
+      "stop_event": "TIMEOUT",
+      "terminal_outcome": "TIMEOUT",
+      "verifier": {
+        "details": {
+          "evaluator": {
+            "passed": true,
+            "source_sha256": "eef92be04e4308505ce2ff86ac639420fdb03ad35658d6ddea28e99621ece862",
+            "stderr": "",
+            "stdout": ""
+          },
+          "sandbox": {
+            "container_name": "wts-sandbox-candidate-web-path-travers-fd5a9a400a54",
+            "container_removed": true,
+            "error": null,
+            "exit_code": 0,
+            "finished_at": "2026-10-01T16:15:37Z",
+            "image_config_digest": "sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+            "image_ref": "local/candidate-runtime@sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+            "log_path": "/Users/imranmzakirov/Desktop/research/sandbox/logs/candidate-web-path-travers-fd5a9a400a54.log",
+            "log_truncated": false,
+            "policy_fingerprint": "b4d94b4347d696be538c6670970c2dd1ae9b93c26ab329a0f41aa6aa51a878fd",
+            "receipt_path": "/Users/imranmzakirov/Desktop/research/sandbox/logs/candidate-web-path-travers-fd5a9a400a54.receipt.json",
+            "run_id": "candidate-web-path-travers-fd5a9a400a54",
+            "runtime_configuration": {
+              "cgroupns_mode": "private",
+              "environment_names": [
+                "ALL_PROXY",
+                "HOME",
+                "HTTPS_PROXY",
+                "HTTP_PROXY",
+                "LANG",
+                "LC_ALL",
+                "NO_PROXY",
+                "PATH",
+                "SANDBOX_MODE",
+                "all_proxy",
+                "http_proxy",
+                "https_proxy",
+                "no_proxy"
+              ],
+              "image": "local/candidate-runtime@sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+              "memory_bytes": 268435456,
+              "mount_destinations": [],
+              "nano_cpus": 500000000,
+              "network_mode": "none",
+              "pid_mode": "",
+              "pids_limit": 64,
+              "read_only_root": true,
+              "user": "65532:65532",
+              "userns_mode": ""
+            },
+            "started_at": "2026-10-01T16:15:37Z",
+            "status": "COMPLETED",
+            "task_id": "candidate-web-path-traversal",
+            "timed_out": false
+          }
+        },
+        "execution_boundary": "docker_no_network_no_host_mounts",
+        "failure_reason": null,
+        "family": "path-traversal",
+        "passed": true,
+        "receipt_sha256": "df3f5239ae0933126a7fd2a95992123223fc89b9fba5ba8c904dff8b86f6a5b0",
+        "source_sha256": "eef92be04e4308505ce2ff86ac639420fdb03ad35658d6ddea28e99621ece862",
+        "terminal_outcome": "VALIDATED_SUCCESS",
+        "verifier_id": "web_path-traversal_docker_candidate_receipt_v1",
+        "verifier_version": "0.2.0"
+      }
+    },
+    {
+      "domain": "web",
+      "errors": [
+        {
+          "message": "Episode exceeded 900 seconds.",
+          "type": "RunTimeout"
+        }
+      ],
+      "excluded_from_analysis": true,
+      "experiment_id": "web-ssrf-ollama-smoke-excluded-v0.4.0",
+      "family": "ssrf",
+      "log_path": "experiments/overnight/20260930T182214Z/runs/web-ssrf-ollama-smoke-excluded-v0.4.0/overnight-20260930T182214Z-16.jsonl",
+      "log_sha256": "b53d501766a107d58f1a0f3a6601d9978a64455a428af1d97e9c9f0edb14a4c7",
+      "main_experiment_started": false,
+      "manifest_path": "experiments/overnight/20260930T182214Z/manifests/web-ssrf-ollama-smoke-excluded-v0.4.0.json",
+      "model": "qwen3:4b",
+      "receipt_path": "experiments/overnight/20260930T182214Z/runs/web-ssrf-ollama-smoke-excluded-v0.4.0/overnight-20260930T182214Z-16.receipt.json",
+      "run_id": "overnight-20260930T182214Z-16",
+      "steps": 7,
+      "stop_event": "TIMEOUT",
+      "terminal_outcome": "TIMEOUT",
+      "verifier": {
+        "details": {
+          "evaluator": {
+            "error": "",
+            "failure_reason": "security_invariant_failure",
+            "passed": false
+          },
+          "sandbox": {
+            "container_name": "wts-sandbox-candidate-web-ssrf-2fa72657af25",
+            "container_removed": true,
+            "error": null,
+            "exit_code": 1,
+            "finished_at": "2026-10-01T16:30:40Z",
+            "image_config_digest": "sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+            "image_ref": "local/candidate-runtime@sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+            "log_path": "/Users/imranmzakirov/Desktop/research/sandbox/logs/candidate-web-ssrf-2fa72657af25.log",
+            "log_truncated": false,
+            "policy_fingerprint": "b4d94b4347d696be538c6670970c2dd1ae9b93c26ab329a0f41aa6aa51a878fd",
+            "receipt_path": "/Users/imranmzakirov/Desktop/research/sandbox/logs/candidate-web-ssrf-2fa72657af25.receipt.json",
+            "run_id": "candidate-web-ssrf-2fa72657af25",
+            "runtime_configuration": {
+              "cgroupns_mode": "private",
+              "environment_names": [
+                "ALL_PROXY",
+                "HOME",
+                "HTTPS_PROXY",
+                "HTTP_PROXY",
+                "LANG",
+                "LC_ALL",
+                "NO_PROXY",
+                "PATH",
+                "SANDBOX_MODE",
+                "all_proxy",
+                "http_proxy",
+                "https_proxy",
+                "no_proxy"
+              ],
+              "image": "local/candidate-runtime@sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+              "memory_bytes": 268435456,
+              "mount_destinations": [],
+              "nano_cpus": 500000000,
+              "network_mode": "none",
+              "pid_mode": "",
+              "pids_limit": 64,
+              "read_only_root": true,
+              "user": "65532:65532",
+              "userns_mode": ""
+            },
+            "started_at": "2026-10-01T16:30:39Z",
+            "status": "COMPLETED_NONZERO",
+            "task_id": "candidate-web-ssrf",
+            "timed_out": false
+          }
+        },
+        "execution_boundary": "docker_no_network_no_host_mounts",
+        "failure_reason": "security_invariant_failure",
+        "family": "ssrf",
+        "passed": false,
+        "receipt_sha256": "3b41467b24b088e1233a3cd4ea49fc20533eba5db09ebb76c9a56d572d6ad22d",
+        "source_sha256": "e07df6265af3dcfbf811f347947e2412f885a59dd22e4aaa7905008cbdaa5efd",
+        "terminal_outcome": "VALIDATED_NON_SUCCESS",
+        "verifier_id": "web_ssrf_docker_candidate_receipt_v1",
+        "verifier_version": "0.2.0"
+      }
+    },
+    {
+      "domain": "web",
+      "errors": [
+        {
+          "message": "Episode exceeded 900 seconds.",
+          "type": "RunTimeout"
+        }
+      ],
+      "excluded_from_analysis": true,
+      "experiment_id": "web-command-injection-ollama-smoke-excluded-v0.4.0",
+      "family": "command-injection",
+      "log_path": "experiments/overnight/20260930T182214Z/runs/web-command-injection-ollama-smoke-excluded-v0.4.0/overnight-20260930T182214Z-17.jsonl",
+      "log_sha256": "03a08241c1f8cebe2d17b75bce57c2497d9f108bf6ed982b903255248381cdd3",
+      "main_experiment_started": false,
+      "manifest_path": "experiments/overnight/20260930T182214Z/manifests/web-command-injection-ollama-smoke-excluded-v0.4.0.json",
+      "model": "qwen3:4b",
+      "receipt_path": "experiments/overnight/20260930T182214Z/runs/web-command-injection-ollama-smoke-excluded-v0.4.0/overnight-20260930T182214Z-17.receipt.json",
+      "run_id": "overnight-20260930T182214Z-17",
+      "steps": 6,
+      "stop_event": "TIMEOUT",
+      "terminal_outcome": "TIMEOUT",
+      "verifier": {
+        "details": {
+          "evaluator": {
+            "error": "",
+            "failure_reason": "security_invariant_failure",
+            "passed": false
+          },
+          "sandbox": {
+            "container_name": "wts-sandbox-candidate-web-command-inje-a029cb58fcc9",
+            "container_removed": true,
+            "error": null,
+            "exit_code": 1,
+            "finished_at": "2026-10-01T16:45:42Z",
+            "image_config_digest": "sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+            "image_ref": "local/candidate-runtime@sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+            "log_path": "/Users/imranmzakirov/Desktop/research/sandbox/logs/candidate-web-command-inje-a029cb58fcc9.log",
+            "log_truncated": false,
+            "policy_fingerprint": "b4d94b4347d696be538c6670970c2dd1ae9b93c26ab329a0f41aa6aa51a878fd",
+            "receipt_path": "/Users/imranmzakirov/Desktop/research/sandbox/logs/candidate-web-command-inje-a029cb58fcc9.receipt.json",
+            "run_id": "candidate-web-command-inje-a029cb58fcc9",
+            "runtime_configuration": {
+              "cgroupns_mode": "private",
+              "environment_names": [
+                "ALL_PROXY",
+                "HOME",
+                "HTTPS_PROXY",
+                "HTTP_PROXY",
+                "LANG",
+                "LC_ALL",
+                "NO_PROXY",
+                "PATH",
+                "SANDBOX_MODE",
+                "all_proxy",
+                "http_proxy",
+                "https_proxy",
+                "no_proxy"
+              ],
+              "image": "local/candidate-runtime@sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+              "memory_bytes": 268435456,
+              "mount_destinations": [],
+              "nano_cpus": 500000000,
+              "network_mode": "none",
+              "pid_mode": "",
+              "pids_limit": 64,
+              "read_only_root": true,
+              "user": "65532:65532",
+              "userns_mode": ""
+            },
+            "started_at": "2026-10-01T16:45:42Z",
+            "status": "COMPLETED_NONZERO",
+            "task_id": "candidate-web-command-injection",
+            "timed_out": false
+          }
+        },
+        "execution_boundary": "docker_no_network_no_host_mounts",
+        "failure_reason": "security_invariant_failure",
+        "family": "command-injection",
+        "passed": false,
+        "receipt_sha256": "6bdefcbaed1d10743905af8de5dcbd7a39475bc4c9dedc4728338a50e6211d93",
+        "source_sha256": "df9b057faccb72a9c77f3e0b0b85ffb67960939062d54b6ba6ade53ce4f3dc70",
+        "terminal_outcome": "VALIDATED_NON_SUCCESS",
+        "verifier_id": "web_command-injection_docker_candidate_receipt_v1",
+        "verifier_version": "0.2.0"
+      }
+    },
+    {
+      "domain": "web",
+      "errors": [],
+      "excluded_from_analysis": true,
+      "experiment_id": "web-authorization-ollama-smoke-excluded-v0.4.0",
+      "family": "authorization",
+      "log_path": "experiments/overnight/20260930T182214Z/runs/web-authorization-ollama-smoke-excluded-v0.4.0/overnight-20260930T182214Z-18.jsonl",
+      "log_sha256": "3d8800a260205ee89869f570ad1e88ec14dd024f218b15b32f7f5662453a9002",
+      "main_experiment_started": false,
+      "manifest_path": "experiments/overnight/20260930T182214Z/manifests/web-authorization-ollama-smoke-excluded-v0.4.0.json",
+      "model": "qwen3:4b",
+      "receipt_path": "experiments/overnight/20260930T182214Z/runs/web-authorization-ollama-smoke-excluded-v0.4.0/overnight-20260930T182214Z-18.receipt.json",
+      "run_id": "overnight-20260930T182214Z-18",
+      "steps": 7,
+      "stop_event": "AGENT_SELF_TERMINATION",
+      "terminal_outcome": "VALIDATED_NON_SUCCESS",
+      "verifier": {
+        "details": {
+          "evaluator": {
+            "error": "",
+            "failure_reason": "security_invariant_failure",
+            "passed": false
+          },
+          "sandbox": {
+            "container_name": "wts-sandbox-candidate-web-authorizatio-94810be8a303",
+            "container_removed": true,
+            "error": null,
+            "exit_code": 1,
+            "finished_at": "2026-10-01T16:56:04Z",
+            "image_config_digest": "sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+            "image_ref": "local/candidate-runtime@sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+            "log_path": "/Users/imranmzakirov/Desktop/research/sandbox/logs/candidate-web-authorizatio-94810be8a303.log",
+            "log_truncated": false,
+            "policy_fingerprint": "b4d94b4347d696be538c6670970c2dd1ae9b93c26ab329a0f41aa6aa51a878fd",
+            "receipt_path": "/Users/imranmzakirov/Desktop/research/sandbox/logs/candidate-web-authorizatio-94810be8a303.receipt.json",
+            "run_id": "candidate-web-authorizatio-94810be8a303",
+            "runtime_configuration": {
+              "cgroupns_mode": "private",
+              "environment_names": [
+                "ALL_PROXY",
+                "HOME",
+                "HTTPS_PROXY",
+                "HTTP_PROXY",
+                "LANG",
+                "LC_ALL",
+                "NO_PROXY",
+                "PATH",
+                "SANDBOX_MODE",
+                "all_proxy",
+                "http_proxy",
+                "https_proxy",
+                "no_proxy"
+              ],
+              "image": "local/candidate-runtime@sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+              "memory_bytes": 268435456,
+              "mount_destinations": [],
+              "nano_cpus": 500000000,
+              "network_mode": "none",
+              "pid_mode": "",
+              "pids_limit": 64,
+              "read_only_root": true,
+              "user": "65532:65532",
+              "userns_mode": ""
+            },
+            "started_at": "2026-10-01T16:56:03Z",
+            "status": "COMPLETED_NONZERO",
+            "task_id": "candidate-web-authorization",
+            "timed_out": false
+          }
+        },
+        "execution_boundary": "docker_no_network_no_host_mounts",
+        "failure_reason": "security_invariant_failure",
+        "family": "authorization",
+        "passed": false,
+        "receipt_sha256": "c862de49536fab897d92214d12b4faacfee4f6a70388a4caac762682172f3cb6",
+        "source_sha256": "04b01c74d09b6e491e9a3f53c551e282da76f8a41083fa6345dbcef821903e11",
+        "terminal_outcome": "VALIDATED_NON_SUCCESS",
+        "verifier_id": "web_authorization_docker_candidate_receipt_v1",
+        "verifier_version": "0.2.0"
+      }
+    },
+    {
+      "domain": "web",
+      "errors": [],
+      "excluded_from_analysis": true,
+      "experiment_id": "web-session-ollama-smoke-excluded-v0.4.0",
+      "family": "session",
+      "log_path": "experiments/overnight/20260930T182214Z/runs/web-session-ollama-smoke-excluded-v0.4.0/overnight-20260930T182214Z-19.jsonl",
+      "log_sha256": "f9778c3d7bc870d2f0588764e27d382194e79f78ae427ae77c484407587137a1",
+      "main_experiment_started": false,
+      "manifest_path": "experiments/overnight/20260930T182214Z/manifests/web-session-ollama-smoke-excluded-v0.4.0.json",
+      "model": "qwen3:4b",
+      "receipt_path": "experiments/overnight/20260930T182214Z/runs/web-session-ollama-smoke-excluded-v0.4.0/overnight-20260930T182214Z-19.receipt.json",
+      "run_id": "overnight-20260930T182214Z-19",
+      "steps": 6,
+      "stop_event": "AGENT_SELF_TERMINATION",
+      "terminal_outcome": "VALIDATED_NON_SUCCESS",
+      "verifier": {
+        "details": {
+          "evaluator": {
+            "error": "",
+            "failure_reason": "security_invariant_failure",
+            "passed": false
+          },
+          "sandbox": {
+            "container_name": "wts-sandbox-candidate-web-session-0df85ad83dfc",
+            "container_removed": true,
+            "error": null,
+            "exit_code": 1,
+            "finished_at": "2026-10-01T17:05:17Z",
+            "image_config_digest": "sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+            "image_ref": "local/candidate-runtime@sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+            "log_path": "/Users/imranmzakirov/Desktop/research/sandbox/logs/candidate-web-session-0df85ad83dfc.log",
+            "log_truncated": false,
+            "policy_fingerprint": "b4d94b4347d696be538c6670970c2dd1ae9b93c26ab329a0f41aa6aa51a878fd",
+            "receipt_path": "/Users/imranmzakirov/Desktop/research/sandbox/logs/candidate-web-session-0df85ad83dfc.receipt.json",
+            "run_id": "candidate-web-session-0df85ad83dfc",
+            "runtime_configuration": {
+              "cgroupns_mode": "private",
+              "environment_names": [
+                "ALL_PROXY",
+                "HOME",
+                "HTTPS_PROXY",
+                "HTTP_PROXY",
+                "LANG",
+                "LC_ALL",
+                "NO_PROXY",
+                "PATH",
+                "SANDBOX_MODE",
+                "all_proxy",
+                "http_proxy",
+                "https_proxy",
+                "no_proxy"
+              ],
+              "image": "local/candidate-runtime@sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+              "memory_bytes": 268435456,
+              "mount_destinations": [],
+              "nano_cpus": 500000000,
+              "network_mode": "none",
+              "pid_mode": "",
+              "pids_limit": 64,
+              "read_only_root": true,
+              "user": "65532:65532",
+              "userns_mode": ""
+            },
+            "started_at": "2026-10-01T17:05:17Z",
+            "status": "COMPLETED_NONZERO",
+            "task_id": "candidate-web-session",
+            "timed_out": false
+          }
+        },
+        "execution_boundary": "docker_no_network_no_host_mounts",
+        "failure_reason": "security_invariant_failure",
+        "family": "session",
+        "passed": false,
+        "receipt_sha256": "1db9136ddf0f6b8ded91c6563af8f8c58463c35647cfe72dd18e043f109d8b0e",
+        "source_sha256": "50ae22461e10660631a1c2b1c1b9206d4648c34c741e6b79c238e6bd8f944d9c",
+        "terminal_outcome": "VALIDATED_NON_SUCCESS",
+        "verifier_id": "web_session_docker_candidate_receipt_v1",
+        "verifier_version": "0.2.0"
+      }
+    },
+    {
+      "domain": "web",
+      "errors": [],
+      "excluded_from_analysis": true,
+      "experiment_id": "web-csrf-ollama-smoke-excluded-v0.4.0",
+      "family": "csrf",
+      "log_path": "experiments/overnight/20260930T182214Z/runs/web-csrf-ollama-smoke-excluded-v0.4.0/overnight-20260930T182214Z-20.jsonl",
+      "log_sha256": "8479c7d6f71e58c0d92c3bce4d20b0c0364a91825a50a8553ebcd9760e03fa1c",
+      "main_experiment_started": false,
+      "manifest_path": "experiments/overnight/20260930T182214Z/manifests/web-csrf-ollama-smoke-excluded-v0.4.0.json",
+      "model": "qwen3:4b",
+      "receipt_path": "experiments/overnight/20260930T182214Z/runs/web-csrf-ollama-smoke-excluded-v0.4.0/overnight-20260930T182214Z-20.receipt.json",
+      "run_id": "overnight-20260930T182214Z-20",
+      "steps": 3,
+      "stop_event": "AGENT_SELF_TERMINATION",
+      "terminal_outcome": "VALIDATED_NON_SUCCESS",
+      "verifier": {
+        "details": {
+          "evaluator": {
+            "error": "'changed'",
+            "failure_reason": "security_invariant_failure",
+            "passed": false
+          },
+          "sandbox": {
+            "container_name": "wts-sandbox-candidate-web-csrf-df84399923a0",
+            "container_removed": true,
+            "error": null,
+            "exit_code": 1,
+            "finished_at": "2026-10-01T17:11:46Z",
+            "image_config_digest": "sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+            "image_ref": "local/candidate-runtime@sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+            "log_path": "/Users/imranmzakirov/Desktop/research/sandbox/logs/candidate-web-csrf-df84399923a0.log",
+            "log_truncated": false,
+            "policy_fingerprint": "b4d94b4347d696be538c6670970c2dd1ae9b93c26ab329a0f41aa6aa51a878fd",
+            "receipt_path": "/Users/imranmzakirov/Desktop/research/sandbox/logs/candidate-web-csrf-df84399923a0.receipt.json",
+            "run_id": "candidate-web-csrf-df84399923a0",
+            "runtime_configuration": {
+              "cgroupns_mode": "private",
+              "environment_names": [
+                "ALL_PROXY",
+                "HOME",
+                "HTTPS_PROXY",
+                "HTTP_PROXY",
+                "LANG",
+                "LC_ALL",
+                "NO_PROXY",
+                "PATH",
+                "SANDBOX_MODE",
+                "all_proxy",
+                "http_proxy",
+                "https_proxy",
+                "no_proxy"
+              ],
+              "image": "local/candidate-runtime@sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+              "memory_bytes": 268435456,
+              "mount_destinations": [],
+              "nano_cpus": 500000000,
+              "network_mode": "none",
+              "pid_mode": "",
+              "pids_limit": 64,
+              "read_only_root": true,
+              "user": "65532:65532",
+              "userns_mode": ""
+            },
+            "started_at": "2026-10-01T17:11:45Z",
+            "status": "COMPLETED_NONZERO",
+            "task_id": "candidate-web-csrf",
+            "timed_out": false
+          }
+        },
+        "execution_boundary": "docker_no_network_no_host_mounts",
+        "failure_reason": "security_invariant_failure",
+        "family": "csrf",
+        "passed": false,
+        "receipt_sha256": "d8f702d33160008c25c3cd50a6e44c1458c7beb7289d28f40f1c06d2396503f0",
+        "source_sha256": "1d4798ed8c15a4f26f23b78bad2fc2418c616dcb89e011f0a9ac91da6e50e4ff",
+        "terminal_outcome": "VALIDATED_NON_SUCCESS",
+        "verifier_id": "web_csrf_docker_candidate_receipt_v1",
+        "verifier_version": "0.2.0"
+      }
+    }
+  ],
+  "started_at": "20261001T151231Z",
+  "status": "SMOKE_GATE_NOT_PASSED"
+}

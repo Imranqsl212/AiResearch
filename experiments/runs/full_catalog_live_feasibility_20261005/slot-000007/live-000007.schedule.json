@@ -1,0 +1,1 @@
+{"episode_id":"live-000007","episode_timeout_seconds":180,"experiment_id":"excluded-full-catalog-feasibility","kind":"single_excluded_episode","max_steps":6,"phase":"pilot","protocol_version":"finite_json_v1","provider_request_timeout_seconds":90,"schema_version":"1.0","seed":1056760393,"task_id":"fb-webhook-integrity-c1","temperature":0.3}

@@ -1,0 +1,71 @@
+{
+  "candidate_space_size": 6,
+  "certificate_version": "4.0.0",
+  "counterexamples": [
+    {
+      "candidate": {
+        "lock": "none",
+        "update": "read_write"
+      },
+      "outcome": {
+        "acknowledged": [
+          "A",
+          "B"
+        ],
+        "error": null,
+        "final_count": 1,
+        "schedule": [
+          "read:A",
+          "read:B",
+          "write:A",
+          "write:B"
+        ]
+      }
+    },
+    {
+      "candidate": {
+        "lock": "request_mutex",
+        "update": "read_write"
+      },
+      "outcome": {
+        "acknowledged": [
+          "A",
+          "B"
+        ],
+        "error": null,
+        "final_count": 1,
+        "schedule": [
+          "read:A",
+          "read:B",
+          "write:A",
+          "write:B"
+        ]
+      }
+    }
+  ],
+  "environment_witness": null,
+  "ground_truth_state": "REPAIRABLE",
+  "proof_sha256": "60ad22829599189b33a746b46b9513866c452e7449500f8214ef86c88febdc14",
+  "satisfying_candidates": [
+    {
+      "lock": "worker_mutex",
+      "update": "read_write"
+    },
+    {
+      "lock": "none",
+      "update": "atomic_add"
+    },
+    {
+      "lock": "request_mutex",
+      "update": "atomic_add"
+    },
+    {
+      "lock": "worker_mutex",
+      "update": "atomic_add"
+    }
+  ],
+  "scope": "bounded_two_request_counter_updates_only",
+  "secure_candidate_gate_verdict": "PASS",
+  "task_id": "fr-counter-race-c1",
+  "task_sha256": "79f985028ce6b14d3e928ea9a5f73a2d3a0f9985bd87147ae13bd21fca68dd16"
+}

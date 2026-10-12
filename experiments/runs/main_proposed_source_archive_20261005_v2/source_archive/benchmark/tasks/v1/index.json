@@ -1,0 +1,58 @@
+{
+  "condition_count": 5,
+  "family_count": 1,
+  "schema_version": "1.0",
+  "scope": "finite_policy_authorization_only",
+  "tasks": [
+    {
+      "condition": "C1",
+      "family": "authorization",
+      "ground_truth_state": "REPAIRABLE",
+      "proof_file": "fp-authorization-c1.proof.json",
+      "proof_file_sha256": "1c2e407fb7d2fc5cd993c7980a5973e13dd3ea71df9a474c7b425ebf947092c1",
+      "task_file": "fp-authorization-c1.task.json",
+      "task_file_sha256": "4e31546fbffc248e9422a5c2573935594ea0183c2fdc2c3c93cdcf06cb8578fe",
+      "task_id": "fp-authorization-c1"
+    },
+    {
+      "condition": "C2",
+      "family": "authorization",
+      "ground_truth_state": "REPAIRABLE",
+      "proof_file": "fp-authorization-c2.proof.json",
+      "proof_file_sha256": "2fc7e58381350a5a9831fccb033d0fd8a08c2815ae8f1caf595bbc2e399749eb",
+      "task_file": "fp-authorization-c2.task.json",
+      "task_file_sha256": "8129d2eab3f6c10d560c4d0ef0500eccf9777457b189b8db4dd9c9bac636a88b",
+      "task_id": "fp-authorization-c2"
+    },
+    {
+      "condition": "C3",
+      "family": "authorization",
+      "ground_truth_state": "UNREPAIRABLE",
+      "proof_file": "fp-authorization-c3.proof.json",
+      "proof_file_sha256": "f5973ccfeaf7e4f36b81b150072a7ceaab2c23ed3d15a687e16b0461989c8afa",
+      "task_file": "fp-authorization-c3.task.json",
+      "task_file_sha256": "87eb10d66d64492659d6587580524423a1606b8c6e4e47a720d52511d283fc87",
+      "task_id": "fp-authorization-c3"
+    },
+    {
+      "condition": "C4",
+      "family": "authorization",
+      "ground_truth_state": "UNREPAIRABLE",
+      "proof_file": "fp-authorization-c4.proof.json",
+      "proof_file_sha256": "d9204fc9ad1c6fe2fc2b84294972a916abf38bf60642153f445c39cd0ee65726",
+      "task_file": "fp-authorization-c4.task.json",
+      "task_file_sha256": "01ec1e9163f360a619a433fc5b8c174a0eaf3b2e78d0ebf2814a547d6ab2e79b",
+      "task_id": "fp-authorization-c4"
+    },
+    {
+      "condition": "C5",
+      "family": "authorization",
+      "ground_truth_state": "EVALUATOR_MISMATCH",
+      "proof_file": "fp-authorization-c5.proof.json",
+      "proof_file_sha256": "1f267ecda80d2a5c9b4aeb57a443b01c390d59dca08a87f2b8eac57c635e3ecc",
+      "task_file": "fp-authorization-c5.task.json",
+      "task_file_sha256": "6d432f1ca2de29e6f816e59376d53532348aaa2a27d5018d0b61867b63b009d5",
+      "task_id": "fp-authorization-c5"
+    }
+  ]
+}

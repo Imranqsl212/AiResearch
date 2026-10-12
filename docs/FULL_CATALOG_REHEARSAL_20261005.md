@@ -4,7 +4,7 @@
 
 This was an **excluded scripted integration run**, not a model experiment or a main-study cohort. The frozen schedule covered all 20 authored finite families, each with C1–C5 once, in R0 only: 100 prescheduled slots. A scripted adapter either submitted a saved satisfying candidate or terminated. No Ollama request, candidate source execution, or scientific rate was produced.
 
-The saved output is `experiments/runs/full_catalog_rehearsal_20261005` (Git ignored). Its plan records seven task-index paths and binds every referenced task/proof hash, implementation source hashes, the root draft manifest, one scripted-model identity, and the seeded slot order. Its pre-run source archive and preflight bind the seven index files byte for byte. A later planner revision also puts index hashes directly in newly created plans; that change does not retroactively alter this saved run. Every slot was reserved once; no replacement was allowed.
+The saved output is `experiments/runs/full_catalog_rehearsal_20261005` (now tracked in the local Git branch). Its plan records seven task-index paths and binds every referenced task/proof hash, implementation source hashes, the root draft manifest, one scripted-model identity, and the seeded slot order. Its pre-run source archive and preflight bind the seven index files byte for byte. A later planner revision also puts index hashes directly in newly created plans; that change does not retroactively alter this saved run. Every slot was reserved once; no replacement was allowed.
 
 ## Result
 

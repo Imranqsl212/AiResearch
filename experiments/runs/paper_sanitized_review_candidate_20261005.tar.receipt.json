@@ -1,0 +1,21 @@
+{
+  "changed_member_count": 200,
+  "public_release_approved": false,
+  "residual_marker_counts": {
+    "linux_home": 0,
+    "local_username": 0,
+    "mac_home": 0,
+    "mac_temp": 0,
+    "mac_volume": 0,
+    "unix_temp": 0,
+    "windows_home": 0
+  },
+  "sanitization_manifest_sha256": "a53a24fedc8f0a9f4fce2bf7d4451ebcb62cd06fc8de1d3b8ae465fc74dffef7",
+  "sanitized_archive_sha256": "48720a5620a1437094268452caab8f0168516454166147e575dea1c1039c0dd3",
+  "sanitized_members": 314,
+  "scientific_replay_verified": false,
+  "source_archive_sha256": "39ded8a4301ba0ebb193b48d71b032b0127a521c381fa378c67d08132319fc26",
+  "source_members": 313,
+  "status": "REVIEW_ONLY_SANITIZED_CANDIDATE",
+  "version": "paper-sanitized-review-candidate-1.0.0"
+}

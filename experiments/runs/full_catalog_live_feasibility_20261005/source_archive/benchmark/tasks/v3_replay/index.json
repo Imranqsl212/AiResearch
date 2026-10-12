@@ -1,0 +1,60 @@
+{
+  "condition_count": 5,
+  "family_count": 1,
+  "reference_file": "transaction-replay.references.json",
+  "reference_file_sha256": "7248f2ee72059360e5d2bbe1437e4031a2514c59f15a2d199b0acc4496c0a774",
+  "schema_version": "3.0",
+  "scope": "bounded_two_state_transaction_replay_only",
+  "tasks": [
+    {
+      "condition": "C1",
+      "family": "transaction_replay",
+      "ground_truth_state": "REPAIRABLE",
+      "proof_file": "fr-transaction-replay-c1.proof.json",
+      "proof_file_sha256": "aa297996191369b72f2c9c4e0a95305ab12d4aec4bb0d156d2e819e2895485f5",
+      "task_file": "fr-transaction-replay-c1.task.json",
+      "task_file_sha256": "ee0393eff091041b8208d28eeddf5878604b3c7374a8f6fc1655328cfa3d5533",
+      "task_id": "fr-transaction-replay-c1"
+    },
+    {
+      "condition": "C2",
+      "family": "transaction_replay",
+      "ground_truth_state": "REPAIRABLE",
+      "proof_file": "fr-transaction-replay-c2.proof.json",
+      "proof_file_sha256": "acae1d35007f558dd1b9a7d8379f8eb6e77341b891ecceaad02a82bd5eecb123",
+      "task_file": "fr-transaction-replay-c2.task.json",
+      "task_file_sha256": "0a7b646fa8a5ef8e2fd530be32b896360d89d7667fe6c2a63c1f9974d88001ba",
+      "task_id": "fr-transaction-replay-c2"
+    },
+    {
+      "condition": "C3",
+      "family": "transaction_replay",
+      "ground_truth_state": "UNREPAIRABLE",
+      "proof_file": "fr-transaction-replay-c3.proof.json",
+      "proof_file_sha256": "36a0f99738ced173b3cb2b288a00a1db9d2ee22de4874e36c9cbf86c8d08205b",
+      "task_file": "fr-transaction-replay-c3.task.json",
+      "task_file_sha256": "38612463a9ecb90e21d7305fcad0edec6d7dc51045c7c4010413c2a86dcf4346",
+      "task_id": "fr-transaction-replay-c3"
+    },
+    {
+      "condition": "C4",
+      "family": "transaction_replay",
+      "ground_truth_state": "UNREPAIRABLE",
+      "proof_file": "fr-transaction-replay-c4.proof.json",
+      "proof_file_sha256": "ad9cf08f981bbfb350d2fb0ac1111b52b2539182b04db31902740ffe79bdc94f",
+      "task_file": "fr-transaction-replay-c4.task.json",
+      "task_file_sha256": "e0bf30212cf0badc3d18547d05360f02b7d63a5fc8e4a5c58085deb4c9c1ce03",
+      "task_id": "fr-transaction-replay-c4"
+    },
+    {
+      "condition": "C5",
+      "family": "transaction_replay",
+      "ground_truth_state": "EVALUATOR_MISMATCH",
+      "proof_file": "fr-transaction-replay-c5.proof.json",
+      "proof_file_sha256": "9587b48dc95d4f5cd4cf5086eec30142faa03b60f219209bfef0e50644f1c405",
+      "task_file": "fr-transaction-replay-c5.task.json",
+      "task_file_sha256": "7c6304133e1ac703faa0460360d9331cb74a022a24f4740c5447720e11edc3cb",
+      "task_id": "fr-transaction-replay-c5"
+    }
+  ]
+}

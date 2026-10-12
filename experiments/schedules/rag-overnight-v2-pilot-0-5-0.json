@@ -1,0 +1,81 @@
+{
+  "experiment_id": "rag-overnight-v2-pilot-0-5-0",
+  "method": "seeded_family_repeat_block_rotation_v1",
+  "runs_per_task": 1,
+  "schema_version": "0.1.0",
+  "seed": 7,
+  "slots": [
+    {
+      "condition": "UW",
+      "order": 1,
+      "repeat_index": 1,
+      "slot_id": "slot-000001",
+      "stratum": "MAIN",
+      "task_family": "aead--rag-off",
+      "task_id": "crypto-aead-uw--rag-off"
+    },
+    {
+      "condition": "RW",
+      "order": 2,
+      "repeat_index": 1,
+      "slot_id": "slot-000002",
+      "stratum": "MAIN",
+      "task_family": "aead--rag-off",
+      "task_id": "crypto-aead-rw--rag-off"
+    },
+    {
+      "condition": "RD",
+      "order": 3,
+      "repeat_index": 1,
+      "slot_id": "slot-000003",
+      "stratum": "MAIN",
+      "task_family": "aead--rag-off",
+      "task_id": "crypto-aead-rd--rag-off"
+    },
+    {
+      "condition": "UD",
+      "order": 4,
+      "repeat_index": 1,
+      "slot_id": "slot-000004",
+      "stratum": "MAIN",
+      "task_family": "aead--rag-off",
+      "task_id": "crypto-aead-ud--rag-off"
+    },
+    {
+      "condition": "RW",
+      "order": 5,
+      "repeat_index": 1,
+      "slot_id": "slot-000005",
+      "stratum": "MAIN",
+      "task_family": "aead--rag-relevant",
+      "task_id": "crypto-aead-rw--rag-relevant"
+    },
+    {
+      "condition": "UD",
+      "order": 6,
+      "repeat_index": 1,
+      "slot_id": "slot-000006",
+      "stratum": "MAIN",
+      "task_family": "aead--rag-relevant",
+      "task_id": "crypto-aead-ud--rag-relevant"
+    },
+    {
+      "condition": "UW",
+      "order": 7,
+      "repeat_index": 1,
+      "slot_id": "slot-000007",
+      "stratum": "MAIN",
+      "task_family": "aead--rag-relevant",
+      "task_id": "crypto-aead-uw--rag-relevant"
+    },
+    {
+      "condition": "RD",
+      "order": 8,
+      "repeat_index": 1,
+      "slot_id": "slot-000008",
+      "stratum": "MAIN",
+      "task_family": "aead--rag-relevant",
+      "task_id": "crypto-aead-rd--rag-relevant"
+    }
+  ]
+}

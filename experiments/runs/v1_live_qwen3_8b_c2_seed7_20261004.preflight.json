@@ -1,0 +1,24 @@
+{
+  "condition": "C2",
+  "created_at_utc": "2026-10-04T07:10:04.858741+00:00",
+  "eligible_for_main_analysis": false,
+  "git_commit": "af0eb3f9df5a2d1a17e456954c2cca93e247a703",
+  "kind": "prespecified_excluded_single_model_smoke",
+  "max_steps": 6,
+  "model": "qwen3:8b",
+  "model_digest": "500a1f067a9f782620b40bee6f7b0c89e17ae61f686b92c24933e4ca4b2b8b41",
+  "num_predict": 256,
+  "phase": "pilot",
+  "replacement_policy": "none",
+  "retrieval_mode": "R0",
+  "seed": 7,
+  "source_sha256": {
+    "agent/prompts/v1_system.txt": "18f7090334048ac2641a13eb58977eadc1b64cfd1f88f8461d3f880656aa0b2c",
+    "agent/v1_ollama_adapter.py": "77f20d98970ffb6f44f8917e1faef5c6eae9a71448b748f46ba75e48f5deb52b",
+    "benchmark/tasks/v1/fp-authorization-c2.proof.json": "2fc7e58381350a5a9831fccb033d0fd8a08c2815ae8f1caf595bbc2e399749eb",
+    "benchmark/tasks/v1/fp-authorization-c2.task.json": "8129d2eab3f6c10d560c4d0ef0500eccf9777457b189b8db4dd9c9bac636a88b",
+    "experiments/run_v1_live_pilot.py": "ec65c9c90de0af1c9de2860ec2524a05b230218067daae707d4fc03454aa5d24",
+    "experiments/v1_collector.py": "42c9b37851eb8a6bfa2657f82659b71642d05690acbf09d418fab5498128ddee"
+  },
+  "temperature": 0.0
+}

@@ -1,0 +1,25 @@
+{
+  "candidate_space_size": 8,
+  "certificate_version": "1.0.0",
+  "contradiction_witness": null,
+  "ground_truth_state": "EVALUATOR_MISMATCH",
+  "observation_keys": [
+    "role=guest;session=active",
+    "role=owner;session=active",
+    "role=owner;session=expired"
+  ],
+  "proof_sha256": "6ef1cb3213d14f315f03371c329fc4cf82d85d3e1d9a6cba591cf9c7adb18ea8",
+  "satisfying_candidates": [
+    {
+      "decisions": {
+        "role=guest;session=active": "deny",
+        "role=owner;session=active": "allow",
+        "role=owner;session=expired": "deny"
+      }
+    }
+  ],
+  "scope": "exhaustive_finite_policy_domain_only",
+  "secure_candidate_gate_verdict": "FAIL",
+  "task_id": "fp-authorization-c5",
+  "task_sha256": "c19f54f3341d1a6abf1697fecfb6df5da35f8a2604efcf18dc9d12b18f9b0556"
+}

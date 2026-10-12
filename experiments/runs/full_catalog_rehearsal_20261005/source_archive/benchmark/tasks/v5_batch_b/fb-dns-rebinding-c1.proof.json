@@ -1,0 +1,61 @@
+{
+  "candidate_space_size": 4,
+  "case_count": 4,
+  "certificate_version": "5.0.0",
+  "contradiction_witness": null,
+  "counterexamples": [
+    {
+      "candidate": {
+        "mode": "hostname_allowlist"
+      },
+      "counterexample": {
+        "actual": true,
+        "case_id": "loopback_rebinding",
+        "observation": {
+          "resolved_ip": "127.0.0.1",
+          "url": "https://updates.example/feed"
+        },
+        "required": false
+      }
+    },
+    {
+      "candidate": {
+        "mode": "string_prefix"
+      },
+      "counterexample": {
+        "actual": true,
+        "case_id": "loopback_rebinding",
+        "observation": {
+          "resolved_ip": "127.0.0.1",
+          "url": "https://updates.example/feed"
+        },
+        "required": false
+      }
+    },
+    {
+      "candidate": {
+        "mode": "reject_all"
+      },
+      "counterexample": {
+        "actual": false,
+        "case_id": "public_resolution",
+        "observation": {
+          "resolved_ip": "93.184.216.34",
+          "url": "https://updates.example/feed"
+        },
+        "required": true
+      }
+    }
+  ],
+  "ground_truth_state": "REPAIRABLE",
+  "proof_sha256": "2656fc4bc0269d5fcade866de76d1de1616282c7fc240d5ff1f1e6f2f12ea2a2",
+  "satisfying_candidates": [
+    {
+      "mode": "resolved_ip_check"
+    }
+  ],
+  "scope": "finite_candidate_language_and_listed_cases_only",
+  "secure_candidate_gate_verdict": "PASS",
+  "task_id": "fb-dns-rebinding-c1",
+  "task_sha256": "7191d10f284cc8ffaea52d58196382745c10c02656a5a41af091395027a48e97"
+}

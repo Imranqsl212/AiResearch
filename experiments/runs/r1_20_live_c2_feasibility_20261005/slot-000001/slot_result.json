@@ -1,0 +1,1 @@
+{"condition":"C2","episode_id":"r1live-000001","family":"transaction_replay","manifest_sha256":"82ae276bc5e8001d2f292c342456e2e1edd6daea6cc7bfbf8364d259a64d09dd","provider_requests":2,"retrieval_mode":"R0","secure_onset":false,"slot_id":"slot-000001","status":"INVALIDATED","stop_reason":"ERROR"}

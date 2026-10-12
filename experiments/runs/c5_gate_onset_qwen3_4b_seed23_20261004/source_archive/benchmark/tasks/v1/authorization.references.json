@@ -1,0 +1,25 @@
+{
+  "family": "authorization",
+  "insecure_mutation_allow_all": {
+    "decisions": {
+      "role=guest;session=active": "allow",
+      "role=owner;session=active": "allow",
+      "role=owner;session=expired": "allow"
+    }
+  },
+  "insecure_mutation_deny_all": {
+    "decisions": {
+      "role=guest;session=active": "deny",
+      "role=owner;session=active": "deny",
+      "role=owner;session=expired": "deny"
+    }
+  },
+  "scope": "evaluator_only_reference_candidates",
+  "secure_reference": {
+    "decisions": {
+      "role=guest;session=active": "deny",
+      "role=owner;session=active": "allow",
+      "role=owner;session=expired": "deny"
+    }
+  }
+}

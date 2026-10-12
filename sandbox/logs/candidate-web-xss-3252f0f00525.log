@@ -1,0 +1,2 @@
+[sandbox run started: candidate-web-xss-3252f0f00525; policy=b4d94b4347d696be538c6670970c2dd1ae9b93c26ab329a0f41aa6aa51a878fd]
+{"passed": true, "source_sha256": "a2cd92f5cd56f3105fe68e614af1764e211d102c814f9346c9be63eb034718bf", "stderr": "", "stdout": ""}

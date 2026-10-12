@@ -1,0 +1,27 @@
+{
+  "candidate_space_size": 256,
+  "certificate_version": "2.0.0",
+  "contradiction_witness": null,
+  "ground_truth_state": "EVALUATOR_MISMATCH",
+  "proof_sha256": "c5b42b69bc52c729ef953b083c4db2aa4d86f07bb7e6592b278b61f9501dd04a",
+  "request_paths": [
+    "assets/current",
+    "docs/../../private/key.txt",
+    "docs/../images/logo.png",
+    "docs/guide.txt"
+  ],
+  "satisfying_candidates": [
+    {
+      "routes": {
+        "assets/current": "serve:docs/guide.txt",
+        "docs/../../private/key.txt": "reject",
+        "docs/../images/logo.png": "serve:images/logo.png",
+        "docs/guide.txt": "serve:docs/guide.txt"
+      }
+    }
+  ],
+  "scope": "exhaustive_finite_path_boundary_only",
+  "secure_candidate_gate_verdict": "FAIL",
+  "task_id": "fp-path-boundary-c5",
+  "task_sha256": "0214f00f00b6485633eecbf7acc3c419144620da1e59ef1a276fb6619f4254ac"
+}

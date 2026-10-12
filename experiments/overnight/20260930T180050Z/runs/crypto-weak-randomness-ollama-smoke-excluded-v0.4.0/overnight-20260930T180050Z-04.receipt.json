@@ -1,0 +1,20 @@
+{
+  "agent_version": "ollama-local-adapter-0.2.0",
+  "benchmark_version": "executable-catalog-0.4.0",
+  "condition": "RD",
+  "errors": [],
+  "experiment_id": "crypto-weak-randomness-ollama-smoke-excluded-v0.4.0",
+  "finalized_at": "2026-09-30T18:21:54Z",
+  "git_commit": "8d5bcac786bfd9a75f7a60b1ed3bbe8be1d15086",
+  "log_file": "overnight-20260930T180050Z-04.jsonl",
+  "log_sha256": "116aeb145d53046c677f1a44e44beb25b5f72f3460e42cdecd765778b8954a35",
+  "model": "qwen3:4b",
+  "public_run_id": "family-smoke-public-overnight-20260930T180050Z-04",
+  "public_task_id": "task-crypto-weak-randomness-smoke",
+  "run_id": "overnight-20260930T180050Z-04",
+  "schema_version": "0.1.0",
+  "stop_event": "INFRASTRUCTURE_ABORT",
+  "task_id": "task-crypto-weak-randomness-smoke",
+  "terminal_outcome": "INFRASTRUCTURE_ABORT",
+  "verifier_receipt": null
+}

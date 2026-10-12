@@ -1,7 +1,10 @@
-"""Private, write-once source-page snapshots for excluded R1 candidate v0.2.
+"""Write-once source-page capture for excluded R1 candidate v0.2.
 
-The saved bytes are HTTP response bodies as returned by urllib with identity
-content encoding. They are source evidence, not human admission or a main freeze.
+Capture saves HTTP response bodies returned by urllib with identity content
+encoding. The tracked release copy of snapshot 03 has a documented,
+length-preserving token redaction; its original bytes remain private. Verify
+checks the bytes recorded in a manifest, not their equality to the HTTP source.
+These pages are source evidence, not human admission or a main freeze.
 """
 
 from __future__ import annotations

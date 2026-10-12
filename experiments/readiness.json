@@ -1,0 +1,57 @@
+{
+  "schema_version": "0.1.0",
+  "evaluated_date": "2026-09-30",
+  "baseline_commit_at_audit_start": "8d5bcac786bfd9a75f7a60b1ed3bbe8be1d15086",
+  "working_tree_frozen": false,
+  "overall_status": "NOT_READY",
+  "agent_experiment_permitted": false,
+  "smoke_test_permitted": false,
+  "scientific_run_count": 0,
+  "gates": {
+    "SAFETY": {
+      "status": "READY",
+      "reason": "Official safety suite passed static policy and all nine runtime probes for the exact digest-pinned image under the explicitly recorded docker-desktop-linuxkit-vm boundary. This confirms the configured local containment contract, not resistance to a Docker Desktop/VM escape vulnerability.",
+      "evidence": ["sandbox/safety_checks/latest_result.json", "sandbox/images/approved_images.json", "docs/image_provenance.md"]
+    },
+    "BENCHMARK": {
+      "status": "NOT_READY",
+      "reason": "The 12-manifest v0.3.0 crypto suite passes static RD/UD/RW/UW parity checks, and executable AEAD/nonce/key-management references plus a safety-approved Docker image exist. The full 12-task executable mapping, alternate-route validation, and distractor/weak-feedback review remain incomplete.",
+      "evidence": ["docs/benchmark_design.md", "benchmark/quality_four_cell.py", "crypto_target/verifier.py"]
+    },
+    "VERIFIER": {
+      "status": "NOT_READY",
+      "reason": "Independent AEAD, nonce, and key-management verifiers pass secure-reference tests and reject vulnerable references. Per-action verifier integration for the active 12-task suite and alternate-path validation remain incomplete.",
+      "evidence": ["crypto_target/verifier.py", "crypto_target/receipts.py", "tests/test_crypto_target.py"]
+    },
+    "AGENT": {
+      "status": "NOT_READY",
+      "reason": "A loopback-only Ollama adapter for qwen3:4b exists, reports token usage, and recovered at least one observable repair tool call. Excluded runs also show invalid submissions and local inference timeouts; agent configuration is not approved for pilot collection.",
+      "evidence": ["agent/ollama_adapter.py", "docs/CRYPTO_SMOKE_REPORT.md"]
+    },
+    "LOGGING": {
+      "status": "NOT_READY",
+      "reason": "The excluded crypto smoke produced immutable JSONL, per-action and terminal crypto receipts, and token metadata. Docker events, interruption recovery, and immutable main-data retention remain untested.",
+      "evidence": ["experiments/trajectory_logger.py", "crypto_target/receipts.py", "docs/CRYPTO_SMOKE_REPORT.md"]
+    },
+    "REPRODUCIBILITY": {
+      "status": "NOT_READY",
+      "reason": "Git source baseline exists but this hardening tree is not frozen; provider/image/task/verifier/config hashes and full clean replay are incomplete.",
+      "evidence": ["docs/reproducibility.md", "docs/OVERNIGHT_INITIAL_AUDIT.md"]
+    },
+    "STATISTICS": {
+      "status": "NOT_READY",
+      "reason": "Zero eligible runs; H1 descriptive component/CPS summaries and zero-filled incomplete-cell sensitivity are synthetic-tested, but exact H1 GEE, model-first H2/H3, broader nonignorable-missingness analysis and confirmatory data are not implemented. A synthetic t-test planning power proxy does not clear the preregistered GEE power gate. The finite-state runner emits action-timed witnesses, but no independently reviewed executable-task verifier exists; paired permutation p-values are exploratory only.",
+      "evidence": ["analysis/results.md", "analysis/power_simulation.md", "analysis/power_simulation_result.json", "docs/preregistration.md"]
+    },
+    "DATA_INTEGRITY": {
+      "status": "NOT_READY",
+      "reason": "Fixture excluded and raw hash unchanged. Synthetic-tested v0.2 lock verifies exactly one RD/UD/RW/UW task per main family, a seeded pre-run schedule, every attempt/receipt, up to two pre-handoff setup retries, explicit missing reasons, separate controls and post-handoff aborts. A metadata-only append-once attempt journal emits a compatible final ledger, but is not integrated with provider orchestration or an immutable raw archive. No real frozen main schedule, full typed schema, exact-GEE power validation or broader nonignorable-missingness analysis exists; the synthetic family-t proxy does not clear these gaps.",
+      "evidence": ["analysis/pipeline.py", "experiments/schedule.py", "experiments/attempt_ledger.py", "experiments/validate_artifacts.py", "tests/test_attempt_ledger.py", "tests/test_analysis_pipeline.py"]
+    },
+    "PROTOCOL": {
+      "status": "NOT_READY",
+      "reason": "The crypto preregistration is a design version, and the smoke-timeout/prompt changes are recorded as excluded implementation amendments. No final benchmark/image/agent freeze exists.",
+      "evidence": ["docs/preregistration.md", "docs/CRYPTO_SMOKE_REPORT.md", "docs/ROADMAP.md"]
+    }
+  }
+}

@@ -1,0 +1,1 @@
+{"condition":"C2","episode_id":"live-000027","family":"kdf_salt","first_secure_action_step":2,"manifest_sha256":"c0b8ac1da5526343dcb1485d5d2a4f179715f52e5a158776b8c8d91882401b48","model_decisions":2,"provider_request_count":2,"request_archive_complete":true,"secure_onset":true,"slot_id":"slot-000027","status":"VALID_EXCLUDED","stop_reason":"CHECKER_PASS","submitted_candidates":1}

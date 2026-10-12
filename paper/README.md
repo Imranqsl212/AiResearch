@@ -4,7 +4,7 @@ The manuscript in [final.md](final.md) is an exploratory measurement audit with 
 
 ## Required local inputs
 
-The raw historical main and AEAD pilot episodes are located under `../experiments/runs/`, with result indexes, manifests, schedules, ledgers, nightly gate report, and sealed archive records under `../experiments/`. The separate v7 corrected-oracle pilot and matched continuation also have Git-ignored local run archives. These directories are deliberately Git ignored pending release review. A clean clone without the separately retained raw archives **cannot** reproduce all numbers from source trajectories. The local derived tables in `artifacts/` and tracked v7 audit JSON files are useful for audit but do not substitute for those raw files.
+The raw historical main and AEAD pilot episodes are under `../experiments/runs/`, with result indexes, manifests, schedules, ledgers, nightly gate report, and sealed archive records under `../experiments/`. The separate v7 corrected-oracle pilot and matched continuation have their own run archives. This research branch tracks these inputs. A complete checkout of this branch can rerun the listed local analyses from source trajectories; a partial export or a checkout lacking the archived inputs cannot. The derived tables in `artifacts/` and v7 audit JSON files do not substitute for raw evidence. Git availability does not approve the records for journal supplementary release.
 
 The 101 receipts in the paper's historical inventory are fixed in
 [`historical_receipts_20261003.txt`](historical_receipts_20261003.txt). The
@@ -67,7 +67,7 @@ sh reproduction/render_paper.sh
 This command regenerates the six figures and both identified and anonymous
 manuscript formats, including four tables, from `final.md`. The abstract has
 237 words excluding keywords. The current A4 PDFs have 16 identified pages
-and 15 anonymous pages. The anonymous renderer removes the author,
+and 16 anonymous pages. The anonymous renderer removes the author,
 affiliation, and correspondence lines, replaces the acknowledgment body with a
 neutral peer-review notice, withholds the source commit, and clears author
 metadata from the PDF and Word files. It checks rendered content and document

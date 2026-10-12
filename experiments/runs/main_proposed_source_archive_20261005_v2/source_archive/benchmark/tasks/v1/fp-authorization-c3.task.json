@@ -1,0 +1,66 @@
+{
+  "condition": "C3",
+  "family": "authorization",
+  "gate_mode": "normal",
+  "raw_test_state_ids": [
+    "owner-active",
+    "guest-active",
+    "owner-expired"
+  ],
+  "schema_version": "1.0.0",
+  "starter_candidate": {
+    "decisions": {
+      "role=guest;session=active": "allow",
+      "role=owner;session=active": "allow",
+      "role=owner;session=expired": "allow"
+    }
+  },
+  "states": [
+    {
+      "facts": {
+        "authorized": true
+      },
+      "observation": {
+        "role": "owner",
+        "session": "active"
+      },
+      "state_id": "owner-active"
+    },
+    {
+      "facts": {
+        "authorized": false
+      },
+      "observation": {
+        "role": "guest",
+        "session": "active"
+      },
+      "state_id": "guest-active"
+    },
+    {
+      "facts": {
+        "authorized": false
+      },
+      "observation": {
+        "role": "owner",
+        "session": "expired"
+      },
+      "state_id": "owner-expired"
+    },
+    {
+      "facts": {
+        "authorized": false
+      },
+      "observation": {
+        "role": "owner",
+        "session": "active"
+      },
+      "state_id": "owner-revoked-hidden"
+    }
+  ],
+  "task_id": "fp-authorization-c3",
+  "version": "1.0.0",
+  "visible_fields": [
+    "role",
+    "session"
+  ]
+}

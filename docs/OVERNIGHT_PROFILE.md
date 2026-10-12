@@ -1,5 +1,12 @@
 # Exploratory Overnight Profile
 
+> **Historical profile for the completed 2–3 October exploratory study.** The
+> 8 AEAD pilot and 40 main episodes below belong only to that older cohort;
+> “main” here does not mean the prospective v1 main. The v1 release gate is
+> `NOT_READY`, with zero eligible episodes. For results see the
+> [paper](../paper/final.md); for current work see the
+> [next actions](NEXT_READY_ACTIONS_20261008.md).
+
 This profile is a resource-bounded feasibility study for the local `qwen3:4b`
 agent on an 8 GB Apple-silicon laptop. It is not a replacement for the frozen
 confirmatory repeated-run design.
@@ -47,9 +54,6 @@ snapshot of all available manifests, logs, receipts, results, and nightly
 reports. Every run has its hashes and integrity status. The snapshot stays
 local until raw experiment metadata receives publication review.
 
-To start or inspect the current profile:
-
-```sh
-PYTHONDONTWRITEBYTECODE=1 caffeinate -dimsu python3 -B -m experiments.run_rag_overnight_profile --run-main
-PYTHONDONTWRITEBYTECODE=1 python3 -B -m experiments.accounting
-```
+The original collection command is omitted because this profile has already
+completed and must not be launched as a new or resumed study. Its saved
+accounting and results are described in the [paper](../paper/final.md).

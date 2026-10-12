@@ -1,0 +1,3 @@
+{"endpoint":"http://127.0.0.1:11434/api/chat","options":{"num_ctx":8192,"num_predict":256,"seed":11,"temperature":0.3},"request_canonical_sha256":"973b77d691a7b00704492ea4a3d479fbf754a0540733f9eb03ad1ac63926d492","request_index":1}
+{"endpoint":"http://127.0.0.1:11434/api/chat","options":{"num_ctx":8192,"num_predict":256,"seed":11,"temperature":0.3},"request_canonical_sha256":"4927009b1e89fe412f4c04a00eaaf742b45585e28f16c889bc73d17c3f139251","request_index":2}
+{"endpoint":"http://127.0.0.1:11434/api/chat","options":{"num_ctx":8192,"num_predict":256,"seed":11,"temperature":0.3},"request_canonical_sha256":"4e70187dcd81e749d6983e4479b80d4e6e89f47f3ebd0d787c53942e92b2cc33","request_index":3}

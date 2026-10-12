@@ -1,0 +1,103 @@
+{
+  "experiment_id": "rag-overnight-v1-pilot-0-5-0",
+  "schedule_sha256": "c292e73cbf7120824a456f94c8bc683a25ceb88de901c36b049cd60777cf9ea3",
+  "schema_version": "0.1.0",
+  "slots": [
+    {
+      "attempts": [
+        {
+          "classification": "SELECTED",
+          "run_id": "rag-overnight-v1-pilot-0-5-0-slot-000001"
+        }
+      ],
+      "missing_reason": null,
+      "selected_run_id": "rag-overnight-v1-pilot-0-5-0-slot-000001",
+      "slot_id": "slot-000001",
+      "status": "RECORDED"
+    },
+    {
+      "attempts": [
+        {
+          "classification": "SELECTED",
+          "run_id": "rag-overnight-v1-pilot-0-5-0-slot-000002"
+        }
+      ],
+      "missing_reason": null,
+      "selected_run_id": "rag-overnight-v1-pilot-0-5-0-slot-000002",
+      "slot_id": "slot-000002",
+      "status": "RECORDED"
+    },
+    {
+      "attempts": [
+        {
+          "classification": "SELECTED",
+          "run_id": "rag-overnight-v1-pilot-0-5-0-slot-000003"
+        }
+      ],
+      "missing_reason": null,
+      "selected_run_id": "rag-overnight-v1-pilot-0-5-0-slot-000003",
+      "slot_id": "slot-000003",
+      "status": "RECORDED"
+    },
+    {
+      "attempts": [
+        {
+          "classification": "SELECTED",
+          "run_id": "rag-overnight-v1-pilot-0-5-0-slot-000004"
+        }
+      ],
+      "missing_reason": null,
+      "selected_run_id": "rag-overnight-v1-pilot-0-5-0-slot-000004",
+      "slot_id": "slot-000004",
+      "status": "RECORDED"
+    },
+    {
+      "attempts": [
+        {
+          "classification": "SELECTED",
+          "run_id": "rag-overnight-v1-pilot-0-5-0-slot-000005"
+        }
+      ],
+      "missing_reason": null,
+      "selected_run_id": "rag-overnight-v1-pilot-0-5-0-slot-000005",
+      "slot_id": "slot-000005",
+      "status": "RECORDED"
+    },
+    {
+      "attempts": [
+        {
+          "classification": "SELECTED",
+          "run_id": "rag-overnight-v1-pilot-0-5-0-slot-000006"
+        }
+      ],
+      "missing_reason": null,
+      "selected_run_id": "rag-overnight-v1-pilot-0-5-0-slot-000006",
+      "slot_id": "slot-000006",
+      "status": "RECORDED"
+    },
+    {
+      "attempts": [
+        {
+          "classification": "SELECTED",
+          "run_id": "rag-overnight-v1-pilot-0-5-0-slot-000007"
+        }
+      ],
+      "missing_reason": null,
+      "selected_run_id": "rag-overnight-v1-pilot-0-5-0-slot-000007",
+      "slot_id": "slot-000007",
+      "status": "RECORDED"
+    },
+    {
+      "attempts": [
+        {
+          "classification": "SELECTED",
+          "run_id": "rag-overnight-v1-pilot-0-5-0-slot-000008"
+        }
+      ],
+      "missing_reason": null,
+      "selected_run_id": "rag-overnight-v1-pilot-0-5-0-slot-000008",
+      "slot_id": "slot-000008",
+      "status": "RECORDED"
+    }
+  ]
+}

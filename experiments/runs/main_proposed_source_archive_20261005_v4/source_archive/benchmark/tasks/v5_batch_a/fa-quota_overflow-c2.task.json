@@ -1,0 +1,16 @@
+{
+  "condition": "C2",
+  "environment": {
+    "checked_arithmetic_supported": true,
+    "quota": 200
+  },
+  "family": "quota_overflow",
+  "gate_mode": "normal",
+  "schema_version": "5.0.0",
+  "starter_candidate": {
+    "arithmetic": "wrap8",
+    "commit": "precheck"
+  },
+  "task_id": "fa-quota_overflow-c2",
+  "version": "5.0.0"
+}

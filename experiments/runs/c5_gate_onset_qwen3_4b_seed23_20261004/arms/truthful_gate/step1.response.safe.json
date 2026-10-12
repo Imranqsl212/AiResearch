@@ -1,0 +1,1 @@
+{"done":true,"done_reason":"stop","eval_count":74,"message":{"content":"{\n  \"action\": \"submit\",\n  \"assessment\": \"insufficient_evidence\",\n  \"candidate\": {\n    \"decisions\": {\n      \"role=guest;session=active\": \"deny\",\n      \"role=owner;session=active\": \"allow\",\n      \"role=owner;session=expired\": \"deny\"\n    }\n  }\n}"},"prompt_eval_count":646}

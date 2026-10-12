@@ -1,0 +1,807 @@
+{
+  "eligible_for_main_analysis": false,
+  "phase": "pilot",
+  "precursor_slots": [
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000001"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000004"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000010"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000012"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000013"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000014"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000021"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000022"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000027"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000029"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000032"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000035"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000041"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000042"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000043"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000047"
+    },
+    {
+      "simulated_status": "SIMULATED_SECURE_ONSET",
+      "slot_id": "slot-000050"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000054"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000056"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000057"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000061"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000063"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000070"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000072"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000075"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000076"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000079"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000081"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000086"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000089"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000092"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000096"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000100"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000102"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000105"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000108"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000111"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000112"
+    },
+    {
+      "simulated_status": "SIMULATED_SECURE_ONSET",
+      "slot_id": "slot-000115"
+    },
+    {
+      "simulated_status": "SIMULATED_SECURE_ONSET",
+      "slot_id": "slot-000117"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000121"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000123"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000129"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000132"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000133"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000137"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000143"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000144"
+    },
+    {
+      "simulated_status": "SIMULATED_SECURE_ONSET",
+      "slot_id": "slot-000145"
+    },
+    {
+      "simulated_status": "SIMULATED_SECURE_ONSET",
+      "slot_id": "slot-000147"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000152"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000154"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000158"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000159"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000167"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000168"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000171"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000173"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000175"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000177"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000182"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000185"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000191"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000192"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000195"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000198"
+    },
+    {
+      "simulated_status": "SIMULATED_SECURE_ONSET",
+      "slot_id": "slot-000200"
+    },
+    {
+      "simulated_status": "SIMULATED_SECURE_ONSET",
+      "slot_id": "slot-000201"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000206"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000209"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000214"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000216"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000217"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000220"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000223"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000224"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000232"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000233"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000239"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000240"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000242"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000243"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000251"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000252"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000254"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000258"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000261"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000263"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000265"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000266"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000273"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000275"
+    },
+    {
+      "simulated_status": "SIMULATED_SECURE_ONSET",
+      "slot_id": "slot-000277"
+    },
+    {
+      "simulated_status": "SIMULATED_SECURE_ONSET",
+      "slot_id": "slot-000278"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000283"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000288"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000292"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000294"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000296"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000299"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000301"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000305"
+    },
+    {
+      "simulated_status": "SIMULATED_INVALIDATED",
+      "slot_id": "slot-000307"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000312"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000316"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000317"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000319"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000320"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000325"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000330"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000333"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000334"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000338"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000339"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000345"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000346"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000351"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000352"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000356"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000358"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000362"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000363"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000370"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000371"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000376"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000377"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000379"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000384"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000386"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000390"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000394"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000395"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000399"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000402"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000403"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000407"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000410"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000413"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000415"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000416"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000424"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000425"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000428"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000431"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000434"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000438"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000439"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000441"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000447"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000449"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000451"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000455"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000457"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000462"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000463"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000468"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000469"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000474"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000479"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000480"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000481"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000483"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000488"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000492"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000496"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000498"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000502"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000504"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000507"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000509"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000512"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000516"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000517"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000518"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000524"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000527"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000530"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000532"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000535"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000540"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000544"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000545"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000548"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000552"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000555"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000558"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000561"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000562"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000566"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000567"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000573"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000574"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000578"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000581"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000583"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000588"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000590"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000594"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000595"
+    },
+    {
+      "simulated_status": "SIMULATED_NO_ONSET",
+      "slot_id": "slot-000599"
+    }
+  ],
+  "schema_version": "prospective-c5-structural-dry-run-0.1.0"
+}

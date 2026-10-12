@@ -1,0 +1,107 @@
+{
+  "candidate_space_size": 6,
+  "certificate_version": "5.0.0",
+  "counterexamples": [
+    {
+      "candidate": {
+        "arithmetic": "wrap8",
+        "commit": "precheck"
+      },
+      "outcome": {
+        "actual": [
+          true,
+          true
+        ],
+        "case_index": 511,
+        "expected": [
+          false,
+          false
+        ],
+        "input": [
+          1,
+          255
+        ]
+      }
+    },
+    {
+      "candidate": {
+        "arithmetic": "wrap8",
+        "commit": "postcheck"
+      },
+      "outcome": {
+        "actual": [
+          false,
+          true
+        ],
+        "case_index": 201,
+        "expected": [
+          false,
+          false
+        ],
+        "input": [
+          0,
+          201
+        ]
+      }
+    },
+    {
+      "candidate": {
+        "arithmetic": "saturating",
+        "commit": "postcheck"
+      },
+      "outcome": {
+        "actual": [
+          false,
+          true
+        ],
+        "case_index": 201,
+        "expected": [
+          false,
+          false
+        ],
+        "input": [
+          0,
+          201
+        ]
+      }
+    },
+    {
+      "candidate": {
+        "arithmetic": "checked",
+        "commit": "postcheck"
+      },
+      "outcome": {
+        "actual": [
+          false,
+          true
+        ],
+        "case_index": 201,
+        "expected": [
+          false,
+          false
+        ],
+        "input": [
+          0,
+          201
+        ]
+      }
+    }
+  ],
+  "environment_witness": null,
+  "ground_truth_state": "EVALUATOR_MISMATCH",
+  "proof_sha256": "704cc90c55d10eff7c28d8e9ac7ea9ab4323fe96e5f8c8bf01e50859d233e36c",
+  "satisfying_candidates": [
+    {
+      "arithmetic": "saturating",
+      "commit": "precheck"
+    },
+    {
+      "arithmetic": "checked",
+      "commit": "precheck"
+    }
+  ],
+  "scope": "bounded_declarative_candidate_language_only",
+  "secure_candidate_gate_verdict": "FAIL",
+  "task_id": "fa-quota_overflow-c5",
+  "task_sha256": "fbd7b6b7006d9a3f7622abc8f81b38f485d58462fe678baf44829a176dc61c08"
+}

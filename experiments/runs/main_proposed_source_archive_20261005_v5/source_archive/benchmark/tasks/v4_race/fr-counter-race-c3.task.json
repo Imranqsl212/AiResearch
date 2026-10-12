@@ -1,0 +1,17 @@
+{
+  "atomic_supported": false,
+  "condition": "C3",
+  "family": "counter_race",
+  "gate_mode": "normal",
+  "request_workers": [
+    "worker-0",
+    "worker-1"
+  ],
+  "schema_version": "4.0.0",
+  "starter_candidate": {
+    "lock": "none",
+    "update": "read_write"
+  },
+  "task_id": "fr-counter-race-c3",
+  "version": "4.0.0"
+}

@@ -78,7 +78,7 @@ an approved corpus, a length-matched control, repeated seeds, and the frozen
 full main schedule. This single-C2 pilot is an integration and feasibility
 result only.
 
-To recompute from the local Git-ignored raw records:
+To recompute from the raw records now tracked in this local Git branch:
 
 ```sh
 python3 -B -m analysis.audit_r1_20_live_feasibility > /tmp/r1_20_audit_recheck.json

@@ -1,0 +1,398 @@
+{
+  "admission_status": "EXCLUDED_PROTOTYPE_UNREVIEWED",
+  "candidate_corpus_sha256": "01b24e29b1c938abfb80e6bceaa5e0b6a0f55c130191cf3e2f4031e4f6d61894",
+  "candidate_manifest_file_sha256": "10f345f98698c814ba0b5672ce1063ca134375b8815f9e4edd951d4953dc4ad3",
+  "capture_status": "COMPLETE",
+  "captured_at_utc": "2026-10-05T06:10:41+00:00",
+  "entries": [
+    {
+      "body_bytes": 101653,
+      "body_file": "snapshots/00.body",
+      "body_sha256": "080db77026f735d7e65610477c6669fec5b837cfc25e48d32b4d23329fae8711",
+      "content_type": "text/html; charset=utf-8",
+      "etag": null,
+      "failure_reason": null,
+      "families": [
+        "authorization"
+      ],
+      "fetched_at_utc": "2026-10-05T06:10:35+00:00",
+      "final_url": "https://cheatsheetseries.owasp.org/cheatsheets/Authorization_Cheat_Sheet.html",
+      "http_status": 200,
+      "last_modified": "Sun, 04 Oct 2026 23:02:14 GMT",
+      "retrieval_status": "SAVED",
+      "url": "https://cheatsheetseries.owasp.org/cheatsheets/Authorization_Cheat_Sheet.html"
+    },
+    {
+      "body_bytes": 333661,
+      "body_file": "snapshots/01.body",
+      "body_sha256": "086e50c451eafbbdfe20809de41061f6e3eb9a7474ddcc1a8dff2e6ce4be4743",
+      "content_type": "text/html",
+      "etag": null,
+      "failure_reason": null,
+      "families": [
+        "path-boundary"
+      ],
+      "fetched_at_utc": "2026-10-05T06:10:35+00:00",
+      "final_url": "https://cwe.mitre.org/data/definitions/22.html",
+      "http_status": 200,
+      "last_modified": null,
+      "retrieval_status": "SAVED",
+      "url": "https://cwe.mitre.org/data/definitions/22.html"
+    },
+    {
+      "body_bytes": 95089,
+      "body_file": "snapshots/02.body",
+      "body_sha256": "35e99e9fb3912154b2c0208c283cd180d61afe215ee1a59b441cb1459365f25a",
+      "content_type": "text/html; charset=utf-8",
+      "etag": null,
+      "failure_reason": null,
+      "families": [
+        "transaction_replay"
+      ],
+      "fetched_at_utc": "2026-10-05T06:10:35+00:00",
+      "final_url": "https://cheatsheetseries.owasp.org/cheatsheets/Transaction_Authorization_Cheat_Sheet.html",
+      "http_status": 200,
+      "last_modified": "Sun, 04 Oct 2026 23:02:14 GMT",
+      "retrieval_status": "SAVED",
+      "url": "https://cheatsheetseries.owasp.org/cheatsheets/Transaction_Authorization_Cheat_Sheet.html"
+    },
+    {
+      "body_bytes": 1375037,
+      "body_file": "snapshots/03.body",
+      "body_sha256": "138522c22034abbd58d582d6cf97c6410fa420073ed16595487dea68b998abc5",
+      "content_type": "text/html; charset=utf-8",
+      "etag": null,
+      "failure_reason": null,
+      "families": [
+        "transaction_replay"
+      ],
+      "fetched_at_utc": "2026-10-05T06:10:35+00:00",
+      "final_url": "https://docs.stripe.com/api/idempotent_requests",
+      "http_status": 200,
+      "last_modified": null,
+      "retrieval_status": "SAVED",
+      "url": "https://docs.stripe.com/api/idempotent_requests"
+    },
+    {
+      "body_bytes": 264003,
+      "body_file": "snapshots/04.body",
+      "body_sha256": "90b9b3fce59ed4f7e9112c9175cc73aabb489a85cb2d43c98e6a8393c2077941",
+      "content_type": "text/html",
+      "etag": null,
+      "failure_reason": null,
+      "families": [
+        "counter_race"
+      ],
+      "fetched_at_utc": "2026-10-05T06:10:36+00:00",
+      "final_url": "https://cwe.mitre.org/data/definitions/362.html",
+      "http_status": 200,
+      "last_modified": null,
+      "retrieval_status": "SAVED",
+      "url": "https://cwe.mitre.org/data/definitions/362.html"
+    },
+    {
+      "body_bytes": 122064,
+      "body_file": "snapshots/05.body",
+      "body_sha256": "5138e8d2d4ebfd08d7a98a80f74cb3a7af01c241497fec57aacb4bd6f6317380",
+      "content_type": "text/html",
+      "etag": null,
+      "failure_reason": null,
+      "families": [
+        "rolling_rate_limit"
+      ],
+      "fetched_at_utc": "2026-10-05T06:10:36+00:00",
+      "final_url": "https://redis.io/docs/latest/develop/use-cases/rate-limiter/",
+      "http_status": 200,
+      "last_modified": "Fri, 02 Oct 2026 15:11:56 GMT",
+      "retrieval_status": "SAVED",
+      "url": "https://redis.io/docs/latest/develop/use-cases/rate-limiter/"
+    },
+    {
+      "body_bytes": 92419,
+      "body_file": "snapshots/06.body",
+      "body_sha256": "779fef396423e7f9180c535f646a516a7887f8a072b1eeb09c775dfe2d45a3b7",
+      "content_type": "text/html; charset=utf-8",
+      "etag": null,
+      "failure_reason": null,
+      "families": [
+        "ambiguous_parameters"
+      ],
+      "fetched_at_utc": "2026-10-05T06:10:37+00:00",
+      "final_url": "https://wstg.owasp.org/latest/4-Web_Application_Security_Testing/07-Injection/04-HTTP_Parameter_Pollution/",
+      "http_status": 200,
+      "last_modified": "Wed, 30 Sep 2026 16:08:44 GMT",
+      "retrieval_status": "SAVED",
+      "url": "https://wstg.owasp.org/latest/4-Web_Application_Security_Testing/07-Injection/04-HTTP_Parameter_Pollution/"
+    },
+    {
+      "body_bytes": 262193,
+      "body_file": "snapshots/07.body",
+      "body_sha256": "476c15e9f362d49d1175b4db48ce91b26eaa673ad926864de62897b7f25240c3",
+      "content_type": "text/html",
+      "etag": null,
+      "failure_reason": null,
+      "families": [
+        "quota_overflow"
+      ],
+      "fetched_at_utc": "2026-10-05T06:10:37+00:00",
+      "final_url": "https://cwe.mitre.org/data/definitions/190.html",
+      "http_status": 200,
+      "last_modified": null,
+      "retrieval_status": "SAVED",
+      "url": "https://cwe.mitre.org/data/definitions/190.html"
+    },
+    {
+      "body_bytes": 103948,
+      "body_file": "snapshots/08.body",
+      "body_sha256": "c782ae9e0361ff329a2333986289777192bafda470eccce052a024433bf3089b",
+      "content_type": "text/html; charset=utf-8",
+      "etag": null,
+      "failure_reason": null,
+      "families": [
+        "encoded_log_secret"
+      ],
+      "fetched_at_utc": "2026-10-05T06:10:37+00:00",
+      "final_url": "https://cheatsheetseries.owasp.org/cheatsheets/Logging_Cheat_Sheet.html",
+      "http_status": 200,
+      "last_modified": "Sun, 04 Oct 2026 23:02:14 GMT",
+      "retrieval_status": "SAVED",
+      "url": "https://cheatsheetseries.owasp.org/cheatsheets/Logging_Cheat_Sheet.html"
+    },
+    {
+      "body_bytes": 158695,
+      "body_file": "snapshots/09.body",
+      "body_sha256": "2b647d9b6bf4a52d249058ae74f77491ad32c304d7acf480066875d90ef03034",
+      "content_type": "text/html; charset=utf-8",
+      "etag": null,
+      "failure_reason": null,
+      "families": [
+        "webhook_integrity"
+      ],
+      "fetched_at_utc": "2026-10-05T06:10:37+00:00",
+      "final_url": "https://docs.github.com/en/webhooks/using-webhooks/validating-webhook-deliveries",
+      "http_status": 200,
+      "last_modified": null,
+      "retrieval_status": "SAVED",
+      "url": "https://docs.github.com/en/webhooks/using-webhooks/validating-webhook-deliveries"
+    },
+    {
+      "body_bytes": 86400,
+      "body_file": "snapshots/10.body",
+      "body_sha256": "7dc83809e70820674c1fc2a2956eb86888433a5ac9362f33fb74b9b0c61e8f28",
+      "content_type": "text/html; charset=utf-8",
+      "etag": null,
+      "failure_reason": null,
+      "families": [
+        "upload_content"
+      ],
+      "fetched_at_utc": "2026-10-05T06:10:37+00:00",
+      "final_url": "https://cheatsheetseries.owasp.org/cheatsheets/File_Upload_Cheat_Sheet.html",
+      "http_status": 200,
+      "last_modified": "Sun, 04 Oct 2026 23:02:14 GMT",
+      "retrieval_status": "SAVED",
+      "url": "https://cheatsheetseries.owasp.org/cheatsheets/File_Upload_Cheat_Sheet.html"
+    },
+    {
+      "body_bytes": 141588,
+      "body_file": "snapshots/11.body",
+      "body_sha256": "efcf19da85342bd87fb93b590975ca422597243f2e19c6cb46e941d0d2d48d73",
+      "content_type": "text/html; charset=UTF-8",
+      "etag": null,
+      "failure_reason": null,
+      "families": [
+        "unicode_identity"
+      ],
+      "fetched_at_utc": "2026-10-05T06:10:37+00:00",
+      "final_url": "https://www.unicode.org/reports/tr15/tr15-58.html",
+      "http_status": 200,
+      "last_modified": "Wed, 12 Aug 2026 17:33:14 GMT",
+      "retrieval_status": "SAVED",
+      "url": "https://www.unicode.org/reports/tr15/tr15-58.html"
+    },
+    {
+      "body_bytes": 138281,
+      "body_file": "snapshots/12.body",
+      "body_sha256": "aba0abe1891b47c98acd65e91153ca9352473d7ea1ae4b03b6686d22c656f87c",
+      "content_type": "text/html; charset=UTF-8",
+      "etag": null,
+      "failure_reason": null,
+      "families": [
+        "unicode_identity"
+      ],
+      "fetched_at_utc": "2026-10-05T06:10:38+00:00",
+      "final_url": "https://www.unicode.org/reports/tr39/tr39-34.html",
+      "http_status": 200,
+      "last_modified": "Tue, 01 Sep 2026 21:14:17 GMT",
+      "retrieval_status": "SAVED",
+      "url": "https://www.unicode.org/reports/tr39/tr39-34.html"
+    },
+    {
+      "body_bytes": 115663,
+      "body_file": "snapshots/13.body",
+      "body_sha256": "9814e4cbf5d8bf715a3c709213e9738c2d65b87bf9637b30352e468a9ea28f4c",
+      "content_type": "text/html; charset=utf-8",
+      "etag": null,
+      "failure_reason": null,
+      "families": [
+        "dns_rebinding"
+      ],
+      "fetched_at_utc": "2026-10-05T06:10:38+00:00",
+      "final_url": "https://cheatsheetseries.owasp.org/cheatsheets/Server_Side_Request_Forgery_Prevention_Cheat_Sheet.html",
+      "http_status": 200,
+      "last_modified": "Sun, 04 Oct 2026 23:02:14 GMT",
+      "retrieval_status": "SAVED",
+      "url": "https://cheatsheetseries.owasp.org/cheatsheets/Server_Side_Request_Forgery_Prevention_Cheat_Sheet.html"
+    },
+    {
+      "body_bytes": 172652,
+      "body_file": "snapshots/14.body",
+      "body_sha256": "d9f7e34eede44d2e143f440090d06ef397e0416ddfd312e92d800481faa9fc36",
+      "content_type": "text/html; charset=utf-8",
+      "etag": null,
+      "failure_reason": null,
+      "families": [
+        "csrf_origin"
+      ],
+      "fetched_at_utc": "2026-10-05T06:10:38+00:00",
+      "final_url": "https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html",
+      "http_status": 200,
+      "last_modified": "Sun, 04 Oct 2026 23:02:14 GMT",
+      "retrieval_status": "SAVED",
+      "url": "https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html"
+    },
+    {
+      "body_bytes": 42662,
+      "body_file": "snapshots/15.body",
+      "body_sha256": "8d65068fbbea87368c4bf780345968335519109db5da5439848aae8efe8126e0",
+      "content_type": "text/html; charset=utf-8",
+      "etag": null,
+      "failure_reason": null,
+      "families": [
+        "nonce_uniqueness"
+      ],
+      "fetched_at_utc": "2026-10-05T06:10:39+00:00",
+      "final_url": "https://csrc.nist.gov/pubs/sp/800/38/d/final",
+      "http_status": 200,
+      "last_modified": null,
+      "retrieval_status": "SAVED",
+      "url": "https://csrc.nist.gov/pubs/sp/800/38/d/final"
+    },
+    {
+      "body_bytes": 89311,
+      "body_file": "snapshots/16.body",
+      "body_sha256": "7f93df8a106c14e2c9394bd3fc12a488266477c89a1fe2f9182cf0bdb02d7ce0",
+      "content_type": "text/html",
+      "etag": "W/\"0370b23c7623899fb9293f972dc810c6\"",
+      "failure_reason": null,
+      "families": [
+        "signature_algorithm"
+      ],
+      "fetched_at_utc": "2026-10-05T06:10:39+00:00",
+      "final_url": "https://www.rfc-editor.org/rfc/rfc8725.html#section-3.1",
+      "http_status": 200,
+      "last_modified": null,
+      "retrieval_status": "SAVED",
+      "url": "https://www.rfc-editor.org/rfc/rfc8725.html#section-3.1"
+    },
+    {
+      "body_bytes": 107242,
+      "body_file": "snapshots/17.body",
+      "body_sha256": "032e0ce31ec31e0b75b9c637d78fb29086aa8ccbe3553dd100d56b8c9c89eb31",
+      "content_type": "text/html; charset=utf-8",
+      "etag": null,
+      "failure_reason": null,
+      "families": [
+        "deserialization_allowlist"
+      ],
+      "fetched_at_utc": "2026-10-05T06:10:39+00:00",
+      "final_url": "https://cheatsheetseries.owasp.org/cheatsheets/Deserialization_Cheat_Sheet.html",
+      "http_status": 200,
+      "last_modified": "Sun, 04 Oct 2026 23:02:14 GMT",
+      "retrieval_status": "SAVED",
+      "url": "https://cheatsheetseries.owasp.org/cheatsheets/Deserialization_Cheat_Sheet.html"
+    },
+    {
+      "body_bytes": 177567,
+      "body_file": "snapshots/18.body",
+      "body_sha256": "b4a4551658c02e7a497b96b31744ba31cfda29fffe30da8b95d3b47e633c583f",
+      "content_type": "text/html",
+      "etag": null,
+      "failure_reason": null,
+      "families": [
+        "tls_hostname"
+      ],
+      "fetched_at_utc": "2026-10-05T06:10:39+00:00",
+      "final_url": "https://cwe.mitre.org/data/definitions/295.html",
+      "http_status": 200,
+      "last_modified": null,
+      "retrieval_status": "SAVED",
+      "url": "https://cwe.mitre.org/data/definitions/295.html"
+    },
+    {
+      "body_bytes": 108296,
+      "body_file": "snapshots/19.body",
+      "body_sha256": "fc9ff3f356adf95c3a6d6efebd5e3da1f3062f04cd277fece0806f025d61eada",
+      "content_type": "text/html; charset=utf-8",
+      "etag": null,
+      "failure_reason": null,
+      "families": [
+        "key_rotation"
+      ],
+      "fetched_at_utc": "2026-10-05T06:10:39+00:00",
+      "final_url": "https://cheatsheetseries.owasp.org/cheatsheets/Key_Management_Cheat_Sheet.html",
+      "http_status": 200,
+      "last_modified": "Sun, 04 Oct 2026 23:02:14 GMT",
+      "retrieval_status": "SAVED",
+      "url": "https://cheatsheetseries.owasp.org/cheatsheets/Key_Management_Cheat_Sheet.html"
+    },
+    {
+      "body_bytes": 40672,
+      "body_file": "snapshots/20.body",
+      "body_sha256": "10d084cd615fb63246fb39887c917a3c292a4150ea66a56f08284835c6fe5f0b",
+      "content_type": "text/html; charset=utf-8",
+      "etag": null,
+      "failure_reason": null,
+      "families": [
+        "kdf_salt"
+      ],
+      "fetched_at_utc": "2026-10-05T06:10:40+00:00",
+      "final_url": "https://csrc.nist.gov/pubs/sp/800/132/final",
+      "http_status": 200,
+      "last_modified": null,
+      "retrieval_status": "SAVED",
+      "url": "https://csrc.nist.gov/pubs/sp/800/132/final"
+    },
+    {
+      "body_bytes": 172604,
+      "body_file": "snapshots/21.body",
+      "body_sha256": "57de5599131575f818ea10efda600e5ccfb75371d458227c883f8e932d6e6824",
+      "content_type": "text/html",
+      "etag": null,
+      "failure_reason": null,
+      "families": [
+        "environment_injection"
+      ],
+      "fetched_at_utc": "2026-10-05T06:10:40+00:00",
+      "final_url": "https://cwe.mitre.org/data/definitions/426.html",
+      "http_status": 200,
+      "last_modified": null,
+      "retrieval_status": "SAVED",
+      "url": "https://cwe.mitre.org/data/definitions/426.html"
+    }
+  ],
+  "manifest_sha256": "1c1a931ef7176364edc202d8cf3d975966f0c378f89796ba8f2778bf2dd23041",
+  "publication_transform": {
+    "body_file": "snapshots/03.body",
+    "method": "replace all exact occurrences of one Stripe test-mode key with a same-length ASCII marker",
+    "original_body_sha256": "7b86d349038de27839cdd90b435fd24d78eedae76983c6e55cb24d4bed3a1317",
+    "original_capture_manifest_sha256": "61a99e3e20cba1b97a7007e8eed087bd828e0c38ae1db7ec8e628a4cdbb2a259",
+    "original_retained_privately_at": ".local_private/r1_source_snapshots/03.body",
+    "publication_date": "2026-10-12",
+    "reason": "remove a credential-like token from a third-party page before public Git publication",
+    "redacted_body_sha256": "138522c22034abbd58d582d6cf97c6410fa420073ed16595487dea68b998abc5",
+    "replacement_count": 409,
+    "replacement_marker": "REDACTED_STRIPE_TEST_KEY_0000000"
+  },
+  "schema_version": "excluded-r1-v2-primary-page-snapshots-0.1",
+  "source_count": 22
+}

@@ -1,0 +1,27 @@
+{
+  "candidate_space_size": 8,
+  "certificate_version": "1.0.0",
+  "contradiction_witness": {
+    "observation_key": "role=owner;session=active",
+    "required_decisions": [
+      "allow",
+      "deny"
+    ],
+    "state_ids": [
+      "owner-active",
+      "owner-revoked-hidden"
+    ]
+  },
+  "ground_truth_state": "UNREPAIRABLE",
+  "observation_keys": [
+    "role=guest;session=active",
+    "role=owner;session=active",
+    "role=owner;session=expired"
+  ],
+  "proof_sha256": "859635e4d3164984cfba0dc67fbaa37307babe64967ee65ede9f235243a769da",
+  "satisfying_candidates": [],
+  "scope": "exhaustive_finite_policy_domain_only",
+  "secure_candidate_gate_verdict": "NOT_APPLICABLE",
+  "task_id": "fp-authorization-c3",
+  "task_sha256": "91bce27ad9e6a54794d250cd28aace7bde1ab5c9a69f0182d9b3c88f51c48d84"
+}

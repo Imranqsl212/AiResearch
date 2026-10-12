@@ -1,0 +1,12 @@
+{
+  "condition": "C5",
+  "family": "upload_content",
+  "gate_mode": "reject_secure",
+  "schema_version": "5.0.0",
+  "sensor_mode": "complete",
+  "starter_candidate": {
+    "mode": "last_suffix"
+  },
+  "task_id": "fb-upload-content-c5",
+  "version": "5.0.0"
+}

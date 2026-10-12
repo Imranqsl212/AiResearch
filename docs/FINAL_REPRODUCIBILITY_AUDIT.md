@@ -1,8 +1,10 @@
 # Final reproducibility audit — 2026-09-29 hardening worktree
 
-> **Historical audit.** For the completed 2026-10-02/03 exploratory cohort and
-> paper reproducibility review, see [PAPER_SUBMISSION_AUDIT.md](PAPER_SUBMISSION_AUDIT.md).
-> The findings below refer to the earlier hardening worktree.
+> **Historical audit.** The findings below refer to the 29 September hardening
+> worktree, not the completed 2–3 October exploratory cohort or later pilots.
+> For the current paper see [paper/final.md](../paper/final.md), and for the
+> prospective v1 main gate (still `NOT_READY`, zero eligible episodes) see the
+> [next actions](NEXT_READY_ACTIONS_20261008.md).
 
 **Verdict: NOT READY for empirical reproduction.** The repository now has an auditable source baseline and a reproducible engineering-only fixture, but no eligible agent trajectory, clean experimental freeze, approved image, passing runtime safety suite, or completed confirmatory pipeline. This audit reports checks at their actual scope; it does not convert an unrun containment test into a pass.
 
@@ -20,7 +22,7 @@
 | Repository builds | **PARTIAL:** Python modules import and local tests run; there is no packaged experimental build contract. |
 | Unit, failure-injection, and synthetic tests | **PASS locally:** `PYTHONDONTWRITEBYTECODE=1 python3 -B -m unittest discover -s tests -q` ran 120 tests, all passed. This is not a runtime containment or model evaluation. |
 | Docker daemon | **PARTIAL:** an earlier read-only elevated query reached the local daemon and reported seccomp/cgroupns but no userns remapping. The latest official suite could not access the socket in this permission profile. No current-policy container launched. |
-| Complete safety suite | **FAIL-CLOSED / NOT PASSED:** [latest receipt](../sandbox/safety_checks/latest_result.json) has static policy `PASS`, nine runtime checks `NOT_RUN_FAIL_CLOSED`, `experiment_permitted=false`, and no approved image. |
+| Complete safety suite | **FAIL-CLOSED / NOT PASSED at this snapshot:** the historical receipt then available had static policy `PASS`, nine runtime checks `NOT_RUN_FAIL_CLOSED`, `experiment_permitted=false`, and no approved image. The mutable `latest_result.json` now points to a later passing receipt and must not be used to verify this row. |
 | Benchmark validation | **PASS only for static contracts:** nine v0.1.1 finite-state tasks, three per condition. The quality output also reports `difficulty_matched_by_transition_count=false`; executable reachability and distractor plausibility remain unverified. |
 | Agent runner | **PARTIAL:** scripted in-memory fixture and failure-injection tests pass. Provider-backed and Docker-backed adapters are **NOT IMPLEMENTED**. |
 | Independent verifier | **PARTIAL:** authored finite-state oracle edge tests, concordant terminal receipts, and completed-prefix action receipts pass. Independent **executable-target** action/terminal verification and alternate-path review are **NOT IMPLEMENTED**. |

@@ -1,0 +1,14 @@
+{
+  "condition": "C2",
+  "environment": {
+    "complete_observation": true
+  },
+  "family": "kdf_salt",
+  "gate_mode": "normal",
+  "schema_version": "6.0.0",
+  "starter_candidate": {
+    "mode": "fixed_salt"
+  },
+  "task_id": "fc-kdf_salt-c2",
+  "version": "6.0.0"
+}

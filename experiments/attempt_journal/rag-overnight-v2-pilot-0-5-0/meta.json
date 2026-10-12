@@ -1,0 +1,6 @@
+{
+  "experiment_id": "rag-overnight-v2-pilot-0-5-0",
+  "manifest_sha256": "56ed35fa2754e5aa72563c092ae574139a9db36c8aa9e0454706651c7ff5f8e3",
+  "schedule_sha256": "41002d1205865cf52d1f62c686f7f99285ceffc5ca0ddf7f53e15c0e36cd7357",
+  "schema_version": "0.1.0"
+}

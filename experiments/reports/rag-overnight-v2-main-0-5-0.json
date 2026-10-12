@@ -1,0 +1,14 @@
+{
+  "archive_manifest": "/Users/imranmzakirov/Desktop/research/experiments/raw_archive/rag-overnight-v2-main-0-5-0/archive_manifest.json",
+  "completed_this_invocation": 40,
+  "experiment_id": "rag-overnight-v2-main-0-5-0",
+  "ledger": "/Users/imranmzakirov/Desktop/research/experiments/ledgers/rag-overnight-v2-main-0-5-0.json",
+  "main_experiment_started": true,
+  "manifest": "/Users/imranmzakirov/Desktop/research/experiments/manifests/rag-overnight-v2-main-0-5-0.json",
+  "phase": "main",
+  "raw_data_mutated": false,
+  "results": "/Users/imranmzakirov/Desktop/research/experiments/results/rag-overnight-v2-main-0-5-0.jsonl",
+  "schedule": "/Users/imranmzakirov/Desktop/research/experiments/schedules/rag-overnight-v2-main-0-5-0.json",
+  "scheduled_slots": 40,
+  "skipped_completed": 0
+}

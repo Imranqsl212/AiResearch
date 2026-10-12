@@ -1,9 +1,16 @@
-# Roadmap: When Secure-Code Repair Fails
+# Historical roadmap: When Secure-Code Repair Fails
+
+> **Historical roadmap for the earlier factorial design.** Its 24-arm pilot,
+> 480-run upper bound, and “frozen corpus” describe an earlier proposal, not
+> the current R1 admission status or prospective v1 plan. The exploratory
+> 40-episode audit and separate 8- and 30-episode pilots were collected later;
+> prospective v1 main remains `NOT_READY` with zero eligible episodes. See the
+> [current overview](../README.md) and [next actions](NEXT_READY_ACTIONS_20261008.md).
 
 **Scope:** how a local provider-backed AI agent responds to independently verified
 crypto/web security failures, and how feedback and retrieved knowledge affect that
 response.
-**Current state:** executable benchmark v0.5.0, 20 security families, approved Docker
+**State at the time of this roadmap:** executable benchmark v0.5.0, 20 security families, approved Docker
 image, excluded Ollama smoke traces, a frozen retrieval corpus, and a fail-closed
 factorial runner exist; no confirmatory pilot or main experiment has been executed.
 

@@ -1,0 +1,79 @@
+{
+  "candidate_space_size": 6,
+  "certificate_version": "5.0.0",
+  "counterexamples": [
+    {
+      "candidate": {
+        "decode": "raw",
+        "duplicates": "first"
+      },
+      "outcome": {
+        "actual": true,
+        "case_index": 1,
+        "expected": false,
+        "input": "mode=safe&mode=admin"
+      }
+    },
+    {
+      "candidate": {
+        "decode": "percent",
+        "duplicates": "first"
+      },
+      "outcome": {
+        "actual": true,
+        "case_index": 1,
+        "expected": false,
+        "input": "mode=safe&mode=admin"
+      }
+    },
+    {
+      "candidate": {
+        "decode": "raw",
+        "duplicates": "last"
+      },
+      "outcome": {
+        "actual": true,
+        "case_index": 2,
+        "expected": false,
+        "input": "mode=admin&mode=safe"
+      }
+    },
+    {
+      "candidate": {
+        "decode": "percent",
+        "duplicates": "last"
+      },
+      "outcome": {
+        "actual": true,
+        "case_index": 2,
+        "expected": false,
+        "input": "mode=admin&mode=safe"
+      }
+    },
+    {
+      "candidate": {
+        "decode": "raw",
+        "duplicates": "reject"
+      },
+      "outcome": {
+        "actual": false,
+        "case_index": 4,
+        "expected": true,
+        "input": "mode=%73afe"
+      }
+    }
+  ],
+  "environment_witness": null,
+  "ground_truth_state": "REPAIRABLE",
+  "proof_sha256": "0351bd45b0a6cb6af128e544de1a1d321f1d6dfc27e94e58fbbe8b656bb23fd3",
+  "satisfying_candidates": [
+    {
+      "decode": "percent",
+      "duplicates": "reject"
+    }
+  ],
+  "scope": "bounded_declarative_candidate_language_only",
+  "secure_candidate_gate_verdict": "PASS",
+  "task_id": "fa-ambiguous_parameters-c1",
+  "task_sha256": "96f3a7e48c5b31cd0f69d546b1d1e37432d31951ea9a6ce374c809c9c75dd699"
+}

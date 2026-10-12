@@ -1,0 +1,24 @@
+{
+  "candidate_space_size": 16,
+  "certificate_version": "3.0.0",
+  "contradiction_witness": {
+    "case_id": "duplicate",
+    "request_positions": [
+      1,
+      2
+    ],
+    "required_decisions": [
+      "approve",
+      "reject"
+    ],
+    "runtime_reset": true,
+    "same_observed_state": "fresh"
+  },
+  "ground_truth_state": "UNREPAIRABLE",
+  "proof_sha256": "e91a3e9ab739f788ac87c8a5d09c69a8fea71ac0c63b5ff5b6ca4c52bc2d74f6",
+  "satisfying_candidates": [],
+  "scope": "bounded_two_state_transaction_replay_only",
+  "secure_candidate_gate_verdict": "NOT_APPLICABLE",
+  "task_id": "fr-transaction-replay-c3",
+  "task_sha256": "32d56191c394198339e7a9bc472d0d01f47355aad89ec0bece97a4324b888f5b"
+}

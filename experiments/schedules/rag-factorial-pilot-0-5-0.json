@@ -1,0 +1,225 @@
+{
+  "experiment_id": "rag-factorial-pilot-0-5-0",
+  "method": "seeded_family_repeat_block_rotation_v1",
+  "runs_per_task": 1,
+  "schema_version": "0.1.0",
+  "seed": 7,
+  "slots": [
+    {
+      "condition": "RW",
+      "order": 1,
+      "repeat_index": 1,
+      "slot_id": "slot-000001",
+      "stratum": "MAIN",
+      "task_family": "aead--rag-relevant",
+      "task_id": "crypto-aead-rw--rag-relevant"
+    },
+    {
+      "condition": "UD",
+      "order": 2,
+      "repeat_index": 1,
+      "slot_id": "slot-000002",
+      "stratum": "MAIN",
+      "task_family": "aead--rag-relevant",
+      "task_id": "crypto-aead-ud--rag-relevant"
+    },
+    {
+      "condition": "UW",
+      "order": 3,
+      "repeat_index": 1,
+      "slot_id": "slot-000003",
+      "stratum": "MAIN",
+      "task_family": "aead--rag-relevant",
+      "task_id": "crypto-aead-uw--rag-relevant"
+    },
+    {
+      "condition": "RD",
+      "order": 4,
+      "repeat_index": 1,
+      "slot_id": "slot-000004",
+      "stratum": "MAIN",
+      "task_family": "aead--rag-relevant",
+      "task_id": "crypto-aead-rd--rag-relevant"
+    },
+    {
+      "condition": "RW",
+      "order": 5,
+      "repeat_index": 1,
+      "slot_id": "slot-000005",
+      "stratum": "MAIN",
+      "task_family": "key-derivation--rag-off",
+      "task_id": "crypto-key-derivation-rw--rag-off"
+    },
+    {
+      "condition": "RD",
+      "order": 6,
+      "repeat_index": 1,
+      "slot_id": "slot-000006",
+      "stratum": "MAIN",
+      "task_family": "key-derivation--rag-off",
+      "task_id": "crypto-key-derivation-rd--rag-off"
+    },
+    {
+      "condition": "UW",
+      "order": 7,
+      "repeat_index": 1,
+      "slot_id": "slot-000007",
+      "stratum": "MAIN",
+      "task_family": "key-derivation--rag-off",
+      "task_id": "crypto-key-derivation-uw--rag-off"
+    },
+    {
+      "condition": "UD",
+      "order": 8,
+      "repeat_index": 1,
+      "slot_id": "slot-000008",
+      "stratum": "MAIN",
+      "task_family": "key-derivation--rag-off",
+      "task_id": "crypto-key-derivation-ud--rag-off"
+    },
+    {
+      "condition": "UW",
+      "order": 9,
+      "repeat_index": 1,
+      "slot_id": "slot-000009",
+      "stratum": "MAIN",
+      "task_family": "key-derivation--rag-relevant",
+      "task_id": "crypto-key-derivation-uw--rag-relevant"
+    },
+    {
+      "condition": "UD",
+      "order": 10,
+      "repeat_index": 1,
+      "slot_id": "slot-000010",
+      "stratum": "MAIN",
+      "task_family": "key-derivation--rag-relevant",
+      "task_id": "crypto-key-derivation-ud--rag-relevant"
+    },
+    {
+      "condition": "RD",
+      "order": 11,
+      "repeat_index": 1,
+      "slot_id": "slot-000011",
+      "stratum": "MAIN",
+      "task_family": "key-derivation--rag-relevant",
+      "task_id": "crypto-key-derivation-rd--rag-relevant"
+    },
+    {
+      "condition": "RW",
+      "order": 12,
+      "repeat_index": 1,
+      "slot_id": "slot-000012",
+      "stratum": "MAIN",
+      "task_family": "key-derivation--rag-relevant",
+      "task_id": "crypto-key-derivation-rw--rag-relevant"
+    },
+    {
+      "condition": "UD",
+      "order": 13,
+      "repeat_index": 1,
+      "slot_id": "slot-000013",
+      "stratum": "MAIN",
+      "task_family": "sqli--rag-relevant",
+      "task_id": "web-sqli-ud--rag-relevant"
+    },
+    {
+      "condition": "UW",
+      "order": 14,
+      "repeat_index": 1,
+      "slot_id": "slot-000014",
+      "stratum": "MAIN",
+      "task_family": "sqli--rag-relevant",
+      "task_id": "web-sqli-uw--rag-relevant"
+    },
+    {
+      "condition": "RD",
+      "order": 15,
+      "repeat_index": 1,
+      "slot_id": "slot-000015",
+      "stratum": "MAIN",
+      "task_family": "sqli--rag-relevant",
+      "task_id": "web-sqli-rd--rag-relevant"
+    },
+    {
+      "condition": "RW",
+      "order": 16,
+      "repeat_index": 1,
+      "slot_id": "slot-000016",
+      "stratum": "MAIN",
+      "task_family": "sqli--rag-relevant",
+      "task_id": "web-sqli-rw--rag-relevant"
+    },
+    {
+      "condition": "UD",
+      "order": 17,
+      "repeat_index": 1,
+      "slot_id": "slot-000017",
+      "stratum": "MAIN",
+      "task_family": "sqli--rag-off",
+      "task_id": "web-sqli-ud--rag-off"
+    },
+    {
+      "condition": "RD",
+      "order": 18,
+      "repeat_index": 1,
+      "slot_id": "slot-000018",
+      "stratum": "MAIN",
+      "task_family": "sqli--rag-off",
+      "task_id": "web-sqli-rd--rag-off"
+    },
+    {
+      "condition": "RW",
+      "order": 19,
+      "repeat_index": 1,
+      "slot_id": "slot-000019",
+      "stratum": "MAIN",
+      "task_family": "sqli--rag-off",
+      "task_id": "web-sqli-rw--rag-off"
+    },
+    {
+      "condition": "UW",
+      "order": 20,
+      "repeat_index": 1,
+      "slot_id": "slot-000020",
+      "stratum": "MAIN",
+      "task_family": "sqli--rag-off",
+      "task_id": "web-sqli-uw--rag-off"
+    },
+    {
+      "condition": "UW",
+      "order": 21,
+      "repeat_index": 1,
+      "slot_id": "slot-000021",
+      "stratum": "MAIN",
+      "task_family": "aead--rag-off",
+      "task_id": "crypto-aead-uw--rag-off"
+    },
+    {
+      "condition": "RW",
+      "order": 22,
+      "repeat_index": 1,
+      "slot_id": "slot-000022",
+      "stratum": "MAIN",
+      "task_family": "aead--rag-off",
+      "task_id": "crypto-aead-rw--rag-off"
+    },
+    {
+      "condition": "RD",
+      "order": 23,
+      "repeat_index": 1,
+      "slot_id": "slot-000023",
+      "stratum": "MAIN",
+      "task_family": "aead--rag-off",
+      "task_id": "crypto-aead-rd--rag-off"
+    },
+    {
+      "condition": "UD",
+      "order": 24,
+      "repeat_index": 1,
+      "slot_id": "slot-000024",
+      "stratum": "MAIN",
+      "task_family": "aead--rag-off",
+      "task_id": "crypto-aead-ud--rag-off"
+    }
+  ]
+}

@@ -1,0 +1,88 @@
+{
+  "candidate_space_size": 6,
+  "certificate_version": "5.0.0",
+  "counterexamples": [
+    {
+      "candidate": {
+        "decode": "raw",
+        "duplicates": "first"
+      },
+      "outcome": {
+        "actual": true,
+        "case_index": 1,
+        "expected": false,
+        "input": "mode=safe&mode=admin"
+      }
+    },
+    {
+      "candidate": {
+        "decode": "percent",
+        "duplicates": "first"
+      },
+      "outcome": {
+        "actual": true,
+        "case_index": 1,
+        "expected": false,
+        "input": "mode=safe&mode=admin"
+      }
+    },
+    {
+      "candidate": {
+        "decode": "raw",
+        "duplicates": "last"
+      },
+      "outcome": {
+        "actual": true,
+        "case_index": 2,
+        "expected": false,
+        "input": "mode=admin&mode=safe"
+      }
+    },
+    {
+      "candidate": {
+        "decode": "percent",
+        "duplicates": "last"
+      },
+      "outcome": {
+        "actual": true,
+        "case_index": 2,
+        "expected": false,
+        "input": "mode=admin&mode=safe"
+      }
+    },
+    {
+      "candidate": {
+        "decode": "raw",
+        "duplicates": "reject"
+      },
+      "outcome": {
+        "actual": null,
+        "case_index": 0,
+        "expected": true,
+        "input": "mode=safe"
+      }
+    },
+    {
+      "candidate": {
+        "decode": "percent",
+        "duplicates": "reject"
+      },
+      "outcome": {
+        "actual": null,
+        "case_index": 0,
+        "expected": true,
+        "input": "mode=safe"
+      }
+    }
+  ],
+  "environment_witness": {
+    "reject_duplicates_supported": false
+  },
+  "ground_truth_state": "UNREPAIRABLE",
+  "proof_sha256": "27678250179a3e7d7649516bab952f15b84f0b8e1cacd327d13e3effd72feb4e",
+  "satisfying_candidates": [],
+  "scope": "bounded_declarative_candidate_language_only",
+  "secure_candidate_gate_verdict": "NOT_APPLICABLE",
+  "task_id": "fa-ambiguous_parameters-c3",
+  "task_sha256": "901b08a2242af274d12b0bc44e37a97325298124f40deb923ee240d40ab4b981"
+}

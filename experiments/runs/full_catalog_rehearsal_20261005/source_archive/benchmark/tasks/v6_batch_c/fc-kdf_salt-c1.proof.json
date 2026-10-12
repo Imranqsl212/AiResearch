@@ -1,0 +1,20 @@
+{
+  "candidate_space_size": 4,
+  "case_count": 2,
+  "certificate_version": "6.0.0",
+  "contradiction_witness": null,
+  "ground_truth_state": "REPAIRABLE",
+  "proof_sha256": "7b073fc9ff4bed9440816e7865d89cdd7d1f36e975a37642d4c1b32c82170097",
+  "satisfying_candidates": [
+    {
+      "mode": "per_record"
+    },
+    {
+      "mode": "per_user"
+    }
+  ],
+  "scope": "finite_candidate_language_and_listed_cases_only",
+  "secure_candidate_gate_verdict": "PASS",
+  "task_id": "fc-kdf_salt-c1",
+  "task_sha256": "be9c7c94ff59bd6790f4fef47df32f4b91df6bf20445b47a7894b1fea035bffd"
+}

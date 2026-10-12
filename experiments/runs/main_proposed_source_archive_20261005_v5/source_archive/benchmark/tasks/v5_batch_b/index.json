@@ -1,0 +1,210 @@
+{
+  "condition_count": 20,
+  "family_count": 4,
+  "reference_file": "batch-b.references.json",
+  "reference_file_sha256": "14e2ef95ad2540f7958eecc1a8e3efc194fe5fadebdb9b8b69c3c772f14778d6",
+  "schema_version": "5.0",
+  "scope": "finite_candidate_languages_and_listed_cases_only",
+  "tasks": [
+    {
+      "condition": "C1",
+      "family": "webhook_integrity",
+      "ground_truth_state": "REPAIRABLE",
+      "proof_file": "fb-webhook-integrity-c1.proof.json",
+      "proof_file_sha256": "5f87228d907566171be9681a8b5e767937726a0938195cc59932ac6afd52b519",
+      "task_file": "fb-webhook-integrity-c1.task.json",
+      "task_file_sha256": "93daf7e4456bbe5f064584620f9e6aa8a9957cbdd916311699f8ee4caac612ea",
+      "task_id": "fb-webhook-integrity-c1"
+    },
+    {
+      "condition": "C2",
+      "family": "webhook_integrity",
+      "ground_truth_state": "REPAIRABLE",
+      "proof_file": "fb-webhook-integrity-c2.proof.json",
+      "proof_file_sha256": "1202be36b9f182869daa595f75bf1bfd550fef5e08fbf6b173c98b3d94b72973",
+      "task_file": "fb-webhook-integrity-c2.task.json",
+      "task_file_sha256": "1a40eb555eb98b725c467ff94466dc4943ee4efe5e46ae35bb4479df072d7f8c",
+      "task_id": "fb-webhook-integrity-c2"
+    },
+    {
+      "condition": "C3",
+      "family": "webhook_integrity",
+      "ground_truth_state": "UNREPAIRABLE",
+      "proof_file": "fb-webhook-integrity-c3.proof.json",
+      "proof_file_sha256": "3f52d99cd4b2e750710bc63e7deb1973c3cf788f80082ff488c347a5f2849e6c",
+      "task_file": "fb-webhook-integrity-c3.task.json",
+      "task_file_sha256": "cb53a1ba642517f405eb4f50cf4b8ada230e5c66fb74d30ee9a08c6885e0953f",
+      "task_id": "fb-webhook-integrity-c3"
+    },
+    {
+      "condition": "C4",
+      "family": "webhook_integrity",
+      "ground_truth_state": "UNREPAIRABLE",
+      "proof_file": "fb-webhook-integrity-c4.proof.json",
+      "proof_file_sha256": "d2a2ad502525e3cc87a3e8abcaddd9d7285435dcf14ee28fa7feeccbb1ce9d49",
+      "task_file": "fb-webhook-integrity-c4.task.json",
+      "task_file_sha256": "317004b5e32208eb055d9d1b505cf0ef16f6c4b8707c9681bed165469cb03ad8",
+      "task_id": "fb-webhook-integrity-c4"
+    },
+    {
+      "condition": "C5",
+      "family": "webhook_integrity",
+      "ground_truth_state": "EVALUATOR_MISMATCH",
+      "proof_file": "fb-webhook-integrity-c5.proof.json",
+      "proof_file_sha256": "a68ff061c5b364e4ccba2d4015d4467e3b02f0f50ada354c8693b5c5c21e6e06",
+      "task_file": "fb-webhook-integrity-c5.task.json",
+      "task_file_sha256": "907afcdcefc700df2a2d50527c5148814a656dcb83b6049ec8cbda8a7a5b02f7",
+      "task_id": "fb-webhook-integrity-c5"
+    },
+    {
+      "condition": "C1",
+      "family": "upload_content",
+      "ground_truth_state": "REPAIRABLE",
+      "proof_file": "fb-upload-content-c1.proof.json",
+      "proof_file_sha256": "4555b68a8439c6b4d169da87bcf4ce907b8830f6bf2433f9fd43095e4a5726e6",
+      "task_file": "fb-upload-content-c1.task.json",
+      "task_file_sha256": "74ae6f950d5c942e3e21d9e33107be0c8cb1e07b061a6d5f1bd382cc6b97e067",
+      "task_id": "fb-upload-content-c1"
+    },
+    {
+      "condition": "C2",
+      "family": "upload_content",
+      "ground_truth_state": "REPAIRABLE",
+      "proof_file": "fb-upload-content-c2.proof.json",
+      "proof_file_sha256": "d49ff7e1203ae6ff54e2d9d4dbdb3a4ccb0773eca1665da716ff99624f931a18",
+      "task_file": "fb-upload-content-c2.task.json",
+      "task_file_sha256": "96581ff4f3ae47f059a3fd072b5c7493af1231785f6edb9efe5c395455ed152d",
+      "task_id": "fb-upload-content-c2"
+    },
+    {
+      "condition": "C3",
+      "family": "upload_content",
+      "ground_truth_state": "UNREPAIRABLE",
+      "proof_file": "fb-upload-content-c3.proof.json",
+      "proof_file_sha256": "d3edbcbbf9be674be28f97b1fe862e0b469d62670bc51de10d21811c76672d47",
+      "task_file": "fb-upload-content-c3.task.json",
+      "task_file_sha256": "10d7473da3a794f5561a6e9ec46bcb21ba985388c82afbfce4c47d827e5ede9c",
+      "task_id": "fb-upload-content-c3"
+    },
+    {
+      "condition": "C4",
+      "family": "upload_content",
+      "ground_truth_state": "UNREPAIRABLE",
+      "proof_file": "fb-upload-content-c4.proof.json",
+      "proof_file_sha256": "4519fbcda41172c8cd5fdc7074dc5b7053a755b4d4d7203a54aebfdc968c1930",
+      "task_file": "fb-upload-content-c4.task.json",
+      "task_file_sha256": "9d322cbf971a42c75e60a9365cb570d3017286b2cabb44915b69e4c16efeee62",
+      "task_id": "fb-upload-content-c4"
+    },
+    {
+      "condition": "C5",
+      "family": "upload_content",
+      "ground_truth_state": "EVALUATOR_MISMATCH",
+      "proof_file": "fb-upload-content-c5.proof.json",
+      "proof_file_sha256": "44592512f45939507dcbe4d41684f0bff3d419eb87424e8b898c1bbf2972a8b6",
+      "task_file": "fb-upload-content-c5.task.json",
+      "task_file_sha256": "22f7f37d40838f990c2d61b1655be37507be1ae11ef2831564f7d9a0d41c450d",
+      "task_id": "fb-upload-content-c5"
+    },
+    {
+      "condition": "C1",
+      "family": "unicode_identity",
+      "ground_truth_state": "REPAIRABLE",
+      "proof_file": "fb-unicode-identity-c1.proof.json",
+      "proof_file_sha256": "7ad979b8e63a693380077d00b6a719090dd0653b100da11775cf1586b88b5ad0",
+      "task_file": "fb-unicode-identity-c1.task.json",
+      "task_file_sha256": "4d7873fda796dc76d89004f08d2ee590b293a2892da1fcb3827a7bf40de14400",
+      "task_id": "fb-unicode-identity-c1"
+    },
+    {
+      "condition": "C2",
+      "family": "unicode_identity",
+      "ground_truth_state": "REPAIRABLE",
+      "proof_file": "fb-unicode-identity-c2.proof.json",
+      "proof_file_sha256": "41000ee5d61e0812d49f50a2e06a63f177808b8cf80fb9574c61d69c1ae0339b",
+      "task_file": "fb-unicode-identity-c2.task.json",
+      "task_file_sha256": "6576e219aa130a4445dd03e2d4429ecf3c3ddd710c3015954913c94cbf42e2ef",
+      "task_id": "fb-unicode-identity-c2"
+    },
+    {
+      "condition": "C3",
+      "family": "unicode_identity",
+      "ground_truth_state": "UNREPAIRABLE",
+      "proof_file": "fb-unicode-identity-c3.proof.json",
+      "proof_file_sha256": "e66932c4a402ceac94a53f3db36c49fff7db0604e2b1693537594917cfcf5a14",
+      "task_file": "fb-unicode-identity-c3.task.json",
+      "task_file_sha256": "5d07a93a99292ab26c34689969c6d367bce15abc001b20bceee65e817a1a90f1",
+      "task_id": "fb-unicode-identity-c3"
+    },
+    {
+      "condition": "C4",
+      "family": "unicode_identity",
+      "ground_truth_state": "UNREPAIRABLE",
+      "proof_file": "fb-unicode-identity-c4.proof.json",
+      "proof_file_sha256": "dae68d22553910f336c5f486a28c0b1e9fde0a68a4b3050f6cc6bf12499b0f14",
+      "task_file": "fb-unicode-identity-c4.task.json",
+      "task_file_sha256": "9284b399ca1abd1bc5aa91f158819fa3ae3e35f7a21c1d720ff6a83f527dd323",
+      "task_id": "fb-unicode-identity-c4"
+    },
+    {
+      "condition": "C5",
+      "family": "unicode_identity",
+      "ground_truth_state": "EVALUATOR_MISMATCH",
+      "proof_file": "fb-unicode-identity-c5.proof.json",
+      "proof_file_sha256": "ad1a5d489509cf3e4cf7c07c065263ed7201a34f2b12f31f35d7effb55ad1f5f",
+      "task_file": "fb-unicode-identity-c5.task.json",
+      "task_file_sha256": "80320f415a2692b67d2963d711835d225f6617d3091754e7e5ffbd26de730455",
+      "task_id": "fb-unicode-identity-c5"
+    },
+    {
+      "condition": "C1",
+      "family": "dns_rebinding",
+      "ground_truth_state": "REPAIRABLE",
+      "proof_file": "fb-dns-rebinding-c1.proof.json",
+      "proof_file_sha256": "95e3cf875827f227eb8e5b4cd78ba66669680160e7f5bbbe7592786af46ef0df",
+      "task_file": "fb-dns-rebinding-c1.task.json",
+      "task_file_sha256": "b3edf81ef35e175ad73883f80a225947c0873fc91b67a488a4754e16ed64ddf1",
+      "task_id": "fb-dns-rebinding-c1"
+    },
+    {
+      "condition": "C2",
+      "family": "dns_rebinding",
+      "ground_truth_state": "REPAIRABLE",
+      "proof_file": "fb-dns-rebinding-c2.proof.json",
+      "proof_file_sha256": "48ebc8a66ba33ce881326e7a2739e147dc453eb8d17a0d9c7734d27ab6dc8ec7",
+      "task_file": "fb-dns-rebinding-c2.task.json",
+      "task_file_sha256": "2c2147b1d9bba7efc31c5cd7a2c44bea79690ac2477d083dcea4c026da7aa9ee",
+      "task_id": "fb-dns-rebinding-c2"
+    },
+    {
+      "condition": "C3",
+      "family": "dns_rebinding",
+      "ground_truth_state": "UNREPAIRABLE",
+      "proof_file": "fb-dns-rebinding-c3.proof.json",
+      "proof_file_sha256": "a95a385b489cbca47bb9c76c63e8e38e39bc54f3a2a3d2711299406d8007c431",
+      "task_file": "fb-dns-rebinding-c3.task.json",
+      "task_file_sha256": "47b4fcac10f6f502f0bde136ffec2167b1899e37f9a1482c2a80673840e8c77e",
+      "task_id": "fb-dns-rebinding-c3"
+    },
+    {
+      "condition": "C4",
+      "family": "dns_rebinding",
+      "ground_truth_state": "UNREPAIRABLE",
+      "proof_file": "fb-dns-rebinding-c4.proof.json",
+      "proof_file_sha256": "7217efcdb9eb5b5f244ca52e67889a979a41bd75acbad841194244ec3dbbb6e6",
+      "task_file": "fb-dns-rebinding-c4.task.json",
+      "task_file_sha256": "19bfb7c98fa3e5de1431b5c551c04b33e2fc0fb73598bae1830eb8ad946e0556",
+      "task_id": "fb-dns-rebinding-c4"
+    },
+    {
+      "condition": "C5",
+      "family": "dns_rebinding",
+      "ground_truth_state": "EVALUATOR_MISMATCH",
+      "proof_file": "fb-dns-rebinding-c5.proof.json",
+      "proof_file_sha256": "8ac86ea39c503ee2a9115b7c0ceb8bd4183d3d0d059403e4a8ca5fa5dbe38240",
+      "task_file": "fb-dns-rebinding-c5.task.json",
+      "task_file_sha256": "85b59dedf1e99911b7145fd0b47597bb596791da8abb45da18b4fe6b272f0b9a",
+      "task_id": "fb-dns-rebinding-c5"
+    }
+  ]
+}

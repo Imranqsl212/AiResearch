@@ -1,0 +1,43 @@
+{
+  "candidate_space_size": 3,
+  "case_count": 3,
+  "certificate_version": "7.0.0",
+  "contradiction_witness": {
+    "case_ids": [
+      "deployment_value",
+      "request_injection"
+    ],
+    "observation": {
+      "name": "SAFE_MODE",
+      "source": null,
+      "value": "1"
+    },
+    "required_outputs": [
+      true,
+      false
+    ],
+    "world_facts": [
+      {
+        "case_id": "deployment_value",
+        "name": "SAFE_MODE",
+        "required_output": true,
+        "source": "deployment",
+        "value": "1"
+      },
+      {
+        "case_id": "request_injection",
+        "name": "SAFE_MODE",
+        "required_output": false,
+        "source": "request",
+        "value": "1"
+      }
+    ]
+  },
+  "ground_truth_state": "UNREPAIRABLE",
+  "proof_sha256": "0552b1d2fcd4b205c1555037eb5c5f7a87cd6fc910e99582d947356de215a6f0",
+  "satisfying_candidates": [],
+  "scope": "fixed_stateless_candidate_modes_and_authored_finite_worlds_only",
+  "secure_candidate_gate_verdict": "NOT_APPLICABLE",
+  "task_id": "fc7-environment_injection-c3",
+  "task_sha256": "cfc63566e213eec4f5ffd6e82bc50f30b117cd791508998b12cd1d1cee49e78d"
+}

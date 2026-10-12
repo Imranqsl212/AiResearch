@@ -1,0 +1,209 @@
+{
+  "archive_sha256": "283b6a770baa849f07186150c1b7bc486fdf52cc30d1639f711c83b56486dfce",
+  "experiment_id": "rag-overnight-v2-main-0-5-0",
+  "files": [
+    {
+      "bytes": 32849,
+      "path": "runs/rag-overnight-v2-main-0-5-0-slot-000001.jsonl",
+      "sha256": "329f5d5bcdd90ac5ac019a939a5cd325c1468a0d9d0e629436fcda766841cc61"
+    },
+    {
+      "bytes": 36922,
+      "path": "runs/rag-overnight-v2-main-0-5-0-slot-000002.jsonl",
+      "sha256": "2396c2bf155ed6d2fc94007cf1a4f2d18c651f0ec83f1c882e16cc9ef89e2faf"
+    },
+    {
+      "bytes": 35279,
+      "path": "runs/rag-overnight-v2-main-0-5-0-slot-000003.jsonl",
+      "sha256": "08a9e35924db192014c5948e9c23f14ec35dbf09348d8894c309e6965b62d86d"
+    },
+    {
+      "bytes": 29158,
+      "path": "runs/rag-overnight-v2-main-0-5-0-slot-000004.jsonl",
+      "sha256": "5944163b8d6985438b1b4cbba851e874688fd978f40e78ef4a6970ebd6be3d3b"
+    },
+    {
+      "bytes": 32087,
+      "path": "runs/rag-overnight-v2-main-0-5-0-slot-000005.jsonl",
+      "sha256": "5ab96aacdb2384804cba0a69041bbaee5a49c015d92a1f7922f08289e0696bd5"
+    },
+    {
+      "bytes": 28627,
+      "path": "runs/rag-overnight-v2-main-0-5-0-slot-000006.jsonl",
+      "sha256": "9087095041e37f80033d3456100ee7e40b0f37b23abccd2235b80780f1880f59"
+    },
+    {
+      "bytes": 29589,
+      "path": "runs/rag-overnight-v2-main-0-5-0-slot-000007.jsonl",
+      "sha256": "03975d2962f9ddd717de70be640e884b8aac84dfb3e83aa77720f70c2e942a28"
+    },
+    {
+      "bytes": 30429,
+      "path": "runs/rag-overnight-v2-main-0-5-0-slot-000008.jsonl",
+      "sha256": "b9e27793d48dcf91bbc3e65a074ffb5ea431c48d7760cfb1e76b8ea2e94172fa"
+    },
+    {
+      "bytes": 43787,
+      "path": "runs/rag-overnight-v2-main-0-5-0-slot-000009.jsonl",
+      "sha256": "37e8a2ba7590a45cdc4aaeb3a7d9f22d232e0993ed8d4d2dc13349ad76feb088"
+    },
+    {
+      "bytes": 53335,
+      "path": "runs/rag-overnight-v2-main-0-5-0-slot-000010.jsonl",
+      "sha256": "aca14cf156c97dd65bdc65fecb945e81971fa3e201227cf827da07a8280758f0"
+    },
+    {
+      "bytes": 28517,
+      "path": "runs/rag-overnight-v2-main-0-5-0-slot-000011.jsonl",
+      "sha256": "7af465a5102172627f97cc5996cda7b3de8402fdf8e073605a20fd11c67e998a"
+    },
+    {
+      "bytes": 32295,
+      "path": "runs/rag-overnight-v2-main-0-5-0-slot-000012.jsonl",
+      "sha256": "b99b98a3f12a7b425ee949040dd4857b24c2f69eb22787679d541ce0956264ed"
+    },
+    {
+      "bytes": 28109,
+      "path": "runs/rag-overnight-v2-main-0-5-0-slot-000013.jsonl",
+      "sha256": "0cc72dd4fb78afcc377fe313b91f1fb7f0f309268c9603096303a3ee697cd200"
+    },
+    {
+      "bytes": 26692,
+      "path": "runs/rag-overnight-v2-main-0-5-0-slot-000014.jsonl",
+      "sha256": "e38bda89ba317adb69d41761ce4ed8e6c9341bc59e439717fe17f0ac8cb1a4d9"
+    },
+    {
+      "bytes": 30478,
+      "path": "runs/rag-overnight-v2-main-0-5-0-slot-000015.jsonl",
+      "sha256": "a9f4cb942c42357c4e34b9a1a6d54da92a331b791be62d7a65d0fadbe7f194ca"
+    },
+    {
+      "bytes": 28549,
+      "path": "runs/rag-overnight-v2-main-0-5-0-slot-000016.jsonl",
+      "sha256": "f5f73fec72ab4f10f0a151991f262203ea56f83239a8c003ca2fb20c86e5a2b0"
+    },
+    {
+      "bytes": 28864,
+      "path": "runs/rag-overnight-v2-main-0-5-0-slot-000017.jsonl",
+      "sha256": "ee943fb1b4c8d8afdf4e1ad94196d23714212ad61d58eca6ff0404b404a6d539"
+    },
+    {
+      "bytes": 36295,
+      "path": "runs/rag-overnight-v2-main-0-5-0-slot-000018.jsonl",
+      "sha256": "1e584dfced54b4e0f6966b9238f9ee8a0f14969ec91d8dd8f9b1be022c9207cb"
+    },
+    {
+      "bytes": 26373,
+      "path": "runs/rag-overnight-v2-main-0-5-0-slot-000019.jsonl",
+      "sha256": "7032a0e1a93a965802326a664ca35b50113ea6d071cb964db6698e7fcc01d8e2"
+    },
+    {
+      "bytes": 31460,
+      "path": "runs/rag-overnight-v2-main-0-5-0-slot-000020.jsonl",
+      "sha256": "c6649f107843be5364640e20814d8bb6772ac3aab4eb8f206cf1e21308df8539"
+    },
+    {
+      "bytes": 52185,
+      "path": "runs/rag-overnight-v2-main-0-5-0-slot-000021.jsonl",
+      "sha256": "88d26fca5ab1267c481de463c86ee8367de06487049487680deda2b9138ea271"
+    },
+    {
+      "bytes": 40765,
+      "path": "runs/rag-overnight-v2-main-0-5-0-slot-000022.jsonl",
+      "sha256": "093adc1be31fe8d780479d30b492691b4cf247b7e26ad54b71b09551f6ba541b"
+    },
+    {
+      "bytes": 25883,
+      "path": "runs/rag-overnight-v2-main-0-5-0-slot-000023.jsonl",
+      "sha256": "1ceab3b55786f4ed92f28c488fab0d2c53375699e4fb954b3fbd681dcb41bd7c"
+    },
+    {
+      "bytes": 33238,
+      "path": "runs/rag-overnight-v2-main-0-5-0-slot-000024.jsonl",
+      "sha256": "e0f70ed6cd5cbf346f80666ee0349296380fe50c035fc6c04f0028f485204c76"
+    },
+    {
+      "bytes": 26822,
+      "path": "runs/rag-overnight-v2-main-0-5-0-slot-000025.jsonl",
+      "sha256": "c286d9a0059c4ba0ad27504c792e393bfadceb4c0486885e3262cbf3f5df6499"
+    },
+    {
+      "bytes": 26867,
+      "path": "runs/rag-overnight-v2-main-0-5-0-slot-000026.jsonl",
+      "sha256": "2232e945f463f1dd6b0254901629cb77eb2178470cc05d5155e09491dfac4414"
+    },
+    {
+      "bytes": 32448,
+      "path": "runs/rag-overnight-v2-main-0-5-0-slot-000027.jsonl",
+      "sha256": "d4a4289c66de5f57707154206ab05271fb0131a2ecda693f411019c1a89041db"
+    },
+    {
+      "bytes": 28371,
+      "path": "runs/rag-overnight-v2-main-0-5-0-slot-000028.jsonl",
+      "sha256": "fb06a4766d4772879af665522f463cbf976cc71c08ff17763b1ffb431ff9edb4"
+    },
+    {
+      "bytes": 28474,
+      "path": "runs/rag-overnight-v2-main-0-5-0-slot-000029.jsonl",
+      "sha256": "e63a4f1211625e6bc50c4b6a3b83566878f58932d6ad629e24d6eb9e2f9ae884"
+    },
+    {
+      "bytes": 30386,
+      "path": "runs/rag-overnight-v2-main-0-5-0-slot-000030.jsonl",
+      "sha256": "38fe4df557b4d57132052a7d8c4ab1a7ca4a546c63cbd915c4043e874d2db535"
+    },
+    {
+      "bytes": 33729,
+      "path": "runs/rag-overnight-v2-main-0-5-0-slot-000031.jsonl",
+      "sha256": "1562becb7d4155b72b7baa6deed7d6ac635f21e5c5b72418b8b95d070b3d5a1f"
+    },
+    {
+      "bytes": 37350,
+      "path": "runs/rag-overnight-v2-main-0-5-0-slot-000032.jsonl",
+      "sha256": "df0860219dca973f65759bde530d4fcade1e50155dd1fb08644d4538c81598e0"
+    },
+    {
+      "bytes": 28805,
+      "path": "runs/rag-overnight-v2-main-0-5-0-slot-000033.jsonl",
+      "sha256": "dbd48e0a1c510b6e261108ca1e0729ae34e4036c7ed89f0873603e8e0c3914a3"
+    },
+    {
+      "bytes": 28186,
+      "path": "runs/rag-overnight-v2-main-0-5-0-slot-000034.jsonl",
+      "sha256": "29fe687887f3280f873e1c1b8f392346df05fbb026d1627c01a2051735e47681"
+    },
+    {
+      "bytes": 28753,
+      "path": "runs/rag-overnight-v2-main-0-5-0-slot-000035.jsonl",
+      "sha256": "b675062d5e0b3d0e06a51f1827193806a4d6e5c0bde371013978a76060be1e50"
+    },
+    {
+      "bytes": 26391,
+      "path": "runs/rag-overnight-v2-main-0-5-0-slot-000036.jsonl",
+      "sha256": "956557a14b7daa33f92d4c4d25e0cd25f29fdac8e69ed345ba9752e6df6bfe3b"
+    },
+    {
+      "bytes": 34939,
+      "path": "runs/rag-overnight-v2-main-0-5-0-slot-000037.jsonl",
+      "sha256": "4a811d0e29f44a980e4248ffc4eae0ab87c4a039eeb47eebeac44300c3078b47"
+    },
+    {
+      "bytes": 32732,
+      "path": "runs/rag-overnight-v2-main-0-5-0-slot-000038.jsonl",
+      "sha256": "14f59ea489ede2c54b72efcd0396bedf009bf356d3f7578a368c6b018c2d4b34"
+    },
+    {
+      "bytes": 37947,
+      "path": "runs/rag-overnight-v2-main-0-5-0-slot-000039.jsonl",
+      "sha256": "55e9f13d1081cf9d59145cf5a4e22e3745999435a15a07ca0b7534f8da0e380c"
+    },
+    {
+      "bytes": 24048,
+      "path": "runs/rag-overnight-v2-main-0-5-0-slot-000040.jsonl",
+      "sha256": "dae1543ef0b338dc4008e2c9dc77a99cf895123f072fd5b73e94d86d0e7ec79c"
+    }
+  ],
+  "manifest_version": "0.1.0",
+  "schema_version": "0.1.0",
+  "sealed": true
+}

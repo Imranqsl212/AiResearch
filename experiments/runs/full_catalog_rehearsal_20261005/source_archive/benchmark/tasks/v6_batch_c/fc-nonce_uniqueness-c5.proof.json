@@ -1,0 +1,20 @@
+{
+  "candidate_space_size": 4,
+  "case_count": 2,
+  "certificate_version": "6.0.0",
+  "contradiction_witness": null,
+  "ground_truth_state": "EVALUATOR_MISMATCH",
+  "proof_sha256": "8e7987cc9a63b444c75304123573d3c31601f64b173978db010153fe30bd530a",
+  "satisfying_candidates": [
+    {
+      "mode": "counter"
+    },
+    {
+      "mode": "random"
+    }
+  ],
+  "scope": "finite_candidate_language_and_listed_cases_only",
+  "secure_candidate_gate_verdict": "FAIL",
+  "task_id": "fc-nonce_uniqueness-c5",
+  "task_sha256": "fccaa5bffffa9c8304dc0431040ae3559296fc6b508bead832612dba5d1bb325"
+}

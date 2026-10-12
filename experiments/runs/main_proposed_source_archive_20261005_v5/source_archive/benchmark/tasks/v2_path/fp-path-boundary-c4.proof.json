@@ -1,0 +1,32 @@
+{
+  "candidate_space_size": 256,
+  "certificate_version": "2.0.0",
+  "contradiction_witness": {
+    "request_path": "assets/current",
+    "required_outputs": [
+      "serve:docs/guide.txt",
+      "reject"
+    ],
+    "resolved_paths": [
+      "/srv/public/docs/guide.txt",
+      "/srv/private/key.txt"
+    ],
+    "state_ids": [
+      "alias-inside",
+      "alias-outside-hidden"
+    ]
+  },
+  "ground_truth_state": "UNREPAIRABLE",
+  "proof_sha256": "ddceb74e41d0e5298f6f71413ae737a01d3d19c72499487186fdb030c3bf9585",
+  "request_paths": [
+    "assets/current",
+    "docs/../../private/key.txt",
+    "docs/../images/logo.png",
+    "docs/guide.txt"
+  ],
+  "satisfying_candidates": [],
+  "scope": "exhaustive_finite_path_boundary_only",
+  "secure_candidate_gate_verdict": "NOT_APPLICABLE",
+  "task_id": "fp-path-boundary-c4",
+  "task_sha256": "9f3e43aa542104789154c1eaf715e741a30cbf609a8a220dc03054d1f3e6bf64"
+}

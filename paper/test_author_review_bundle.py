@@ -17,8 +17,8 @@ from paper import build_author_review_bundle as bundle
 
 class AuthorReviewBundleTests(unittest.TestCase):
     def test_deterministic_exact_source_copy_and_review_flags(self) -> None:
-        self.assertEqual(bundle.OUTPUT, bundle.V6_OUTPUT)
-        self.assertNotEqual(bundle.V5_OUTPUT, bundle.V6_OUTPUT)
+        self.assertEqual(bundle.OUTPUT, bundle.V7_OUTPUT)
+        self.assertNotEqual(bundle.V6_OUTPUT, bundle.V7_OUTPUT)
         self.assertEqual(set(bundle.V6_SOURCE_NAMES) - set(bundle.V5_SOURCE_NAMES), {
             "paper/audit_original_archive_provenance.py",
             "paper/test_audit_original_archive_provenance.py",
@@ -35,7 +35,7 @@ class AuthorReviewBundleTests(unittest.TestCase):
             self.assertTrue(verified["local_sources_match"])
             files = bundle._archive_files(first)
             manifest = json.loads(files[bundle.MANIFEST_NAME])
-            self.assertEqual(manifest["version"], bundle.V6_VERSION)
+            self.assertEqual(manifest["version"], bundle.V7_VERSION)
             self.assertFalse(manifest["public_release_approved"])
             self.assertFalse(manifest["journal_submission_approved"])
             self.assertFalse(manifest["original_raw_data_included"])
@@ -44,7 +44,7 @@ class AuthorReviewBundleTests(unittest.TestCase):
             for name in bundle.SOURCE_NAMES:
                 self.assertEqual(files[name], (bundle.ROOT / name).read_bytes())
             decision = files["paper/AUTHOR_SUBMISSION_DECISIONS_20261005.md"].decode("utf-8")
-            for name in bundle._decision_bound_names(bundle.V6_SPEC):
+            for name in bundle._decision_bound_names(bundle.V7_SPEC):
                 self.assertIn(Path(name).name, decision)
                 self.assertIn(hashlib.sha256(files[name]).hexdigest(), decision)
 

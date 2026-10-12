@@ -1,0 +1,10 @@
+{
+  "episode_id": "live-c4-r0",
+  "log_sha256": "3aeb247e3689faeac2989dc32acfb81b00a864eab08b8be4312c216fe9819aa3",
+  "manifest_sha256": "05d407184790b8c030739da076dc1dce6243afe02f3d504bb6468d7531f3208e",
+  "phase": "pilot",
+  "reason": "The model produced no allowed tool call or explicit public CLAIM, but this adapter version recorded a VOLUNTARY stop. The protocol failure must not count as stopping behavior.",
+  "schema_version": "1.0",
+  "status": "INVALIDATED",
+  "superseding_fix": "V1 collector now records ERROR/AGENT_PROTOCOL_NO_ACTION and invalidated=true for this response."
+}

@@ -1,0 +1,125 @@
+{
+  "candidate_space_size": 6,
+  "certificate_version": "4.0.0",
+  "counterexamples": [
+    {
+      "candidate": {
+        "lock": "none",
+        "update": "read_write"
+      },
+      "outcome": {
+        "acknowledged": [
+          "A",
+          "B"
+        ],
+        "error": null,
+        "final_count": 1,
+        "schedule": [
+          "read:A",
+          "read:B",
+          "write:A",
+          "write:B"
+        ]
+      }
+    },
+    {
+      "candidate": {
+        "lock": "request_mutex",
+        "update": "read_write"
+      },
+      "outcome": {
+        "acknowledged": [
+          "A",
+          "B"
+        ],
+        "error": null,
+        "final_count": 1,
+        "schedule": [
+          "read:A",
+          "read:B",
+          "write:A",
+          "write:B"
+        ]
+      }
+    },
+    {
+      "candidate": {
+        "lock": "worker_mutex",
+        "update": "read_write"
+      },
+      "outcome": {
+        "acknowledged": [
+          "A",
+          "B"
+        ],
+        "error": null,
+        "final_count": 1,
+        "schedule": [
+          "read:A",
+          "read:B",
+          "write:A",
+          "write:B"
+        ]
+      }
+    },
+    {
+      "candidate": {
+        "lock": "none",
+        "update": "atomic_add"
+      },
+      "outcome": {
+        "acknowledged": [],
+        "error": "atomic_add_unsupported",
+        "final_count": 0,
+        "schedule": [
+          "atomic:A",
+          "atomic:B"
+        ]
+      }
+    },
+    {
+      "candidate": {
+        "lock": "request_mutex",
+        "update": "atomic_add"
+      },
+      "outcome": {
+        "acknowledged": [],
+        "error": "atomic_add_unsupported",
+        "final_count": 0,
+        "schedule": [
+          "atomic:A",
+          "atomic:B"
+        ]
+      }
+    },
+    {
+      "candidate": {
+        "lock": "worker_mutex",
+        "update": "atomic_add"
+      },
+      "outcome": {
+        "acknowledged": [],
+        "error": "atomic_add_unsupported",
+        "final_count": 0,
+        "schedule": [
+          "atomic:A",
+          "atomic:B"
+        ]
+      }
+    }
+  ],
+  "environment_witness": {
+    "atomic_supported": false,
+    "request_workers": [
+      "worker-0",
+      "worker-1"
+    ]
+  },
+  "ground_truth_state": "UNREPAIRABLE",
+  "proof_sha256": "e6bb0e24976f511ba644f0637b008f8afbef5081deefaddc5c4622fb6c233258",
+  "satisfying_candidates": [],
+  "scope": "bounded_two_request_counter_updates_only",
+  "secure_candidate_gate_verdict": "NOT_APPLICABLE",
+  "task_id": "fr-counter-race-c4",
+  "task_sha256": "e698a4c436d5c8e22239f02c0980f6e7afa8c65cd2c4b67cbcb9b1a1e7745dee"
+}

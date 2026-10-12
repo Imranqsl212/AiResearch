@@ -1,0 +1,61 @@
+{
+  "candidate_space_size": 5,
+  "case_count": 2,
+  "certificate_version": "5.0.0",
+  "contradiction_witness": null,
+  "counterexamples": [
+    {
+      "candidate": {
+        "mode": "nfkc_exact"
+      },
+      "counterexample": {
+        "actual": true,
+        "case_id": "ascii_impostor",
+        "observation": {
+          "principal": "ffi"
+        },
+        "required": false
+      }
+    },
+    {
+      "candidate": {
+        "mode": "casefold_exact"
+      },
+      "counterexample": {
+        "actual": true,
+        "case_id": "ascii_impostor",
+        "observation": {
+          "principal": "ffi"
+        },
+        "required": false
+      }
+    },
+    {
+      "candidate": {
+        "mode": "reject_all"
+      },
+      "counterexample": {
+        "actual": false,
+        "case_id": "trusted_ligature",
+        "observation": {
+          "principal": "ﬃ"
+        },
+        "required": true
+      }
+    }
+  ],
+  "ground_truth_state": "EVALUATOR_MISMATCH",
+  "proof_sha256": "84b7e2768e5d4a9327b67851b006a0e00929c313b97d8c343079c4a623db22d1",
+  "satisfying_candidates": [
+    {
+      "mode": "raw_exact"
+    },
+    {
+      "mode": "nfc_exact"
+    }
+  ],
+  "scope": "finite_candidate_language_and_listed_cases_only",
+  "secure_candidate_gate_verdict": "FAIL",
+  "task_id": "fb-unicode-identity-c5",
+  "task_sha256": "a8aa634c2025c904136f507f7d82567d901f7ce7c3d835c074d3ecffc573a165"
+}

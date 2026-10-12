@@ -1,0 +1,369 @@
+{
+  "experiment_id": "rag-overnight-v2-main-0-5-0",
+  "method": "seeded_family_repeat_block_rotation_v1",
+  "runs_per_task": 1,
+  "schema_version": "0.1.0",
+  "seed": 7,
+  "slots": [
+    {
+      "condition": "RW",
+      "order": 1,
+      "repeat_index": 1,
+      "slot_id": "slot-000001",
+      "stratum": "MAIN",
+      "task_family": "key-derivation--rag-relevant",
+      "task_id": "crypto-key-derivation-rw--rag-relevant"
+    },
+    {
+      "condition": "UD",
+      "order": 2,
+      "repeat_index": 1,
+      "slot_id": "slot-000002",
+      "stratum": "MAIN",
+      "task_family": "key-derivation--rag-relevant",
+      "task_id": "crypto-key-derivation-ud--rag-relevant"
+    },
+    {
+      "condition": "UW",
+      "order": 3,
+      "repeat_index": 1,
+      "slot_id": "slot-000003",
+      "stratum": "MAIN",
+      "task_family": "key-derivation--rag-relevant",
+      "task_id": "crypto-key-derivation-uw--rag-relevant"
+    },
+    {
+      "condition": "RD",
+      "order": 4,
+      "repeat_index": 1,
+      "slot_id": "slot-000004",
+      "stratum": "MAIN",
+      "task_family": "key-derivation--rag-relevant",
+      "task_id": "crypto-key-derivation-rd--rag-relevant"
+    },
+    {
+      "condition": "UD",
+      "order": 5,
+      "repeat_index": 1,
+      "slot_id": "slot-000005",
+      "stratum": "MAIN",
+      "task_family": "sqli--rag-relevant",
+      "task_id": "web-sqli-ud--rag-relevant"
+    },
+    {
+      "condition": "UW",
+      "order": 6,
+      "repeat_index": 1,
+      "slot_id": "slot-000006",
+      "stratum": "MAIN",
+      "task_family": "sqli--rag-relevant",
+      "task_id": "web-sqli-uw--rag-relevant"
+    },
+    {
+      "condition": "RD",
+      "order": 7,
+      "repeat_index": 1,
+      "slot_id": "slot-000007",
+      "stratum": "MAIN",
+      "task_family": "sqli--rag-relevant",
+      "task_id": "web-sqli-rd--rag-relevant"
+    },
+    {
+      "condition": "RW",
+      "order": 8,
+      "repeat_index": 1,
+      "slot_id": "slot-000008",
+      "stratum": "MAIN",
+      "task_family": "sqli--rag-relevant",
+      "task_id": "web-sqli-rw--rag-relevant"
+    },
+    {
+      "condition": "UW",
+      "order": 9,
+      "repeat_index": 1,
+      "slot_id": "slot-000009",
+      "stratum": "MAIN",
+      "task_family": "nonce--rag-relevant",
+      "task_id": "crypto-nonce-uw--rag-relevant"
+    },
+    {
+      "condition": "UD",
+      "order": 10,
+      "repeat_index": 1,
+      "slot_id": "slot-000010",
+      "stratum": "MAIN",
+      "task_family": "nonce--rag-relevant",
+      "task_id": "crypto-nonce-ud--rag-relevant"
+    },
+    {
+      "condition": "RD",
+      "order": 11,
+      "repeat_index": 1,
+      "slot_id": "slot-000011",
+      "stratum": "MAIN",
+      "task_family": "nonce--rag-relevant",
+      "task_id": "crypto-nonce-rd--rag-relevant"
+    },
+    {
+      "condition": "RW",
+      "order": 12,
+      "repeat_index": 1,
+      "slot_id": "slot-000012",
+      "stratum": "MAIN",
+      "task_family": "nonce--rag-relevant",
+      "task_id": "crypto-nonce-rw--rag-relevant"
+    },
+    {
+      "condition": "UW",
+      "order": 13,
+      "repeat_index": 1,
+      "slot_id": "slot-000013",
+      "stratum": "MAIN",
+      "task_family": "weak-randomness--rag-relevant",
+      "task_id": "crypto-weak-randomness-uw--rag-relevant"
+    },
+    {
+      "condition": "RD",
+      "order": 14,
+      "repeat_index": 1,
+      "slot_id": "slot-000014",
+      "stratum": "MAIN",
+      "task_family": "weak-randomness--rag-relevant",
+      "task_id": "crypto-weak-randomness-rd--rag-relevant"
+    },
+    {
+      "condition": "UD",
+      "order": 15,
+      "repeat_index": 1,
+      "slot_id": "slot-000015",
+      "stratum": "MAIN",
+      "task_family": "weak-randomness--rag-relevant",
+      "task_id": "crypto-weak-randomness-ud--rag-relevant"
+    },
+    {
+      "condition": "RW",
+      "order": 16,
+      "repeat_index": 1,
+      "slot_id": "slot-000016",
+      "stratum": "MAIN",
+      "task_family": "weak-randomness--rag-relevant",
+      "task_id": "crypto-weak-randomness-rw--rag-relevant"
+    },
+    {
+      "condition": "RW",
+      "order": 17,
+      "repeat_index": 1,
+      "slot_id": "slot-000017",
+      "stratum": "MAIN",
+      "task_family": "xss--rag-off",
+      "task_id": "web-xss-rw--rag-off"
+    },
+    {
+      "condition": "UD",
+      "order": 18,
+      "repeat_index": 1,
+      "slot_id": "slot-000018",
+      "stratum": "MAIN",
+      "task_family": "xss--rag-off",
+      "task_id": "web-xss-ud--rag-off"
+    },
+    {
+      "condition": "RD",
+      "order": 19,
+      "repeat_index": 1,
+      "slot_id": "slot-000019",
+      "stratum": "MAIN",
+      "task_family": "xss--rag-off",
+      "task_id": "web-xss-rd--rag-off"
+    },
+    {
+      "condition": "UW",
+      "order": 20,
+      "repeat_index": 1,
+      "slot_id": "slot-000020",
+      "stratum": "MAIN",
+      "task_family": "xss--rag-off",
+      "task_id": "web-xss-uw--rag-off"
+    },
+    {
+      "condition": "UW",
+      "order": 21,
+      "repeat_index": 1,
+      "slot_id": "slot-000021",
+      "stratum": "MAIN",
+      "task_family": "key-derivation--rag-off",
+      "task_id": "crypto-key-derivation-uw--rag-off"
+    },
+    {
+      "condition": "RW",
+      "order": 22,
+      "repeat_index": 1,
+      "slot_id": "slot-000022",
+      "stratum": "MAIN",
+      "task_family": "key-derivation--rag-off",
+      "task_id": "crypto-key-derivation-rw--rag-off"
+    },
+    {
+      "condition": "RD",
+      "order": 23,
+      "repeat_index": 1,
+      "slot_id": "slot-000023",
+      "stratum": "MAIN",
+      "task_family": "key-derivation--rag-off",
+      "task_id": "crypto-key-derivation-rd--rag-off"
+    },
+    {
+      "condition": "UD",
+      "order": 24,
+      "repeat_index": 1,
+      "slot_id": "slot-000024",
+      "stratum": "MAIN",
+      "task_family": "key-derivation--rag-off",
+      "task_id": "crypto-key-derivation-ud--rag-off"
+    },
+    {
+      "condition": "RW",
+      "order": 25,
+      "repeat_index": 1,
+      "slot_id": "slot-000025",
+      "stratum": "MAIN",
+      "task_family": "xss--rag-relevant",
+      "task_id": "web-xss-rw--rag-relevant"
+    },
+    {
+      "condition": "UW",
+      "order": 26,
+      "repeat_index": 1,
+      "slot_id": "slot-000026",
+      "stratum": "MAIN",
+      "task_family": "xss--rag-relevant",
+      "task_id": "web-xss-uw--rag-relevant"
+    },
+    {
+      "condition": "UD",
+      "order": 27,
+      "repeat_index": 1,
+      "slot_id": "slot-000027",
+      "stratum": "MAIN",
+      "task_family": "xss--rag-relevant",
+      "task_id": "web-xss-ud--rag-relevant"
+    },
+    {
+      "condition": "RD",
+      "order": 28,
+      "repeat_index": 1,
+      "slot_id": "slot-000028",
+      "stratum": "MAIN",
+      "task_family": "xss--rag-relevant",
+      "task_id": "web-xss-rd--rag-relevant"
+    },
+    {
+      "condition": "RW",
+      "order": 29,
+      "repeat_index": 1,
+      "slot_id": "slot-000029",
+      "stratum": "MAIN",
+      "task_family": "nonce--rag-off",
+      "task_id": "crypto-nonce-rw--rag-off"
+    },
+    {
+      "condition": "RD",
+      "order": 30,
+      "repeat_index": 1,
+      "slot_id": "slot-000030",
+      "stratum": "MAIN",
+      "task_family": "nonce--rag-off",
+      "task_id": "crypto-nonce-rd--rag-off"
+    },
+    {
+      "condition": "UW",
+      "order": 31,
+      "repeat_index": 1,
+      "slot_id": "slot-000031",
+      "stratum": "MAIN",
+      "task_family": "nonce--rag-off",
+      "task_id": "crypto-nonce-uw--rag-off"
+    },
+    {
+      "condition": "UD",
+      "order": 32,
+      "repeat_index": 1,
+      "slot_id": "slot-000032",
+      "stratum": "MAIN",
+      "task_family": "nonce--rag-off",
+      "task_id": "crypto-nonce-ud--rag-off"
+    },
+    {
+      "condition": "RW",
+      "order": 33,
+      "repeat_index": 1,
+      "slot_id": "slot-000033",
+      "stratum": "MAIN",
+      "task_family": "weak-randomness--rag-off",
+      "task_id": "crypto-weak-randomness-rw--rag-off"
+    },
+    {
+      "condition": "UW",
+      "order": 34,
+      "repeat_index": 1,
+      "slot_id": "slot-000034",
+      "stratum": "MAIN",
+      "task_family": "weak-randomness--rag-off",
+      "task_id": "crypto-weak-randomness-uw--rag-off"
+    },
+    {
+      "condition": "UD",
+      "order": 35,
+      "repeat_index": 1,
+      "slot_id": "slot-000035",
+      "stratum": "MAIN",
+      "task_family": "weak-randomness--rag-off",
+      "task_id": "crypto-weak-randomness-ud--rag-off"
+    },
+    {
+      "condition": "RD",
+      "order": 36,
+      "repeat_index": 1,
+      "slot_id": "slot-000036",
+      "stratum": "MAIN",
+      "task_family": "weak-randomness--rag-off",
+      "task_id": "crypto-weak-randomness-rd--rag-off"
+    },
+    {
+      "condition": "UD",
+      "order": 37,
+      "repeat_index": 1,
+      "slot_id": "slot-000037",
+      "stratum": "MAIN",
+      "task_family": "sqli--rag-off",
+      "task_id": "web-sqli-ud--rag-off"
+    },
+    {
+      "condition": "RD",
+      "order": 38,
+      "repeat_index": 1,
+      "slot_id": "slot-000038",
+      "stratum": "MAIN",
+      "task_family": "sqli--rag-off",
+      "task_id": "web-sqli-rd--rag-off"
+    },
+    {
+      "condition": "RW",
+      "order": 39,
+      "repeat_index": 1,
+      "slot_id": "slot-000039",
+      "stratum": "MAIN",
+      "task_family": "sqli--rag-off",
+      "task_id": "web-sqli-rw--rag-off"
+    },
+    {
+      "condition": "UW",
+      "order": 40,
+      "repeat_index": 1,
+      "slot_id": "slot-000040",
+      "stratum": "MAIN",
+      "task_family": "sqli--rag-off",
+      "task_id": "web-sqli-uw--rag-off"
+    }
+  ]
+}

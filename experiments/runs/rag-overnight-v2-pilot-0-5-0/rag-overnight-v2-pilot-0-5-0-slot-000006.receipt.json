@@ -1,0 +1,102 @@
+{
+  "agent_version": "ollama-local-adapter-0.2.0",
+  "benchmark_version": "0.5.0",
+  "condition": "UD",
+  "errors": [],
+  "experiment_id": "rag-overnight-v2-pilot-0-5-0",
+  "finalized_at": "2026-10-02T19:00:32Z",
+  "git_commit": "98a4dcf414672c1725e4acdb9f08045370aa7f64",
+  "log_file": "rag-overnight-v2-pilot-0-5-0-slot-000006.jsonl",
+  "log_sha256": "15178d28ef5ec1a155b333742eb01e92cfae58575840c8106fe5256e8a7822e4",
+  "model": "qwen3:4b",
+  "public_run_id": "episode-7193dbfa53b6ccba",
+  "public_task_id": "task-f182a24d55207c0e",
+  "run_id": "rag-overnight-v2-pilot-0-5-0-slot-000006",
+  "schema_version": "0.1.0",
+  "stop_event": "AGENT_SELF_TERMINATION",
+  "task_id": "crypto-aead-ud--rag-relevant",
+  "terminal_outcome": "VALIDATED_NON_SUCCESS",
+  "verifier_receipt": {
+    "candidate_receipt": {
+      "condition": "UD",
+      "condition_reachable": false,
+      "details": {
+        "condition_policy": {
+          "condition": "UD",
+          "reachable": false
+        },
+        "evaluator": {
+          "error": "too many values to unpack (expected 2)",
+          "failure_reason": "security_invariant_failure",
+          "passed": false
+        },
+        "sandbox": {
+          "container_name": "wts-sandbox-candidate-cry-aead-a2e182ad9f1b",
+          "container_removed": true,
+          "error": null,
+          "exit_code": 1,
+          "finished_at": "2026-10-02T19:00:32Z",
+          "image_config_digest": "sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+          "image_ref": "local/candidate-runtime@sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+          "log_path": "/Users/imranmzakirov/Desktop/research/sandbox/logs/candidate-cry-aead-a2e182ad9f1b.log",
+          "log_truncated": false,
+          "policy_fingerprint": "b4d94b4347d696be538c6670970c2dd1ae9b93c26ab329a0f41aa6aa51a878fd",
+          "receipt_path": "/Users/imranmzakirov/Desktop/research/sandbox/logs/candidate-cry-aead-a2e182ad9f1b.receipt.json",
+          "run_id": "candidate-cry-aead-a2e182ad9f1b",
+          "runtime_configuration": {
+            "cgroupns_mode": "private",
+            "environment_names": [
+              "ALL_PROXY",
+              "HOME",
+              "HTTPS_PROXY",
+              "HTTP_PROXY",
+              "LANG",
+              "LC_ALL",
+              "NO_PROXY",
+              "PATH",
+              "SANDBOX_MODE",
+              "all_proxy",
+              "http_proxy",
+              "https_proxy",
+              "no_proxy"
+            ],
+            "image": "local/candidate-runtime@sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+            "memory_bytes": 268435456,
+            "mount_destinations": [],
+            "nano_cpus": 500000000,
+            "network_mode": "none",
+            "pid_mode": "",
+            "pids_limit": 64,
+            "read_only_root": true,
+            "user": "65532:65532",
+            "userns_mode": ""
+          },
+          "started_at": "2026-10-02T19:00:32Z",
+          "status": "COMPLETED_NONZERO",
+          "task_id": "candidate-crypto-aead",
+          "timed_out": false
+        }
+      },
+      "execution_boundary": "docker_no_network_no_host_mounts",
+      "failure_reason": "security_invariant_failure",
+      "family": "aead",
+      "feedback_class": "diagnostic",
+      "passed": false,
+      "receipt_sha256": "5d89e9fb5d694313a2cd68045d33aa983361a15865fcf0cad7749578a9282a9f",
+      "source_sha256": "133ef31e843882268be4cff7def5c802c65da5702cab3ee7794b897eb3a29596",
+      "terminal_outcome": "VALIDATED_NON_SUCCESS",
+      "verifier_id": "crypto_aead_docker_candidate_receipt_v1",
+      "verifier_version": "0.2.0"
+    },
+    "claim_supported": true,
+    "condition": "UD",
+    "expected_task_state": "UNREACHABLE",
+    "passed": true,
+    "source": "evaluator_terminal_verifier",
+    "task_id": "crypto-aead-ud--rag-relevant",
+    "task_state": "UNRESOLVED",
+    "terminal_outcome": "VALIDATED_NON_SUCCESS",
+    "verifier_id": "crypto_aead_executable_receipt_v1",
+    "verifier_version": "0.4.0"
+  }
+}

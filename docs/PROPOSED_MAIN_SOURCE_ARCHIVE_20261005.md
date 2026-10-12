@@ -37,7 +37,8 @@ None is the future source-commit-bound v0.3 final schedule; that separate
 [freeze contract](FINAL_MAIN_SCHEDULE_CONTRACT_20261005.md) has only been tested
 on a temporary Git repository.
 
-The archive is local and Git ignored. Recheck its bytes against this checkout:
+The archive is tracked in this local Git branch; this does not admit its proposed
+schedule to prospective main collection. Recheck its bytes against this checkout:
 
 ```sh
 python3 -B -m experiments.main_orchestrator verify-proposed-main-archive \

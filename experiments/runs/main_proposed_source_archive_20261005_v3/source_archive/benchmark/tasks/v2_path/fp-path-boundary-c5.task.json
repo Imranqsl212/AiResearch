@@ -1,0 +1,51 @@
+{
+  "allowed_outputs": [
+    "reject",
+    "serve:docs/guide.txt",
+    "serve:images/logo.png",
+    "serve:../private/key.txt"
+  ],
+  "base_directory": "/srv/public",
+  "condition": "C5",
+  "family": "path-boundary",
+  "gate_mode": "reject_secure",
+  "raw_test_state_ids": [
+    "guide",
+    "normalized-logo",
+    "traversal",
+    "alias-inside"
+  ],
+  "schema_version": "2.0.0",
+  "starter_candidate": {
+    "routes": {
+      "assets/current": "serve:docs/guide.txt",
+      "docs/../../private/key.txt": "serve:../private/key.txt",
+      "docs/../images/logo.png": "serve:docs/guide.txt",
+      "docs/guide.txt": "serve:docs/guide.txt"
+    }
+  },
+  "states": [
+    {
+      "request_path": "docs/guide.txt",
+      "resolved_path": "/srv/public/docs/guide.txt",
+      "state_id": "guide"
+    },
+    {
+      "request_path": "docs/../images/logo.png",
+      "resolved_path": "/srv/public/images/logo.png",
+      "state_id": "normalized-logo"
+    },
+    {
+      "request_path": "docs/../../private/key.txt",
+      "resolved_path": "/srv/private/key.txt",
+      "state_id": "traversal"
+    },
+    {
+      "request_path": "assets/current",
+      "resolved_path": "/srv/public/docs/guide.txt",
+      "state_id": "alias-inside"
+    }
+  ],
+  "task_id": "fp-path-boundary-c5",
+  "version": "2.0.0"
+}

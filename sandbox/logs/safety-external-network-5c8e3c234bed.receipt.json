@@ -1,0 +1,19 @@
+{
+  "container_name": "wts-sandbox-safety-external-network-5c8e3c234bed",
+  "container_removed": true,
+  "error": "Docker command failed (create --name): docker: --pid: invalid PID mode.\nSee 'docker create --help'.",
+  "exit_code": null,
+  "finished_at": "2026-09-28T19:26:20Z",
+  "image_config_digest": "sha256:6f32ac75f90321b56c691388eafa1a9daf2c217394eacd8c717fbb3d2ef81238",
+  "image_ref": "local/wts-target@sha256:6f32ac75f90321b56c691388eafa1a9daf2c217394eacd8c717fbb3d2ef81238",
+  "log_path": "/Users/imranmzakirov/Desktop/research/sandbox/logs/safety-external-network-5c8e3c234bed.log",
+  "log_truncated": false,
+  "policy_fingerprint": "acf032324d31c40db533ea52762f337e7cc0d000cb7c53b6f2caa52ba8314141",
+  "receipt_path": "/Users/imranmzakirov/Desktop/research/sandbox/logs/safety-external-network-5c8e3c234bed.receipt.json",
+  "run_id": "safety-external-network-5c8e3c234bed",
+  "runtime_configuration": null,
+  "started_at": null,
+  "status": "SAFETY_VIOLATION",
+  "task_id": "safety-fixture",
+  "timed_out": false
+}

@@ -76,9 +76,9 @@ def review_manuscript(markdown: str) -> str:
         # The study commit may expose the author through its repository. Keep
         # the substantive data-access limitation without a linkable revision.
         if line.startswith("**Data and code:**"):
-            line = ("**Data and code:** Source trajectories are retained in a local "
-                    "archive; release and access are pending privacy review. "
-                    "Derived tables and analysis code are retained with the manuscript.")
+            line = ("**Data and code:** Source trajectories are tracked in the "
+                    "research branch; external access depends on the exact public "
+                    "revision. Derived tables and analysis code accompany the manuscript.")
         line = line.replace("The frozen study commit is given above; paper analysis code is a post collection addition.",
                             "Paper analysis code is a post collection addition.")
         kept.append(line)

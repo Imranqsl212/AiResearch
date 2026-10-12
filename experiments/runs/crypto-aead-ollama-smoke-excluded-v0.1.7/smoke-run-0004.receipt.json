@@ -1,0 +1,25 @@
+{
+  "agent_version": "ollama-local-adapter-0.1.5",
+  "benchmark_version": "crypto-aead-executable-0.1.6",
+  "condition": "RD",
+  "errors": [
+    {
+      "message": "attempt source must contain the bounded target interface",
+      "type": "ValueError"
+    }
+  ],
+  "experiment_id": "crypto-aead-ollama-smoke-excluded-v0.1.7",
+  "finalized_at": "2026-09-30T15:19:47Z",
+  "git_commit": "8d5bcac786bfd9a75f7a60b1ed3bbe8be1d15086",
+  "log_file": "smoke-run-0004.jsonl",
+  "log_sha256": "fc0ec7ed18a3d3d9e57c6f753c928bdec9cd4101070c1ee286902c1732b298ea",
+  "model": "qwen3:4b",
+  "public_run_id": "crypto-smoke-public-smoke-run-0004",
+  "public_task_id": "task-crypto-aead-smoke",
+  "run_id": "smoke-run-0004",
+  "schema_version": "0.1.0",
+  "stop_event": "INFRASTRUCTURE_ABORT",
+  "task_id": "task-crypto-aead-smoke",
+  "terminal_outcome": "INFRASTRUCTURE_ABORT",
+  "verifier_receipt": null
+}

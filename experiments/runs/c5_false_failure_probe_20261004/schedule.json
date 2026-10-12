@@ -1,0 +1,1 @@
+{"endpoint":"http://127.0.0.1:11434/api/chat","max_agent_actions":1,"max_output_tokens":512,"model":"qwen3:4b","order":["C5_RELEASED","C3_RELEASED","C3_WITHHELD","C5_WITHHELD"],"phase":"excluded_pilot","request_timeout_seconds":90,"retrieval_mode":"none","schema_version":"c5-false-failure-probe-0.1.0","scripted_submission_counts_as_agent_action":false,"seed":7,"temperature":0.0}

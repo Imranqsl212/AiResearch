@@ -16,8 +16,10 @@ records all 12 live gates false, `model_calls=0`, `candidate_runs=0`, and
 The [manuscript](../paper/final.md), [PDF](../paper/submission/full_paper.pdf),
 [DOCX](../paper/submission/full_paper.docx), references, and recomputed tables
 are saved. A [deterministic local author-review bundle](../paper/AUTHOR_REVIEW_BUNDLE_20261005.md)
-contains the manuscript and derived artifacts without private raw archives;
-it is not cleared for public release. The paper's primary denominator is the
+contains the manuscript and derived artifacts without raw archives inside
+that filtered bundle. The raw archives are separately tracked in the present
+local Git branch; neither Git tracking nor this review bundle establishes
+privacy or journal approval. The paper's primary denominator is the
 older 40-episode local cohort; the eight-episode AEAD and excluded 30-episode
 v7 pilots are described separately, without pooling. Its central
 observation is nine of 20 final candidates in nominally unavailable states
@@ -37,8 +39,8 @@ historical denominator.
 | R1 coverage and live feasibility | The [20-family v0.1 candidate corpus](R1_TWENTY_CANDIDATE_AUDIT_20261005.md) has a review register; excluded collector/analysis integration passed 40 fake-provider cases. A separate [40-slot C2 R0/R1 live block](R1_TWENTY_LIVE_FEASIBILITY_20261005.md) produced 38 valid slots and two retained invalidations. Nineteen complete family pairs had 12 both-secure, six neither-secure, one R0-only and zero R1-only outcomes; 15/19 had identical submitted candidate-hash sequences. A [primary-source spotcheck](R1_SOURCE_SUPPORT_SPOTCHECK_20261005.md) identified concrete citation and task-rule mismatches. | One seed and one condition per family, with 306–462 extra UTF-8 bytes in R1's first request. Candidate source support, relevance and semantic leakage lack independent approval; v0.1 source snapshots remain unpinned. This does not estimate a retrieval benefit and does not bind the main retrieval contract. |
 | R1 source repair | A separate [v0.2 candidate](R1_TWENTY_CANDIDATE_V2_20261005.md) revises seven source paragraphs and keeps the v0.1 live-pilot inputs byte-pinned. Its new corpus and manifest pass offline checks. [Private snapshots](R1_V2_PRIVATE_SOURCE_SNAPSHOTS_20261005.md) pin all 22 cited URL response bodies; a separate [version-bound human review packet](R1_V2_SOURCE_REVIEW_PACKET_20261005.md) has 40 pending reviews and 20 pending adjudications. | No model run used v0.2. The snapshots need source-claim and privacy review; two NIST captures are landing pages rather than linked PDFs. The corpus remains unreviewed and unbound to main. |
 | Request/source provenance | Excluded collectors saved provider requests before dispatch and source/task hashes; the full-catalog and R1 blocks have pre-dispatch source archives and replayed first prompts. C5 preflight hashes match its later copied source archives. | The main release gate is still closed. Local hashes are not third-party timestamps; C5's postrun archive is not a pre-run attestation. |
-| Excluded-pilot raw replay | A [private bundle](PRIVATE_EXCLUDED_PILOT_BUNDLE_20261005.md) preserves 1,371 raw/source/audit files and independently replays the full-catalog, C5 and R1 descriptive counts. | It contains unredacted local paths, prompts and provider responses; human privacy review is required before any sharing. It is not a prospective main archive. |
-| Paper reproduction inputs | Original 311 hashed inputs have a private, byte-checked archive. A separate [sanitized review candidate](../paper/SANITIZED_REVIEW_CANDIDATE_20261005.md) has per-file old/new hashes and now recomputes 13 saved result sections and all 86 submitted source hashes from transformed bytes. A private inspection packet locates eight residual path candidates and 457 lexical review leads. | Original exposes local paths; the sanitized copy does not revalidate the original hash chain and needs human privacy/content review. Neither is approved for public upload. |
+| Excluded-pilot raw replay | A [historically named private bundle](PRIVATE_EXCLUDED_PILOT_BUNDLE_20261005.md) preserves 1,371 raw/source/audit files and independently replays the full-catalog, C5 and R1 descriptive counts. | The bundle is tracked in the present local Git branch and contains unredacted local paths, prompts and provider responses; no independent privacy review is recorded. It is not a prospective main archive. |
+| Paper reproduction inputs | Original 311 hashed inputs have a byte-checked archive now tracked in the local branch. A separate [sanitized review candidate](../paper/SANITIZED_REVIEW_CANDIDATE_20261005.md) has per-file old/new hashes and recomputes 13 saved result sections and all 86 submitted source hashes from transformed bytes. An inspection packet locates eight residual path candidates and 457 lexical review leads. | Original exposes local paths; the sanitized copy does not revalidate the original hash chain and still needs human privacy/content review for journal suitability. Git tracking alone is not that review. |
 | Historical source fidelity | A [post hoc audit](EXPLORATORY_SOURCE_FIDELITY_20261005.md) rechecked all 77 logged Python attempts: 63 parse as logged, 11 contain unquoted logger redaction markers, and three have other syntax errors. Of 37 adjacent pairs, 25 have two parseable logged sources; none of those 25 has an identical normalized AST. | The 11 erased original expressions are not recoverable from the saved logs. This cannot become an exact AST analysis of all 77 executed submissions; historical records and manuscript denominators remain unchanged. |
 | Future per-action checker logging | The [excluded v1 collector contract](PER_ACTION_CHECK_LOGGING_20261005.md) now fsyncs the full structured finite evaluator receipt and digest for each completed starter/submission/check, or records an explicit no-valid-receipt reason. Offline reader replay verifies full receipts; a stale executable sandbox receipt can no longer attach to later `inspect`/`terminate`. | This does not produce per-case process stdout, retrofit old records, implement a verified main oracle, or open the main gate. |
 
@@ -134,7 +136,7 @@ admit executable code tasks for main.
 
 ## Gates before submitting the existing exploratory paper
 
-The [submission handoff](../paper/SUBMISSION_HANDOFF_20261005.md) now includes
+At the time of this 5 October update, the [submission handoff](../paper/SUBMISSION_HANDOFF_20261005.md) included
 identified 16-page and anonymous 15-page A4 PDF review copies, with paired
 DOCX files at 12 pt and single spacing, and the author-provided name, location,
 and email on the identified
@@ -142,8 +144,10 @@ title page. The [decision form](../paper/AUTHOR_SUBMISSION_DECISIONS_20261005.md
 records exact hashes and remaining decisions: contribution wording,
 funding/conflicts/acknowledgments (the author will clarify these separately),
 journal article type and style, data availability, privacy sign-off, and final
-scientific approval. The raw private bundle must be reviewed before any public
-release. The sanitized candidate can recompute the paper's path-independent
-tables but remains internal until privacy/provenance review and an actual
-released or controlled-access arrangement are approved. The formatted drafts
-are not an approved journal submission.
+scientific approval. Later manuscript renders can have different page counts;
+the current files and counts are in [paper/README.md](../paper/README.md).
+Raw files are already tracked in the local Git branch;
+the reviewer still needs to examine privacy and provenance before deciding
+whether this package suits a journal. The sanitized candidate can recompute
+the paper's path-independent tables; its separate review is unfinished. The
+formatted drafts are not an approved journal submission.

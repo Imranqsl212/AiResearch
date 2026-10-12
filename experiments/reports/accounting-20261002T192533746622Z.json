@@ -1,0 +1,872 @@
+{
+  "generated_at": "2026-10-02T19:25:33Z",
+  "interpretation": "prior runs are historical context; separately scheduled v2 main runs form the new exploratory cohort",
+  "nightly_reports": [
+    {
+      "path": "/Users/imranmzakirov/Desktop/research/experiments/nightly/rag-20261002T135333Z.json",
+      "sha256": "e26324b3c118345ae3b36a29726dabfb23d13a6e0c0a11f2c3c9a87dac83e783",
+      "status": "FAIL_CLOSED"
+    },
+    {
+      "path": "/Users/imranmzakirov/Desktop/research/experiments/nightly/rag-20261002T135531Z.json",
+      "sha256": "5e5165dec0607cdc7a786be18bba85f2536417003dcd9b62aaff0d859f15d557",
+      "status": "PILOT_RUNNING"
+    },
+    {
+      "path": "/Users/imranmzakirov/Desktop/research/experiments/nightly/rag-overnight-20261002T152956Z.json",
+      "sha256": "f9256c807f648f083cccd8962bd1148b804989198d0453c10abd81d95182ecdb",
+      "status": "PILOT_GATE_FAILED"
+    },
+    {
+      "path": "/Users/imranmzakirov/Desktop/research/experiments/nightly/rag-overnight-20261002T174849Z.json",
+      "sha256": "c10de8acaeef8f55113642a8f8ef5f3e0effdeeb6975ebaafb866505d9adfe47",
+      "status": "PILOT_RUNNING"
+    }
+  ],
+  "runs": [
+    {
+      "analysis_role": "excluded_smoke",
+      "artifact_integrity_passed": true,
+      "experiment_id": "crypto-aead-ollama-smoke-excluded-v0.1.0",
+      "integrity_errors": [],
+      "log_path": "/Users/imranmzakirov/Desktop/research/experiments/runs/crypto-aead-ollama-smoke-excluded-v0.1.0/smoke-run-0001.jsonl",
+      "log_sha256": "7ad2d40e640534698737f319184d72e5fc0886d942ae614de2acc25349ee8f98",
+      "manifest_path": "/Users/imranmzakirov/Desktop/research/experiments/manifests/crypto-aead-ollama-smoke-excluded-v0.1.0.json",
+      "manifest_sha256": "5014cc06bc496a614d77c6d3f16c17036624a455f95455e38bd108d17329f3c7",
+      "prior_to_v2": true,
+      "receipt_path": "/Users/imranmzakirov/Desktop/research/experiments/runs/crypto-aead-ollama-smoke-excluded-v0.1.0/smoke-run-0001.receipt.json",
+      "receipt_sha256": "c7452f8644da4d6f71bf8e7e70a4f6403cb15df626b0ca19270496c4fa18e658",
+      "result_sources": [],
+      "run_id": "smoke-run-0001",
+      "terminal_outcome": "INFRASTRUCTURE_ABORT"
+    },
+    {
+      "analysis_role": "excluded_smoke",
+      "artifact_integrity_passed": true,
+      "experiment_id": "crypto-aead-ollama-smoke-excluded-v0.1.0",
+      "integrity_errors": [],
+      "log_path": "/Users/imranmzakirov/Desktop/research/experiments/runs/crypto-aead-ollama-smoke-excluded-v0.1.0/smoke-run-0002.jsonl",
+      "log_sha256": "c87621f3d3f8e839129e863e17e83c69c2c83f4dc8d3cb872954def6255a4df6",
+      "manifest_path": "/Users/imranmzakirov/Desktop/research/experiments/manifests/crypto-aead-ollama-smoke-excluded-v0.1.0.json",
+      "manifest_sha256": "5014cc06bc496a614d77c6d3f16c17036624a455f95455e38bd108d17329f3c7",
+      "prior_to_v2": true,
+      "receipt_path": "/Users/imranmzakirov/Desktop/research/experiments/runs/crypto-aead-ollama-smoke-excluded-v0.1.0/smoke-run-0002.receipt.json",
+      "receipt_sha256": "591f8a26f51815d7a886d584c54feb41e3167eaf8f9537f0b14dba60bba06a71",
+      "result_sources": [],
+      "run_id": "smoke-run-0002",
+      "terminal_outcome": "INFRASTRUCTURE_ABORT"
+    },
+    {
+      "analysis_role": "excluded_smoke",
+      "artifact_integrity_passed": true,
+      "experiment_id": "crypto-aead-ollama-smoke-excluded-v0.1.1",
+      "integrity_errors": [],
+      "log_path": "/Users/imranmzakirov/Desktop/research/experiments/runs/crypto-aead-ollama-smoke-excluded-v0.1.1/smoke-run-0001.jsonl",
+      "log_sha256": "d59121361a00d878ba5dcf17e6aab702d814715c7f3440bc2eeddf0514b93dd2",
+      "manifest_path": "/Users/imranmzakirov/Desktop/research/experiments/manifests/crypto-aead-ollama-smoke-excluded-v0.1.1.json",
+      "manifest_sha256": "a0902e25f26a0a32ba8deb64377bf6acb72bdd421b29d400584c3efc95b8f54f",
+      "prior_to_v2": true,
+      "receipt_path": "/Users/imranmzakirov/Desktop/research/experiments/runs/crypto-aead-ollama-smoke-excluded-v0.1.1/smoke-run-0001.receipt.json",
+      "receipt_sha256": "0f6fc30b819d1c74f4bb403a12a4ed8e02dd39bfc07aa98e07efaebe1bce4ca6",
+      "result_sources": [],
+      "run_id": "smoke-run-0001",
+      "terminal_outcome": "INFRASTRUCTURE_ABORT"
+    },
+    {
+      "analysis_role": "excluded_smoke",
+      "artifact_integrity_passed": false,
+      "experiment_id": "crypto-aead-ollama-smoke-excluded-v0.1.2",
+      "integrity_errors": [
+        "VERIFIER_RECEIPT event disagrees with final receipt"
+      ],
+      "log_path": "/Users/imranmzakirov/Desktop/research/experiments/runs/crypto-aead-ollama-smoke-excluded-v0.1.2/smoke-run-0001.jsonl",
+      "log_sha256": "a9ddd346844acc1436ec7185c7fbe1e6d77d8e9f051999c4e03c170c392d4414",
+      "manifest_path": "/Users/imranmzakirov/Desktop/research/experiments/manifests/crypto-aead-ollama-smoke-excluded-v0.1.2.json",
+      "manifest_sha256": "d02ab0fbbcaba7d1fc437803bbde2b61013f2fca6b5b1861b8341582929b152a",
+      "prior_to_v2": true,
+      "receipt_path": "/Users/imranmzakirov/Desktop/research/experiments/runs/crypto-aead-ollama-smoke-excluded-v0.1.2/smoke-run-0001.receipt.json",
+      "receipt_sha256": "d65c0dac991e0baccbebe28b3e065fb1259cef36fc7d2283bb5fd75fc0a9cacb",
+      "result_sources": [],
+      "run_id": "smoke-run-0001",
+      "terminal_outcome": "VALIDATED_NON_SUCCESS"
+    },
+    {
+      "analysis_role": "excluded_smoke",
+      "artifact_integrity_passed": false,
+      "experiment_id": "crypto-aead-ollama-smoke-excluded-v0.1.3",
+      "integrity_errors": [
+        "VERIFIER_RECEIPT event disagrees with final receipt"
+      ],
+      "log_path": "/Users/imranmzakirov/Desktop/research/experiments/runs/crypto-aead-ollama-smoke-excluded-v0.1.3/smoke-run-0001.jsonl",
+      "log_sha256": "34513453ca3cfd4c0b14e84f0962e95f82490b329c70fab19759b81b5f129564",
+      "manifest_path": "/Users/imranmzakirov/Desktop/research/experiments/manifests/crypto-aead-ollama-smoke-excluded-v0.1.3.json",
+      "manifest_sha256": "0f6d2f5701b02c7a281feb4adb2d6022fe9ec6dbb54c33b2fd0f88979ea0f1d3",
+      "prior_to_v2": true,
+      "receipt_path": "/Users/imranmzakirov/Desktop/research/experiments/runs/crypto-aead-ollama-smoke-excluded-v0.1.3/smoke-run-0001.receipt.json",
+      "receipt_sha256": "e558a85c8a19496263aa3806ac2f13ac05d88a02578ec88e40daeffcb107b643",
+      "result_sources": [],
+      "run_id": "smoke-run-0001",
+      "terminal_outcome": "VALIDATED_NON_SUCCESS"
+    },
+    {
+      "analysis_role": "excluded_smoke",
+      "artifact_integrity_passed": false,
+      "experiment_id": "crypto-aead-ollama-smoke-excluded-v0.1.4",
+      "integrity_errors": [
+        "VERIFIER_RECEIPT event disagrees with final receipt"
+      ],
+      "log_path": "/Users/imranmzakirov/Desktop/research/experiments/runs/crypto-aead-ollama-smoke-excluded-v0.1.4/smoke-run-0001.jsonl",
+      "log_sha256": "91c61af44b23b930e99f6bf53e9ae06b42698b15a3afd5cfb092d7c6eb7e25ff",
+      "manifest_path": "/Users/imranmzakirov/Desktop/research/experiments/manifests/crypto-aead-ollama-smoke-excluded-v0.1.4.json",
+      "manifest_sha256": "6d1fff5cf78a47413f948338265d817a9176d0634eaddb43d3a217d3c99944b5",
+      "prior_to_v2": true,
+      "receipt_path": "/Users/imranmzakirov/Desktop/research/experiments/runs/crypto-aead-ollama-smoke-excluded-v0.1.4/smoke-run-0001.receipt.json",
+      "receipt_sha256": "4656a7cf16c0ec8953ffdcc30b242a937e766eeb827900247f533340829bb4b4",
+      "result_sources": [],
+      "run_id": "smoke-run-0001",
+      "terminal_outcome": "VALIDATED_NON_SUCCESS"
+    },
+    {
+      "analysis_role": "excluded_smoke",
+      "artifact_integrity_passed": false,
+      "experiment_id": "crypto-aead-ollama-smoke-excluded-v0.1.5",
+      "integrity_errors": [
+        "VERIFIER_RECEIPT event disagrees with final receipt"
+      ],
+      "log_path": "/Users/imranmzakirov/Desktop/research/experiments/runs/crypto-aead-ollama-smoke-excluded-v0.1.5/smoke-run-0002.jsonl",
+      "log_sha256": "9af1eb9132e912d87496f1de88d507658b41846f46b2cb727e4cf32c78c55e9e",
+      "manifest_path": "/Users/imranmzakirov/Desktop/research/experiments/manifests/crypto-aead-ollama-smoke-excluded-v0.1.5.json",
+      "manifest_sha256": "7240d700ac30b45f9a283dd6f9dd04a5d543b40d9e9f8bae23251000934d6a5a",
+      "prior_to_v2": true,
+      "receipt_path": "/Users/imranmzakirov/Desktop/research/experiments/runs/crypto-aead-ollama-smoke-excluded-v0.1.5/smoke-run-0002.receipt.json",
+      "receipt_sha256": "25562b4e1f48b86c3e7343635b000860d2936100225a76e7c3b3807e1fff9363",
+      "result_sources": [],
+      "run_id": "smoke-run-0002",
+      "terminal_outcome": "VALIDATED_NON_SUCCESS"
+    },
+    {
+      "analysis_role": "excluded_smoke",
+      "artifact_integrity_passed": true,
+      "experiment_id": "crypto-aead-ollama-smoke-excluded-v0.1.6",
+      "integrity_errors": [],
+      "log_path": "/Users/imranmzakirov/Desktop/research/experiments/runs/crypto-aead-ollama-smoke-excluded-v0.1.6/smoke-run-0003.jsonl",
+      "log_sha256": "92a7fa4c9a0a952a4fac91cda6da3f25401cdaa6480c9edb724d09e22ce419be",
+      "manifest_path": "/Users/imranmzakirov/Desktop/research/experiments/manifests/crypto-aead-ollama-smoke-excluded-v0.1.6.json",
+      "manifest_sha256": "88a869aa9f79feaffd67b3f99ff3c1bff95b59a2f7b95db88520fc64f0bac1a1",
+      "prior_to_v2": true,
+      "receipt_path": "/Users/imranmzakirov/Desktop/research/experiments/runs/crypto-aead-ollama-smoke-excluded-v0.1.6/smoke-run-0003.receipt.json",
+      "receipt_sha256": "e867da38c89f8da827c498911b587b9c8c8d5ed8b0b93e340a91f24a4c4127d4",
+      "result_sources": [],
+      "run_id": "smoke-run-0003",
+      "terminal_outcome": "INFRASTRUCTURE_ABORT"
+    },
+    {
+      "analysis_role": "excluded_smoke",
+      "artifact_integrity_passed": true,
+      "experiment_id": "crypto-aead-ollama-smoke-excluded-v0.1.7",
+      "integrity_errors": [],
+      "log_path": "/Users/imranmzakirov/Desktop/research/experiments/runs/crypto-aead-ollama-smoke-excluded-v0.1.7/smoke-run-0004.jsonl",
+      "log_sha256": "fc0ec7ed18a3d3d9e57c6f753c928bdec9cd4101070c1ee286902c1732b298ea",
+      "manifest_path": "/Users/imranmzakirov/Desktop/research/experiments/manifests/crypto-aead-ollama-smoke-excluded-v0.1.7.json",
+      "manifest_sha256": "f77c2af4fe59fb0fb137141dad1cc72467247b974ca4603e04854bb702541102",
+      "prior_to_v2": true,
+      "receipt_path": "/Users/imranmzakirov/Desktop/research/experiments/runs/crypto-aead-ollama-smoke-excluded-v0.1.7/smoke-run-0004.receipt.json",
+      "receipt_sha256": "905f992ed1991cee001528375a21dd52b3b6660782df8ec5f342da05b550fba7",
+      "result_sources": [],
+      "run_id": "smoke-run-0004",
+      "terminal_outcome": "INFRASTRUCTURE_ABORT"
+    },
+    {
+      "analysis_role": "excluded_smoke",
+      "artifact_integrity_passed": true,
+      "experiment_id": "crypto-aead-ollama-smoke-excluded-v0.1.8",
+      "integrity_errors": [],
+      "log_path": "/Users/imranmzakirov/Desktop/research/experiments/runs/crypto-aead-ollama-smoke-excluded-v0.1.8/smoke-run-0005.jsonl",
+      "log_sha256": "bf4c499ca606e2de10a2087d6278666b4c82ce64b1b0b7381e99f82d368b223c",
+      "manifest_path": "/Users/imranmzakirov/Desktop/research/experiments/manifests/crypto-aead-ollama-smoke-excluded-v0.1.8.json",
+      "manifest_sha256": "b9e5c12796200956ac0373278d09c78b31833094e0d3fa1fe645f48b79397865",
+      "prior_to_v2": true,
+      "receipt_path": "/Users/imranmzakirov/Desktop/research/experiments/runs/crypto-aead-ollama-smoke-excluded-v0.1.8/smoke-run-0005.receipt.json",
+      "receipt_sha256": "f584cf57a54e4a58cd36bdf06cd79a89d82a43b1458b9fcb9e08b2c116d77d46",
+      "result_sources": [],
+      "run_id": "smoke-run-0005",
+      "terminal_outcome": "INFRASTRUCTURE_ABORT"
+    },
+    {
+      "analysis_role": "excluded_smoke",
+      "artifact_integrity_passed": false,
+      "experiment_id": "crypto-aead-ollama-smoke-excluded-v0.4.0",
+      "integrity_errors": [
+        "VERIFIER_RECEIPT event disagrees with final receipt"
+      ],
+      "log_path": "/Users/imranmzakirov/Desktop/research/experiments/runs/crypto-aead-ollama-smoke-excluded-v0.4.0/smoke-retry1-0001.jsonl",
+      "log_sha256": "3ab5187c983ae582b60d1334f1b133d124e69da4d00becdaf6a19aa7d72da4dd",
+      "manifest_path": "/Users/imranmzakirov/Desktop/research/experiments/manifests/crypto-aead-ollama-smoke-excluded-v0.4.0.json",
+      "manifest_sha256": "18c4addbc74c4c8c6331fbdf7f38e850caace4f3d28afb836ffc2399cd5dd593",
+      "prior_to_v2": true,
+      "receipt_path": "/Users/imranmzakirov/Desktop/research/experiments/runs/crypto-aead-ollama-smoke-excluded-v0.4.0/smoke-retry1-0001.receipt.json",
+      "receipt_sha256": "1ba4bae9680c6f6a1147fce2867f8fe775a202b13e720bc622bf67b34529ca22",
+      "result_sources": [
+        "/Users/imranmzakirov/Desktop/research/experiments/family_smoke_results.jsonl"
+      ],
+      "run_id": "smoke-retry1-0001",
+      "terminal_outcome": "VALIDATED_SUCCESS"
+    },
+    {
+      "analysis_role": "excluded_smoke",
+      "artifact_integrity_passed": true,
+      "experiment_id": "crypto-aead-ollama-smoke-excluded-v0.4.0",
+      "integrity_errors": [],
+      "log_path": "/Users/imranmzakirov/Desktop/research/experiments/runs/crypto-aead-ollama-smoke-excluded-v0.4.0/smoke-run-0001.jsonl",
+      "log_sha256": "cd1c16b90fde7c226a17c1af290cdec47285744adc6bef6ebc67cdd0368841c4",
+      "manifest_path": "/Users/imranmzakirov/Desktop/research/experiments/manifests/crypto-aead-ollama-smoke-excluded-v0.4.0.json",
+      "manifest_sha256": "18c4addbc74c4c8c6331fbdf7f38e850caace4f3d28afb836ffc2399cd5dd593",
+      "prior_to_v2": true,
+      "receipt_path": "/Users/imranmzakirov/Desktop/research/experiments/runs/crypto-aead-ollama-smoke-excluded-v0.4.0/smoke-run-0001.receipt.json",
+      "receipt_sha256": "a77c5c83433f80a166b99ead94a87d222193120c7c0836ab322175bfc2f412ef",
+      "result_sources": [
+        "/Users/imranmzakirov/Desktop/research/experiments/family_smoke_results.jsonl"
+      ],
+      "run_id": "smoke-run-0001",
+      "terminal_outcome": "INFRASTRUCTURE_ABORT"
+    },
+    {
+      "analysis_role": "excluded_smoke",
+      "artifact_integrity_passed": false,
+      "experiment_id": "crypto-key-derivation-ollama-smoke-excluded-v0.4.0",
+      "integrity_errors": [
+        "infrastructure abort lacks an error event"
+      ],
+      "log_path": "/Users/imranmzakirov/Desktop/research/experiments/runs/crypto-key-derivation-ollama-smoke-excluded-v0.4.0/smoke-run-0005.jsonl",
+      "log_sha256": "93f930c9411860de5132472e31900fd611faa3780de237dffe939a431d517a28",
+      "manifest_path": "/Users/imranmzakirov/Desktop/research/experiments/manifests/crypto-key-derivation-ollama-smoke-excluded-v0.4.0.json",
+      "manifest_sha256": "244fbead717516d4d67447433953358fb9890797ca696ef1d35055690d5e6590",
+      "prior_to_v2": true,
+      "receipt_path": "/Users/imranmzakirov/Desktop/research/experiments/runs/crypto-key-derivation-ollama-smoke-excluded-v0.4.0/smoke-run-0005.receipt.json",
+      "receipt_sha256": "c75be966edfdb38b4418859eb48ff0d0a0a70a0d3003beff5e92a6ec7c216461",
+      "result_sources": [],
+      "run_id": "smoke-run-0005",
+      "terminal_outcome": "INFRASTRUCTURE_ABORT"
+    },
+    {
+      "analysis_role": "excluded_smoke",
+      "artifact_integrity_passed": true,
+      "experiment_id": "crypto-key-management-ollama-smoke-excluded-v0.4.0",
+      "integrity_errors": [],
+      "log_path": "/Users/imranmzakirov/Desktop/research/experiments/runs/crypto-key-management-ollama-smoke-excluded-v0.4.0/smoke-run-0003.jsonl",
+      "log_sha256": "351541c4f09e9b6aa38af4cd4092bb3cd7f885e493258415aa3412a37409b9bd",
+      "manifest_path": "/Users/imranmzakirov/Desktop/research/experiments/manifests/crypto-key-management-ollama-smoke-excluded-v0.4.0.json",
+      "manifest_sha256": "fdfa2b1a0bf81e332b6cf9b6c36017bd868943764bfc3e2517ae37b3a94a60d5",
+      "prior_to_v2": true,
+      "receipt_path": "/Users/imranmzakirov/Desktop/research/experiments/runs/crypto-key-management-ollama-smoke-excluded-v0.4.0/smoke-run-0003.receipt.json",
+      "receipt_sha256": "406c5908c70272f1a4ef0312ccfcc4ca00aa51207d7dd570b691c58120fb7485",
+      "result_sources": [
+        "/Users/imranmzakirov/Desktop/research/experiments/family_smoke_results.jsonl"
+      ],
+      "run_id": "smoke-run-0003",
+      "terminal_outcome": "INFRASTRUCTURE_ABORT"
+    },
+    {
+      "analysis_role": "excluded_smoke",
+      "artifact_integrity_passed": false,
+      "experiment_id": "crypto-nonce-ollama-smoke-excluded-v0.4.0",
+      "integrity_errors": [
+        "infrastructure abort lacks an error event"
+      ],
+      "log_path": "/Users/imranmzakirov/Desktop/research/experiments/runs/crypto-nonce-ollama-smoke-excluded-v0.4.0/smoke-retry1-0002.jsonl",
+      "log_sha256": "a6f1cfedfa3c659beaadfadbb4614f2b960d8f98fd0dcd5cfd8261be322179ee",
+      "manifest_path": "/Users/imranmzakirov/Desktop/research/experiments/manifests/crypto-nonce-ollama-smoke-excluded-v0.4.0.json",
+      "manifest_sha256": "59da10ad4e2c10b7c7281026e7445eaa4356fdd674191ab87e39859b4d6117a8",
+      "prior_to_v2": true,
+      "receipt_path": "/Users/imranmzakirov/Desktop/research/experiments/runs/crypto-nonce-ollama-smoke-excluded-v0.4.0/smoke-retry1-0002.receipt.json",
+      "receipt_sha256": "8efa8a7d5b3fca532674b4b53142914464543814fd78eb75d032ac5738b1d6e9",
+      "result_sources": [],
+      "run_id": "smoke-retry1-0002",
+      "terminal_outcome": "INFRASTRUCTURE_ABORT"
+    },
+    {
+      "analysis_role": "excluded_smoke",
+      "artifact_integrity_passed": true,
+      "experiment_id": "crypto-nonce-ollama-smoke-excluded-v0.4.0",
+      "integrity_errors": [],
+      "log_path": "/Users/imranmzakirov/Desktop/research/experiments/runs/crypto-nonce-ollama-smoke-excluded-v0.4.0/smoke-run-0002.jsonl",
+      "log_sha256": "35ab34ce815453c276d0cface0ccb8e1cbde1b4a59867479f38ab617e8d31c8a",
+      "manifest_path": "/Users/imranmzakirov/Desktop/research/experiments/manifests/crypto-nonce-ollama-smoke-excluded-v0.4.0.json",
+      "manifest_sha256": "59da10ad4e2c10b7c7281026e7445eaa4356fdd674191ab87e39859b4d6117a8",
+      "prior_to_v2": true,
+      "receipt_path": "/Users/imranmzakirov/Desktop/research/experiments/runs/crypto-nonce-ollama-smoke-excluded-v0.4.0/smoke-run-0002.receipt.json",
+      "receipt_sha256": "edac36e4a6b8500c4f21198dc15f39d1adb2af529b8adf2b628fd33d345c7288",
+      "result_sources": [
+        "/Users/imranmzakirov/Desktop/research/experiments/family_smoke_results.jsonl"
+      ],
+      "run_id": "smoke-run-0002",
+      "terminal_outcome": "INFRASTRUCTURE_ABORT"
+    },
+    {
+      "analysis_role": "excluded_smoke",
+      "artifact_integrity_passed": false,
+      "experiment_id": "crypto-weak-randomness-ollama-smoke-excluded-v0.4.0",
+      "integrity_errors": [
+        "VERIFIER_RECEIPT event disagrees with final receipt"
+      ],
+      "log_path": "/Users/imranmzakirov/Desktop/research/experiments/runs/crypto-weak-randomness-ollama-smoke-excluded-v0.4.0/smoke-run-0001.jsonl",
+      "log_sha256": "04099126f1abe2835f11402a41c01b243e8e67facc08b0b0f35f6021d89fcd8e",
+      "manifest_path": "/Users/imranmzakirov/Desktop/research/experiments/manifests/crypto-weak-randomness-ollama-smoke-excluded-v0.4.0.json",
+      "manifest_sha256": "d0e72557ef473eb84bc7b78e442609bbc5f5c0d7f7012f148b4064b012ef8612",
+      "prior_to_v2": true,
+      "receipt_path": "/Users/imranmzakirov/Desktop/research/experiments/runs/crypto-weak-randomness-ollama-smoke-excluded-v0.4.0/smoke-run-0001.receipt.json",
+      "receipt_sha256": "a1538be81f59b8648a47ece9693e29ddc381b443e6e9ce45cf143b00c98fd415",
+      "result_sources": [],
+      "run_id": "smoke-run-0001",
+      "terminal_outcome": "VALIDATED_SUCCESS"
+    },
+    {
+      "analysis_role": "engineering_fixture",
+      "artifact_integrity_passed": true,
+      "experiment_id": "e2e-local-finite-state-v0.1.2",
+      "integrity_errors": [],
+      "log_path": "/Users/imranmzakirov/Desktop/research/experiments/runs/e2e-local-finite-state-v0.1.2/fixture-run-0001.jsonl",
+      "log_sha256": "7de80aa43ed0feefb2ab88f67ec7d634dd4688b583b8fd39db19109b9e310c8b",
+      "manifest_path": "/Users/imranmzakirov/Desktop/research/experiments/manifests/e2e-local-finite-state-v0.1.2.json",
+      "manifest_sha256": "2f3cb93108b12c4a947bb3327b0897867225c968e21826533871b7b7576379de",
+      "prior_to_v2": true,
+      "receipt_path": "/Users/imranmzakirov/Desktop/research/experiments/runs/e2e-local-finite-state-v0.1.2/fixture-run-0001.receipt.json",
+      "receipt_sha256": "011e720b0ca0788de704e1429ec376022f450ea081f9e6d0f7ccef93ce8aebca",
+      "result_sources": [],
+      "run_id": "fixture-run-0001",
+      "terminal_outcome": "VALIDATED_SUCCESS"
+    },
+    {
+      "analysis_role": "excluded_smoke",
+      "artifact_integrity_passed": true,
+      "experiment_id": "executable-smoke-v0-5-0",
+      "integrity_errors": [],
+      "log_path": "/Users/imranmzakirov/Desktop/research/experiments/runs/executable-smoke-v0-5-0/smoke-run-0001.jsonl",
+      "log_sha256": "2b98430d68b54fa0908a1d5144107ce0994806ff9abc88b9a397f843025bc57a",
+      "manifest_path": "/Users/imranmzakirov/Desktop/research/experiments/manifests/executable-smoke-v0-5-0.json",
+      "manifest_sha256": "d062f54e802148b06d0a1d637a59acefa423334ffc59c6c105607d498e3c0bab",
+      "prior_to_v2": true,
+      "receipt_path": "/Users/imranmzakirov/Desktop/research/experiments/runs/executable-smoke-v0-5-0/smoke-run-0001.receipt.json",
+      "receipt_sha256": "0461b3ea66b9956da8105ee8fb61641d863ff6602e158af0a02ca92b8cff76c8",
+      "result_sources": [],
+      "run_id": "smoke-run-0001",
+      "terminal_outcome": "VALIDATED_SUCCESS"
+    },
+    {
+      "analysis_role": "excluded_smoke",
+      "artifact_integrity_passed": true,
+      "experiment_id": "executable-smoke-v0-5-0",
+      "integrity_errors": [],
+      "log_path": "/Users/imranmzakirov/Desktop/research/experiments/runs/executable-smoke-v0-5-0/smoke-run-0002.jsonl",
+      "log_sha256": "a74f289f7cdb8d90cc54f604788e0b15b37bf152c5beab65b74d89354d68709d",
+      "manifest_path": "/Users/imranmzakirov/Desktop/research/experiments/manifests/executable-smoke-v0-5-0.json",
+      "manifest_sha256": "d062f54e802148b06d0a1d637a59acefa423334ffc59c6c105607d498e3c0bab",
+      "prior_to_v2": true,
+      "receipt_path": "/Users/imranmzakirov/Desktop/research/experiments/runs/executable-smoke-v0-5-0/smoke-run-0002.receipt.json",
+      "receipt_sha256": "f7623065f01be00d1cf9880534e1b7d95aa713b77ecac2a7735672b45e755abf",
+      "result_sources": [],
+      "run_id": "smoke-run-0002",
+      "terminal_outcome": "VALIDATED_SUCCESS"
+    },
+    {
+      "analysis_role": "excluded_smoke",
+      "artifact_integrity_passed": true,
+      "experiment_id": "executable-smoke-v0-5-0-085636908dd2",
+      "integrity_errors": [],
+      "log_path": "/Users/imranmzakirov/Desktop/research/experiments/runs/executable-smoke-v0-5-0-085636908dd2/smoke-run-0001.jsonl",
+      "log_sha256": "fc24a9e85f7d03f9025ecd1c376509733727e058fd096edffa646990a60afe8f",
+      "manifest_path": "/Users/imranmzakirov/Desktop/research/experiments/manifests/executable-smoke-v0-5-0-085636908dd2.json",
+      "manifest_sha256": "f819df6a2a61a72e604a32a3d7f1bae99a1b3f51e2de6f8301dc85fa23bfcbe9",
+      "prior_to_v2": true,
+      "receipt_path": "/Users/imranmzakirov/Desktop/research/experiments/runs/executable-smoke-v0-5-0-085636908dd2/smoke-run-0001.receipt.json",
+      "receipt_sha256": "fd64585b9dc183e24613aeea09d9cc32fb6eb542b19427093e52b16a3dcc9c49",
+      "result_sources": [],
+      "run_id": "smoke-run-0001",
+      "terminal_outcome": "VALIDATED_SUCCESS"
+    },
+    {
+      "analysis_role": "excluded_smoke",
+      "artifact_integrity_passed": true,
+      "experiment_id": "executable-smoke-v0-5-0-98a4dcf41467",
+      "integrity_errors": [],
+      "log_path": "/Users/imranmzakirov/Desktop/research/experiments/runs/executable-smoke-v0-5-0-98a4dcf41467/smoke-run-0001.jsonl",
+      "log_sha256": "5a5a8ada40b581f1ab652116409dc726ae421b347513d67b7671d583d4753a7b",
+      "manifest_path": "/Users/imranmzakirov/Desktop/research/experiments/manifests/executable-smoke-v0-5-0-98a4dcf41467.json",
+      "manifest_sha256": "39ad809bc5070b4d5a1e97c911570560d6321de178bcefb017e23d008c8ce56c",
+      "prior_to_v2": true,
+      "receipt_path": "/Users/imranmzakirov/Desktop/research/experiments/runs/executable-smoke-v0-5-0-98a4dcf41467/smoke-run-0001.receipt.json",
+      "receipt_sha256": "55836043147b807a488d14a92a3596f4fc967808786a2a1af1eda198137891b4",
+      "result_sources": [],
+      "run_id": "smoke-run-0001",
+      "terminal_outcome": "VALIDATED_SUCCESS"
+    },
+    {
+      "analysis_role": "excluded_smoke",
+      "artifact_integrity_passed": true,
+      "experiment_id": "executable-smoke-v0-5-0-c9df9fc77bcc",
+      "integrity_errors": [],
+      "log_path": "/Users/imranmzakirov/Desktop/research/experiments/runs/executable-smoke-v0-5-0-c9df9fc77bcc/smoke-run-0001.jsonl",
+      "log_sha256": "895675b503cc6ff81cc81205d82abdfb3cc334cf5e6c761477fc019ecd0f0af9",
+      "manifest_path": "/Users/imranmzakirov/Desktop/research/experiments/manifests/executable-smoke-v0-5-0-c9df9fc77bcc.json",
+      "manifest_sha256": "1ab59eae2b34cf983e54f3e160549578889810f871a80b31cddd7d9b98f1f75f",
+      "prior_to_v2": true,
+      "receipt_path": "/Users/imranmzakirov/Desktop/research/experiments/runs/executable-smoke-v0-5-0-c9df9fc77bcc/smoke-run-0001.receipt.json",
+      "receipt_sha256": "5c8be91b84eaff70b74bbb689d6b1b36f930590c49a61e57de6bbbca1d1b6743",
+      "result_sources": [],
+      "run_id": "smoke-run-0001",
+      "terminal_outcome": "VALIDATED_SUCCESS"
+    },
+    {
+      "analysis_role": "pilot_only",
+      "artifact_integrity_passed": true,
+      "experiment_id": "rag-factorial-pilot-0-5-0",
+      "integrity_errors": [],
+      "log_path": "/Users/imranmzakirov/Desktop/research/experiments/runs/rag-factorial-pilot-0-5-0/rag-factorial-pilot-0-5-0-slot-000001.jsonl",
+      "log_sha256": "ae099a7ded7cc0af9b6894d1c0d6236baed573a200d2dafe17d7e5d6b8705029",
+      "manifest_path": "/Users/imranmzakirov/Desktop/research/experiments/manifests/rag-factorial-pilot-0-5-0.json",
+      "manifest_sha256": "fb68d2654484afccb850bded9038a975f35d180f67a27451effe34446cca7eac",
+      "prior_to_v2": true,
+      "receipt_path": "/Users/imranmzakirov/Desktop/research/experiments/runs/rag-factorial-pilot-0-5-0/rag-factorial-pilot-0-5-0-slot-000001.receipt.json",
+      "receipt_sha256": "5fe223a421198c33b7da8c0b6525e78ac3c5fed5af72c682c4efef9033303f7a",
+      "result_sources": [
+        "/Users/imranmzakirov/Desktop/research/experiments/results/rag-factorial-pilot-0-5-0.jsonl"
+      ],
+      "run_id": "rag-factorial-pilot-0-5-0-slot-000001",
+      "terminal_outcome": "VALIDATED_SUCCESS"
+    },
+    {
+      "analysis_role": "pilot_only",
+      "artifact_integrity_passed": true,
+      "experiment_id": "rag-factorial-pilot-0-5-0",
+      "integrity_errors": [],
+      "log_path": "/Users/imranmzakirov/Desktop/research/experiments/runs/rag-factorial-pilot-0-5-0/rag-factorial-pilot-0-5-0-slot-000002.jsonl",
+      "log_sha256": "403643249f4987b3381483ad1ac4e1dab90615020aff79314f4fd0c83e79e635",
+      "manifest_path": "/Users/imranmzakirov/Desktop/research/experiments/manifests/rag-factorial-pilot-0-5-0.json",
+      "manifest_sha256": "fb68d2654484afccb850bded9038a975f35d180f67a27451effe34446cca7eac",
+      "prior_to_v2": true,
+      "receipt_path": "/Users/imranmzakirov/Desktop/research/experiments/runs/rag-factorial-pilot-0-5-0/rag-factorial-pilot-0-5-0-slot-000002.receipt.json",
+      "receipt_sha256": "c5a5c1ccbd9865f1baa46d433f5263fc00c8d5e5a5fa50958ea20074a11692ab",
+      "result_sources": [
+        "/Users/imranmzakirov/Desktop/research/experiments/results/rag-factorial-pilot-0-5-0.jsonl"
+      ],
+      "run_id": "rag-factorial-pilot-0-5-0-slot-000002",
+      "terminal_outcome": "VALIDATED_NON_SUCCESS"
+    },
+    {
+      "analysis_role": "pilot_only",
+      "artifact_integrity_passed": false,
+      "experiment_id": "rag-factorial-pilot-0-5-0",
+      "integrity_errors": [
+        "infrastructure abort lacks an error event"
+      ],
+      "log_path": "/Users/imranmzakirov/Desktop/research/experiments/runs/rag-factorial-pilot-0-5-0/rag-factorial-pilot-0-5-0-slot-000003.jsonl",
+      "log_sha256": "8a9953891c85fad4050adb1ab67bc86b08fe9c0345f7b9cf3a9cbf285490e378",
+      "manifest_path": "/Users/imranmzakirov/Desktop/research/experiments/manifests/rag-factorial-pilot-0-5-0.json",
+      "manifest_sha256": "fb68d2654484afccb850bded9038a975f35d180f67a27451effe34446cca7eac",
+      "prior_to_v2": true,
+      "receipt_path": "/Users/imranmzakirov/Desktop/research/experiments/runs/rag-factorial-pilot-0-5-0/rag-factorial-pilot-0-5-0-slot-000003.receipt.json",
+      "receipt_sha256": "d10faa0349d35aba8cc75b4dc5693e74ad1be42afd593bb12885a66a3fd7fc44",
+      "result_sources": [],
+      "run_id": "rag-factorial-pilot-0-5-0-slot-000003",
+      "terminal_outcome": "INFRASTRUCTURE_ABORT"
+    },
+    {
+      "analysis_role": "pilot_only",
+      "artifact_integrity_passed": true,
+      "experiment_id": "rag-overnight-v1-pilot-0-5-0",
+      "integrity_errors": [],
+      "log_path": "/Users/imranmzakirov/Desktop/research/experiments/runs/rag-overnight-v1-pilot-0-5-0/rag-overnight-v1-pilot-0-5-0-slot-000001.jsonl",
+      "log_sha256": "b77ac11dfc76189479d5862288b5858ec755558f255d5a88adb74459cecb3bcc",
+      "manifest_path": "/Users/imranmzakirov/Desktop/research/experiments/manifests/rag-overnight-v1-pilot-0-5-0.json",
+      "manifest_sha256": "67f7712a27c370b512b2821bcea5e3a5ece02becc00c662d46bdc46fc1079491",
+      "prior_to_v2": true,
+      "receipt_path": "/Users/imranmzakirov/Desktop/research/experiments/runs/rag-overnight-v1-pilot-0-5-0/rag-overnight-v1-pilot-0-5-0-slot-000001.receipt.json",
+      "receipt_sha256": "f9877595a9cf9ea0351fde54b681226062b7d1ae2e18b709d3bb41f0fa8d6e5b",
+      "result_sources": [
+        "/Users/imranmzakirov/Desktop/research/experiments/results/rag-overnight-v1-pilot-0-5-0.jsonl"
+      ],
+      "run_id": "rag-overnight-v1-pilot-0-5-0-slot-000001",
+      "terminal_outcome": "VALIDATED_NON_SUCCESS"
+    },
+    {
+      "analysis_role": "pilot_only",
+      "artifact_integrity_passed": true,
+      "experiment_id": "rag-overnight-v1-pilot-0-5-0",
+      "integrity_errors": [],
+      "log_path": "/Users/imranmzakirov/Desktop/research/experiments/runs/rag-overnight-v1-pilot-0-5-0/rag-overnight-v1-pilot-0-5-0-slot-000002.jsonl",
+      "log_sha256": "b0df3cb7d60823db8316b2d90b3457ccc51738a10a43a9c8ae5efdcb2cf90b4c",
+      "manifest_path": "/Users/imranmzakirov/Desktop/research/experiments/manifests/rag-overnight-v1-pilot-0-5-0.json",
+      "manifest_sha256": "67f7712a27c370b512b2821bcea5e3a5ece02becc00c662d46bdc46fc1079491",
+      "prior_to_v2": true,
+      "receipt_path": "/Users/imranmzakirov/Desktop/research/experiments/runs/rag-overnight-v1-pilot-0-5-0/rag-overnight-v1-pilot-0-5-0-slot-000002.receipt.json",
+      "receipt_sha256": "be825de91dfaf78817e7e1740bbe490834d4268a91230da73cf15c0bab997e5b",
+      "result_sources": [
+        "/Users/imranmzakirov/Desktop/research/experiments/results/rag-overnight-v1-pilot-0-5-0.jsonl"
+      ],
+      "run_id": "rag-overnight-v1-pilot-0-5-0-slot-000002",
+      "terminal_outcome": "VALIDATED_SUCCESS"
+    },
+    {
+      "analysis_role": "pilot_only",
+      "artifact_integrity_passed": true,
+      "experiment_id": "rag-overnight-v1-pilot-0-5-0",
+      "integrity_errors": [],
+      "log_path": "/Users/imranmzakirov/Desktop/research/experiments/runs/rag-overnight-v1-pilot-0-5-0/rag-overnight-v1-pilot-0-5-0-slot-000003.jsonl",
+      "log_sha256": "c0005313694939eeebdeae33407a96b6625ea097a54a11bf90a664cd9223c7f4",
+      "manifest_path": "/Users/imranmzakirov/Desktop/research/experiments/manifests/rag-overnight-v1-pilot-0-5-0.json",
+      "manifest_sha256": "67f7712a27c370b512b2821bcea5e3a5ece02becc00c662d46bdc46fc1079491",
+      "prior_to_v2": true,
+      "receipt_path": "/Users/imranmzakirov/Desktop/research/experiments/runs/rag-overnight-v1-pilot-0-5-0/rag-overnight-v1-pilot-0-5-0-slot-000003.receipt.json",
+      "receipt_sha256": "f94a709f1bff08eb4df28c1ad41409dffbd468ce716f1099835035ddb04147a5",
+      "result_sources": [
+        "/Users/imranmzakirov/Desktop/research/experiments/results/rag-overnight-v1-pilot-0-5-0.jsonl"
+      ],
+      "run_id": "rag-overnight-v1-pilot-0-5-0-slot-000003",
+      "terminal_outcome": "VALIDATED_SUCCESS"
+    },
+    {
+      "analysis_role": "pilot_only",
+      "artifact_integrity_passed": true,
+      "experiment_id": "rag-overnight-v1-pilot-0-5-0",
+      "integrity_errors": [],
+      "log_path": "/Users/imranmzakirov/Desktop/research/experiments/runs/rag-overnight-v1-pilot-0-5-0/rag-overnight-v1-pilot-0-5-0-slot-000004.jsonl",
+      "log_sha256": "dace4a13a464598cebbedf1029ac6b653a13a17dcfee45366164383a821cc4cd",
+      "manifest_path": "/Users/imranmzakirov/Desktop/research/experiments/manifests/rag-overnight-v1-pilot-0-5-0.json",
+      "manifest_sha256": "67f7712a27c370b512b2821bcea5e3a5ece02becc00c662d46bdc46fc1079491",
+      "prior_to_v2": true,
+      "receipt_path": "/Users/imranmzakirov/Desktop/research/experiments/runs/rag-overnight-v1-pilot-0-5-0/rag-overnight-v1-pilot-0-5-0-slot-000004.receipt.json",
+      "receipt_sha256": "85d6e29d398dd6f68e88c33ef9a5ff70cb76aa1ca991d9d4603aebfdfec75f96",
+      "result_sources": [
+        "/Users/imranmzakirov/Desktop/research/experiments/results/rag-overnight-v1-pilot-0-5-0.jsonl"
+      ],
+      "run_id": "rag-overnight-v1-pilot-0-5-0-slot-000004",
+      "terminal_outcome": "VALIDATED_NON_SUCCESS"
+    },
+    {
+      "analysis_role": "pilot_only",
+      "artifact_integrity_passed": true,
+      "experiment_id": "rag-overnight-v1-pilot-0-5-0",
+      "integrity_errors": [],
+      "log_path": "/Users/imranmzakirov/Desktop/research/experiments/runs/rag-overnight-v1-pilot-0-5-0/rag-overnight-v1-pilot-0-5-0-slot-000005.jsonl",
+      "log_sha256": "3607d219a4600be0f9d2518113462e246754ced5e9920b81d486a656a2c8f0eb",
+      "manifest_path": "/Users/imranmzakirov/Desktop/research/experiments/manifests/rag-overnight-v1-pilot-0-5-0.json",
+      "manifest_sha256": "67f7712a27c370b512b2821bcea5e3a5ece02becc00c662d46bdc46fc1079491",
+      "prior_to_v2": true,
+      "receipt_path": "/Users/imranmzakirov/Desktop/research/experiments/runs/rag-overnight-v1-pilot-0-5-0/rag-overnight-v1-pilot-0-5-0-slot-000005.receipt.json",
+      "receipt_sha256": "c671143360b6e6578f7b5236a8136206953220f5577a3be9bd720655608b318e",
+      "result_sources": [
+        "/Users/imranmzakirov/Desktop/research/experiments/results/rag-overnight-v1-pilot-0-5-0.jsonl"
+      ],
+      "run_id": "rag-overnight-v1-pilot-0-5-0-slot-000005",
+      "terminal_outcome": "VALIDATED_SUCCESS"
+    },
+    {
+      "analysis_role": "pilot_only",
+      "artifact_integrity_passed": true,
+      "experiment_id": "rag-overnight-v1-pilot-0-5-0",
+      "integrity_errors": [],
+      "log_path": "/Users/imranmzakirov/Desktop/research/experiments/runs/rag-overnight-v1-pilot-0-5-0/rag-overnight-v1-pilot-0-5-0-slot-000006.jsonl",
+      "log_sha256": "8b97ea2f2aa469876e4ea041d1dbf91da3d390dbd3ebbaaab2984dad08436358",
+      "manifest_path": "/Users/imranmzakirov/Desktop/research/experiments/manifests/rag-overnight-v1-pilot-0-5-0.json",
+      "manifest_sha256": "67f7712a27c370b512b2821bcea5e3a5ece02becc00c662d46bdc46fc1079491",
+      "prior_to_v2": true,
+      "receipt_path": "/Users/imranmzakirov/Desktop/research/experiments/runs/rag-overnight-v1-pilot-0-5-0/rag-overnight-v1-pilot-0-5-0-slot-000006.receipt.json",
+      "receipt_sha256": "e012e767c77c7ec500d795f65d9ed2f22707b3148efbb1742ea676c0730dc727",
+      "result_sources": [
+        "/Users/imranmzakirov/Desktop/research/experiments/results/rag-overnight-v1-pilot-0-5-0.jsonl"
+      ],
+      "run_id": "rag-overnight-v1-pilot-0-5-0-slot-000006",
+      "terminal_outcome": "VALIDATED_NON_SUCCESS"
+    },
+    {
+      "analysis_role": "pilot_only",
+      "artifact_integrity_passed": true,
+      "experiment_id": "rag-overnight-v1-pilot-0-5-0",
+      "integrity_errors": [],
+      "log_path": "/Users/imranmzakirov/Desktop/research/experiments/runs/rag-overnight-v1-pilot-0-5-0/rag-overnight-v1-pilot-0-5-0-slot-000007.jsonl",
+      "log_sha256": "b94fb495509284cd097abd83dd8fba3e0e7a55a25c8cd93c5c6c2eae72b8ee85",
+      "manifest_path": "/Users/imranmzakirov/Desktop/research/experiments/manifests/rag-overnight-v1-pilot-0-5-0.json",
+      "manifest_sha256": "67f7712a27c370b512b2821bcea5e3a5ece02becc00c662d46bdc46fc1079491",
+      "prior_to_v2": true,
+      "receipt_path": "/Users/imranmzakirov/Desktop/research/experiments/runs/rag-overnight-v1-pilot-0-5-0/rag-overnight-v1-pilot-0-5-0-slot-000007.receipt.json",
+      "receipt_sha256": "82049afd064709971a4d03996fc9adf15f5725650965473b3cdc5ddd313c48f5",
+      "result_sources": [
+        "/Users/imranmzakirov/Desktop/research/experiments/results/rag-overnight-v1-pilot-0-5-0.jsonl"
+      ],
+      "run_id": "rag-overnight-v1-pilot-0-5-0-slot-000007",
+      "terminal_outcome": "INFRASTRUCTURE_ABORT"
+    },
+    {
+      "analysis_role": "pilot_only",
+      "artifact_integrity_passed": true,
+      "experiment_id": "rag-overnight-v1-pilot-0-5-0",
+      "integrity_errors": [],
+      "log_path": "/Users/imranmzakirov/Desktop/research/experiments/runs/rag-overnight-v1-pilot-0-5-0/rag-overnight-v1-pilot-0-5-0-slot-000008.jsonl",
+      "log_sha256": "7be468d453cae05f8040723676394fbc02e4375c7aa2f7d3359230024072b885",
+      "manifest_path": "/Users/imranmzakirov/Desktop/research/experiments/manifests/rag-overnight-v1-pilot-0-5-0.json",
+      "manifest_sha256": "67f7712a27c370b512b2821bcea5e3a5ece02becc00c662d46bdc46fc1079491",
+      "prior_to_v2": true,
+      "receipt_path": "/Users/imranmzakirov/Desktop/research/experiments/runs/rag-overnight-v1-pilot-0-5-0/rag-overnight-v1-pilot-0-5-0-slot-000008.receipt.json",
+      "receipt_sha256": "615ba331e4752ff95de745c506a8844a1adae25d6da0b27b8fe4331a4f6f9845",
+      "result_sources": [
+        "/Users/imranmzakirov/Desktop/research/experiments/results/rag-overnight-v1-pilot-0-5-0.jsonl"
+      ],
+      "run_id": "rag-overnight-v1-pilot-0-5-0-slot-000008",
+      "terminal_outcome": "VALIDATED_NON_SUCCESS"
+    },
+    {
+      "analysis_role": "pilot_only",
+      "artifact_integrity_passed": true,
+      "experiment_id": "rag-overnight-v2-pilot-0-5-0",
+      "integrity_errors": [],
+      "log_path": "/Users/imranmzakirov/Desktop/research/experiments/runs/rag-overnight-v2-pilot-0-5-0/rag-overnight-v2-pilot-0-5-0-slot-000001.jsonl",
+      "log_sha256": "921c8e443462c6b05d3774475a161efc784c078e308e3f7cf627bc87d1fa7c15",
+      "manifest_path": "/Users/imranmzakirov/Desktop/research/experiments/manifests/rag-overnight-v2-pilot-0-5-0.json",
+      "manifest_sha256": "56ed35fa2754e5aa72563c092ae574139a9db36c8aa9e0454706651c7ff5f8e3",
+      "prior_to_v2": false,
+      "receipt_path": "/Users/imranmzakirov/Desktop/research/experiments/runs/rag-overnight-v2-pilot-0-5-0/rag-overnight-v2-pilot-0-5-0-slot-000001.receipt.json",
+      "receipt_sha256": "f2e646fb43def469b2f4248294d05ca8cd6b8138f824e311e0e9ae20d03d22df",
+      "result_sources": [
+        "/Users/imranmzakirov/Desktop/research/experiments/results/rag-overnight-v2-pilot-0-5-0.jsonl"
+      ],
+      "run_id": "rag-overnight-v2-pilot-0-5-0-slot-000001",
+      "terminal_outcome": "VALIDATED_NON_SUCCESS"
+    },
+    {
+      "analysis_role": "pilot_only",
+      "artifact_integrity_passed": true,
+      "experiment_id": "rag-overnight-v2-pilot-0-5-0",
+      "integrity_errors": [],
+      "log_path": "/Users/imranmzakirov/Desktop/research/experiments/runs/rag-overnight-v2-pilot-0-5-0/rag-overnight-v2-pilot-0-5-0-slot-000002.jsonl",
+      "log_sha256": "e515ad76902c517d6de6ffbe66909feaaf2e03540fd361f1296b0fd1e30a6e45",
+      "manifest_path": "/Users/imranmzakirov/Desktop/research/experiments/manifests/rag-overnight-v2-pilot-0-5-0.json",
+      "manifest_sha256": "56ed35fa2754e5aa72563c092ae574139a9db36c8aa9e0454706651c7ff5f8e3",
+      "prior_to_v2": false,
+      "receipt_path": "/Users/imranmzakirov/Desktop/research/experiments/runs/rag-overnight-v2-pilot-0-5-0/rag-overnight-v2-pilot-0-5-0-slot-000002.receipt.json",
+      "receipt_sha256": "dde6e3add99dc974180ca7300a8fc9bcca65bf7bb2c31938be97a10ee1518868",
+      "result_sources": [
+        "/Users/imranmzakirov/Desktop/research/experiments/results/rag-overnight-v2-pilot-0-5-0.jsonl"
+      ],
+      "run_id": "rag-overnight-v2-pilot-0-5-0-slot-000002",
+      "terminal_outcome": "VALIDATED_SUCCESS"
+    },
+    {
+      "analysis_role": "pilot_only",
+      "artifact_integrity_passed": true,
+      "experiment_id": "rag-overnight-v2-pilot-0-5-0",
+      "integrity_errors": [],
+      "log_path": "/Users/imranmzakirov/Desktop/research/experiments/runs/rag-overnight-v2-pilot-0-5-0/rag-overnight-v2-pilot-0-5-0-slot-000003.jsonl",
+      "log_sha256": "c8d468fc19753d4283bbc0d8459300c421e980ccf2e43ab23036bd4c7d7a99fc",
+      "manifest_path": "/Users/imranmzakirov/Desktop/research/experiments/manifests/rag-overnight-v2-pilot-0-5-0.json",
+      "manifest_sha256": "56ed35fa2754e5aa72563c092ae574139a9db36c8aa9e0454706651c7ff5f8e3",
+      "prior_to_v2": false,
+      "receipt_path": "/Users/imranmzakirov/Desktop/research/experiments/runs/rag-overnight-v2-pilot-0-5-0/rag-overnight-v2-pilot-0-5-0-slot-000003.receipt.json",
+      "receipt_sha256": "a1c7bfd72870f3d31c99c34328c27414bf9435e68c8b7557f0fcbfd92c9b797d",
+      "result_sources": [
+        "/Users/imranmzakirov/Desktop/research/experiments/results/rag-overnight-v2-pilot-0-5-0.jsonl"
+      ],
+      "run_id": "rag-overnight-v2-pilot-0-5-0-slot-000003",
+      "terminal_outcome": "VALIDATED_SUCCESS"
+    },
+    {
+      "analysis_role": "pilot_only",
+      "artifact_integrity_passed": true,
+      "experiment_id": "rag-overnight-v2-pilot-0-5-0",
+      "integrity_errors": [],
+      "log_path": "/Users/imranmzakirov/Desktop/research/experiments/runs/rag-overnight-v2-pilot-0-5-0/rag-overnight-v2-pilot-0-5-0-slot-000004.jsonl",
+      "log_sha256": "3d7193cece4a0dcd5c764b008887071558f76bcb37a960b3ebe5b18560e13889",
+      "manifest_path": "/Users/imranmzakirov/Desktop/research/experiments/manifests/rag-overnight-v2-pilot-0-5-0.json",
+      "manifest_sha256": "56ed35fa2754e5aa72563c092ae574139a9db36c8aa9e0454706651c7ff5f8e3",
+      "prior_to_v2": false,
+      "receipt_path": "/Users/imranmzakirov/Desktop/research/experiments/runs/rag-overnight-v2-pilot-0-5-0/rag-overnight-v2-pilot-0-5-0-slot-000004.receipt.json",
+      "receipt_sha256": "cb08d3bd3cbe69c5eeb872e2154aadfee63dc8071cc51a8f3b308ba8d3bc68e6",
+      "result_sources": [
+        "/Users/imranmzakirov/Desktop/research/experiments/results/rag-overnight-v2-pilot-0-5-0.jsonl"
+      ],
+      "run_id": "rag-overnight-v2-pilot-0-5-0-slot-000004",
+      "terminal_outcome": "VALIDATED_NON_SUCCESS"
+    },
+    {
+      "analysis_role": "pilot_only",
+      "artifact_integrity_passed": true,
+      "experiment_id": "rag-overnight-v2-pilot-0-5-0",
+      "integrity_errors": [],
+      "log_path": "/Users/imranmzakirov/Desktop/research/experiments/runs/rag-overnight-v2-pilot-0-5-0/rag-overnight-v2-pilot-0-5-0-slot-000005.jsonl",
+      "log_sha256": "9847b61dfa7349d1b6d9c9c18f20687527335e387fc94cc4e7b28d8fc58f8979",
+      "manifest_path": "/Users/imranmzakirov/Desktop/research/experiments/manifests/rag-overnight-v2-pilot-0-5-0.json",
+      "manifest_sha256": "56ed35fa2754e5aa72563c092ae574139a9db36c8aa9e0454706651c7ff5f8e3",
+      "prior_to_v2": false,
+      "receipt_path": "/Users/imranmzakirov/Desktop/research/experiments/runs/rag-overnight-v2-pilot-0-5-0/rag-overnight-v2-pilot-0-5-0-slot-000005.receipt.json",
+      "receipt_sha256": "af58bcd728f95054da72bdef6b39273998b291623e10835fbfdad2cdbc51e162",
+      "result_sources": [
+        "/Users/imranmzakirov/Desktop/research/experiments/results/rag-overnight-v2-pilot-0-5-0.jsonl"
+      ],
+      "run_id": "rag-overnight-v2-pilot-0-5-0-slot-000005",
+      "terminal_outcome": "VALIDATED_SUCCESS"
+    },
+    {
+      "analysis_role": "pilot_only",
+      "artifact_integrity_passed": true,
+      "experiment_id": "rag-overnight-v2-pilot-0-5-0",
+      "integrity_errors": [],
+      "log_path": "/Users/imranmzakirov/Desktop/research/experiments/runs/rag-overnight-v2-pilot-0-5-0/rag-overnight-v2-pilot-0-5-0-slot-000006.jsonl",
+      "log_sha256": "15178d28ef5ec1a155b333742eb01e92cfae58575840c8106fe5256e8a7822e4",
+      "manifest_path": "/Users/imranmzakirov/Desktop/research/experiments/manifests/rag-overnight-v2-pilot-0-5-0.json",
+      "manifest_sha256": "56ed35fa2754e5aa72563c092ae574139a9db36c8aa9e0454706651c7ff5f8e3",
+      "prior_to_v2": false,
+      "receipt_path": "/Users/imranmzakirov/Desktop/research/experiments/runs/rag-overnight-v2-pilot-0-5-0/rag-overnight-v2-pilot-0-5-0-slot-000006.receipt.json",
+      "receipt_sha256": "0d54b82cbc81a2b91efa7248f936e2057c43fc93748edafc052f7f1e8b9985ac",
+      "result_sources": [
+        "/Users/imranmzakirov/Desktop/research/experiments/results/rag-overnight-v2-pilot-0-5-0.jsonl"
+      ],
+      "run_id": "rag-overnight-v2-pilot-0-5-0-slot-000006",
+      "terminal_outcome": "VALIDATED_NON_SUCCESS"
+    },
+    {
+      "analysis_role": "pilot_only",
+      "artifact_integrity_passed": true,
+      "experiment_id": "rag-overnight-v2-pilot-0-5-0",
+      "integrity_errors": [],
+      "log_path": "/Users/imranmzakirov/Desktop/research/experiments/runs/rag-overnight-v2-pilot-0-5-0/rag-overnight-v2-pilot-0-5-0-slot-000007.jsonl",
+      "log_sha256": "01203fc72f58d43cb2855b291986712907034e39725db5a2774d5c4c2ab8c930",
+      "manifest_path": "/Users/imranmzakirov/Desktop/research/experiments/manifests/rag-overnight-v2-pilot-0-5-0.json",
+      "manifest_sha256": "56ed35fa2754e5aa72563c092ae574139a9db36c8aa9e0454706651c7ff5f8e3",
+      "prior_to_v2": false,
+      "receipt_path": "/Users/imranmzakirov/Desktop/research/experiments/runs/rag-overnight-v2-pilot-0-5-0/rag-overnight-v2-pilot-0-5-0-slot-000007.receipt.json",
+      "receipt_sha256": "a1a30102e9ac569405b7241776711eddcba2e997d5d15b5e3d3366fecb2bdb63",
+      "result_sources": [
+        "/Users/imranmzakirov/Desktop/research/experiments/results/rag-overnight-v2-pilot-0-5-0.jsonl"
+      ],
+      "run_id": "rag-overnight-v2-pilot-0-5-0-slot-000007",
+      "terminal_outcome": "VALIDATED_NON_SUCCESS"
+    },
+    {
+      "analysis_role": "pilot_only",
+      "artifact_integrity_passed": true,
+      "experiment_id": "rag-overnight-v2-pilot-0-5-0",
+      "integrity_errors": [],
+      "log_path": "/Users/imranmzakirov/Desktop/research/experiments/runs/rag-overnight-v2-pilot-0-5-0/rag-overnight-v2-pilot-0-5-0-slot-000008.jsonl",
+      "log_sha256": "61f0964e5ddf717d1824eb77c7e183bed165ae5a5a0abbf15bc0c6909a408a89",
+      "manifest_path": "/Users/imranmzakirov/Desktop/research/experiments/manifests/rag-overnight-v2-pilot-0-5-0.json",
+      "manifest_sha256": "56ed35fa2754e5aa72563c092ae574139a9db36c8aa9e0454706651c7ff5f8e3",
+      "prior_to_v2": false,
+      "receipt_path": "/Users/imranmzakirov/Desktop/research/experiments/runs/rag-overnight-v2-pilot-0-5-0/rag-overnight-v2-pilot-0-5-0-slot-000008.receipt.json",
+      "receipt_sha256": "a8faf61064705b03dd31ac655cf9ad511c1cce49a97f7a6b1f0c1e1632ce2cb1",
+      "result_sources": [
+        "/Users/imranmzakirov/Desktop/research/experiments/results/rag-overnight-v2-pilot-0-5-0.jsonl"
+      ],
+      "run_id": "rag-overnight-v2-pilot-0-5-0-slot-000008",
+      "terminal_outcome": "VALIDATED_NON_SUCCESS"
+    },
+    {
+      "analysis_role": "excluded_smoke",
+      "artifact_integrity_passed": false,
+      "experiment_id": "web-xss-ollama-smoke-excluded-v0.4.0",
+      "integrity_errors": [
+        "trajectory event 6 has an invalid per-action evaluator verifier receipt",
+        "trajectory event 8 has an invalid per-action evaluator verifier receipt",
+        "VERIFIER_RECEIPT event disagrees with final receipt"
+      ],
+      "log_path": "/Users/imranmzakirov/Desktop/research/experiments/runs/web-xss-ollama-smoke-excluded-v0.4.0/docker-smoke-web-xss-0001.jsonl",
+      "log_sha256": "89e7e56c8256a4441a42c79d7bb563f299d481532f4330329edf4262e162939c",
+      "manifest_path": "/Users/imranmzakirov/Desktop/research/experiments/manifests/web-xss-ollama-smoke-excluded-v0.4.0.json",
+      "manifest_sha256": "ccadb1c3169b07901e0187808879c700f74d6593865ea575d897a2034499e94f",
+      "prior_to_v2": true,
+      "receipt_path": "/Users/imranmzakirov/Desktop/research/experiments/runs/web-xss-ollama-smoke-excluded-v0.4.0/docker-smoke-web-xss-0001.receipt.json",
+      "receipt_sha256": "3b3f791652348cf59772d343f7ca2e125ab704232dfcbac0d6517a9e764b9f44",
+      "result_sources": [],
+      "run_id": "docker-smoke-web-xss-0001",
+      "terminal_outcome": "VALIDATED_SUCCESS"
+    },
+    {
+      "analysis_role": "excluded_smoke",
+      "artifact_integrity_passed": false,
+      "experiment_id": "web-xss-ollama-smoke-excluded-v0.4.0",
+      "integrity_errors": [
+        "trajectory event 6 has an invalid per-action evaluator verifier receipt",
+        "trajectory event 8 has an invalid per-action evaluator verifier receipt",
+        "VERIFIER_RECEIPT event disagrees with final receipt"
+      ],
+      "log_path": "/Users/imranmzakirov/Desktop/research/experiments/runs/web-xss-ollama-smoke-excluded-v0.4.0/readiness-check-20260930T1647Z.jsonl",
+      "log_sha256": "55602e3b03d5a1bdf048651d5124e15843f36df6e551b549cf364d5aa63bd6da",
+      "manifest_path": "/Users/imranmzakirov/Desktop/research/experiments/manifests/web-xss-ollama-smoke-excluded-v0.4.0.json",
+      "manifest_sha256": "ccadb1c3169b07901e0187808879c700f74d6593865ea575d897a2034499e94f",
+      "prior_to_v2": true,
+      "receipt_path": "/Users/imranmzakirov/Desktop/research/experiments/runs/web-xss-ollama-smoke-excluded-v0.4.0/readiness-check-20260930T1647Z.receipt.json",
+      "receipt_sha256": "7407e31318bf0efcc761126d4081608347c5096b3582c752c529398da08a99da",
+      "result_sources": [],
+      "run_id": "readiness-check-20260930T1647Z",
+      "terminal_outcome": "VALIDATED_SUCCESS"
+    },
+    {
+      "analysis_role": "excluded_smoke",
+      "artifact_integrity_passed": false,
+      "experiment_id": "web-xss-ollama-smoke-excluded-v0.4.0",
+      "integrity_errors": [
+        "VERIFIER_RECEIPT event disagrees with final receipt"
+      ],
+      "log_path": "/Users/imranmzakirov/Desktop/research/experiments/runs/web-xss-ollama-smoke-excluded-v0.4.0/smoke-run-0001.jsonl",
+      "log_sha256": "c0e8ff08b5f422f19f63aee283c6757b15002a60d59a866ef41ca55e281b7d4c",
+      "manifest_path": "/Users/imranmzakirov/Desktop/research/experiments/manifests/web-xss-ollama-smoke-excluded-v0.4.0.json",
+      "manifest_sha256": "ccadb1c3169b07901e0187808879c700f74d6593865ea575d897a2034499e94f",
+      "prior_to_v2": true,
+      "receipt_path": "/Users/imranmzakirov/Desktop/research/experiments/runs/web-xss-ollama-smoke-excluded-v0.4.0/smoke-run-0001.receipt.json",
+      "receipt_sha256": "80e431428a69b821865a15cc06e10c5990c01a63ee6da5c96b95a7ce3e40a171",
+      "result_sources": [],
+      "run_id": "smoke-run-0001",
+      "terminal_outcome": "VALIDATED_SUCCESS"
+    }
+  ],
+  "schema_version": "1.0.0",
+  "scope": "all local manifests, run logs, receipts, result JSONL, and nightly reports",
+  "summary": {
+    "integrity_passed_count": 33,
+    "manifest_count": 23,
+    "manifests_without_runs": [],
+    "nightly_report_count": 4,
+    "outcomes": {
+      "INFRASTRUCTURE_ABORT": 13,
+      "VALIDATED_NON_SUCCESS": 14,
+      "VALIDATED_SUCCESS": 18
+    },
+    "prior_to_v2_count": 37,
+    "result_rows_without_matching_log": [],
+    "result_source_rows": {
+      "/Users/imranmzakirov/Desktop/research/experiments/family_smoke_results.jsonl": 4,
+      "/Users/imranmzakirov/Desktop/research/experiments/results/rag-factorial-pilot-0-5-0.jsonl": 2,
+      "/Users/imranmzakirov/Desktop/research/experiments/results/rag-overnight-v1-pilot-0-5-0.jsonl": 8,
+      "/Users/imranmzakirov/Desktop/research/experiments/results/rag-overnight-v2-pilot-0-5-0.jsonl": 8
+    },
+    "roles": {
+      "engineering_fixture": 1,
+      "excluded_smoke": 25,
+      "pilot_only": 19
+    },
+    "run_count": 45,
+    "runs_by_experiment": {
+      "crypto-aead-ollama-smoke-excluded-v0.1.0": 2,
+      "crypto-aead-ollama-smoke-excluded-v0.1.1": 1,
+      "crypto-aead-ollama-smoke-excluded-v0.1.2": 1,
+      "crypto-aead-ollama-smoke-excluded-v0.1.3": 1,
+      "crypto-aead-ollama-smoke-excluded-v0.1.4": 1,
+      "crypto-aead-ollama-smoke-excluded-v0.1.5": 1,
+      "crypto-aead-ollama-smoke-excluded-v0.1.6": 1,
+      "crypto-aead-ollama-smoke-excluded-v0.1.7": 1,
+      "crypto-aead-ollama-smoke-excluded-v0.1.8": 1,
+      "crypto-aead-ollama-smoke-excluded-v0.4.0": 2,
+      "crypto-key-derivation-ollama-smoke-excluded-v0.4.0": 1,
+      "crypto-key-management-ollama-smoke-excluded-v0.4.0": 1,
+      "crypto-nonce-ollama-smoke-excluded-v0.4.0": 2,
+      "crypto-weak-randomness-ollama-smoke-excluded-v0.4.0": 1,
+      "e2e-local-finite-state-v0.1.2": 1,
+      "executable-smoke-v0-5-0": 2,
+      "executable-smoke-v0-5-0-085636908dd2": 1,
+      "executable-smoke-v0-5-0-98a4dcf41467": 1,
+      "executable-smoke-v0-5-0-c9df9fc77bcc": 1,
+      "rag-factorial-pilot-0-5-0": 3,
+      "rag-overnight-v1-pilot-0-5-0": 8,
+      "rag-overnight-v2-pilot-0-5-0": 8,
+      "web-xss-ollama-smoke-excluded-v0.4.0": 3
+    }
+  }
+}

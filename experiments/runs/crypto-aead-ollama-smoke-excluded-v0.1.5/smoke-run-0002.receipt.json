@@ -1,0 +1,40 @@
+{
+  "agent_version": "ollama-local-adapter-0.1.3",
+  "benchmark_version": "crypto-aead-executable-0.1.5",
+  "condition": "RD",
+  "errors": [],
+  "experiment_id": "crypto-aead-ollama-smoke-excluded-v0.1.5",
+  "finalized_at": "2026-09-30T15:05:27Z",
+  "git_commit": "8d5bcac786bfd9a75f7a60b1ed3bbe8be1d15086",
+  "log_file": "smoke-run-0002.jsonl",
+  "log_sha256": "9af1eb9132e912d87496f1de88d507658b41846f46b2cb727e4cf32c78c55e9e",
+  "model": "qwen3:4b",
+  "public_run_id": "crypto-smoke-public-smoke-run-0002",
+  "public_task_id": "task-crypto-aead-smoke",
+  "run_id": "smoke-run-0002",
+  "schema_version": "0.1.0",
+  "stop_event": "AGENT_SELF_TERMINATION",
+  "task_id": "task-crypto-aead-smoke",
+  "terminal_outcome": "VALIDATED_NON_SUCCESS",
+  "verifier_receipt": {
+    "details": {
+      "checks": {
+        "nonce_unique": false,
+        "round_trip": false,
+        "tamper_rejected": false,
+        "wrong_aad_rejected": false
+      },
+      "returncode": 1,
+      "stderr": "# local.crypto/aead-target [local.crypto/aead-target.test]\n./solution.go:20:9: no new variables on left side of :=\n./solution.go:24:9: not enough return values\n\thave ([]byte)\n\twant ([]byte, error)\n./solution.go:24:36: not enough arguments in call to gcm.Seal\n\thave ([]byte, []byte, []byte)\n\twant ([]byte, []byte, []byte, []byte)\n",
+      "stdout": "FAIL\tlocal.crypto/aead-target [build failed]\nFAIL\n"
+    },
+    "failure_reason": "build_or_test_failure",
+    "passed": false,
+    "receipt_sha256": "434567afab1a3ac64b2e979fb93a981733ac4f725212a9c0936b75ff97c501cc",
+    "source_sha256": "3ed29ddd11878f81efb63118e7c9948e3ec001b3fd323fd94cd6431dbd65e33f",
+    "terminal_outcome": "VALIDATED_NON_SUCCESS",
+    "verifier_id": "crypto_aead_executable_receipt_v1",
+    "verifier_version": "0.1.0",
+    "workspace": "/private/var/folders/19/t_x4_sc94sb5cybhxhgfmwqw0000gn/T/crypto-aead-episode-olf6pp5r/target"
+  }
+}

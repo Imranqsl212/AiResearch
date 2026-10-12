@@ -1,6 +1,16 @@
-# Claim–evidence matrix — current worktree, 2026-09-29
+# Claim–evidence matrix — historical worktree, 2026-09-29
 
-This matrix audits the manuscript and README against **observed** artifacts, not intended infrastructure. `SUPPORTED` below means supported only at the stated engineering scope. The complete paper remains a protocol/status draft, not an empirical agent-behavior paper.
+> **Historical matrix for the 29 September hardening worktree.** “Current” and
+> “no agent outcomes” below refer only to that earlier snapshot and draft; they
+> do not describe today's [exploratory paper](../paper/final.md). The later
+> historical cohort has 40 episodes, while prospective v1 main remains
+> `NOT_READY` with zero eligible episodes. Use the [current overview](../README.md)
+> and [next actions](NEXT_READY_ACTIONS_20261008.md) for current claims.
+
+This matrix audited the then-current manuscript and README against **observed**
+artifacts, not intended infrastructure. `SUPPORTED` below means supported only
+at that engineering scope. The paper reviewed at that time was a protocol/status
+draft, not the later empirical exploratory audit.
 
 | Claim | Evidence | Dataset | Analysis | Limitation | Supported? |
 | --- | --- | --- | --- | --- | --- |

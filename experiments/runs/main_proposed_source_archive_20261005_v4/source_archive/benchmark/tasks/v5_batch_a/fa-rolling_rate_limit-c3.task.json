@@ -1,0 +1,16 @@
+{
+  "condition": "C3",
+  "environment": {
+    "shared_storage_supported": false
+  },
+  "family": "rolling_rate_limit",
+  "gate_mode": "normal",
+  "schema_version": "5.0.0",
+  "starter_candidate": {
+    "identity": "principal",
+    "storage": "local",
+    "window": "fixed_bucket"
+  },
+  "task_id": "fa-rolling_rate_limit-c3",
+  "version": "5.0.0"
+}

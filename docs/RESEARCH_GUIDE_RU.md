@@ -1,11 +1,20 @@
 # Исследование: как AI-агент исправляет криптографические ошибки и когда останавливается
 
+> **Исторический проектный гид (до аудита 3 октября 2026 года).** Условия `UD/UW`
+> и команды ниже не являются действующим протоколом. В 40 исторических
+> эпизодах «недоступность» задавалась скрытым отказом в приёмке, а не
+> доказанной невозможностью ремонта. Восемь AEAD и 30 v7 запусков относятся к
+> отдельным пилотам. Новый основной эксперимент остаётся `NOT_READY`,
+> допущенных эпизодов — 0. Актуальные выводы: [статья](../paper/final.md);
+> дальнейшие действия: [план READY](NEXT_READY_ACTIONS_20261008.md).
+
 ## Идея в двух предложениях
 
 Мы не пытаемся доказать, что «AI умеет или не умеет кибербезопасность» вообще.
 Это слишком широкая тема. Мы берём конкретный контролируемый сценарий: локальный
 AI coding agent получает небезопасную реализацию криптографического механизма,
-получает обратную связь от независимого security checker и пытается исправить код.
+получает обратную связь от локального checker и пытается исправить код. Его
+независимость и достаточность проверки были позднее поставлены под сомнение.
 
 Главный вопрос: после неудачи агент действительно меняет security strategy или
 только перебирает параметры, повторяет тот же подход и останавливается случайно —
@@ -17,7 +26,7 @@ AI coding agent получает небезопасную реализацию �
 
 - какой tool вызван;
 - какие параметры и код отправлены;
-- что ответил независимый checker;
+- что ответил локальный checker;
 - прошёл ли код executable verifier;
 - изменилась ли реализация и observable strategy codebook;
 - повторил ли агент прежнее действие;
@@ -28,7 +37,7 @@ AI coding agent получает небезопасную реализацию �
 Private chain-of-thought не собирается и не используется как доказательство.
 Финальный текст модели — это только claim, а не ground truth.
 
-## Дизайн benchmark
+## Ранний дизайн benchmark (заменён после аудита)
 
 В текущем executable catalog 80 локальных задач:
 
@@ -43,10 +52,12 @@ Private chain-of-thought не собирается и не использует�
 | `RW` | да | weak but truthful: checker подтверждает только факт rejection |
 | `UW` | нет | weak but truthful: checker подтверждает только факт rejection |
 
-`RD/RW` — repairable, `UD/UW` — evaluator-enforced unreachable. Это важно:
+`RD/RW` — repairable, `UD/UW` — evaluator-enforced unreachable в обозначениях
+раннего плана. Это важно:
 агент не получает label условия, expected outcome или состояние verifier. Для
-`UD/UW` нельзя «выиграть» бесконечными попытками, поэтому можно отдельно измерять,
-распознаёт ли агент невозможность задачи.
+`UD/UW` нельзя было «выиграть» из-за скрытого veto в старом оценщике. Такая
+реализация **не позволяет** измерить, распознаёт ли агент настоящую
+невозможность задачи; см. последующий [аудит](../research_audit.md).
 
 Примеры crypto families: AEAD/nonce lifecycle, key management, weak randomness,
 key derivation, password hashing, padding, tag verification, TLS/certificate
@@ -73,7 +84,7 @@ path traversal, SSRF policy, command injection, authorization, session и CSRF.
 credentials, limits, timeout, runaway processes, log retention, reproducibility и
 точно тот candidate RPC path, который используется benchmark.
 
-## Порядок запуска
+## Предполагавшийся порядок запуска (не действующий допуск)
 
 Ночная команда сначала делает preflight:
 
@@ -83,39 +94,23 @@ credentials, limits, timeout, runaway processes, log retention, reproducibility 
 4. запускает один исключённый provider→Docker→verifier smoke;
 5. запускает pilot на 12 задачах: `aead`, `key-derivation`, `sqli` × `RD/UD/RW/UW`;
 6. проверяет completeness, receipts, logs и отсутствие infrastructure abort;
-7. только после этого, если передан `--run-main`, запускает main на всех 80 задачах.
+7. предполагался main на всех 80 задачах; этот шаг не является действующим
+   допуском к новому основному исследованию.
 
 Pilot и main используют create-once manifest, deterministic schedule, attempt ledger
 и append-only raw JSONL. При остановке процесс можно повторить: завершённые slots
 будут пропущены. Незавершённая reservation не обходится автоматически — это
 намеренный fail-closed режим, чтобы не потерять или не продублировать наблюдение.
 
-## Команда для ночного запуска
+## Исторические параметры ночного плана
 
-Из корня проекта:
+Ранняя команда удалена из этого гида, чтобы её не приняли за инструкцию к
+нынешнему основному эксперименту. Тогда планировались лимиты 300 секунд на
+запрос и 900 секунд на эпизод; это не параметры нового v1 main. Его gate
+остаётся закрытым, а порядок допуска описан в
+[плане READY](NEXT_READY_ACTIONS_20261008.md).
 
-```bash
-cd /path/to/research && \
-PYTHONDONTWRITEBYTECODE=1 python3 -u -B -m experiments.run_nightly_study \
-  --model qwen3:4b \
-  --pilot-runs 1 \
-  --main-runs 3 \
-  --request-timeout 300 \
-  --timeout-seconds 900 \
-  --max-steps 8 \
-  --run-main
-```
-
-Если сначала нужен только pilot, уберите последний флаг `--run-main`. Это
-рекомендуемый первый запуск: main тогда не начнётся автоматически.
-
-`--request-timeout 300` — это лимит одного запроса к Ollama. `--timeout-seconds 900`
-— лимит всего episode. На MacBook Air M1 8 GB Qwen3:4b может тратить несколько
-минут на один tool decision, поэтому полный main не гарантированно помещается в
-одну ночь. Команда resumable и продолжает frozen schedule с последнего валидного
-slot; она не меняет задачи по ходу дела.
-
-## Где смотреть результат утром
+## Где ранний план ожидал результаты
 
 Главный orchestration report:
 
@@ -142,8 +137,10 @@ experiments/ledgers/executable-main-v0-5-0.json
 ```
 
 Сырые trajectories находятся в `experiments/runs/`, receipts — рядом с ними,
-content-addressed archive — в `experiments/raw_archive/`. Эти директории намеренно
-игнорируются Git и не должны публиковаться без отдельного data-release review.
+content-addressed archive — в `experiments/raw_archive/`. Эти директории теперь
+отслеживаются локальной Git-веткой. Это не означает научный допуск задач или
+принятие пакета данных выбранным журналом; наличие на удалённой ветке нужно
+проверять отдельно.
 
 Успехом считается только `verifier_terminal_outcome=VALIDATED_SUCCESS`. Статусы
 `TIMEOUT`, `BUDGET_STOP`, `AGENT_SELF_TERMINATION`, `INFRASTRUCTURE_ABORT` и
@@ -175,11 +172,13 @@ unsupported claim сохраняются отдельно; они не смеш�
 - `agent/` — provider-neutral adapter и Ollama integration;
 - `sandbox/` — immutable runtime и safety tests;
 - `experiments/` — manifests, schedule, ledger и launcher;
-- `analysis/` и `paper/` — analysis/paper infrastructure без выдуманных main results.
+- `analysis/` и `paper/` — инфраструктура анализа; позднее по сохранённым
+  реальным данным подготовлена отдельная [статья](../paper/final.md).
 
 ## Честные ограничения
 
-Сейчас это controlled local benchmark, а не доказательство поведения всех AI agents
+Этот ранний замысел описывал controlled local benchmark, а не доказательство
+поведения всех AI agents
 и не оценка production crypto libraries. Модель одна, локальная, tasks synthetic but
 executable, а strategy labels основаны только на observable codebook. Smoke success
 подтверждает работоспособность pipeline, но не является научным выводом. Эти

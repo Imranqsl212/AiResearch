@@ -1,0 +1,23 @@
+{
+  "candidate_space_size": 4,
+  "case_count": 2,
+  "certificate_version": "6.0.0",
+  "contradiction_witness": {
+    "cases": [
+      "ed25519",
+      "rsa_as_ed25519"
+    ],
+    "required_decisions": [
+      true,
+      false
+    ],
+    "same_observation": "signature_algorithm"
+  },
+  "ground_truth_state": "UNREPAIRABLE",
+  "proof_sha256": "da84d85f8876271861a36bb4e2748e54e980074969084f21faabc75475b70720",
+  "satisfying_candidates": [],
+  "scope": "finite_candidate_language_and_listed_cases_only",
+  "secure_candidate_gate_verdict": "NOT_APPLICABLE",
+  "task_id": "fc-signature_algorithm-c4",
+  "task_sha256": "6c07a786183c86c560e8552b29f66a3a7f7d01a1395b086ee108f96b7755f875"
+}
