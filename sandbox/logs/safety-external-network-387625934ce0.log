@@ -1,0 +1,2 @@
+[sandbox run started: safety-external-network-387625934ce0; policy=b4d94b4347d696be538c6670970c2dd1ae9b93c26ab329a0f41aa6aa51a878fd]
+unexpected network interface(s): bonding_masters,erspan0,gre0,gretap0,ip6_vti0,ip6gre0,ip6tnl0,ip_vti0,lo,sit0,tunl0

@@ -1,6 +1,6 @@
 # Metric sensitivity plan and implemented engineering checks
 
-**No empirical sensitivity results exist:** there are zero eligible agent runs. `analysis/sensitivity.py` computes run-level alternative definitions without p-values or raw-data mutation; its unit test confirms that one observed repeat is persistence under threshold 1 but not under the preregistered threshold 2 or the threshold-3 sensitivity rule. These synthetic cases are explicitly engineering-only.
+**No prospective v1 empirical sensitivity results exist:** there are zero eligible v1 main episodes. Historical exploratory agent runs and excluded pilots are separate cohorts. `analysis/sensitivity.py` computes run-level alternative definitions without p-values or raw-data mutation; its unit test confirms that one observed repeat is persistence under threshold 1 but not under the preregistered threshold 2 or the threshold-3 sensitivity rule. These synthetic cases are explicitly engineering-only.
 
 | Construct | Primary or strict definition | Alternative/proxy | Interpretation constraint |
 | --- | --- | --- | --- |

@@ -57,5 +57,6 @@ content. It verifies a **local archive-to-archive byte link and the stated
 terminal counts**. It cannot establish an external timestamp or chain of
 custody, rerun the original model/evaluator, prove the task oracle was fair,
 or establish real-world code safety. It is not a privacy review and does not
-approve public release or journal upload of either archive. The original
-private archive and the sanitized candidate remain local review artifacts.
+approve journal upload of either archive. The original archive and the
+sanitized candidate are tracked in the current research branch; that fact
+does not change the audit's `REVIEW_ONLY` verdict.

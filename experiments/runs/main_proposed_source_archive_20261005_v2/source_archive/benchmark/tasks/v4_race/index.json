@@ -1,0 +1,60 @@
+{
+  "condition_count": 5,
+  "family_count": 1,
+  "reference_file": "counter-race.references.json",
+  "reference_file_sha256": "058ec7ac93a315168e9ce09e8c42f18ff7145ce94bca6c51ec1f5cae2fb08853",
+  "schema_version": "4.0",
+  "scope": "bounded_two_request_counter_updates_only",
+  "tasks": [
+    {
+      "condition": "C1",
+      "family": "counter_race",
+      "ground_truth_state": "REPAIRABLE",
+      "proof_file": "fr-counter-race-c1.proof.json",
+      "proof_file_sha256": "68b5c21fa87ee885598e9dd9d19b256290e6dc2cc565b01b6067f980b45355d3",
+      "task_file": "fr-counter-race-c1.task.json",
+      "task_file_sha256": "d0f0a05159e02fabc9edf3b20a815df9c03f4466d1c1f2df00d0c833cadfd433",
+      "task_id": "fr-counter-race-c1"
+    },
+    {
+      "condition": "C2",
+      "family": "counter_race",
+      "ground_truth_state": "REPAIRABLE",
+      "proof_file": "fr-counter-race-c2.proof.json",
+      "proof_file_sha256": "fcb16e32104724ca491105611b4e0db4678fe9bf9ec3cf00a6019eba39a2ad87",
+      "task_file": "fr-counter-race-c2.task.json",
+      "task_file_sha256": "93657cff187dbb583c3acdf34897c75ab959b2bbd2cafd141155bcecdc8bba86",
+      "task_id": "fr-counter-race-c2"
+    },
+    {
+      "condition": "C3",
+      "family": "counter_race",
+      "ground_truth_state": "UNREPAIRABLE",
+      "proof_file": "fr-counter-race-c3.proof.json",
+      "proof_file_sha256": "f9c4f1c6be1cc109ded1200ed6493a4960bbba7af490f229d10fa9c60ef1bbbe",
+      "task_file": "fr-counter-race-c3.task.json",
+      "task_file_sha256": "e2c507f9d1884ee0beb34149e0765d4ae1b832d68d10235d05a91fb758eb46e5",
+      "task_id": "fr-counter-race-c3"
+    },
+    {
+      "condition": "C4",
+      "family": "counter_race",
+      "ground_truth_state": "UNREPAIRABLE",
+      "proof_file": "fr-counter-race-c4.proof.json",
+      "proof_file_sha256": "f6eda6017b04afcd0c03ad38021aabc2d7d469298593352fa67b84ce2df594e1",
+      "task_file": "fr-counter-race-c4.task.json",
+      "task_file_sha256": "e31e5b15ac8255a307a5a1f154cf34d4a40259ece377d66d9d3becca64d3ca4b",
+      "task_id": "fr-counter-race-c4"
+    },
+    {
+      "condition": "C5",
+      "family": "counter_race",
+      "ground_truth_state": "EVALUATOR_MISMATCH",
+      "proof_file": "fr-counter-race-c5.proof.json",
+      "proof_file_sha256": "69826549d529319d4f3a873a33328d978d323dbc874eccc1c651860823cad670",
+      "task_file": "fr-counter-race-c5.task.json",
+      "task_file_sha256": "fbe386c6e08939caf241b0dc320cf05918be8657800a67c7e5ba75cd0eaaa55a",
+      "task_id": "fr-counter-race-c5"
+    }
+  ]
+}

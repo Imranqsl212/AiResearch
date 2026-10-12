@@ -1,6 +1,19 @@
 # Four-reviewer assessment and adversarial conclusion audit
 
-**Review date:** 2026-09-29. **Recommendation:** reject as an empirical paper; retain as a protocol/implementation-status manuscript. The current repository has no eligible main-study run. A positive, negative, or mixed behavioral conclusion would all be invented. Reviews below assess the submitted draft and record concrete corrections made in `paper/final.md`.
+> **Historical review, 29 September 2026.** This assessed an earlier
+> protocol-only draft and its then-uncollected dataset. References below to
+> “current” paper and zero agent trajectories apply to that snapshot, not to
+> the later [40-episode exploratory audit](../paper/final.md). The separate
+> prospective v1 main is still `NOT_READY` with zero eligible episodes. See
+> the [current overview](../README.md) and [next actions](NEXT_READY_ACTIONS_20261008.md).
+
+**Review date:** 2026-09-29. **Recommendation for the reviewed draft:** reject
+as an empirical paper; retain as a protocol/implementation-status manuscript.
+At that point the repository had no eligible main-study run. A positive,
+negative, or mixed behavioral conclusion from those then-available artifacts
+would have been invented. Reviews below assess that earlier draft and record
+corrections made at the time; `paper/final.md` has since been replaced by the
+exploratory audit.
 
 **Post-review infrastructure note:** the missing Git baseline has since been created (`33b3d7acfc7cea0b83f96bae9f2f26d0127152da`). It does not retroactively repair the pre-Git fixture or substitute for a frozen experimental commit; the remaining methodological objections below still apply. The local Docker image candidate is unapproved because runtime preapproval failed.
 

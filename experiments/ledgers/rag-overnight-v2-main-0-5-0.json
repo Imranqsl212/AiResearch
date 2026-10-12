@@ -1,0 +1,487 @@
+{
+  "experiment_id": "rag-overnight-v2-main-0-5-0",
+  "schedule_sha256": "78fb9732520fd9b1eb37ba956e40386986c84d0e0fc8aaa31666136b35c6feb4",
+  "schema_version": "0.1.0",
+  "slots": [
+    {
+      "attempts": [
+        {
+          "classification": "SELECTED",
+          "run_id": "rag-overnight-v2-main-0-5-0-slot-000001"
+        }
+      ],
+      "missing_reason": null,
+      "selected_run_id": "rag-overnight-v2-main-0-5-0-slot-000001",
+      "slot_id": "slot-000001",
+      "status": "RECORDED"
+    },
+    {
+      "attempts": [
+        {
+          "classification": "SELECTED",
+          "run_id": "rag-overnight-v2-main-0-5-0-slot-000002"
+        }
+      ],
+      "missing_reason": null,
+      "selected_run_id": "rag-overnight-v2-main-0-5-0-slot-000002",
+      "slot_id": "slot-000002",
+      "status": "RECORDED"
+    },
+    {
+      "attempts": [
+        {
+          "classification": "SELECTED",
+          "run_id": "rag-overnight-v2-main-0-5-0-slot-000003"
+        }
+      ],
+      "missing_reason": null,
+      "selected_run_id": "rag-overnight-v2-main-0-5-0-slot-000003",
+      "slot_id": "slot-000003",
+      "status": "RECORDED"
+    },
+    {
+      "attempts": [
+        {
+          "classification": "SELECTED",
+          "run_id": "rag-overnight-v2-main-0-5-0-slot-000004"
+        }
+      ],
+      "missing_reason": null,
+      "selected_run_id": "rag-overnight-v2-main-0-5-0-slot-000004",
+      "slot_id": "slot-000004",
+      "status": "RECORDED"
+    },
+    {
+      "attempts": [
+        {
+          "classification": "SELECTED",
+          "run_id": "rag-overnight-v2-main-0-5-0-slot-000005"
+        }
+      ],
+      "missing_reason": null,
+      "selected_run_id": "rag-overnight-v2-main-0-5-0-slot-000005",
+      "slot_id": "slot-000005",
+      "status": "RECORDED"
+    },
+    {
+      "attempts": [
+        {
+          "classification": "SELECTED",
+          "run_id": "rag-overnight-v2-main-0-5-0-slot-000006"
+        }
+      ],
+      "missing_reason": null,
+      "selected_run_id": "rag-overnight-v2-main-0-5-0-slot-000006",
+      "slot_id": "slot-000006",
+      "status": "RECORDED"
+    },
+    {
+      "attempts": [
+        {
+          "classification": "SELECTED",
+          "run_id": "rag-overnight-v2-main-0-5-0-slot-000007"
+        }
+      ],
+      "missing_reason": null,
+      "selected_run_id": "rag-overnight-v2-main-0-5-0-slot-000007",
+      "slot_id": "slot-000007",
+      "status": "RECORDED"
+    },
+    {
+      "attempts": [
+        {
+          "classification": "SELECTED",
+          "run_id": "rag-overnight-v2-main-0-5-0-slot-000008"
+        }
+      ],
+      "missing_reason": null,
+      "selected_run_id": "rag-overnight-v2-main-0-5-0-slot-000008",
+      "slot_id": "slot-000008",
+      "status": "RECORDED"
+    },
+    {
+      "attempts": [
+        {
+          "classification": "SELECTED",
+          "run_id": "rag-overnight-v2-main-0-5-0-slot-000009"
+        }
+      ],
+      "missing_reason": null,
+      "selected_run_id": "rag-overnight-v2-main-0-5-0-slot-000009",
+      "slot_id": "slot-000009",
+      "status": "RECORDED"
+    },
+    {
+      "attempts": [
+        {
+          "classification": "SELECTED",
+          "run_id": "rag-overnight-v2-main-0-5-0-slot-000010"
+        }
+      ],
+      "missing_reason": null,
+      "selected_run_id": "rag-overnight-v2-main-0-5-0-slot-000010",
+      "slot_id": "slot-000010",
+      "status": "RECORDED"
+    },
+    {
+      "attempts": [
+        {
+          "classification": "SELECTED",
+          "run_id": "rag-overnight-v2-main-0-5-0-slot-000011"
+        }
+      ],
+      "missing_reason": null,
+      "selected_run_id": "rag-overnight-v2-main-0-5-0-slot-000011",
+      "slot_id": "slot-000011",
+      "status": "RECORDED"
+    },
+    {
+      "attempts": [
+        {
+          "classification": "SELECTED",
+          "run_id": "rag-overnight-v2-main-0-5-0-slot-000012"
+        }
+      ],
+      "missing_reason": null,
+      "selected_run_id": "rag-overnight-v2-main-0-5-0-slot-000012",
+      "slot_id": "slot-000012",
+      "status": "RECORDED"
+    },
+    {
+      "attempts": [
+        {
+          "classification": "SELECTED",
+          "run_id": "rag-overnight-v2-main-0-5-0-slot-000013"
+        }
+      ],
+      "missing_reason": null,
+      "selected_run_id": "rag-overnight-v2-main-0-5-0-slot-000013",
+      "slot_id": "slot-000013",
+      "status": "RECORDED"
+    },
+    {
+      "attempts": [
+        {
+          "classification": "SELECTED",
+          "run_id": "rag-overnight-v2-main-0-5-0-slot-000014"
+        }
+      ],
+      "missing_reason": null,
+      "selected_run_id": "rag-overnight-v2-main-0-5-0-slot-000014",
+      "slot_id": "slot-000014",
+      "status": "RECORDED"
+    },
+    {
+      "attempts": [
+        {
+          "classification": "SELECTED",
+          "run_id": "rag-overnight-v2-main-0-5-0-slot-000015"
+        }
+      ],
+      "missing_reason": null,
+      "selected_run_id": "rag-overnight-v2-main-0-5-0-slot-000015",
+      "slot_id": "slot-000015",
+      "status": "RECORDED"
+    },
+    {
+      "attempts": [
+        {
+          "classification": "SELECTED",
+          "run_id": "rag-overnight-v2-main-0-5-0-slot-000016"
+        }
+      ],
+      "missing_reason": null,
+      "selected_run_id": "rag-overnight-v2-main-0-5-0-slot-000016",
+      "slot_id": "slot-000016",
+      "status": "RECORDED"
+    },
+    {
+      "attempts": [
+        {
+          "classification": "SELECTED",
+          "run_id": "rag-overnight-v2-main-0-5-0-slot-000017"
+        }
+      ],
+      "missing_reason": null,
+      "selected_run_id": "rag-overnight-v2-main-0-5-0-slot-000017",
+      "slot_id": "slot-000017",
+      "status": "RECORDED"
+    },
+    {
+      "attempts": [
+        {
+          "classification": "SELECTED",
+          "run_id": "rag-overnight-v2-main-0-5-0-slot-000018"
+        }
+      ],
+      "missing_reason": null,
+      "selected_run_id": "rag-overnight-v2-main-0-5-0-slot-000018",
+      "slot_id": "slot-000018",
+      "status": "RECORDED"
+    },
+    {
+      "attempts": [
+        {
+          "classification": "SELECTED",
+          "run_id": "rag-overnight-v2-main-0-5-0-slot-000019"
+        }
+      ],
+      "missing_reason": null,
+      "selected_run_id": "rag-overnight-v2-main-0-5-0-slot-000019",
+      "slot_id": "slot-000019",
+      "status": "RECORDED"
+    },
+    {
+      "attempts": [
+        {
+          "classification": "SELECTED",
+          "run_id": "rag-overnight-v2-main-0-5-0-slot-000020"
+        }
+      ],
+      "missing_reason": null,
+      "selected_run_id": "rag-overnight-v2-main-0-5-0-slot-000020",
+      "slot_id": "slot-000020",
+      "status": "RECORDED"
+    },
+    {
+      "attempts": [
+        {
+          "classification": "SELECTED",
+          "run_id": "rag-overnight-v2-main-0-5-0-slot-000021"
+        }
+      ],
+      "missing_reason": null,
+      "selected_run_id": "rag-overnight-v2-main-0-5-0-slot-000021",
+      "slot_id": "slot-000021",
+      "status": "RECORDED"
+    },
+    {
+      "attempts": [
+        {
+          "classification": "SELECTED",
+          "run_id": "rag-overnight-v2-main-0-5-0-slot-000022"
+        }
+      ],
+      "missing_reason": null,
+      "selected_run_id": "rag-overnight-v2-main-0-5-0-slot-000022",
+      "slot_id": "slot-000022",
+      "status": "RECORDED"
+    },
+    {
+      "attempts": [
+        {
+          "classification": "SELECTED",
+          "run_id": "rag-overnight-v2-main-0-5-0-slot-000023"
+        }
+      ],
+      "missing_reason": null,
+      "selected_run_id": "rag-overnight-v2-main-0-5-0-slot-000023",
+      "slot_id": "slot-000023",
+      "status": "RECORDED"
+    },
+    {
+      "attempts": [
+        {
+          "classification": "SELECTED",
+          "run_id": "rag-overnight-v2-main-0-5-0-slot-000024"
+        }
+      ],
+      "missing_reason": null,
+      "selected_run_id": "rag-overnight-v2-main-0-5-0-slot-000024",
+      "slot_id": "slot-000024",
+      "status": "RECORDED"
+    },
+    {
+      "attempts": [
+        {
+          "classification": "SELECTED",
+          "run_id": "rag-overnight-v2-main-0-5-0-slot-000025"
+        }
+      ],
+      "missing_reason": null,
+      "selected_run_id": "rag-overnight-v2-main-0-5-0-slot-000025",
+      "slot_id": "slot-000025",
+      "status": "RECORDED"
+    },
+    {
+      "attempts": [
+        {
+          "classification": "SELECTED",
+          "run_id": "rag-overnight-v2-main-0-5-0-slot-000026"
+        }
+      ],
+      "missing_reason": null,
+      "selected_run_id": "rag-overnight-v2-main-0-5-0-slot-000026",
+      "slot_id": "slot-000026",
+      "status": "RECORDED"
+    },
+    {
+      "attempts": [
+        {
+          "classification": "SELECTED",
+          "run_id": "rag-overnight-v2-main-0-5-0-slot-000027"
+        }
+      ],
+      "missing_reason": null,
+      "selected_run_id": "rag-overnight-v2-main-0-5-0-slot-000027",
+      "slot_id": "slot-000027",
+      "status": "RECORDED"
+    },
+    {
+      "attempts": [
+        {
+          "classification": "SELECTED",
+          "run_id": "rag-overnight-v2-main-0-5-0-slot-000028"
+        }
+      ],
+      "missing_reason": null,
+      "selected_run_id": "rag-overnight-v2-main-0-5-0-slot-000028",
+      "slot_id": "slot-000028",
+      "status": "RECORDED"
+    },
+    {
+      "attempts": [
+        {
+          "classification": "SELECTED",
+          "run_id": "rag-overnight-v2-main-0-5-0-slot-000029"
+        }
+      ],
+      "missing_reason": null,
+      "selected_run_id": "rag-overnight-v2-main-0-5-0-slot-000029",
+      "slot_id": "slot-000029",
+      "status": "RECORDED"
+    },
+    {
+      "attempts": [
+        {
+          "classification": "SELECTED",
+          "run_id": "rag-overnight-v2-main-0-5-0-slot-000030"
+        }
+      ],
+      "missing_reason": null,
+      "selected_run_id": "rag-overnight-v2-main-0-5-0-slot-000030",
+      "slot_id": "slot-000030",
+      "status": "RECORDED"
+    },
+    {
+      "attempts": [
+        {
+          "classification": "SELECTED",
+          "run_id": "rag-overnight-v2-main-0-5-0-slot-000031"
+        }
+      ],
+      "missing_reason": null,
+      "selected_run_id": "rag-overnight-v2-main-0-5-0-slot-000031",
+      "slot_id": "slot-000031",
+      "status": "RECORDED"
+    },
+    {
+      "attempts": [
+        {
+          "classification": "SELECTED",
+          "run_id": "rag-overnight-v2-main-0-5-0-slot-000032"
+        }
+      ],
+      "missing_reason": null,
+      "selected_run_id": "rag-overnight-v2-main-0-5-0-slot-000032",
+      "slot_id": "slot-000032",
+      "status": "RECORDED"
+    },
+    {
+      "attempts": [
+        {
+          "classification": "SELECTED",
+          "run_id": "rag-overnight-v2-main-0-5-0-slot-000033"
+        }
+      ],
+      "missing_reason": null,
+      "selected_run_id": "rag-overnight-v2-main-0-5-0-slot-000033",
+      "slot_id": "slot-000033",
+      "status": "RECORDED"
+    },
+    {
+      "attempts": [
+        {
+          "classification": "SELECTED",
+          "run_id": "rag-overnight-v2-main-0-5-0-slot-000034"
+        }
+      ],
+      "missing_reason": null,
+      "selected_run_id": "rag-overnight-v2-main-0-5-0-slot-000034",
+      "slot_id": "slot-000034",
+      "status": "RECORDED"
+    },
+    {
+      "attempts": [
+        {
+          "classification": "SELECTED",
+          "run_id": "rag-overnight-v2-main-0-5-0-slot-000035"
+        }
+      ],
+      "missing_reason": null,
+      "selected_run_id": "rag-overnight-v2-main-0-5-0-slot-000035",
+      "slot_id": "slot-000035",
+      "status": "RECORDED"
+    },
+    {
+      "attempts": [
+        {
+          "classification": "SELECTED",
+          "run_id": "rag-overnight-v2-main-0-5-0-slot-000036"
+        }
+      ],
+      "missing_reason": null,
+      "selected_run_id": "rag-overnight-v2-main-0-5-0-slot-000036",
+      "slot_id": "slot-000036",
+      "status": "RECORDED"
+    },
+    {
+      "attempts": [
+        {
+          "classification": "SELECTED",
+          "run_id": "rag-overnight-v2-main-0-5-0-slot-000037"
+        }
+      ],
+      "missing_reason": null,
+      "selected_run_id": "rag-overnight-v2-main-0-5-0-slot-000037",
+      "slot_id": "slot-000037",
+      "status": "RECORDED"
+    },
+    {
+      "attempts": [
+        {
+          "classification": "SELECTED",
+          "run_id": "rag-overnight-v2-main-0-5-0-slot-000038"
+        }
+      ],
+      "missing_reason": null,
+      "selected_run_id": "rag-overnight-v2-main-0-5-0-slot-000038",
+      "slot_id": "slot-000038",
+      "status": "RECORDED"
+    },
+    {
+      "attempts": [
+        {
+          "classification": "SELECTED",
+          "run_id": "rag-overnight-v2-main-0-5-0-slot-000039"
+        }
+      ],
+      "missing_reason": null,
+      "selected_run_id": "rag-overnight-v2-main-0-5-0-slot-000039",
+      "slot_id": "slot-000039",
+      "status": "RECORDED"
+    },
+    {
+      "attempts": [
+        {
+          "classification": "SELECTED",
+          "run_id": "rag-overnight-v2-main-0-5-0-slot-000040"
+        }
+      ],
+      "missing_reason": null,
+      "selected_run_id": "rag-overnight-v2-main-0-5-0-slot-000040",
+      "slot_id": "slot-000040",
+      "status": "RECORDED"
+    }
+  ]
+}

@@ -1,18 +1,20 @@
 # Historical paper bundle: sanitized review candidate
 
-**Status: `REVIEW_ONLY_SANITIZED_CANDIDATE`.** This is a local inspection copy of
+**Status: `REVIEW_ONLY_SANITIZED_CANDIDATE`.** This is an inspection copy of
 the historical exploratory paper inputs. A separate table-only replay from its
 transformed bytes now matches the saved paper results. It is not the original
 raw dataset or an approved public supplement. It contains
 the completed historical cohort described in `paper/final.md`; it does not turn
-the later C1–C5 pilots into confirmatory data.
+the later C1–C5 pilots into confirmatory data. The archives are tracked in the
+current research branch; Git availability does not establish privacy review
+or journal supplement approval.
 
 ## Exact files and hash relationship
 
 | Item | SHA-256 | Role |
 | --- | --- | --- |
 | `experiments/runs/paper_private_repro_inputs_20261005.tar.gz` | `39ded8a4301ba0ebb193b48d71b032b0127a521c381fa378c67d08132319fc26` | Original private archive, left untouched. |
-| `experiments/runs/paper_sanitized_review_candidate_20261005.tar.gz` | `48720a5620a1437094268452caab8f0168516454166147e575dea1c1039c0dd3` | New Git-ignored review copy. |
+| `experiments/runs/paper_sanitized_review_candidate_20261005.tar.gz` | `48720a5620a1437094268452caab8f0168516454166147e575dea1c1039c0dd3` | Tracked transformed review copy. |
 | `SANITIZATION_MANIFEST.json` inside the review copy | `a53a24fedc8f0a9f4fce2bf7d4451ebcb62cd06fc8de1d3b8ae465fc74dffef7` | Per-member original-to-transformed SHA-256 and byte-count map. |
 
 The private archive has 313 members, including its `BUNDLE_INVENTORY.json`.
@@ -50,10 +52,10 @@ now records the exact member, byte offset, line, and bounded context for all
 eight residual path candidates. A conservative lexical pass adds 457 review
 leads across the transformed archive, including possible names, addresses,
 credential labels, URLs, redaction markers, and model-deliberation tags. These
-are leads rather than verified sensitive data. The Git-ignored report has
+are leads rather than verified sensitive data. The tracked report has
 mode `0600` (directory `0700`) and SHA-256
 `efc747fec81e94b972a408cc496e22702969eb477ca2917164687df2654c4841`.
-It remains private and marks `human_privacy_review_complete=false` and
+Its metadata still mark it private, and it records `human_privacy_review_complete=false` and
 `public_release_approved=false`. No raw snippets are placed in this document.
 
 Run the offline checks from the repository root:
@@ -105,6 +107,7 @@ original hash chain, while the new script reports the narrower table replay.
 A release still needs human privacy review, a documented decision about the
 remaining path-like strings and sensitive free text, an agreed treatment of the
 original-byte provenance gap, and a data-availability statement matching the
-actual access route. The table-only replay is now available for author review;
-it does not approve the archive for public upload. Until those decisions, the
-private original and sanitized candidate remain local review artifacts.
+actual access route. The table-only replay is available for author review;
+it does not establish privacy clearance or journal data-release approval.
+The original and sanitized candidate are tracked in this branch, including
+material whose review decisions remain open.

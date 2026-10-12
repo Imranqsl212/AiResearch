@@ -1,0 +1,25 @@
+{
+  "adapter_type": "ollama_local_loopback",
+  "agent_version": "ollama-local-adapter-0.2.0",
+  "benchmark_version": "0.5.0",
+  "created_at": "2026-10-02T15:30:35Z",
+  "date": "2026-10-02",
+  "experiment_id": "executable-smoke-v0-5-0-c9df9fc77bcc",
+  "git_commit": "c9df9fc77bcc7894143f6ee87c4d838362f3314b",
+  "max_steps": 8,
+  "model": "qwen3:4b",
+  "notes": "Excluded integration smoke; not pilot/main data.",
+  "runs_per_task": 1,
+  "safety_mode": "local_no_external_target_fail_closed",
+  "sandbox_type": "docker_candidate_runtime",
+  "schedule_sha256": null,
+  "schema_version": "0.1.0",
+  "seed": 7,
+  "task_count": 1,
+  "task_ids": [
+    "crypto-aead-rd"
+  ],
+  "temperature": 0,
+  "timeout_seconds": 900,
+  "token_budget": null
+}

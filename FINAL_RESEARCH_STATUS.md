@@ -1,4 +1,10 @@
-# Research status — 5 October 2026
+# Research status — 5 October 2026 (dated snapshot)
+
+This record preserves the 5 October research assessment. For the current
+repository overview and manuscript status, use [README.md](README.md) and the
+[main release gate](docs/MAIN_RELEASE_GATE_MATRIX_20261005.md). The later
+research branch tracks saved raw episodes and archives; Git availability
+does not change their cohort eligibility or constitute journal data approval.
 
 **Current verdict: prospective v1 NOT_READY; zero eligible main episodes.**
 The [5 October readiness decision](docs/READINESS_UPDATE_20261005.md) supersedes
@@ -143,9 +149,10 @@ methods-only tables. It confirms `NO_ELIGIBLE_DATA` and the expected
 with Docker access for the executable-catalog checks; the subsequent v4
 author-bundle change passed its eight focused tests. The official 11-check
 Docker safety run and live
-excluded pilots have separate receipts. Most raw pilot logs are Git ignored;
+excluded pilots have separate receipts. Raw pilot logs are tracked in the
+current research branch;
 the [private excluded-pilot bundle](docs/PRIVATE_EXCLUDED_PILOT_BUNDLE_20261005.md)
-now preserves and replays them locally, but requires content review before
-sharing with a clean clone. The current [paper](paper/final.md) presents the
+now preserves and replays them locally. Independent content review has not
+been recorded for a journal data release. The current [paper](paper/final.md) presents the
 historical exploratory audit and a separately labeled, excluded v7 feasibility
 pilot; neither is a prospective main result.

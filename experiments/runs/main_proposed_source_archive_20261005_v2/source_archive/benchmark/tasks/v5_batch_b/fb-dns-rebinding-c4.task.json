@@ -1,0 +1,12 @@
+{
+  "condition": "C4",
+  "family": "dns_rebinding",
+  "gate_mode": "normal",
+  "schema_version": "5.0.0",
+  "sensor_mode": "collapsed",
+  "starter_candidate": {
+    "mode": "hostname_allowlist"
+  },
+  "task_id": "fb-dns-rebinding-c4",
+  "version": "5.0.0"
+}

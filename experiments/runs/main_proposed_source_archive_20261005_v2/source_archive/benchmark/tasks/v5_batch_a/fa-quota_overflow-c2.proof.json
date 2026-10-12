@@ -1,0 +1,107 @@
+{
+  "candidate_space_size": 6,
+  "certificate_version": "5.0.0",
+  "counterexamples": [
+    {
+      "candidate": {
+        "arithmetic": "wrap8",
+        "commit": "precheck"
+      },
+      "outcome": {
+        "actual": [
+          true,
+          true
+        ],
+        "case_index": 511,
+        "expected": [
+          false,
+          false
+        ],
+        "input": [
+          1,
+          255
+        ]
+      }
+    },
+    {
+      "candidate": {
+        "arithmetic": "wrap8",
+        "commit": "postcheck"
+      },
+      "outcome": {
+        "actual": [
+          false,
+          true
+        ],
+        "case_index": 201,
+        "expected": [
+          false,
+          false
+        ],
+        "input": [
+          0,
+          201
+        ]
+      }
+    },
+    {
+      "candidate": {
+        "arithmetic": "saturating",
+        "commit": "postcheck"
+      },
+      "outcome": {
+        "actual": [
+          false,
+          true
+        ],
+        "case_index": 201,
+        "expected": [
+          false,
+          false
+        ],
+        "input": [
+          0,
+          201
+        ]
+      }
+    },
+    {
+      "candidate": {
+        "arithmetic": "checked",
+        "commit": "postcheck"
+      },
+      "outcome": {
+        "actual": [
+          false,
+          true
+        ],
+        "case_index": 201,
+        "expected": [
+          false,
+          false
+        ],
+        "input": [
+          0,
+          201
+        ]
+      }
+    }
+  ],
+  "environment_witness": null,
+  "ground_truth_state": "REPAIRABLE",
+  "proof_sha256": "4f27cdca38ec3453632b86cf57d3e025beea09e581b750c86d1605b02c0fbc88",
+  "satisfying_candidates": [
+    {
+      "arithmetic": "saturating",
+      "commit": "precheck"
+    },
+    {
+      "arithmetic": "checked",
+      "commit": "precheck"
+    }
+  ],
+  "scope": "bounded_declarative_candidate_language_only",
+  "secure_candidate_gate_verdict": "PASS",
+  "task_id": "fa-quota_overflow-c2",
+  "task_sha256": "f2c7ac63771d519064b1c137e521231421b093e0072005f1b0b1532c82c644a7"
+}

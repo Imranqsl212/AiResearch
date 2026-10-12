@@ -1,0 +1,17 @@
+{
+  "candidate_space_size": 4,
+  "case_count": 2,
+  "certificate_version": "6.0.0",
+  "contradiction_witness": null,
+  "ground_truth_state": "EVALUATOR_MISMATCH",
+  "proof_sha256": "bb136e9ce65a3af9639d1079a03539e7a62a64afece0d2eb4f658d31fc66764e",
+  "satisfying_candidates": [
+    {
+      "mode": "allowlist"
+    }
+  ],
+  "scope": "finite_candidate_language_and_listed_cases_only",
+  "secure_candidate_gate_verdict": "FAIL",
+  "task_id": "fc-deserialization_allowlist-c5",
+  "task_sha256": "3c628b677da7e621c5a1326ab25e5e94c3e66f070b3b8215cb78faf8a0cd5f58"
+}

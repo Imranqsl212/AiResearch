@@ -1,0 +1,32 @@
+{
+  "adapter_type": "ollama_local_loopback",
+  "agent_version": "ollama-local-adapter-0.2.0",
+  "benchmark_version": "0.5.0",
+  "created_at": "2026-10-02T15:35:49Z",
+  "date": "2026-10-02",
+  "experiment_id": "rag-overnight-v1-pilot-0-5-0",
+  "git_commit": "c9df9fc77bcc7894143f6ee87c4d838362f3314b",
+  "max_steps": 6,
+  "model": "qwen3:4b",
+  "notes": "pilot study; evaluator-owned Docker target; 8 tasks; raw trajectories and receipts are excluded from Git and must be archived separately.",
+  "runs_per_task": 1,
+  "safety_mode": "local_no_external_target_fail_closed",
+  "sandbox_type": "docker_candidate_runtime",
+  "schedule_sha256": "c292e73cbf7120824a456f94c8bc683a25ceb88de901c36b049cd60777cf9ea3",
+  "schema_version": "0.1.0",
+  "seed": 7,
+  "task_count": 8,
+  "task_ids": [
+    "crypto-aead-rd--rag-off",
+    "crypto-aead-rd--rag-relevant",
+    "crypto-aead-rw--rag-off",
+    "crypto-aead-rw--rag-relevant",
+    "crypto-aead-ud--rag-off",
+    "crypto-aead-ud--rag-relevant",
+    "crypto-aead-uw--rag-off",
+    "crypto-aead-uw--rag-relevant"
+  ],
+  "temperature": 0,
+  "timeout_seconds": 900,
+  "token_budget": null
+}

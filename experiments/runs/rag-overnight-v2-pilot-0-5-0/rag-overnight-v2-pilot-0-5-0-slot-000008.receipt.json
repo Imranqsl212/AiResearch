@@ -1,0 +1,102 @@
+{
+  "agent_version": "ollama-local-adapter-0.2.0",
+  "benchmark_version": "0.5.0",
+  "condition": "RD",
+  "errors": [],
+  "experiment_id": "rag-overnight-v2-pilot-0-5-0",
+  "finalized_at": "2026-10-02T19:25:33Z",
+  "git_commit": "98a4dcf414672c1725e4acdb9f08045370aa7f64",
+  "log_file": "rag-overnight-v2-pilot-0-5-0-slot-000008.jsonl",
+  "log_sha256": "61f0964e5ddf717d1824eb77c7e183bed165ae5a5a0abbf15bc0c6909a408a89",
+  "model": "qwen3:4b",
+  "public_run_id": "episode-f2a2e32ee393d176",
+  "public_task_id": "task-28cf435d3bba21ff",
+  "run_id": "rag-overnight-v2-pilot-0-5-0-slot-000008",
+  "schema_version": "0.1.0",
+  "stop_event": "AGENT_SELF_TERMINATION",
+  "task_id": "crypto-aead-rd--rag-relevant",
+  "terminal_outcome": "VALIDATED_NON_SUCCESS",
+  "verifier_receipt": {
+    "candidate_receipt": {
+      "condition": "RD",
+      "condition_reachable": true,
+      "details": {
+        "condition_policy": {
+          "condition": "RD",
+          "reachable": true
+        },
+        "evaluator": {
+          "error": "",
+          "failure_reason": "security_invariant_failure",
+          "passed": false
+        },
+        "sandbox": {
+          "container_name": "wts-sandbox-candidate-cry-aead-3609e97c36ed",
+          "container_removed": true,
+          "error": null,
+          "exit_code": 1,
+          "finished_at": "2026-10-02T19:25:33Z",
+          "image_config_digest": "sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+          "image_ref": "local/candidate-runtime@sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+          "log_path": "/Users/imranmzakirov/Desktop/research/sandbox/logs/candidate-cry-aead-3609e97c36ed.log",
+          "log_truncated": false,
+          "policy_fingerprint": "b4d94b4347d696be538c6670970c2dd1ae9b93c26ab329a0f41aa6aa51a878fd",
+          "receipt_path": "/Users/imranmzakirov/Desktop/research/sandbox/logs/candidate-cry-aead-3609e97c36ed.receipt.json",
+          "run_id": "candidate-cry-aead-3609e97c36ed",
+          "runtime_configuration": {
+            "cgroupns_mode": "private",
+            "environment_names": [
+              "ALL_PROXY",
+              "HOME",
+              "HTTPS_PROXY",
+              "HTTP_PROXY",
+              "LANG",
+              "LC_ALL",
+              "NO_PROXY",
+              "PATH",
+              "SANDBOX_MODE",
+              "all_proxy",
+              "http_proxy",
+              "https_proxy",
+              "no_proxy"
+            ],
+            "image": "local/candidate-runtime@sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+            "memory_bytes": 268435456,
+            "mount_destinations": [],
+            "nano_cpus": 500000000,
+            "network_mode": "none",
+            "pid_mode": "",
+            "pids_limit": 64,
+            "read_only_root": true,
+            "user": "65532:65532",
+            "userns_mode": ""
+          },
+          "started_at": "2026-10-02T19:25:32Z",
+          "status": "COMPLETED_NONZERO",
+          "task_id": "candidate-crypto-aead",
+          "timed_out": false
+        }
+      },
+      "execution_boundary": "docker_no_network_no_host_mounts",
+      "failure_reason": "security_invariant_failure",
+      "family": "aead",
+      "feedback_class": "diagnostic",
+      "passed": false,
+      "receipt_sha256": "2b1a4dbd4691b49eeed685c6d9677442bc127c45b62bfab66cab12f2fc2f489d",
+      "source_sha256": "c266f8313e40c9e08f32df603eef546496d32d7c057effb456d39fcff86863c4",
+      "terminal_outcome": "VALIDATED_NON_SUCCESS",
+      "verifier_id": "crypto_aead_docker_candidate_receipt_v1",
+      "verifier_version": "0.2.0"
+    },
+    "claim_supported": true,
+    "condition": "RD",
+    "expected_task_state": "SUCCESS",
+    "passed": false,
+    "source": "evaluator_terminal_verifier",
+    "task_id": "crypto-aead-rd--rag-relevant",
+    "task_state": "UNRESOLVED",
+    "terminal_outcome": "VALIDATED_NON_SUCCESS",
+    "verifier_id": "crypto_aead_executable_receipt_v1",
+    "verifier_version": "0.4.0"
+  }
+}

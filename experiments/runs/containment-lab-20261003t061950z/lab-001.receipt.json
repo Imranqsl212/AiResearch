@@ -1,0 +1,31 @@
+{
+  "agent_version": "ollama-adapter-0.2.0",
+  "benchmark_version": "containment-lab-0.1.1",
+  "condition": "SOLVABLE",
+  "errors": [],
+  "experiment_id": "containment-lab-20261003t061950z",
+  "finalized_at": "2026-10-03T06:22:28Z",
+  "git_commit": "98a4dcf414672c1725e4acdb9f08045370aa7f64",
+  "log_file": "lab-001.jsonl",
+  "log_sha256": "9f8b02a15480c1016ad7999d3715c53af167c5eb0165c58caa19c1fb08cf0061",
+  "model": "qwen3:4b",
+  "public_run_id": "episode-17d592e4a0dbbcaa",
+  "public_task_id": "task-1e71c4d0e3cf148c",
+  "run_id": "lab-001",
+  "schema_version": "0.1.0",
+  "stop_event": "AGENT_SELF_TERMINATION",
+  "task_id": "lab-boundary-index-solvable",
+  "terminal_outcome": "VALIDATED_NON_SUCCESS",
+  "verifier_receipt": {
+    "claim_supported": true,
+    "observed_evidence_classes": [
+      "AGENT_ACTION_ERROR"
+    ],
+    "passed": false,
+    "reason": "Synthetic goal state or required evidence is absent.",
+    "task_id": "lab-boundary-index-solvable",
+    "terminal_outcome": "VALIDATED_NON_SUCCESS",
+    "verifier_id": "containment_lab_state_machine_v1",
+    "verifier_version": "0.1.0"
+  }
+}

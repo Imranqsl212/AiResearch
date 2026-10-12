@@ -1,0 +1,17 @@
+{
+  "candidate_space_size": 4,
+  "case_count": 2,
+  "certificate_version": "6.0.0",
+  "contradiction_witness": null,
+  "ground_truth_state": "EVALUATOR_MISMATCH",
+  "proof_sha256": "bc7314cac2f20f3d0ffaa18ccd0a2f053732575a8246425e6948c4fe0a463deb",
+  "satisfying_candidates": [
+    {
+      "mode": "hostname"
+    }
+  ],
+  "scope": "finite_candidate_language_and_listed_cases_only",
+  "secure_candidate_gate_verdict": "FAIL",
+  "task_id": "fc-tls_hostname-c5",
+  "task_sha256": "4cb004ac45eaecdcf0da497439d9de03eb5466a13d901dbb4f1958d6f8ca418c"
+}

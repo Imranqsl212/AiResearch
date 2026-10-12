@@ -1,6 +1,6 @@
 # Initial hardening audit — 2026-09-29
 
-This is a current-tree audit of `8d5bcac786bfd9a75f7a60b1ed3bbe8be1d15086`, not an empirical study. The working tree was clean at entry. A separate Codex security scan returned a **historical, unversioned AVB-Bench snapshot**; its findings and partial coverage do **not** establish security of this tree and are not counted as a current pass.
+**Historical snapshot.** This audited the tree at `8d5bcac786bfd9a75f7a60b1ed3bbe8be1d15086`; its zero-run and Git-ignore statements describe 29 September, not the current repository. Use [README.md](../README.md) for current status. The working tree was clean at entry. A separate Codex security scan returned a **historical, unversioned AVB-Bench snapshot**; its findings and partial coverage do **not** establish security of this tree and are not counted as a current pass.
 
 ## 1. Current architecture
 

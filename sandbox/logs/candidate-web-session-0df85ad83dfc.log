@@ -1,0 +1,2 @@
+[sandbox run started: candidate-web-session-0df85ad83dfc; policy=b4d94b4347d696be538c6670970c2dd1ae9b93c26ab329a0f41aa6aa51a878fd]
+{"error": "", "failure_reason": "security_invariant_failure", "passed": false}

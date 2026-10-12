@@ -1,0 +1,137 @@
+{
+  "candidate_space_size": 6,
+  "certificate_version": "5.0.0",
+  "counterexamples": [
+    {
+      "candidate": {
+        "arithmetic": "wrap8",
+        "commit": "precheck"
+      },
+      "outcome": {
+        "actual": [
+          true,
+          true
+        ],
+        "case_index": 511,
+        "expected": [
+          false,
+          false
+        ],
+        "input": [
+          1,
+          255
+        ]
+      }
+    },
+    {
+      "candidate": {
+        "arithmetic": "wrap8",
+        "commit": "postcheck"
+      },
+      "outcome": {
+        "actual": [
+          true,
+          true
+        ],
+        "case_index": 511,
+        "expected": [
+          false,
+          false
+        ],
+        "input": [
+          1,
+          255
+        ]
+      }
+    },
+    {
+      "candidate": {
+        "arithmetic": "saturating",
+        "commit": "precheck"
+      },
+      "outcome": {
+        "actual": [
+          true,
+          true
+        ],
+        "case_index": 511,
+        "expected": [
+          false,
+          false
+        ],
+        "input": [
+          1,
+          255
+        ]
+      }
+    },
+    {
+      "candidate": {
+        "arithmetic": "saturating",
+        "commit": "postcheck"
+      },
+      "outcome": {
+        "actual": [
+          true,
+          true
+        ],
+        "case_index": 511,
+        "expected": [
+          false,
+          false
+        ],
+        "input": [
+          1,
+          255
+        ]
+      }
+    },
+    {
+      "candidate": {
+        "arithmetic": "checked",
+        "commit": "precheck"
+      },
+      "outcome": {
+        "actual": null,
+        "case_index": 0,
+        "expected": [
+          true,
+          true
+        ],
+        "input": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "candidate": {
+        "arithmetic": "checked",
+        "commit": "postcheck"
+      },
+      "outcome": {
+        "actual": null,
+        "case_index": 0,
+        "expected": [
+          true,
+          true
+        ],
+        "input": [
+          0,
+          0
+        ]
+      }
+    }
+  ],
+  "environment_witness": {
+    "checked_arithmetic_supported": false,
+    "quota": 255
+  },
+  "ground_truth_state": "UNREPAIRABLE",
+  "proof_sha256": "621fa7aa8a61d2710f347536459d5fec32b0addd3e4e2d54d6c5e34bce637c65",
+  "satisfying_candidates": [],
+  "scope": "bounded_declarative_candidate_language_only",
+  "secure_candidate_gate_verdict": "NOT_APPLICABLE",
+  "task_id": "fa-quota_overflow-c4",
+  "task_sha256": "5afc66a57b090d83094d993e5179852008ff5426ea0eba112321102c8b145abb"
+}

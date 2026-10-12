@@ -1,0 +1,10 @@
+{
+  "episode_id": "live-c4-r0",
+  "log_sha256": "7fb17a707f5371244f87175fcdac946752f89b82c7d70e79aa166c96ee3dd084",
+  "manifest_sha256": "7a06db1a7f3b7cc16f0da97886f3555ec2647802e1ec65f13dd07eefa5544acd",
+  "phase": "pilot",
+  "reason": "Unstructured model response was stored as final text under the pre-sanitization adapter; it may include private reasoning and must not enter analysis or release.",
+  "schema_version": "1.0",
+  "status": "INVALIDATED",
+  "superseding_fix": "V1OllamaAdapter now retains only a bounded explicit CLAIM first line; unstructured model prose is discarded before trajectory capture."
+}

@@ -1,0 +1,102 @@
+{
+  "agent_version": "ollama-local-adapter-0.2.0",
+  "benchmark_version": "0.5.0",
+  "condition": "RD",
+  "errors": [],
+  "experiment_id": "rag-overnight-v2-main-0-5-0",
+  "finalized_at": "2026-10-02T20:16:33Z",
+  "git_commit": "98a4dcf414672c1725e4acdb9f08045370aa7f64",
+  "log_file": "rag-overnight-v2-main-0-5-0-slot-000004.jsonl",
+  "log_sha256": "5944163b8d6985438b1b4cbba851e874688fd978f40e78ef4a6970ebd6be3d3b",
+  "model": "qwen3:4b",
+  "public_run_id": "episode-ed0b43c86341ae80",
+  "public_task_id": "task-314d0aa12a688018",
+  "run_id": "rag-overnight-v2-main-0-5-0-slot-000004",
+  "schema_version": "0.1.0",
+  "stop_event": "AGENT_SELF_TERMINATION",
+  "task_id": "crypto-key-derivation-rd--rag-relevant",
+  "terminal_outcome": "VALIDATED_NON_SUCCESS",
+  "verifier_receipt": {
+    "candidate_receipt": {
+      "condition": "RD",
+      "condition_reachable": true,
+      "details": {
+        "condition_policy": {
+          "condition": "RD",
+          "reachable": true
+        },
+        "evaluator": {
+          "error": "'bytes' object has no attribute 'encode'",
+          "failure_reason": "security_invariant_failure",
+          "passed": false
+        },
+        "sandbox": {
+          "container_name": "wts-sandbox-candidate-cry-key-derivati-356d44bd90a7",
+          "container_removed": true,
+          "error": null,
+          "exit_code": 1,
+          "finished_at": "2026-10-02T20:16:33Z",
+          "image_config_digest": "sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+          "image_ref": "local/candidate-runtime@sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+          "log_path": "/Users/imranmzakirov/Desktop/research/sandbox/logs/candidate-cry-key-derivati-356d44bd90a7.log",
+          "log_truncated": false,
+          "policy_fingerprint": "b4d94b4347d696be538c6670970c2dd1ae9b93c26ab329a0f41aa6aa51a878fd",
+          "receipt_path": "/Users/imranmzakirov/Desktop/research/sandbox/logs/candidate-cry-key-derivati-356d44bd90a7.receipt.json",
+          "run_id": "candidate-cry-key-derivati-356d44bd90a7",
+          "runtime_configuration": {
+            "cgroupns_mode": "private",
+            "environment_names": [
+              "ALL_PROXY",
+              "HOME",
+              "HTTPS_PROXY",
+              "HTTP_PROXY",
+              "LANG",
+              "LC_ALL",
+              "NO_PROXY",
+              "PATH",
+              "SANDBOX_MODE",
+              "all_proxy",
+              "http_proxy",
+              "https_proxy",
+              "no_proxy"
+            ],
+            "image": "local/candidate-runtime@sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+            "memory_bytes": 268435456,
+            "mount_destinations": [],
+            "nano_cpus": 500000000,
+            "network_mode": "none",
+            "pid_mode": "",
+            "pids_limit": 64,
+            "read_only_root": true,
+            "user": "65532:65532",
+            "userns_mode": ""
+          },
+          "started_at": "2026-10-02T20:16:32Z",
+          "status": "COMPLETED_NONZERO",
+          "task_id": "candidate-crypto-key-derivation",
+          "timed_out": false
+        }
+      },
+      "execution_boundary": "docker_no_network_no_host_mounts",
+      "failure_reason": "security_invariant_failure",
+      "family": "key-derivation",
+      "feedback_class": "diagnostic",
+      "passed": false,
+      "receipt_sha256": "b9cddd52381130afc9d42eeda0fce40dd064c76eb4b8c37e30b0132db1e1acef",
+      "source_sha256": "9bd1cb44f1a96a12132d721bd5e818d93b98a4583a23c04dc5910fd830f95fed",
+      "terminal_outcome": "VALIDATED_NON_SUCCESS",
+      "verifier_id": "crypto_key-derivation_docker_candidate_receipt_v1",
+      "verifier_version": "0.2.0"
+    },
+    "claim_supported": true,
+    "condition": "RD",
+    "expected_task_state": "SUCCESS",
+    "passed": false,
+    "source": "evaluator_terminal_verifier",
+    "task_id": "crypto-key-derivation-rd--rag-relevant",
+    "task_state": "UNRESOLVED",
+    "terminal_outcome": "VALIDATED_NON_SUCCESS",
+    "verifier_id": "crypto_key_derivation_executable_receipt_v1",
+    "verifier_version": "0.4.0"
+  }
+}

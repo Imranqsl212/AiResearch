@@ -1,0 +1,13 @@
+{
+  "additional_file_count": 2,
+  "archive_bytes": 447459,
+  "archive_path": "/Users/imranmzakirov/Desktop/research/experiments/runs/paper_private_repro_inputs_20261005.tar.gz",
+  "archive_sha256": "39ded8a4301ba0ebb193b48d71b032b0127a521c381fa378c67d08132319fc26",
+  "input_file_count": 311,
+  "marker_counts": {
+    "absolute_user_path_files": 184,
+    "local_username_files": 184
+  },
+  "status": "PRIVATE_REVIEW_ONLY_UNREDACTED",
+  "version": "paper-private-input-bundle-1.0"
+}

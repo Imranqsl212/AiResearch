@@ -1,0 +1,11 @@
+{
+  "attempt_index": 1,
+  "classification": "SELECTED",
+  "completed_at": "2026-10-03T00:59:35Z",
+  "log_sha256": "df0860219dca973f65759bde530d4fcade1e50155dd1fb08644d4538c81598e0",
+  "receipt_sha256": "147b9cd5d45fefd3bff65c0bd92a7b804ba658129655cc56e9c8d2e735c8b048",
+  "run_id": "rag-overnight-v2-main-0-5-0-slot-000032",
+  "schema_version": "0.1.0",
+  "slot_id": "slot-000032",
+  "terminal_outcome": "VALIDATED_NON_SUCCESS"
+}

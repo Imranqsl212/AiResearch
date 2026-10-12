@@ -1,8 +1,8 @@
 # Experiment records
 
-`experiments/` stores frozen configuration manifests and evaluator-owned observable
-trajectory records. It is not a result directory for the main study: no provider-backed
-agent run has been launched.
+`experiments/` stores configuration manifests and evaluator-owned observable
+trajectory records. It contains historical provider-backed runs and excluded pilots,
+but no eligible episode from the prospective v1 main study. Do not pool these cohorts.
 
 - `manifests/` contains immutable JSON configuration records.
 - `schedules/` is the pre-run deterministic family/repeat-blocked slot plan.
@@ -68,8 +68,9 @@ An unresolved reservation must be audited and resolved with a valid raw abort
 record; it cannot be silently cancelled or retried. This engineering validation
 is not a license to collect.
 
-New manifests, schedules, journals, ledgers, and raw runs are Git-ignored by
-default to avoid accidental publication of unreviewed episode data. The
-historical tracked scripted fixture remains explicitly versioned. Any eventual
-research data release needs a separate reviewed allowlist, provenance check,
-and retention/access decision; Git ignore is not an immutable storage policy.
+This research branch tracks saved manifests, schedules, journals, ledgers, and raw
+runs, including records previously kept only in the local workspace. Their Git
+availability does not establish that they are suitable as journal supplements,
+that the source or privacy review is complete, or that excluded runs are eligible
+for the prospective main analysis. Use the sealed indexes and receipts to select
+the historical cohorts rather than scanning every run in this directory.

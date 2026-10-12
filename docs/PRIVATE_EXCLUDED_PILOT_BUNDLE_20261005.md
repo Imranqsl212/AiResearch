@@ -5,7 +5,9 @@ preserves the raw records for four excluded run roots: the 40-slot full-catalog
 pilot, the first C5 fork, the remaining 13 C5 forks, and the 40-slot R1 C2
 pilot. It contains 1,371 exact files (5,601,948 uncompressed payload bytes),
 including archived source snapshots and the C5/R1 audit scripts and outputs.
-It is **private**, Git ignored and has not been uploaded.
+Despite its historical “private” name, this archive is tracked in the present
+local Git branch. Whether those exact bytes are on the remote must be checked
+after push; tracking is not independent privacy or journal review.
 
 | Artifact | SHA-256 |
 | --- | --- |
@@ -28,7 +30,7 @@ python3 -B -m analysis.build_private_excluded_pilot_bundle verify
 The bundle supports offline integrity and descriptive replay, not rerunning
 stochastic model calls or promoting any pilot to main. Its raw bytes contain
 local paths, prompts and provider responses. A human privacy and content
-review is required before sharing or creating a public version. The C5 source
+review has not been recorded for journal suitability. The C5 source
 snapshots were copied after collection from files matching their saved
 preflight hashes; these local hashes are neither signed third-party timestamps
 nor proof that no unrecorded provider call occurred. The archive does not

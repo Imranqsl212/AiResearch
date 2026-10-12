@@ -1,0 +1,15 @@
+{
+  "condition": "C2",
+  "environment": {
+    "reject_duplicates_supported": true
+  },
+  "family": "ambiguous_parameters",
+  "gate_mode": "normal",
+  "schema_version": "5.0.0",
+  "starter_candidate": {
+    "decode": "raw",
+    "duplicates": "first"
+  },
+  "task_id": "fa-ambiguous_parameters-c2",
+  "version": "5.0.0"
+}

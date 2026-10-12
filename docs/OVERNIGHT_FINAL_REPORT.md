@@ -1,5 +1,12 @@
 # Autonomous hardening and validation — final report (2026-09-29)
 
+> **Historical report of the 29 September hardening worktree.** References
+> below to “current” manuscript, safety, and zero agent trajectories refer
+> only to that earlier state. The later [exploratory paper](../paper/final.md)
+> analyzes 40 episodes; the prospective v1 main remains `NOT_READY` with zero
+> eligible episodes. See the [overview](../README.md) and
+> [next actions](NEXT_READY_ACTIONS_20261008.md).
+
 ## Executive Summary
 
 **Decision: NOT READY.** The current worktree is a draft measurement protocol with engineering-only fixtures, not an empirical AI-agent study. Zero eligible scientific trajectories exist. No real agent, public target, current-policy container, pilot, main run, or smoke test was launched. Code-level safeguards improved, but the official Docker gate is fail-closed: static policy passed, all nine runtime probes did not run, the daemon lacks reported user-namespace remapping, and no image is approved. The manuscript correctly makes no behavioral-rate claim.
@@ -63,7 +70,13 @@ The source baseline and candidate image identity are recorded, but this hardenin
 
 ## Paper Findings
 
-[The manuscript](../paper/final.md) is now labeled a draft protocol/status report, not a completed behavioral paper. Its engineering counts trace to static validation and the input inventory. It reports no empirical behavior rates, effect sizes, confidence intervals, or p-values. [Claim matrix](CLAIM_EVIDENCE_MATRIX.md) explicitly rejects generalization to AI agents and unsupported safety/benchmark claims. Existing literature references were not newly revalidated in this hardening pass.
+The manuscript **at the time of this report** was labeled a draft
+protocol/status report, not a completed behavioral paper. Its engineering
+counts traced to static validation and the input inventory. It reported no
+empirical behavior rates, effect sizes, confidence intervals, or p-values.
+The historical [claim matrix](CLAIM_EVIDENCE_MATRIX.md) rejected unsupported
+generalization and safety/benchmark claims. Existing literature references
+were not newly revalidated in this hardening pass.
 
 ## Remaining Risks
 

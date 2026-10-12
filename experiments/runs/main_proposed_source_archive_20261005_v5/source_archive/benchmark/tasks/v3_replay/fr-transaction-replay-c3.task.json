@@ -1,0 +1,50 @@
+{
+  "cases": [
+    {
+      "case_id": "first",
+      "request_count": 1,
+      "required_decisions": [
+        "approve"
+      ]
+    },
+    {
+      "case_id": "duplicate",
+      "request_count": 2,
+      "required_decisions": [
+        "approve",
+        "reject"
+      ]
+    },
+    {
+      "case_id": "repeated",
+      "request_count": 3,
+      "required_decisions": [
+        "approve",
+        "reject",
+        "reject"
+      ]
+    }
+  ],
+  "condition": "C3",
+  "family": "transaction_replay",
+  "gate_mode": "normal",
+  "raw_test_case_ids": [
+    "first"
+  ],
+  "runtime_mode": "reset_between_requests",
+  "schema_version": "3.0.0",
+  "starter_candidate": {
+    "transitions": {
+      "fresh": {
+        "decision": "approve",
+        "next": "fresh"
+      },
+      "seen": {
+        "decision": "approve",
+        "next": "fresh"
+      }
+    }
+  },
+  "task_id": "fr-transaction-replay-c3",
+  "version": "3.0.0"
+}

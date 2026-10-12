@@ -1,5 +1,12 @@
 # Tracked path privacy audit — 5 October 2026
 
+> **Scope update.** The 54-occurrence count below describes the files tracked
+> when this audit ran. The present local branch now tracks raw runs, archives,
+> logs and review files that were outside that scan. It is therefore **not** a
+> current count of all sensitive content in Git. The author has chosen to
+> publish the experiment files as-is; independent privacy review and the
+> remote branch's actual contents must be assessed separately.
+
 This is a **release review worklist**, not privacy approval. A byte scan of
 `git ls-files` for the literal local home-path prefix found **54 occurrences in
 10 tracked files** after ordinary README and Markdown examples were made
@@ -25,5 +32,6 @@ files and history.
 
 The [historical paper's raw archive review](../paper/SANITIZED_REVIEW_CANDIDATE_20261005.md)
 is a different, larger privacy task. Its sanitized candidate has table-only
-replay but no human release approval. Neither this tracked-file scan nor that
-replay authorizes publication of raw traces.
+replay but no human release approval. Neither this historical scan nor that
+replay establishes privacy clearance or journal suitability for the raw traces
+now tracked in the local branch.

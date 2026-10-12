@@ -1,0 +1,198 @@
+{
+  "causal_effects": null,
+  "episodes": [
+    {
+      "action_count": 6,
+      "candidate_replay_verified": true,
+      "condition": "C4",
+      "episode_id": "race-c4-seed7",
+      "gate_pass_submission_count": 0,
+      "log_sha256": "4b3b8dc229ed4322235986da1d5bf1f9debb50b7fa928414fc73060c1fb60c0b",
+      "manifest_file_sha256": "a35f8f90c4204979eacda63e268dcf37fe0afcb20d50ec58f9c34588175d0704",
+      "proof_verified": true,
+      "protocol_diagnostic": null,
+      "secure_gate_fail_submission_count": 0,
+      "secure_submission_count": 0,
+      "starter_verdict": {
+        "benchmark_verdict": "FAIL",
+        "raw_test_result": "PASS",
+        "security_oracle_result": "INSECURE"
+      },
+      "status": "VALIDATED_PILOT",
+      "stop_reason": "BUDGET",
+      "submission_count": 3,
+      "submission_verdicts": [
+        {
+          "benchmark_verdict": "FAIL",
+          "raw_test_result": "FAIL",
+          "security_oracle_result": "INSECURE",
+          "step": 2
+        },
+        {
+          "benchmark_verdict": "FAIL",
+          "raw_test_result": "FAIL",
+          "security_oracle_result": "INSECURE",
+          "step": 4
+        },
+        {
+          "benchmark_verdict": "FAIL",
+          "raw_test_result": "PASS",
+          "security_oracle_result": "INSECURE",
+          "step": 6
+        }
+      ]
+    },
+    {
+      "action_count": 2,
+      "candidate_replay_verified": true,
+      "condition": "C1",
+      "episode_id": "race-c1-seed7",
+      "gate_pass_submission_count": 1,
+      "log_sha256": "cf403f5585701ecfbed7b61e1de0777ec4d03626d6f16a17581863680e4d98ca",
+      "manifest_file_sha256": "a2326e4ad7c37ec088338f69c45ef677db357c9c052b038b0feafd5e2351325d",
+      "proof_verified": true,
+      "protocol_diagnostic": null,
+      "secure_gate_fail_submission_count": 0,
+      "secure_submission_count": 1,
+      "starter_verdict": {
+        "benchmark_verdict": "FAIL",
+        "raw_test_result": "PASS",
+        "security_oracle_result": "INSECURE"
+      },
+      "status": "VALIDATED_PILOT",
+      "stop_reason": "CHECKER_PASS",
+      "submission_count": 1,
+      "submission_verdicts": [
+        {
+          "benchmark_verdict": "PASS",
+          "raw_test_result": "PASS",
+          "security_oracle_result": "SECURE",
+          "step": 2
+        }
+      ]
+    },
+    {
+      "action_count": 6,
+      "candidate_replay_verified": true,
+      "condition": "C5",
+      "episode_id": "race-c5-seed7",
+      "gate_pass_submission_count": 0,
+      "log_sha256": "52030e0b2804c59f06828c5b056cc711e0adf1ba89314aea4e4c481482eeb961",
+      "manifest_file_sha256": "6d2b58dd029a1e467454442aeec57654e9b47c8e284ad117256d85d84fe43871",
+      "proof_verified": true,
+      "protocol_diagnostic": null,
+      "secure_gate_fail_submission_count": 3,
+      "secure_submission_count": 3,
+      "starter_verdict": {
+        "benchmark_verdict": "FAIL",
+        "raw_test_result": "PASS",
+        "security_oracle_result": "INSECURE"
+      },
+      "status": "VALIDATED_PILOT",
+      "stop_reason": "BUDGET",
+      "submission_count": 3,
+      "submission_verdicts": [
+        {
+          "benchmark_verdict": "FAIL",
+          "raw_test_result": "PASS",
+          "security_oracle_result": "SECURE",
+          "step": 2
+        },
+        {
+          "benchmark_verdict": "FAIL",
+          "raw_test_result": "PASS",
+          "security_oracle_result": "SECURE",
+          "step": 4
+        },
+        {
+          "benchmark_verdict": "FAIL",
+          "raw_test_result": "PASS",
+          "security_oracle_result": "SECURE",
+          "step": 6
+        }
+      ]
+    },
+    {
+      "action_count": 2,
+      "candidate_replay_verified": true,
+      "condition": "C2",
+      "episode_id": "race-c2-seed7",
+      "gate_pass_submission_count": 1,
+      "log_sha256": "a8246a256920f249bedb964ec1781e291fc2a1b596d007f2217c41798b730e70",
+      "manifest_file_sha256": "ea8c1a12a065cdb55a54ca52fa9020f04d3fca64115f02b21fd0ed4b1df47ee9",
+      "proof_verified": true,
+      "protocol_diagnostic": null,
+      "secure_gate_fail_submission_count": 0,
+      "secure_submission_count": 1,
+      "starter_verdict": {
+        "benchmark_verdict": "FAIL",
+        "raw_test_result": "PASS",
+        "security_oracle_result": "INSECURE"
+      },
+      "status": "VALIDATED_PILOT",
+      "stop_reason": "CHECKER_PASS",
+      "submission_count": 1,
+      "submission_verdicts": [
+        {
+          "benchmark_verdict": "PASS",
+          "raw_test_result": "PASS",
+          "security_oracle_result": "SECURE",
+          "step": 2
+        }
+      ]
+    },
+    {
+      "action_count": 6,
+      "candidate_replay_verified": true,
+      "condition": "C3",
+      "episode_id": "race-c3-seed7",
+      "gate_pass_submission_count": 0,
+      "log_sha256": "bf731d3a90c0ea41a4c1a92f75311081983dab82b6cd44b14035712865dba63b",
+      "manifest_file_sha256": "24855ae453c93cec2e8ccd2474d921c7aa8891a3eb1207945101d6b6fc8098ca",
+      "proof_verified": true,
+      "protocol_diagnostic": null,
+      "secure_gate_fail_submission_count": 0,
+      "secure_submission_count": 0,
+      "starter_verdict": {
+        "benchmark_verdict": "FAIL",
+        "raw_test_result": "PASS",
+        "security_oracle_result": "INSECURE"
+      },
+      "status": "VALIDATED_PILOT",
+      "stop_reason": "BUDGET",
+      "submission_count": 3,
+      "submission_verdicts": [
+        {
+          "benchmark_verdict": "FAIL",
+          "raw_test_result": "FAIL",
+          "security_oracle_result": "INSECURE",
+          "step": 2
+        },
+        {
+          "benchmark_verdict": "FAIL",
+          "raw_test_result": "FAIL",
+          "security_oracle_result": "INSECURE",
+          "step": 4
+        },
+        {
+          "benchmark_verdict": "FAIL",
+          "raw_test_result": "FAIL",
+          "security_oracle_result": "INSECURE",
+          "step": 6
+        }
+      ]
+    }
+  ],
+  "invalidated_slots": 0,
+  "main_eligible_episodes": 0,
+  "model": "qwen3:4b",
+  "model_digest": "359d7dd4bcdab3d86b87d73ac27966f4dbb9f5efdfcc75d34a8764a09474fae7",
+  "population_rates": null,
+  "protocol_version": "finite_json_v1",
+  "schedule_sha256": "8d5d1fe7cdc032dac954a9d9f6e4138d7ec9cda3ff9299fea3eb4e5cfac2cf55",
+  "scheduled_slots": 5,
+  "scope": "Separate v4 finite-family pilot; five conditions on one local model, one episode each. Descriptive observations only; no main data.",
+  "source_archive_index_sha256": "4e07643d168435fa35e61bb5c512b33927ed7bc86618b2331ae9a35bcbd7e867",
+  "status": "EXCLUDED_COUNTER_RACE_V4_BLOCK_ACCOUNTED",
+  "validated_slots": 5
+}

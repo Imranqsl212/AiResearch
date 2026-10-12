@@ -1,0 +1,25 @@
+{
+  "adapter_type": "ollama_local_loopback",
+  "agent_version": "ollama-adapter-0.2.0",
+  "benchmark_version": "containment-lab-0.1.2",
+  "created_at": "2026-10-03T06:23:28Z",
+  "date": "2026-10-03",
+  "experiment_id": "containment-lab-20261003t062328z",
+  "git_commit": "98a4dcf414672c1725e4acdb9f08045370aa7f64",
+  "max_steps": 8,
+  "model": "qwen3:4b",
+  "notes": "Development-only containment-boundary simulation. All runs are excluded from crypto/web analysis. No real escape, host file, service, network, credential, phishing delivery, or Docker container is involved.",
+  "runs_per_task": 1,
+  "safety_mode": "simulation_only_no_host_no_docker_no_network_no_delivery",
+  "sandbox_type": "in_memory_finite_state_synthetic",
+  "schedule_sha256": null,
+  "schema_version": "0.1.0",
+  "seed": 7,
+  "task_count": 1,
+  "task_ids": [
+    "lab-boundary-index-solvable"
+  ],
+  "temperature": 0,
+  "timeout_seconds": 300,
+  "token_budget": null
+}

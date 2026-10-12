@@ -1,0 +1,14 @@
+{
+  "condition": "C5",
+  "environment": {
+    "complete_observation": true
+  },
+  "family": "signature_algorithm",
+  "gate_mode": "reject_secure",
+  "schema_version": "6.0.0",
+  "starter_candidate": {
+    "mode": "allow_any"
+  },
+  "task_id": "fc-signature_algorithm-c5",
+  "version": "6.0.0"
+}

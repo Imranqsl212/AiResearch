@@ -1,4 +1,4 @@
-# Submission handoff — updated 8 October 2026
+# Submission handoff — updated 12 October 2026
 
 ## Scope of this manuscript
 
@@ -21,7 +21,7 @@ study remains `NOT_READY` with zero eligible new main episodes.
 | [`final.md`](final.md) | Editable source manuscript, with 25 numbered references and the required IMRAD sections. |
 | [`submission/full_paper.pdf`](submission/full_paper.pdf) | Identified 16-page A4 review copy with six figures and four tables. |
 | [`submission/full_paper.docx`](submission/full_paper.docx) | Identified editable Word copy. |
-| [`submission/full_paper_anonymous.pdf`](submission/full_paper_anonymous.pdf) | Anonymous 15-page A4 review copy. |
+| [`submission/full_paper_anonymous.pdf`](submission/full_paper_anonymous.pdf) | Anonymous 16-page A4 review copy. |
 | [`submission/full_paper_anonymous.docx`](submission/full_paper_anonymous.docx) | Anonymous editable Word copy. |
 | [`references.bib`](references.bib) | Bibliography metadata for journal conversion. |
 | [`requirements-render.txt`](requirements-render.txt) | Pinned Python package versions used to render the review PDF and DOCX; a compatible font is still required. |
@@ -31,25 +31,28 @@ study remains `NOT_READY` with zero eligible new main episodes.
 | [`../docs/V7_DECISIVE_EXCLUDED_PILOT_20261005.md`](../docs/V7_DECISIVE_EXCLUDED_PILOT_20261005.md) | Separate v7 pilot protocol, results, matched fork and scope limits. |
 | [`historical_receipts_20261003.txt`](historical_receipts_20261003.txt) | Saved allowlist of the 101 legacy receipts inventoried by the paper analysis; include it in the submission source revision. |
 | [`submission/cover_letter_template.md`](submission/cover_letter_template.md) | Venue-neutral cover letter draft with author and journal declarations left for confirmation. |
-| [`DATA_AVAILABILITY_OPTIONS_20261005.md`](DATA_AVAILABILITY_OPTIONS_20261005.md) | Truthful current status and conditional public/controlled-access wording for author choice. |
+| [`DATA_AVAILABILITY_OPTIONS_20261005.md`](DATA_AVAILABILITY_OPTIONS_20261005.md) | Branch-aware data status and draft journal wording to finalize after the exact public revision is verified. |
 | [`VENUE_SHORTLIST_20261005.md`](VENUE_SHORTLIST_20261005.md) | Official-guideline comparison of three possible journals; venue choice remains with the submitting author. |
 | [`AUTHOR_SUBMISSION_DECISIONS_20261005.md`](AUTHOR_SUBMISSION_DECISIONS_20261005.md) | Hash-bound draft inventory and the human decisions still pending; it contains no inferred approvals. |
 
-The filtered [v6 local author-review bundle](AUTHOR_REVIEW_BUNDLE_20261005.md)
+The filtered [v7 local author-review bundle](AUTHOR_REVIEW_BUNDLE_20261005.md)
 contains this manuscript, both rendered file pairs, derived v7 pilot audits,
 the source-fidelity inventory, an independent transformed-receipt recount,
 and the separate original-byte audit code, tests, and methods note.
 Its 35 selected sources and two bundle
 metadata members verified against the current workspace. It remains
-`REVIEW_ONLY`; it excludes the raw trajectories and does not approve data
-release or journal submission. Earlier bundles remain separately verifiable;
+`REVIEW_ONLY`; it excludes the raw trajectories and does not approve journal
+submission or certify a journal data package. The raw artifacts are separately
+tracked in the research branch. Earlier bundles remain separately verifiable;
 v2 contains the 14-page, three-table draft, and v3 predates the final
 recalculation of the historical input-hash ledger. V4 preserves the prior
-manuscript wording, while v5 preserves the earlier transformed-only audit.
+manuscript wording, v5 preserves the earlier transformed-only audit, and v6
+preserves the original-byte audit before the data-availability revision.
 All bundles include author
 identity and must not be uploaded as anonymous supplements.
 
-A **private author-review copy** of the 311 historical paper input members is saved at
+A 311-member historical paper input archive, named as a private author-review
+copy when created but now tracked in the research branch, is saved at
 `experiments/runs/paper_private_repro_inputs_20261005.tar.gz` (SHA-256
 `39ded8a4301ba0ebb193b48d71b032b0127a521c381fa378c67d08132319fc26`).
 The bundle was reopened and every archived member byte-checked after writing.
@@ -59,12 +62,13 @@ workspace digest is `experiments/executable_episode.py`. The original CSV bytes
 were not stored as an archive member; do not claim the current CSV is the exact
 historical packaging ledger.
 Its notice marks it `PRIVATE_REVIEW_ONLY_UNREDACTED`; 184 files contain the
-local username/path marker. This package is for release review, **not** a
-public supplement or a journal upload. The reproducible builder is
+local username/path marker. That label describes the original review workflow,
+not the current Git visibility or journal suitability. It is **not** a vetted
+journal supplement. The reproducible builder is
 [`build_private_repro_bundle.py`](build_private_repro_bundle.py), and the
-Git-ignored companion receipt is beside the archive.
-This earlier private copy covers the historical paper inputs; the new v7 pilot
-has separate Git-ignored source-bound archives and audit receipts.
+tracked companion receipt is beside the archive.
+This earlier copy covers the historical paper inputs; the corrected-oracle v7
+pilot has separate tracked source-bound archives and audit receipts.
 
 A separate [sanitized review candidate](SANITIZED_REVIEW_CANDIDATE_20261005.md)
 is also saved locally, with an original-to-transformed hash map and a targeted
@@ -72,19 +76,20 @@ path/username scan. It changes 200 data members and cannot replay the paper's
 original hash chain. A new [table-only verifier](replay_sanitized_candidate.py)
 recomputed 13 result sections and all 86 submitted source hashes from the
 transformed bytes, matching the tracked paper artifacts without reading the
-private original. The sanitized candidate is **not an approved release**;
-human privacy/content review and an actual data-availability plan remain
-necessary.
+original archive. The sanitized candidate is **not a vetted journal data
+package**; human privacy/content review and a precise journal data statement
+remain necessary.
 The [private inspection packet](../experiments/runs/paper_sanitized_privacy_packet_20261005_v2/PRIVATE_INSPECTION_REPORT.json)
 pinpoints the eight residual path candidates and 457 additional lexical leads
-for that review. It is Git-ignored, mode `0600`, and explicitly records that
-privacy review and public-release approval are pending. Its contents must
-not be attached to a journal submission without review.
+for that review. It is tracked in the research branch; its local file mode
+`0600` does not restrict access to a committed copy. The packet records that
+human privacy review is pending, so it must not be attached to a journal
+submission without that review.
 The [tracked-path privacy audit](../docs/TRACKED_PATH_PRIVACY_AUDIT_20261005.md)
 also found local home-path strings in historical tracked JSON and a safety
-probe. A public repository or supplementary release needs a separate review
-of those files and Git history; the current manuscript PDF/DOCX are review
-copies, not an approved public data package.
+probe. Those files and Git history should be examined when preparing the
+journal's data package; the current manuscript PDF/DOCX are review copies,
+not submission-approved files.
 
 The new related-work paragraph explicitly discusses SWE-Bench+, PatchBench, and a
 recent agentic-security harness audit. It narrows the contribution to this
@@ -99,8 +104,8 @@ whitespace-delimited words excluding the keywords line. The manuscript now
 contains six figures and four tables and follows Title,
 Authors/Affiliation, Abstract, Introduction, Methods, Results, Discussion,
 Acknowledgments, and References. The identified and anonymous PDFs were rebuilt
-at 12 pt and single spacing. The identified PDF is 16 A4 pages; the anonymous
-PDF is 15. The Word styles are 12 pt and single spaced. The anonymous renderer
+at 12 pt and single spacing. The identified and anonymous PDFs are each 16 A4
+pages. The Word styles are 12 pt and single spaced. The anonymous renderer
 checks author identifiers and study-commit markers in text and metadata; repeat
 the scan after each content or rendering change. The Word page count was not
 independently verified in a Word-compatible editor.
@@ -120,14 +125,14 @@ recounted the central historical 9/20 disagreement directly from the sanitized
 terminal receipts without using the original paper summary functions. It
 cannot by itself prove original-byte provenance or approve data release. A
 [separate original-byte audit](ORIGINAL_ARCHIVE_PROVENANCE_AUDIT_20261008.md)
-opened the local private archive, verified all 313 original members against
+opened the original-byte archive, verified all 313 original members against
 the sanitization manifest, and independently recounted **9/20** from original
 terminal receipts. It does not establish an external chain of custody, run the
-evaluator, or clear the archive for public sharing. The new
-[private review register](../docs/SANITIZED_PRIVACY_REVIEW_REGISTER_20261008.md)
+evaluator or establish journal supplement suitability. The new
+[review register](../docs/SANITIZED_PRIVACY_REVIEW_REGISTER_20261008.md)
 tracks all residual scanner leads with human decisions still blank.
-The current manuscript and analysis remain a working-tree review draft; no
-final source revision has yet been pinned.
+The current manuscript and analysis remain an author-review draft; no final
+journal source revision has yet been pinned.
 
 ## What a submitting author must supply or decide
 
@@ -140,14 +145,13 @@ final source revision has yet been pinned.
    [venue shortlist](VENUE_SHORTLIST_20261005.md) as a starting point. Apply its length,
    reference, figure, data-availability, ethics, anonymization, and preprint rules.
    The PDF/DOCX are review copies, not a journal template or an actual submission.
-3. Decide how to provide the Git-ignored raw trajectories and archive. A reviewed
-   release or controlled-access plan must preserve log-to-receipt/source links while
-   removing local path metadata or other sensitive contents. The private bundle
-   above makes this review concrete; its original bytes still expose local paths.
-   The sanitized candidate now recomputes the path-independent paper tables,
-   and a separate local audit verified its byte link to the private original.
-   This does not establish privacy suitability or an external access route for
-   reviewers.
+3. Verify the exact public GitHub revision containing the raw trajectories and
+   archives chosen by the author for publication. Record it in the journal
+   data-availability statement. The tracked original bytes expose local paths;
+   the sanitized candidate recomputes path-independent paper tables, and a
+   separate local audit verified its byte link to the original. Any separate
+   journal deposit still needs privacy review and an accurate description of
+   how transformed bytes relate to the originals.
 4. Record the final paper/source revision and archive the exact manuscript,
    analysis code, frozen historical receipt list, raw input hashes, and any released
    dataset identifier together. Re-run the commands in [`README.md`](README.md)
@@ -170,11 +174,11 @@ the nominally unavailable group. The separate v7 audit verified 30/30
 prescheduled pilot episodes; its matched-fork audit verified both continuations.
 The source-fidelity audit verified 77 source entries, 37 adjacent pairs, and
 the archive-to-live-log byte links. `paper.build_submission` regenerated the
-identified 16-page and anonymous 15-page PDFs, paired DOCX files, six figures,
+identified and anonymous 16-page PDFs, paired DOCX files, six figures,
 and four tables. These checks validate this workspace's saved artifacts, not
 an independent third-party replication. The current manuscript and decisions
 form is hash-bound to these rendered copies. On 8 October 2026, the separate
 original-byte audit verified 313 original members, 312 transformed counterparts,
 and the original terminal 9/20 count, while reporting one current input-ledger
-digest drift. The v6 author-review bundle was built and verified after these
-edits; final author and venue decisions remain pending.
+digest drift. The v7 author-review bundle reflects the data-availability
+wording and refreshed render; final author and venue decisions remain pending.

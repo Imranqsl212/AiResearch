@@ -29,14 +29,16 @@ V3_OUTPUT = ROOT / "experiments/runs/paper_author_review_manuscript_20261005_v3.
 V4_OUTPUT = ROOT / "experiments/runs/paper_author_review_manuscript_20261005_v4.tar.gz"
 V5_OUTPUT = ROOT / "experiments/runs/paper_author_review_manuscript_20261008_v5.tar.gz"
 V6_OUTPUT = ROOT / "experiments/runs/paper_author_review_manuscript_20261008_v6.tar.gz"
-OUTPUT = V6_OUTPUT
+V7_OUTPUT = ROOT / "experiments/runs/paper_author_review_manuscript_20261012_v7.tar.gz"
+OUTPUT = V7_OUTPUT
 V1_VERSION = "paper-author-review-manuscript-1.0.0"
 V2_VERSION = "paper-author-review-manuscript-2.0.0"
 V3_VERSION = "paper-author-review-manuscript-3.0.0"
 V4_VERSION = "paper-author-review-manuscript-4.0.0"
 V5_VERSION = "paper-author-review-manuscript-5.0.0"
 V6_VERSION = "paper-author-review-manuscript-6.0.0"
-VERSION = V6_VERSION
+V7_VERSION = "paper-author-review-manuscript-7.0.0"
+VERSION = V7_VERSION
 README_NAME = "REVIEW_ONLY_README.md"
 MANIFEST_NAME = "SOURCE_HASH_MANIFEST.json"
 V1_SOURCE_NAMES = (
@@ -85,7 +87,8 @@ V6_SOURCE_NAMES = V5_SOURCE_NAMES + (
     "paper/test_audit_original_archive_provenance.py",
     "paper/ORIGINAL_ARCHIVE_PROVENANCE_AUDIT_20261008.md",
 )
-SOURCE_NAMES = V6_SOURCE_NAMES
+V7_SOURCE_NAMES = V6_SOURCE_NAMES
+SOURCE_NAMES = V7_SOURCE_NAMES
 FORBIDDEN_MARKERS = {
     "mac_home": re.compile(rb"/Users/[^/\s\"'<>\\]+", re.I),
     "linux_home": re.compile(rb"/home/[^/\s\"'<>\\]+", re.I),
@@ -226,7 +229,26 @@ V6_README = V5_README.replace("bundle v5", "bundle v6").replace(
     "private and absent from this package; no public release or journal "
     "submission is approved.",
 )
-README = V6_README
+V7_README = V6_README.replace("bundle v6", "bundle v7").replace(
+    "paper_author_review_manuscript_20261008_v6.tar.gz",
+    "paper_author_review_manuscript_20261012_v7.tar.gz",
+).replace(
+    "Public release and journal submission are not approved.",
+    "This filtered package is not approved as a journal supplement or submission.",
+).replace(
+    "Both archives remain private and absent from this package; no public release or journal "
+    "submission is approved.",
+    "The archives are tracked separately in the research branch and absent "
+    "from this filtered package; no journal submission is approved.",
+).replace(
+    "responses, private archives, and sanitized candidate are not included.",
+    "responses, original archives, and sanitized candidate are not included.",
+).replace(
+    "All scientific,\nprivacy, venue, identity, declaration, and data-access decisions remain open.",
+    "Scientific, privacy, venue, identity, declaration, and journal data-route "
+    "decisions remain open.",
+)
+README = V7_README
 
 
 @dataclass(frozen=True)
@@ -242,8 +264,9 @@ V3_SPEC = BundleSpec(V3_VERSION, V3_SOURCE_NAMES, V3_README)
 V4_SPEC = BundleSpec(V4_VERSION, V4_SOURCE_NAMES, V4_README)
 V5_SPEC = BundleSpec(V5_VERSION, V5_SOURCE_NAMES, V5_README)
 V6_SPEC = BundleSpec(V6_VERSION, V6_SOURCE_NAMES, V6_README)
+V7_SPEC = BundleSpec(V7_VERSION, V7_SOURCE_NAMES, V7_README)
 SPECS_BY_VERSION = {spec.version: spec for spec in
-                    (V1_SPEC, V2_SPEC, V3_SPEC, V4_SPEC, V5_SPEC, V6_SPEC)}
+                    (V1_SPEC, V2_SPEC, V3_SPEC, V4_SPEC, V5_SPEC, V6_SPEC, V7_SPEC)}
 
 
 class BundleError(RuntimeError):
@@ -291,7 +314,7 @@ def _decision_bound_names(spec: BundleSpec) -> tuple[str, ...]:
         "paper/submission/full_paper.docx",
         "paper/artifacts/results.json",
     )
-    if spec in (V2_SPEC, V3_SPEC, V4_SPEC, V5_SPEC, V6_SPEC):
+    if spec in (V2_SPEC, V3_SPEC, V4_SPEC, V5_SPEC, V6_SPEC, V7_SPEC):
         names += (
             "paper/submission/full_paper_anonymous.pdf",
             "paper/submission/full_paper_anonymous.docx",
@@ -310,7 +333,7 @@ def _check_decision_bindings(source: dict[str, bytes], spec: BundleSpec) -> None
             raise BundleError(f"author decision form does not identify current {name}")
 
 
-def _source_bytes(spec: BundleSpec = V6_SPEC) -> dict[str, bytes]:
+def _source_bytes(spec: BundleSpec = V7_SPEC) -> dict[str, bytes]:
     if len(set(spec.source_names)) != len(spec.source_names):
         raise BundleError("duplicate source allowlist member")
     source: dict[str, bytes] = {}
@@ -329,7 +352,7 @@ def _source_bytes(spec: BundleSpec = V6_SPEC) -> dict[str, bytes]:
     return source
 
 
-def _manifest(source: dict[str, bytes], readme: bytes, spec: BundleSpec = V6_SPEC) -> dict[str, Any]:
+def _manifest(source: dict[str, bytes], readme: bytes, spec: BundleSpec = V7_SPEC) -> dict[str, Any]:
     return {
         "version": spec.version,
         "status": "REVIEW_ONLY",
@@ -454,7 +477,7 @@ def verify(*, archive: Path = OUTPUT, compare_sources: bool = True) -> dict[str,
             "local_sources_match": True if compare_sources else None}
 
 
-def build(*, output: Path = OUTPUT, spec: BundleSpec = V6_SPEC) -> dict[str, Any]:
+def build(*, output: Path = OUTPUT, spec: BundleSpec = V7_SPEC) -> dict[str, Any]:
     output = Path(output)
     receipt_path = _receipt_path(output)
     if output.exists() or receipt_path.exists():

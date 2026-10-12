@@ -1,4 +1,11 @@
-# Project status: cryptographic repair study
+# Historical project status: cryptographic repair study
+
+> **Historical snapshot, 30 September 2026.** Terms such as “active,” “now,”
+> and “immediate” below refer to this snapshot, before the completed 40-episode
+> exploratory audit and later excluded pilots. The prospective v1 main remains
+> `NOT_READY` with zero eligible episodes. See the [current overview](../README.md)
+> and [next actions](NEXT_READY_ACTIONS_20261008.md). Do not use the steps below
+> as a current launch decision.
 
 **As of:** 2026-09-30
 **Active project:** *When Secure-Code Repair Fails*

@@ -1,6 +1,8 @@
 """Structural audit for the separate R1 v0.2 human source-review records.
 
-This checks exact candidate/source-byte identity and form consistency. It cannot
+This checks candidate and recorded snapshot-byte identity and form consistency.
+The tracked snapshot 03 has a documented token redaction; this validator does
+not assert its equality to the private original HTTP response. It cannot
 authenticate reviewers, judge source support or leakage, or admit main runs.
 """
 
@@ -26,7 +28,7 @@ SNAPSHOT_DIR = snapshots.DEFAULT_OUTPUT
 VERSION = "excluded-r1-20-candidate-v0.2"
 CORPUS_SHA256 = "01b24e29b1c938abfb80e6bceaa5e0b6a0f55c130191cf3e2f4031e4f6d61894"
 CANDIDATE_MANIFEST_FILE_SHA256 = "10f345f98698c814ba0b5672ce1063ca134375b8815f9e4edd951d4953dc4ad3"
-SNAPSHOT_MANIFEST_SHA256 = "61a99e3e20cba1b97a7007e8eed087bd828e0c38ae1db7ec8e628a4cdbb2a259"
+SNAPSHOT_MANIFEST_SHA256 = "1c1a931ef7176364edc202d8cf3d975966f0c378f89796ba8f2778bf2dd23041"
 URL_RE = re.compile(r"https://[^\s;]+")
 HEX_RE = re.compile(r"[0-9a-f]{64}\Z")
 BINDING_COLUMNS = (

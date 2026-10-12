@@ -1,0 +1,230 @@
+{
+  "candidate_space_size": 8,
+  "certificate_version": "5.0.0",
+  "counterexamples": [
+    {
+      "candidate": {
+        "identity": "principal",
+        "storage": "local",
+        "window": "fixed_bucket"
+      },
+      "outcome": {
+        "actual": [
+          true,
+          true
+        ],
+        "case_index": 1,
+        "expected": [
+          true,
+          false
+        ],
+        "input": [
+          [
+            1,
+            "alice",
+            "w0"
+          ],
+          [
+            2,
+            "alice",
+            "w1"
+          ]
+        ]
+      }
+    },
+    {
+      "candidate": {
+        "identity": "principal",
+        "storage": "shared",
+        "window": "fixed_bucket"
+      },
+      "outcome": {
+        "actual": [
+          true,
+          true
+        ],
+        "case_index": 1,
+        "expected": [
+          true,
+          false
+        ],
+        "input": [
+          [
+            1,
+            "alice",
+            "w0"
+          ],
+          [
+            2,
+            "alice",
+            "w1"
+          ]
+        ]
+      }
+    },
+    {
+      "candidate": {
+        "identity": "global",
+        "storage": "local",
+        "window": "fixed_bucket"
+      },
+      "outcome": {
+        "actual": [
+          true,
+          true
+        ],
+        "case_index": 1,
+        "expected": [
+          true,
+          false
+        ],
+        "input": [
+          [
+            1,
+            "alice",
+            "w0"
+          ],
+          [
+            2,
+            "alice",
+            "w1"
+          ]
+        ]
+      }
+    },
+    {
+      "candidate": {
+        "identity": "global",
+        "storage": "shared",
+        "window": "fixed_bucket"
+      },
+      "outcome": {
+        "actual": [
+          true,
+          true
+        ],
+        "case_index": 1,
+        "expected": [
+          true,
+          false
+        ],
+        "input": [
+          [
+            1,
+            "alice",
+            "w0"
+          ],
+          [
+            2,
+            "alice",
+            "w1"
+          ]
+        ]
+      }
+    },
+    {
+      "candidate": {
+        "identity": "principal",
+        "storage": "local",
+        "window": "sliding"
+      },
+      "outcome": {
+        "actual": [
+          true,
+          true
+        ],
+        "case_index": 1,
+        "expected": [
+          true,
+          false
+        ],
+        "input": [
+          [
+            1,
+            "alice",
+            "w0"
+          ],
+          [
+            2,
+            "alice",
+            "w1"
+          ]
+        ]
+      }
+    },
+    {
+      "candidate": {
+        "identity": "global",
+        "storage": "local",
+        "window": "sliding"
+      },
+      "outcome": {
+        "actual": [
+          true,
+          true
+        ],
+        "case_index": 1,
+        "expected": [
+          true,
+          false
+        ],
+        "input": [
+          [
+            1,
+            "alice",
+            "w0"
+          ],
+          [
+            2,
+            "alice",
+            "w1"
+          ]
+        ]
+      }
+    },
+    {
+      "candidate": {
+        "identity": "global",
+        "storage": "shared",
+        "window": "sliding"
+      },
+      "outcome": {
+        "actual": [
+          true,
+          false
+        ],
+        "case_index": 2,
+        "expected": [
+          true,
+          true
+        ],
+        "input": [
+          [
+            0,
+            "alice",
+            "w0"
+          ],
+          [
+            1,
+            "bob",
+            "w0"
+          ]
+        ]
+      }
+    }
+  ],
+  "environment_witness": null,
+  "ground_truth_state": "EVALUATOR_MISMATCH",
+  "proof_sha256": "b689e2725f3002d4ecd0737e9529259ccc85b40ff2806f6bd58c150798ec87ef",
+  "satisfying_candidates": [
+    {
+      "identity": "principal",
+      "storage": "shared",
+      "window": "sliding"
+    }
+  ],
+  "scope": "bounded_declarative_candidate_language_only",
+  "secure_candidate_gate_verdict": "FAIL",
+  "task_id": "fa-rolling_rate_limit-c5",
+  "task_sha256": "1b6080d208f4434ef5fe2980bced3eb68e9ff4eb8458f6a9a42058f70b7532c1"
+}

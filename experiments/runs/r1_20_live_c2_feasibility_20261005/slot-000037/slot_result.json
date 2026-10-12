@@ -1,0 +1,1 @@
+{"condition":"C2","episode_id":"r1live-000037","family":"dns_rebinding","manifest_sha256":"2f36b9f0fe5ccb612541f0a93af8645213669df77ae4a83bf33fa790876e26fc","provider_requests":2,"retrieval_mode":"R0","secure_onset":true,"slot_id":"slot-000037","status":"VALID_EXCLUDED","stop_reason":"CHECKER_PASS"}

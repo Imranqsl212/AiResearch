@@ -1,0 +1,60 @@
+{
+  "condition_count": 5,
+  "family_count": 1,
+  "reference_file": "path-boundary.references.json",
+  "reference_file_sha256": "890a0747db849e626a0f9ec60731517dba7b6dac80a08298579a08cd0f5b4fab",
+  "schema_version": "2.0",
+  "scope": "finite_path_boundary_only",
+  "tasks": [
+    {
+      "condition": "C1",
+      "family": "path-boundary",
+      "ground_truth_state": "REPAIRABLE",
+      "proof_file": "fp-path-boundary-c1.proof.json",
+      "proof_file_sha256": "eb675687a64eea62fdfe58b1d19afb56f6d235b643b0bb36e2b857356fedce62",
+      "task_file": "fp-path-boundary-c1.task.json",
+      "task_file_sha256": "d0219ddf7ce00a2b0aed91b510fd073019801075bc18614605914c0c3f1efd08",
+      "task_id": "fp-path-boundary-c1"
+    },
+    {
+      "condition": "C2",
+      "family": "path-boundary",
+      "ground_truth_state": "REPAIRABLE",
+      "proof_file": "fp-path-boundary-c2.proof.json",
+      "proof_file_sha256": "cd9e3f5b2c4c6341e7acf2ce1e1bdb951df66da15cd407510b09f6e7867fc8f6",
+      "task_file": "fp-path-boundary-c2.task.json",
+      "task_file_sha256": "b845d80dd6ba183a28902c60dcfdae553613edcea51c49c83e0d0afdf4df16a2",
+      "task_id": "fp-path-boundary-c2"
+    },
+    {
+      "condition": "C3",
+      "family": "path-boundary",
+      "ground_truth_state": "UNREPAIRABLE",
+      "proof_file": "fp-path-boundary-c3.proof.json",
+      "proof_file_sha256": "d1a4cec2d3b4252cf1249220863fee92ad6108cfaa3c89249438e393316d43ec",
+      "task_file": "fp-path-boundary-c3.task.json",
+      "task_file_sha256": "a07b70b98c2039559ca13843550acd277eecd9425c835c70f78319e4d0731267",
+      "task_id": "fp-path-boundary-c3"
+    },
+    {
+      "condition": "C4",
+      "family": "path-boundary",
+      "ground_truth_state": "UNREPAIRABLE",
+      "proof_file": "fp-path-boundary-c4.proof.json",
+      "proof_file_sha256": "fd0bc955685ea2579e54f9893c37b63e2f8276c90fd8e98aa33d7ff5f5d34b3d",
+      "task_file": "fp-path-boundary-c4.task.json",
+      "task_file_sha256": "37eb829ad6f96a8fb8d2385523ee23e269ed2e07c8fdb21bb2da5601c42042f8",
+      "task_id": "fp-path-boundary-c4"
+    },
+    {
+      "condition": "C5",
+      "family": "path-boundary",
+      "ground_truth_state": "EVALUATOR_MISMATCH",
+      "proof_file": "fp-path-boundary-c5.proof.json",
+      "proof_file_sha256": "3dff77daea1f2fa02089d365545ad24ae47a4c9bdce85c15f16f2ac86363328b",
+      "task_file": "fp-path-boundary-c5.task.json",
+      "task_file_sha256": "0c94ea4f855cb369fded8412215eb7312ce48188a808e3619462e7554bbabaa3",
+      "task_id": "fp-path-boundary-c5"
+    }
+  ]
+}

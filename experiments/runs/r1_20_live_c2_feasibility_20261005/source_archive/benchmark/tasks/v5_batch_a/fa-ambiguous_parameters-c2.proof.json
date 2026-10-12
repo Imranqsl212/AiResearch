@@ -1,0 +1,79 @@
+{
+  "candidate_space_size": 6,
+  "certificate_version": "5.0.0",
+  "counterexamples": [
+    {
+      "candidate": {
+        "decode": "raw",
+        "duplicates": "first"
+      },
+      "outcome": {
+        "actual": true,
+        "case_index": 1,
+        "expected": false,
+        "input": "mode=safe&mode=admin"
+      }
+    },
+    {
+      "candidate": {
+        "decode": "percent",
+        "duplicates": "first"
+      },
+      "outcome": {
+        "actual": true,
+        "case_index": 1,
+        "expected": false,
+        "input": "mode=safe&mode=admin"
+      }
+    },
+    {
+      "candidate": {
+        "decode": "raw",
+        "duplicates": "last"
+      },
+      "outcome": {
+        "actual": true,
+        "case_index": 2,
+        "expected": false,
+        "input": "mode=admin&mode=safe"
+      }
+    },
+    {
+      "candidate": {
+        "decode": "percent",
+        "duplicates": "last"
+      },
+      "outcome": {
+        "actual": true,
+        "case_index": 2,
+        "expected": false,
+        "input": "mode=admin&mode=safe"
+      }
+    },
+    {
+      "candidate": {
+        "decode": "raw",
+        "duplicates": "reject"
+      },
+      "outcome": {
+        "actual": false,
+        "case_index": 4,
+        "expected": true,
+        "input": "mode=%73afe"
+      }
+    }
+  ],
+  "environment_witness": null,
+  "ground_truth_state": "REPAIRABLE",
+  "proof_sha256": "fa525d6e014e6997d7db623f5723cece0de0a48a35b2f3ddaddf0e661e8e3c42",
+  "satisfying_candidates": [
+    {
+      "decode": "percent",
+      "duplicates": "reject"
+    }
+  ],
+  "scope": "bounded_declarative_candidate_language_only",
+  "secure_candidate_gate_verdict": "PASS",
+  "task_id": "fa-ambiguous_parameters-c2",
+  "task_sha256": "5e28a8f2c49c1d2c8ec7400641b559402b28c07b9e2fe35b76548e52e453958b"
+}

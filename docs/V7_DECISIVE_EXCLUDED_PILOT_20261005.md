@@ -104,8 +104,8 @@ The prospective statistical plan needs a power decision for the number of
 independent families, not merely more seed repeats within these two families.
 The full main live path, blind strategy coding, public-data privacy route,
 model/runtime freeze and 12-point release gate remain incomplete. The
-source-bound local raw archives are Git ignored and are not approved
-supplements.
+source-bound local raw archives are now tracked in this Git branch. That does
+not make them approved journal supplements.
 
 Recheck locally with:
 

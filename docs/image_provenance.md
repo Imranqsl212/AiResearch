@@ -14,7 +14,7 @@
 | Crypto image source | [`sandbox/images/crypto-target/main.go`](../sandbox/images/crypto-target/main.go) |
 | Base image | `scratch` (empty Docker base; no tag, registry, packages, or inherited filesystem) |
 | Builder | Go 1.26.4 `darwin/arm64` cross-compiled to static `linux/arm64`; Docker Desktop 4.57.0, Engine 29.1.3 `linux/arm64`, Buildx 0.30.1-desktop.1 |
-| Binary | `bin/wts-local`, static Linux aarch64 ELF, SHA-256 `739c2727365fcbd7821c6d8b20a855e2ebcc5862849fdf03d7d54ebf8403a251` (generated locally and ignored by Git) |
+| Binary | `bin/wts-local`, static Linux aarch64 ELF, SHA-256 `739c2727365fcbd7821c6d8b20a855e2ebcc5862849fdf03d7d54ebf8403a251` (generated locally; now tracked in this Git branch) |
 
 Rebuild from the repository root with a local Go toolchain and Docker daemon:
 

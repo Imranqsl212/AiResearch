@@ -1,0 +1,20 @@
+{
+  "agent_version": "ollama-local-adapter-0.2.0",
+  "benchmark_version": "0.5.0",
+  "condition": "UW",
+  "errors": [],
+  "experiment_id": "rag-factorial-pilot-0-5-0",
+  "finalized_at": "2026-10-02T15:21:05Z",
+  "git_commit": "085636908dd269456fb152a1217c2ab66a294cdd",
+  "log_file": "rag-factorial-pilot-0-5-0-slot-000003.jsonl",
+  "log_sha256": "8a9953891c85fad4050adb1ab67bc86b08fe9c0345f7b9cf3a9cbf285490e378",
+  "model": "qwen3:4b",
+  "public_run_id": "episode-4a8e13185922877a",
+  "public_task_id": "task-ec052db91853294f",
+  "run_id": "rag-factorial-pilot-0-5-0-slot-000003",
+  "schema_version": "0.1.0",
+  "stop_event": "INFRASTRUCTURE_ABORT",
+  "task_id": "crypto-aead-uw--rag-relevant",
+  "terminal_outcome": "INFRASTRUCTURE_ABORT",
+  "verifier_receipt": null
+}

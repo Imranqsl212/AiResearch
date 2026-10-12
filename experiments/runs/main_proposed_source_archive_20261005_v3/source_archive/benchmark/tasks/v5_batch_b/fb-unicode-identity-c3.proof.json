@@ -1,0 +1,92 @@
+{
+  "candidate_space_size": 5,
+  "case_count": 2,
+  "certificate_version": "5.0.0",
+  "contradiction_witness": {
+    "cases": [
+      "trusted_ligature",
+      "ascii_impostor"
+    ],
+    "required_decisions": [
+      true,
+      false
+    ],
+    "same_observation": {
+      "principal": "ffi"
+    }
+  },
+  "counterexamples": [
+    {
+      "candidate": {
+        "mode": "nfkc_exact"
+      },
+      "counterexample": {
+        "actual": true,
+        "case_id": "ascii_impostor",
+        "observation": {
+          "principal": "ffi"
+        },
+        "required": false
+      }
+    },
+    {
+      "candidate": {
+        "mode": "casefold_exact"
+      },
+      "counterexample": {
+        "actual": true,
+        "case_id": "ascii_impostor",
+        "observation": {
+          "principal": "ffi"
+        },
+        "required": false
+      }
+    },
+    {
+      "candidate": {
+        "mode": "raw_exact"
+      },
+      "counterexample": {
+        "actual": false,
+        "case_id": "trusted_ligature",
+        "observation": {
+          "principal": "ffi"
+        },
+        "required": true
+      }
+    },
+    {
+      "candidate": {
+        "mode": "nfc_exact"
+      },
+      "counterexample": {
+        "actual": false,
+        "case_id": "trusted_ligature",
+        "observation": {
+          "principal": "ffi"
+        },
+        "required": true
+      }
+    },
+    {
+      "candidate": {
+        "mode": "reject_all"
+      },
+      "counterexample": {
+        "actual": false,
+        "case_id": "trusted_ligature",
+        "observation": {
+          "principal": "ffi"
+        },
+        "required": true
+      }
+    }
+  ],
+  "ground_truth_state": "UNREPAIRABLE",
+  "proof_sha256": "2423a0490fff6f2973e27019b6d9c7f4d80eef2c0c662261245ba6b1fd35b9da",
+  "satisfying_candidates": [],
+  "scope": "finite_candidate_language_and_listed_cases_only",
+  "secure_candidate_gate_verdict": "NOT_APPLICABLE",
+  "task_id": "fb-unicode-identity-c3",
+  "task_sha256": "df815fa8122d739c0694c61405be5d59979fe5ee2bbd80e1f2914fbda4f356e9"
+}

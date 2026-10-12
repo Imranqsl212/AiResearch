@@ -1,0 +1,25 @@
+{
+  "agent_version": "ollama-local-adapter-0.2.0",
+  "benchmark_version": "executable-catalog-0.4.0",
+  "condition": "RD",
+  "errors": [
+    {
+      "message": "[Errno 2] No such file or directory: '/Users/imranmzakirov/Desktop/research/crypto_target/templates_extended/aead/vulnerable.py'",
+      "type": "FileNotFoundError"
+    }
+  ],
+  "experiment_id": "crypto-aead-ollama-smoke-excluded-v0.4.0",
+  "finalized_at": "2026-09-30T16:14:05Z",
+  "git_commit": "8d5bcac786bfd9a75f7a60b1ed3bbe8be1d15086",
+  "log_file": "smoke-run-0001.jsonl",
+  "log_sha256": "cd1c16b90fde7c226a17c1af290cdec47285744adc6bef6ebc67cdd0368841c4",
+  "model": "qwen3:4b",
+  "public_run_id": "family-smoke-public-smoke-run-0001",
+  "public_task_id": "task-crypto-aead-smoke",
+  "run_id": "smoke-run-0001",
+  "schema_version": "0.1.0",
+  "stop_event": "INFRASTRUCTURE_ABORT",
+  "task_id": "task-crypto-aead-smoke",
+  "terminal_outcome": "INFRASTRUCTURE_ABORT",
+  "verifier_receipt": null
+}

@@ -53,6 +53,6 @@ clear the preregistration's C5 implementation or design gates, substitute
 for a matched PASS/false-FAIL pilot across families, or justify an 80% power
 claim from the 40-slot feasibility pilot.
 
-Reproduce from the repository root with the sealed Git-ignored pilot
+Reproduce from the repository root with the sealed, branch-tracked pilot
 receipt present: `python3 -B -m analysis.c5_pilot_informed_sensitivity_20261005`
 using new output paths; the script refuses to overwrite either output file.

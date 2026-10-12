@@ -1,12 +1,19 @@
 # Experiment readiness — 2026-09-30
 
+> **Historical readiness snapshot.** The “no real agent” and other gate
+> statements below describe the early 30 September worktree, not the later
+> exploratory cohort or excluded pilots. The historical paper now analyzes 40
+> episodes; the prospective v1 main is still `NOT_READY`, with zero eligible
+> episodes. See the [current overview](../README.md) and
+> [next actions](NEXT_READY_ACTIONS_20261008.md).
+
 **Overall: NOT READY.** No real-agent smoke run, 3×3 pilot, or main study was launched. The engineering fixture is not an agent result. Statuses below are gates, not task-success outcomes. A failed or unrun safety check is never counted as passed.
 
 **Safety update (same date):** [Machine-readable readiness](../experiments/readiness.json) remains `NOT_READY` overall, but the safety gate is now `PASS`. Docker Desktop reports context `desktop-linux`, LinuxKit kernel, `OSType=linux`, Docker Desktop identity, and seccomp; the policy records this as `docker-desktop-linuxkit-vm`, not daemon userns-remapping. The official suite passed all nine runtime checks for the exact immutable image digest and records `experiment_permitted=true`. This clears only the sandbox gate. The v0.1.1 engineering pilot remains condition-confounded; the four-cell development suite, executable verifier, provider agent, protocol freeze, and scientific readiness are still incomplete. Passing safety tests does not establish scientific readiness.
 
 ## Git
 
-**PASS — source baseline exists, experimental freeze does not.** The directory had no `.git` history. Git was initialized without replacing an existing repository, and an allow-listed current-study baseline was committed as `33b3d7acfc7cea0b83f96bae9f2f26d0127152da` (`git rev-parse HEAD`). `.gitignore` excludes credential files, keys, caches, future raw runs, and generated binaries. Staged paths and content were checked for common key/token signatures before the commit; this is a bounded scan, not a proof that every possible private string is absent. Legacy AVB materials were moved recoverably to the macOS Trash, not committed; see [cleanup record](LEGACY_CLEANUP.md). The pre-Git scripted fixture retains its `UNAVAILABLE_NO_GIT` sentinel and is excluded from research analysis. A later study still needs its own frozen clean commit and manifest.
+**PASS — source baseline exists, experimental freeze does not.** The directory had no `.git` history at this snapshot. Git was initialized without replacing an existing repository, and an allow-listed then-current baseline was committed as `33b3d7acfc7cea0b83f96bae9f2f26d0127152da` (`git rev-parse HEAD`). At that time `.gitignore` excluded credential files, keys, caches, future raw runs, and generated binaries; the present local branch later began tracking raw runs and binaries. Staged paths and content were checked for common key/token signatures before that baseline commit; this was a bounded scan, not a proof that every possible private string was absent. Legacy AVB materials were moved recoverably to the macOS Trash, not committed; see [cleanup record](LEGACY_CLEANUP.md). The pre-Git scripted fixture retains its `UNAVAILABLE_NO_GIT` sentinel and is excluded from research analysis. A prospective study still needs its own frozen clean commit and manifest.
 
 ## Immutable Image
 
@@ -14,7 +21,16 @@
 
 ## Safety Suite
 
-**PASS — sandbox gate only.** The [candidate result](../sandbox/safety_checks/candidate_result.json) and [current official safety receipt](../sandbox/safety_checks/latest_result.json) record static `PASS` and **all nine runtime checks `PASS`** for the new digest. The receipt records `experiment_permitted=true`, `agent_runs_launched=0`, `external_targets_contacted=false`, and `isolation_mode=docker-desktop-linuxkit-vm`. No provider-backed agent or scientific episode was launched. Docker Desktop VM escape resistance remains an explicit residual assumption.
+**PASS — sandbox gate only at this snapshot.** The candidate result and the
+official safety receipt available then recorded static `PASS` and nine runtime
+checks `PASS` for that digest. The then-current receipt recorded
+`experiment_permitted=true`, `agent_runs_launched=0`,
+`external_targets_contacted=false`, and
+`isolation_mode=docker-desktop-linuxkit-vm`. The mutable
+`sandbox/safety_checks/latest_result.json` has since been replaced by a later
+11-check receipt; it is not the nine-check evidence described here. No
+provider-backed agent or scientific episode had been launched at that time.
+Docker Desktop VM escape resistance remained an explicit assumption.
 
 | Required property | Current measurement |
 | --- | --- |
@@ -56,7 +72,11 @@ provider-backed behavior has been measured. This does not change `NOT_READY`.
 
 ## Smoke Test
 
-**FAIL — NOT_RUN.** A real-agent trajectory was prohibited by the failed safety gate, unapproved image, absent provider adapter, and unvalidated executable verifier. The existing deterministic in-memory fixture is not this requested `SMOKE_TEST` and was not relabeled.
+**FAIL — NOT_RUN at that earlier snapshot.** A real-agent trajectory had not
+been permitted under the earlier safety, image, adapter, and verifier state.
+The separate safety update above passed later that day; this old smoke decision
+was not a decision about later excluded live pilots. The deterministic in-memory
+fixture was not relabeled as that requested `SMOKE_TEST`.
 
 ## Pilot Readiness
 

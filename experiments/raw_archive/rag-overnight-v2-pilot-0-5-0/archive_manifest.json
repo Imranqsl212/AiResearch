@@ -1,0 +1,49 @@
+{
+  "archive_sha256": "90591ab027ffd4e032f70563b4f5e9104689b2437423998eb5bf40663d2db8d3",
+  "experiment_id": "rag-overnight-v2-pilot-0-5-0",
+  "files": [
+    {
+      "bytes": 33871,
+      "path": "runs/rag-overnight-v2-pilot-0-5-0-slot-000001.jsonl",
+      "sha256": "921c8e443462c6b05d3774475a161efc784c078e308e3f7cf627bc87d1fa7c15"
+    },
+    {
+      "bytes": 29544,
+      "path": "runs/rag-overnight-v2-pilot-0-5-0-slot-000002.jsonl",
+      "sha256": "e515ad76902c517d6de6ffbe66909feaaf2e03540fd361f1296b0fd1e30a6e45"
+    },
+    {
+      "bytes": 28732,
+      "path": "runs/rag-overnight-v2-pilot-0-5-0-slot-000003.jsonl",
+      "sha256": "c8d468fc19753d4283bbc0d8459300c421e980ccf2e43ab23036bd4c7d7a99fc"
+    },
+    {
+      "bytes": 35288,
+      "path": "runs/rag-overnight-v2-pilot-0-5-0-slot-000004.jsonl",
+      "sha256": "3d7193cece4a0dcd5c764b008887071558f76bcb37a960b3ebe5b18560e13889"
+    },
+    {
+      "bytes": 33332,
+      "path": "runs/rag-overnight-v2-pilot-0-5-0-slot-000005.jsonl",
+      "sha256": "9847b61dfa7349d1b6d9c9c18f20687527335e387fc94cc4e7b28d8fc58f8979"
+    },
+    {
+      "bytes": 46301,
+      "path": "runs/rag-overnight-v2-pilot-0-5-0-slot-000006.jsonl",
+      "sha256": "15178d28ef5ec1a155b333742eb01e92cfae58575840c8106fe5256e8a7822e4"
+    },
+    {
+      "bytes": 41059,
+      "path": "runs/rag-overnight-v2-pilot-0-5-0-slot-000007.jsonl",
+      "sha256": "01203fc72f58d43cb2855b291986712907034e39725db5a2774d5c4c2ab8c930"
+    },
+    {
+      "bytes": 41351,
+      "path": "runs/rag-overnight-v2-pilot-0-5-0-slot-000008.jsonl",
+      "sha256": "61f0964e5ddf717d1824eb77c7e183bed165ae5a5a0abbf15bc0c6909a408a89"
+    }
+  ],
+  "manifest_version": "0.1.0",
+  "schema_version": "0.1.0",
+  "sealed": true
+}

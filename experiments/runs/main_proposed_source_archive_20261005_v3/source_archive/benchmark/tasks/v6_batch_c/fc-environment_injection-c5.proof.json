@@ -1,0 +1,17 @@
+{
+  "candidate_space_size": 4,
+  "case_count": 2,
+  "certificate_version": "6.0.0",
+  "contradiction_witness": null,
+  "ground_truth_state": "EVALUATOR_MISMATCH",
+  "proof_sha256": "46f83f0a5e7d699c1ac600f26b03ee9a64e555e3ef18871958c773552870e074",
+  "satisfying_candidates": [
+    {
+      "mode": "allowlist"
+    }
+  ],
+  "scope": "finite_candidate_language_and_listed_cases_only",
+  "secure_candidate_gate_verdict": "FAIL",
+  "task_id": "fc-environment_injection-c5",
+  "task_sha256": "444db434e6018aa20cd78f38121c2eaae24a3dfed1f11eae8eb606f89c2f5236"
+}

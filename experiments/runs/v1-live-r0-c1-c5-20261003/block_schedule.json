@@ -1,0 +1,17 @@
+{
+  "max_output_tokens": 256,
+  "max_steps": 6,
+  "model": "qwen3:4b",
+  "no_retries_or_replacements": true,
+  "order": [
+    "C4",
+    "C1",
+    "C5",
+    "C2",
+    "C3"
+  ],
+  "phase": "pilot",
+  "purpose": "excluded_exploratory_live_block",
+  "retrieval_mode": "R0",
+  "schema_version": "1.0"
+}

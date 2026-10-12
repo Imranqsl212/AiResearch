@@ -1,0 +1,104 @@
+{
+  "candidate_space_size": 5,
+  "case_count": 5,
+  "certificate_version": "5.0.0",
+  "contradiction_witness": {
+    "cases": [
+      "approved_image",
+      "same_name_payload"
+    ],
+    "required_decisions": [
+      true,
+      false
+    ],
+    "same_observation": {
+      "byte_hash": null,
+      "declared_mime": "image/png",
+      "filename": "avatar.png"
+    }
+  },
+  "counterexamples": [
+    {
+      "candidate": {
+        "mode": "last_suffix"
+      },
+      "counterexample": {
+        "actual": true,
+        "case_id": "same_name_payload",
+        "observation": {
+          "byte_hash": null,
+          "declared_mime": "image/png",
+          "filename": "avatar.png"
+        },
+        "required": false
+      }
+    },
+    {
+      "candidate": {
+        "mode": "first_suffix"
+      },
+      "counterexample": {
+        "actual": true,
+        "case_id": "same_name_payload",
+        "observation": {
+          "byte_hash": null,
+          "declared_mime": "image/png",
+          "filename": "avatar.png"
+        },
+        "required": false
+      }
+    },
+    {
+      "candidate": {
+        "mode": "declared_mime"
+      },
+      "counterexample": {
+        "actual": true,
+        "case_id": "same_name_payload",
+        "observation": {
+          "byte_hash": null,
+          "declared_mime": "image/png",
+          "filename": "avatar.png"
+        },
+        "required": false
+      }
+    },
+    {
+      "candidate": {
+        "mode": "byte_hash_allowlist"
+      },
+      "counterexample": {
+        "actual": false,
+        "case_id": "approved_image",
+        "observation": {
+          "byte_hash": null,
+          "declared_mime": "image/png",
+          "filename": "avatar.png"
+        },
+        "required": true
+      }
+    },
+    {
+      "candidate": {
+        "mode": "reject_all"
+      },
+      "counterexample": {
+        "actual": false,
+        "case_id": "approved_image",
+        "observation": {
+          "byte_hash": null,
+          "declared_mime": "image/png",
+          "filename": "avatar.png"
+        },
+        "required": true
+      }
+    }
+  ],
+  "ground_truth_state": "UNREPAIRABLE",
+  "proof_sha256": "65d86048ac39701cbc360bab39aab9e091ca661fd482edbe260c0e9f05a08591",
+  "satisfying_candidates": [],
+  "scope": "finite_candidate_language_and_listed_cases_only",
+  "secure_candidate_gate_verdict": "NOT_APPLICABLE",
+  "task_id": "fb-upload-content-c3",
+  "task_sha256": "38fa7141e4fa1a14943e86e2b64b0c318a6e32214853f224356c6fa36d6a8aab"
+}

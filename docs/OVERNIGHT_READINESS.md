@@ -1,9 +1,16 @@
 # Overnight readiness: factorial RAG study
 
-**Updated:** 2026-10-02
-**Scientific data collected:** none yet. Existing smoke traces are excluded.
+> **Historical plan, 2 October 2026.** This documents an earlier 24-arm pilot
+> and 480-episode upper-bound design. It is not the prospective v1 release
+> schedule or a current launch guide. The completed exploratory cohort has 40
+> episodes; the separate AEAD and corrected-oracle pilots have 8 and 30.
+> Prospective main remains `NOT_READY` with zero eligible episodes. See the
+> [current overview](../README.md) and [next actions](NEXT_READY_ACTIONS_20261008.md).
 
-## Current architecture
+**Updated:** 2026-10-02
+**Scientific data at the time of this snapshot:** none yet. Existing smoke traces were excluded.
+
+## Architecture proposed at the time
 
 The active executable catalog contains 80 local targets: 48 crypto and 32 web task
 definitions across 20 families and four cells (`RD/UD/RW/UW`). Candidate Python source
@@ -20,7 +27,7 @@ reference code, condition labels, expected outcomes, or verifier internals.
 
 ## Gated sequence
 
-`experiments.run_rag_factorial_nightly` performs:
+The earlier `experiments.run_rag_factorial_nightly` plan called for:
 
 1. Ollama/model preflight;
 2. 80-target catalog validation;
@@ -29,7 +36,8 @@ reference code, condition labels, expected outcomes, or verifier internals.
 5. one excluded provider/Docker smoke;
 6. a 24-arm pilot: 3 families × 4 target cells × RAG on/off;
 7. pilot log/receipt/infrastructure integrity gate;
-8. main only when `--run-main` was explicitly supplied and every prior gate passed.
+8. main only if its old explicit flag and every prior gate had passed. This
+   historical condition does not authorize prospective v1 collection.
 
 Any failure stops the pipeline. The launcher never weakens the sandbox or silently
 relabels infrastructure failure as agent failure.
@@ -42,17 +50,10 @@ Static validation only:
 PYTHONDONTWRITEBYTECODE=1 python3 -B -m unittest tests.test_rag_factorial
 ```
 
-Pilot only:
-
-```bash
-PYTHONDONTWRITEBYTECODE=1 python3 -B -m experiments.run_rag_factorial_nightly
-```
-
-Pilot followed by main after a clean gate:
-
-```bash
-PYTHONDONTWRITEBYTECODE=1 python3 -B -m experiments.run_rag_factorial_nightly --run-main
-```
+The old pilot/main launcher commands are intentionally omitted: this document
+does not authorize collection under the current prospective protocol. Consult
+the [12-gate matrix](MAIN_RELEASE_GATE_MATRIX_20261005.md) before designing a
+new release.
 
 The full main upper bound is 160 treatment arms × 3 repeats = 480 episodes. On an M1
 MacBook Air with a 4B local model this can take much longer than one night. The process
@@ -68,5 +69,7 @@ attempt ledger and skips completed slots.
 - immutable raw archive: `experiments/raw_archive/rag-factorial-*`;
 - manifests and schedules: `experiments/manifests/` and `experiments/schedules/`.
 
-Raw trajectories and generated result files are intentionally ignored by Git. They
-must be backed up separately after collection and must never be overwritten.
+Raw trajectories and generated result files were Git-ignored at the time of
+this historical plan. The present local branch tracks them; their immutable
+receipts still need to be preserved, and remote availability must be checked
+separately after push.

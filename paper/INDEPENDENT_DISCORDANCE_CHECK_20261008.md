@@ -2,7 +2,8 @@
 
 **Scope:** a second, narrow count of the exploratory manuscript's terminal
 test–gate disagreement. This note and its script are included in the v5 local
-author-review bundle; the sanitized archive itself remains separate and private.
+author-review bundle; the sanitized archive itself is a separate tracked
+artifact whose review status remains open.
 The check does not change the manuscript or any raw archive.
 
 Run from the repository root:
@@ -14,7 +15,7 @@ python3 -B -m unittest paper.test_independent_discordance_check -v
 
 The checker uses only Python's standard library. It does **not** import
 `analysis.paper_pipeline`, any of its summary functions, or
-`paper.replay_sanitized_candidate`. It opens the Git-ignored transformed
+`paper.replay_sanitized_candidate`. It opens the tracked transformed
 review archive directly, verifies every mapped transformed member's SHA-256
 and size, and checks the 40 main result-index rows against their distinct
 terminal receipt objects. It checks experiment, run, task, condition,
@@ -50,10 +51,10 @@ proven from these changed bytes alone. The checker reports
 private archive. A [separate local original-byte audit](ORIGINAL_ARCHIVE_PROVENANCE_AUDIT_20261008.md)
 subsequently opened the private original and verified its byte link to the
 sanitized copy, including the original terminal **9/20** count. That later
-check does not broaden this transformed-only verifier's output or make either
-archive publishable. This check confirms the 9/20 count within the transformed
+check does not broaden this transformed-only verifier's output or establish
+journal data-release approval. This check confirms the 9/20 count within the transformed
 terminal records and their internal links. It does not independently run
 the family tests, establish real-world code security, validate the hidden
 veto as a truthful task oracle, recover missing historical per-action raw
-checks, or authorize sharing the archive. External chain-of-custody and
-privacy review remain necessary for any external data package.
+checks, or resolve the archive's privacy status. External chain-of-custody and
+privacy review remain necessary for a journal data package.

@@ -1,0 +1,17 @@
+{
+  "candidate_space_size": 4,
+  "case_count": 2,
+  "certificate_version": "6.0.0",
+  "contradiction_witness": null,
+  "ground_truth_state": "REPAIRABLE",
+  "proof_sha256": "510b0575d5e168e2837964467647ace51786883384aae5d8ab5804cf23250d33",
+  "satisfying_candidates": [
+    {
+      "mode": "allowlist"
+    }
+  ],
+  "scope": "finite_candidate_language_and_listed_cases_only",
+  "secure_candidate_gate_verdict": "PASS",
+  "task_id": "fc-deserialization_allowlist-c1",
+  "task_sha256": "bea9ffc4ec37de6d7a12b376efaae28adb33da4c4e55bb53fedc77ed2da70260"
+}

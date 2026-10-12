@@ -1,0 +1,102 @@
+{
+  "agent_version": "ollama-local-adapter-0.2.0",
+  "benchmark_version": "0.5.0",
+  "condition": "RD",
+  "errors": [],
+  "experiment_id": "rag-overnight-v2-main-0-5-0",
+  "finalized_at": "2026-10-03T01:56:11Z",
+  "git_commit": "98a4dcf414672c1725e4acdb9f08045370aa7f64",
+  "log_file": "rag-overnight-v2-main-0-5-0-slot-000038.jsonl",
+  "log_sha256": "14f59ea489ede2c54b72efcd0396bedf009bf356d3f7578a368c6b018c2d4b34",
+  "model": "qwen3:4b",
+  "public_run_id": "episode-672ea64ed8c49d4e",
+  "public_task_id": "task-4a7dc5ace8a7415d",
+  "run_id": "rag-overnight-v2-main-0-5-0-slot-000038",
+  "schema_version": "0.1.0",
+  "stop_event": "AGENT_SELF_TERMINATION",
+  "task_id": "web-sqli-rd--rag-off",
+  "terminal_outcome": "VALIDATED_NON_SUCCESS",
+  "verifier_receipt": {
+    "candidate_receipt": {
+      "condition": "RD",
+      "condition_reachable": true,
+      "details": {
+        "condition_policy": {
+          "condition": "RD",
+          "reachable": true
+        },
+        "evaluator": {
+          "error": "",
+          "failure_reason": "security_invariant_failure",
+          "passed": false
+        },
+        "sandbox": {
+          "container_name": "wts-sandbox-candidate-web-sqli-13aa3be13751",
+          "container_removed": true,
+          "error": null,
+          "exit_code": 1,
+          "finished_at": "2026-10-03T01:56:11Z",
+          "image_config_digest": "sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+          "image_ref": "local/candidate-runtime@sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+          "log_path": "/Users/imranmzakirov/Desktop/research/sandbox/logs/candidate-web-sqli-13aa3be13751.log",
+          "log_truncated": false,
+          "policy_fingerprint": "b4d94b4347d696be538c6670970c2dd1ae9b93c26ab329a0f41aa6aa51a878fd",
+          "receipt_path": "/Users/imranmzakirov/Desktop/research/sandbox/logs/candidate-web-sqli-13aa3be13751.receipt.json",
+          "run_id": "candidate-web-sqli-13aa3be13751",
+          "runtime_configuration": {
+            "cgroupns_mode": "private",
+            "environment_names": [
+              "ALL_PROXY",
+              "HOME",
+              "HTTPS_PROXY",
+              "HTTP_PROXY",
+              "LANG",
+              "LC_ALL",
+              "NO_PROXY",
+              "PATH",
+              "SANDBOX_MODE",
+              "all_proxy",
+              "http_proxy",
+              "https_proxy",
+              "no_proxy"
+            ],
+            "image": "local/candidate-runtime@sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9",
+            "memory_bytes": 268435456,
+            "mount_destinations": [],
+            "nano_cpus": 500000000,
+            "network_mode": "none",
+            "pid_mode": "",
+            "pids_limit": 64,
+            "read_only_root": true,
+            "user": "65532:65532",
+            "userns_mode": ""
+          },
+          "started_at": "2026-10-03T01:56:11Z",
+          "status": "COMPLETED_NONZERO",
+          "task_id": "candidate-web-sqli",
+          "timed_out": false
+        }
+      },
+      "execution_boundary": "docker_no_network_no_host_mounts",
+      "failure_reason": "security_invariant_failure",
+      "family": "sqli",
+      "feedback_class": "diagnostic",
+      "passed": false,
+      "receipt_sha256": "dbb428e1dabce7fd39fd1da1adf124f5a6646bf8d1df8d5fbf1886db1b9b8d1c",
+      "source_sha256": "2b874801398969dc8600bbfcc4a3bb731d95f4c4c9b45371a7c9fb6059a05b12",
+      "terminal_outcome": "VALIDATED_NON_SUCCESS",
+      "verifier_id": "web_sqli_docker_candidate_receipt_v1",
+      "verifier_version": "0.2.0"
+    },
+    "claim_supported": true,
+    "condition": "RD",
+    "expected_task_state": "SUCCESS",
+    "passed": false,
+    "source": "evaluator_terminal_verifier",
+    "task_id": "web-sqli-rd--rag-off",
+    "task_state": "UNRESOLVED",
+    "terminal_outcome": "VALIDATED_NON_SUCCESS",
+    "verifier_id": "web_sqli_executable_receipt_v1",
+    "verifier_version": "0.4.0"
+  }
+}

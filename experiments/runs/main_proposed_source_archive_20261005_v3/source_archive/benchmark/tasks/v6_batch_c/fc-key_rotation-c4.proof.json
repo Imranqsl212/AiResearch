@@ -1,0 +1,23 @@
+{
+  "candidate_space_size": 4,
+  "case_count": 2,
+  "certificate_version": "6.0.0",
+  "contradiction_witness": {
+    "cases": [
+      "current",
+      "retired"
+    ],
+    "required_decisions": [
+      true,
+      false
+    ],
+    "same_observation": "key_rotation"
+  },
+  "ground_truth_state": "UNREPAIRABLE",
+  "proof_sha256": "3ad9446f3b7be54b5766b3af69abec1a1afa6c0564014133036af88f657c20f7",
+  "satisfying_candidates": [],
+  "scope": "finite_candidate_language_and_listed_cases_only",
+  "secure_candidate_gate_verdict": "NOT_APPLICABLE",
+  "task_id": "fc-key_rotation-c4",
+  "task_sha256": "e11505d2f59bd2b2f6c4dc52bece3f4f9c365180de4986a5241a271a8a5900cc"
+}

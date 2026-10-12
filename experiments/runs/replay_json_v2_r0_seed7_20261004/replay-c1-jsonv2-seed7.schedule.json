@@ -1,0 +1,1 @@
+{"episode_id":"replay-c1-jsonv2-seed7","episode_timeout_seconds":120,"experiment_id":"excluded-live-replay-json-v2","kind":"single_excluded_episode","max_steps":6,"phase":"pilot","protocol_version":"finite_json_v2","provider_request_timeout_seconds":90.0,"schema_version":"1.0","seed":7,"task_id":"fr-transaction-replay-c1","temperature":0.0}

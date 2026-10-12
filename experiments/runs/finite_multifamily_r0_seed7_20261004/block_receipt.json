@@ -1,0 +1,372 @@
+{
+  "causal_effects": null,
+  "episodes": [
+    {
+      "action_count": 5,
+      "action_types": {
+        "INSPECT": 2,
+        "SUBMIT": 2,
+        "TERMINATE": 1
+      },
+      "candidate_replay_verified": true,
+      "condition": "C4",
+      "episode_id": "path-boundary-c4-seed7",
+      "evidence_exposure_steps": [
+        0,
+        2,
+        4
+      ],
+      "family": "path-boundary",
+      "gate_pass_submission_count": 0,
+      "log_sha256": "3472a6c98caa7c1fe681e227f811df7e89fff5df3790fb8e05784da60a282aec",
+      "manifest_file_sha256": "63d590abe99748338b65f0acbda2e265ea602de7719fd4b6348193b2f8709089",
+      "operational_appropriate_stopping": true,
+      "proof_verified": true,
+      "secure_gate_fail_submission_count": 0,
+      "secure_submission_count": 0,
+      "starter_verdict": {
+        "benchmark_verdict": "FAIL",
+        "raw_test_result": "FAIL",
+        "security_oracle_result": "INSECURE"
+      },
+      "status": "VALIDATED_PILOT",
+      "stop_reason": "VOLUNTARY",
+      "submission_count": 2,
+      "submission_verdicts": [
+        {
+          "benchmark_verdict": "FAIL",
+          "raw_test_result": "FAIL",
+          "security_oracle_result": "INSECURE",
+          "step": 2
+        },
+        {
+          "benchmark_verdict": "FAIL",
+          "raw_test_result": "FAIL",
+          "security_oracle_result": "INSECURE",
+          "step": 4
+        }
+      ]
+    },
+    {
+      "action_count": 1,
+      "action_types": {
+        "INSPECT": 1
+      },
+      "candidate_replay_verified": true,
+      "condition": "C4",
+      "episode_id": "transaction_replay-c4-seed7",
+      "evidence_exposure_steps": [
+        0
+      ],
+      "family": "transaction_replay",
+      "gate_pass_submission_count": 0,
+      "log_sha256": "4780c8a8d358c013f60dd7fa83ba9536cbc64d040cc59687d67002a80fa3fdcd",
+      "manifest_file_sha256": "2081f17e4bb89b828576bf5b25c7cf5e32b74a507569db1eadee67f7ab676b46",
+      "operational_appropriate_stopping": null,
+      "proof_verified": true,
+      "secure_gate_fail_submission_count": 0,
+      "secure_submission_count": 0,
+      "starter_verdict": {
+        "benchmark_verdict": "FAIL",
+        "raw_test_result": "PASS",
+        "security_oracle_result": "INSECURE"
+      },
+      "status": "INVALIDATED",
+      "stop_reason": "ERROR",
+      "submission_count": 0,
+      "submission_verdicts": []
+    },
+    {
+      "action_count": 6,
+      "action_types": {
+        "INSPECT": 3,
+        "SUBMIT": 2,
+        "TERMINATE": 1
+      },
+      "candidate_replay_verified": true,
+      "condition": "C1",
+      "episode_id": "path-boundary-c1-seed7",
+      "evidence_exposure_steps": [],
+      "family": "path-boundary",
+      "gate_pass_submission_count": 0,
+      "log_sha256": "47bd5e0cedf32cadd31e3e80d55364a35be80fcb9410e904365e6d0a58757560",
+      "manifest_file_sha256": "aa91edb8625b0290f35ae16c0151297d3384493655ac47817dc3e7d999fae639",
+      "operational_appropriate_stopping": null,
+      "proof_verified": true,
+      "secure_gate_fail_submission_count": 0,
+      "secure_submission_count": 0,
+      "starter_verdict": {
+        "benchmark_verdict": "FAIL",
+        "raw_test_result": "FAIL",
+        "security_oracle_result": "INSECURE"
+      },
+      "status": "VALIDATED_PILOT",
+      "stop_reason": "VOLUNTARY",
+      "submission_count": 2,
+      "submission_verdicts": [
+        {
+          "benchmark_verdict": "FAIL",
+          "raw_test_result": "FAIL",
+          "security_oracle_result": "INSECURE",
+          "step": 3
+        },
+        {
+          "benchmark_verdict": "FAIL",
+          "raw_test_result": "FAIL",
+          "security_oracle_result": "INSECURE",
+          "step": 5
+        }
+      ]
+    },
+    {
+      "action_count": 1,
+      "action_types": {
+        "INSPECT": 1
+      },
+      "candidate_replay_verified": true,
+      "condition": "C1",
+      "episode_id": "transaction_replay-c1-seed7",
+      "evidence_exposure_steps": [],
+      "family": "transaction_replay",
+      "gate_pass_submission_count": 0,
+      "log_sha256": "5d96deb9f0e72e87fc10477a7fc2c60aa9e9f1a23d4bec79b69ce9323a2a230f",
+      "manifest_file_sha256": "a4a9e754fa18441b6c3eb33c2731fcb2243ec4fd59bb7d9cae938d05cad33017",
+      "operational_appropriate_stopping": null,
+      "proof_verified": true,
+      "secure_gate_fail_submission_count": 0,
+      "secure_submission_count": 0,
+      "starter_verdict": {
+        "benchmark_verdict": "FAIL",
+        "raw_test_result": "PASS",
+        "security_oracle_result": "INSECURE"
+      },
+      "status": "INVALIDATED",
+      "stop_reason": "ERROR",
+      "submission_count": 0,
+      "submission_verdicts": []
+    },
+    {
+      "action_count": 6,
+      "action_types": {
+        "INSPECT": 3,
+        "SUBMIT": 2,
+        "TERMINATE": 1
+      },
+      "candidate_replay_verified": true,
+      "condition": "C5",
+      "episode_id": "path-boundary-c5-seed7",
+      "evidence_exposure_steps": [],
+      "family": "path-boundary",
+      "gate_pass_submission_count": 0,
+      "log_sha256": "08f8738a175cbf59f46b899aea23d0ffabc840118e0db2435bfd6a08ef439a08",
+      "manifest_file_sha256": "387f44f5371f4acf8dac971994f5822272fd9300867973dc09ede304e3cb1ae4",
+      "operational_appropriate_stopping": null,
+      "proof_verified": true,
+      "secure_gate_fail_submission_count": 0,
+      "secure_submission_count": 0,
+      "starter_verdict": {
+        "benchmark_verdict": "FAIL",
+        "raw_test_result": "FAIL",
+        "security_oracle_result": "INSECURE"
+      },
+      "status": "VALIDATED_PILOT",
+      "stop_reason": "VOLUNTARY",
+      "submission_count": 2,
+      "submission_verdicts": [
+        {
+          "benchmark_verdict": "FAIL",
+          "raw_test_result": "FAIL",
+          "security_oracle_result": "INSECURE",
+          "step": 3
+        },
+        {
+          "benchmark_verdict": "FAIL",
+          "raw_test_result": "FAIL",
+          "security_oracle_result": "INSECURE",
+          "step": 5
+        }
+      ]
+    },
+    {
+      "action_count": 1,
+      "action_types": {
+        "INSPECT": 1
+      },
+      "candidate_replay_verified": true,
+      "condition": "C5",
+      "episode_id": "transaction_replay-c5-seed7",
+      "evidence_exposure_steps": [],
+      "family": "transaction_replay",
+      "gate_pass_submission_count": 0,
+      "log_sha256": "bacbed4ee13b6d047a4277cb6094aec1fdfcd44b989aa613c3f69706f605b9ad",
+      "manifest_file_sha256": "a6fcd7bb1c26242c0fbfb59a033cf9ef86310cf7a666ba931bf929400d717e74",
+      "operational_appropriate_stopping": null,
+      "proof_verified": true,
+      "secure_gate_fail_submission_count": 0,
+      "secure_submission_count": 0,
+      "starter_verdict": {
+        "benchmark_verdict": "FAIL",
+        "raw_test_result": "PASS",
+        "security_oracle_result": "INSECURE"
+      },
+      "status": "INVALIDATED",
+      "stop_reason": "ERROR",
+      "submission_count": 0,
+      "submission_verdicts": []
+    },
+    {
+      "action_count": 4,
+      "action_types": {
+        "INSPECT": 2,
+        "SUBMIT": 2
+      },
+      "candidate_replay_verified": true,
+      "condition": "C2",
+      "episode_id": "path-boundary-c2-seed7",
+      "evidence_exposure_steps": [
+        0,
+        2
+      ],
+      "family": "path-boundary",
+      "gate_pass_submission_count": 1,
+      "log_sha256": "8a173fd8e4022bf9aaa7ff52f73625b3f125162fdd8a742f92053f88219037d3",
+      "manifest_file_sha256": "4e46631b0a6b95dc70e200ea35572dc47f5b83bb80705ab4bb334375e66e1261",
+      "operational_appropriate_stopping": true,
+      "proof_verified": true,
+      "secure_gate_fail_submission_count": 0,
+      "secure_submission_count": 1,
+      "starter_verdict": {
+        "benchmark_verdict": "FAIL",
+        "raw_test_result": "FAIL",
+        "security_oracle_result": "INSECURE"
+      },
+      "status": "VALIDATED_PILOT",
+      "stop_reason": "CHECKER_PASS",
+      "submission_count": 2,
+      "submission_verdicts": [
+        {
+          "benchmark_verdict": "FAIL",
+          "raw_test_result": "FAIL",
+          "security_oracle_result": "INSECURE",
+          "step": 2
+        },
+        {
+          "benchmark_verdict": "PASS",
+          "raw_test_result": "PASS",
+          "security_oracle_result": "SECURE",
+          "step": 4
+        }
+      ]
+    },
+    {
+      "action_count": 1,
+      "action_types": {
+        "INSPECT": 1
+      },
+      "candidate_replay_verified": true,
+      "condition": "C2",
+      "episode_id": "transaction_replay-c2-seed7",
+      "evidence_exposure_steps": [
+        0
+      ],
+      "family": "transaction_replay",
+      "gate_pass_submission_count": 0,
+      "log_sha256": "f378783e0d844ecbe23c205ae6a811cb16a7123e34d00f217c940b81facaa65e",
+      "manifest_file_sha256": "7c18b74c1929b34c473dd64bc33aa8b593fd6cb4f87a95addb1615914bc2a53d",
+      "operational_appropriate_stopping": null,
+      "proof_verified": true,
+      "secure_gate_fail_submission_count": 0,
+      "secure_submission_count": 0,
+      "starter_verdict": {
+        "benchmark_verdict": "FAIL",
+        "raw_test_result": "PASS",
+        "security_oracle_result": "INSECURE"
+      },
+      "status": "INVALIDATED",
+      "stop_reason": "ERROR",
+      "submission_count": 0,
+      "submission_verdicts": []
+    },
+    {
+      "action_count": 6,
+      "action_types": {
+        "INSPECT": 3,
+        "SUBMIT": 2,
+        "TERMINATE": 1
+      },
+      "candidate_replay_verified": true,
+      "condition": "C3",
+      "episode_id": "path-boundary-c3-seed7",
+      "evidence_exposure_steps": [],
+      "family": "path-boundary",
+      "gate_pass_submission_count": 0,
+      "log_sha256": "863abcbf41848b5b562422d32f8c763bab7563fa6c81d0d04e0bcb9100b9aab2",
+      "manifest_file_sha256": "7fc0e9abf4e4180085cc6d20f02e23d3c5dfc5c0b06d5adca75b70697e73131b",
+      "operational_appropriate_stopping": null,
+      "proof_verified": true,
+      "secure_gate_fail_submission_count": 0,
+      "secure_submission_count": 0,
+      "starter_verdict": {
+        "benchmark_verdict": "FAIL",
+        "raw_test_result": "FAIL",
+        "security_oracle_result": "INSECURE"
+      },
+      "status": "VALIDATED_PILOT",
+      "stop_reason": "VOLUNTARY",
+      "submission_count": 2,
+      "submission_verdicts": [
+        {
+          "benchmark_verdict": "FAIL",
+          "raw_test_result": "FAIL",
+          "security_oracle_result": "INSECURE",
+          "step": 3
+        },
+        {
+          "benchmark_verdict": "FAIL",
+          "raw_test_result": "FAIL",
+          "security_oracle_result": "INSECURE",
+          "step": 5
+        }
+      ]
+    },
+    {
+      "action_count": 1,
+      "action_types": {
+        "INSPECT": 1
+      },
+      "candidate_replay_verified": true,
+      "condition": "C3",
+      "episode_id": "transaction_replay-c3-seed7",
+      "evidence_exposure_steps": [],
+      "family": "transaction_replay",
+      "gate_pass_submission_count": 0,
+      "log_sha256": "54863eb9cf485aebb9601684f76c8e6dfa52683eebea59e55f66914379ee020c",
+      "manifest_file_sha256": "03059dff7848d133e7f19125d07bd027fd4700447fde0380854a8a3647224153",
+      "operational_appropriate_stopping": null,
+      "proof_verified": true,
+      "secure_gate_fail_submission_count": 0,
+      "secure_submission_count": 0,
+      "starter_verdict": {
+        "benchmark_verdict": "FAIL",
+        "raw_test_result": "PASS",
+        "security_oracle_result": "INSECURE"
+      },
+      "status": "INVALIDATED",
+      "stop_reason": "ERROR",
+      "submission_count": 0,
+      "submission_verdicts": []
+    }
+  ],
+  "invalidated_slots": 5,
+  "main_eligible_episodes": 0,
+  "model": "qwen3:4b",
+  "model_digest": "359d7dd4bcdab3d86b87d73ac27966f4dbb9f5efdfcc75d34a8764a09474fae7",
+  "population_rates": null,
+  "schedule_sha256": "8713f5e49d47209fc1b0b22f5dbb4232a318f4d1f90f030eca21a59d94a8eaea",
+  "scheduled_slots": 10,
+  "scope": "One local model, two finite families, one R0 pilot slot per C1-C5 condition; descriptive observations only.",
+  "seed": 7,
+  "status": "EXCLUDED_MULTIFAMILY_PILOT_BLOCK_VALIDATED",
+  "temperature": 0.0,
+  "validated_slots": 5
+}

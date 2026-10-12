@@ -1,0 +1,12 @@
+{
+  "condition": "C3",
+  "family": "webhook_integrity",
+  "gate_mode": "normal",
+  "schema_version": "5.0.0",
+  "sensor_mode": "collapsed",
+  "starter_candidate": {
+    "mode": "parsed_hmac"
+  },
+  "task_id": "fb-webhook-integrity-c3",
+  "version": "5.0.0"
+}

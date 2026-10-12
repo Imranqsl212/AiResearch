@@ -1,0 +1,47 @@
+{
+  "changed_source_members": 200,
+  "expected_paper_results_sha256": "3d7ef25bfa07ef25ae20cea8d6ee34b59c5d9158e20c2e9b7013bfbd5a3cb229",
+  "key_checks": {
+    "main_api_inventory_change_pairs": 17,
+    "main_final_source_hash_mismatches": 2,
+    "main_final_test_gate_discordance": 9,
+    "main_finite_acceptance": 16,
+    "main_per_action_raw_receipts": 0,
+    "main_post_failure_submission_runs": 24,
+    "main_public_failed_check_exposure": 28,
+    "main_source_pairs": 37
+  },
+  "not_recomputed": [
+    "original per-run hash-chain validator pass count",
+    "original source commit integrity",
+    "safety/container attestation",
+    "PDF rendering",
+    "model or evaluator execution"
+  ],
+  "original_byte_identical_raw_data": false,
+  "original_hash_chain_revalidated_from_sanitized_bytes": false,
+  "privacy_review_complete": false,
+  "public_release_approved": false,
+  "recomputed_main_episodes": 40,
+  "recomputed_pilot_episodes": 8,
+  "recomputed_sections": [
+    "main",
+    "repairable",
+    "policy_rejected",
+    "pilot",
+    "by_condition",
+    "by_arm",
+    "family_repairable_by_retrieval",
+    "exploratory_contrasts",
+    "leave_one_family_out",
+    "repairable_excluding_timeout",
+    "historical_cohort_counts",
+    "historical_outcome_counts",
+    "historical_receipts"
+  ],
+  "sanitization_manifest_sha256": "a53a24fedc8f0a9f4fce2bf7d4451ebcb62cd06fc8de1d3b8ae465fc74dffef7",
+  "sanitized_archive_sha256": "48720a5620a1437094268452caab8f0168516454166147e575dea1c1039c0dd3",
+  "status": "REVIEW_ONLY_SANITIZED_TABLE_REPLAY_MATCHED",
+  "transformed_member_hashes_verified": true,
+  "transformed_members": 314
+}

@@ -1,0 +1,41 @@
+{
+  "config": {
+    "algorithm": "domain-filtered-tfidf-public-family-bonus-v1",
+    "chunking": "whole-document-v1",
+    "embedding_model": null,
+    "noise_policy": "replace-final-rank-with-seeded-opposite-domain-document-v1",
+    "noise_seed": 7,
+    "reranker": null,
+    "tokenizer": "ascii-alphanumeric-lower-v1",
+    "top_k": 2
+  },
+  "config_sha256": "a5b23003de8dba8a6920ba9222dd31d89a454dd45d45ea3dbd1dca4e455dd266",
+  "corpus_file": "retrieval_corpus_v1.jsonl",
+  "corpus_sha256": "8fb4dabffc9891179c91bd8419f2c5762686ba5ae307fa9b213d44ef85c2a56d",
+  "document_count": 20,
+  "document_hashes": {
+    "crypto-aead-v1": "33018f5fada7a8c6759d2a9f28b7ef26f24e87bc9d66f4a38557aa4583a63974",
+    "crypto-certificate-validation-v1": "6979bfed9ed6313a9bf168dd7a15cbf8c969a3d2fd93f333506dcf610bffa3fb",
+    "crypto-deterministic-iv-v1": "853369bfb09d59930804a82e5b8965022c00fdbd42bb4b1f4081e5d6825f600f",
+    "crypto-insecure-padding-v1": "3c56bee3f824f9328a2f6a76e257716251bbd13ab1323d0293bc2737d7afa728",
+    "crypto-key-derivation-v1": "e3fc25beb0af7bda21122f6265cbf229ee077a9d58d52ec23075d6d024fc2681",
+    "crypto-key-management-v1": "ee994ec8d0902ce6e25be065008553e450b6b9e7fef8ca753c41026a9ea57152",
+    "crypto-nonce-v1": "73fb80652881691d417b94d05ed61135f674d144f93bc2144da33221e66ffa1c",
+    "crypto-password-hashing-v1": "a8e0ae116f826c5709386cdc3f3794e411b11cfe622cf7d2a4889c8d4b1c9608",
+    "crypto-secret-leakage-v1": "7d39496880393650a1b89226a17af034415247fdf7cf049b8c7f2690fcc03d67",
+    "crypto-tag-verification-v1": "dfea7e61d0053c03b81a2cb764a9797eeaefb0c388f42d423ebea3cd82473506",
+    "crypto-tls-validation-v1": "a374dcb7df17da140e553adee7e1a5493e29c38810c3720acba18ff7bb616430",
+    "crypto-weak-randomness-v1": "25c9c6d00dace18f1dbfbc726f4e547f5fe5c3931d279c4e102893d4b74f469f",
+    "web-authorization-v1": "70f691819800d2cba96dc983f74106bd884d07960d86f67784f0c5de7162e7b0",
+    "web-command-injection-v1": "c3723e9c0c66b61c2c8e3f7b5eb06ff919f119ade3cdc7b91cffafd26ee7c656",
+    "web-csrf-v1": "c850a840620717c64479246d7b76b9710ca698d901b50e0690ab027e83e3f17f",
+    "web-path-traversal-v1": "6871085a82e5fa6da846a42d3117875bb47f2d68192562acc608115535ea564c",
+    "web-session-v1": "0eb549bbdea8ac6386a914a6ae11ef5d8316df1c230b6a15c1eecfb58fa662f5",
+    "web-sqli-v1": "ccddb3afcc32c500a12e87890d8c55b0811ebceb2f90f3f403512b83f4311bfd",
+    "web-ssrf-v1": "59f78a07df7e0d1f154e2e4a0593cda29483a33eea2761dbab7184cc613d43a8",
+    "web-xss-v1": "bdee8ba51ffb5ca4e1bb80345ac3c3bc92b4b9e3a9d6e8a093745e0738912765"
+  },
+  "implementation_sha256": "4e0a7afd35ba30e9de18834d1fbbe1b0a68d8a2b25cc5a1fe95dd6a79a3520df",
+  "retrieval_manifest_sha256": "309101bfa7724094602a6f3983020869b2725f6582226ccfa4ca7beebfda8cdc",
+  "retrieval_version": "controlled-local-retrieval-v1.0.0"
+}

@@ -1,0 +1,71 @@
+{
+  "candidate_space_size": 6,
+  "certificate_version": "4.0.0",
+  "counterexamples": [
+    {
+      "candidate": {
+        "lock": "none",
+        "update": "read_write"
+      },
+      "outcome": {
+        "acknowledged": [
+          "A",
+          "B"
+        ],
+        "error": null,
+        "final_count": 1,
+        "schedule": [
+          "read:A",
+          "read:B",
+          "write:A",
+          "write:B"
+        ]
+      }
+    },
+    {
+      "candidate": {
+        "lock": "request_mutex",
+        "update": "read_write"
+      },
+      "outcome": {
+        "acknowledged": [
+          "A",
+          "B"
+        ],
+        "error": null,
+        "final_count": 1,
+        "schedule": [
+          "read:A",
+          "read:B",
+          "write:A",
+          "write:B"
+        ]
+      }
+    }
+  ],
+  "environment_witness": null,
+  "ground_truth_state": "EVALUATOR_MISMATCH",
+  "proof_sha256": "6dbe3557158b32b51e64102858899b16f392ff203c29a2e4c2c64c40cec2219c",
+  "satisfying_candidates": [
+    {
+      "lock": "worker_mutex",
+      "update": "read_write"
+    },
+    {
+      "lock": "none",
+      "update": "atomic_add"
+    },
+    {
+      "lock": "request_mutex",
+      "update": "atomic_add"
+    },
+    {
+      "lock": "worker_mutex",
+      "update": "atomic_add"
+    }
+  ],
+  "scope": "bounded_two_request_counter_updates_only",
+  "secure_candidate_gate_verdict": "FAIL",
+  "task_id": "fr-counter-race-c5",
+  "task_sha256": "f6732a7de02a6849643ccf7666764be6e0a94fc84e13a2a6f01ded9f6b07a526"
+}

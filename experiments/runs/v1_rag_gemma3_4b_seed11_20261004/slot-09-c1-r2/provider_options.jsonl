@@ -1,0 +1,1 @@
+{"endpoint":"http://127.0.0.1:11434/api/chat","options":{"num_ctx":8192,"num_predict":256,"seed":11,"temperature":0.3},"request_canonical_sha256":"a01833ed5dc0af97c0957bb0b2bd3a8766ae0d7e9bda2fc0e0580ca98b8763f2","request_index":1}

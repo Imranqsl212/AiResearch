@@ -1,0 +1,25 @@
+{
+  "agent_version": "ollama-local-adapter-0.2.0",
+  "benchmark_version": "0.5.0",
+  "condition": "UW",
+  "errors": [
+    {
+      "message": "local Ollama request failed: timed out",
+      "type": "OllamaAdapterError"
+    }
+  ],
+  "experiment_id": "rag-overnight-v1-pilot-0-5-0",
+  "finalized_at": "2026-10-02T16:46:08Z",
+  "git_commit": "c9df9fc77bcc7894143f6ee87c4d838362f3314b",
+  "log_file": "rag-overnight-v1-pilot-0-5-0-slot-000007.jsonl",
+  "log_sha256": "b94fb495509284cd097abd83dd8fba3e0e7a55a25c8cd93c5c6c2eae72b8ee85",
+  "model": "qwen3:4b",
+  "public_run_id": "episode-a7ac8976680aa7d9",
+  "public_task_id": "task-ec052db91853294f",
+  "run_id": "rag-overnight-v1-pilot-0-5-0-slot-000007",
+  "schema_version": "0.1.0",
+  "stop_event": "INFRASTRUCTURE_ABORT",
+  "task_id": "crypto-aead-uw--rag-relevant",
+  "terminal_outcome": "INFRASTRUCTURE_ABORT",
+  "verifier_receipt": null
+}

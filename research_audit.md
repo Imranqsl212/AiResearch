@@ -1,5 +1,9 @@
 # Research audit — 3 October 2026
 
+**Historical snapshot at `af0eb3f`.** Later branches track the raw experiments
+that this audit describes as Git ignored. Use [README.md](README.md) for the
+current repository status; keep the findings below in their original time scope.
+
 ## Scope and evidence boundary
 
 This is a read-only audit of the repository at `af0eb3f` before the new research design. The worktree was clean at audit start. We inspected the tracked source and Git history; the task catalogs and generated manifests; evaluator, agent, trajectory, sandbox, retrieval, analysis, tests, and paper code; the available local raw logs, receipts, and archive indexes; and the current manuscript and historical review documents. This audit does not turn the existing pilot into a confirmatory study.
@@ -63,6 +67,6 @@ The data do **not** show that agents recognize true impossibility, stop appropri
 
 ## Audit checks and next decision
 
-The repository contains 319 tracked files and local raw artifacts under Git-ignored `experiments/runs/` and `experiments/raw_archive/`. The current main index has 40 rows and the disjoint pilot index has eight. We inspected the Git history through `af0eb3f`, the current paper, manifests, code paths above, test inventory, raw-log and archive checks, and existing reproducibility documents. A current shell probe could not access the Docker socket or Ollama loopback under this sandbox profile, so it does not revalidate the saved October 3 safety receipt or provide model-run readiness.
+At the audited commit, the repository contained 319 tracked files and local raw artifacts under Git-ignored `experiments/runs/` and `experiments/raw_archive/`. The historical main index had 40 rows and the disjoint pilot index had eight. We inspected Git history through `af0eb3f`, the paper, manifests, code paths above, test inventory, raw-log and archive checks, and existing reproducibility documents. The audit shell probe could not access the Docker socket or Ollama loopback under that sandbox profile, so it did not revalidate the saved October 3 safety receipt or provide model-run readiness.
 
 **Gate decision:** no new scientific agent episodes should be collected with benchmark `0.5.0`. The next stage is a new oracle and task-state design with falsification tests, then a small excluded engineering pilot. Only a passed versioned readiness gate can authorize a repeated main study.
