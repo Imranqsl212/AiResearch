@@ -17,8 +17,10 @@ from paper import build_author_review_bundle as bundle
 
 class AuthorReviewBundleTests(unittest.TestCase):
     def test_deterministic_exact_source_copy_and_review_flags(self) -> None:
-        self.assertEqual(bundle.OUTPUT, bundle.V8_OUTPUT)
+        self.assertEqual(bundle.OUTPUT, bundle.V9_OUTPUT)
+        self.assertNotEqual(bundle.V8_OUTPUT, bundle.V9_OUTPUT)
         self.assertNotEqual(bundle.V7_OUTPUT, bundle.V8_OUTPUT)
+        self.assertEqual(bundle.V9_SOURCE_NAMES, bundle.V8_SOURCE_NAMES)
         self.assertEqual(bundle.V8_SOURCE_NAMES, bundle.V7_SOURCE_NAMES)
         self.assertEqual(set(bundle.V6_SOURCE_NAMES) - set(bundle.V5_SOURCE_NAMES), {
             "paper/audit_original_archive_provenance.py",
@@ -36,7 +38,7 @@ class AuthorReviewBundleTests(unittest.TestCase):
             self.assertTrue(verified["local_sources_match"])
             files = bundle._archive_files(first)
             manifest = json.loads(files[bundle.MANIFEST_NAME])
-            self.assertEqual(manifest["version"], bundle.V8_VERSION)
+            self.assertEqual(manifest["version"], bundle.V9_VERSION)
             self.assertFalse(manifest["public_release_approved"])
             self.assertFalse(manifest["journal_submission_approved"])
             self.assertFalse(manifest["original_raw_data_included"])
@@ -45,9 +47,13 @@ class AuthorReviewBundleTests(unittest.TestCase):
             for name in bundle.SOURCE_NAMES:
                 self.assertEqual(files[name], (bundle.ROOT / name).read_bytes())
             decision = files["paper/AUTHOR_SUBMISSION_DECISIONS_20261005.md"].decode("utf-8")
-            for name in bundle._decision_bound_names(bundle.V8_SPEC):
+            for name in bundle._decision_bound_names(bundle.V9_SPEC):
                 self.assertIn(Path(name).name, decision)
                 self.assertIn(hashlib.sha256(files[name]).hexdigest(), decision)
+            readme = files[bundle.README_NAME].decode("utf-8")
+            self.assertIn("bundle v9", readme)
+            self.assertIn("37074c198237ade67eb76921333b2835d329c863", readme)
+            self.assertIn("not an approved journal supplement", readme)
 
     def test_existing_v1_archive_still_verifies_without_local_source_compare(self) -> None:
         if not bundle.V1_OUTPUT.is_file():
@@ -111,6 +117,15 @@ class AuthorReviewBundleTests(unittest.TestCase):
         verified = bundle.verify(archive=bundle.V7_OUTPUT, compare_sources=False)
         self.assertEqual(verified["version"], bundle.V7_VERSION)
         self.assertEqual(verified["source_file_count"], len(bundle.V7_SOURCE_NAMES))
+        self.assertEqual(verified["archive_sha256"], before)
+
+    def test_existing_v8_archive_still_verifies_without_local_source_compare(self) -> None:
+        if not bundle.V8_OUTPUT.is_file():
+            self.skipTest("local v8 archive is unavailable")
+        before = hashlib.sha256(bundle.V8_OUTPUT.read_bytes()).hexdigest()
+        verified = bundle.verify(archive=bundle.V8_OUTPUT, compare_sources=False)
+        self.assertEqual(verified["version"], bundle.V8_VERSION)
+        self.assertEqual(verified["source_file_count"], len(bundle.V8_SOURCE_NAMES))
         self.assertEqual(verified["archive_sha256"], before)
 
     def test_v2_requires_decision_hash_for_each_rendered_file(self) -> None:

@@ -30,12 +30,12 @@ study remains `NOT_READY` with zero eligible new main episodes.
 | [`../analysis/source_fidelity_v1.json`](../analysis/source_fidelity_v1.json) | Versioned, source-text-free inventory of all 77 logged historical source strings and 37 adjacent pairs. |
 | [`../docs/V7_DECISIVE_EXCLUDED_PILOT_20261005.md`](../docs/V7_DECISIVE_EXCLUDED_PILOT_20261005.md) | Separate v7 pilot protocol, results, matched fork and scope limits. |
 | [`historical_receipts_20261003.txt`](historical_receipts_20261003.txt) | Saved allowlist of the 101 legacy receipts inventoried by the paper analysis; include it in the submission source revision. |
-| [`submission/cover_letter_template.md`](submission/cover_letter_template.md) | Venue-neutral cover letter draft with author and journal declarations left for confirmation. |
+| [`submission/cover_letter_template.md`](submission/cover_letter_template.md) | Venue-neutral cover letter draft reflecting the public GitHub data revision; author and journal declarations remain pending. |
 | [`DATA_AVAILABILITY_OPTIONS_20261005.md`](DATA_AVAILABILITY_OPTIONS_20261005.md) | Public data revision `37074c198237ade67eb76921333b2835d329c863` and draft journal wording for author review. |
 | [`VENUE_SHORTLIST_20261005.md`](VENUE_SHORTLIST_20261005.md) | Official-guideline comparison of three possible journals; venue choice remains with the submitting author. |
 | [`AUTHOR_SUBMISSION_DECISIONS_20261005.md`](AUTHOR_SUBMISSION_DECISIONS_20261005.md) | Hash-bound draft inventory and the human decisions still pending; it contains no inferred approvals. |
 
-The filtered [v8 local author-review bundle](AUTHOR_REVIEW_BUNDLE_20261005.md)
+The filtered [v9 local author-review bundle](AUTHOR_REVIEW_BUNDLE_20261005.md)
 contains this manuscript, both rendered file pairs, derived v7 pilot audits,
 the source-fidelity inventory, an independent transformed-receipt recount,
 and the separate original-byte audit code, tests, and methods note.
@@ -48,7 +48,8 @@ v2 contains the 14-page, three-table draft, and v3 predates the final
 recalculation of the historical input-hash ledger. V4 preserves the prior
 manuscript wording, v5 preserves the earlier transformed-only audit, and v6
 preserves the original-byte audit before the data-availability revision. V7
-preserves the manuscript before the present claim corrections.
+preserves the manuscript before the present claim corrections. V8 preserves
+the corrected manuscript before the cover-letter data wording was updated.
 All bundles include author
 identity and must not be uploaded as anonymous supplements.
 
@@ -188,5 +189,6 @@ an independent third-party replication. The current manuscript and decisions
 form is hash-bound to these rendered copies. On 8 October 2026, the separate
 original-byte audit verified 313 original members, 312 transformed counterparts,
 and the original terminal 9/20 count, while reporting one current input-ledger
-digest drift. The v8 author-review bundle reflects the corrected claims and
-public data revision; final author and venue decisions remain pending.
+digest drift. The v9 author-review bundle reflects the corrected claims,
+public data revision, and cover-letter wording; final author and venue
+decisions remain pending.
