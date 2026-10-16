@@ -1,4 +1,4 @@
-# Submission handoff — updated 12 October 2026
+# Submission handoff — updated 16 October 2026
 
 ## Scope of this manuscript
 
@@ -24,6 +24,7 @@ study remains `NOT_READY` with zero eligible new main episodes.
 | [`submission/full_paper_anonymous.pdf`](submission/full_paper_anonymous.pdf) | Anonymous 16-page A4 review copy. |
 | [`submission/full_paper_anonymous.docx`](submission/full_paper_anonymous.docx) | Anonymous editable Word copy. |
 | [`references.bib`](references.bib) | Bibliography metadata for journal conversion. |
+| [`venue_author_year_draft.md`](venue_author_year_draft.md) | Working author-year citation conversion for journal adaptation; not the rendered or approved manuscript. |
 | [`requirements-render.txt`](requirements-render.txt) | Pinned Python package versions used to render the review PDF and DOCX; a compatible font is still required. |
 | [`artifacts/results.json`](artifacts/results.json) | Recomputed exploratory counts and historical analysis fields; the corrected manuscript omits several earlier sensitivity calculations. |
 | [`ORIGINAL_ARCHIVE_PROVENANCE_AUDIT_20261008.md`](ORIGINAL_ARCHIVE_PROVENANCE_AUDIT_20261008.md) | Local original-to-sanitized byte-link audit and original terminal 9/20 recount; no journal supplement clearance. |
@@ -35,11 +36,12 @@ study remains `NOT_READY` with zero eligible new main episodes.
 | [`VENUE_SHORTLIST_20261005.md`](VENUE_SHORTLIST_20261005.md) | Official-guideline comparison of three possible journals; venue choice remains with the submitting author. |
 | [`AUTHOR_SUBMISSION_DECISIONS_20261005.md`](AUTHOR_SUBMISSION_DECISIONS_20261005.md) | Hash-bound draft inventory and the human decisions still pending; it contains no inferred approvals. |
 
-The filtered [v9 local author-review bundle](AUTHOR_REVIEW_BUNDLE_20261005.md)
+The filtered [v10 author-review bundle](AUTHOR_REVIEW_BUNDLE_20261005.md)
 contains this manuscript, both rendered file pairs, derived v7 pilot audits,
 the source-fidelity inventory, an independent transformed-receipt recount,
-and the separate original-byte audit code, tests, and methods note.
-Its 35 selected sources and two bundle
+the separate original-byte audit code, tests, and methods note, the working
+author-year conversion, and the dated venue shortlist.
+Its 37 selected sources and two bundle
 metadata members verified against the current workspace. It remains
 `REVIEW_ONLY`; it excludes the raw trajectories and does not approve journal
 submission or certify a journal data package. The raw artifacts are separately
@@ -50,6 +52,7 @@ manuscript wording, v5 preserves the earlier transformed-only audit, and v6
 preserves the original-byte audit before the data-availability revision. V7
 preserves the manuscript before the present claim corrections. V8 preserves
 the corrected manuscript before the cover-letter data wording was updated.
+V9 preserves the copy before the current reference and venue adaptation.
 All bundles include author
 identity and must not be uploaded as anonymous supplements.
 
@@ -59,8 +62,9 @@ copy when created but now tracked on GitHub, is saved at
 `39ded8a4301ba0ebb193b48d71b032b0127a521c381fa378c67d08132319fc26`).
 The bundle was reopened and every archived member byte-checked after writing.
 The archived private inventory's input-ledger digest is not the digest of the
-current tracked CSV: 310 of 311 member hashes still match, and the one changed
-workspace digest is `experiments/executable_episode.py`. The original CSV bytes
+current tracked CSV: 308 of 311 member hashes still match. The three changed
+workspace digests are `analysis/paper_pipeline.py`, `docs/OVERNIGHT_PROFILE.md`,
+and `experiments/executable_episode.py`. The original CSV bytes
 were not stored as an archive member; do not claim the current CSV is the exact
 historical packaging ledger.
 Its notice marks it `PRIVATE_REVIEW_ONLY_UNREDACTED`; 184 files contain the
@@ -189,6 +193,7 @@ an independent third-party replication. The current manuscript and decisions
 form is hash-bound to these rendered copies. On 8 October 2026, the separate
 original-byte audit verified 313 original members, 312 transformed counterparts,
 and the original terminal 9/20 count, while reporting one current input-ledger
-digest drift. The v9 author-review bundle reflects the corrected claims,
-public data revision, and cover-letter wording; final author and venue
+digest drift. The v10 author-review bundle reflects the corrected claims,
+public data revision, reference updates, working venue conversion, and cover-letter
+wording; final author and venue
 decisions remain pending.

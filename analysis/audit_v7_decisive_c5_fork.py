@@ -10,6 +10,7 @@ from typing import Any
 
 from analysis.audit_c5_remaining_onsets import _verify_pair
 from analysis.audit_v7_decisive_excluded_pilot import audit as audit_precursor
+from analysis.v1_pipeline import recorded_checkout_root, resolve_checkout_artifact_path
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -40,7 +41,18 @@ def audit(pair: Path = PAIR) -> dict[str, Any]:
     pair = Path(pair).resolve()
     preflight = _read(pair / "preflight.json")
     inputs = preflight["input_artifacts"]
-    manifest_path = Path(inputs["pilot_manifest"]["path"])
+    recorded_manifest = inputs["pilot_manifest"]["path"]
+    expected_relative = Path(
+        "experiments/runs/v7_decisive_excluded_20261005_v1/slot-000022/"
+        "v7-environment_injection-c1-r2.manifest.json"
+    )
+    old_root = recorded_checkout_root(
+        recorded_manifest, expected_relative, name="v7 precursor manifest",
+    )
+    manifest_path = resolve_checkout_artifact_path(
+        recorded_manifest, source_root=ROOT, recorded_root=old_root,
+        name="v7 precursor manifest",
+    )
     if (preflight["family"] != "environment_injection"
             or preflight["precursor_condition"] != "C1"
             or manifest_path.parent.name != "slot-000022"
@@ -50,14 +62,14 @@ def audit(pair: Path = PAIR) -> dict[str, Any]:
         "slot_id": manifest_path.parent.name,
         "family": preflight["family"],
         "precursor_condition": preflight["precursor_condition"],
-        "pilot_manifest": str(manifest_path),
+        "pilot_manifest": recorded_manifest,
         "pilot_manifest_sha256": inputs["pilot_manifest"]["sha256"],
         "c1": {"task": inputs["c1_task"]["path"],
                "proof": inputs["c1_proof"]["path"]},
         "c5": {"task": inputs["c5_task"]["path"],
                "proof": inputs["c5_proof"]["path"]},
     }
-    verified = _verify_pair(pair, row)
+    verified = _verify_pair(pair, row, source_root=ROOT, recorded_root=old_root)
     if verified["pair_invalidated"]:
         status = "INVALIDATED_EXCLUDED"
     else:

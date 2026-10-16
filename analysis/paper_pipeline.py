@@ -48,15 +48,20 @@ def jsonl(path: Path) -> list[dict[str, Any]]:
 
 
 def local_path(value: str, section: str) -> Path:
-    # Historical artifacts contain absolute owner-specific paths. Resolve them
-    # relative to this checkout when the old owner-specific path is unavailable.
+    # Historical records contain absolute owner-specific paths. Always use the
+    # matching file in this checkout, even if the original owner's path still
+    # exists on the machine; otherwise a fresh clone silently reads elsewhere.
     path = Path(value)
-    if path.is_file():
-        return path
     parts = path.parts
     if section not in parts:
         raise ValueError(f"unresolvable local artifact path: {value}")
-    return ROOT.joinpath(*parts[parts.index(section):])
+    relative = Path(*parts[parts.index(section):])
+    if ".." in relative.parts:
+        raise ValueError(f"artifact path escapes checkout: {value}")
+    candidate = ROOT / relative
+    if not candidate.is_file() or not candidate.resolve().is_relative_to(ROOT.resolve()):
+        raise ValueError(f"artifact file absent from checkout: {relative}")
+    return candidate
 
 
 def call_inventory(source: str) -> tuple[list[str], str | None]:

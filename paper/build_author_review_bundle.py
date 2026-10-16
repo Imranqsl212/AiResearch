@@ -32,7 +32,8 @@ V6_OUTPUT = ROOT / "experiments/runs/paper_author_review_manuscript_20261008_v6.
 V7_OUTPUT = ROOT / "experiments/runs/paper_author_review_manuscript_20261012_v7.tar.gz"
 V8_OUTPUT = ROOT / "experiments/runs/paper_author_review_manuscript_20261012_v8.tar.gz"
 V9_OUTPUT = ROOT / "experiments/runs/paper_author_review_manuscript_20261016_v9.tar.gz"
-OUTPUT = V9_OUTPUT
+V10_OUTPUT = ROOT / "experiments/runs/paper_author_review_manuscript_20261016_v10.tar.gz"
+OUTPUT = V10_OUTPUT
 V1_VERSION = "paper-author-review-manuscript-1.0.0"
 V2_VERSION = "paper-author-review-manuscript-2.0.0"
 V3_VERSION = "paper-author-review-manuscript-3.0.0"
@@ -42,7 +43,8 @@ V6_VERSION = "paper-author-review-manuscript-6.0.0"
 V7_VERSION = "paper-author-review-manuscript-7.0.0"
 V8_VERSION = "paper-author-review-manuscript-8.0.0"
 V9_VERSION = "paper-author-review-manuscript-9.0.0"
-VERSION = V9_VERSION
+V10_VERSION = "paper-author-review-manuscript-10.0.0"
+VERSION = V10_VERSION
 README_NAME = "REVIEW_ONLY_README.md"
 MANIFEST_NAME = "SOURCE_HASH_MANIFEST.json"
 V1_SOURCE_NAMES = (
@@ -94,7 +96,11 @@ V6_SOURCE_NAMES = V5_SOURCE_NAMES + (
 V7_SOURCE_NAMES = V6_SOURCE_NAMES
 V8_SOURCE_NAMES = V7_SOURCE_NAMES
 V9_SOURCE_NAMES = V8_SOURCE_NAMES
-SOURCE_NAMES = V9_SOURCE_NAMES
+V10_SOURCE_NAMES = V9_SOURCE_NAMES + (
+    "paper/venue_author_year_draft.md",
+    "paper/VENUE_SHORTLIST_20261005.md",
+)
+SOURCE_NAMES = V10_SOURCE_NAMES
 FORBIDDEN_MARKERS = {
     "mac_home": re.compile(rb"/Users/[^/\s\"'<>\\]+", re.I),
     "linux_home": re.compile(rb"/home/[^/\s\"'<>\\]+", re.I),
@@ -103,6 +109,7 @@ FORBIDDEN_MARKERS = {
 }
 MAX_MEMBER_BYTES = 8_000_000
 MAX_TOTAL_BYTES = 32_000_000
+PUBLIC_DATA_REVISION = "37074c198237ade67eb76921333b2835d329c863"
 
 V1_README = """# Local author-review manuscript bundle
 
@@ -313,7 +320,24 @@ V9_README = V8_README.replace(
     "revision does not attest to this v9 package's contents.\n\n"
     "The manuscript corrects the interpretation of the hidden acceptance veto,",
 )
-README = V9_README
+V10_README = V9_README.replace(
+    "bundle v9", "bundle v10"
+).replace(
+    "paper_author_review_manuscript_20261016_v9.tar.gz",
+    "paper_author_review_manuscript_20261016_v10.tar.gz",
+).replace(
+    "this v9 package's contents", "this v10 package's contents",
+).replace(
+    "Verify against the local source tree with:",
+    "The package also includes a venue author-year conversion draft and a "
+    "dated venue shortlist. These are working review materials, not the "
+    "rendered manuscript or proof of journal compliance. Verify citation "
+    "metadata and venue requirements before submission. The manifest does "
+    "not attest whether this review archive is on GitHub; it records the "
+    "already public data revision separately.\n\n"
+    "Verify against the local source tree with:",
+)
+README = V10_README
 
 
 @dataclass(frozen=True)
@@ -332,8 +356,9 @@ V6_SPEC = BundleSpec(V6_VERSION, V6_SOURCE_NAMES, V6_README)
 V7_SPEC = BundleSpec(V7_VERSION, V7_SOURCE_NAMES, V7_README)
 V8_SPEC = BundleSpec(V8_VERSION, V8_SOURCE_NAMES, V8_README)
 V9_SPEC = BundleSpec(V9_VERSION, V9_SOURCE_NAMES, V9_README)
+V10_SPEC = BundleSpec(V10_VERSION, V10_SOURCE_NAMES, V10_README)
 SPECS_BY_VERSION = {spec.version: spec for spec in
-                    (V1_SPEC, V2_SPEC, V3_SPEC, V4_SPEC, V5_SPEC, V6_SPEC, V7_SPEC, V8_SPEC, V9_SPEC)}
+                    (V1_SPEC, V2_SPEC, V3_SPEC, V4_SPEC, V5_SPEC, V6_SPEC, V7_SPEC, V8_SPEC, V9_SPEC, V10_SPEC)}
 
 
 class BundleError(RuntimeError):
@@ -381,10 +406,15 @@ def _decision_bound_names(spec: BundleSpec) -> tuple[str, ...]:
         "paper/submission/full_paper.docx",
         "paper/artifacts/results.json",
     )
-    if spec in (V2_SPEC, V3_SPEC, V4_SPEC, V5_SPEC, V6_SPEC, V7_SPEC, V8_SPEC, V9_SPEC):
+    if spec in (V2_SPEC, V3_SPEC, V4_SPEC, V5_SPEC, V6_SPEC, V7_SPEC, V8_SPEC, V9_SPEC, V10_SPEC):
         names += (
             "paper/submission/full_paper_anonymous.pdf",
             "paper/submission/full_paper_anonymous.docx",
+        )
+    if spec is V10_SPEC:
+        names += (
+            "paper/venue_author_year_draft.md",
+            "paper/VENUE_SHORTLIST_20261005.md",
         )
     return names
 
@@ -400,7 +430,7 @@ def _check_decision_bindings(source: dict[str, bytes], spec: BundleSpec) -> None
             raise BundleError(f"author decision form does not identify current {name}")
 
 
-def _source_bytes(spec: BundleSpec = V9_SPEC) -> dict[str, bytes]:
+def _source_bytes(spec: BundleSpec = V10_SPEC) -> dict[str, bytes]:
     if len(set(spec.source_names)) != len(spec.source_names):
         raise BundleError("duplicate source allowlist member")
     source: dict[str, bytes] = {}
@@ -419,11 +449,21 @@ def _source_bytes(spec: BundleSpec = V9_SPEC) -> dict[str, bytes]:
     return source
 
 
-def _manifest(source: dict[str, bytes], readme: bytes, spec: BundleSpec = V9_SPEC) -> dict[str, Any]:
+def _release_flags(spec: BundleSpec) -> dict[str, Any]:
+    if spec is V10_SPEC:
+        return {
+            "journal_supplement_approved": False,
+            "git_visibility": "not-attested-by-bundle",
+            "related_data_public_git_revision": PUBLIC_DATA_REVISION,
+        }
+    return {"public_release_approved": False}
+
+
+def _manifest(source: dict[str, bytes], readme: bytes, spec: BundleSpec = V10_SPEC) -> dict[str, Any]:
     return {
         "version": spec.version,
         "status": "REVIEW_ONLY",
-        "public_release_approved": False,
+        **_release_flags(spec),
         "journal_submission_approved": False,
         "original_raw_data_included": False,
         "original_byte_replay_verified": False,
@@ -492,10 +532,12 @@ def verify(*, archive: Path = OUTPUT, compare_sources: bool = True) -> dict[str,
     digest = _sha(archive.read_bytes())
     if (receipt.get("archive_sha256") != digest or receipt.get("status") != "REVIEW_ONLY"
             or receipt.get("version") != spec.version
-            or receipt.get("public_release_approved") is not False
             or receipt.get("journal_submission_approved") is not False
             or receipt.get("archive_bytes") != archive.stat().st_size):
         raise BundleError("archive differs from review-only receipt")
+    if (any(receipt.get(key) != value for key, value in _release_flags(spec).items())
+            or (spec is V10_SPEC and "public_release_approved" in receipt)):
+        raise BundleError("receipt release flags differ")
     files = _archive_files(archive)
     expected_names = set(spec.source_names) | {README_NAME, MANIFEST_NAME}
     if set(files) != expected_names:
@@ -505,12 +547,14 @@ def verify(*, archive: Path = OUTPUT, compare_sources: bool = True) -> dict[str,
     except json.JSONDecodeError as exc:
         raise BundleError("source hash manifest is invalid") from exc
     if (manifest.get("version") != spec.version or manifest.get("status") != "REVIEW_ONLY"
-            or manifest.get("public_release_approved") is not False
             or manifest.get("journal_submission_approved") is not False
             or manifest.get("original_raw_data_included") is not False
             or manifest.get("original_byte_replay_verified") is not False
             or manifest.get("source_git_revision_bound") is not False):
         raise BundleError("review-only provenance flags differ")
+    if (any(manifest.get(key) != value for key, value in _release_flags(spec).items())
+            or (spec is V10_SPEC and "public_release_approved" in manifest)):
+        raise BundleError("manifest release flags differ")
     rows = manifest.get("files")
     if not isinstance(rows, list) or len(rows) != len(spec.source_names):
         raise BundleError("manifest source file count differs")
@@ -544,7 +588,7 @@ def verify(*, archive: Path = OUTPUT, compare_sources: bool = True) -> dict[str,
             "local_sources_match": True if compare_sources else None}
 
 
-def build(*, output: Path = OUTPUT, spec: BundleSpec = V9_SPEC) -> dict[str, Any]:
+def build(*, output: Path = OUTPUT, spec: BundleSpec = V10_SPEC) -> dict[str, Any]:
     output = Path(output)
     receipt_path = _receipt_path(output)
     if output.exists() or receipt_path.exists():
@@ -567,7 +611,7 @@ def build(*, output: Path = OUTPUT, spec: BundleSpec = V9_SPEC) -> dict[str, Any
                         _add(archive, name, data)
         receipt = {
             "version": spec.version, "status": "REVIEW_ONLY",
-            "public_release_approved": False, "journal_submission_approved": False,
+            **_release_flags(spec), "journal_submission_approved": False,
             "archive_sha256": _sha(output.read_bytes()),
             "manifest_sha256": _sha(manifest_bytes),
             "source_file_count": len(spec.source_names), "archive_members": len(files),

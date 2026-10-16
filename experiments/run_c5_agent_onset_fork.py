@@ -20,7 +20,7 @@ from typing import Any, Callable, Mapping
 from agent.contracts import AgentRunContext, StopRequest, ToolCall, ToolObservation
 from agent.finite_candidate_contract import candidate_shape
 from agent.v1_ollama_adapter import V1OllamaAdapter
-from analysis.v1_pipeline import load_episode
+from analysis.v1_pipeline import load_episode, resolve_episode_artifact_path
 from benchmark.finite_family_registry import family_module
 from experiments.v1_collector import _agent_task, _public_observation
 
@@ -119,9 +119,15 @@ def _load_input(manifest_path: Path, c1_task_path: Path, c1_proof_path: Path,
     """Validate archived requests, event replay, both finite proofs and public parity."""
     episode = load_episode(manifest_path, source_root=ROOT)
     manifest, events = episode["manifest"], episode["events"]
-    # The reservation must live next to the original event log. A copied
-    # manifest in another directory must not provide a fresh onset identity.
-    if (manifest_path.resolve().parent != Path(manifest["log_path"]).resolve().parent
+    def episode_path(value: Any, name: str) -> Path:
+        return resolve_episode_artifact_path(
+            manifest_path, manifest, value, source_root=ROOT, name=name,
+        )
+
+    log_path = episode_path(manifest["log_path"], "pilot log")
+    # The reservation must remain beside the replayed event log, including
+    # when the same checkout tree has been relocated.
+    if (manifest_path.resolve().parent != log_path.resolve().parent
             or manifest_path.name != f"{manifest['episode_id']}.manifest.json"):
         raise ForkError("pilot manifest is not beside its original event log")
     if (manifest.get("phase") != "pilot" or manifest.get("condition") not in {"C1", "C2"}
@@ -133,7 +139,7 @@ def _load_input(manifest_path: Path, c1_task_path: Path, c1_proof_path: Path,
             or not manifest.get("provider_request_archive")
             or str(manifest.get("model", "")).startswith("scripted")):
         raise ForkError("input must be a valid excluded non-scripted C1/C2 pilot with archived requests")
-    task = _read(Path(manifest["task_path"]))
+    task = _read(episode_path(manifest["task_path"], "pilot task"))
     c1_task, c1_proof = _read(c1_task_path), _read(c1_proof_path)
     c5_task, c5_proof = _read(c5_task_path), _read(c5_proof_path)
     if (task.get("family") != c1_task.get("family") or
@@ -178,7 +184,7 @@ def _load_input(manifest_path: Path, c1_task_path: Path, c1_proof_path: Path,
     requests = manifest["provider_request_archive"]
     if (len(requests) != onset["step"] or requests[-1]["sequence"] != onset["step"]):
         raise ForkError("last archived model request does not cause the secure submission")
-    last_path = Path(requests[-1]["path"])
+    last_path = episode_path(requests[-1]["path"], "last pilot provider request")
     last_record = _read(last_path)
     if _hash_file(last_path) != requests[-1]["sha256"]:
         raise ForkError("last archived request hash differs")

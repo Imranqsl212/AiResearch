@@ -10,12 +10,14 @@ separately. Do not infer their absence from a missing response.
 
 | Artifact | Current SHA-256 |
 | --- | --- |
-| [`final.md`](final.md) | `44b2583583dd245deeebfb399a259796e0861e931817afd0f918b77464564546` |
-| [Identified `full_paper.pdf`](submission/full_paper.pdf) | `d41b536071595f208e4eaabf725cf6db7d8d2f762fb42cf78d06724bad89c336` |
-| [Identified `full_paper.docx`](submission/full_paper.docx) | `fbbf1130c3ebe4fc9044dd03bb7ad5d6c21960bfab1850afee247b4536ce3787` |
-| [Anonymous `full_paper_anonymous.pdf`](submission/full_paper_anonymous.pdf) | `32baf373bbf1696eda9bec80feaecb2f0a70f5cb05a748165e3d9aaa8d84cd08` |
-| [Anonymous `full_paper_anonymous.docx`](submission/full_paper_anonymous.docx) | `a4ebc3dcb4967e4a64a0326bfdaf3b9557514f1eb8fc26c9ec7969d5c93ed5e1` |
+| [`final.md`](final.md) | `71de04936dc99ea8169c248a3742872b89a18ed89ff8e707c7910be2c2a6a572` |
+| [Identified `full_paper.pdf`](submission/full_paper.pdf) | `2212e03ec77f66ffebbbfca8481514807258a0105a08f1410387855448a1f502` |
+| [Identified `full_paper.docx`](submission/full_paper.docx) | `fe9be94e57bef198f8d60445ad03993f9ae20ebd8f4916afb191417d0c89f703` |
+| [Anonymous `full_paper_anonymous.pdf`](submission/full_paper_anonymous.pdf) | `942eedc00d6586e58ca472ed1d1cc9c240875619c76077c0727b46a0a9d8bc95` |
+| [Anonymous `full_paper_anonymous.docx`](submission/full_paper_anonymous.docx) | `238dca97d1da5ee262992010d4944fd023e9cd058998861aa410fd589ea2be73` |
 | [`results.json`](artifacts/results.json) | `3d7ef25bfa07ef25ae20cea8d6ee34b59c5d9158e20c2e9b7013bfbd5a3cb229` |
+| [Working author-year conversion](venue_author_year_draft.md) | `3194eefc193663633349ed25e28b06b4b469a58ab27c94abdf8908b2d2fbddc0` |
+| [Venue shortlist](VENUE_SHORTLIST_20261005.md) | `6946eda6d419aa0d08ec245c9545d49951902789013e45cd1d7999991138a133` |
 
 The identified and anonymous PDFs each have 16 A4 pages. PDF text,
 including captions and tables, is 12 pt;
@@ -29,6 +31,8 @@ page count and final venue compliance must be checked in the journal's editor.
 These hashes identify this review draft only. Recompute them and repeat
 scientific review after any manuscript, analysis, or rendering change. The
 final reviewed source revision and exact data package must be recorded together.
+The author-year conversion is a working venue adaptation and is not the
+rendered PDF/DOCX or an approved final submission file.
 
 ## Decisions to record
 
@@ -51,9 +55,10 @@ recounted the central **9/20** result from the original terminal receipts.
 This establishes a local archive-to-archive byte link, not an external chain
 of custody, rerun of the evaluator, privacy clearance, or journal-deposit approval.
 The archived private inventory's input-ledger digest differs from the current
-tracked `artifacts/input_hashes.csv`: 310 of 311 input member hashes match,
-while the `experiments/executable_episode.py` digest differs after a later
-workspace version. The original ledger CSV bytes were not archived as a member;
+tracked `artifacts/input_hashes.csv`: 308 of 311 input member hashes match.
+The three differing digests are `analysis/paper_pipeline.py`,
+`docs/OVERNIGHT_PROFILE.md`, and `experiments/executable_episode.py` after
+later workspace versions. The original ledger CSV bytes were not archived as a member;
 do not label the current CSV as that exact historical ledger.
 Its [inspection report](../experiments/runs/paper_sanitized_privacy_packet_20261005_v2/PRIVATE_INSPECTION_REPORT.json), tracked on GitHub,
 has SHA-256

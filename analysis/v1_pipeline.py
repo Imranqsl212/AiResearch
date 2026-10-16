@@ -132,8 +132,121 @@ def _local_path(manifest_path: Path, value: Any, name: str) -> Path:
     return path
 
 
-def _check_file(manifest_path: Path, manifest: Mapping[str, Any], stem: str) -> Path:
-    path = _local_path(manifest_path, manifest[f"{stem}_path"], f"{stem}_path")
+def _recorded_root(manifest_path: Path, manifest: Mapping[str, Any], source_root: Path) -> Path | None:
+    """Infer an old checkout prefix from the prompt beside an archived manifest.
+
+    Collector fixtures may live outside ``source_root`` while using it only
+    for Git verification. A manifest inside that root is treated as a
+    repository artifact: every recorded absolute path must map into it.
+    """
+
+    declared_root = source_root.absolute()
+    root = source_root.resolve()
+    location = manifest_path.absolute()
+    if location.is_relative_to(declared_root):
+        relative_parent = manifest_path.parent.relative_to(declared_root)
+    elif location.is_relative_to(root):
+        relative_parent = manifest_path.parent.relative_to(root)
+    else:
+        return None
+    if not manifest_path.resolve().is_relative_to(root):
+        raise V1ValidationError("episode manifest escapes the declared source root")
+    prompt_value = manifest.get("prompt_path")
+    if not isinstance(prompt_value, str) or not prompt_value:
+        raise V1ValidationError("prompt_path: missing path")
+    prompt = Path(prompt_value)
+    if not prompt.is_absolute():
+        return root
+    if ".." in prompt.parts:
+        raise V1ValidationError("recorded prompt path traverses outside source root")
+    suffix = relative_parent.parts
+    if suffix and prompt.parent.parts[-len(suffix):] != suffix:
+        raise V1ValidationError("recorded prompt path has a different checkout location")
+    original_root = Path(*(prompt.parent.parts[:-len(suffix)] if suffix else prompt.parent.parts))
+    if not original_root.is_absolute():
+        raise V1ValidationError("recorded prompt path has no absolute checkout root")
+    return original_root
+
+
+def recorded_checkout_root(value: Any, expected_relative: Path, *, name: str) -> Path:
+    """Derive a recorded checkout prefix from one known repository-relative path."""
+
+    if not isinstance(value, str) or not value:
+        raise V1ValidationError(f"{name}: missing path")
+    recorded = Path(value)
+    relative = Path(expected_relative)
+    if (not recorded.is_absolute() or relative.is_absolute() or not relative.parts
+            or ".." in recorded.parts or ".." in relative.parts
+            or recorded.parts[-len(relative.parts):] != relative.parts):
+        raise V1ValidationError(f"{name}: recorded path does not match repository location")
+    root = Path(*recorded.parts[:-len(relative.parts)])
+    if not root.is_absolute():
+        raise V1ValidationError(f"{name}: no absolute recorded checkout root")
+    return root
+
+
+def resolve_checkout_artifact_path(
+    value: Any, *, source_root: Path, recorded_root: Path, name: str,
+) -> Path:
+    """Map one recorded absolute checkout path to an existing local file."""
+
+    if not isinstance(value, str) or not value:
+        raise V1ValidationError(f"{name}: missing path")
+    recorded = Path(value)
+    if not recorded.is_absolute() or ".." in recorded.parts:
+        raise V1ValidationError(f"{name}: expected an absolute path without traversal")
+    try:
+        relative = recorded.relative_to(recorded_root)
+    except ValueError as exc:
+        raise V1ValidationError(f"{name}: recorded path is outside original checkout") from exc
+    root = Path(source_root).resolve()
+    path = root / relative
+    if not path.resolve().is_relative_to(root) or path.is_symlink() or not path.is_file():
+        raise V1ValidationError(f"{name}: file is missing or outside declared source root: {path}")
+    return path
+
+
+def resolve_episode_artifact_path(
+    manifest_path: Path, manifest: Mapping[str, Any], value: Any,
+    *, source_root: Path | None, name: str,
+) -> Path:
+    """Read a relocated artifact only from its declared current source root.
+
+    The original absolute path is retained in the immutable manifest. The
+    caller still verifies its recorded digest and identity after resolution.
+    """
+
+    manifest_path = Path(manifest_path)
+    if source_root is None:
+        return _local_path(manifest_path, value, name)
+    root = Path(source_root).resolve()
+    original_root = _recorded_root(manifest_path, manifest, Path(source_root))
+    if original_root is None:
+        return _local_path(manifest_path, value, name)
+    if not isinstance(value, str) or not value:
+        raise V1ValidationError(f"{name}: missing path")
+    recorded = Path(value)
+    if ".." in recorded.parts:
+        raise V1ValidationError(f"{name}: path traversal is forbidden")
+    if recorded.is_absolute():
+        return resolve_checkout_artifact_path(
+            value, source_root=root, recorded_root=original_root, name=name,
+        )
+    else:
+        path = manifest_path.parent / recorded
+    if not path.resolve().is_relative_to(root) or path.is_symlink() or not path.is_file():
+        raise V1ValidationError(f"{name}: file is missing or outside declared source root: {path}")
+    return path
+
+
+def _check_file(
+    manifest_path: Path, manifest: Mapping[str, Any], stem: str,
+    source_root: Path | None = None,
+) -> Path:
+    path = resolve_episode_artifact_path(
+        manifest_path, manifest, manifest[f"{stem}_path"],
+        source_root=source_root, name=f"{stem}_path",
+    )
     expected = _digest(manifest[f"{stem}_sha256"], f"{stem}_sha256")
     if sha256_bytes(path.read_bytes()) != expected:
         raise V1ValidationError(f"{stem}: file SHA-256 mismatch")
@@ -279,6 +392,7 @@ def _verify_candidate_replay(
 
 def _validate_excluded_v7_source_binding(
     manifest: Mapping[str, Any], task: Mapping[str, Any],
+    *, manifest_path: Path | None = None, source_root: Path | None = None,
 ) -> None:
     """Bind v7 replay to the runtime source captured before and after dispatch."""
 
@@ -298,11 +412,35 @@ def _validate_excluded_v7_source_binding(
             or not EXCLUDED_V7_IMPLEMENTATION_FILES.issubset(source_hashes)):
         raise V1ValidationError("batch-C v7 source snapshot is incomplete")
     runtime_root = Path(__file__).resolve().parents[1]
+    if (manifest_path is not None and source_root is not None
+            and _recorded_root(Path(manifest_path), manifest, Path(source_root)) is not None):
+        runtime_root = Path(source_root).resolve()
     for name in EXCLUDED_V7_IMPLEMENTATION_FILES:
         digest = _digest(source_hashes[name], f"batch-C v7 source {name}")
         path = runtime_root / name
-        if not path.is_file() or sha256_bytes(path.read_bytes()) != digest:
+        if (not path.is_file() or path.is_symlink()
+                or not path.resolve().is_relative_to(runtime_root)
+                or sha256_bytes(path.read_bytes()) != digest):
             raise V1ValidationError(f"batch-C v7 source differs from captured bytes: {name}")
+    # Hashing the declared checkout is insufficient if Python has already
+    # imported its evaluator from another checkout. The proof and event replay
+    # below execute these exact imported modules.
+    from benchmark import finite_batch_c_reference_v7 as reference
+    from benchmark import finite_batch_c_v7 as evaluator
+    from benchmark import finite_family_registry as registry
+    replay_modules = {
+        "benchmark/finite_family_registry.py": registry,
+        "benchmark/finite_batch_c_v7.py": evaluator,
+        "benchmark/finite_batch_c_reference_v7.py": reference,
+    }
+    for name, module in replay_modules.items():
+        module_file = getattr(module, "__file__", None)
+        if (not isinstance(module_file, str)
+                or Path(module_file).resolve() != (runtime_root / name).resolve()
+                or sha256_bytes(Path(module_file).read_bytes()) != source_hashes[name]):
+            raise V1ValidationError(f"batch-C v7 imported evaluator differs from captured bytes: {name}")
+    if registry.family_module(task) is not evaluator:
+        raise V1ValidationError("batch-C v7 registry did not select the captured evaluator")
 
 
 def _validate_retrieval(start: Mapping[str, Any], manifest: Mapping[str, Any], retrieval_manifest: Mapping[str, Any] | None) -> None:
@@ -657,7 +795,7 @@ def _validate_optional_protocol_metadata(manifest: Mapping[str, Any], events: li
 
 def _validate_request_archive(
     manifest_path: Path, manifest: Mapping[str, Any], events: list[dict[str, Any]],
-    prompt_path: Path,
+    prompt_path: Path, source_root: Path | None = None,
 ) -> None:
     """Verify every pre-dispatch provider request in newly archived episodes.
 
@@ -684,7 +822,10 @@ def _validate_request_archive(
         if not isinstance(row, dict) or set(row) != {"sequence", "path", "sha256"}:
             raise V1ValidationError("provider request archive index is malformed")
         expected_name = f"{manifest['episode_id']}.request-{sequence:06d}.json"
-        path = Path(row["path"]) if isinstance(row["path"], str) else Path("")
+        path = resolve_episode_artifact_path(
+            manifest_path, manifest, row["path"], source_root=source_root,
+            name="provider request archive path",
+        )
         if (row["sequence"] != sequence or path.name != expected_name or path.is_symlink()
                 or path.parent.resolve() != manifest_path.parent.resolve()):
             raise V1ValidationError("provider request archive path or sequence differs")
@@ -804,20 +945,20 @@ def load_episode(
     body = {key: value for key, value in manifest.items() if key != "manifest_sha256"}
     if sha256_bytes(canonical_bytes(body)) != expected_manifest_hash:
         raise V1ValidationError("manifest self hash mismatch")
-    task_path = _check_file(manifest_path, manifest, "task")
-    prompt_path = _check_file(manifest_path, manifest, "prompt")
-    schedule_path = _check_file(manifest_path, manifest, "schedule")
-    proof_path = _check_file(manifest_path, manifest, "oracle_proof")
-    log_path = _check_file(manifest_path, manifest, "log")
+    task_path = _check_file(manifest_path, manifest, "task", source_root)
+    prompt_path = _check_file(manifest_path, manifest, "prompt", source_root)
+    schedule_path = _check_file(manifest_path, manifest, "schedule", source_root)
+    proof_path = _check_file(manifest_path, manifest, "oracle_proof", source_root)
+    log_path = _check_file(manifest_path, manifest, "log", source_root)
     retrieval_manifest: dict[str, Any] | None = None
     if manifest["retrieval_mode"] != "R0" or retrieval_provider == "r1_20_candidate":
         _require_fields(manifest, frozenset({"corpus_path", "corpus_sha256", "retrieval_manifest_path", "retrieval_manifest_sha256"}), "R1/R2 manifest")
-        _check_file(manifest_path, manifest, "corpus")
-        retrieval_manifest_path = _check_file(manifest_path, manifest, "retrieval_manifest")
+        _check_file(manifest_path, manifest, "corpus", source_root)
+        retrieval_manifest_path = _check_file(manifest_path, manifest, "retrieval_manifest", source_root)
         retrieval_manifest = _json_file(retrieval_manifest_path, "retrieval manifest")
     if retrieval_provider == "r1_20_candidate":
         _require_fields(manifest, frozenset({"retrieval_provider_source_path", "retrieval_provider_source_sha256"}), "candidate retrieval source")
-        _check_file(manifest_path, manifest, "retrieval_provider_source")
+        _check_file(manifest_path, manifest, "retrieval_provider_source", source_root)
     task = _json_file(task_path, "task")
     proof = _json_file(proof_path, "oracle proof")
     schedule = _json_file(schedule_path, "schedule")
@@ -829,7 +970,9 @@ def load_episode(
         or task.get("condition") != manifest["condition"]
         or proof.get("ground_truth_state") != manifest["ground_truth_state"]):
         raise V1ValidationError("task/proof identity disagrees with manifest")
-    _validate_excluded_v7_source_binding(manifest, task)
+    _validate_excluded_v7_source_binding(
+        manifest, task, manifest_path=manifest_path, source_root=source_root,
+    )
     try:
         events = [json.loads(line) for line in log_path.read_text(encoding="utf-8").splitlines() if line.strip()]
     except (UnicodeError, json.JSONDecodeError) as exc:
@@ -839,7 +982,7 @@ def load_episode(
     _validate_events(events, manifest, proof, retrieval_manifest)
     _validate_per_action_checks(events, manifest)
     _validate_optional_protocol_metadata(manifest, events, prompt_path)
-    _validate_request_archive(manifest_path, manifest, events, prompt_path)
+    _validate_request_archive(manifest_path, manifest, events, prompt_path, source_root)
     if retrieval_provider == "r1_20_candidate":
         _validate_candidate_retrieval_replay(manifest, task, events, retrieval_manifest, prompt_path)
     if events[-1]["stop_reason"] != manifest["stop_reason"]:
