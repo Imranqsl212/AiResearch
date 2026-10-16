@@ -55,3 +55,15 @@ fail even while the original recorded path was still available. These are
 saved-data checks, not fresh model calls. A Git archive contains no `.git`, so
 the episode-level `git_commit_verified` field is false there; a local Git
 clone is needed for the commit-object check.
+
+After committing the fixes at `a0e159f7`, a separate **local Git clone** of
+that branch reproduced the main summary (40 episodes, 16 accepted repairable
+final candidates, 9/20 hidden-veto discordance) and left the clone clean after
+regenerating `paper/artifacts`. All 30 v7 pilot manifests in that clone passed
+proof and candidate replay; all 30 had `git_commit_verified=True`. Both v7
+audits passed, and the 14-pair C5 report was byte-identical to the native
+report. The loader's general `eligible` flag indicates a valid episode record;
+the v7 manifests explicitly set `eligible_for_main_analysis=False`, so these
+30 excluded pilot episodes are **not** part of a prospective main analysis.
+The clone came from the local repository; a separate remote checkout remains
+an external reproduction step.
