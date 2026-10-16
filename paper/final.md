@@ -275,7 +275,7 @@ Funding, conflicts of interest, contributions beyond the listed author, and any 
 
 [2] S. Yao et al., “ReAct: Synergizing Reasoning and Acting in Language Models,” *ICLR*, 2023. [Primary source](https://arxiv.org/abs/2210.03629).
 
-[3] N. Shinn et al., “Reflexion: Language Agents with Verbal Reinforcement Learning,” *NeurIPS*, 2023. [Primary source](https://arxiv.org/abs/2303.11366).
+[3] N. Shinn, F. Cassano, A. Gopinath, K. Narasimhan, and S. Yao, “Reflexion: Language Agents with Verbal Reinforcement Learning,” *NeurIPS*, 2023. DOI: [10.52202/075280-0377](https://doi.org/10.52202/075280-0377). [Primary source](https://papers.nips.cc/paper_files/paper/2023/hash/1b44b878bb782e6954cd888628510e90-Abstract-Conference.html).
 
 [4] A. Madaan et al., “Self-Refine: Iterative Refinement with Self-Feedback,” *NeurIPS*, 2023. [Primary source](https://arxiv.org/abs/2303.17651).
 
@@ -283,35 +283,35 @@ Funding, conflicts of interest, contributions beyond the listed author, and any 
 
 [6] X. Chen et al., “Teaching Large Language Models to Self-Debug,” *ICLR*, 2024. [Primary source](https://arxiv.org/abs/2304.05128).
 
-[7] U. Kulsum et al., “A Case Study of LLM for Automated Vulnerability Repair: Assessing Impact of Reasoning and Patch Validation Feedback,” *AIware*, 2024. [Primary source](https://arxiv.org/abs/2405.15690).
+[7] U. Kulsum et al., “A Case Study of LLM for Automated Vulnerability Repair: Assessing Impact of Reasoning and Patch Validation Feedback,” *AIware*, 2024. DOI: [10.1145/3664646.3664770](https://doi.org/10.1145/3664646.3664770). [Primary source](https://2024.aiwareconf.org/details/aiware-2024-papers/14/A-Case-Study-of-LLM-for-Automated-Vulnerability-Repair-Assessing-Impact-of-Reasoning).
 
 [8] A. Wang et al., “Hell or High Water: Evaluating Agentic Recovery from External Failures,” *COLM*, 2025. [Primary source](https://arxiv.org/abs/2508.11027).
 
-[9] X. Liu et al., “AgentAbstain: Do LLM Agents Know When Not to Act?,” *arXiv preprint*, 2026. [Primary source](https://arxiv.org/abs/2607.10059).
+[9] X. Liu et al., “AgentAbstain: Do LLM Agents Know When Not to Act?,” *NeurIPS* (accepted, Evaluations & Datasets Track), 2026. [Primary source](https://agentabstain.github.io/).
 
 [10] L. Advani, “From Confident Closing to Silent Failure: Characterizing False Success in LLM Agents,” *FAGEN workshop at ICML*, 2026. [Primary source](https://arxiv.org/abs/2606.09863).
 
 [11] J. Liu, “When May an Agent Stop? Evidence-Carrying Termination for Tool-Using LLMs,” *arXiv preprint*, 2026. [Primary source](https://arxiv.org/abs/2608.23623).
 
-[12] R. Kamoi et al., “When Can LLMs Actually Correct Their Own Mistakes? A Critical Survey of Self-Correction of LLMs,” *Transactions of the Association for Computational Linguistics*, vol. 12, pp. 1417–1440, 2024. DOI: 10.1162/tacl_a_00713. [Primary source](https://aclanthology.org/2024.tacl-1.78/).
+[12] R. Kamoi et al., “When Can LLMs Actually Correct Their Own Mistakes? A Critical Survey of Self-Correction of LLMs,” *Transactions of the Association for Computational Linguistics*, vol. 12, pp. 1417–1440, 2024. DOI: [10.1162/tacl_a_00713](https://doi.org/10.1162/tacl_a_00713). [Primary source](https://aclanthology.org/2024.tacl-1.78/).
 
 [13] J. Huang et al., “Large Language Models Cannot Self-Correct Reasoning Yet,” *ICLR*, 2024. [Primary source](https://arxiv.org/abs/2310.01798).
 
 [14] P. Lewis et al., “Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks,” *NeurIPS*, 2020. [Primary source](https://arxiv.org/abs/2005.11401).
 
-[15] Z. Liu et al., “Do LLMs Catch Their Own Mistakes? A Comprehensive Benchmark for Reflective Tool Use LLMs,” *Findings of ACL*, 2026. DOI: 10.18653/v1/2026.findings-acl.86. [Primary source](https://aclanthology.org/2026.findings-acl.86/).
+[15] Z. Liu et al., “Do LLMs Catch Their Own Mistakes? A Comprehensive Benchmark for Reflective Tool Use LLMs,” *Findings of ACL*, 2026. DOI: [10.18653/v1/2026.findings-acl.86](https://doi.org/10.18653/v1/2026.findings-acl.86). [Primary source](https://aclanthology.org/2026.findings-acl.86/).
 
 [16] C. Ma et al., “AgentBoard: An Analytical Evaluation Board of Multi-turn LLM Agents,” *NeurIPS*, 2024. [Primary source](https://arxiv.org/abs/2401.13178).
 
 [17] C. E. Jimenez et al., “SWE-bench: Can Language Models Resolve Real-World GitHub Issues?,” *ICLR*, 2024. [Primary source](https://arxiv.org/abs/2310.06770).
 
-[18] Z. Wang et al., “CyberGym: Evaluating AI Agents' Real-World Cybersecurity Capabilities at Scale,” *arXiv preprint*, 2025. [Primary source](https://arxiv.org/abs/2506.02548).
+[18] Z. Wang et al., “CyberGym: Evaluating AI Agents' Real-World Cybersecurity Capabilities at Scale,” *ICLR*, 2026. [Primary source](https://www.cybergym.io/cybergym/).
 
 [19] A. K. Zhang et al., “Cybench: A Framework for Evaluating Cybersecurity Capabilities and Risks of Language Models,” *ICLR*, 2025. [Primary source](https://arxiv.org/abs/2408.08926).
 
-[20] M. Dworkin, “Recommendation for Block Cipher Modes of Operation: Galois/Counter Mode (GCM) and GMAC,” NIST SP 800-38D, 2007. [Primary source](https://csrc.nist.gov/pubs/sp/800/38/d/final).
+[20] M. Dworkin, “Recommendation for Block Cipher Modes of Operation: Galois/Counter Mode (GCM) and GMAC,” NIST SP 800-38D, 2007. DOI: [10.6028/NIST.SP.800-38D](https://doi.org/10.6028/NIST.SP.800-38D). [Primary source](https://csrc.nist.gov/pubs/sp/800/38/d/final).
 
-[21] M. S. Turan, E. Barker, W. Burr, and L. Chen, “Recommendation for Password-Based Key Derivation: Part 1: Storage Applications,” NIST SP 800-132, 2010. [Primary source](https://csrc.nist.gov/pubs/sp/800/132/final).
+[21] M. S. Turan, E. Barker, W. Burr, and L. Chen, “Recommendation for Password-Based Key Derivation: Part 1: Storage Applications,” NIST SP 800-132, 2010. DOI: [10.6028/NIST.SP.800-132](https://doi.org/10.6028/NIST.SP.800-132). [Primary source](https://csrc.nist.gov/pubs/sp/800/132/final).
 
 [22] A. Yang et al., “Qwen3 Technical Report,” *arXiv preprint*, 2025. [Primary source](https://arxiv.org/abs/2505.09388).
 

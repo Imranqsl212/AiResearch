@@ -10,7 +10,7 @@ from collections import Counter, defaultdict
 from pathlib import Path
 from typing import Any
 
-from analysis.v1_pipeline import load_episode
+from analysis.v1_pipeline import load_episode, resolve_episode_artifact_path
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -116,7 +116,10 @@ def audit(block: Path = BLOCK) -> dict[str, Any]:
         request_rows = manifest.get("provider_request_archive")
         if not request_rows or manifest.get("provider_request_archive_complete") is not True:
             raise ValueError(f"provider request archive incomplete: {slot_id}")
-        first_path = Path(request_rows[0]["path"])
+        first_path = resolve_episode_artifact_path(
+            manifest_path, manifest, request_rows[0]["path"],
+            source_root=ROOT, name="first v7 provider request",
+        )
         if _sha(first_path) != request_rows[0]["sha256"]:
             raise ValueError(f"first request hash differs: {slot_id}")
         first_request = _read(first_path)["request"]

@@ -1,11 +1,33 @@
 """Paper measurements: no model, Docker, network, or candidate execution."""
 import unittest
+from pathlib import Path
+from tempfile import TemporaryDirectory
+from unittest.mock import patch
 
-from analysis.paper_pipeline import bootstrap_contrast, call_inventory, recovered_claim
+from analysis import paper_pipeline
+from analysis.paper_pipeline import bootstrap_contrast, call_inventory, local_path, recovered_claim
 from analysis.auxiliary_sidecar_audit import summarize_matches
 
 
 class PaperMeasurementTests(unittest.TestCase):
+    def test_historical_absolute_path_reads_current_checkout(self):
+        with TemporaryDirectory() as directory:
+            base = Path(directory)
+            owner = base / "old-owner"
+            checkout = base / "fresh-checkout"
+            relative = Path("experiments/runs/example.jsonl")
+            original = owner / relative
+            original.parent.mkdir(parents=True)
+            original.write_text("original", encoding="utf-8")
+            relocated = checkout / relative
+            relocated.parent.mkdir(parents=True)
+            relocated.write_text("relocated", encoding="utf-8")
+            with patch.object(paper_pipeline, "ROOT", checkout):
+                self.assertEqual(local_path(str(original), "experiments"), relocated)
+                relocated.unlink()
+                with self.assertRaisesRegex(ValueError, "absent from checkout"):
+                    local_path(str(original), "experiments")
+
     def test_only_public_explicit_claim_is_recovered(self):
         self.assertEqual(recovered_claim('<think>CLAIM: success</think>\nCLAIM: non_success'), 'non_success')
         self.assertEqual(recovered_claim('<think>CLAIM: success'), 'UNRECOVERED')

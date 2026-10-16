@@ -12,6 +12,7 @@ from collections import Counter
 from pathlib import Path
 from typing import Any
 
+from analysis.v1_pipeline import recorded_checkout_root, resolve_checkout_artifact_path
 from experiments.run_c5_agent_onset_fork import _load_input
 from experiments.run_c5_remaining_onset_feasibility import OUTPUT, FIRST_PAIR, PILOT, build_schedule
 
@@ -46,7 +47,26 @@ def _observation(request: dict[str, Any]) -> dict[str, Any]:
     return result
 
 
-def _verify_pair(directory: Path, row: dict[str, Any]) -> dict[str, Any]:
+def _verify_pair(
+    directory: Path, row: dict[str, Any], *,
+    source_root: Path | None = None, recorded_root: Path | None = None,
+) -> dict[str, Any]:
+    if (source_root is None) != (recorded_root is None):
+        raise ValueError("source and recorded roots must be supplied together")
+    directory = Path(directory).resolve()
+    if source_root is not None:
+        source_root = Path(source_root).resolve()
+        recorded_root = Path(recorded_root)
+        if not directory.is_relative_to(source_root) or not recorded_root.is_absolute():
+            raise ValueError("pair directory or recorded root is outside declared checkout")
+
+    def local(value: Any, name: str) -> Path:
+        if source_root is None:
+            return Path(value)
+        return resolve_checkout_artifact_path(
+            value, source_root=source_root, recorded_root=recorded_root, name=name,
+        )
+
     preflight_path, pair_path = directory / "preflight.json", directory / "run.receipt.json"
     preflight, pair = _read(preflight_path), _read(pair_path)
     assert pair["preflight_sha256"] == _hash(preflight_path)
@@ -64,24 +84,26 @@ def _verify_pair(directory: Path, row: dict[str, Any]) -> dict[str, Any]:
     started = _read(directory / "started.json")
     assert started["preflight_sha256"] == _hash(preflight_path)
     assert started["branch_order"] == expected_order
-    assert _hash(Path(row["pilot_manifest"])) == row["pilot_manifest_sha256"]
+    assert _hash(local(row["pilot_manifest"], "pilot manifest")) == row["pilot_manifest_sha256"]
     input_paths = preflight["input_artifacts"]
     for key, item in input_paths.items():
-        path = Path(item["path"])
+        path = local(item["path"], f"input artifact {key}")
         assert _hash(path) == item["sha256"], f"input artifact drift: {key}"
     assert input_paths["pilot_manifest"]["path"] == row["pilot_manifest"]
     for condition in ("c1", "c5"):
         assert input_paths[f"{condition}_task"]["path"] == row[condition]["task"]
         assert input_paths[f"{condition}_proof"]["path"] == row[condition]["proof"]
-    loaded = _load_input(Path(row["pilot_manifest"]),
-                         Path(row["c1"]["task"]), Path(row["c1"]["proof"]),
-                         Path(row["c5"]["task"]), Path(row["c5"]["proof"]))
+    loaded = _load_input(local(row["pilot_manifest"], "pilot manifest"),
+                         local(row["c1"]["task"], "C1 task"),
+                         local(row["c1"]["proof"], "C1 proof"),
+                         local(row["c5"]["task"], "C5 task"),
+                         local(row["c5"]["proof"], "C5 proof"))
     assert loaded["onset"]["candidate_hash"] == preflight["onset_candidate_sha256"]
     assert loaded["onset"]["step"] == preflight["onset_step"]
     assert preflight["model"] == loaded["episode"]["manifest"]["model"]
     assert preflight["options"] == loaded["options"]
     reservation = preflight["onset_reservation"]
-    reservation_path = Path(reservation["path"])
+    reservation_path = local(reservation["path"], "onset reservation")
     assert _hash(reservation_path) == reservation["sha256"]
     reservation_body = _read(reservation_path)
     preflight_core = {key: value for key, value in preflight.items() if key != "onset_reservation"}
@@ -89,7 +111,10 @@ def _verify_pair(directory: Path, row: dict[str, Any]) -> dict[str, Any]:
     assert reservation_body["pilot_manifest_sha256"] == preflight["pilot_manifest_sha256"]
     assert reservation_body["onset_step"] == preflight["onset_step"]
     assert reservation_body["onset_candidate_sha256"] == preflight["onset_candidate_sha256"]
-    assert reservation_body["output_dir"] == str(directory)
+    if source_root is None:
+        assert reservation_body["output_dir"] == str(directory)
+    else:
+        assert Path(reservation_body["output_dir"]) == recorded_root / directory.relative_to(source_root)
     assert reservation_body["order_seed"] == preflight["order_seed"]
 
     initial: dict[str, dict[str, Any]] = {}
@@ -97,12 +122,12 @@ def _verify_pair(directory: Path, row: dict[str, Any]) -> dict[str, Any]:
     for arm in ARMS:
         lower = arm.lower()
         initial_row = preflight["initial_requests"][arm]
-        initial_path = Path(initial_row["path"])
+        initial_path = local(initial_row["path"], f"{arm} initial request")
         assert initial_path.parent == directory and _hash(initial_path) == initial_row["sha256"]
         initial[arm] = _read(initial_path)["request"]
         arm_path = directory / f"{lower}.receipt.json"
         assert _hash(arm_path) == pair["arms"][arm]["receipt_sha256"]
-        assert pair["arms"][arm]["receipt_path"] == str(arm_path)
+        assert local(pair["arms"][arm]["receipt_path"], f"{arm} receipt") == arm_path
         arm_receipt = _read(arm_path)
         body = {k: v for k, v in arm_receipt.items() if k != "receipt_sha256"}
         assert arm_receipt["receipt_sha256"] == hashlib.sha256(_canonical(body)).hexdigest()
@@ -110,7 +135,7 @@ def _verify_pair(directory: Path, row: dict[str, Any]) -> dict[str, Any]:
         assert arm_receipt["model"] == preflight["model"]
         assert arm_receipt["seed"] == preflight["seed"]
         assert arm_receipt["options"] == preflight["options"]
-        event_path = Path(arm_receipt["event_path"])
+        event_path = local(arm_receipt["event_path"], f"{arm} events")
         assert event_path == directory / f"{lower}.events.jsonl"
         assert _hash(event_path) == arm_receipt["event_sha256"]
         events = [json.loads(line) for line in event_path.read_text(encoding="utf-8").splitlines()]
@@ -118,7 +143,7 @@ def _verify_pair(directory: Path, row: dict[str, Any]) -> dict[str, Any]:
         requests = arm_receipt["request_archive"]
         assert len(requests) == len(list(directory.glob(f"{lower}.request-*.json")))
         for sequence, request_row in enumerate(requests, 1):
-            path = Path(request_row["path"])
+            path = local(request_row["path"], f"{arm} provider request")
             assert request_row["sequence"] == sequence and path == directory / f"{lower}.request-{sequence:06d}.json"
             assert _hash(path) == request_row["sha256"]
             request_record = _read(path)
@@ -184,7 +209,26 @@ def audit() -> dict[str, Any]:
     schedule_path, prepared_path, run_path = (OUTPUT / name for name in
                                               ("schedule.json", "prepared.json", "run.receipt.json"))
     schedule, prepared, run = _read(schedule_path), _read(prepared_path), _read(run_path)
-    assert schedule == build_schedule()
+    first_onset = schedule["onsets"][0]
+    expected_pilot_relative = (
+        PILOT / first_onset["slot_id"] / Path(first_onset["pilot_manifest"]).name
+    ).relative_to(ROOT)
+    recorded_root = recorded_checkout_root(
+        first_onset["pilot_manifest"], expected_pilot_relative,
+        name="first pilot manifest",
+    )
+    expected_schedule = build_schedule()
+    mapped_fields: set[tuple[int, str]] = set()
+    for expected_row in expected_schedule["onsets"]:
+        for item, key in ((expected_row, "pilot_manifest"),
+                          (expected_row["c1"], "task"), (expected_row["c1"], "proof"),
+                          (expected_row["c5"], "task"), (expected_row["c5"], "proof")):
+            field = (id(item), key)
+            if field in mapped_fields:
+                continue
+            mapped_fields.add(field)
+            item[key] = str(recorded_root / Path(item[key]).relative_to(ROOT))
+    assert schedule == expected_schedule
     assert prepared["schedule_sha256"] == run["schedule_sha256"] == _hash(schedule_path)
     assert run["prepared_sha256"] == _hash(prepared_path)
     assert run["prior_pair_receipt_sha256"] == schedule["prior_pair_receipt_sha256"] == _hash(FIRST_PAIR)
@@ -241,7 +285,17 @@ def audit() -> dict[str, Any]:
             assert indexed[row["slot_id"]]["pair_invalidated"] is False
             assert prepared_by_slot[row["slot_id"]]["preflight_sha256"] == _hash(path / "preflight.json")
             assert _read(path / "preflight.json")["source_sha256s"] == archived_hashes
-        rows.append(_verify_pair(path, row))
+        pilot_manifest_relative = (
+            PILOT / row["slot_id"] / f"{pilot_row['episode_id']}.manifest.json"
+        ).relative_to(ROOT)
+        row_recorded_root = recorded_checkout_root(
+            row["pilot_manifest"], pilot_manifest_relative,
+            name=f"{row['slot_id']} pilot manifest",
+        )
+        assert row_recorded_root == recorded_root
+        rows.append(_verify_pair(
+            path, row, source_root=ROOT, recorded_root=recorded_root,
+        ))
     assert len(rows) == len(secure_pilot) == 14
     notice_hashes = {row["continuation_notice_sha256"] for row in rows}
     assert len(notice_hashes) == 1

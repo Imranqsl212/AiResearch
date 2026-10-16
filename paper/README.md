@@ -2,6 +2,8 @@
 
 The manuscript in [final.md](final.md) is an exploratory measurement audit with a separate, excluded corrected-oracle pilot. The identified files are [PDF](submission/full_paper.pdf) and [Word](submission/full_paper.docx). The anonymous peer-review files are [PDF](submission/full_paper_anonymous.pdf) and [Word](submission/full_paper_anonymous.docx). It contains six generated PNG figures in `figures/` and four tables. The pre empirical protocol manuscript is preserved in `archive/protocol_before_empirical_revision.md`.
 
+An [author–year venue-format draft](VENUE_FORMAT_DRAFT_20261016.md) has separate identified and anonymous PDF/DOCX files. It preserves the scientific text and figures while changing citation style; the numbered `final.md` remains the canonical author-review source until a journal and final declarations are approved.
+
 ## Required local inputs
 
 The raw historical main and AEAD pilot episodes are under `../experiments/runs/`, with result indexes, manifests, schedules, ledgers, nightly gate report, and sealed archive records under `../experiments/`. The separate v7 corrected-oracle pilot and matched continuation have their own run archives. The public repository's data revision `37074c198237ade67eb76921333b2835d329c863` tracks these inputs. A complete checkout containing them can rerun the listed local analyses from source trajectories; a partial export or a checkout lacking the archived inputs cannot. The derived tables in `artifacts/` and v7 audit JSON files do not substitute for raw evidence. GitHub availability does not approve the records for journal supplementary release.
@@ -35,12 +37,14 @@ bytes using `python3 -B -m paper.replay_sanitized_candidate`. It does not
 revalidate original-byte provenance or approve the archive as a journal supplement.
 An [independent terminal-receipt recount](INDEPENDENT_DISCORDANCE_CHECK_20261008.md)
 also verifies the central 9/20 test–gate disagreement from that transformed
-archive without importing the historical summary functions. The private
+archive without importing the historical summary functions. The
 [privacy review register](../docs/SANITIZED_PRIVACY_REVIEW_REGISTER_20261008.md)
-keeps all scanner leads pending human disposition.
+keeps all scanner leads pending human disposition. Its source inspection packet
+and blank register are tracked publicly despite their `PRIVATE` filenames.
 
 A separate [read-only original-byte audit](ORIGINAL_ARCHIVE_PROVENANCE_AUDIT_20261008.md)
-checks the local private original against the sanitized manifest, both archive
+checks the original archive, now tracked publicly despite its `private` filename,
+against the sanitized manifest, both archive
 receipts, and the original terminal 9/20 count:
 
 ```sh
@@ -50,7 +54,8 @@ python3 -B -m unittest -q paper.test_audit_original_archive_provenance
 
 It verified 313 original archive members and their transformed counterparts
 locally. The archived input-ledger digest still differs from the current tracked
-ledger by one later source hash. This audit does not establish external chain
+ledger: 308 of 311 entries match and three later source/document hashes differ.
+This audit does not establish external chain
 of custody, rerun the model or evaluator, or clear either archive for a journal deposit.
 
 The separate auxiliary audit searches local, unsealed Docker sidecar logs by candidate-source hash. Its result is in `artifacts/auxiliary_sidecar_audit.json`. These logs are not uniquely tied to an action and are not used for any paper outcome or stopping metric. A clone without `sandbox/logs/` cannot reproduce this auxiliary check.
