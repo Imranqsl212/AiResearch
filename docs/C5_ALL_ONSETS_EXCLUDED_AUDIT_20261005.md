@@ -104,7 +104,7 @@ prospective [preregistration draft](preregistration_v1_20261005.md) and
 excluded observations is inserted into the historical exploratory paper's
 40-episode denominator or a prospective v1 result.
 
-To recheck the local ignored artifacts:
+To recheck the tracked saved artifacts:
 
 ```sh
 python3 -B -m analysis.audit_c5_remaining_onsets > /tmp/c5_audit_recheck.json

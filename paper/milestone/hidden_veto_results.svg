@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1300" height="800" viewBox="0 0 1300 800" role="img" aria-labelledby="title desc">
+<title id="title">Historical finite tests and final acceptance</title>
+<desc id="desc">Grouped bars for 20 repairable and 20 policy-rejected episodes. Raw family tests passed for 16 and 9 respectively; final acceptance was 16 and 0. The policy-rejected group had a hidden veto.</desc>
+<rect width="1300" height="800" fill="#ffffff"/>
+<rect width="1300" height="12" fill="#173a60"/>
+<g font-family="Arial,Helvetica,sans-serif" fill="#172536">
+<text x="120" y="70" font-size="35" font-weight="700">When finite tests pass but the gate rejects</text>
+<text x="120" y="105" font-size="21" fill="#536578">Historical main cohort · 40 episodes · descriptive counts</text>
+<rect x="120" y="133" width="22" height="22" fill="#173a60"/>
+<text x="154" y="151" font-size="19">Raw family finite tests passed</text>
+<rect x="520" y="133" width="22" height="22" fill="#218d91"/>
+<text x="554" y="151" font-size="19">Final benchmark accepted</text>
+<line x1="165" y1="585.0" x2="1120" y2="585.0" stroke="#dce4eb" stroke-width="1.5"/>
+<text x="147" y="591.0" font-size="18" text-anchor="end" fill="#536578">0</text>
+<line x1="165" y1="486.2" x2="1120" y2="486.2" stroke="#dce4eb" stroke-width="1.5"/>
+<text x="147" y="492.2" font-size="18" text-anchor="end" fill="#536578">5</text>
+<line x1="165" y1="387.5" x2="1120" y2="387.5" stroke="#dce4eb" stroke-width="1.5"/>
+<text x="147" y="393.5" font-size="18" text-anchor="end" fill="#536578">10</text>
+<line x1="165" y1="288.8" x2="1120" y2="288.8" stroke="#dce4eb" stroke-width="1.5"/>
+<text x="147" y="294.8" font-size="18" text-anchor="end" fill="#536578">15</text>
+<line x1="165" y1="190.0" x2="1120" y2="190.0" stroke="#dce4eb" stroke-width="1.5"/>
+<text x="147" y="196.0" font-size="18" text-anchor="end" fill="#536578">20</text>
+<text x="52" y="400" font-size="18" transform="rotate(-90 52 400)">Episodes (out of 20 per group)</text>
+<rect x="285" y="269.0" width="116" height="316.0" fill="#173a60"/>
+<text x="343" y="256.0" font-size="24" font-weight="700" text-anchor="middle">16/20</text>
+<rect x="440" y="269.0" width="116" height="316.0" fill="#218d91"/>
+<text x="498" y="256.0" font-size="24" font-weight="700" text-anchor="middle">16/20</text>
+<text x="420.5" y="631" font-size="23" font-weight="700" text-anchor="middle">Repairable (R)</text>
+<text x="420.5" y="659" font-size="18" text-anchor="middle" fill="#536578">n = 20 episodes</text>
+<rect x="785" y="407.2" width="116" height="177.8" fill="#173a60"/>
+<text x="843" y="394.2" font-size="24" font-weight="700" text-anchor="middle">9/20</text>
+<line x1="940" y1="583" x2="1056" y2="583" stroke="#218d91" stroke-width="4"/>
+<text x="998" y="568.0" font-size="24" font-weight="700" text-anchor="middle">0/20</text>
+<text x="920.5" y="631" font-size="23" font-weight="700" text-anchor="middle">Policy rejected (U)</text>
+<text x="920.5" y="659" font-size="18" text-anchor="middle" fill="#536578">n = 20 episodes</text>
+<rect x="120" y="695" width="1060" height="61" rx="8" fill="#edf3f6"/>
+<text x="138" y="719" font-size="17" font-weight="700">Interpretation limit</text>
+<text x="138" y="743" font-size="16">Finite family tests are limited; the U gate applied a hidden policy veto after those tests.</text>
+<text x="120" y="784" font-size="14" fill="#64748b">Source: paper/artifacts/results.json · Historical exploratory cohort · No inferential intervals</text>
+</g></svg>
