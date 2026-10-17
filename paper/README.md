@@ -4,6 +4,8 @@ The manuscript in [final.md](final.md) is an exploratory measurement audit with 
 
 An [author–year venue-format draft](VENUE_FORMAT_DRAFT_20261016.md) has separate identified and anonymous PDF/DOCX files. It preserves the scientific text and figures while changing citation style; the numbered `final.md` remains the canonical author-review source until a journal and final declarations are approved.
 
+The [17 October collected-data milestone](milestone/RESULTS_20261017.md) organizes the historical and pilot cohorts, adds a graph of the hidden test–gate veto, and compares the observations with the original H1–H6 hypotheses without treating the exploratory records as confirmatory tests.
+
 ## Required local inputs
 
 The raw historical main and AEAD pilot episodes are under `../experiments/runs/`, with result indexes, manifests, schedules, ledgers, nightly gate report, and sealed archive records under `../experiments/`. The separate v7 corrected-oracle pilot and matched continuation have their own run archives. The public repository's data revision `37074c198237ade67eb76921333b2835d329c863` tracks these inputs. A complete checkout containing them can rerun the listed local analyses from source trajectories; a partial export or a checkout lacking the archived inputs cannot. The derived tables in `artifacts/` and v7 audit JSON files do not substitute for raw evidence. GitHub availability does not approve the records for journal supplementary release.
