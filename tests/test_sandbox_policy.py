@@ -18,7 +18,7 @@ from sandbox.policy import (
 )
 from sandbox.runner import _BoundedLogCapture, DockerSandboxRunner, SafetyViolation, validate_runtime_configuration
 from sandbox.safety_checks.checks import static_policy_check
-from sandbox.safety_checks.checks import CANDIDATE_LOCK_PATH, run_complete_safety_suite
+from sandbox.safety_checks.checks import CANDIDATE_LOCK_PATH, CANDIDATE_V2_LOCK_PATH, run_complete_safety_suite
 
 
 IMAGE_REF = "local.test/when-to-stop/safety@sha256:" + "a" * 64
@@ -173,13 +173,37 @@ class SandboxPolicyTests(unittest.TestCase):
         self.assertTrue(images[0].image_ref.endswith("@sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9"))
 
     def test_candidate_lock_cannot_launch_an_ordinary_episode(self):
-        runner = DockerSandboxRunner(image_lock_path=CANDIDATE_LOCK_PATH)
-        with self.assertRaisesRegex(SafetyViolation, "official approved image lock"):
-            runner.run(self.valid_request())
-        with self.assertRaisesRegex(SafetyViolation, "official approved image lock"):
-            runner._run(self.valid_request())
-        with self.assertRaisesRegex(SafetyViolation, "fixed local safety probes"):
-            runner.run_safety_probe(self.valid_request())
+        for lock_path in (CANDIDATE_LOCK_PATH, CANDIDATE_V2_LOCK_PATH):
+            with self.subTest(lock_path=lock_path):
+                runner = DockerSandboxRunner(image_lock_path=lock_path)
+                with self.assertRaisesRegex(SafetyViolation, "official approved image lock"):
+                    runner.run(self.valid_request())
+                with self.assertRaisesRegex(SafetyViolation, "official approved image lock"):
+                    runner._run(self.valid_request())
+                with self.assertRaisesRegex(SafetyViolation, "fixed local safety probes"):
+                    runner.run_safety_probe(self.valid_request())
+
+    def test_candidate_safety_probe_rejects_arbitrary_source_before_docker(self):
+        for lock_path in (CANDIDATE_LOCK_PATH, CANDIDATE_V2_LOCK_PATH):
+            with self.subTest(lock_path=lock_path):
+                runner = DockerSandboxRunner(image_lock_path=lock_path)
+                request = SandboxRunRequest(
+                    run_id="candidate-payload-rejected",
+                    task_id="safety-fixture",
+                    image_ref=IMAGE_REF,
+                    command=("/usr/bin/python3", "-I", "/opt/candidate_runtime.py"),
+                    timeout_seconds=1,
+                    stdin_payload=b'{"kind":"evaluate","source":"print(1)"}\n',
+                )
+                with self.assertRaisesRegex(SafetyViolation, "exact fixed payload"):
+                    runner.run_safety_probe(request)
+                fixed_probe = SandboxRunRequest(
+                    run_id="fixed-payload-rejected", task_id="safety-fixture",
+                    image_ref=IMAGE_REF, command=("/wts-local", "probe", "network"),
+                    timeout_seconds=1, stdin_payload=b"unexpected",
+                )
+                with self.assertRaisesRegex(SafetyViolation, "may not receive stdin"):
+                    runner.run_safety_probe(fixed_probe)
 
     def test_static_failure_prevents_all_runtime_probes(self):
         failure = {"check_id": "static_policy_locked", "passed": False, "status": "FAIL",

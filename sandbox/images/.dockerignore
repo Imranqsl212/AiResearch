@@ -5,3 +5,5 @@
 !bin/crypto-target
 !candidate-runtime.Dockerfile
 !candidate_runtime.py
+!candidate_runtime_v2.Dockerfile
+!candidate_runtime_v2.py

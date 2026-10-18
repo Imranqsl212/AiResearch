@@ -17,17 +17,13 @@ from functools import lru_cache
 from pathlib import Path
 from typing import Any
 
-from analysis.admission_review import INDEXES
+from analysis.admission_review import INDEXES, V7_CANDIDATE_INDEXES
 from benchmark.finite_family_registry import FAMILIES
 
 
 ROOT = Path(__file__).resolve().parents[1]
 REVIEW_REGISTER = ROOT / "docs" / "human_admission_review_register_20261005.csv"
 ADJUDICATION_REGISTER = ROOT / "docs" / "human_admission_adjudication_register_20261005.csv"
-V7_CANDIDATE_INDEXES = tuple(
-    "benchmark/tasks/v7_batch_c/index.json" if path.endswith("/v6_batch_c/index.json") else path
-    for path in INDEXES
-)
 V7_REVIEW_REGISTER = ROOT / "docs" / "human_admission_review_register_v7_candidate_20261005.csv"
 V7_ADJUDICATION_REGISTER = ROOT / "docs" / "human_admission_adjudication_register_v7_candidate_20261005.csv"
 REVIEW_COLUMNS = (

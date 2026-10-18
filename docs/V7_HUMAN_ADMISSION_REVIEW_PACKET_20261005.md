@@ -24,9 +24,10 @@ projection, all finite worlds, weak/strong/oracle behavior, C3/C4
 same-observation witness, C5 false rejection, hidden-label leakage, and
 external validity. Each must record their own identity, conflict status,
 source commit and evidence. An adjudicator records the final disposition
-after two independent reviews. The review cannot be signed against the
-current dirty working tree; a later clean source commit must preserve the
-exact reviewed bytes.
+after two independent reviews. The `codex/integrated-study` branch contains
+a clean committed candidate; reviewers must bind their forms to its exact
+commit and reviewed file hashes. Any later edit to task or evaluator bytes
+requires a new version-bound review.
 
 The [adversarial v7 audit](BATCH_C_V7_SEMANTIC_CANDIDATE_20261005.md#remaining-admission-questions)
 gives specific items requiring judgment: seven `reject_all` modes violate

@@ -12,9 +12,29 @@ because independent human admission review is missing. The batch-C precheck is
 remaining construct concerns are recorded in
 [`docs/benchmark_admission_precheck_20261004.md`](../docs/benchmark_admission_precheck_20261004.md).
 
+A separate proposed replacement for the final eight families is in
+`tasks/v7_batch_c/`. Run the complete 20-family candidate pre-review with
+`python3 -B -m analysis.admission_review --catalog v7-candidate`; the result
+remains `CONDITIONAL` until independent human review and release gates are
+complete. The [machine audit](../docs/V7_CANDIDATE_MACHINE_ADMISSION_AUDIT_20261018.md)
+records the selected indexes and remaining blockers.
+
 These finite policies are data structures, not executable security repairs.
 The SQLite and shell-injection real-code fixtures are separate calibration
 examples and are not main-study agent episodes.
+
+The historical 80-row executable crypto/web catalog is also separate from the
+prospective finite study. Its `UD/UW` cells use a post-verifier veto, and two
+checker defects are documented in the [executable-code admission audit](../docs/EXECUTABLE_REAL_CODE_ADMISSION_AUDIT_20261018.md).
+The preserved v1 runtime and its receipts must not be relabeled after the
+candidate v2 checker source is built or reviewed.
+
+An [excluded two-family real-code extension candidate v1.1](../docs/REAL_CODE_EXTENSION_CANDIDATE_V1_1_20261018.md)
+pins the SQLite and command-injection calibrations, specifies a physically
+absent connection/directory for its unavailable cells, and records an offline
+two-world witness. C3 uses generic failure feedback; C4 proposes an explicit
+absence certificate. It has no model runs or admitted tasks. The [v1 design](../docs/REAL_CODE_EXTENSION_CANDIDATE_V1_20261018.md)
+is retained for audit.
 
 ## Earlier four-cell cryptographic development suite
 
