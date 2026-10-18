@@ -4,9 +4,9 @@
 This audit selects the original four families, batches A/B, and the proposed
 **v7** batch C. It does not substitute the older v6 batch-C artifacts or convert
 excluded pilots into main data. The source revision before this audit was
-`6ccacf980138a6d38b263b700da08e020533b12d`; the new audit code and this
-report are working-tree changes until reviewed and committed. Reviewer forms
-must cite the eventual clean source commit and the exact bytes they inspected.
+`6ccacf980138a6d38b263b700da08e020533b12d`; its implementation and
+report are now in the `codex/integrated-study` branch. Reviewer forms must
+cite the clean source commit and the exact bytes inspected at review time.
 
 ## Reproducible machine results
 
