@@ -27,6 +27,7 @@ from sandbox.runner import DockerSandboxRunner, SafetyViolation, SandboxRunResul
 SAFETY_CHECK_ROOT = Path(__file__).resolve().parent
 LATEST_REPORT_PATH = SAFETY_CHECK_ROOT / "latest_result.json"
 CANDIDATE_LOCK_PATH = SAFETY_CHECK_ROOT.parent / "images" / "candidate_images.json"
+CANDIDATE_V2_LOCK_PATH = SAFETY_CHECK_ROOT.parent / "images" / "candidate_images_v2.json"
 RUNTIME_CHECK_IDS = (
     "external_network_blocked",
     "host_files_unmounted",
@@ -460,8 +461,12 @@ def run_complete_safety_suite(image_lock_path: Path = APPROVED_IMAGES_PATH) -> d
     image = None
     daemon_fingerprint: str | None = None
     isolation_mode: str | None = None
-    if image_lock_path.resolve() not in {APPROVED_IMAGES_PATH.resolve(), CANDIDATE_LOCK_PATH.resolve()}:
-        blockers.append("safety suite requires the fixed official or candidate image lock")
+    if image_lock_path.resolve() not in {
+        APPROVED_IMAGES_PATH.resolve(),
+        CANDIDATE_LOCK_PATH.resolve(),
+        CANDIDATE_V2_LOCK_PATH.resolve(),
+    }:
+        blockers.append("safety suite requires a fixed official or versioned candidate image lock")
     if not blockers:
         try:
             runner.assert_local_daemon()

@@ -361,15 +361,19 @@ class DockerSandboxRunner:
         """Return the verified isolation mode or fail closed."""
 
         self._assert_local_docker_endpoint()
-        self._docker(("version", "--format", "{{json .Server}}"), timeout_seconds=5)
-        security_options = self._docker_json(("info", "--format", "{{json .SecurityOptions}}"), timeout_seconds=5)
+        # Docker Desktop may take several seconds to answer read-only metadata
+        # queries while its local VM is starting. This does not extend a
+        # container's execution budget or relax any checked isolation field.
+        metadata_timeout = 15
+        self._docker(("version", "--format", "{{json .Server}}"), timeout_seconds=metadata_timeout)
+        security_options = self._docker_json(("info", "--format", "{{json .SecurityOptions}}"), timeout_seconds=metadata_timeout)
         if not isinstance(security_options, list) or not any("seccomp" in str(option).lower() for option in security_options):
             raise SafetyViolation("Docker daemon does not report its built-in seccomp protection")
         if any("userns" in str(option).lower() for option in security_options):
             return ISOLATION_MODE_USERNS_REMAP
 
-        info = self._docker_json(("info", "--format", "{{json .}}"), timeout_seconds=5)
-        context = self._docker(("context", "show"), timeout_seconds=5).stdout.strip()
+        info = self._docker_json(("info", "--format", "{{json .}}"), timeout_seconds=metadata_timeout)
+        context = self._docker(("context", "show"), timeout_seconds=metadata_timeout).stdout.strip()
         operating_system = str(info.get("OperatingSystem", "")) if isinstance(info, Mapping) else ""
         kernel = str(info.get("KernelVersion", "")) if isinstance(info, Mapping) else ""
         os_type = str(info.get("OSType", "")) if isinstance(info, Mapping) else ""
@@ -388,8 +392,8 @@ class DockerSandboxRunner:
         """Bind a passing suite to stable, safety-relevant daemon properties."""
 
         self._assert_local_docker_endpoint()
-        server = self._docker_json(("version", "--format", "{{json .Server}}"), timeout_seconds=5)
-        info = self._docker_json(("info", "--format", "{{json .}}"), timeout_seconds=5)
+        server = self._docker_json(("version", "--format", "{{json .Server}}"), timeout_seconds=15)
+        info = self._docker_json(("info", "--format", "{{json .}}"), timeout_seconds=15)
         if not isinstance(server, Mapping) or not isinstance(info, Mapping):
             raise SafetyViolation("Docker daemon fingerprint fields are unavailable")
         fields = ("ID", "ServerVersion", "KernelVersion", "SecurityOptions", "CgroupDriver",
@@ -421,19 +425,31 @@ class DockerSandboxRunner:
         # Authorization sits at the last launch point. An internal caller may
         # not bypass the official receipt merely by invoking _run directly.
         if safety_probe:
-            from sandbox.safety_checks.checks import CANDIDATE_LOCK_PATH
+            from sandbox.safety_checks.checks import CANDIDATE_LOCK_PATH, CANDIDATE_V2_LOCK_PATH
 
             lock_path = self.image_lock_path or APPROVED_IMAGES_PATH
-            if lock_path.resolve() not in {APPROVED_IMAGES_PATH.resolve(), CANDIDATE_LOCK_PATH.resolve()}:
-                raise SafetyViolation("safety probes require the fixed official or candidate lock")
-            if request.task_id != "safety-fixture" or request.command not in {
+            if lock_path.resolve() not in {
+                APPROVED_IMAGES_PATH.resolve(),
+                CANDIDATE_LOCK_PATH.resolve(),
+                CANDIDATE_V2_LOCK_PATH.resolve(),
+            }:
+                raise SafetyViolation("safety probes require a fixed official or versioned candidate lock")
+            fixed_probe_commands = {
                 ("/wts-local", "probe", name)
                 for name in ("network", "host-files", "credentials", "marker", "resources", "sleep", "runaway", "reproducible")
-            } and request.command not in {
+            }
+            python_probe_commands = {
                 ("/usr/local/bin/python3", "-I", "/opt/candidate_runtime.py"),
                 ("/usr/bin/python3", "-I", "/opt/candidate_runtime.py"),
-            }:
+            }
+            if request.task_id != "safety-fixture" or request.command not in (
+                fixed_probe_commands | python_probe_commands
+            ):
                 raise SafetyViolation("candidate image may execute only fixed local safety probes")
+            if request.command in fixed_probe_commands and request.stdin_payload != b"":
+                raise SafetyViolation("fixed local safety probe may not receive stdin payload")
+            if request.command in python_probe_commands and request.stdin_payload != b'{"kind":"runtime_probe"}\n':
+                raise SafetyViolation("candidate runtime safety probe requires the exact fixed payload")
         else:
             self._require_official_gate(request)
 

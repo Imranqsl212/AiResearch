@@ -1,0 +1,14 @@
+{
+  "schema_version": "0.1.0",
+  "approved_images": [
+    {
+      "image_ref": "local/candidate-runtime@sha256:fe4daf243d6575ddcfdaac4a6143001ed89c4d1bf31e961770c0a2af84fd3d5a",
+      "config_digest": "sha256:fe4daf243d6575ddcfdaac4a6143001ed89c4d1bf31e961770c0a2af84fd3d5a",
+      "oci_config_digest": "sha256:4591a2762b5968b64eae812efd9395b47faa53cc5ddd0cd6a2bc2f1678d917af",
+      "purpose": "Preapproval containment checks for the separately built v2 candidate runtime",
+      "safety_test_eligible": true
+    }
+  ],
+  "status": "CANDIDATE_NOT_APPROVED",
+  "notes": "Built offline on 18 October 2026 from local/candidate-runtime:python-crypto-web-v0.5.3 after verifying its image ID was sha256:1c987bcba6e1e759fe257e929f50ced3b59933057043a8b0fecb020bccf501a9. This is a test lock only and does not promote the v2 image to the approved image list."
+}

@@ -1,0 +1,20 @@
+{
+  "condition_count": 10,
+  "contracts": [
+    {
+      "contract_file": "command_file.contract.json",
+      "contract_sha256": "af16c2503835496498b9eee3ae0a2347bd0f90d2053b8303f7f5411ead6c60cf",
+      "family": "command_file"
+    },
+    {
+      "contract_file": "sqlite_lookup.contract.json",
+      "contract_sha256": "8f251edf4d7699b7b700e8c6056908c7e9d5c5072d7e227cb7730d8cd50477f2",
+      "family": "sqlite_lookup"
+    }
+  ],
+  "family_count": 2,
+  "purpose": "offline_task_design_only_no_model_or_docker_execution",
+  "schema_version": "real-code-candidate-v1.1.0",
+  "status": "EXCLUDED_CANDIDATE_NOT_HUMAN_ADMITTED",
+  "supersedes_index_sha256": "5e042f648ec63bf4ff7726d60649b1f59cdb788a93b96321f05fb26ebe823732"
+}

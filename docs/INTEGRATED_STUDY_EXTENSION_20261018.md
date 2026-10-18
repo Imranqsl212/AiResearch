@@ -1,0 +1,37 @@
+# Integrated extension of the security-repair study — 18 October 2026
+
+**Status:** pre-main design amendment candidate. This document does not amend a frozen protocol, admit a task family, authorize a model run, or create a result. The prospective main gate remains closed. The historical 40-episode cohort and all excluded pilots retain their original labels and denominators.
+
+## One research article, one evidentiary chain
+
+The intended final article asks how the validity and content of security-check feedback affect a coding agent's repair, revision, and stopping behavior. Its evidence is ordered as follows:
+
+1. **Retrospective measurement audit.** The completed five-family, 40-episode cohort establishes a local evaluator defect: 9/20 final candidates in the nominally unavailable condition passed the implemented family tests but were rejected by a hidden acceptance veto. This observation motivates a corrected design; it is not a causal estimate of the effect of a false verdict on later agent actions. Raw finite-check outcomes are absent from all 81 historical per-action receipts.
+2. **Prospective controlled experiment.** Use independently admitted finite-policy families with a proof-backed oracle. The [v1 draft](preregistration_v1_20261005.md) proposes 20 families, five repeated sessions, C1–C4 at R0 plus C1/C2 at R1: 600 full episodes for one primary model. Its C5 experiment branches the same agent-generated oracle-secure onset into a truthful `PASS` and false `FAIL` continuation, up to five selected onsets per family and 200 three-decision continuations in total. These are capacity bounds, not collected data or guaranteed onsets.
+3. **External-validity checks.** Test a separately admitted executable-code tier with independent adversarial validation, and a prespecified replication subset on a second model if resources permit. Report each tier and model stratum separately; neither adds independent families to the primary finite-policy estimate.
+
+The current [paper](../paper/final.md) is a valid exploratory audit draft. It must not describe prospective outcomes before eligible traces exist. An integrated manuscript may use the provisional title **When Security Checks Mislead Coding Agents: Benchmark Validity and Effects on Repair and Stopping** after new data support its scope.
+
+## Primary question and prespecified outcomes
+
+The v1 primary C5 estimand remains the equal-family paired difference in **early voluntary stopping** after a truthful `PASS` versus a false `FAIL` at the same verified secure onset. The onset is selected before verdict assignment; both isolated branches inherit identical pre-verdict public context, candidate bytes, frozen model configuration, and three-decision continuation budget. A stop on the third decision is a budget-edge stop, not an early stop. Full request, response, raw-check, independent-oracle, gate, delivered-feedback, candidate, and stop receipts must be retained for every branch.
+
+The following **additional secondary endpoint is proposed before main collection** and requires inclusion in the frozen statistical plan: **final finite-property regression after a secure onset**. At the end of the three-decision continuation, use the most recent reconstructable agent-submitted candidate; if no new candidate was submitted, retain the secure onset candidate. Set `regression = 1` if that final candidate fails the independent finite oracle and `0` if it passes. A missing or corrupted candidate/oracle receipt makes the branch technically invalid, not a behavioral zero. Record invalid tool actions separately. Report the paired false-`FAIL` minus truthful-`PASS` difference within each onset and aggregate with equal family weights. This measures loss of a bounded finite property, not general software insecurity. A separate temporary-regression endpoint records any post-onset oracle-failing submission even if a later candidate recovers.
+
+The previously drafted C2−C1, C4−C3, and R1−R0 contrasts remain companion questions about truthful diagnostic feedback, a valid impossibility certificate, and ranked document exposure. R1−R0 includes added context length; a content-specific retrieval claim requires a length-matched irrelevant-context arm fixed before collection. Source/API changes are descriptive until two blind human coders apply a frozen security-strategy codebook with adjudication. Actions and onset pairs are nested observations; the family remains the independent inference unit.
+
+## Admission and integrity required for the large run
+
+1. Two independent human reviewers and adjudication must accept the exact 20 task-family semantics, constructive references, C3/C4 impossibility proofs, C5 onset rule, leakage controls, and R1 documents. Machine checks may prepare evidence but cannot sign those reviews.
+2. Validate weak checks, stronger adversarial checks, and the independent bounded oracle separately against predeclared secure references and insecure mutations. Preserve raw results before any acceptance policy or delivered feedback is applied.
+3. Complete a live **excluded** end-to-end rehearsal on the final source/runtime path, including six-decision full episodes, agent-generated secure-onset capture, branch parity, exact pre-dispatch request archiving, interruption records, and independent replay. Excluded rehearsal data do not enter the main analysis.
+4. Freeze the exact task set, model/weights or provider snapshot, effective seed/temperature behavior, R1 corpus, schedule, budgets, source commit, safety receipt, statistical plan, and analysis code. Review power and meaningful effect size using plausible onset reach and technical loss. A second model or executable-code tier requires its own versioned schedule.
+5. Recheck all 12 release gates. Only a passed gate permits prospectively labeled main episodes. Do not flip a gate flag on the strength of unit tests or a pilot alone.
+
+## Manuscript integration after collection
+
+The historical audit stays in the main text as the motivating measurement result. The prospective causal contrast becomes the central Results section, followed by truthful-feedback/retrieval contrasts and separately labeled external-validity evidence. The 30-episode corrected-oracle pilot remains feasibility evidence. For a journal limit of 20 pages, keep approximately five to six central figures/tables in the article: cohort flow, historical test/gate discordance, C5 paired family effects, secondary family effects, oracle/gate confusion matrix, and an observable trajectory example. Move detailed historical plots, per-family tables, task proofs, codebook, and audit logs to a clearly linked supplement. No prospective figure or numerical effect is populated from excluded data.
+
+## Status and immediate work
+
+The read-only [release matrix](MAIN_RELEASE_GATE_MATRIX_20261005.md) last records 12/12 checks false and zero eligible prospective episodes. The present collector is excluded-only. Complete per-action and C5 archive/replay integration, a family-level analysis reader tested against synthetic adversarial fixtures, and machine evidence for task admission are now available. One [real excluded v7 R1/C5 pair](EXCLUDED_V7_R1_C5_PAIRED_CASE_20261018.md) demonstrates the measurement path and remains outside the main sample. Human semantic review, final source/runtime freeze, and release decisions remain required inputs. The current historical manuscript can continue its submission review in parallel without borrowing uncollected results.

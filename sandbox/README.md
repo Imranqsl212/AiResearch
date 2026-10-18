@@ -38,3 +38,16 @@ The command tests only harmless in-container probes. It never contacts a public 
 starts an AI agent, calls a model provider, or invokes an external target. A missing
 daemon, missing image lock entry, Docker feature mismatch, unverified Docker Desktop
 identity, or any failed check produces a nonzero result and leaves experiments blocked.
+
+The separately versioned v2 checker image can be containment-tested without
+adding it to the official allow-list:
+
+```sh
+python3 -B -m sandbox.safety_checks.preapproval --candidate-v2
+```
+
+This writes `safety_checks/candidate_result_v2.json`. Its 18 October 2026
+receipt passed all 11 checks under the local Docker Desktop daemon, while
+`approval_scope=CANDIDATE_ONLY_NOT_APPROVED` and
+`experiment_permitted=false`. The normal episode runner rejects that candidate
+lock. A new daemon or safety-code version requires a fresh receipt.

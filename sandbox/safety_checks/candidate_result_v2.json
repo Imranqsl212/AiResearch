@@ -1,0 +1,127 @@
+{
+  "agent_runs_launched": 0,
+  "approval_scope": "CANDIDATE_ONLY_NOT_APPROVED",
+  "blocking_reasons": [],
+  "checks": [
+    {
+      "check_id": "static_policy_locked",
+      "detail": "Fixed Docker arguments were checked without launching a container.",
+      "evidence": {
+        "policy_fingerprint": "b4d94b4347d696be538c6670970c2dd1ae9b93c26ab329a0f41aa6aa51a878fd"
+      },
+      "passed": true,
+      "status": "PASS"
+    },
+    {
+      "check_id": "external_network_blocked",
+      "detail": "The container had network mode none, no active non-loopback interface, and no route. No public address was contacted.",
+      "evidence": {
+        "container_removed": true
+      },
+      "passed": true,
+      "status": "PASS"
+    },
+    {
+      "check_id": "host_files_unmounted",
+      "detail": "Docker inspect found only the exact bounded /tmp and /work tmpfs policy; the read-only root probe could not write a host-like path.",
+      "evidence": {
+        "mounts": [
+          "/tmp",
+          "/work"
+        ]
+      },
+      "passed": true,
+      "status": "PASS"
+    },
+    {
+      "check_id": "credentials_absent",
+      "detail": "Standard SSH and secret paths were absent and the observed controlled environment contained no credential-like names.",
+      "evidence": {
+        "log_path": "/Users/imranmzakirov/Desktop/research/sandbox/logs/safety-credentials-1e28ae09b597.log"
+      },
+      "passed": true,
+      "status": "PASS"
+    },
+    {
+      "check_id": "container_destroyed",
+      "detail": "The runner force-removed the named disposable container and verified its absence.",
+      "evidence": {
+        "container_name": "wts-sandbox-safety-cleanup-6561a806b2c3"
+      },
+      "passed": true,
+      "status": "PASS"
+    },
+    {
+      "check_id": "resource_limits_enforced",
+      "detail": "Docker inspect and in-container cgroup/ulimit probes matched the fixed CPU, memory, PID, and file-descriptor policy.",
+      "evidence": {
+        "observed_cpu": "50000 100000",
+        "observed_memory": 268435456,
+        "observed_nofile": 128,
+        "observed_pids": 64
+      },
+      "passed": true,
+      "status": "PASS"
+    },
+    {
+      "check_id": "timeout_enforced",
+      "detail": "A harmless sleeping process exceeded one second, then the runner force-removed its container.",
+      "evidence": {
+        "exit_code": 137
+      },
+      "passed": true,
+      "status": "PASS"
+    },
+    {
+      "check_id": "runaway_process_terminated",
+      "detail": "A background sleeper was placed in a timed-out container; container removal terminated the process namespace.",
+      "evidence": {
+        "exit_code": 137
+      },
+      "passed": true,
+      "status": "PASS"
+    },
+    {
+      "check_id": "logs_retained",
+      "detail": "The bounded, runner-owned log remained available after the container was removed.",
+      "evidence": {
+        "log_path": "/Users/imranmzakirov/Desktop/research/sandbox/logs/safety-logs-9d17ae5dbe35.log"
+      },
+      "passed": true,
+      "status": "PASS"
+    },
+    {
+      "check_id": "reproducible_state",
+      "detail": "Two identical local probes used the same image digest, policy fingerprint, effective configuration, and output.",
+      "evidence": {
+        "image_config_digest": "sha256:fe4daf243d6575ddcfdaac4a6143001ed89c4d1bf31e961770c0a2af84fd3d5a",
+        "policy_fingerprint": "b4d94b4347d696be538c6670970c2dd1ae9b93c26ab329a0f41aa6aa51a878fd"
+      },
+      "passed": true,
+      "status": "PASS"
+    },
+    {
+      "check_id": "candidate_runtime_isolated",
+      "detail": "The exact Python candidate RPC path ran with network blocked, no visible host workspace, and disposable cleanup.",
+      "evidence": {
+        "container_removed": true,
+        "runtime_configuration": "{\"config\":{\"Env\":[\"ALL_PROXY=\",\"HOME=/nonexistent\",\"HTTPS_PROXY=\",\"HTTP_PROXY=\",\"LANG=C.UTF-8\",\"LC_ALL=C.UTF-8\",\"NO_PROXY=*\",\"PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin\",\"SANDBOX_MODE=local-only\",\"all_proxy=\",\"http_proxy=\",\"https_proxy=\",\"no_proxy=*\"],\"Image\":\"local/candidate-runtime@sha256:fe4daf243d6575ddcfdaac4a6143001ed89c4d1bf31e961770c0a2af84fd3d5a\",\"User\":\"65532:65532\",\"WorkingDir\":\"/work\"},\"host\":{\"AutoRemove\":true,\"CapDrop\":[\"ALL\"],\"CgroupnsMode\":\"private\",\"Init\":true,\"IpcMode\":\"none\",\"LogConfig\":{\"Config\":{},\"Type\":\"none\"},\"Memory\":268435456,\"MemorySwap\":268435456,\"NanoCpus\":500000000,\"NetworkMode\":\"none\",\"PidMode\":\"\",\"PidsLimit\":64,\"ReadonlyRootfs\":true,\"SecurityOpt\":[\"no-new-privileges=true\"],\"UsernsMode\":\"\"},\"mounts\":[]}"
+      },
+      "passed": true,
+      "status": "PASS"
+    }
+  ],
+  "daemon_fingerprint": "35ef097a7dce8f05d9e73c6f060141e9dc666aed744ef8ed14fe0179ea13aeb1",
+  "experiment_permitted": false,
+  "external_targets_contacted": false,
+  "generated_at": "2026-10-18T06:53:21Z",
+  "image_config_digest": "sha256:fe4daf243d6575ddcfdaac4a6143001ed89c4d1bf31e961770c0a2af84fd3d5a",
+  "image_lock_sha256": "b95007a1e44fce8f4466fac4b9f8fceca6600185ebfb68d5d583bcffa98fe2f2",
+  "image_ref": "local/candidate-runtime@sha256:fe4daf243d6575ddcfdaac4a6143001ed89c4d1bf31e961770c0a2af84fd3d5a",
+  "isolation_mode": "docker-desktop-linuxkit-vm",
+  "overall_passed": true,
+  "policy_fingerprint": "b4d94b4347d696be538c6670970c2dd1ae9b93c26ab329a0f41aa6aa51a878fd",
+  "safety_code_fingerprint": "a36219506aeca0024635429171f030fb26ffff8f478304fff63ace2444b3fe8c",
+  "schema_version": "0.1.0",
+  "suite": "when-to-stop-local-sandbox-safety"
+}

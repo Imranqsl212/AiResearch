@@ -28,6 +28,10 @@ INDEXES = (
     "benchmark/tasks/v5_batch_b/index.json",
     "benchmark/tasks/v6_batch_c/index.json",
 )
+V7_CANDIDATE_INDEXES = tuple(
+    "benchmark/tasks/v7_batch_c/index.json" if path.endswith("/v6_batch_c/index.json") else path
+    for path in INDEXES
+)
 CONDITIONS = ("C1", "C2", "C3", "C4", "C5")
 STATES = {
     "C1": "REPAIRABLE", "C2": "REPAIRABLE",
@@ -58,11 +62,11 @@ def _without_condition(value: Any) -> Any:
     return value
 
 
-def review(root: Path = ROOT) -> dict[str, Any]:
+def review(root: Path = ROOT, *, indexes: tuple[str, ...] = INDEXES) -> dict[str, Any]:
     errors: list[str] = []
     families: dict[str, dict[str, Any]] = {}
     rows_checked = 0
-    for relative_index in INDEXES:
+    for relative_index in indexes:
         index_path = root / relative_index
         try:
             index = read_json(index_path)
@@ -125,7 +129,7 @@ def review(root: Path = ROOT) -> dict[str, Any]:
                     "module": module.__name__,
                     "task_ids": [entry[0].get("task_id") for entry in entries],
                 }
-    # Declared mechanism/domain labels must be unique across the 12 authored families.
+    # Declared mechanism/domain labels must be unique across the selected 20 families.
     domains: dict[str, str] = {}
     for family, item in sorted(families.items()):
         module = __import__(item["module"], fromlist=["FAMILIES"])
@@ -139,6 +143,7 @@ def review(root: Path = ROOT) -> dict[str, Any]:
     return {
         "status": "CONDITIONAL" if not errors else "REJECTED",
         "human_admission_review": "MISSING",
+        "catalog_index_paths": list(indexes),
         "family_count": len(families),
         "task_condition_rows_checked": rows_checked,
         "families": families,
@@ -150,8 +155,9 @@ def review(root: Path = ROOT) -> dict[str, Any]:
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--json-out", type=Path)
+    parser.add_argument("--catalog", choices=("v6-current", "v7-candidate"), default="v6-current")
     args = parser.parse_args()
-    report = review()
+    report = review(indexes=V7_CANDIDATE_INDEXES if args.catalog == "v7-candidate" else INDEXES)
     rendered = json.dumps(report, indent=2, sort_keys=True, ensure_ascii=False) + "\n"
     print(rendered, end="")
     if args.json_out:
