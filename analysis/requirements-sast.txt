@@ -1,0 +1,2 @@
+# Candidate-only Python SAST engine; freeze wheel and transitive hashes before main use.
+bandit==1.9.4

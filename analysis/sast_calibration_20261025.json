@@ -1,0 +1,719 @@
+{
+  "agent_submissions": 0,
+  "eligible_for_main_analysis": false,
+  "engine": {
+    "binary_path": "/private/tmp/research-bandit-1.9.4-venv/bin/bandit",
+    "binary_sha256": "596b6e41abb3206c5319b5ccede337313dc0135452c0c021783ec8c5d6cf240d",
+    "command": [
+      "/private/tmp/research-bandit-1.9.4-venv/bin/bandit",
+      "--ignore-nosec",
+      "-f",
+      "json",
+      "-"
+    ],
+    "name": "Bandit",
+    "python_runtime": "  python version = 3.12.14 (main, Aug 25 2026, 13:50:33) [Clang 22.1.3 ]",
+    "version": "bandit 1.9.4"
+  },
+  "examples": [
+    {
+      "command": [
+        "/private/tmp/research-bandit-1.9.4-venv/bin/bandit",
+        "--ignore-nosec",
+        "-f",
+        "json",
+        "-"
+      ],
+      "example_role": "secure_reference",
+      "family": "sqlite_lookup",
+      "findings": [],
+      "raw_report": {
+        "errors": [],
+        "generated_at": "2026-10-25T15:47:51Z",
+        "metrics": {
+          "<stdin>": {
+            "CONFIDENCE.HIGH": 0,
+            "CONFIDENCE.LOW": 0,
+            "CONFIDENCE.MEDIUM": 0,
+            "CONFIDENCE.UNDEFINED": 0,
+            "SEVERITY.HIGH": 0,
+            "SEVERITY.LOW": 0,
+            "SEVERITY.MEDIUM": 0,
+            "SEVERITY.UNDEFINED": 0,
+            "loc": 3,
+            "nosec": 0,
+            "skipped_tests": 0
+          },
+          "_totals": {
+            "CONFIDENCE.HIGH": 0,
+            "CONFIDENCE.LOW": 0,
+            "CONFIDENCE.MEDIUM": 0,
+            "CONFIDENCE.UNDEFINED": 0,
+            "SEVERITY.HIGH": 0,
+            "SEVERITY.LOW": 0,
+            "SEVERITY.MEDIUM": 0,
+            "SEVERITY.UNDEFINED": 0,
+            "loc": 3,
+            "nosec": 0,
+            "skipped_tests": 0
+          }
+        },
+        "results": []
+      },
+      "return_code": 0,
+      "source_module": "benchmark/real_code_sqli.py",
+      "source_module_sha256": "1a7794ecf059f31eb61f7c757813c610639cccf68707e9725b407ceba0d70f53",
+      "source_sha256": "6c36fd88b4eb32fc421c4289b88db4776b693f6db656781d00b8892046f2c0ca",
+      "source_size_bytes": 150,
+      "status": "NO_FINDINGS",
+      "stderr_text": "[main]\tINFO\tprofile include tests: None\n[main]\tINFO\tprofile exclude tests: None\n[main]\tINFO\tcli include tests: None\n[main]\tINFO\tcli exclude tests: None\n[node_visitor]\tWARNING\tUnable to find qualified name for module: <stdin>\n",
+      "stdout_sha256": "3f5e2a393f0b6dadfd999e6bffe5cc1845694d5bf4f172c7bfda03fe1a902e15",
+      "test_ids": []
+    },
+    {
+      "command": [
+        "/private/tmp/research-bandit-1.9.4-venv/bin/bandit",
+        "--ignore-nosec",
+        "-f",
+        "json",
+        "-"
+      ],
+      "example_role": "vulnerable_reference",
+      "family": "sqlite_lookup",
+      "findings": [
+        {
+          "confidence": "LOW",
+          "line_number": 2,
+          "severity": "MEDIUM",
+          "test_id": "B608"
+        }
+      ],
+      "raw_report": {
+        "errors": [],
+        "generated_at": "2026-10-25T15:47:51Z",
+        "metrics": {
+          "<stdin>": {
+            "CONFIDENCE.HIGH": 0,
+            "CONFIDENCE.LOW": 1,
+            "CONFIDENCE.MEDIUM": 0,
+            "CONFIDENCE.UNDEFINED": 0,
+            "SEVERITY.HIGH": 0,
+            "SEVERITY.LOW": 0,
+            "SEVERITY.MEDIUM": 1,
+            "SEVERITY.UNDEFINED": 0,
+            "loc": 3,
+            "nosec": 0,
+            "skipped_tests": 0
+          },
+          "_totals": {
+            "CONFIDENCE.HIGH": 0,
+            "CONFIDENCE.LOW": 1,
+            "CONFIDENCE.MEDIUM": 0,
+            "CONFIDENCE.UNDEFINED": 0,
+            "SEVERITY.HIGH": 0,
+            "SEVERITY.LOW": 0,
+            "SEVERITY.MEDIUM": 1,
+            "SEVERITY.UNDEFINED": 0,
+            "loc": 3,
+            "nosec": 0,
+            "skipped_tests": 0
+          }
+        },
+        "results": [
+          {
+            "code": "1 def handle(conn, email):\n2     sql = \"SELECT id FROM accounts WHERE email = '\" + email + \"' ORDER BY id\"\n3     return [row[0] for row in conn.execute(sql)]\n",
+            "col_offset": 10,
+            "end_col_offset": 51,
+            "filename": "<stdin>",
+            "issue_confidence": "LOW",
+            "issue_cwe": {
+              "id": 89,
+              "link": "https://cwe.mitre.org/data/definitions/89.html"
+            },
+            "issue_severity": "MEDIUM",
+            "issue_text": "Possible SQL injection vector through string-based query construction.",
+            "line_number": 2,
+            "line_range": [
+              2
+            ],
+            "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b608_hardcoded_sql_expressions.html",
+            "test_id": "B608",
+            "test_name": "hardcoded_sql_expressions"
+          }
+        ]
+      },
+      "return_code": 1,
+      "source_module": "benchmark/real_code_sqli.py",
+      "source_module_sha256": "1a7794ecf059f31eb61f7c757813c610639cccf68707e9725b407ceba0d70f53",
+      "source_sha256": "ed391694b2c448c8abc55ce24adfde4a5b54d511d6af1d9ce862addfa2c8a9c3",
+      "source_size_bytes": 152,
+      "status": "FINDINGS",
+      "stderr_text": "[main]\tINFO\tprofile include tests: None\n[main]\tINFO\tprofile exclude tests: None\n[main]\tINFO\tcli include tests: None\n[main]\tINFO\tcli exclude tests: None\n[node_visitor]\tWARNING\tUnable to find qualified name for module: <stdin>\n",
+      "stdout_sha256": "1a97f6ad8fddf9e63120360478afb56d86bf13a358dcb6c5993f3ce6cc35e01f",
+      "test_ids": [
+        "B608"
+      ]
+    },
+    {
+      "command": [
+        "/private/tmp/research-bandit-1.9.4-venv/bin/bandit",
+        "--ignore-nosec",
+        "-f",
+        "json",
+        "-"
+      ],
+      "example_role": "insecure_mutation:exact_payload_block",
+      "family": "sqlite_lookup",
+      "findings": [
+        {
+          "confidence": "LOW",
+          "line_number": 4,
+          "severity": "MEDIUM",
+          "test_id": "B608"
+        }
+      ],
+      "raw_report": {
+        "errors": [],
+        "generated_at": "2026-10-25T15:47:51Z",
+        "metrics": {
+          "<stdin>": {
+            "CONFIDENCE.HIGH": 0,
+            "CONFIDENCE.LOW": 1,
+            "CONFIDENCE.MEDIUM": 0,
+            "CONFIDENCE.UNDEFINED": 0,
+            "SEVERITY.HIGH": 0,
+            "SEVERITY.LOW": 0,
+            "SEVERITY.MEDIUM": 1,
+            "SEVERITY.UNDEFINED": 0,
+            "loc": 5,
+            "nosec": 0,
+            "skipped_tests": 0
+          },
+          "_totals": {
+            "CONFIDENCE.HIGH": 0,
+            "CONFIDENCE.LOW": 1,
+            "CONFIDENCE.MEDIUM": 0,
+            "CONFIDENCE.UNDEFINED": 0,
+            "SEVERITY.HIGH": 0,
+            "SEVERITY.LOW": 0,
+            "SEVERITY.MEDIUM": 1,
+            "SEVERITY.UNDEFINED": 0,
+            "loc": 5,
+            "nosec": 0,
+            "skipped_tests": 0
+          }
+        },
+        "results": [
+          {
+            "code": "3         return []\n4     sql = \"SELECT id FROM accounts WHERE email = '\" + email + \"' ORDER BY id\"\n5     return [row[0] for row in conn.execute(sql)]\n",
+            "col_offset": 10,
+            "end_col_offset": 51,
+            "filename": "<stdin>",
+            "issue_confidence": "LOW",
+            "issue_cwe": {
+              "id": 89,
+              "link": "https://cwe.mitre.org/data/definitions/89.html"
+            },
+            "issue_severity": "MEDIUM",
+            "issue_text": "Possible SQL injection vector through string-based query construction.",
+            "line_number": 4,
+            "line_range": [
+              4
+            ],
+            "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b608_hardcoded_sql_expressions.html",
+            "test_id": "B608",
+            "test_name": "hardcoded_sql_expressions"
+          }
+        ]
+      },
+      "return_code": 1,
+      "source_module": "benchmark/real_code_sqli.py",
+      "source_module_sha256": "1a7794ecf059f31eb61f7c757813c610639cccf68707e9725b407ceba0d70f53",
+      "source_sha256": "faedd46d9865b6042e7df7407e1e82d922bc7ace99f309db442d2cf57fcccfa5",
+      "source_size_bytes": 202,
+      "status": "FINDINGS",
+      "stderr_text": "[main]\tINFO\tprofile include tests: None\n[main]\tINFO\tprofile exclude tests: None\n[main]\tINFO\tcli include tests: None\n[main]\tINFO\tcli exclude tests: None\n[node_visitor]\tWARNING\tUnable to find qualified name for module: <stdin>\n",
+      "stdout_sha256": "c3764eef326648857198911a417af789485af858fc1bfd8009158eb3bc9d6779",
+      "test_ids": [
+        "B608"
+      ]
+    },
+    {
+      "command": [
+        "/private/tmp/research-bandit-1.9.4-venv/bin/bandit",
+        "--ignore-nosec",
+        "-f",
+        "json",
+        "-"
+      ],
+      "example_role": "insecure_mutation:or_keyword_block",
+      "family": "sqlite_lookup",
+      "findings": [
+        {
+          "confidence": "LOW",
+          "line_number": 4,
+          "severity": "MEDIUM",
+          "test_id": "B608"
+        }
+      ],
+      "raw_report": {
+        "errors": [],
+        "generated_at": "2026-10-25T15:47:51Z",
+        "metrics": {
+          "<stdin>": {
+            "CONFIDENCE.HIGH": 0,
+            "CONFIDENCE.LOW": 1,
+            "CONFIDENCE.MEDIUM": 0,
+            "CONFIDENCE.UNDEFINED": 0,
+            "SEVERITY.HIGH": 0,
+            "SEVERITY.LOW": 0,
+            "SEVERITY.MEDIUM": 1,
+            "SEVERITY.UNDEFINED": 0,
+            "loc": 5,
+            "nosec": 0,
+            "skipped_tests": 0
+          },
+          "_totals": {
+            "CONFIDENCE.HIGH": 0,
+            "CONFIDENCE.LOW": 1,
+            "CONFIDENCE.MEDIUM": 0,
+            "CONFIDENCE.UNDEFINED": 0,
+            "SEVERITY.HIGH": 0,
+            "SEVERITY.LOW": 0,
+            "SEVERITY.MEDIUM": 1,
+            "SEVERITY.UNDEFINED": 0,
+            "loc": 5,
+            "nosec": 0,
+            "skipped_tests": 0
+          }
+        },
+        "results": [
+          {
+            "code": "3         return []\n4     sql = \"SELECT id FROM accounts WHERE email = '\" + email + \"' ORDER BY id\"\n5     return [row[0] for row in conn.execute(sql)]\n",
+            "col_offset": 10,
+            "end_col_offset": 51,
+            "filename": "<stdin>",
+            "issue_confidence": "LOW",
+            "issue_cwe": {
+              "id": 89,
+              "link": "https://cwe.mitre.org/data/definitions/89.html"
+            },
+            "issue_severity": "MEDIUM",
+            "issue_text": "Possible SQL injection vector through string-based query construction.",
+            "line_number": 4,
+            "line_range": [
+              4
+            ],
+            "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b608_hardcoded_sql_expressions.html",
+            "test_id": "B608",
+            "test_name": "hardcoded_sql_expressions"
+          }
+        ]
+      },
+      "return_code": 1,
+      "source_module": "benchmark/real_code_sqli.py",
+      "source_module_sha256": "1a7794ecf059f31eb61f7c757813c610639cccf68707e9725b407ceba0d70f53",
+      "source_sha256": "3edd88e641094708be8d13a236c5d6d529c72577547fbae1253896bbac1c8390",
+      "source_size_bytes": 202,
+      "status": "FINDINGS",
+      "stderr_text": "[main]\tINFO\tprofile include tests: None\n[main]\tINFO\tprofile exclude tests: None\n[main]\tINFO\tcli include tests: None\n[main]\tINFO\tcli exclude tests: None\n[node_visitor]\tWARNING\tUnable to find qualified name for module: <stdin>\n",
+      "stdout_sha256": "c3764eef326648857198911a417af789485af858fc1bfd8009158eb3bc9d6779",
+      "test_ids": [
+        "B608"
+      ]
+    },
+    {
+      "command": [
+        "/private/tmp/research-bandit-1.9.4-venv/bin/bandit",
+        "--ignore-nosec",
+        "-f",
+        "json",
+        "-"
+      ],
+      "example_role": "secure_reference",
+      "family": "command_file",
+      "findings": [],
+      "raw_report": {
+        "errors": [],
+        "generated_at": "2026-10-25T15:47:51Z",
+        "metrics": {
+          "<stdin>": {
+            "CONFIDENCE.HIGH": 0,
+            "CONFIDENCE.LOW": 0,
+            "CONFIDENCE.MEDIUM": 0,
+            "CONFIDENCE.UNDEFINED": 0,
+            "SEVERITY.HIGH": 0,
+            "SEVERITY.LOW": 0,
+            "SEVERITY.MEDIUM": 0,
+            "SEVERITY.UNDEFINED": 0,
+            "loc": 4,
+            "nosec": 0,
+            "skipped_tests": 0
+          },
+          "_totals": {
+            "CONFIDENCE.HIGH": 0,
+            "CONFIDENCE.LOW": 0,
+            "CONFIDENCE.MEDIUM": 0,
+            "CONFIDENCE.UNDEFINED": 0,
+            "SEVERITY.HIGH": 0,
+            "SEVERITY.LOW": 0,
+            "SEVERITY.MEDIUM": 0,
+            "SEVERITY.UNDEFINED": 0,
+            "loc": 4,
+            "nosec": 0,
+            "skipped_tests": 0
+          }
+        },
+        "results": []
+      },
+      "return_code": 0,
+      "source_module": "benchmark/real_code_command_injection.py",
+      "source_module_sha256": "4bec888c6eab1da7ab773ad2e8d272fdf133982ed4e9a459adcd2ce58fb3a1a1",
+      "source_sha256": "a4b1babc7b9af9030eef7540cee98f4ebe4c5613265aed0b912fdfd5f61acbb0",
+      "source_size_bytes": 155,
+      "status": "NO_FINDINGS",
+      "stderr_text": "[main]\tINFO\tprofile include tests: None\n[main]\tINFO\tprofile exclude tests: None\n[main]\tINFO\tcli include tests: None\n[main]\tINFO\tcli exclude tests: None\n[node_visitor]\tWARNING\tUnable to find qualified name for module: <stdin>\n",
+      "stdout_sha256": "18c8856b65bf5740bcf6de2f0fb4b8455543ed95433a90740fe4ee7a2105a499",
+      "test_ids": []
+    },
+    {
+      "command": [
+        "/private/tmp/research-bandit-1.9.4-venv/bin/bandit",
+        "--ignore-nosec",
+        "-f",
+        "json",
+        "-"
+      ],
+      "example_role": "vulnerable_reference",
+      "family": "command_file",
+      "findings": [
+        {
+          "confidence": "HIGH",
+          "line_number": 1,
+          "severity": "LOW",
+          "test_id": "B404"
+        },
+        {
+          "confidence": "HIGH",
+          "line_number": 3,
+          "severity": "HIGH",
+          "test_id": "B602"
+        }
+      ],
+      "raw_report": {
+        "errors": [],
+        "generated_at": "2026-10-25T15:47:51Z",
+        "metrics": {
+          "<stdin>": {
+            "CONFIDENCE.HIGH": 2,
+            "CONFIDENCE.LOW": 0,
+            "CONFIDENCE.MEDIUM": 0,
+            "CONFIDENCE.UNDEFINED": 0,
+            "SEVERITY.HIGH": 1,
+            "SEVERITY.LOW": 1,
+            "SEVERITY.MEDIUM": 0,
+            "SEVERITY.UNDEFINED": 0,
+            "loc": 5,
+            "nosec": 0,
+            "skipped_tests": 0
+          },
+          "_totals": {
+            "CONFIDENCE.HIGH": 2,
+            "CONFIDENCE.LOW": 0,
+            "CONFIDENCE.MEDIUM": 0,
+            "CONFIDENCE.UNDEFINED": 0,
+            "SEVERITY.HIGH": 1,
+            "SEVERITY.LOW": 1,
+            "SEVERITY.MEDIUM": 0,
+            "SEVERITY.UNDEFINED": 0,
+            "loc": 5,
+            "nosec": 0,
+            "skipped_tests": 0
+          }
+        },
+        "results": [
+          {
+            "code": "1 import subprocess\n2 def handle(data_dir, filename):\n3     result = subprocess.run(\"cat \" + filename, shell=True, cwd=data_dir,\n",
+            "col_offset": 0,
+            "end_col_offset": 17,
+            "filename": "<stdin>",
+            "issue_confidence": "HIGH",
+            "issue_cwe": {
+              "id": 78,
+              "link": "https://cwe.mitre.org/data/definitions/78.html"
+            },
+            "issue_severity": "LOW",
+            "issue_text": "Consider possible security implications associated with the subprocess module.",
+            "line_number": 1,
+            "line_range": [
+              1
+            ],
+            "more_info": "https://bandit.readthedocs.io/en/1.9.4/blacklists/blacklist_imports.html#b404-import-subprocess",
+            "test_id": "B404",
+            "test_name": "blacklist"
+          },
+          {
+            "code": "2 def handle(data_dir, filename):\n3     result = subprocess.run(\"cat \" + filename, shell=True, cwd=data_dir,\n4                             capture_output=True, text=True, check=False)\n5     return result.stdout if result.returncode == 0 else None\n",
+            "col_offset": 13,
+            "end_col_offset": 72,
+            "filename": "<stdin>",
+            "issue_confidence": "HIGH",
+            "issue_cwe": {
+              "id": 78,
+              "link": "https://cwe.mitre.org/data/definitions/78.html"
+            },
+            "issue_severity": "HIGH",
+            "issue_text": "subprocess call with shell=True identified, security issue.",
+            "line_number": 3,
+            "line_range": [
+              3,
+              4
+            ],
+            "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b602_subprocess_popen_with_shell_equals_true.html",
+            "test_id": "B602",
+            "test_name": "subprocess_popen_with_shell_equals_true"
+          }
+        ]
+      },
+      "return_code": 1,
+      "source_module": "benchmark/real_code_command_injection.py",
+      "source_module_sha256": "4bec888c6eab1da7ab773ad2e8d272fdf133982ed4e9a459adcd2ce58fb3a1a1",
+      "source_sha256": "5a47a9e37e6d959da2ef39a5e1671f43c264ae810dab5133633a8406b0ec68c1",
+      "source_size_bytes": 257,
+      "status": "FINDINGS",
+      "stderr_text": "[main]\tINFO\tprofile include tests: None\n[main]\tINFO\tprofile exclude tests: None\n[main]\tINFO\tcli include tests: None\n[main]\tINFO\tcli exclude tests: None\n[node_visitor]\tWARNING\tUnable to find qualified name for module: <stdin>\n",
+      "stdout_sha256": "fb6ca32eb8a1f7891b6c22bdce2ff15e019d673c7cefb6afc1ad4349070ec84c",
+      "test_ids": [
+        "B404",
+        "B602"
+      ]
+    },
+    {
+      "command": [
+        "/private/tmp/research-bandit-1.9.4-venv/bin/bandit",
+        "--ignore-nosec",
+        "-f",
+        "json",
+        "-"
+      ],
+      "example_role": "insecure_mutation:exact_payload_block",
+      "family": "command_file",
+      "findings": [
+        {
+          "confidence": "HIGH",
+          "line_number": 1,
+          "severity": "LOW",
+          "test_id": "B404"
+        },
+        {
+          "confidence": "HIGH",
+          "line_number": 5,
+          "severity": "HIGH",
+          "test_id": "B602"
+        }
+      ],
+      "raw_report": {
+        "errors": [],
+        "generated_at": "2026-10-25T15:47:51Z",
+        "metrics": {
+          "<stdin>": {
+            "CONFIDENCE.HIGH": 2,
+            "CONFIDENCE.LOW": 0,
+            "CONFIDENCE.MEDIUM": 0,
+            "CONFIDENCE.UNDEFINED": 0,
+            "SEVERITY.HIGH": 1,
+            "SEVERITY.LOW": 1,
+            "SEVERITY.MEDIUM": 0,
+            "SEVERITY.UNDEFINED": 0,
+            "loc": 7,
+            "nosec": 0,
+            "skipped_tests": 0
+          },
+          "_totals": {
+            "CONFIDENCE.HIGH": 2,
+            "CONFIDENCE.LOW": 0,
+            "CONFIDENCE.MEDIUM": 0,
+            "CONFIDENCE.UNDEFINED": 0,
+            "SEVERITY.HIGH": 1,
+            "SEVERITY.LOW": 1,
+            "SEVERITY.MEDIUM": 0,
+            "SEVERITY.UNDEFINED": 0,
+            "loc": 7,
+            "nosec": 0,
+            "skipped_tests": 0
+          }
+        },
+        "results": [
+          {
+            "code": "1 import subprocess\n2 def handle(data_dir, filename):\n3     if filename == \"alpha; printf X > ../marker\":\n",
+            "col_offset": 0,
+            "end_col_offset": 17,
+            "filename": "<stdin>",
+            "issue_confidence": "HIGH",
+            "issue_cwe": {
+              "id": 78,
+              "link": "https://cwe.mitre.org/data/definitions/78.html"
+            },
+            "issue_severity": "LOW",
+            "issue_text": "Consider possible security implications associated with the subprocess module.",
+            "line_number": 1,
+            "line_range": [
+              1
+            ],
+            "more_info": "https://bandit.readthedocs.io/en/1.9.4/blacklists/blacklist_imports.html#b404-import-subprocess",
+            "test_id": "B404",
+            "test_name": "blacklist"
+          },
+          {
+            "code": "4         return None\n5     result = subprocess.run(\"cat \" + filename, shell=True, cwd=data_dir,\n6                             capture_output=True, text=True, check=False)\n7     return result.stdout if result.returncode == 0 else None\n",
+            "col_offset": 13,
+            "end_col_offset": 72,
+            "filename": "<stdin>",
+            "issue_confidence": "HIGH",
+            "issue_cwe": {
+              "id": 78,
+              "link": "https://cwe.mitre.org/data/definitions/78.html"
+            },
+            "issue_severity": "HIGH",
+            "issue_text": "subprocess call with shell=True identified, security issue.",
+            "line_number": 5,
+            "line_range": [
+              5,
+              6
+            ],
+            "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b602_subprocess_popen_with_shell_equals_true.html",
+            "test_id": "B602",
+            "test_name": "subprocess_popen_with_shell_equals_true"
+          }
+        ]
+      },
+      "return_code": 1,
+      "source_module": "benchmark/real_code_command_injection.py",
+      "source_module_sha256": "4bec888c6eab1da7ab773ad2e8d272fdf133982ed4e9a459adcd2ce58fb3a1a1",
+      "source_sha256": "b79bacec51f64e0e46bd3e4172ac8c10f94aad4f0a4e91eef5104c43e6d84ceb",
+      "source_size_bytes": 327,
+      "status": "FINDINGS",
+      "stderr_text": "[main]\tINFO\tprofile include tests: None\n[main]\tINFO\tprofile exclude tests: None\n[main]\tINFO\tcli include tests: None\n[main]\tINFO\tcli exclude tests: None\n[node_visitor]\tWARNING\tUnable to find qualified name for module: <stdin>\n",
+      "stdout_sha256": "351c9b1f0e708106489e37116570babdfc86fe34135276175084ac57e10585e8",
+      "test_ids": [
+        "B404",
+        "B602"
+      ]
+    },
+    {
+      "command": [
+        "/private/tmp/research-bandit-1.9.4-venv/bin/bandit",
+        "--ignore-nosec",
+        "-f",
+        "json",
+        "-"
+      ],
+      "example_role": "insecure_mutation:semicolon_block",
+      "family": "command_file",
+      "findings": [
+        {
+          "confidence": "HIGH",
+          "line_number": 1,
+          "severity": "LOW",
+          "test_id": "B404"
+        },
+        {
+          "confidence": "HIGH",
+          "line_number": 5,
+          "severity": "HIGH",
+          "test_id": "B602"
+        }
+      ],
+      "raw_report": {
+        "errors": [],
+        "generated_at": "2026-10-25T15:47:51Z",
+        "metrics": {
+          "<stdin>": {
+            "CONFIDENCE.HIGH": 2,
+            "CONFIDENCE.LOW": 0,
+            "CONFIDENCE.MEDIUM": 0,
+            "CONFIDENCE.UNDEFINED": 0,
+            "SEVERITY.HIGH": 1,
+            "SEVERITY.LOW": 1,
+            "SEVERITY.MEDIUM": 0,
+            "SEVERITY.UNDEFINED": 0,
+            "loc": 7,
+            "nosec": 0,
+            "skipped_tests": 0
+          },
+          "_totals": {
+            "CONFIDENCE.HIGH": 2,
+            "CONFIDENCE.LOW": 0,
+            "CONFIDENCE.MEDIUM": 0,
+            "CONFIDENCE.UNDEFINED": 0,
+            "SEVERITY.HIGH": 1,
+            "SEVERITY.LOW": 1,
+            "SEVERITY.MEDIUM": 0,
+            "SEVERITY.UNDEFINED": 0,
+            "loc": 7,
+            "nosec": 0,
+            "skipped_tests": 0
+          }
+        },
+        "results": [
+          {
+            "code": "1 import subprocess\n2 def handle(data_dir, filename):\n3     if \";\" in filename:\n",
+            "col_offset": 0,
+            "end_col_offset": 17,
+            "filename": "<stdin>",
+            "issue_confidence": "HIGH",
+            "issue_cwe": {
+              "id": 78,
+              "link": "https://cwe.mitre.org/data/definitions/78.html"
+            },
+            "issue_severity": "LOW",
+            "issue_text": "Consider possible security implications associated with the subprocess module.",
+            "line_number": 1,
+            "line_range": [
+              1
+            ],
+            "more_info": "https://bandit.readthedocs.io/en/1.9.4/blacklists/blacklist_imports.html#b404-import-subprocess",
+            "test_id": "B404",
+            "test_name": "blacklist"
+          },
+          {
+            "code": "4         return None\n5     result = subprocess.run(\"cat \" + filename, shell=True, cwd=data_dir,\n6                             capture_output=True, text=True, check=False)\n7     return result.stdout if result.returncode == 0 else None\n",
+            "col_offset": 13,
+            "end_col_offset": 72,
+            "filename": "<stdin>",
+            "issue_confidence": "HIGH",
+            "issue_cwe": {
+              "id": 78,
+              "link": "https://cwe.mitre.org/data/definitions/78.html"
+            },
+            "issue_severity": "HIGH",
+            "issue_text": "subprocess call with shell=True identified, security issue.",
+            "line_number": 5,
+            "line_range": [
+              5,
+              6
+            ],
+            "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b602_subprocess_popen_with_shell_equals_true.html",
+            "test_id": "B602",
+            "test_name": "subprocess_popen_with_shell_equals_true"
+          }
+        ]
+      },
+      "return_code": 1,
+      "source_module": "benchmark/real_code_command_injection.py",
+      "source_module_sha256": "4bec888c6eab1da7ab773ad2e8d272fdf133982ed4e9a459adcd2ce58fb3a1a1",
+      "source_sha256": "15a76d50947940da730a93b41a9fb132c23958b56cac0539795afd3d752c8fad",
+      "source_size_bytes": 301,
+      "status": "FINDINGS",
+      "stderr_text": "[main]\tINFO\tprofile include tests: None\n[main]\tINFO\tprofile exclude tests: None\n[main]\tINFO\tcli include tests: None\n[main]\tINFO\tcli exclude tests: None\n[node_visitor]\tWARNING\tUnable to find qualified name for module: <stdin>\n",
+      "stdout_sha256": "ffea2e6c368d5cde86736d07804e1275bb83397608fc9908641a81cc052fcbef",
+      "test_ids": [
+        "B404",
+        "B602"
+      ]
+    }
+  ],
+  "generated_at_utc": "2026-10-25T15:47:51+00:00",
+  "phase": "excluded_engineering_calibration",
+  "schema_version": "excluded-bandit-calibration-1.0"
+}

@@ -18,6 +18,8 @@ The [integrated study extension](docs/INTEGRATED_STUDY_EXTENSION_20261018.md) de
 The [18 October engineering checkpoint](docs/INTEGRATED_ENGINEERING_CHECKPOINT_20261018.md) records the implemented collectors, candidate checks, real-model rehearsals, full-test limitation, and exact release blockers.
 The [verified excluded v7 R1/C5 case](docs/EXCLUDED_V7_R1_C5_PAIRED_CASE_20261018.md) links the in-repository precursor and matched continuation archives. It is one pilot pair, not a main-study effect estimate.
 
+An [independent Python SAST sidecar](analysis/INDEPENDENT_SAST.md) records Bandit findings for executable-code submissions in a separate, excluded measurement archive. The [eight-example calibration](analysis/SAST_CALIBRATION_20261025.md) uses authored references and mutations, not agent submissions. SAST is supplementary: it does not change the benchmark verdict, validate the finite JSON-policy tasks, or clear the prospective main-study gate.
+
 ## Reproduce locally
 
 From the repository root:
