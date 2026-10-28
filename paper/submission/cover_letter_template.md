@@ -2,7 +2,7 @@
 
 **To:** Editor, [journal and article type]  
 **From:** Imran Zakirov, independent student researcher (no institutional affiliation), Bishkek, Kyrgyzstan; zakirovimran333@gmail.com  
-**Manuscript:** “When the Tests Pass but the Benchmark Says No: Auditing Agent Persistence in Security Repair”
+**Manuscript:** “The Tests Passed. The Benchmark Said No: A Hidden Veto in AI Security Repair”
 
 Dear Editor,
 

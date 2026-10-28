@@ -1,4 +1,4 @@
-# When the Tests Pass but the Benchmark Says No
+# The Tests Passed. The Benchmark Said No
 
 This repository studies what a local coding agent does after a security checker rejects its Python code. It contains a completed **exploratory benchmark audit**, separate feasibility pilots, and an unfinished prospective study. These cohorts have different protocols and are never pooled.
 
@@ -6,11 +6,15 @@ This repository studies what a local coding agent does after a security checker 
 
 The historical study used `qwen3:4b` on five selected task families: **40 main episodes**, one run per condition and guidance arm. A separate AEAD pilot has eight episodes. In **9 of 20** final candidates labeled nominally unavailable, the implemented family tests passed but a hidden acceptance rule rejected the result. This is a measurement defect in that evaluator; it does not prove that those tasks were truly impossible or that the submitted code was secure. The agent's response to truthful impossibility feedback was not measured in this historical cohort.
 
+![Raw finite tests versus final benchmark acceptance in the historical runs](paper/milestone/hidden_veto_results.png)
+
 A later [corrected-oracle v7 pilot](docs/V7_DECISIVE_EXCLUDED_PILOT_20261005.md) completed 30 excluded episodes in two authored finite families with three seeds per cell. Its C3/C4 matched blocks showed no reduction in submitted candidates or early stopping under truthful contradiction feedback. One selected secure-candidate continuation differed under truthful PASS and false FAIL. These are descriptive pilot results, not a population effect or part of the 40-episode denominator.
+
+The larger research question is **“Can a wrong verdict undo a security fix?”** The [prospective paired study](docs/INTEGRATED_STUDY_EXTENSION_20261018.md) would change the verdict while holding the verified candidate fixed. A separately proposed second-opinion experiment would test whether an optional independent check helps the agent preserve that finite property. These are proposed experiments; the historical audit above is the completed result.
 
 ## Manuscript and status
 
-The [research article](paper/final.md) is available as [identified PDF](paper/submission/full_paper.pdf), [identified DOCX](paper/submission/full_paper.docx), [anonymous PDF](paper/submission/full_paper_anonymous.pdf), and [anonymous DOCX](paper/submission/full_paper_anonymous.docx). It has a 237-word abstract, six figures, four tables, 27 cited sources, and 16 A4 pages in each PDF. The [dated author-review bundle](paper/AUTHOR_REVIEW_BUNDLE_20261005.md) binds an earlier manuscript snapshot, derived results, and two independent receipt audits; its hashes should not be used for the current rendered files. The current article remains **`REVIEW_ONLY`**. Author approval, declarations, venue selection, data availability, and privacy review are recorded in the [submission decision form](paper/AUTHOR_SUBMISSION_DECISIONS_20261005.md).
+The [research article](paper/final.md) is available as [identified PDF](paper/submission/full_paper.pdf), [identified DOCX](paper/submission/full_paper.docx), [anonymous PDF](paper/submission/full_paper_anonymous.pdf), and [anonymous DOCX](paper/submission/full_paper_anonymous.docx). It has a 234-word abstract, six figures, four tables, 27 cited sources, and 16 A4 pages in each PDF. The [dated author-review bundle](paper/AUTHOR_REVIEW_BUNDLE_20261005.md) binds an earlier manuscript snapshot, derived results, and two independent receipt audits; its hashes should not be used for the current rendered files. The current article remains **`REVIEW_ONLY`**. Author approval, declarations, venue selection, data availability, and privacy review are recorded in the [submission decision form](paper/AUTHOR_SUBMISSION_DECISIONS_20261005.md).
 
 The **prospective v1 main study is `NOT_READY`**: its [12-point release gate](docs/MAIN_RELEASE_GATE_MATRIX_20261005.md) currently passes none of the checks, and it has **zero eligible main episodes**. The proposed 600 full episodes plus conditional C5 continuations are a plan, not collected data. Excluded pilots cannot be relabeled as main results. See the [current action list](docs/NEXT_READY_ACTIONS_20261008.md) and [research status](FINAL_RESEARCH_STATUS.md). Older dated plans in `docs/` describe earlier project states; use these current records for decisions.
 
