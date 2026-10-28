@@ -152,3 +152,14 @@ agent request, replay on a clean checkout, and versioned containment for the
 scanner process. Independent human reviewers must judge the executable task
 semantics and whether SAST's observed warnings are relevant. The ordinary
 main release gate and author disclosures remain separate prerequisites.
+
+## Excluded observations now available
+
+The [historical Bandit reanalysis](SAST_HISTORICAL_REANALYSIS_20261028.md)
+reports all 77 saved attempts with source-hash and syntax losses, and its raw
+reports are archived separately. The [authored mutation comparison](SAST_MUTATION_JOIN_20261028.md)
+joins Bandit findings to the previously saved weak and strong finite checks
+by exact source SHA-256. A separate [Semgrep pilot](SEMGREP_EXCLUDED_PILOT_20261028.md)
+uses two pinned stock rules on the same authored Python examples. These are
+excluded, descriptive measurements; they do not amend the manuscript's main
+denominators or establish a security oracle.

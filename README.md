@@ -19,6 +19,7 @@ The [18 October engineering checkpoint](docs/INTEGRATED_ENGINEERING_CHECKPOINT_2
 The [verified excluded v7 R1/C5 case](docs/EXCLUDED_V7_R1_C5_PAIRED_CASE_20261018.md) links the in-repository precursor and matched continuation archives. It is one pilot pair, not a main-study effect estimate.
 
 An [independent Python SAST sidecar](analysis/INDEPENDENT_SAST.md) records Bandit findings for executable-code submissions in a separate, excluded measurement archive. The [eight-example calibration](analysis/SAST_CALIBRATION_20261025.md) uses authored references and mutations, not agent submissions. SAST is supplementary: it does not change the benchmark verdict, validate the finite JSON-policy tasks, or clear the prospective main-study gate.
+The [excluded historical SAST reanalysis](analysis/SAST_HISTORICAL_REANALYSIS_20261028.md) covers all 77 saved submissions with explicit source-loss categories and an [archived raw report bundle](experiments/sast_historical_20261028.tar.gz). A [source-identical mutation comparison](analysis/SAST_MUTATION_JOIN_20261028.md) and a separate [Semgrep feasibility pilot](analysis/SEMGREP_EXCLUDED_PILOT_20261028.md) describe tool coverage on authored Python examples. None of these measurements is an eligible prospective main result.
 
 ## Reproduce locally
 

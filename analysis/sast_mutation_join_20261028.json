@@ -1,0 +1,244 @@
+{
+  "agent_submissions": 0,
+  "coverage": {
+    "joined_profiles": 8,
+    "saved_docker_profiles": 9,
+    "unjoined_saved_profiles": [
+      "sqlite_lookup/uppercase_secure_reference"
+    ]
+  },
+  "cross_tab": [
+    {
+      "bandit_status": "FINDINGS",
+      "count": 2,
+      "strong_passed": false,
+      "weak_passed": false
+    },
+    {
+      "bandit_status": "FINDINGS",
+      "count": 4,
+      "strong_passed": false,
+      "weak_passed": true
+    },
+    {
+      "bandit_status": "NO_FINDINGS",
+      "count": 2,
+      "strong_passed": true,
+      "weak_passed": true
+    }
+  ],
+  "docker_calibration_validation": {
+    "command_file": {
+      "case_ids": [
+        "w_alpha",
+        "w_missing",
+        "w_semicolon",
+        "s_beta",
+        "s_newline",
+        "s_and",
+        "s_substitution",
+        "s_parent"
+      ],
+      "family": "command_file",
+      "saved_profiles": 4,
+      "strong_mutations_killed": 2,
+      "suite_sha256": "0c71e60047134ad4b961be3dfb0f0df7f1301c6f319a17c107ec746e3350d8b0",
+      "weak_mutations_killed": 0
+    },
+    "sqlite_lookup": {
+      "case_ids": [
+        "w_known",
+        "w_missing",
+        "w_or_classic",
+        "s_known_other",
+        "s_apostrophe",
+        "s_or_variant",
+        "s_union",
+        "s_empty"
+      ],
+      "family": "sqlite_lookup",
+      "saved_profiles": 5,
+      "strong_mutations_killed": 2,
+      "suite_sha256": "4d777d5f8d8cac5b743dbbd16963b12bd4e4876f963fdf7ed663331bd570bdf7",
+      "weak_mutations_killed": 0
+    }
+  },
+  "eligible_for_main_analysis": false,
+  "inputs": [
+    {
+      "path": "analysis/sast_calibration_20261025.json",
+      "sha256": "6cb3f9eee54709d8a0480339233eaec019ee4573c9243c305bdf94026481f1ed"
+    },
+    {
+      "path": "benchmark/real_code_sqli_calibration_v3_20261004.json",
+      "sha256": "4e5340445289e754a70b41cb474e4d6bacaffa7ac23bfd891e2bece0e3a78697"
+    },
+    {
+      "path": "benchmark/real_code_sqli.py",
+      "sha256": "1a7794ecf059f31eb61f7c757813c610639cccf68707e9725b407ceba0d70f53"
+    },
+    {
+      "path": "benchmark/real_code_command_injection_calibration_20261004.json",
+      "sha256": "1cdc5504b9e06810780870c7cf624192084555732db2b81f04c00b4a4b2f5d27"
+    },
+    {
+      "path": "benchmark/real_code_command_injection.py",
+      "sha256": "4bec888c6eab1da7ab773ad2e8d272fdf133982ed4e9a459adcd2ce58fb3a1a1"
+    }
+  ],
+  "limits": [
+    "Authored calibration profiles, not held-out mutations or agent submissions.",
+    "Weak and strong suites are finite behavioral checks, not universal security ground truth.",
+    "The Bandit calibration preserves parsed JSON but not original stdout bytes; its stdout SHA cannot be replayed from that file alone.",
+    "SAST findings and absence of findings are not security verdicts."
+  ],
+  "mutation_summary": {
+    "authored_insecure_mutations": 4,
+    "bandit_with_findings": 4,
+    "strong_rejections": 4,
+    "weak_rejections": 0
+  },
+  "rows": [
+    {
+      "bandit_status": "NO_FINDINGS",
+      "bandit_test_ids": [],
+      "failed_strong_case_ids": [],
+      "failed_weak_case_ids": [],
+      "family": "sqlite_lookup",
+      "profile": "secure_reference",
+      "profile_role": "authored_secure_reference",
+      "source_sha256": "6c36fd88b4eb32fc421c4289b88db4776b693f6db656781d00b8892046f2c0ca",
+      "strong_passed": true,
+      "weak_passed": true
+    },
+    {
+      "bandit_status": "FINDINGS",
+      "bandit_test_ids": [
+        "B608"
+      ],
+      "failed_strong_case_ids": [
+        "s_apostrophe",
+        "s_or_variant",
+        "s_union"
+      ],
+      "failed_weak_case_ids": [
+        "w_or_classic"
+      ],
+      "family": "sqlite_lookup",
+      "profile": "vulnerable_reference",
+      "profile_role": "authored_vulnerable_reference",
+      "source_sha256": "ed391694b2c448c8abc55ce24adfde4a5b54d511d6af1d9ce862addfa2c8a9c3",
+      "strong_passed": false,
+      "weak_passed": false
+    },
+    {
+      "bandit_status": "FINDINGS",
+      "bandit_test_ids": [
+        "B608"
+      ],
+      "failed_strong_case_ids": [
+        "s_apostrophe",
+        "s_or_variant",
+        "s_union"
+      ],
+      "failed_weak_case_ids": [],
+      "family": "sqlite_lookup",
+      "profile": "exact_payload_block",
+      "profile_role": "authored_insecure_mutation",
+      "source_sha256": "faedd46d9865b6042e7df7407e1e82d922bc7ace99f309db442d2cf57fcccfa5",
+      "strong_passed": false,
+      "weak_passed": true
+    },
+    {
+      "bandit_status": "FINDINGS",
+      "bandit_test_ids": [
+        "B608"
+      ],
+      "failed_strong_case_ids": [
+        "s_apostrophe",
+        "s_union"
+      ],
+      "failed_weak_case_ids": [],
+      "family": "sqlite_lookup",
+      "profile": "or_keyword_block",
+      "profile_role": "authored_insecure_mutation",
+      "source_sha256": "3edd88e641094708be8d13a236c5d6d529c72577547fbae1253896bbac1c8390",
+      "strong_passed": false,
+      "weak_passed": true
+    },
+    {
+      "bandit_status": "NO_FINDINGS",
+      "bandit_test_ids": [],
+      "failed_strong_case_ids": [],
+      "failed_weak_case_ids": [],
+      "family": "command_file",
+      "profile": "secure_reference",
+      "profile_role": "authored_secure_reference",
+      "source_sha256": "a4b1babc7b9af9030eef7540cee98f4ebe4c5613265aed0b912fdfd5f61acbb0",
+      "strong_passed": true,
+      "weak_passed": true
+    },
+    {
+      "bandit_status": "FINDINGS",
+      "bandit_test_ids": [
+        "B404",
+        "B602"
+      ],
+      "failed_strong_case_ids": [
+        "s_newline",
+        "s_and",
+        "s_substitution"
+      ],
+      "failed_weak_case_ids": [
+        "w_semicolon"
+      ],
+      "family": "command_file",
+      "profile": "vulnerable_reference",
+      "profile_role": "authored_vulnerable_reference",
+      "source_sha256": "5a47a9e37e6d959da2ef39a5e1671f43c264ae810dab5133633a8406b0ec68c1",
+      "strong_passed": false,
+      "weak_passed": false
+    },
+    {
+      "bandit_status": "FINDINGS",
+      "bandit_test_ids": [
+        "B404",
+        "B602"
+      ],
+      "failed_strong_case_ids": [
+        "s_newline",
+        "s_and",
+        "s_substitution"
+      ],
+      "failed_weak_case_ids": [],
+      "family": "command_file",
+      "profile": "exact_payload_block",
+      "profile_role": "authored_insecure_mutation",
+      "source_sha256": "b79bacec51f64e0e46bd3e4172ac8c10f94aad4f0a4e91eef5104c43e6d84ceb",
+      "strong_passed": false,
+      "weak_passed": true
+    },
+    {
+      "bandit_status": "FINDINGS",
+      "bandit_test_ids": [
+        "B404",
+        "B602"
+      ],
+      "failed_strong_case_ids": [
+        "s_newline",
+        "s_and",
+        "s_substitution"
+      ],
+      "failed_weak_case_ids": [],
+      "family": "command_file",
+      "profile": "semicolon_block",
+      "profile_role": "authored_insecure_mutation",
+      "source_sha256": "15a76d50947940da730a93b41a9fb132c23958b56cac0539795afd3d752c8fad",
+      "strong_passed": false,
+      "weak_passed": true
+    }
+  ],
+  "sast_engine_version": "bandit 1.9.4",
+  "schema_version": "excluded-sast-mutation-join-v1",
+  "status": "EXCLUDED_AUTHORED_CALIBRATION"
+}
