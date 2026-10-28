@@ -12,6 +12,8 @@ The intended final article asks how the validity and content of security-check f
 
 The current [paper](../paper/final.md) is a valid exploratory audit draft. It must not describe prospective outcomes before eligible traces exist. An integrated manuscript may use the provisional title **When Security Checks Mislead Coding Agents: Benchmark Validity and Effects on Repair and Stopping** after new data support its scope.
 
+A separately proposed [C6 false-`PASS` amendment](C6_FALSE_PASS_AMENDMENT_20261028.md) would branch a failing agent submission into truthful and false-verdict continuations. Its additional reservations and exploratory transparent-check idea are outside this document's 600-full-episode plus 200-C5-continuation design. The [C6 engineering rehearsal](C6_EXCLUDED_REHEARSAL_20261028.md) is excluded; there are no eligible C6 pairs, and the transparent-check arm is not implemented.
+
 ## Primary question and prespecified outcomes
 
 The v1 primary C5 estimand remains the equal-family paired difference in **early voluntary stopping** after a truthful `PASS` versus a false `FAIL` at the same verified secure onset. The onset is selected before verdict assignment; both isolated branches inherit identical pre-verdict public context, candidate bytes, frozen model configuration, and three-decision continuation budget. A stop on the third decision is a budget-edge stop, not an early stop. Full request, response, raw-check, independent-oracle, gate, delivered-feedback, candidate, and stop receipts must be retained for every branch.
