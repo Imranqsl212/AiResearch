@@ -18,7 +18,7 @@ study remains `NOT_READY` with zero eligible new main episodes.
 
 | File | Purpose |
 | --- | --- |
-| [`final.md`](final.md) | Editable source manuscript, with 25 numbered references and the required IMRAD sections. |
+| [`final.md`](final.md) | Editable source manuscript, with 27 numbered references and the required IMRAD sections. |
 | [`submission/full_paper.pdf`](submission/full_paper.pdf) | Identified 16-page A4 review copy with six figures and four tables. |
 | [`submission/full_paper.docx`](submission/full_paper.docx) | Identified editable Word copy. |
 | [`submission/full_paper_anonymous.pdf`](submission/full_paper_anonymous.pdf) | Anonymous 16-page A4 review copy. |
@@ -105,7 +105,7 @@ An independent manuscript check found the historical numerical anchors
 consistent with `artifacts/results.json`. The v7 pilot and matched fork have
 separate [episode](../analysis/v7_decisive_excluded_audit_20261005.json) and
 [fork](../analysis/v7_decisive_c5_fork_audit_20261005.json) audit reports, both
-rechecked against their local raw artifacts. The abstract has 237
+rechecked against their local raw artifacts. The abstract has 234
 whitespace-delimited words excluding the keywords line. The manuscript now
 contains six figures and four tables and follows Title,
 Authors/Affiliation, Abstract, Introduction, Methods, Results, Discussion,

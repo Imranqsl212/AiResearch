@@ -73,7 +73,7 @@ sh reproduction/render_paper.sh
 
 This command regenerates the six figures and both identified and anonymous
 manuscript formats, including four tables, from `final.md`. The abstract has
-237 words excluding keywords. The current A4 PDFs have 16 identified pages
+234 words excluding keywords. The current A4 PDFs have 16 identified pages
 and 16 anonymous pages. The anonymous renderer removes the author,
 affiliation, and correspondence lines, replaces the acknowledgment body with a
 neutral peer-review notice, withholds the source commit, and clears author
