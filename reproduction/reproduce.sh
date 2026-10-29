@@ -26,7 +26,7 @@ python3 -B -m benchmark.validate_finite_batch_c_v7
 python3 -B -m analysis.admission_review --json-out /tmp/admission_review_reproduced.json
 python3 -B -m analysis.validate_human_admission_register --catalog v6-current
 python3 -B -m analysis.validate_human_admission_register --catalog v7-candidate
-# Requires the private, Git-ignored v0.2 page snapshots in this workspace.
+# Requires the tracked v0.2 page snapshot archive; one page is redacted.
 python3 -B -m analysis.validate_r1_v2_source_review
 python3 -B -m analysis.validate_statistical_plan_candidate
 

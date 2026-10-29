@@ -2,9 +2,24 @@
 
 ## Current result
 
-The repository contains a completed **legacy exploratory** study and an unfinished prospective v1 design. No v1 main empirical result exists. This research branch tracks the historical raw trajectories, their indexes, and receipts. A complete checkout of this branch can independently rerun the 40-episode analysis from raw data; a partial export cannot. Do not substitute the derived tables for raw evidence. Git availability does not certify privacy review or journal supplementary release.
+The repository contains a completed **legacy exploratory** study and an unfinished prospective v1 design. No v1 main empirical result exists. The tracked historical raw trajectories, indexes, and receipts let a complete checkout independently rerun the 40-episode analysis; a partial export cannot. Do not substitute the derived tables for raw evidence. Git availability does not certify privacy review or journal supplementary release.
 
 ## Reproduce the legacy exploratory analysis
+
+For a quick read-only check from the repository root, run:
+
+```sh
+python3 -B -m reproduction.verify_project
+```
+
+It rebuilds the historical paper summary in a temporary directory, compares
+that JSON with the tracked result, independently recounts the terminal
+test–gate disagreement from the transformed archive, and checks the source
+fidelity report. A successful run prints `VERIFIED_EXPLORATORY_EVIDENCE`,
+including 40 main episodes, 25 raw finite-test passes, 16 accepted finals,
+and 9/20 disagreements in the nominally unavailable arm. It uses the saved
+artifacts and Python standard library; it does not call the model, execute
+candidate code, approve a data release, or open the prospective main gate.
 
 With the tracked `experiments/runs/` and `experiments/raw_archive/` present:
 
@@ -24,12 +39,11 @@ analysis status, and the static main preflight. The families have 100 C1–C5
 task/proof rows and 1,820 recorded finite candidate/condition checks across
 the four original mechanisms and three later batches. It also checks the
 separate, unadmitted batch-C v7 and R1 v0.2 candidates and excluded main-path
-scaffolds. The script's 285
-offline unit/integration tests, six focused real-code regressions, and fixture
+scaffolds. The script's offline unit/integration suite, six focused real-code regressions, and fixture
 validators need no ignored model pilot logs, Docker run, or Ollama call. The
 R1 v0.2 source-review validator requires the tracked
 [22-page source snapshot archive](../docs/R1_V2_PRIVATE_SOURCE_SNAPSHOTS_20261005.md)
-in this research branch. A partial export without it cannot run the same
+in this repository. A partial export without it cannot run the same
 full validation. One Stripe page in that archive is a documented redacted
 release copy; its exact original bytes remain local, as recorded in the
 [redaction audit](../docs/R1_V2_PUBLICATION_REDACTION_20261012.md). It prints
