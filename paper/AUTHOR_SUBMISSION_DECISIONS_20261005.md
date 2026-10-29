@@ -12,13 +12,17 @@ separately. Do not infer their absence from a missing response.
 
 | Artifact | Current SHA-256 |
 | --- | --- |
-| [`final.md`](final.md) | `9bb4ede8a1bac30dde29bce6b6abf409bac0efae8ad923949c6b4ed3315fc978` |
-| [Identified `full_paper.pdf`](submission/full_paper.pdf) | `65aa4e2029f1bb423d7caa76dc650fb8c63413c623b6c7ef446f80268e9b0603` |
-| [Identified `full_paper.docx`](submission/full_paper.docx) | `8761b7ae2c1e5f959dee5312ca6ae8d784edaecf15dcfe44ec0925be82508b9f` |
-| [Anonymous `full_paper_anonymous.pdf`](submission/full_paper_anonymous.pdf) | `f34bbbfbb52a3eba20342eb8beab3fae01f98778a7956f64440fc80be78a0dc4` |
-| [Anonymous `full_paper_anonymous.docx`](submission/full_paper_anonymous.docx) | `9936cfd3a6ec36325fde89242ba53c4cff73884f3d7039c1f72db1131926840f` |
+| [`final.md`](final.md) | `f5b0fb2c96488291963b3c409817f21ad4a7844555211b3c2ae128258237a330` |
+| [Identified `full_paper.pdf`](submission/full_paper.pdf) | `84de7cecc8ce080b33a834ea2e4f9c576b9e8b19740e2787f3c14c152b6d1985` |
+| [Identified `full_paper.docx`](submission/full_paper.docx) | `743a7df17102898ec6719ea5e40242fa1baf111aa5601a46407f0e7f257236d0` |
+| [Anonymous `full_paper_anonymous.pdf`](submission/full_paper_anonymous.pdf) | `5da75e547cae5bc605e38a6cb8a849e5376b4540c7a6af41204e168cb3134a95` |
+| [Anonymous `full_paper_anonymous.docx`](submission/full_paper_anonymous.docx) | `413f269391853497adc1974f5bac38d776d739f77af7801fd912495d3dc3c0a1` |
 | [`results.json`](artifacts/results.json) | `3d7ef25bfa07ef25ae20cea8d6ee34b59c5d9158e20c2e9b7013bfbd5a3cb229` |
-| [Working author-year conversion](venue_author_year_draft.md) | `46fe14de980e0d552cf7d9f0b21e00c7c3b25fc1eedc3ff7a49f7f56299bb987` |
+| [Working author-year conversion](venue_author_year_draft.md) | `d1c88e0dbc35952145e2cfd58ae73726bb10251bbf6800ec213c284009c6f2c4` |
+| [Author-year `venue_author_year_identified.pdf`](submission/venue_author_year_identified.pdf) | `1e446b434ca731e4ca0b923f3bf3a69e83252b17369921d17c898225e1caafd1` |
+| [Author-year `venue_author_year_identified.docx`](submission/venue_author_year_identified.docx) | `974c31f0e5f7c8b2aeaab9f4fb5357408207df2f80f1da250d1a606dc6d26b90` |
+| [Author-year `venue_author_year_anonymous.pdf`](submission/venue_author_year_anonymous.pdf) | `7df85bcca0615e5170a3648f2ce7fe3d2cb1d99708e0739a8ffcbb01c689aea0` |
+| [Author-year `venue_author_year_anonymous.docx`](submission/venue_author_year_anonymous.docx) | `4a53e8374d37df315a8b200b97ffc275eefe8a81600ebf2bbb242ac352b35d3a` |
 | [Venue shortlist](VENUE_SHORTLIST_20261005.md) | `6bb7c78180837a15fe0c55038d226cd7445d5162a17b1f14b6e1924024f73c9b` |
 
 The identified and anonymous PDFs each have 16 A4 pages. PDF text,

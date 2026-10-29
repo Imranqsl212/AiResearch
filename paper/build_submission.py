@@ -160,7 +160,7 @@ def figure1(rows: list[dict], results: dict) -> None:
 
 
 def figure2(rows: list[dict]) -> None:
-    im, d = canvas("Actions before stopping", "Observed tool calls per episode · R n=20; U n=20")
+    im, d = canvas("Tool actions per episode", "Observed tool calls per episode · R n=20; U n=20")
     counts = {(group, k): sum(r["feasibility"] == group and int(r["actions"]) == k for r in rows)
               for group in ("R", "U") for k in range(2, 7)}
     # Scale from the observed maximum so a tall bar cannot enter the title.
@@ -275,6 +275,7 @@ def figure6(rows: list[dict]) -> None:
                   size=20, fill=color, anchor="mt")
     d.rectangle((535, 991, 560, 1016), fill=TEAL); label(d, (570, 1004), "public check passed", size=24, anchor="lm")
     d.rectangle((970, 991, 995, 1016), fill=ORANGE); label(d, (1005, 1004), "public check failed", size=24, anchor="lm")
+    d.rectangle((1335, 991, 1360, 1016), fill=NAVY); label(d, (1370, 1004), "other tool observation", size=24, anchor="lm")
     save(im, 6, "timelines")
 
 
