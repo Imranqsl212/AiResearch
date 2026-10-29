@@ -1,5 +1,7 @@
 # The Tests Passed. The Benchmark Said No
 
+[![Verify saved study](https://github.com/Imranqsl212/AiResearch/actions/workflows/verify-saved-study.yml/badge.svg)](https://github.com/Imranqsl212/AiResearch/actions/workflows/verify-saved-study.yml)
+
 This repository studies what a local coding agent does after a security checker rejects its Python code. It contains a completed **exploratory benchmark audit**, separate feasibility pilots, and an unfinished prospective study. These cohorts have different protocols and are never pooled.
 
 For a short project review, start with the [research overview](docs/PROJECT_OVERVIEW_20261029.md); the full [research article](paper/final.md) and reproduction instructions are linked below.
