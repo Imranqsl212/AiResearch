@@ -18,6 +18,15 @@ AI coding agents are evaluated by whether a security checker accepts their patch
 | Why does it happen? | The evaluator computes final acceptance as `raw_test_pass AND condition_reachable`; the flag is false for the `UD`/`UW` conditions ([source](../sandbox/docker_candidate.py#L52-L57)). The agent did not see this flag. |
 | What does it mean? | This local benchmark's final verdict cannot by itself establish that the agent failed to solve, recognize, or stop on a genuinely impossible repair. It is an evaluator-validity finding. |
 
+## Two ways a checker can mislead
+
+| Direction | Recorded evidence | Scope |
+| --- | --- | --- |
+| **Rejected despite passing the implemented tests** | 9/20 final agent submissions in the nominally unavailable arm passed the family tests, then failed a hidden acceptance rule. | Historical agent cohort; a test–gate disagreement, not proof of general security. |
+| **Passed weak tests despite an insecure mutation** | 4/4 deliberately insecure authored mutations passed a weak suite; all four failed a stronger suite and triggered Bandit warnings. | [Separate authored calibration](../analysis/SAST_MUTATION_JOIN_20261028.md); zero agent submissions and no prevalence estimate. |
+
+The rows have different sources and denominators. They are not pooled, and a Bandit warning is not itself a security verdict.
+
 ![Raw finite tests versus final benchmark acceptance in the historical runs](../paper/milestone/hidden_veto_results.png)
 
 **Independent check:** [archived-receipt recount](../paper/INDEPENDENT_DISCORDANCE_CHECK_20261008.md) and [original-archive provenance check](../paper/ORIGINAL_ARCHIVE_PROVENANCE_AUDIT_20261008.md). The [research article](../paper/final.md) explains the methods, full results, and limitations. Read the [identified PDF](../paper/submission/full_paper.pdf) or [anonymous review PDF](../paper/submission/full_paper_anonymous.pdf).
