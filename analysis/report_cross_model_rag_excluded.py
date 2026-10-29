@@ -14,7 +14,10 @@ from pathlib import Path
 from typing import Any, Mapping
 
 from analysis.report_excluded_rag_block import _request_audit, derive_behavior
-from analysis.v1_pipeline import load_episode
+from analysis.v1_pipeline import (
+    V1ValidationError, load_episode, recorded_checkout_root,
+    resolve_checkout_artifact_path, resolve_episode_artifact_path,
+)
 from benchmark.finite_policy_v1 import public_projection
 
 
@@ -65,12 +68,23 @@ def archive_audit(block_dir: Path, snapshot: Mapping[str, str],
         archive = sibling / "source_snapshot_recovered"
         index = read(index_path)
         initial = read(initial_index_path)
+        try:
+            recorded_root = recorded_checkout_root(
+                index.get("archive_path"), archive.relative_to(ROOT),
+                name="archive_path",
+            )
+            recorded_schedule = resolve_checkout_artifact_path(
+                index.get("schedule_path"), source_root=ROOT,
+                recorded_root=recorded_root, name="schedule_path",
+            )
+        except V1ValidationError as exc:
+            raise CrossModelAuditError(f"Qwen archive path cannot be relocated: {exc}") from exc
         require(index.get("kind") == "post_run_source_snapshot_recovery" and
                 index.get("post_run_recovery") is True and
                 index.get("prior_index_sha256") == sha(initial_index_path) and
                 initial.get("source_file_sha256s") == snapshot and
                 index.get("schedule_sha256") == sha(block_dir / "block_schedule.json") and
-                index.get("archive_path") == str(archive.resolve()),
+                recorded_schedule == block_dir / "block_schedule.json",
                 "Qwen post-run archive index mismatch")
         timing = "post_run_recovered"
         require(datetime.fromisoformat(index["created_at_utc"].replace("Z", "+00:00")) >
@@ -210,7 +224,14 @@ def audit_block(block_dir: Path) -> dict[str, Any]:
                 hashlib.sha256(canon(visible)).hexdigest() ==
                 slot["expected_public_documents_sha256"],
                 f"public documents mismatch: {slot['slot_id']}")
-        task = read(Path(manifest["task_path"]))
+        try:
+            task_path = resolve_episode_artifact_path(
+                manifest_path, manifest, manifest["task_path"],
+                source_root=ROOT, name="task_path",
+            )
+        except V1ValidationError as exc:
+            raise CrossModelAuditError(f"task path cannot be relocated: {slot['slot_id']}: {exc}") from exc
+        task = read(task_path)
         require(hashlib.sha256(canon(public_projection(task))).hexdigest() ==
                 slot["public_task_sha256"], f"public task mismatch: {slot['slot_id']}")
         requests = _request_audit(slot_dir / "provider_options.jsonl", request, schedule,

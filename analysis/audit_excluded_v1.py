@@ -15,7 +15,10 @@ from datetime import datetime
 from pathlib import Path
 from typing import Any, Mapping
 
-from analysis.v1_pipeline import V1ValidationError, episode_metrics, load_episode
+from analysis.v1_pipeline import (
+    V1ValidationError, episode_metrics, load_episode, recorded_checkout_root,
+    resolve_checkout_artifact_path, resolve_episode_artifact_path,
+)
 from benchmark.finite_policy_reference import reference_results
 from benchmark.finite_policy_v1 import canonical_bytes, evaluate_candidate, public_projection, verify_proof
 from experiments import run_c5_false_failure_probe_v1 as probe
@@ -114,6 +117,29 @@ def audit_seeded_block(block_dir: Path, *, source_root: Path) -> dict[str, Any]:
     receipt_body = {key: value for key, value in receipt.items() if key != "receipt_sha256"}
     _require(receipt.get("receipt_sha256") == hashlib.sha256(canonical_bytes(receipt_body)).hexdigest(),
              "seeded receipt self hash mismatch")
+    try:
+        recorded_root = recorded_checkout_root(
+            receipt.get("schedule_path"), schedule_path.relative_to(source_root),
+            name="schedule_path",
+        )
+        recorded_schedule = resolve_checkout_artifact_path(
+            receipt["schedule_path"], source_root=source_root,
+            recorded_root=recorded_root, name="schedule_path",
+        )
+    except (ValueError, V1ValidationError) as exc:
+        raise PilotAuditError(f"seeded schedule path cannot be relocated: {exc}") from exc
+    _require(recorded_schedule == schedule_path, "seeded schedule path differs from block")
+
+    def recorded_file(value: Any, expected: Path, name: str) -> Path:
+        try:
+            relocated = resolve_checkout_artifact_path(
+                value, source_root=source_root, recorded_root=recorded_root, name=name,
+            )
+        except V1ValidationError as exc:
+            raise PilotAuditError(f"{name}: {exc}") from exc
+        _require(relocated == expected, f"{name}: relocated file differs from schedule")
+        return relocated
+
     slots, results = schedule.get("slots"), receipt.get("slots")
     _require(isinstance(slots, list) and isinstance(results, list), "seeded slots are missing")
     validate_seeded_partition(slots, results)
@@ -129,8 +155,8 @@ def audit_seeded_block(block_dir: Path, *, source_root: Path) -> dict[str, Any]:
         _require(slot_dir.is_dir() and slot_dir.resolve().parent == block_dir and
                  slot_dir.name == slot_id, f"{slot_id}: output directory differs from schedule")
         result_path = block_dir / f"{slot_id}.result.json"
-        _require(result.get("result_path") == str(result_path) and
-                 result.get("result_file_sha256") == _sha(result_path),
+        recorded_file(result.get("result_path"), result_path, f"{slot_id}: result_path")
+        _require(result.get("result_file_sha256") == _sha(result_path),
                  f"{slot_id}: result file hash or path mismatch")
         saved_result = _json(result_path)
         _require(saved_result.get("slot_id") == slot_id and
@@ -148,8 +174,8 @@ def audit_seeded_block(block_dir: Path, *, source_root: Path) -> dict[str, Any]:
             recorded_manifest = result.get("manifest_path")
             if recorded_manifest is not None:
                 manifest_path = slot_dir / f"{slot['episode_id']}.manifest.json"
-                _require(recorded_manifest == str(manifest_path) and
-                         result.get("manifest_file_sha256") == _sha(manifest_path),
+                recorded_file(recorded_manifest, manifest_path, f"{slot_id}: manifest_path")
+                _require(result.get("manifest_file_sha256") == _sha(manifest_path),
                          f"{slot_id}: invalidated manifest path or hash mismatch")
                 expected_manifests.add(manifest_path)
             reason = (result.get("validation_error_type") or result.get("runner_error_type") or
@@ -165,8 +191,8 @@ def audit_seeded_block(block_dir: Path, *, source_root: Path) -> dict[str, Any]:
                  result.get("runner_error_type") is None,
                  f"{slot_id}: completed slot has an unaccounted error")
         manifest_path = slot_dir / f"{slot['episode_id']}.manifest.json"
-        _require(result.get("manifest_path") == str(manifest_path) and
-                 result.get("manifest_file_sha256") == _sha(manifest_path),
+        recorded_file(result.get("manifest_path"), manifest_path, f"{slot_id}: manifest_path")
+        _require(result.get("manifest_file_sha256") == _sha(manifest_path),
                  f"{slot_id}: manifest path or hash mismatch")
         expected_manifests.add(manifest_path)
         try:
@@ -189,7 +215,18 @@ def audit_seeded_block(block_dir: Path, *, source_root: Path) -> dict[str, Any]:
                  result.get("stop_reason") == episode["events"][-1]["stop_reason"],
                  f"{slot_id}: receipt disagrees with event log")
         start = episode["events"][0]
-        proof = _json(Path(manifest["oracle_proof_path"]))
+        try:
+            proof_path = resolve_episode_artifact_path(
+                manifest_path, manifest, manifest["oracle_proof_path"],
+                source_root=source_root, name="oracle_proof_path",
+            )
+            prompt_path = resolve_episode_artifact_path(
+                manifest_path, manifest, manifest["prompt_path"],
+                source_root=source_root, name="prompt_path",
+            )
+        except V1ValidationError as exc:
+            raise PilotAuditError(f"{slot_id}: episode path cannot be relocated: {exc}") from exc
+        proof = _json(proof_path)
         initial_evidence = start["evidence_exposed"] is True
         impossibility_proof = slot["condition"] == "C4" and initial_evidence
         if slot["condition"] == "C4":
@@ -202,7 +239,7 @@ def audit_seeded_block(block_dir: Path, *, source_root: Path) -> dict[str, Any]:
                      f"{slot_id}: C2 diagnostic feedback was misclassified as impossibility proof")
         else:
             _require(not initial_evidence, f"{slot_id}: C1 generic feedback unexpectedly contains evidence")
-        prompt = _json(Path(manifest["prompt_path"]))
+        prompt = _json(prompt_path)
         request = prompt.get("request")
         options = request.get("options") if isinstance(request, dict) else None
         _require(isinstance(options, dict) and request.get("model") == schedule["model"] and

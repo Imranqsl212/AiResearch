@@ -44,7 +44,11 @@ validators need no ignored model pilot logs, Docker run, or Ollama call. The
 R1 v0.2 source-review validator requires the tracked
 [22-page source snapshot archive](../docs/R1_V2_PRIVATE_SOURCE_SNAPSHOTS_20261005.md)
 in this repository. A partial export without it cannot run the same
-full validation. One Stripe page in that archive is a documented redacted
+full validation. Use a **full-history Git checkout** for this broader script:
+two excluded-pilot audits verify their frozen source commit, so a shallow
+clone is insufficient. Their archived absolute paths are mapped to the
+current checkout while retaining the original records and file-hash checks.
+One Stripe page in that archive is a documented redacted
 release copy; its exact original bytes remain local, as recorded in the
 [redaction audit](../docs/R1_V2_PUBLICATION_REDACTION_20261012.md). It prints
 `NO_ELIGIBLE_DATA` and `NOT_READY` for the current design-stage repository.

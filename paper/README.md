@@ -24,7 +24,6 @@ From the repository root:
 
 ```sh
 python3 -B -m analysis.paper_pipeline --output paper/artifacts
-python3 -B -m analysis.auxiliary_sidecar_audit
 python3 -B -m analysis.source_fidelity_v1 --check
 python3 -B -m analysis.audit_v7_decisive_excluded_pilot --check
 python3 -B -m analysis.audit_v7_decisive_c5_fork --check
@@ -60,7 +59,7 @@ ledger: 308 of 311 entries match and three later source/document hashes differ.
 This audit does not establish external chain
 of custody, rerun the model or evaluator, or clear either archive for a journal deposit.
 
-The separate auxiliary audit searches local, unsealed Docker sidecar logs by candidate-source hash. Its result is in `artifacts/auxiliary_sidecar_audit.json`. These logs are not uniquely tied to an action and are not used for any paper outcome or stopping metric. A clone without `sandbox/logs/` cannot reproduce this auxiliary check.
+The separate auxiliary audit searches local, unsealed Docker sidecar logs by candidate-source hash. Its result is in `artifacts/auxiliary_sidecar_audit.json`. These logs are not uniquely tied to an action and are not used for any paper outcome or stopping metric. It is an **original-workspace-only** check: the old auxiliary rows contain absolute trajectory paths, and the ignored `sandbox/logs/` are not in a fresh clone. Run `python3 -B -m analysis.auxiliary_sidecar_audit` only in the original capture workspace with those paths and logs present; it is not part of the portable recompute block above.
 
 The PDF and Word builder requires the versions pinned in
 [`requirements-render.txt`](requirements-render.txt). It was last rendered with

@@ -378,10 +378,7 @@ def _receipt_path(output: Path) -> Path:
 
 
 def _screen(name: str, data: bytes) -> None:
-    local_account = Path.home().name.encode("utf-8")
     patterns = list(FORBIDDEN_MARKERS.values())
-    if len(local_account) >= 3 and local_account.lower() not in {b"root", b"user", b"shared"}:
-        patterns.append(re.compile(re.escape(local_account), re.I))
     candidates = [data]
     if name.endswith(".docx"):
         try:
