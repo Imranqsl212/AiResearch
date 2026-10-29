@@ -76,7 +76,7 @@ manuscript formats, including four tables, from `final.md`. The abstract has
 234 words excluding keywords. The current A4 PDFs have 16 identified pages
 and 16 anonymous pages. The anonymous renderer removes the author,
 affiliation, and correspondence lines, replaces the acknowledgment body with a
-neutral peer-review notice, withholds the source commit, and clears author
+neutral peer-review notice, withholds the source and public data commits, and clears author
 metadata from the PDF and Word files. It checks rendered content and document
 metadata for known author identifiers. The PDF and Word styles use 12-point
 Arial and single line spacing on A4 pages; the renderer reports PDF page counts

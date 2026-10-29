@@ -1,6 +1,6 @@
 # Author submission decision record — pending
 
-**Review copy refreshed:** 28 October 2026.
+**Review copy refreshed:** 29 October 2026.
 
 This record identifies the exact exploratory manuscript files for **local author
 review**. It does not approve journal submission, a journal data deposit, or the scientific
@@ -15,8 +15,8 @@ separately. Do not infer their absence from a missing response.
 | [`final.md`](final.md) | `9bb4ede8a1bac30dde29bce6b6abf409bac0efae8ad923949c6b4ed3315fc978` |
 | [Identified `full_paper.pdf`](submission/full_paper.pdf) | `65aa4e2029f1bb423d7caa76dc650fb8c63413c623b6c7ef446f80268e9b0603` |
 | [Identified `full_paper.docx`](submission/full_paper.docx) | `8761b7ae2c1e5f959dee5312ca6ae8d784edaecf15dcfe44ec0925be82508b9f` |
-| [Anonymous `full_paper_anonymous.pdf`](submission/full_paper_anonymous.pdf) | `e2adc24d0c6e365e1b95537841ad72ee43ae076cfc71bf5b40f468f57c6a03e3` |
-| [Anonymous `full_paper_anonymous.docx`](submission/full_paper_anonymous.docx) | `bf75e2a64e7c0a25072805f9cf1c2d48eb5fc0408e119cc0f3897a663c9c2588` |
+| [Anonymous `full_paper_anonymous.pdf`](submission/full_paper_anonymous.pdf) | `f34bbbfbb52a3eba20342eb8beab3fae01f98778a7956f64440fc80be78a0dc4` |
+| [Anonymous `full_paper_anonymous.docx`](submission/full_paper_anonymous.docx) | `9936cfd3a6ec36325fde89242ba53c4cff73884f3d7039c1f72db1131926840f` |
 | [`results.json`](artifacts/results.json) | `3d7ef25bfa07ef25ae20cea8d6ee34b59c5d9158e20c2e9b7013bfbd5a3cb229` |
 | [Working author-year conversion](venue_author_year_draft.md) | `46fe14de980e0d552cf7d9f0b21e00c7c3b25fc1eedc3ff7a49f7f56299bb987` |
 | [Venue shortlist](VENUE_SHORTLIST_20261005.md) | `6bb7c78180837a15fe0c55038d226cd7445d5162a17b1f14b6e1924024f73c9b` |
@@ -27,7 +27,8 @@ the DOCX styles are 12 pt with single line spacing. The abstract has 234 words
 and the article contains six figures and four tables. The identified and
 anonymous PDF/DOCX pairs were regenerated from the source on this workspace.
 The anonymous files have blank author metadata and automated scans found no
-author name, contact, location, or study-commit marker in their content. Word
+author name, contact, location, study-commit marker, or linkable public data
+revision in their content. Word
 page count and final venue compliance must be checked in the journal's editor.
 
 These hashes identify this review draft only. Recompute them and repeat

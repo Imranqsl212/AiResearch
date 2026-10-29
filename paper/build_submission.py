@@ -89,7 +89,17 @@ def review_manuscript(markdown: str) -> str:
     )
     review = review.replace("98a4dcf414672c1725e4acdb9f08045370aa7f64",
                             "source revision withheld during anonymous review")
-    if re.search(r"(?i)\b(?:imran|zakirov)\b|zakirovimran333@gmail\.com", review):
+    review = review.replace(
+        "The public repository's data revision `37074c198237ade67eb76921333b2835d329c863` "
+        "contains the raw trajectories and archives needed to recalculate the reported counts;",
+        "A source revision withheld during anonymous review contains the raw trajectories "
+        "and archives needed to recalculate the reported counts;",
+    )
+    if re.search(
+        r"(?i)\b(?:imran|zakirov)\b|zakirovimran333@gmail\.com|"
+        r"37074c198237ade67eb76921333b2835d329c863|github\.com/Imranqsl212",
+        review,
+    ):
         raise ValueError("anonymized manuscript still contains a known author identifier")
     return review
 
@@ -510,7 +520,9 @@ def verify_anonymous_artifacts(pdf_path: Path, docx_path: Path) -> None:
             for name in archive.namelist() if name.endswith((".xml", ".rels"))
         )
     identity = re.compile(r"(?i)\b(?:imran|zakirov|bishkek)\b|zakirovimran333@gmail\.com|"
-                          r"98a4dcf414672c1725e4acdb9f08045370aa7f64")
+                          r"98a4dcf414672c1725e4acdb9f08045370aa7f64|"
+                          r"37074c198237ade67eb76921333b2835d329c863|"
+                          r"github\.com/Imranqsl212")
     for label, content in (("PDF text", pdf_text), ("PDF metadata", pdf_properties),
                            ("DOCX XML and metadata", docx_xml)):
         if identity.search(content):
