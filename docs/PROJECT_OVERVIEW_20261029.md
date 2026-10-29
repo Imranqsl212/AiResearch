@@ -41,7 +41,7 @@ python3 -B -m reproduction.verify_project
 
 The [read-only verifier](../reproduction/README.md) rebuilds the historical summary in a temporary directory and checks it against independent terminal receipts and source-fidelity records. Success prints `VERIFIED_EXPLORATORY_EVIDENCE` with 40 episodes and 9/20 hidden-gate disagreements. It does not call the model, Docker, or the prospective main collector.
 
-The broader offline `sh reproduction/reproduce.sh` check passed on 29 October 2026, including 298 unit/integration tests and six focused real-code regression tests. Its final prospective preflight correctly reports `NOT_READY` because the main study has not been admitted.
+The broader offline `sh reproduction/reproduce.sh` check passed on 29 October 2026, including 298 unit/integration tests and six focused real-code regression tests. It also passed from a relocated full-history clone after the archived-path audit fix. Its final prospective preflight correctly reports `NOT_READY` because the main study has not been admitted.
 
 ## Limits and next research question
 
