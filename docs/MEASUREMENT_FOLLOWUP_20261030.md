@@ -31,6 +31,9 @@ final candidate in that family passed the finite tests, so a test–gate
 disagreement could not be observed. The families were selected, not sampled,
 and this sensitivity range is not a confidence interval. The exact counts and
 archive digests are in the [derived JSON](../analysis/family_discordance_sensitivity_20261030.json).
+A focused test also opens the pinned original archive, runs its provenance
+audit, and confirms the same five family counts independently of the
+transformed archive.
 
 ## 2. Which finals can actually be compared with Bandit
 
