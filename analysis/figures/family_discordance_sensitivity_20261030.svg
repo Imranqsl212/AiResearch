@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="540" viewBox="0 0 920 540" role="img" aria-label="Historical U-arm hidden-veto disagreements by family">
+<rect width="100%" height="100%" fill="white"/>
+<text x="36" y="52" font-family="Arial,sans-serif" font-size="27" font-weight="700" fill="#172b40">Hidden-veto disagreement by family</text>
+<text x="36" y="80" font-family="Arial,sans-serif" font-size="16" fill="#526779">Historical U arm · four final candidates per selected family</text>
+<text x="235" y="152" text-anchor="end" font-family="Arial,sans-serif" font-size="17" fill="#172b40">Key derivation</text>
+<rect x="295" y="130" width="470" height="32" fill="#edf1f4"/>
+<rect x="295" y="130" width="117" height="32" fill="#c56d38"/>
+<text x="782" y="154" font-family="Arial,sans-serif" font-size="19" font-weight="700" fill="#172b40">1/4</text>
+<text x="235" y="222" text-anchor="end" font-family="Arial,sans-serif" font-size="17" fill="#172b40">Nonce handling</text>
+<rect x="295" y="200" width="470" height="32" fill="#edf1f4"/>
+<rect x="295" y="200" width="470" height="32" fill="#c56d38"/>
+<text x="782" y="224" font-family="Arial,sans-serif" font-size="19" font-weight="700" fill="#172b40">4/4</text>
+<text x="235" y="292" text-anchor="end" font-family="Arial,sans-serif" font-size="17" fill="#172b40">Weak randomness</text>
+<rect x="295" y="270" width="470" height="32" fill="#edf1f4"/>
+<rect x="295" y="270" width="470" height="32" fill="#c56d38"/>
+<text x="782" y="294" font-family="Arial,sans-serif" font-size="19" font-weight="700" fill="#172b40">4/4</text>
+<text x="235" y="362" text-anchor="end" font-family="Arial,sans-serif" font-size="17" fill="#172b40">SQL injection</text>
+<rect x="295" y="340" width="470" height="32" fill="#edf1f4"/>
+<text x="782" y="364" font-family="Arial,sans-serif" font-size="19" font-weight="700" fill="#172b40">0/4</text>
+<text x="235" y="432" text-anchor="end" font-family="Arial,sans-serif" font-size="17" fill="#172b40">Cross-site scripting</text>
+<rect x="295" y="410" width="470" height="32" fill="#edf1f4"/>
+<text x="782" y="434" font-family="Arial,sans-serif" font-size="19" font-weight="700" fill="#172b40">0/4</text>
+<text x="295" y="496" font-family="Arial,sans-serif" font-size="16" fill="#526779">Raw finite test PASS followed by hidden-gate FAIL</text>
+<text x="36" y="524" font-family="Arial,sans-serif" font-size="14" fill="#526779">Selected families; descriptive only. Finite test pass does not establish general security.</text>
+</svg>

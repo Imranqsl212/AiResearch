@@ -40,3 +40,27 @@ jobs:
           python-version: '3.12'
       - name: Validate saved fixtures and excluded pilot audits
         run: sh reproduction/reproduce.sh
+
+  measurement-followup:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - name: Check out saved data
+        uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - name: Set up Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      - name: Recompute supplemental analyses
+        run: |
+          python -B -m analysis.family_discordance_sensitivity --check
+          python -B -m analysis.sast_provenance_missingness --check
+          python -B -m analysis.full_catalog_calibration_20261030 --verify
+      - name: Test supplemental analysis guards
+        run: |
+          python -B -m unittest -q \
+            tests.test_family_discordance_sensitivity \
+            tests.test_sast_provenance_missingness \
+            tests.test_full_catalog_calibration_20261030

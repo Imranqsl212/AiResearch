@@ -6,6 +6,12 @@ This repository studies what a local coding agent does after a security checker 
 
 For a short project review, start with the [research overview](docs/PROJECT_OVERVIEW_20261029.md); the full [research article](paper/final.md) and reproduction instructions are linked below.
 
+The [30 October measurement follow-up](docs/MEASUREMENT_FOLLOWUP_20261030.md)
+adds three executable checks: family-level sensitivity of the hidden veto,
+source-hash missingness in the Bandit comparison, and independent calibration
+of the authored 20-family task catalog. It includes machine-readable results,
+a graph, and commands to rerun the tests.
+
 ## Current result
 
 The historical study used `qwen3:4b` on five selected task families: **40 main episodes**, one run per condition and guidance arm. A separate AEAD pilot has eight episodes. In **9 of 20** final candidates labeled nominally unavailable, the implemented family tests passed but a hidden acceptance rule rejected the result. This is a measurement defect in that evaluator; it does not prove that those tasks were truly impossible or that the submitted code was secure. The agent's response to truthful impossibility feedback was not measured in this historical cohort.
