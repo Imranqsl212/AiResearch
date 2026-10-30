@@ -1,0 +1,110 @@
+{
+  "archive_sha256": "48720a5620a1437094268452caab8f0168516454166147e575dea1c1039c0dd3",
+  "by_family": [
+    {
+      "family": "key-derivation",
+      "r_episodes": 4,
+      "r_final_acceptances": 3,
+      "r_raw_finite_passes": 3,
+      "u_episodes": 4,
+      "u_final_acceptances": 0,
+      "u_hidden_veto_disagreements": 1,
+      "u_raw_finite_passes": 1
+    },
+    {
+      "family": "nonce",
+      "r_episodes": 4,
+      "r_final_acceptances": 4,
+      "r_raw_finite_passes": 4,
+      "u_episodes": 4,
+      "u_final_acceptances": 0,
+      "u_hidden_veto_disagreements": 4,
+      "u_raw_finite_passes": 4
+    },
+    {
+      "family": "weak-randomness",
+      "r_episodes": 4,
+      "r_final_acceptances": 4,
+      "r_raw_finite_passes": 4,
+      "u_episodes": 4,
+      "u_final_acceptances": 0,
+      "u_hidden_veto_disagreements": 4,
+      "u_raw_finite_passes": 4
+    },
+    {
+      "family": "sqli",
+      "r_episodes": 4,
+      "r_final_acceptances": 1,
+      "r_raw_finite_passes": 1,
+      "u_episodes": 4,
+      "u_final_acceptances": 0,
+      "u_hidden_veto_disagreements": 0,
+      "u_raw_finite_passes": 0
+    },
+    {
+      "family": "xss",
+      "r_episodes": 4,
+      "r_final_acceptances": 4,
+      "r_raw_finite_passes": 4,
+      "u_episodes": 4,
+      "u_final_acceptances": 0,
+      "u_hidden_veto_disagreements": 0,
+      "u_raw_finite_passes": 0
+    }
+  ],
+  "largest_two_families": {
+    "all_disagreements": 9,
+    "disagreements": 8,
+    "families": [
+      "nonce",
+      "weak-randomness"
+    ]
+  },
+  "leave_one_family_out": [
+    {
+      "exact_fraction": "8/16",
+      "omitted_family": "key-derivation",
+      "u_disagreements": 8,
+      "u_episodes": 16
+    },
+    {
+      "exact_fraction": "5/16",
+      "omitted_family": "nonce",
+      "u_disagreements": 5,
+      "u_episodes": 16
+    },
+    {
+      "exact_fraction": "5/16",
+      "omitted_family": "weak-randomness",
+      "u_disagreements": 5,
+      "u_episodes": 16
+    },
+    {
+      "exact_fraction": "9/16",
+      "omitted_family": "sqli",
+      "u_disagreements": 9,
+      "u_episodes": 16
+    },
+    {
+      "exact_fraction": "9/16",
+      "omitted_family": "xss",
+      "u_disagreements": 9,
+      "u_episodes": 16
+    }
+  ],
+  "leave_one_family_out_max": "9/16",
+  "leave_one_family_out_min": "5/16",
+  "limitation": "Post-collection description of five purposively selected families with one run per cell. Guidance blocks were not fully time balanced; no population interval, p value, causal effect, or general security claim is supported.",
+  "main_episodes": 40,
+  "main_index_sha256": "759bc5769393ba2a3dd1f71744ed5ff8ba5ae7e8f8e4f446d00d838d21a9fd71",
+  "original_byte_provenance_verified_from_transformed_archive": false,
+  "public_release_approved": false,
+  "sanitization_manifest_sha256": "a53a24fedc8f0a9f4fce2bf7d4451ebcb62cd06fc8de1d3b8ae465fc74dffef7",
+  "selected_family_count": 5,
+  "source": "transformed review archive terminal receipts; no candidate source executed",
+  "status": "EXPLORATORY_FAMILY_DISCORDANCE_SENSITIVITY",
+  "transformed_members_hashed": 312,
+  "u_disagreement_fraction": "9/20",
+  "u_episodes": 20,
+  "u_hidden_veto_disagreements": 9
+}

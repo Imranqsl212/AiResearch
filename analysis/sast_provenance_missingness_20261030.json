@@ -1,0 +1,98 @@
+{
+  "by_raw_test_outcome": {
+    "raw_test_fail": {
+      "evaluator_source_relations": {
+        "MISSING_SHA": 15
+      },
+      "sast_statuses": {
+        "INDETERMINATE": 1,
+        "NO_FINDINGS": 13,
+        "UNSCANNABLE_SOURCE_MISMATCH": 1
+      },
+      "source_identical_eligible": 0,
+      "source_identical_ineligible": 15,
+      "total": 15
+    },
+    "raw_test_pass": {
+      "evaluator_source_relations": {
+        "DIFFERENT_SHA": 1,
+        "MATCH": 24
+      },
+      "sast_statuses": {
+        "NO_FINDINGS": 24,
+        "UNSCANNABLE_SOURCE_MISMATCH": 1
+      },
+      "source_identical_eligible": 24,
+      "source_identical_ineligible": 1,
+      "total": 25
+    }
+  },
+  "cohort": "rag-overnight-v2-main-0-5-0",
+  "eligible_for_main_analysis": false,
+  "finals": 40,
+  "phase": "excluded_retrospective",
+  "sast_archive_sha256": "648b76fe3c88affdf33f8c59666fb310f44bcab0cc5b0a5ed748644caee8f4f6",
+  "sast_manifest_sha256": "55ff1b678d94c74f36a59fec68f63a7fdc85271869c20e54f9894305c874152a",
+  "schema_version": "excluded-historical-sast-provenance-missingness-v1",
+  "sealed_log_archive_manifest_sha256": "07bf61e0db8d23aa7bfdf4481fad9b2f6b1ed867870cd17f8e230560f4e6d950",
+  "strata": {
+    "condition": {
+      "RD": {
+        "evaluator_sha_missing": 3,
+        "raw_test_pass": 7,
+        "source_identical_eligible": 7,
+        "total": 10
+      },
+      "RW": {
+        "evaluator_sha_missing": 1,
+        "raw_test_pass": 9,
+        "source_identical_eligible": 8,
+        "total": 10
+      },
+      "UD": {
+        "evaluator_sha_missing": 5,
+        "raw_test_pass": 5,
+        "source_identical_eligible": 5,
+        "total": 10
+      },
+      "UW": {
+        "evaluator_sha_missing": 6,
+        "raw_test_pass": 4,
+        "source_identical_eligible": 4,
+        "total": 10
+      }
+    },
+    "family": {
+      "key-derivation": {
+        "evaluator_sha_missing": 4,
+        "raw_test_pass": 4,
+        "source_identical_eligible": 3,
+        "total": 8
+      },
+      "nonce": {
+        "evaluator_sha_missing": 0,
+        "raw_test_pass": 8,
+        "source_identical_eligible": 8,
+        "total": 8
+      },
+      "sqli": {
+        "evaluator_sha_missing": 7,
+        "raw_test_pass": 1,
+        "source_identical_eligible": 1,
+        "total": 8
+      },
+      "weak-randomness": {
+        "evaluator_sha_missing": 0,
+        "raw_test_pass": 8,
+        "source_identical_eligible": 8,
+        "total": 8
+      },
+      "xss": {
+        "evaluator_sha_missing": 4,
+        "raw_test_pass": 4,
+        "source_identical_eligible": 4,
+        "total": 8
+      }
+    }
+  }
+}
