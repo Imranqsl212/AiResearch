@@ -1,0 +1,17 @@
+{
+  "candidate_space_size": 3,
+  "case_count": 3,
+  "certificate_version": "7.0.0",
+  "contradiction_witness": null,
+  "ground_truth_state": "REPAIRABLE",
+  "proof_sha256": "6a8cfcd6f069f089938dfa0d86cf5452cc0a61e235d5e37dde171ad0212e80bc",
+  "satisfying_candidates": [
+    {
+      "mode": "check_used"
+    }
+  ],
+  "scope": "fixed_stateless_candidate_modes_and_authored_finite_worlds_only",
+  "secure_candidate_gate_verdict": "PASS",
+  "task_id": "fc7-nonce_uniqueness-c1",
+  "task_sha256": "9d590bbd684ab12afdd2a66b4c8bd0449d549fe61bc10cff8039bfb5baff27fa"
+}
