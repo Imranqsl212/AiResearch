@@ -1,8 +1,7 @@
-"""Build a short, editable research update for a nontechnical audience.
+"""Build an eight-slide, editable research talk for a general audience.
 
-The deck deliberately separates the completed historical audit, authored
-calibration cases, excluded pilots, and the planned prospective experiment.
-Run with the Codex bundled Python, which includes python-pptx 1.0.2.
+Use the Codex bundled Python, which includes python-pptx. The slide text
+uses ordinary language; exact definitions and evidence limits live in notes.
 """
 
 from __future__ import annotations
@@ -16,13 +15,13 @@ from pptx.enum.text import MSO_ANCHOR, PP_ALIGN
 from pptx.util import Inches, Pt
 
 
-OUT = Path(__file__).resolve().parent / "Research_Update_2026-11-01.pptx"
-
+HERE = Path(__file__).resolve().parent
+OUT = HERE / "Research_Update_2026-11-01.pptx"
 NAVY = "0B1220"
 PANEL = "172238"
 PANEL_2 = "1D2B45"
 WHITE = "F6F4EF"
-MUTED = "A8B5C8"
+MUTED = "ADB9CA"
 MINT = "5DDFC4"
 CORAL = "FF7773"
 BLUE = "77A9FF"
@@ -39,93 +38,88 @@ def text(
     slide, value: str, x: float, y: float, w: float, h: float,
     *, size: float = 20, color: str = WHITE, bold: bool = False,
     align=PP_ALIGN.LEFT, valign=MSO_ANCHOR.MIDDLE,
-    margin: float = 0, line_spacing: float = 1.1,
 ) -> None:
-    box = slide.shapes.add_textbox(Inches(x), Inches(y), Inches(w), Inches(h))
-    tf = box.text_frame
-    tf.clear()
-    tf.word_wrap = True
-    tf.margin_left = tf.margin_right = Inches(margin)
-    tf.margin_top = tf.margin_bottom = Inches(margin)
-    tf.vertical_anchor = valign
-    for idx, line in enumerate(value.split("\n")):
-        p = tf.paragraphs[0] if idx == 0 else tf.add_paragraph()
-        p.alignment = align
-        p.line_spacing = line_spacing
-        p.space_after = Pt(0)
-        r = p.add_run()
-        r.text = line
-        r.font.name = FONT
-        r.font.size = Pt(size)
-        r.font.bold = bold
-        r.font.color.rgb = rgb(color)
+    shape = slide.shapes.add_textbox(Inches(x), Inches(y), Inches(w), Inches(h))
+    frame = shape.text_frame
+    frame.clear()
+    frame.word_wrap = True
+    frame.margin_left = frame.margin_right = Inches(0)
+    frame.margin_top = frame.margin_bottom = Inches(0)
+    frame.vertical_anchor = valign
+    for i, line in enumerate(value.split("\n")):
+        para = frame.paragraphs[0] if i == 0 else frame.add_paragraph()
+        para.alignment = align
+        para.space_after = Pt(0)
+        para.line_spacing = 1.08
+        run = para.add_run()
+        run.text = line
+        run.font.name = FONT
+        run.font.size = Pt(size)
+        run.font.bold = bold
+        run.font.color.rgb = rgb(color)
 
 
 def box(slide, x: float, y: float, w: float, h: float, *,
-        fill: str = PANEL, border: str | None = None, round_: bool = True):
-    shape_type = MSO_SHAPE.ROUNDED_RECTANGLE if round_ else MSO_SHAPE.RECTANGLE
-    s = slide.shapes.add_shape(shape_type, Inches(x), Inches(y), Inches(w), Inches(h))
-    s.fill.solid()
-    s.fill.fore_color.rgb = rgb(fill)
-    if border:
-        s.line.color.rgb = rgb(border)
-        s.line.width = Pt(1.2)
+        fill: str = PANEL, border: str | None = None, rounded: bool = True):
+    kind = MSO_SHAPE.ROUNDED_RECTANGLE if rounded else MSO_SHAPE.RECTANGLE
+    shape = slide.shapes.add_shape(kind, Inches(x), Inches(y), Inches(w), Inches(h))
+    shape.fill.solid()
+    shape.fill.fore_color.rgb = rgb(fill)
+    if border is None:
+        shape.line.fill.background()
     else:
-        s.line.fill.background()
-    if round_:
-        s.adjustments[0] = 0.12
-    return s
+        shape.line.color.rgb = rgb(border)
+        shape.line.width = Pt(1.2)
+    if rounded:
+        shape.adjustments[0] = 0.12
+    return shape
 
 
-def circle(slide, x: float, y: float, d: float, *, fill: str,
-           border: str | None = None):
-    s = slide.shapes.add_shape(MSO_SHAPE.OVAL, Inches(x), Inches(y), Inches(d), Inches(d))
-    s.fill.solid()
-    s.fill.fore_color.rgb = rgb(fill)
-    if border:
-        s.line.color.rgb = rgb(border)
-        s.line.width = Pt(1.1)
+def circle(slide, x: float, y: float, d: float, *,
+           fill: str, border: str | None = None) -> None:
+    shape = slide.shapes.add_shape(MSO_SHAPE.OVAL, Inches(x), Inches(y),
+                                   Inches(d), Inches(d))
+    shape.fill.solid()
+    shape.fill.fore_color.rgb = rgb(fill)
+    if border is None:
+        shape.line.fill.background()
     else:
-        s.line.fill.background()
-    return s
+        shape.line.color.rgb = rgb(border)
+        shape.line.width = Pt(1.1)
 
 
 def rule(slide, x1: float, y1: float, x2: float, y2: float,
-         *, color: str = LINE, width: float = 1.5):
-    s = slide.shapes.add_connector(MSO_CONNECTOR.STRAIGHT,
-                                   Inches(x1), Inches(y1),
-                                   Inches(x2), Inches(y2))
-    s.line.color.rgb = rgb(color)
-    s.line.width = Pt(width)
-    return s
+         *, color: str = LINE, width: float = 1.5) -> None:
+    shape = slide.shapes.add_connector(MSO_CONNECTOR.STRAIGHT,
+                                       Inches(x1), Inches(y1),
+                                       Inches(x2), Inches(y2))
+    shape.line.color.rgb = rgb(color)
+    shape.line.width = Pt(width)
 
 
-def pill(slide, value: str, x: float, y: float, w: float, h: float,
-         *, fill: str = PANEL_2, color: str = WHITE,
-         size: float = 13, border: str | None = None) -> None:
-    box(slide, x, y, w, h, fill=fill, border=border)
-    text(slide, value, x + 0.10, y + 0.02, w - 0.20, h - 0.04,
+def pill(slide, value: str, x: float, y: float, w: float, h: float, *,
+         fill: str = PANEL_2, color: str = WHITE, size: float = 15) -> None:
+    box(slide, x, y, w, h, fill=fill)
+    text(slide, value, x + 0.11, y + 0.02, w - 0.22, h - 0.04,
          size=size, color=color, bold=True, align=PP_ALIGN.CENTER)
 
 
-def base(prs: Presentation, number: int, eyebrow: str, title: str,
-         source: str, *, title_size: float = 33):
+def base(prs: Presentation, n: int, label: str, title: str, source: str,
+         *, title_size: float = 35):
     slide = prs.slides.add_slide(prs.slide_layouts[6])
-    box(slide, 0, 0, 13.333, 7.5, fill=NAVY, round_=False)
-    text(slide, eyebrow.upper(), 0.70, 0.36, 10.9, 0.30,
+    box(slide, 0, 0, 13.333, 7.5, fill=NAVY, rounded=False)
+    text(slide, label.upper(), 0.70, 0.35, 10.8, 0.30,
          size=11, color=BLUE, bold=True)
-    text(slide, title, 0.70, 0.81, 11.95, 0.92,
-         size=title_size, color=WHITE, bold=True,
-         valign=MSO_ANCHOR.TOP)
-    rule(slide, 0.70, 7.08, 12.63, 7.08)
-    text(slide, source, 0.72, 7.14, 11.4, 0.19,
-         size=8.5, color=MUTED)
-    text(slide, f"{number:02d}", 12.1, 7.11, 0.5, 0.24,
-         size=10, color=MUTED, align=PP_ALIGN.RIGHT)
+    text(slide, title, 0.70, 0.83, 11.98, 0.90,
+         size=title_size, bold=True, valign=MSO_ANCHOR.TOP)
+    rule(slide, 0.70, 7.07, 12.63, 7.07)
+    text(slide, source, 0.72, 7.14, 11.30, 0.19, size=8.2, color=MUTED)
+    text(slide, f"{n:02d}", 12.08, 7.12, 0.50, 0.22, size=10,
+         color=MUTED, align=PP_ALIGN.RIGHT)
     return slide
 
 
-def speaker_note(slide, value: str) -> None:
+def note(slide, value: str) -> None:
     slide.notes_slide.notes_text_frame.text = value
 
 
@@ -133,297 +127,229 @@ def build() -> None:
     prs = Presentation()
     prs.slide_width = Inches(13.333)
     prs.slide_height = Inches(7.5)
-    prs.core_properties.title = "The Tests Passed. The Benchmark Said No."
-    prs.core_properties.subject = "Research progress on AI security-repair evaluation"
+    prs.core_properties.title = "Our Tests Said PASS. Our Grader Said FAIL."
+    prs.core_properties.subject = "Plain-language research progress presentation"
     prs.core_properties.author = "Imran Zakirov"
-    prs.core_properties.keywords = "AI coding agent, security repair, benchmark validity"
 
-    # 1 — Hook.
+    # 1. Hook. "Passed" always refers to our written tests, not full security.
     s = prs.slides.add_slide(prs.slide_layouts[6])
-    box(s, 0, 0, 13.333, 7.5, fill=NAVY, round_=False)
-    pill(s, "RESEARCH UPDATE  ·  1 NOV 2026", 0.72, 0.53, 3.63, 0.42,
-         fill=PANEL_2, color=BLUE, size=11)
-    text(s, "The Tests Passed.\nThe Benchmark Said No.", 0.70, 1.28, 10.9, 2.05,
-         size=45, bold=True, valign=MSO_ANCHOR.TOP, line_spacing=1.03)
-    text(s, "What if the grader of an AI security fix is wrong?", 0.73, 3.54,
-         10.6, 0.55, size=23, color=MUTED)
-    pill(s, "TESTS  PASS", 0.77, 4.62, 3.18, 0.72,
-         fill="17453E", color=MINT, size=23, border="2D7769")
-    text(s, "→", 4.23, 4.59, 0.75, 0.74, size=36, color=MUTED,
+    box(s, 0, 0, 13.333, 7.5, fill=NAVY, rounded=False)
+    pill(s, "RESEARCH UPDATE  ·  1 NOV 2026", 0.75, 0.54, 3.58, 0.42,
+         color=BLUE, size=11)
+    text(s, "Our tests said PASS.\nOur grader said FAIL.",
+         0.72, 1.25, 11.55, 2.05, size=46, bold=True,
+         valign=MSO_ANCHOR.TOP)
+    text(s, "This happened in nine runs where AI tried to fix code.",
+         0.75, 3.58, 11.72, 0.62, size=24, color=MUTED)
+    pill(s, "OUR TESTS: PASS", 0.78, 4.70, 3.82, 0.78,
+         fill="17453E", color=MINT, size=22)
+    text(s, "→", 4.83, 4.70, 0.68, 0.76, size=34, color=BLUE,
          align=PP_ALIGN.CENTER)
-    pill(s, "FINAL VERDICT  FAIL", 5.20, 4.62, 4.48, 0.72,
-         fill="4A2937", color=CORAL, size=22, border="875063")
-    rule(s, 0.72, 6.78, 12.61, 6.78)
-    text(s, "Imran Zakirov  ·  Bishkek, Kyrgyzstan", 0.73, 6.91, 8, 0.25,
-         size=11, color=MUTED)
-    text(s, "01", 12.08, 6.89, 0.5, 0.26, size=11, color=MUTED,
-         align=PP_ALIGN.RIGHT)
-    speaker_note(s, "We asked whether an AI that repairs code is being judged fairly. "
-                 "Our headline is a verified disagreement inside one historical benchmark, "
-                 "not a claim that the generated code was secure in general. "
-                 "Source: README.md; paper/final.md, Results.")
+    pill(s, "FINAL SCORE: FAIL", 5.73, 4.70, 4.52, 0.78,
+         fill="4A2937", color=CORAL, size=22)
+    rule(s, 0.75, 6.76, 12.58, 6.76)
+    text(s, "Imran Zakirov  ·  Bishkek, Kyrgyzstan",
+         0.76, 6.90, 8.65, 0.28, size=11, color=MUTED)
+    text(s, "01", 12.05, 6.88, 0.50, 0.27, size=11,
+         color=MUTED, align=PP_ALIGN.RIGHT)
+    note(s, "We watched a local AI system try to fix small security-related "
+         "mistakes in Python code. In part of our historical study, its final "
+         "code passed the tests we had written, yet our checker gave a final "
+         "FAIL. This is about our research checker, not a malicious AI. Passing "
+         "our tests does not prove complete safety. Source: README.md; paper/final.md.")
 
-    # 2 — Everyday analogy.
-    s = base(prs, 2, "The idea", "Imagine a teacher with a checklist",
-             "Illustration of the benchmark disagreement; see paper/final.md, Results.")
-    box(s, 0.76, 2.07, 5.32, 3.56, fill=PANEL)
-    text(s, "THE CHECKLIST", 1.09, 2.39, 4.45, 0.37,
-         size=14, color=MUTED, bold=True)
-    circle(s, 1.13, 3.08, 0.51, fill=MINT)
-    text(s, "✓", 1.19, 3.05, 0.38, 0.54, size=28, color=NAVY,
-         bold=True, align=PP_ALIGN.CENTER)
-    text(s, "All listed checks pass", 1.82, 3.09, 3.85, 0.54,
-         size=22, bold=True)
-    text(s, "The student's work satisfies\nwhat the checklist actually tests.",
-         1.13, 4.10, 4.38, 0.95, size=17, color=MUTED)
-    text(s, "→", 6.27, 3.33, 0.8, 0.85,
+    # 2. The setup in everyday words.
+    s = base(prs, 2, "First", "What was the AI doing?",
+             "Source: paper/final.md, Methods; README.md.")
+    steps = [
+        ("1", "See a small\ncode problem", BLUE),
+        ("2", "Write a\npossible fix", MINT),
+        ("3", "Hear PASS\nor FAIL", AMBER),
+        ("4", "Stop or\ntry again", CORAL),
+    ]
+    for i, (number, label, accent) in enumerate(steps):
+        x = 0.75 + i * 3.16
+        box(s, x, 2.10, 2.78, 3.18, fill=PANEL)
+        circle(s, x + 0.97, 2.38, 0.78, fill=accent)
+        text(s, number, x + 1.09, 2.48, 0.52, 0.50,
+             size=24, color=NAVY, bold=True, align=PP_ALIGN.CENTER)
+        text(s, label, x + 0.20, 3.58, 2.38, 1.08,
+             size=22, bold=True, align=PP_ALIGN.CENTER)
+        if i < 3:
+            text(s, "→", x + 2.82, 3.30, 0.35, 0.66,
+                 size=29, color=BLUE, align=PP_ALIGN.CENTER)
+    pill(s, "This can happen several times in one run.",
+         2.34, 6.05, 8.66, 0.50, color=WHITE, size=16)
+    note(s, "An AI coder is a model that writes a code change, sees the "
+         "checker's message, and may revise within one session. We are not "
+         "training the model during these runs. The checker is software "
+         "written for our study. Source: paper/final.md, Methods.")
+
+    # 3. Analogy.
+    s = base(prs, 3, "Imagine this", "A teacher checks every box...",
+             "Analogy of the historical checker; source: paper/final.md, Results.")
+    box(s, 0.78, 2.10, 5.27, 3.34, fill="173D3B", border="2A716C")
+    text(s, "THE CHECKLIST", 1.09, 2.45, 4.57, 0.42,
+         size=15, color=MINT, bold=True)
+    text(s, "✓  ✓  ✓", 1.25, 3.21, 4.25, 0.78,
+         size=44, color=MINT, bold=True, align=PP_ALIGN.CENTER)
+    text(s, "All listed checks pass.", 1.17, 4.35, 4.56, 0.54,
+         size=24, bold=True, align=PP_ALIGN.CENTER)
+    text(s, "→", 6.23, 3.19, 0.85, 0.76,
          size=38, color=BLUE, align=PP_ALIGN.CENTER)
-    box(s, 7.25, 2.07, 5.30, 3.56, fill="3D2634", border="794458")
-    text(s, "THE FINAL GRADE", 7.60, 2.39, 4.45, 0.37,
-         size=14, color="F7B0AC", bold=True)
-    circle(s, 7.64, 3.08, 0.51, fill=CORAL)
-    text(s, "×", 7.70, 3.05, 0.38, 0.54, size=30, color=NAVY,
-         bold=True, align=PP_ALIGN.CENTER)
-    text(s, "Still marked FAIL", 8.35, 3.09, 3.75, 0.54,
-         size=22, bold=True)
-    text(s, "An extra rule makes the final\ngrade disagree with the checks.",
-         7.64, 4.10, 4.35, 0.95, size=17, color="E7B7BC")
-    pill(s, "A checklist can also miss important problems.", 2.28, 6.02,
-         8.78, 0.46, fill=PANEL_2, color=AMBER, size=14)
-    speaker_note(s, "Think of a teacher whose own checklist is satisfied, yet who "
-                 "marks the work wrong because of an additional rule. That is the "
-                 "analogy for our historical checker. The checklist is limited; "
-                 "passing it is not proof that the answer is fully correct.")
+    box(s, 7.23, 2.10, 5.27, 3.34, fill="3D2634", border="794458")
+    text(s, "THE FINAL GRADE", 7.59, 2.45, 4.50, 0.42,
+         size=15, color=CORAL, bold=True)
+    text(s, "FAIL", 7.88, 3.22, 3.97, 0.86,
+         size=48, color=CORAL, bold=True, align=PP_ALIGN.CENTER)
+    text(s, "Another rule says no.", 7.56, 4.35, 4.58, 0.54,
+         size=24, bold=True, align=PP_ALIGN.CENTER)
+    pill(s, "The checklist covers only the things it checks.",
+         2.05, 5.94, 9.20, 0.58, color=AMBER, size=17)
+    note(s, "Imagine that a teacher's written checklist marks every listed "
+         "item correct, but the teacher still gives FAIL because of an extra "
+         "rule. Our checker had that kind of extra rule. The analogy has a "
+         "limit: a checklist can miss important problems, so passing listed "
+         "tests does not prove the work perfect or the code fully secure.")
 
-    # 3 — Agent feedback loop.
-    s = base(prs, 3, "How it works", "An AI coder responds to the checker",
-             "Study process: paper/final.md, Methods; README.md.")
-    stages = [
-        (0.76, "1", "A security task", "A small piece of code\nneeds repair.", BLUE),
-        (3.89, "2", "AI proposes code", "The agent submits\na candidate fix.", MINT),
-        (7.02, "3", "Checker responds", "Tests and final rule\nproduce feedback.", AMBER),
-        (10.15, "4", "AI acts again", "It may revise, stop,\nor run out of time.", CORAL),
-    ]
-    for x, num, heading, body, accent in stages:
-        box(s, x, 2.19, 2.42, 3.24, fill=PANEL)
-        circle(s, x + 0.85, 2.51, 0.70, fill=accent)
-        text(s, num, x + 0.91, 2.55, 0.58, 0.58, size=23,
-             color=NAVY, bold=True, align=PP_ALIGN.CENTER)
-        text(s, heading, x + 0.17, 3.45, 2.08, 0.55,
-             size=17.5, bold=True, align=PP_ALIGN.CENTER)
-        text(s, body, x + 0.17, 4.18, 2.08, 0.79,
-             size=13.5, color=MUTED, align=PP_ALIGN.CENTER)
-    for x in (3.38, 6.51, 9.64):
-        text(s, "→", x, 3.24, 0.36, 0.65, size=27,
-             color=BLUE, align=PP_ALIGN.CENTER)
-    text(s, "Our research asks: what can we infer from the AI's reaction if the feedback is wrong?",
-         1.06, 5.92, 11.21, 0.68, size=22,
-         color=WHITE, bold=True, align=PP_ALIGN.CENTER)
-    speaker_note(s, "The AI agent writes small Python repairs, receives feedback, "
-                 "and can try again. We archive submissions and observations. "
-                 "A final pass rate alone cannot tell us what happened along the way.")
-
-    # 4 — Historical cohort.
-    s = base(prs, 4, "What we examined", "One recorded study, clearly bounded",
-             "Historical exploratory cohort: README.md, Current result; paper/final.md, Methods.")
-    metrics = [
-        (0.77, "40", "recorded repair\nepisodes", BLUE),
-        (4.54, "5", "selected security\ntask families", MINT),
-        (8.31, "1", "local coding\nmodel", AMBER),
-    ]
-    for x, numeral, label, accent in metrics:
-        box(s, x, 2.01, 3.18, 2.56, fill=PANEL)
-        text(s, numeral, x + 0.24, 2.27, 2.7, 0.98,
-             size=55, color=accent, bold=True, align=PP_ALIGN.CENTER)
-        text(s, label, x + 0.26, 3.43, 2.66, 0.78,
-             size=17, color=WHITE, bold=True, align=PP_ALIGN.CENTER)
-    text(s, "The five families covered key derivation, nonce handling, weak randomness,",
-         0.78, 5.08, 11.8, 0.38, size=19, color=MUTED)
-    text(s, "SQL injection, and cross-site scripting.",
-         0.78, 5.48, 11.8, 0.38, size=19, color=MUTED)
-    pill(s, "HISTORICAL EXPLORATORY DATA", 0.78, 6.18, 4.12, 0.45,
-         fill=PANEL_2, color=BLUE, size=12)
-    speaker_note(s, "We audited 40 archived episodes from one local model, "
-                 "qwen3:4b, across five selected security task families. One episode "
-                 "is a recorded attempt under a particular condition. This is an "
-                 "exploratory cohort, not the future main experiment.")
-
-    # 5 — Key finding, dot plot.
-    s = base(prs, 5, "The finding", "Tests passed. The final answer was still FAIL.",
-             "Counts: docs/MEASUREMENT_FOLLOWUP_20261030.md, §1; paper/final.md, Results.",
-             title_size=30)
-    box(s, 0.78, 1.98, 7.20, 3.73, fill=PANEL)
+    # 4. The actual counted finding.
+    s = base(prs, 4, "What we found", "Nine times, tests and score disagreed",
+             "Source: docs/MEASUREMENT_FOLLOWUP_20261030.md, §1; paper/final.md, Results.")
+    box(s, 0.78, 2.10, 7.10, 3.52, fill=PANEL)
     for i in range(20):
         row, col = divmod(i, 10)
-        d = 0.43
-        x = 1.26 + col * 0.61
-        y = 2.68 + row * 0.84
-        circle(s, x, y, d, fill=CORAL if i < 9 else PANEL_2,
+        circle(s, 1.22 + col * 0.60, 2.72 + row * 0.85, 0.43,
+               fill=CORAL if i < 9 else PANEL_2,
                border=None if i < 9 else LINE)
-    text(s, '20 final submissions in tasks labeled\n"unavailable" by the benchmark',
-         1.24, 4.64, 6.19, 0.79, size=17, color=MUTED)
-    text(s, "9 / 20", 8.43, 2.38, 3.96, 1.25,
-         size=58, color=CORAL, bold=True, align=PP_ALIGN.CENTER)
-    text(s, "passed the implemented\nfamily tests, yet the\nfinal gate rejected them",
-         8.40, 3.85, 4.00, 1.48, size=21,
-         color=WHITE, bold=True, align=PP_ALIGN.CENTER)
-    pill(s, "This is a checker disagreement in selected runs.",
-         1.72, 6.06, 9.90, 0.48, fill="3B2834", color="FFC0BC", size=15)
-    speaker_note(s, "In nine of the 20 historical runs labeled nominally "
-                 "unavailable, the final submission passed the implemented family "
-                 "tests but the benchmark rejected it. That is nine of those "
-                 "20 selected runs, not a general error rate. The receipt audit "
-                 "reproduced these counts from the saved archive.")
-
-    # 6 — Hidden gate mechanism.
-    s = base(prs, 6, "Why it happened", "The benchmark had a second gate",
-             "Evaluator rule and receipts: paper/final.md, Results; README.md.")
-    box(s, 0.84, 2.17, 4.20, 1.82, fill="173D3B", border="2A716C")
-    text(s, "IMPLEMENTED TESTS", 1.10, 2.47, 3.70, 0.38,
-         size=14, color=MINT, bold=True, align=PP_ALIGN.CENTER)
-    text(s, "PASS", 1.11, 3.04, 3.69, 0.56,
-         size=29, color=MINT, bold=True, align=PP_ALIGN.CENTER)
-    text(s, "AND", 5.23, 2.81, 1.04, 0.72,
-         size=19, color=MUTED, bold=True, align=PP_ALIGN.CENTER)
-    box(s, 6.42, 2.17, 4.20, 1.82, fill="3C2836", border="755065")
-    text(s, "HIDDEN CONDITION FLAG", 6.68, 2.47, 3.70, 0.38,
-         size=14, color="FFC0BC", bold=True, align=PP_ALIGN.CENTER)
-    text(s, "FALSE", 6.69, 3.04, 3.69, 0.56,
-         size=29, color=CORAL, bold=True, align=PP_ALIGN.CENTER)
-    text(s, "=", 10.85, 2.81, 0.52, 0.72,
-         size=31, color=MUTED, bold=True, align=PP_ALIGN.CENTER)
-    box(s, 11.46, 2.60, 1.05, 0.90, fill="633243", border="9F5469")
-    text(s, "FAIL", 11.52, 2.72, 0.92, 0.56,
-         size=18, color=WHITE, bold=True, align=PP_ALIGN.CENTER)
-    text(s, 'The extra flag was false for tasks labeled "unavailable".',
-         0.86, 4.66, 11.73, 0.50, size=21, bold=True,
+    text(s, '20 runs had the extra "no" rule',
+         1.17, 4.74, 6.18, 0.52, size=19, color=MUTED)
+    text(s, "9 of 20", 8.30, 2.45, 4.15, 0.95,
+         size=49, color=CORAL, bold=True, align=PP_ALIGN.CENTER)
+    text(s, "passed our written tests\nbut still got FAIL",
+         8.20, 3.60, 4.28, 1.20, size=24, bold=True,
          align=PP_ALIGN.CENTER)
-    text(s, "Passing these finite tests still does not prove that code is secure in general.",
-         0.86, 5.44, 11.73, 0.55, size=18,
-         color=AMBER, align=PP_ALIGN.CENTER)
-    speaker_note(s, "The final rule was effectively: accept if the implemented "
-                 "tests pass and a hidden condition flag allows acceptance. In the "
-                 "nominally unavailable condition that flag was false. This "
-                 "explains the test-versus-gate disagreement. It does not show "
-                 "that the code was secure beyond those finite tests.")
+    pill(s, "We reviewed 40 AI runs in total.",
+         3.30, 6.02, 6.72, 0.53, color=BLUE, size=17)
+    note(s, "We reviewed 40 archived runs by one local model across five "
+         "selected kinds of small security tasks. Twenty runs were labeled "
+         "'unavailable' in our experiment. In nine of those twenty, the "
+         "final code passed our checker's own written tests but the final "
+         "decision was FAIL. The dots show those twenty final submissions; "
+         "nine colored dots are the disagreements. These are selected runs, "
+         "not an error rate for all AI tools. Source: paper/final.md, Results; "
+         "docs/MEASUREMENT_FOLLOWUP_20261030.md.")
 
-    # 7 — Accomplishments, with separate cohorts.
-    s = base(prs, 7, "What we built", "We checked the evidence from several angles",
-             "README.md; docs/MEASUREMENT_FOLLOWUP_20261030.md; docs/V7_DECISIVE_EXCLUDED_PILOT_20261005.md.",
-             title_size=31)
-    cards = [
-        (0.78, 2.05, BLUE, "ARCHIVE REPLAY", "Recomputed the 40-run result\nfrom saved receipts."),
-        (6.72, 2.05, MINT, "TASK CATALOG", "Built 20 types of security tasks;\nhuman review is still pending."),
-        (0.78, 4.22, AMBER, "TEST CALIBRATION", "Rechecked 1,820 outcomes on\nexamples we designed."),
-        (6.72, 4.22, CORAL, "CORRECTED PILOT", "Completed 30 separate trial runs\nwith a revised checker."),
-    ]
-    for x, y, accent, head, body in cards:
-        box(s, x, y, 5.78, 1.77, fill=PANEL)
-        box(s, x, y, 0.12, 1.77, fill=accent, round_=False)
-        text(s, head, x + 0.31, y + 0.18, 4.98, 0.36,
-             size=13, color=accent, bold=True)
-        text(s, body, x + 0.30, y + 0.63, 5.05, 0.83,
-             size=18.3, bold=True)
-    speaker_note(s, "We rebuilt the historical result from saved records and "
-                 "added automated verification in the public repository. "
-                 "Separately, we authored a 20-family finite catalog and "
-                 "independently rechecked 1,820 authored decisions. Those are "
-                 "designed examples, not AI submissions. A corrected-oracle pilot "
-                 "completed 30 excluded episodes in two authored families. "
-                 "None of these cohorts is pooled with the 40 historical runs.")
+    # 5. Cause: the research team's extra rule.
+    s = base(prs, 5, "Why", "Our checker had an extra rule",
+             "Source: paper/final.md, Results; docs/PROJECT_OVERVIEW_20261029.md.")
+    box(s, 0.82, 2.07, 5.34, 2.03, fill="173D3B", border="2A716C")
+    text(s, "WRITTEN TESTS", 1.17, 2.41, 4.66, 0.43,
+         size=17, color=MINT, bold=True, align=PP_ALIGN.CENTER)
+    text(s, "PASS", 1.17, 3.02, 4.66, 0.70,
+         size=35, color=MINT, bold=True, align=PP_ALIGN.CENTER)
+    text(s, "+", 6.28, 2.71, 0.68, 0.66,
+         size=33, color=MUTED, align=PP_ALIGN.CENTER)
+    box(s, 7.07, 2.07, 5.34, 2.03, fill="3D2634", border="794458")
+    text(s, "OUR EXTRA RULE", 7.42, 2.41, 4.64, 0.43,
+         size=17, color=CORAL, bold=True, align=PP_ALIGN.CENTER)
+    text(s, "NO", 7.42, 3.02, 4.64, 0.70,
+         size=35, color=CORAL, bold=True, align=PP_ALIGN.CENTER)
+    text(s, "=  FINAL FAIL", 3.44, 4.46, 6.45, 0.78,
+         size=32, color=CORAL, bold=True, align=PP_ALIGN.CENTER)
+    pill(s, "We added that rule. The AI did not see it.",
+         2.05, 5.97, 9.24, 0.57, color=AMBER, size=18)
+    note(s, "The research checker accepted a result only when our written "
+         "tests passed AND an extra condition allowed acceptance. Our team "
+         "added that condition to simulate tasks labeled unavailable. It "
+         "forced a final FAIL for that group even when its written tests "
+         "passed. The AI did not see this rule. This shows that the group "
+         "was not an independently proven impossible repair task. Source: "
+         "paper/final.md, Results; docs/PROJECT_OVERVIEW_20261029.md.")
 
-    # 8 — Limits and scientific discipline.
-    s = base(prs, 8, "What the evidence means", "A clear result, with clear limits",
-             "Limitations: paper/final.md, Results and Discussion; README.md.")
-    box(s, 0.78, 2.04, 5.84, 3.49, fill="173A39", border="2A716C")
-    text(s, "WE CAN SAY", 1.08, 2.34, 5.10, 0.42,
-         size=15, color=MINT, bold=True)
-    text(s, "The checker and its own\nimplemented tests disagreed\nin nine archived finals.",
-         1.08, 3.00, 5.06, 1.91, size=24, bold=True,
-         valign=MSO_ANCHOR.TOP)
-    box(s, 6.76, 2.04, 5.78, 3.49, fill="3A2C35", border="795867")
-    text(s, "WE CANNOT YET SAY", 7.05, 2.34, 5.10, 0.42,
+    # 6. Interpretation and one important limit.
+    s = base(prs, 6, "So what?", "The score can mislead us",
+             "Source: paper/final.md, Discussion and limitations.")
+    box(s, 0.78, 2.12, 5.42, 2.68, fill="3D2634", border="794458")
+    text(s, "THE SCORE SEEMS TO SAY", 1.10, 2.44, 4.82, 0.41,
          size=15, color=CORAL, bold=True)
-    text(s, "The AI generally reacts badly\nto wrong feedback—or that\nthose fixes were fully secure.",
-         7.06, 3.00, 5.06, 1.91, size=23, bold=True,
-         valign=MSO_ANCHOR.TOP)
-    pill(s, "Old logs: none of 81 intermediate checks saved the raw test result.",
-         0.80, 5.96, 11.73, 0.52,
-         fill=PANEL_2, color=AMBER, size=15)
-    speaker_note(s, "We can say the historical checker was internally "
-                 "inconsistent in nine final submissions. We cannot say this "
-                 "caused an agent to continue or that the code was truly secure. "
-                 "The old per-action receipts did not preserve raw test results "
-                 "for any of the 81 intermediate checks, so we cannot identify "
-                 "every point where a passing intermediate candidate appeared.")
+    text(s, '"The AI failed."', 1.11, 3.19, 4.82, 0.68,
+         size=30, bold=True)
+    box(s, 7.14, 2.12, 5.42, 2.68, fill="173D3B", border="2A716C")
+    text(s, "OUR RECORDS SHOW", 7.47, 2.44, 4.73, 0.41,
+         size=15, color=MINT, bold=True)
+    text(s, "The tests and\nscore disagreed.", 7.48, 3.02, 4.64, 1.25,
+         size=29, bold=True)
+    text(s, "So this score cannot tell us whether the AI should have stopped trying.",
+         1.10, 5.18, 11.12, 0.75, size=22, bold=True,
+         align=PP_ALIGN.CENTER)
+    pill(s, "Passing our small tests does not prove the code fully safe.",
+         1.52, 6.10, 10.30, 0.48, color=AMBER, size=15)
+    note(s, "The final FAIL alone could make it look as if the AI could not "
+         "solve the task or did not know when to stop. But the checker and "
+         "its own tests disagreed. We cannot infer a general AI stopping "
+         "problem from that score. Also, none of the 81 old intermediate "
+         "check records saved the raw underlying test result, so we cannot "
+         "prove that a particular revision followed a known passing test. "
+         "Passing the small written tests does not prove general security.")
 
-    # 9 — Prospective causal design.
-    s = base(prs, 9, "The next experiment", "Same code. Two different verdicts.",
-             "Planned design only: docs/INTEGRATED_STUDY_EXTENSION_20261018.md.")
-    box(s, 4.15, 1.95, 5.04, 1.04, fill=PANEL_2, border=LINE)
-    text(s, "One independently checked candidate", 4.39, 2.18, 4.55, 0.52,
-         size=19.5, bold=True, align=PP_ALIGN.CENTER)
-    rule(s, 6.67, 2.99, 6.67, 3.44, color=BLUE, width=2)
-    rule(s, 3.70, 3.44, 9.63, 3.44, color=BLUE, width=2)
-    rule(s, 3.70, 3.44, 3.70, 3.77, color=BLUE, width=2)
-    rule(s, 9.63, 3.44, 9.63, 3.77, color=BLUE, width=2)
-    box(s, 1.20, 3.77, 5.04, 1.30, fill="173D3B", border="2A716C")
-    text(s, "A  ·  truthful PASS", 1.51, 4.11, 4.40, 0.59,
-         size=23, color=MINT, bold=True, align=PP_ALIGN.CENTER)
-    box(s, 7.08, 3.77, 5.04, 1.30, fill="3C2836", border="755065")
-    text(s, "B  ·  false FAIL", 7.40, 4.11, 4.40, 0.59,
-         size=23, color=CORAL, bold=True, align=PP_ALIGN.CENTER)
-    text(s, "Compare the later code and whether it keeps the verified finite property.",
-         1.02, 5.64, 11.27, 0.55, size=20,
-         bold=True, align=PP_ALIGN.CENTER)
-    pill(s, "PLANNED  ·  NO ELIGIBLE MAIN RESULTS YET", 3.74, 6.29,
-         5.84, 0.42, fill=PANEL_2, color=BLUE, size=12)
-    speaker_note(s, "The planned study branches from the same agent-generated, "
-                 "independently verified candidate and the same previous transcript. "
-                 "One branch hears a truthful PASS; the other a false FAIL. "
-                 "We would measure early stopping and whether the final candidate "
-                 "retains the bounded security property. A selected excluded "
-                 "pilot pair motivated this question, but it cannot establish "
-                 "a general causal effect. The main study has no eligible data.")
+    # 7. Concrete work completed, each cohort kept separate.
+    s = base(prs, 7, "Our progress", "What we have done so far",
+             "Sources: README.md; docs/MEASUREMENT_FOLLOWUP_20261030.md; docs/V7_DECISIVE_EXCLUDED_PILOT_20261005.md.")
+    cards = [
+        (0.80, 2.07, BLUE, "40", "old AI runs\nchecked again"),
+        (6.77, 2.07, MINT, "20", "new kinds of tasks\ndrafted"),
+        (0.80, 4.30, AMBER, "30", "separate practice\nruns completed"),
+        (6.77, 4.30, CORAL, "✓", "code and analyses\nshared online"),
+    ]
+    for x, y, accent, number, label in cards:
+        box(s, x, y, 5.72, 1.84, fill=PANEL)
+        text(s, number, x + 0.28, y + 0.28, 1.27, 1.16,
+             size=44, color=accent, bold=True, align=PP_ALIGN.CENTER)
+        text(s, label, x + 1.80, y + 0.29, 3.59, 1.14,
+             size=23, bold=True)
+    note(s, "We independently replayed the archived records and checked the "
+         "40-run result. We created twenty types of small security tasks; "
+         "independent human review is still pending. We also completed a "
+         "separate thirty-run practice study using a revised bounded checker; "
+         "those runs are not part of the original forty or the future main "
+         "study. The code and reproducible analyses are public. Source: README.md; "
+         "docs/MEASUREMENT_FOLLOWUP_20261030.md; "
+         "docs/V7_DECISIVE_EXCLUDED_PILOT_20261005.md.")
 
-    # 10 — Takeaway + current status.
-    s = prs.slides.add_slide(prs.slide_layouts[6])
-    box(s, 0, 0, 13.333, 7.5, fill=NAVY, round_=False)
-    text(s, "THE TAKEAWAY", 0.73, 0.54, 9.0, 0.35,
-         size=12, color=BLUE, bold=True)
-    text(s, "Before judging the AI,\ncheck the judge.",
-         0.73, 1.27, 11.62, 1.77, size=48, bold=True,
-         valign=MSO_ANCHOR.TOP, line_spacing=1.03)
-    box(s, 0.77, 3.74, 11.78, 1.39, fill=PANEL)
-    text(s, "COMPLETED", 1.05, 4.00, 2.05, 0.30,
-         size=12, color=MINT, bold=True)
-    text(s, "historical audit", 1.06, 4.38, 2.82, 0.42,
-         size=20, bold=True)
-    text(s, "NEXT", 4.60, 4.00, 1.15, 0.30,
-         size=12, color=AMBER, bold=True)
-    text(s, "independent review", 4.60, 4.38, 3.01, 0.42,
-         size=20, bold=True)
-    text(s, "MAIN STUDY", 8.80, 4.00, 2.12, 0.30,
-         size=12, color=CORAL, bold=True)
-    text(s, "0 / 12 gates passed", 8.81, 4.38, 3.22, 0.42,
-         size=20, bold=True)
-    text(s, "as of 1 Nov 2026", 8.82, 4.83, 3.12, 0.20,
-         size=10, color=MUTED)
-    text(s, "Would you trust an AI score if the grader disagreed with its own tests?",
-         0.73, 5.60, 11.90, 0.59, size=21, color=MUTED)
-    text(s, "github.com/Imranqsl212/AiResearch", 0.74, 6.65,
-         8.05, 0.35, size=16, color=BLUE, bold=True)
-    rule(s, 0.73, 7.13, 12.62, 7.13)
-    text(s, "Sources: README.md · paper/final.md · docs/MEASUREMENT_FOLLOWUP_20261030.md",
-         0.74, 7.18, 11.5, 0.18, size=8.5, color=MUTED)
-    text(s, "10", 12.10, 7.17, 0.5, 0.2,
-         size=10, color=MUTED, align=PP_ALIGN.RIGHT)
-    speaker_note(s, "Our completed finding is about measurement integrity. "
-                 "The future causal question is exciting, and it requires "
-                 "independently reviewed tasks and a frozen main protocol. "
-                 "As of this presentation, the prospective release gate is "
-                 "0 of 12 and there are zero eligible main episodes. "
-                 "The full repository is public at github.com/Imranqsl212/AiResearch.")
+    # 8. Next fair test and closing point.
+    s = base(prs, 8, "What comes next?", "Same code. Two different messages.",
+             "Planned study: docs/INTEGRATED_STUDY_EXTENSION_20261018.md.")
+    box(s, 4.14, 1.95, 5.06, 0.96, fill=PANEL_2, border=LINE)
+    text(s, "The same checked code", 4.42, 2.17, 4.48, 0.53,
+         size=21, bold=True, align=PP_ALIGN.CENTER)
+    rule(s, 6.67, 2.91, 6.67, 3.35, color=BLUE, width=2)
+    rule(s, 3.67, 3.35, 9.67, 3.35, color=BLUE, width=2)
+    rule(s, 3.67, 3.35, 3.67, 3.66, color=BLUE, width=2)
+    rule(s, 9.67, 3.35, 9.67, 3.66, color=BLUE, width=2)
+    box(s, 1.17, 3.66, 5.04, 1.17, fill="173D3B", border="2A716C")
+    text(s, "AI hears true PASS", 1.47, 3.96, 4.44, 0.60,
+         size=24, color=MINT, bold=True, align=PP_ALIGN.CENTER)
+    box(s, 7.13, 3.66, 5.04, 1.17, fill="3D2634", border="794458")
+    text(s, "AI hears false FAIL", 7.44, 3.96, 4.43, 0.60,
+         size=24, color=CORAL, bold=True, align=PP_ALIGN.CENTER)
+    text(s, "Does the wrong message make it lose the fix?",
+         1.00, 5.16, 11.35, 0.57, size=25, bold=True,
+         align=PP_ALIGN.CENTER)
+    pill(s, "PLANNED: this larger test has no results yet.",
+         2.77, 5.93, 7.80, 0.49, color=BLUE, size=15)
+    text(s, "Before judging the AI, check the grader.",
+         1.03, 6.55, 7.75, 0.34, size=20, color=AMBER, bold=True)
+    text(s, "github.com/Imranqsl212/AiResearch",
+         8.53, 6.55, 3.79, 0.34, size=13.5, color=BLUE,
+         bold=True, align=PP_ALIGN.RIGHT)
+    note(s, "Our planned fairer study will save the exact same verified "
+         "candidate code and previous AI history, then make two isolated "
+         "continuations. One receives a truthful PASS; the other receives "
+         "a false FAIL. We will compare what the AI does next and whether "
+         "its final code still satisfies the specific property we checked. "
+         "This is only a plan, not a measured effect. As of 1 November 2026, "
+         "zero future main runs are eligible; the release gate is 0 of 12. "
+         "Source: docs/INTEGRATED_STUDY_EXTENSION_20261018.md; README.md.")
 
     OUT.parent.mkdir(parents=True, exist_ok=True)
     prs.save(OUT)

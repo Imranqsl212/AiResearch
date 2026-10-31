@@ -1,7 +1,9 @@
 # Research update presentation
 
-The ten-slide deck explains the current security-repair research to a
-nontechnical audience. It is designed for a 7–8 minute talk.
+The eight-slide deck explains the current research in plain English to an
+audience new to AI and cybersecurity. It is designed for a 5–6 minute talk.
+
+Start with the [one-minute explanation](START_HERE.md) before presenting.
 
 - [Editable PowerPoint](Research_Update_2026-11-01.pptx)
 - [PDF for presenting](Research_Update_2026-11-01.pdf)
