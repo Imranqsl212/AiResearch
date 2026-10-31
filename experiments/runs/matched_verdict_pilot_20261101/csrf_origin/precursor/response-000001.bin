@@ -1,0 +1,1 @@
+{"model":"qwen3:4b","created_at":"2026-10-31T19:21:44.775601Z","message":{"role":"assistant","content":"{\n  \"action\": \"inspect\",\n  \"payload\": {}\n}"},"done":true,"done_reason":"stop","total_duration":10152040125,"load_duration":6912024709,"prompt_eval_count":459,"prompt_eval_cached_count":0,"prompt_eval_duration":2439055000,"eval_count":15,"eval_duration":757685000}

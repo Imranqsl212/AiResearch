@@ -863,7 +863,9 @@ def _validate_request_archive(
                                     json.dumps(events[0].get("public_observation"), ensure_ascii=False,
                                                sort_keys=True)}):
                 raise V1ValidationError("first provider request has an unlogged initial message")
-            schedule = _json_file(_check_file(manifest_path, manifest, "schedule"), "episode schedule")
+            schedule = _json_file(
+                _check_file(manifest_path, manifest, "schedule", source_root), "episode schedule",
+            )
             if (schedule.get("kind") != "single_excluded_episode" or
                     schedule.get("phase") != manifest.get("phase") or
                     schedule.get("episode_id") != manifest.get("episode_id") or

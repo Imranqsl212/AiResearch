@@ -64,3 +64,27 @@ jobs:
             tests.test_family_discordance_sensitivity \
             tests.test_sast_provenance_missingness \
             tests.test_full_catalog_calibration_20261030
+
+  matched-pilot-replay:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - name: Check out saved pilot archives
+        uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Set up Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      - name: Recompute matched-pilot analyses
+        run: |
+          python -B -m analysis.c5_paired_regression_recount_20261101 --check
+          python -B -m analysis.fresh_matched_verdict_pilot_20261101 --check
+      - name: Test archived-pilot validation guards
+        run: |
+          python -B -m unittest -q \
+            tests.test_c5_paired_regression_recount_20261101 \
+            tests.test_fresh_matched_verdict_pilot_20261101 \
+            tests.test_v1_request_archive_relocation
