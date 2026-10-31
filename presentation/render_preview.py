@@ -17,6 +17,8 @@ PREVIEW = HERE / "preview"
 
 def main() -> None:
     PREVIEW.mkdir(exist_ok=True)
+    for stale in PREVIEW.glob("slide_*.png"):
+        stale.unlink()
     document = pdfium.PdfDocument(str(PDF))
     slides: list[Image.Image] = []
     for index in range(len(document)):
@@ -28,8 +30,10 @@ def main() -> None:
         slides.append(thumb)
 
     margin, gap, tile_w, tile_h = 28, 22, 920, 520
+    rows = (len(slides) + 1) // 2
     sheet = Image.new("RGB", (2 * tile_w + 2 * margin + gap,
-                              5 * tile_h + 2 * margin + 4 * gap), "#E7EAF0")
+                              rows * tile_h + 2 * margin + (rows - 1) * gap),
+                      "#E7EAF0")
     for index, thumb in enumerate(slides):
         col, row = index % 2, index // 2
         x = margin + col * (tile_w + gap)
