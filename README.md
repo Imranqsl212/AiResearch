@@ -6,6 +6,8 @@ This repository studies what a local coding agent does after a security checker 
 
 For a short project review, start with the [research overview](docs/PROJECT_OVERVIEW_20261029.md); the full [research article](paper/final.md) and reproduction instructions are linked below.
 
+For a nontechnical audience, use the [10-slide research presentation](presentation/README.md), with an editable PowerPoint, PDF, and speaker notes.
+
 The [30 October measurement follow-up](docs/MEASUREMENT_FOLLOWUP_20261030.md)
 adds three executable checks: family-level sensitivity of the hidden veto,
 source-hash missingness in the Bandit comparison, and independent calibration
