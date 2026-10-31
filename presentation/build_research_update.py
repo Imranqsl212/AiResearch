@@ -260,7 +260,7 @@ def build() -> None:
         y = 2.68 + row * 0.84
         circle(s, x, y, d, fill=CORAL if i < 9 else PANEL_2,
                border=None if i < 9 else LINE)
-    text(s, "20 final submissions in the nominally\nunavailable condition",
+    text(s, '20 final submissions in tasks labeled\n"unavailable" by the benchmark',
          1.24, 4.64, 6.19, 0.79, size=17, color=MUTED)
     text(s, "9 / 20", 8.43, 2.38, 3.96, 1.25,
          size=58, color=CORAL, bold=True, align=PP_ALIGN.CENTER)
@@ -295,7 +295,7 @@ def build() -> None:
     box(s, 11.46, 2.60, 1.05, 0.90, fill="633243", border="9F5469")
     text(s, "FAIL", 11.52, 2.72, 0.92, 0.56,
          size=18, color=WHITE, bold=True, align=PP_ALIGN.CENTER)
-    text(s, "The extra flag was false in the nominally unavailable condition.",
+    text(s, 'The extra flag was false for tasks labeled "unavailable".',
          0.86, 4.66, 11.73, 0.50, size=21, bold=True,
          align=PP_ALIGN.CENTER)
     text(s, "Passing these finite tests still does not prove that code is secure in general.",
@@ -313,9 +313,9 @@ def build() -> None:
              title_size=31)
     cards = [
         (0.78, 2.05, BLUE, "ARCHIVE REPLAY", "Recomputed the 40-run result\nfrom saved receipts."),
-        (6.72, 2.05, MINT, "TASK CATALOG", "Authored 20 finite task families;\nhuman review is still pending."),
-        (0.78, 4.22, AMBER, "TEST CALIBRATION", "Rechecked 1,820 authored\ncandidate/condition decisions."),
-        (6.72, 4.22, CORAL, "CORRECTED PILOT", "Completed 30 separate, excluded\nfeasibility episodes."),
+        (6.72, 2.05, MINT, "TASK CATALOG", "Built 20 types of security tasks;\nhuman review is still pending."),
+        (0.78, 4.22, AMBER, "TEST CALIBRATION", "Rechecked 1,820 outcomes on\nexamples we designed."),
+        (6.72, 4.22, CORAL, "CORRECTED PILOT", "Completed 30 separate trial runs\nwith a revised checker."),
     ]
     for x, y, accent, head, body in cards:
         box(s, x, y, 5.78, 1.77, fill=PANEL)
@@ -347,7 +347,7 @@ def build() -> None:
     text(s, "The AI generally reacts badly\nto wrong feedback—or that\nthose fixes were fully secure.",
          7.06, 3.00, 5.06, 1.91, size=23, bold=True,
          valign=MSO_ANCHOR.TOP)
-    pill(s, "Old intermediate logs: 0 of 81 action receipts stored raw test results.",
+    pill(s, "Old logs: none of 81 intermediate checks saved the raw test result.",
          0.80, 5.96, 11.73, 0.52,
          fill=PANEL_2, color=AMBER, size=15)
     speaker_note(s, "We can say the historical checker was internally "
