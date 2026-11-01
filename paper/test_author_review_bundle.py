@@ -16,6 +16,43 @@ from paper import build_author_review_bundle as bundle
 
 
 class AuthorReviewBundleTests(unittest.TestCase):
+    def test_v12_is_opt_in_and_requires_the_excluded_variance_report(self) -> None:
+        self.assertEqual(bundle.OUTPUT, bundle.V11_OUTPUT)
+        self.assertEqual(bundle.VERSION, bundle.V11_VERSION)
+        self.assertEqual(bundle.SOURCE_NAMES, bundle.V11_SOURCE_NAMES)
+        self.assertEqual(bundle.BUILD_TARGETS["v12"], (bundle.V12_OUTPUT, bundle.V12_SPEC))
+        self.assertEqual(set(bundle.V12_SOURCE_NAMES) - set(bundle.V11_SOURCE_NAMES), {
+            "analysis/V7_TEMP_VARIANCE_20261101.md",
+            "analysis/v7_temp_variance_20261101.json",
+        })
+        self.assertEqual(bundle.V12_SOURCE_NAMES[:len(bundle.V11_SOURCE_NAMES)],
+                         bundle.V11_SOURCE_NAMES)
+        self.assertEqual(bundle.SPECS_BY_VERSION[bundle.V12_VERSION], bundle.V12_SPEC)
+        self.assertEqual(set(bundle._decision_bound_names(bundle.V12_SPEC)) -
+                         set(bundle._decision_bound_names(bundle.V11_SPEC)), {
+            "analysis/V7_TEMP_VARIANCE_20261101.md",
+            "analysis/v7_temp_variance_20261101.json",
+        })
+        flags = bundle._release_flags(bundle.V12_SPEC)
+        self.assertFalse(flags["journal_supplement_approved"])
+        self.assertEqual(flags["git_visibility"], "not-attested-by-bundle")
+        self.assertIsNone(flags["related_data_public_git_revision"])
+        self.assertEqual(flags["historical_data_public_git_revision"],
+                         bundle.PUBLIC_DATA_REVISION)
+        self.assertIn("REVIEW_ONLY", bundle.V12_README)
+        self.assertIn("temperature 0.3 pilot is excluded exploratory data",
+                      bundle.V12_README)
+        self.assertIn("does not support the main inference", bundle.V12_README)
+        self.assertIn("separately tracked raw", bundle.V12_README)
+        manifest = bundle._manifest(
+            {name: name.encode("utf-8") for name in bundle.V12_SOURCE_NAMES},
+            bundle.V12_README.encode("utf-8"), bundle.V12_SPEC,
+        )
+        self.assertEqual(manifest["version"], bundle.V12_VERSION)
+        self.assertFalse(manifest["journal_submission_approved"])
+        self.assertFalse(manifest["original_raw_data_included"])
+        self.assertEqual(len(manifest["files"]), len(bundle.V12_SOURCE_NAMES))
+
     def test_deterministic_exact_source_copy_and_review_flags(self) -> None:
         self.assertEqual(bundle.OUTPUT, bundle.V11_OUTPUT)
         self.assertNotEqual(bundle.V10_OUTPUT, bundle.V11_OUTPUT)
@@ -169,6 +206,15 @@ class AuthorReviewBundleTests(unittest.TestCase):
         verified = bundle.verify(archive=bundle.V10_OUTPUT, compare_sources=False)
         self.assertEqual(verified["version"], bundle.V10_VERSION)
         self.assertEqual(verified["source_file_count"], len(bundle.V10_SOURCE_NAMES))
+        self.assertEqual(verified["archive_sha256"], before)
+
+    def test_existing_v11_archive_still_verifies_without_local_source_compare(self) -> None:
+        if not bundle.V11_OUTPUT.is_file():
+            self.skipTest("local v11 archive is unavailable")
+        before = hashlib.sha256(bundle.V11_OUTPUT.read_bytes()).hexdigest()
+        verified = bundle.verify(archive=bundle.V11_OUTPUT, compare_sources=False)
+        self.assertEqual(verified["version"], bundle.V11_VERSION)
+        self.assertEqual(verified["source_file_count"], len(bundle.V11_SOURCE_NAMES))
         self.assertEqual(verified["archive_sha256"], before)
 
     def test_v2_requires_decision_hash_for_each_rendered_file(self) -> None:
