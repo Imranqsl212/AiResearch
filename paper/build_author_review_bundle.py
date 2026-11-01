@@ -33,7 +33,8 @@ V7_OUTPUT = ROOT / "experiments/runs/paper_author_review_manuscript_20261012_v7.
 V8_OUTPUT = ROOT / "experiments/runs/paper_author_review_manuscript_20261012_v8.tar.gz"
 V9_OUTPUT = ROOT / "experiments/runs/paper_author_review_manuscript_20261016_v9.tar.gz"
 V10_OUTPUT = ROOT / "experiments/runs/paper_author_review_manuscript_20261016_v10.tar.gz"
-OUTPUT = V10_OUTPUT
+V11_OUTPUT = ROOT / "experiments/runs/paper_author_review_manuscript_20261101_v11.tar.gz"
+OUTPUT = V11_OUTPUT
 V1_VERSION = "paper-author-review-manuscript-1.0.0"
 V2_VERSION = "paper-author-review-manuscript-2.0.0"
 V3_VERSION = "paper-author-review-manuscript-3.0.0"
@@ -44,7 +45,8 @@ V7_VERSION = "paper-author-review-manuscript-7.0.0"
 V8_VERSION = "paper-author-review-manuscript-8.0.0"
 V9_VERSION = "paper-author-review-manuscript-9.0.0"
 V10_VERSION = "paper-author-review-manuscript-10.0.0"
-VERSION = V10_VERSION
+V11_VERSION = "paper-author-review-manuscript-11.0.0"
+VERSION = V11_VERSION
 README_NAME = "REVIEW_ONLY_README.md"
 MANIFEST_NAME = "SOURCE_HASH_MANIFEST.json"
 V1_SOURCE_NAMES = (
@@ -100,7 +102,21 @@ V10_SOURCE_NAMES = V9_SOURCE_NAMES + (
     "paper/venue_author_year_draft.md",
     "paper/VENUE_SHORTLIST_20261005.md",
 )
-SOURCE_NAMES = V10_SOURCE_NAMES
+V11_SOURCE_NAMES = V10_SOURCE_NAMES + (
+    "paper/submission/venue_author_year_identified.pdf",
+    "paper/submission/venue_author_year_identified.docx",
+    "paper/submission/venue_author_year_anonymous.pdf",
+    "paper/submission/venue_author_year_anonymous.docx",
+    "analysis/C5_PAIRED_REGRESSION_RECOUNT_20261101.md",
+    "analysis/c5_paired_regression_recount_20261101.json",
+    "analysis/C5_CANDIDATE_DISCORDANCE_20261101.md",
+    "analysis/c5_candidate_discordance_20261101.json",
+    "analysis/FRESH_MATCHED_VERDICT_PILOT_20261101.md",
+    "analysis/fresh_matched_verdict_pilot_20261101.json",
+    "analysis/V7_SECOND_WAVE_20261101.md",
+    "analysis/v7_second_wave_20261101.json",
+)
+SOURCE_NAMES = V11_SOURCE_NAMES
 FORBIDDEN_MARKERS = {
     "mac_home": re.compile(rb"/Users/[^/\s\"'<>\\]+", re.I),
     "linux_home": re.compile(rb"/home/[^/\s\"'<>\\]+", re.I),
@@ -337,7 +353,48 @@ V10_README = V9_README.replace(
     "already public data revision separately.\n\n"
     "Verify against the local source tree with:",
 )
-README = V10_README
+V11_README = """# Local author-review manuscript bundle v11
+
+**Status: REVIEW_ONLY. This filtered package is not an approved journal
+supplement or submission.**
+
+This package copies the updated exploratory manuscript, identified and
+anonymous canonical and author-year PDF/DOCX files, six figures, historical
+derived tables, references, and the pending author decision form. It adds
+derived reports and JSON results for the excluded 14-pair persistent-veto
+recount and two sequential one-shot v7 pilot waves. These cohorts have
+different selection histories and protocols and are not pooled as an
+inferential sample or with the historical 40-episode denominator.
+
+`SOURCE_HASH_MANIFEST.json` records each selected file's SHA-256 and byte
+count. Raw trajectories, original responses, candidate source, source
+snapshots, original archives, and the sanitized review candidate are not
+inside this package. The derived reports require separately tracked raw
+archives and analysis code for independent replay; this package alone cannot
+reproduce their counts from raw traces.
+
+The recorded public Git revision belongs to an older historical data release.
+The exact Git revision containing the new pilot archives is pending in this
+review package. Git visibility, journal data route, privacy clearance, and
+author approval are not attested by this bundle. The anonymous files remain
+review drafts; the identified decision form must not accompany an anonymous
+peer-review submission.
+
+The builder screens selected bytes and expanded DOCX members for a small set
+of local path and account markers. That is not a full privacy or scientific
+validity review. Before external distribution, the author must inspect the
+exact package and choose an accepted data route.
+
+Verify against the local source tree with:
+
+    python3 -B -m paper.build_author_review_bundle verify \\
+      --archive experiments/runs/paper_author_review_manuscript_20261101_v11.tar.gz
+
+Use `--no-local-compare` to verify archived bytes and receipt after the
+workspace changes. This receipt is a digest, not an independent timestamp,
+signature, final source revision, or journal approval.
+"""
+README = V11_README
 
 
 @dataclass(frozen=True)
@@ -357,8 +414,10 @@ V7_SPEC = BundleSpec(V7_VERSION, V7_SOURCE_NAMES, V7_README)
 V8_SPEC = BundleSpec(V8_VERSION, V8_SOURCE_NAMES, V8_README)
 V9_SPEC = BundleSpec(V9_VERSION, V9_SOURCE_NAMES, V9_README)
 V10_SPEC = BundleSpec(V10_VERSION, V10_SOURCE_NAMES, V10_README)
+V11_SPEC = BundleSpec(V11_VERSION, V11_SOURCE_NAMES, V11_README)
 SPECS_BY_VERSION = {spec.version: spec for spec in
-                    (V1_SPEC, V2_SPEC, V3_SPEC, V4_SPEC, V5_SPEC, V6_SPEC, V7_SPEC, V8_SPEC, V9_SPEC, V10_SPEC)}
+                    (V1_SPEC, V2_SPEC, V3_SPEC, V4_SPEC, V5_SPEC, V6_SPEC,
+                     V7_SPEC, V8_SPEC, V9_SPEC, V10_SPEC, V11_SPEC)}
 
 
 class BundleError(RuntimeError):
@@ -403,15 +462,26 @@ def _decision_bound_names(spec: BundleSpec) -> tuple[str, ...]:
         "paper/submission/full_paper.docx",
         "paper/artifacts/results.json",
     )
-    if spec in (V2_SPEC, V3_SPEC, V4_SPEC, V5_SPEC, V6_SPEC, V7_SPEC, V8_SPEC, V9_SPEC, V10_SPEC):
+    if spec in (V2_SPEC, V3_SPEC, V4_SPEC, V5_SPEC, V6_SPEC, V7_SPEC, V8_SPEC, V9_SPEC, V10_SPEC, V11_SPEC):
         names += (
             "paper/submission/full_paper_anonymous.pdf",
             "paper/submission/full_paper_anonymous.docx",
         )
-    if spec is V10_SPEC:
+    if spec in (V10_SPEC, V11_SPEC):
         names += (
             "paper/venue_author_year_draft.md",
             "paper/VENUE_SHORTLIST_20261005.md",
+        )
+    if spec is V11_SPEC:
+        names += (
+            "paper/submission/venue_author_year_identified.pdf",
+            "paper/submission/venue_author_year_identified.docx",
+            "paper/submission/venue_author_year_anonymous.pdf",
+            "paper/submission/venue_author_year_anonymous.docx",
+            "analysis/c5_paired_regression_recount_20261101.json",
+            "analysis/c5_candidate_discordance_20261101.json",
+            "analysis/fresh_matched_verdict_pilot_20261101.json",
+            "analysis/v7_second_wave_20261101.json",
         )
     return names
 
@@ -427,7 +497,7 @@ def _check_decision_bindings(source: dict[str, bytes], spec: BundleSpec) -> None
             raise BundleError(f"author decision form does not identify current {name}")
 
 
-def _source_bytes(spec: BundleSpec = V10_SPEC) -> dict[str, bytes]:
+def _source_bytes(spec: BundleSpec = V11_SPEC) -> dict[str, bytes]:
     if len(set(spec.source_names)) != len(spec.source_names):
         raise BundleError("duplicate source allowlist member")
     source: dict[str, bytes] = {}
@@ -447,6 +517,13 @@ def _source_bytes(spec: BundleSpec = V10_SPEC) -> dict[str, bytes]:
 
 
 def _release_flags(spec: BundleSpec) -> dict[str, Any]:
+    if spec is V11_SPEC:
+        return {
+            "journal_supplement_approved": False,
+            "git_visibility": "not-attested-by-bundle",
+            "related_data_public_git_revision": None,
+            "historical_data_public_git_revision": PUBLIC_DATA_REVISION,
+        }
     if spec is V10_SPEC:
         return {
             "journal_supplement_approved": False,
@@ -456,7 +533,7 @@ def _release_flags(spec: BundleSpec) -> dict[str, Any]:
     return {"public_release_approved": False}
 
 
-def _manifest(source: dict[str, bytes], readme: bytes, spec: BundleSpec = V10_SPEC) -> dict[str, Any]:
+def _manifest(source: dict[str, bytes], readme: bytes, spec: BundleSpec = V11_SPEC) -> dict[str, Any]:
     return {
         "version": spec.version,
         "status": "REVIEW_ONLY",
@@ -533,7 +610,7 @@ def verify(*, archive: Path = OUTPUT, compare_sources: bool = True) -> dict[str,
             or receipt.get("archive_bytes") != archive.stat().st_size):
         raise BundleError("archive differs from review-only receipt")
     if (any(receipt.get(key) != value for key, value in _release_flags(spec).items())
-            or (spec is V10_SPEC and "public_release_approved" in receipt)):
+            or (spec in (V10_SPEC, V11_SPEC) and "public_release_approved" in receipt)):
         raise BundleError("receipt release flags differ")
     files = _archive_files(archive)
     expected_names = set(spec.source_names) | {README_NAME, MANIFEST_NAME}
@@ -550,7 +627,7 @@ def verify(*, archive: Path = OUTPUT, compare_sources: bool = True) -> dict[str,
             or manifest.get("source_git_revision_bound") is not False):
         raise BundleError("review-only provenance flags differ")
     if (any(manifest.get(key) != value for key, value in _release_flags(spec).items())
-            or (spec is V10_SPEC and "public_release_approved" in manifest)):
+            or (spec in (V10_SPEC, V11_SPEC) and "public_release_approved" in manifest)):
         raise BundleError("manifest release flags differ")
     rows = manifest.get("files")
     if not isinstance(rows, list) or len(rows) != len(spec.source_names):
@@ -585,7 +662,7 @@ def verify(*, archive: Path = OUTPUT, compare_sources: bool = True) -> dict[str,
             "local_sources_match": True if compare_sources else None}
 
 
-def build(*, output: Path = OUTPUT, spec: BundleSpec = V10_SPEC) -> dict[str, Any]:
+def build(*, output: Path = OUTPUT, spec: BundleSpec = V11_SPEC) -> dict[str, Any]:
     output = Path(output)
     receipt_path = _receipt_path(output)
     if output.exists() or receipt_path.exists():

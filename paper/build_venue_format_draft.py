@@ -105,7 +105,7 @@ def main() -> None:
     citations, references = validate_citations(canonical, draft)
     displays = Counter(kind for kind, _ in markdown_blocks(draft)
                        if kind in ("figure", "table"))
-    if displays != {"figure": 6, "table": 4}:
+    if displays != {"figure": 6, "table": 6}:
         raise ValueError("figure/table inventory changed")
 
     SUBMISSION.mkdir(parents=True, exist_ok=True)

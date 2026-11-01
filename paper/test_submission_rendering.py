@@ -27,9 +27,13 @@ class SubmissionRenderingTests(unittest.TestCase):
         self.assertIn("A source revision withheld during anonymous review", review)
         self.assertNotIn("Funding, conflicts of interest, contributions beyond", review)
         self.assertIn("Acknowledgments and author disclosures are withheld", review)
-        for fact in ("16/20", "9/20", "40 main episodes"):
+        for fact in ("16/20", "9/20", "40 main episodes", "21/45", "5/14", "7/14",
+                     "0/3", "1/3", "1/2"):
             self.assertIn(fact, review)
         self.assertEqual(review.count("![Figure "), self.manuscript.count("![Figure "))
+        self.assertEqual(review.count("**Table "), self.manuscript.count("**Table "))
+        self.assertEqual(re.findall(r"\*\*Table (\d+)\.\*\*", review),
+                         ["1", "2", "3", "4", "5", "6"])
         headings = re.findall(r"^## (.+)$", review, flags=re.MULTILINE)
         self.assertEqual(headings, ["Abstract", "Introduction", "Methods", "Results",
                                     "Discussion", "Acknowledgments", "References"])
