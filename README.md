@@ -6,7 +6,7 @@ This repository studies what a local coding agent does after a security checker 
 
 For a short project review, start with the [research overview](docs/PROJECT_OVERVIEW_20261029.md); the full [research article](paper/final.md) and reproduction instructions are linked below.
 
-For a nontechnical audience, use the [10-slide research presentation](presentation/README.md), with an editable PowerPoint, PDF, and speaker notes.
+For a nontechnical audience, use the [six-slide research presentation](presentation/README.md), with an editable PowerPoint, PDF, and speaker notes.
 
 The [30 October measurement follow-up](docs/MEASUREMENT_FOLLOWUP_20261030.md)
 adds three executable checks: family-level sensitivity of the hidden veto,
@@ -28,6 +28,8 @@ The [1 November matched-verdict pilot](analysis/FRESH_MATCHED_VERDICT_PILOT_2026
 
 A [sequential second wave](analysis/V7_SECOND_WAVE_20261101.md) covered the four remaining v7 families under the same one-shot protocol: two secure onsets and two completed pairs. In `signature_algorithm`, **both** arms abandoned a verified candidate and ended with a finite-property regression, including the truthful-`PASS` arm; in `key_rotation`, both arms retained the property. The two waves were planned at different times and are reported separately. These outcomes do not establish a general effect of the false verdict.
 
+Two later [temperature-0.3](analysis/V7_TEMP_VARIANCE_20261101.md) [pilot waves](analysis/V7_TEMP_VARIANCE_SECONDWAVE_20261101.md) each stopped on a local model timeout and are excluded from the main study. Each produced four verified CSRF pairs from one task family. In the second wave, one pair regressed only after a truthful `PASS`, while three regressed only after a false `FAIL`; the [two-panel figure](analysis/figures/v7_temp03_pair_outcomes_20261101.png) also shows the missing scheduled slots. These waves are descriptive and are not pooled with each other or earlier pilots.
+
 The larger research question is **“Can a wrong verdict undo a security fix?”** The [prospective paired study](docs/INTEGRATED_STUDY_EXTENSION_20261018.md) would change the verdict while holding the verified candidate fixed in an admitted main cohort. The pilot above exercises this comparison only in excluded tasks. A separately proposed second-opinion experiment would test whether an optional independent check helps the agent preserve that finite property.
 
 ## Additional checks and extensions
@@ -40,7 +42,7 @@ The larger research question is **“Can a wrong verdict undo a security fix?”
 
 ## Manuscript and status
 
-The [research article](paper/final.md) is available as [identified PDF](paper/submission/full_paper.pdf), [identified DOCX](paper/submission/full_paper.docx), [anonymous PDF](paper/submission/full_paper_anonymous.pdf), and [anonymous DOCX](paper/submission/full_paper_anonymous.docx). It has a 218-word abstract, six figures, six tables, 27 cited sources, and 19 A4 pages in each PDF. The [v11 author-review bundle](paper/AUTHOR_REVIEW_BUNDLE_V11_20261101.md) binds the current rendered files and derived pilot reports; earlier bundles remain dated snapshots. The article remains **`REVIEW_ONLY`**. Author approval, declarations, venue selection, data availability, and privacy review are recorded in the [submission decision form](paper/AUTHOR_SUBMISSION_DECISIONS_20261005.md).
+The [research article](paper/final.md) is available as [identified PDF](paper/submission/full_paper.pdf), [identified DOCX](paper/submission/full_paper.docx), [anonymous PDF](paper/submission/full_paper_anonymous.pdf), and [anonymous DOCX](paper/submission/full_paper_anonymous.docx). It has a 218-word abstract, six figures, six tables, 31 cited sources, and 19 A4 pages in each PDF. The [v11 author-review bundle](paper/AUTHOR_REVIEW_BUNDLE_V11_20261101.md) is a dated earlier snapshot; the current rendered files are bound by hashes in the [submission decision form](paper/AUTHOR_SUBMISSION_DECISIONS_20261005.md). The article remains **`REVIEW_ONLY`**. Author approval, declarations, venue selection, data availability, and privacy review remain pending there.
 
 The **prospective v1 main study is `NOT_READY`**: its [12-point release gate](docs/MAIN_RELEASE_GATE_MATRIX_20261005.md) currently passes none of the checks, and it has **zero eligible main episodes**. The proposed 600 full episodes plus conditional C5 continuations are a plan, not collected data. Excluded pilots cannot be relabeled as main results. See the [action list](docs/NEXT_READY_ACTIONS_20261008.md) and [dated research status snapshot](FINAL_RESEARCH_STATUS.md); rerun the gate command below for the live status.
 

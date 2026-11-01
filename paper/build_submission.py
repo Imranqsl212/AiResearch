@@ -105,6 +105,10 @@ def review_manuscript(markdown: str) -> str:
         "A source revision withheld during anonymous review contains the raw trajectories "
         "and archives needed to recalculate the reported counts;",
     )
+    review = review.replace(
+        "The earlier public data revision `37074c198237ade67eb76921333b2835d329c863`",
+        "A source revision withheld during anonymous review",
+    )
     if re.search(
         r"(?i)\b(?:imran|zakirov)\b|zakirovimran333@gmail\.com|"
         r"37074c198237ade67eb76921333b2835d329c863|github\.com/Imranqsl212",

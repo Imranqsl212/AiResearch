@@ -1,0 +1,17 @@
+{
+  "candidate_space_size": 3,
+  "case_count": 3,
+  "certificate_version": "7.0.0",
+  "contradiction_witness": null,
+  "ground_truth_state": "REPAIRABLE",
+  "proof_sha256": "31e5f5194ec76a1a2b2bdc801825b9779fcc2de6819b75a924d45450b991d901",
+  "satisfying_candidates": [
+    {
+      "mode": "name_and_provenance"
+    }
+  ],
+  "scope": "fixed_stateless_candidate_modes_and_authored_finite_worlds_only",
+  "secure_candidate_gate_verdict": "PASS",
+  "task_id": "fc7-environment_injection-c1",
+  "task_sha256": "f4aa19c3f94f10b735f0bf488277dd30ce9f3481b7ff1cb4f4f87dc659c5dc03"
+}
