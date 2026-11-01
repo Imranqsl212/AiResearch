@@ -1,0 +1,17 @@
+# Literature gap audit — 1 November 2026
+
+This is a source check for the manuscript's new **raw-test PASS / bounded-oracle INSECURE** finding. It proposes citations for a later manuscript revision; it does not add those papers to the current submission files. Both links below lead to the authors' primary preprints. Their rates must not be pooled with, or compared numerically to, the selected **21/45 post-onset submissions** in our older excluded C5 pilot. Those 45 submissions include repeated candidates (nine distinct SHA-256 values among the 21 discordant submissions), whereas the papers use different real-project task and patch units.
+
+## Strongest missing studies
+
+1. **Zheng Yu, Wenxuan Shi, Xinqian Sun, Zheyun Feng, Meng Xu, and Xinyu Xing.** “Patch Validation in Automated Vulnerability Repair.” arXiv:2603.06858, 2026. [Primary paper](https://arxiv.org/abs/2603.06858); arXiv DOI [10.48550/arXiv.2603.06858](https://doi.org/10.48550/arXiv.2603.06858). The authors built PVBench with **209 cases from 20 projects** and evaluated three automated vulnerability repair systems. More than 40% of patches accepted by their basic tests failed added developer-derived `PoC+` tests. This directly supports the methodological point that a weak validation pass can overstate patch correctness. Their denominator is patches in real-project vulnerability cases, **not** repeated submissions from our synthetic finite tasks. Their added tests also capture developer intent and root-cause semantics that our bounded oracle does not establish.
+
+2. **Tan Bui, Ting Zhang, Ferdian Thung, Yunpeng Xiong, Penghao Jiang, Xin Zhou, and David Lo.** “Vul4Py: Benchmarking Automated Vulnerability Repair in Python with Paired Exploit and Functional Oracles.” arXiv:2608.00692, 2026. [Primary paper](https://arxiv.org/abs/2608.00692); arXiv DOI [10.48550/arXiv.2608.00692](https://doi.org/10.48550/arXiv.2608.00692). Vul4Py packages **100 real Python vulnerabilities from 60 projects**, each with an exploit oracle and project-native functional tests. The paired oracle rejected **15 of 119 patches** that an exploit-only oracle would have accepted. This is a close design precedent for keeping two validation dimensions visible. Its detected failure is mainly a functional regression after exploit mitigation; our raw-test/oracle discordance concerns an authored bounded security property. Neither rate estimates the other.
+
+## Suggested future insertion
+
+Place after the PatchBench sentence in **Prior work → Benchmark validity**:
+
+> Related vulnerability-repair evaluations show why a single pass signal is insufficient: PVBench adds developer-derived tests to basic patch validation, and Vul4Py pairs exploit and functional oracles for Python repair [new references]. Their real-project patch denominators and oracle targets differ from our selected finite-task submissions, so we use them as design precedents rather than a quantitative baseline.
+
+The manuscript's sampled citations to Sriram et al. [1], VRpilot [7], AgentAbstain [9], ReflecTool-Bench [15], SWE-Bench+ [23], PatchBench [24], FixedBench [26], and the recent oracle-integrity audit [27] matched their linked primary pages on the claims checked. In particular, Sriram et al.'s paper specifies GCC, CodeQL, KLEE, and embedding-based retrieval; SWE-Bench+ reports both solution leakage and weak tests. **No correction is required for these sampled claims.** This spot check does not certify every reference or every sentence in the manuscript.

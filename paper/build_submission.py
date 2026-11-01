@@ -429,7 +429,8 @@ def make_pdf(markdown: str, destination: Path, *, author: str) -> int:
         if required not in extracted:
             raise ValueError(f"PDF text extraction missing {required}")
     for caption, header in (("Table 1.", "Decision stage"), ("Table 2.", "Measure"),
-                            ("Table 3.", "Fixed guidance")):
+                            ("Table 3.", "Fixed guidance"),
+                            ("Table 5.", "Raw check / bounded"), ("Table 6.", "Wave")):
         if not any(caption in page and header in page for page in page_text):
             raise ValueError(f"PDF separates {caption} from its table header")
     return len(pdf.pages)

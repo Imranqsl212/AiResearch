@@ -1,6 +1,6 @@
 # Author submission decision record — pending
 
-**Review copy refreshed:** 29 October 2026.
+**Review copy refreshed:** 1 November 2026.
 
 This record identifies the exact exploratory manuscript files for **local author
 review**. It does not approve journal submission, a journal data deposit, or the scientific
@@ -12,23 +12,27 @@ separately. Do not infer their absence from a missing response.
 
 | Artifact | Current SHA-256 |
 | --- | --- |
-| [`final.md`](final.md) | `f5b0fb2c96488291963b3c409817f21ad4a7844555211b3c2ae128258237a330` |
-| [Identified `full_paper.pdf`](submission/full_paper.pdf) | `84de7cecc8ce080b33a834ea2e4f9c576b9e8b19740e2787f3c14c152b6d1985` |
-| [Identified `full_paper.docx`](submission/full_paper.docx) | `743a7df17102898ec6719ea5e40242fa1baf111aa5601a46407f0e7f257236d0` |
-| [Anonymous `full_paper_anonymous.pdf`](submission/full_paper_anonymous.pdf) | `5da75e547cae5bc605e38a6cb8a849e5376b4540c7a6af41204e168cb3134a95` |
-| [Anonymous `full_paper_anonymous.docx`](submission/full_paper_anonymous.docx) | `413f269391853497adc1974f5bac38d776d739f77af7801fd912495d3dc3c0a1` |
+| [`final.md`](final.md) | `5ecb972a2d3fd89788931f4ec389171949e76c51d230e1a3d31498ecf0ba67fb` |
+| [Identified `full_paper.pdf`](submission/full_paper.pdf) | `579d52df328721182ae6ba3b6a3c00ebd6f7cdb0e19844c71cd58e2cff64ea1d` |
+| [Identified `full_paper.docx`](submission/full_paper.docx) | `8ea5a70d1019dedbe106128666ac6749985467225dfc9cc1465c4bc46bb2e62f` |
+| [Anonymous `full_paper_anonymous.pdf`](submission/full_paper_anonymous.pdf) | `3d837f7405a1a0da6d8e372f4a154f588d654269abf153143fce0f12e9c4907a` |
+| [Anonymous `full_paper_anonymous.docx`](submission/full_paper_anonymous.docx) | `d1b5eed1efe81666bc89870203bc3cbeefaae9a8c0ab1c3a574df35589b901ad` |
 | [`results.json`](artifacts/results.json) | `3d7ef25bfa07ef25ae20cea8d6ee34b59c5d9158e20c2e9b7013bfbd5a3cb229` |
-| [Working author-year conversion](venue_author_year_draft.md) | `d1c88e0dbc35952145e2cfd58ae73726bb10251bbf6800ec213c284009c6f2c4` |
-| [Author-year `venue_author_year_identified.pdf`](submission/venue_author_year_identified.pdf) | `1e446b434ca731e4ca0b923f3bf3a69e83252b17369921d17c898225e1caafd1` |
-| [Author-year `venue_author_year_identified.docx`](submission/venue_author_year_identified.docx) | `974c31f0e5f7c8b2aeaab9f4fb5357408207df2f80f1da250d1a606dc6d26b90` |
-| [Author-year `venue_author_year_anonymous.pdf`](submission/venue_author_year_anonymous.pdf) | `7df85bcca0615e5170a3648f2ce7fe3d2cb1d99708e0739a8ffcbb01c689aea0` |
-| [Author-year `venue_author_year_anonymous.docx`](submission/venue_author_year_anonymous.docx) | `4a53e8374d37df315a8b200b97ffc275eefe8a81600ebf2bbb242ac352b35d3a` |
+| [Working author-year conversion](venue_author_year_draft.md) | `67e75bb23876f4d19ff2828ad52913b870295ba19468ed7a35413151402ade58` |
+| [Author-year `venue_author_year_identified.pdf`](submission/venue_author_year_identified.pdf) | `72bdfefcdd3a8af7b47c936febea8ee4abd94550796b6cadcb2f40ddfe272cfe` |
+| [Author-year `venue_author_year_identified.docx`](submission/venue_author_year_identified.docx) | `7b999a871b07dc1d1ff6e549a377932399109422f63a29bfefef81ef153319ca` |
+| [Author-year `venue_author_year_anonymous.pdf`](submission/venue_author_year_anonymous.pdf) | `daed2a5a8e9f1d37a6a20bc82b2ceb70700c13a1b327b339c01493c801bffa41` |
+| [Author-year `venue_author_year_anonymous.docx`](submission/venue_author_year_anonymous.docx) | `ed030ed0260f0960ad1512ff72aa86c4f7550b1d20df903dedaf00940fb80ec5` |
+| [Older C5 terminal recount](../analysis/c5_paired_regression_recount_20261101.json) | `434a3034212d19dac142641344b3abe6707da1823026ce2eec317ab7e3a09ad4` |
+| [Older C5 candidate recount](../analysis/c5_candidate_discordance_20261101.json) | `ad36ca8a76f5589760bffd0ac293381828e477fb9e0e96ffe1c692fe7ff9188d` |
+| [First one-shot wave recount](../analysis/fresh_matched_verdict_pilot_20261101.json) | `251869f1b0e057ab133cf450bf51e1b75d5de92ffd15aac5a708e24493c7a1c8` |
+| [Second one-shot wave recount](../analysis/v7_second_wave_20261101.json) | `dfc0b19fbaaebbc5b3d5bccf95fb67c71ca64414c582d9ecbb5608e1d2f43d78` |
 | [Venue shortlist](VENUE_SHORTLIST_20261005.md) | `6bb7c78180837a15fe0c55038d226cd7445d5162a17b1f14b6e1924024f73c9b` |
 
-The identified and anonymous PDFs each have 16 A4 pages. PDF text,
+The identified and anonymous PDFs each have 19 A4 pages. PDF text,
 including captions and tables, is 12 pt;
-the DOCX styles are 12 pt with single line spacing. The abstract has 234 words
-and the article contains six figures and four tables. The identified and
+the DOCX styles are 12 pt with single line spacing. The abstract has 218 words
+and the article contains six figures and six tables. The identified and
 anonymous PDF/DOCX pairs were regenerated from the source on this workspace.
 The anonymous files have blank author metadata and automated scans found no
 author name, contact, location, study-commit marker, or linkable public data
@@ -50,7 +54,7 @@ rendered PDF/DOCX or an approved final submission file.
 | Contributions | Approved contribution statement from all named authors | `PENDING` |
 | Declarations | Funding, conflicts, acknowledgments, ethics and required AI-tool disclosure | `PENDING`: author said details will follow separately. Known Codex assistance is disclosed in Methods and Acknowledgments for author review; the author must confirm the final wording. |
 | Scientific sign-off | Authors approve the exact exploratory claims and limitations in the hashed draft | `PENDING` |
-| Data route | Exact public source revision and journal-accepted data statement or supplementary deposit | `PARTIAL`: the author chose GitHub publication of the raw experimental artifacts; data revision [`37074c198237ade67eb76921333b2835d329c863`](https://github.com/Imranqsl212/AiResearch/tree/37074c198237ade67eb76921333b2835d329c863) is recorded. Journal route and persistent identifier are pending. |
+| Data route | Exact public source revision and journal-accepted data statement or supplementary deposit | `PARTIAL`: the author chose GitHub publication of raw experimental artifacts. Revision [`37074c198237ade67eb76921333b2835d329c863`](https://github.com/Imranqsl212/AiResearch/tree/37074c198237ade67eb76921333b2835d329c863) covers the earlier historical archive, not the later C5 and one-shot wave additions. The exact current manuscript/data revision, journal route, and persistent identifier are pending. |
 | Privacy sign-off | Human review of raw and transformed free text, with disposition of residual candidates | `PENDING`: GitHub tracks unredacted archives and a review packet; suitability for a journal deposit is not established. |
 | Final package | Venue formatting, final hashes, source revision, supplementary files, cover letter and submission account | `PENDING` |
 
