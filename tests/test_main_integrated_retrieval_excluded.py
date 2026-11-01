@@ -33,6 +33,50 @@ def _current_c1_tasks() -> dict[str, Path]:
 
 
 class IntegratedRetrievalTests(unittest.TestCase):
+    def test_plan_temperature_defaults_to_zero_and_rejects_invalid_values(self) -> None:
+        path = "benchmark/tasks/v1/fp-authorization-c1.task.json"
+        kwargs = {
+            "task_path": path,
+            "proof_path": path.replace(".task.json", ".proof.json"),
+            "model_name": MODEL["name"],
+            "model_digest": MODEL["digest"],
+            "seed": 17,
+            "request_timeout_seconds": 180,
+        }
+        self.assertEqual(build_excluded_plan(**kwargs)["inference_config"]["temperature"],
+                         0.0)
+        for value in (True, "0.3", float("nan"), float("inf"), float("-inf"),
+                      -0.1, 1.1):
+            with self.subTest(value=value), self.assertRaises(ValueError):
+                build_excluded_plan(**kwargs, temperature=value)
+
+    def test_nonzero_temperature_is_archived_and_source_bound(self) -> None:
+        path = "benchmark/tasks/v7_batch_c/fc7-csrf_origin-c1.task.json"
+        plan = build_excluded_plan(
+            task_path=path, proof_path=path.replace(".task.json", ".proof.json"),
+            model_name=MODEL["name"], model_digest=MODEL["digest"],
+            seed=101, request_timeout_seconds=180, retrieval_mode="R0",
+            temperature=0.3)
+        self.assertEqual(plan["inference_config"]["temperature"], 0.3)
+        with tempfile.TemporaryDirectory() as temp:
+            output = Path(temp) / "slot"
+            transport = FakeTransport([_response("terminate")])
+            episode = ExcludedIntegratedFiniteEpisode(
+                plan=plan, slot_id="excluded-slot-000001", source_root=ROOT,
+                output_dir=output, observed_inference_config=plan["inference_config"],
+                transport=transport)
+            receipt = episode.run()
+            self.assertEqual(receipt["status"], "COMPLETED_EXCLUDED_VERIFIED_FINITE")
+            self.assertFalse(receipt["eligible_for_main_analysis"])
+            request = json.loads((output / "request-000001.bin").read_bytes())
+            self.assertEqual(request["options"]["temperature"], 0.3)
+            self.assertEqual(request["options"]["seed"], 101)
+            self.assertEqual(transport.requests, [
+                (output / "request-000001.bin").read_bytes()])
+            archived_plan = json.loads((output / "plan_snapshot.json").read_bytes())
+            self.assertEqual(archived_plan["inference_config"]["temperature"], 0.3)
+            self.assertEqual(verify_excluded_integrated(output, source_root=ROOT), receipt)
+
     def test_twenty_current_families_have_replayable_r0_r1_exposure(self) -> None:
         tasks = _current_c1_tasks()
         self.assertEqual(len(tasks), 20)
