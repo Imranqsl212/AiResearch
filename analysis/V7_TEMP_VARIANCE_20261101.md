@@ -21,7 +21,9 @@ Across the seven verified precursors there were 14 submissions, including six wi
 
 ## Technical cause and inference limit
 
-The failed slot has an archived `LiveDispatchError` with invalidation reason `MODEL_IDENTITY_UNAVAILABLE`; the runner's stderr attributes it to an Ollama `/api/tags` timeout. A later read-only request to `/api/tags` took about 7.8 seconds, close to the 10-second identity limit. This supports a timeout explanation but does not reconstruct the unobserved fifth decision or prove why the server slowed. The failed precursor and 24 unstarted slots are retained in the denominator. A separately planned post-failure wave may test a longer identity timeout; it must use a new schedule and archive identifier and be reported separately.
+The failed slot has an archived `LiveDispatchError` with invalidation reason `MODEL_IDENTITY_UNAVAILABLE`; the runner's stderr attributes it to an Ollama `/api/tags` timeout. A later read-only request to `/api/tags` took about 7.8 seconds, close to the 10-second identity limit. This supports a timeout explanation but does not reconstruct the unobserved fifth decision or prove why the server slowed. The failed precursor and 24 unstarted slots are retained in the denominator. A [separately planned post-failure wave](../docs/EXCLUDED_V7_TEMP_VARIANCE_SECONDWAVE_20261101_PLAN.md) tests a longer identity timeout under a new schedule and archive identifier; its outcomes are not pooled here.
+
+The [reproducible public-archive scanner](scan_public_excluded_archive.py) found zero hits in 14 sensitive-pattern categories across all 654 published files. It reported 13 uses of the fixed `/private/tmp` output root as execution metadata. This pattern scan cannot establish general privacy clearance or detect unfamiliar/encoded secrets; the original local archive and the published redaction should still be inspected by a human before journal deposit.
 
 The eight authored v7 task families have not passed human semantic admission. Repeated seeds on one fixed CSRF task do not establish a general effect across security repairs. `SECURE` here means bounded agreement with the finite reference, not real-world safety. The early pilot waves at temperature 0 were observed before this plan and cannot be pooled as if they formed a single prospective sample.
 
@@ -32,6 +34,9 @@ From the repository root:
 ```sh
 python3 -B -m analysis.v7_temp_variance_20261101 --check
 python3 -B -m unittest -q tests.test_v7_temp_variance_20261101
+python3 -B -m analysis.scan_public_excluded_archive \
+  experiments/runs/v7_temp03_four_seed_20261101 \
+  --planned-temp-root /private/tmp/research-v7-temp03-four-seed-20261101
 ```
 
 The analysis code was committed while the fixed wave was running, before its author inspected the wave outputs. Its outcome definitions were already specified in the pushed plan. The archive includes the fixed preflight source commit `d125c34f337ec47c375f7f7aeaf6a2295f3de2ac` and the plan SHA-256 `62487055f2724fc987785d6db17a4dde726cca64cf5f895d033255fb8ebdba00`. No Git commit or hash alone is an independent timestamp or external chain of custody.
