@@ -101,9 +101,12 @@ The anonymous file is a draft for peer review. Author declarations, data
 release, and venue-specific file requirements still need confirmation before
 submission.
 
-The current chart builder references macOS Arial in
-`/System/Library/Fonts/Supplemental/`; a fully portable build also needs a
-compatible TrueType font configured on the destination host. The builder
+The renderer uses macOS Arial where available and falls back to the Bitstream
+Vera font pair bundled with the pinned ReportLab package on other systems.
+The fallback uses 0.42-inch A4 margins versus 0.52-inch margins for the
+canonical Arial render; both retain 12-point text and single spacing. Font
+metrics can still change page breaks, so check the page limit in the destination
+environment. The builder
 verifies key numerical anchors before typesetting and extracts text from the
 generated PDF to check required sections. Pinning packages alone does not
 make the output bitwise reproducible across fonts and operating systems.

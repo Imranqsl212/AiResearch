@@ -12,6 +12,7 @@ import html
 import io
 import json
 import re
+import reportlab
 from copy import copy
 from collections import Counter
 from pathlib import Path
@@ -29,7 +30,7 @@ from reportlab.lib.units import inch
 from reportlab.pdfbase import pdfmetrics
 from reportlab.pdfbase.ttfonts import TTFont
 from reportlab.platypus import Image as PdfImage
-from reportlab.platypus import LongTable, Paragraph, SimpleDocTemplate, Spacer, TableStyle
+from reportlab.platypus import KeepTogether, LongTable, Paragraph, SimpleDocTemplate, Spacer, TableStyle
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -40,6 +41,15 @@ ARTIFACTS = PAPER / "artifacts"
 FONT_DIR = Path("/System/Library/Fonts/Supplemental")
 FONT_REG = FONT_DIR / "Arial.ttf"
 FONT_BOLD = FONT_DIR / "Arial Bold.ttf"
+FALLBACK_FONT = not (FONT_REG.is_file() and FONT_BOLD.is_file())
+if FALLBACK_FONT:
+    # ReportLab ships this font pair, so read-only rendering checks can run
+    # on a fresh Linux checkout without relying on host-specific font paths.
+    FONT_DIR = Path(reportlab.__file__).resolve().parent / "fonts"
+    FONT_REG = FONT_DIR / "Vera.ttf"
+    FONT_BOLD = FONT_DIR / "VeraBd.ttf"
+if not (FONT_REG.is_file() and FONT_BOLD.is_file()):
+    raise FileNotFoundError("no supported body font pair is available")
 NAVY = "#16324F"
 TEAL = "#1F8A8A"
 ORANGE = "#C36E39"
@@ -392,7 +402,13 @@ def make_pdf(markdown: str, destination: Path, *, author: str) -> int:
                 ("LEFTPADDING", (0, 0), (-1, -1), 3), ("RIGHTPADDING", (0, 0), (-1, -1), 3),
                 ("TOPPADDING", (0, 0), (-1, -1), 3), ("BOTTOMPADDING", (0, 0), (-1, -1), 3),
             ]))
-            story.extend([table, Spacer(1, 4)])
+            if FALLBACK_FONT and story and isinstance(story[-1], Paragraph) and story[-1].style.name == "TableCaptionX":
+                # Vera's wider metrics can otherwise leave a short table's
+                # caption at the foot of the preceding page.
+                story.append(KeepTogether([story.pop(), table]))
+            else:
+                story.append(table)
+            story.append(Spacer(1, 4))
         elif kind == "figure":
             figcaption, relative = payload
             image_path = PAPER / relative
@@ -406,8 +422,9 @@ def make_pdf(markdown: str, destination: Path, *, author: str) -> int:
     title_match = re.search(r"^#\s+(.+)$", markdown, re.MULTILINE)
     if title_match is None:
         raise ValueError("manuscript title is missing")
-    doc = SimpleDocTemplate(str(destination), pagesize=A4, rightMargin=0.52*inch,
-                            leftMargin=0.52*inch, topMargin=0.52*inch, bottomMargin=0.52*inch,
+    margin = (0.42 if FALLBACK_FONT else 0.52) * inch
+    doc = SimpleDocTemplate(str(destination), pagesize=A4, rightMargin=margin,
+                            leftMargin=margin, topMargin=margin, bottomMargin=margin,
                             title=title_match.group(1), author=author,
                             invariant=1)
 
@@ -428,10 +445,11 @@ def make_pdf(markdown: str, destination: Path, *, author: str) -> int:
     for required in (*required_sections, "16/20", "9/20"):
         if required not in extracted:
             raise ValueError(f"PDF text extraction missing {required}")
+    normalized_pages = [re.sub(r"\s+", " ", page) for page in page_text]
     for caption, header in (("Table 1.", "Decision stage"), ("Table 2.", "Measure"),
                             ("Table 3.", "Fixed guidance"),
                             ("Table 5.", "Raw check / bounded"), ("Table 6.", "Wave")):
-        if not any(caption in page and header in page for page in page_text):
+        if not any(caption in page and header in page for page in normalized_pages):
             raise ValueError(f"PDF separates {caption} from its table header")
     return len(pdf.pages)
 
