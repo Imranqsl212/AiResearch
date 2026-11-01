@@ -1,0 +1,17 @@
+{
+  "file": "dispatch_logs/deserialization_allowlist-s104.precursor.json",
+  "original_archive_fingerprint": {
+    "file_count": 654,
+    "tree_sha256": "f0fdaaafd95109b3fe44e3f86357a0dff91b3de11a6324bc059eb9b37d3d430c"
+  },
+  "original_file_sha256": "9735c4345d3de1caec1ca4ecdd8d3a3a1bda45d3bd11f3971c7ce0afc0cd6dce",
+  "published_archive_fingerprint": {
+    "file_count": 654,
+    "tree_sha256": "a6a7e604cc3f7ff394d345f73124d741a4c174c6a8934ae90713928d708bed00"
+  },
+  "published_file_sha256": "f8eabc4102343f0ea60b2788dd4e9cfb0ae4ac81e4f8103293b42286a15b1054",
+  "redaction": "local user workspace prefix in technical stderr only",
+  "replacement_count": 8,
+  "scientific_fields_unchanged": true,
+  "scope": "published copy of excluded V1 wave; original retained under /private/tmp"
+}

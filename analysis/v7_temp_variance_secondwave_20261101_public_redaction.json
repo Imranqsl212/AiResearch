@@ -1,0 +1,17 @@
+{
+  "file": "dispatch_logs/environment_injection-s202.precursor.json",
+  "original_archive_fingerprint": {
+    "file_count": 721,
+    "tree_sha256": "712fd5788539223cbf13b701a1e50a94236b0a65fae848ae3b92bf1aa1578d93"
+  },
+  "original_file_sha256": "f4a393b72855fcd1b6193202470e677c01815a858561fa4020c6b50d71dd79ac",
+  "published_archive_fingerprint": {
+    "file_count": 721,
+    "tree_sha256": "12a105516432abd31460b8c4a3420734af7b044c189656efe795a2321364cd58"
+  },
+  "published_file_sha256": "aca35128edc617d0d9587bc6c85fb79b58334b541482a8027c984a1c9f076fe9",
+  "redaction": "local user workspace prefix in technical stderr only",
+  "replacement_count": 7,
+  "scientific_fields_unchanged": true,
+  "scope": "published copy of excluded V2 wave; original retained under /private/tmp and ignored .local_private backup"
+}

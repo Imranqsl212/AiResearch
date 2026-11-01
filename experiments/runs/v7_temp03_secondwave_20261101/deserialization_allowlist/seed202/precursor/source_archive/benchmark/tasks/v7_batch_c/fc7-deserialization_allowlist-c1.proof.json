@@ -1,0 +1,17 @@
+{
+  "candidate_space_size": 3,
+  "case_count": 3,
+  "certificate_version": "7.0.0",
+  "contradiction_witness": null,
+  "ground_truth_state": "REPAIRABLE",
+  "proof_sha256": "25dbab8246492e70640b47da26c3d0236a364b729a07e7d109bd71ac6599b183",
+  "satisfying_candidates": [
+    {
+      "mode": "check_resolved_type"
+    }
+  ],
+  "scope": "fixed_stateless_candidate_modes_and_authored_finite_worlds_only",
+  "secure_candidate_gate_verdict": "PASS",
+  "task_id": "fc7-deserialization_allowlist-c1",
+  "task_sha256": "7229ef30d7baf89f2b6c2c9dd53d124b26a6c7ba6885b88b694a753ab22cdaa7"
+}

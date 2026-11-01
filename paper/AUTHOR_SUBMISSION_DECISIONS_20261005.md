@@ -12,17 +12,17 @@ separately. Do not infer their absence from a missing response.
 
 | Artifact | Current SHA-256 |
 | --- | --- |
-| [`final.md`](final.md) | `5ecb972a2d3fd89788931f4ec389171949e76c51d230e1a3d31498ecf0ba67fb` |
-| [Identified `full_paper.pdf`](submission/full_paper.pdf) | `579d52df328721182ae6ba3b6a3c00ebd6f7cdb0e19844c71cd58e2cff64ea1d` |
-| [Identified `full_paper.docx`](submission/full_paper.docx) | `8ea5a70d1019dedbe106128666ac6749985467225dfc9cc1465c4bc46bb2e62f` |
-| [Anonymous `full_paper_anonymous.pdf`](submission/full_paper_anonymous.pdf) | `3d837f7405a1a0da6d8e372f4a154f588d654269abf153143fce0f12e9c4907a` |
-| [Anonymous `full_paper_anonymous.docx`](submission/full_paper_anonymous.docx) | `d1b5eed1efe81666bc89870203bc3cbeefaae9a8c0ab1c3a574df35589b901ad` |
+| [`final.md`](final.md) | `ca158ffd0af2e047fabf02ab6e7768e8871f530af7139248d909d987008e533d` |
+| [Identified `full_paper.pdf`](submission/full_paper.pdf) | `12a6d05f93dcaffea93aa3736dfb33cfa88899e59196c2f5284d7ab77fa25931` |
+| [Identified `full_paper.docx`](submission/full_paper.docx) | `9a41385ca6256f8c7a1fa213cd6857465e487e3152e6fac743b62bd889b8d72f` |
+| [Anonymous `full_paper_anonymous.pdf`](submission/full_paper_anonymous.pdf) | `9003824a3208d2f4174b5ac9e841f443997fc10776667ba5012f069606926efc` |
+| [Anonymous `full_paper_anonymous.docx`](submission/full_paper_anonymous.docx) | `25520b080f220ed1e16e0c41a0d85575a2d3eb9bd0ee980946395469adcb535a` |
 | [`results.json`](artifacts/results.json) | `3d7ef25bfa07ef25ae20cea8d6ee34b59c5d9158e20c2e9b7013bfbd5a3cb229` |
-| [Working author-year conversion](venue_author_year_draft.md) | `67e75bb23876f4d19ff2828ad52913b870295ba19468ed7a35413151402ade58` |
-| [Author-year `venue_author_year_identified.pdf`](submission/venue_author_year_identified.pdf) | `72bdfefcdd3a8af7b47c936febea8ee4abd94550796b6cadcb2f40ddfe272cfe` |
-| [Author-year `venue_author_year_identified.docx`](submission/venue_author_year_identified.docx) | `7b999a871b07dc1d1ff6e549a377932399109422f63a29bfefef81ef153319ca` |
-| [Author-year `venue_author_year_anonymous.pdf`](submission/venue_author_year_anonymous.pdf) | `daed2a5a8e9f1d37a6a20bc82b2ceb70700c13a1b327b339c01493c801bffa41` |
-| [Author-year `venue_author_year_anonymous.docx`](submission/venue_author_year_anonymous.docx) | `ed030ed0260f0960ad1512ff72aa86c4f7550b1d20df903dedaf00940fb80ec5` |
+| [Working author-year conversion](venue_author_year_draft.md) | `fbafbb2b84a6dd254814904532ecd90713b3d9b1b99066957cccc3f02b7ce69e` |
+| [Author-year `venue_author_year_identified.pdf`](submission/venue_author_year_identified.pdf) | `b57ce16ae8cee1833e97dde0d1966b36a18bbab0f4036c52932b556dd44421c5` |
+| [Author-year `venue_author_year_identified.docx`](submission/venue_author_year_identified.docx) | `dfe867b75d5f48ef15de0885e20b8b30e35e836ca40d73cfa92617e2e6d3652c` |
+| [Author-year `venue_author_year_anonymous.pdf`](submission/venue_author_year_anonymous.pdf) | `2980ced5473365bab5d04255ae472e1e0f3a0bc68b4e7e3c46dcc1726cfb3e5b` |
+| [Author-year `venue_author_year_anonymous.docx`](submission/venue_author_year_anonymous.docx) | `25c2f5b76d7123da87c14077cb380f814237c3c853d76cba4352c1a8c97a515b` |
 | [Older C5 terminal recount](../analysis/c5_paired_regression_recount_20261101.json) | `434a3034212d19dac142641344b3abe6707da1823026ce2eec317ab7e3a09ad4` |
 | [Older C5 candidate recount](../analysis/c5_candidate_discordance_20261101.json) | `ad36ca8a76f5589760bffd0ac293381828e477fb9e0e96ffe1c692fe7ff9188d` |
 | [First one-shot wave recount](../analysis/fresh_matched_verdict_pilot_20261101.json) | `251869f1b0e057ab133cf450bf51e1b75d5de92ffd15aac5a708e24493c7a1c8` |

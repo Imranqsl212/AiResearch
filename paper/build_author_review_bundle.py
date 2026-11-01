@@ -34,6 +34,7 @@ V8_OUTPUT = ROOT / "experiments/runs/paper_author_review_manuscript_20261012_v8.
 V9_OUTPUT = ROOT / "experiments/runs/paper_author_review_manuscript_20261016_v9.tar.gz"
 V10_OUTPUT = ROOT / "experiments/runs/paper_author_review_manuscript_20261016_v10.tar.gz"
 V11_OUTPUT = ROOT / "experiments/runs/paper_author_review_manuscript_20261101_v11.tar.gz"
+V12_OUTPUT = ROOT / "experiments/runs/paper_author_review_manuscript_20261101_v12.tar.gz"
 OUTPUT = V11_OUTPUT
 V1_VERSION = "paper-author-review-manuscript-1.0.0"
 V2_VERSION = "paper-author-review-manuscript-2.0.0"
@@ -46,6 +47,7 @@ V8_VERSION = "paper-author-review-manuscript-8.0.0"
 V9_VERSION = "paper-author-review-manuscript-9.0.0"
 V10_VERSION = "paper-author-review-manuscript-10.0.0"
 V11_VERSION = "paper-author-review-manuscript-11.0.0"
+V12_VERSION = "paper-author-review-manuscript-12.0.0"
 VERSION = V11_VERSION
 README_NAME = "REVIEW_ONLY_README.md"
 MANIFEST_NAME = "SOURCE_HASH_MANIFEST.json"
@@ -115,6 +117,10 @@ V11_SOURCE_NAMES = V10_SOURCE_NAMES + (
     "analysis/fresh_matched_verdict_pilot_20261101.json",
     "analysis/V7_SECOND_WAVE_20261101.md",
     "analysis/v7_second_wave_20261101.json",
+)
+V12_SOURCE_NAMES = V11_SOURCE_NAMES + (
+    "analysis/V7_TEMP_VARIANCE_20261101.md",
+    "analysis/v7_temp_variance_20261101.json",
 )
 SOURCE_NAMES = V11_SOURCE_NAMES
 FORBIDDEN_MARKERS = {
@@ -394,6 +400,46 @@ Use `--no-local-compare` to verify archived bytes and receipt after the
 workspace changes. This receipt is a digest, not an independent timestamp,
 signature, final source revision, or journal approval.
 """
+V12_README = """# Local author-review manuscript bundle v12
+
+**Status: REVIEW_ONLY. This filtered package is not an approved journal
+supplement or submission.**
+
+This package copies the updated exploratory manuscript, identified and
+anonymous canonical and author-year PDF/DOCX files, six figures, historical
+derived tables, references, and the pending author decision form. It retains
+the excluded persistent-veto and sequential one-shot v7 pilot reports from
+v11 and adds a derived report and JSON for the temperature 0.3 variance
+pilot. The temperature 0.3 pilot is excluded exploratory data with a
+different protocol; it is not pooled with the temperature-zero cohorts and
+does not support the main inference.
+
+`SOURCE_HASH_MANIFEST.json` records each selected file's SHA-256 and byte
+count. Raw trajectories, original responses, candidate source, source
+snapshots, original archives, and the sanitized review candidate are not
+inside this package. The derived reports require separately tracked raw
+archives and analysis code for independent replay; this package alone cannot
+reproduce their counts from raw traces.
+
+The recorded public Git revision belongs to an older historical data release.
+This bundle does not attest to Git visibility, a final source revision,
+journal data route, privacy clearance, or author approval. The anonymous
+files remain review drafts; the identified decision form must not accompany
+an anonymous peer-review submission.
+
+The builder screens selected bytes and expanded DOCX members for a small set
+of local path and account markers. That is not a full privacy or scientific
+validity review. Before external distribution, the author must inspect the
+exact package and choose an accepted data route.
+
+Verify against the local source tree with:
+
+    python3 -B -m paper.build_author_review_bundle verify --archive experiments/runs/paper_author_review_manuscript_20261101_v12.tar.gz
+
+Use `--no-local-compare` to verify archived bytes and receipt after the
+workspace changes. This receipt is a digest, not an independent timestamp,
+signature, final source revision, or journal approval.
+"""
 README = V11_README
 
 
@@ -415,9 +461,11 @@ V8_SPEC = BundleSpec(V8_VERSION, V8_SOURCE_NAMES, V8_README)
 V9_SPEC = BundleSpec(V9_VERSION, V9_SOURCE_NAMES, V9_README)
 V10_SPEC = BundleSpec(V10_VERSION, V10_SOURCE_NAMES, V10_README)
 V11_SPEC = BundleSpec(V11_VERSION, V11_SOURCE_NAMES, V11_README)
+V12_SPEC = BundleSpec(V12_VERSION, V12_SOURCE_NAMES, V12_README)
 SPECS_BY_VERSION = {spec.version: spec for spec in
                     (V1_SPEC, V2_SPEC, V3_SPEC, V4_SPEC, V5_SPEC, V6_SPEC,
-                     V7_SPEC, V8_SPEC, V9_SPEC, V10_SPEC, V11_SPEC)}
+                     V7_SPEC, V8_SPEC, V9_SPEC, V10_SPEC, V11_SPEC, V12_SPEC)}
+BUILD_TARGETS = {"v11": (V11_OUTPUT, V11_SPEC), "v12": (V12_OUTPUT, V12_SPEC)}
 
 
 class BundleError(RuntimeError):
@@ -462,17 +510,17 @@ def _decision_bound_names(spec: BundleSpec) -> tuple[str, ...]:
         "paper/submission/full_paper.docx",
         "paper/artifacts/results.json",
     )
-    if spec in (V2_SPEC, V3_SPEC, V4_SPEC, V5_SPEC, V6_SPEC, V7_SPEC, V8_SPEC, V9_SPEC, V10_SPEC, V11_SPEC):
+    if spec in (V2_SPEC, V3_SPEC, V4_SPEC, V5_SPEC, V6_SPEC, V7_SPEC, V8_SPEC, V9_SPEC, V10_SPEC, V11_SPEC, V12_SPEC):
         names += (
             "paper/submission/full_paper_anonymous.pdf",
             "paper/submission/full_paper_anonymous.docx",
         )
-    if spec in (V10_SPEC, V11_SPEC):
+    if spec in (V10_SPEC, V11_SPEC, V12_SPEC):
         names += (
             "paper/venue_author_year_draft.md",
             "paper/VENUE_SHORTLIST_20261005.md",
         )
-    if spec is V11_SPEC:
+    if spec in (V11_SPEC, V12_SPEC):
         names += (
             "paper/submission/venue_author_year_identified.pdf",
             "paper/submission/venue_author_year_identified.docx",
@@ -482,6 +530,11 @@ def _decision_bound_names(spec: BundleSpec) -> tuple[str, ...]:
             "analysis/c5_candidate_discordance_20261101.json",
             "analysis/fresh_matched_verdict_pilot_20261101.json",
             "analysis/v7_second_wave_20261101.json",
+        )
+    if spec is V12_SPEC:
+        names += (
+            "analysis/V7_TEMP_VARIANCE_20261101.md",
+            "analysis/v7_temp_variance_20261101.json",
         )
     return names
 
@@ -517,7 +570,7 @@ def _source_bytes(spec: BundleSpec = V11_SPEC) -> dict[str, bytes]:
 
 
 def _release_flags(spec: BundleSpec) -> dict[str, Any]:
-    if spec is V11_SPEC:
+    if spec in (V11_SPEC, V12_SPEC):
         return {
             "journal_supplement_approved": False,
             "git_visibility": "not-attested-by-bundle",
@@ -610,7 +663,7 @@ def verify(*, archive: Path = OUTPUT, compare_sources: bool = True) -> dict[str,
             or receipt.get("archive_bytes") != archive.stat().st_size):
         raise BundleError("archive differs from review-only receipt")
     if (any(receipt.get(key) != value for key, value in _release_flags(spec).items())
-            or (spec in (V10_SPEC, V11_SPEC) and "public_release_approved" in receipt)):
+            or (spec in (V10_SPEC, V11_SPEC, V12_SPEC) and "public_release_approved" in receipt)):
         raise BundleError("receipt release flags differ")
     files = _archive_files(archive)
     expected_names = set(spec.source_names) | {README_NAME, MANIFEST_NAME}
@@ -627,7 +680,7 @@ def verify(*, archive: Path = OUTPUT, compare_sources: bool = True) -> dict[str,
             or manifest.get("source_git_revision_bound") is not False):
         raise BundleError("review-only provenance flags differ")
     if (any(manifest.get(key) != value for key, value in _release_flags(spec).items())
-            or (spec in (V10_SPEC, V11_SPEC) and "public_release_approved" in manifest)):
+            or (spec in (V10_SPEC, V11_SPEC, V12_SPEC) and "public_release_approved" in manifest)):
         raise BundleError("manifest release flags differ")
     rows = manifest.get("files")
     if not isinstance(rows, list) or len(rows) != len(spec.source_names):
@@ -706,12 +759,16 @@ def build(*, output: Path = OUTPUT, spec: BundleSpec = V11_SPEC) -> dict[str, An
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("action", choices=("build", "verify"))
-    parser.add_argument("--archive", type=Path, default=OUTPUT)
+    parser.add_argument("--bundle-version", choices=tuple(BUILD_TARGETS), default="v11",
+                        help="select the default archive and, for build, source specification")
+    parser.add_argument("--archive", type=Path)
     parser.add_argument("--no-local-compare", action="store_true",
                         help="verify archived hashes without comparing current workspace files")
     args = parser.parse_args()
-    result = (build(output=args.archive) if args.action == "build" else
-              verify(archive=args.archive, compare_sources=not args.no_local_compare))
+    default_archive, spec = BUILD_TARGETS[args.bundle_version]
+    archive = args.archive or default_archive
+    result = (build(output=archive, spec=spec) if args.action == "build" else
+              verify(archive=archive, compare_sources=not args.no_local_compare))
     print(json.dumps(result, indent=2, sort_keys=True))
 
 

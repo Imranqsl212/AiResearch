@@ -7,6 +7,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import math
 from pathlib import Path
 
 from benchmark.finite_family_registry import family_module
@@ -33,10 +34,15 @@ BASE_SOURCES = (
 def build_excluded_plan(*, task_path: str, proof_path: str,
                         model_name: str, model_digest: str,
                         seed: int, request_timeout_seconds: int,
-                        retrieval_mode: str = "R0") -> dict:
+                        retrieval_mode: str = "R0",
+                        temperature: float = 0.0) -> dict:
     """Freeze direct inputs for one engineering pilot, never a main schedule."""
     if retrieval_mode not in {"R0", "R1"}:
         raise ValueError("excluded integrated pilot supports R0/R1 only")
+    if (type(temperature) not in (int, float) or
+            not 0.0 <= temperature <= 1.0 or
+            not math.isfinite(temperature)):
+        raise ValueError("temperature must be a finite number in 0..1")
     task_file = _relative_source(ROOT, task_path)
     proof_file = _relative_source(ROOT, proof_path)
     task = _json_object(task_file.read_bytes(), "pilot task")
@@ -50,7 +56,7 @@ def build_excluded_plan(*, task_path: str, proof_path: str,
     inventory = {name: _sha(_relative_source(ROOT, name).read_bytes())
                  for name in sorted(sources)}
     config = {
-        "temperature": 0.0, "max_steps": 6,
+        "temperature": float(temperature), "max_steps": 6,
         "episode_timeout_seconds": 900,
         "max_output_tokens": 256, "num_ctx": 4096,
         "request_timeout_seconds": request_timeout_seconds,
@@ -86,6 +92,7 @@ def main() -> int:
     parser.add_argument("--model", required=True)
     parser.add_argument("--model-digest", required=True)
     parser.add_argument("--seed", type=int, default=17)
+    parser.add_argument("--temperature", type=float, default=0.0)
     parser.add_argument("--retrieval-mode", choices=("R0", "R1"), default="R0")
     parser.add_argument("--request-timeout-seconds", type=int, default=180)
     parser.add_argument("--base-url", default="http://127.0.0.1:11434")
@@ -95,11 +102,13 @@ def main() -> int:
         parser.error("excluded pilot output must be outside the research repository")
     if args.request_timeout_seconds <= 0 or args.request_timeout_seconds > 900:
         parser.error("request timeout must be in 1..900 seconds")
+    if not math.isfinite(args.temperature) or not 0.0 <= args.temperature <= 1.0:
+        parser.error("temperature must be a finite number in 0..1")
     plan = build_excluded_plan(
         task_path=args.task_path, proof_path=args.proof_path,
         model_name=args.model, model_digest=args.model_digest,
         seed=args.seed, request_timeout_seconds=args.request_timeout_seconds,
-        retrieval_mode=args.retrieval_mode)
+        retrieval_mode=args.retrieval_mode, temperature=args.temperature)
     transport = ExcludedOllamaHTTPTransport(
         model_name=args.model, model_digest=args.model_digest,
         base_url=args.base_url,

@@ -3,8 +3,8 @@
 `venue_author_year_draft.md` is a separate formatting draft derived from
 `final.md`. It changes in-text citations and alphabetizes the bibliography;
 the scientific prose, six figures, and six tables match the current numbered
-manuscript. All 27 primary-source URLs are retained. The 41 in-text citation
-instances resolve unambiguously to the 27 references, and every reference is cited.
+manuscript. All 31 primary-source URLs are retained. The 42 in-text citation
+instances resolve unambiguously to the 31 references, and every reference is cited.
 
 Rebuild and verify from the repository root with the bundled Python runtime:
 
@@ -12,7 +12,7 @@ Rebuild and verify from the repository root with the bundled Python runtime:
 /Users/imranmzakirov/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3 -B -m paper.build_venue_format_draft
 ```
 
-The command produced these four separate draft files in `paper/submission/`:
+The command produces these four separate draft files in `paper/submission/`:
 
 - `venue_author_year_identified.pdf` and `.docx`
 - `venue_author_year_anonymous.pdf` and `.docx`
