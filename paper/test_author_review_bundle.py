@@ -16,12 +16,13 @@ from paper import build_author_review_bundle as bundle
 
 
 class AuthorReviewBundleTests(unittest.TestCase):
-    def test_v18_binds_current_render_and_v17_remains_a_snapshot(self) -> None:
+    def test_v19_binds_current_render_and_v18_remains_a_snapshot(self) -> None:
         self.assertEqual(bundle.BUILD_TARGETS["v14"], (bundle.V14_OUTPUT, bundle.V14_SPEC))
         self.assertEqual(bundle.BUILD_TARGETS["v15"], (bundle.V15_OUTPUT, bundle.V15_SPEC))
         self.assertEqual(bundle.BUILD_TARGETS["v16"], (bundle.V16_OUTPUT, bundle.V16_SPEC))
         self.assertEqual(bundle.BUILD_TARGETS["v17"], (bundle.V17_OUTPUT, bundle.V17_SPEC))
         self.assertEqual(bundle.BUILD_TARGETS["v18"], (bundle.V18_OUTPUT, bundle.V18_SPEC))
+        self.assertEqual(bundle.BUILD_TARGETS["v19"], (bundle.V19_OUTPUT, bundle.V19_SPEC))
         self.assertEqual(bundle.V14_SOURCE_NAMES[:len(bundle.V13_SOURCE_NAMES)],
                          bundle.V13_SOURCE_NAMES)
         self.assertEqual(set(bundle.V14_SOURCE_NAMES) - set(bundle.V13_SOURCE_NAMES),
@@ -97,10 +98,27 @@ class AuthorReviewBundleTests(unittest.TestCase):
         self.assertIn("208 completed qwen3:4b responses", bundle.V18_README)
         self.assertIn("remote Linux recheck is pending", bundle.V18_README)
         self.assertIsNone(bundle._release_flags(bundle.V18_SPEC)["related_data_public_git_revision"])
-        current = bundle.verify(archive=bundle.V18_OUTPUT)
-        self.assertEqual(current["version"], bundle.V18_VERSION)
-        self.assertEqual(current["archive_members"], 100)
-        self.assertEqual(current["source_file_count"], 98)
+        snapshot = bundle.verify(archive=bundle.V18_OUTPUT, compare_sources=False)
+        self.assertEqual(snapshot["version"], bundle.V18_VERSION)
+        self.assertEqual(snapshot["archive_members"], 100)
+        self.assertEqual(snapshot["source_file_count"], 98)
+        self.assertIsNone(snapshot["local_sources_match"])
+
+        self.assertEqual(bundle.V19_SOURCE_NAMES[:len(bundle.V18_SOURCE_NAMES)],
+                         bundle.V18_SOURCE_NAMES)
+        self.assertEqual(set(bundle.V19_SOURCE_NAMES) - set(bundle.V18_SOURCE_NAMES),
+                         set(bundle.V19_NEW_DERIVED))
+        self.assertEqual(len(bundle.V19_NEW_DERIVED), 9)
+        self.assertEqual(set(bundle._decision_bound_names(bundle.V19_SPEC)) -
+                         set(bundle._decision_bound_names(bundle.V18_SPEC)),
+                         set(bundle.V19_NEW_DERIVED))
+        self.assertIn("success-path handshake interval", bundle.V19_README)
+        self.assertIn("remote Linux recheck is pending", bundle.V19_README)
+        self.assertIsNone(bundle._release_flags(bundle.V19_SPEC)["related_data_public_git_revision"])
+        current = bundle.verify(archive=bundle.V19_OUTPUT)
+        self.assertEqual(current["version"], bundle.V19_VERSION)
+        self.assertEqual(current["archive_members"], 109)
+        self.assertEqual(current["source_file_count"], 107)
         self.assertTrue(current["local_sources_match"])
 
     def test_v13_and_v12_remain_independent_historical_snapshots(self) -> None:

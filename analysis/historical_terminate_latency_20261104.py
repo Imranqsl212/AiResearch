@@ -100,6 +100,15 @@ def build_report() -> dict[str, Any]:
                     f"terminate acknowledgement differs: {slot}")
             observations.append(matches[0])
         first_call, first_observation = calls[0], observations[0]
+        preceding_observations = [
+            e for e in events[:events.index(first_call)]
+            if e.get("event_type") == "TOOL_OBSERVATION"
+        ]
+        require(row["condition"] in {"RD", "RW"}
+                and preceding_observations
+                and preceding_observations[-1].get("tool") == "attempt"
+                and preceding_observations[-1].get("outcome") == "SECURITY_CHECK_PASSED",
+                f"terminate was not a repairable post-PASS call: {slot}")
         after_call = [e for e in events if e.get("event_type") == "TOOL_CALL"
                       and e.get("step", 0) > first_call["step"]]
         call_time = event_time(first_call, slot)
@@ -115,6 +124,7 @@ def build_report() -> dict[str, Any]:
             "family": row["family"],
             "stop_event": row["stop_event"],
             "first_terminate_step": first_call["step"],
+            "preceding_public_outcome": "SECURITY_CHECK_PASSED",
             "terminate_call_count": len(calls),
             "later_logged_tool_calls": [
                 {"step": e["step"], "tool": e["tool"]} for e in after_call],
@@ -186,9 +196,9 @@ def render_svg(report: dict[str, Any]) -> bytes:
         'aria-label="Elapsed seconds after acknowledged terminate until final runner stop">',
         '<rect width="100%" height="100%" fill="#ffffff"/>',
         '<text x="28" y="31" fill="#172b47" font-family="Arial,sans-serif" '
-        'font-size="20" font-weight="700">A stop request did not stop the runner</text>',
+        'font-size="20" font-weight="700">After a public PASS, terminate did not end the run</text>',
         '<text x="28" y="54" fill="#53657a" font-family="Arial,sans-serif" '
-        'font-size="12">40 sealed historical episodes; 14 episodes with acknowledged terminate calls</text>',
+        'font-size="12">14 repairable episodes with acknowledged terminate calls; no unavailable episode called the tool</text>',
     ]
     for tick in (0, 50, 100, 150, 200):
         x = plot_left + (plot_right - plot_left) * tick / seconds_max

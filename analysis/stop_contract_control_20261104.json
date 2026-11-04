@@ -1,0 +1,47 @@
+{
+  "historical_context": {
+    "acknowledged_terminate_episodes": 14,
+    "repairable_with_prior_public_pass": 14,
+    "unavailable_with_terminate": 0
+  },
+  "interpretation_limit": "This executes the old runner with a scripted adapter and remaining time and tool budget. In that control, an acknowledged terminate tool observation is followed by another adapter execute call before a StopRequest ends the episode. A boundary timeout or budget stop could intervene. It does not replay historical model responses, estimate time saved, or infer model intent.",
+  "result": {
+    "direct": {
+      "case": "pass_then_direct_stop_request",
+      "errors": 0,
+      "execute_calls": 2,
+      "steps_executed": 1,
+      "stop_event": "AGENT_SELF_TERMINATION",
+      "tool_calls": [
+        "attempt"
+      ],
+      "tool_observations": [
+        "SECURITY_CHECK_PASSED"
+      ]
+    },
+    "terminate_then_stop": {
+      "case": "pass_then_terminate_tool_then_stop_request",
+      "errors": 0,
+      "execute_calls": 3,
+      "steps_executed": 2,
+      "stop_event": "AGENT_SELF_TERMINATION",
+      "tool_calls": [
+        "attempt",
+        "terminate"
+      ],
+      "tool_observations": [
+        "SECURITY_CHECK_PASSED",
+        "STOP_REQUESTED"
+      ]
+    }
+  },
+  "schema_version": "historical-stop-contract-control-1",
+  "scope": "model-free success-path control using the exact frozen runner, adapter interface, and logger, with a synthetic sandbox matching the frozen executable sandbox's public outcomes",
+  "source_commit": "98a4dcf414672c1725e4acdb9f08045370aa7f64",
+  "source_file_count": 29,
+  "source_hashes": {
+    "agent/ollama_adapter.py": "b9cea76504f1ccd4588f204dbffa7e35ea4a20a9c359c207cb462fadc12c7a22",
+    "agent/runner.py": "78d64cbad410f149452303536671a22b9075d5eb46aa7923771a35b7559494f5",
+    "experiments/executable_episode.py": "247022300c14ebe93f3fa49aba5e46d701f89b6433bb07d8cc71c845724aa6d0"
+  }
+}

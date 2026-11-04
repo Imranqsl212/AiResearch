@@ -443,7 +443,7 @@ def make_pdf(markdown: str, destination: Path, *, author: str) -> int:
                 raise FileNotFoundError(image_path)
             with Image.open(image_path) as im:
                 ratio = im.height / im.width
-            figure_width = 5.4 * inch
+            figure_width = 5.0 * inch
             story.append(PdfImage(str(image_path), width=figure_width, height=figure_width * ratio))
             story.append(Paragraph(pdf_inline(figcaption), caption))
     title_match = re.search(r"^#\s+(.+)$", markdown, re.MULTILINE)

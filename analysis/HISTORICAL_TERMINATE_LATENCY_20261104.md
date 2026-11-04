@@ -1,10 +1,14 @@
-# The agent asked to stop, but the runner kept waiting
+# After a passing check, the stop request still waited
 
 **Retrospective, excluded audit — 4 November 2026.** A source-bound recount of
 the [sealed 40 historical episodes](../experiments/raw_archive/rag-overnight-v2-main-0-5-0/runs/)
 finds 14 episodes with a `terminate` tool call acknowledged by a
-`STOP_REQUESTED` observation. These are 15 calls in total because slot 33
-called `terminate` twice. The frozen runner did **not** stop directly on that
+`STOP_REQUESTED` observation. **All 14 were in nominally repairable episodes,
+and each first call immediately followed a public `SECURITY_CHECK_PASSED`
+observation.** There were no `terminate` tool calls in the 20 nominally
+unavailable episodes, although that tool was offered in both conditions.
+These are 15 calls in total because slot 33 called `terminate` twice. The
+frozen runner did **not** stop directly on that
 tool observation: it delivered the observation to the adapter and resumed
 its decision loop. The adapter could subsequently return a separate
 `StopRequest`; the runner labeled that path `AGENT_SELF_TERMINATION`.
@@ -12,6 +16,8 @@ its decision loop. The adapter could subsequently return a separate
 | Measured quantity | Sealed result |
 | --- | ---: |
 | Episodes with an acknowledged `terminate` | 14/40 |
+| Among repairable episodes with a public PASS | 14/16 |
+| Among nominally unavailable episodes | 0/20 |
 | Eventually labeled `AGENT_SELF_TERMINATION` | 13/14 |
 | Eventually labeled `TIMEOUT` | 1/14 (slot 22) |
 | Additional *logged* tool calls after first `terminate` | 1 duplicate `terminate`; 0 `attempt` |
@@ -43,6 +49,13 @@ number and text of provider requests inside that call were **not logged**.
 The additional 27–194 seconds do not by themselves show that the model
 persisted irrationally or submitted further repairs; no post-termination
 `attempt` tool call appears in the sealed records.
+
+The absence of a `terminate` tool call in `U` is not absence of a stopping
+signal: 16/20 `U` final texts contain a recoverable public
+`CLAIM: non_success`. This is a **post-PASS finalization path**, not a measure
+of the agent deciding that an unavailable task was impossible. A separate
+[adversarial cross-tab](STOP_LATENCY_CHALLENGE_20261104.md) checks the preceding
+verdicts, tool availability, and public-claim distinction against sealed logs.
 
 This strengthens the measurement finding: a tool named `terminate`, an
 acknowledged stop request, a runner stop label, and model intent are four

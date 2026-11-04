@@ -64,6 +64,8 @@ jobs:
           python -B -m analysis.logged_source_surrogate_ast_20261104 --check
           python -B -m analysis.historical_protocol_stop_recount_20261104 --check
           python -B -m analysis.historical_terminate_latency_20261104 --check
+          python -B -m analysis.stop_latency_challenge_20261104 --check
+          python -B -m analysis.stop_contract_control_20261104 --check
           python -B -m analysis.v7_test_set_sufficiency_20261104 --check
           python -B -m analysis.v7_boundary_provider_latency_20261104 --check
       - name: Test supplemental analysis guards
@@ -77,6 +79,8 @@ jobs:
             tests.test_logged_source_surrogate_ast_20261104 \
             tests.test_historical_protocol_stop_recount_20261104 \
             tests.test_historical_terminate_latency_20261104 \
+            tests.test_stop_latency_challenge_20261104 \
+            tests.test_stop_contract_control_20261104 \
             tests.test_v7_test_set_sufficiency_20261104 \
             tests.test_v7_boundary_provider_latency_20261104
 
