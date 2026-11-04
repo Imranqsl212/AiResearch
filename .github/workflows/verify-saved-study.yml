@@ -59,13 +59,15 @@ jobs:
           python -B -m analysis.sast_provenance_missingness --check
           python -B -m analysis.full_catalog_calibration_20261030 --verify
           python -B -m analysis.v7_leave_one_world_out_20261104 --check
+          python -B -m analysis.historical_feedback_specificity_20261104 --check
       - name: Test supplemental analysis guards
         run: |
           python -B -m unittest -q \
             tests.test_family_discordance_sensitivity \
             tests.test_sast_provenance_missingness \
             tests.test_full_catalog_calibration_20261030 \
-            tests.test_v7_leave_one_world_out_20261104
+            tests.test_v7_leave_one_world_out_20261104 \
+            tests.test_historical_feedback_specificity_20261104
 
   matched-pilot-replay:
     runs-on: ubuntu-24.04
@@ -86,6 +88,8 @@ jobs:
           python -B -m analysis.c5_candidate_discordance_20261101 --check
           python -B -m analysis.fresh_matched_verdict_pilot_20261101 --check
           python -B -m analysis.v7_second_wave_20261101 --check
+          python -B -m analysis.c5_first_submission_parity_20261104 --check
+          python -B -m analysis.v7_crossfamily_20261104 --check
       - name: Test archived-pilot validation guards
         run: |
           python -B -m unittest -q \
@@ -93,6 +97,9 @@ jobs:
             tests.test_c5_candidate_discordance_20261101 \
             tests.test_fresh_matched_verdict_pilot_20261101 \
             tests.test_v7_second_wave_20261101 \
+            tests.test_c5_first_submission_parity_20261104 \
+            tests.test_v7_crossfamily_20261104 \
+            tests.test_v7_crossfamily_20261104_excluded \
             tests.test_v1_request_archive_relocation
 
   manuscript-format-check:
