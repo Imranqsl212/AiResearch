@@ -12,11 +12,11 @@ separately. Do not infer their absence from a missing response.
 
 | Artifact | Current SHA-256 |
 | --- | --- |
-| [`final.md`](final.md) | `1d9a77f99b21aed3ef7acfc8114de4d77723f1f1bfe60fa375ba10916a403a43` |
-| [Identified `full_paper.pdf`](submission/full_paper.pdf) | `0de68e84a44d8f2a9b44665194530836608ab40f951d23c376c8907e8c2c1871` |
-| [Identified `full_paper.docx`](submission/full_paper.docx) | `aab9e1594ae8a5f629d7dca7ccb188d01646f72045cacc416f2e9aef12f5e685` |
-| [Anonymous `full_paper_anonymous.pdf`](submission/full_paper_anonymous.pdf) | `38129c3b900461878b85bca0a53172d97daaf90b229e489a68eb4f6251132bed` |
-| [Anonymous `full_paper_anonymous.docx`](submission/full_paper_anonymous.docx) | `81b4d210a8ae88e95d8c3cfe34ce3b77061f73906d62140b27a9b60f838c4162` |
+| [`final.md`](final.md) | `7bf954df3646bf0c4bf5206da39bd42fce7a8c8d78be47605d261a6f653467ea` |
+| [Identified `full_paper.pdf`](submission/full_paper.pdf) | `e30b42c2a15fa12e3737337f661314d27cd825be6bb80aa5c0957018831ec800` |
+| [Identified `full_paper.docx`](submission/full_paper.docx) | `fa3ebe9f18c74274c9c409bc4839e3abb67ff35912c383ea2aa27664fdf6330b` |
+| [Anonymous `full_paper_anonymous.pdf`](submission/full_paper_anonymous.pdf) | `585011f1d67468dacbb9a081a1852ed8cf02b1fcf9545668dab2821640dae383` |
+| [Anonymous `full_paper_anonymous.docx`](submission/full_paper_anonymous.docx) | `7da65f2460724db9e9a6948660f3e2649e55d646f1bfc4c3ea7dccc746a493fd` |
 | [`results.json`](artifacts/results.json) | `3d7ef25bfa07ef25ae20cea8d6ee34b59c5d9158e20c2e9b7013bfbd5a3cb229` |
 | [Working author-year conversion](venue_author_year_draft.md) | `d56b469d919986c7da430c7d003121776e37c86b06bdac5f7f69f480011791dd` |
 | [Author-year `venue_author_year_identified.pdf`](submission/venue_author_year_identified.pdf) | `eebb1832db3bc60ebfd342e31483982909c1aac17729abb9a4f48f4a17c0e1b8` |
@@ -69,7 +69,7 @@ separately. Do not infer their absence from a missing response.
 | [v7_qwen8b_capacity_20261104.json](../analysis/v7_qwen8b_capacity_20261104.json) | `847600863cc2e438f18a1737da79479096dcf10b22d0b777ac61cb1413fc7767` |
 | [v7_qwen8b_capacity_20261104_screen.json](../analysis/v7_qwen8b_capacity_20261104_screen.json) | `97b6860d5dee57fd31b8acae058fda7073dfcc66b42ba7a0a99e6095f4aebf58` |
 
-The identified and anonymous PDFs each have 19 A4 pages locally; a local simulated fallback stays within 20 pages. The remote Linux recheck after the layout change is pending. PDF text,
+The identified and anonymous PDFs each have 18 A4 pages locally with Arial; a fresh-process Bitstream Vera render has 19 pages. The remote Linux recheck after the font correction is pending. PDF text,
 including captions and tables, is 12 pt;
 the DOCX styles are 12 pt with single line spacing. The abstract has 220 space-delimited words
 and the article contains five figures and six tables. The identified and

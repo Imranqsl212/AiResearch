@@ -92,6 +92,12 @@ class SubmissionRenderingTests(unittest.TestCase):
                                         target / "anonymous.pdf", author="")
             self.assertLessEqual(identified, render.PAGE_LIMIT)
             self.assertLessEqual(anonymous, render.PAGE_LIMIT)
+            fonts_used = {
+                str(font.get_object().get("/BaseFont"))
+                for font in PdfReader(target / "identified.pdf").pages[0]["/Resources"]["/Font"].values()
+            }
+            self.assertTrue(any("BitstreamVeraSans" in name for name in fonts_used),
+                            "fallback render reused a previously registered host font")
 
 
 if __name__ == "__main__":
