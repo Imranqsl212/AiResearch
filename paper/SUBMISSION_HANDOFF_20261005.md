@@ -1,4 +1,4 @@
-# Submission handoff — updated 16 October 2026
+# Submission handoff — updated 4 November 2026
 
 ## Scope of this manuscript
 
@@ -18,10 +18,10 @@ study remains `NOT_READY` with zero eligible new main episodes.
 
 | File | Purpose |
 | --- | --- |
-| [`final.md`](final.md) | Editable source manuscript, with 27 numbered references and the required IMRAD sections. |
-| [`submission/full_paper.pdf`](submission/full_paper.pdf) | Identified 16-page A4 review copy with six figures and four tables. |
+| [`final.md`](final.md) | Editable source manuscript, with 31 numbered references and the required IMRAD sections. |
+| [`submission/full_paper.pdf`](submission/full_paper.pdf) | Identified 19-page A4 review copy with five figures and six tables. |
 | [`submission/full_paper.docx`](submission/full_paper.docx) | Identified editable Word copy. |
-| [`submission/full_paper_anonymous.pdf`](submission/full_paper_anonymous.pdf) | Anonymous 16-page A4 review copy. |
+| [`submission/full_paper_anonymous.pdf`](submission/full_paper_anonymous.pdf) | Anonymous 19-page A4 review copy. |
 | [`submission/full_paper_anonymous.docx`](submission/full_paper_anonymous.docx) | Anonymous editable Word copy. |
 | [`references.bib`](references.bib) | Bibliography metadata for journal conversion. |
 | [`venue_author_year_draft.md`](venue_author_year_draft.md) | Working author-year citation conversion for journal adaptation; not the rendered or approved manuscript. |
@@ -36,25 +36,17 @@ study remains `NOT_READY` with zero eligible new main episodes.
 | [`VENUE_SHORTLIST_20261005.md`](VENUE_SHORTLIST_20261005.md) | Official-guideline comparison of three possible journals; venue choice remains with the submitting author. |
 | [`AUTHOR_SUBMISSION_DECISIONS_20261005.md`](AUTHOR_SUBMISSION_DECISIONS_20261005.md) | Hash-bound draft inventory and the human decisions still pending; it contains no inferred approvals. |
 
-The filtered [v10 author-review bundle](AUTHOR_REVIEW_BUNDLE_20261005.md)
-contains this manuscript, both rendered file pairs, derived v7 pilot audits,
-the source-fidelity inventory, an independent transformed-receipt recount,
-the separate original-byte audit code, tests, and methods note, the working
-author-year conversion, and the dated venue shortlist.
-Its 37 selected sources and two bundle
-metadata members verified against the current workspace. It remains
-`REVIEW_ONLY`; it excludes the raw trajectories and does not approve journal
-submission or certify a journal data package. The raw artifacts are separately
-tracked on GitHub. Earlier bundles remain separately verifiable;
-v2 contains the 14-page, three-table draft, and v3 predates the final
-recalculation of the historical input-hash ledger. V4 preserves the prior
-manuscript wording, v5 preserves the earlier transformed-only audit, and v6
-preserves the original-byte audit before the data-availability revision. V7
-preserves the manuscript before the present claim corrections. V8 preserves
-the corrected manuscript before the cover-letter data wording was updated.
-V9 preserves the copy before the current reference and venue adaptation.
-All bundles include author
-identity and must not be uploaded as anonymous supplements.
+The current [v13 author-review bundle](AUTHOR_REVIEW_BUNDLE_V13_20261104.md)
+contains this manuscript, both rendered file pairs, derived historical and
+excluded-pilot audits, the author-year conversion, and a descriptive figure
+for the separately stopped temperature 0.3 waves. Its 58 selected sources and
+two bundle metadata members must be verified against the current workspace
+after each rendering update. It remains `REVIEW_ONLY`; raw trajectories are
+tracked separately and are needed to replay the derived counts. Earlier
+[v10](AUTHOR_REVIEW_BUNDLE_20261005.md), v11, and
+[v12](AUTHOR_REVIEW_BUNDLE_V12_20261104.md) bundles remain dated snapshots.
+The bundle includes author identity and must not be uploaded as an anonymous
+supplement.
 
 A 311-member historical paper input archive, named as a private author-review
 copy when created but now tracked on GitHub, is saved at
@@ -105,13 +97,13 @@ An independent manuscript check found the historical numerical anchors
 consistent with `artifacts/results.json`. The v7 pilot and matched fork have
 separate [episode](../analysis/v7_decisive_excluded_audit_20261005.json) and
 [fork](../analysis/v7_decisive_c5_fork_audit_20261005.json) audit reports, both
-rechecked against their local raw artifacts. The abstract has 234
+rechecked against their local raw artifacts. The abstract has 210
 whitespace-delimited words excluding the keywords line. The manuscript now
-contains six figures and four tables and follows Title,
+contains five figures and six tables and follows Title,
 Authors/Affiliation, Abstract, Introduction, Methods, Results, Discussion,
 Acknowledgments, and References. The identified and anonymous PDFs were rebuilt
-at 12 pt and single spacing. The identified and anonymous PDFs are each 16 A4
-pages. The Word styles are 12 pt and single spaced. The anonymous renderer
+at 12 pt and single spacing. The identified and anonymous PDFs are each 19 A4
+pages (20 with the wider Linux fallback font). The Word styles are 12 pt and single spaced. The anonymous renderer
 checks author identifiers and study-commit markers in text and metadata; repeat
 the scan after each content or rendering change. The Word page count was not
 independently verified in a Word-compatible editor.
@@ -125,8 +117,7 @@ changes remain descriptive. The historical guidance arm selected one fixed
 family document before the episode; it was not semantic retrieval.
 Four of 40 main episodes passed the nominal 900-second boundary before their
 recorded stop. Three retained self-termination labels, and slot `000022` has
-an agent `terminate` call before the recorded `TIMEOUT`. Figure 4 is therefore
-a chart of runner labels, not verified voluntary stopping.
+an agent `terminate` call before the recorded `TIMEOUT`. The standalone stop-label chart is retained as an artifact but omitted from the current article; the text reports runner labels, not verified voluntary stopping.
 The prospective v1 logger now retains full finite-evaluator receipts on checked
 actions and explicit `NOT_RUN` reasons elsewhere, but cannot backfill the 81
 historical per-action records. Three v7 seeds per cell across two authored
@@ -190,8 +181,8 @@ The source-fidelity audit verified 77 source entries, 37 adjacent pairs, and
 the archive-to-live-log byte links. `paper.build_submission` regenerated the
 identified and anonymous 16-page PDFs, paired DOCX files, six figures,
 and four tables. These checks validate this workspace's saved artifacts, not
-an independent third-party replication. The current manuscript and decisions
-form is hash-bound to these rendered copies. On 8 October 2026, the separate
+an independent third-party replication. That historical manuscript and decisions
+form were hash-bound to those rendered copies. On 8 October 2026, the separate
 original-byte audit verified 313 original members, 312 transformed counterparts,
 and the original terminal 9/20 count, while reporting one current input-ledger
 digest drift. The v10 author-review bundle reflects the corrected claims,

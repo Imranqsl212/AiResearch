@@ -16,6 +16,20 @@ from paper import build_author_review_bundle as bundle
 
 
 class AuthorReviewBundleTests(unittest.TestCase):
+    def test_v13_binds_current_render_and_v12_remains_a_snapshot(self) -> None:
+        self.assertEqual(bundle.BUILD_TARGETS["v13"], (bundle.V13_OUTPUT, bundle.V13_SPEC))
+        self.assertEqual(bundle.V13_SOURCE_NAMES, bundle.V12_SOURCE_NAMES)
+        self.assertEqual(bundle._decision_bound_names(bundle.V13_SPEC),
+                         bundle._decision_bound_names(bundle.V12_SPEC))
+        self.assertIn("five article figures", bundle.V13_README)
+        self.assertFalse(bundle._release_flags(bundle.V13_SPEC)["journal_supplement_approved"])
+        current = bundle.verify(archive=bundle.V13_OUTPUT)
+        self.assertEqual(current["version"], bundle.V13_VERSION)
+        self.assertEqual(current["archive_members"], 60)
+        self.assertTrue(current["local_sources_match"])
+        snapshot = bundle.verify(archive=bundle.V12_OUTPUT, compare_sources=False)
+        self.assertEqual(snapshot["version"], bundle.V12_VERSION)
+
     def test_v12_is_opt_in_and_binds_current_derived_audits(self) -> None:
         self.assertEqual(bundle.OUTPUT, bundle.V11_OUTPUT)
         self.assertEqual(bundle.VERSION, bundle.V11_VERSION)

@@ -1,8 +1,9 @@
 # Author-review manuscript bundle — v12, 4 November 2026
 
 The [v12 archive](../experiments/runs/paper_author_review_manuscript_20261101_v12.tar.gz)
-is a filtered **REVIEW_ONLY** copy of the current three-author draft, its
-identified and anonymous PDF/DOCX files, six manuscript figures, derived
+is a filtered **REVIEW_ONLY** snapshot of the three-author draft at its first
+4 November rendering, its identified and anonymous PDF/DOCX files, six chart
+assets, derived
 tables, and selected audit reports. It has **60 members**: 58 source files,
 `REVIEW_ONLY_README.md`, and `SOURCE_HASH_MANIFEST.json`. The [receipt](../experiments/runs/paper_author_review_manuscript_20261101_v12.tar.receipt.json)
 records the archive and internal manifest digests.
@@ -22,8 +23,9 @@ for independent replay. The decision form binds the exact current manuscript
 and selected derived audits by hash.
 
 The bundle builder verified its file allowlist, selected file hashes, decision
-bindings, and limited local-path screen. `verify --bundle-version v12`
-confirmed the archive receipt and current source matches. This package does
+bindings, and limited local-path screen at creation. `verify --bundle-version v12
+--no-local-compare` checks its archived receipt after the manuscript changed.
+The [v13 package](AUTHOR_REVIEW_BUNDLE_V13_20261104.md) binds the current render. This package does
 not establish privacy clearance, external chain of custody, task security,
 author approval, or journal submission readiness. It includes the identified
 decision form and must not be uploaded as an anonymous peer-review supplement.
@@ -33,7 +35,7 @@ approval are pending.
 From the repository root:
 
 ```sh
-python3 -B -m paper.build_author_review_bundle verify --bundle-version v12
+python3 -B -m paper.build_author_review_bundle verify --bundle-version v12 --no-local-compare
 python3 -B -m unittest -q paper.test_author_review_bundle
 ```
 

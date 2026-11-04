@@ -7,7 +7,9 @@ import tempfile
 import unittest
 from collections import Counter
 from pathlib import Path
+from unittest import mock
 
+import reportlab
 from docx import Document
 from pypdf import PdfReader
 
@@ -32,6 +34,8 @@ class SubmissionRenderingTests(unittest.TestCase):
                      "0/3", "1/3", "1/2"):
             self.assertIn(fact, review)
         self.assertEqual(review.count("![Figure "), self.manuscript.count("![Figure "))
+        self.assertEqual(re.findall(r"!\[Figure (\d+)\.", review),
+                         ["1", "2", "3", "4", "5"])
         self.assertEqual(review.count("**Table "), self.manuscript.count("**Table "))
         self.assertEqual(re.findall(r"\*\*Table (\d+)\.\*\*", review),
                          ["1", "2", "3", "4", "5", "6"])
@@ -75,6 +79,19 @@ class SubmissionRenderingTests(unittest.TestCase):
                 self.assertEqual(style.paragraph_format.line_spacing, 1.0)
             self.assertAlmostEqual(anonymous_word.sections[0].page_width.pt, render.A4[0], delta=0.05)
             self.assertAlmostEqual(anonymous_word.sections[0].page_height.pt, render.A4[1], delta=0.05)
+
+    def test_fallback_font_keeps_both_pdfs_within_page_limit(self) -> None:
+        fonts = Path(reportlab.__file__).resolve().parent / "fonts"
+        with tempfile.TemporaryDirectory() as directory, \
+             mock.patch.object(render, "FONT_REG", fonts / "Vera.ttf"), \
+             mock.patch.object(render, "FONT_BOLD", fonts / "VeraBd.ttf"), \
+             mock.patch.object(render, "FALLBACK_FONT", True):
+            target = Path(directory)
+            identified = render.make_pdf(self.manuscript, target / "identified.pdf", author=render.AUTHOR)
+            anonymous = render.make_pdf(render.review_manuscript(self.manuscript),
+                                        target / "anonymous.pdf", author="")
+            self.assertLessEqual(identified, render.PAGE_LIMIT)
+            self.assertLessEqual(anonymous, render.PAGE_LIMIT)
 
 
 if __name__ == "__main__":
