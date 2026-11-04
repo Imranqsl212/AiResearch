@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="850" height="566" viewBox="0 0 850 566" role="img" aria-label="Elapsed seconds after acknowledged terminate until final runner stop">
+<rect width="100%" height="100%" fill="#ffffff"/>
+<text x="28" y="31" fill="#172b47" font-family="Arial,sans-serif" font-size="20" font-weight="700">A stop request did not stop the runner</text>
+<text x="28" y="54" fill="#53657a" font-family="Arial,sans-serif" font-size="12">40 sealed historical episodes; 14 episodes with acknowledged terminate calls</text>
+<line x1="138.0" y1="68" x2="138.0" y2="481" stroke="#dce5ec" stroke-width="1"/>
+<text x="138.0" y="502" text-anchor="middle" fill="#52657a" font-family="Arial,sans-serif" font-size="12">0</text>
+<line x1="296.5" y1="68" x2="296.5" y2="481" stroke="#dce5ec" stroke-width="1"/>
+<text x="296.5" y="502" text-anchor="middle" fill="#52657a" font-family="Arial,sans-serif" font-size="12">50</text>
+<line x1="455.0" y1="68" x2="455.0" y2="481" stroke="#dce5ec" stroke-width="1"/>
+<text x="455.0" y="502" text-anchor="middle" fill="#52657a" font-family="Arial,sans-serif" font-size="12">100</text>
+<line x1="613.5" y1="68" x2="613.5" y2="481" stroke="#dce5ec" stroke-width="1"/>
+<text x="613.5" y="502" text-anchor="middle" fill="#52657a" font-family="Arial,sans-serif" font-size="12">150</text>
+<line x1="772.0" y1="68" x2="772.0" y2="481" stroke="#dce5ec" stroke-width="1"/>
+<text x="772.0" y="502" text-anchor="middle" fill="#52657a" font-family="Arial,sans-serif" font-size="12">200</text>
+<text x="28" y="83" fill="#24364a" font-family="Arial,sans-serif" font-size="12">slot 000011</text>
+<rect x="138" y="74" width="225.58" height="10" rx="3" fill="#1c6592"/>
+<circle cx="363.58" cy="79" r="5" fill="#1c6592"/>
+<text x="373.6" y="83" fill="#1c6592" font-family="Arial,sans-serif" font-size="11" font-weight="700">71.2</text>
+<text x="28" y="112" fill="#24364a" font-family="Arial,sans-serif" font-size="12">slot 000012</text>
+<rect x="138" y="103" width="407.17" height="10" rx="3" fill="#1c6592"/>
+<circle cx="545.17" cy="108" r="5" fill="#1c6592"/>
+<text x="555.2" y="112" fill="#1c6592" font-family="Arial,sans-serif" font-size="11" font-weight="700">128.4</text>
+<text x="28" y="141" fill="#24364a" font-family="Arial,sans-serif" font-size="12">slot 000014</text>
+<rect x="138" y="132" width="303.69" height="10" rx="3" fill="#1c6592"/>
+<circle cx="441.69" cy="137" r="5" fill="#1c6592"/>
+<text x="451.7" y="141" fill="#1c6592" font-family="Arial,sans-serif" font-size="11" font-weight="700">95.8</text>
+<text x="28" y="170" fill="#24364a" font-family="Arial,sans-serif" font-size="12">slot 000016</text>
+<rect x="138" y="161" width="474.20" height="10" rx="3" fill="#1c6592"/>
+<circle cx="612.20" cy="166" r="5" fill="#1c6592"/>
+<text x="622.2" y="170" fill="#1c6592" font-family="Arial,sans-serif" font-size="11" font-weight="700">149.6</text>
+<text x="28" y="199" fill="#24364a" font-family="Arial,sans-serif" font-size="12">slot 000017</text>
+<rect x="138" y="190" width="600.09" height="10" rx="3" fill="#1c6592"/>
+<circle cx="738.09" cy="195" r="5" fill="#1c6592"/>
+<text x="748.1" y="199" fill="#1c6592" font-family="Arial,sans-serif" font-size="11" font-weight="700">189.3</text>
+<text x="28" y="228" fill="#24364a" font-family="Arial,sans-serif" font-size="12">slot 000019</text>
+<rect x="138" y="219" width="409.07" height="10" rx="3" fill="#1c6592"/>
+<circle cx="547.07" cy="224" r="5" fill="#1c6592"/>
+<text x="557.1" y="228" fill="#1c6592" font-family="Arial,sans-serif" font-size="11" font-weight="700">129.0</text>
+<text x="28" y="257" fill="#24364a" font-family="Arial,sans-serif" font-size="12">slot 000022</text>
+<circle cx="138.00" cy="253" r="5" fill="#d26922"/>
+<text x="148.0" y="257" fill="#d26922" font-family="Arial,sans-serif" font-size="11" font-weight="700">0.002 · TIMEOUT</text>
+<text x="28" y="286" fill="#24364a" font-family="Arial,sans-serif" font-size="12">slot 000023</text>
+<rect x="138" y="277" width="87.85" height="10" rx="3" fill="#1c6592"/>
+<circle cx="225.85" cy="282" r="5" fill="#1c6592"/>
+<text x="235.9" y="286" fill="#1c6592" font-family="Arial,sans-serif" font-size="11" font-weight="700">27.7</text>
+<text x="28" y="315" fill="#24364a" font-family="Arial,sans-serif" font-size="12">slot 000025</text>
+<rect x="138" y="306" width="456.09" height="10" rx="3" fill="#1c6592"/>
+<circle cx="594.09" cy="311" r="5" fill="#1c6592"/>
+<text x="604.1" y="315" fill="#1c6592" font-family="Arial,sans-serif" font-size="11" font-weight="700">143.9</text>
+<text x="28" y="344" fill="#24364a" font-family="Arial,sans-serif" font-size="12">slot 000028</text>
+<rect x="138" y="335" width="485.75" height="10" rx="3" fill="#1c6592"/>
+<circle cx="623.75" cy="340" r="5" fill="#1c6592"/>
+<text x="633.7" y="344" fill="#1c6592" font-family="Arial,sans-serif" font-size="11" font-weight="700">153.2</text>
+<text x="28" y="373" fill="#24364a" font-family="Arial,sans-serif" font-size="12">slot 000029</text>
+<rect x="138" y="364" width="204.67" height="10" rx="3" fill="#1c6592"/>
+<circle cx="342.67" cy="369" r="5" fill="#1c6592"/>
+<text x="352.7" y="373" fill="#1c6592" font-family="Arial,sans-serif" font-size="11" font-weight="700">64.6</text>
+<text x="28" y="402" fill="#24364a" font-family="Arial,sans-serif" font-size="12">slot 000030</text>
+<rect x="138" y="393" width="613.44" height="10" rx="3" fill="#1c6592"/>
+<circle cx="751.44" cy="398" r="5" fill="#1c6592"/>
+<text x="761.4" y="402" fill="#1c6592" font-family="Arial,sans-serif" font-size="11" font-weight="700">193.5</text>
+<text x="28" y="431" fill="#24364a" font-family="Arial,sans-serif" font-size="12">slot 000033</text>
+<rect x="138" y="422" width="397.43" height="10" rx="3" fill="#1c6592"/>
+<circle cx="535.43" cy="427" r="5" fill="#1c6592"/>
+<text x="545.4" y="431" fill="#1c6592" font-family="Arial,sans-serif" font-size="11" font-weight="700">125.4</text>
+<text x="28" y="460" fill="#24364a" font-family="Arial,sans-serif" font-size="12">slot 000036</text>
+<rect x="138" y="451" width="357.17" height="10" rx="3" fill="#1c6592"/>
+<circle cx="495.17" cy="456" r="5" fill="#1c6592"/>
+<text x="505.2" y="460" fill="#1c6592" font-family="Arial,sans-serif" font-size="11" font-weight="700">112.7</text>
+<text x="455" y="525" text-anchor="middle" fill="#24364a" font-family="Arial,sans-serif" font-size="13">Seconds from first STOP_REQUESTED observation to final STOP</text>
+<text x="28" y="549" fill="#53657a" font-family="Arial,sans-serif" font-size="11">Slot 22 crossed the 900-second boundary before acknowledgement; no later attempt was logged.</text>
+</svg>

@@ -12,11 +12,11 @@ separately. Do not infer their absence from a missing response.
 
 | Artifact | Current SHA-256 |
 | --- | --- |
-| [`final.md`](final.md) | `7bf954df3646bf0c4bf5206da39bd42fce7a8c8d78be47605d261a6f653467ea` |
-| [Identified `full_paper.pdf`](submission/full_paper.pdf) | `e30b42c2a15fa12e3737337f661314d27cd825be6bb80aa5c0957018831ec800` |
-| [Identified `full_paper.docx`](submission/full_paper.docx) | `fa3ebe9f18c74274c9c409bc4839e3abb67ff35912c383ea2aa27664fdf6330b` |
-| [Anonymous `full_paper_anonymous.pdf`](submission/full_paper_anonymous.pdf) | `585011f1d67468dacbb9a081a1852ed8cf02b1fcf9545668dab2821640dae383` |
-| [Anonymous `full_paper_anonymous.docx`](submission/full_paper_anonymous.docx) | `7da65f2460724db9e9a6948660f3e2649e55d646f1bfc4c3ea7dccc746a493fd` |
+| [`final.md`](final.md) | `f52da594cc2af651c9b766fd56f0344feb03e388a04435057a53e1fd47ba12cb` |
+| [Identified `full_paper.pdf`](submission/full_paper.pdf) | `648fef1aa29ca39ccb26358b5eac6091709d959f5b73e074a4f5bbe389b9de3c` |
+| [Identified `full_paper.docx`](submission/full_paper.docx) | `9efdd5f99e90d6d4c6eaa18b0cdefe4d5d26003e71906cd156ed732e5ca600cc` |
+| [Anonymous `full_paper_anonymous.pdf`](submission/full_paper_anonymous.pdf) | `84ae0721b706c7b2b2e61d0a632c735bbafd3074827a8ab5cc0948e21749bc15` |
+| [Anonymous `full_paper_anonymous.docx`](submission/full_paper_anonymous.docx) | `9f608ed00cb7590ec7dda293b92b969bf2ceac63f9feb3d10985d22f6b28cb8a` |
 | [`results.json`](artifacts/results.json) | `3d7ef25bfa07ef25ae20cea8d6ee34b59c5d9158e20c2e9b7013bfbd5a3cb229` |
 | [Working author-year conversion](venue_author_year_draft.md) | `d56b469d919986c7da430c7d003121776e37c86b06bdac5f7f69f480011791dd` |
 | [Author-year `venue_author_year_identified.pdf`](submission/venue_author_year_identified.pdf) | `eebb1832db3bc60ebfd342e31483982909c1aac17729abb9a4f48f4a17c0e1b8` |
@@ -68,8 +68,17 @@ separately. Do not infer their absence from a missing response.
 | [V7_QWEN8B_CAPACITY_20261104.md](../analysis/V7_QWEN8B_CAPACITY_20261104.md) | `7d8b34d224ddf826db92eaa1da4cc502e8c3a41891e060855f837adcac582690` |
 | [v7_qwen8b_capacity_20261104.json](../analysis/v7_qwen8b_capacity_20261104.json) | `847600863cc2e438f18a1737da79479096dcf10b22d0b777ac61cb1413fc7767` |
 | [v7_qwen8b_capacity_20261104_screen.json](../analysis/v7_qwen8b_capacity_20261104_screen.json) | `97b6860d5dee57fd31b8acae058fda7073dfcc66b42ba7a0a99e6095f4aebf58` |
+| [HISTORICAL_TERMINATE_LATENCY_20261104.md](../analysis/HISTORICAL_TERMINATE_LATENCY_20261104.md) | `230e9094aa8fa876382e6b0c0d0f06f5ce0a51652c809fb208e1a27e351848ff` |
+| [historical_terminate_latency_20261104.json](../analysis/historical_terminate_latency_20261104.json) | `70dcb487441efb9c70fe61ae6b7165b997ee54f634b1bb7cd8866a41ae9c1f08` |
+| [historical_terminate_latency_20261104.py](../analysis/historical_terminate_latency_20261104.py) | `6135d3d4f29c78cb6ab95d8ae848f8c4d5d2d1cfc109ba44bdb79866c078615f` |
+| [historical_terminate_latency_20261104.svg](../figures/historical_terminate_latency_20261104.svg) | `66a55f7b457f0778920169758fcb0ebaecc161c419204dc44fb25a1292369566` |
+| [test_historical_terminate_latency_20261104.py](../tests/test_historical_terminate_latency_20261104.py) | `58f211b24c6ec5774ff61a4454254663ea8e0bd4188b4f39db949eb8d7d4aef8` |
+| [V7_BOUNDARY_PROVIDER_LATENCY_20261104.md](../analysis/V7_BOUNDARY_PROVIDER_LATENCY_20261104.md) | `b48a914974f5b5e646ef466e270315ef6556ea17d6f0b91391303f3ec69246f3` |
+| [v7_boundary_provider_latency_20261104.json](../analysis/v7_boundary_provider_latency_20261104.json) | `cc6411f340c521e9693876496a8dcc9ff68d55f7c9d07b158560741a95d233e9` |
+| [v7_boundary_provider_latency_20261104.py](../analysis/v7_boundary_provider_latency_20261104.py) | `8fd4992b74831dc3bd748f66df19d736ac6b8cf0b9b446c7efc9813d1a2d4185` |
+| [test_v7_boundary_provider_latency_20261104.py](../tests/test_v7_boundary_provider_latency_20261104.py) | `eee498f2d258d2f3df642b7ec7eeeba2a2d6a616727a2af4952c5757495a34e3` |
 
-The identified and anonymous PDFs each have 18 A4 pages locally with Arial; a fresh-process Bitstream Vera render has 19 pages. The remote Linux recheck after the font correction is pending. PDF text,
+The identified and anonymous PDFs each have 18 A4 pages locally with Arial; a fresh-process Bitstream Vera render stays within 20 pages. The remote Linux recheck for this V18 revision is pending. PDF text,
 including captions and tables, is 12 pt;
 the DOCX styles are 12 pt with single line spacing. The abstract has 220 space-delimited words
 and the article contains five figures and six tables. The identified and

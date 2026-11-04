@@ -1,0 +1,275 @@
+{
+  "cohorts": [
+    {
+      "archive": "experiments/runs/v7_second_wave_20261101",
+      "completed_provider_responses": 20,
+      "max_total_seconds": 11.683502,
+      "max_unattributed_seconds": 0.502488,
+      "median_total_seconds": 2.329288,
+      "median_unattributed_seconds": 0.023673,
+      "name": "temperature_zero_second_wave",
+      "response_window_utc": [
+        "2026-11-01T07:27:24.085741Z",
+        "2026-11-01T07:28:53.965456Z"
+      ],
+      "rows_over_30_seconds_total": [],
+      "total_over_seconds": {
+        "10": 1,
+        "30": 0,
+        "60": 0
+      },
+      "unattributed_over_seconds": {
+        "10": 0,
+        "30": 0,
+        "60": 0
+      },
+      "upstream_report_sha256": "dfc0b19fbaaebbc5b3d5bccf95fb67c71ca64414c582d9ecbb5608e1d2f43d78"
+    },
+    {
+      "archive": "experiments/runs/v7_temp03_four_seed_20261101",
+      "completed_provider_responses": 55,
+      "max_total_seconds": 22.187832,
+      "max_unattributed_seconds": 12.035386,
+      "median_total_seconds": 2.984614,
+      "median_unattributed_seconds": 0.040684,
+      "name": "temperature_03_first_stopped",
+      "response_window_utc": [
+        "2026-11-01T07:51:11.433981Z",
+        "2026-11-01T07:55:02.203956Z"
+      ],
+      "rows_over_30_seconds_total": [],
+      "total_over_seconds": {
+        "10": 3,
+        "30": 0,
+        "60": 0
+      },
+      "unattributed_over_seconds": {
+        "10": 2,
+        "30": 0,
+        "60": 0
+      },
+      "upstream_report_sha256": "efbc6cf9bfd0010fe49808ca130244236be22b7d57fd9af1bb64263b016198b8"
+    },
+    {
+      "archive": "experiments/runs/v7_temp03_secondwave_20261101",
+      "completed_provider_responses": 50,
+      "max_total_seconds": 155.809222,
+      "max_unattributed_seconds": 122.945605,
+      "median_total_seconds": 8.645532,
+      "median_unattributed_seconds": 1.747875,
+      "name": "temperature_03_second_stopped",
+      "response_window_utc": [
+        "2026-11-01T08:04:12.275158Z",
+        "2026-11-01T08:31:26.766897Z"
+      ],
+      "rows_over_30_seconds_total": [
+        {
+          "created_at": "2026-11-01T08:06:37.093836Z",
+          "output_tokens": 32,
+          "path": "csrf_origin/seed202/pair/false_fail.000002.response.bin",
+          "prompt_tokens": 1305,
+          "response_sha256": "f7af8dfc90dc51b07782b283c977f370f42d5b1a37d22a2093d05a2311274941",
+          "total_ns": 40081971500,
+          "unattributed_ns": 29210442542
+        },
+        {
+          "created_at": "2026-11-01T08:13:57.745634Z",
+          "output_tokens": 32,
+          "path": "csrf_origin/seed204/pair/false_fail.000001.response.bin",
+          "prompt_tokens": 1239,
+          "response_sha256": "60cbf14db1153a6797ea36851d10833a6d7e966ba3b2e66eae580a95b7ecdc80",
+          "total_ns": 142603859375,
+          "unattributed_ns": 122945605500
+        },
+        {
+          "created_at": "2026-11-01T08:15:02.812101Z",
+          "output_tokens": 32,
+          "path": "csrf_origin/seed204/pair/false_fail.000002.response.bin",
+          "prompt_tokens": 1305,
+          "response_sha256": "a1dc97365ab8f2f4eff950b85a11bd594bf52d2f290e49c178b464bc5285b7a4",
+          "total_ns": 48868501625,
+          "unattributed_ns": 21734482708
+        },
+        {
+          "created_at": "2026-11-01T08:16:58.686201Z",
+          "output_tokens": 15,
+          "path": "csrf_origin/seed204/pair/false_fail.000003.response.bin",
+          "prompt_tokens": 1371,
+          "response_sha256": "d2ab5ba7334a6ec0f92014632998c1f977307690fc16a8462b16af1d15b4a617",
+          "total_ns": 105665425375,
+          "unattributed_ns": 79092210250
+        },
+        {
+          "created_at": "2026-11-01T08:08:03.391337Z",
+          "output_tokens": 15,
+          "path": "csrf_origin/seed204/precursor/response-000001.bin",
+          "prompt_tokens": 459,
+          "response_sha256": "c036549e802cb770409672e810c925c08a19b69e97dc365447e6683c96543267",
+          "total_ns": 40473619625,
+          "unattributed_ns": 18227945416
+        },
+        {
+          "created_at": "2026-11-01T08:09:53.285926Z",
+          "output_tokens": 15,
+          "path": "csrf_origin/seed204/precursor/response-000002.bin",
+          "prompt_tokens": 803,
+          "response_sha256": "d57d891a586da6fe75153c5c663526ab5a81ae84c6c68f162fde3bbe4a39360c",
+          "total_ns": 91153628458,
+          "unattributed_ns": 54909973417
+        },
+        {
+          "created_at": "2026-11-01T08:11:06.118966Z",
+          "output_tokens": 33,
+          "path": "csrf_origin/seed204/precursor/response-000003.bin",
+          "prompt_tokens": 1147,
+          "response_sha256": "e32b5c776f97150b3fc280eef6687209a9f0a5ed5639abe471c96b82f1e2799e",
+          "total_ns": 47969898125,
+          "unattributed_ns": 26413194208
+        },
+        {
+          "created_at": "2026-11-01T08:23:16.47115Z",
+          "output_tokens": 32,
+          "path": "deserialization_allowlist/seed204/precursor/response-000005.bin",
+          "prompt_tokens": 1240,
+          "response_sha256": "88b27f1325828d6bed057334aae14d07929a6fea84ea6f0b9a227a612f27f4c6",
+          "total_ns": 155809222375,
+          "unattributed_ns": 98002816208
+        },
+        {
+          "created_at": "2026-11-01T08:24:38.236946Z",
+          "output_tokens": 15,
+          "path": "deserialization_allowlist/seed204/precursor/response-000006.bin",
+          "prompt_tokens": 1306,
+          "response_sha256": "a6135723732641cd831602e050eab5355ac7238cda96aa2016206e0cd1f9026b",
+          "total_ns": 68846739750,
+          "unattributed_ns": 49615000459
+        },
+        {
+          "created_at": "2026-11-01T08:25:43.602292Z",
+          "output_tokens": 15,
+          "path": "environment_injection/seed201/precursor/response-000001.bin",
+          "prompt_tokens": 451,
+          "response_sha256": "2d822de2ee580432a520e777ac83048170452d1aa077ac7508f3da66e7b5415f",
+          "total_ns": 51890763541,
+          "unattributed_ns": 26226135375
+        },
+        {
+          "created_at": "2026-11-01T08:27:04.776471Z",
+          "output_tokens": 15,
+          "path": "environment_injection/seed202/precursor/response-000001.bin",
+          "prompt_tokens": 451,
+          "response_sha256": "297080cff70ac41f5c105feacc60e01ae02300a202c6ad71c6fa02033d7b882a",
+          "total_ns": 62273229125,
+          "unattributed_ns": 32598630417
+        },
+        {
+          "created_at": "2026-11-01T08:28:59.035159Z",
+          "output_tokens": 15,
+          "path": "environment_injection/seed202/precursor/response-000002.bin",
+          "prompt_tokens": 787,
+          "response_sha256": "98e633778f5a084138fb407a65b4c612e87a95e0b536cfad5894ec050158fdc1",
+          "total_ns": 98241902167,
+          "unattributed_ns": 58035133042
+        },
+        {
+          "created_at": "2026-11-01T08:31:26.766897Z",
+          "output_tokens": 33,
+          "path": "environment_injection/seed202/precursor/response-000003.bin",
+          "prompt_tokens": 1123,
+          "response_sha256": "ecdcec0050cff270d6ec922ce66805d4e5de1ba1d2d1d33b68cdbf4191503cfa",
+          "total_ns": 129525909750,
+          "unattributed_ns": 59177613791
+        }
+      ],
+      "total_over_seconds": {
+        "10": 24,
+        "30": 13,
+        "60": 8
+      },
+      "unattributed_over_seconds": {
+        "10": 16,
+        "30": 8,
+        "60": 3
+      },
+      "upstream_report_sha256": "78c27633f927bd26e585ee9898238dfbfe8383204764bb94b85ee06b2a27192a"
+    },
+    {
+      "archive": "experiments/runs/v7_crossfamily_20261104",
+      "completed_provider_responses": 28,
+      "max_total_seconds": 11.633563,
+      "max_unattributed_seconds": 0.074924,
+      "median_total_seconds": 2.311747,
+      "median_unattributed_seconds": 0.016192,
+      "name": "crossfamily_seed301",
+      "response_window_utc": [
+        "2026-11-04T14:42:28.832937Z",
+        "2026-11-04T14:43:32.493851Z"
+      ],
+      "rows_over_30_seconds_total": [],
+      "total_over_seconds": {
+        "10": 1,
+        "30": 0,
+        "60": 0
+      },
+      "unattributed_over_seconds": {
+        "10": 0,
+        "30": 0,
+        "60": 0
+      },
+      "upstream_report_sha256": "4c9c129efb878ca705ad1d6e4f9224a84a8986106311e4208094836180dfeb96"
+    },
+    {
+      "archive": "experiments/runs/v7_feedback_replication_20261104",
+      "completed_provider_responses": 55,
+      "max_total_seconds": 14.517044,
+      "max_unattributed_seconds": 0.421387,
+      "median_total_seconds": 2.310914,
+      "median_unattributed_seconds": 0.024633,
+      "name": "six_slot_seeds302_304",
+      "response_window_utc": [
+        "2026-11-04T15:00:34.548253Z",
+        "2026-11-04T15:02:40.484536Z"
+      ],
+      "rows_over_30_seconds_total": [],
+      "total_over_seconds": {
+        "10": 1,
+        "30": 0,
+        "60": 0
+      },
+      "unattributed_over_seconds": {
+        "10": 0,
+        "30": 0,
+        "60": 0
+      },
+      "upstream_report_sha256": "e8b2ab1a74b5ba3f1eeeb0a3ff7bf5df42efff726f69d3f9e842d4f2d31ccfed"
+    }
+  ],
+  "completed_response_scope": "208 responses in five selected excluded qwen3:4b waves; timed-out requests omitted",
+  "eligible_for_main_analysis": false,
+  "exploratory_thresholds_seconds": [
+    10,
+    30,
+    60
+  ],
+  "same_seed204_csrf_pair_first_response": {
+    "false_fail": {
+      "output_tokens": 32,
+      "path": "csrf_origin/seed204/pair/false_fail.000001.response.bin",
+      "prompt_tokens": 1239,
+      "response_sha256": "60cbf14db1153a6797ea36851d10833a6d7e966ba3b2e66eae580a95b7ecdc80",
+      "total_ns": 142603859375,
+      "unattributed_ns": 122945605500
+    },
+    "truthful_pass": {
+      "output_tokens": 33,
+      "path": "csrf_origin/seed204/pair/truthful_pass.000001.response.bin",
+      "prompt_tokens": 1240,
+      "response_sha256": "44fa10a9213542c5cae86634de24ddf6d2008935e0335c7660fccec55376cbcc",
+      "total_ns": 6993600875,
+      "unattributed_ns": 2548805709
+    }
+  },
+  "schema_version": "excluded-v7-provider-latency-audit-1",
+  "temperature_03_model_digest": "359d7dd4bcdab3d86b87d73ac27966f4dbb9f5efdfcc75d34a8764a09474fae7",
+  "temperature_03_ollama_server_version": "0.35.0"
+}

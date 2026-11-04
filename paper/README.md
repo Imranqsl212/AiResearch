@@ -2,7 +2,7 @@
 
 The manuscript in [final.md](final.md) is an exploratory measurement audit with a separate, excluded corrected-oracle pilot, a post hoc older C5 candidate audit, sequential one-shot engineering waves, and later directional-error analyses. The identified files are [PDF](submission/full_paper.pdf) and [Word](submission/full_paper.docx). The anonymous peer-review files are [PDF](submission/full_paper_anonymous.pdf) and [Word](submission/full_paper_anonymous.docx). It contains five article figures, a separate stop-label chart in `figures/`, and six tables. The pre empirical protocol manuscript is preserved in `archive/protocol_before_empirical_revision.md`.
 
-The current filtered [v17 author-review bundle](AUTHOR_REVIEW_BUNDLE_V17_20261104.md) binds the revised manuscript, renderings, and selected derived reports. [V16](AUTHOR_REVIEW_BUNDLE_V16_20261104.md) and earlier bundles are dated snapshots and remain available for audit.
+The current filtered [v18 author-review bundle](AUTHOR_REVIEW_BUNDLE_V18_20261104.md) binds the revised manuscript, renderings, and selected derived reports. [V17](AUTHOR_REVIEW_BUNDLE_V17_20261104.md) and earlier bundles are dated snapshots and remain available for audit.
 
 An [author–year venue-format draft](VENUE_FORMAT_DRAFT_20261016.md) has separate identified and anonymous PDF/DOCX files. It preserves the scientific text, figures, and tables while changing citation style; the numbered `final.md` remains the canonical author-review source until a journal and final declarations are approved.
 
@@ -92,8 +92,8 @@ This command regenerates six chart assets (five embedded in the article) and bot
 manuscript formats, including six tables, from `final.md`. The abstract has
 220 space-delimited words excluding keywords. The current A4 PDFs have 19
 identified and 18 anonymous pages locally with Arial. A fresh-process
-Bitstream Vera render has 19 pages; the remote Linux recheck after the font
-correction is pending. The anonymous renderer removes the author,
+Bitstream Vera check stays within 20 pages; the remote Linux recheck for this
+V18 revision is pending. The anonymous renderer removes the author,
 affiliation, and correspondence lines, replaces the acknowledgment body with a
 neutral peer-review notice, withholds the source and public data commits, and clears author
 metadata from the PDF and Word files. It checks rendered content and document

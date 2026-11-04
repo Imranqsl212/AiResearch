@@ -63,7 +63,9 @@ jobs:
           python -B -m analysis.historical_feedback_specificity_20261104 --check
           python -B -m analysis.logged_source_surrogate_ast_20261104 --check
           python -B -m analysis.historical_protocol_stop_recount_20261104 --check
+          python -B -m analysis.historical_terminate_latency_20261104 --check
           python -B -m analysis.v7_test_set_sufficiency_20261104 --check
+          python -B -m analysis.v7_boundary_provider_latency_20261104 --check
       - name: Test supplemental analysis guards
         run: |
           python -B -m unittest -q \
@@ -74,7 +76,9 @@ jobs:
             tests.test_historical_feedback_specificity_20261104 \
             tests.test_logged_source_surrogate_ast_20261104 \
             tests.test_historical_protocol_stop_recount_20261104 \
-            tests.test_v7_test_set_sufficiency_20261104
+            tests.test_historical_terminate_latency_20261104 \
+            tests.test_v7_test_set_sufficiency_20261104 \
+            tests.test_v7_boundary_provider_latency_20261104
 
   matched-pilot-replay:
     runs-on: ubuntu-24.04
