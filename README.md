@@ -8,6 +8,8 @@ For a short project review, start with the [research overview](docs/PROJECT_OVER
 
 For a nontechnical audience, use the [six-slide research presentation](presentation/README.md), with an editable PowerPoint, PDF, and speaker notes.
 
+The [November showcase package](showcase/2026-11-08/README.md) adds a one-page poster, a title plus five content slides, a short abstract, and a timed group speaking script.
+
 The [30 October measurement follow-up](docs/MEASUREMENT_FOLLOWUP_20261030.md)
 adds three executable checks: family-level sensitivity of the hidden veto,
 source-hash missingness in the Bandit comparison, and independent calibration

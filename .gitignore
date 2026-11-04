@@ -33,3 +33,4 @@ data/raw/**
 logs/checkpoints/**
 *.oci.tar
 *.docker.tar
+showcase/**/Slide_*_Preview.png

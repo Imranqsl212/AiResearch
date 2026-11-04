@@ -1,0 +1,13 @@
+Project title: The Tests Passed. The Grader Said No.
+Subtitle: Checking the checker in AI security repair
+Team members: Imran Zakirov; Iosifova Nuriya
+Mentor and active project contributor: Kramich Anna
+
+Abstract (131 words):
+How can we judge an AI coding assistant when its checker gives misleading feedback? We audited 40 saved repair sessions from one local language model across five small Python security task types. We compared the final code's test result with the benchmark's acceptance decision. Twenty sessions used a hidden rule, written by our research team, that rejected every solution. In nine of those twenty sessions, the final code passed the implemented tests but still received FAIL. Passing these limited tests did not prove the code secure. Missing intermediate test results also prevented us from tracing exactly which revisions followed a test–verdict disagreement. We built improved logging and small exploratory paired follow-ups. Our main finding is that the checker must be validated before its scores are used to judge an AI's decisions.
+
+Code and research evidence: https://github.com/Imranqsl212/AiResearch
+Paper draft (optional): https://github.com/Imranqsl212/AiResearch/blob/9ecd07a3d605cfd812a874835e9b945adc5d5145/paper/submission/full_paper.pdf
+
+Poster: Zakirov_Iosifova_AI_Checker_Audit_Poster.pdf
+Slides: Zakirov_Iosifova_AI_Checker_Audit_Slides.pdf
