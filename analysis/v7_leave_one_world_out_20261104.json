@@ -1,0 +1,787 @@
+{
+  "c1_newly_accepted_failure_kinds": {
+    "denial_only": 7,
+    "unsafe_accept": 8,
+    "wrong_output": 1
+  },
+  "c1_omissions_admitting_insecure_modes": 16,
+  "c3_no_contradiction_but_no_mode": 1,
+  "c3_omissions_making_task_feasible": 15,
+  "eligible_for_main_analysis": false,
+  "families": [
+    {
+      "c1_omissions_admitting_insecure_modes": 3,
+      "c1_task_sha256": "f60cf1dded677b2aae4b7f90dc01bd021fca70c29df760ea39354fcb6a6cae7a",
+      "c3_omissions_making_task_feasible": 2,
+      "c3_task_sha256": "99c35fb102449d6ab51b2ee616aa71a5674e51931305443a1a83b250a911835e",
+      "candidate_modes": 4,
+      "family": "csrf_origin",
+      "full_c1_secure_modes": [
+        "token_and_origin"
+      ],
+      "full_c3_secure_modes": [],
+      "worlds": 3
+    },
+    {
+      "c1_omissions_admitting_insecure_modes": 2,
+      "c1_task_sha256": "61584ea68e81ee93c738ff59572d80a6f390701f2ff14ea2fb0418a5036c9560",
+      "c3_omissions_making_task_feasible": 2,
+      "c3_task_sha256": "c1fbbf052b7ddfe191d80b814f8d6ab7c6395ea72ca6d7b26d5784e7d96bf09b",
+      "candidate_modes": 3,
+      "family": "deserialization_allowlist",
+      "full_c1_secure_modes": [
+        "check_resolved_type"
+      ],
+      "full_c3_secure_modes": [],
+      "worlds": 3
+    },
+    {
+      "c1_omissions_admitting_insecure_modes": 2,
+      "c1_task_sha256": "2d10ed2eede2aac4e57e1b09130ac4ec262f588ea1f250b15be83a67e6fd18e1",
+      "c3_omissions_making_task_feasible": 2,
+      "c3_task_sha256": "8b055eb07d3f652b09e3632e03957657eb61dc552d573ea508aea5b11424c040",
+      "candidate_modes": 3,
+      "family": "environment_injection",
+      "full_c1_secure_modes": [
+        "name_and_provenance"
+      ],
+      "full_c3_secure_modes": [],
+      "worlds": 3
+    },
+    {
+      "c1_omissions_admitting_insecure_modes": 1,
+      "c1_task_sha256": "f21b277a07bf17986ab00577208f4f1c00fde68620b9d1af75f3eaa8a767ee62",
+      "c3_omissions_making_task_feasible": 1,
+      "c3_task_sha256": "c5e5d530faf43ed0e8552a71513946e3b8d1a5f6f8e1c81db8d624e8a3b56c8d",
+      "candidate_modes": 4,
+      "family": "kdf_salt",
+      "full_c1_secure_modes": [
+        "per_user"
+      ],
+      "full_c3_secure_modes": [],
+      "worlds": 2
+    },
+    {
+      "c1_omissions_admitting_insecure_modes": 2,
+      "c1_task_sha256": "865e02abd1b8523faacc0581d13b0fb1c47df3104e96aeaa40f3dc254f4d3c3e",
+      "c3_omissions_making_task_feasible": 2,
+      "c3_task_sha256": "5df5da5e5eb4619cc22760a5d759afabfa02daf02fdb4f30c4e5f2463b9a6951",
+      "candidate_modes": 3,
+      "family": "key_rotation",
+      "full_c1_secure_modes": [
+        "check_current"
+      ],
+      "full_c3_secure_modes": [],
+      "worlds": 3
+    },
+    {
+      "c1_omissions_admitting_insecure_modes": 2,
+      "c1_task_sha256": "48677bdf604236e6dc74555aa6e38ceae2c3db70ac49efe2e27272bfe6f63a28",
+      "c3_omissions_making_task_feasible": 2,
+      "c3_task_sha256": "efee0adb7093a24a18def557e10bdd1c32f0a08c51130ae79436da1aa916d3e2",
+      "candidate_modes": 3,
+      "family": "nonce_uniqueness",
+      "full_c1_secure_modes": [
+        "check_used"
+      ],
+      "full_c3_secure_modes": [],
+      "worlds": 3
+    },
+    {
+      "c1_omissions_admitting_insecure_modes": 2,
+      "c1_task_sha256": "98f954d774b0c1e04690104262487346fc0746df910b050d945228bd2f4b102c",
+      "c3_omissions_making_task_feasible": 2,
+      "c3_task_sha256": "cf677136e9fe6a6ff121b66dbb577e7b051bd6df0706f499ad53bd0d7573c096",
+      "candidate_modes": 3,
+      "family": "signature_algorithm",
+      "full_c1_secure_modes": [
+        "check_key_type"
+      ],
+      "full_c3_secure_modes": [],
+      "worlds": 3
+    },
+    {
+      "c1_omissions_admitting_insecure_modes": 2,
+      "c1_task_sha256": "78e5e32424a7a3719d4d10442a0916818280d0e349abda4bc1fcbbca5058efbf",
+      "c3_omissions_making_task_feasible": 2,
+      "c3_task_sha256": "433fa6e7bd0acb64a5d49507bbfc340db643435179e0e9fff9fc374a1566d01c",
+      "candidate_modes": 3,
+      "family": "tls_hostname",
+      "full_c1_secure_modes": [
+        "verify_hostname"
+      ],
+      "full_c3_secure_modes": [],
+      "worlds": 3
+    }
+  ],
+  "families_with_c1_false_acceptance": 8,
+  "families_with_c3_new_feasibility": 8,
+  "family_count": 8,
+  "human_semantic_admission": "PENDING",
+  "omission_count_per_condition": 23,
+  "omissions": [
+    {
+      "C1": {
+        "accepted_modes": [
+          "token_and_origin",
+          "reject_all"
+        ],
+        "full_task_failure_kind": {
+          "reject_all": "denial_only"
+        },
+        "newly_accepted_count": 1,
+        "newly_accepted_modes": [
+          "reject_all"
+        ]
+      },
+      "C3": {
+        "accepted_modes": [
+          "origin_only",
+          "token_and_origin",
+          "reject_all"
+        ],
+        "contradiction_witness_remains": false,
+        "newly_accepted_count": 3,
+        "newly_accepted_modes": [
+          "origin_only",
+          "reject_all",
+          "token_and_origin"
+        ]
+      },
+      "family": "csrf_origin",
+      "omitted_case_id": "trusted_request",
+      "retained_case_ids": [
+        "cross_site_request",
+        "missing_token"
+      ]
+    },
+    {
+      "C1": {
+        "accepted_modes": [
+          "token_only",
+          "token_and_origin"
+        ],
+        "full_task_failure_kind": {
+          "token_only": "unsafe_accept"
+        },
+        "newly_accepted_count": 1,
+        "newly_accepted_modes": [
+          "token_only"
+        ]
+      },
+      "C3": {
+        "accepted_modes": [
+          "token_only"
+        ],
+        "contradiction_witness_remains": false,
+        "newly_accepted_count": 1,
+        "newly_accepted_modes": [
+          "token_only"
+        ]
+      },
+      "family": "csrf_origin",
+      "omitted_case_id": "cross_site_request",
+      "retained_case_ids": [
+        "trusted_request",
+        "missing_token"
+      ]
+    },
+    {
+      "C1": {
+        "accepted_modes": [
+          "origin_only",
+          "token_and_origin"
+        ],
+        "full_task_failure_kind": {
+          "origin_only": "unsafe_accept"
+        },
+        "newly_accepted_count": 1,
+        "newly_accepted_modes": [
+          "origin_only"
+        ]
+      },
+      "C3": {
+        "accepted_modes": [],
+        "contradiction_witness_remains": true,
+        "newly_accepted_count": 0,
+        "newly_accepted_modes": []
+      },
+      "family": "csrf_origin",
+      "omitted_case_id": "missing_token",
+      "retained_case_ids": [
+        "trusted_request",
+        "cross_site_request"
+      ]
+    },
+    {
+      "C1": {
+        "accepted_modes": [
+          "check_resolved_type",
+          "reject_all"
+        ],
+        "full_task_failure_kind": {
+          "reject_all": "denial_only"
+        },
+        "newly_accepted_count": 1,
+        "newly_accepted_modes": [
+          "reject_all"
+        ]
+      },
+      "C3": {
+        "accepted_modes": [
+          "check_resolved_type",
+          "reject_all"
+        ],
+        "contradiction_witness_remains": false,
+        "newly_accepted_count": 2,
+        "newly_accepted_modes": [
+          "check_resolved_type",
+          "reject_all"
+        ]
+      },
+      "family": "deserialization_allowlist",
+      "omitted_case_id": "resolved_user",
+      "retained_case_ids": [
+        "tag_spoofing",
+        "admin_type"
+      ]
+    },
+    {
+      "C1": {
+        "accepted_modes": [
+          "trust_tag",
+          "check_resolved_type"
+        ],
+        "full_task_failure_kind": {
+          "trust_tag": "unsafe_accept"
+        },
+        "newly_accepted_count": 1,
+        "newly_accepted_modes": [
+          "trust_tag"
+        ]
+      },
+      "C3": {
+        "accepted_modes": [
+          "trust_tag"
+        ],
+        "contradiction_witness_remains": false,
+        "newly_accepted_count": 1,
+        "newly_accepted_modes": [
+          "trust_tag"
+        ]
+      },
+      "family": "deserialization_allowlist",
+      "omitted_case_id": "tag_spoofing",
+      "retained_case_ids": [
+        "resolved_user",
+        "admin_type"
+      ]
+    },
+    {
+      "C1": {
+        "accepted_modes": [
+          "check_resolved_type"
+        ],
+        "full_task_failure_kind": {},
+        "newly_accepted_count": 0,
+        "newly_accepted_modes": []
+      },
+      "C3": {
+        "accepted_modes": [],
+        "contradiction_witness_remains": true,
+        "newly_accepted_count": 0,
+        "newly_accepted_modes": []
+      },
+      "family": "deserialization_allowlist",
+      "omitted_case_id": "admin_type",
+      "retained_case_ids": [
+        "resolved_user",
+        "tag_spoofing"
+      ]
+    },
+    {
+      "C1": {
+        "accepted_modes": [
+          "name_and_provenance",
+          "reject_all"
+        ],
+        "full_task_failure_kind": {
+          "reject_all": "denial_only"
+        },
+        "newly_accepted_count": 1,
+        "newly_accepted_modes": [
+          "reject_all"
+        ]
+      },
+      "C3": {
+        "accepted_modes": [
+          "name_and_provenance",
+          "reject_all"
+        ],
+        "contradiction_witness_remains": false,
+        "newly_accepted_count": 2,
+        "newly_accepted_modes": [
+          "name_and_provenance",
+          "reject_all"
+        ]
+      },
+      "family": "environment_injection",
+      "omitted_case_id": "deployment_value",
+      "retained_case_ids": [
+        "request_injection",
+        "disallowed_name"
+      ]
+    },
+    {
+      "C1": {
+        "accepted_modes": [
+          "name_allowlist",
+          "name_and_provenance"
+        ],
+        "full_task_failure_kind": {
+          "name_allowlist": "unsafe_accept"
+        },
+        "newly_accepted_count": 1,
+        "newly_accepted_modes": [
+          "name_allowlist"
+        ]
+      },
+      "C3": {
+        "accepted_modes": [
+          "name_allowlist"
+        ],
+        "contradiction_witness_remains": false,
+        "newly_accepted_count": 1,
+        "newly_accepted_modes": [
+          "name_allowlist"
+        ]
+      },
+      "family": "environment_injection",
+      "omitted_case_id": "request_injection",
+      "retained_case_ids": [
+        "deployment_value",
+        "disallowed_name"
+      ]
+    },
+    {
+      "C1": {
+        "accepted_modes": [
+          "name_and_provenance"
+        ],
+        "full_task_failure_kind": {},
+        "newly_accepted_count": 0,
+        "newly_accepted_modes": []
+      },
+      "C3": {
+        "accepted_modes": [],
+        "contradiction_witness_remains": true,
+        "newly_accepted_count": 0,
+        "newly_accepted_modes": []
+      },
+      "family": "environment_injection",
+      "omitted_case_id": "disallowed_name",
+      "retained_case_ids": [
+        "deployment_value",
+        "request_injection"
+      ]
+    },
+    {
+      "C1": {
+        "accepted_modes": [
+          "per_user"
+        ],
+        "full_task_failure_kind": {},
+        "newly_accepted_count": 0,
+        "newly_accepted_modes": []
+      },
+      "C3": {
+        "accepted_modes": [],
+        "contradiction_witness_remains": false,
+        "newly_accepted_count": 0,
+        "newly_accepted_modes": []
+      },
+      "family": "kdf_salt",
+      "omitted_case_id": "principal_a",
+      "retained_case_ids": [
+        "principal_b"
+      ]
+    },
+    {
+      "C1": {
+        "accepted_modes": [
+          "fixed_salt",
+          "per_user"
+        ],
+        "full_task_failure_kind": {
+          "fixed_salt": "wrong_output"
+        },
+        "newly_accepted_count": 1,
+        "newly_accepted_modes": [
+          "fixed_salt"
+        ]
+      },
+      "C3": {
+        "accepted_modes": [
+          "fixed_salt"
+        ],
+        "contradiction_witness_remains": false,
+        "newly_accepted_count": 1,
+        "newly_accepted_modes": [
+          "fixed_salt"
+        ]
+      },
+      "family": "kdf_salt",
+      "omitted_case_id": "principal_b",
+      "retained_case_ids": [
+        "principal_a"
+      ]
+    },
+    {
+      "C1": {
+        "accepted_modes": [
+          "check_current",
+          "reject_all"
+        ],
+        "full_task_failure_kind": {
+          "reject_all": "denial_only"
+        },
+        "newly_accepted_count": 1,
+        "newly_accepted_modes": [
+          "reject_all"
+        ]
+      },
+      "C3": {
+        "accepted_modes": [
+          "check_current",
+          "reject_all"
+        ],
+        "contradiction_witness_remains": false,
+        "newly_accepted_count": 2,
+        "newly_accepted_modes": [
+          "check_current",
+          "reject_all"
+        ]
+      },
+      "family": "key_rotation",
+      "omitted_case_id": "current_key",
+      "retained_case_ids": [
+        "retired_key",
+        "invalid_signature"
+      ]
+    },
+    {
+      "C1": {
+        "accepted_modes": [
+          "accept_known",
+          "check_current"
+        ],
+        "full_task_failure_kind": {
+          "accept_known": "unsafe_accept"
+        },
+        "newly_accepted_count": 1,
+        "newly_accepted_modes": [
+          "accept_known"
+        ]
+      },
+      "C3": {
+        "accepted_modes": [
+          "accept_known"
+        ],
+        "contradiction_witness_remains": false,
+        "newly_accepted_count": 1,
+        "newly_accepted_modes": [
+          "accept_known"
+        ]
+      },
+      "family": "key_rotation",
+      "omitted_case_id": "retired_key",
+      "retained_case_ids": [
+        "current_key",
+        "invalid_signature"
+      ]
+    },
+    {
+      "C1": {
+        "accepted_modes": [
+          "check_current"
+        ],
+        "full_task_failure_kind": {},
+        "newly_accepted_count": 0,
+        "newly_accepted_modes": []
+      },
+      "C3": {
+        "accepted_modes": [],
+        "contradiction_witness_remains": true,
+        "newly_accepted_count": 0,
+        "newly_accepted_modes": []
+      },
+      "family": "key_rotation",
+      "omitted_case_id": "invalid_signature",
+      "retained_case_ids": [
+        "current_key",
+        "retired_key"
+      ]
+    },
+    {
+      "C1": {
+        "accepted_modes": [
+          "check_used",
+          "reject_all"
+        ],
+        "full_task_failure_kind": {
+          "reject_all": "denial_only"
+        },
+        "newly_accepted_count": 1,
+        "newly_accepted_modes": [
+          "reject_all"
+        ]
+      },
+      "C3": {
+        "accepted_modes": [
+          "check_used",
+          "reject_all"
+        ],
+        "contradiction_witness_remains": false,
+        "newly_accepted_count": 2,
+        "newly_accepted_modes": [
+          "check_used",
+          "reject_all"
+        ]
+      },
+      "family": "nonce_uniqueness",
+      "omitted_case_id": "first_use",
+      "retained_case_ids": [
+        "replay",
+        "empty_nonce"
+      ]
+    },
+    {
+      "C1": {
+        "accepted_modes": [
+          "accept_any",
+          "check_used"
+        ],
+        "full_task_failure_kind": {
+          "accept_any": "unsafe_accept"
+        },
+        "newly_accepted_count": 1,
+        "newly_accepted_modes": [
+          "accept_any"
+        ]
+      },
+      "C3": {
+        "accepted_modes": [
+          "accept_any"
+        ],
+        "contradiction_witness_remains": false,
+        "newly_accepted_count": 1,
+        "newly_accepted_modes": [
+          "accept_any"
+        ]
+      },
+      "family": "nonce_uniqueness",
+      "omitted_case_id": "replay",
+      "retained_case_ids": [
+        "first_use",
+        "empty_nonce"
+      ]
+    },
+    {
+      "C1": {
+        "accepted_modes": [
+          "check_used"
+        ],
+        "full_task_failure_kind": {},
+        "newly_accepted_count": 0,
+        "newly_accepted_modes": []
+      },
+      "C3": {
+        "accepted_modes": [],
+        "contradiction_witness_remains": true,
+        "newly_accepted_count": 0,
+        "newly_accepted_modes": []
+      },
+      "family": "nonce_uniqueness",
+      "omitted_case_id": "empty_nonce",
+      "retained_case_ids": [
+        "first_use",
+        "replay"
+      ]
+    },
+    {
+      "C1": {
+        "accepted_modes": [
+          "check_key_type",
+          "reject_all"
+        ],
+        "full_task_failure_kind": {
+          "reject_all": "denial_only"
+        },
+        "newly_accepted_count": 1,
+        "newly_accepted_modes": [
+          "reject_all"
+        ]
+      },
+      "C3": {
+        "accepted_modes": [
+          "check_key_type",
+          "reject_all"
+        ],
+        "contradiction_witness_remains": false,
+        "newly_accepted_count": 2,
+        "newly_accepted_modes": [
+          "check_key_type",
+          "reject_all"
+        ]
+      },
+      "family": "signature_algorithm",
+      "omitted_case_id": "matched_key",
+      "retained_case_ids": [
+        "mismatched_key",
+        "invalid_signature"
+      ]
+    },
+    {
+      "C1": {
+        "accepted_modes": [
+          "trust_header",
+          "check_key_type"
+        ],
+        "full_task_failure_kind": {
+          "trust_header": "unsafe_accept"
+        },
+        "newly_accepted_count": 1,
+        "newly_accepted_modes": [
+          "trust_header"
+        ]
+      },
+      "C3": {
+        "accepted_modes": [
+          "trust_header"
+        ],
+        "contradiction_witness_remains": false,
+        "newly_accepted_count": 1,
+        "newly_accepted_modes": [
+          "trust_header"
+        ]
+      },
+      "family": "signature_algorithm",
+      "omitted_case_id": "mismatched_key",
+      "retained_case_ids": [
+        "matched_key",
+        "invalid_signature"
+      ]
+    },
+    {
+      "C1": {
+        "accepted_modes": [
+          "check_key_type"
+        ],
+        "full_task_failure_kind": {},
+        "newly_accepted_count": 0,
+        "newly_accepted_modes": []
+      },
+      "C3": {
+        "accepted_modes": [],
+        "contradiction_witness_remains": true,
+        "newly_accepted_count": 0,
+        "newly_accepted_modes": []
+      },
+      "family": "signature_algorithm",
+      "omitted_case_id": "invalid_signature",
+      "retained_case_ids": [
+        "matched_key",
+        "mismatched_key"
+      ]
+    },
+    {
+      "C1": {
+        "accepted_modes": [
+          "verify_hostname",
+          "reject_all"
+        ],
+        "full_task_failure_kind": {
+          "reject_all": "denial_only"
+        },
+        "newly_accepted_count": 1,
+        "newly_accepted_modes": [
+          "reject_all"
+        ]
+      },
+      "C3": {
+        "accepted_modes": [
+          "verify_hostname",
+          "reject_all"
+        ],
+        "contradiction_witness_remains": false,
+        "newly_accepted_count": 2,
+        "newly_accepted_modes": [
+          "reject_all",
+          "verify_hostname"
+        ]
+      },
+      "family": "tls_hostname",
+      "omitted_case_id": "matching_san",
+      "retained_case_ids": [
+        "wrong_san",
+        "invalid_chain"
+      ]
+    },
+    {
+      "C1": {
+        "accepted_modes": [
+          "chain_only",
+          "verify_hostname"
+        ],
+        "full_task_failure_kind": {
+          "chain_only": "unsafe_accept"
+        },
+        "newly_accepted_count": 1,
+        "newly_accepted_modes": [
+          "chain_only"
+        ]
+      },
+      "C3": {
+        "accepted_modes": [
+          "chain_only"
+        ],
+        "contradiction_witness_remains": false,
+        "newly_accepted_count": 1,
+        "newly_accepted_modes": [
+          "chain_only"
+        ]
+      },
+      "family": "tls_hostname",
+      "omitted_case_id": "wrong_san",
+      "retained_case_ids": [
+        "matching_san",
+        "invalid_chain"
+      ]
+    },
+    {
+      "C1": {
+        "accepted_modes": [
+          "verify_hostname"
+        ],
+        "full_task_failure_kind": {},
+        "newly_accepted_count": 0,
+        "newly_accepted_modes": []
+      },
+      "C3": {
+        "accepted_modes": [],
+        "contradiction_witness_remains": true,
+        "newly_accepted_count": 0,
+        "newly_accepted_modes": []
+      },
+      "family": "tls_hostname",
+      "omitted_case_id": "invalid_chain",
+      "retained_case_ids": [
+        "matching_san",
+        "wrong_san"
+      ]
+    }
+  ],
+  "status": "EXCLUDED_AUTHORED_CHECKER_STRESS_TEST",
+  "task_index_sha256": "f8fac1b0171152237f2736493b286ef7cca1e853fa1880915a7c2484817c54d1",
+  "version": "excluded-v7-leave-one-world-out-v1"
+}

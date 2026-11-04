@@ -8,6 +8,8 @@ For a short project review, start with the [research overview](docs/PROJECT_OVER
 
 For a nontechnical audience, use the [six-slide research presentation](presentation/README.md), with an editable PowerPoint, PDF, and speaker notes.
 
+The [November showcase package](showcase/2026-11-08/README.md) adds a one-page poster, a title plus five content slides, a short abstract, and a timed group speaking script.
+
 The [30 October measurement follow-up](docs/MEASUREMENT_FOLLOWUP_20261030.md)
 adds three executable checks: family-level sensitivity of the hidden veto,
 source-hash missingness in the Bandit comparison, and independent calibration
@@ -17,6 +19,8 @@ a graph, and commands to rerun the tests.
 ## Current result
 
 The historical study used `qwen3:4b` on five selected task families: **40 main episodes**, one run per condition and guidance arm. A separate AEAD pilot has eight episodes. In **9 of 20** final candidates labeled nominally unavailable, the implemented family tests passed but a hidden acceptance rule rejected the result. This is a measurement defect in that evaluator; it does not prove that those tasks were truly impossible or that the submitted code was secure. The agent's response to truthful impossibility feedback was not measured in this historical cohort.
+
+A new [exact-source audit](analysis/HISTORICAL_MATCHED_SOURCE_FEEDBACK_20261104.md) found six family–code groups where identical candidate bytes received public PASS in a repairable run and public FAIL in a policy-rejected run. Three XSS runs then revised the expected return shape and ended with failing tests, although terminal XSS counts showed no test–gate disagreement. The older [C5 action audit](analysis/C5_FEEDBACK_ACTION_20261104.md) found first-action `INSPECT` in 12/14 false-FAIL arms and 0/14 truthful-PASS arms; later one-shot cohorts did not repeat this pattern. Both are exploratory, source-bound findings with separate denominators and limits.
 
 A [separate authored calibration](analysis/SAST_MUTATION_JOIN_20261028.md) found the opposite finite-check weakness: four deliberately insecure mutations passed weak tests, while all four failed stronger tests and raised Bandit warnings. These were **not agent submissions** and do not estimate how often either error occurs.
 
@@ -42,7 +46,7 @@ The larger research question is **“Can a wrong verdict undo a security fix?”
 
 ## Manuscript and status
 
-The [research article](paper/final.md) is available as [identified PDF](paper/submission/full_paper.pdf), [identified DOCX](paper/submission/full_paper.docx), [anonymous PDF](paper/submission/full_paper_anonymous.pdf), and [anonymous DOCX](paper/submission/full_paper_anonymous.docx). It has a 218-word abstract, six figures, six tables, 31 cited sources, and 19 A4 pages in each PDF. The [v11 author-review bundle](paper/AUTHOR_REVIEW_BUNDLE_V11_20261101.md) is a dated earlier snapshot; the current rendered files are bound by hashes in the [submission decision form](paper/AUTHOR_SUBMISSION_DECISIONS_20261005.md). The article remains **`REVIEW_ONLY`**. Author approval, declarations, venue selection, data availability, and privacy review remain pending there.
+The [research article](paper/final.md) is available as [identified PDF](paper/submission/full_paper.pdf), [identified DOCX](paper/submission/full_paper.docx), [anonymous PDF](paper/submission/full_paper_anonymous.pdf), and [anonymous DOCX](paper/submission/full_paper_anonymous.docx). It has a 210-word abstract, five figures, six tables, 31 cited sources, and 19 A4 pages in each current PDF. The [v13 author-review bundle](paper/AUTHOR_REVIEW_BUNDLE_V13_20261104.md) binds the current rendered files and selected derived audits; earlier bundles are dated snapshots. The article remains **`REVIEW_ONLY`**. Author approval, individual contributions, affiliations, declarations, venue selection, data availability, and privacy review remain pending in the [decision form](paper/AUTHOR_SUBMISSION_DECISIONS_20261005.md).
 
 The **prospective v1 main study is `NOT_READY`**: its [12-point release gate](docs/MAIN_RELEASE_GATE_MATRIX_20261005.md) currently passes none of the checks, and it has **zero eligible main episodes**. The proposed 600 full episodes plus conditional C5 continuations are a plan, not collected data. Excluded pilots cannot be relabeled as main results. See the [action list](docs/NEXT_READY_ACTIONS_20261008.md) and [dated research status snapshot](FINAL_RESEARCH_STATUS.md); rerun the gate command below for the live status.
 

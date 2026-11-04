@@ -56,7 +56,7 @@ ORANGE = "#C36E39"
 GRAY = "#687786"
 LIGHT = "#E9EFF3"
 INK = "#17212B"
-AUTHOR = "Imran Zakirov"
+AUTHOR = "Imran Zakirov; Iosifova Nuriya; Kramich Anna"
 PAGE_LIMIT = 20
 BODY_POINT_SIZE = 12
 
@@ -109,9 +109,16 @@ def review_manuscript(markdown: str) -> str:
         "The earlier public data revision `37074c198237ade67eb76921333b2835d329c863`",
         "A source revision withheld during anonymous review",
     )
+    review = review.replace(
+        "9ecd07a3d605cfd812a874835e9b945adc5d5145",
+        "data revision withheld during anonymous review",
+    )
     if re.search(
-        r"(?i)\b(?:imran|zakirov)\b|zakirovimran333@gmail\.com|"
-        r"37074c198237ade67eb76921333b2835d329c863|github\.com/Imranqsl212",
+        r"(?i)\b(?:imran|zakirov|iosifova|nuriya|kramich|anna)\b|"
+        r"zakirovimran333@gmail\.com|"
+        r"37074c198237ade67eb76921333b2835d329c863|"
+        r"9ecd07a3d605cfd812a874835e9b945adc5d5145|"
+        r"github\.com/Imranqsl212",
         review,
     ):
         raise ValueError("anonymized manuscript still contains a known author identifier")
@@ -371,18 +378,18 @@ def make_pdf(markdown: str, destination: Path, *, author: str) -> int:
     styles = getSampleStyleSheet()
     width, _ = A4
     body = ParagraphStyle("BodyX", parent=styles["Normal"], fontName="Body", fontSize=BODY_POINT_SIZE,
-                          leading=BODY_POINT_SIZE, spaceAfter=3, textColor=colors.HexColor(INK))
+                          leading=BODY_POINT_SIZE, spaceAfter=2, textColor=colors.HexColor(INK))
     head1 = ParagraphStyle("H1X", parent=body, fontName="BodyBold", fontSize=BODY_POINT_SIZE,
-                           leading=BODY_POINT_SIZE, spaceBefore=7, spaceAfter=3, keepWithNext=True,
+                           leading=BODY_POINT_SIZE, spaceBefore=5, spaceAfter=2, keepWithNext=True,
                            textColor=colors.HexColor(NAVY))
-    head2 = ParagraphStyle("H2X", parent=head1, spaceBefore=5)
+    head2 = ParagraphStyle("H2X", parent=head1, spaceBefore=3)
     head3 = ParagraphStyle("H3X", parent=head2, leftIndent=10,
                            spaceBefore=3, textColor=colors.HexColor(INK))
     title = ParagraphStyle("TitleX", parent=head1, alignment=TA_CENTER, spaceAfter=5)
-    caption = ParagraphStyle("CaptionX", parent=body, spaceBefore=2, spaceAfter=5,
+    caption = ParagraphStyle("CaptionX", parent=body, spaceBefore=2, spaceAfter=3,
                              textColor=colors.HexColor(GRAY))
     table_caption = ParagraphStyle("TableCaptionX", parent=body, keepWithNext=True,
-                                   spaceBefore=3, spaceAfter=3)
+                                   spaceBefore=2, spaceAfter=2)
     story = []
     for kind, payload in markdown_blocks(markdown):
         if kind == "heading":
@@ -404,7 +411,7 @@ def make_pdf(markdown: str, destination: Path, *, author: str) -> int:
                 ("ROWBACKGROUNDS", (0, 1), (-1, -1), [colors.white, colors.HexColor("#F7F9FB")]),
                 ("VALIGN", (0, 0), (-1, -1), "TOP"),
                 ("LEFTPADDING", (0, 0), (-1, -1), 3), ("RIGHTPADDING", (0, 0), (-1, -1), 3),
-                ("TOPPADDING", (0, 0), (-1, -1), 3), ("BOTTOMPADDING", (0, 0), (-1, -1), 3),
+                ("TOPPADDING", (0, 0), (-1, -1), 2), ("BOTTOMPADDING", (0, 0), (-1, -1), 2),
             ]))
             if FALLBACK_FONT and story and isinstance(story[-1], Paragraph) and story[-1].style.name == "TableCaptionX":
                 # Vera's wider metrics can otherwise leave a short table's
@@ -412,7 +419,7 @@ def make_pdf(markdown: str, destination: Path, *, author: str) -> int:
                 story.append(KeepTogether([story.pop(), table]))
             else:
                 story.append(table)
-            story.append(Spacer(1, 4))
+            story.append(Spacer(1, 2))
         elif kind == "figure":
             figcaption, relative = payload
             image_path = PAPER / relative
@@ -420,7 +427,7 @@ def make_pdf(markdown: str, destination: Path, *, author: str) -> int:
                 raise FileNotFoundError(image_path)
             with Image.open(image_path) as im:
                 ratio = im.height / im.width
-            figure_width = 6.7 * inch
+            figure_width = 6.3 * inch
             story.append(PdfImage(str(image_path), width=figure_width, height=figure_width * ratio))
             story.append(Paragraph(inline(figcaption), caption))
     title_match = re.search(r"^#\s+(.+)$", markdown, re.MULTILINE)
@@ -543,9 +550,10 @@ def verify_anonymous_artifacts(pdf_path: Path, docx_path: Path) -> None:
             archive.read(name).decode("utf-8", errors="replace")
             for name in archive.namelist() if name.endswith((".xml", ".rels"))
         )
-    identity = re.compile(r"(?i)\b(?:imran|zakirov|bishkek)\b|zakirovimran333@gmail\.com|"
+    identity = re.compile(r"(?i)\b(?:imran|zakirov|iosifova|nuriya|kramich|anna|bishkek)\b|zakirovimran333@gmail\.com|"
                           r"98a4dcf414672c1725e4acdb9f08045370aa7f64|"
                           r"37074c198237ade67eb76921333b2835d329c863|"
+                          r"9ecd07a3d605cfd812a874835e9b945adc5d5145|"
                           r"github\.com/Imranqsl212")
     for label, content in (("PDF text", pdf_text), ("PDF metadata", pdf_properties),
                            ("DOCX XML and metadata", docx_xml)):

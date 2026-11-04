@@ -2,7 +2,7 @@
 
 The manuscript in [final.md](final.md) is an exploratory measurement audit with a separate, excluded corrected-oracle pilot, a post hoc older C5 candidate audit, and two sequential one-shot engineering waves. The identified files are [PDF](submission/full_paper.pdf) and [Word](submission/full_paper.docx). The anonymous peer-review files are [PDF](submission/full_paper_anonymous.pdf) and [Word](submission/full_paper_anonymous.docx). It contains six generated PNG figures in `figures/` and six tables. The pre empirical protocol manuscript is preserved in `archive/protocol_before_empirical_revision.md`.
 
-The current filtered [v11 author-review bundle](AUTHOR_REVIEW_BUNDLE_V11_20261101.md) binds the rendered manuscript and new derived pilot reports. Earlier bundles are dated snapshots and remain available for audit.
+The current filtered [v13 author-review bundle](AUTHOR_REVIEW_BUNDLE_V13_20261104.md) binds the rendered manuscript and selected derived audit reports. Earlier bundles are dated snapshots and remain available for audit.
 
 An [author–year venue-format draft](VENUE_FORMAT_DRAFT_20261016.md) has separate identified and anonymous PDF/DOCX files. It preserves the scientific text, figures, and tables while changing citation style; the numbered `final.md` remains the canonical author-review source until a journal and final declarations are approved.
 
@@ -76,10 +76,10 @@ Python 3.12.14. From the repository root, run the bundled-runtime wrapper
 sh reproduction/render_paper.sh
 ```
 
-This command regenerates the six figures and both identified and anonymous
+This command regenerates six chart assets (five embedded in the article) and both identified and anonymous
 manuscript formats, including six tables, from `final.md`. The abstract has
-218 words excluding keywords. The current A4 PDFs have 19 identified pages
-and 19 anonymous pages. The anonymous renderer removes the author,
+210 words excluding keywords. The current A4 PDFs have 20 identified pages
+and 20 anonymous pages. The anonymous renderer removes the author,
 affiliation, and correspondence lines, replaces the acknowledgment body with a
 neutral peer-review notice, withholds the source and public data commits, and clears author
 metadata from the PDF and Word files. It checks rendered content and document
@@ -118,7 +118,7 @@ make the output bitwise reproducible across fonts and operating systems.
 - `0/81` per-action check records preserve the raw family test result. The terminal disagreement cannot be assigned to an earlier action in the trajectory; extra revisions must not be described as occurring after a known raw pass.
 - `0/15` recovered explicit success statements contradict the limited benchmark receipt. Five main final claims were not recovered; the historical raw parser labeled all 40 unknown.
 - The five historical main families have one run per arm. Factor comparisons are descriptive; independently coded strategy transitions and confirmatory hypothesis tests are unavailable.
-- Figure 4 counts the runner's recorded stop labels (38 self termination, one budget stop, one timeout), not verified agent intent. Four of 40 main runs crossed the effective 900-second boundary before the stop event. Three retained a self-termination label after the boundary; in slot `000022`, an explicit `terminate` call at 909.5 seconds preceded the recorded timeout. The accepted candidate in that run is counted separately from its stop label.
+- The standalone [runner stop-label chart](figures/figure4_stopping.png) remains reproducible but is omitted from the current article to keep the PDF within 20 pages across supported fonts. The text retains the recorded counts: 38 self termination labels, one budget stop, and one timeout. These labels do not verify agent intent. Four of 40 main runs crossed the effective 900-second boundary before the stop event. Three retained a self-termination label after the boundary; in slot `000022`, an explicit `terminate` call at 909.5 seconds preceded the recorded timeout. The accepted candidate in that run is counted separately from its stop label.
 - Of 77 historical logged source strings, 63 parse. Eleven have an unquoted logger redaction marker that causes a syntax error; all 11 become parseable if the marker is replaced with a quoted dummy value, but this produces a surrogate AST and does not recover the erased original expression. Two other strings have an invalid compound `def` after a semicolon, and one has an unmatched closing brace. Only 25/37 adjacent pairs have two parseable logged sources, and their AST/API features are not semantic strategy labels. See the [versioned source-fidelity audit](../docs/EXPLORATORY_SOURCE_FIDELITY_20261005.md).
 - The [excluded v7 corrected-oracle pilot](../docs/V7_DECISIVE_EXCLUDED_PILOT_20261005.md) completed 30/30 prescheduled episodes at temperature 0.3, with three seeds per cell across two authored families. C3 and C4 used two submissions each in all six matched blocks; one post-outcome-selected secure-onset fork differed under truthful PASS and false FAIL. These observations do not justify a population confidence interval or general feedback-effect claim, and no v7 episode is eligible for the prospective main study.
 - The separate [post hoc C5 candidate audit](../analysis/C5_CANDIDATE_DISCORDANCE_20261101.md) recounts 45 submissions in 14 selected continuation pairs from an older persistent-veto protocol. A raw check passed while the bounded oracle failed in 21/45 submissions, but those involved only nine distinct candidate hashes; terminal regressions were 5/14 after truthful PASS and 7/14 after false FAIL. This is not a population rate or a causal feedback estimate, and it is not pooled with the 30-episode pilot or the newer one-shot pilot.

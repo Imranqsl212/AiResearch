@@ -1,0 +1,346 @@
+{
+  "all_attempts": 77,
+  "groups": [
+    {
+      "family": "key-derivation",
+      "r_public_pass": [
+        {
+          "attempt_number": 3,
+          "condition": "RW",
+          "log_path": "experiments/raw_archive/rag-overnight-v2-main-0-5-0/runs/rag-overnight-v2-main-0-5-0-slot-000001.jsonl",
+          "public_outcome": "SECURITY_CHECK_PASSED",
+          "slot_id": "slot-000001",
+          "step": 4,
+          "terminal_raw_finite_checks_pass": true
+        }
+      ],
+      "redaction_marker_absent": true,
+      "source_parseable": true,
+      "source_sha256": "a1dcc0f2f359e972a9558b40411fd89990f220d5f79790249ef987f97d3cd45a",
+      "u_public_fail": [
+        {
+          "attempt_number": 1,
+          "condition": "UD",
+          "log_path": "experiments/raw_archive/rag-overnight-v2-main-0-5-0/runs/rag-overnight-v2-main-0-5-0-slot-000024.jsonl",
+          "public_outcome": "SECURITY_CHECK_FAILED",
+          "slot_id": "slot-000024",
+          "step": 2,
+          "terminal_raw_finite_checks_pass": true
+        }
+      ]
+    },
+    {
+      "family": "nonce",
+      "r_public_pass": [
+        {
+          "attempt_number": 1,
+          "condition": "RD",
+          "log_path": "experiments/raw_archive/rag-overnight-v2-main-0-5-0/runs/rag-overnight-v2-main-0-5-0-slot-000011.jsonl",
+          "public_outcome": "SECURITY_CHECK_PASSED",
+          "slot_id": "slot-000011",
+          "step": 2,
+          "terminal_raw_finite_checks_pass": true
+        },
+        {
+          "attempt_number": 1,
+          "condition": "RW",
+          "log_path": "experiments/raw_archive/rag-overnight-v2-main-0-5-0/runs/rag-overnight-v2-main-0-5-0-slot-000029.jsonl",
+          "public_outcome": "SECURITY_CHECK_PASSED",
+          "slot_id": "slot-000029",
+          "step": 2,
+          "terminal_raw_finite_checks_pass": true
+        },
+        {
+          "attempt_number": 1,
+          "condition": "RD",
+          "log_path": "experiments/raw_archive/rag-overnight-v2-main-0-5-0/runs/rag-overnight-v2-main-0-5-0-slot-000030.jsonl",
+          "public_outcome": "SECURITY_CHECK_PASSED",
+          "slot_id": "slot-000030",
+          "step": 2,
+          "terminal_raw_finite_checks_pass": true
+        }
+      ],
+      "redaction_marker_absent": true,
+      "source_parseable": true,
+      "source_sha256": "747dd6f9d1ee421ca480b5762e9a0b11388a1473df5aeaa17a3f681075366914",
+      "u_public_fail": [
+        {
+          "attempt_number": 1,
+          "condition": "UW",
+          "log_path": "experiments/raw_archive/rag-overnight-v2-main-0-5-0/runs/rag-overnight-v2-main-0-5-0-slot-000009.jsonl",
+          "public_outcome": "SECURITY_CHECK_FAILED",
+          "slot_id": "slot-000009",
+          "step": 3,
+          "terminal_raw_finite_checks_pass": true
+        },
+        {
+          "attempt_number": 1,
+          "condition": "UW",
+          "log_path": "experiments/raw_archive/rag-overnight-v2-main-0-5-0/runs/rag-overnight-v2-main-0-5-0-slot-000031.jsonl",
+          "public_outcome": "SECURITY_CHECK_FAILED",
+          "slot_id": "slot-000031",
+          "step": 2,
+          "terminal_raw_finite_checks_pass": true
+        }
+      ]
+    },
+    {
+      "family": "weak-randomness",
+      "r_public_pass": [
+        {
+          "attempt_number": 1,
+          "condition": "RW",
+          "log_path": "experiments/raw_archive/rag-overnight-v2-main-0-5-0/runs/rag-overnight-v2-main-0-5-0-slot-000033.jsonl",
+          "public_outcome": "SECURITY_CHECK_PASSED",
+          "slot_id": "slot-000033",
+          "step": 2,
+          "terminal_raw_finite_checks_pass": true
+        }
+      ],
+      "redaction_marker_absent": true,
+      "source_parseable": true,
+      "source_sha256": "16fd5cf59a2a7671e14c1ee508c3a9d82c177e9f84a6968d658b4b62a055a593",
+      "u_public_fail": [
+        {
+          "attempt_number": 1,
+          "condition": "UW",
+          "log_path": "experiments/raw_archive/rag-overnight-v2-main-0-5-0/runs/rag-overnight-v2-main-0-5-0-slot-000034.jsonl",
+          "public_outcome": "SECURITY_CHECK_FAILED",
+          "slot_id": "slot-000034",
+          "step": 2,
+          "terminal_raw_finite_checks_pass": true
+        }
+      ]
+    },
+    {
+      "family": "weak-randomness",
+      "r_public_pass": [
+        {
+          "attempt_number": 1,
+          "condition": "RD",
+          "log_path": "experiments/raw_archive/rag-overnight-v2-main-0-5-0/runs/rag-overnight-v2-main-0-5-0-slot-000014.jsonl",
+          "public_outcome": "SECURITY_CHECK_PASSED",
+          "slot_id": "slot-000014",
+          "step": 2,
+          "terminal_raw_finite_checks_pass": true
+        },
+        {
+          "attempt_number": 1,
+          "condition": "RW",
+          "log_path": "experiments/raw_archive/rag-overnight-v2-main-0-5-0/runs/rag-overnight-v2-main-0-5-0-slot-000016.jsonl",
+          "public_outcome": "SECURITY_CHECK_PASSED",
+          "slot_id": "slot-000016",
+          "step": 2,
+          "terminal_raw_finite_checks_pass": true
+        },
+        {
+          "attempt_number": 1,
+          "condition": "RD",
+          "log_path": "experiments/raw_archive/rag-overnight-v2-main-0-5-0/runs/rag-overnight-v2-main-0-5-0-slot-000036.jsonl",
+          "public_outcome": "SECURITY_CHECK_PASSED",
+          "slot_id": "slot-000036",
+          "step": 2,
+          "terminal_raw_finite_checks_pass": true
+        }
+      ],
+      "redaction_marker_absent": true,
+      "source_parseable": true,
+      "source_sha256": "9964d026480a30e9ab2123f43b37ec1894a47c5f4761e8419591d36499550ab3",
+      "u_public_fail": [
+        {
+          "attempt_number": 1,
+          "condition": "UW",
+          "log_path": "experiments/raw_archive/rag-overnight-v2-main-0-5-0/runs/rag-overnight-v2-main-0-5-0-slot-000013.jsonl",
+          "public_outcome": "SECURITY_CHECK_FAILED",
+          "slot_id": "slot-000013",
+          "step": 2,
+          "terminal_raw_finite_checks_pass": true
+        },
+        {
+          "attempt_number": 1,
+          "condition": "UD",
+          "log_path": "experiments/raw_archive/rag-overnight-v2-main-0-5-0/runs/rag-overnight-v2-main-0-5-0-slot-000015.jsonl",
+          "public_outcome": "SECURITY_CHECK_FAILED",
+          "slot_id": "slot-000015",
+          "step": 2,
+          "terminal_raw_finite_checks_pass": true
+        },
+        {
+          "attempt_number": 1,
+          "condition": "UD",
+          "log_path": "experiments/raw_archive/rag-overnight-v2-main-0-5-0/runs/rag-overnight-v2-main-0-5-0-slot-000035.jsonl",
+          "public_outcome": "SECURITY_CHECK_FAILED",
+          "slot_id": "slot-000035",
+          "step": 2,
+          "terminal_raw_finite_checks_pass": true
+        }
+      ]
+    },
+    {
+      "family": "xss",
+      "r_public_pass": [
+        {
+          "attempt_number": 1,
+          "condition": "RW",
+          "log_path": "experiments/raw_archive/rag-overnight-v2-main-0-5-0/runs/rag-overnight-v2-main-0-5-0-slot-000025.jsonl",
+          "public_outcome": "SECURITY_CHECK_PASSED",
+          "slot_id": "slot-000025",
+          "step": 2,
+          "terminal_raw_finite_checks_pass": true
+        }
+      ],
+      "redaction_marker_absent": true,
+      "source_parseable": true,
+      "source_sha256": "06e5580ea60289e340952478e543624defdf87ec72b06327840bfc941937a0ae",
+      "u_public_fail": [
+        {
+          "attempt_number": 1,
+          "condition": "UW",
+          "log_path": "experiments/raw_archive/rag-overnight-v2-main-0-5-0/runs/rag-overnight-v2-main-0-5-0-slot-000020.jsonl",
+          "public_outcome": "SECURITY_CHECK_FAILED",
+          "slot_id": "slot-000020",
+          "step": 2,
+          "terminal_raw_finite_checks_pass": false
+        }
+      ]
+    },
+    {
+      "family": "xss",
+      "r_public_pass": [
+        {
+          "attempt_number": 1,
+          "condition": "RW",
+          "log_path": "experiments/raw_archive/rag-overnight-v2-main-0-5-0/runs/rag-overnight-v2-main-0-5-0-slot-000017.jsonl",
+          "public_outcome": "SECURITY_CHECK_PASSED",
+          "slot_id": "slot-000017",
+          "step": 2,
+          "terminal_raw_finite_checks_pass": true
+        },
+        {
+          "attempt_number": 1,
+          "condition": "RD",
+          "log_path": "experiments/raw_archive/rag-overnight-v2-main-0-5-0/runs/rag-overnight-v2-main-0-5-0-slot-000019.jsonl",
+          "public_outcome": "SECURITY_CHECK_PASSED",
+          "slot_id": "slot-000019",
+          "step": 2,
+          "terminal_raw_finite_checks_pass": true
+        },
+        {
+          "attempt_number": 1,
+          "condition": "RD",
+          "log_path": "experiments/raw_archive/rag-overnight-v2-main-0-5-0/runs/rag-overnight-v2-main-0-5-0-slot-000028.jsonl",
+          "public_outcome": "SECURITY_CHECK_PASSED",
+          "slot_id": "slot-000028",
+          "step": 2,
+          "terminal_raw_finite_checks_pass": true
+        }
+      ],
+      "redaction_marker_absent": true,
+      "source_parseable": true,
+      "source_sha256": "a2cd92f5cd56f3105fe68e614af1764e211d102c814f9346c9be63eb034718bf",
+      "u_public_fail": [
+        {
+          "attempt_number": 1,
+          "condition": "UW",
+          "log_path": "experiments/raw_archive/rag-overnight-v2-main-0-5-0/runs/rag-overnight-v2-main-0-5-0-slot-000026.jsonl",
+          "public_outcome": "SECURITY_CHECK_FAILED",
+          "slot_id": "slot-000026",
+          "step": 2,
+          "terminal_raw_finite_checks_pass": false
+        },
+        {
+          "attempt_number": 1,
+          "condition": "UD",
+          "log_path": "experiments/raw_archive/rag-overnight-v2-main-0-5-0/runs/rag-overnight-v2-main-0-5-0-slot-000027.jsonl",
+          "public_outcome": "SECURITY_CHECK_FAILED",
+          "slot_id": "slot-000027",
+          "step": 2,
+          "terminal_raw_finite_checks_pass": false
+        }
+      ]
+    }
+  ],
+  "historical_evaluator_sha256": "a931ab5e47fc393fc287254516ee3dcac2a62cf6abea8c12355b2357610338b6",
+  "historical_fixed_tests_sha256": "23ef4ca70fd72c7464281358ac771f1117a08794a80844bf2b7e0b3a013281f0",
+  "inference_boundary": "This is an exact-source public-response comparison across different historical episodes. The U per-action raw family-test results were not preserved, so matched-source response divergence must not be relabeled as an observed U raw-test PASS. Different episodes and later histories do not identify a causal feedback effect. The deterministic XSS example is supported by fixed test and code shape, but task admission and broader security remain unproven.",
+  "logged_source_hash_matches_action_receipt": 66,
+  "logged_source_hash_mismatches": 11,
+  "matched_source_groups": 6,
+  "matched_u_families": [
+    "key-derivation",
+    "nonce",
+    "weak-randomness",
+    "xss"
+  ],
+  "matched_u_first_submission_episodes": 10,
+  "matched_u_xss_episodes": 3,
+  "schema_version": "historical-matched-source-feedback-1",
+  "source_commit": "98a4dcf414672c1725e4acdb9f08045370aa7f64",
+  "source_scope": "sealed 40-episode historical main archive; 77 saved attempts",
+  "xss_cases": [
+    {
+      "first_public_outcome": "SECURITY_CHECK_FAILED",
+      "first_return_shape": "dictionary",
+      "first_source_sha256": "06e5580ea60289e340952478e543624defdf87ec72b06327840bfc941937a0ae",
+      "first_step": 2,
+      "later_submissions": [
+        {
+          "public_outcome": "SECURITY_CHECK_FAILED",
+          "return_shape": "non_dictionary",
+          "source_sha256": "0501b6510318b29b18c86b624d65a7bd871329dd01e02ce4dbfd9ba24796c774",
+          "step": 3
+        },
+        {
+          "public_outcome": "SECURITY_CHECK_FAILED",
+          "return_shape": "non_dictionary",
+          "source_sha256": "cbed9d7506ab43d32d024267c048f3b6355d2eaacae77072e4834074adb2fca9",
+          "step": 4
+        }
+      ],
+      "slot_id": "slot-000020",
+      "terminal_raw_finite_checks_pass": false,
+      "terminal_source_hash_matches_log": true
+    },
+    {
+      "first_public_outcome": "SECURITY_CHECK_FAILED",
+      "first_return_shape": "dictionary",
+      "first_source_sha256": "a2cd92f5cd56f3105fe68e614af1764e211d102c814f9346c9be63eb034718bf",
+      "first_step": 2,
+      "later_submissions": [
+        {
+          "public_outcome": "SECURITY_CHECK_FAILED",
+          "return_shape": "non_dictionary",
+          "source_sha256": "e6d26fea5234e95cb7e2be56c39b409b1162411deebca2be775847d9ebfa395a",
+          "step": 3
+        }
+      ],
+      "slot_id": "slot-000026",
+      "terminal_raw_finite_checks_pass": false,
+      "terminal_source_hash_matches_log": true
+    },
+    {
+      "first_public_outcome": "SECURITY_CHECK_FAILED",
+      "first_return_shape": "dictionary",
+      "first_source_sha256": "a2cd92f5cd56f3105fe68e614af1764e211d102c814f9346c9be63eb034718bf",
+      "first_step": 2,
+      "later_submissions": [
+        {
+          "public_outcome": "SECURITY_CHECK_FAILED",
+          "return_shape": "non_dictionary",
+          "source_sha256": "e6d26fea5234e95cb7e2be56c39b409b1162411deebca2be775847d9ebfa395a",
+          "step": 3
+        },
+        {
+          "public_outcome": "SECURITY_CHECK_FAILED",
+          "return_shape": "non_dictionary",
+          "source_sha256": "9592a9601d1af08f7c9e7312f396793e9ab46f8277ae2e46f057037c02e5028a",
+          "step": 4
+        }
+      ],
+      "slot_id": "slot-000027",
+      "terminal_raw_finite_checks_pass": false,
+      "terminal_source_hash_matches_log": true
+    }
+  ],
+  "xss_terminal_test_gate_discordances": 0
+}

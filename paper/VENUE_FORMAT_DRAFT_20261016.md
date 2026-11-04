@@ -1,8 +1,8 @@
-# Author–year venue-format draft — 16 October 2026; updated 1 November 2026
+# Author–year venue-format draft — 16 October 2026; updated 4 November 2026
 
 `venue_author_year_draft.md` is a separate formatting draft derived from
 `final.md`. It changes in-text citations and alphabetizes the bibliography;
-the scientific prose, six figures, and six tables match the current numbered
+the scientific prose, five figures, and six tables match the current numbered
 manuscript. All 31 primary-source URLs are retained. The 42 in-text citation
 instances resolve unambiguously to the 31 references, and every reference is cited.
 
@@ -17,7 +17,7 @@ The command produces these four separate draft files in `paper/submission/`:
 - `venue_author_year_identified.pdf` and `.docx`
 - `venue_author_year_anonymous.pdf` and `.docx`
 
-The identified and anonymous PDFs each have 19 pages, within the 20-page ceiling. The renderer uses 12 pt
+The current identified and anonymous PDFs each have 19 pages, within the 20-page ceiling. The renderer uses 12 pt
 body text and single line spacing. The anonymous PDF/DOCX passed checks for
 known author identifiers in text and metadata; the identified files carry the
 author metadata. `paper/final.md` and the canonical `full_paper` outputs are
