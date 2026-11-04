@@ -5,6 +5,7 @@
     "wrong_output": 1
   },
   "c1_omissions_admitting_insecure_modes": 16,
+  "c3_no_contradiction_but_no_mode": 1,
   "c3_omissions_making_task_feasible": 15,
   "eligible_for_main_analysis": false,
   "families": [
@@ -139,6 +140,7 @@
           "token_and_origin",
           "reject_all"
         ],
+        "contradiction_witness_remains": false,
         "newly_accepted_count": 3,
         "newly_accepted_modes": [
           "origin_only",
@@ -171,6 +173,7 @@
         "accepted_modes": [
           "token_only"
         ],
+        "contradiction_witness_remains": false,
         "newly_accepted_count": 1,
         "newly_accepted_modes": [
           "token_only"
@@ -199,6 +202,7 @@
       },
       "C3": {
         "accepted_modes": [],
+        "contradiction_witness_remains": true,
         "newly_accepted_count": 0,
         "newly_accepted_modes": []
       },
@@ -228,6 +232,7 @@
           "check_resolved_type",
           "reject_all"
         ],
+        "contradiction_witness_remains": false,
         "newly_accepted_count": 2,
         "newly_accepted_modes": [
           "check_resolved_type",
@@ -259,6 +264,7 @@
         "accepted_modes": [
           "trust_tag"
         ],
+        "contradiction_witness_remains": false,
         "newly_accepted_count": 1,
         "newly_accepted_modes": [
           "trust_tag"
@@ -282,6 +288,7 @@
       },
       "C3": {
         "accepted_modes": [],
+        "contradiction_witness_remains": true,
         "newly_accepted_count": 0,
         "newly_accepted_modes": []
       },
@@ -311,6 +318,7 @@
           "name_and_provenance",
           "reject_all"
         ],
+        "contradiction_witness_remains": false,
         "newly_accepted_count": 2,
         "newly_accepted_modes": [
           "name_and_provenance",
@@ -342,6 +350,7 @@
         "accepted_modes": [
           "name_allowlist"
         ],
+        "contradiction_witness_remains": false,
         "newly_accepted_count": 1,
         "newly_accepted_modes": [
           "name_allowlist"
@@ -365,6 +374,7 @@
       },
       "C3": {
         "accepted_modes": [],
+        "contradiction_witness_remains": true,
         "newly_accepted_count": 0,
         "newly_accepted_modes": []
       },
@@ -386,6 +396,7 @@
       },
       "C3": {
         "accepted_modes": [],
+        "contradiction_witness_remains": false,
         "newly_accepted_count": 0,
         "newly_accepted_modes": []
       },
@@ -413,6 +424,7 @@
         "accepted_modes": [
           "fixed_salt"
         ],
+        "contradiction_witness_remains": false,
         "newly_accepted_count": 1,
         "newly_accepted_modes": [
           "fixed_salt"
@@ -443,6 +455,7 @@
           "check_current",
           "reject_all"
         ],
+        "contradiction_witness_remains": false,
         "newly_accepted_count": 2,
         "newly_accepted_modes": [
           "check_current",
@@ -474,6 +487,7 @@
         "accepted_modes": [
           "accept_known"
         ],
+        "contradiction_witness_remains": false,
         "newly_accepted_count": 1,
         "newly_accepted_modes": [
           "accept_known"
@@ -497,6 +511,7 @@
       },
       "C3": {
         "accepted_modes": [],
+        "contradiction_witness_remains": true,
         "newly_accepted_count": 0,
         "newly_accepted_modes": []
       },
@@ -526,6 +541,7 @@
           "check_used",
           "reject_all"
         ],
+        "contradiction_witness_remains": false,
         "newly_accepted_count": 2,
         "newly_accepted_modes": [
           "check_used",
@@ -557,6 +573,7 @@
         "accepted_modes": [
           "accept_any"
         ],
+        "contradiction_witness_remains": false,
         "newly_accepted_count": 1,
         "newly_accepted_modes": [
           "accept_any"
@@ -580,6 +597,7 @@
       },
       "C3": {
         "accepted_modes": [],
+        "contradiction_witness_remains": true,
         "newly_accepted_count": 0,
         "newly_accepted_modes": []
       },
@@ -609,6 +627,7 @@
           "check_key_type",
           "reject_all"
         ],
+        "contradiction_witness_remains": false,
         "newly_accepted_count": 2,
         "newly_accepted_modes": [
           "check_key_type",
@@ -640,6 +659,7 @@
         "accepted_modes": [
           "trust_header"
         ],
+        "contradiction_witness_remains": false,
         "newly_accepted_count": 1,
         "newly_accepted_modes": [
           "trust_header"
@@ -663,6 +683,7 @@
       },
       "C3": {
         "accepted_modes": [],
+        "contradiction_witness_remains": true,
         "newly_accepted_count": 0,
         "newly_accepted_modes": []
       },
@@ -692,6 +713,7 @@
           "verify_hostname",
           "reject_all"
         ],
+        "contradiction_witness_remains": false,
         "newly_accepted_count": 2,
         "newly_accepted_modes": [
           "reject_all",
@@ -723,6 +745,7 @@
         "accepted_modes": [
           "chain_only"
         ],
+        "contradiction_witness_remains": false,
         "newly_accepted_count": 1,
         "newly_accepted_modes": [
           "chain_only"
@@ -746,6 +769,7 @@
       },
       "C3": {
         "accepted_modes": [],
+        "contradiction_witness_remains": true,
         "newly_accepted_count": 0,
         "newly_accepted_modes": []
       },

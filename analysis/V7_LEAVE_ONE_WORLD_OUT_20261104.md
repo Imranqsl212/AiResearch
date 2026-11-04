@@ -39,6 +39,14 @@ deletions made at least one mode satisfy the **reduced** world set. This
 does not mean the original C3 task became solvable: the deleted security
 case remains part of its stated requirement.
 
+One deletion exposes a second mechanism. When `principal_a` is removed from
+the C3 KDF task, the remaining single world has **no conflicting-observation
+witness**, yet none of the four allowed modes produces its required output.
+That reduced task remains infeasible because of the bounded candidate language,
+not because two worlds demand different outputs for the same observation.
+The original two-world C3 task does have a valid contradiction witness. This
+distinction matters when interpreting what an agent's failure demonstrates.
+
 These are sensitivity counts for a deliberately small authored test suite.
 They are not failure rates for sampled benchmarks, model behavior, or real
 security. Deleting a legitimate positive case can also admit `reject_all`,

@@ -12,7 +12,7 @@ import json
 from pathlib import Path
 from typing import Any
 
-from benchmark.finite_batch_c_reference_v7 import reference_results
+from benchmark.finite_batch_c_reference_v7 import reference_results, reference_witness
 from benchmark.finite_batch_c_v7 import FAMILIES, candidate_space, decision
 from benchmark.validate_finite_batch_c_v7 import ROOT as TASK_ROOT, validate
 
@@ -102,6 +102,9 @@ def build_report() -> dict[str, Any]:
                 if condition == "C1":
                     row[condition]["full_task_failure_kind"] = {
                         mode: _full_failure_kind(c1, mode) for mode in newly}
+                else:
+                    row[condition]["contradiction_witness_remains"] = (
+                        reference_witness(mutated) is not None)
             c1_mutations += bool(row["C1"]["newly_accepted_modes"])
             c3_mutations += bool(row["C3"]["newly_accepted_modes"])
             rows.append(row)
@@ -125,6 +128,9 @@ def build_report() -> dict[str, Any]:
                 for kind in ("unsafe_accept", "denial_only", "wrong_output")},
             "c3_omissions_making_task_feasible": sum(
                 bool(row["C3"]["newly_accepted_modes"]) for row in rows),
+            "c3_no_contradiction_but_no_mode": sum(
+                not row["C3"]["contradiction_witness_remains"]
+                and not row["C3"]["accepted_modes"] for row in rows),
             "families_with_c1_false_acceptance": sum(
                 row["c1_omissions_admitting_insecure_modes"] > 0 for row in family_summary),
             "families_with_c3_new_feasibility": sum(
@@ -148,6 +154,7 @@ def main() -> None:
                       ("family_count", "omission_count_per_condition",
                        "c1_omissions_admitting_insecure_modes",
                        "c3_omissions_making_task_feasible",
+                       "c3_no_contradiction_but_no_mode",
                        "families_with_c1_false_acceptance",
                        "families_with_c3_new_feasibility")}, sort_keys=True))
 

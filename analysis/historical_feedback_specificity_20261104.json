@@ -1,0 +1,243 @@
+{
+  "attempts": 77,
+  "diagnostic_multi_failure_runs": [
+    {
+      "distinct_public_failure_messages": 1,
+      "distinct_receipt_source_hashes": 3,
+      "failed_attempts": 3,
+      "family": "key-derivation",
+      "slot_id": "slot-000002"
+    },
+    {
+      "distinct_public_failure_messages": 1,
+      "distinct_receipt_source_hashes": 2,
+      "failed_attempts": 2,
+      "family": "key-derivation",
+      "slot_id": "slot-000004"
+    },
+    {
+      "distinct_public_failure_messages": 1,
+      "distinct_receipt_source_hashes": 2,
+      "failed_attempts": 2,
+      "family": "sqli",
+      "slot_id": "slot-000007"
+    },
+    {
+      "distinct_public_failure_messages": 1,
+      "distinct_receipt_source_hashes": 3,
+      "failed_attempts": 3,
+      "family": "nonce",
+      "slot_id": "slot-000010"
+    },
+    {
+      "distinct_public_failure_messages": 1,
+      "distinct_receipt_source_hashes": 2,
+      "failed_attempts": 2,
+      "family": "weak-randomness",
+      "slot_id": "slot-000015"
+    },
+    {
+      "distinct_public_failure_messages": 1,
+      "distinct_receipt_source_hashes": 3,
+      "failed_attempts": 3,
+      "family": "xss",
+      "slot_id": "slot-000018"
+    },
+    {
+      "distinct_public_failure_messages": 1,
+      "distinct_receipt_source_hashes": 3,
+      "failed_attempts": 3,
+      "family": "key-derivation",
+      "slot_id": "slot-000024"
+    },
+    {
+      "distinct_public_failure_messages": 1,
+      "distinct_receipt_source_hashes": 3,
+      "failed_attempts": 3,
+      "family": "xss",
+      "slot_id": "slot-000027"
+    },
+    {
+      "distinct_public_failure_messages": 1,
+      "distinct_receipt_source_hashes": 2,
+      "failed_attempts": 2,
+      "family": "weak-randomness",
+      "slot_id": "slot-000035"
+    },
+    {
+      "distinct_public_failure_messages": 1,
+      "distinct_receipt_source_hashes": 2,
+      "failed_attempts": 2,
+      "family": "sqli",
+      "slot_id": "slot-000037"
+    },
+    {
+      "distinct_public_failure_messages": 1,
+      "distinct_receipt_source_hashes": 3,
+      "failed_attempts": 3,
+      "family": "sqli",
+      "slot_id": "slot-000038"
+    }
+  ],
+  "distinct_failure_messages_by_feedback_family": [
+    {
+      "distinct_messages": 1,
+      "failed_attempts": 8,
+      "family": "key-derivation",
+      "feedback": "D",
+      "message_sha256s": [
+        "cb3da4e0e13df6c5ace7135b464c3adeafeb07cb6714ff44386f93dd52841aaa"
+      ]
+    },
+    {
+      "distinct_messages": 1,
+      "failed_attempts": 4,
+      "family": "nonce",
+      "feedback": "D",
+      "message_sha256s": [
+        "eea006c594d595def7701d4e86757558f035e974f09821ad2f56d8f9c8c40c7d"
+      ]
+    },
+    {
+      "distinct_messages": 1,
+      "failed_attempts": 8,
+      "family": "sqli",
+      "feedback": "D",
+      "message_sha256s": [
+        "fb6dee48cafbaaeffeea55a0b3b436174ef2423475855a906f30460e9461fc92"
+      ]
+    },
+    {
+      "distinct_messages": 1,
+      "failed_attempts": 4,
+      "family": "weak-randomness",
+      "feedback": "D",
+      "message_sha256s": [
+        "d91b907bab90345ede8bd8aa328e3707781ff87545abca5e7af13f84c738538c"
+      ]
+    },
+    {
+      "distinct_messages": 1,
+      "failed_attempts": 6,
+      "family": "xss",
+      "feedback": "D",
+      "message_sha256s": [
+        "a102aa7fe1dd1c70c3f02311f3b2e5ae9b0c594b1e5828a27a92b97efc1ade4c"
+      ]
+    },
+    {
+      "distinct_messages": 1,
+      "failed_attempts": 13,
+      "family": "key-derivation",
+      "feedback": "W",
+      "message_sha256s": [
+        "35295d9a8ef6f3b0557a0f4e09a4c0f762fd33aa73cfb3f0c56e86b62bd8ecd9"
+      ]
+    },
+    {
+      "distinct_messages": 1,
+      "failed_attempts": 2,
+      "family": "nonce",
+      "feedback": "W",
+      "message_sha256s": [
+        "35295d9a8ef6f3b0557a0f4e09a4c0f762fd33aa73cfb3f0c56e86b62bd8ecd9"
+      ]
+    },
+    {
+      "distinct_messages": 1,
+      "failed_attempts": 7,
+      "family": "sqli",
+      "feedback": "W",
+      "message_sha256s": [
+        "35295d9a8ef6f3b0557a0f4e09a4c0f762fd33aa73cfb3f0c56e86b62bd8ecd9"
+      ]
+    },
+    {
+      "distinct_messages": 1,
+      "failed_attempts": 4,
+      "family": "weak-randomness",
+      "feedback": "W",
+      "message_sha256s": [
+        "35295d9a8ef6f3b0557a0f4e09a4c0f762fd33aa73cfb3f0c56e86b62bd8ecd9"
+      ]
+    },
+    {
+      "distinct_messages": 1,
+      "failed_attempts": 5,
+      "family": "xss",
+      "feedback": "W",
+      "message_sha256s": [
+        "35295d9a8ef6f3b0557a0f4e09a4c0f762fd33aa73cfb3f0c56e86b62bd8ecd9"
+      ]
+    }
+  ],
+  "failed_attempt_observations": {
+    "D": 30,
+    "W": 31
+  },
+  "historical_feedback_source_path": "experiments/executable_episode.py",
+  "historical_feedback_source_sha256": "247022300c14ebe93f3fa49aba5e46d701f89b6433bb07d8cc71c845724aa6d0",
+  "inference_boundary": "Terminal raw tests only; per-action raw test results were not saved. A finite pass is not proof of secure code; static wording does not identify agent behavior.",
+  "logged_source_hash_mismatches": 11,
+  "main_episodes": 40,
+  "schema_version": "historical-feedback-specificity-v1",
+  "source_commit": "98a4dcf414672c1725e4acdb9f08045370aa7f64",
+  "u_diagnostic_terminal_raw_pass_count": 5,
+  "u_diagnostic_terminal_raw_pass_source_joined": [
+    {
+      "condition": "UD",
+      "diagnostic_message_sha256": "eea006c594d595def7701d4e86757558f035e974f09821ad2f56d8f9c8c40c7d",
+      "family": "nonce",
+      "last_attempt_number": 3,
+      "last_step": 4,
+      "log_sha256": "aca14cf156c97dd65bdc65fecb945e81971fa3e201227cf827da07a8280758f0",
+      "slot_id": "slot-000010",
+      "source_sha256": "856bf51759db23d0292b2d4f64de5b89a0250f6a9ab28fdff8be8b6b5a6f9371",
+      "terminal_receipt_sha256": "64f8fdd67f2ea2760d1a0da997e7b43b9b25d3faa29e566d9efa3588ce00f55b"
+    },
+    {
+      "condition": "UD",
+      "diagnostic_message_sha256": "d91b907bab90345ede8bd8aa328e3707781ff87545abca5e7af13f84c738538c",
+      "family": "weak-randomness",
+      "last_attempt_number": 2,
+      "last_step": 3,
+      "log_sha256": "a9f4cb942c42357c4e34b9a1a6d54da92a331b791be62d7a65d0fadbe7f194ca",
+      "slot_id": "slot-000015",
+      "source_sha256": "40aafab281f363308a7f09dcc6ec48c5edc416d27bedb17a8f34e7817ab14759",
+      "terminal_receipt_sha256": "656c792db64eb96a40f1f33618ba441a7ecb0ec9c12352f360c6653e52f577c3"
+    },
+    {
+      "condition": "UD",
+      "diagnostic_message_sha256": "cb3da4e0e13df6c5ace7135b464c3adeafeb07cb6714ff44386f93dd52841aaa",
+      "family": "key-derivation",
+      "last_attempt_number": 3,
+      "last_step": 4,
+      "log_sha256": "e0f70ed6cd5cbf346f80666ee0349296380fe50c035fc6c04f0028f485204c76",
+      "slot_id": "slot-000024",
+      "source_sha256": "1236b6b33c93b65baf916ee520c6a5cb8575fbbc76da832100f8640ff55aa115",
+      "terminal_receipt_sha256": "c7872d2db67adb10117c7a6eb55b383bd431bdf973a1a2af564b3b0d638fe48b"
+    },
+    {
+      "condition": "UD",
+      "diagnostic_message_sha256": "eea006c594d595def7701d4e86757558f035e974f09821ad2f56d8f9c8c40c7d",
+      "family": "nonce",
+      "last_attempt_number": 1,
+      "last_step": 2,
+      "log_sha256": "df0860219dca973f65759bde530d4fcade1e50155dd1fb08644d4538c81598e0",
+      "slot_id": "slot-000032",
+      "source_sha256": "22897ae434b144d335e6986edeac821e9f257fa5e752eec586f472e52bae5056",
+      "terminal_receipt_sha256": "147b9cd5d45fefd3bff65c0bd92a7b804ba658129655cc56e9c8d2e735c8b048"
+    },
+    {
+      "condition": "UD",
+      "diagnostic_message_sha256": "d91b907bab90345ede8bd8aa328e3707781ff87545abca5e7af13f84c738538c",
+      "family": "weak-randomness",
+      "last_attempt_number": 2,
+      "last_step": 3,
+      "log_sha256": "b675062d5e0b3d0e06a51f1827193806a4d6e5c0bde371013978a76060be1e50",
+      "slot_id": "slot-000035",
+      "source_sha256": "40aafab281f363308a7f09dcc6ec48c5edc416d27bedb17a8f34e7817ab14759",
+      "terminal_receipt_sha256": "4858d47feabb5e78dae2e9b13bc29ee76b690f435b20f78fa9d04fa9cd9e1706"
+    }
+  ]
+}
