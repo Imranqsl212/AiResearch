@@ -384,9 +384,9 @@ def make_pdf(markdown: str, destination: Path, *, author: str) -> int:
     styles = getSampleStyleSheet()
     width, _ = A4
     body = ParagraphStyle("BodyX", parent=styles["Normal"], fontName="Body", fontSize=BODY_POINT_SIZE,
-                          leading=BODY_POINT_SIZE, spaceAfter=2, textColor=colors.HexColor(INK))
+                          leading=BODY_POINT_SIZE, spaceAfter=1, textColor=colors.HexColor(INK))
     head1 = ParagraphStyle("H1X", parent=body, fontName="BodyBold", fontSize=BODY_POINT_SIZE,
-                           leading=BODY_POINT_SIZE, spaceBefore=5, spaceAfter=2, keepWithNext=True,
+                           leading=BODY_POINT_SIZE, spaceBefore=4, spaceAfter=2, keepWithNext=True,
                            textColor=colors.HexColor(NAVY))
     head2 = ParagraphStyle("H2X", parent=head1, spaceBefore=3)
     head3 = ParagraphStyle("H3X", parent=head2, leftIndent=10,
@@ -433,7 +433,7 @@ def make_pdf(markdown: str, destination: Path, *, author: str) -> int:
                 raise FileNotFoundError(image_path)
             with Image.open(image_path) as im:
                 ratio = im.height / im.width
-            figure_width = 6.3 * inch
+            figure_width = 6.1 * inch
             story.append(PdfImage(str(image_path), width=figure_width, height=figure_width * ratio))
             story.append(Paragraph(inline(figcaption), caption))
     title_match = re.search(r"^#\s+(.+)$", markdown, re.MULTILINE)

@@ -38,6 +38,7 @@ V12_OUTPUT = ROOT / "experiments/runs/paper_author_review_manuscript_20261101_v1
 V13_OUTPUT = ROOT / "experiments/runs/paper_author_review_manuscript_20261104_v13.tar.gz"
 V14_OUTPUT = ROOT / "experiments/runs/paper_author_review_manuscript_20261104_v14.tar.gz"
 V15_OUTPUT = ROOT / "experiments/runs/paper_author_review_manuscript_20261104_v15.tar.gz"
+V16_OUTPUT = ROOT / "experiments/runs/paper_author_review_manuscript_20261104_v16.tar.gz"
 OUTPUT = V11_OUTPUT
 V1_VERSION = "paper-author-review-manuscript-1.0.0"
 V2_VERSION = "paper-author-review-manuscript-2.0.0"
@@ -54,6 +55,7 @@ V12_VERSION = "paper-author-review-manuscript-12.0.0"
 V13_VERSION = "paper-author-review-manuscript-13.0.0"
 V14_VERSION = "paper-author-review-manuscript-14.0.0"
 V15_VERSION = "paper-author-review-manuscript-15.0.0"
+V16_VERSION = "paper-author-review-manuscript-16.0.0"
 VERSION = V11_VERSION
 README_NAME = "REVIEW_ONLY_README.md"
 MANIFEST_NAME = "SOURCE_HASH_MANIFEST.json"
@@ -170,6 +172,12 @@ V15_NEW_DERIVED = (
     "figures/v7_checker_stage_cascade_20261104.svg",
 )
 V15_SOURCE_NAMES = V14_SOURCE_NAMES + V15_NEW_DERIVED
+V16_NEW_DERIVED = (
+    "analysis/V7_QWEN8B_CAPACITY_20261104.md",
+    "analysis/v7_qwen8b_capacity_20261104.json",
+    "analysis/v7_qwen8b_capacity_20261104_screen.json",
+)
+V16_SOURCE_NAMES = V15_SOURCE_NAMES + V16_NEW_DERIVED
 SOURCE_NAMES = V11_SOURCE_NAMES
 FORBIDDEN_MARKERS = {
     "mac_home": re.compile(rb"/Users/[^/\s\"'<>\\]+", re.I),
@@ -575,6 +583,41 @@ Use `--no-local-compare` to verify archived bytes and receipt after workspace
 sources change. This digest receipt is not an independent timestamp,
 signature, source revision, or journal approval.
 """
+V16_README = """# Local author-review manuscript bundle v16
+
+**Status: REVIEW_ONLY. This filtered package is not an approved journal
+supplement or submission.**
+
+This package binds the current exploratory manuscript, identified and
+anonymous PDF/DOCX renderings, article figures, historical derived tables,
+references, and pending author decision form. It retains the v15 analyses
+and adds a derived report, JSON recount, and limited pattern-screen receipt
+for the excluded Qwen3:8b capacity probe. The first model request timed out;
+the other three slots were unstarted. There was no model response, candidate,
+or matched feedback comparison to score. Do not interpret this as a negative
+effect or a measured model comparison.
+
+The bundle contains no raw trajectories, model requests/responses, source
+snapshots, or separate run archives. Its source-hash manifest binds exact
+selected bytes. Separately tracked archives and analysis code are required
+to replay findings. This review package does not establish human task
+admission, author approval, privacy clearance, a journal-accepted data
+route, or a final Git revision for the newest material. The included screen
+receipt is a limited pattern check, not general privacy clearance.
+
+The PDFs were rerendered after the v15 remote Linux page-limit failure.
+Local rendering and a local simulated fallback meet the 20-page limit;
+the remote Linux recheck is pending. The anonymous files are review drafts.
+The identified decision form must not accompany anonymous peer review.
+
+Verify against the current local source tree with:
+
+    python3 -B -m paper.build_author_review_bundle verify --bundle-version v16
+
+Use `--no-local-compare` to verify archived bytes and receipt after workspace
+sources change. This digest receipt is not an independent timestamp,
+signature, source revision, or journal approval.
+"""
 README = V11_README
 
 
@@ -600,13 +643,14 @@ V12_SPEC = BundleSpec(V12_VERSION, V12_SOURCE_NAMES, V12_README)
 V13_SPEC = BundleSpec(V13_VERSION, V13_SOURCE_NAMES, V13_README)
 V14_SPEC = BundleSpec(V14_VERSION, V14_SOURCE_NAMES, V14_README)
 V15_SPEC = BundleSpec(V15_VERSION, V15_SOURCE_NAMES, V15_README)
+V16_SPEC = BundleSpec(V16_VERSION, V16_SOURCE_NAMES, V16_README)
 SPECS_BY_VERSION = {spec.version: spec for spec in
                     (V1_SPEC, V2_SPEC, V3_SPEC, V4_SPEC, V5_SPEC, V6_SPEC,
                      V7_SPEC, V8_SPEC, V9_SPEC, V10_SPEC, V11_SPEC, V12_SPEC,
-                     V13_SPEC, V14_SPEC, V15_SPEC)}
+                     V13_SPEC, V14_SPEC, V15_SPEC, V16_SPEC)}
 BUILD_TARGETS = {"v11": (V11_OUTPUT, V11_SPEC), "v12": (V12_OUTPUT, V12_SPEC),
                  "v13": (V13_OUTPUT, V13_SPEC), "v14": (V14_OUTPUT, V14_SPEC),
-                 "v15": (V15_OUTPUT, V15_SPEC)}
+                 "v15": (V15_OUTPUT, V15_SPEC), "v16": (V16_OUTPUT, V16_SPEC)}
 
 
 class BundleError(RuntimeError):
@@ -651,17 +695,17 @@ def _decision_bound_names(spec: BundleSpec) -> tuple[str, ...]:
         "paper/submission/full_paper.docx",
         "paper/artifacts/results.json",
     )
-    if spec in (V2_SPEC, V3_SPEC, V4_SPEC, V5_SPEC, V6_SPEC, V7_SPEC, V8_SPEC, V9_SPEC, V10_SPEC, V11_SPEC, V12_SPEC, V13_SPEC, V14_SPEC, V15_SPEC):
+    if spec in (V2_SPEC, V3_SPEC, V4_SPEC, V5_SPEC, V6_SPEC, V7_SPEC, V8_SPEC, V9_SPEC, V10_SPEC, V11_SPEC, V12_SPEC, V13_SPEC, V14_SPEC, V15_SPEC, V16_SPEC):
         names += (
             "paper/submission/full_paper_anonymous.pdf",
             "paper/submission/full_paper_anonymous.docx",
         )
-    if spec in (V10_SPEC, V11_SPEC, V12_SPEC, V13_SPEC, V14_SPEC, V15_SPEC):
+    if spec in (V10_SPEC, V11_SPEC, V12_SPEC, V13_SPEC, V14_SPEC, V15_SPEC, V16_SPEC):
         names += (
             "paper/venue_author_year_draft.md",
             "paper/VENUE_SHORTLIST_20261005.md",
         )
-    if spec in (V11_SPEC, V12_SPEC, V13_SPEC, V14_SPEC, V15_SPEC):
+    if spec in (V11_SPEC, V12_SPEC, V13_SPEC, V14_SPEC, V15_SPEC, V16_SPEC):
         names += (
             "paper/submission/venue_author_year_identified.pdf",
             "paper/submission/venue_author_year_identified.docx",
@@ -672,7 +716,7 @@ def _decision_bound_names(spec: BundleSpec) -> tuple[str, ...]:
             "analysis/fresh_matched_verdict_pilot_20261101.json",
             "analysis/v7_second_wave_20261101.json",
         )
-    if spec in (V12_SPEC, V13_SPEC, V14_SPEC, V15_SPEC):
+    if spec in (V12_SPEC, V13_SPEC, V14_SPEC, V15_SPEC, V16_SPEC):
         names += (
             "analysis/V7_TEMP_VARIANCE_20261101.md",
             "analysis/v7_temp_variance_20261101.json",
@@ -684,10 +728,12 @@ def _decision_bound_names(spec: BundleSpec) -> tuple[str, ...]:
             "analysis/c5_feedback_action_20261104.json",
             "analysis/figures/v7_temp03_pair_outcomes_20261101.png",
         )
-    if spec in (V14_SPEC, V15_SPEC):
+    if spec in (V14_SPEC, V15_SPEC, V16_SPEC):
         names += V14_NEW_DERIVED
-    if spec is V15_SPEC:
+    if spec in (V15_SPEC, V16_SPEC):
         names += V15_NEW_DERIVED
+    if spec is V16_SPEC:
+        names += V16_NEW_DERIVED
     return names
 
 
@@ -722,7 +768,7 @@ def _source_bytes(spec: BundleSpec = V11_SPEC) -> dict[str, bytes]:
 
 
 def _release_flags(spec: BundleSpec) -> dict[str, Any]:
-    if spec in (V14_SPEC, V15_SPEC):
+    if spec in (V14_SPEC, V15_SPEC, V16_SPEC):
         return {
             "journal_supplement_approved": False,
             "git_visibility": "not-attested-by-bundle",
@@ -736,7 +782,7 @@ def _release_flags(spec: BundleSpec) -> dict[str, Any]:
             "related_data_public_git_revision": "9ecd07a3d605cfd812a874835e9b945adc5d5145",
             "historical_data_public_git_revision": PUBLIC_DATA_REVISION,
         }
-    if spec in (V11_SPEC, V12_SPEC, V13_SPEC, V14_SPEC, V15_SPEC):
+    if spec in (V11_SPEC, V12_SPEC, V13_SPEC, V14_SPEC, V15_SPEC, V16_SPEC):
         return {
             "journal_supplement_approved": False,
             "git_visibility": "not-attested-by-bundle",
@@ -829,7 +875,7 @@ def verify(*, archive: Path = OUTPUT, compare_sources: bool = True) -> dict[str,
             or receipt.get("archive_bytes") != archive.stat().st_size):
         raise BundleError("archive differs from review-only receipt")
     if (any(receipt.get(key) != value for key, value in _release_flags(spec).items())
-            or (spec in (V10_SPEC, V11_SPEC, V12_SPEC, V13_SPEC, V14_SPEC, V15_SPEC) and "public_release_approved" in receipt)):
+            or (spec in (V10_SPEC, V11_SPEC, V12_SPEC, V13_SPEC, V14_SPEC, V15_SPEC, V16_SPEC) and "public_release_approved" in receipt)):
         raise BundleError("receipt release flags differ")
     files = _archive_files(archive)
     expected_names = set(spec.source_names) | {README_NAME, MANIFEST_NAME}
@@ -846,7 +892,7 @@ def verify(*, archive: Path = OUTPUT, compare_sources: bool = True) -> dict[str,
             or manifest.get("source_git_revision_bound") is not False):
         raise BundleError("review-only provenance flags differ")
     if (any(manifest.get(key) != value for key, value in _release_flags(spec).items())
-            or (spec in (V10_SPEC, V11_SPEC, V12_SPEC, V13_SPEC, V14_SPEC, V15_SPEC) and "public_release_approved" in manifest)):
+            or (spec in (V10_SPEC, V11_SPEC, V12_SPEC, V13_SPEC, V14_SPEC, V15_SPEC, V16_SPEC) and "public_release_approved" in manifest)):
         raise BundleError("manifest release flags differ")
     rows = manifest.get("files")
     if not isinstance(rows, list) or len(rows) != len(spec.source_names):
