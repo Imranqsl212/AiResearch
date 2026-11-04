@@ -22,6 +22,13 @@ class CrossFamilyRecountTest(unittest.TestCase):
         self.assertEqual(report["descriptive_totals"]["false_only_regression_pairs"], 1)
         self.assertEqual([s["terminal_regression_pattern"] for s in report["slots"]],
                          ["1->1", "0->0", "0->1"])
+        by_family = {s["family"]: s for s in report["slots"]}
+        for family in ("key_rotation", "csrf_origin"):
+            malformed = by_family[family]["arms"]["TRUTHFUL_PASS"]["attempts"][0]
+            self.assertIsNone(malformed["mode"])
+            self.assertEqual(malformed["candidate_keys"], [":mode"])
+            self.assertFalse(malformed["valid_candidate_schema"])
+            self.assertEqual(malformed["oracle_result"], "INDETERMINATE")
 
     def test_mutated_model_response_fails_source_bound_replay(self) -> None:
         with tempfile.TemporaryDirectory() as temp:

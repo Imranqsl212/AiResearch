@@ -1,8 +1,8 @@
 # Manuscript reproduction and handoff
 
-The manuscript in [final.md](final.md) is an exploratory measurement audit with a separate, excluded corrected-oracle pilot, a post hoc older C5 candidate audit, and two sequential one-shot engineering waves. The identified files are [PDF](submission/full_paper.pdf) and [Word](submission/full_paper.docx). The anonymous peer-review files are [PDF](submission/full_paper_anonymous.pdf) and [Word](submission/full_paper_anonymous.docx). It contains six generated PNG figures in `figures/` and six tables. The pre empirical protocol manuscript is preserved in `archive/protocol_before_empirical_revision.md`.
+The manuscript in [final.md](final.md) is an exploratory measurement audit with a separate, excluded corrected-oracle pilot, a post hoc older C5 candidate audit, sequential one-shot engineering waves, and later directional-error analyses. The identified files are [PDF](submission/full_paper.pdf) and [Word](submission/full_paper.docx). The anonymous peer-review files are [PDF](submission/full_paper_anonymous.pdf) and [Word](submission/full_paper_anonymous.docx). It contains five article figures, a separate stop-label chart in `figures/`, and six tables. The pre empirical protocol manuscript is preserved in `archive/protocol_before_empirical_revision.md`.
 
-The current filtered [v13 author-review bundle](AUTHOR_REVIEW_BUNDLE_V13_20261104.md) binds the rendered manuscript and selected derived audit reports. Earlier bundles are dated snapshots and remain available for audit.
+The current filtered [v14 author-review bundle](AUTHOR_REVIEW_BUNDLE_V14_20261104.md) binds the revised manuscript, renderings, and selected new derived reports. [V13](AUTHOR_REVIEW_BUNDLE_V13_20261104.md) and earlier bundles are dated snapshots and remain available for audit.
 
 An [author–year venue-format draft](VENUE_FORMAT_DRAFT_20261016.md) has separate identified and anonymous PDF/DOCX files. It preserves the scientific text, figures, and tables while changing citation style; the numbered `final.md` remains the canonical author-review source until a journal and final declarations are approved.
 

@@ -12,11 +12,11 @@ separately. Do not infer their absence from a missing response.
 
 | Artifact | Current SHA-256 |
 | --- | --- |
-| [`final.md`](final.md) | `ac10a79bab2bfd5685c19995593061c28d76e1f34ba7c369bf2d23e285eef57c` |
-| [Identified `full_paper.pdf`](submission/full_paper.pdf) | `9e18caf519d663f1de3e150ad46b8f3d1090c148c36f0947e597bba901c0087c` |
-| [Identified `full_paper.docx`](submission/full_paper.docx) | `00677506353e8a10ba54c5bfe5facf34506e5bebd8ab25b32576050558f72c36` |
-| [Anonymous `full_paper_anonymous.pdf`](submission/full_paper_anonymous.pdf) | `6d2d23b23189bf18bae04070491c158f1197e23026dbe02e3e17129adeff72bf` |
-| [Anonymous `full_paper_anonymous.docx`](submission/full_paper_anonymous.docx) | `f8464efbf3b79de695b3ec87893385c714a397dd1903af2729c352c4514d13c5` |
+| [`final.md`](final.md) | `a02a0d862ed22779e88a35515b89e28da6d23656bd04320fc7ae177b79daead0` |
+| [Identified `full_paper.pdf`](submission/full_paper.pdf) | `5c65e62d9e812901afc015f01f6df905b56380f935d599d4311e50bed22537af` |
+| [Identified `full_paper.docx`](submission/full_paper.docx) | `49bcedfb35430503d4767e853fa4fdb04536c681632e6444f1350ba3ddac8e3e` |
+| [Anonymous `full_paper_anonymous.pdf`](submission/full_paper_anonymous.pdf) | `2af04da33b7f92778a4675672384251788eaa6d7629d8ae12f8fa3bc642a5c85` |
+| [Anonymous `full_paper_anonymous.docx`](submission/full_paper_anonymous.docx) | `1ba8bce4c41bd30220aaaf438644dbfa69cf1f236893f984f1725bee501130ba` |
 | [`results.json`](artifacts/results.json) | `3d7ef25bfa07ef25ae20cea8d6ee34b59c5d9158e20c2e9b7013bfbd5a3cb229` |
 | [Working author-year conversion](venue_author_year_draft.md) | `d56b469d919986c7da430c7d003121776e37c86b06bdac5f7f69f480011791dd` |
 | [Author-year `venue_author_year_identified.pdf`](submission/venue_author_year_identified.pdf) | `eebb1832db3bc60ebfd342e31483982909c1aac17729abb9a4f48f4a17c0e1b8` |
@@ -37,10 +37,28 @@ separately. Do not infer their absence from a missing response.
 | [C5 feedback-action report](../analysis/C5_FEEDBACK_ACTION_20261104.md) | `5496a11e8cb188d025ea9cfe848b1f5406f7ff72255b30c1a7bbd257178b9924` |
 | [C5 feedback-action recount](../analysis/c5_feedback_action_20261104.json) | `f1b4ef4b90a639c0c1223cf954f38c3f99f0b9942736dbce398c12eee7408f8c` |
 | [Separate temperature waves figure](../analysis/figures/v7_temp03_pair_outcomes_20261101.png) | `a00c3695d5c66a8a8bf41cdd5d4225858d56c403ee0ef1857dfa10c6b711bcd1` |
+| [HISTORICAL FEEDBACK SPECIFICITY 20261104](../analysis/HISTORICAL_FEEDBACK_SPECIFICITY_20261104.md) | `609ca376c4f932f674f1006402e130d6afa38e9aa2e0344db319b72f7be6d50d` |
+| [historical feedback specificity 20261104](../analysis/historical_feedback_specificity_20261104.json) | `2dae4ded09a4e35dda82580738b439e018b4de1229191509a1004020d7914214` |
+| [C5 FIRST SUBMISSION PARITY 20261104](../analysis/C5_FIRST_SUBMISSION_PARITY_20261104.md) | `11ffe82d4061c0df8e14f8bb12a97906b93e4fe894e7662676581d1292416e49` |
+| [c5 first submission parity 20261104](../analysis/c5_first_submission_parity_20261104.json) | `e01d9b864ca9b4b41bd75107a63a7706db55a924588a7e57deb1791420cbe355` |
+| [V7 LEAVE ONE WORLD OUT 20261104](../analysis/V7_LEAVE_ONE_WORLD_OUT_20261104.md) | `13cae99fcfe4fb095df9b5884c757f35591c29300ddcdd5640c0fe3f4062dee4` |
+| [v7 leave one world out 20261104](../analysis/v7_leave_one_world_out_20261104.json) | `cf223c7ec31473e8fd4a4a90e4b57ebb66e0f86078ecfce14c083c5044d3156c` |
+| [V7 CROSSFAMILY ERROR DIRECTION 20261104](../analysis/V7_CROSSFAMILY_ERROR_DIRECTION_20261104.md) | `821a84783d201171f5cef0d817b30df51953d98d1f9e0afbd9d274a18887814f` |
+| [v7 crossfamily error direction 20261104](../analysis/v7_crossfamily_error_direction_20261104.json) | `0ee44a979d4339e9652b44896ba1749337fcf3abe54e609595f378ea416780a4` |
+| [V7 CSRF TRANSITION DIRECTION 20261104](../analysis/V7_CSRF_TRANSITION_DIRECTION_20261104.md) | `803fae1d60dd04723b716a2454752e75079ddae68c727f4f2e9335aa0b149740` |
+| [v7 csrf transition direction 20261104](../analysis/v7_csrf_transition_direction_20261104.json) | `4a44d1fcd8ff2d7772682d771265662a09eea95d423753af91136b7f28cf0550` |
+| [V7 TEMP03 ERROR DIRECTION 20261104](../analysis/V7_TEMP03_ERROR_DIRECTION_20261104.md) | `45d18f12b60968fe4b350dd5446f19dce171202a285b4df632e7f306bbdfb8d6` |
+| [v7 temp03 error direction 20261104](../analysis/v7_temp03_error_direction_20261104.json) | `53c795abfa5dfc083d0c394817db05a15dcc709134e2cb2b83d4742a93db1607` |
+| [LOGGED SOURCE SURROGATE AST 20261104](../analysis/LOGGED_SOURCE_SURROGATE_AST_20261104.md) | `872eb00f28ce5535ab7e7b964cb0f8044740d17ba1b8e0f3031cc52272ccc5c4` |
+| [logged source surrogate ast 20261104](../analysis/logged_source_surrogate_ast_20261104.json) | `994bf4e3d8fd0e40c0a0abe5152ede63c1e80298babb10b52fdfb4ce2d104a3b` |
+| [EXCLUDED V7 CROSSFAMILY 20261104 RESULTS](../docs/EXCLUDED_V7_CROSSFAMILY_20261104_RESULTS.md) | `f4ce52afd953f70729539b9e504b0c1b2240b76ff12caf5a1b7e3c3ff8f76c58` |
+| [v7 crossfamily 20261104](../analysis/v7_crossfamily_20261104.json) | `4c9c129efb878ca705ad1d6e4f9224a84a8986106311e4208094836180dfeb96` |
+| [EXCLUDED V7 FEEDBACK REPLICATION 20261104 RESULTS](../docs/EXCLUDED_V7_FEEDBACK_REPLICATION_20261104_RESULTS.md) | `a55199122ca71e744180dc7b23a105cd990130f663362bfd8a793360b156693d` |
+| [v7 feedback replication 20261104](../analysis/v7_feedback_replication_20261104.json) | `e8b2ab1a74b5ba3f1eeeb0a3ff7bf5df42efff726f69d3f9e842d4f2d31ccfed` |
 
 The identified and anonymous PDFs each have 19 A4 pages; the Linux fallback-font render has 20. PDF text,
 including captions and tables, is 12 pt;
-the DOCX styles are 12 pt with single line spacing. The abstract has 210 words
+the DOCX styles are 12 pt with single line spacing. The abstract has 206 space-delimited words
 and the article contains five figures and six tables. The identified and
 anonymous PDF/DOCX pairs were regenerated from the source on this workspace.
 The anonymous files have blank author metadata and automated scans found no
@@ -63,7 +81,7 @@ rendered PDF/DOCX or an approved final submission file.
 | Contributions | Approved contribution statement from all named authors | `PENDING`: the user will provide each person's concrete contribution later. Kramich Anna is also the project mentor. |
 | Declarations | Funding, conflicts, acknowledgments, ethics and required AI-tool disclosure | `PENDING`: author said details will follow separately. Known Codex assistance is disclosed in Methods and Acknowledgments for author review; the author must confirm the final wording. |
 | Scientific sign-off | Authors approve the exact exploratory claims and limitations in the hashed draft | `PENDING` |
-| Data route | Exact public source revision and journal-accepted data statement or supplementary deposit | `PARTIAL`: the author chose GitHub publication of raw experimental artifacts. [Revision `9ecd07a3d605cfd812a874835e9b945adc5d5145`](https://github.com/Imranqsl212/AiResearch/tree/9ecd07a3d605cfd812a874835e9b945adc5d5145) contains archived cohorts discussed in this draft. The new 4 November read-only audit code and the current manuscript will require a later final revision. The journal route and persistent identifier remain pending. |
+| Data route | Exact public source revision and journal-accepted data statement or supplementary deposit | `PARTIAL`: the author chose GitHub publication of raw experimental artifacts. [Revision `9ecd07a3d605cfd812a874835e9b945adc5d5145`](https://github.com/Imranqsl212/AiResearch/tree/9ecd07a3d605cfd812a874835e9b945adc5d5145) contains earlier archived cohorts. The current manuscript and newest live-wave archive require a later final source revision, which is not bound by this review bundle. The journal route and persistent identifier remain pending. |
 | Privacy sign-off | Human review of raw and transformed free text, with disposition of residual candidates | `PENDING`: GitHub tracks unredacted archives and a review packet; suitability for a journal deposit is not established. |
 | Final package | Venue formatting, final hashes, source revision, supplementary files, cover letter and submission account | `PENDING` |
 

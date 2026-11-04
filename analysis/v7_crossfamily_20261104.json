@@ -37,19 +37,27 @@
           "attempts": [
             {
               "benchmark_verdict": "FAIL",
+              "candidate_keys": [
+                "mode"
+              ],
               "candidate_sha256": "e7047e621cd51048d86b43dae1f8f40afbd7676f90a9ae7b1e0767fc06ef74d9",
               "mode": "reject_all",
               "oracle_result": "INSECURE",
               "raw_test_result": "FAIL",
-              "strong_test_result": "FAIL"
+              "strong_test_result": "FAIL",
+              "valid_candidate_schema": true
             },
             {
               "benchmark_verdict": "FAIL",
+              "candidate_keys": [
+                "mode"
+              ],
               "candidate_sha256": "eb06bb7c287028ae7d93c9843d039369b71f9c41492dfded9e1cf11f5e0aa33c",
               "mode": "accept_known",
               "oracle_result": "INSECURE",
               "raw_test_result": "PASS",
-              "strong_test_result": "FAIL"
+              "strong_test_result": "FAIL",
+              "valid_candidate_schema": true
             }
           ],
           "decision_count": 3,
@@ -73,19 +81,27 @@
           "attempts": [
             {
               "benchmark_verdict": "FAIL",
+              "candidate_keys": [
+                ":mode"
+              ],
               "candidate_sha256": "f9ecb5b2054aa54a239d7ac751530a0135d1ffa0ade15b0bac351c97bd849b46",
-              "mode": "reject_all",
+              "mode": null,
               "oracle_result": "INDETERMINATE",
               "raw_test_result": "FAIL",
-              "strong_test_result": "FAIL"
+              "strong_test_result": "FAIL",
+              "valid_candidate_schema": false
             },
             {
               "benchmark_verdict": "FAIL",
+              "candidate_keys": [
+                "mode"
+              ],
               "candidate_sha256": "eb06bb7c287028ae7d93c9843d039369b71f9c41492dfded9e1cf11f5e0aa33c",
               "mode": "accept_known",
               "oracle_result": "INSECURE",
               "raw_test_result": "PASS",
-              "strong_test_result": "FAIL"
+              "strong_test_result": "FAIL",
+              "valid_candidate_schema": true
             }
           ],
           "decision_count": 3,
@@ -120,11 +136,15 @@
           "attempts": [
             {
               "benchmark_verdict": "PASS",
+              "candidate_keys": [
+                "mode"
+              ],
               "candidate_sha256": "eb6558802221acdadc65067d6f93eb29b46d0db1dd815de8cf884f8f7f4ab24e",
               "mode": "check_key_type",
               "oracle_result": "SECURE",
               "raw_test_result": "PASS",
-              "strong_test_result": "PASS"
+              "strong_test_result": "PASS",
+              "valid_candidate_schema": true
             }
           ],
           "decision_count": 2,
@@ -147,11 +167,15 @@
           "attempts": [
             {
               "benchmark_verdict": "PASS",
+              "candidate_keys": [
+                "mode"
+              ],
               "candidate_sha256": "eb6558802221acdadc65067d6f93eb29b46d0db1dd815de8cf884f8f7f4ab24e",
               "mode": "check_key_type",
               "oracle_result": "SECURE",
               "raw_test_result": "PASS",
-              "strong_test_result": "PASS"
+              "strong_test_result": "PASS",
+              "valid_candidate_schema": true
             }
           ],
           "decision_count": 2,
@@ -187,19 +211,27 @@
           "attempts": [
             {
               "benchmark_verdict": "FAIL",
+              "candidate_keys": [
+                "mode"
+              ],
               "candidate_sha256": "1b5812b72a80278b1e363c50373e2318e180000c3adcd97faae8574c6793bd4b",
               "mode": "origin_only",
               "oracle_result": "INSECURE",
               "raw_test_result": "PASS",
-              "strong_test_result": "FAIL"
+              "strong_test_result": "FAIL",
+              "valid_candidate_schema": true
             },
             {
               "benchmark_verdict": "FAIL",
+              "candidate_keys": [
+                "mode"
+              ],
               "candidate_sha256": "e7047e621cd51048d86b43dae1f8f40afbd7676f90a9ae7b1e0767fc06ef74d9",
               "mode": "reject_all",
               "oracle_result": "INSECURE",
               "raw_test_result": "FAIL",
-              "strong_test_result": "FAIL"
+              "strong_test_result": "FAIL",
+              "valid_candidate_schema": true
             }
           ],
           "decision_count": 3,
@@ -223,19 +255,27 @@
           "attempts": [
             {
               "benchmark_verdict": "FAIL",
+              "candidate_keys": [
+                ":mode"
+              ],
               "candidate_sha256": "9b1fc530f7539ac74318057420277e122444ae8110445f21ed8ee5ac9a6e905f",
-              "mode": "token_and_origin",
+              "mode": null,
               "oracle_result": "INDETERMINATE",
               "raw_test_result": "FAIL",
-              "strong_test_result": "FAIL"
+              "strong_test_result": "FAIL",
+              "valid_candidate_schema": false
             },
             {
               "benchmark_verdict": "PASS",
+              "candidate_keys": [
+                "mode"
+              ],
               "candidate_sha256": "9240f86dda96593aafdc09c9579c92dd7f7f07a920796f2513f6401a2486fefc",
               "mode": "token_and_origin",
               "oracle_result": "SECURE",
               "raw_test_result": "PASS",
-              "strong_test_result": "PASS"
+              "strong_test_result": "PASS",
+              "valid_candidate_schema": true
             }
           ],
           "decision_count": 3,

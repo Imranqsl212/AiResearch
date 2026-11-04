@@ -12,6 +12,7 @@ import json
 from pathlib import Path
 
 from analysis.scan_public_excluded_archive import scan_archive
+from benchmark import finite_batch_c_reference_v7 as reference
 from experiments.main_c5_integrated_excluded import verify_excluded_c5_pair
 from experiments.main_collector import _canonical, _response_action
 from experiments.main_integrated_excluded import verify_excluded_integrated
@@ -42,7 +43,7 @@ def _json(path: Path) -> dict:
     return json.loads(path.read_bytes())
 
 
-def _arm(pair: Path, arm: str) -> dict:
+def _arm(pair: Path, arm: str, task: dict) -> dict:
     lower = arm.lower()
     receipt = _json(pair / f"{lower}.receipt.json")
     _require(receipt["arm"] == arm and receipt["status"] == "COMPLETED_EXCLUDED_C5_ARM",
@@ -63,14 +64,14 @@ def _arm(pair: Path, arm: str) -> dict:
         if decision["action"] != "ATTEMPT":
             continue
         candidate = payload.get("candidate") if isinstance(payload, dict) else None
-        mode = candidate.get("mode", candidate.get(":mode")) if isinstance(candidate, dict) else None
-        _require(isinstance(mode, str),
-                 "attempt candidate lacks mode")
+        mode = reference._candidate_mode(task, candidate)
         _require(_sha(_canonical(candidate)) == decision["candidate_sha256"],
                  "candidate hash mismatch")
         result = decision["result"]
         attempts.append({
             "mode": mode,
+            "candidate_keys": sorted(candidate) if isinstance(candidate, dict) else None,
+            "valid_candidate_schema": mode is not None,
             "candidate_sha256": decision["candidate_sha256"],
             "raw_test_result": result["raw_test_result"],
             "strong_test_result": result["strong_test_result"],
@@ -159,7 +160,11 @@ def build() -> dict:
         _require(pair_receipt["arm_order"] ==
                  (["FALSE_FAIL", "TRUTHFUL_PASS"] if index == 1 else
                   ["TRUTHFUL_PASS", "FALSE_FAIL"]), f"{family}: arm order differs")
-        arms = {arm: _arm(pair, arm) for arm in ARMS}
+        pair_open = _json(pair / "pair_open.json")
+        c5_task = _json(ROOT / pair_open["c5_task_path"])
+        _require(c5_task["family"] == family and c5_task["condition"] == "C5",
+                 f"{family}: pair C5 task differs")
+        arms = {arm: _arm(pair, arm, c5_task) for arm in ARMS}
         truthful, false = (arms[arm] for arm in ARMS)
         slots.append({
             "family": family,

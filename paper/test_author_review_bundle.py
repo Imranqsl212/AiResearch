@@ -16,17 +16,37 @@ from paper import build_author_review_bundle as bundle
 
 
 class AuthorReviewBundleTests(unittest.TestCase):
-    def test_v13_binds_current_render_and_v12_remains_a_snapshot(self) -> None:
+    def test_v14_binds_current_render_and_v13_remains_a_snapshot(self) -> None:
+        self.assertEqual(bundle.BUILD_TARGETS["v14"], (bundle.V14_OUTPUT, bundle.V14_SPEC))
+        self.assertEqual(bundle.V14_SOURCE_NAMES[:len(bundle.V13_SOURCE_NAMES)],
+                         bundle.V13_SOURCE_NAMES)
+        self.assertEqual(set(bundle.V14_SOURCE_NAMES) - set(bundle.V13_SOURCE_NAMES),
+                         set(bundle.V14_NEW_DERIVED))
+        self.assertEqual(len(bundle.V14_NEW_DERIVED), 18)
+        self.assertEqual(set(bundle._decision_bound_names(bundle.V14_SPEC)) -
+                         set(bundle._decision_bound_names(bundle.V13_SPEC)),
+                         set(bundle.V14_NEW_DERIVED))
+        self.assertIn("six-slot", bundle.V14_README)
+        flags = bundle._release_flags(bundle.V14_SPEC)
+        self.assertFalse(flags["journal_supplement_approved"])
+        self.assertIsNone(flags["related_data_public_git_revision"])
+        current = bundle.verify(archive=bundle.V14_OUTPUT)
+        self.assertEqual(current["version"], bundle.V14_VERSION)
+        self.assertEqual(current["archive_members"], 78)
+        self.assertEqual(current["source_file_count"], 76)
+        self.assertTrue(current["local_sources_match"])
+
+    def test_v13_and_v12_remain_independent_historical_snapshots(self) -> None:
         self.assertEqual(bundle.BUILD_TARGETS["v13"], (bundle.V13_OUTPUT, bundle.V13_SPEC))
         self.assertEqual(bundle.V13_SOURCE_NAMES, bundle.V12_SOURCE_NAMES)
         self.assertEqual(bundle._decision_bound_names(bundle.V13_SPEC),
                          bundle._decision_bound_names(bundle.V12_SPEC))
         self.assertIn("five article figures", bundle.V13_README)
         self.assertFalse(bundle._release_flags(bundle.V13_SPEC)["journal_supplement_approved"])
-        current = bundle.verify(archive=bundle.V13_OUTPUT)
-        self.assertEqual(current["version"], bundle.V13_VERSION)
-        self.assertEqual(current["archive_members"], 60)
-        self.assertTrue(current["local_sources_match"])
+        snapshot_v13 = bundle.verify(archive=bundle.V13_OUTPUT, compare_sources=False)
+        self.assertEqual(snapshot_v13["version"], bundle.V13_VERSION)
+        self.assertEqual(snapshot_v13["archive_members"], 60)
+        self.assertIsNone(snapshot_v13["local_sources_match"])
         snapshot = bundle.verify(archive=bundle.V12_OUTPUT, compare_sources=False)
         self.assertEqual(snapshot["version"], bundle.V12_VERSION)
 

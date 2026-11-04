@@ -1,0 +1,1 @@
+{"arm":"FALSE_FAIL","eligible_for_main_analysis":false,"observed_model":{"digest":"359d7dd4bcdab3d86b87d73ac27966f4dbb9f5efdfcc75d34a8764a09474fae7","name":"qwen3:4b"},"phase":"pilot","request_sha256":"ba490d22a9779b9b263ff579b5fcf933c9017b17e893f5e1fbd7df6643c8480f","schema_version":"excluded-integrated-c5-pair-0.1.0","sequence":1}

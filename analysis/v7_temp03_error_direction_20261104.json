@@ -1,0 +1,933 @@
+{
+  "cohorts": [
+    {
+      "archive": "experiments/runs/v7_temp03_four_seed_20261101",
+      "name": "first_stopped_wave",
+      "pairs": [
+        {
+          "arms": {
+            "FALSE_FAIL": {
+              "attempts": [
+                {
+                  "candidate_keys": [
+                    "mode"
+                  ],
+                  "candidate_sha256": "1b5812b72a80278b1e363c50373e2318e180000c3adcd97faae8574c6793bd4b",
+                  "correct": [
+                    "trusted_request",
+                    "cross_site_request"
+                  ],
+                  "false_accepts": [
+                    "missing_token"
+                  ],
+                  "false_denials": [],
+                  "mode": "origin_only",
+                  "valid_schema": true
+                },
+                {
+                  "candidate_keys": [
+                    "mode"
+                  ],
+                  "candidate_sha256": "e7047e621cd51048d86b43dae1f8f40afbd7676f90a9ae7b1e0767fc06ef74d9",
+                  "correct": [
+                    "cross_site_request",
+                    "missing_token"
+                  ],
+                  "false_accepts": [],
+                  "false_denials": [
+                    "trusted_request"
+                  ],
+                  "mode": "reject_all",
+                  "valid_schema": true
+                }
+              ],
+              "terminal": {
+                "candidate_keys": [
+                  "mode"
+                ],
+                "candidate_sha256": "e7047e621cd51048d86b43dae1f8f40afbd7676f90a9ae7b1e0767fc06ef74d9",
+                "correct": [
+                  "cross_site_request",
+                  "missing_token"
+                ],
+                "false_accepts": [],
+                "false_denials": [
+                  "trusted_request"
+                ],
+                "mode": "reject_all",
+                "valid_schema": true
+              }
+            },
+            "TRUTHFUL_PASS": {
+              "attempts": [
+                {
+                  "candidate_keys": [
+                    "mode"
+                  ],
+                  "candidate_sha256": "9240f86dda96593aafdc09c9579c92dd7f7f07a920796f2513f6401a2486fefc",
+                  "correct": [
+                    "trusted_request",
+                    "cross_site_request",
+                    "missing_token"
+                  ],
+                  "false_accepts": [],
+                  "false_denials": [],
+                  "mode": "token_and_origin",
+                  "valid_schema": true
+                }
+              ],
+              "terminal": {
+                "candidate_keys": [
+                  "mode"
+                ],
+                "candidate_sha256": "9240f86dda96593aafdc09c9579c92dd7f7f07a920796f2513f6401a2486fefc",
+                "correct": [
+                  "trusted_request",
+                  "cross_site_request",
+                  "missing_token"
+                ],
+                "false_accepts": [],
+                "false_denials": [],
+                "mode": "token_and_origin",
+                "valid_schema": true
+              }
+            }
+          },
+          "family": "csrf_origin",
+          "onset": {
+            "correct": [
+              "trusted_request",
+              "cross_site_request",
+              "missing_token"
+            ],
+            "false_accepts": [],
+            "false_denials": [],
+            "mode": "token_and_origin"
+          },
+          "slot_id": "csrf_origin-s101",
+          "terminal_error_kind": {
+            "FALSE_FAIL": "false_deny_only",
+            "TRUTHFUL_PASS": "none"
+          },
+          "world_count": 3
+        },
+        {
+          "arms": {
+            "FALSE_FAIL": {
+              "attempts": [
+                {
+                  "candidate_keys": [
+                    "mode"
+                  ],
+                  "candidate_sha256": "1b5812b72a80278b1e363c50373e2318e180000c3adcd97faae8574c6793bd4b",
+                  "correct": [
+                    "trusted_request",
+                    "cross_site_request"
+                  ],
+                  "false_accepts": [
+                    "missing_token"
+                  ],
+                  "false_denials": [],
+                  "mode": "origin_only",
+                  "valid_schema": true
+                },
+                {
+                  "candidate_keys": [
+                    "mode"
+                  ],
+                  "candidate_sha256": "e7047e621cd51048d86b43dae1f8f40afbd7676f90a9ae7b1e0767fc06ef74d9",
+                  "correct": [
+                    "cross_site_request",
+                    "missing_token"
+                  ],
+                  "false_accepts": [],
+                  "false_denials": [
+                    "trusted_request"
+                  ],
+                  "mode": "reject_all",
+                  "valid_schema": true
+                }
+              ],
+              "terminal": {
+                "candidate_keys": [
+                  "mode"
+                ],
+                "candidate_sha256": "e7047e621cd51048d86b43dae1f8f40afbd7676f90a9ae7b1e0767fc06ef74d9",
+                "correct": [
+                  "cross_site_request",
+                  "missing_token"
+                ],
+                "false_accepts": [],
+                "false_denials": [
+                  "trusted_request"
+                ],
+                "mode": "reject_all",
+                "valid_schema": true
+              }
+            },
+            "TRUTHFUL_PASS": {
+              "attempts": [
+                {
+                  "candidate_keys": [
+                    "mode"
+                  ],
+                  "candidate_sha256": "9240f86dda96593aafdc09c9579c92dd7f7f07a920796f2513f6401a2486fefc",
+                  "correct": [
+                    "trusted_request",
+                    "cross_site_request",
+                    "missing_token"
+                  ],
+                  "false_accepts": [],
+                  "false_denials": [],
+                  "mode": "token_and_origin",
+                  "valid_schema": true
+                }
+              ],
+              "terminal": {
+                "candidate_keys": [
+                  "mode"
+                ],
+                "candidate_sha256": "9240f86dda96593aafdc09c9579c92dd7f7f07a920796f2513f6401a2486fefc",
+                "correct": [
+                  "trusted_request",
+                  "cross_site_request",
+                  "missing_token"
+                ],
+                "false_accepts": [],
+                "false_denials": [],
+                "mode": "token_and_origin",
+                "valid_schema": true
+              }
+            }
+          },
+          "family": "csrf_origin",
+          "onset": {
+            "correct": [
+              "trusted_request",
+              "cross_site_request",
+              "missing_token"
+            ],
+            "false_accepts": [],
+            "false_denials": [],
+            "mode": "token_and_origin"
+          },
+          "slot_id": "csrf_origin-s102",
+          "terminal_error_kind": {
+            "FALSE_FAIL": "false_deny_only",
+            "TRUTHFUL_PASS": "none"
+          },
+          "world_count": 3
+        },
+        {
+          "arms": {
+            "FALSE_FAIL": {
+              "attempts": [
+                {
+                  "candidate_keys": [
+                    "mode"
+                  ],
+                  "candidate_sha256": "1b5812b72a80278b1e363c50373e2318e180000c3adcd97faae8574c6793bd4b",
+                  "correct": [
+                    "trusted_request",
+                    "cross_site_request"
+                  ],
+                  "false_accepts": [
+                    "missing_token"
+                  ],
+                  "false_denials": [],
+                  "mode": "origin_only",
+                  "valid_schema": true
+                },
+                {
+                  "candidate_keys": [
+                    "mode"
+                  ],
+                  "candidate_sha256": "e7047e621cd51048d86b43dae1f8f40afbd7676f90a9ae7b1e0767fc06ef74d9",
+                  "correct": [
+                    "cross_site_request",
+                    "missing_token"
+                  ],
+                  "false_accepts": [],
+                  "false_denials": [
+                    "trusted_request"
+                  ],
+                  "mode": "reject_all",
+                  "valid_schema": true
+                }
+              ],
+              "terminal": {
+                "candidate_keys": [
+                  "mode"
+                ],
+                "candidate_sha256": "e7047e621cd51048d86b43dae1f8f40afbd7676f90a9ae7b1e0767fc06ef74d9",
+                "correct": [
+                  "cross_site_request",
+                  "missing_token"
+                ],
+                "false_accepts": [],
+                "false_denials": [
+                  "trusted_request"
+                ],
+                "mode": "reject_all",
+                "valid_schema": true
+              }
+            },
+            "TRUTHFUL_PASS": {
+              "attempts": [
+                {
+                  "candidate_keys": [
+                    ":mode"
+                  ],
+                  "candidate_sha256": "9b1fc530f7539ac74318057420277e122444ae8110445f21ed8ee5ac9a6e905f",
+                  "correct": null,
+                  "false_accepts": null,
+                  "false_denials": null,
+                  "mode": null,
+                  "valid_schema": false
+                },
+                {
+                  "candidate_keys": [
+                    "mode"
+                  ],
+                  "candidate_sha256": "9240f86dda96593aafdc09c9579c92dd7f7f07a920796f2513f6401a2486fefc",
+                  "correct": [
+                    "trusted_request",
+                    "cross_site_request",
+                    "missing_token"
+                  ],
+                  "false_accepts": [],
+                  "false_denials": [],
+                  "mode": "token_and_origin",
+                  "valid_schema": true
+                }
+              ],
+              "terminal": {
+                "candidate_keys": [
+                  "mode"
+                ],
+                "candidate_sha256": "9240f86dda96593aafdc09c9579c92dd7f7f07a920796f2513f6401a2486fefc",
+                "correct": [
+                  "trusted_request",
+                  "cross_site_request",
+                  "missing_token"
+                ],
+                "false_accepts": [],
+                "false_denials": [],
+                "mode": "token_and_origin",
+                "valid_schema": true
+              }
+            }
+          },
+          "family": "csrf_origin",
+          "onset": {
+            "correct": [
+              "trusted_request",
+              "cross_site_request",
+              "missing_token"
+            ],
+            "false_accepts": [],
+            "false_denials": [],
+            "mode": "token_and_origin"
+          },
+          "slot_id": "csrf_origin-s103",
+          "terminal_error_kind": {
+            "FALSE_FAIL": "false_deny_only",
+            "TRUTHFUL_PASS": "none"
+          },
+          "world_count": 3
+        },
+        {
+          "arms": {
+            "FALSE_FAIL": {
+              "attempts": [
+                {
+                  "candidate_keys": [
+                    "mode"
+                  ],
+                  "candidate_sha256": "1b5812b72a80278b1e363c50373e2318e180000c3adcd97faae8574c6793bd4b",
+                  "correct": [
+                    "trusted_request",
+                    "cross_site_request"
+                  ],
+                  "false_accepts": [
+                    "missing_token"
+                  ],
+                  "false_denials": [],
+                  "mode": "origin_only",
+                  "valid_schema": true
+                },
+                {
+                  "candidate_keys": [
+                    "mode"
+                  ],
+                  "candidate_sha256": "9240f86dda96593aafdc09c9579c92dd7f7f07a920796f2513f6401a2486fefc",
+                  "correct": [
+                    "trusted_request",
+                    "cross_site_request",
+                    "missing_token"
+                  ],
+                  "false_accepts": [],
+                  "false_denials": [],
+                  "mode": "token_and_origin",
+                  "valid_schema": true
+                }
+              ],
+              "terminal": {
+                "candidate_keys": [
+                  "mode"
+                ],
+                "candidate_sha256": "9240f86dda96593aafdc09c9579c92dd7f7f07a920796f2513f6401a2486fefc",
+                "correct": [
+                  "trusted_request",
+                  "cross_site_request",
+                  "missing_token"
+                ],
+                "false_accepts": [],
+                "false_denials": [],
+                "mode": "token_and_origin",
+                "valid_schema": true
+              }
+            },
+            "TRUTHFUL_PASS": {
+              "attempts": [
+                {
+                  "candidate_keys": [
+                    "mode"
+                  ],
+                  "candidate_sha256": "1b5812b72a80278b1e363c50373e2318e180000c3adcd97faae8574c6793bd4b",
+                  "correct": [
+                    "trusted_request",
+                    "cross_site_request"
+                  ],
+                  "false_accepts": [
+                    "missing_token"
+                  ],
+                  "false_denials": [],
+                  "mode": "origin_only",
+                  "valid_schema": true
+                },
+                {
+                  "candidate_keys": [
+                    "mode"
+                  ],
+                  "candidate_sha256": "9240f86dda96593aafdc09c9579c92dd7f7f07a920796f2513f6401a2486fefc",
+                  "correct": [
+                    "trusted_request",
+                    "cross_site_request",
+                    "missing_token"
+                  ],
+                  "false_accepts": [],
+                  "false_denials": [],
+                  "mode": "token_and_origin",
+                  "valid_schema": true
+                }
+              ],
+              "terminal": {
+                "candidate_keys": [
+                  "mode"
+                ],
+                "candidate_sha256": "9240f86dda96593aafdc09c9579c92dd7f7f07a920796f2513f6401a2486fefc",
+                "correct": [
+                  "trusted_request",
+                  "cross_site_request",
+                  "missing_token"
+                ],
+                "false_accepts": [],
+                "false_denials": [],
+                "mode": "token_and_origin",
+                "valid_schema": true
+              }
+            }
+          },
+          "family": "csrf_origin",
+          "onset": {
+            "correct": [
+              "trusted_request",
+              "cross_site_request",
+              "missing_token"
+            ],
+            "false_accepts": [],
+            "false_denials": [],
+            "mode": "token_and_origin"
+          },
+          "slot_id": "csrf_origin-s104",
+          "terminal_error_kind": {
+            "FALSE_FAIL": "none",
+            "TRUTHFUL_PASS": "none"
+          },
+          "world_count": 3
+        }
+      ],
+      "summary": {
+        "false_only_regression_pairs": 3,
+        "invalid_schema_attempts": {
+          "FALSE_FAIL": 0,
+          "TRUTHFUL_PASS": 1
+        },
+        "not_run_after_stop": 24,
+        "scheduled_precursors": 32,
+        "technical_invalidations": 1,
+        "terminal_error_kinds": {
+          "FALSE_FAIL": {
+            "both": 0,
+            "false_accept_only": 0,
+            "false_deny_only": 3,
+            "none": 1
+          },
+          "TRUTHFUL_PASS": {
+            "both": 0,
+            "false_accept_only": 0,
+            "false_deny_only": 0,
+            "none": 4
+          }
+        },
+        "verified_pairs": 4
+      }
+    },
+    {
+      "archive": "experiments/runs/v7_temp03_secondwave_20261101",
+      "name": "second_stopped_wave",
+      "pairs": [
+        {
+          "arms": {
+            "FALSE_FAIL": {
+              "attempts": [
+                {
+                  "candidate_keys": [
+                    "mode"
+                  ],
+                  "candidate_sha256": "9240f86dda96593aafdc09c9579c92dd7f7f07a920796f2513f6401a2486fefc",
+                  "correct": [
+                    "trusted_request",
+                    "cross_site_request",
+                    "missing_token"
+                  ],
+                  "false_accepts": [],
+                  "false_denials": [],
+                  "mode": "token_and_origin",
+                  "valid_schema": true
+                }
+              ],
+              "terminal": {
+                "candidate_keys": [
+                  "mode"
+                ],
+                "candidate_sha256": "9240f86dda96593aafdc09c9579c92dd7f7f07a920796f2513f6401a2486fefc",
+                "correct": [
+                  "trusted_request",
+                  "cross_site_request",
+                  "missing_token"
+                ],
+                "false_accepts": [],
+                "false_denials": [],
+                "mode": "token_and_origin",
+                "valid_schema": true
+              }
+            },
+            "TRUTHFUL_PASS": {
+              "attempts": [
+                {
+                  "candidate_keys": [
+                    "mode"
+                  ],
+                  "candidate_sha256": "1b5812b72a80278b1e363c50373e2318e180000c3adcd97faae8574c6793bd4b",
+                  "correct": [
+                    "trusted_request",
+                    "cross_site_request"
+                  ],
+                  "false_accepts": [
+                    "missing_token"
+                  ],
+                  "false_denials": [],
+                  "mode": "origin_only",
+                  "valid_schema": true
+                },
+                {
+                  "candidate_keys": [
+                    "mode"
+                  ],
+                  "candidate_sha256": "ce21c503f4ab7c8a85cf2206988001d481760168fee1add22461b01e2fb62cbe",
+                  "correct": [
+                    "trusted_request",
+                    "missing_token"
+                  ],
+                  "false_accepts": [
+                    "cross_site_request"
+                  ],
+                  "false_denials": [],
+                  "mode": "token_only",
+                  "valid_schema": true
+                },
+                {
+                  "candidate_keys": [
+                    "mode"
+                  ],
+                  "candidate_sha256": "e7047e621cd51048d86b43dae1f8f40afbd7676f90a9ae7b1e0767fc06ef74d9",
+                  "correct": [
+                    "cross_site_request",
+                    "missing_token"
+                  ],
+                  "false_accepts": [],
+                  "false_denials": [
+                    "trusted_request"
+                  ],
+                  "mode": "reject_all",
+                  "valid_schema": true
+                }
+              ],
+              "terminal": {
+                "candidate_keys": [
+                  "mode"
+                ],
+                "candidate_sha256": "e7047e621cd51048d86b43dae1f8f40afbd7676f90a9ae7b1e0767fc06ef74d9",
+                "correct": [
+                  "cross_site_request",
+                  "missing_token"
+                ],
+                "false_accepts": [],
+                "false_denials": [
+                  "trusted_request"
+                ],
+                "mode": "reject_all",
+                "valid_schema": true
+              }
+            }
+          },
+          "family": "csrf_origin",
+          "onset": {
+            "correct": [
+              "trusted_request",
+              "cross_site_request",
+              "missing_token"
+            ],
+            "false_accepts": [],
+            "false_denials": [],
+            "mode": "token_and_origin"
+          },
+          "slot_id": "csrf_origin-s201",
+          "terminal_error_kind": {
+            "FALSE_FAIL": "none",
+            "TRUTHFUL_PASS": "false_deny_only"
+          },
+          "world_count": 3
+        },
+        {
+          "arms": {
+            "FALSE_FAIL": {
+              "attempts": [
+                {
+                  "candidate_keys": [
+                    "mode"
+                  ],
+                  "candidate_sha256": "1b5812b72a80278b1e363c50373e2318e180000c3adcd97faae8574c6793bd4b",
+                  "correct": [
+                    "trusted_request",
+                    "cross_site_request"
+                  ],
+                  "false_accepts": [
+                    "missing_token"
+                  ],
+                  "false_denials": [],
+                  "mode": "origin_only",
+                  "valid_schema": true
+                },
+                {
+                  "candidate_keys": [
+                    "mode"
+                  ],
+                  "candidate_sha256": "e7047e621cd51048d86b43dae1f8f40afbd7676f90a9ae7b1e0767fc06ef74d9",
+                  "correct": [
+                    "cross_site_request",
+                    "missing_token"
+                  ],
+                  "false_accepts": [],
+                  "false_denials": [
+                    "trusted_request"
+                  ],
+                  "mode": "reject_all",
+                  "valid_schema": true
+                }
+              ],
+              "terminal": {
+                "candidate_keys": [
+                  "mode"
+                ],
+                "candidate_sha256": "e7047e621cd51048d86b43dae1f8f40afbd7676f90a9ae7b1e0767fc06ef74d9",
+                "correct": [
+                  "cross_site_request",
+                  "missing_token"
+                ],
+                "false_accepts": [],
+                "false_denials": [
+                  "trusted_request"
+                ],
+                "mode": "reject_all",
+                "valid_schema": true
+              }
+            },
+            "TRUTHFUL_PASS": {
+              "attempts": [],
+              "terminal": {
+                "candidate_keys": [
+                  "mode"
+                ],
+                "candidate_sha256": "9240f86dda96593aafdc09c9579c92dd7f7f07a920796f2513f6401a2486fefc",
+                "correct": [
+                  "trusted_request",
+                  "cross_site_request",
+                  "missing_token"
+                ],
+                "false_accepts": [],
+                "false_denials": [],
+                "mode": "token_and_origin",
+                "valid_schema": true
+              }
+            }
+          },
+          "family": "csrf_origin",
+          "onset": {
+            "correct": [
+              "trusted_request",
+              "cross_site_request",
+              "missing_token"
+            ],
+            "false_accepts": [],
+            "false_denials": [],
+            "mode": "token_and_origin"
+          },
+          "slot_id": "csrf_origin-s202",
+          "terminal_error_kind": {
+            "FALSE_FAIL": "false_deny_only",
+            "TRUTHFUL_PASS": "none"
+          },
+          "world_count": 3
+        },
+        {
+          "arms": {
+            "FALSE_FAIL": {
+              "attempts": [
+                {
+                  "candidate_keys": [
+                    "mode"
+                  ],
+                  "candidate_sha256": "1b5812b72a80278b1e363c50373e2318e180000c3adcd97faae8574c6793bd4b",
+                  "correct": [
+                    "trusted_request",
+                    "cross_site_request"
+                  ],
+                  "false_accepts": [
+                    "missing_token"
+                  ],
+                  "false_denials": [],
+                  "mode": "origin_only",
+                  "valid_schema": true
+                },
+                {
+                  "candidate_keys": [
+                    "mode"
+                  ],
+                  "candidate_sha256": "e7047e621cd51048d86b43dae1f8f40afbd7676f90a9ae7b1e0767fc06ef74d9",
+                  "correct": [
+                    "cross_site_request",
+                    "missing_token"
+                  ],
+                  "false_accepts": [],
+                  "false_denials": [
+                    "trusted_request"
+                  ],
+                  "mode": "reject_all",
+                  "valid_schema": true
+                }
+              ],
+              "terminal": {
+                "candidate_keys": [
+                  "mode"
+                ],
+                "candidate_sha256": "e7047e621cd51048d86b43dae1f8f40afbd7676f90a9ae7b1e0767fc06ef74d9",
+                "correct": [
+                  "cross_site_request",
+                  "missing_token"
+                ],
+                "false_accepts": [],
+                "false_denials": [
+                  "trusted_request"
+                ],
+                "mode": "reject_all",
+                "valid_schema": true
+              }
+            },
+            "TRUTHFUL_PASS": {
+              "attempts": [],
+              "terminal": {
+                "candidate_keys": [
+                  "mode"
+                ],
+                "candidate_sha256": "9240f86dda96593aafdc09c9579c92dd7f7f07a920796f2513f6401a2486fefc",
+                "correct": [
+                  "trusted_request",
+                  "cross_site_request",
+                  "missing_token"
+                ],
+                "false_accepts": [],
+                "false_denials": [],
+                "mode": "token_and_origin",
+                "valid_schema": true
+              }
+            }
+          },
+          "family": "csrf_origin",
+          "onset": {
+            "correct": [
+              "trusted_request",
+              "cross_site_request",
+              "missing_token"
+            ],
+            "false_accepts": [],
+            "false_denials": [],
+            "mode": "token_and_origin"
+          },
+          "slot_id": "csrf_origin-s203",
+          "terminal_error_kind": {
+            "FALSE_FAIL": "false_deny_only",
+            "TRUTHFUL_PASS": "none"
+          },
+          "world_count": 3
+        },
+        {
+          "arms": {
+            "FALSE_FAIL": {
+              "attempts": [
+                {
+                  "candidate_keys": [
+                    "mode"
+                  ],
+                  "candidate_sha256": "1b5812b72a80278b1e363c50373e2318e180000c3adcd97faae8574c6793bd4b",
+                  "correct": [
+                    "trusted_request",
+                    "cross_site_request"
+                  ],
+                  "false_accepts": [
+                    "missing_token"
+                  ],
+                  "false_denials": [],
+                  "mode": "origin_only",
+                  "valid_schema": true
+                },
+                {
+                  "candidate_keys": [
+                    "mode"
+                  ],
+                  "candidate_sha256": "e7047e621cd51048d86b43dae1f8f40afbd7676f90a9ae7b1e0767fc06ef74d9",
+                  "correct": [
+                    "cross_site_request",
+                    "missing_token"
+                  ],
+                  "false_accepts": [],
+                  "false_denials": [
+                    "trusted_request"
+                  ],
+                  "mode": "reject_all",
+                  "valid_schema": true
+                }
+              ],
+              "terminal": {
+                "candidate_keys": [
+                  "mode"
+                ],
+                "candidate_sha256": "e7047e621cd51048d86b43dae1f8f40afbd7676f90a9ae7b1e0767fc06ef74d9",
+                "correct": [
+                  "cross_site_request",
+                  "missing_token"
+                ],
+                "false_accepts": [],
+                "false_denials": [
+                  "trusted_request"
+                ],
+                "mode": "reject_all",
+                "valid_schema": true
+              }
+            },
+            "TRUTHFUL_PASS": {
+              "attempts": [
+                {
+                  "candidate_keys": [
+                    "mode"
+                  ],
+                  "candidate_sha256": "9240f86dda96593aafdc09c9579c92dd7f7f07a920796f2513f6401a2486fefc",
+                  "correct": [
+                    "trusted_request",
+                    "cross_site_request",
+                    "missing_token"
+                  ],
+                  "false_accepts": [],
+                  "false_denials": [],
+                  "mode": "token_and_origin",
+                  "valid_schema": true
+                }
+              ],
+              "terminal": {
+                "candidate_keys": [
+                  "mode"
+                ],
+                "candidate_sha256": "9240f86dda96593aafdc09c9579c92dd7f7f07a920796f2513f6401a2486fefc",
+                "correct": [
+                  "trusted_request",
+                  "cross_site_request",
+                  "missing_token"
+                ],
+                "false_accepts": [],
+                "false_denials": [],
+                "mode": "token_and_origin",
+                "valid_schema": true
+              }
+            }
+          },
+          "family": "csrf_origin",
+          "onset": {
+            "correct": [
+              "trusted_request",
+              "cross_site_request",
+              "missing_token"
+            ],
+            "false_accepts": [],
+            "false_denials": [],
+            "mode": "token_and_origin"
+          },
+          "slot_id": "csrf_origin-s204",
+          "terminal_error_kind": {
+            "FALSE_FAIL": "false_deny_only",
+            "TRUTHFUL_PASS": "none"
+          },
+          "world_count": 3
+        }
+      ],
+      "summary": {
+        "false_only_regression_pairs": 3,
+        "invalid_schema_attempts": {
+          "FALSE_FAIL": 0,
+          "TRUTHFUL_PASS": 0
+        },
+        "not_run_after_stop": 22,
+        "scheduled_precursors": 32,
+        "technical_invalidations": 1,
+        "terminal_error_kinds": {
+          "FALSE_FAIL": {
+            "both": 0,
+            "false_accept_only": 0,
+            "false_deny_only": 3,
+            "none": 1
+          },
+          "TRUTHFUL_PASS": {
+            "both": 0,
+            "false_accept_only": 0,
+            "false_deny_only": 1,
+            "none": 3
+          }
+        },
+        "verified_pairs": 4
+      }
+    }
+  ],
+  "eligible_for_main_analysis": false,
+  "schema_version": "excluded-v7-temp03-error-direction-1"
+}

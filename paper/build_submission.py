@@ -113,6 +113,12 @@ def review_manuscript(markdown: str) -> str:
         "9ecd07a3d605cfd812a874835e9b945adc5d5145",
         "data revision withheld during anonymous review",
     )
+    review = review.replace(
+        "The public repository contains the saved archives for the cohorts discussed here, "
+        "including the temperature 0.3 and later six-slot waves.",
+        "A data revision withheld during anonymous review contains the saved archives "
+        "for the cohorts discussed here, including the temperature 0.3 and later six-slot waves.",
+    )
     if re.search(
         r"(?i)\b(?:imran|zakirov|iosifova|nuriya|kramich|anna)\b|"
         r"zakirovimran333@gmail\.com|"
