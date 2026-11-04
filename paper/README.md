@@ -33,6 +33,18 @@ python3 -B -m analysis.c5_paired_regression_recount_20261101 --check
 python3 -B -m analysis.c5_candidate_discordance_20261101 --check
 python3 -B -m analysis.fresh_matched_verdict_pilot_20261101 --check
 python3 -B -m analysis.v7_second_wave_20261101 --check
+python3 -B -m analysis.historical_matched_source_feedback_20261104 --check
+python3 -B -m analysis.historical_feedback_specificity_20261104 --check
+python3 -B -m analysis.logged_source_surrogate_ast_20261104 --check
+python3 -B -m analysis.c5_feedback_action_20261104 --check
+python3 -B -m analysis.c5_first_submission_parity_20261104 --check
+python3 -B -m analysis.v7_temp_variance_20261101 --check
+python3 -B -m analysis.v7_temp_variance_secondwave_20261101 --check
+python3 -B -m analysis.v7_temp03_error_direction_20261104 --check
+python3 -B -m analysis.v7_crossfamily_20261104 --check
+python3 -B -m analysis.v7_crossfamily_error_direction_20261104 --check
+python3 -B -m analysis.v7_feedback_replication_20261104 --check
+python3 -B -m analysis.v7_csrf_transition_direction_20261104 --check
 python3 -B -m unittest tests.test_paper_pipeline
 ```
 

@@ -12,11 +12,11 @@ separately. Do not infer their absence from a missing response.
 
 | Artifact | Current SHA-256 |
 | --- | --- |
-| [`final.md`](final.md) | `a02a0d862ed22779e88a35515b89e28da6d23656bd04320fc7ae177b79daead0` |
-| [Identified `full_paper.pdf`](submission/full_paper.pdf) | `5c65e62d9e812901afc015f01f6df905b56380f935d599d4311e50bed22537af` |
-| [Identified `full_paper.docx`](submission/full_paper.docx) | `49bcedfb35430503d4767e853fa4fdb04536c681632e6444f1350ba3ddac8e3e` |
-| [Anonymous `full_paper_anonymous.pdf`](submission/full_paper_anonymous.pdf) | `2af04da33b7f92778a4675672384251788eaa6d7629d8ae12f8fa3bc642a5c85` |
-| [Anonymous `full_paper_anonymous.docx`](submission/full_paper_anonymous.docx) | `1ba8bce4c41bd30220aaaf438644dbfa69cf1f236893f984f1725bee501130ba` |
+| [`final.md`](final.md) | `a9c5bb20fa8cc37cf2e46d0fe431f78d78d5667f23d7e685f6bde7d28543fc99` |
+| [Identified `full_paper.pdf`](submission/full_paper.pdf) | `01f77b996ae004f00bf10dc6f89d1555c5701f22ff01b4977fdfd48b40b8ea88` |
+| [Identified `full_paper.docx`](submission/full_paper.docx) | `fd68111efad60672fba040dc2b6fb4ecade909a42c2d2d887e083c6dc7cc179a` |
+| [Anonymous `full_paper_anonymous.pdf`](submission/full_paper_anonymous.pdf) | `52bb7d0f1941188a66a222c3931c940a99bf013971bffcb57e755c9184a7121f` |
+| [Anonymous `full_paper_anonymous.docx`](submission/full_paper_anonymous.docx) | `a668ab3c83a03520a8aa72148bf70612a945f3b44ce3c884100cbf93ca08112c` |
 | [`results.json`](artifacts/results.json) | `3d7ef25bfa07ef25ae20cea8d6ee34b59c5d9158e20c2e9b7013bfbd5a3cb229` |
 | [Working author-year conversion](venue_author_year_draft.md) | `d56b469d919986c7da430c7d003121776e37c86b06bdac5f7f69f480011791dd` |
 | [Author-year `venue_author_year_identified.pdf`](submission/venue_author_year_identified.pdf) | `eebb1832db3bc60ebfd342e31483982909c1aac17729abb9a4f48f4a17c0e1b8` |

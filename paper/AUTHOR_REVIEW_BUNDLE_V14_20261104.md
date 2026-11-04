@@ -9,8 +9,8 @@ records the archive and internal manifest digests.
 
 | Artifact | SHA-256 |
 | --- | --- |
-| v14 archive (3,264,696 bytes) | `921db9f1b8bf824cdfe754bf04f2ab01c989b2651776bed496911d76c862d2ee` |
-| Internal source-hash manifest | `c18f5147cc4d60795297e1d47ac4f64dd50b2f3d9790aa7c664af0af59aec2c8` |
+| v14 archive (3,262,586 bytes) | `8f260229e2b0732be1147ea67b8edeb112ac04a47cbca952f7e398b3684e580c` |
+| Internal source-hash manifest | `cc5287127b1860623ed043b35311e1026f5411677a3ef8f38d987f843fb59f9f` |
 
 Compared with [v13](AUTHOR_REVIEW_BUNDLE_V13_20261104.md), this version
 binds the revised paper and 18 additional **derived** reports/JSON recounts:
