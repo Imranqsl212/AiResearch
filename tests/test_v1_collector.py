@@ -209,6 +209,30 @@ class V1CollectorTests(unittest.TestCase):
         self.assertEqual(stop["remaining_action_budget"], 6)
         self.assertFalse(stop["evidence_exposed"])
 
+    def test_terminate_tool_stops_without_another_adapter_decision(self) -> None:
+        class CountingAdapter(ScriptedFixtureAdapter):
+            def __init__(self):
+                super().__init__((ToolCall("terminate", {}),),
+                                 AgentFinalResponse("non_success", "Fixture stopped."))
+                self.execute_count = 0
+
+            def execute(self):
+                self.execute_count += 1
+                return super().execute()
+
+        adapter = CountingAdapter()
+        result = self.collect("C4", adapter)
+        loaded = _load(result)
+        self.assertEqual(adapter.execute_count, 1)
+        self.assertEqual(result["stop_reason"], "VOLUNTARY")
+        self.assertEqual([event["event_type"] for event in loaded["events"]],
+                         ["TASK_START", "ACTION", "STOP"])
+        terminate = loaded["events"][1]
+        self.assertEqual(terminate["action_type"], "TERMINATE")
+        self.assertEqual(terminate["public_observation"]["outcome"], "STOP_REQUESTED")
+        self.assertEqual(terminate["per_action_check"]["reason"], "TERMINATE_NO_CHECK")
+        self.assertEqual(loaded["events"][-1]["stop_reason"], "VOLUNTARY")
+
     def test_c5_separates_raw_oracle_and_gate(self) -> None:
         _, proof_path = _task_paths("C5")
         candidate = json.loads(proof_path.read_text())["satisfying_candidates"][0]
