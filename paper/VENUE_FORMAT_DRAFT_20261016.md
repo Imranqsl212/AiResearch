@@ -17,7 +17,7 @@ The command produces these four separate draft files in `paper/submission/`:
 - `venue_author_year_identified.pdf` and `.docx`
 - `venue_author_year_anonymous.pdf` and `.docx`
 
-The identified and anonymous PDFs each have 19 pages, within the 20-page ceiling. The renderer uses 12 pt
+The identified and anonymous PDFs each have 20 pages, within the 20-page ceiling. The renderer uses 12 pt
 body text and single line spacing. The anonymous PDF/DOCX passed checks for
 known author identifiers in text and metadata; the identified files carry the
 author metadata. `paper/final.md` and the canonical `full_paper` outputs are

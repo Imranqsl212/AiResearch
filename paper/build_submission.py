@@ -56,7 +56,7 @@ ORANGE = "#C36E39"
 GRAY = "#687786"
 LIGHT = "#E9EFF3"
 INK = "#17212B"
-AUTHOR = "Imran Zakirov"
+AUTHOR = "Imran Zakirov; Iosifova Nuriya; Kramich Anna"
 PAGE_LIMIT = 20
 BODY_POINT_SIZE = 12
 
@@ -109,9 +109,16 @@ def review_manuscript(markdown: str) -> str:
         "The earlier public data revision `37074c198237ade67eb76921333b2835d329c863`",
         "A source revision withheld during anonymous review",
     )
+    review = review.replace(
+        "9ecd07a3d605cfd812a874835e9b945adc5d5145",
+        "data revision withheld during anonymous review",
+    )
     if re.search(
-        r"(?i)\b(?:imran|zakirov)\b|zakirovimran333@gmail\.com|"
-        r"37074c198237ade67eb76921333b2835d329c863|github\.com/Imranqsl212",
+        r"(?i)\b(?:imran|zakirov|iosifova|nuriya|kramich|anna)\b|"
+        r"zakirovimran333@gmail\.com|"
+        r"37074c198237ade67eb76921333b2835d329c863|"
+        r"9ecd07a3d605cfd812a874835e9b945adc5d5145|"
+        r"github\.com/Imranqsl212",
         review,
     ):
         raise ValueError("anonymized manuscript still contains a known author identifier")
@@ -543,9 +550,10 @@ def verify_anonymous_artifacts(pdf_path: Path, docx_path: Path) -> None:
             archive.read(name).decode("utf-8", errors="replace")
             for name in archive.namelist() if name.endswith((".xml", ".rels"))
         )
-    identity = re.compile(r"(?i)\b(?:imran|zakirov|bishkek)\b|zakirovimran333@gmail\.com|"
+    identity = re.compile(r"(?i)\b(?:imran|zakirov|iosifova|nuriya|kramich|anna|bishkek)\b|zakirovimran333@gmail\.com|"
                           r"98a4dcf414672c1725e4acdb9f08045370aa7f64|"
                           r"37074c198237ade67eb76921333b2835d329c863|"
+                          r"9ecd07a3d605cfd812a874835e9b945adc5d5145|"
                           r"github\.com/Imranqsl212")
     for label, content in (("PDF text", pdf_text), ("PDF metadata", pdf_properties),
                            ("DOCX XML and metadata", docx_xml)):

@@ -148,19 +148,20 @@ journal source revision has yet been pinned.
 
 ## What a submitting author must supply or decide
 
-1. Confirm sole authorship and contribution wording. Imran Zakirov provided
-   Bishkek, Kyrgyzstan, no institutional affiliation, and the contact email
-   shown on the identified title page. The author will clarify funding,
-   conflicts, acknowledgments, and other declarations separately; the draft
-   discloses Codex assistance for author review. Do not infer missing entries.
+1. The user named Imran Zakirov, Iosifova Nuriya, and Kramich Anna as coauthors.
+   Confirm each person's direct approval, contribution wording, affiliation,
+   and corresponding author before submission. Imran provided Bishkek,
+   Kyrgyzstan, no institutional affiliation, and the contact email on the
+   identified title page. Funding, conflicts, acknowledgments, and other
+   declarations remain pending; the draft discloses Codex assistance.
 2. Select a specific journal or conference article type using the
    [venue shortlist](VENUE_SHORTLIST_20261005.md) as a starting point. Apply its length,
    reference, figure, data-availability, ethics, anonymization, and preprint rules.
    The PDF/DOCX are review copies, not a journal template or an actual submission.
-3. The public GitHub data revision `37074c198237ade67eb76921333b2835d329c863`
-   contains the raw trajectories and archives chosen by the author for publication.
-   Record it in the journal data-availability statement and verify inputs from
-   that revision in a fresh checkout. The tracked original bytes expose local paths;
+3. Public GitHub data revision `9ecd07a3d605cfd812a874835e9b945adc5d5145`
+   contains the archived cohorts discussed in the current draft. The new 4 November
+   read-only audits and revised manuscript require a later exact release revision.
+   Verify inputs from that revision in a fresh checkout. The tracked original bytes expose local paths;
    the sanitized candidate recomputes path-independent paper tables, and a
    separate local audit verified its byte link to the original. Any separate
    journal deposit still needs privacy review and an accurate description of

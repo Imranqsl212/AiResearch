@@ -2,7 +2,7 @@
 
 The manuscript in [final.md](final.md) is an exploratory measurement audit with a separate, excluded corrected-oracle pilot, a post hoc older C5 candidate audit, and two sequential one-shot engineering waves. The identified files are [PDF](submission/full_paper.pdf) and [Word](submission/full_paper.docx). The anonymous peer-review files are [PDF](submission/full_paper_anonymous.pdf) and [Word](submission/full_paper_anonymous.docx). It contains six generated PNG figures in `figures/` and six tables. The pre empirical protocol manuscript is preserved in `archive/protocol_before_empirical_revision.md`.
 
-The current filtered [v11 author-review bundle](AUTHOR_REVIEW_BUNDLE_V11_20261101.md) binds the rendered manuscript and new derived pilot reports. Earlier bundles are dated snapshots and remain available for audit.
+The current filtered [v12 author-review bundle](AUTHOR_REVIEW_BUNDLE_V12_20261104.md) binds the rendered manuscript and selected derived audit reports. Earlier bundles are dated snapshots and remain available for audit.
 
 An [author–year venue-format draft](VENUE_FORMAT_DRAFT_20261016.md) has separate identified and anonymous PDF/DOCX files. It preserves the scientific text, figures, and tables while changing citation style; the numbered `final.md` remains the canonical author-review source until a journal and final declarations are approved.
 
@@ -78,8 +78,8 @@ sh reproduction/render_paper.sh
 
 This command regenerates the six figures and both identified and anonymous
 manuscript formats, including six tables, from `final.md`. The abstract has
-218 words excluding keywords. The current A4 PDFs have 19 identified pages
-and 19 anonymous pages. The anonymous renderer removes the author,
+210 words excluding keywords. The current A4 PDFs have 20 identified pages
+and 20 anonymous pages. The anonymous renderer removes the author,
 affiliation, and correspondence lines, replaces the acknowledgment body with a
 neutral peer-review notice, withholds the source and public data commits, and clears author
 metadata from the PDF and Word files. It checks rendered content and document

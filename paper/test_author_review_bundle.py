@@ -16,27 +16,34 @@ from paper import build_author_review_bundle as bundle
 
 
 class AuthorReviewBundleTests(unittest.TestCase):
-    def test_v12_is_opt_in_and_requires_the_excluded_variance_report(self) -> None:
+    def test_v12_is_opt_in_and_binds_current_derived_audits(self) -> None:
         self.assertEqual(bundle.OUTPUT, bundle.V11_OUTPUT)
         self.assertEqual(bundle.VERSION, bundle.V11_VERSION)
         self.assertEqual(bundle.SOURCE_NAMES, bundle.V11_SOURCE_NAMES)
         self.assertEqual(bundle.BUILD_TARGETS["v12"], (bundle.V12_OUTPUT, bundle.V12_SPEC))
-        self.assertEqual(set(bundle.V12_SOURCE_NAMES) - set(bundle.V11_SOURCE_NAMES), {
+        new_sources = {
             "analysis/V7_TEMP_VARIANCE_20261101.md",
             "analysis/v7_temp_variance_20261101.json",
-        })
+            "analysis/V7_TEMP_VARIANCE_SECONDWAVE_20261101.md",
+            "analysis/v7_temp_variance_secondwave_20261101.json",
+            "analysis/HISTORICAL_MATCHED_SOURCE_FEEDBACK_20261104.md",
+            "analysis/historical_matched_source_feedback_20261104.json",
+            "analysis/C5_FEEDBACK_ACTION_20261104.md",
+            "analysis/c5_feedback_action_20261104.json",
+            "analysis/figures/v7_temp03_pair_outcomes_20261101.png",
+        }
+        self.assertEqual(set(bundle.V12_SOURCE_NAMES) - set(bundle.V11_SOURCE_NAMES),
+                         new_sources)
         self.assertEqual(bundle.V12_SOURCE_NAMES[:len(bundle.V11_SOURCE_NAMES)],
                          bundle.V11_SOURCE_NAMES)
         self.assertEqual(bundle.SPECS_BY_VERSION[bundle.V12_VERSION], bundle.V12_SPEC)
         self.assertEqual(set(bundle._decision_bound_names(bundle.V12_SPEC)) -
-                         set(bundle._decision_bound_names(bundle.V11_SPEC)), {
-            "analysis/V7_TEMP_VARIANCE_20261101.md",
-            "analysis/v7_temp_variance_20261101.json",
-        })
+                         set(bundle._decision_bound_names(bundle.V11_SPEC)), new_sources)
         flags = bundle._release_flags(bundle.V12_SPEC)
         self.assertFalse(flags["journal_supplement_approved"])
         self.assertEqual(flags["git_visibility"], "not-attested-by-bundle")
-        self.assertIsNone(flags["related_data_public_git_revision"])
+        self.assertEqual(flags["related_data_public_git_revision"],
+                         "9ecd07a3d605cfd812a874835e9b945adc5d5145")
         self.assertEqual(flags["historical_data_public_git_revision"],
                          bundle.PUBLIC_DATA_REVISION)
         self.assertIn("REVIEW_ONLY", bundle.V12_README)

@@ -121,6 +121,13 @@ V11_SOURCE_NAMES = V10_SOURCE_NAMES + (
 V12_SOURCE_NAMES = V11_SOURCE_NAMES + (
     "analysis/V7_TEMP_VARIANCE_20261101.md",
     "analysis/v7_temp_variance_20261101.json",
+    "analysis/V7_TEMP_VARIANCE_SECONDWAVE_20261101.md",
+    "analysis/v7_temp_variance_secondwave_20261101.json",
+    "analysis/HISTORICAL_MATCHED_SOURCE_FEEDBACK_20261104.md",
+    "analysis/historical_matched_source_feedback_20261104.json",
+    "analysis/C5_FEEDBACK_ACTION_20261104.md",
+    "analysis/c5_feedback_action_20261104.json",
+    "analysis/figures/v7_temp03_pair_outcomes_20261101.png",
 )
 SOURCE_NAMES = V11_SOURCE_NAMES
 FORBIDDEN_MARKERS = {
@@ -414,6 +421,11 @@ pilot. The temperature 0.3 pilot is excluded exploratory data with a
 different protocol; it is not pooled with the temperature-zero cohorts and
 does not support the main inference.
 
+This revision also includes the separately stopped second temperature 0.3
+wave, the matched-source historical feedback audit, the older C5 action
+audit, and their two-panel descriptive figure. Each report states its own
+denominator and missingness; the cohorts are not pooled.
+
 `SOURCE_HASH_MANIFEST.json` records each selected file's SHA-256 and byte
 count. Raw trajectories, original responses, candidate source, source
 snapshots, original archives, and the sanitized review candidate are not
@@ -421,8 +433,8 @@ inside this package. The derived reports require separately tracked raw
 archives and analysis code for independent replay; this package alone cannot
 reproduce their counts from raw traces.
 
-The recorded public Git revision belongs to an older historical data release.
-This bundle does not attest to Git visibility, a final source revision,
+The manifest identifies an earlier historical release and a later related-data
+review revision. This bundle does not attest to Git visibility, a final source revision,
 journal data route, privacy clearance, or author approval. The anonymous
 files remain review drafts; the identified decision form must not accompany
 an anonymous peer-review submission.
@@ -535,6 +547,13 @@ def _decision_bound_names(spec: BundleSpec) -> tuple[str, ...]:
         names += (
             "analysis/V7_TEMP_VARIANCE_20261101.md",
             "analysis/v7_temp_variance_20261101.json",
+            "analysis/V7_TEMP_VARIANCE_SECONDWAVE_20261101.md",
+            "analysis/v7_temp_variance_secondwave_20261101.json",
+            "analysis/HISTORICAL_MATCHED_SOURCE_FEEDBACK_20261104.md",
+            "analysis/historical_matched_source_feedback_20261104.json",
+            "analysis/C5_FEEDBACK_ACTION_20261104.md",
+            "analysis/c5_feedback_action_20261104.json",
+            "analysis/figures/v7_temp03_pair_outcomes_20261101.png",
         )
     return names
 
@@ -570,6 +589,13 @@ def _source_bytes(spec: BundleSpec = V11_SPEC) -> dict[str, bytes]:
 
 
 def _release_flags(spec: BundleSpec) -> dict[str, Any]:
+    if spec is V12_SPEC:
+        return {
+            "journal_supplement_approved": False,
+            "git_visibility": "not-attested-by-bundle",
+            "related_data_public_git_revision": "9ecd07a3d605cfd812a874835e9b945adc5d5145",
+            "historical_data_public_git_revision": PUBLIC_DATA_REVISION,
+        }
     if spec in (V11_SPEC, V12_SPEC):
         return {
             "journal_supplement_approved": False,

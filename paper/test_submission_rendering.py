@@ -20,11 +20,12 @@ class SubmissionRenderingTests(unittest.TestCase):
 
     def test_anonymous_text_keeps_science_and_required_sections(self) -> None:
         review = render.review_manuscript(self.manuscript)
-        self.assertNotRegex(review, r"(?i)imran|zakirov|bishkek|zakirovimran333@gmail\.com")
+        self.assertNotRegex(review, r"(?i)imran|zakirov|iosifova|nuriya|kramich|anna|bishkek|zakirovimran333@gmail\.com")
         self.assertNotIn("98a4dcf414672c1725e4acdb9f08045370aa7f64", review)
         self.assertNotIn("37074c198237ade67eb76921333b2835d329c863", review)
+        self.assertNotIn("9ecd07a3d605cfd812a874835e9b945adc5d5145", review)
         self.assertNotIn("github.com/Imranqsl212", review)
-        self.assertIn("A source revision withheld during anonymous review", review)
+        self.assertIn("data revision withheld during anonymous review", review)
         self.assertNotIn("Funding, conflicts of interest, contributions beyond", review)
         self.assertIn("Acknowledgments and author disclosures are withheld", review)
         for fact in ("16/20", "9/20", "40 main episodes", "21/45", "5/14", "7/14",
