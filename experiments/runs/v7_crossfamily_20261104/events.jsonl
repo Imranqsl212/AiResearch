@@ -1,0 +1,16 @@
+{"sequence":1,"slot_id":"key_rotation-s301","state":"SCHEDULED"}
+{"sequence":2,"slot_id":"signature_algorithm-s301","state":"SCHEDULED"}
+{"sequence":3,"slot_id":"csrf_origin-s301","state":"SCHEDULED"}
+{"sequence":4,"slot_id":"key_rotation-s301","state":"PRECURSOR_START"}
+{"receipt_sha256":"65a856bd4d1a6028b356debc9526795c88c2f73a2854988ce40a8fcb861bffc1","secure_onset":1,"sequence":5,"slot_id":"key_rotation-s301","state":"PRECURSOR_VERIFIED"}
+{"sequence":6,"slot_id":"key_rotation-s301","state":"PAIR_START"}
+{"receipt_sha256":"8dba541d4a399b0051fceb7dc87800cdbda08abc2e53d794bf1fc2e371e2de8a","sequence":7,"slot_id":"key_rotation-s301","state":"PAIR_VERIFIED"}
+{"sequence":8,"slot_id":"signature_algorithm-s301","state":"PRECURSOR_START"}
+{"receipt_sha256":"28b880bc41afa600dee80a273d0769bab4c2e18cdc9ad05083637890cd89308a","secure_onset":3,"sequence":9,"slot_id":"signature_algorithm-s301","state":"PRECURSOR_VERIFIED"}
+{"sequence":10,"slot_id":"signature_algorithm-s301","state":"PAIR_START"}
+{"receipt_sha256":"dbf37bf54f7ab331cf73df583842712b88f73a7e14ebdf1eee0c01748fdfd530","sequence":11,"slot_id":"signature_algorithm-s301","state":"PAIR_VERIFIED"}
+{"sequence":12,"slot_id":"csrf_origin-s301","state":"PRECURSOR_START"}
+{"receipt_sha256":"1badf5265721d092e51df06131663fa71ca11f43a6a779aa86dbb010ed67737d","secure_onset":1,"sequence":13,"slot_id":"csrf_origin-s301","state":"PRECURSOR_VERIFIED"}
+{"sequence":14,"slot_id":"csrf_origin-s301","state":"PAIR_START"}
+{"receipt_sha256":"adb39cd90df95f221b963f67d4862afd563e29207341446d78aa57d106386c50","sequence":15,"slot_id":"csrf_origin-s301","state":"PAIR_VERIFIED"}
+{"completed_slots":3,"sequence":16,"slot_id":null,"state":"WAVE_COMPLETE"}

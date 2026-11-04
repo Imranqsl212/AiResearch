@@ -8,6 +8,7 @@ This renderer never loads or executes candidate code or calls an agent.
 from __future__ import annotations
 
 import csv
+import hashlib
 import html
 import io
 import json
@@ -112,6 +113,12 @@ def review_manuscript(markdown: str) -> str:
     review = review.replace(
         "9ecd07a3d605cfd812a874835e9b945adc5d5145",
         "data revision withheld during anonymous review",
+    )
+    review = review.replace(
+        "The public repository contains the saved archives for the cohorts discussed here, "
+        "including the temperature 0.3 and later six-slot waves.",
+        "A data revision withheld during anonymous review contains the saved archives "
+        "for the cohorts discussed here, including the temperature 0.3 and later six-slot waves.",
     )
     if re.search(
         r"(?i)\b(?:imran|zakirov|iosifova|nuriya|kramich|anna)\b|"
@@ -372,15 +379,21 @@ def markdown_blocks(markdown: str):
 
 
 def make_pdf(markdown: str, destination: Path, *, author: str) -> int:
-    pdfmetrics.registerFont(TTFont("Body", str(FONT_REG)))
-    pdfmetrics.registerFont(TTFont("BodyBold", str(FONT_BOLD if FONT_BOLD.is_file() else FONT_REG)))
-    pdfmetrics.registerFontFamily("Body", normal="Body", bold="BodyBold", italic="Body", boldItalic="BodyBold")
+    # ReportLab's registry persists across calls in one process. Distinct names
+    # keep a fallback-font render from silently reusing an earlier host font.
+    font_key = hashlib.sha256(f"{FONT_REG}|{FONT_BOLD}".encode()).hexdigest()[:12]
+    body_font = f"Body_{font_key}"
+    bold_font = f"BodyBold_{font_key}"
+    pdfmetrics.registerFont(TTFont(body_font, str(FONT_REG)))
+    pdfmetrics.registerFont(TTFont(bold_font, str(FONT_BOLD if FONT_BOLD.is_file() else FONT_REG)))
+    pdfmetrics.registerFontFamily(body_font, normal=body_font, bold=bold_font,
+                                  italic=body_font, boldItalic=bold_font)
     styles = getSampleStyleSheet()
     width, _ = A4
-    body = ParagraphStyle("BodyX", parent=styles["Normal"], fontName="Body", fontSize=BODY_POINT_SIZE,
-                          leading=BODY_POINT_SIZE, spaceAfter=2, textColor=colors.HexColor(INK))
-    head1 = ParagraphStyle("H1X", parent=body, fontName="BodyBold", fontSize=BODY_POINT_SIZE,
-                           leading=BODY_POINT_SIZE, spaceBefore=5, spaceAfter=2, keepWithNext=True,
+    body = ParagraphStyle("BodyX", parent=styles["Normal"], fontName=body_font, fontSize=BODY_POINT_SIZE,
+                          leading=BODY_POINT_SIZE, spaceAfter=1, textColor=colors.HexColor(INK))
+    head1 = ParagraphStyle("H1X", parent=body, fontName=bold_font, fontSize=BODY_POINT_SIZE,
+                           leading=BODY_POINT_SIZE, spaceBefore=4, spaceAfter=2, keepWithNext=True,
                            textColor=colors.HexColor(NAVY))
     head2 = ParagraphStyle("H2X", parent=head1, spaceBefore=3)
     head3 = ParagraphStyle("H3X", parent=head2, leftIndent=10,
@@ -390,20 +403,23 @@ def make_pdf(markdown: str, destination: Path, *, author: str) -> int:
                              textColor=colors.HexColor(GRAY))
     table_caption = ParagraphStyle("TableCaptionX", parent=body, keepWithNext=True,
                                    spaceBefore=2, spaceAfter=2)
+    def pdf_inline(value: str) -> str:
+        return inline(value).replace('name="Body"', f'name="{body_font}"')
+
     story = []
     for kind, payload in markdown_blocks(markdown):
         if kind == "heading":
             depth, value = payload
             style = title if depth == 1 else head1 if depth == 2 else head2 if depth == 3 else head3
-            story.append(Paragraph(inline(value), style))
+            story.append(Paragraph(pdf_inline(value), style))
         elif kind == "paragraph":
-            story.append(Paragraph(inline(payload), table_caption if payload.startswith("**Table ") else body))
+            story.append(Paragraph(pdf_inline(payload), table_caption if payload.startswith("**Table ") else body))
         elif kind == "list":
-            story.append(Paragraph(inline(payload), ParagraphStyle("ListX", parent=body, leftIndent=16, firstLineIndent=-16)))
+            story.append(Paragraph(pdf_inline(payload), ParagraphStyle("ListX", parent=body, leftIndent=16, firstLineIndent=-16)))
         elif kind == "table":
             widths = [7.1 * inch / len(payload[0])] * len(payload[0])
             cell_style = ParagraphStyle("CellX", parent=body, spaceAfter=0)
-            cells = [[Paragraph(inline(cell), cell_style) for cell in row] for row in payload]
+            cells = [[Paragraph(pdf_inline(cell), cell_style) for cell in row] for row in payload]
             table = LongTable(cells, colWidths=widths, repeatRows=1, hAlign="LEFT")
             table.setStyle(TableStyle([
                 ("BACKGROUND", (0, 0), (-1, 0), colors.HexColor(LIGHT)),
@@ -427,13 +443,13 @@ def make_pdf(markdown: str, destination: Path, *, author: str) -> int:
                 raise FileNotFoundError(image_path)
             with Image.open(image_path) as im:
                 ratio = im.height / im.width
-            figure_width = 6.3 * inch
+            figure_width = 5.0 * inch
             story.append(PdfImage(str(image_path), width=figure_width, height=figure_width * ratio))
-            story.append(Paragraph(inline(figcaption), caption))
+            story.append(Paragraph(pdf_inline(figcaption), caption))
     title_match = re.search(r"^#\s+(.+)$", markdown, re.MULTILINE)
     if title_match is None:
         raise ValueError("manuscript title is missing")
-    margin = (0.42 if FALLBACK_FONT else 0.52) * inch
+    margin = (0.35 if FALLBACK_FONT else 0.52) * inch
     doc = SimpleDocTemplate(str(destination), pagesize=A4, rightMargin=margin,
                             leftMargin=margin, topMargin=margin, bottomMargin=margin,
                             title=title_match.group(1), author=author,
@@ -441,7 +457,7 @@ def make_pdf(markdown: str, destination: Path, *, author: str) -> int:
 
     def footer(canv, document):
         canv.saveState()
-        canv.setFont("Body", BODY_POINT_SIZE)
+        canv.setFont(body_font, BODY_POINT_SIZE)
         canv.setFillColor(colors.HexColor(GRAY))
         canv.drawString(0.52*inch, 0.3*inch, "Exploratory study")
         canv.drawRightString(width - 0.52*inch, 0.3*inch, f"{document.page}")

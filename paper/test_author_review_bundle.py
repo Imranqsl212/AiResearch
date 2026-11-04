@@ -16,17 +16,122 @@ from paper import build_author_review_bundle as bundle
 
 
 class AuthorReviewBundleTests(unittest.TestCase):
-    def test_v13_binds_current_render_and_v12_remains_a_snapshot(self) -> None:
+    def test_v19_binds_current_render_and_v18_remains_a_snapshot(self) -> None:
+        self.assertEqual(bundle.BUILD_TARGETS["v14"], (bundle.V14_OUTPUT, bundle.V14_SPEC))
+        self.assertEqual(bundle.BUILD_TARGETS["v15"], (bundle.V15_OUTPUT, bundle.V15_SPEC))
+        self.assertEqual(bundle.BUILD_TARGETS["v16"], (bundle.V16_OUTPUT, bundle.V16_SPEC))
+        self.assertEqual(bundle.BUILD_TARGETS["v17"], (bundle.V17_OUTPUT, bundle.V17_SPEC))
+        self.assertEqual(bundle.BUILD_TARGETS["v18"], (bundle.V18_OUTPUT, bundle.V18_SPEC))
+        self.assertEqual(bundle.BUILD_TARGETS["v19"], (bundle.V19_OUTPUT, bundle.V19_SPEC))
+        self.assertEqual(bundle.V14_SOURCE_NAMES[:len(bundle.V13_SOURCE_NAMES)],
+                         bundle.V13_SOURCE_NAMES)
+        self.assertEqual(set(bundle.V14_SOURCE_NAMES) - set(bundle.V13_SOURCE_NAMES),
+                         set(bundle.V14_NEW_DERIVED))
+        self.assertEqual(len(bundle.V14_NEW_DERIVED), 18)
+        self.assertEqual(set(bundle._decision_bound_names(bundle.V14_SPEC)) -
+                         set(bundle._decision_bound_names(bundle.V13_SPEC)),
+                         set(bundle.V14_NEW_DERIVED))
+        self.assertIn("six-slot", bundle.V14_README)
+        flags = bundle._release_flags(bundle.V14_SPEC)
+        self.assertFalse(flags["journal_supplement_approved"])
+        self.assertIsNone(flags["related_data_public_git_revision"])
+        previous = bundle.verify(archive=bundle.V14_OUTPUT, compare_sources=False)
+        self.assertEqual(previous["version"], bundle.V14_VERSION)
+        self.assertEqual(previous["archive_members"], 78)
+        self.assertEqual(previous["source_file_count"], 76)
+        self.assertIsNone(previous["local_sources_match"])
+
+        self.assertEqual(bundle.V15_SOURCE_NAMES[:len(bundle.V14_SOURCE_NAMES)],
+                         bundle.V14_SOURCE_NAMES)
+        self.assertEqual(set(bundle.V15_SOURCE_NAMES) - set(bundle.V14_SOURCE_NAMES),
+                         set(bundle.V15_NEW_DERIVED))
+        self.assertEqual(len(bundle.V15_NEW_DERIVED), 10)
+        self.assertEqual(set(bundle._decision_bound_names(bundle.V15_SPEC)) -
+                         set(bundle._decision_bound_names(bundle.V14_SPEC)),
+                         set(bundle.V15_NEW_DERIVED))
+        self.assertIn("no matched feedback arms opened", bundle.V15_README)
+        self.assertIsNone(bundle._release_flags(bundle.V15_SPEC)["related_data_public_git_revision"])
+        snapshot = bundle.verify(archive=bundle.V15_OUTPUT, compare_sources=False)
+        self.assertEqual(snapshot["version"], bundle.V15_VERSION)
+        self.assertEqual(snapshot["archive_members"], 88)
+        self.assertEqual(snapshot["source_file_count"], 86)
+        self.assertIsNone(snapshot["local_sources_match"])
+
+        self.assertEqual(bundle.V16_SOURCE_NAMES[:len(bundle.V15_SOURCE_NAMES)],
+                         bundle.V15_SOURCE_NAMES)
+        self.assertEqual(set(bundle.V16_SOURCE_NAMES) - set(bundle.V15_SOURCE_NAMES),
+                         set(bundle.V16_NEW_DERIVED))
+        self.assertEqual(len(bundle.V16_NEW_DERIVED), 3)
+        self.assertEqual(set(bundle._decision_bound_names(bundle.V16_SPEC)) -
+                         set(bundle._decision_bound_names(bundle.V15_SPEC)),
+                         set(bundle.V16_NEW_DERIVED))
+        self.assertIn("remote Linux recheck is pending", bundle.V16_README)
+        self.assertIsNone(bundle._release_flags(bundle.V16_SPEC)["related_data_public_git_revision"])
+        snapshot = bundle.verify(archive=bundle.V16_OUTPUT, compare_sources=False)
+        self.assertEqual(snapshot["version"], bundle.V16_VERSION)
+        self.assertEqual(snapshot["archive_members"], 91)
+        self.assertEqual(snapshot["source_file_count"], 89)
+        self.assertIsNone(snapshot["local_sources_match"])
+
+        self.assertEqual(bundle.V17_SOURCE_NAMES, bundle.V16_SOURCE_NAMES)
+        self.assertEqual(bundle._decision_bound_names(bundle.V17_SPEC),
+                         bundle._decision_bound_names(bundle.V16_SPEC))
+        self.assertIn("fresh-process Vera render", bundle.V17_README)
+        self.assertIn("remote Linux recheck after this correction is pending",
+                      bundle.V17_README)
+        self.assertIsNone(bundle._release_flags(bundle.V17_SPEC)["related_data_public_git_revision"])
+        snapshot = bundle.verify(archive=bundle.V17_OUTPUT, compare_sources=False)
+        self.assertEqual(snapshot["version"], bundle.V17_VERSION)
+        self.assertEqual(snapshot["archive_members"], 91)
+        self.assertEqual(snapshot["source_file_count"], 89)
+        self.assertIsNone(snapshot["local_sources_match"])
+
+        self.assertEqual(bundle.V18_SOURCE_NAMES[:len(bundle.V17_SOURCE_NAMES)],
+                         bundle.V17_SOURCE_NAMES)
+        self.assertEqual(set(bundle.V18_SOURCE_NAMES) - set(bundle.V17_SOURCE_NAMES),
+                         set(bundle.V18_NEW_DERIVED))
+        self.assertEqual(len(bundle.V18_NEW_DERIVED), 9)
+        self.assertEqual(set(bundle._decision_bound_names(bundle.V18_SPEC)) -
+                         set(bundle._decision_bound_names(bundle.V17_SPEC)),
+                         set(bundle.V18_NEW_DERIVED))
+        self.assertIn("128.446 seconds", bundle.V18_README)
+        self.assertIn("208 completed qwen3:4b responses", bundle.V18_README)
+        self.assertIn("remote Linux recheck is pending", bundle.V18_README)
+        self.assertIsNone(bundle._release_flags(bundle.V18_SPEC)["related_data_public_git_revision"])
+        snapshot = bundle.verify(archive=bundle.V18_OUTPUT, compare_sources=False)
+        self.assertEqual(snapshot["version"], bundle.V18_VERSION)
+        self.assertEqual(snapshot["archive_members"], 100)
+        self.assertEqual(snapshot["source_file_count"], 98)
+        self.assertIsNone(snapshot["local_sources_match"])
+
+        self.assertEqual(bundle.V19_SOURCE_NAMES[:len(bundle.V18_SOURCE_NAMES)],
+                         bundle.V18_SOURCE_NAMES)
+        self.assertEqual(set(bundle.V19_SOURCE_NAMES) - set(bundle.V18_SOURCE_NAMES),
+                         set(bundle.V19_NEW_DERIVED))
+        self.assertEqual(len(bundle.V19_NEW_DERIVED), 9)
+        self.assertEqual(set(bundle._decision_bound_names(bundle.V19_SPEC)) -
+                         set(bundle._decision_bound_names(bundle.V18_SPEC)),
+                         set(bundle.V19_NEW_DERIVED))
+        self.assertIn("success-path handshake interval", bundle.V19_README)
+        self.assertIn("remote Linux recheck is pending", bundle.V19_README)
+        self.assertIsNone(bundle._release_flags(bundle.V19_SPEC)["related_data_public_git_revision"])
+        current = bundle.verify(archive=bundle.V19_OUTPUT)
+        self.assertEqual(current["version"], bundle.V19_VERSION)
+        self.assertEqual(current["archive_members"], 109)
+        self.assertEqual(current["source_file_count"], 107)
+        self.assertTrue(current["local_sources_match"])
+
+    def test_v13_and_v12_remain_independent_historical_snapshots(self) -> None:
         self.assertEqual(bundle.BUILD_TARGETS["v13"], (bundle.V13_OUTPUT, bundle.V13_SPEC))
         self.assertEqual(bundle.V13_SOURCE_NAMES, bundle.V12_SOURCE_NAMES)
         self.assertEqual(bundle._decision_bound_names(bundle.V13_SPEC),
                          bundle._decision_bound_names(bundle.V12_SPEC))
         self.assertIn("five article figures", bundle.V13_README)
         self.assertFalse(bundle._release_flags(bundle.V13_SPEC)["journal_supplement_approved"])
-        current = bundle.verify(archive=bundle.V13_OUTPUT)
-        self.assertEqual(current["version"], bundle.V13_VERSION)
-        self.assertEqual(current["archive_members"], 60)
-        self.assertTrue(current["local_sources_match"])
+        snapshot_v13 = bundle.verify(archive=bundle.V13_OUTPUT, compare_sources=False)
+        self.assertEqual(snapshot_v13["version"], bundle.V13_VERSION)
+        self.assertEqual(snapshot_v13["archive_members"], 60)
+        self.assertIsNone(snapshot_v13["local_sources_match"])
         snapshot = bundle.verify(archive=bundle.V12_OUTPUT, compare_sources=False)
         self.assertEqual(snapshot["version"], bundle.V12_VERSION)
 

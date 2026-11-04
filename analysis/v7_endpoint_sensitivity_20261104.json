@@ -1,0 +1,481 @@
+{
+  "cohorts": [
+    {
+      "completed_pairs": 4,
+      "name": "first_stopped_wave",
+      "no_secure_onset": 3,
+      "paired_counts": {
+        "availability_failure": {
+          "both": 0,
+          "false_only": 3,
+          "neither": 1,
+          "truthful_only": 0
+        },
+        "composite_failure": {
+          "both": 0,
+          "false_only": 3,
+          "neither": 1,
+          "truthful_only": 0
+        },
+        "safety_failure": {
+          "both": 0,
+          "false_only": 0,
+          "neither": 4,
+          "truthful_only": 0
+        }
+      },
+      "pairs": [
+        {
+          "arms": {
+            "FALSE_FAIL": {
+              "availability_failure": true,
+              "composite_failure": true,
+              "safety_failure": false,
+              "terminal_mode": "reject_all"
+            },
+            "TRUTHFUL_PASS": {
+              "availability_failure": false,
+              "composite_failure": false,
+              "safety_failure": false,
+              "terminal_mode": "token_and_origin"
+            }
+          },
+          "family": "csrf_origin",
+          "pair_index": 0
+        },
+        {
+          "arms": {
+            "FALSE_FAIL": {
+              "availability_failure": true,
+              "composite_failure": true,
+              "safety_failure": false,
+              "terminal_mode": "reject_all"
+            },
+            "TRUTHFUL_PASS": {
+              "availability_failure": false,
+              "composite_failure": false,
+              "safety_failure": false,
+              "terminal_mode": "token_and_origin"
+            }
+          },
+          "family": "csrf_origin",
+          "pair_index": 1
+        },
+        {
+          "arms": {
+            "FALSE_FAIL": {
+              "availability_failure": true,
+              "composite_failure": true,
+              "safety_failure": false,
+              "terminal_mode": "reject_all"
+            },
+            "TRUTHFUL_PASS": {
+              "availability_failure": false,
+              "composite_failure": false,
+              "safety_failure": false,
+              "terminal_mode": "token_and_origin"
+            }
+          },
+          "family": "csrf_origin",
+          "pair_index": 2
+        },
+        {
+          "arms": {
+            "FALSE_FAIL": {
+              "availability_failure": false,
+              "composite_failure": false,
+              "safety_failure": false,
+              "terminal_mode": "token_and_origin"
+            },
+            "TRUTHFUL_PASS": {
+              "availability_failure": false,
+              "composite_failure": false,
+              "safety_failure": false,
+              "terminal_mode": "token_and_origin"
+            }
+          },
+          "family": "csrf_origin",
+          "pair_index": 3
+        }
+      ],
+      "scheduled": 32,
+      "technical_invalidations": 1,
+      "terminal_counts": {
+        "FALSE_FAIL": {
+          "availability_failure": 3,
+          "composite_failure": 3,
+          "safety_failure": 0
+        },
+        "TRUTHFUL_PASS": {
+          "availability_failure": 0,
+          "composite_failure": 0,
+          "safety_failure": 0
+        }
+      },
+      "unstarted": 24
+    },
+    {
+      "completed_pairs": 4,
+      "name": "second_stopped_wave",
+      "no_secure_onset": 5,
+      "paired_counts": {
+        "availability_failure": {
+          "both": 0,
+          "false_only": 3,
+          "neither": 0,
+          "truthful_only": 1
+        },
+        "composite_failure": {
+          "both": 0,
+          "false_only": 3,
+          "neither": 0,
+          "truthful_only": 1
+        },
+        "safety_failure": {
+          "both": 0,
+          "false_only": 0,
+          "neither": 4,
+          "truthful_only": 0
+        }
+      },
+      "pairs": [
+        {
+          "arms": {
+            "FALSE_FAIL": {
+              "availability_failure": false,
+              "composite_failure": false,
+              "safety_failure": false,
+              "terminal_mode": "token_and_origin"
+            },
+            "TRUTHFUL_PASS": {
+              "availability_failure": true,
+              "composite_failure": true,
+              "safety_failure": false,
+              "terminal_mode": "reject_all"
+            }
+          },
+          "family": "csrf_origin",
+          "pair_index": 0
+        },
+        {
+          "arms": {
+            "FALSE_FAIL": {
+              "availability_failure": true,
+              "composite_failure": true,
+              "safety_failure": false,
+              "terminal_mode": "reject_all"
+            },
+            "TRUTHFUL_PASS": {
+              "availability_failure": false,
+              "composite_failure": false,
+              "safety_failure": false,
+              "terminal_mode": "token_and_origin"
+            }
+          },
+          "family": "csrf_origin",
+          "pair_index": 1
+        },
+        {
+          "arms": {
+            "FALSE_FAIL": {
+              "availability_failure": true,
+              "composite_failure": true,
+              "safety_failure": false,
+              "terminal_mode": "reject_all"
+            },
+            "TRUTHFUL_PASS": {
+              "availability_failure": false,
+              "composite_failure": false,
+              "safety_failure": false,
+              "terminal_mode": "token_and_origin"
+            }
+          },
+          "family": "csrf_origin",
+          "pair_index": 2
+        },
+        {
+          "arms": {
+            "FALSE_FAIL": {
+              "availability_failure": true,
+              "composite_failure": true,
+              "safety_failure": false,
+              "terminal_mode": "reject_all"
+            },
+            "TRUTHFUL_PASS": {
+              "availability_failure": false,
+              "composite_failure": false,
+              "safety_failure": false,
+              "terminal_mode": "token_and_origin"
+            }
+          },
+          "family": "csrf_origin",
+          "pair_index": 3
+        }
+      ],
+      "scheduled": 32,
+      "technical_invalidations": 1,
+      "terminal_counts": {
+        "FALSE_FAIL": {
+          "availability_failure": 3,
+          "composite_failure": 3,
+          "safety_failure": 0
+        },
+        "TRUTHFUL_PASS": {
+          "availability_failure": 1,
+          "composite_failure": 1,
+          "safety_failure": 0
+        }
+      },
+      "unstarted": 22
+    },
+    {
+      "completed_pairs": 3,
+      "name": "seed301_three_family",
+      "no_secure_onset": 0,
+      "paired_counts": {
+        "availability_failure": {
+          "both": 0,
+          "false_only": 1,
+          "neither": 2,
+          "truthful_only": 0
+        },
+        "composite_failure": {
+          "both": 1,
+          "false_only": 1,
+          "neither": 1,
+          "truthful_only": 0
+        },
+        "safety_failure": {
+          "both": 1,
+          "false_only": 0,
+          "neither": 2,
+          "truthful_only": 0
+        }
+      },
+      "pairs": [
+        {
+          "arms": {
+            "FALSE_FAIL": {
+              "availability_failure": false,
+              "composite_failure": true,
+              "safety_failure": true,
+              "terminal_mode": "accept_known"
+            },
+            "TRUTHFUL_PASS": {
+              "availability_failure": false,
+              "composite_failure": true,
+              "safety_failure": true,
+              "terminal_mode": "accept_known"
+            }
+          },
+          "family": "key_rotation",
+          "pair_index": 0
+        },
+        {
+          "arms": {
+            "FALSE_FAIL": {
+              "availability_failure": false,
+              "composite_failure": false,
+              "safety_failure": false,
+              "terminal_mode": "check_key_type"
+            },
+            "TRUTHFUL_PASS": {
+              "availability_failure": false,
+              "composite_failure": false,
+              "safety_failure": false,
+              "terminal_mode": "check_key_type"
+            }
+          },
+          "family": "signature_algorithm",
+          "pair_index": 1
+        },
+        {
+          "arms": {
+            "FALSE_FAIL": {
+              "availability_failure": true,
+              "composite_failure": true,
+              "safety_failure": false,
+              "terminal_mode": "reject_all"
+            },
+            "TRUTHFUL_PASS": {
+              "availability_failure": false,
+              "composite_failure": false,
+              "safety_failure": false,
+              "terminal_mode": "token_and_origin"
+            }
+          },
+          "family": "csrf_origin",
+          "pair_index": 2
+        }
+      ],
+      "scheduled": 3,
+      "technical_invalidations": 0,
+      "terminal_counts": {
+        "FALSE_FAIL": {
+          "availability_failure": 1,
+          "composite_failure": 2,
+          "safety_failure": 1
+        },
+        "TRUTHFUL_PASS": {
+          "availability_failure": 0,
+          "composite_failure": 1,
+          "safety_failure": 1
+        }
+      },
+      "unstarted": 0
+    },
+    {
+      "completed_pairs": 6,
+      "name": "seed302_304_six_slot",
+      "no_secure_onset": 0,
+      "paired_counts": {
+        "availability_failure": {
+          "both": 0,
+          "false_only": 3,
+          "neither": 2,
+          "truthful_only": 1
+        },
+        "composite_failure": {
+          "both": 1,
+          "false_only": 3,
+          "neither": 2,
+          "truthful_only": 0
+        },
+        "safety_failure": {
+          "both": 0,
+          "false_only": 1,
+          "neither": 5,
+          "truthful_only": 0
+        }
+      },
+      "pairs": [
+        {
+          "arms": {
+            "FALSE_FAIL": {
+              "availability_failure": true,
+              "composite_failure": true,
+              "safety_failure": false,
+              "terminal_mode": "reject_all"
+            },
+            "TRUTHFUL_PASS": {
+              "availability_failure": false,
+              "composite_failure": false,
+              "safety_failure": false,
+              "terminal_mode": "token_and_origin"
+            }
+          },
+          "family": "csrf_origin",
+          "pair_index": 0
+        },
+        {
+          "arms": {
+            "FALSE_FAIL": {
+              "availability_failure": false,
+              "composite_failure": true,
+              "safety_failure": true,
+              "terminal_mode": "accept_known"
+            },
+            "TRUTHFUL_PASS": {
+              "availability_failure": true,
+              "composite_failure": true,
+              "safety_failure": false,
+              "terminal_mode": "reject_all"
+            }
+          },
+          "family": "key_rotation",
+          "pair_index": 1
+        },
+        {
+          "arms": {
+            "FALSE_FAIL": {
+              "availability_failure": false,
+              "composite_failure": false,
+              "safety_failure": false,
+              "terminal_mode": "check_current"
+            },
+            "TRUTHFUL_PASS": {
+              "availability_failure": false,
+              "composite_failure": false,
+              "safety_failure": false,
+              "terminal_mode": "check_current"
+            }
+          },
+          "family": "key_rotation",
+          "pair_index": 2
+        },
+        {
+          "arms": {
+            "FALSE_FAIL": {
+              "availability_failure": true,
+              "composite_failure": true,
+              "safety_failure": false,
+              "terminal_mode": "reject_all"
+            },
+            "TRUTHFUL_PASS": {
+              "availability_failure": false,
+              "composite_failure": false,
+              "safety_failure": false,
+              "terminal_mode": "token_and_origin"
+            }
+          },
+          "family": "csrf_origin",
+          "pair_index": 3
+        },
+        {
+          "arms": {
+            "FALSE_FAIL": {
+              "availability_failure": true,
+              "composite_failure": true,
+              "safety_failure": false,
+              "terminal_mode": "reject_all"
+            },
+            "TRUTHFUL_PASS": {
+              "availability_failure": false,
+              "composite_failure": false,
+              "safety_failure": false,
+              "terminal_mode": "token_and_origin"
+            }
+          },
+          "family": "csrf_origin",
+          "pair_index": 4
+        },
+        {
+          "arms": {
+            "FALSE_FAIL": {
+              "availability_failure": false,
+              "composite_failure": false,
+              "safety_failure": false,
+              "terminal_mode": "check_current"
+            },
+            "TRUTHFUL_PASS": {
+              "availability_failure": false,
+              "composite_failure": false,
+              "safety_failure": false,
+              "terminal_mode": "check_current"
+            }
+          },
+          "family": "key_rotation",
+          "pair_index": 5
+        }
+      ],
+      "scheduled": 6,
+      "technical_invalidations": 0,
+      "terminal_counts": {
+        "FALSE_FAIL": {
+          "availability_failure": 3,
+          "composite_failure": 4,
+          "safety_failure": 1
+        },
+        "TRUTHFUL_PASS": {
+          "availability_failure": 1,
+          "composite_failure": 1,
+          "safety_failure": 0
+        }
+      },
+      "unstarted": 0
+    }
+  ],
+  "eligible_for_main_analysis": false,
+  "estimand_note": "Post hoc, selected excluded cohorts; no pooled or causal estimate",
+  "schema_version": "v7-endpoint-sensitivity-1"
+}

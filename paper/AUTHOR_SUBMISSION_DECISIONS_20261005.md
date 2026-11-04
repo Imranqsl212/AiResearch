@@ -12,11 +12,11 @@ separately. Do not infer their absence from a missing response.
 
 | Artifact | Current SHA-256 |
 | --- | --- |
-| [`final.md`](final.md) | `ac10a79bab2bfd5685c19995593061c28d76e1f34ba7c369bf2d23e285eef57c` |
-| [Identified `full_paper.pdf`](submission/full_paper.pdf) | `9e18caf519d663f1de3e150ad46b8f3d1090c148c36f0947e597bba901c0087c` |
-| [Identified `full_paper.docx`](submission/full_paper.docx) | `00677506353e8a10ba54c5bfe5facf34506e5bebd8ab25b32576050558f72c36` |
-| [Anonymous `full_paper_anonymous.pdf`](submission/full_paper_anonymous.pdf) | `6d2d23b23189bf18bae04070491c158f1197e23026dbe02e3e17129adeff72bf` |
-| [Anonymous `full_paper_anonymous.docx`](submission/full_paper_anonymous.docx) | `f8464efbf3b79de695b3ec87893385c714a397dd1903af2729c352c4514d13c5` |
+| [`final.md`](final.md) | `58b71372f2742392f7e7748b45bee7053db6b124b6852090555fc19fc2348196` |
+| [Identified `full_paper.pdf`](submission/full_paper.pdf) | `668317261aab4f95d5f748f70bb5b3a4f83ceaeee8a61d49b52540975334cb2b` |
+| [Identified `full_paper.docx`](submission/full_paper.docx) | `a4e828577deed98f165c2c0048cd6413bb638cd9db892ff9c4e6af09ae18728f` |
+| [Anonymous `full_paper_anonymous.pdf`](submission/full_paper_anonymous.pdf) | `92a7141a7f0896088d1514e706d3cb21cb9ef341dc807a203f77acbbd3e05532` |
+| [Anonymous `full_paper_anonymous.docx`](submission/full_paper_anonymous.docx) | `670ae0e0c7852e4a0903a1802089b32fa2f50000752c5e6f562a0c95311dd83d` |
 | [`results.json`](artifacts/results.json) | `3d7ef25bfa07ef25ae20cea8d6ee34b59c5d9158e20c2e9b7013bfbd5a3cb229` |
 | [Working author-year conversion](venue_author_year_draft.md) | `d56b469d919986c7da430c7d003121776e37c86b06bdac5f7f69f480011791dd` |
 | [Author-year `venue_author_year_identified.pdf`](submission/venue_author_year_identified.pdf) | `eebb1832db3bc60ebfd342e31483982909c1aac17729abb9a4f48f4a17c0e1b8` |
@@ -37,10 +37,59 @@ separately. Do not infer their absence from a missing response.
 | [C5 feedback-action report](../analysis/C5_FEEDBACK_ACTION_20261104.md) | `5496a11e8cb188d025ea9cfe848b1f5406f7ff72255b30c1a7bbd257178b9924` |
 | [C5 feedback-action recount](../analysis/c5_feedback_action_20261104.json) | `f1b4ef4b90a639c0c1223cf954f38c3f99f0b9942736dbce398c12eee7408f8c` |
 | [Separate temperature waves figure](../analysis/figures/v7_temp03_pair_outcomes_20261101.png) | `a00c3695d5c66a8a8bf41cdd5d4225858d56c403ee0ef1857dfa10c6b711bcd1` |
+| [HISTORICAL FEEDBACK SPECIFICITY 20261104](../analysis/HISTORICAL_FEEDBACK_SPECIFICITY_20261104.md) | `609ca376c4f932f674f1006402e130d6afa38e9aa2e0344db319b72f7be6d50d` |
+| [historical feedback specificity 20261104](../analysis/historical_feedback_specificity_20261104.json) | `2dae4ded09a4e35dda82580738b439e018b4de1229191509a1004020d7914214` |
+| [C5 FIRST SUBMISSION PARITY 20261104](../analysis/C5_FIRST_SUBMISSION_PARITY_20261104.md) | `11ffe82d4061c0df8e14f8bb12a97906b93e4fe894e7662676581d1292416e49` |
+| [c5 first submission parity 20261104](../analysis/c5_first_submission_parity_20261104.json) | `e01d9b864ca9b4b41bd75107a63a7706db55a924588a7e57deb1791420cbe355` |
+| [V7 LEAVE ONE WORLD OUT 20261104](../analysis/V7_LEAVE_ONE_WORLD_OUT_20261104.md) | `13cae99fcfe4fb095df9b5884c757f35591c29300ddcdd5640c0fe3f4062dee4` |
+| [v7 leave one world out 20261104](../analysis/v7_leave_one_world_out_20261104.json) | `cf223c7ec31473e8fd4a4a90e4b57ebb66e0f86078ecfce14c083c5044d3156c` |
+| [V7 CROSSFAMILY ERROR DIRECTION 20261104](../analysis/V7_CROSSFAMILY_ERROR_DIRECTION_20261104.md) | `821a84783d201171f5cef0d817b30df51953d98d1f9e0afbd9d274a18887814f` |
+| [v7 crossfamily error direction 20261104](../analysis/v7_crossfamily_error_direction_20261104.json) | `0ee44a979d4339e9652b44896ba1749337fcf3abe54e609595f378ea416780a4` |
+| [V7 CSRF TRANSITION DIRECTION 20261104](../analysis/V7_CSRF_TRANSITION_DIRECTION_20261104.md) | `803fae1d60dd04723b716a2454752e75079ddae68c727f4f2e9335aa0b149740` |
+| [v7 csrf transition direction 20261104](../analysis/v7_csrf_transition_direction_20261104.json) | `4a44d1fcd8ff2d7772682d771265662a09eea95d423753af91136b7f28cf0550` |
+| [V7 TEMP03 ERROR DIRECTION 20261104](../analysis/V7_TEMP03_ERROR_DIRECTION_20261104.md) | `45d18f12b60968fe4b350dd5446f19dce171202a285b4df632e7f306bbdfb8d6` |
+| [v7 temp03 error direction 20261104](../analysis/v7_temp03_error_direction_20261104.json) | `53c795abfa5dfc083d0c394817db05a15dcc709134e2cb2b83d4742a93db1607` |
+| [LOGGED SOURCE SURROGATE AST 20261104](../analysis/LOGGED_SOURCE_SURROGATE_AST_20261104.md) | `872eb00f28ce5535ab7e7b964cb0f8044740d17ba1b8e0f3031cc52272ccc5c4` |
+| [logged source surrogate ast 20261104](../analysis/logged_source_surrogate_ast_20261104.json) | `994bf4e3d8fd0e40c0a0abe5152ede63c1e80298babb10b52fdfb4ce2d104a3b` |
+| [EXCLUDED V7 CROSSFAMILY 20261104 RESULTS](../docs/EXCLUDED_V7_CROSSFAMILY_20261104_RESULTS.md) | `f4ce52afd953f70729539b9e504b0c1b2240b76ff12caf5a1b7e3c3ff8f76c58` |
+| [v7 crossfamily 20261104](../analysis/v7_crossfamily_20261104.json) | `4c9c129efb878ca705ad1d6e4f9224a84a8986106311e4208094836180dfeb96` |
+| [EXCLUDED V7 FEEDBACK REPLICATION 20261104 RESULTS](../docs/EXCLUDED_V7_FEEDBACK_REPLICATION_20261104_RESULTS.md) | `a55199122ca71e744180dc7b23a105cd990130f663362bfd8a793360b156693d` |
+| [v7 feedback replication 20261104](../analysis/v7_feedback_replication_20261104.json) | `e8b2ab1a74b5ba3f1eeeb0a3ff7bf5df42efff726f69d3f9e842d4f2d31ccfed` |
+| [HISTORICAL PROTOCOL STOP RECOUNT 20261104](../analysis/HISTORICAL_PROTOCOL_STOP_RECOUNT_20261104.md) | `353cf1d899404b6cad26b85edbd8b2b3766e565415dcfbf062ead43b6140b394` |
+| [historical_protocol_stop_recount_20261104.json](../analysis/historical_protocol_stop_recount_20261104.json) | `e6259f77645c11852fbd2ed16a7aba4ffc0974d2ebcee33ba629d981dd5557ef` |
+| [V7 ENDPOINT SENSITIVITY 20261104](../analysis/V7_ENDPOINT_SENSITIVITY_20261104.md) | `2227c3168a6efb422114fdd28626df8d2f119741ea88ccbbc88ef044cd2e4dd7` |
+| [v7_endpoint_sensitivity_20261104.json](../analysis/v7_endpoint_sensitivity_20261104.json) | `b046c85cf232dac108a98d160bb8d18a69da52170c9705ae21020f5f739d61b2` |
+| [V7 TEST SET SUFFICIENCY 20261104](../analysis/V7_TEST_SET_SUFFICIENCY_20261104.md) | `a12210aa71ff93766dda6a0358ffd981b82bb628c2a3aaf30c3190196a3f0321` |
+| [v7_test_set_sufficiency_20261104.json](../analysis/v7_test_set_sufficiency_20261104.json) | `b3d0fb740cc1a3f1b573dcfe1bfb7f3c56180fe2dc0a8b9a93c15186a4a2503e` |
+| [V7 GEMMA TRANSFER 20261104](../analysis/V7_GEMMA_TRANSFER_20261104.md) | `a80b78dd918d050c3b1447efa45f84cf89c0e44e01609eb92ae9d71f418a13b8` |
+| [v7_gemma_transfer_20261104.json](../analysis/v7_gemma_transfer_20261104.json) | `11d5703326a02752763985481ce6062a664e7f57a0d6d2ec1392f256de84b3fa` |
+| [v7_gemma_transfer_20261104_screen.json](../analysis/v7_gemma_transfer_20261104_screen.json) | `67796a716377ea3a1a18b3a095c02fd94f1bca906dcbb15b7ca6b4eda6b0555d` |
+| [v7_checker_stage_cascade_20261104.svg](../figures/v7_checker_stage_cascade_20261104.svg) | `70db8706da932f8a0ea6f3a5230ef8223bf322455a11d3982a4d5fd7c163b6ec` |
+| [V7_QWEN8B_CAPACITY_20261104.md](../analysis/V7_QWEN8B_CAPACITY_20261104.md) | `7d8b34d224ddf826db92eaa1da4cc502e8c3a41891e060855f837adcac582690` |
+| [v7_qwen8b_capacity_20261104.json](../analysis/v7_qwen8b_capacity_20261104.json) | `847600863cc2e438f18a1737da79479096dcf10b22d0b777ac61cb1413fc7767` |
+| [v7_qwen8b_capacity_20261104_screen.json](../analysis/v7_qwen8b_capacity_20261104_screen.json) | `97b6860d5dee57fd31b8acae058fda7073dfcc66b42ba7a0a99e6095f4aebf58` |
+| [HISTORICAL_TERMINATE_LATENCY_20261104.md](../analysis/HISTORICAL_TERMINATE_LATENCY_20261104.md) | `1dfe00a2f497ff879b9c7f70a74b678dc9b943e0f5f1f11d97fb9b2391204413` |
+| [historical_terminate_latency_20261104.json](../analysis/historical_terminate_latency_20261104.json) | `11a9fcb15f0664e78bbff14a205edc0afb177a26de851fbbac49b4b9767815e7` |
+| [historical_terminate_latency_20261104.py](../analysis/historical_terminate_latency_20261104.py) | `5ca49defa29ae960d739e83c5366077b0414b3704786dbf7bfe861cb5974e205` |
+| [historical_terminate_latency_20261104.svg](../figures/historical_terminate_latency_20261104.svg) | `5f9a4daf5a1cc1946bf195a93e870b0f447b502ee4e3b8e338453e50b2a782ad` |
+| [test_historical_terminate_latency_20261104.py](../tests/test_historical_terminate_latency_20261104.py) | `58f211b24c6ec5774ff61a4454254663ea8e0bd4188b4f39db949eb8d7d4aef8` |
+| [V7_BOUNDARY_PROVIDER_LATENCY_20261104.md](../analysis/V7_BOUNDARY_PROVIDER_LATENCY_20261104.md) | `b48a914974f5b5e646ef466e270315ef6556ea17d6f0b91391303f3ec69246f3` |
+| [v7_boundary_provider_latency_20261104.json](../analysis/v7_boundary_provider_latency_20261104.json) | `cc6411f340c521e9693876496a8dcc9ff68d55f7c9d07b158560741a95d233e9` |
+| [v7_boundary_provider_latency_20261104.py](../analysis/v7_boundary_provider_latency_20261104.py) | `8fd4992b74831dc3bd748f66df19d736ac6b8cf0b9b446c7efc9813d1a2d4185` |
+| [test_v7_boundary_provider_latency_20261104.py](../tests/test_v7_boundary_provider_latency_20261104.py) | `eee498f2d258d2f3df642b7ec7eeeba2a2d6a616727a2af4952c5757495a34e3` |
+| [STOP_LATENCY_CHALLENGE_20261104.md](../analysis/STOP_LATENCY_CHALLENGE_20261104.md) | `e718a918a6ae5e8c4cfc9eedb7a44064074ec0bf0bac1d7846db1c6181c901bd` |
+| [stop_latency_challenge_20261104.json](../analysis/stop_latency_challenge_20261104.json) | `4d49242594989479fd1d38c84dc766b1fb726445f4f86ab410b4ff2972e9cffa` |
+| [stop_latency_challenge_20261104.py](../analysis/stop_latency_challenge_20261104.py) | `9ebe23ef997de0280bcf64cfb0acfb26ad52fb422c95702afaf71e3dccad4809` |
+| [test_stop_latency_challenge_20261104.py](../tests/test_stop_latency_challenge_20261104.py) | `4a8c51ab6769496b582d662b07faa93fded83547d8417b7c9ae0acd8057889e8` |
+| [STOP_CONTRACT_CONTROL_20261104.md](../analysis/STOP_CONTRACT_CONTROL_20261104.md) | `d9b1def4ef2c087abcc0b4550b6eefa36d5bfead13cb7b2a6075f202a0d8fd0c` |
+| [stop_contract_control_20261104.json](../analysis/stop_contract_control_20261104.json) | `04a71025fd0be823fd25358d60a41f085bfc06499fea44e3f18b809c467f084b` |
+| [stop_contract_control_20261104.py](../analysis/stop_contract_control_20261104.py) | `3e47f4555fd0f71981410da6b20040ab3a6695ab1e312959e2123f0212e06d8b` |
+| [test_stop_contract_control_20261104.py](../tests/test_stop_contract_control_20261104.py) | `6aa72ae447a0db30a5f34eda64f13c57194d7c3a8edc323167e5a1bca75e4178` |
+| [test_submission_rendering.py](test_submission_rendering.py) | `13f2534238b93f64c6791fcdcc49833c105e95a10e55d708746e31362cff7392` |
 
-The identified and anonymous PDFs each have 19 A4 pages; the Linux fallback-font render has 20. PDF text,
+The identified and anonymous PDFs each have 18 A4 pages locally with Arial; a fresh-process Bitstream Vera render has 19 pages. The remote Linux recheck for this V19 revision is pending. PDF text,
 including captions and tables, is 12 pt;
-the DOCX styles are 12 pt with single line spacing. The abstract has 210 words
+the DOCX styles are 12 pt with single line spacing. The abstract has 204 space-delimited words
 and the article contains five figures and six tables. The identified and
 anonymous PDF/DOCX pairs were regenerated from the source on this workspace.
 The anonymous files have blank author metadata and automated scans found no
@@ -63,7 +112,7 @@ rendered PDF/DOCX or an approved final submission file.
 | Contributions | Approved contribution statement from all named authors | `PENDING`: the user will provide each person's concrete contribution later. Kramich Anna is also the project mentor. |
 | Declarations | Funding, conflicts, acknowledgments, ethics and required AI-tool disclosure | `PENDING`: author said details will follow separately. Known Codex assistance is disclosed in Methods and Acknowledgments for author review; the author must confirm the final wording. |
 | Scientific sign-off | Authors approve the exact exploratory claims and limitations in the hashed draft | `PENDING` |
-| Data route | Exact public source revision and journal-accepted data statement or supplementary deposit | `PARTIAL`: the author chose GitHub publication of raw experimental artifacts. [Revision `9ecd07a3d605cfd812a874835e9b945adc5d5145`](https://github.com/Imranqsl212/AiResearch/tree/9ecd07a3d605cfd812a874835e9b945adc5d5145) contains archived cohorts discussed in this draft. The new 4 November read-only audit code and the current manuscript will require a later final revision. The journal route and persistent identifier remain pending. |
+| Data route | Exact public source revision and journal-accepted data statement or supplementary deposit | `PARTIAL`: the author chose GitHub publication of raw experimental artifacts. [Revision `9ecd07a3d605cfd812a874835e9b945adc5d5145`](https://github.com/Imranqsl212/AiResearch/tree/9ecd07a3d605cfd812a874835e9b945adc5d5145) contains earlier archived cohorts. The current manuscript and newest live-wave archive require a later final source revision, which is not bound by this review bundle. The journal route and persistent identifier remain pending. |
 | Privacy sign-off | Human review of raw and transformed free text, with disposition of residual candidates | `PENDING`: GitHub tracks unredacted archives and a review packet; suitability for a journal deposit is not established. |
 | Final package | Venue formatting, final hashes, source revision, supplementary files, cover letter and submission account | `PENDING` |
 

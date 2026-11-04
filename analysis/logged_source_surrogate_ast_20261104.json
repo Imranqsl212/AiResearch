@@ -1,0 +1,244 @@
+{
+  "eligible_for_main_analysis": false,
+  "pairs": [
+    {
+      "pair_id": "slot-000001-step-002__slot-000001-step-003",
+      "status": "BOTH_EXACT_LOGGED_ASTS",
+      "visible_ast_differs": true,
+      "visible_call_inventory_differs": false
+    },
+    {
+      "pair_id": "slot-000001-step-003__slot-000001-step-004",
+      "status": "BOTH_EXACT_LOGGED_ASTS",
+      "visible_ast_differs": true,
+      "visible_call_inventory_differs": true
+    },
+    {
+      "pair_id": "slot-000002-step-002__slot-000002-step-003",
+      "status": "BOTH_EXACT_LOGGED_ASTS",
+      "visible_ast_differs": true,
+      "visible_call_inventory_differs": false
+    },
+    {
+      "pair_id": "slot-000002-step-003__slot-000002-step-004",
+      "status": "BOTH_EXACT_LOGGED_ASTS",
+      "visible_ast_differs": true,
+      "visible_call_inventory_differs": false
+    },
+    {
+      "pair_id": "slot-000003-step-002__slot-000003-step-003",
+      "status": "BOTH_VISIBLE_PROJECTIONS_ONLY",
+      "visible_ast_differs": true,
+      "visible_call_inventory_differs": false
+    },
+    {
+      "pair_id": "slot-000003-step-003__slot-000003-step-004",
+      "status": "BOTH_VISIBLE_PROJECTIONS_ONLY",
+      "visible_ast_differs": true,
+      "visible_call_inventory_differs": false
+    },
+    {
+      "pair_id": "slot-000004-step-002__slot-000004-step-003",
+      "status": "BOTH_EXACT_LOGGED_ASTS",
+      "visible_ast_differs": true,
+      "visible_call_inventory_differs": false
+    },
+    {
+      "pair_id": "slot-000006-step-002__slot-000006-step-003",
+      "status": "BOTH_EXACT_LOGGED_ASTS",
+      "visible_ast_differs": true,
+      "visible_call_inventory_differs": true
+    },
+    {
+      "pair_id": "slot-000007-step-002__slot-000007-step-003",
+      "status": "BOTH_EXACT_LOGGED_ASTS",
+      "visible_ast_differs": true,
+      "visible_call_inventory_differs": true
+    },
+    {
+      "pair_id": "slot-000008-step-002__slot-000008-step-003",
+      "status": "AT_LEAST_ONE_UNPARSEABLE",
+      "visible_ast_differs": null,
+      "visible_call_inventory_differs": null
+    },
+    {
+      "pair_id": "slot-000010-step-002__slot-000010-step-003",
+      "status": "BOTH_EXACT_LOGGED_ASTS",
+      "visible_ast_differs": true,
+      "visible_call_inventory_differs": true
+    },
+    {
+      "pair_id": "slot-000010-step-003__slot-000010-step-004",
+      "status": "BOTH_EXACT_LOGGED_ASTS",
+      "visible_ast_differs": true,
+      "visible_call_inventory_differs": true
+    },
+    {
+      "pair_id": "slot-000013-step-002__slot-000013-step-003",
+      "status": "BOTH_EXACT_LOGGED_ASTS",
+      "visible_ast_differs": true,
+      "visible_call_inventory_differs": true
+    },
+    {
+      "pair_id": "slot-000015-step-002__slot-000015-step-003",
+      "status": "BOTH_EXACT_LOGGED_ASTS",
+      "visible_ast_differs": true,
+      "visible_call_inventory_differs": true
+    },
+    {
+      "pair_id": "slot-000018-step-002__slot-000018-step-003",
+      "status": "AT_LEAST_ONE_UNPARSEABLE",
+      "visible_ast_differs": null,
+      "visible_call_inventory_differs": null
+    },
+    {
+      "pair_id": "slot-000018-step-003__slot-000018-step-004",
+      "status": "AT_LEAST_ONE_UNPARSEABLE",
+      "visible_ast_differs": null,
+      "visible_call_inventory_differs": null
+    },
+    {
+      "pair_id": "slot-000020-step-002__slot-000020-step-003",
+      "status": "BOTH_EXACT_LOGGED_ASTS",
+      "visible_ast_differs": true,
+      "visible_call_inventory_differs": false
+    },
+    {
+      "pair_id": "slot-000020-step-003__slot-000020-step-004",
+      "status": "BOTH_EXACT_LOGGED_ASTS",
+      "visible_ast_differs": true,
+      "visible_call_inventory_differs": true
+    },
+    {
+      "pair_id": "slot-000021-step-002__slot-000021-step-003",
+      "status": "BOTH_VISIBLE_PROJECTIONS_ONLY",
+      "visible_ast_differs": true,
+      "visible_call_inventory_differs": false
+    },
+    {
+      "pair_id": "slot-000021-step-003__slot-000021-step-004",
+      "status": "BOTH_VISIBLE_PROJECTIONS_ONLY",
+      "visible_ast_differs": true,
+      "visible_call_inventory_differs": false
+    },
+    {
+      "pair_id": "slot-000021-step-004__slot-000021-step-005",
+      "status": "BOTH_VISIBLE_PROJECTIONS_ONLY",
+      "visible_ast_differs": true,
+      "visible_call_inventory_differs": false
+    },
+    {
+      "pair_id": "slot-000021-step-005__slot-000021-step-006",
+      "status": "BOTH_VISIBLE_PROJECTIONS_ONLY",
+      "visible_ast_differs": true,
+      "visible_call_inventory_differs": true
+    },
+    {
+      "pair_id": "slot-000022-step-002__slot-000022-step-003",
+      "status": "BOTH_VISIBLE_PROJECTIONS_ONLY",
+      "visible_ast_differs": true,
+      "visible_call_inventory_differs": true
+    },
+    {
+      "pair_id": "slot-000022-step-003__slot-000022-step-004",
+      "status": "BOTH_VISIBLE_PROJECTIONS_ONLY",
+      "visible_ast_differs": true,
+      "visible_call_inventory_differs": true
+    },
+    {
+      "pair_id": "slot-000022-step-004__slot-000022-step-005",
+      "status": "BOTH_VISIBLE_PROJECTIONS_ONLY",
+      "visible_ast_differs": true,
+      "visible_call_inventory_differs": true
+    },
+    {
+      "pair_id": "slot-000024-step-002__slot-000024-step-003",
+      "status": "BOTH_EXACT_LOGGED_ASTS",
+      "visible_ast_differs": true,
+      "visible_call_inventory_differs": true
+    },
+    {
+      "pair_id": "slot-000024-step-003__slot-000024-step-004",
+      "status": "BOTH_EXACT_LOGGED_ASTS",
+      "visible_ast_differs": true,
+      "visible_call_inventory_differs": true
+    },
+    {
+      "pair_id": "slot-000026-step-002__slot-000026-step-003",
+      "status": "BOTH_EXACT_LOGGED_ASTS",
+      "visible_ast_differs": true,
+      "visible_call_inventory_differs": false
+    },
+    {
+      "pair_id": "slot-000027-step-002__slot-000027-step-003",
+      "status": "BOTH_EXACT_LOGGED_ASTS",
+      "visible_ast_differs": true,
+      "visible_call_inventory_differs": false
+    },
+    {
+      "pair_id": "slot-000027-step-003__slot-000027-step-004",
+      "status": "BOTH_EXACT_LOGGED_ASTS",
+      "visible_ast_differs": true,
+      "visible_call_inventory_differs": false
+    },
+    {
+      "pair_id": "slot-000034-step-002__slot-000034-step-003",
+      "status": "BOTH_EXACT_LOGGED_ASTS",
+      "visible_ast_differs": true,
+      "visible_call_inventory_differs": true
+    },
+    {
+      "pair_id": "slot-000035-step-002__slot-000035-step-003",
+      "status": "BOTH_EXACT_LOGGED_ASTS",
+      "visible_ast_differs": true,
+      "visible_call_inventory_differs": true
+    },
+    {
+      "pair_id": "slot-000037-step-003__slot-000037-step-004",
+      "status": "BOTH_EXACT_LOGGED_ASTS",
+      "visible_ast_differs": true,
+      "visible_call_inventory_differs": true
+    },
+    {
+      "pair_id": "slot-000038-step-002__slot-000038-step-003",
+      "status": "BOTH_EXACT_LOGGED_ASTS",
+      "visible_ast_differs": true,
+      "visible_call_inventory_differs": true
+    },
+    {
+      "pair_id": "slot-000038-step-003__slot-000038-step-004",
+      "status": "BOTH_EXACT_LOGGED_ASTS",
+      "visible_ast_differs": true,
+      "visible_call_inventory_differs": true
+    },
+    {
+      "pair_id": "slot-000039-step-003__slot-000039-step-004",
+      "status": "BOTH_EXACT_LOGGED_ASTS",
+      "visible_ast_differs": true,
+      "visible_call_inventory_differs": true
+    },
+    {
+      "pair_id": "slot-000039-step-004__slot-000039-step-005",
+      "status": "BOTH_EXACT_LOGGED_ASTS",
+      "visible_ast_differs": true,
+      "visible_call_inventory_differs": true
+    }
+  ],
+  "scope": "logged_source_visible_projection_only",
+  "sealed_manifest_sha256": "07bf61e0db8d23aa7bfdf4481fad9b2f6b1ed867870cd17f8e230560f4e6d950",
+  "source_fidelity_report_sha256": "0c724fbca23fe25574e1e1b02899348bc0f95c63ed742964fb69895ee49ae577",
+  "summary": {
+    "adjacent_pairs": 37,
+    "exact_logged_ast_differences": 25,
+    "exact_logged_ast_pairs": 25,
+    "executed_ast_recovered": 0,
+    "logged_attempt_sources": 77,
+    "new_visible_ast_differences": 9,
+    "new_visible_call_inventory_differences": 4,
+    "new_visible_projection_pairs": 9,
+    "redacted_sources_with_parseable_placeholder_projection": 11,
+    "remaining_unparseable_pairs": 3,
+    "sealed_runs": 40
+  },
+  "version": "logged-source-surrogate-ast-1"
+}

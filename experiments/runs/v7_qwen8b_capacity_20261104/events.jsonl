@@ -1,0 +1,10 @@
+{"sequence":1,"slot_id":"csrf_origin-s501","state":"SCHEDULED"}
+{"sequence":2,"slot_id":"tls_hostname-s502","state":"SCHEDULED"}
+{"sequence":3,"slot_id":"tls_hostname-s503","state":"SCHEDULED"}
+{"sequence":4,"slot_id":"csrf_origin-s504","state":"SCHEDULED"}
+{"sequence":5,"slot_id":"csrf_origin-s501","state":"PRECURSOR_START"}
+{"error":"local Ollama /api/chat timed out","error_type":"ExcludedOllamaTransportTimeout","sequence":6,"slot_id":"csrf_origin-s501","state":"INVALIDATED"}
+{"reason":"stopped_after_technical_invalidation","sequence":7,"slot_id":"tls_hostname-s502","state":"UNSTARTED"}
+{"reason":"stopped_after_technical_invalidation","sequence":8,"slot_id":"tls_hostname-s503","state":"UNSTARTED"}
+{"reason":"stopped_after_technical_invalidation","sequence":9,"slot_id":"csrf_origin-s504","state":"UNSTARTED"}
+{"completed_slots":0,"failed_slot_id":"csrf_origin-s501","sequence":10,"slot_id":null,"state":"WAVE_STOPPED"}

@@ -1,0 +1,1 @@
+{"eligible_for_main_analysis":false,"message_sha256":"e836d60e1cc3c804d9314555b40e65aa35b5b787eb6016a18ff9fdca018a39ad","phase":"pilot","reason":"TRANSPORT_EXCEPTION","schema_version":"excluded-live-dispatch-0.1.0","sequence":1,"slot_id":"excluded-slot-000001","type":"ExcludedOllamaTransportTimeout"}

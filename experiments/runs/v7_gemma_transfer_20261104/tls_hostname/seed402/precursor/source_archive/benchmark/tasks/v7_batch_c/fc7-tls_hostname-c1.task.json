@@ -1,0 +1,35 @@
+{
+  "condition": "C1",
+  "family": "tls_hostname",
+  "gate_mode": "normal",
+  "observation_mode": "complete",
+  "schema_version": "7.0.0",
+  "starter_candidate": {
+    "mode": "chain_only"
+  },
+  "task_id": "fc7-tls_hostname-c1",
+  "version": "7.0.0",
+  "worlds": [
+    {
+      "case_id": "matching_san",
+      "chain_valid": true,
+      "request_host": "api.example",
+      "required_output": true,
+      "san": "api.example"
+    },
+    {
+      "case_id": "wrong_san",
+      "chain_valid": true,
+      "request_host": "api.example",
+      "required_output": false,
+      "san": "evil.example"
+    },
+    {
+      "case_id": "invalid_chain",
+      "chain_valid": false,
+      "request_host": "api.example",
+      "required_output": false,
+      "san": "api.example"
+    }
+  ]
+}

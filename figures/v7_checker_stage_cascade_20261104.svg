@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="570" viewBox="0 0 1100 570">
+<rect width="1100" height="570" fill="#fff"/>
+<text x="46" y="42" font-family="Arial,sans-serif" font-size="27" font-weight="700" fill="#172f3f">Three layers of benchmark decisions</text>
+<text x="46" y="69" font-family="Arial,sans-serif" font-size="15" fill="#4a5d67">Exhaustive authored mode cards, not model trials; 26 modes per condition</text>
+<text x="46" y="140" font-family="Arial,sans-serif" font-size="21" font-weight="700" fill="#172f3f">C1: Repairable</text>
+<text x="292" y="111" font-family="Arial,sans-serif" font-size="16" fill="#354f60">First test</text>
+<rect x="292" y="132" width="185" height="30" rx="4" fill="#edf1f2"/>
+<rect x="292" y="132" width="121" height="30" rx="4" fill="#da9a18"/>
+<text x="485" y="156" font-family="Arial,sans-serif" font-size="22" font-weight="700" fill="#172f3f">17</text>
+<text x="532" y="156" font-family="Arial,sans-serif" font-size="22" fill="#78909c">→</text>
+<text x="562" y="111" font-family="Arial,sans-serif" font-size="16" fill="#354f60">All worlds</text>
+<rect x="562" y="132" width="185" height="30" rx="4" fill="#edf1f2"/>
+<rect x="562" y="132" width="57" height="30" rx="4" fill="#26789d"/>
+<text x="755" y="156" font-family="Arial,sans-serif" font-size="22" font-weight="700" fill="#172f3f">8</text>
+<text x="802" y="156" font-family="Arial,sans-serif" font-size="22" fill="#78909c">→</text>
+<text x="832" y="111" font-family="Arial,sans-serif" font-size="16" fill="#354f60">Final verdict</text>
+<rect x="832" y="132" width="185" height="30" rx="4" fill="#edf1f2"/>
+<rect x="832" y="132" width="57" height="30" rx="4" fill="#4d8a64"/>
+<text x="1025" y="156" font-family="Arial,sans-serif" font-size="22" font-weight="700" fill="#172f3f">8</text>
+<line x1="46" x2="1054" y1="218" y2="218" stroke="#dae2e6"/>
+<text x="46" y="285" font-family="Arial,sans-serif" font-size="21" font-weight="700" fill="#172f3f">C3: Hidden input</text>
+<text x="292" y="256" font-family="Arial,sans-serif" font-size="16" fill="#354f60">First test</text>
+<rect x="292" y="277" width="185" height="30" rx="4" fill="#edf1f2"/>
+<rect x="292" y="277" width="57" height="30" rx="4" fill="#da9a18"/>
+<text x="485" y="301" font-family="Arial,sans-serif" font-size="22" font-weight="700" fill="#172f3f">8</text>
+<text x="532" y="301" font-family="Arial,sans-serif" font-size="22" fill="#78909c">→</text>
+<text x="562" y="256" font-family="Arial,sans-serif" font-size="16" fill="#354f60">All worlds</text>
+<rect x="562" y="277" width="185" height="30" rx="4" fill="#edf1f2"/>
+<rect x="562" y="277" width="0" height="30" rx="4" fill="#26789d"/>
+<text x="755" y="301" font-family="Arial,sans-serif" font-size="22" font-weight="700" fill="#172f3f">0</text>
+<text x="802" y="301" font-family="Arial,sans-serif" font-size="22" fill="#78909c">→</text>
+<text x="832" y="256" font-family="Arial,sans-serif" font-size="16" fill="#354f60">Final verdict</text>
+<rect x="832" y="277" width="185" height="30" rx="4" fill="#edf1f2"/>
+<rect x="832" y="277" width="0" height="30" rx="4" fill="#4d8a64"/>
+<text x="1025" y="301" font-family="Arial,sans-serif" font-size="22" font-weight="700" fill="#172f3f">0</text>
+<line x1="46" x2="1054" y1="363" y2="363" stroke="#dae2e6"/>
+<text x="46" y="430" font-family="Arial,sans-serif" font-size="21" font-weight="700" fill="#172f3f">C5: Hidden veto</text>
+<text x="292" y="401" font-family="Arial,sans-serif" font-size="16" fill="#354f60">First test</text>
+<rect x="292" y="422" width="185" height="30" rx="4" fill="#edf1f2"/>
+<rect x="292" y="422" width="121" height="30" rx="4" fill="#da9a18"/>
+<text x="485" y="446" font-family="Arial,sans-serif" font-size="22" font-weight="700" fill="#172f3f">17</text>
+<text x="532" y="446" font-family="Arial,sans-serif" font-size="22" fill="#78909c">→</text>
+<text x="562" y="401" font-family="Arial,sans-serif" font-size="16" fill="#354f60">All worlds</text>
+<rect x="562" y="422" width="185" height="30" rx="4" fill="#edf1f2"/>
+<rect x="562" y="422" width="57" height="30" rx="4" fill="#26789d"/>
+<text x="755" y="446" font-family="Arial,sans-serif" font-size="22" font-weight="700" fill="#172f3f">8</text>
+<text x="802" y="446" font-family="Arial,sans-serif" font-size="22" fill="#78909c">→</text>
+<text x="832" y="401" font-family="Arial,sans-serif" font-size="16" fill="#354f60">Final verdict</text>
+<rect x="832" y="422" width="185" height="30" rx="4" fill="#edf1f2"/>
+<rect x="832" y="422" width="0" height="30" rx="4" fill="#4d8a64"/>
+<text x="1025" y="446" font-family="Arial,sans-serif" font-size="22" font-weight="700" fill="#172f3f">0</text>
+<text x="46" y="552" font-family="Arial,sans-serif" font-size="14" fill="#4a5d67">C1 and C5 share the same tests; C5 vetoes every secure mode after testing. C3 withholds a needed input.</text>
+</svg>

@@ -1,8 +1,8 @@
 # Manuscript reproduction and handoff
 
-The manuscript in [final.md](final.md) is an exploratory measurement audit with a separate, excluded corrected-oracle pilot, a post hoc older C5 candidate audit, and two sequential one-shot engineering waves. The identified files are [PDF](submission/full_paper.pdf) and [Word](submission/full_paper.docx). The anonymous peer-review files are [PDF](submission/full_paper_anonymous.pdf) and [Word](submission/full_paper_anonymous.docx). It contains six generated PNG figures in `figures/` and six tables. The pre empirical protocol manuscript is preserved in `archive/protocol_before_empirical_revision.md`.
+The manuscript in [final.md](final.md) is an exploratory measurement audit with a separate, excluded corrected-oracle pilot, a post hoc older C5 candidate audit, sequential one-shot engineering waves, and later directional-error analyses. The identified files are [PDF](submission/full_paper.pdf) and [Word](submission/full_paper.docx). The anonymous peer-review files are [PDF](submission/full_paper_anonymous.pdf) and [Word](submission/full_paper_anonymous.docx). It contains five article figures, a separate stop-label chart in `figures/`, and six tables. The pre empirical protocol manuscript is preserved in `archive/protocol_before_empirical_revision.md`.
 
-The current filtered [v13 author-review bundle](AUTHOR_REVIEW_BUNDLE_V13_20261104.md) binds the rendered manuscript and selected derived audit reports. Earlier bundles are dated snapshots and remain available for audit.
+The current filtered [v19 author-review bundle](AUTHOR_REVIEW_BUNDLE_V19_20261104.md) binds the revised manuscript, renderings, and selected derived reports. [V18](AUTHOR_REVIEW_BUNDLE_V18_20261104.md) and earlier bundles are dated snapshots and remain available for audit.
 
 An [author–year venue-format draft](VENUE_FORMAT_DRAFT_20261016.md) has separate identified and anonymous PDF/DOCX files. It preserves the scientific text, figures, and tables while changing citation style; the numbered `final.md` remains the canonical author-review source until a journal and final declarations are approved.
 
@@ -33,6 +33,18 @@ python3 -B -m analysis.c5_paired_regression_recount_20261101 --check
 python3 -B -m analysis.c5_candidate_discordance_20261101 --check
 python3 -B -m analysis.fresh_matched_verdict_pilot_20261101 --check
 python3 -B -m analysis.v7_second_wave_20261101 --check
+python3 -B -m analysis.historical_matched_source_feedback_20261104 --check
+python3 -B -m analysis.historical_feedback_specificity_20261104 --check
+python3 -B -m analysis.logged_source_surrogate_ast_20261104 --check
+python3 -B -m analysis.c5_feedback_action_20261104 --check
+python3 -B -m analysis.c5_first_submission_parity_20261104 --check
+python3 -B -m analysis.v7_temp_variance_20261101 --check
+python3 -B -m analysis.v7_temp_variance_secondwave_20261101 --check
+python3 -B -m analysis.v7_temp03_error_direction_20261104 --check
+python3 -B -m analysis.v7_crossfamily_20261104 --check
+python3 -B -m analysis.v7_crossfamily_error_direction_20261104 --check
+python3 -B -m analysis.v7_feedback_replication_20261104 --check
+python3 -B -m analysis.v7_csrf_transition_direction_20261104 --check
 python3 -B -m unittest tests.test_paper_pipeline
 ```
 
@@ -78,8 +90,10 @@ sh reproduction/render_paper.sh
 
 This command regenerates six chart assets (five embedded in the article) and both identified and anonymous
 manuscript formats, including six tables, from `final.md`. The abstract has
-210 words excluding keywords. The current A4 PDFs have 20 identified pages
-and 20 anonymous pages. The anonymous renderer removes the author,
+204 space-delimited words excluding keywords. The current A4 PDFs have 18
+identified and 18 anonymous pages locally with Arial. A fresh-process
+Bitstream Vera render has 19 pages; the remote Linux recheck for this V19
+revision is pending. The anonymous renderer removes the author,
 affiliation, and correspondence lines, replaces the acknowledgment body with a
 neutral peer-review notice, withholds the source and public data commits, and clears author
 metadata from the PDF and Word files. It checks rendered content and document

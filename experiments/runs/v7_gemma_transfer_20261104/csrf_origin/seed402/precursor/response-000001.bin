@@ -1,0 +1,1 @@
+{"model":"gemma3:4b","created_at":"2026-11-04T15:28:43.877625Z","message":{"role":"assistant","content":"{\"action\": \"inspect\", \"payload\": {}}"},"done":true,"done_reason":"stop","total_duration":4227614792,"load_duration":9874958,"prompt_eval_count":514,"prompt_eval_cached_count":508,"prompt_eval_duration":828130000,"eval_count":12,"eval_duration":659598000}

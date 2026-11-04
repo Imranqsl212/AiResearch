@@ -36,6 +36,12 @@ V10_OUTPUT = ROOT / "experiments/runs/paper_author_review_manuscript_20261016_v1
 V11_OUTPUT = ROOT / "experiments/runs/paper_author_review_manuscript_20261101_v11.tar.gz"
 V12_OUTPUT = ROOT / "experiments/runs/paper_author_review_manuscript_20261101_v12.tar.gz"
 V13_OUTPUT = ROOT / "experiments/runs/paper_author_review_manuscript_20261104_v13.tar.gz"
+V14_OUTPUT = ROOT / "experiments/runs/paper_author_review_manuscript_20261104_v14.tar.gz"
+V15_OUTPUT = ROOT / "experiments/runs/paper_author_review_manuscript_20261104_v15.tar.gz"
+V16_OUTPUT = ROOT / "experiments/runs/paper_author_review_manuscript_20261104_v16.tar.gz"
+V17_OUTPUT = ROOT / "experiments/runs/paper_author_review_manuscript_20261104_v17.tar.gz"
+V18_OUTPUT = ROOT / "experiments/runs/paper_author_review_manuscript_20261104_v18.tar.gz"
+V19_OUTPUT = ROOT / "experiments/runs/paper_author_review_manuscript_20261104_v19.tar.gz"
 OUTPUT = V11_OUTPUT
 V1_VERSION = "paper-author-review-manuscript-1.0.0"
 V2_VERSION = "paper-author-review-manuscript-2.0.0"
@@ -50,6 +56,12 @@ V10_VERSION = "paper-author-review-manuscript-10.0.0"
 V11_VERSION = "paper-author-review-manuscript-11.0.0"
 V12_VERSION = "paper-author-review-manuscript-12.0.0"
 V13_VERSION = "paper-author-review-manuscript-13.0.0"
+V14_VERSION = "paper-author-review-manuscript-14.0.0"
+V15_VERSION = "paper-author-review-manuscript-15.0.0"
+V16_VERSION = "paper-author-review-manuscript-16.0.0"
+V17_VERSION = "paper-author-review-manuscript-17.0.0"
+V18_VERSION = "paper-author-review-manuscript-18.0.0"
+V19_VERSION = "paper-author-review-manuscript-19.0.0"
 VERSION = V11_VERSION
 README_NAME = "REVIEW_ONLY_README.md"
 MANIFEST_NAME = "SOURCE_HASH_MANIFEST.json"
@@ -132,6 +144,71 @@ V12_SOURCE_NAMES = V11_SOURCE_NAMES + (
     "analysis/figures/v7_temp03_pair_outcomes_20261101.png",
 )
 V13_SOURCE_NAMES = V12_SOURCE_NAMES
+V14_NEW_DERIVED = (
+    "analysis/HISTORICAL_FEEDBACK_SPECIFICITY_20261104.md",
+    "analysis/historical_feedback_specificity_20261104.json",
+    "analysis/C5_FIRST_SUBMISSION_PARITY_20261104.md",
+    "analysis/c5_first_submission_parity_20261104.json",
+    "analysis/V7_LEAVE_ONE_WORLD_OUT_20261104.md",
+    "analysis/v7_leave_one_world_out_20261104.json",
+    "analysis/V7_CROSSFAMILY_ERROR_DIRECTION_20261104.md",
+    "analysis/v7_crossfamily_error_direction_20261104.json",
+    "analysis/V7_CSRF_TRANSITION_DIRECTION_20261104.md",
+    "analysis/v7_csrf_transition_direction_20261104.json",
+    "analysis/V7_TEMP03_ERROR_DIRECTION_20261104.md",
+    "analysis/v7_temp03_error_direction_20261104.json",
+    "analysis/LOGGED_SOURCE_SURROGATE_AST_20261104.md",
+    "analysis/logged_source_surrogate_ast_20261104.json",
+    "docs/EXCLUDED_V7_CROSSFAMILY_20261104_RESULTS.md",
+    "analysis/v7_crossfamily_20261104.json",
+    "docs/EXCLUDED_V7_FEEDBACK_REPLICATION_20261104_RESULTS.md",
+    "analysis/v7_feedback_replication_20261104.json",
+)
+V14_SOURCE_NAMES = V13_SOURCE_NAMES + V14_NEW_DERIVED
+V15_NEW_DERIVED = (
+    "analysis/HISTORICAL_PROTOCOL_STOP_RECOUNT_20261104.md",
+    "analysis/historical_protocol_stop_recount_20261104.json",
+    "analysis/V7_ENDPOINT_SENSITIVITY_20261104.md",
+    "analysis/v7_endpoint_sensitivity_20261104.json",
+    "analysis/V7_TEST_SET_SUFFICIENCY_20261104.md",
+    "analysis/v7_test_set_sufficiency_20261104.json",
+    "analysis/V7_GEMMA_TRANSFER_20261104.md",
+    "analysis/v7_gemma_transfer_20261104.json",
+    "analysis/v7_gemma_transfer_20261104_screen.json",
+    "figures/v7_checker_stage_cascade_20261104.svg",
+)
+V15_SOURCE_NAMES = V14_SOURCE_NAMES + V15_NEW_DERIVED
+V16_NEW_DERIVED = (
+    "analysis/V7_QWEN8B_CAPACITY_20261104.md",
+    "analysis/v7_qwen8b_capacity_20261104.json",
+    "analysis/v7_qwen8b_capacity_20261104_screen.json",
+)
+V16_SOURCE_NAMES = V15_SOURCE_NAMES + V16_NEW_DERIVED
+V17_SOURCE_NAMES = V16_SOURCE_NAMES
+V18_NEW_DERIVED = (
+    "analysis/HISTORICAL_TERMINATE_LATENCY_20261104.md",
+    "analysis/historical_terminate_latency_20261104.json",
+    "analysis/historical_terminate_latency_20261104.py",
+    "figures/historical_terminate_latency_20261104.svg",
+    "tests/test_historical_terminate_latency_20261104.py",
+    "analysis/V7_BOUNDARY_PROVIDER_LATENCY_20261104.md",
+    "analysis/v7_boundary_provider_latency_20261104.json",
+    "analysis/v7_boundary_provider_latency_20261104.py",
+    "tests/test_v7_boundary_provider_latency_20261104.py",
+)
+V18_SOURCE_NAMES = V17_SOURCE_NAMES + V18_NEW_DERIVED
+V19_NEW_DERIVED = (
+    "analysis/STOP_LATENCY_CHALLENGE_20261104.md",
+    "analysis/stop_latency_challenge_20261104.json",
+    "analysis/stop_latency_challenge_20261104.py",
+    "tests/test_stop_latency_challenge_20261104.py",
+    "analysis/STOP_CONTRACT_CONTROL_20261104.md",
+    "analysis/stop_contract_control_20261104.json",
+    "analysis/stop_contract_control_20261104.py",
+    "tests/test_stop_contract_control_20261104.py",
+    "paper/test_submission_rendering.py",
+)
+V19_SOURCE_NAMES = V18_SOURCE_NAMES + V19_NEW_DERIVED
 SOURCE_NAMES = V11_SOURCE_NAMES
 FORBIDDEN_MARKERS = {
     "mac_home": re.compile(rb"/Users/[^/\s\"'<>\\]+", re.I),
@@ -464,6 +541,237 @@ V13_README = V12_README.replace(
     "paper_author_review_manuscript_20261101_v12.tar.gz",
     "paper_author_review_manuscript_20261104_v13.tar.gz",
 )
+V14_README = """# Local author-review manuscript bundle v14
+
+**Status: REVIEW_ONLY. This filtered package is not an approved journal
+supplement or submission.**
+
+This package binds the current exploratory manuscript, identified and
+anonymous canonical and author-year PDF/DOCX renderings, the article figures,
+historical derived tables, references, and the pending author decision form.
+It adds selected derived reports for the historical feedback audit, first
+candidate parity, checker-world sensitivity, source-surrogate AST audit,
+and directional error analyses. Two separately selected, excluded live
+waves are represented by their reports and JSON recounts. The new six-slot
+wave is not pooled with the earlier three-family pilot or the historical
+main-study denominator.
+
+`SOURCE_HASH_MANIFEST.json` records exact hashes and byte counts. Raw
+trajectories, model requests and responses, candidate source, source snapshots,
+and the public run archives are **not** inside this filtered package. Those
+separately tracked archives and analysis code are required to replay the
+derived findings. This package itself does not establish original-run
+provenance, human task admission, author approval, privacy clearance, or a
+journal-accepted data route. The newest live-wave data Git revision is
+unbound in this bundle; the historical-data revision applies only to an
+earlier release.
+
+The anonymous files remain review drafts. The identified author decision
+form must not accompany an anonymous peer-review submission. The builder
+screens selected bytes and expanded DOCX members for a limited set of local
+path and account markers; authors must still inspect the exact package.
+
+Verify against the current local source tree with:
+
+    python3 -B -m paper.build_author_review_bundle verify --bundle-version v14
+
+Use `--no-local-compare` to verify archived bytes and receipt after workspace
+sources change. This digest receipt is not an independent timestamp,
+signature, final source revision, or journal approval.
+"""
+V15_README = """# Local author-review manuscript bundle v15
+
+**Status: REVIEW_ONLY. This filtered package is not an approved journal
+supplement or submission.**
+
+This package binds the current exploratory manuscript, identified and
+anonymous PDF/DOCX renderings, article figures, historical derived tables,
+references, and pending author decision form. It retains the v14 analyses
+and adds derived reports/JSON for historical protocol stops, sensitivity to
+the endpoint definition, and finite test-set sufficiency. It also includes
+a descriptive checker-stage SVG and a screened excluded Gemma transfer-pilot
+report/JSON. In Gemma's four fixed slots no secure precursor onset occurred,
+so no matched feedback arms opened; this is not a measured transfer effect.
+
+The bundle contains no raw trajectories, model requests/responses, source
+snapshots, or separate run archives. Its source-hash manifest binds exact
+selected bytes. Separately tracked archives and analysis code are needed to
+replay findings. This filtered review package does not establish human task
+admission, author approval, privacy clearance, a journal-accepted data route,
+or a final Git revision for the newest material. The included screen receipt
+is a limited pattern check, not a general privacy guarantee.
+
+The anonymous files are review drafts. The identified decision form must
+not accompany anonymous peer review. The builder screens selected bytes and
+expanded DOCX members for limited local path and account markers; authors
+must still inspect the exact package.
+
+Verify against the current local source tree with:
+
+    python3 -B -m paper.build_author_review_bundle verify --bundle-version v15
+
+Use `--no-local-compare` to verify archived bytes and receipt after workspace
+sources change. This digest receipt is not an independent timestamp,
+signature, source revision, or journal approval.
+"""
+V16_README = """# Local author-review manuscript bundle v16
+
+**Status: REVIEW_ONLY. This filtered package is not an approved journal
+supplement or submission.**
+
+This package binds the current exploratory manuscript, identified and
+anonymous PDF/DOCX renderings, article figures, historical derived tables,
+references, and pending author decision form. It retains the v15 analyses
+and adds a derived report, JSON recount, and limited pattern-screen receipt
+for the excluded Qwen3:8b capacity probe. The first model request timed out;
+the other three slots were unstarted. There was no model response, candidate,
+or matched feedback comparison to score. Do not interpret this as a negative
+effect or a measured model comparison.
+
+The bundle contains no raw trajectories, model requests/responses, source
+snapshots, or separate run archives. Its source-hash manifest binds exact
+selected bytes. Separately tracked archives and analysis code are required
+to replay findings. This review package does not establish human task
+admission, author approval, privacy clearance, a journal-accepted data
+route, or a final Git revision for the newest material. The included screen
+receipt is a limited pattern check, not general privacy clearance.
+
+The PDFs were rerendered after the v15 remote Linux page-limit failure.
+Local rendering and a local simulated fallback meet the 20-page limit;
+the remote Linux recheck is pending. The anonymous files are review drafts.
+The identified decision form must not accompany anonymous peer review.
+
+Verify against the current local source tree with:
+
+    python3 -B -m paper.build_author_review_bundle verify --bundle-version v16
+
+Use `--no-local-compare` to verify archived bytes and receipt after workspace
+sources change. This digest receipt is not an independent timestamp,
+signature, source revision, or journal approval.
+"""
+V17_README = """# Local author-review manuscript bundle v17
+
+**Status: REVIEW_ONLY. This filtered package is not an approved journal
+supplement or submission.**
+
+This package binds the current exploratory manuscript, identified and
+anonymous PDF/DOCX renderings, article figures, historical derived tables,
+references, and pending author decision form. The derived-report allowlist
+matches v16. In the excluded Qwen3:8b capacity probe, the first request
+timed out and three slots were unstarted; no matched feedback effect was
+measured. The raw run archive is outside this filtered bundle.
+
+The v17 manuscript and renderings incorporate a correction to the PDF font
+registration test: fallback rendering now uses Bitstream Vera in a fresh
+process rather than accidentally reusing Arial. The current PDFs are 18
+pages locally with Arial and 19 pages in a fresh-process Vera render. The
+remote Linux recheck after this correction is pending.
+
+The bundle contains no raw trajectories, model requests/responses, source
+snapshots, or separate run archives. Its source-hash manifest binds exact
+selected bytes. Separately tracked archives and analysis code are required
+to replay findings. This review package does not establish human task
+admission, author approval, privacy clearance, a journal-accepted data
+route, or a final Git revision for the newest material. The included screen
+receipt is a limited pattern check, not general privacy clearance.
+
+The anonymous files are review drafts. The identified decision form must
+not accompany anonymous peer review.
+
+Verify against the current local source tree with:
+
+    python3 -B -m paper.build_author_review_bundle verify --bundle-version v17
+
+Use `--no-local-compare` to verify archived bytes and receipt after workspace
+sources change. This digest receipt is not an independent timestamp,
+signature, source revision, or journal approval.
+"""
+V18_README = """# Local author-review manuscript bundle v18
+
+**Status: REVIEW_ONLY. This filtered package is not an approved journal
+supplement or submission.**
+
+This package binds the current exploratory manuscript, identified and
+anonymous PDF/DOCX renderings, article figures, historical derived tables,
+references, and pending author decision form. It retains the v17 material
+and adds a source-bound historical terminate-latency audit: report, JSON,
+recount script, focused test, and SVG. In 14 of 40 historical episodes,
+the agent's `terminate` tool call was acknowledged. In 13 later self-labeled
+episodes, the median interval from first acknowledgement to final runner
+stop was 128.446 seconds. This is observed time, not a counterfactual time
+saving or evidence of continued code repair. One acknowledged request ended
+in a timeout. These outcomes are retrospective and local to the frozen
+adapter/runner.
+
+A separate runtime audit of 208 completed qwen3:4b responses across five
+selected excluded v7 cohorts identifies a transient latency burst in one
+stopped wave. It includes its report, JSON recount, script, and focused test.
+Response-duration arithmetic cannot establish its cause or a feedback effect.
+
+The v17 manuscript-format check passed on remote Linux at source revision
+`42aaa05e`. V18 has new scientific text and current local renders of 18
+pages; its remote Linux recheck is pending. The bundle contains no raw
+trajectories, model requests/responses, source snapshots, or separate run
+archives. Its source-hash manifest binds exact selected bytes. Separately
+tracked archives are required to replay the historical result.
+
+This review package does not establish human task admission, author approval,
+privacy clearance, a journal-accepted data route, or a final Git revision
+for the newest material. The anonymous files are review drafts. The
+identified decision form must not accompany anonymous peer review.
+
+Verify against the current local source tree with:
+
+    python3 -B -m paper.build_author_review_bundle verify --bundle-version v18
+
+Use `--no-local-compare` to verify archived bytes and receipt after workspace
+sources change. This digest receipt is not an independent timestamp,
+signature, source revision, or journal approval.
+"""
+V19_README = """# Local author-review manuscript bundle v19
+
+**Status: REVIEW_ONLY. This filtered package is not an approved journal
+supplement or submission.**
+
+This package binds the current exploratory manuscript, identified and
+anonymous PDF/DOCX renderings, figures, historical derived tables,
+references, and pending author decision form. It retains the v18 material
+and adds two verified source-bound controls: an adversarial audit of the
+historical terminate-latency interpretation and a model-free control of the
+frozen runner's stop handshake. The corrected historical latency report,
+JSON, script, and SVG are bound to their current bytes.
+
+The 14 historical episodes with an acknowledged `terminate` call occurred
+only in nominally repairable cells after a public `SECURITY_CHECK_PASSED`
+message. Those episodes contain 15 calls because one episode called twice.
+The 128.446-second median acknowledgement-to-stop interval in 13 later
+self-labeled episodes is an observed success-path handshake interval, not
+time spent deciding that an unavailable task was impossible or a measured
+counterfactual time saving. The model-free control shows that the frozen
+runner requires a subsequent adapter stop decision after `STOP_REQUESTED`.
+It does not estimate the historical model's intent or a feedback effect.
+
+The current identified and anonymous PDFs have 18 pages locally with Arial
+and 19 pages in a fresh-process Bitstream Vera render. The current v19
+remote Linux recheck is pending. The package includes the rendering test
+that checks the 200–250-word abstract range. The bundle contains no raw trajectories,
+model requests/responses, source snapshots, or separate run archives. Its
+source-hash manifest binds exact selected bytes. Separately tracked sealed
+logs are required to replay the historical findings.
+
+This review package does not establish human task admission, author approval,
+privacy clearance, a journal-accepted data route, or a final Git revision
+for the newest material. The anonymous files are review drafts. The
+identified decision form must not accompany anonymous peer review.
+
+Verify against the current local source tree with:
+
+    python3 -B -m paper.build_author_review_bundle verify --bundle-version v19
+
+Use `--no-local-compare` to verify archived bytes and receipt after workspace
+sources change. This digest receipt is not an independent timestamp,
+signature, source revision, or journal approval.
+"""
 README = V11_README
 
 
@@ -487,12 +795,22 @@ V10_SPEC = BundleSpec(V10_VERSION, V10_SOURCE_NAMES, V10_README)
 V11_SPEC = BundleSpec(V11_VERSION, V11_SOURCE_NAMES, V11_README)
 V12_SPEC = BundleSpec(V12_VERSION, V12_SOURCE_NAMES, V12_README)
 V13_SPEC = BundleSpec(V13_VERSION, V13_SOURCE_NAMES, V13_README)
+V14_SPEC = BundleSpec(V14_VERSION, V14_SOURCE_NAMES, V14_README)
+V15_SPEC = BundleSpec(V15_VERSION, V15_SOURCE_NAMES, V15_README)
+V16_SPEC = BundleSpec(V16_VERSION, V16_SOURCE_NAMES, V16_README)
+V17_SPEC = BundleSpec(V17_VERSION, V17_SOURCE_NAMES, V17_README)
+V18_SPEC = BundleSpec(V18_VERSION, V18_SOURCE_NAMES, V18_README)
+V19_SPEC = BundleSpec(V19_VERSION, V19_SOURCE_NAMES, V19_README)
 SPECS_BY_VERSION = {spec.version: spec for spec in
                     (V1_SPEC, V2_SPEC, V3_SPEC, V4_SPEC, V5_SPEC, V6_SPEC,
                      V7_SPEC, V8_SPEC, V9_SPEC, V10_SPEC, V11_SPEC, V12_SPEC,
-                     V13_SPEC)}
+                     V13_SPEC, V14_SPEC, V15_SPEC, V16_SPEC, V17_SPEC, V18_SPEC,
+                     V19_SPEC)}
 BUILD_TARGETS = {"v11": (V11_OUTPUT, V11_SPEC), "v12": (V12_OUTPUT, V12_SPEC),
-                 "v13": (V13_OUTPUT, V13_SPEC)}
+                 "v13": (V13_OUTPUT, V13_SPEC), "v14": (V14_OUTPUT, V14_SPEC),
+                 "v15": (V15_OUTPUT, V15_SPEC), "v16": (V16_OUTPUT, V16_SPEC),
+                 "v17": (V17_OUTPUT, V17_SPEC), "v18": (V18_OUTPUT, V18_SPEC),
+                 "v19": (V19_OUTPUT, V19_SPEC)}
 
 
 class BundleError(RuntimeError):
@@ -537,17 +855,17 @@ def _decision_bound_names(spec: BundleSpec) -> tuple[str, ...]:
         "paper/submission/full_paper.docx",
         "paper/artifacts/results.json",
     )
-    if spec in (V2_SPEC, V3_SPEC, V4_SPEC, V5_SPEC, V6_SPEC, V7_SPEC, V8_SPEC, V9_SPEC, V10_SPEC, V11_SPEC, V12_SPEC, V13_SPEC):
+    if spec in (V2_SPEC, V3_SPEC, V4_SPEC, V5_SPEC, V6_SPEC, V7_SPEC, V8_SPEC, V9_SPEC, V10_SPEC, V11_SPEC, V12_SPEC, V13_SPEC, V14_SPEC, V15_SPEC, V16_SPEC, V17_SPEC, V18_SPEC, V19_SPEC):
         names += (
             "paper/submission/full_paper_anonymous.pdf",
             "paper/submission/full_paper_anonymous.docx",
         )
-    if spec in (V10_SPEC, V11_SPEC, V12_SPEC, V13_SPEC):
+    if spec in (V10_SPEC, V11_SPEC, V12_SPEC, V13_SPEC, V14_SPEC, V15_SPEC, V16_SPEC, V17_SPEC, V18_SPEC, V19_SPEC):
         names += (
             "paper/venue_author_year_draft.md",
             "paper/VENUE_SHORTLIST_20261005.md",
         )
-    if spec in (V11_SPEC, V12_SPEC, V13_SPEC):
+    if spec in (V11_SPEC, V12_SPEC, V13_SPEC, V14_SPEC, V15_SPEC, V16_SPEC, V17_SPEC, V18_SPEC, V19_SPEC):
         names += (
             "paper/submission/venue_author_year_identified.pdf",
             "paper/submission/venue_author_year_identified.docx",
@@ -558,7 +876,7 @@ def _decision_bound_names(spec: BundleSpec) -> tuple[str, ...]:
             "analysis/fresh_matched_verdict_pilot_20261101.json",
             "analysis/v7_second_wave_20261101.json",
         )
-    if spec in (V12_SPEC, V13_SPEC):
+    if spec in (V12_SPEC, V13_SPEC, V14_SPEC, V15_SPEC, V16_SPEC, V17_SPEC, V18_SPEC, V19_SPEC):
         names += (
             "analysis/V7_TEMP_VARIANCE_20261101.md",
             "analysis/v7_temp_variance_20261101.json",
@@ -570,6 +888,16 @@ def _decision_bound_names(spec: BundleSpec) -> tuple[str, ...]:
             "analysis/c5_feedback_action_20261104.json",
             "analysis/figures/v7_temp03_pair_outcomes_20261101.png",
         )
+    if spec in (V14_SPEC, V15_SPEC, V16_SPEC, V17_SPEC, V18_SPEC, V19_SPEC):
+        names += V14_NEW_DERIVED
+    if spec in (V15_SPEC, V16_SPEC, V17_SPEC, V18_SPEC, V19_SPEC):
+        names += V15_NEW_DERIVED
+    if spec in (V16_SPEC, V17_SPEC, V18_SPEC, V19_SPEC):
+        names += V16_NEW_DERIVED
+    if spec in (V18_SPEC, V19_SPEC):
+        names += V18_NEW_DERIVED
+    if spec is V19_SPEC:
+        names += V19_NEW_DERIVED
     return names
 
 
@@ -604,6 +932,13 @@ def _source_bytes(spec: BundleSpec = V11_SPEC) -> dict[str, bytes]:
 
 
 def _release_flags(spec: BundleSpec) -> dict[str, Any]:
+    if spec in (V14_SPEC, V15_SPEC, V16_SPEC, V17_SPEC, V18_SPEC, V19_SPEC):
+        return {
+            "journal_supplement_approved": False,
+            "git_visibility": "not-attested-by-bundle",
+            "related_data_public_git_revision": None,
+            "historical_data_public_git_revision": PUBLIC_DATA_REVISION,
+        }
     if spec in (V12_SPEC, V13_SPEC):
         return {
             "journal_supplement_approved": False,
@@ -611,7 +946,7 @@ def _release_flags(spec: BundleSpec) -> dict[str, Any]:
             "related_data_public_git_revision": "9ecd07a3d605cfd812a874835e9b945adc5d5145",
             "historical_data_public_git_revision": PUBLIC_DATA_REVISION,
         }
-    if spec in (V11_SPEC, V12_SPEC, V13_SPEC):
+    if spec in (V11_SPEC, V12_SPEC, V13_SPEC, V14_SPEC, V15_SPEC, V16_SPEC, V17_SPEC, V18_SPEC, V19_SPEC):
         return {
             "journal_supplement_approved": False,
             "git_visibility": "not-attested-by-bundle",
@@ -704,7 +1039,7 @@ def verify(*, archive: Path = OUTPUT, compare_sources: bool = True) -> dict[str,
             or receipt.get("archive_bytes") != archive.stat().st_size):
         raise BundleError("archive differs from review-only receipt")
     if (any(receipt.get(key) != value for key, value in _release_flags(spec).items())
-            or (spec in (V10_SPEC, V11_SPEC, V12_SPEC, V13_SPEC) and "public_release_approved" in receipt)):
+            or (spec in (V10_SPEC, V11_SPEC, V12_SPEC, V13_SPEC, V14_SPEC, V15_SPEC, V16_SPEC, V17_SPEC, V18_SPEC, V19_SPEC) and "public_release_approved" in receipt)):
         raise BundleError("receipt release flags differ")
     files = _archive_files(archive)
     expected_names = set(spec.source_names) | {README_NAME, MANIFEST_NAME}
@@ -721,7 +1056,7 @@ def verify(*, archive: Path = OUTPUT, compare_sources: bool = True) -> dict[str,
             or manifest.get("source_git_revision_bound") is not False):
         raise BundleError("review-only provenance flags differ")
     if (any(manifest.get(key) != value for key, value in _release_flags(spec).items())
-            or (spec in (V10_SPEC, V11_SPEC, V12_SPEC, V13_SPEC) and "public_release_approved" in manifest)):
+            or (spec in (V10_SPEC, V11_SPEC, V12_SPEC, V13_SPEC, V14_SPEC, V15_SPEC, V16_SPEC, V17_SPEC, V18_SPEC, V19_SPEC) and "public_release_approved" in manifest)):
         raise BundleError("manifest release flags differ")
     rows = manifest.get("files")
     if not isinstance(rows, list) or len(rows) != len(spec.source_names):

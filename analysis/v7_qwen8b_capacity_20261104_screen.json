@@ -1,0 +1,38 @@
+{
+  "file_count": 41,
+  "findings": [],
+  "limitations": "Pattern scan only: encoded, split, unfamiliar, or contextual secrets and personal data may be missed; hits and planned-path metadata require human review, and zero hits are not privacy clearance.",
+  "metadata_findings": [
+    {
+      "category": "PLANNED_LOCAL_TEMP_ROOT",
+      "path": "csrf_origin/seed501/precursor/source_archive/docs/EXCLUDED_V7_QWEN8B_CAPACITY_20261104_PLAN.md"
+    },
+    {
+      "category": "PLANNED_LOCAL_TEMP_ROOT",
+      "path": "csrf_origin/seed501/precursor/source_archive/experiments/run_v7_qwen8b_capacity_20261104_excluded.py"
+    },
+    {
+      "category": "PLANNED_LOCAL_TEMP_ROOT",
+      "path": "preflight_manifest.json"
+    }
+  ],
+  "pattern_categories": [
+    "STRIPE_API_KEY",
+    "GITHUB_TOKEN",
+    "AWS_ACCESS_KEY_ID",
+    "GOOGLE_API_KEY",
+    "GOOGLE_ACCESS_TOKEN",
+    "SLACK_TOKEN",
+    "PEM_PRIVATE_KEY",
+    "BEARER_TOKEN",
+    "BASIC_TOKEN",
+    "EMAIL_ADDRESS",
+    "MAC_HOME_PATH",
+    "LINUX_HOME_PATH",
+    "WINDOWS_HOME_PATH",
+    "PRIVATE_MAC_TEMP_PATH"
+  ],
+  "schema_version": "public-excluded-archive-screen-1",
+  "status": "NO_PATTERN_HITS",
+  "tree_sha256": "1173b7e290ad8cb6e06ffbacd1e66886f65e9cabbeca1906bf51085b53d51ad3"
+}

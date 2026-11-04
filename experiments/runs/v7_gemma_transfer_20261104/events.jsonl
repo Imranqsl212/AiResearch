@@ -1,0 +1,17 @@
+{"sequence":1,"slot_id":"csrf_origin-s401","state":"SCHEDULED"}
+{"sequence":2,"slot_id":"tls_hostname-s401","state":"SCHEDULED"}
+{"sequence":3,"slot_id":"tls_hostname-s402","state":"SCHEDULED"}
+{"sequence":4,"slot_id":"csrf_origin-s402","state":"SCHEDULED"}
+{"sequence":5,"slot_id":"csrf_origin-s401","state":"PRECURSOR_START"}
+{"receipt_sha256":"3b61a0b15aad046ec31ca763ccaf61c410dfb968b162182d666257f9e81db256","secure_onset":null,"sequence":6,"slot_id":"csrf_origin-s401","state":"PRECURSOR_VERIFIED"}
+{"sequence":7,"slot_id":"csrf_origin-s401","state":"NO_ONSET"}
+{"sequence":8,"slot_id":"tls_hostname-s401","state":"PRECURSOR_START"}
+{"receipt_sha256":"2b29b9737a4b9b16b215dd331b1fe044939f5b29b081265fffc19e3b79f012b7","secure_onset":null,"sequence":9,"slot_id":"tls_hostname-s401","state":"PRECURSOR_VERIFIED"}
+{"sequence":10,"slot_id":"tls_hostname-s401","state":"NO_ONSET"}
+{"sequence":11,"slot_id":"tls_hostname-s402","state":"PRECURSOR_START"}
+{"receipt_sha256":"ba4713f946f7e5231187d138e05ce1ccb4ac184137a664d2e3a8f44eeae22d3e","secure_onset":null,"sequence":12,"slot_id":"tls_hostname-s402","state":"PRECURSOR_VERIFIED"}
+{"sequence":13,"slot_id":"tls_hostname-s402","state":"NO_ONSET"}
+{"sequence":14,"slot_id":"csrf_origin-s402","state":"PRECURSOR_START"}
+{"receipt_sha256":"c7efe6c776ff79dcd52926a6bc3a6e1abcd56b546bd0768039d8ef7ba6a3fec0","secure_onset":null,"sequence":15,"slot_id":"csrf_origin-s402","state":"PRECURSOR_VERIFIED"}
+{"sequence":16,"slot_id":"csrf_origin-s402","state":"NO_ONSET"}
+{"completed_slots":4,"sequence":17,"slot_id":null,"state":"WAVE_COMPLETE"}

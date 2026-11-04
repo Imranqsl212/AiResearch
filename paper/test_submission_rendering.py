@@ -43,6 +43,11 @@ class SubmissionRenderingTests(unittest.TestCase):
         self.assertEqual(headings, ["Abstract", "Introduction", "Methods", "Results",
                                     "Discussion", "Acknowledgments", "References"])
 
+    def test_abstract_stays_within_required_word_range(self) -> None:
+        abstract = self.manuscript.split("## Abstract\n\n", 1)[1].split("\n\n**Keywords:**", 1)[0]
+        self.assertGreaterEqual(len(abstract.split()), 200)
+        self.assertLessEqual(len(abstract.split()), 250)
+
     def test_both_formats_have_twelve_point_text_and_clean_review_metadata(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
             target = Path(directory)
@@ -92,6 +97,12 @@ class SubmissionRenderingTests(unittest.TestCase):
                                         target / "anonymous.pdf", author="")
             self.assertLessEqual(identified, render.PAGE_LIMIT)
             self.assertLessEqual(anonymous, render.PAGE_LIMIT)
+            fonts_used = {
+                str(font.get_object().get("/BaseFont"))
+                for font in PdfReader(target / "identified.pdf").pages[0]["/Resources"]["/Font"].values()
+            }
+            self.assertTrue(any("BitstreamVeraSans" in name for name in fonts_used),
+                            "fallback render reused a previously registered host font")
 
 
 if __name__ == "__main__":
