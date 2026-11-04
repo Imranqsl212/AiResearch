@@ -16,8 +16,9 @@ from paper import build_author_review_bundle as bundle
 
 
 class AuthorReviewBundleTests(unittest.TestCase):
-    def test_v14_binds_current_render_and_v13_remains_a_snapshot(self) -> None:
+    def test_v15_binds_current_render_and_v14_remains_a_snapshot(self) -> None:
         self.assertEqual(bundle.BUILD_TARGETS["v14"], (bundle.V14_OUTPUT, bundle.V14_SPEC))
+        self.assertEqual(bundle.BUILD_TARGETS["v15"], (bundle.V15_OUTPUT, bundle.V15_SPEC))
         self.assertEqual(bundle.V14_SOURCE_NAMES[:len(bundle.V13_SOURCE_NAMES)],
                          bundle.V13_SOURCE_NAMES)
         self.assertEqual(set(bundle.V14_SOURCE_NAMES) - set(bundle.V13_SOURCE_NAMES),
@@ -30,10 +31,26 @@ class AuthorReviewBundleTests(unittest.TestCase):
         flags = bundle._release_flags(bundle.V14_SPEC)
         self.assertFalse(flags["journal_supplement_approved"])
         self.assertIsNone(flags["related_data_public_git_revision"])
-        current = bundle.verify(archive=bundle.V14_OUTPUT)
-        self.assertEqual(current["version"], bundle.V14_VERSION)
-        self.assertEqual(current["archive_members"], 78)
-        self.assertEqual(current["source_file_count"], 76)
+        previous = bundle.verify(archive=bundle.V14_OUTPUT, compare_sources=False)
+        self.assertEqual(previous["version"], bundle.V14_VERSION)
+        self.assertEqual(previous["archive_members"], 78)
+        self.assertEqual(previous["source_file_count"], 76)
+        self.assertIsNone(previous["local_sources_match"])
+
+        self.assertEqual(bundle.V15_SOURCE_NAMES[:len(bundle.V14_SOURCE_NAMES)],
+                         bundle.V14_SOURCE_NAMES)
+        self.assertEqual(set(bundle.V15_SOURCE_NAMES) - set(bundle.V14_SOURCE_NAMES),
+                         set(bundle.V15_NEW_DERIVED))
+        self.assertEqual(len(bundle.V15_NEW_DERIVED), 10)
+        self.assertEqual(set(bundle._decision_bound_names(bundle.V15_SPEC)) -
+                         set(bundle._decision_bound_names(bundle.V14_SPEC)),
+                         set(bundle.V15_NEW_DERIVED))
+        self.assertIn("no matched feedback arms opened", bundle.V15_README)
+        self.assertIsNone(bundle._release_flags(bundle.V15_SPEC)["related_data_public_git_revision"])
+        current = bundle.verify(archive=bundle.V15_OUTPUT)
+        self.assertEqual(current["version"], bundle.V15_VERSION)
+        self.assertEqual(current["archive_members"], 88)
+        self.assertEqual(current["source_file_count"], 86)
         self.assertTrue(current["local_sources_match"])
 
     def test_v13_and_v12_remain_independent_historical_snapshots(self) -> None:

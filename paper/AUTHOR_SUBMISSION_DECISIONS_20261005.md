@@ -12,11 +12,11 @@ separately. Do not infer their absence from a missing response.
 
 | Artifact | Current SHA-256 |
 | --- | --- |
-| [`final.md`](final.md) | `a9c5bb20fa8cc37cf2e46d0fe431f78d78d5667f23d7e685f6bde7d28543fc99` |
-| [Identified `full_paper.pdf`](submission/full_paper.pdf) | `01f77b996ae004f00bf10dc6f89d1555c5701f22ff01b4977fdfd48b40b8ea88` |
-| [Identified `full_paper.docx`](submission/full_paper.docx) | `fd68111efad60672fba040dc2b6fb4ecade909a42c2d2d887e083c6dc7cc179a` |
-| [Anonymous `full_paper_anonymous.pdf`](submission/full_paper_anonymous.pdf) | `52bb7d0f1941188a66a222c3931c940a99bf013971bffcb57e755c9184a7121f` |
-| [Anonymous `full_paper_anonymous.docx`](submission/full_paper_anonymous.docx) | `a668ab3c83a03520a8aa72148bf70612a945f3b44ce3c884100cbf93ca08112c` |
+| [`final.md`](final.md) | `1d9a77f99b21aed3ef7acfc8114de4d77723f1f1bfe60fa375ba10916a403a43` |
+| [Identified `full_paper.pdf`](submission/full_paper.pdf) | `63c28ebe621f186cf4742ebb820b4cb114a36691aba72521ebb33089b5b4695b` |
+| [Identified `full_paper.docx`](submission/full_paper.docx) | `aab9e1594ae8a5f629d7dca7ccb188d01646f72045cacc416f2e9aef12f5e685` |
+| [Anonymous `full_paper_anonymous.pdf`](submission/full_paper_anonymous.pdf) | `f44057ac5456c4d351bbb64d478f46a58c8f37eda72d39c284aa5bcd297d4ec3` |
+| [Anonymous `full_paper_anonymous.docx`](submission/full_paper_anonymous.docx) | `81b4d210a8ae88e95d8c3cfe34ce3b77061f73906d62140b27a9b60f838c4162` |
 | [`results.json`](artifacts/results.json) | `3d7ef25bfa07ef25ae20cea8d6ee34b59c5d9158e20c2e9b7013bfbd5a3cb229` |
 | [Working author-year conversion](venue_author_year_draft.md) | `d56b469d919986c7da430c7d003121776e37c86b06bdac5f7f69f480011791dd` |
 | [Author-year `venue_author_year_identified.pdf`](submission/venue_author_year_identified.pdf) | `eebb1832db3bc60ebfd342e31483982909c1aac17729abb9a4f48f4a17c0e1b8` |
@@ -55,10 +55,20 @@ separately. Do not infer their absence from a missing response.
 | [v7 crossfamily 20261104](../analysis/v7_crossfamily_20261104.json) | `4c9c129efb878ca705ad1d6e4f9224a84a8986106311e4208094836180dfeb96` |
 | [EXCLUDED V7 FEEDBACK REPLICATION 20261104 RESULTS](../docs/EXCLUDED_V7_FEEDBACK_REPLICATION_20261104_RESULTS.md) | `a55199122ca71e744180dc7b23a105cd990130f663362bfd8a793360b156693d` |
 | [v7 feedback replication 20261104](../analysis/v7_feedback_replication_20261104.json) | `e8b2ab1a74b5ba3f1eeeb0a3ff7bf5df42efff726f69d3f9e842d4f2d31ccfed` |
+| [HISTORICAL PROTOCOL STOP RECOUNT 20261104](../analysis/HISTORICAL_PROTOCOL_STOP_RECOUNT_20261104.md) | `353cf1d899404b6cad26b85edbd8b2b3766e565415dcfbf062ead43b6140b394` |
+| [historical_protocol_stop_recount_20261104.json](../analysis/historical_protocol_stop_recount_20261104.json) | `e6259f77645c11852fbd2ed16a7aba4ffc0974d2ebcee33ba629d981dd5557ef` |
+| [V7 ENDPOINT SENSITIVITY 20261104](../analysis/V7_ENDPOINT_SENSITIVITY_20261104.md) | `2227c3168a6efb422114fdd28626df8d2f119741ea88ccbbc88ef044cd2e4dd7` |
+| [v7_endpoint_sensitivity_20261104.json](../analysis/v7_endpoint_sensitivity_20261104.json) | `b046c85cf232dac108a98d160bb8d18a69da52170c9705ae21020f5f739d61b2` |
+| [V7 TEST SET SUFFICIENCY 20261104](../analysis/V7_TEST_SET_SUFFICIENCY_20261104.md) | `a12210aa71ff93766dda6a0358ffd981b82bb628c2a3aaf30c3190196a3f0321` |
+| [v7_test_set_sufficiency_20261104.json](../analysis/v7_test_set_sufficiency_20261104.json) | `b3d0fb740cc1a3f1b573dcfe1bfb7f3c56180fe2dc0a8b9a93c15186a4a2503e` |
+| [V7 GEMMA TRANSFER 20261104](../analysis/V7_GEMMA_TRANSFER_20261104.md) | `a80b78dd918d050c3b1447efa45f84cf89c0e44e01609eb92ae9d71f418a13b8` |
+| [v7_gemma_transfer_20261104.json](../analysis/v7_gemma_transfer_20261104.json) | `11d5703326a02752763985481ce6062a664e7f57a0d6d2ec1392f256de84b3fa` |
+| [v7_gemma_transfer_20261104_screen.json](../analysis/v7_gemma_transfer_20261104_screen.json) | `67796a716377ea3a1a18b3a095c02fd94f1bca906dcbb15b7ca6b4eda6b0555d` |
+| [v7_checker_stage_cascade_20261104.svg](../figures/v7_checker_stage_cascade_20261104.svg) | `70db8706da932f8a0ea6f3a5230ef8223bf322455a11d3982a4d5fd7c163b6ec` |
 
 The identified and anonymous PDFs each have 19 A4 pages; the Linux fallback-font render has 20. PDF text,
 including captions and tables, is 12 pt;
-the DOCX styles are 12 pt with single line spacing. The abstract has 206 space-delimited words
+the DOCX styles are 12 pt with single line spacing. The abstract has 220 space-delimited words
 and the article contains five figures and six tables. The identified and
 anonymous PDF/DOCX pairs were regenerated from the source on this workspace.
 The anonymous files have blank author metadata and automated scans found no

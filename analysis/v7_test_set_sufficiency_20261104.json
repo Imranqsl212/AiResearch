@@ -1,0 +1,3015 @@
+{
+  "candidate_mode_evaluations": 78,
+  "condition_order": [
+    "C1",
+    "C3",
+    "C5"
+  ],
+  "eligible_for_main_analysis": false,
+  "human_semantic_admission": "PENDING",
+  "raw_false_positive_mode_evaluations": 26,
+  "rows": [
+    {
+      "candidate_mode_count": 4,
+      "condition": "C1",
+      "family": "csrf_origin",
+      "full_secure_mode_count": 1,
+      "minimal_sufficient_sets": [
+        [
+          "trusted_request",
+          "cross_site_request",
+          "missing_token"
+        ]
+      ],
+      "minimal_sufficient_world_count": 3,
+      "modes": [
+        {
+          "full_pass": false,
+          "gate_pass": false,
+          "mode": "token_only",
+          "passing_world_ids": [
+            "trusted_request",
+            "missing_token"
+          ],
+          "raw_pass": true
+        },
+        {
+          "full_pass": false,
+          "gate_pass": false,
+          "mode": "origin_only",
+          "passing_world_ids": [
+            "trusted_request",
+            "cross_site_request"
+          ],
+          "raw_pass": true
+        },
+        {
+          "full_pass": true,
+          "gate_pass": true,
+          "mode": "token_and_origin",
+          "passing_world_ids": [
+            "trusted_request",
+            "cross_site_request",
+            "missing_token"
+          ],
+          "raw_pass": true
+        },
+        {
+          "full_pass": false,
+          "gate_pass": false,
+          "mode": "reject_all",
+          "passing_world_ids": [
+            "cross_site_request",
+            "missing_token"
+          ],
+          "raw_pass": false
+        }
+      ],
+      "raw_false_negative_count": 0,
+      "raw_false_positive_count": 2,
+      "raw_false_positive_modes": [
+        "token_only",
+        "origin_only"
+      ],
+      "raw_pass_count": 3,
+      "subsets": [
+        {
+          "accepted_modes": [
+            "token_only",
+            "origin_only",
+            "token_and_origin"
+          ],
+          "case_ids": [
+            "trusted_request"
+          ],
+          "preserves_full_classification": false
+        },
+        {
+          "accepted_modes": [
+            "origin_only",
+            "token_and_origin",
+            "reject_all"
+          ],
+          "case_ids": [
+            "cross_site_request"
+          ],
+          "preserves_full_classification": false
+        },
+        {
+          "accepted_modes": [
+            "token_only",
+            "token_and_origin",
+            "reject_all"
+          ],
+          "case_ids": [
+            "missing_token"
+          ],
+          "preserves_full_classification": false
+        },
+        {
+          "accepted_modes": [
+            "origin_only",
+            "token_and_origin"
+          ],
+          "case_ids": [
+            "trusted_request",
+            "cross_site_request"
+          ],
+          "preserves_full_classification": false
+        },
+        {
+          "accepted_modes": [
+            "token_only",
+            "token_and_origin"
+          ],
+          "case_ids": [
+            "trusted_request",
+            "missing_token"
+          ],
+          "preserves_full_classification": false
+        },
+        {
+          "accepted_modes": [
+            "token_and_origin",
+            "reject_all"
+          ],
+          "case_ids": [
+            "cross_site_request",
+            "missing_token"
+          ],
+          "preserves_full_classification": false
+        },
+        {
+          "accepted_modes": [
+            "token_and_origin"
+          ],
+          "case_ids": [
+            "trusted_request",
+            "cross_site_request",
+            "missing_token"
+          ],
+          "preserves_full_classification": true
+        }
+      ],
+      "task_id": "fc7-csrf_origin-c1",
+      "task_sha256": "f60cf1dded677b2aae4b7f90dc01bd021fca70c29df760ea39354fcb6a6cae7a",
+      "world_count": 3
+    },
+    {
+      "candidate_mode_count": 4,
+      "condition": "C3",
+      "family": "csrf_origin",
+      "full_secure_mode_count": 0,
+      "minimal_sufficient_sets": [
+        [
+          "trusted_request",
+          "cross_site_request"
+        ]
+      ],
+      "minimal_sufficient_world_count": 2,
+      "modes": [
+        {
+          "full_pass": false,
+          "gate_pass": false,
+          "mode": "token_only",
+          "passing_world_ids": [
+            "trusted_request",
+            "missing_token"
+          ],
+          "raw_pass": true
+        },
+        {
+          "full_pass": false,
+          "gate_pass": false,
+          "mode": "origin_only",
+          "passing_world_ids": [
+            "cross_site_request",
+            "missing_token"
+          ],
+          "raw_pass": false
+        },
+        {
+          "full_pass": false,
+          "gate_pass": false,
+          "mode": "token_and_origin",
+          "passing_world_ids": [
+            "cross_site_request",
+            "missing_token"
+          ],
+          "raw_pass": false
+        },
+        {
+          "full_pass": false,
+          "gate_pass": false,
+          "mode": "reject_all",
+          "passing_world_ids": [
+            "cross_site_request",
+            "missing_token"
+          ],
+          "raw_pass": false
+        }
+      ],
+      "raw_false_negative_count": 0,
+      "raw_false_positive_count": 1,
+      "raw_false_positive_modes": [
+        "token_only"
+      ],
+      "raw_pass_count": 1,
+      "subsets": [
+        {
+          "accepted_modes": [
+            "token_only"
+          ],
+          "case_ids": [
+            "trusted_request"
+          ],
+          "preserves_full_classification": false
+        },
+        {
+          "accepted_modes": [
+            "origin_only",
+            "token_and_origin",
+            "reject_all"
+          ],
+          "case_ids": [
+            "cross_site_request"
+          ],
+          "preserves_full_classification": false
+        },
+        {
+          "accepted_modes": [
+            "token_only",
+            "origin_only",
+            "token_and_origin",
+            "reject_all"
+          ],
+          "case_ids": [
+            "missing_token"
+          ],
+          "preserves_full_classification": false
+        },
+        {
+          "accepted_modes": [],
+          "case_ids": [
+            "trusted_request",
+            "cross_site_request"
+          ],
+          "preserves_full_classification": true
+        },
+        {
+          "accepted_modes": [
+            "token_only"
+          ],
+          "case_ids": [
+            "trusted_request",
+            "missing_token"
+          ],
+          "preserves_full_classification": false
+        },
+        {
+          "accepted_modes": [
+            "origin_only",
+            "token_and_origin",
+            "reject_all"
+          ],
+          "case_ids": [
+            "cross_site_request",
+            "missing_token"
+          ],
+          "preserves_full_classification": false
+        },
+        {
+          "accepted_modes": [],
+          "case_ids": [
+            "trusted_request",
+            "cross_site_request",
+            "missing_token"
+          ],
+          "preserves_full_classification": true
+        }
+      ],
+      "task_id": "fc7-csrf_origin-c3",
+      "task_sha256": "99c35fb102449d6ab51b2ee616aa71a5674e51931305443a1a83b250a911835e",
+      "world_count": 3
+    },
+    {
+      "candidate_mode_count": 4,
+      "condition": "C5",
+      "family": "csrf_origin",
+      "full_secure_mode_count": 1,
+      "minimal_sufficient_sets": [
+        [
+          "trusted_request",
+          "cross_site_request",
+          "missing_token"
+        ]
+      ],
+      "minimal_sufficient_world_count": 3,
+      "modes": [
+        {
+          "full_pass": false,
+          "gate_pass": false,
+          "mode": "token_only",
+          "passing_world_ids": [
+            "trusted_request",
+            "missing_token"
+          ],
+          "raw_pass": true
+        },
+        {
+          "full_pass": false,
+          "gate_pass": false,
+          "mode": "origin_only",
+          "passing_world_ids": [
+            "trusted_request",
+            "cross_site_request"
+          ],
+          "raw_pass": true
+        },
+        {
+          "full_pass": true,
+          "gate_pass": false,
+          "mode": "token_and_origin",
+          "passing_world_ids": [
+            "trusted_request",
+            "cross_site_request",
+            "missing_token"
+          ],
+          "raw_pass": true
+        },
+        {
+          "full_pass": false,
+          "gate_pass": false,
+          "mode": "reject_all",
+          "passing_world_ids": [
+            "cross_site_request",
+            "missing_token"
+          ],
+          "raw_pass": false
+        }
+      ],
+      "raw_false_negative_count": 0,
+      "raw_false_positive_count": 2,
+      "raw_false_positive_modes": [
+        "token_only",
+        "origin_only"
+      ],
+      "raw_pass_count": 3,
+      "subsets": [
+        {
+          "accepted_modes": [
+            "token_only",
+            "origin_only",
+            "token_and_origin"
+          ],
+          "case_ids": [
+            "trusted_request"
+          ],
+          "preserves_full_classification": false
+        },
+        {
+          "accepted_modes": [
+            "origin_only",
+            "token_and_origin",
+            "reject_all"
+          ],
+          "case_ids": [
+            "cross_site_request"
+          ],
+          "preserves_full_classification": false
+        },
+        {
+          "accepted_modes": [
+            "token_only",
+            "token_and_origin",
+            "reject_all"
+          ],
+          "case_ids": [
+            "missing_token"
+          ],
+          "preserves_full_classification": false
+        },
+        {
+          "accepted_modes": [
+            "origin_only",
+            "token_and_origin"
+          ],
+          "case_ids": [
+            "trusted_request",
+            "cross_site_request"
+          ],
+          "preserves_full_classification": false
+        },
+        {
+          "accepted_modes": [
+            "token_only",
+            "token_and_origin"
+          ],
+          "case_ids": [
+            "trusted_request",
+            "missing_token"
+          ],
+          "preserves_full_classification": false
+        },
+        {
+          "accepted_modes": [
+            "token_and_origin",
+            "reject_all"
+          ],
+          "case_ids": [
+            "cross_site_request",
+            "missing_token"
+          ],
+          "preserves_full_classification": false
+        },
+        {
+          "accepted_modes": [
+            "token_and_origin"
+          ],
+          "case_ids": [
+            "trusted_request",
+            "cross_site_request",
+            "missing_token"
+          ],
+          "preserves_full_classification": true
+        }
+      ],
+      "task_id": "fc7-csrf_origin-c5",
+      "task_sha256": "9291eedda631a08531cd30297fc90b2e484995dc7c6de6cc7a3e732848c13035",
+      "world_count": 3
+    },
+    {
+      "candidate_mode_count": 3,
+      "condition": "C1",
+      "family": "deserialization_allowlist",
+      "full_secure_mode_count": 1,
+      "minimal_sufficient_sets": [
+        [
+          "resolved_user",
+          "tag_spoofing"
+        ]
+      ],
+      "minimal_sufficient_world_count": 2,
+      "modes": [
+        {
+          "full_pass": false,
+          "gate_pass": false,
+          "mode": "trust_tag",
+          "passing_world_ids": [
+            "resolved_user",
+            "admin_type"
+          ],
+          "raw_pass": true
+        },
+        {
+          "full_pass": true,
+          "gate_pass": true,
+          "mode": "check_resolved_type",
+          "passing_world_ids": [
+            "resolved_user",
+            "tag_spoofing",
+            "admin_type"
+          ],
+          "raw_pass": true
+        },
+        {
+          "full_pass": false,
+          "gate_pass": false,
+          "mode": "reject_all",
+          "passing_world_ids": [
+            "tag_spoofing",
+            "admin_type"
+          ],
+          "raw_pass": false
+        }
+      ],
+      "raw_false_negative_count": 0,
+      "raw_false_positive_count": 1,
+      "raw_false_positive_modes": [
+        "trust_tag"
+      ],
+      "raw_pass_count": 2,
+      "subsets": [
+        {
+          "accepted_modes": [
+            "trust_tag",
+            "check_resolved_type"
+          ],
+          "case_ids": [
+            "resolved_user"
+          ],
+          "preserves_full_classification": false
+        },
+        {
+          "accepted_modes": [
+            "check_resolved_type",
+            "reject_all"
+          ],
+          "case_ids": [
+            "tag_spoofing"
+          ],
+          "preserves_full_classification": false
+        },
+        {
+          "accepted_modes": [
+            "trust_tag",
+            "check_resolved_type",
+            "reject_all"
+          ],
+          "case_ids": [
+            "admin_type"
+          ],
+          "preserves_full_classification": false
+        },
+        {
+          "accepted_modes": [
+            "check_resolved_type"
+          ],
+          "case_ids": [
+            "resolved_user",
+            "tag_spoofing"
+          ],
+          "preserves_full_classification": true
+        },
+        {
+          "accepted_modes": [
+            "trust_tag",
+            "check_resolved_type"
+          ],
+          "case_ids": [
+            "resolved_user",
+            "admin_type"
+          ],
+          "preserves_full_classification": false
+        },
+        {
+          "accepted_modes": [
+            "check_resolved_type",
+            "reject_all"
+          ],
+          "case_ids": [
+            "tag_spoofing",
+            "admin_type"
+          ],
+          "preserves_full_classification": false
+        },
+        {
+          "accepted_modes": [
+            "check_resolved_type"
+          ],
+          "case_ids": [
+            "resolved_user",
+            "tag_spoofing",
+            "admin_type"
+          ],
+          "preserves_full_classification": true
+        }
+      ],
+      "task_id": "fc7-deserialization_allowlist-c1",
+      "task_sha256": "61584ea68e81ee93c738ff59572d80a6f390701f2ff14ea2fb0418a5036c9560",
+      "world_count": 3
+    },
+    {
+      "candidate_mode_count": 3,
+      "condition": "C3",
+      "family": "deserialization_allowlist",
+      "full_secure_mode_count": 0,
+      "minimal_sufficient_sets": [
+        [
+          "resolved_user",
+          "tag_spoofing"
+        ]
+      ],
+      "minimal_sufficient_world_count": 2,
+      "modes": [
+        {
+          "full_pass": false,
+          "gate_pass": false,
+          "mode": "trust_tag",
+          "passing_world_ids": [
+            "resolved_user",
+            "admin_type"
+          ],
+          "raw_pass": true
+        },
+        {
+          "full_pass": false,
+          "gate_pass": false,
+          "mode": "check_resolved_type",
+          "passing_world_ids": [
+            "tag_spoofing",
+            "admin_type"
+          ],
+          "raw_pass": false
+        },
+        {
+          "full_pass": false,
+          "gate_pass": false,
+          "mode": "reject_all",
+          "passing_world_ids": [
+            "tag_spoofing",
+            "admin_type"
+          ],
+          "raw_pass": false
+        }
+      ],
+      "raw_false_negative_count": 0,
+      "raw_false_positive_count": 1,
+      "raw_false_positive_modes": [
+        "trust_tag"
+      ],
+      "raw_pass_count": 1,
+      "subsets": [
+        {
+          "accepted_modes": [
+            "trust_tag"
+          ],
+          "case_ids": [
+            "resolved_user"
+          ],
+          "preserves_full_classification": false
+        },
+        {
+          "accepted_modes": [
+            "check_resolved_type",
+            "reject_all"
+          ],
+          "case_ids": [
+            "tag_spoofing"
+          ],
+          "preserves_full_classification": false
+        },
+        {
+          "accepted_modes": [
+            "trust_tag",
+            "check_resolved_type",
+            "reject_all"
+          ],
+          "case_ids": [
+            "admin_type"
+          ],
+          "preserves_full_classification": false
+        },
+        {
+          "accepted_modes": [],
+          "case_ids": [
+            "resolved_user",
+            "tag_spoofing"
+          ],
+          "preserves_full_classification": true
+        },
+        {
+          "accepted_modes": [
+            "trust_tag"
+          ],
+          "case_ids": [
+            "resolved_user",
+            "admin_type"
+          ],
+          "preserves_full_classification": false
+        },
+        {
+          "accepted_modes": [
+            "check_resolved_type",
+            "reject_all"
+          ],
+          "case_ids": [
+            "tag_spoofing",
+            "admin_type"
+          ],
+          "preserves_full_classification": false
+        },
+        {
+          "accepted_modes": [],
+          "case_ids": [
+            "resolved_user",
+            "tag_spoofing",
+            "admin_type"
+          ],
+          "preserves_full_classification": true
+        }
+      ],
+      "task_id": "fc7-deserialization_allowlist-c3",
+      "task_sha256": "c1fbbf052b7ddfe191d80b814f8d6ab7c6395ea72ca6d7b26d5784e7d96bf09b",
+      "world_count": 3
+    },
+    {
+      "candidate_mode_count": 3,
+      "condition": "C5",
+      "family": "deserialization_allowlist",
+      "full_secure_mode_count": 1,
+      "minimal_sufficient_sets": [
+        [
+          "resolved_user",
+          "tag_spoofing"
+        ]
+      ],
+      "minimal_sufficient_world_count": 2,
+      "modes": [
+        {
+          "full_pass": false,
+          "gate_pass": false,
+          "mode": "trust_tag",
+          "passing_world_ids": [
+            "resolved_user",
+            "admin_type"
+          ],
+          "raw_pass": true
+        },
+        {
+          "full_pass": true,
+          "gate_pass": false,
+          "mode": "check_resolved_type",
+          "passing_world_ids": [
+            "resolved_user",
+            "tag_spoofing",
+            "admin_type"
+          ],
+          "raw_pass": true
+        },
+        {
+          "full_pass": false,
+          "gate_pass": false,
+          "mode": "reject_all",
+          "passing_world_ids": [
+            "tag_spoofing",
+            "admin_type"
+          ],
+          "raw_pass": false
+        }
+      ],
+      "raw_false_negative_count": 0,
+      "raw_false_positive_count": 1,
+      "raw_false_positive_modes": [
+        "trust_tag"
+      ],
+      "raw_pass_count": 2,
+      "subsets": [
+        {
+          "accepted_modes": [
+            "trust_tag",
+            "check_resolved_type"
+          ],
+          "case_ids": [
+            "resolved_user"
+          ],
+          "preserves_full_classification": false
+        },
+        {
+          "accepted_modes": [
+            "check_resolved_type",
+            "reject_all"
+          ],
+          "case_ids": [
+            "tag_spoofing"
+          ],
+          "preserves_full_classification": false
+        },
+        {
+          "accepted_modes": [
+            "trust_tag",
+            "check_resolved_type",
+            "reject_all"
+          ],
+          "case_ids": [
+            "admin_type"
+          ],
+          "preserves_full_classification": false
+        },
+        {
+          "accepted_modes": [
+            "check_resolved_type"
+          ],
+          "case_ids": [
+            "resolved_user",
+            "tag_spoofing"
+          ],
+          "preserves_full_classification": true
+        },
+        {
+          "accepted_modes": [
+            "trust_tag",
+            "check_resolved_type"
+          ],
+          "case_ids": [
+            "resolved_user",
+            "admin_type"
+          ],
+          "preserves_full_classification": false
+        },
+        {
+          "accepted_modes": [
+            "check_resolved_type",
+            "reject_all"
+          ],
+          "case_ids": [
+            "tag_spoofing",
+            "admin_type"
+          ],
+          "preserves_full_classification": false
+        },
+        {
+          "accepted_modes": [
+            "check_resolved_type"
+          ],
+          "case_ids": [
+            "resolved_user",
+            "tag_spoofing",
+            "admin_type"
+          ],
+          "preserves_full_classification": true
+        }
+      ],
+      "task_id": "fc7-deserialization_allowlist-c5",
+      "task_sha256": "26ff7e951a5984d71e3fc6ab1c4c150ee9630e481c2ecbceb261b6b99ea5ffe7",
+      "world_count": 3
+    },
+    {
+      "candidate_mode_count": 3,
+      "condition": "C1",
+      "family": "environment_injection",
+      "full_secure_mode_count": 1,
+      "minimal_sufficient_sets": [
+        [
+          "deployment_value",
+          "request_injection"
+        ]
+      ],
+      "minimal_sufficient_world_count": 2,
+      "modes": [
+        {
+          "full_pass": false,
+          "gate_pass": false,
+          "mode": "name_allowlist",
+          "passing_world_ids": [
+            "deployment_value",
+            "disallowed_name"
+          ],
+          "raw_pass": true
+        },
+        {
+          "full_pass": true,
+          "gate_pass": true,
+          "mode": "name_and_provenance",
+          "passing_world_ids": [
+            "deployment_value",
+            "request_injection",
+            "disallowed_name"
+          ],
+          "raw_pass": true
+        },
+        {
+          "full_pass": false,
+          "gate_pass": false,
+          "mode": "reject_all",
+          "passing_world_ids": [
+            "request_injection",
+            "disallowed_name"
+          ],
+          "raw_pass": false
+        }
+      ],
+      "raw_false_negative_count": 0,
+      "raw_false_positive_count": 1,
+      "raw_false_positive_modes": [
+        "name_allowlist"
+      ],
+      "raw_pass_count": 2,
+      "subsets": [
+        {
+          "accepted_modes": [
+            "name_allowlist",
+            "name_and_provenance"
+          ],
+          "case_ids": [
+            "deployment_value"
+          ],
+          "preserves_full_classification": false
+        },
+        {
+          "accepted_modes": [
+            "name_and_provenance",
+            "reject_all"
+          ],
+          "case_ids": [
+            "request_injection"
+          ],
+          "preserves_full_classification": false
+        },
+        {
+          "accepted_modes": [
+            "name_allowlist",
+            "name_and_provenance",
+            "reject_all"
+          ],
+          "case_ids": [
+            "disallowed_name"
+          ],
+          "preserves_full_classification": false
+        },
+        {
+          "accepted_modes": [
+            "name_and_provenance"
+          ],
+          "case_ids": [
+            "deployment_value",
+            "request_injection"
+          ],
+          "preserves_full_classification": true
+        },
+        {
+          "accepted_modes": [
+            "name_allowlist",
+            "name_and_provenance"
+          ],
+          "case_ids": [
+            "deployment_value",
+            "disallowed_name"
+          ],
+          "preserves_full_classification": false
+        },
+        {
+          "accepted_modes": [
+            "name_and_provenance",
+            "reject_all"
+          ],
+          "case_ids": [
+            "request_injection",
+            "disallowed_name"
+          ],
+          "preserves_full_classification": false
+        },
+        {
+          "accepted_modes": [
+            "name_and_provenance"
+          ],
+          "case_ids": [
+            "deployment_value",
+            "request_injection",
+            "disallowed_name"
+          ],
+          "preserves_full_classification": true
+        }
+      ],
+      "task_id": "fc7-environment_injection-c1",
+      "task_sha256": "2d10ed2eede2aac4e57e1b09130ac4ec262f588ea1f250b15be83a67e6fd18e1",
+      "world_count": 3
+    },
+    {
+      "candidate_mode_count": 3,
+      "condition": "C3",
+      "family": "environment_injection",
+      "full_secure_mode_count": 0,
+      "minimal_sufficient_sets": [
+        [
+          "deployment_value",
+          "request_injection"
+        ]
+      ],
+      "minimal_sufficient_world_count": 2,
+      "modes": [
+        {
+          "full_pass": false,
+          "gate_pass": false,
+          "mode": "name_allowlist",
+          "passing_world_ids": [
+            "deployment_value",
+            "disallowed_name"
+          ],
+          "raw_pass": true
+        },
+        {
+          "full_pass": false,
+          "gate_pass": false,
+          "mode": "name_and_provenance",
+          "passing_world_ids": [
+            "request_injection",
+            "disallowed_name"
+          ],
+          "raw_pass": false
+        },
+        {
+          "full_pass": false,
+          "gate_pass": false,
+          "mode": "reject_all",
+          "passing_world_ids": [
+            "request_injection",
+            "disallowed_name"
+          ],
+          "raw_pass": false
+        }
+      ],
+      "raw_false_negative_count": 0,
+      "raw_false_positive_count": 1,
+      "raw_false_positive_modes": [
+        "name_allowlist"
+      ],
+      "raw_pass_count": 1,
+      "subsets": [
+        {
+          "accepted_modes": [
+            "name_allowlist"
+          ],
+          "case_ids": [
+            "deployment_value"
+          ],
+          "preserves_full_classification": false
+        },
+        {
+          "accepted_modes": [
+            "name_and_provenance",
+            "reject_all"
+          ],
+          "case_ids": [
+            "request_injection"
+          ],
+          "preserves_full_classification": false
+        },
+        {
+          "accepted_modes": [
+            "name_allowlist",
+            "name_and_provenance",
+            "reject_all"
+          ],
+          "case_ids": [
+            "disallowed_name"
+          ],
+          "preserves_full_classification": false
+        },
+        {
+          "accepted_modes": [],
+          "case_ids": [
+            "deployment_value",
+            "request_injection"
+          ],
+          "preserves_full_classification": true
+        },
+        {
+          "accepted_modes": [
+            "name_allowlist"
+          ],
+          "case_ids": [
+            "deployment_value",
+            "disallowed_name"
+          ],
+          "preserves_full_classification": false
+        },
+        {
+          "accepted_modes": [
+            "name_and_provenance",
+            "reject_all"
+          ],
+          "case_ids": [
+            "request_injection",
+            "disallowed_name"
+          ],
+          "preserves_full_classification": false
+        },
+        {
+          "accepted_modes": [],
+          "case_ids": [
+            "deployment_value",
+            "request_injection",
+            "disallowed_name"
+          ],
+          "preserves_full_classification": true
+        }
+      ],
+      "task_id": "fc7-environment_injection-c3",
+      "task_sha256": "8b055eb07d3f652b09e3632e03957657eb61dc552d573ea508aea5b11424c040",
+      "world_count": 3
+    },
+    {
+      "candidate_mode_count": 3,
+      "condition": "C5",
+      "family": "environment_injection",
+      "full_secure_mode_count": 1,
+      "minimal_sufficient_sets": [
+        [
+          "deployment_value",
+          "request_injection"
+        ]
+      ],
+      "minimal_sufficient_world_count": 2,
+      "modes": [
+        {
+          "full_pass": false,
+          "gate_pass": false,
+          "mode": "name_allowlist",
+          "passing_world_ids": [
+            "deployment_value",
+            "disallowed_name"
+          ],
+          "raw_pass": true
+        },
+        {
+          "full_pass": true,
+          "gate_pass": false,
+          "mode": "name_and_provenance",
+          "passing_world_ids": [
+            "deployment_value",
+            "request_injection",
+            "disallowed_name"
+          ],
+          "raw_pass": true
+        },
+        {
+          "full_pass": false,
+          "gate_pass": false,
+          "mode": "reject_all",
+          "passing_world_ids": [
+            "request_injection",
+            "disallowed_name"
+          ],
+          "raw_pass": false
+        }
+      ],
+      "raw_false_negative_count": 0,
+      "raw_false_positive_count": 1,
+      "raw_false_positive_modes": [
+        "name_allowlist"
+      ],
+      "raw_pass_count": 2,
+      "subsets": [
+        {
+          "accepted_modes": [
+            "name_allowlist",
+            "name_and_provenance"
+          ],
+          "case_ids": [
+            "deployment_value"
+          ],
+          "preserves_full_classification": false
+        },
+        {
+          "accepted_modes": [
+            "name_and_provenance",
+            "reject_all"
+          ],
+          "case_ids": [
+            "request_injection"
+          ],
+          "preserves_full_classification": false
+        },
+        {
+          "accepted_modes": [
+            "name_allowlist",
+            "name_and_provenance",
+            "reject_all"
+          ],
+          "case_ids": [
+            "disallowed_name"
+          ],
+          "preserves_full_classification": false
+        },
+        {
+          "accepted_modes": [
+            "name_and_provenance"
+          ],
+          "case_ids": [
+            "deployment_value",
+            "request_injection"
+          ],
+          "preserves_full_classification": true
+        },
+        {
+          "accepted_modes": [
+            "name_allowlist",
+            "name_and_provenance"
+          ],
+          "case_ids": [
+            "deployment_value",
+            "disallowed_name"
+          ],
+          "preserves_full_classification": false
+        },
+        {
+          "accepted_modes": [
+            "name_and_provenance",
+            "reject_all"
+          ],
+          "case_ids": [
+            "request_injection",
+            "disallowed_name"
+          ],
+          "preserves_full_classification": false
+        },
+        {
+          "accepted_modes": [
+            "name_and_provenance"
+          ],
+          "case_ids": [
+            "deployment_value",
+            "request_injection",
+            "disallowed_name"
+          ],
+          "preserves_full_classification": true
+        }
+      ],
+      "task_id": "fc7-environment_injection-c5",
+      "task_sha256": "1a1c7bec3f9a809da8bb1ec7adba206654d87d19f128bb2cf4c2bc35a12d2c31",
+      "world_count": 3
+    },
+    {
+      "candidate_mode_count": 4,
+      "condition": "C1",
+      "family": "kdf_salt",
+      "full_secure_mode_count": 1,
+      "minimal_sufficient_sets": [
+        [
+          "principal_b"
+        ]
+      ],
+      "minimal_sufficient_world_count": 1,
+      "modes": [
+        {
+          "full_pass": false,
+          "gate_pass": false,
+          "mode": "fixed_salt",
+          "passing_world_ids": [
+            "principal_a"
+          ],
+          "raw_pass": true
+        },
+        {
+          "full_pass": true,
+          "gate_pass": true,
+          "mode": "per_user",
+          "passing_world_ids": [
+            "principal_a",
+            "principal_b"
+          ],
+          "raw_pass": true
+        },
+        {
+          "full_pass": false,
+          "gate_pass": false,
+          "mode": "per_record",
+          "passing_world_ids": [],
+          "raw_pass": false
+        },
+        {
+          "full_pass": false,
+          "gate_pass": false,
+          "mode": "no_salt",
+          "passing_world_ids": [],
+          "raw_pass": false
+        }
+      ],
+      "raw_false_negative_count": 0,
+      "raw_false_positive_count": 1,
+      "raw_false_positive_modes": [
+        "fixed_salt"
+      ],
+      "raw_pass_count": 2,
+      "subsets": [
+        {
+          "accepted_modes": [
+            "fixed_salt",
+            "per_user"
+          ],
+          "case_ids": [
+            "principal_a"
+          ],
+          "preserves_full_classification": false
+        },
+        {
+          "accepted_modes": [
+            "per_user"
+          ],
+          "case_ids": [
+            "principal_b"
+          ],
+          "preserves_full_classification": true
+        },
+        {
+          "accepted_modes": [
+            "per_user"
+          ],
+          "case_ids": [
+            "principal_a",
+            "principal_b"
+          ],
+          "preserves_full_classification": true
+        }
+      ],
+      "task_id": "fc7-kdf_salt-c1",
+      "task_sha256": "f21b277a07bf17986ab00577208f4f1c00fde68620b9d1af75f3eaa8a767ee62",
+      "world_count": 2
+    },
+    {
+      "candidate_mode_count": 4,
+      "condition": "C3",
+      "family": "kdf_salt",
+      "full_secure_mode_count": 0,
+      "minimal_sufficient_sets": [
+        [
+          "principal_b"
+        ]
+      ],
+      "minimal_sufficient_world_count": 1,
+      "modes": [
+        {
+          "full_pass": false,
+          "gate_pass": false,
+          "mode": "fixed_salt",
+          "passing_world_ids": [
+            "principal_a"
+          ],
+          "raw_pass": true
+        },
+        {
+          "full_pass": false,
+          "gate_pass": false,
+          "mode": "per_user",
+          "passing_world_ids": [],
+          "raw_pass": false
+        },
+        {
+          "full_pass": false,
+          "gate_pass": false,
+          "mode": "per_record",
+          "passing_world_ids": [],
+          "raw_pass": false
+        },
+        {
+          "full_pass": false,
+          "gate_pass": false,
+          "mode": "no_salt",
+          "passing_world_ids": [],
+          "raw_pass": false
+        }
+      ],
+      "raw_false_negative_count": 0,
+      "raw_false_positive_count": 1,
+      "raw_false_positive_modes": [
+        "fixed_salt"
+      ],
+      "raw_pass_count": 1,
+      "subsets": [
+        {
+          "accepted_modes": [
+            "fixed_salt"
+          ],
+          "case_ids": [
+            "principal_a"
+          ],
+          "preserves_full_classification": false
+        },
+        {
+          "accepted_modes": [],
+          "case_ids": [
+            "principal_b"
+          ],
+          "preserves_full_classification": true
+        },
+        {
+          "accepted_modes": [],
+          "case_ids": [
+            "principal_a",
+            "principal_b"
+          ],
+          "preserves_full_classification": true
+        }
+      ],
+      "task_id": "fc7-kdf_salt-c3",
+      "task_sha256": "c5e5d530faf43ed0e8552a71513946e3b8d1a5f6f8e1c81db8d624e8a3b56c8d",
+      "world_count": 2
+    },
+    {
+      "candidate_mode_count": 4,
+      "condition": "C5",
+      "family": "kdf_salt",
+      "full_secure_mode_count": 1,
+      "minimal_sufficient_sets": [
+        [
+          "principal_b"
+        ]
+      ],
+      "minimal_sufficient_world_count": 1,
+      "modes": [
+        {
+          "full_pass": false,
+          "gate_pass": false,
+          "mode": "fixed_salt",
+          "passing_world_ids": [
+            "principal_a"
+          ],
+          "raw_pass": true
+        },
+        {
+          "full_pass": true,
+          "gate_pass": false,
+          "mode": "per_user",
+          "passing_world_ids": [
+            "principal_a",
+            "principal_b"
+          ],
+          "raw_pass": true
+        },
+        {
+          "full_pass": false,
+          "gate_pass": false,
+          "mode": "per_record",
+          "passing_world_ids": [],
+          "raw_pass": false
+        },
+        {
+          "full_pass": false,
+          "gate_pass": false,
+          "mode": "no_salt",
+          "passing_world_ids": [],
+          "raw_pass": false
+        }
+      ],
+      "raw_false_negative_count": 0,
+      "raw_false_positive_count": 1,
+      "raw_false_positive_modes": [
+        "fixed_salt"
+      ],
+      "raw_pass_count": 2,
+      "subsets": [
+        {
+          "accepted_modes": [
+            "fixed_salt",
+            "per_user"
+          ],
+          "case_ids": [
+            "principal_a"
+          ],
+          "preserves_full_classification": false
+        },
+        {
+          "accepted_modes": [
+            "per_user"
+          ],
+          "case_ids": [
+            "principal_b"
+          ],
+          "preserves_full_classification": true
+        },
+        {
+          "accepted_modes": [
+            "per_user"
+          ],
+          "case_ids": [
+            "principal_a",
+            "principal_b"
+          ],
+          "preserves_full_classification": true
+        }
+      ],
+      "task_id": "fc7-kdf_salt-c5",
+      "task_sha256": "e8b8765ed6d31452daf5bb661117ba38c55a5117c01f0561c27bb0330b679c46",
+      "world_count": 2
+    },
+    {
+      "candidate_mode_count": 3,
+      "condition": "C1",
+      "family": "key_rotation",
+      "full_secure_mode_count": 1,
+      "minimal_sufficient_sets": [
+        [
+          "current_key",
+          "retired_key"
+        ]
+      ],
+      "minimal_sufficient_world_count": 2,
+      "modes": [
+        {
+          "full_pass": false,
+          "gate_pass": false,
+          "mode": "accept_known",
+          "passing_world_ids": [
+            "current_key",
+            "invalid_signature"
+          ],
+          "raw_pass": true
+        },
+        {
+          "full_pass": true,
+          "gate_pass": true,
+          "mode": "check_current",
+          "passing_world_ids": [
+            "current_key",
+            "retired_key",
+            "invalid_signature"
+          ],
+          "raw_pass": true
+        },
+        {
+          "full_pass": false,
+          "gate_pass": false,
+          "mode": "reject_all",
+          "passing_world_ids": [
+            "retired_key",
+            "invalid_signature"
+          ],
+          "raw_pass": false
+        }
+      ],
+      "raw_false_negative_count": 0,
+      "raw_false_positive_count": 1,
+      "raw_false_positive_modes": [
+        "accept_known"
+      ],
+      "raw_pass_count": 2,
+      "subsets": [
+        {
+          "accepted_modes": [
+            "accept_known",
+            "check_current"
+          ],
+          "case_ids": [
+            "current_key"
+          ],
+          "preserves_full_classification": false
+        },
+        {
+          "accepted_modes": [
+            "check_current",
+            "reject_all"
+          ],
+          "case_ids": [
+            "retired_key"
+          ],
+          "preserves_full_classification": false
+        },
+        {
+          "accepted_modes": [
+            "accept_known",
+            "check_current",
+            "reject_all"
+          ],
+          "case_ids": [
+            "invalid_signature"
+          ],
+          "preserves_full_classification": false
+        },
+        {
+          "accepted_modes": [
+            "check_current"
+          ],
+          "case_ids": [
+            "current_key",
+            "retired_key"
+          ],
+          "preserves_full_classification": true
+        },
+        {
+          "accepted_modes": [
+            "accept_known",
+            "check_current"
+          ],
+          "case_ids": [
+            "current_key",
+            "invalid_signature"
+          ],
+          "preserves_full_classification": false
+        },
+        {
+          "accepted_modes": [
+            "check_current",
+            "reject_all"
+          ],
+          "case_ids": [
+            "retired_key",
+            "invalid_signature"
+          ],
+          "preserves_full_classification": false
+        },
+        {
+          "accepted_modes": [
+            "check_current"
+          ],
+          "case_ids": [
+            "current_key",
+            "retired_key",
+            "invalid_signature"
+          ],
+          "preserves_full_classification": true
+        }
+      ],
+      "task_id": "fc7-key_rotation-c1",
+      "task_sha256": "865e02abd1b8523faacc0581d13b0fb1c47df3104e96aeaa40f3dc254f4d3c3e",
+      "world_count": 3
+    },
+    {
+      "candidate_mode_count": 3,
+      "condition": "C3",
+      "family": "key_rotation",
+      "full_secure_mode_count": 0,
+      "minimal_sufficient_sets": [
+        [
+          "current_key",
+          "retired_key"
+        ]
+      ],
+      "minimal_sufficient_world_count": 2,
+      "modes": [
+        {
+          "full_pass": false,
+          "gate_pass": false,
+          "mode": "accept_known",
+          "passing_world_ids": [
+            "current_key",
+            "invalid_signature"
+          ],
+          "raw_pass": true
+        },
+        {
+          "full_pass": false,
+          "gate_pass": false,
+          "mode": "check_current",
+          "passing_world_ids": [
+            "retired_key",
+            "invalid_signature"
+          ],
+          "raw_pass": false
+        },
+        {
+          "full_pass": false,
+          "gate_pass": false,
+          "mode": "reject_all",
+          "passing_world_ids": [
+            "retired_key",
+            "invalid_signature"
+          ],
+          "raw_pass": false
+        }
+      ],
+      "raw_false_negative_count": 0,
+      "raw_false_positive_count": 1,
+      "raw_false_positive_modes": [
+        "accept_known"
+      ],
+      "raw_pass_count": 1,
+      "subsets": [
+        {
+          "accepted_modes": [
+            "accept_known"
+          ],
+          "case_ids": [
+            "current_key"
+          ],
+          "preserves_full_classification": false
+        },
+        {
+          "accepted_modes": [
+            "check_current",
+            "reject_all"
+          ],
+          "case_ids": [
+            "retired_key"
+          ],
+          "preserves_full_classification": false
+        },
+        {
+          "accepted_modes": [
+            "accept_known",
+            "check_current",
+            "reject_all"
+          ],
+          "case_ids": [
+            "invalid_signature"
+          ],
+          "preserves_full_classification": false
+        },
+        {
+          "accepted_modes": [],
+          "case_ids": [
+            "current_key",
+            "retired_key"
+          ],
+          "preserves_full_classification": true
+        },
+        {
+          "accepted_modes": [
+            "accept_known"
+          ],
+          "case_ids": [
+            "current_key",
+            "invalid_signature"
+          ],
+          "preserves_full_classification": false
+        },
+        {
+          "accepted_modes": [
+            "check_current",
+            "reject_all"
+          ],
+          "case_ids": [
+            "retired_key",
+            "invalid_signature"
+          ],
+          "preserves_full_classification": false
+        },
+        {
+          "accepted_modes": [],
+          "case_ids": [
+            "current_key",
+            "retired_key",
+            "invalid_signature"
+          ],
+          "preserves_full_classification": true
+        }
+      ],
+      "task_id": "fc7-key_rotation-c3",
+      "task_sha256": "5df5da5e5eb4619cc22760a5d759afabfa02daf02fdb4f30c4e5f2463b9a6951",
+      "world_count": 3
+    },
+    {
+      "candidate_mode_count": 3,
+      "condition": "C5",
+      "family": "key_rotation",
+      "full_secure_mode_count": 1,
+      "minimal_sufficient_sets": [
+        [
+          "current_key",
+          "retired_key"
+        ]
+      ],
+      "minimal_sufficient_world_count": 2,
+      "modes": [
+        {
+          "full_pass": false,
+          "gate_pass": false,
+          "mode": "accept_known",
+          "passing_world_ids": [
+            "current_key",
+            "invalid_signature"
+          ],
+          "raw_pass": true
+        },
+        {
+          "full_pass": true,
+          "gate_pass": false,
+          "mode": "check_current",
+          "passing_world_ids": [
+            "current_key",
+            "retired_key",
+            "invalid_signature"
+          ],
+          "raw_pass": true
+        },
+        {
+          "full_pass": false,
+          "gate_pass": false,
+          "mode": "reject_all",
+          "passing_world_ids": [
+            "retired_key",
+            "invalid_signature"
+          ],
+          "raw_pass": false
+        }
+      ],
+      "raw_false_negative_count": 0,
+      "raw_false_positive_count": 1,
+      "raw_false_positive_modes": [
+        "accept_known"
+      ],
+      "raw_pass_count": 2,
+      "subsets": [
+        {
+          "accepted_modes": [
+            "accept_known",
+            "check_current"
+          ],
+          "case_ids": [
+            "current_key"
+          ],
+          "preserves_full_classification": false
+        },
+        {
+          "accepted_modes": [
+            "check_current",
+            "reject_all"
+          ],
+          "case_ids": [
+            "retired_key"
+          ],
+          "preserves_full_classification": false
+        },
+        {
+          "accepted_modes": [
+            "accept_known",
+            "check_current",
+            "reject_all"
+          ],
+          "case_ids": [
+            "invalid_signature"
+          ],
+          "preserves_full_classification": false
+        },
+        {
+          "accepted_modes": [
+            "check_current"
+          ],
+          "case_ids": [
+            "current_key",
+            "retired_key"
+          ],
+          "preserves_full_classification": true
+        },
+        {
+          "accepted_modes": [
+            "accept_known",
+            "check_current"
+          ],
+          "case_ids": [
+            "current_key",
+            "invalid_signature"
+          ],
+          "preserves_full_classification": false
+        },
+        {
+          "accepted_modes": [
+            "check_current",
+            "reject_all"
+          ],
+          "case_ids": [
+            "retired_key",
+            "invalid_signature"
+          ],
+          "preserves_full_classification": false
+        },
+        {
+          "accepted_modes": [
+            "check_current"
+          ],
+          "case_ids": [
+            "current_key",
+            "retired_key",
+            "invalid_signature"
+          ],
+          "preserves_full_classification": true
+        }
+      ],
+      "task_id": "fc7-key_rotation-c5",
+      "task_sha256": "f951550edcda766347ec078a0461efad7c437a9604d5d49cae2320ac8e86478d",
+      "world_count": 3
+    },
+    {
+      "candidate_mode_count": 3,
+      "condition": "C1",
+      "family": "nonce_uniqueness",
+      "full_secure_mode_count": 1,
+      "minimal_sufficient_sets": [
+        [
+          "first_use",
+          "replay"
+        ]
+      ],
+      "minimal_sufficient_world_count": 2,
+      "modes": [
+        {
+          "full_pass": false,
+          "gate_pass": false,
+          "mode": "accept_any",
+          "passing_world_ids": [
+            "first_use",
+            "empty_nonce"
+          ],
+          "raw_pass": true
+        },
+        {
+          "full_pass": true,
+          "gate_pass": true,
+          "mode": "check_used",
+          "passing_world_ids": [
+            "first_use",
+            "replay",
+            "empty_nonce"
+          ],
+          "raw_pass": true
+        },
+        {
+          "full_pass": false,
+          "gate_pass": false,
+          "mode": "reject_all",
+          "passing_world_ids": [
+            "replay",
+            "empty_nonce"
+          ],
+          "raw_pass": false
+        }
+      ],
+      "raw_false_negative_count": 0,
+      "raw_false_positive_count": 1,
+      "raw_false_positive_modes": [
+        "accept_any"
+      ],
+      "raw_pass_count": 2,
+      "subsets": [
+        {
+          "accepted_modes": [
+            "accept_any",
+            "check_used"
+          ],
+          "case_ids": [
+            "first_use"
+          ],
+          "preserves_full_classification": false
+        },
+        {
+          "accepted_modes": [
+            "check_used",
+            "reject_all"
+          ],
+          "case_ids": [
+            "replay"
+          ],
+          "preserves_full_classification": false
+        },
+        {
+          "accepted_modes": [
+            "accept_any",
+            "check_used",
+            "reject_all"
+          ],
+          "case_ids": [
+            "empty_nonce"
+          ],
+          "preserves_full_classification": false
+        },
+        {
+          "accepted_modes": [
+            "check_used"
+          ],
+          "case_ids": [
+            "first_use",
+            "replay"
+          ],
+          "preserves_full_classification": true
+        },
+        {
+          "accepted_modes": [
+            "accept_any",
+            "check_used"
+          ],
+          "case_ids": [
+            "first_use",
+            "empty_nonce"
+          ],
+          "preserves_full_classification": false
+        },
+        {
+          "accepted_modes": [
+            "check_used",
+            "reject_all"
+          ],
+          "case_ids": [
+            "replay",
+            "empty_nonce"
+          ],
+          "preserves_full_classification": false
+        },
+        {
+          "accepted_modes": [
+            "check_used"
+          ],
+          "case_ids": [
+            "first_use",
+            "replay",
+            "empty_nonce"
+          ],
+          "preserves_full_classification": true
+        }
+      ],
+      "task_id": "fc7-nonce_uniqueness-c1",
+      "task_sha256": "48677bdf604236e6dc74555aa6e38ceae2c3db70ac49efe2e27272bfe6f63a28",
+      "world_count": 3
+    },
+    {
+      "candidate_mode_count": 3,
+      "condition": "C3",
+      "family": "nonce_uniqueness",
+      "full_secure_mode_count": 0,
+      "minimal_sufficient_sets": [
+        [
+          "first_use",
+          "replay"
+        ]
+      ],
+      "minimal_sufficient_world_count": 2,
+      "modes": [
+        {
+          "full_pass": false,
+          "gate_pass": false,
+          "mode": "accept_any",
+          "passing_world_ids": [
+            "first_use",
+            "empty_nonce"
+          ],
+          "raw_pass": true
+        },
+        {
+          "full_pass": false,
+          "gate_pass": false,
+          "mode": "check_used",
+          "passing_world_ids": [
+            "replay",
+            "empty_nonce"
+          ],
+          "raw_pass": false
+        },
+        {
+          "full_pass": false,
+          "gate_pass": false,
+          "mode": "reject_all",
+          "passing_world_ids": [
+            "replay",
+            "empty_nonce"
+          ],
+          "raw_pass": false
+        }
+      ],
+      "raw_false_negative_count": 0,
+      "raw_false_positive_count": 1,
+      "raw_false_positive_modes": [
+        "accept_any"
+      ],
+      "raw_pass_count": 1,
+      "subsets": [
+        {
+          "accepted_modes": [
+            "accept_any"
+          ],
+          "case_ids": [
+            "first_use"
+          ],
+          "preserves_full_classification": false
+        },
+        {
+          "accepted_modes": [
+            "check_used",
+            "reject_all"
+          ],
+          "case_ids": [
+            "replay"
+          ],
+          "preserves_full_classification": false
+        },
+        {
+          "accepted_modes": [
+            "accept_any",
+            "check_used",
+            "reject_all"
+          ],
+          "case_ids": [
+            "empty_nonce"
+          ],
+          "preserves_full_classification": false
+        },
+        {
+          "accepted_modes": [],
+          "case_ids": [
+            "first_use",
+            "replay"
+          ],
+          "preserves_full_classification": true
+        },
+        {
+          "accepted_modes": [
+            "accept_any"
+          ],
+          "case_ids": [
+            "first_use",
+            "empty_nonce"
+          ],
+          "preserves_full_classification": false
+        },
+        {
+          "accepted_modes": [
+            "check_used",
+            "reject_all"
+          ],
+          "case_ids": [
+            "replay",
+            "empty_nonce"
+          ],
+          "preserves_full_classification": false
+        },
+        {
+          "accepted_modes": [],
+          "case_ids": [
+            "first_use",
+            "replay",
+            "empty_nonce"
+          ],
+          "preserves_full_classification": true
+        }
+      ],
+      "task_id": "fc7-nonce_uniqueness-c3",
+      "task_sha256": "efee0adb7093a24a18def557e10bdd1c32f0a08c51130ae79436da1aa916d3e2",
+      "world_count": 3
+    },
+    {
+      "candidate_mode_count": 3,
+      "condition": "C5",
+      "family": "nonce_uniqueness",
+      "full_secure_mode_count": 1,
+      "minimal_sufficient_sets": [
+        [
+          "first_use",
+          "replay"
+        ]
+      ],
+      "minimal_sufficient_world_count": 2,
+      "modes": [
+        {
+          "full_pass": false,
+          "gate_pass": false,
+          "mode": "accept_any",
+          "passing_world_ids": [
+            "first_use",
+            "empty_nonce"
+          ],
+          "raw_pass": true
+        },
+        {
+          "full_pass": true,
+          "gate_pass": false,
+          "mode": "check_used",
+          "passing_world_ids": [
+            "first_use",
+            "replay",
+            "empty_nonce"
+          ],
+          "raw_pass": true
+        },
+        {
+          "full_pass": false,
+          "gate_pass": false,
+          "mode": "reject_all",
+          "passing_world_ids": [
+            "replay",
+            "empty_nonce"
+          ],
+          "raw_pass": false
+        }
+      ],
+      "raw_false_negative_count": 0,
+      "raw_false_positive_count": 1,
+      "raw_false_positive_modes": [
+        "accept_any"
+      ],
+      "raw_pass_count": 2,
+      "subsets": [
+        {
+          "accepted_modes": [
+            "accept_any",
+            "check_used"
+          ],
+          "case_ids": [
+            "first_use"
+          ],
+          "preserves_full_classification": false
+        },
+        {
+          "accepted_modes": [
+            "check_used",
+            "reject_all"
+          ],
+          "case_ids": [
+            "replay"
+          ],
+          "preserves_full_classification": false
+        },
+        {
+          "accepted_modes": [
+            "accept_any",
+            "check_used",
+            "reject_all"
+          ],
+          "case_ids": [
+            "empty_nonce"
+          ],
+          "preserves_full_classification": false
+        },
+        {
+          "accepted_modes": [
+            "check_used"
+          ],
+          "case_ids": [
+            "first_use",
+            "replay"
+          ],
+          "preserves_full_classification": true
+        },
+        {
+          "accepted_modes": [
+            "accept_any",
+            "check_used"
+          ],
+          "case_ids": [
+            "first_use",
+            "empty_nonce"
+          ],
+          "preserves_full_classification": false
+        },
+        {
+          "accepted_modes": [
+            "check_used",
+            "reject_all"
+          ],
+          "case_ids": [
+            "replay",
+            "empty_nonce"
+          ],
+          "preserves_full_classification": false
+        },
+        {
+          "accepted_modes": [
+            "check_used"
+          ],
+          "case_ids": [
+            "first_use",
+            "replay",
+            "empty_nonce"
+          ],
+          "preserves_full_classification": true
+        }
+      ],
+      "task_id": "fc7-nonce_uniqueness-c5",
+      "task_sha256": "c319a7702210bca1c7ae69c2e49d48983735c17472e83bf50ce1bb217b7a08f0",
+      "world_count": 3
+    },
+    {
+      "candidate_mode_count": 3,
+      "condition": "C1",
+      "family": "signature_algorithm",
+      "full_secure_mode_count": 1,
+      "minimal_sufficient_sets": [
+        [
+          "matched_key",
+          "mismatched_key"
+        ]
+      ],
+      "minimal_sufficient_world_count": 2,
+      "modes": [
+        {
+          "full_pass": false,
+          "gate_pass": false,
+          "mode": "trust_header",
+          "passing_world_ids": [
+            "matched_key",
+            "invalid_signature"
+          ],
+          "raw_pass": true
+        },
+        {
+          "full_pass": true,
+          "gate_pass": true,
+          "mode": "check_key_type",
+          "passing_world_ids": [
+            "matched_key",
+            "mismatched_key",
+            "invalid_signature"
+          ],
+          "raw_pass": true
+        },
+        {
+          "full_pass": false,
+          "gate_pass": false,
+          "mode": "reject_all",
+          "passing_world_ids": [
+            "mismatched_key",
+            "invalid_signature"
+          ],
+          "raw_pass": false
+        }
+      ],
+      "raw_false_negative_count": 0,
+      "raw_false_positive_count": 1,
+      "raw_false_positive_modes": [
+        "trust_header"
+      ],
+      "raw_pass_count": 2,
+      "subsets": [
+        {
+          "accepted_modes": [
+            "trust_header",
+            "check_key_type"
+          ],
+          "case_ids": [
+            "matched_key"
+          ],
+          "preserves_full_classification": false
+        },
+        {
+          "accepted_modes": [
+            "check_key_type",
+            "reject_all"
+          ],
+          "case_ids": [
+            "mismatched_key"
+          ],
+          "preserves_full_classification": false
+        },
+        {
+          "accepted_modes": [
+            "trust_header",
+            "check_key_type",
+            "reject_all"
+          ],
+          "case_ids": [
+            "invalid_signature"
+          ],
+          "preserves_full_classification": false
+        },
+        {
+          "accepted_modes": [
+            "check_key_type"
+          ],
+          "case_ids": [
+            "matched_key",
+            "mismatched_key"
+          ],
+          "preserves_full_classification": true
+        },
+        {
+          "accepted_modes": [
+            "trust_header",
+            "check_key_type"
+          ],
+          "case_ids": [
+            "matched_key",
+            "invalid_signature"
+          ],
+          "preserves_full_classification": false
+        },
+        {
+          "accepted_modes": [
+            "check_key_type",
+            "reject_all"
+          ],
+          "case_ids": [
+            "mismatched_key",
+            "invalid_signature"
+          ],
+          "preserves_full_classification": false
+        },
+        {
+          "accepted_modes": [
+            "check_key_type"
+          ],
+          "case_ids": [
+            "matched_key",
+            "mismatched_key",
+            "invalid_signature"
+          ],
+          "preserves_full_classification": true
+        }
+      ],
+      "task_id": "fc7-signature_algorithm-c1",
+      "task_sha256": "98f954d774b0c1e04690104262487346fc0746df910b050d945228bd2f4b102c",
+      "world_count": 3
+    },
+    {
+      "candidate_mode_count": 3,
+      "condition": "C3",
+      "family": "signature_algorithm",
+      "full_secure_mode_count": 0,
+      "minimal_sufficient_sets": [
+        [
+          "matched_key",
+          "mismatched_key"
+        ]
+      ],
+      "minimal_sufficient_world_count": 2,
+      "modes": [
+        {
+          "full_pass": false,
+          "gate_pass": false,
+          "mode": "trust_header",
+          "passing_world_ids": [
+            "matched_key",
+            "invalid_signature"
+          ],
+          "raw_pass": true
+        },
+        {
+          "full_pass": false,
+          "gate_pass": false,
+          "mode": "check_key_type",
+          "passing_world_ids": [
+            "mismatched_key",
+            "invalid_signature"
+          ],
+          "raw_pass": false
+        },
+        {
+          "full_pass": false,
+          "gate_pass": false,
+          "mode": "reject_all",
+          "passing_world_ids": [
+            "mismatched_key",
+            "invalid_signature"
+          ],
+          "raw_pass": false
+        }
+      ],
+      "raw_false_negative_count": 0,
+      "raw_false_positive_count": 1,
+      "raw_false_positive_modes": [
+        "trust_header"
+      ],
+      "raw_pass_count": 1,
+      "subsets": [
+        {
+          "accepted_modes": [
+            "trust_header"
+          ],
+          "case_ids": [
+            "matched_key"
+          ],
+          "preserves_full_classification": false
+        },
+        {
+          "accepted_modes": [
+            "check_key_type",
+            "reject_all"
+          ],
+          "case_ids": [
+            "mismatched_key"
+          ],
+          "preserves_full_classification": false
+        },
+        {
+          "accepted_modes": [
+            "trust_header",
+            "check_key_type",
+            "reject_all"
+          ],
+          "case_ids": [
+            "invalid_signature"
+          ],
+          "preserves_full_classification": false
+        },
+        {
+          "accepted_modes": [],
+          "case_ids": [
+            "matched_key",
+            "mismatched_key"
+          ],
+          "preserves_full_classification": true
+        },
+        {
+          "accepted_modes": [
+            "trust_header"
+          ],
+          "case_ids": [
+            "matched_key",
+            "invalid_signature"
+          ],
+          "preserves_full_classification": false
+        },
+        {
+          "accepted_modes": [
+            "check_key_type",
+            "reject_all"
+          ],
+          "case_ids": [
+            "mismatched_key",
+            "invalid_signature"
+          ],
+          "preserves_full_classification": false
+        },
+        {
+          "accepted_modes": [],
+          "case_ids": [
+            "matched_key",
+            "mismatched_key",
+            "invalid_signature"
+          ],
+          "preserves_full_classification": true
+        }
+      ],
+      "task_id": "fc7-signature_algorithm-c3",
+      "task_sha256": "cf677136e9fe6a6ff121b66dbb577e7b051bd6df0706f499ad53bd0d7573c096",
+      "world_count": 3
+    },
+    {
+      "candidate_mode_count": 3,
+      "condition": "C5",
+      "family": "signature_algorithm",
+      "full_secure_mode_count": 1,
+      "minimal_sufficient_sets": [
+        [
+          "matched_key",
+          "mismatched_key"
+        ]
+      ],
+      "minimal_sufficient_world_count": 2,
+      "modes": [
+        {
+          "full_pass": false,
+          "gate_pass": false,
+          "mode": "trust_header",
+          "passing_world_ids": [
+            "matched_key",
+            "invalid_signature"
+          ],
+          "raw_pass": true
+        },
+        {
+          "full_pass": true,
+          "gate_pass": false,
+          "mode": "check_key_type",
+          "passing_world_ids": [
+            "matched_key",
+            "mismatched_key",
+            "invalid_signature"
+          ],
+          "raw_pass": true
+        },
+        {
+          "full_pass": false,
+          "gate_pass": false,
+          "mode": "reject_all",
+          "passing_world_ids": [
+            "mismatched_key",
+            "invalid_signature"
+          ],
+          "raw_pass": false
+        }
+      ],
+      "raw_false_negative_count": 0,
+      "raw_false_positive_count": 1,
+      "raw_false_positive_modes": [
+        "trust_header"
+      ],
+      "raw_pass_count": 2,
+      "subsets": [
+        {
+          "accepted_modes": [
+            "trust_header",
+            "check_key_type"
+          ],
+          "case_ids": [
+            "matched_key"
+          ],
+          "preserves_full_classification": false
+        },
+        {
+          "accepted_modes": [
+            "check_key_type",
+            "reject_all"
+          ],
+          "case_ids": [
+            "mismatched_key"
+          ],
+          "preserves_full_classification": false
+        },
+        {
+          "accepted_modes": [
+            "trust_header",
+            "check_key_type",
+            "reject_all"
+          ],
+          "case_ids": [
+            "invalid_signature"
+          ],
+          "preserves_full_classification": false
+        },
+        {
+          "accepted_modes": [
+            "check_key_type"
+          ],
+          "case_ids": [
+            "matched_key",
+            "mismatched_key"
+          ],
+          "preserves_full_classification": true
+        },
+        {
+          "accepted_modes": [
+            "trust_header",
+            "check_key_type"
+          ],
+          "case_ids": [
+            "matched_key",
+            "invalid_signature"
+          ],
+          "preserves_full_classification": false
+        },
+        {
+          "accepted_modes": [
+            "check_key_type",
+            "reject_all"
+          ],
+          "case_ids": [
+            "mismatched_key",
+            "invalid_signature"
+          ],
+          "preserves_full_classification": false
+        },
+        {
+          "accepted_modes": [
+            "check_key_type"
+          ],
+          "case_ids": [
+            "matched_key",
+            "mismatched_key",
+            "invalid_signature"
+          ],
+          "preserves_full_classification": true
+        }
+      ],
+      "task_id": "fc7-signature_algorithm-c5",
+      "task_sha256": "11422650e07298fa75706e92bc3a470fcee7d2a5be172733b16e6c815fcab1a3",
+      "world_count": 3
+    },
+    {
+      "candidate_mode_count": 3,
+      "condition": "C1",
+      "family": "tls_hostname",
+      "full_secure_mode_count": 1,
+      "minimal_sufficient_sets": [
+        [
+          "matching_san",
+          "wrong_san"
+        ]
+      ],
+      "minimal_sufficient_world_count": 2,
+      "modes": [
+        {
+          "full_pass": false,
+          "gate_pass": false,
+          "mode": "chain_only",
+          "passing_world_ids": [
+            "matching_san",
+            "invalid_chain"
+          ],
+          "raw_pass": true
+        },
+        {
+          "full_pass": true,
+          "gate_pass": true,
+          "mode": "verify_hostname",
+          "passing_world_ids": [
+            "matching_san",
+            "wrong_san",
+            "invalid_chain"
+          ],
+          "raw_pass": true
+        },
+        {
+          "full_pass": false,
+          "gate_pass": false,
+          "mode": "reject_all",
+          "passing_world_ids": [
+            "wrong_san",
+            "invalid_chain"
+          ],
+          "raw_pass": false
+        }
+      ],
+      "raw_false_negative_count": 0,
+      "raw_false_positive_count": 1,
+      "raw_false_positive_modes": [
+        "chain_only"
+      ],
+      "raw_pass_count": 2,
+      "subsets": [
+        {
+          "accepted_modes": [
+            "chain_only",
+            "verify_hostname"
+          ],
+          "case_ids": [
+            "matching_san"
+          ],
+          "preserves_full_classification": false
+        },
+        {
+          "accepted_modes": [
+            "verify_hostname",
+            "reject_all"
+          ],
+          "case_ids": [
+            "wrong_san"
+          ],
+          "preserves_full_classification": false
+        },
+        {
+          "accepted_modes": [
+            "chain_only",
+            "verify_hostname",
+            "reject_all"
+          ],
+          "case_ids": [
+            "invalid_chain"
+          ],
+          "preserves_full_classification": false
+        },
+        {
+          "accepted_modes": [
+            "verify_hostname"
+          ],
+          "case_ids": [
+            "matching_san",
+            "wrong_san"
+          ],
+          "preserves_full_classification": true
+        },
+        {
+          "accepted_modes": [
+            "chain_only",
+            "verify_hostname"
+          ],
+          "case_ids": [
+            "matching_san",
+            "invalid_chain"
+          ],
+          "preserves_full_classification": false
+        },
+        {
+          "accepted_modes": [
+            "verify_hostname",
+            "reject_all"
+          ],
+          "case_ids": [
+            "wrong_san",
+            "invalid_chain"
+          ],
+          "preserves_full_classification": false
+        },
+        {
+          "accepted_modes": [
+            "verify_hostname"
+          ],
+          "case_ids": [
+            "matching_san",
+            "wrong_san",
+            "invalid_chain"
+          ],
+          "preserves_full_classification": true
+        }
+      ],
+      "task_id": "fc7-tls_hostname-c1",
+      "task_sha256": "78e5e32424a7a3719d4d10442a0916818280d0e349abda4bc1fcbbca5058efbf",
+      "world_count": 3
+    },
+    {
+      "candidate_mode_count": 3,
+      "condition": "C3",
+      "family": "tls_hostname",
+      "full_secure_mode_count": 0,
+      "minimal_sufficient_sets": [
+        [
+          "matching_san",
+          "wrong_san"
+        ]
+      ],
+      "minimal_sufficient_world_count": 2,
+      "modes": [
+        {
+          "full_pass": false,
+          "gate_pass": false,
+          "mode": "chain_only",
+          "passing_world_ids": [
+            "matching_san",
+            "invalid_chain"
+          ],
+          "raw_pass": true
+        },
+        {
+          "full_pass": false,
+          "gate_pass": false,
+          "mode": "verify_hostname",
+          "passing_world_ids": [
+            "wrong_san",
+            "invalid_chain"
+          ],
+          "raw_pass": false
+        },
+        {
+          "full_pass": false,
+          "gate_pass": false,
+          "mode": "reject_all",
+          "passing_world_ids": [
+            "wrong_san",
+            "invalid_chain"
+          ],
+          "raw_pass": false
+        }
+      ],
+      "raw_false_negative_count": 0,
+      "raw_false_positive_count": 1,
+      "raw_false_positive_modes": [
+        "chain_only"
+      ],
+      "raw_pass_count": 1,
+      "subsets": [
+        {
+          "accepted_modes": [
+            "chain_only"
+          ],
+          "case_ids": [
+            "matching_san"
+          ],
+          "preserves_full_classification": false
+        },
+        {
+          "accepted_modes": [
+            "verify_hostname",
+            "reject_all"
+          ],
+          "case_ids": [
+            "wrong_san"
+          ],
+          "preserves_full_classification": false
+        },
+        {
+          "accepted_modes": [
+            "chain_only",
+            "verify_hostname",
+            "reject_all"
+          ],
+          "case_ids": [
+            "invalid_chain"
+          ],
+          "preserves_full_classification": false
+        },
+        {
+          "accepted_modes": [],
+          "case_ids": [
+            "matching_san",
+            "wrong_san"
+          ],
+          "preserves_full_classification": true
+        },
+        {
+          "accepted_modes": [
+            "chain_only"
+          ],
+          "case_ids": [
+            "matching_san",
+            "invalid_chain"
+          ],
+          "preserves_full_classification": false
+        },
+        {
+          "accepted_modes": [
+            "verify_hostname",
+            "reject_all"
+          ],
+          "case_ids": [
+            "wrong_san",
+            "invalid_chain"
+          ],
+          "preserves_full_classification": false
+        },
+        {
+          "accepted_modes": [],
+          "case_ids": [
+            "matching_san",
+            "wrong_san",
+            "invalid_chain"
+          ],
+          "preserves_full_classification": true
+        }
+      ],
+      "task_id": "fc7-tls_hostname-c3",
+      "task_sha256": "433fa6e7bd0acb64a5d49507bbfc340db643435179e0e9fff9fc374a1566d01c",
+      "world_count": 3
+    },
+    {
+      "candidate_mode_count": 3,
+      "condition": "C5",
+      "family": "tls_hostname",
+      "full_secure_mode_count": 1,
+      "minimal_sufficient_sets": [
+        [
+          "matching_san",
+          "wrong_san"
+        ]
+      ],
+      "minimal_sufficient_world_count": 2,
+      "modes": [
+        {
+          "full_pass": false,
+          "gate_pass": false,
+          "mode": "chain_only",
+          "passing_world_ids": [
+            "matching_san",
+            "invalid_chain"
+          ],
+          "raw_pass": true
+        },
+        {
+          "full_pass": true,
+          "gate_pass": false,
+          "mode": "verify_hostname",
+          "passing_world_ids": [
+            "matching_san",
+            "wrong_san",
+            "invalid_chain"
+          ],
+          "raw_pass": true
+        },
+        {
+          "full_pass": false,
+          "gate_pass": false,
+          "mode": "reject_all",
+          "passing_world_ids": [
+            "wrong_san",
+            "invalid_chain"
+          ],
+          "raw_pass": false
+        }
+      ],
+      "raw_false_negative_count": 0,
+      "raw_false_positive_count": 1,
+      "raw_false_positive_modes": [
+        "chain_only"
+      ],
+      "raw_pass_count": 2,
+      "subsets": [
+        {
+          "accepted_modes": [
+            "chain_only",
+            "verify_hostname"
+          ],
+          "case_ids": [
+            "matching_san"
+          ],
+          "preserves_full_classification": false
+        },
+        {
+          "accepted_modes": [
+            "verify_hostname",
+            "reject_all"
+          ],
+          "case_ids": [
+            "wrong_san"
+          ],
+          "preserves_full_classification": false
+        },
+        {
+          "accepted_modes": [
+            "chain_only",
+            "verify_hostname",
+            "reject_all"
+          ],
+          "case_ids": [
+            "invalid_chain"
+          ],
+          "preserves_full_classification": false
+        },
+        {
+          "accepted_modes": [
+            "verify_hostname"
+          ],
+          "case_ids": [
+            "matching_san",
+            "wrong_san"
+          ],
+          "preserves_full_classification": true
+        },
+        {
+          "accepted_modes": [
+            "chain_only",
+            "verify_hostname"
+          ],
+          "case_ids": [
+            "matching_san",
+            "invalid_chain"
+          ],
+          "preserves_full_classification": false
+        },
+        {
+          "accepted_modes": [
+            "verify_hostname",
+            "reject_all"
+          ],
+          "case_ids": [
+            "wrong_san",
+            "invalid_chain"
+          ],
+          "preserves_full_classification": false
+        },
+        {
+          "accepted_modes": [
+            "verify_hostname"
+          ],
+          "case_ids": [
+            "matching_san",
+            "wrong_san",
+            "invalid_chain"
+          ],
+          "preserves_full_classification": true
+        }
+      ],
+      "task_id": "fc7-tls_hostname-c5",
+      "task_sha256": "2084c630335839f024c71c6ad099063ed67c7e389266b39c7806c6f3ad4dc1c8",
+      "world_count": 3
+    }
+  ],
+  "status": "EXCLUDED_AUTHORED_TEST_SET_AUDIT",
+  "task_count": 24,
+  "task_index_sha256": "f8fac1b0171152237f2736493b286ef7cca1e853fa1880915a7c2484817c54d1",
+  "version": "excluded-v7-exhaustive-test-set-sufficiency-v1"
+}
