@@ -1,122 +1,162 @@
 # Выступление и подготовка к вопросам
 
-Основной вариант рассчитан на группу: **до 4 минут**, целевой финиш — **3:45**.
-Это план времени, а не запись проведённой репетиции. Прочитайте вслух с таймером.
-Слайды переключает организатор; произносите **“Next slide, please.”**
+Групповой лимит — **4 минуты**, затем **1 минута Q&A**. Цель для этой речи —
+**3:40–3:45 с паузами и переключениями**. Это расчётный план, а не проведённая
+репетиция. Обязательно прочитайте вслух с таймером.
 
-Имена сохранены в написании, которое вы прислали. Анна указана как ментор
-и участник проекта. Ниже предложено распределение речи; оно не является
-заявлением об индивидуальном вкладе в исследование.
+Слайды переключает организатор. Фразу **“Next slide, please.”** произносим
+пять раз — после титула и первых четырёх содержательных слайдов.
+
+Все трое указаны как участники проекта; Kramich Anna также ментор. Распределение
+речи ниже — предложение для выступления, а не утверждение об индивидуальном
+вкладе в исследование.
 
 ## Групповой текст на английском
 
 ### Title · Imran Zakirov · 0:00–0:25
 
-Imagine fixing a coding exercise, passing the teacher’s tests, and still receiving a fail.
-That is the contradiction we found in our AI experiment. We are Imran Zakirov and
-Iosifova Nuriya, working with our mentor and project contributor, Kramich Anna.
-Next slide, please.
+Imagine passing a teacher’s tests and still receiving a fail. Something similar
+happened in our AI experiment. We are Imran Zakirov, Iosifova Nuriya, and Kramich
+Anna, who is also our mentor. Our project is called “The Tests Passed. The Grader
+Said No.” Next slide, please.
 
 ### Slide 1 · Imran Zakirov · 0:25–0:55
 
 Our starting question was: when should an AI stop trying to repair code?
-The AI saw a small security problem in Python, proposed a fix, and received PASS or
-FAIL. It could then stop or try another version. This matters because people use
-feedback to judge AI-written code. To understand those repeated attempts, we also
-needed to check whether the feedback was trustworthy. Next slide, please.
-
-### Slide 2 · Iosifova Nuriya · 0:55–1:35
-
-We reviewed forty saved sessions from one local AI model across five small task types.
-We compared two things: did the final code pass our written tests, and did the
-benchmark accept it? In twenty sessions, our research team had added a hidden rule
-that rejected every solution. It represented an unavailable condition, but it did
-not actually prove the coding task impossible. The AI did not see that rule.
+The AI saw a small security problem in Python, suggested a fix, and received
+PASS or FAIL. It could stop or try again. This matters because people use such
+scores to judge AI-written code. But first, could we trust our own checker?
 Next slide, please.
 
-### Slide 3 · Iosifova Nuriya · 1:35–2:15
+### Slide 2 · Iosifova Nuriya · 0:55–1:30
 
-In nine of those twenty sessions, the final code passed the written tests but still
-received FAIL. Each dot here represents one of the twenty sessions with that rule.
-One example involved a value intended for one-time use during encryption. Its final
-code passed our small tests, but our hidden rule still rejected it. Passing these
-tests did not prove the code completely secure. The result was a disagreement
-between the tests and the final score. Next slide, please.
+We reviewed forty saved sessions from one local AI model, Qwen, across five
+small task types. We compared the final code’s test result with its final score.
+In twenty sessions, our team had added a hidden rule: reject every solution.
+The AI could not see it. We intended this to represent an unavailable condition.
+But rejecting everything did not prove that the coding task itself was impossible.
+Next slide, please.
 
-### Slide 4 · Kramich Anna · 2:15–3:00
+### Slide 3 · Iosifova Nuriya · 1:30–2:00
 
-The hardest challenge was discovering what the records could actually prove.
-We had final test results, but the old logs did not preserve the raw results of every
-earlier check. We could not identify exactly which revisions followed misleading
-feedback. This changed our lesson: validate the grader, save each check, and explain
-the limits of the tests. We improved the logging for later runs, but that cannot
-recover evidence missing from the old records. Next slide, please.
+In nine of those twenty sessions, the final code passed our written tests but
+still received FAIL. Each dot represents one session with the hidden rule.
+This does not mean nine solutions were completely secure: our tests were limited.
+It means the final score could disagree with the implemented tests.
+Next slide, please.
 
-### Slide 5 · Kramich Anna · 3:00–3:45
+### Slide 4 · Kramich Anna · 2:00–2:50
 
-We have completed the historical audit, improved the logs, and run small exploratory
-follow-ups. A fairer comparison starts two copies from the same checked code. One
-receives a truthful PASS, the other a false FAIL. We compare their next steps and
-whether the final version keeps the checked property. The larger study still needs
-independent task review and broader testing. Our lesson so far is: before judging
-the AI, check the grader. Thank you.
+We found another surprise. In fourteen repairable sessions, the AI requested
+termination immediately after a PASS. The software did not end on that request
+alone. Thirteen sessions later ended without timeout; their median wait was about
+two minutes and eight seconds. One ended by timeout and is excluded from that
+median. No further repair attempts were logged. A controlled software test
+confirmed the extra decision step. This was about finishing after a PASS,
+not evidence that the AI refused to give up. Next slide, please.
+
+### Slide 5 · Kramich Anna · 2:50–3:40
+
+The challenge was separating AI behavior from our measuring software. Missing
+old step results also limited what we could conclude. We now record every check,
+and a regression test confirms that the new collector stops immediately on a
+termination request. Small follow-up experiments remain exploratory. Next, we
+need independent task review and broader comparisons of truthful PASS versus
+false FAIL. Our lesson: before judging the AI, check the grader. Thank you.
 
 ## Если выступают только два студента
 
-Imran: титул, слайд 1 и слайд 4. Nuriya: слайды 2, 3 и 5.
-Имя Анны остаётся на титуле как ментора и участника проекта. Остальной текст
-не требует изменений. Лимит группы остаётся 4 минуты.
+**Imran:** титул, слайды 1 и 4. **Nuriya:** слайды 2, 3 и 5.
+Анна остаётся указана как ментор и участник проекта. Групповой лимит — 4 минуты.
+
+Если фактически выступает один человек, лимит — **3 минуты**: сократите титул
+до названия и имён; на слайде 2 оставьте числа и объяснение скрытого правила;
+на слайде 4 оставьте «14 после PASS, медиана 2:08 для 13, один timeout,
+новых исправлений не было»; на слайде 5 оставьте главный вывод и следующий шаг.
+Не ускоряйте чтение в ущерб понятности.
 
 ## Простое объяснение по-русски
 
-Мы хотели узнать, когда ИИ прекращает исправлять код. Он отправлял решение
-проверяющему и получал PASS или FAIL. Затем мы проверили самого проверяющего.
+Мы дали ИИ маленькие задачи: исправить ошибку безопасности в коде. Он отправлял
+решение нашей программе-проверяющему и получал PASS («прошёл») или FAIL
+(«не прошёл»). Мы хотели понять, когда он продолжает исправления, а когда
+заканчивает.
 
-В 20 из 40 старых запусков было наше дополнительное скрытое правило:
-«не принимать никакое решение». В 9 из этих 20 итоговый код прошёл записанные
-тесты, но получил FAIL из-за этого правила. ИИ не видел правило. Поэтому
-неудачная итоговая оценка сама по себе не доказывает, что ИИ плохо исправлял
-код или не умел остановиться.
+Потом проверили самого проверяющего. В 20 из 40 старых запусков **мы сами**
+добавили скрытое правило: «не принимать никакое решение». В 9 из этих 20
+итоговый код прошёл наши ограниченные тесты, но всё равно получил FAIL.
+Поэтому такая оценка сама по себе не доказывает, что ИИ плохо исправил код.
+Пройти наши тесты также не значит быть полностью безопасным.
 
-Тесты были маленькими: пройти их — ещё не значит быть полностью безопасным.
-Также старые логи сохранили не все промежуточные результаты. Мы улучшили
-логирование и начали пилоты: один и тот же проверенный код получает правдивое
-PASS или ложное FAIL, после чего мы сравниваем действия агента. Большой
-эксперимент ещё не завершён.
+Нашли и вторую проблему измерения. В 14 других случаях ИИ запросил завершение
+сразу после сообщения PASS. Программа не завершалась по одному этому запросу.
+Для 13 случаев без timeout середина ряда задержек — около 2 минут 8 секунд;
+один случай с timeout посчитан отдельно. Новых попыток исправления после запроса
+в логах нет. Это не история «ИИ не умеет сдаваться»: здесь он уже получил PASS.
+
+Главный вывод: прежде чем оценивать поведение ИИ, нужно проверить программу,
+которая ставит ему оценки и записывает, когда он закончил. Мы улучшили запись
+проверок и проверили немедленное завершение в новом сборщике. Следующий большой
+эксперимент ещё требует независимой проверки задач.
 
 ## Ответы для минуты Q&A
 
-**Who wrote the hidden rule?** Our research team did. It was in our benchmark checker.
-The AI could not see it.
+**Who wrote the hidden rule?** Our research team did. It was part of our checker,
+not a secret rule created by the AI.
 
-**Why did you add it?** It represented an unavailable condition. The audit showed
-that unconditional rejection does not prove a coding task impossible.
+**Why add a rule that rejects everything?** It represented an unavailable condition.
+Our audit showed that this does not prove the underlying coding task impossible.
 
 **Were the nine solutions secure?** They passed our limited tests. We did not prove
 security in every situation.
 
-**Did the wrong message make the AI worse?** The historical records cannot establish
-that. Small paired pilots had mixed outcomes and remain exploratory.
+**Did the false FAIL make the AI worse?** These historical records cannot establish
+that. Our small follow-up comparisons remain exploratory.
 
-**What is new here?** We provide a reproducible audit of this local checker and show
-why its scores do not support strong conclusions about when the agent should stop.
-We do not claim to be the first researchers to discover misleading feedback.
+**What does “two minutes and eight seconds” mean?** It is the rounded median time
+from the first acknowledged termination request to final stop in thirteen historical
+sessions without timeout. All had received PASS before requesting termination.
+The fourteenth ended by timeout and is reported separately.
+
+**Was the AI still trying to fix the code during that delay?** No further repair
+attempts were logged. The runner took another decision step. We do not have the
+exact internal provider requests from that interval.
+
+**Did you prove the new version saves two minutes?** No. The controlled test checks
+how stopping works; it does not measure how much time an alternative runner would
+have saved in the old sessions.
+
+**What have you completed?** A reproducible audit of saved runs, better check logs,
+a controlled test of the old stopping mechanism, and a regression test for immediate
+termination in the new collector. The larger study is still unfinished.
 
 **What is a benchmark?** A set of tasks and scoring rules used to evaluate a system.
 
-**Did you use AI to help?** Yes. Codex assisted with analysis code, drafting, editing,
-and artifact checks. People remain responsible for reviewing the evidence and claims.
+**Did you use AI to help?** Yes. Codex assisted with analysis code, drafting,
+editing, and artifact checks. Human authors remain responsible for reviewing
+the evidence and claims.
 
-**What did each person do?** Answer using the contribution you can personally confirm.
-The speaking assignments above do not establish who wrote particular code or text.
+**What did each person do?** Each person should name only their own confirmed
+contribution. Speaking assignments do not establish research contributions.
 
 ## Репетиция
 
-1. Откройте PDF презентации и включите таймер.
-2. Проговорите весь текст, включая передачу слова и просьбы переключить слайды.
-3. Если получаются больше 3:45, сократите пример про шифрование на слайде 3.
-4. На сигнал «30 секунд» переходите к последним двум предложениям слайда 5.
-5. Проверьте камеру, микрофон и спокойное место для выступления.
+1. Откройте PDF презентации и включите таймер; репетируйте всей выступающей командой.
+2. Проговорите весь текст, включая передачи слова и просьбы переключить слайды.
+3. Если получилось больше 3:45, сократите пояснение о первоначальной цели скрытого
+   правила на слайде 2 и часть про controlled test на слайде 4. Сохраните знаменатели
+   и оговорку, что задержки возникли после PASS.
+4. На сигнал «30 секунд» завершите текущую мысль и переходите к выводу на слайде 5.
+5. Проверьте камеру, микрофон, тихое место и соединение. Камера должна быть включена.
 
-При отправке материалов не отмечайте репетицию как выполненную, пока реально
-не проведёте её с таймером.
+Репетиция и отправка материалов пока **не подтверждены**. Не отмечайте их как
+выполненные, пока действительно не проведёте репетицию и не отправите комплект.
+
+## Источники для подготовки, не для чтения вслух
+
+- Основной подсчёт: `paper/artifacts/results.json`, разделы `main` и `policy_rejected`.
+- Остановка после PASS: `analysis/HISTORICAL_TERMINATE_LATENCY_20261104.md`.
+- Контроль механизма: `analysis/STOP_CONTRACT_CONTROL_20261104.md`.
+- Новое немедленное завершение: `tests/test_v1_collector.py`,
+  `test_terminate_tool_stops_without_another_adapter_decision`.
+- Полная интерпретация и ограничения: `paper/final.md`.

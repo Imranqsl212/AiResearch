@@ -6,18 +6,28 @@
       "Imran Zakirov",
       "Iosifova Nuriya"
     ],
+    "team_members": [
+      "Imran Zakirov",
+      "Iosifova Nuriya",
+      "Kramich Anna"
+    ],
     "mentor_and_contributor": "Kramich Anna",
-    "prepared_on": "2026-11-03",
+    "prepared_on": "2026-11-06",
     "submission_deadline_local": "2026-11-08 12:00 Asia/Bishkek",
     "group_talk_limit_minutes": 4,
-    "research_source_commit": "9ecd07a3d605cfd812a874835e9b945adc5d5145",
+    "research_source_commit": "bf5bc244ce51f5fad92592de8c80cdfad0f88187",
     "repository": "https://github.com/Imranqsl212/AiResearch"
   },
-  "abstract_words": 131,
+  "abstract_words": 140,
   "slide_count": 6,
   "poster_pages_expected": 1,
   "counts_source": "paper/artifacts/results.json",
   "counts_source_sha256": "3d7ef25bfa07ef25ae20cea8d6ee34b59c5d9158e20c2e9b7013bfbd5a3cb229",
+  "evidence_files": {
+    "paper/artifacts/results.json": "3d7ef25bfa07ef25ae20cea8d6ee34b59c5d9158e20c2e9b7013bfbd5a3cb229",
+    "analysis/historical_terminate_latency_20261104.json": "11a9fcb15f0664e78bbff14a205edc0afb177a26de851fbbac49b4b9767815e7",
+    "analysis/stop_contract_control_20261104.json": "04a71025fd0be823fd25358d60a41f085bfc06499fea44e3f18b809c467f084b"
+  },
   "claim": "9 of 20 historical hidden-rule final candidates passed finite tests but received FAIL",
   "submission_status": "PREPARED_FOR_USER_REVIEW_NOT_SUBMITTED"
 }
