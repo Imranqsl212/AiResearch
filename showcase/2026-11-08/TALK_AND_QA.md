@@ -40,7 +40,7 @@ Next slide, please.
 ### Slide 3 · Iosifova Nuriya · 1:30–2:00
 
 In nine of those twenty sessions, the final code passed our written tests but
-still received FAIL. Each dot represents one session with the hidden rule.
+still received FAIL. Each block represents one session with the hidden rule.
 This does not mean nine solutions were completely secure: our tests were limited.
 It means the final score could disagree with the implemented tests.
 Next slide, please.

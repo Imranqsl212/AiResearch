@@ -30,6 +30,14 @@ def setup_fonts():
         names = ('Arial.ttf', 'Arial Bold.ttf')
     for font, filename in zip(('Showcase', 'ShowcaseBold'), names):
         pdfmetrics.registerFont(TTFont(font, str(directory / filename)))
+    serif_directory=Path('/System/Library/Fonts/Supplemental')
+    if (serif_directory/'Georgia.ttf').exists():
+        for font,filename in (('ShowcaseSerif','Georgia.ttf'),('ShowcaseSerifBold','Georgia Bold.ttf')):
+            pdfmetrics.registerFont(TTFont(font,str(serif_directory/filename)))
+    else:
+        from reportlab.pdfbase.pdfmetrics import Font
+        pdfmetrics.registerFont(Font('ShowcaseSerif','Times-Roman','WinAnsiEncoding'))
+        pdfmetrics.registerFont(Font('ShowcaseSerifBold','Times-Bold','WinAnsiEncoding'))
 
 
 def wrapped_lines(value, font, size, width):
@@ -61,7 +69,9 @@ def render_text(pdf, shape, slide_height):
         assert len(runs) == 1, 'Showcase text must use one uniform run per paragraph'
         run = runs[0]
         size = run.font.size.pt
-        font = 'ShowcaseBold' if run.font.bold else 'Showcase'
+        font = 'ShowcaseSerif' if run.font.name == 'Georgia' else 'Showcase'
+        if run.font.bold:
+            font += 'Bold'
         color = HexColor('#' + str(run.font.color.rgb))
         spacing = paragraph.line_spacing or 1.0
         assert isinstance(spacing, float), 'Only proportional line spacing is supported'

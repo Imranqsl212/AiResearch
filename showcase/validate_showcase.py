@@ -38,7 +38,7 @@ def main():
         for slide, page in zip(pptx.slides, pdf.pages):
             pptx_text = "".join(s.text for s in slide.shapes if s.has_text_frame)
             assert compact(pptx_text) == compact(page.extract_text()), f"{kind}: PDF/PPTX text mismatch"
-        assert "2 min 8 sec" in texts[kind] and "13" in texts[kind]
+        assert ("2 min 8 sec" in texts[kind] or "2:08" in texts[kind]) and "13" in texts[kind]
         result[kind.lower()] = {"pdf_pages":expected,"pptx_slides":expected,"aspect_ratio":"16:9",
                                 "names_present":True,"notes_present":True,"pdf_pptx_text_match":True}
     for section in ("RESEARCH QUESTION","BACKGROUND","METHODS","RESULTS","CONCLUSION","NEXT STEPS","REFERENCES"):
@@ -63,7 +63,7 @@ def main():
     poster = pdfium.PdfDocument(str(OUT/f"{STEM}_Poster.pdf"))
     poster[0].render(scale=1.3).to_pil().convert("RGB").save(OUT/"Poster_Preview.png")
     slides = pdfium.PdfDocument(str(OUT/f"{STEM}_Slides.pdf"))
-    sheet = Image.new("RGB",(1648,1414),"#E7EAF0")
+    sheet = Image.new("RGB",(1648,1414),"#D8D1C6")
     for i,page in enumerate(slides):
         rendered = page.render(scale=1.5).to_pil().convert("RGB")
         rendered.save(OUT/f"Slide_{i+1:02d}_Preview.png")
