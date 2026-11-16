@@ -1,0 +1,62 @@
+AGENT LITERATURE SYNTHESIS
+Cutoff and verification date: 2026-11-16
+Coverage: exactly 50 unique publications, A01–A50. Their JSON annotations distinguish source findings from our transfer proposals and limitations. Most entries are abstract-level reviews; closest novelty threats received targeted full-text inspection. No experiments were reproduced. This is a purposefully selected review, not an exhaustive systematic search.
+
+MANUSCRIPT UNDERSTANDING
+The historical 40-episode experiment is primarily an evaluator audit. The nominal unavailable condition was not a demonstrated impossibility condition: an unconditional acceptance veto rejected candidates that could satisfy the raw finite suite. Missing action receipts and controller-induced stops prevent strong behavioral conclusions. The later continuation cohorts are exploratory, procedurally heterogeneous, and include regressions even under truthful PASS. Security failure and legitimate-function denial must be separated. The manuscript's most promising future contribution is a controlled account of when agent repair destroys already-established properties under evaluator disagreement.
+
+CLOSEST NOVELTY THREATS
+A01 COBALT already includes misleading execution-feedback experiments in multi-turn coding. Therefore “wrong feedback can undo correct code” is insufficient novelty. Current official publication is TMLR October 2026, with the COBALT title; the older preprint title and review record should not be mistaken for a different publication.
+https://jmlr.org/tmlr/papers/
+https://openreview.net/pdf?id=7SwoUNzIxe
+https://arxiv.org/abs/2602.03806
+
+A03 FixedBench already studies unnecessary edits to resolved issues. Its partially fixed controls show why instruction-induced restraint must be assessed alongside useful action.
+https://arxiv.org/abs/2605.07769
+
+A02 AgentAbstain already evaluates appropriate action and abstention through paired tasks. Its official NeurIPS 2026 listing makes it a stronger venue-verified comparator than a project-only claim.
+https://neurips.cc/Downloads/2026
+https://arxiv.org/abs/2607.10059
+
+A08 ReviveBench already connects verifier defects, unattainable expectations and unsupported capability interpretations. Its discussion distinguishes oracle self-calibration from achievability; merely adding an audit or independent candidate consensus is not a new conceptual contribution.
+https://arxiv.org/html/2609.36161v1
+
+A22 Who Verifies the Verifier shows that downstream gains can coexist with degenerate graders. An agent score alone cannot validate its learning or evaluation signal.
+https://arxiv.org/html/2610.11464v1
+
+A23 Verification Transport already isolates changes in observable evidence while holding the realized task outcome fixed. Provenance-preserving receipts alone are therefore not a sufficient originality claim.
+https://arxiv.org/html/2611.18471v1
+
+A27 Veritas already separates verdict delivery from verdict correctness and compares over-strict and over-lenient checks. Reporting missing verdicts is necessary evaluation hygiene rather than a standalone breakthrough.
+https://arxiv.org/html/2611.13336v1
+
+A06 Evidence-Carrying Termination already proposes certificates for supported stopping. A certificate supports a claim relative to a declared trace; it does not establish the truth of an erroneous specification.
+https://arxiv.org/abs/2608.23623
+
+A07 False Success already compares confident completion with independent environment outcomes. The manuscript's narrow recovered claim labels cannot support a general absence-of-false-success claim.
+https://arxiv.org/abs/2606.09863
+
+STRONGEST RESEARCH DIRECTION — INTERPRETATION, NOT AN ESTABLISHED NOVELTY CLAIM
+Study security-preserving revision when an agent's evaluator conflicts with independently reproducible evidence. The distinct target would be the causal transition from a candidate that satisfies both a security property and legitimate functionality to a candidate that violates one of them, with continuation pressure and observability controlled. Existing neighboring papers separately cover misleading feedback, unnecessary action, verifier defects, and provenance; the proposed combination needs a final search before any priority claim.
+
+A clean experiment begins from independently validated candidate states, including secure-and-functional, secure-but-overblocking, unsafe-but-functional and invalid-code states. Fork identical histories into truthful and false verdict arms. Hold wording, remaining budget, action availability and continuation instructions constant. Include a no-change action and measure its use without treating nonresponse or adapter failure as abstention. Intervene separately on whether agents see the actual failing witness, an independent contrary witness, or only a verdict label. Preserve unmodified raw records while rendering manipulated feedback to the agent.
+
+The key hypothesis is conditional: independently checkable contrary evidence may reduce destructive revisions, but its benefit may depend on source attribution and the cost of another verification action. An equally informative alternative is that explicit continuation pressure dominates verdict truth, or that all forms of revision increase regression at equal rates. Such results would challenge a false-feedback-only narrative.
+
+Track security and functionality at every candidate, not just final acceptance. Distinguish insecure acceptance, overblocking, syntax/runtime failure, missing verdict, unsupported completion, voluntary stop and controller stop. Security here must always mean the independently specified bounded properties actually tested, with residual coverage limitations stated.
+
+SECONDARY OPPORTUNITIES — SPECULATIVE
+1. Evidence retention versus evidence acquisition: test whether the agent needs a new check or merely a durable representation of an already verified invariant. Fixed receipt content with randomized position can separate memory/attention failure from trust failure. This is motivated by A33 and A23 but is not yet demonstrated in security repair.
+2. Cross-attempt contamination: compare ephemeral feedback with persistent verbal-reflection memory. A false verdict might affect later tasks even after the current candidate is restored. A10 motivates the architecture, not the predicted harmful transfer.
+3. Clarification as a third action: introduce an explicit request for a checker witness or human specification decision, rather than forcing edit versus stop. A49 already establishes user interaction as an evaluation target; the new question would concern the cost and security value of resolving inconsistent verification.
+4. Availability-versus-integrity asymmetry: test whether evaluators and agents react differently to unsafe access and excessive denial. The manuscript's CSRF and key-rotation observations suggest this contrast, but task-family confounding currently prevents interpreting it as a discovered law.
+
+ESSENTIAL BASELINES
+A18 motivates a scripted localization/repair/validation baseline. A43 and A45 motivate independent sampling at matched compute. A11–A15 require distinguishing self-critique, tool-grounded correction and correction-trained models. A39 and A40 motivate generated/expanded test comparisons while warning that agreement is not ground truth. A17 makes the custom controller itself an experimental factor. A48 and A50 motivate joint utility/security reporting. The manuscript's fixed guide should be called static guidance, not retrieval-augmented generation; A29–A34 provide the actual retrieval comparators if a retrieval mechanism is introduced.
+
+BIBLIOGRAPHIC CORRECTIONS
+Agentless: final publication title is “Demystifying LLM-based Software Engineering Agents,” FSE 2025/PACMSE, not ICSE 2025.
+Reflexion: the NeurIPS 2023 version lists five authors; the later arXiv version adds an author. The JSON uses the published list.
+CRAG: the verified 2026 Findings of IJCNLP-AACL paper is an expanded version; it is counted once.
+Lost in the Middle: TACL publication year is 2024 although accepted in 2023.
+A22 and A23 are NeurIPS 2026 workshop acceptances, not main-conference publications. A07 is an ICML workshop acceptance. A02 is accepted to NeurIPS 2026; the conference has not yet occurred at this cutoff.

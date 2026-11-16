@@ -1,0 +1,889 @@
+[
+  {
+    "id": "A01",
+    "title": "COBALT: Contextual Bandit Learning with Offline Trajectories for Multi-Turn Code Generation",
+    "authors": "Ziru Chen; Dongdong Chen; Ruinan Jin; Yingbin Liang; Yujia Xie; Huan Sun",
+    "year": 2026,
+    "venue": "Transactions on Machine Learning Research",
+    "status": "peer-reviewed",
+    "arxiv_id": "2602.03806",
+    "primary_sources": [
+      "https://arxiv.org/abs/2602.03806",
+      "https://jmlr.org/tmlr/papers/",
+      "https://openreview.net/pdf?id=7SwoUNzIxe",
+      "https://arxiv.org/html/2602.03806v1"
+    ],
+    "access_depth": "Primary v2 metadata/abstract and TMLR publication index; parent researcher inspected v1 misleading-feedback analysis, §§5.1–5.4; v2 HTML unavailable",
+    "metadata_verification": "The arXiv v2 title and October 2026 TMLR index agree on COBALT; an earlier title and OpenReview record belong to an earlier version.",
+    "claim_check": "The reported method improves code-generation performance and includes a perturbation experiment in which misleading execution feedback can degrade otherwise correct code.",
+    "annotation_scope": "Contribution and findings summarize the cited primary source. Relevance, proposed transfer and limitations are critical interpretation, not reported experiments.",
+    "verified_date": "2026-11-16"
+  },
+  {
+    "id": "A02",
+    "title": "AgentAbstain: Do LLM Agents Know When Not to Act?",
+    "authors": "Xun Liu; Yi Evie Zhang; Vira Kasprova; Parisa Rabbani; Pardis Sadat Zahraei; Tianyu Zhang; Ali Ebrahimpour-Boroojeny; Varun Chandrasekaran",
+    "year": 2026,
+    "venue": "NeurIPS 2026, Evaluations & Datasets Track (accepted)",
+    "status": "peer-reviewed (accepted)",
+    "arxiv_id": "2607.10059",
+    "primary_sources": [
+      "https://arxiv.org/abs/2607.10059",
+      "https://neurips.cc/Downloads/2026",
+      "https://agentabstain.github.io/",
+      "https://neurips.cc/virtual/2026/poster/139558",
+      "https://arxiv.org/html/2607.10059v1"
+    ],
+    "access_depth": "Primary abstract plus targeted full-text methods/results inspection; results not independently reproduced",
+    "metadata_verification": "NeurIPS 2026 official downloads list the paper; the project identifies the Evaluations & Datasets track. Full text inspected for paired tasks and evaluation.",
+    "claim_check": "Across 263 task pairs and 42 environments, the best reported paired accuracy is 59.5%; task competence does not reliably predict restraint.",
+    "annotation_scope": "Contribution and findings summarize the cited primary source. Relevance, proposed transfer and limitations are critical interpretation, not reported experiments.",
+    "verified_date": "2026-11-16"
+  },
+  {
+    "id": "A03",
+    "title": "Coding Agents Don't Know When to Act",
+    "authors": "Thibaud Gloaguen; Niels Mündler; Mark Müller; Veselin Raychev; Martin Vechev",
+    "year": 2026,
+    "venue": "arXiv",
+    "status": "preprint",
+    "arxiv_id": "2605.07769",
+    "primary_sources": [
+      "https://arxiv.org/abs/2605.07769",
+      "https://arxiv.org/html/2605.07769v1"
+    ],
+    "access_depth": "Primary abstract plus targeted full-text methods/results inspection; results not independently reproduced",
+    "metadata_verification": "No reviewed venue was verified. FixedBench is the benchmark name in this preprint; introductory methodology and reproduction-first caveat inspected.",
+    "claim_check": "Models often modify already-fixed code; reproduction-first instructions reduce this but can induce premature abstention on partially fixed issues.",
+    "annotation_scope": "Contribution and findings summarize the cited primary source. Relevance, proposed transfer and limitations are critical interpretation, not reported experiments.",
+    "verified_date": "2026-11-16"
+  },
+  {
+    "id": "A04",
+    "title": "Hell or High Water: Evaluating Agentic Recovery from External Failures",
+    "authors": "Andrew Wang; Sophia Hager; Adi Asija; Daniel Khashabi; Nicholas Andrews",
+    "year": 2025,
+    "venue": "COLM",
+    "status": "peer-reviewed",
+    "arxiv_id": "2508.11027",
+    "primary_sources": [
+      "https://arxiv.org/abs/2508.11027"
+    ],
+    "access_depth": "Primary abstract and bibliographic record; results not independently reproduced",
+    "metadata_verification": "arXiv author comment identifies COLM 2025 acceptance.",
+    "claim_check": "Agents frequently fail to find backup plans even when the action search space is restricted.",
+    "annotation_scope": "Contribution and findings summarize the cited primary source. Relevance, proposed transfer and limitations are critical interpretation, not reported experiments.",
+    "verified_date": "2026-11-16"
+  },
+  {
+    "id": "A05",
+    "title": "Do LLMs Catch Their Own Mistakes? A Comprehensive Benchmark for Reflective Tool Use LLMs",
+    "authors": "Zheyuan Liu; Liqiang Xiao; Yang Li; Hyokun Yun; Lihong Li; Chao Zhang; Meng Jiang",
+    "year": 2026,
+    "venue": "Findings of ACL",
+    "status": "peer-reviewed",
+    "arxiv_id": null,
+    "primary_sources": [
+      "https://aclanthology.org/2026.findings-acl.86/"
+    ],
+    "access_depth": "Primary abstract and bibliographic record; results not independently reproduced",
+    "metadata_verification": "ACL Anthology confirms Findings of ACL 2026 and the complete author list.",
+    "claim_check": "The benchmark spans 968 dialogues, 88 APIs and ten domains; models perform worse on their own errors than on third-party critique.",
+    "annotation_scope": "Contribution and findings summarize the cited primary source. Relevance, proposed transfer and limitations are critical interpretation, not reported experiments.",
+    "verified_date": "2026-11-16"
+  },
+  {
+    "id": "A06",
+    "title": "When May an Agent Stop? Evidence-Carrying Termination for Tool-Using LLMs",
+    "authors": "Jason Liu",
+    "year": 2026,
+    "venue": "arXiv",
+    "status": "preprint",
+    "arxiv_id": "2608.23623",
+    "primary_sources": [
+      "https://arxiv.org/abs/2608.23623"
+    ],
+    "access_depth": "Primary abstract and bibliographic record; results not independently reproduced",
+    "metadata_verification": "Only an arXiv preprint was verified; do not imply peer review.",
+    "claim_check": "The reported synthetic and prospective trajectory studies reduce unsupported completions while preserving much supported completion.",
+    "annotation_scope": "Contribution and findings summarize the cited primary source. Relevance, proposed transfer and limitations are critical interpretation, not reported experiments.",
+    "verified_date": "2026-11-16"
+  },
+  {
+    "id": "A07",
+    "title": "From Confident Closing to Silent Failure: Characterizing False Success in LLM Agents",
+    "authors": "Laksh Advani",
+    "year": 2026,
+    "venue": "FAGEN workshop at ICML",
+    "status": "workshop paper (accepted per author record)",
+    "arxiv_id": "2606.09863",
+    "primary_sources": [
+      "https://arxiv.org/abs/2606.09863"
+    ],
+    "access_depth": "Primary abstract and bibliographic record; results not independently reproduced",
+    "metadata_verification": "The arXiv author record states acceptance to FAGEN at ICML 2026; this is a workshop paper, not an ICML main-conference paper.",
+    "claim_check": "Across tau2-bench and AppWorld, false-success frequency varies strongly by setting; the tested LLM judges often fail to distinguish it.",
+    "annotation_scope": "Contribution and findings summarize the cited primary source. Relevance, proposed transfer and limitations are critical interpretation, not reported experiments.",
+    "verified_date": "2026-11-16"
+  },
+  {
+    "id": "A08",
+    "title": "From Dead Code and Static Requirements to Working Engines: Software Revival with Coding Agents",
+    "authors": "Tianyu Liu; Dingyuan Dai; Yufan Du; Zhen Yang",
+    "year": 2026,
+    "venue": "arXiv",
+    "status": "preprint",
+    "arxiv_id": "2609.36161",
+    "primary_sources": [
+      "https://arxiv.org/abs/2609.36161",
+      "https://arxiv.org/html/2609.36161v1"
+    ],
+    "access_depth": "Primary abstract plus targeted full-text methods/results inspection; results not independently reproduced",
+    "metadata_verification": "Full-text verifier audit inspected, especially §8; no peer-reviewed venue was verified.",
+    "claim_check": "The authors identify 28 verifier defects, including 24 false negatives, and retract a solver-capability interpretation exposed by a minimal passing counterexample.",
+    "annotation_scope": "Contribution and findings summarize the cited primary source. Relevance, proposed transfer and limitations are critical interpretation, not reported experiments.",
+    "verified_date": "2026-11-16"
+  },
+  {
+    "id": "A09",
+    "title": "ReAct: Synergizing Reasoning and Acting in Language Models",
+    "authors": "Shunyu Yao; Jeffrey Zhao; Dian Yu; Nan Du; Izhak Shafran; Karthik Narasimhan; Yuan Cao",
+    "year": 2023,
+    "venue": "ICLR",
+    "status": "peer-reviewed",
+    "arxiv_id": "2210.03629",
+    "primary_sources": [
+      "https://arxiv.org/abs/2210.03629"
+    ],
+    "access_depth": "Primary abstract and bibliographic record; results not independently reproduced",
+    "metadata_verification": "arXiv describes its version as the ICLR camera-ready paper.",
+    "claim_check": "It improves performance over selected baselines on question answering, fact checking and interactive decision tasks.",
+    "annotation_scope": "Contribution and findings summarize the cited primary source. Relevance, proposed transfer and limitations are critical interpretation, not reported experiments.",
+    "verified_date": "2026-11-16"
+  },
+  {
+    "id": "A10",
+    "title": "Reflexion: Language Agents with Verbal Reinforcement Learning",
+    "authors": "Noah Shinn; Federico Cassano; Ashwin Gopinath; Karthik Narasimhan; Shunyu Yao",
+    "year": 2023,
+    "venue": "NeurIPS",
+    "status": "peer-reviewed",
+    "arxiv_id": "2303.11366",
+    "primary_sources": [
+      "https://arxiv.org/abs/2303.11366",
+      "https://papers.nips.cc/paper_files/paper/2023/hash/1b44b878bb782e6954cd888628510e90-Abstract-Conference.html"
+    ],
+    "access_depth": "Primary abstract and bibliographic record; results not independently reproduced",
+    "metadata_verification": "NeurIPS publication has five authors; later arXiv version adds Edward Berman. This entry uses the published author list.",
+    "claim_check": "The paper reports gains across decision-making, coding and reasoning, with sensitivity to feedback sources and memory design.",
+    "annotation_scope": "Contribution and findings summarize the cited primary source. Relevance, proposed transfer and limitations are critical interpretation, not reported experiments.",
+    "verified_date": "2026-11-16"
+  },
+  {
+    "id": "A11",
+    "title": "Self-Refine: Iterative Refinement with Self-Feedback",
+    "authors": "Aman Madaan; Niket Tandon; Prakhar Gupta; Skyler Hallinan; Luyu Gao; Sarah Wiegreffe; Uri Alon; Nouha Dziri; Shrimai Prabhumoye; Yiming Yang; Shashank Gupta; Bodhisattwa Prasad Majumder; Katherine Hermann; Sean Welleck; Amir Yazdanbakhsh; Peter Clark",
+    "year": 2023,
+    "venue": "NeurIPS",
+    "status": "peer-reviewed",
+    "arxiv_id": "2303.17651",
+    "primary_sources": [
+      "https://arxiv.org/abs/2303.17651",
+      "https://papers.nips.cc/paper/2023/hash/91edff07232fb1b55a505a9e9f6c0ff3-Abstract-Conference.html"
+    ],
+    "access_depth": "Primary abstract and bibliographic record; results not independently reproduced",
+    "metadata_verification": "NeurIPS 2023 primary proceedings record verified.",
+    "claim_check": "The authors report improvements across seven tasks, including code and reasoning, relative to single-pass generation.",
+    "annotation_scope": "Contribution and findings summarize the cited primary source. Relevance, proposed transfer and limitations are critical interpretation, not reported experiments.",
+    "verified_date": "2026-11-16"
+  },
+  {
+    "id": "A12",
+    "title": "CRITIC: Large Language Models Can Self-Correct with Tool-Interactive Critiquing",
+    "authors": "Zhibin Gou; Zhihong Shao; Yeyun Gong; Yelong Shen; Yujiu Yang; Nan Duan; Weizhu Chen",
+    "year": 2024,
+    "venue": "ICLR",
+    "status": "peer-reviewed",
+    "arxiv_id": "2305.11738",
+    "primary_sources": [
+      "https://arxiv.org/abs/2305.11738"
+    ],
+    "access_depth": "Primary abstract and bibliographic record; results not independently reproduced",
+    "metadata_verification": "arXiv author record identifies ICLR 2024.",
+    "claim_check": "Reported gains span question answering, mathematical program synthesis and toxicity reduction; the paper emphasizes the value of external feedback.",
+    "annotation_scope": "Contribution and findings summarize the cited primary source. Relevance, proposed transfer and limitations are critical interpretation, not reported experiments.",
+    "verified_date": "2026-11-16"
+  },
+  {
+    "id": "A13",
+    "title": "Teaching Large Language Models to Self-Debug",
+    "authors": "Xinyun Chen; Maxwell Lin; Nathanael Schärli; Denny Zhou",
+    "year": 2024,
+    "venue": "ICLR",
+    "status": "peer-reviewed",
+    "arxiv_id": "2304.05128",
+    "primary_sources": [
+      "https://arxiv.org/abs/2304.05128",
+      "https://openreview.net/pdf?id=KuPixIqPiq"
+    ],
+    "access_depth": "Primary abstract and bibliographic record; results not independently reproduced",
+    "metadata_verification": "ICLR 2024 primary OpenReview PDF verified.",
+    "claim_check": "Few-shot self-debugging improves code generation across several settings, including tasks without explicit correctness tests and tasks with unit-test feedback.",
+    "annotation_scope": "Contribution and findings summarize the cited primary source. Relevance, proposed transfer and limitations are critical interpretation, not reported experiments.",
+    "verified_date": "2026-11-16"
+  },
+  {
+    "id": "A14",
+    "title": "Large Language Models Cannot Self-Correct Reasoning Yet",
+    "authors": "Jie Huang; Xinyun Chen; Swaroop Mishra; Huaixiu Steven Zheng; Adams Wei Yu; Xinying Song; Denny Zhou",
+    "year": 2024,
+    "venue": "ICLR",
+    "status": "peer-reviewed",
+    "arxiv_id": "2310.01798",
+    "primary_sources": [
+      "https://arxiv.org/abs/2310.01798"
+    ],
+    "access_depth": "Primary abstract and bibliographic record; results not independently reproduced",
+    "metadata_verification": "arXiv author record identifies ICLR 2024.",
+    "claim_check": "The examined models often fail to improve and can replace correct answers with incorrect ones under self-correction prompts.",
+    "annotation_scope": "Contribution and findings summarize the cited primary source. Relevance, proposed transfer and limitations are critical interpretation, not reported experiments.",
+    "verified_date": "2026-11-16"
+  },
+  {
+    "id": "A15",
+    "title": "Training Language Models to Self-Correct via Reinforcement Learning",
+    "authors": "Aviral Kumar; Vincent Zhuang; Rishabh Agarwal; Yi Su; John D Co-Reyes; Avi Singh; Kate Baumli; Shariq Iqbal; Colton Bishop; Rebecca Roelofs; Lei M Zhang; Kay McKinney; Disha Shrivastava; Cosmin Paduraru; George Tucker; Doina Precup; Feryal Behbahani; Aleksandra Faust",
+    "year": 2025,
+    "venue": "ICLR",
+    "status": "peer-reviewed",
+    "arxiv_id": "2409.12917",
+    "primary_sources": [
+      "https://arxiv.org/abs/2409.12917",
+      "https://openreview.net/pdf/933985f70410dda1d58d271d6f55f69812e8c962.pdf"
+    ],
+    "access_depth": "Primary abstract and bibliographic record; results not independently reproduced",
+    "metadata_verification": "ICLR 2025 primary OpenReview PDF verified.",
+    "claim_check": "The authors report improvements on mathematical reasoning and code generation and identify distribution mismatch and behavior collapse as problems for simpler training alternatives.",
+    "annotation_scope": "Contribution and findings summarize the cited primary source. Relevance, proposed transfer and limitations are critical interpretation, not reported experiments.",
+    "verified_date": "2026-11-16"
+  },
+  {
+    "id": "A16",
+    "title": "SWE-bench: Can Language Models Resolve Real-World GitHub Issues?",
+    "authors": "Carlos E. Jimenez; John Yang; Alexander Wettig; Shunyu Yao; Kexin Pei; Ofir Press; Karthik Narasimhan",
+    "year": 2024,
+    "venue": "ICLR",
+    "status": "peer-reviewed",
+    "arxiv_id": "2310.06770",
+    "primary_sources": [
+      "https://arxiv.org/abs/2310.06770"
+    ],
+    "access_depth": "Primary abstract and bibliographic record; results not independently reproduced",
+    "metadata_verification": "arXiv author record identifies ICLR 2024.",
+    "claim_check": "The original release contains 2,294 issues from twelve Python repositories and shows that repository-level issue resolution is substantially harder than isolated function generation.",
+    "annotation_scope": "Contribution and findings summarize the cited primary source. Relevance, proposed transfer and limitations are critical interpretation, not reported experiments.",
+    "verified_date": "2026-11-16"
+  },
+  {
+    "id": "A17",
+    "title": "SWE-agent: Agent-Computer Interfaces Enable Automated Software Engineering",
+    "authors": "John Yang; Carlos E. Jimenez; Alexander Wettig; Kilian Lieret; Shunyu Yao; Karthik Narasimhan; Ofir Press",
+    "year": 2024,
+    "venue": "NeurIPS",
+    "status": "peer-reviewed",
+    "arxiv_id": "2405.15793",
+    "primary_sources": [
+      "https://arxiv.org/abs/2405.15793",
+      "https://papers.nips.cc/paper/2024/hash/5a7c947568c1b1328ccc5230172e1e7c-Abstract-Conference.html"
+    ],
+    "access_depth": "Primary abstract and bibliographic record; results not independently reproduced",
+    "metadata_verification": "NeurIPS 2024 primary proceedings record verified.",
+    "claim_check": "The reported agent solves real software issues, and interface choices materially affect its ability to operate in coding environments.",
+    "annotation_scope": "Contribution and findings summarize the cited primary source. Relevance, proposed transfer and limitations are critical interpretation, not reported experiments.",
+    "verified_date": "2026-11-16"
+  },
+  {
+    "id": "A18",
+    "title": "Demystifying LLM-based Software Engineering Agents",
+    "authors": "Chunqiu Steven Xia; Yinlin Deng; Soren Dunn; Lingming Zhang",
+    "year": 2025,
+    "venue": "FSE 2025 / Proceedings of the ACM on Software Engineering",
+    "status": "peer-reviewed",
+    "arxiv_id": "2407.01489",
+    "primary_sources": [
+      "https://arxiv.org/abs/2407.01489",
+      "https://conf.researchr.org/details/fse-2025/fse-2025-research-papers/85/Demystifying-LLM-based-Software-Engineering-Agents"
+    ],
+    "access_depth": "Primary abstract and bibliographic record; results not independently reproduced",
+    "metadata_verification": "FSE 2025 official program verifies the published title Demystifying LLM-based Software Engineering Agents; Agentless is the preprint/system name.",
+    "claim_check": "The paper reports competitive issue-resolution performance and identifies benchmark cases with misleading descriptions or information leakage.",
+    "annotation_scope": "Contribution and findings summarize the cited primary source. Relevance, proposed transfer and limitations are critical interpretation, not reported experiments.",
+    "verified_date": "2026-11-16"
+  },
+  {
+    "id": "A19",
+    "title": "AgentBoard: An Analytical Evaluation Board of Multi-turn LLM Agents",
+    "authors": "Chang Ma; Junlei Zhang; Zhihao Zhu; Cheng Yang; Yujiu Yang; Yaohui Jin; Zhenzhong Lan; Lingpeng Kong; Junxian He",
+    "year": 2024,
+    "venue": "NeurIPS",
+    "status": "peer-reviewed",
+    "arxiv_id": "2401.13178",
+    "primary_sources": [
+      "https://arxiv.org/abs/2401.13178"
+    ],
+    "access_depth": "Primary abstract and bibliographic record; results not independently reproduced",
+    "metadata_verification": "arXiv author record identifies NeurIPS 2024.",
+    "claim_check": "Fine-grained analyses expose differences that final success rates conceal across interactive tasks and models.",
+    "annotation_scope": "Contribution and findings summarize the cited primary source. Relevance, proposed transfer and limitations are critical interpretation, not reported experiments.",
+    "verified_date": "2026-11-16"
+  },
+  {
+    "id": "A20",
+    "title": "AgentBench: Evaluating LLMs as Agents",
+    "authors": "Xiao Liu; Hao Yu; Hanchen Zhang; Yifan Xu; Xuanyu Lei; Hanyu Lai; Yu Gu; Hangliang Ding; Kaiwen Men; Kejuan Yang; Shudan Zhang; Xiang Deng; Aohan Zeng; Zhengxiao Du; Chenhui Zhang; Sheng Shen; Tianjun Zhang; Yu Su; Huan Sun; Minlie Huang; Yuxiao Dong; Jie Tang",
+    "year": 2024,
+    "venue": "ICLR",
+    "status": "peer-reviewed",
+    "arxiv_id": "2308.03688",
+    "primary_sources": [
+      "https://arxiv.org/abs/2308.03688"
+    ],
+    "access_depth": "Primary abstract and bibliographic record; results not independently reproduced",
+    "metadata_verification": "arXiv author record identifies ICLR 2024.",
+    "claim_check": "The analysis reveals substantial capability gaps and recurring failures in planning and instruction following across models.",
+    "annotation_scope": "Contribution and findings summarize the cited primary source. Relevance, proposed transfer and limitations are critical interpretation, not reported experiments.",
+    "verified_date": "2026-11-16"
+  },
+  {
+    "id": "A21",
+    "title": "WebArena: A Realistic Web Environment for Building Autonomous Agents",
+    "authors": "Shuyan Zhou; Frank F. Xu; Hao Zhu; Xuhui Zhou; Robert Lo; Abishek Sridhar; Xianyi Cheng; Tianyue Ou; Yonatan Bisk; Daniel Fried; Uri Alon; Graham Neubig",
+    "year": 2024,
+    "venue": "ICLR",
+    "status": "peer-reviewed",
+    "arxiv_id": "2307.13854",
+    "primary_sources": [
+      "https://arxiv.org/abs/2307.13854",
+      "https://openreview.net/pdf?id=oKn9c6ytLx"
+    ],
+    "access_depth": "Primary abstract and bibliographic record; results not independently reproduced",
+    "metadata_verification": "ICLR 2024 primary OpenReview PDF verified.",
+    "claim_check": "The original experiments reveal a large gap between autonomous agents and human performance on long, compositional web tasks.",
+    "annotation_scope": "Contribution and findings summarize the cited primary source. Relevance, proposed transfer and limitations are critical interpretation, not reported experiments.",
+    "verified_date": "2026-11-16"
+  },
+  {
+    "id": "A22",
+    "title": "Who Verifies the Verifier? Co-Evolving Inspectable Graders with Self-Improving Agents",
+    "authors": "Xing Zhang; Guanghui Wang; Yanwei Cui; Ziyuan Li; Wei Qiu; Bing Zhu; Peiyang He",
+    "year": 2026,
+    "venue": "NeurIPS 2026 workshop Who Verifies the Agents? (accepted)",
+    "status": "workshop paper (accepted per author record)",
+    "arxiv_id": "2610.11464",
+    "primary_sources": [
+      "https://arxiv.org/abs/2610.11464",
+      "https://arxiv.org/html/2610.11464v1"
+    ],
+    "access_depth": "Primary abstract plus targeted full-text methods/results inspection; results not independently reproduced",
+    "metadata_verification": "arXiv identifies a NeurIPS 2026 workshop acceptance; full text inspected for anchor ablation, including §5.2.",
+    "claim_check": "An ablation without anchor safeguards produces nearly always-passing graders even while downstream agent improvements remain comparable.",
+    "annotation_scope": "Contribution and findings summarize the cited primary source. Relevance, proposed transfer and limitations are critical interpretation, not reported experiments.",
+    "verified_date": "2026-11-16"
+  },
+  {
+    "id": "A23",
+    "title": "Do Verifier Judgments Survive Abstraction? Measuring Verification Transport for LLM Agent Evaluation",
+    "authors": "Disha Sheshanarayana; Sai Linisha Reddy Goli",
+    "year": 2026,
+    "venue": "NeurIPS 2026 workshop Who Verifies the Agents? (accepted)",
+    "status": "workshop paper (accepted per author record)",
+    "arxiv_id": "2611.18471",
+    "primary_sources": [
+      "https://arxiv.org/abs/2611.18471",
+      "https://arxiv.org/html/2611.18471v1"
+    ],
+    "access_depth": "Primary abstract plus targeted full-text methods/results inspection; results not independently reproduced",
+    "metadata_verification": "Submitted November 13, 2026 and therefore within cutoff. Workshop acceptance per arXiv; full-text methods and conditional denominator inspected.",
+    "claim_check": "Holding realized behavior and truth fixed, the paper finds failures under reduced observability and substantial recovery when provenance is restored.",
+    "annotation_scope": "Contribution and findings summarize the cited primary source. Relevance, proposed transfer and limitations are critical interpretation, not reported experiments.",
+    "verified_date": "2026-11-16"
+  },
+  {
+    "id": "A24",
+    "title": "τ-bench: A Benchmark for Tool-Agent-User Interaction in Real-World Domains",
+    "authors": "Shunyu Yao; Noah Shinn; Pedram Razavi; Karthik Narasimhan",
+    "year": 2025,
+    "venue": "ICLR",
+    "status": "peer-reviewed",
+    "arxiv_id": "2406.12045",
+    "primary_sources": [
+      "https://arxiv.org/abs/2406.12045",
+      "https://openreview.net/pdf/57cd0f8d1f7b7790714c1bedf5d781ba10e56590.pdf"
+    ],
+    "access_depth": "Primary abstract and bibliographic record; results not independently reproduced",
+    "metadata_verification": "ICLR 2025 primary OpenReview PDF verified.",
+    "claim_check": "Final database states and repeated-trial consistency expose unreliable behavior that single successful conversations can conceal.",
+    "annotation_scope": "Contribution and findings summarize the cited primary source. Relevance, proposed transfer and limitations are critical interpretation, not reported experiments.",
+    "verified_date": "2026-11-16"
+  },
+  {
+    "id": "A25",
+    "title": "Toolformer: Language Models Can Teach Themselves to Use Tools",
+    "authors": "Timo Schick; Jane Dwivedi-Yu; Roberto Dessì; Roberta Raileanu; Maria Lomeli; Luke Zettlemoyer; Nicola Cancedda; Thomas Scialom",
+    "year": 2023,
+    "venue": "NeurIPS",
+    "status": "peer-reviewed",
+    "arxiv_id": "2302.04761",
+    "primary_sources": [
+      "https://arxiv.org/abs/2302.04761",
+      "https://papers.nips.cc/paper_files/paper/2023/hash/d842425e4bf79ba039352da0f658a906-Abstract-Conference.html"
+    ],
+    "access_depth": "Primary abstract and bibliographic record; results not independently reproduced",
+    "metadata_verification": "NeurIPS 2023 primary proceedings record verified.",
+    "claim_check": "Self-supervised augmentation improves selected tasks using tools such as calculators, search and translation with limited demonstrations.",
+    "annotation_scope": "Contribution and findings summarize the cited primary source. Relevance, proposed transfer and limitations are critical interpretation, not reported experiments.",
+    "verified_date": "2026-11-16"
+  },
+  {
+    "id": "A26",
+    "title": "ToolLLM: Facilitating Large Language Models to Master 16000+ Real-world APIs",
+    "authors": "Yujia Qin; Shihao Liang; Yining Ye; Kunlun Zhu; Lan Yan; Yaxi Lu; Yankai Lin; Xin Cong; Xiangru Tang; Bill Qian; Sihan Zhao; Lauren Hong; Runchu Tian; Ruobing Xie; Jie Zhou; Mark Gerstein; Dahai Li; Zhiyuan Liu; Maosong Sun",
+    "year": 2024,
+    "venue": "ICLR",
+    "status": "peer-reviewed",
+    "arxiv_id": "2307.16789",
+    "primary_sources": [
+      "https://arxiv.org/abs/2307.16789",
+      "https://openreview.net/notes/edits/attachment?id=vBiFw5SoQe&name=pdf"
+    ],
+    "access_depth": "Primary abstract and bibliographic record; results not independently reproduced",
+    "metadata_verification": "ICLR 2024 primary OpenReview PDF verified.",
+    "claim_check": "The paper reports stronger generalization across API-oriented tasks using data covering more than sixteen thousand real-world APIs.",
+    "annotation_scope": "Contribution and findings summarize the cited primary source. Relevance, proposed transfer and limitations are critical interpretation, not reported experiments.",
+    "verified_date": "2026-11-16"
+  },
+  {
+    "id": "A27",
+    "title": "Veritas: A Verifier Generation Harness for Agent Tasks",
+    "authors": "Daoan Zhang; Qinbo Bai; Dehai Min; Xingyu Mu; Ziyi Chen; Jianing Yin",
+    "year": 2026,
+    "venue": "arXiv",
+    "status": "preprint",
+    "arxiv_id": "2611.13336",
+    "primary_sources": [
+      "https://arxiv.org/abs/2611.13336",
+      "https://arxiv.org/html/2611.13336v1"
+    ],
+    "access_depth": "Primary abstract plus targeted full-text methods/results inspection; results not independently reproduced",
+    "metadata_verification": "Submitted November 9, 2026 and therefore within cutoff; preprint. Full-text §4.5 inspected for verdict delivery and error direction.",
+    "claim_check": "Comparisons reveal over-strict generated checks, overly lenient official checks and substantial differences between verdict accuracy and verdict delivery.",
+    "annotation_scope": "Contribution and findings summarize the cited primary source. Relevance, proposed transfer and limitations are critical interpretation, not reported experiments.",
+    "verified_date": "2026-11-16"
+  },
+  {
+    "id": "A28",
+    "title": "Identifying the Risks of LM Agents with an LM-Emulated Sandbox",
+    "authors": "Yangjun Ruan; Honghua Dong; Andrew Wang; Silviu Pitis; Yongchao Zhou; Jimmy Ba; Yann Dubois; Chris J. Maddison; Tatsunori Hashimoto",
+    "year": 2024,
+    "venue": "ICLR",
+    "status": "peer-reviewed",
+    "arxiv_id": "2309.15817",
+    "primary_sources": [
+      "https://arxiv.org/abs/2309.15817",
+      "https://openreview.net/pdf/d1601f78407737fc216de9e6ec0085038f8c885f.pdf"
+    ],
+    "access_depth": "Primary abstract and bibliographic record; results not independently reproduced",
+    "metadata_verification": "ICLR 2024 primary OpenReview PDF verified.",
+    "claim_check": "The experiments uncover potential failures at reduced evaluation cost, with human review confirming only a subset as realistic and valid.",
+    "annotation_scope": "Contribution and findings summarize the cited primary source. Relevance, proposed transfer and limitations are critical interpretation, not reported experiments.",
+    "verified_date": "2026-11-16"
+  },
+  {
+    "id": "A29",
+    "title": "Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks",
+    "authors": "Patrick Lewis; Ethan Perez; Aleksandra Piktus; Fabio Petroni; Vladimir Karpukhin; Naman Goyal; Heinrich Küttler; Mike Lewis; Wen-tau Yih; Tim Rocktäschel; Sebastian Riedel; Douwe Kiela",
+    "year": 2020,
+    "venue": "NeurIPS",
+    "status": "peer-reviewed",
+    "arxiv_id": "2005.11401",
+    "primary_sources": [
+      "https://arxiv.org/abs/2005.11401"
+    ],
+    "access_depth": "Primary abstract and bibliographic record; results not independently reproduced",
+    "metadata_verification": "arXiv author record identifies NeurIPS 2020.",
+    "claim_check": "The reported approach improves selected knowledge tasks and produces more factual, specific outputs than purely parametric comparison models.",
+    "annotation_scope": "Contribution and findings summarize the cited primary source. Relevance, proposed transfer and limitations are critical interpretation, not reported experiments.",
+    "verified_date": "2026-11-16"
+  },
+  {
+    "id": "A30",
+    "title": "Self-RAG: Learning to Retrieve, Generate, and Critique through Self-Reflection",
+    "authors": "Akari Asai; Zeqiu Wu; Yizhong Wang; Avirup Sil; Hannaneh Hajishirzi",
+    "year": 2024,
+    "venue": "ICLR",
+    "status": "peer-reviewed",
+    "arxiv_id": "2310.11511",
+    "primary_sources": [
+      "https://arxiv.org/abs/2310.11511",
+      "https://openreview.net/pdf?id=hSyW5go0v8"
+    ],
+    "access_depth": "Primary abstract and bibliographic record; results not independently reproduced",
+    "metadata_verification": "ICLR 2024 primary OpenReview PDF verified.",
+    "claim_check": "The paper reports improvements in factuality and citation-related evaluation while avoiding unnecessary retrieval on some inputs.",
+    "annotation_scope": "Contribution and findings summarize the cited primary source. Relevance, proposed transfer and limitations are critical interpretation, not reported experiments.",
+    "verified_date": "2026-11-16"
+  },
+  {
+    "id": "A31",
+    "title": "Corrective Retrieval Augmented Generation",
+    "authors": "Shi-Qi Yan; Jia-Chen Gu; Yun Zhu; Zhen-Hua Ling",
+    "year": 2026,
+    "venue": "Findings of IJCNLP-AACL",
+    "status": "peer-reviewed",
+    "arxiv_id": "2401.15884",
+    "primary_sources": [
+      "https://arxiv.org/abs/2401.15884",
+      "https://aclanthology.org/2026.findings-aacl.151/"
+    ],
+    "access_depth": "Primary abstract and bibliographic record; results not independently reproduced",
+    "metadata_verification": "ACL Anthology confirms an expanded Findings of IJCNLP-AACL 2026 publication; the older 2024 preprint is not counted separately.",
+    "claim_check": "Experiments across five datasets report improved generation accuracy and efficiency compared with the evaluated retrieval baselines.",
+    "annotation_scope": "Contribution and findings summarize the cited primary source. Relevance, proposed transfer and limitations are critical interpretation, not reported experiments.",
+    "verified_date": "2026-11-16"
+  },
+  {
+    "id": "A32",
+    "title": "Active Retrieval Augmented Generation",
+    "authors": "Zhengbao Jiang; Frank F. Xu; Luyu Gao; Zhiqing Sun; Qian Liu; Jane Dwivedi-Yu; Yiming Yang; Jamie Callan; Graham Neubig",
+    "year": 2023,
+    "venue": "EMNLP",
+    "status": "peer-reviewed",
+    "arxiv_id": "2305.06983",
+    "primary_sources": [
+      "https://arxiv.org/abs/2305.06983"
+    ],
+    "access_depth": "Primary abstract and bibliographic record; results not independently reproduced",
+    "metadata_verification": "arXiv author record identifies EMNLP 2023.",
+    "claim_check": "The reported FLARE method improves several long-form generation tasks compared with evaluated retrieval strategies.",
+    "annotation_scope": "Contribution and findings summarize the cited primary source. Relevance, proposed transfer and limitations are critical interpretation, not reported experiments.",
+    "verified_date": "2026-11-16"
+  },
+  {
+    "id": "A33",
+    "title": "Lost in the Middle: How Language Models Use Long Contexts",
+    "authors": "Nelson F. Liu; Kevin Lin; John Hewitt; Ashwin Paranjape; Michele Bevilacqua; Fabio Petroni; Percy Liang",
+    "year": 2024,
+    "venue": "Transactions of the Association for Computational Linguistics",
+    "status": "peer-reviewed",
+    "arxiv_id": "2307.03172",
+    "primary_sources": [
+      "https://arxiv.org/abs/2307.03172",
+      "https://aclanthology.org/2024.tacl-1.9/"
+    ],
+    "access_depth": "Primary abstract and bibliographic record; results not independently reproduced",
+    "metadata_verification": "Official TACL PDF confirms publication in February 2024, volume 12, pages 157–173, despite acceptance in 2023.",
+    "claim_check": "On document question answering and key-value retrieval, relevant information is often used better near context boundaries than in the middle.",
+    "annotation_scope": "Contribution and findings summarize the cited primary source. Relevance, proposed transfer and limitations are critical interpretation, not reported experiments.",
+    "verified_date": "2026-11-16"
+  },
+  {
+    "id": "A34",
+    "title": "RepoCoder: Repository-Level Code Completion Through Iterative Retrieval and Generation",
+    "authors": "Fengji Zhang; Bei Chen; Yue Zhang; Jacky Keung; Jin Liu; Daoguang Zan; Yi Mao; Jian-Guang Lou; Weizhu Chen",
+    "year": 2023,
+    "venue": "EMNLP",
+    "status": "peer-reviewed",
+    "arxiv_id": "2303.12570",
+    "primary_sources": [
+      "https://arxiv.org/abs/2303.12570"
+    ],
+    "access_depth": "Primary abstract and bibliographic record; results not independently reproduced",
+    "metadata_verification": "arXiv author record identifies EMNLP 2023 main conference.",
+    "claim_check": "The method outperforms evaluated retrieval-free and simpler retrieval baselines on repository completion at several granularities.",
+    "annotation_scope": "Contribution and findings summarize the cited primary source. Relevance, proposed transfer and limitations are critical interpretation, not reported experiments.",
+    "verified_date": "2026-11-16"
+  },
+  {
+    "id": "A35",
+    "title": "CodePlan: Repository-level Coding using LLMs and Planning",
+    "authors": "Ramakrishna Bairi; Atharv Sonwane; Aditya Kanade; Vageesh D C; Arun Iyer; Suresh Parthasarathy; Sriram Rajamani; B. Ashok; Shashank Shet",
+    "year": 2024,
+    "venue": "FSE 2024 / Proceedings of the ACM on Software Engineering",
+    "status": "peer-reviewed",
+    "arxiv_id": "2309.12499",
+    "primary_sources": [
+      "https://arxiv.org/abs/2309.12499",
+      "https://conf.researchr.org/program/fse-2024/program-fse-2024/Detailed-Timeline"
+    ],
+    "access_depth": "Primary abstract and bibliographic record; results not independently reproduced",
+    "metadata_verification": "FSE 2024 official program verifies the paper; arXiv provides metadata and abstract.",
+    "claim_check": "The reported system better completes multi-file migration and change tasks than baselines without an effective plan.",
+    "annotation_scope": "Contribution and findings summarize the cited primary source. Relevance, proposed transfer and limitations are critical interpretation, not reported experiments.",
+    "verified_date": "2026-11-16"
+  },
+  {
+    "id": "A36",
+    "title": "InterCode: Standardizing and Benchmarking Interactive Coding with Execution Feedback",
+    "authors": "John Yang; Akshara Prabhakar; Karthik Narasimhan; Shunyu Yao",
+    "year": 2023,
+    "venue": "NeurIPS, Datasets and Benchmarks Track",
+    "status": "peer-reviewed",
+    "arxiv_id": "2306.14898",
+    "primary_sources": [
+      "https://arxiv.org/abs/2306.14898",
+      "https://papers.nips.cc/paper_files/paper/2023/hash/4b175d846fb008d540d233c188379ff9-Abstract-Datasets_and_Benchmarks.html"
+    ],
+    "access_depth": "Primary abstract and bibliographic record; results not independently reproduced",
+    "metadata_verification": "NeurIPS 2023 Datasets and Benchmarks primary proceedings verified.",
+    "claim_check": "The benchmark enables controlled comparison of iterative code-producing agents across executable task settings.",
+    "annotation_scope": "Contribution and findings summarize the cited primary source. Relevance, proposed transfer and limitations are critical interpretation, not reported experiments.",
+    "verified_date": "2026-11-16"
+  },
+  {
+    "id": "A37",
+    "title": "CodeRL: Mastering Code Generation through Pretrained Models and Deep Reinforcement Learning",
+    "authors": "Hung Le; Yue Wang; Akhilesh Deepak Gotmare; Silvio Savarese; Steven C.H. Hoi",
+    "year": 2022,
+    "venue": "NeurIPS",
+    "status": "peer-reviewed",
+    "arxiv_id": "2207.01780",
+    "primary_sources": [
+      "https://arxiv.org/abs/2207.01780"
+    ],
+    "access_depth": "Primary abstract and bibliographic record; results not independently reproduced",
+    "metadata_verification": "arXiv notes that an earlier version was accepted at NeurIPS 2022; annotation concerns the paper's central method, not a new publication.",
+    "claim_check": "The paper reports improved programming performance using execution-based rewards and critic-guided generation and refinement.",
+    "annotation_scope": "Contribution and findings summarize the cited primary source. Relevance, proposed transfer and limitations are critical interpretation, not reported experiments.",
+    "verified_date": "2026-11-16"
+  },
+  {
+    "id": "A38",
+    "title": "LEVER: Learning to Verify Language-to-Code Generation with Execution",
+    "authors": "Ansong Ni; Srini Iyer; Dragomir Radev; Veselin Stoyanov; Wen-Tau Yih; Sida Wang; Xi Victoria Lin",
+    "year": 2023,
+    "venue": "ICML",
+    "status": "peer-reviewed",
+    "arxiv_id": "2302.08468",
+    "primary_sources": [
+      "https://arxiv.org/abs/2302.08468",
+      "https://proceedings.mlr.press/v202/ni23b.html"
+    ],
+    "access_depth": "Primary abstract and bibliographic record; results not independently reproduced",
+    "metadata_verification": "ICML 2023 PMLR publication verified; author names use the official proceedings form.",
+    "claim_check": "Reranking with verification scores improves performance across four language-to-code datasets in the reported experiments.",
+    "annotation_scope": "Contribution and findings summarize the cited primary source. Relevance, proposed transfer and limitations are critical interpretation, not reported experiments.",
+    "verified_date": "2026-11-16"
+  },
+  {
+    "id": "A39",
+    "title": "CodeT: Code Generation with Generated Tests",
+    "authors": "Bei Chen; Fengji Zhang; Anh Nguyen; Daoguang Zan; Zeqi Lin; Jian-Guang Lou; Weizhu Chen",
+    "year": 2023,
+    "venue": "ICLR",
+    "status": "peer-reviewed",
+    "arxiv_id": "2207.10397",
+    "primary_sources": [
+      "https://arxiv.org/abs/2207.10397",
+      "https://openreview.net/pdf?id=ktrw68Cmu9c"
+    ],
+    "access_depth": "Primary abstract and bibliographic record; results not independently reproduced",
+    "metadata_verification": "ICLR 2023 primary OpenReview PDF verified.",
+    "claim_check": "The reported dual-execution agreement strategy improves code-generation accuracy on established programming benchmarks.",
+    "annotation_scope": "Contribution and findings summarize the cited primary source. Relevance, proposed transfer and limitations are critical interpretation, not reported experiments.",
+    "verified_date": "2026-11-16"
+  },
+  {
+    "id": "A40",
+    "title": "Is Your Code Generated by ChatGPT Really Correct? Rigorous Evaluation of Large Language Models for Code Generation",
+    "authors": "Jiawei Liu; Chunqiu Steven Xia; Yuyao Wang; Lingming Zhang",
+    "year": 2023,
+    "venue": "NeurIPS",
+    "status": "peer-reviewed",
+    "arxiv_id": "2305.01210",
+    "primary_sources": [
+      "https://arxiv.org/abs/2305.01210",
+      "https://papers.nips.cc/paper/2023/hash/43e9d647ccd3e4b7b5baab53f0368686-Abstract-Conference.html"
+    ],
+    "access_depth": "Primary abstract and bibliographic record; results not independently reproduced",
+    "metadata_verification": "NeurIPS 2023 primary proceedings record verified.",
+    "claim_check": "The expanded EvalPlus suites expose incorrect programs previously counted as correct and can alter model rankings.",
+    "annotation_scope": "Contribution and findings summarize the cited primary source. Relevance, proposed transfer and limitations are critical interpretation, not reported experiments.",
+    "verified_date": "2026-11-16"
+  },
+  {
+    "id": "A41",
+    "title": "LiveCodeBench: Holistic and Contamination Free Evaluation of Large Language Models for Code",
+    "authors": "Naman Jain; King Han; Alex Gu; Wen-Ding Li; Fanjia Yan; Tianjun Zhang; Sida Wang; Armando Solar-Lezama; Koushik Sen; Ion Stoica",
+    "year": 2025,
+    "venue": "ICLR",
+    "status": "peer-reviewed",
+    "arxiv_id": "2403.07974",
+    "primary_sources": [
+      "https://arxiv.org/abs/2403.07974",
+      "https://openreview.net/pdf/e4619cf824fc3a958f2d274337715f6c670e7240.pdf"
+    ],
+    "access_depth": "Primary abstract and bibliographic record; results not independently reproduced",
+    "metadata_verification": "ICLR 2025 primary OpenReview PDF verified.",
+    "claim_check": "The benchmark exposes variation across coding capabilities and offers release-time controls that reduce some contamination concerns.",
+    "annotation_scope": "Contribution and findings summarize the cited primary source. Relevance, proposed transfer and limitations are critical interpretation, not reported experiments.",
+    "verified_date": "2026-11-16"
+  },
+  {
+    "id": "A42",
+    "title": "BigCodeBench: Benchmarking Code Generation with Diverse Function Calls and Complex Instructions",
+    "authors": "Terry Yue Zhuo; Minh Chien Vu; Jenny Chim; Han Hu; Wenhao Yu; Ratnadira Widyasari; Imam Nur Bani Yusuf; Haolan Zhan; Junda He; Indraneil Paul; Simon Brunner; Chen Gong; Thong Hoang; Armel Randy Zebaze; Xiaoheng Hong; Wen-Ding Li; Jean Kaddour; Ming Xu; Zhihan Zhang; Prateek Yadav; Naman Jain; Alex Gu; Zhoujun Cheng; Jiawei Liu; Qian Liu; Zijian Wang; Binyuan Hui; Niklas Muennighoff; David Lo; Daniel Fried; Xiaoning Du; Harm de Vries; Leandro Von Werra",
+    "year": 2025,
+    "venue": "ICLR",
+    "status": "peer-reviewed",
+    "arxiv_id": "2406.15877",
+    "primary_sources": [
+      "https://arxiv.org/abs/2406.15877"
+    ],
+    "access_depth": "Primary abstract and bibliographic record; results not independently reproduced",
+    "metadata_verification": "arXiv author comment identifies ICLR 2025; inspected metadata version was available before the cutoff.",
+    "claim_check": "The benchmark contains 1,140 tasks covering 139 libraries and reports a persistent gap between evaluated models and human performance.",
+    "annotation_scope": "Contribution and findings summarize the cited primary source. Relevance, proposed transfer and limitations are critical interpretation, not reported experiments.",
+    "verified_date": "2026-11-16"
+  },
+  {
+    "id": "A43",
+    "title": "Evaluating Large Language Models Trained on Code",
+    "authors": "Mark Chen; Jerry Tworek; Heewoo Jun; Qiming Yuan; Henrique Ponde de Oliveira Pinto; Jared Kaplan; Harri Edwards; Yuri Burda; Nicholas Joseph; Greg Brockman; Alex Ray; Raul Puri; Gretchen Krueger; Michael Petrov; Heidy Khlaaf; Girish Sastry; Pamela Mishkin; Brooke Chan; Scott Gray; Nick Ryder; Mikhail Pavlov; Alethea Power; Lukasz Kaiser; Mohammad Bavarian; Clemens Winter; Philippe Tillet; Felipe Petroski Such; Dave Cummings; Matthias Plappert; Fotios Chantzis; Elizabeth Barnes; Ariel Herbert-Voss; William Hebgen Guss; Alex Nichol; Alex Paino; Nikolas Tezak; Jie Tang; Igor Babuschkin; Suchir Balaji; Shantanu Jain; William Saunders; Christopher Hesse; Andrew N. Carr; Jan Leike; Josh Achiam; Vedant Misra; Evan Morikawa; Alec Radford; Matthew Knight; Miles Brundage; Mira Murati; Katie Mayer; Peter Welinder; Bob McGrew; Dario Amodei; Sam McCandlish; Ilya Sutskever; Wojciech Zaremba",
+    "year": 2021,
+    "venue": "arXiv technical report",
+    "status": "preprint",
+    "arxiv_id": "2107.03374",
+    "primary_sources": [
+      "https://arxiv.org/abs/2107.03374"
+    ],
+    "access_depth": "Primary abstract and bibliographic record; results not independently reproduced",
+    "metadata_verification": "Technical-report preprint; no peer-reviewed venue is asserted.",
+    "claim_check": "The report shows that sampling multiple candidates can substantially increase the availability of a test-passing solution.",
+    "annotation_scope": "Contribution and findings summarize the cited primary source. Relevance, proposed transfer and limitations are critical interpretation, not reported experiments.",
+    "verified_date": "2026-11-16"
+  },
+  {
+    "id": "A44",
+    "title": "SWE-Bench+: Enhanced Coding Benchmark for LLMs",
+    "authors": "Reem Aleithan; Haoran Xue; Mohammad Mahdi Mohajer; Elijah Nnorom; Gias Uddin; Song Wang",
+    "year": 2024,
+    "venue": "arXiv",
+    "status": "preprint",
+    "arxiv_id": "2410.06992",
+    "primary_sources": [
+      "https://arxiv.org/abs/2410.06992"
+    ],
+    "access_depth": "Primary abstract and bibliographic record; results not independently reproduced",
+    "metadata_verification": "No peer-reviewed venue was verified; audit claims refer to the selected successful-patch sample.",
+    "claim_check": "Manual inspection of a selected set of successful agent patches finds substantial issue-description leakage and suspicious cases associated with inadequate validation.",
+    "annotation_scope": "Contribution and findings summarize the cited primary source. Relevance, proposed transfer and limitations are critical interpretation, not reported experiments.",
+    "verified_date": "2026-11-16"
+  },
+  {
+    "id": "A45",
+    "title": "Competition-Level Code Generation with AlphaCode",
+    "authors": "Yujia Li; David Choi; Junyoung Chung; Nate Kushman; Julian Schrittwieser; Rémi Leblond; Tom Eccles; James Keeling; Felix Gimeno; Agustin Dal Lago; Thomas Hubert; Peter Choy; Cyprien de Masson d'Autume; Igor Babuschkin; Xinyun Chen; Po-Sen Huang; Johannes Welbl; Sven Gowal; Alexey Cherepanov; James Molloy; Daniel J. Mankowitz; Esme Sutherland Robson; Pushmeet Kohli; Nando de Freitas; Koray Kavukcuoglu; Oriol Vinyals",
+    "year": 2022,
+    "venue": "Science",
+    "status": "peer-reviewed",
+    "arxiv_id": "2203.07814",
+    "primary_sources": [
+      "https://arxiv.org/abs/2203.07814",
+      "https://doi.org/10.1126/science.abq1158"
+    ],
+    "access_depth": "Primary abstract and bibliographic record; results not independently reproduced",
+    "metadata_verification": "arXiv record and Science DOI verify publication in 2022.",
+    "claim_check": "The reported system reaches a competitive level on held-out contests by searching over many candidate programs.",
+    "annotation_scope": "Contribution and findings summarize the cited primary source. Relevance, proposed transfer and limitations are critical interpretation, not reported experiments.",
+    "verified_date": "2026-11-16"
+  },
+  {
+    "id": "A46",
+    "title": "Cybench: A Framework for Evaluating Cybersecurity Capabilities and Risks of Language Models",
+    "authors": "Andy K. Zhang; Neil Perry; Riya Dulepet; Joey Ji; Celeste Menders; Justin W. Lin; Eliot Jones; Gashon Hussein; Samantha Liu; Donovan Jasper; Pura Peetathawatchai; Ari Glenn; Vikram Sivashankar; Daniel Zamoshchin; Leo Glikbarg; Derek Askaryar; Mike Yang; Teddy Zhang; Rishi Alluri; Nathan Tran; Rinnara Sangpisit; Polycarpos Yiorkadjis; Kenny Osele; Gautham Raghupathi; Dan Boneh; Daniel E. Ho; Percy Liang",
+    "year": 2025,
+    "venue": "ICLR",
+    "status": "peer-reviewed",
+    "arxiv_id": "2408.08926",
+    "primary_sources": [
+      "https://arxiv.org/abs/2408.08926"
+    ],
+    "access_depth": "Primary abstract and bibliographic record; results not independently reproduced",
+    "metadata_verification": "arXiv author record identifies ICLR 2025.",
+    "claim_check": "The evaluated agents show substantial limitations, while subtask scaffolding helps expose which stages prevent completion.",
+    "annotation_scope": "Contribution and findings summarize the cited primary source. Relevance, proposed transfer and limitations are critical interpretation, not reported experiments.",
+    "verified_date": "2026-11-16"
+  },
+  {
+    "id": "A47",
+    "title": "CyberGym: Evaluating AI Agents' Real-World Cybersecurity Capabilities at Scale",
+    "authors": "Zhun Wang; Tianneng Shi; Jingxuan He; Matthew Cai; Jialin Zhang; Dawn Song",
+    "year": 2026,
+    "venue": "ICLR",
+    "status": "peer-reviewed",
+    "arxiv_id": "2506.02548",
+    "primary_sources": [
+      "https://arxiv.org/abs/2506.02548",
+      "https://openreview.net/pdf/5295973bc5abb49eb5bd2ff0575549716db2a7b3.pdf"
+    ],
+    "access_depth": "Primary abstract and bibliographic record; results not independently reproduced",
+    "metadata_verification": "ICLR 2026 primary OpenReview PDF verified; use current published title rather than older preprint title.",
+    "claim_check": "The study reports successful reproduction on some real targets and discovery of additional defects during evaluation.",
+    "annotation_scope": "Contribution and findings summarize the cited primary source. Relevance, proposed transfer and limitations are critical interpretation, not reported experiments.",
+    "verified_date": "2026-11-16"
+  },
+  {
+    "id": "A48",
+    "title": "AppWorld: A Controllable World of Apps and People for Benchmarking Interactive Coding Agents",
+    "authors": "Harsh Trivedi; Tushar Khot; Mareike Hartmann; Ruskin Manku; Vinty Dong; Edward Li; Shashank Gupta; Ashish Sabharwal; Niranjan Balasubramanian",
+    "year": 2024,
+    "venue": "ACL",
+    "status": "peer-reviewed",
+    "arxiv_id": "2407.18901",
+    "primary_sources": [
+      "https://arxiv.org/abs/2407.18901",
+      "https://aclanthology.org/2024.acl-long.850/"
+    ],
+    "access_depth": "Primary abstract and bibliographic record; results not independently reproduced",
+    "metadata_verification": "ACL 2024 proceedings verified; arXiv describes camera-ready version.",
+    "claim_check": "Tasks are evaluated through state changes and collateral effects; the benchmark reveals difficulty even for strong agents.",
+    "annotation_scope": "Contribution and findings summarize the cited primary source. Relevance, proposed transfer and limitations are critical interpretation, not reported experiments.",
+    "verified_date": "2026-11-16"
+  },
+  {
+    "id": "A49",
+    "title": "AppWorld-UL: Benchmarking Diverse Agent-User Interactions for Tool-Use",
+    "authors": "Junzhi Chen; Harsh Trivedi; Jane Pan; Michael JQ Zhang; Tejas Srinivasan; Niranjan Balasubramanian; Ashish Sabharwal",
+    "year": 2026,
+    "venue": "ICML",
+    "status": "peer-reviewed",
+    "arxiv_id": "2607.20536",
+    "primary_sources": [
+      "https://arxiv.org/abs/2607.20536",
+      "https://proceedings.mlr.press/v306/chen26eg.html"
+    ],
+    "access_depth": "Primary abstract and bibliographic record; results not independently reproduced",
+    "metadata_verification": "ICML 2026 PMLR volume 306, pages 16996–17023, independently confirms venue beyond the arXiv author comment.",
+    "claim_check": "The 516-task benchmark reports that correct user interaction is essential and that compositional scenarios remain particularly difficult.",
+    "annotation_scope": "Contribution and findings summarize the cited primary source. Relevance, proposed transfer and limitations are critical interpretation, not reported experiments.",
+    "verified_date": "2026-11-16"
+  },
+  {
+    "id": "A50",
+    "title": "AgentDojo: A Dynamic Environment to Evaluate Prompt Injection Attacks and Defenses for LLM Agents",
+    "authors": "Edoardo Debenedetti; Jie Zhang; Mislav Balunović; Luca Beurer-Kellner; Marc Fischer; Florian Tramèr",
+    "year": 2024,
+    "venue": "NeurIPS, Datasets and Benchmarks Track",
+    "status": "peer-reviewed",
+    "arxiv_id": "2406.13352",
+    "primary_sources": [
+      "https://arxiv.org/abs/2406.13352",
+      "https://papers.nips.cc/paper_files/paper/2024/hash/97091a5177d8dc64b1da8bf3e1f6fb54-Abstract-Datasets_and_Benchmarks_Track.html"
+    ],
+    "access_depth": "Primary abstract and bibliographic record; results not independently reproduced",
+    "metadata_verification": "NeurIPS 2024 Datasets and Benchmarks primary proceedings verified.",
+    "claim_check": "The study evaluates both ordinary task utility and resilience to attacks, exposing tradeoffs across defenses and models.",
+    "annotation_scope": "Contribution and findings summarize the cited primary source. Relevance, proposed transfer and limitations are critical interpretation, not reported experiments.",
+    "verified_date": "2026-11-16"
+  }
+]

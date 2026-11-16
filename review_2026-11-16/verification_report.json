@@ -1,0 +1,33 @@
+{
+  "publication_count": 150,
+  "unique_normalized_titles": 150,
+  "unique_primary_urls": 150,
+  "groups": {
+    "A": 50,
+    "B": 50,
+    "C": 50
+  },
+  "status_counts": {
+    "peer-reviewed": 130,
+    "peer-reviewed (accepted)": 1,
+    "preprint": 14,
+    "workshop paper (accepted per author record)": 3,
+    "peer-reviewed survey": 2
+  },
+  "required_fields_complete": true,
+  "sections": 11,
+  "internal_anchors_valid": true,
+  "verification_date": "2026-11-16",
+  "manuscript_sha256": "58b71372f2742392f7e7748b45bee7053db6b124b6852090555fc19fc2348196",
+  "html_sha256": "b1bfee3fb99c255148ea37cf30c3ec8d13c6eef076078cd5ac27d7147500da59",
+  "bibliography_sha256": "6d31218a22e4d1692bd85401a9c70f6aa055119677e2d3ba990a4f863f3aee9d",
+  "word_count_approx": 31429,
+  "scientific_replication_claim": false,
+  "reading_depth_note": "See each record; not all entries are full-text reviews.",
+  "local_checks": {
+    "historical_replay": "VERIFIED_EXPLORATORY_EVIDENCE",
+    "historical_stop_recount": "PASS",
+    "crossfamily_error_direction": "CROSSFAMILY_ERROR_DIRECTION_OK",
+    "feedback_replication": "FEEDBACK_REPLICATION_RECOUNT_OK"
+  }
+}

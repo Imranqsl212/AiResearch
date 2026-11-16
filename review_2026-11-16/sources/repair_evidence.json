@@ -1,0 +1,1003 @@
+{
+  "scope": "Fifty verified publications, cutoff 2026-11-16. Primary proceedings, journals, institutional/author manuscripts and arXiv records were used. Source access was by web opening and/or primary-source indexed excerpts; an access label does not imply cover-to-cover reading. DOI URLs identify publications even where the resolver could not be fetched. These records paraphrase the verification basis and do not reproduce source abstracts.",
+  "verification_date": "2026-11-16",
+  "records": [
+    {
+      "id": "B01",
+      "title": "PatchBench: Evaluating AI Agents for Vulnerability Patching",
+      "authors": "Chihao Shen; Jiacheng Li; Aastha Mahajan; Jeffery Siyuan Tian; Yonghwi Kwon; Yizheng Chen",
+      "year": 2026,
+      "venue": "arXiv:2609.04075",
+      "status": "preprint",
+      "source_urls": [
+        "https://arxiv.org/abs/2609.04075",
+        "https://arxiv.org/html/2609.04075v1"
+      ],
+      "access_depth": "full text: introduction, benchmark construction, validation, results",
+      "metadata_checked": [
+        "title",
+        "author list",
+        "publication year or version",
+        "venue or preprint status"
+      ],
+      "paraphrased_content_check": "Builds a vulnerability-repair benchmark that tests root-cause repair, contamination, and preservation of intended behavior."
+    },
+    {
+      "id": "B02",
+      "title": "Patch Validation in Automated Vulnerability Repair",
+      "authors": "Zheng Yu; Wenxuan Shi; Xinqian Sun; Zheyun Feng; Meng Xu; Xinyu Xing",
+      "year": 2026,
+      "venue": "arXiv:2603.06858",
+      "status": "preprint",
+      "source_urls": [
+        "https://arxiv.org/abs/2603.06858",
+        "https://arxiv.org/html/2603.06858v2"
+      ],
+      "access_depth": "full text: methods, validation results, manual assessment",
+      "metadata_checked": [
+        "title",
+        "author list",
+        "publication year or version",
+        "venue or preprint status"
+      ],
+      "paraphrased_content_check": "Introduces PVBench and developer-derived PoC+ tests that encode post-fix semantics."
+    },
+    {
+      "id": "B03",
+      "title": "Vul4Py: Benchmarking Automated Vulnerability Repair in Python with Paired Exploit and Functional Oracles",
+      "authors": "Tan Bui; Ting Zhang; Ferdian Thung; Yunpeng Xiong; Penghao Jiang; Xin Zhou; David Lo",
+      "year": 2026,
+      "venue": "arXiv:2608.00692",
+      "status": "preprint",
+      "source_urls": [
+        "https://arxiv.org/abs/2608.00692"
+      ],
+      "access_depth": "primary abstract and metadata",
+      "metadata_checked": [
+        "title",
+        "author list",
+        "publication year or version",
+        "venue or preprint status"
+      ],
+      "paraphrased_content_check": "Packages one hundred real Python vulnerabilities with exploit and project-native functional checks."
+    },
+    {
+      "id": "B04",
+      "title": "Improving LLM-Assisted Secure Code Generation through Retrieval-Augmented-Generation and Multi-Tool Feedback",
+      "authors": "Vidyut Sriram; Sawan Pandita; Achintya Lakshmanan; Aneesh Shamraj; Suman Saha",
+      "year": 2026,
+      "venue": "arXiv:2601.00509",
+      "status": "preprint",
+      "source_urls": [
+        "https://arxiv.org/abs/2601.00509"
+      ],
+      "access_depth": "primary abstract and metadata",
+      "metadata_checked": [
+        "title",
+        "author list",
+        "publication year or version",
+        "venue or preprint status"
+      ],
+      "paraphrased_content_check": "Combines retrieved successful repairs with compiler, CodeQL, and symbolic-execution feedback."
+    },
+    {
+      "id": "B05",
+      "title": "The Oracle Problem in Software Testing: A Survey",
+      "authors": "Earl T. Barr; Mark Harman; Phil McMinn; Muzammil Shahbaz; Shin Yoo",
+      "year": 2015,
+      "venue": "IEEE Transactions on Software Engineering 41(5)",
+      "status": "peer-reviewed survey",
+      "source_urls": [
+        "https://doi.org/10.1109/TSE.2014.2372785",
+        "https://discovery.ucl.ac.uk/id/eprint/1471263/1/06963470.pdf",
+        "https://ieeexplore.ieee.org/document/6963470"
+      ],
+      "access_depth": "primary paper abstract; bibliographic metadata",
+      "metadata_checked": [
+        "title",
+        "author list",
+        "publication year or version",
+        "venue or preprint status"
+      ],
+      "paraphrased_content_check": "Organizes approaches to deciding whether observed program behavior is correct."
+    },
+    {
+      "id": "B06",
+      "title": "QuickCheck: A Lightweight Tool for Random Testing of Haskell Programs",
+      "authors": "Koen Claessen; John Hughes",
+      "year": 2000,
+      "venue": "ACM ICFP",
+      "status": "peer-reviewed",
+      "source_urls": [
+        "https://doi.org/10.1145/351240.351266",
+        "https://www.icfpconference.org/archived/icfp2000/lampwww.epfl.ch/~odersky/icfp2000/program.html"
+      ],
+      "access_depth": "primary abstract and conference metadata",
+      "metadata_checked": [
+        "title",
+        "author list",
+        "publication year or version",
+        "venue or preprint status"
+      ],
+      "paraphrased_content_check": "Provides executable properties and customizable random generators for testing functional programs."
+    },
+    {
+      "id": "B07",
+      "title": "DART: Directed Automated Random Testing",
+      "authors": "Patrice Godefroid; Nils Klarlund; Koushik Sen",
+      "year": 2005,
+      "venue": "ACM PLDI",
+      "status": "peer-reviewed",
+      "source_urls": [
+        "https://doi.org/10.1145/1065010.1065036",
+        "https://osl.cs.illinois.edu/publications/conf/pldi/GodefroidKS05.html"
+      ],
+      "access_depth": "primary institutional abstract and metadata",
+      "metadata_checked": [
+        "title",
+        "author list",
+        "publication year or version",
+        "venue or preprint status"
+      ],
+      "paraphrased_content_check": "Combines interface extraction, random test generation, and dynamic path-directed analysis."
+    },
+    {
+      "id": "B08",
+      "title": "CUTE: A Concolic Unit Testing Engine for C",
+      "authors": "Koushik Sen; Darko Marinov; Gul Agha",
+      "year": 2005,
+      "venue": "ACM ESEC/FSE",
+      "status": "peer-reviewed",
+      "source_urls": [
+        "https://doi.org/10.1145/1081706.1081750",
+        "https://osl.cs.illinois.edu/publications/conf/sigsoft/SenMA05.html"
+      ],
+      "access_depth": "primary institutional abstract and metadata",
+      "metadata_checked": [
+        "title",
+        "author list",
+        "publication year or version",
+        "venue or preprint status"
+      ],
+      "paraphrased_content_check": "Extends combined concrete and symbolic execution to unit testing with pointer-rich memory graphs."
+    },
+    {
+      "id": "B09",
+      "title": "KLEE: Unassisted and Automatic Generation of High-Coverage Tests for Complex Systems Programs",
+      "authors": "Cristian Cadar; Daniel Dunbar; Dawson Engler",
+      "year": 2008,
+      "venue": "USENIX OSDI",
+      "status": "peer-reviewed",
+      "source_urls": [
+        "https://www.usenix.org/conference/osdi-08/klee-unassisted-and-automatic-generation-high-coverage-tests-complex-systems",
+        "https://static.usenix.org/events/osdi08/tech/full_papers/cadar/cadar_html/index.html"
+      ],
+      "access_depth": "full text: abstract, design overview, coverage results and limits",
+      "metadata_checked": [
+        "title",
+        "author list",
+        "publication year or version",
+        "venue or preprint status"
+      ],
+      "paraphrased_content_check": "Develops scalable symbolic execution with environment modeling and constraint optimizations."
+    },
+    {
+      "id": "B10",
+      "title": "Automated Whitebox Fuzz Testing",
+      "authors": "Patrice Godefroid; Michael Y. Levin; David Molnar",
+      "year": 2008,
+      "venue": "NDSS",
+      "status": "peer-reviewed",
+      "source_urls": [
+        "https://patricegodefroid.github.io/public_psfiles/ndss2008.pdf",
+        "https://www.ndss-symposium.org/ndss2008/accepted-papers/"
+      ],
+      "access_depth": "primary paper abstract/introduction and conference metadata",
+      "metadata_checked": [
+        "title",
+        "author list",
+        "publication year or version",
+        "venue or preprint status"
+      ],
+      "paraphrased_content_check": "Uses symbolic constraints from concrete executions to generate new inputs for security testing."
+    },
+    {
+      "id": "B11",
+      "title": "Finding and Understanding Bugs in C Compilers",
+      "authors": "Xuejun Yang; Yang Chen; Eric Eide; John Regehr",
+      "year": 2011,
+      "venue": "ACM PLDI",
+      "status": "peer-reviewed",
+      "source_urls": [
+        "https://doi.org/10.1145/1993498.1993532",
+        "https://www.flux.utah.edu/paper/yang-pldi11"
+      ],
+      "access_depth": "primary author abstract and metadata",
+      "metadata_checked": [
+        "title",
+        "author list",
+        "publication year or version",
+        "venue or preprint status"
+      ],
+      "paraphrased_content_check": "Introduces Csmith, generating diverse C programs while avoiding undefined and unspecified behavior."
+    },
+    {
+      "id": "B12",
+      "title": "Compiler Validation via Equivalence Modulo Inputs",
+      "authors": "Vu Le; Mehrdad Afshari; Zhendong Su",
+      "year": 2014,
+      "venue": "ACM PLDI",
+      "status": "peer-reviewed",
+      "source_urls": [
+        "https://doi.org/10.1145/2594291.2594334",
+        "https://www.cs.ucdavis.edu/~su/publications/emi.pdf"
+      ],
+      "access_depth": "primary paper abstract and introduction",
+      "metadata_checked": [
+        "title",
+        "author list",
+        "publication year or version",
+        "venue or preprint status"
+      ],
+      "paraphrased_content_check": "Creates program variants equivalent on selected inputs to expose compiler inconsistencies."
+    },
+    {
+      "id": "B13",
+      "title": "Automatically Finding Patches Using Genetic Programming",
+      "authors": "Westley Weimer; ThanhVu Nguyen; Claire Le Goues; Stephanie Forrest",
+      "year": 2009,
+      "venue": "IEEE/ACM ICSE",
+      "status": "peer-reviewed",
+      "source_urls": [
+        "https://doi.org/10.1109/ICSE.2009.5070536",
+        "https://www.genetic-programming.org/hc2009/1-Forrest/Forrest-Paper-on-Patches.pdf"
+      ],
+      "access_depth": "primary paper abstract and metadata",
+      "metadata_checked": [
+        "title",
+        "author list",
+        "publication year or version",
+        "venue or preprint status"
+      ],
+      "paraphrased_content_check": "Uses genetic programming and existing tests to evolve and minimize program repairs."
+    },
+    {
+      "id": "B14",
+      "title": "A Systematic Study of Automated Program Repair: Fixing 55 out of 105 Bugs for $8 Each",
+      "authors": "Claire Le Goues; Michael Dewey-Vogt; Stephanie Forrest; Westley Weimer",
+      "year": 2012,
+      "venue": "IEEE/ACM ICSE",
+      "status": "peer-reviewed",
+      "source_urls": [
+        "https://doi.org/10.1109/ICSE.2012.6227211",
+        "https://web.eecs.umich.edu/~weimerw/p/weimer-icse2012-genprog-preprint.pdf"
+      ],
+      "access_depth": "primary paper abstract and institutional metadata",
+      "metadata_checked": [
+        "title",
+        "author list",
+        "publication year or version",
+        "venue or preprint status"
+      ],
+      "paraphrased_content_check": "Evaluates GenProg at larger scale with explicit compute-cost accounting."
+    },
+    {
+      "id": "B15",
+      "title": "SemFix: Program Repair via Semantic Analysis",
+      "authors": "Hoang Duong Thien Nguyen; Dawei Qi; Abhik Roychoudhury; Satish Chandra",
+      "year": 2013,
+      "venue": "IEEE/ACM ICSE",
+      "status": "peer-reviewed",
+      "source_urls": [
+        "https://research.ibm.com/publications/semfix-program-repair-via-semantic-analysis"
+      ],
+      "access_depth": "primary institutional abstract and metadata",
+      "metadata_checked": [
+        "title",
+        "author list",
+        "publication year or version",
+        "venue or preprint status"
+      ],
+      "paraphrased_content_check": "Formulates repair as constraints solved with symbolic execution and program synthesis."
+    },
+    {
+      "id": "B16",
+      "title": "An Analysis of Patch Plausibility and Correctness for Generate-and-Validate Patch Generation Systems",
+      "authors": "Zichao Qi; Fan Long; Sara Achour; Martin Rinard",
+      "year": 2015,
+      "venue": "ACM ISSTA",
+      "status": "peer-reviewed",
+      "source_urls": [
+        "https://doi.org/10.1145/2771783.2771791",
+        "https://people.csail.mit.edu/rinard/paper/issta15.pdf"
+      ],
+      "access_depth": "full text: introduction, plausibility audit, weak-proxy analysis",
+      "metadata_checked": [
+        "title",
+        "author list",
+        "publication year or version",
+        "venue or preprint status"
+      ],
+      "paraphrased_content_check": "Audits generated patches and introduces Kali, which repairs by deleting functionality."
+    },
+    {
+      "id": "B17",
+      "title": "Is the Cure Worse Than the Disease? Overfitting in Automated Program Repair",
+      "authors": "Edward K. Smith; Earl T. Barr; Claire Le Goues; Yuriy Brun",
+      "year": 2015,
+      "venue": "ACM ESEC/FSE",
+      "status": "peer-reviewed",
+      "source_urls": [
+        "https://doi.org/10.1145/2786805.2786825",
+        "https://people.cs.umass.edu/~brun/pubs/pubs/Smith15fse.pdf"
+      ],
+      "access_depth": "full text: abstract, introduction, evaluation framing",
+      "metadata_checked": [
+        "title",
+        "author list",
+        "publication year or version",
+        "venue or preprint status"
+      ],
+      "paraphrased_content_check": "Separates tests used to construct repairs from independent tests used to assess them."
+    },
+    {
+      "id": "B18",
+      "title": "Identifying Test-Suite-Overfitted Patches through Test Case Generation",
+      "authors": "Qi Xin; Steven P. Reiss",
+      "year": 2017,
+      "venue": "ACM ISSTA",
+      "status": "peer-reviewed",
+      "source_urls": [
+        "https://doi.org/10.1145/3092703.3092718",
+        "https://cs.brown.edu/people/qxin/papers/testgen_issta17.pdf"
+      ],
+      "access_depth": "primary paper abstract and method introduction",
+      "metadata_checked": [
+        "title",
+        "author list",
+        "publication year or version",
+        "venue or preprint status"
+      ],
+      "paraphrased_content_check": "Introduces DiffTGen, generating inputs that expose semantic differences between original and patched programs."
+    },
+    {
+      "id": "B19",
+      "title": "Investigating Test Overfitting on SWE-bench",
+      "authors": "Toufique Ahmed; Jatin Ganhotra; Avraham Shinnar; Martin Hirzel",
+      "year": 2026,
+      "venue": "arXiv:2511.16858v3; first posted 2025",
+      "status": "preprint",
+      "source_urls": [
+        "https://arxiv.org/abs/2511.16858",
+        "https://arxiv.org/html/2511.16858v3"
+      ],
+      "access_depth": "full text: research questions, refinement protocol, methods",
+      "metadata_checked": [
+        "title",
+        "author list",
+        "publication year or version",
+        "venue or preprint status"
+      ],
+      "paraphrased_content_check": "Studies repository-level refinement using generated tests and an LLM critic."
+    },
+    {
+      "id": "B20",
+      "title": "Defects4J: A Database of Existing Faults to Enable Controlled Testing Studies for Java Programs",
+      "authors": "René Just; Darioush Jalali; Michael D. Ernst",
+      "year": 2014,
+      "venue": "ACM ISSTA",
+      "status": "peer-reviewed",
+      "source_urls": [
+        "https://doi.org/10.1145/2610384.2628055",
+        "https://homes.cs.washington.edu/~mernst/pubs/bug-database-issta2014.pdf"
+      ],
+      "access_depth": "primary paper abstract and metadata",
+      "metadata_checked": [
+        "title",
+        "author list",
+        "publication year or version",
+        "venue or preprint status"
+      ],
+      "paraphrased_content_check": "Provides reproducible real Java defects with executable tests and version-control context."
+    },
+    {
+      "id": "B21",
+      "title": "The ManyBugs and IntroClass Benchmarks for Automated Repair of C Programs",
+      "authors": "Claire Le Goues; Neal Holtschulte; Edward K. Smith; Yuriy Brun; Premkumar Devanbu; Stephanie Forrest; Westley Weimer",
+      "year": 2015,
+      "venue": "IEEE Transactions on Software Engineering 41(12)",
+      "status": "peer-reviewed",
+      "source_urls": [
+        "https://doi.org/10.1109/TSE.2015.2454513",
+        "https://repairbenchmarks.cs.umass.edu/"
+      ],
+      "access_depth": "primary project page and paper abstract",
+      "metadata_checked": [
+        "title",
+        "author list",
+        "publication year or version",
+        "venue or preprint status"
+      ],
+      "paraphrased_content_check": "Defines repair benchmarks with reproducible defects, test suites, and categorized study objects."
+    },
+    {
+      "id": "B22",
+      "title": "Automatic Patch Generation by Learning Correct Code",
+      "authors": "Fan Long; Martin Rinard",
+      "year": 2016,
+      "venue": "ACM POPL",
+      "status": "peer-reviewed",
+      "source_urls": [
+        "https://doi.org/10.1145/2837614.2837617",
+        "https://people.csail.mit.edu/rinard/research/AutomaticPatchGeneration/index.html"
+      ],
+      "access_depth": "primary author research page and abstract",
+      "metadata_checked": [
+        "title",
+        "author list",
+        "publication year or version",
+        "venue or preprint status"
+      ],
+      "paraphrased_content_check": "Introduces Prophet, ranking candidate repairs using properties learned from human patches."
+    },
+    {
+      "id": "B23",
+      "title": "Staged Program Repair with Condition Synthesis",
+      "authors": "Fan Long; Martin Rinard",
+      "year": 2015,
+      "venue": "ACM ESEC/FSE",
+      "status": "peer-reviewed",
+      "source_urls": [
+        "https://people.csail.mit.edu/rinard/paper/fse15.pdf"
+      ],
+      "access_depth": "primary full-text excerpts: abstract, synthesis method, experimental framing",
+      "metadata_checked": [
+        "title",
+        "author list",
+        "publication year or version",
+        "venue or preprint status"
+      ],
+      "paraphrased_content_check": "Combines transformation schemas, target-value search, and condition synthesis to search repairs efficiently."
+    },
+    {
+      "id": "B24",
+      "title": "DirectFix: Looking for Simple Program Repairs",
+      "authors": "Sergey Mechtaev; Jooyong Yi; Abhik Roychoudhury",
+      "year": 2015,
+      "venue": "IEEE/ACM ICSE",
+      "status": "peer-reviewed",
+      "source_urls": [
+        "https://mechtaev.com/files/icse15.pdf",
+        "https://www.jooyongyi.com/"
+      ],
+      "access_depth": "primary paper abstract and author publication metadata",
+      "metadata_checked": [
+        "title",
+        "author list",
+        "publication year or version",
+        "venue or preprint status"
+      ],
+      "paraphrased_content_check": "Uses partial MaxSAT and synthesis to seek small repairs while preserving program structure."
+    },
+    {
+      "id": "B25",
+      "title": "Angelix: Scalable Multiline Program Patch Synthesis via Symbolic Analysis",
+      "authors": "Sergey Mechtaev; Jooyong Yi; Abhik Roychoudhury",
+      "year": 2016,
+      "venue": "IEEE/ACM ICSE",
+      "status": "peer-reviewed",
+      "source_urls": [
+        "https://doi.org/10.1145/2884781.2884807",
+        "https://discovery.ucl.ac.uk/id/eprint/10088929/"
+      ],
+      "access_depth": "primary institutional abstract and paper method excerpts",
+      "metadata_checked": [
+        "title",
+        "author list",
+        "publication year or version",
+        "venue or preprint status"
+      ],
+      "paraphrased_content_check": "Uses symbolic analysis and compact repair constraints to synthesize coordinated multiline fixes."
+    },
+    {
+      "id": "B26",
+      "title": "Getafix: Learning to Fix Bugs Automatically",
+      "authors": "Johannes Bader; Andrew Scott; Michael Pradel; Satish Chandra",
+      "year": 2019,
+      "venue": "Proceedings of the ACM on Programming Languages 3(OOPSLA)",
+      "status": "peer-reviewed",
+      "source_urls": [
+        "https://doi.org/10.1145/3360585",
+        "https://software-lab.org/publications/oopsla2019_Getafix.pdf",
+        "https://2019.splashcon.org/details/splash-2019-oopsla/43/Getafix-Learning-to-Fix-Bugs-Automatically"
+      ],
+      "access_depth": "primary abstract; author-hosted final publication metadata",
+      "metadata_checked": [
+        "title",
+        "author list",
+        "publication year or version",
+        "venue or preprint status"
+      ],
+      "paraphrased_content_check": "Learns hierarchical fix patterns and ranks context-appropriate suggestions from prior human changes."
+    },
+    {
+      "id": "B27",
+      "title": "SapFix: Automated End-to-End Repair at Scale",
+      "authors": "Alexandru Marginean; Johannes Bader; Satish Chandra; Mark Harman; Yue Jia; Ke Mao; Alexander Mols; Andrew Scott",
+      "year": 2019,
+      "venue": "IEEE/ACM ICSE Software Engineering in Practice",
+      "status": "peer-reviewed",
+      "source_urls": [
+        "https://doi.org/10.1109/ICSE-SEIP.2019.00039",
+        "https://discovery.ucl.ac.uk/id/eprint/10084761/",
+        "https://2019.icse-conferences.org/details/icse-2019-Software-Engineering-in-Practice/9/SapFix-Automated-End-to-End-Repair-at-Scale"
+      ],
+      "access_depth": "primary institutional abstract and paper introduction",
+      "metadata_checked": [
+        "title",
+        "author list",
+        "publication year or version",
+        "venue or preprint status"
+      ],
+      "paraphrased_content_check": "Integrates test generation, fault localization, candidate repair, retesting, and developer review in production."
+    },
+    {
+      "id": "B28",
+      "title": "Asleep at the Keyboard? Assessing the Security of GitHub Copilot's Code Contributions",
+      "authors": "Hammond Pearce; Baleegh Ahmad; Benjamin Tan; Brendan Dolan-Gavitt; Ramesh Karri",
+      "year": 2022,
+      "venue": "IEEE Symposium on Security and Privacy",
+      "status": "peer-reviewed",
+      "source_urls": [
+        "https://arxiv.org/abs/2108.09293",
+        "https://www.ieee-security.org/TC/SP2022/awards.html"
+      ],
+      "access_depth": "primary abstract and official conference metadata",
+      "metadata_checked": [
+        "title",
+        "author list",
+        "publication year or version",
+        "venue or preprint status"
+      ],
+      "paraphrased_content_check": "Systematically evaluates security weaknesses in Copilot-generated code under varied scenarios and prompts."
+    },
+    {
+      "id": "B29",
+      "title": "Do Users Write More Insecure Code with AI Assistants?",
+      "authors": "Neil Perry; Megha Srivastava; Deepak Kumar; Dan Boneh",
+      "year": 2023,
+      "venue": "ACM CCS",
+      "status": "peer-reviewed",
+      "source_urls": [
+        "https://doi.org/10.1145/3576915.3623157",
+        "https://kumarde.com/papers/codex.pdf"
+      ],
+      "access_depth": "primary paper introduction and abstract",
+      "metadata_checked": [
+        "title",
+        "author list",
+        "publication year or version",
+        "venue or preprint status"
+      ],
+      "paraphrased_content_check": "Studies how people use an AI assistant on security-related programming tasks."
+    },
+    {
+      "id": "B30",
+      "title": "Lost at C: A User Study on the Security Implications of Large Language Model Code Assistants",
+      "authors": "Gustavo Sandoval; Hammond Pearce; Teo Nys; Ramesh Karri; Siddharth Garg; Brendan Dolan-Gavitt",
+      "year": 2023,
+      "venue": "USENIX Security Symposium",
+      "status": "peer-reviewed",
+      "source_urls": [
+        "https://www.usenix.org/conference/usenixsecurity23/presentation/sandoval",
+        "https://arxiv.org/abs/2208.09727"
+      ],
+      "access_depth": "primary abstract and official proceedings metadata",
+      "metadata_checked": [
+        "title",
+        "author list",
+        "publication year or version",
+        "venue or preprint status"
+      ],
+      "paraphrased_content_check": "Evaluates AI assistance in a controlled low-level C programming study with 58 participants."
+    },
+    {
+      "id": "B31",
+      "title": "Examining Zero-Shot Vulnerability Repair with Large Language Models",
+      "authors": "Hammond Pearce; Benjamin Tan; Baleegh Ahmad; Ramesh Karri; Brendan Dolan-Gavitt",
+      "year": 2023,
+      "venue": "IEEE Symposium on Security and Privacy",
+      "status": "peer-reviewed",
+      "source_urls": [
+        "https://doi.org/10.1109/SP46215.2023.10179324",
+        "https://arxiv.org/abs/2112.02125"
+      ],
+      "access_depth": "full text: methods, real-world results, reliability discussion",
+      "metadata_checked": [
+        "title",
+        "author list",
+        "publication year or version",
+        "venue or preprint status"
+      ],
+      "paraphrased_content_check": "Evaluates prompt-based vulnerability repair across synthetic, handcrafted, and historical real-world scenarios."
+    },
+    {
+      "id": "B32",
+      "title": "VulRepair: A T5-Based Automated Software Vulnerability Repair",
+      "authors": "Michael Fu; Chakkrit Tantithamthavorn; Trung Le; Van Nguyen; Dinh Phung",
+      "year": 2022,
+      "venue": "ACM ESEC/FSE",
+      "status": "peer-reviewed",
+      "source_urls": [
+        "https://doi.org/10.1145/3540250.3549098",
+        "https://research.monash.edu/en/publications/vulrepair-a-t5-based-automated-software-vulnerability-repair/"
+      ],
+      "access_depth": "primary institutional abstract and paper introduction",
+      "metadata_checked": [
+        "title",
+        "author list",
+        "publication year or version",
+        "venue or preprint status"
+      ],
+      "paraphrased_content_check": "Uses a pretrained T5 architecture and subword tokenization for vulnerability patch prediction."
+    },
+    {
+      "id": "B33",
+      "title": "Neural Transfer Learning for Repairing Security Vulnerabilities in C Code",
+      "authors": "Zimin Chen; Steve Kommrusch; Martin Monperrus",
+      "year": 2023,
+      "venue": "IEEE Transactions on Software Engineering 49(1); online 2022",
+      "status": "peer-reviewed",
+      "source_urls": [
+        "https://doi.org/10.1109/TSE.2022.3147265",
+        "https://arxiv.org/abs/2104.08308"
+      ],
+      "access_depth": "primary abstract and journal reference",
+      "metadata_checked": [
+        "title",
+        "author list",
+        "publication year or version",
+        "venue or preprint status"
+      ],
+      "paraphrased_content_check": "Introduces VRepair, transferring knowledge from general bug fixes to scarce vulnerability-fix data."
+    },
+    {
+      "id": "B34",
+      "title": "CryptoGuard: High Precision Detection of Cryptographic Vulnerabilities in Massive-sized Java Projects",
+      "authors": "Sazzadur Rahaman; Ya Xiao; Sharmin Afrose; Fahad Shaon; Ke Tian; Miles Frantz; Murat Kantarcioglu; Danfeng (Daphne) Yao",
+      "year": 2019,
+      "venue": "ACM CCS",
+      "status": "peer-reviewed",
+      "source_urls": [
+        "https://doi.org/10.1145/3319535.3345659",
+        "https://sazzadur.com/pdfs/cryptoguard_ccs_19.pdf"
+      ],
+      "access_depth": "primary paper abstract, introduction and author metadata",
+      "metadata_checked": [
+        "title",
+        "author list",
+        "publication year or version",
+        "venue or preprint status"
+      ],
+      "paraphrased_content_check": "Refines program slicing to reduce false alerts in cryptographic misuse detection."
+    },
+    {
+      "id": "B35",
+      "title": "CrySL: An Extensible Approach to Validating the Correct Usage of Cryptographic APIs",
+      "authors": "Stefan Krüger; Johannes Späth; Karim Ali; Eric Bodden; Mira Mezini",
+      "year": 2018,
+      "venue": "ECOOP; LIPIcs 109",
+      "status": "peer-reviewed",
+      "source_urls": [
+        "https://doi.org/10.4230/LIPIcs.ECOOP.2018.10",
+        "https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.ECOOP.2018.10"
+      ],
+      "access_depth": "primary proceedings abstract and paper excerpts",
+      "metadata_checked": [
+        "title",
+        "author list",
+        "publication year or version",
+        "venue or preprint status"
+      ],
+      "paraphrased_content_check": "Defines a specification language for correct cryptographic API usage and supports automated checking."
+    },
+    {
+      "id": "B36",
+      "title": "A Case Study of LLM for Automated Vulnerability Repair: Assessing Impact of Reasoning and Patch Validation Feedback",
+      "authors": "Ummay Kulsum; Haotian Zhu; Bowen Xu; Marcelo d'Amorim",
+      "year": 2024,
+      "venue": "ACM AIware",
+      "status": "peer-reviewed",
+      "source_urls": [
+        "https://doi.org/10.1145/3664646.3664770",
+        "https://damorim.github.io/publications/Kulsum_ETAL_AIWARE24.pdf"
+      ],
+      "access_depth": "full text excerpts: workflow, comparisons, ablations",
+      "metadata_checked": [
+        "title",
+        "author list",
+        "publication year or version",
+        "venue or preprint status"
+      ],
+      "paraphrased_content_check": "Introduces VRpilot, iterating vulnerability-repair prompts using reasoning and external validation feedback."
+    },
+    {
+      "id": "B37",
+      "title": "IRIS: LLM-Assisted Static Analysis for Detecting Security Vulnerabilities",
+      "authors": "Ziyang Li; Saikat Dutta; Mayur Naik",
+      "year": 2025,
+      "venue": "ICLR",
+      "status": "peer-reviewed",
+      "source_urls": [
+        "https://proceedings.iclr.cc/paper_files/paper/2025/hash/582d4e27fa24168f3af1f4582655034b-Abstract-Conference.html",
+        "https://proceedings.iclr.cc/paper_files/paper/2025/file/582d4e27fa24168f3af1f4582655034b-Paper-Conference.pdf"
+      ],
+      "access_depth": "primary proceedings abstract and metadata",
+      "metadata_checked": [
+        "title",
+        "author list",
+        "publication year or version",
+        "venue or preprint status"
+      ],
+      "paraphrased_content_check": "Combines LLM-inferred taint specifications and contextual reasoning with static analysis."
+    },
+    {
+      "id": "B38",
+      "title": "Security Weaknesses of Copilot-Generated Code in GitHub Projects: An Empirical Study",
+      "authors": "Yujia Fu; Peng Liang; Amjed Tahir; Zengyang Li; Mojtaba Shahin; Jiaxin Yu; Jinfu Chen",
+      "year": 2025,
+      "venue": "ACM Transactions on Software Engineering and Methodology 34(8)",
+      "status": "peer-reviewed",
+      "source_urls": [
+        "https://doi.org/10.1145/3716848",
+        "https://arxiv.org/abs/2310.02059"
+      ],
+      "access_depth": "full text excerpts: sampling, detector combination, results",
+      "metadata_checked": [
+        "title",
+        "author list",
+        "publication year or version",
+        "venue or preprint status"
+      ],
+      "paraphrased_content_check": "Analyzes AI-generated snippets found in public projects and tests warning-guided repair."
+    },
+    {
+      "id": "B39",
+      "title": "Logs In, Patches Out: Automated Vulnerability Repair via Tree-of-Thought LLM Analysis",
+      "authors": "Youngjoon Kim; Sunguk Shin; Hyoungshick Kim; Jiwon Yoon",
+      "year": 2025,
+      "venue": "USENIX Security Symposium",
+      "status": "peer-reviewed",
+      "source_urls": [
+        "https://www.usenix.org/conference/usenixsecurity25/presentation/kim-youngjoon"
+      ],
+      "access_depth": "primary proceedings abstract and metadata",
+      "metadata_checked": [
+        "title",
+        "author list",
+        "publication year or version",
+        "venue or preprint status"
+      ],
+      "paraphrased_content_check": "Introduces SAN2PATCH, decomposing sanitizer-guided repair into comprehension, localization, strategy, and patching."
+    },
+    {
+      "id": "B40",
+      "title": "Hints on Test Data Selection: Help for the Practicing Programmer",
+      "authors": "Richard A. DeMillo; Richard J. Lipton; Frederick G. Sayward",
+      "year": 1978,
+      "venue": "IEEE Computer 11(4)",
+      "status": "peer-reviewed",
+      "source_urls": [
+        "https://doi.org/10.1109/C-M.1978.218136",
+        "https://gse.ufsc.br/bezerra/disciplinas/Confiabilidade/docs/demillo-mutants.pdf"
+      ],
+      "access_depth": "primary paper introduction and institutional metadata",
+      "metadata_checked": [
+        "title",
+        "author list",
+        "publication year or version",
+        "venue or preprint status"
+      ],
+      "paraphrased_content_check": "Motivates mutation-based testing through small program changes and the coupling of simple and complex faults."
+    },
+    {
+      "id": "B41",
+      "title": "Are Mutants a Valid Substitute for Real Faults in Software Testing?",
+      "authors": "René Just; Darioush Jalali; Laura Inozemtseva; Michael D. Ernst; Reid Holmes; Gordon Fraser",
+      "year": 2014,
+      "venue": "ACM FSE",
+      "status": "peer-reviewed",
+      "source_urls": [
+        "https://doi.org/10.1145/2635868.2635929",
+        "https://homes.cs.washington.edu/~mernst/pubs/mutation-effectiveness-fse2014-abstract.html"
+      ],
+      "access_depth": "primary author abstract and metadata",
+      "metadata_checked": [
+        "title",
+        "author list",
+        "publication year or version",
+        "venue or preprint status"
+      ],
+      "paraphrased_content_check": "Tests whether mutation detection tracks real-fault detection after controlling for coverage."
+    },
+    {
+      "id": "B42",
+      "title": "Assessing Oracle Quality with Checked Coverage",
+      "authors": "David Schuler; Andreas Zeller",
+      "year": 2011,
+      "venue": "IEEE ICST",
+      "status": "peer-reviewed",
+      "source_urls": [
+        "https://www.st.cs.uni-saarland.de/publications/files/schuler-icst-2011.pdf",
+        "https://onlinelibrary.wiley.com/doi/10.1002/stvr.1497"
+      ],
+      "access_depth": "primary paper abstract and method introduction",
+      "metadata_checked": [
+        "title",
+        "author list",
+        "publication year or version",
+        "venue or preprint status"
+      ],
+      "paraphrased_content_check": "Measures statements whose effects actually reach assertions rather than merely executed statements."
+    },
+    {
+      "id": "B43",
+      "title": "Coverage Is Not Strongly Correlated with Test Suite Effectiveness",
+      "authors": "Laura Inozemtseva; Reid Holmes",
+      "year": 2014,
+      "venue": "IEEE/ACM ICSE",
+      "status": "peer-reviewed",
+      "source_urls": [
+        "https://www.cs.ubc.ca/~rtholmes/papers/icse_2014_inozemtseva.pdf"
+      ],
+      "access_depth": "primary paper abstract and methods framing",
+      "metadata_checked": [
+        "title",
+        "author list",
+        "publication year or version",
+        "venue or preprint status"
+      ],
+      "paraphrased_content_check": "Separates test-suite size from coverage when evaluating fault-detection effectiveness."
+    },
+    {
+      "id": "B44",
+      "title": "An Empirical Analysis of Flaky Tests",
+      "authors": "Qingzhou Luo; Farah Hariri; Lamyaa Eloussi; Darko Marinov",
+      "year": 2014,
+      "venue": "ACM FSE",
+      "status": "peer-reviewed",
+      "source_urls": [
+        "https://doi.org/10.1145/2635868.2635920",
+        "https://mir.cs.illinois.edu/~marinov/publications/LuoETAL14FlakyTestsAnalysis.pdf"
+      ],
+      "access_depth": "primary paper abstract, introduction and institutional metadata",
+      "metadata_checked": [
+        "title",
+        "author list",
+        "publication year or version",
+        "venue or preprint status"
+      ],
+      "paraphrased_content_check": "Studies nondeterministic tests and categorizes their causes and repair practices."
+    },
+    {
+      "id": "B45",
+      "title": "Evaluating Fuzz Testing",
+      "authors": "George Klees; Andrew Ruef; Benji Cooper; Shiyi Wei; Michael Hicks",
+      "year": 2018,
+      "venue": "ACM CCS",
+      "status": "peer-reviewed",
+      "source_urls": [
+        "https://doi.org/10.1145/3243734.3243804",
+        "https://cseweb.ucsd.edu/~dstefan/cse227-spring20/papers/klees%3Aevaluating.pdf"
+      ],
+      "access_depth": "primary paper abstract and evaluation framing",
+      "metadata_checked": [
+        "title",
+        "author list",
+        "publication year or version",
+        "venue or preprint status"
+      ],
+      "paraphrased_content_check": "Audits fuzzing evaluations and experimentally demonstrates how design choices distort comparisons."
+    },
+    {
+      "id": "B46",
+      "title": "BenchChecker: Assessing the Credibility of Bug-Fixing Benchmarks for LLMs",
+      "authors": "Di Wu; Xu He; Shu Wang; Kun Sun",
+      "year": 2026,
+      "venue": "USENIX Security Symposium",
+      "status": "peer-reviewed",
+      "source_urls": [
+        "https://www.usenix.org/conference/usenixsecurity26/presentation/wu-di",
+        "https://arxiv.org/abs/2610.19447"
+      ],
+      "access_depth": "primary proceedings abstract and metadata",
+      "metadata_checked": [
+        "title",
+        "author list",
+        "publication year or version",
+        "venue or preprint status"
+      ],
+      "paraphrased_content_check": "Detects likely benchmark contamination through repository-presence and patch-presence probes."
+    },
+    {
+      "id": "B47",
+      "title": "PATCHAGENT: A Practical Program Repair Agent Mimicking Human Expertise",
+      "authors": "Zheng Yu; Ziyi Guo; Yuhang Wu; Jiahao Yu; Meng Xu; Dongliang Mu; Yan Chen; Xinyu Xing",
+      "year": 2025,
+      "venue": "USENIX Security Symposium",
+      "status": "peer-reviewed",
+      "source_urls": [
+        "https://www.usenix.org/conference/usenixsecurity25/presentation/yu-zheng",
+        "https://www.usenix.org/system/files/usenixsecurity25-yu-zheng.pdf"
+      ],
+      "access_depth": "primary proceedings abstract and metadata",
+      "metadata_checked": [
+        "title",
+        "author list",
+        "publication year or version",
+        "venue or preprint status"
+      ],
+      "paraphrased_content_check": "Integrates fault localization, patch generation, verification, and interaction optimization in an autonomous repair agent."
+    },
+    {
+      "id": "B48",
+      "title": "HACL*: A Verified Modern Cryptographic Library",
+      "authors": "Jean-Karim Zinzindohoué; Karthikeyan Bhargavan; Jonathan Protzenko; Benjamin Beurdouche",
+      "year": 2017,
+      "venue": "ACM CCS",
+      "status": "peer-reviewed",
+      "source_urls": [
+        "https://doi.org/10.1145/3133956.3134043",
+        "https://www.microsoft.com/en-us/research/uploads/prod/2018/08/tmp536.pdf"
+      ],
+      "access_depth": "primary paper excerpts: guarantees, limitations and conclusion",
+      "metadata_checked": [
+        "title",
+        "author list",
+        "publication year or version",
+        "venue or preprint status"
+      ],
+      "paraphrased_content_check": "Develops verified cryptographic implementations with explicit functional, memory-safety, and secret-independence guarantees."
+    },
+    {
+      "id": "B49",
+      "title": "Metamorphic Testing: A Review of Challenges and Opportunities",
+      "authors": "Tsong Yueh Chen; Fei-Ching Kuo; Huai Liu; Pak-Lok Poon; Dave Towey; T. H. Tse; Zhi Quan Zhou",
+      "year": 2018,
+      "venue": "ACM Computing Surveys 51(1)",
+      "status": "peer-reviewed survey",
+      "source_urls": [
+        "https://doi.org/10.1145/3143561",
+        "https://nottingham-repository.worktribe.com/output/925152/metamorphic-testing-a-review-of-challenges-and-opportunities"
+      ],
+      "access_depth": "primary institutional abstract and accepted manuscript",
+      "metadata_checked": [
+        "title",
+        "author list",
+        "publication year or version",
+        "venue or preprint status"
+      ],
+      "paraphrased_content_check": "Organizes testing through relations among multiple inputs and outputs when individual expected outputs are difficult to obtain."
+    },
+    {
+      "id": "B50",
+      "title": "Using Frankencerts for Automated Adversarial Testing of Certificate Validation in SSL/TLS Implementations",
+      "authors": "Chad Brubaker; Suman Jana; Baishakhi Ray; Sarfraz Khurshid; Vitaly Shmatikov",
+      "year": 2014,
+      "venue": "IEEE Symposium on Security and Privacy",
+      "status": "peer-reviewed",
+      "source_urls": [
+        "https://www.cs.cornell.edu/~shmat/shmat_oak14.pdf",
+        "https://www.cs.columbia.edu/~suman/docs/frankencert.pdf"
+      ],
+      "access_depth": "primary paper abstract and introduction",
+      "metadata_checked": [
+        "title",
+        "author list",
+        "publication year or version",
+        "venue or preprint status"
+      ],
+      "paraphrased_content_check": "Combines mutated certificates with differential testing of certificate-validation implementations."
+    }
+  ]
+}

@@ -1,0 +1,1 @@
+{"action":{"action":"terminate","claim":"non_success"},"observation":{"terminated":true,"tool":"terminate"},"request_sha256":"3608e6e93b9bba61f56f33294c7913b6c6b888aa39cd0940b4f152ad6bee1a6d","response_sha256":"80f3a78795d9f0d61255187233487c0941c6f519f978e3cc382626da86190db7","retained_source_sha256":"451198221b85123ff03de8c9e660158de0bb4945452c20da330ec5affa355b71"}

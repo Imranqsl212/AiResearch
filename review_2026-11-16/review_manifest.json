@@ -1,0 +1,84 @@
+{
+  "date": "2026-11-16",
+  "timezone": "Asia/Bishkek",
+  "manuscript": "/Users/imranmzakirov/Desktop/research/paper/final.md",
+  "input_files": [
+    {
+      "path": "paper/final.md",
+      "sha256": "58b71372f2742392f7e7748b45bee7053db6b124b6852090555fc19fc2348196"
+    },
+    {
+      "path": "README.md",
+      "sha256": "57fcff30219ea09e82dba358ca1e1c7ad7901cdb6eeb7b7f66deca17d6d6dbc9"
+    },
+    {
+      "path": "docs/INTEGRATED_STUDY_EXTENSION_20261018.md",
+      "sha256": "358e115dfde1ebcb1802d6f01cf51894a2cad3b5513b0ccd7108fb34d7b81cc3"
+    },
+    {
+      "path": "docs/C6_FALSE_PASS_AMENDMENT_20261028.md",
+      "sha256": "b40067ddf73c0f11a321c24e5814077272025fffe80ecbdd125fb122260ae099"
+    },
+    {
+      "path": "docs/LITERATURE_GAP_AUDIT_20261101.md",
+      "sha256": "84464c3c4abf29e0cf3d85e31717b78080d129dec03ddff35ad3c8f2cda81159"
+    },
+    {
+      "path": "docs/MAIN_RELEASE_GATE_MATRIX_20261005.md",
+      "sha256": "9221d354a7c8edd098c7421b336f8e137e577da91993827c47889d23f9a9fd05"
+    },
+    {
+      "path": "analysis/HISTORICAL_PROTOCOL_STOP_RECOUNT_20261104.md",
+      "sha256": "353cf1d899404b6cad26b85edbd8b2b3766e565415dcfbf062ead43b6140b394"
+    },
+    {
+      "path": "analysis/V7_CROSSFAMILY_ERROR_DIRECTION_20261104.md",
+      "sha256": "821a84783d201171f5cef0d817b30df51953d98d1f9e0afbd9d274a18887814f"
+    },
+    {
+      "path": "docs/EXCLUDED_V7_FEEDBACK_REPLICATION_20261104_RESULTS.md",
+      "sha256": "a55199122ca71e744180dc7b23a105cd990130f663362bfd8a793360b156693d"
+    },
+    {
+      "path": "benchmark/finite_batch_c_reference_v7.py",
+      "sha256": "3de3775e379961aeb0119a3fecddded6e1b49711c1b718cbd4aa783ae9fab3a4"
+    },
+    {
+      "path": "analysis/prospective_estimands.py",
+      "sha256": "3a68548c9c3fbf030581a2a89292f4df123aee9264bc2c839df4bb0ee99adf90"
+    },
+    {
+      "path": "docs/preregistration.md",
+      "sha256": "ae01bd3d7aeda8578fd3905d4ebd5ba52745f51c71f67e0e3cc8832d7507d025"
+    }
+  ],
+  "scope": "Read-only manuscript/evidence review and primary-source literature search; no experimental model calls; new review artifacts only.",
+  "verification_commands": [
+    {
+      "command": "python3 -B -m reproduction.verify_project",
+      "result": "VERIFIED_EXPLORATORY_EVIDENCE; 40 episodes; 5 families; 9/20 unavailable-arm disagreements; 0/81 raw action receipts"
+    },
+    {
+      "command": "python3 -B -m analysis.historical_protocol_stop_recount_20261104 --check",
+      "result": "PASS: 40 historical terminal records and frozen adapter/runner code path verified"
+    },
+    {
+      "command": "python3 -B -m analysis.v7_crossfamily_error_direction_20261104 --check",
+      "result": "CROSSFAMILY_ERROR_DIRECTION_OK"
+    },
+    {
+      "command": "python3 -B -m analysis.v7_feedback_replication_20261104 --check",
+      "result": "FEEDBACK_REPLICATION_RECOUNT_OK"
+    }
+  ],
+  "preexisting_worktree_changes_preserved": [
+    " D showcase/Zakirov_Iosifova_Showcase_2026-11-08.zip",
+    "?? showcase/2026-11-08/SPEECH_2_SPEAKERS.md"
+  ],
+  "artifact_validation": {
+    "count_and_metadata": "150 unique records; all required fields complete",
+    "duplicate_identifiers": "No repeated arXiv identifiers or DOI identifiers across distinct records",
+    "search_filters": "Pure JavaScript checks passed: all150, groupB50, COBALT1, absentquery0, groupC50",
+    "visual_preview": "Not performed: in-app browser rejected local file URLs. No alternate browser or server workaround attempted."
+  }
+}

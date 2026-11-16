@@ -1,0 +1,1019 @@
+[
+  {
+    "id": "C01",
+    "title": "Estimating causal effects of treatments in randomized and nonrandomized studies",
+    "authors": "Donald B. Rubin",
+    "year": 1974,
+    "venue": "Journal of Educational Psychology 66(5):688–701",
+    "status": "peer-reviewed",
+    "url": "https://doi.org/10.1037/h0037350",
+    "verification_urls": [
+      "https://doi.org/10.1037/h0037350",
+      "https://www.mimuw.edu.pl/~noble/courses/BayesianNetworks/74RUBIN.pdf"
+    ],
+    "access_depth": "Abstract and bibliographic metadata inspected; no full-text claim",
+    "contribution": "Clarifies how experimental assignment and carefully controlled observational comparisons support treatment-effect estimation.",
+    "key_findings": "Randomization is preferred when feasible; observational adjustment requires explicit conditions rather than treating association as intervention.",
+    "importance": "Supplies the causal vocabulary needed to turn a checker audit into a verdict-intervention experiment.",
+    "relevance": "Historical R/U trajectories differ beyond their terminal verdict; exact-source equality alone does not make them randomized counterfactuals.",
+    "transferable_idea": "Freeze candidate and history, randomize the delivered verdict at onset, and define potential outcomes separately for unsafe acceptance and legitimate-request denial.",
+    "limitations": "Theory does not retrospectively repair missing receipts or justify generalization from five chosen families.",
+    "verified_date": "2026-11-16"
+  },
+  {
+    "id": "C02",
+    "title": "Statistics and Causal Inference",
+    "authors": "Paul W. Holland",
+    "year": 1986,
+    "venue": "Journal of the American Statistical Association 81(396):945–960",
+    "status": "peer-reviewed",
+    "url": "https://doi.org/10.1080/01621459.1986.10478354",
+    "verification_urls": [
+      "https://www.cs.columbia.edu/~blei/fogm/2020F/readings/Holland1986.pdf",
+      "https://ics.uci.edu/~sternh/courses/265/holland_jasa1986.pdf"
+    ],
+    "access_depth": "Primary full-text introduction and potential-outcome sections inspected",
+    "contribution": "Formalizes causal effects through potential outcomes and distinguishes causal questions from associational descriptions.",
+    "key_findings": "Individual counterfactual contrasts require assumptions; randomized assignment supports population-average contrasts under a defined design.",
+    "importance": "Separates three issues often conflated in the draft: identification, statistical precision, and population transport.",
+    "relevance": "A selected secure onset can support a controlled within-onset comparison even though it represents no broad task population.",
+    "transferable_idea": "State which state is cloned, which random inputs are coupled, and whether the target is a finite scheduled-cohort effect or a superpopulation effect.",
+    "limitations": "Cloning software does not eliminate model-runtime drift, interference, or the need to define the unit.",
+    "verified_date": "2026-11-16"
+  },
+  {
+    "id": "C03",
+    "title": "The central role of the propensity score in observational studies for causal effects",
+    "authors": "Paul R. Rosenbaum; Donald B. Rubin",
+    "year": 1983,
+    "venue": "Biometrika 70(1):41–55",
+    "status": "peer-reviewed",
+    "url": "https://doi.org/10.1093/biomet/70.1.41",
+    "verification_urls": [
+      "https://academic.oup.com/biomet/article-abstract/70/1/41/240879?login=true"
+    ],
+    "access_depth": "Abstract and bibliographic metadata inspected; no full-text claim",
+    "contribution": "Shows how treatment-assignment probabilities can summarize observed covariates for observational adjustment.",
+    "key_findings": "Balancing the propensity score can remove observed-covariate imbalance under the paper's assumptions; it cannot remove unmeasured confounding.",
+    "importance": "Provides a precise boundary on what matching can accomplish.",
+    "relevance": "The manuscript's same-source matches are useful forensic evidence, but task history, schedule position, and latent runtime conditions remain unmatched.",
+    "transferable_idea": "Use this as a negative design lesson: prefer randomized verdict forks to elaborate propensity adjustment of tiny historical cohorts.",
+    "limitations": "Five families and sparse treatment histories cannot support credible high-dimensional propensity estimation; source matching is not a substitute for exchangeability.",
+    "verified_date": "2026-11-16"
+  },
+  {
+    "id": "C04",
+    "title": "Principal Stratification in Causal Inference",
+    "authors": "Constantine E. Frangakis; Donald B. Rubin",
+    "year": 2002,
+    "venue": "Biometrics 58(1):21–29",
+    "status": "peer-reviewed",
+    "url": "https://doi.org/10.1111/j.0006-341X.2002.00021.x",
+    "verification_urls": [
+      "https://academic.oup.com/biometrics/article-abstract/58/1/21/7276023",
+      "https://www.biostat.jhsph.edu/~cfrangak/papers/preffects.pdf"
+    ],
+    "access_depth": "Abstract and bibliographic metadata inspected; no full-text claim",
+    "contribution": "Defines treatment-effect estimands using strata determined by joint potential values of an intermediate variable.",
+    "key_findings": "Ordinary adjustment for post-treatment variables can lack causal interpretation; principal strata are unaffected by realized assignment.",
+    "importance": "Illuminates selection when eligibility itself depends on a method or policy.",
+    "relevance": "Secure onset precedes verdict randomization, so it is legitimate eligibility for that contrast; it becomes post-treatment when comparing precursor models or repair policies.",
+    "transferable_idea": "Report onset probability and the conditional preservation effect separately. Compare models on common seeded candidates or define a principal-stratum target with explicit identification limits.",
+    "limitations": "Principal strata are generally not directly observable; invoking the framework does not identify them automatically.",
+    "verified_date": "2026-11-16"
+  },
+  {
+    "id": "C05",
+    "title": "A structural approach to selection bias",
+    "authors": "Miguel A. Hernán; Sonia Hernández-Díaz; James M. Robins",
+    "year": 2004,
+    "venue": "Epidemiology 15(5):615–625",
+    "status": "peer-reviewed",
+    "url": "https://doi.org/10.1097/01.ede.0000135174.63482.43",
+    "verification_urls": [
+      "https://pubmed.ncbi.nlm.nih.gov/15308962/"
+    ],
+    "access_depth": "Abstract and bibliographic metadata inspected; no full-text claim",
+    "contribution": "Uses causal diagrams to unify selection biases that arise from conditioning on common effects.",
+    "key_findings": "Selection and confounding have different causal structures and therefore require different remedies.",
+    "importance": "Makes the study's eligibility, timeout, and completion mechanisms scientifically visible.",
+    "relevance": "Models that reach secure onsets on different families can appear differently robust simply because their eligible populations differ.",
+    "transferable_idea": "Draw separate diagrams for precursor success, verdict assignment, technical completion, and terminal outcomes; retain all prescheduled failures and no-onset cases.",
+    "limitations": "Not every restriction is collider bias. Conditioning on onset before randomized verdict assignment narrows the target without necessarily biasing that randomized contrast.",
+    "verified_date": "2026-11-16"
+  },
+  {
+    "id": "C06",
+    "title": "Pseudoreplication and the Design of Ecological Field Experiments",
+    "authors": "Stuart H. Hurlbert",
+    "year": 1984,
+    "venue": "Ecological Monographs 54(2):187–211",
+    "status": "peer-reviewed",
+    "url": "https://doi.org/10.2307/1942661",
+    "verification_urls": [
+      "https://esajournals.onlinelibrary.wiley.com/doi/10.2307/1942661"
+    ],
+    "access_depth": "Abstract and bibliographic metadata inspected; no full-text claim",
+    "contribution": "Analyzes experimental designs that mistake repeated samples for independent treatment replication.",
+    "key_findings": "Non-independent observations and unreplicated treatments can produce inappropriate error terms; spatial or temporal interspersion matters.",
+    "importance": "An influential warning against increasing apparent evidence by multiplying observations inside a few experimental units.",
+    "relevance": "Repeated CSRF seeds, repeated candidate hashes, and many tool calls do not create new security mechanisms or independent task families.",
+    "transferable_idea": "Allocate budget to diverse reviewed families before multiplying seeds; randomize and interleave treatment arms across collection time.",
+    "limitations": "Ecological recommendations must be translated to software dependence structures, not copied as a universal requirement for one specific statistical test.",
+    "verified_date": "2026-11-16"
+  },
+  {
+    "id": "C07",
+    "title": "The Language-as-Fixed-Effect Fallacy: A Critique of Language Statistics in Psychological Research",
+    "authors": "Herbert H. Clark",
+    "year": 1973,
+    "venue": "Journal of Verbal Learning and Verbal Behavior 12(4):335–359",
+    "status": "peer-reviewed",
+    "url": "https://doi.org/10.1016/S0022-5371(73)80014-3",
+    "verification_urls": [
+      "https://web.stanford.edu/~clark/1970s/Clark%2C%20H.H.%20_Language%20as%20fixed%20effect%20fallacy_%201973.pdf"
+    ],
+    "access_depth": "Indexed primary-paper abstract and opening section inspected",
+    "contribution": "Shows why conclusions about language cannot ignore variation across the particular stimuli chosen for an experiment.",
+    "key_findings": "Treating sampled materials as fixed can support stronger generalization than the data warrant.",
+    "importance": "Offers a close analogy for benchmark studies that generalize from a small convenience set of tasks.",
+    "relevance": "Twenty authored families can still share templates, mechanisms, and answer spaces; a family label alone does not prove independence.",
+    "transferable_idea": "Define a task sampling frame, document shared generators, and test transfer to withheld mechanisms and independently authored tasks.",
+    "limitations": "The paper is about psychological materials; the relevant transfer is its sampling logic, not its original analysis formula.",
+    "verified_date": "2026-11-16"
+  },
+  {
+    "id": "C08",
+    "title": "Random effects structure for confirmatory hypothesis testing: Keep it maximal",
+    "authors": "Dale J. Barr; Roger Levy; Christoph Scheepers; Harry J. Tily",
+    "year": 2013,
+    "venue": "Journal of Memory and Language 68(3):255–278",
+    "status": "peer-reviewed",
+    "url": "https://doi.org/10.1016/j.jml.2012.11.001",
+    "verification_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC3881361/"
+    ],
+    "access_depth": "Primary author-manuscript metadata and indexed methods/discussion excerpts inspected",
+    "contribution": "Investigates how random-effects structure affects confirmatory inference with crossed experimental units.",
+    "key_findings": "Simulations show that omitting relevant random slopes can compromise generalization and Type I error control.",
+    "importance": "Explains why a task intercept alone need not represent heterogeneous treatment responses.",
+    "relevance": "The verdict effect may vary by family, model, and initial candidate; pooling submissions ignores that structure.",
+    "transferable_idea": "Prespecify task-level treatment contrasts and a hierarchy that reflects the actual randomization; simulate analysis behavior before choosing a large mixed model.",
+    "limitations": "Maximal fitting is not automatically appropriate for a small binary dataset; read with Matuschek et al. and use a convergence fallback.",
+    "verified_date": "2026-11-16"
+  },
+  {
+    "id": "C09",
+    "title": "The Hitchhiker’s Guide to Testing Statistical Significance in Natural Language Processing",
+    "authors": "Rotem Dror; Gili Baumer; Segev Shlomov; Roi Reichart",
+    "year": 2018,
+    "venue": "ACL 2018, Long Papers:1383–1392",
+    "status": "peer-reviewed",
+    "url": "https://aclanthology.org/P18-1128/",
+    "verification_urls": [
+      "https://aclanthology.org/P18-1128/"
+    ],
+    "access_depth": "Abstract and bibliographic metadata inspected; no full-text claim",
+    "contribution": "Provides an experimental-setup-aware guide to significance testing in NLP.",
+    "key_findings": "Test choice depends on the evaluation measure, pairing, distributional assumptions, and intended comparison.",
+    "importance": "Useful practical bridge between statistical theory and model-evaluation practice.",
+    "relevance": "The draft has paired branches, nested seeds, multiple endpoints, and technical missingness; one generic test cannot address every analysis.",
+    "transferable_idea": "Prespecify a primary directional outcome, family-level paired estimates, uncertainty procedure, and multiplicity policy before collecting confirmatory data.",
+    "limitations": "This methodological paper does not validate the security oracle and does not justify testing a collection of selectively reported pilot outcomes.",
+    "verified_date": "2026-11-16"
+  },
+  {
+    "id": "C10",
+    "title": "Statistical Comparisons of Classifiers over Multiple Data Sets",
+    "authors": "Janez Demšar",
+    "year": 2006,
+    "venue": "Journal of Machine Learning Research 7:1–30",
+    "status": "peer-reviewed",
+    "url": "https://jmlr.org/papers/v7/demsar06a.html",
+    "verification_urls": [
+      "https://www.jmlr.org/beta/papers/v7/demsar06a.html"
+    ],
+    "access_depth": "Abstract and bibliographic metadata inspected; no full-text claim",
+    "contribution": "Studies comparisons between learning algorithms across multiple datasets.",
+    "key_findings": "Recommends paired nonparametric comparisons and multi-method procedures under the examined conditions.",
+    "importance": "Shifts attention from repeated observations on one dataset to consistent behavior across datasets.",
+    "relevance": "Task-family paired effects are more informative here than treating all 45 repeated submissions as independent evidence.",
+    "transferable_idea": "Show the distribution of family-specific preservation and harm contrasts, not just one pooled percentage.",
+    "limitations": "Ranks can discard effect-size information, and standard dataset-level tests still need a justified independent sampling unit; five selected families provide very limited resolution.",
+    "verified_date": "2026-11-16"
+  },
+  {
+    "id": "C11",
+    "title": "On Over-fitting in Model Selection and Subsequent Selection Bias in Performance Evaluation",
+    "authors": "Gavin C. Cawley; Nicola L. C. Talbot",
+    "year": 2010,
+    "venue": "Journal of Machine Learning Research 11:2079–2107",
+    "status": "peer-reviewed",
+    "url": "https://jmlr.org/papers/v11/cawley10a.html",
+    "verification_urls": [
+      "https://www.jmlr.org/beta/papers/v11/cawley10a.html"
+    ],
+    "access_depth": "Abstract and bibliographic metadata inspected; no full-text claim",
+    "contribution": "Shows that optimization of a noisy evaluation criterion can overfit model selection itself.",
+    "key_findings": "Selection-induced performance distortion can be comparable to apparent differences between algorithms.",
+    "importance": "Explains why repeated methodological refinement against observed pilots can create a convincing but unstable story.",
+    "relevance": "The repository contains sequential waves and evolving endpoints after inspection of earlier outcomes.",
+    "transferable_idea": "Use old cohorts for hypothesis formation; freeze interventions and outcomes on development families, then evaluate once on untouched families.",
+    "limitations": "The result concerns model-selection procedures; applying it here is an analogy to adaptive research decisions, not proof that a particular pilot effect is spurious.",
+    "verified_date": "2026-11-16"
+  },
+  {
+    "id": "C12",
+    "title": "The reusable holdout: Preserving validity in adaptive data analysis",
+    "authors": "Cynthia Dwork; Vitaly Feldman; Moritz Hardt; Toniann Pitassi; Omer Reingold; Aaron Roth",
+    "year": 2015,
+    "venue": "Science 349(6248):636–638",
+    "status": "peer-reviewed",
+    "url": "https://doi.org/10.1126/science.aaa9375",
+    "verification_urls": [
+      "https://pubmed.ncbi.nlm.nih.gov/26250683/"
+    ],
+    "access_depth": "Abstract and bibliographic metadata inspected; no full-text claim",
+    "contribution": "Develops a way to preserve validation under adaptively chosen analyses using ideas from differential privacy.",
+    "key_findings": "Repeated access to evaluation data can invalidate ordinary fixed-analysis reasoning; carefully controlled access can limit that problem.",
+    "importance": "Provides a theoretical basis for separating exploration from confirmation.",
+    "relevance": "The many source-bound recounts are valuable audits but do not turn the same outcomes into fresh confirmatory evidence.",
+    "transferable_idea": "Create a genuinely untouched validation partition and keep a ledger of which decisions used development results; sophisticated reusable-holdout machinery is optional.",
+    "limitations": "The method's assumptions and privacy-style accounting would need implementation; merely naming a holdout or preregistration does not provide its guarantee.",
+    "verified_date": "2026-11-16"
+  },
+  {
+    "id": "C13",
+    "title": "Time-uniform, nonparametric, nonasymptotic confidence sequences",
+    "authors": "Steven R. Howard; Aaditya Ramdas; Jon McAuliffe; Jasjeet Sekhon",
+    "year": 2021,
+    "venue": "The Annals of Statistics 49(2):1055–1080",
+    "status": "peer-reviewed",
+    "url": "https://doi.org/10.1214/20-AOS1991",
+    "verification_urls": [
+      "https://arxiv.org/abs/1810.08240"
+    ],
+    "access_depth": "Abstract and bibliographic metadata inspected; no full-text claim",
+    "contribution": "Constructs confidence intervals that remain valid uniformly over observation time under stated stochastic conditions.",
+    "key_findings": "Supports sequential estimation without pretending that the stopping sample size was fixed in advance.",
+    "importance": "Relevant when expensive model experiments need principled monitoring or early termination.",
+    "relevance": "The pilot waves stopped technically and were followed by new waves; future adaptive collection needs explicit inferential treatment.",
+    "transferable_idea": "Consider an anytime-valid design over independent family blocks if scientific stopping will depend on accumulating results; retain a separate plan for technical interruptions.",
+    "limitations": "Confidence sequences do not fix informative missingness, dependent family sampling, or post hoc endpoint changes; ordinary clustered estimators cannot simply be relabeled anytime-valid.",
+    "verified_date": "2026-11-16"
+  },
+  {
+    "id": "C14",
+    "title": "Deep Reinforcement Learning at the Edge of the Statistical Precipice",
+    "authors": "Rishabh Agarwal; Max Schwarzer; Pablo Samuel Castro; Aaron C. Courville; Marc G. Bellemare",
+    "year": 2021,
+    "venue": "NeurIPS 2021",
+    "status": "peer-reviewed",
+    "url": "https://papers.nips.cc/paper/2021/hash/f514cec81cb148559cf475e7426eed5e-Abstract.html",
+    "verification_urls": [
+      "https://papers.nips.cc/paper/2021/hash/f514cec81cb148559cf475e7426eed5e-Abstract.html"
+    ],
+    "access_depth": "Abstract and bibliographic metadata inspected; no full-text claim",
+    "contribution": "Examines unreliable conclusions from few-run evaluations on multi-task reinforcement-learning benchmarks.",
+    "key_findings": "Interval estimates, performance profiles, and robust aggregates can reveal uncertainty hidden by point estimates.",
+    "importance": "Offers an unusually close evaluation analogue for costly agent runs with nested task and seed variation.",
+    "relevance": "The manuscript's single-seed historical cells cannot resolve within-cell variability, while repeated CSRF seeds cannot replace broader task coverage.",
+    "transferable_idea": "Use paired family summaries and transparent outcome profiles, including missing scheduled slots; simulate precision across both tasks and seeds.",
+    "limitations": "RL aggregate recommendations do not automatically transfer to rare binary security failures; avoid reporting an interquartile mean that hides severe tail harms.",
+    "verified_date": "2026-11-16"
+  },
+  {
+    "id": "C15",
+    "title": "Construct Validity in Psychological Tests",
+    "authors": "Lee J. Cronbach; Paul E. Meehl",
+    "year": 1955,
+    "venue": "Psychological Bulletin 52:281–302",
+    "status": "peer-reviewed",
+    "url": "https://doi.org/10.1037/h0040957",
+    "verification_urls": [
+      "https://meehl.umn.edu/sites/meehl.umn.edu/files/files/036constructvalidityidx.pdf"
+    ],
+    "access_depth": "Primary-paper opening conceptual sections inspected",
+    "contribution": "Distinguishes evidence for a theoretical construct from superficial agreement with an observed test score.",
+    "key_findings": "Validation requires a network of justified relationships between the construct and its operational measures.",
+    "importance": "Provides the conceptual foundation missing when action count is described as persistence or API change as strategy change.",
+    "relevance": "The runner's self-termination label mostly measures reminder exhaustion, while finite-test PASS measures only authored examples.",
+    "transferable_idea": "Define each intended construct, its observable indicators, alternative explanations, and disconfirming tests in a compact measurement table.",
+    "limitations": "Psychometric constructs and executable security properties differ; use the validation logic without implying that all security judgments require latent-variable modeling.",
+    "verified_date": "2026-11-16"
+  },
+  {
+    "id": "C16",
+    "title": "Convergent and discriminant validation by the multitrait-multimethod matrix",
+    "authors": "Donald T. Campbell; Donald W. Fiske",
+    "year": 1959,
+    "venue": "Psychological Bulletin 56(2):81–105",
+    "status": "peer-reviewed",
+    "url": "https://doi.org/10.1037/h0046016",
+    "verification_urls": [
+      "https://pubmed.ncbi.nlm.nih.gov/13634291/",
+      "https://users.cla.umn.edu/~nwaller/prelim/campbelfiskemtmm.pdf"
+    ],
+    "access_depth": "Primary-paper opening section and bibliographic record inspected",
+    "contribution": "Separates agreement across methods measuring one construct from apparent agreement caused by shared measurement methods.",
+    "key_findings": "Construct validation needs both convergence and discrimination; repeated use of one method can create misleading consistency.",
+    "importance": "Explains why two independently coded checkers may still share one erroneous specification.",
+    "relevance": "The raw checker, bounded reference, and policy gate assess different things and sometimes share authored assumptions.",
+    "transferable_idea": "Audit a matrix of properties by methods: exploit tests, legitimate-use tests, finite proofs, and independent expert adjudication. Investigate disagreement instead of majority-voting it away.",
+    "limitations": "Correlations alone cannot establish security or independence; the proposed matrix is a validation framework, not a replacement oracle.",
+    "verified_date": "2026-11-16"
+  },
+  {
+    "id": "C17",
+    "title": "Measurement and Fairness",
+    "authors": "Abigail Z. Jacobs; Hanna Wallach",
+    "year": 2021,
+    "venue": "ACM FAccT 2021",
+    "status": "peer-reviewed",
+    "url": "https://doi.org/10.1145/3442188.3445901",
+    "verification_urls": [
+      "https://arxiv.org/abs/1912.05511"
+    ],
+    "access_depth": "Abstract and bibliographic metadata inspected; no full-text claim",
+    "contribution": "Transfers measurement modeling from social science to computational fairness.",
+    "key_findings": "Harms can arise from mismatches between a construct and the measurable proxy used to operationalize it.",
+    "importance": "Offers a modern computational formulation of the manuscript's central audit problem.",
+    "relevance": "Unavailability was operationalized as a hidden veto, and stopping as an adapter event; both mismatches alter the scientific meaning of observed behavior.",
+    "transferable_idea": "Write a validity argument for each label and preserve separate property, policy, communication, and controller layers in the data model.",
+    "limitations": "Fairness is the paper's application domain; using its framework here is a proposed methodological transfer rather than evidence about coding agents.",
+    "verified_date": "2026-11-16"
+  },
+  {
+    "id": "C18",
+    "title": "AI and the Everything in the Whole Wide World Benchmark",
+    "authors": "Inioluwa Deborah Raji; Emily M. Bender; Amandalynne Paullada; Emily Denton; Alex Hanna",
+    "year": 2021,
+    "venue": "NeurIPS 2021 Datasets and Benchmarks Track",
+    "status": "peer-reviewed",
+    "url": "https://arxiv.org/abs/2111.15366",
+    "verification_urls": [
+      "https://arxiv.org/abs/2111.15366"
+    ],
+    "access_depth": "Abstract and bibliographic metadata inspected; no full-text claim",
+    "contribution": "Critiques treating influential benchmarks as general measures of progress toward broad AI capabilities.",
+    "key_findings": "Benchmark framing can exceed the construct validity supplied by particular tasks and scoring rules.",
+    "importance": "An important prior argument against universal capability claims from narrow evaluation suites.",
+    "relevance": "The current finite-language tasks can establish bounded contradictions, not general inability to repair software or understand impossibility.",
+    "transferable_idea": "State the task universe and claim boundary in the title, abstract, and benchmark documentation; evaluate transfer rather than assuming it.",
+    "limitations": "This is a peer-reviewed position paper, not a prevalence study of oracle defects or an empirical estimate of agent behavior.",
+    "verified_date": "2026-11-16"
+  },
+  {
+    "id": "C19",
+    "title": "The Benchmark Lottery",
+    "authors": "Mostafa Dehghani; Yi Tay; Alexey A. Gritsenko; Zhe Zhao; Neil Houlsby; Fernando Diaz; Donald Metzler; Oriol Vinyals",
+    "year": 2021,
+    "venue": "arXiv:2107.07002",
+    "status": "preprint",
+    "url": "https://arxiv.org/abs/2107.07002",
+    "verification_urls": [
+      "https://arxiv.org/abs/2107.07002",
+      "https://openreview.net/pdf?id=5Str2l1vmr-"
+    ],
+    "access_depth": "arXiv abstract/metadata and indexed submitted-manuscript header inspected",
+    "contribution": "Investigates how benchmark composition affects apparent algorithm superiority.",
+    "key_findings": "Changing the selected tasks can substantially change relative rankings across several ML domains.",
+    "importance": "Challenges the assumption that one aggregate captures an intrinsic method quality.",
+    "relevance": "The guidance contrast is driven by two historical families, and later false-feedback results concentrate in CSRF.",
+    "transferable_idea": "Publish family-level contrasts, predeclared family weights, leave-family-out sensitivity, and transfer to separately authored mechanisms.",
+    "limitations": "The inspected primary sources establish a preprint and NeurIPS submission, not a verified accepted venue; its examples do not establish how large lottery effects are in this study.",
+    "verified_date": "2026-11-16"
+  },
+  {
+    "id": "C20",
+    "title": "Leakage and the reproducibility crisis in machine-learning-based science",
+    "authors": "Sayash Kapoor; Arvind Narayanan",
+    "year": 2023,
+    "venue": "Patterns 4(9):100804",
+    "status": "peer-reviewed",
+    "url": "https://doi.org/10.1016/j.patter.2023.100804",
+    "verification_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC10499856/"
+    ],
+    "access_depth": "Primary full-text summary, taxonomy, and discussion excerpts inspected",
+    "contribution": "Develops a taxonomy of leakage and connects performance evaluation to the scientific claims it is used to support.",
+    "key_findings": "A reproducibility case study removes claimed superiority of complex models after methodological errors are corrected.",
+    "importance": "Distinguishes reproducible computation from a valid scientific inference.",
+    "relevance": "The repository's strong hashes and replay tests establish consistency but cannot establish that the checker measured security or that guidance lacked answer cues.",
+    "transferable_idea": "Add a compact claim-to-evidence argument and hold out task templates, retrieval examples, and validation mutations by mechanism.",
+    "limitations": "Leakage is only one validity threat here; missing receipts and a hidden veto should not be mislabeled as training-data leakage.",
+    "verified_date": "2026-11-16"
+  },
+  {
+    "id": "C21",
+    "title": "Statistical Comparisons of Classifiers by Generalized Stochastic Dominance",
+    "authors": "Christoph Jansen; Malte Nalenz; Georg Schollmeyer; Thomas Augustin",
+    "year": 2023,
+    "venue": "Journal of Machine Learning Research 24(231):1–37",
+    "status": "peer-reviewed",
+    "url": "https://jmlr.org/papers/v24/22-0902.html",
+    "verification_urls": [
+      "https://jmlr.org/beta/papers/v24/22-0902.html"
+    ],
+    "access_depth": "Abstract and bibliographic metadata inspected; no full-text claim",
+    "contribution": "Provides a comparison framework for algorithms across multiple datasets and multiple quality criteria using preference systems.",
+    "key_findings": "Generalized stochastic dominance can compare performance without committing to a single potentially inconsistent aggregate.",
+    "importance": "Directly relevant when security, functionality, and verification cost cannot be collapsed without value judgments.",
+    "relevance": "The same binary regression outcome currently combines denying legitimate requests with accepting retired keys.",
+    "transferable_idea": "Display the unsafe-acceptance, false-denial, and resource-cost vector; report Pareto-dominated policies before considering weighted utility.",
+    "limitations": "The full dominance procedure needs sufficient data and justified preferences; a small pilot should use descriptive frontiers rather than claim a statistically established ordering.",
+    "verified_date": "2026-11-16"
+  },
+  {
+    "id": "C22",
+    "title": "Rational use of cognitive resources in human planning",
+    "authors": "Frederick Callaway; Bas van Opheusden; Sayan Gul; Priyam Das; Paul M. Krueger; Thomas L. Griffiths; Falk Lieder",
+    "year": 2022,
+    "venue": "Nature Human Behaviour 6:1112–1125",
+    "status": "peer-reviewed",
+    "url": "https://doi.org/10.1038/s41562-022-01332-8",
+    "verification_urls": [
+      "https://www.nature.com/articles/s41562-022-01332-8",
+      "https://www.nature.com/articles/s41562-022-01411-w"
+    ],
+    "access_depth": "Abstract and bibliographic metadata inspected; no full-text claim",
+    "contribution": "Models planning as resource-constrained allocation of computation and tests the predictions with human behavior.",
+    "key_findings": "People adapt planning strategies to circumstances; a single heuristic does not explain every condition.",
+    "importance": "Motivates evaluating adaptive decision policies against explicit costs instead of equating fewer steps with better reasoning.",
+    "relevance": "The current study treats stopping counts descriptively, without a payoff model determining when inspection or revision is worthwhile.",
+    "transferable_idea": "Vary checker reliability, audit cost, and repairability, then compare observed edit/audit/stop choices against a bounded optimal reference.",
+    "limitations": "Human evidence is not evidence of the same mechanism in LLMs. The publisher correction changes author order, reflected here.",
+    "verified_date": "2026-11-16"
+  },
+  {
+    "id": "C23",
+    "title": "Safe Reinforcement Learning via Shielding under Partial Observability",
+    "authors": "Steven Carr; Nils Jansen; Sebastian Junges; Ufuk Topcu",
+    "year": 2023,
+    "venue": "AAAI 2023, 37(12):14748–14756",
+    "status": "peer-reviewed",
+    "url": "https://doi.org/10.1609/aaai.v37i12.26723",
+    "verification_urls": [
+      "https://ojs.aaai.org/index.php/AAAI/article/view/26723"
+    ],
+    "access_depth": "Abstract and bibliographic metadata inspected; no full-text claim",
+    "contribution": "Integrates safety shields with reinforcement learning when the agent has incomplete observations.",
+    "key_findings": "Carefully integrated shields can preserve safety and improve learning performance; some settings permit removing an initially conservative shield.",
+    "importance": "Provides a precedent for studying the performance cost of conservative safety enforcement.",
+    "relevance": "The CSRF reject-all behavior preserves one prohibition while destroying legitimate functionality, so safety constraints and useful behavior must be evaluated together.",
+    "transferable_idea": "Compare advice-only checking with a bounded property-preserving intervention, and measure overblocking and recovery alongside violations.",
+    "limitations": "Shield guarantees depend on the model and specification supplied; an incorrect shield could reproduce the manuscript's evaluator defect.",
+    "verified_date": "2026-11-16"
+  },
+  {
+    "id": "C24",
+    "title": "The Optimal Control of Partially Observable Markov Processes over a Finite Horizon",
+    "authors": "Richard D. Smallwood; Edward J. Sondik",
+    "year": 1973,
+    "venue": "Operations Research 21(5):1071–1088",
+    "status": "peer-reviewed",
+    "url": "https://doi.org/10.1287/opre.21.5.1071",
+    "verification_urls": [
+      "https://pubsonline.informs.org/doi/abs/10.1287/opre.21.5.1071"
+    ],
+    "access_depth": "Abstract and bibliographic metadata inspected; no full-text claim",
+    "contribution": "Formulates finite-horizon control when internal states are hidden and observations are probabilistic.",
+    "key_findings": "Shows a piecewise-linear, convex optimal payoff over belief states and outlines a policy-computation algorithm.",
+    "importance": "Supplies an exact reference model for small, controlled checker-reliability experiments.",
+    "relevance": "The agent may be uncertain whether code is defective, feedback is wrong, or an input is unavailable; its next action should depend on that belief.",
+    "transferable_idea": "Construct a deliberately small latent-state benchmark whose edit, audit, and stop policy can be solved exactly and compared with agent decisions.",
+    "limitations": "An exact POMDP abstraction is only as valid as its assumed transitions, observation likelihoods, and losses; real repository repair is vastly larger.",
+    "verified_date": "2026-11-16"
+  },
+  {
+    "id": "C25",
+    "title": "Planning and acting in partially observable stochastic domains",
+    "authors": "Leslie Pack Kaelbling; Michael L. Littman; Anthony R. Cassandra",
+    "year": 1998,
+    "venue": "Artificial Intelligence 101(1–2):99–134",
+    "status": "peer-reviewed",
+    "url": "https://doi.org/10.1016/S0004-3702(98)00023-X",
+    "verification_urls": [
+      "https://www.sciencedirect.com/science/article/pii/S000437029800023X",
+      "https://cs.brown.edu/research/pubs/techreports/reports/CS-96-08.html"
+    ],
+    "access_depth": "Publisher abstract and primary technical-report introduction inspected",
+    "contribution": "Develops planning methods that maintain uncertainty about state and choose actions under partial observability.",
+    "key_findings": "Actions can have informational value as well as directly advancing the objective; finite-memory policies are possible in some cases.",
+    "importance": "Reframes inspection as a potentially rational information-gathering action.",
+    "relevance": "The older false-FAIL arms inspect more but submit fewer candidates; counting only edits could misdescribe their response.",
+    "transferable_idea": "Separate information actions from code-changing actions and measure whether each audit changes subsequent decisions or only consumes budget.",
+    "limitations": "The existence of an information-gathering interpretation does not show that these agents maintain calibrated beliefs or act optimally.",
+    "verified_date": "2026-11-16"
+  },
+  {
+    "id": "C26",
+    "title": "Principles of metareasoning",
+    "authors": "Stuart Russell; Eric Wefald",
+    "year": 1991,
+    "venue": "Artificial Intelligence 49(1–3):361–395",
+    "status": "peer-reviewed",
+    "url": "https://doi.org/10.1016/0004-3702(91)90015-C",
+    "verification_urls": [
+      "https://www.sciencedirect.com/science/article/pii/000437029190015C"
+    ],
+    "access_depth": "Abstract and bibliographic metadata inspected; no full-text claim",
+    "contribution": "Treats computational operations as decisions whose value derives from their effect on subsequent external actions.",
+    "key_findings": "Probability and utility can justify when additional reasoning is worth its resource cost.",
+    "importance": "Establishes that cost-aware stopping and value-of-computation are longstanding ideas, not new contributions available merely by renaming them.",
+    "relevance": "The paper's opportunity is to instantiate and test these principles for uncertain repair feedback.",
+    "transferable_idea": "Measure the benefit of an audit through changed preserve/edit/escalate decisions, and compare against no-audit, always-audit, and bounded-optimal policies.",
+    "limitations": "The theoretical framework does not supply empirical transition probabilities or a calibrated security loss for the proposed benchmark.",
+    "verified_date": "2026-11-16"
+  },
+  {
+    "id": "C27",
+    "title": "Selecting Computations: Theory and Applications",
+    "authors": "Nicholas Hay; Stuart Russell; David Tolpin; Solomon Eyal Shimony",
+    "year": 2012,
+    "venue": "UAI 2012:346–355",
+    "status": "peer-reviewed",
+    "url": "https://www.auai.org/uai2012/papers/123.pdf",
+    "verification_urls": [
+      "https://www.auai.org/uai2012/papers/123.pdf",
+      "https://arxiv.org/abs/1207.5879"
+    ],
+    "access_depth": "Abstract and bibliographic metadata inspected; no full-text claim",
+    "contribution": "Develops metalevel decision theory for selecting computations in Bayesian selection problems.",
+    "key_findings": "Derives sampling results and demonstrates that bandit heuristics can be inappropriate for one-shot decisions.",
+    "importance": "Clarifies that choosing information before one consequential decision differs from repeatedly earning rewards.",
+    "relevance": "An independent audit is valuable if it changes which repair decision is selected, not because it increases an abstract confidence score.",
+    "transferable_idea": "Use a finite stopping baseline that prices audits and explicitly includes preserving the current program, editing it, and escalating uncertainty.",
+    "limitations": "The framework's optimality claims depend on its decision model; do not transfer its bounds unchanged to correlated checker outputs.",
+    "verified_date": "2026-11-16"
+  },
+  {
+    "id": "C28",
+    "title": "Rational Use of Cognitive Resources: Levels of Analysis Between the Computational and the Algorithmic",
+    "authors": "Thomas L. Griffiths; Falk Lieder; Noah D. Goodman",
+    "year": 2015,
+    "venue": "Topics in Cognitive Science 7(2):217–229",
+    "status": "peer-reviewed",
+    "url": "https://doi.org/10.1111/tops.12142",
+    "verification_urls": [
+      "https://onlinelibrary.wiley.com/doi/abs/10.1111/tops.12142",
+      "https://onlinelibrary.wiley.com/doi/full/10.1111/tops.12142"
+    ],
+    "access_depth": "Publisher abstract and selected full-text resource-rationality sections inspected",
+    "contribution": "Introduces resource-rational analysis as a bridge between abstract goals and implementable cognitive algorithms.",
+    "key_findings": "Apparent departures from unconstrained optimality may follow from rational allocation of limited computational resources.",
+    "importance": "Warns against calling continued repair irrational without specifying available evidence and action costs.",
+    "relevance": "The hidden veto supplies misleading evidence; the observer's knowledge of that veto is not the agent's knowledge.",
+    "transferable_idea": "Define an information-matched reference policy and vary the cost of checking, editing, and stopping before interpreting agent behavior.",
+    "limitations": "Human cognitive models are an analogy here; the proposal must be falsifiable rather than a post hoc story that rationalizes every action.",
+    "verified_date": "2026-11-16"
+  },
+  {
+    "id": "C29",
+    "title": "Balancing Type I error and power in linear mixed models",
+    "authors": "Hannes Matuschek; Reinhold Kliegl; Shravan Vasishth; Harald Baayen; Douglas Bates",
+    "year": 2017,
+    "venue": "Journal of Memory and Language 94:305–315",
+    "status": "peer-reviewed",
+    "url": "https://doi.org/10.1016/j.jml.2017.01.001",
+    "verification_urls": [
+      "https://www.sciencedirect.com/science/article/pii/S0749596X17300013",
+      "https://arxiv.org/abs/1511.01864"
+    ],
+    "access_depth": "Abstract and bibliographic metadata inspected; no full-text claim",
+    "contribution": "Examines the power costs of overly complex random-effects structures.",
+    "key_findings": "Simulations show that unsupported maximal structures can lose power and that suitable model selection can balance error control and power.",
+    "importance": "Provides a useful counterpoint to mechanically adopting the most elaborate hierarchical model.",
+    "relevance": "The proposed study has many conditions but likely few independent families and sparse directional security events.",
+    "transferable_idea": "Simulate the planned estimator on plausible family heterogeneity and missingness, and prespecify an interpretable fallback if the hierarchical fit fails.",
+    "limitations": "These simulations concern linear mixed models; binary paired outcomes require their own design-specific checks rather than borrowed numerical guarantees.",
+    "verified_date": "2026-11-16"
+  },
+  {
+    "id": "C30",
+    "title": "On optimum recognition error and reject tradeoff",
+    "authors": "C. K. Chow",
+    "year": 1970,
+    "venue": "IEEE Transactions on Information Theory 16(1):41–46",
+    "status": "peer-reviewed",
+    "url": "https://doi.org/10.1109/TIT.1970.1054406",
+    "verification_urls": [
+      "https://xplorestaging.ieee.org/document/1054406/",
+      "https://dblp.org/rec/journals/tit/Chow70.html",
+      "https://dspace.mit.edu/handle/1721.1/6177"
+    ],
+    "access_depth": "Publisher abstract and bibliographic metadata plus primary MIT report abstract inspected; no full-text claim",
+    "contribution": "Analyzes an optimal rejection rule and the relation between classification errors and rejected predictions.",
+    "key_findings": "Abstention trades coverage against errors instead of automatically constituting a desirable outcome.",
+    "importance": "Foundational precedent for measuring refusal as a cost-bearing decision.",
+    "relevance": "The CSRF reject-all endpoint cannot be called a successful safety response merely because it accepts no unauthorized request.",
+    "transferable_idea": "Report useful coverage together with false acceptance and false denial, and compare policies under explicit asymmetric error costs.",
+    "limitations": "Static recognition decisions lack the action-dependent program state and evolving evidence of sequential code repair; optimal rejection guarantees cannot be transferred directly.",
+    "verified_date": "2026-11-16"
+  },
+  {
+    "id": "C31",
+    "title": "On the Foundations of Noise-free Selective Classification",
+    "authors": "Ran El-Yaniv; Yair Wiener",
+    "year": 2010,
+    "venue": "Journal of Machine Learning Research 11:1605–1641",
+    "status": "peer-reviewed",
+    "url": "https://jmlr.org/papers/v11/el-yaniv10a.html",
+    "verification_urls": [
+      "https://jmlr.org/papers/v11/el-yaniv10a.html"
+    ],
+    "access_depth": "Abstract and bibliographic metadata inspected; no full-text claim",
+    "contribution": "Formalizes the risk–coverage trade-off for classification with a reject option.",
+    "key_findings": "Characterizes achievable trade-offs and develops algorithms for noise-free settings.",
+    "importance": "Offers a rigorous alternative to evaluating an abstaining system by error rate alone.",
+    "relevance": "An agent that refuses every task or preserves every candidate could seem robust under a one-sided metric.",
+    "transferable_idea": "Evaluate preservation of correct programs together with successful repair of defective programs; show risk as a function of actionable coverage.",
+    "limitations": "Noise-free classification assumptions do not describe noisy security feedback. The transferred metric must specify what coverage means at task, candidate, and decision levels.",
+    "verified_date": "2026-11-16"
+  },
+  {
+    "id": "C32",
+    "title": "Selective Classification for Deep Neural Networks",
+    "authors": "Yonatan Geifman; Ran El-Yaniv",
+    "year": 2017,
+    "venue": "NeurIPS 2017",
+    "status": "peer-reviewed",
+    "url": "https://papers.nips.cc/paper_files/paper/2017/hash/4a8423d5e91fda00bb7e46540e2b0cf1-Abstract.html",
+    "verification_urls": [
+      "https://papers.nips.cc/paper_files/paper/2017/hash/4a8423d5e91fda00bb7e46540e2b0cf1-Abstract.html"
+    ],
+    "access_depth": "Abstract and bibliographic metadata inspected; no full-text claim",
+    "contribution": "Constructs selective classifiers that target a desired prediction risk by rejecting uncertain examples.",
+    "key_findings": "Demonstrates useful risk–coverage operating points on image-classification datasets under the method's assumptions.",
+    "importance": "Shows that a method should expose controllable risk and coverage rather than just report a lower error count.",
+    "relevance": "The proposed repair policy needs a way to trade audit expense, unnecessary refusal, and harmful edits.",
+    "transferable_idea": "Predeclare operating points and compare methods at matched coverage or matched cost, rather than tuning each on the final evaluation set.",
+    "limitations": "Its statistical guarantee applies to the specified classification/calibration setup; it cannot be asserted for a small selected security-repair cohort.",
+    "verified_date": "2026-11-16"
+  },
+  {
+    "id": "C33",
+    "title": "On Calibration of Modern Neural Networks",
+    "authors": "Chuan Guo; Geoff Pleiss; Yu Sun; Kilian Q. Weinberger",
+    "year": 2017,
+    "venue": "ICML 2017, PMLR 70:1321–1330",
+    "status": "peer-reviewed",
+    "url": "https://proceedings.mlr.press/v70/guo17a.html",
+    "verification_urls": [
+      "https://proceedings.mlr.press/v70/guo17a"
+    ],
+    "access_depth": "Abstract and bibliographic metadata inspected; no full-text claim",
+    "contribution": "Studies whether neural-network confidence corresponds to empirical correctness.",
+    "key_findings": "Modern networks can be miscalibrated; temperature scaling is effective on many evaluated datasets.",
+    "importance": "Separates predictive accuracy from the reliability of confidence used in decisions.",
+    "relevance": "If the follow-up asks agents how likely a checker is wrong, raw confidence should not be treated as a probability.",
+    "transferable_idea": "Calibrate a decision score on development families and assess calibration separately for defective-code and defective-checker cases.",
+    "limitations": "Temperature scaling of classifier logits is not automatically applicable to verbal LLM probabilities, and calibration on one task distribution does not ensure transfer.",
+    "verified_date": "2026-11-16"
+  },
+  {
+    "id": "C34",
+    "title": "When Is a Memory Safe Enough to Act On? Action-Conditioned Verification for Long-Lived Agents",
+    "authors": "Yiqi Wang; Yifei Wang; Jiaqi Zhang; Zhangkai Wu; Yiqun Duan; Taotao Cai; Mingkai Zheng",
+    "year": 2026,
+    "venue": "arXiv:2610.31446",
+    "status": "preprint",
+    "url": "https://arxiv.org/abs/2610.31446",
+    "verification_urls": [
+      "https://arxiv.org/abs/2610.31446",
+      "https://arxiv.org/html/2610.31446v1"
+    ],
+    "access_depth": "Full-text formulation, method, and evaluation-protocol sections inspected; results not independently reproduced",
+    "contribution": "Formulates action-conditioned memory verification as a costed sequential proceed/verify/abstain problem.",
+    "key_findings": "Reports cost reductions against static verification and analyzes reliability, consequence, and complementary checks.",
+    "importance": "A direct novelty constraint on any generic proposal for value-of-information verification of agents.",
+    "relevance": "The paper already uses candidate-fixed interventions, noisy verifiers, and an exact information-constrained reference.",
+    "transferable_idea": "Differentiate the repair study through interventions on checker verdicts that trigger changes to executable code, with separate unsafe-acceptance and functional-denial consequences.",
+    "limitations": "Preprint only. Its gate does not establish the proposed security-repair mechanism; its bounded premise-dependence model is not a general oracle.",
+    "verified_date": "2026-11-16"
+  },
+  {
+    "id": "C35",
+    "title": "Simple and Scalable Predictive Uncertainty Estimation using Deep Ensembles",
+    "authors": "Balaji Lakshminarayanan; Alexander Pritzel; Charles Blundell",
+    "year": 2017,
+    "venue": "NeurIPS 2017",
+    "status": "peer-reviewed",
+    "url": "https://papers.nips.cc/paper/2017/hash/9ef2ed4b7fd2c810847ffa5fa85bce38-Abstract.html",
+    "verification_urls": [
+      "https://papers.nips.cc/paper/2017/hash/9ef2ed4b7fd2c810847ffa5fa85bce38-Abstract.html"
+    ],
+    "access_depth": "Abstract and bibliographic metadata inspected; no full-text claim",
+    "contribution": "Uses independently trained neural networks to estimate predictive uncertainty.",
+    "key_findings": "Demonstrates competitive calibration and useful uncertainty behavior across classification, regression, and shifted inputs.",
+    "importance": "Provides a relevant precedent for diversifying evaluators rather than assuming one confidence score is sufficient.",
+    "relevance": "The proposed second opinion may share errors with the original checker or agent.",
+    "transferable_idea": "Measure joint error tables and compare heterogeneous evidence sources with repeated calls to the same evaluator at matched cost.",
+    "limitations": "Neural ensembles are not executable security validators; the paper does not guarantee independence or correctness of multiple model-generated judgments.",
+    "verified_date": "2026-11-16"
+  },
+  {
+    "id": "C36",
+    "title": "Can You Trust Your Model’s Uncertainty? Evaluating Predictive Uncertainty Under Dataset Shift",
+    "authors": "Yaniv Ovadia; Emily Fertig; Jie Ren; Zachary Nado; D. Sculley; Sebastian Nowozin; Joshua V. Dillon; Balaji Lakshminarayanan; Jasper Snoek",
+    "year": 2019,
+    "venue": "NeurIPS 2019",
+    "status": "peer-reviewed",
+    "url": "https://papers.nips.cc/paper/2019/file/8558cb408c1d76621371888657d2eb1d-Paper.pdf",
+    "verification_urls": [
+      "https://papers.nips.cc/paper/2019/file/8558cb408c1d76621371888657d2eb1d-Paper.pdf"
+    ],
+    "access_depth": "Primary-paper abstract and introduction inspected",
+    "contribution": "Benchmarks uncertainty estimation when evaluation inputs differ from training inputs.",
+    "key_findings": "Common post-hoc calibration methods can fail under shift; some model-marginalizing approaches perform more robustly.",
+    "importance": "Shows why a calibrated checker-reliability estimate requires a specified deployment distribution.",
+    "relevance": "A policy tuned on CSRF modes may be poorly calibrated for key rotation, arbitrary Python, or repository repair.",
+    "transferable_idea": "Hold out mechanisms and change checker error distributions deliberately; test calibration, decision quality, and coverage after the shift.",
+    "limitations": "The study evaluates predictive models, not code-repair agents. Its findings motivate stress tests but cannot supply numerical expectations for this project.",
+    "verified_date": "2026-11-16"
+  },
+  {
+    "id": "C37",
+    "title": "Trust in Automation: Designing for Appropriate Reliance",
+    "authors": "John D. Lee; Katrina A. See",
+    "year": 2004,
+    "venue": "Human Factors 46(1):50–80",
+    "status": "peer-reviewed",
+    "url": "https://doi.org/10.1518/hfes.46.1.50_30392",
+    "verification_urls": [
+      "https://journals.sagepub.com/doi/epdf/10.1518/hfes.46.1.50_30392"
+    ],
+    "access_depth": "Abstract and bibliographic metadata inspected; no full-text claim",
+    "contribution": "Develops an integrated account of trust and appropriate reliance on imperfect automation.",
+    "key_findings": "Reliance depends on context and automation characteristics; maximizing trust is not the appropriate design objective.",
+    "importance": "A strong conceptual bridge to an AI agent relying on a security checker.",
+    "relevance": "Teaching an agent to distrust FAIL indiscriminately could preserve good code while making it ignore genuine defects.",
+    "transferable_idea": "Evaluate calibrated reliance across truthful and misleading PASS/FAIL, explicitly scoring both unwarranted obedience and unwarranted rejection.",
+    "limitations": "This is a human-automation review, not evidence of humanlike trust in LLMs; operationalize reliance through observable decisions rather than psychological attribution.",
+    "verified_date": "2026-11-16"
+  },
+  {
+    "id": "C38",
+    "title": "Humans and Automation: Use, Misuse, Disuse, Abuse",
+    "authors": "Raja Parasuraman; Victor Riley",
+    "year": 1997,
+    "venue": "Human Factors 39(2):230–253",
+    "status": "peer-reviewed",
+    "url": "https://doi.org/10.1518/001872097778543886",
+    "verification_urls": [
+      "https://journals.sagepub.com/doi/pdf/10.1518/001872097778543886"
+    ],
+    "access_depth": "Abstract and bibliographic metadata inspected; no full-text claim",
+    "contribution": "Distinguishes appropriate automation use from overreliance, underuse, and design-induced misuse.",
+    "key_findings": "False alarms can produce disuse; reliability, workload, and system design interact in reliance decisions.",
+    "importance": "Explains why both overtrust and blanket skepticism must be failure modes.",
+    "relevance": "The original hidden veto and controller handshake can manufacture apparent agent failures through system design.",
+    "transferable_idea": "Build symmetric controls and manipulate the history of checker reliability, while separately auditing the controller's contribution.",
+    "limitations": "Human-factors categories are analytical analogies here. An agent changing code after FAIL does not by itself prove trust, complacency, or a human cognitive bias.",
+    "verified_date": "2026-11-16"
+  },
+  {
+    "id": "C39",
+    "title": "Ironies of automation",
+    "authors": "Lisanne Bainbridge",
+    "year": 1983,
+    "venue": "Automatica 19(6):775–779",
+    "status": "peer-reviewed",
+    "url": "https://doi.org/10.1016/0005-1098(83)90046-8",
+    "verification_urls": [
+      "https://www.sciencedirect.com/science/article/pii/0005109883900468/pdf?md5=63dee2ce59531b69680a4af83c53cd3d&pid=1-s2.0-0005109883900468-main.pdf"
+    ],
+    "access_depth": "Abstract and bibliographic metadata inspected; no full-text claim",
+    "contribution": "Argues that automation can leave operators with difficult abnormal situations rather than remove their burden.",
+    "key_findings": "Automating routine control can expand monitoring and recovery problems at the human–machine boundary.",
+    "importance": "Suggests evaluating the whole repair-and-check system instead of attributing every outcome to the model.",
+    "relevance": "The draft's delayed stop handshake and hidden veto are failures of the surrounding automation that distort behavioral labels.",
+    "transferable_idea": "Use scripted agents to isolate controller behavior, then compare complete systems under matched failure conditions and recovery interfaces.",
+    "limitations": "The article is a conceptual analysis of industrial automation, not a benchmark of language-model agents or an estimate of their error rates.",
+    "verified_date": "2026-11-16"
+  },
+  {
+    "id": "C40",
+    "title": "The role of trust in automation reliance",
+    "authors": "Mary T. Dzindolet; Scott A. Peterson; Regina A. Pomranky; Linda G. Pierce; Hall P. Beck",
+    "year": 2003,
+    "venue": "International Journal of Human-Computer Studies 58(6):697–718",
+    "status": "peer-reviewed",
+    "url": "https://doi.org/10.1016/S1071-5819(03)00038-7",
+    "verification_urls": [
+      "https://www.sciencedirect.com/science/article/pii/S1071581903000387"
+    ],
+    "access_depth": "Publisher abstract and study/discussion excerpts inspected",
+    "contribution": "Experimentally studies reliability, trust, and reliance on an automated decision aid.",
+    "key_findings": "Explaining why an aid might err increased reliance, including situations in which that trust was unwarranted.",
+    "importance": "A counterintuitive warning that more explanation does not necessarily produce better calibrated decisions.",
+    "relevance": "The current diagnostic-feedback condition changes wording, but explanation plausibility and evidential validity are not disentangled.",
+    "transferable_idea": "Cross verdict truth with evidence validity, using plausible but invalid explanations and verifiable counterexamples; measure whether agents track evidence or persuasive form.",
+    "limitations": "These are human experiments on a visual-detection task. They motivate an LLM hypothesis, not a direct prediction of the same effect.",
+    "verified_date": "2026-11-16"
+  },
+  {
+    "id": "C41",
+    "title": "Algorithm aversion: People erroneously avoid algorithms after seeing them err",
+    "authors": "Berkeley J. Dietvorst; Joseph P. Simmons; Cade Massey",
+    "year": 2015,
+    "venue": "Journal of Experimental Psychology: General 144(1):114–126",
+    "status": "peer-reviewed",
+    "url": "https://doi.org/10.1037/xge0000033",
+    "verification_urls": [
+      "https://pubmed.ncbi.nlm.nih.gov/25401381/",
+      "https://supp.apa.org/psycarticles/supplemental/xge0000033/xge0000033_supp.html"
+    ],
+    "access_depth": "Abstract and bibliographic metadata inspected; no full-text claim",
+    "contribution": "Tests how observing algorithmic errors affects willingness to rely on forecasts.",
+    "key_findings": "Across the studied conditions, people can reject superior algorithms after observing their mistakes.",
+    "importance": "Provides a counterweight to the assumption that the only reliance problem is excessive obedience.",
+    "relevance": "A training intervention warning about faulty checkers could make agents reject accurate security warnings.",
+    "transferable_idea": "Include a reliability-history manipulation and measure recovery of reliance when feedback becomes accurate again.",
+    "limitations": "The finding concerns human forecasting choices. Do not diagnose algorithm aversion in an LLM from a few selected repair trajectories or assume the effect is universal.",
+    "verified_date": "2026-11-16"
+  },
+  {
+    "id": "C42",
+    "title": "Algorithm appreciation: People prefer algorithmic to human judgment",
+    "authors": "Jennifer M. Logg; Julia A. Minson; Don A. Moore",
+    "year": 2019,
+    "venue": "Organizational Behavior and Human Decision Processes 151:90–103",
+    "status": "peer-reviewed",
+    "url": "https://doi.org/10.1016/j.obhdp.2018.12.005",
+    "verification_urls": [
+      "https://www.sciencedirect.com/science/article/abs/pii/S0749597818303388",
+      "https://doi.org/10.1016/j.obhdp.2018.12.005"
+    ],
+    "access_depth": "Abstract and bibliographic metadata inspected; no full-text claim",
+    "contribution": "Shows conditions under which people give greater weight to algorithmic than human advice.",
+    "key_findings": "Equivalent advice can have different influence depending on the attributed source.",
+    "importance": "Challenges a universal algorithm-aversion narrative and motivates source-label controls.",
+    "relevance": "A checker branded as authoritative might induce different repair behavior even when its evidence is unchanged.",
+    "transferable_idea": "Randomize neutral source labels independently of verdict and evidence validity, while keeping the same executable counterexample; test whether labels dominate substance.",
+    "limitations": "Human advice weighting is not an LLM mechanism. The experiment would test an analogy, and source-label effects alone would not establish irrationality.",
+    "verified_date": "2026-11-16"
+  },
+  {
+    "id": "C43",
+    "title": "Concrete Problems in AI Safety",
+    "authors": "Dario Amodei; Chris Olah; Jacob Steinhardt; Paul Christiano; John Schulman; Dan Mané",
+    "year": 2016,
+    "venue": "arXiv:1606.06565",
+    "status": "preprint",
+    "url": "https://arxiv.org/abs/1606.06565",
+    "verification_urls": [
+      "https://arxiv.org/abs/1606.06565"
+    ],
+    "access_depth": "arXiv abstract and metadata inspected",
+    "contribution": "Organizes practical AI safety problems around objectives, supervision cost, exploration, and distribution shift.",
+    "key_findings": "Highlights how misspecified objectives and imperfect supervision can create harmful behavior without malicious intent.",
+    "importance": "An influential agenda that already identifies proxy optimization and supervision failures as central problems.",
+    "relevance": "The hidden veto is an imperfect supervisory signal, while weak tests are incomplete operationalizations of desired behavior.",
+    "transferable_idea": "Use the taxonomy to distinguish corrupted feedback from unsafe exploration and from genuine repair inability, with separate experiments for each.",
+    "limitations": "This is an agenda-setting preprint, not evidence of a measured causal effect in code repair and not a source for a security-success rate.",
+    "verified_date": "2026-11-16"
+  },
+  {
+    "id": "C44",
+    "title": "Inverse Reward Design",
+    "authors": "Dylan Hadfield-Menell; Smitha Milli; Pieter Abbeel; Stuart Russell; Anca D. Dragan",
+    "year": 2017,
+    "venue": "NeurIPS 2017",
+    "status": "peer-reviewed",
+    "url": "https://papers.nips.cc/paper_files/paper/2017/hash/32fdab6559cdfa4f167f8c31b9199643-Abstract.html",
+    "verification_urls": [
+      "https://papers.nips.cc/paper_files/paper/2017/hash/32fdab6559cdfa4f167f8c31b9199643-Abstract.html"
+    ],
+    "access_depth": "Abstract and bibliographic metadata inspected; no full-text claim",
+    "contribution": "Treats a designed reward as evidence about intended objectives in the context where the reward was constructed.",
+    "key_findings": "Inferring uncertainty about intended reward can reduce undesirable behavior when moving to new situations.",
+    "importance": "Offers a conceptual alternative to treating checker output as an unquestionable objective.",
+    "relevance": "The hidden veto and narrow tests may conflict with the user's actual security and functionality requirements.",
+    "transferable_idea": "Give agents explicit task contracts and uncertainty about checker scope, then test whether they preserve those contracts when feedback conflicts.",
+    "limitations": "Reward inference in modeled environments differs from interpreting a security test; the transfer must not become a license to ignore valid specifications.",
+    "verified_date": "2026-11-16"
+  },
+  {
+    "id": "C45",
+    "title": "Reinforcement Learning with a Corrupted Reward Channel",
+    "authors": "Tom Everitt; Victoria Krakovna; Laurent Orseau; Marcus Hutter; Shane Legg",
+    "year": 2017,
+    "venue": "IJCAI 2017, AI and Autonomy Track:4705–4713",
+    "status": "peer-reviewed",
+    "url": "https://doi.org/10.24963/ijcai.2017/656",
+    "verification_urls": [
+      "https://www.ijcai.org/proceedings/2017/656",
+      "https://www.ijcai.org/proceedings/2017/0656.pdf"
+    ],
+    "access_depth": "Official proceedings abstract and primary-paper introduction inspected",
+    "contribution": "Formalizes reinforcement learning when observed reward differs systematically from the intended reward.",
+    "key_findings": "Standard reinforcement learning can perform poorly even under simplified corruption; richer evidence or limited optimization can help under assumptions.",
+    "importance": "A close theoretical antecedent for separating true properties from delivered feedback.",
+    "relevance": "The veto changes the feedback channel independently of code quality, though the evaluated agent is not trained online by RL.",
+    "transferable_idea": "Represent checker corruption separately from program state and measure when an extra information source can identify the faulty channel.",
+    "limitations": "Exogenous corruption is not necessarily deliberate reward hacking. The PDF footnote credits Hutter as fourth author despite his omission from the proceedings listing.",
+    "verified_date": "2026-11-16"
+  },
+  {
+    "id": "C46",
+    "title": "Defining and Characterizing Reward Gaming",
+    "authors": "Joar Skalse; Nikolaus H. R. Howe; Dmitrii Krasheninnikov; David Krueger",
+    "year": 2022,
+    "venue": "NeurIPS 2022",
+    "status": "peer-reviewed",
+    "url": "https://papers.nips.cc/paper_files/paper/2022/hash/3d719fee332caa23d5038b8a90e81796-Abstract-Conference.html",
+    "verification_urls": [
+      "https://papers.nips.cc/paper_files/paper/2022/hash/3d719fee332caa23d5038b8a90e81796-Abstract-Conference.html",
+      "https://proceedings.neurips.cc/paper_files/paper/2022/file/3d719fee332caa23d5038b8a90e81796-Paper-Conference.pdf"
+    ],
+    "access_depth": "Official abstract and primary-paper abstract/introduction inspected",
+    "contribution": "Formalizes conditions under which optimizing a proxy reward can worsen a true reward.",
+    "key_findings": "Unhackability is highly restrictive across broad policy classes; restricted policy sets permit different relationships.",
+    "importance": "Prevents treating proxy alignment as obvious merely because a benchmark works on a few examples.",
+    "relevance": "The finite-mode suites restrict policy classes, while real Python repair admits many more ways to satisfy shallow checks.",
+    "transferable_idea": "Test whether apparent feedback robustness survives expansion from fixed modes to richer executable programs, with independently validated outcomes.",
+    "limitations": "The official landing title says Reward Gaming; the linked manuscript says Reward Hacking. Neither theorem directly characterizes LLM repair trajectories.",
+    "verified_date": "2026-11-16"
+  },
+  {
+    "id": "C47",
+    "title": "Scaling Laws for Reward Model Overoptimization",
+    "authors": "Leo Gao; John Schulman; Jacob Hilton",
+    "year": 2023,
+    "venue": "ICML 2023, PMLR 202:10835–10866",
+    "status": "peer-reviewed",
+    "url": "https://proceedings.mlr.press/v202/gao23h.html",
+    "verification_urls": [
+      "https://proceedings.mlr.press/v202/gao23h.html"
+    ],
+    "access_depth": "Abstract and bibliographic metadata inspected; no full-text claim",
+    "contribution": "Measures how optimization against an imperfect learned reward can reduce performance under a separate gold-standard reward model.",
+    "key_findings": "Different optimization procedures exhibit different relationships between optimization strength and gold-model score.",
+    "importance": "Suggests that more search or more model capability need not monotonically improve the underlying objective.",
+    "relevance": "The repair loop optimizes against finite feedback, so increased edit budget could amplify evaluator weaknesses.",
+    "transferable_idea": "Vary optimization budget and checker quality jointly, measuring the full trajectory of security and functionality rather than terminal acceptance alone.",
+    "limitations": "The gold reward is itself a synthetic model proxy; these scaling relationships are not expected numerical laws for security repair.",
+    "verified_date": "2026-11-16"
+  },
+  {
+    "id": "C48",
+    "title": "Constrained Policy Optimization",
+    "authors": "Joshua Achiam; David Held; Aviv Tamar; Pieter Abbeel",
+    "year": 2017,
+    "venue": "ICML 2017, PMLR 70:22–31",
+    "status": "peer-reviewed",
+    "url": "https://proceedings.mlr.press/v70/achiam17a.html",
+    "verification_urls": [
+      "https://proceedings.mlr.press/v70/achiam17a"
+    ],
+    "access_depth": "Abstract and bibliographic metadata inspected; no full-text claim",
+    "contribution": "Optimizes reinforcement-learning policies with explicit constraints alongside reward.",
+    "key_findings": "Provides near-constraint-satisfaction guarantees under the analysis and demonstrates constrained control on simulated locomotion tasks.",
+    "importance": "Illustrates why security constraints should not disappear inside a single scalar task score.",
+    "relevance": "The current oracle-insecure label merges harmful acceptance and unnecessary denial, which can move in opposite directions.",
+    "transferable_idea": "Specify security constraints and a separate usefulness objective; report both and state any utility weights instead of choosing them after results.",
+    "limitations": "The algorithm and its guarantees do not transfer directly to black-box code editing; use the constrained formulation as a design principle.",
+    "verified_date": "2026-11-16"
+  },
+  {
+    "id": "C49",
+    "title": "A Comprehensive Survey on Safe Reinforcement Learning",
+    "authors": "Javier García; Fernando Fernández",
+    "year": 2015,
+    "venue": "Journal of Machine Learning Research 16:1437–1480",
+    "status": "peer-reviewed",
+    "url": "https://jmlr.org/papers/v16/garcia15a.html",
+    "verification_urls": [
+      "https://www.jmlr.org/beta/papers/v16/garcia15a.html"
+    ],
+    "access_depth": "Abstract and bibliographic metadata inspected; no full-text claim",
+    "contribution": "Organizes safe reinforcement-learning approaches by changes to the objective and changes to exploration.",
+    "key_findings": "Separates safety during learning from safety during later deployment, including external guidance and risk-sensitive criteria.",
+    "importance": "Useful for distinguishing exploratory unsafe candidates from the final deployed artifact.",
+    "relevance": "The manuscript already observes temporary failures whose direction differs from terminal regression counts.",
+    "transferable_idea": "Report any-time unsafe behavior, duration until recovery, and terminal correctness as distinct outcomes; decide whether attempted code is executed or only evaluated.",
+    "limitations": "This survey supplies a taxonomy rather than new causal evidence. Its safety definitions are domain-dependent and should not be imported without an explicit threat model.",
+    "verified_date": "2026-11-16"
+  },
+  {
+    "id": "C50",
+    "title": "Safe Reinforcement Learning via Shielding",
+    "authors": "Mohammed Alshiekh; Roderick Bloem; Rüdiger Ehlers; Bettina Könighofer; Scott Niekum; Ufuk Topcu",
+    "year": 2018,
+    "venue": "AAAI 2018, 32(1)",
+    "status": "peer-reviewed",
+    "url": "https://doi.org/10.1609/aaai.v32i1.11797",
+    "verification_urls": [
+      "https://ojs.aaai.org/index.php/AAAI/article/view/11797"
+    ],
+    "access_depth": "Abstract and bibliographic metadata inspected; no full-text claim",
+    "contribution": "Synthesizes a reactive shield that modifies proposed actions when necessary to enforce temporal-logic requirements.",
+    "key_findings": "Demonstrates a way to combine learning with specification-based protection under explicit model assumptions.",
+    "importance": "Provides a meaningful stronger baseline than merely asking an agent to be cautious.",
+    "relevance": "The paper's paired continuations could compare optional advice with an enforcement mechanism that preserves validated properties.",
+    "transferable_idea": "Keep an independently validated candidate and prevent replacement unless security and functionality checks pass; measure when this conservative baseline blocks useful repairs.",
+    "limitations": "A shield inherits specification errors and model limitations. The contribution cannot be simply claiming that an external guard is new or guarantees general code security.",
+    "verified_date": "2026-11-16"
+  }
+]

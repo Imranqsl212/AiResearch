@@ -1,0 +1,924 @@
+{
+  "review_date": "2026-11-16",
+  "scope": "50 adjacent-foundation academic papers; primary-source verification with explicit access limits",
+  "method": "Targeted interdisciplinary review, not a systematic review or full-text review of all sources. Notes are paraphrased; official bibliographic metadata and links retained.",
+  "papers": [
+    {
+      "id": "C01",
+      "title": "Estimating causal effects of treatments in randomized and nonrandomized studies",
+      "authors": "Donald B. Rubin",
+      "year": 1974,
+      "venue": "Journal of Educational Psychology 66(5):688–701",
+      "status": "peer-reviewed",
+      "official_url": "https://doi.org/10.1037/h0037350",
+      "verification_urls": [
+        "https://doi.org/10.1037/h0037350",
+        "https://www.mimuw.edu.pl/~noble/courses/BayesianNetworks/74RUBIN.pdf"
+      ],
+      "access_depth": "Abstract and bibliographic metadata inspected; no full-text claim",
+      "verified_date": "2026-11-16",
+      "evidence_type": "Theory/methodology (some papers also provide empirical illustrations)",
+      "verification_note": "Scholarly publication record and bibliographic metadata verified at the listed source(s). The inspected content supports the contribution summarized in the annotated bibliography; access limits are explicit.",
+      "verified_scope": "Randomization is preferred when feasible; observational adjustment requires explicit conditions rather than treating association as intervention.",
+      "interpretation_boundary": "Relevance and transferable ideas are reviewer interpretations for this manuscript, not findings of the source paper."
+    },
+    {
+      "id": "C02",
+      "title": "Statistics and Causal Inference",
+      "authors": "Paul W. Holland",
+      "year": 1986,
+      "venue": "Journal of the American Statistical Association 81(396):945–960",
+      "status": "peer-reviewed",
+      "official_url": "https://doi.org/10.1080/01621459.1986.10478354",
+      "verification_urls": [
+        "https://www.cs.columbia.edu/~blei/fogm/2020F/readings/Holland1986.pdf",
+        "https://ics.uci.edu/~sternh/courses/265/holland_jasa1986.pdf"
+      ],
+      "access_depth": "Primary full-text introduction and potential-outcome sections inspected",
+      "verified_date": "2026-11-16",
+      "evidence_type": "Theory/methodology (some papers also provide empirical illustrations)",
+      "verification_note": "Scholarly publication record and bibliographic metadata verified at the listed source(s). The inspected content supports the contribution summarized in the annotated bibliography; access limits are explicit.",
+      "verified_scope": "Individual counterfactual contrasts require assumptions; randomized assignment supports population-average contrasts under a defined design.",
+      "interpretation_boundary": "Relevance and transferable ideas are reviewer interpretations for this manuscript, not findings of the source paper."
+    },
+    {
+      "id": "C03",
+      "title": "The central role of the propensity score in observational studies for causal effects",
+      "authors": "Paul R. Rosenbaum; Donald B. Rubin",
+      "year": 1983,
+      "venue": "Biometrika 70(1):41–55",
+      "status": "peer-reviewed",
+      "official_url": "https://doi.org/10.1093/biomet/70.1.41",
+      "verification_urls": [
+        "https://academic.oup.com/biomet/article-abstract/70/1/41/240879?login=true"
+      ],
+      "access_depth": "Abstract and bibliographic metadata inspected; no full-text claim",
+      "verified_date": "2026-11-16",
+      "evidence_type": "Theory/methodology (some papers also provide empirical illustrations)",
+      "verification_note": "Scholarly publication record and bibliographic metadata verified at the listed source(s). The inspected content supports the contribution summarized in the annotated bibliography; access limits are explicit.",
+      "verified_scope": "Balancing the propensity score can remove observed-covariate imbalance under the paper's assumptions; it cannot remove unmeasured confounding.",
+      "interpretation_boundary": "Relevance and transferable ideas are reviewer interpretations for this manuscript, not findings of the source paper."
+    },
+    {
+      "id": "C04",
+      "title": "Principal Stratification in Causal Inference",
+      "authors": "Constantine E. Frangakis; Donald B. Rubin",
+      "year": 2002,
+      "venue": "Biometrics 58(1):21–29",
+      "status": "peer-reviewed",
+      "official_url": "https://doi.org/10.1111/j.0006-341X.2002.00021.x",
+      "verification_urls": [
+        "https://academic.oup.com/biometrics/article-abstract/58/1/21/7276023",
+        "https://www.biostat.jhsph.edu/~cfrangak/papers/preffects.pdf"
+      ],
+      "access_depth": "Abstract and bibliographic metadata inspected; no full-text claim",
+      "verified_date": "2026-11-16",
+      "evidence_type": "Theory/methodology (some papers also provide empirical illustrations)",
+      "verification_note": "Scholarly publication record and bibliographic metadata verified at the listed source(s). The inspected content supports the contribution summarized in the annotated bibliography; access limits are explicit.",
+      "verified_scope": "Ordinary adjustment for post-treatment variables can lack causal interpretation; principal strata are unaffected by realized assignment.",
+      "interpretation_boundary": "Relevance and transferable ideas are reviewer interpretations for this manuscript, not findings of the source paper."
+    },
+    {
+      "id": "C05",
+      "title": "A structural approach to selection bias",
+      "authors": "Miguel A. Hernán; Sonia Hernández-Díaz; James M. Robins",
+      "year": 2004,
+      "venue": "Epidemiology 15(5):615–625",
+      "status": "peer-reviewed",
+      "official_url": "https://doi.org/10.1097/01.ede.0000135174.63482.43",
+      "verification_urls": [
+        "https://pubmed.ncbi.nlm.nih.gov/15308962/"
+      ],
+      "access_depth": "Abstract and bibliographic metadata inspected; no full-text claim",
+      "verified_date": "2026-11-16",
+      "evidence_type": "Theory/methodology (some papers also provide empirical illustrations)",
+      "verification_note": "Scholarly publication record and bibliographic metadata verified at the listed source(s). The inspected content supports the contribution summarized in the annotated bibliography; access limits are explicit.",
+      "verified_scope": "Selection and confounding have different causal structures and therefore require different remedies.",
+      "interpretation_boundary": "Relevance and transferable ideas are reviewer interpretations for this manuscript, not findings of the source paper."
+    },
+    {
+      "id": "C06",
+      "title": "Pseudoreplication and the Design of Ecological Field Experiments",
+      "authors": "Stuart H. Hurlbert",
+      "year": 1984,
+      "venue": "Ecological Monographs 54(2):187–211",
+      "status": "peer-reviewed",
+      "official_url": "https://doi.org/10.2307/1942661",
+      "verification_urls": [
+        "https://esajournals.onlinelibrary.wiley.com/doi/10.2307/1942661"
+      ],
+      "access_depth": "Abstract and bibliographic metadata inspected; no full-text claim",
+      "verified_date": "2026-11-16",
+      "evidence_type": "Theory/methodology (some papers also provide empirical illustrations)",
+      "verification_note": "Scholarly publication record and bibliographic metadata verified at the listed source(s). The inspected content supports the contribution summarized in the annotated bibliography; access limits are explicit.",
+      "verified_scope": "Non-independent observations and unreplicated treatments can produce inappropriate error terms; spatial or temporal interspersion matters.",
+      "interpretation_boundary": "Relevance and transferable ideas are reviewer interpretations for this manuscript, not findings of the source paper."
+    },
+    {
+      "id": "C07",
+      "title": "The Language-as-Fixed-Effect Fallacy: A Critique of Language Statistics in Psychological Research",
+      "authors": "Herbert H. Clark",
+      "year": 1973,
+      "venue": "Journal of Verbal Learning and Verbal Behavior 12(4):335–359",
+      "status": "peer-reviewed",
+      "official_url": "https://doi.org/10.1016/S0022-5371(73)80014-3",
+      "verification_urls": [
+        "https://web.stanford.edu/~clark/1970s/Clark%2C%20H.H.%20_Language%20as%20fixed%20effect%20fallacy_%201973.pdf"
+      ],
+      "access_depth": "Indexed primary-paper abstract and opening section inspected",
+      "verified_date": "2026-11-16",
+      "evidence_type": "Theory/methodology (some papers also provide empirical illustrations)",
+      "verification_note": "Scholarly publication record and bibliographic metadata verified at the listed source(s). The inspected content supports the contribution summarized in the annotated bibliography; access limits are explicit.",
+      "verified_scope": "Treating sampled materials as fixed can support stronger generalization than the data warrant.",
+      "interpretation_boundary": "Relevance and transferable ideas are reviewer interpretations for this manuscript, not findings of the source paper."
+    },
+    {
+      "id": "C08",
+      "title": "Random effects structure for confirmatory hypothesis testing: Keep it maximal",
+      "authors": "Dale J. Barr; Roger Levy; Christoph Scheepers; Harry J. Tily",
+      "year": 2013,
+      "venue": "Journal of Memory and Language 68(3):255–278",
+      "status": "peer-reviewed",
+      "official_url": "https://doi.org/10.1016/j.jml.2012.11.001",
+      "verification_urls": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC3881361/"
+      ],
+      "access_depth": "Primary author-manuscript metadata and indexed methods/discussion excerpts inspected",
+      "verified_date": "2026-11-16",
+      "evidence_type": "Computational methods and experiments",
+      "verification_note": "Scholarly publication record and bibliographic metadata verified at the listed source(s). The inspected content supports the contribution summarized in the annotated bibliography; access limits are explicit.",
+      "verified_scope": "Simulations show that omitting relevant random slopes can compromise generalization and Type I error control.",
+      "interpretation_boundary": "Relevance and transferable ideas are reviewer interpretations for this manuscript, not findings of the source paper."
+    },
+    {
+      "id": "C09",
+      "title": "The Hitchhiker’s Guide to Testing Statistical Significance in Natural Language Processing",
+      "authors": "Rotem Dror; Gili Baumer; Segev Shlomov; Roi Reichart",
+      "year": 2018,
+      "venue": "ACL 2018, Long Papers:1383–1392",
+      "status": "peer-reviewed",
+      "official_url": "https://aclanthology.org/P18-1128/",
+      "verification_urls": [
+        "https://aclanthology.org/P18-1128/"
+      ],
+      "access_depth": "Abstract and bibliographic metadata inspected; no full-text claim",
+      "verified_date": "2026-11-16",
+      "evidence_type": "Review, critique, taxonomy, or methodological synthesis",
+      "verification_note": "Scholarly publication record and bibliographic metadata verified at the listed source(s). The inspected content supports the contribution summarized in the annotated bibliography; access limits are explicit.",
+      "verified_scope": "Test choice depends on the evaluation measure, pairing, distributional assumptions, and intended comparison.",
+      "interpretation_boundary": "Relevance and transferable ideas are reviewer interpretations for this manuscript, not findings of the source paper."
+    },
+    {
+      "id": "C10",
+      "title": "Statistical Comparisons of Classifiers over Multiple Data Sets",
+      "authors": "Janez Demšar",
+      "year": 2006,
+      "venue": "Journal of Machine Learning Research 7:1–30",
+      "status": "peer-reviewed",
+      "official_url": "https://jmlr.org/papers/v7/demsar06a.html",
+      "verification_urls": [
+        "https://www.jmlr.org/beta/papers/v7/demsar06a.html"
+      ],
+      "access_depth": "Abstract and bibliographic metadata inspected; no full-text claim",
+      "verified_date": "2026-11-16",
+      "evidence_type": "Theory/methodology (some papers also provide empirical illustrations)",
+      "verification_note": "Scholarly publication record and bibliographic metadata verified at the listed source(s). The inspected content supports the contribution summarized in the annotated bibliography; access limits are explicit.",
+      "verified_scope": "Recommends paired nonparametric comparisons and multi-method procedures under the examined conditions.",
+      "interpretation_boundary": "Relevance and transferable ideas are reviewer interpretations for this manuscript, not findings of the source paper."
+    },
+    {
+      "id": "C11",
+      "title": "On Over-fitting in Model Selection and Subsequent Selection Bias in Performance Evaluation",
+      "authors": "Gavin C. Cawley; Nicola L. C. Talbot",
+      "year": 2010,
+      "venue": "Journal of Machine Learning Research 11:2079–2107",
+      "status": "peer-reviewed",
+      "official_url": "https://jmlr.org/papers/v11/cawley10a.html",
+      "verification_urls": [
+        "https://www.jmlr.org/beta/papers/v11/cawley10a.html"
+      ],
+      "access_depth": "Abstract and bibliographic metadata inspected; no full-text claim",
+      "verified_date": "2026-11-16",
+      "evidence_type": "Theory/methodology (some papers also provide empirical illustrations)",
+      "verification_note": "Scholarly publication record and bibliographic metadata verified at the listed source(s). The inspected content supports the contribution summarized in the annotated bibliography; access limits are explicit.",
+      "verified_scope": "Selection-induced performance distortion can be comparable to apparent differences between algorithms.",
+      "interpretation_boundary": "Relevance and transferable ideas are reviewer interpretations for this manuscript, not findings of the source paper."
+    },
+    {
+      "id": "C12",
+      "title": "The reusable holdout: Preserving validity in adaptive data analysis",
+      "authors": "Cynthia Dwork; Vitaly Feldman; Moritz Hardt; Toniann Pitassi; Omer Reingold; Aaron Roth",
+      "year": 2015,
+      "venue": "Science 349(6248):636–638",
+      "status": "peer-reviewed",
+      "official_url": "https://doi.org/10.1126/science.aaa9375",
+      "verification_urls": [
+        "https://pubmed.ncbi.nlm.nih.gov/26250683/"
+      ],
+      "access_depth": "Abstract and bibliographic metadata inspected; no full-text claim",
+      "verified_date": "2026-11-16",
+      "evidence_type": "Theory/methodology (some papers also provide empirical illustrations)",
+      "verification_note": "Scholarly publication record and bibliographic metadata verified at the listed source(s). The inspected content supports the contribution summarized in the annotated bibliography; access limits are explicit.",
+      "verified_scope": "Repeated access to evaluation data can invalidate ordinary fixed-analysis reasoning; carefully controlled access can limit that problem.",
+      "interpretation_boundary": "Relevance and transferable ideas are reviewer interpretations for this manuscript, not findings of the source paper."
+    },
+    {
+      "id": "C13",
+      "title": "Time-uniform, nonparametric, nonasymptotic confidence sequences",
+      "authors": "Steven R. Howard; Aaditya Ramdas; Jon McAuliffe; Jasjeet Sekhon",
+      "year": 2021,
+      "venue": "The Annals of Statistics 49(2):1055–1080",
+      "status": "peer-reviewed",
+      "official_url": "https://doi.org/10.1214/20-AOS1991",
+      "verification_urls": [
+        "https://arxiv.org/abs/1810.08240"
+      ],
+      "access_depth": "Abstract and bibliographic metadata inspected; no full-text claim",
+      "verified_date": "2026-11-16",
+      "evidence_type": "Theory/methodology (some papers also provide empirical illustrations)",
+      "verification_note": "Scholarly publication record and bibliographic metadata verified at the listed source(s). The inspected content supports the contribution summarized in the annotated bibliography; access limits are explicit.",
+      "verified_scope": "Supports sequential estimation without pretending that the stopping sample size was fixed in advance.",
+      "interpretation_boundary": "Relevance and transferable ideas are reviewer interpretations for this manuscript, not findings of the source paper."
+    },
+    {
+      "id": "C14",
+      "title": "Deep Reinforcement Learning at the Edge of the Statistical Precipice",
+      "authors": "Rishabh Agarwal; Max Schwarzer; Pablo Samuel Castro; Aaron C. Courville; Marc G. Bellemare",
+      "year": 2021,
+      "venue": "NeurIPS 2021",
+      "status": "peer-reviewed",
+      "official_url": "https://papers.nips.cc/paper/2021/hash/f514cec81cb148559cf475e7426eed5e-Abstract.html",
+      "verification_urls": [
+        "https://papers.nips.cc/paper/2021/hash/f514cec81cb148559cf475e7426eed5e-Abstract.html"
+      ],
+      "access_depth": "Abstract and bibliographic metadata inspected; no full-text claim",
+      "verified_date": "2026-11-16",
+      "evidence_type": "Computational methods and experiments",
+      "verification_note": "Scholarly publication record and bibliographic metadata verified at the listed source(s). The inspected content supports the contribution summarized in the annotated bibliography; access limits are explicit.",
+      "verified_scope": "Interval estimates, performance profiles, and robust aggregates can reveal uncertainty hidden by point estimates.",
+      "interpretation_boundary": "Relevance and transferable ideas are reviewer interpretations for this manuscript, not findings of the source paper."
+    },
+    {
+      "id": "C15",
+      "title": "Construct Validity in Psychological Tests",
+      "authors": "Lee J. Cronbach; Paul E. Meehl",
+      "year": 1955,
+      "venue": "Psychological Bulletin 52:281–302",
+      "status": "peer-reviewed",
+      "official_url": "https://doi.org/10.1037/h0040957",
+      "verification_urls": [
+        "https://meehl.umn.edu/sites/meehl.umn.edu/files/files/036constructvalidityidx.pdf"
+      ],
+      "access_depth": "Primary-paper opening conceptual sections inspected",
+      "verified_date": "2026-11-16",
+      "evidence_type": "Theory/methodology (some papers also provide empirical illustrations)",
+      "verification_note": "Scholarly publication record and bibliographic metadata verified at the listed source(s). The inspected content supports the contribution summarized in the annotated bibliography; access limits are explicit.",
+      "verified_scope": "Validation requires a network of justified relationships between the construct and its operational measures.",
+      "interpretation_boundary": "Relevance and transferable ideas are reviewer interpretations for this manuscript, not findings of the source paper."
+    },
+    {
+      "id": "C16",
+      "title": "Convergent and discriminant validation by the multitrait-multimethod matrix",
+      "authors": "Donald T. Campbell; Donald W. Fiske",
+      "year": 1959,
+      "venue": "Psychological Bulletin 56(2):81–105",
+      "status": "peer-reviewed",
+      "official_url": "https://doi.org/10.1037/h0046016",
+      "verification_urls": [
+        "https://pubmed.ncbi.nlm.nih.gov/13634291/",
+        "https://users.cla.umn.edu/~nwaller/prelim/campbelfiskemtmm.pdf"
+      ],
+      "access_depth": "Primary-paper opening section and bibliographic record inspected",
+      "verified_date": "2026-11-16",
+      "evidence_type": "Theory/methodology (some papers also provide empirical illustrations)",
+      "verification_note": "Scholarly publication record and bibliographic metadata verified at the listed source(s). The inspected content supports the contribution summarized in the annotated bibliography; access limits are explicit.",
+      "verified_scope": "Construct validation needs both convergence and discrimination; repeated use of one method can create misleading consistency.",
+      "interpretation_boundary": "Relevance and transferable ideas are reviewer interpretations for this manuscript, not findings of the source paper."
+    },
+    {
+      "id": "C17",
+      "title": "Measurement and Fairness",
+      "authors": "Abigail Z. Jacobs; Hanna Wallach",
+      "year": 2021,
+      "venue": "ACM FAccT 2021",
+      "status": "peer-reviewed",
+      "official_url": "https://doi.org/10.1145/3442188.3445901",
+      "verification_urls": [
+        "https://arxiv.org/abs/1912.05511"
+      ],
+      "access_depth": "Abstract and bibliographic metadata inspected; no full-text claim",
+      "verified_date": "2026-11-16",
+      "evidence_type": "Theory/methodology (some papers also provide empirical illustrations)",
+      "verification_note": "Scholarly publication record and bibliographic metadata verified at the listed source(s). The inspected content supports the contribution summarized in the annotated bibliography; access limits are explicit.",
+      "verified_scope": "Harms can arise from mismatches between a construct and the measurable proxy used to operationalize it.",
+      "interpretation_boundary": "Relevance and transferable ideas are reviewer interpretations for this manuscript, not findings of the source paper."
+    },
+    {
+      "id": "C18",
+      "title": "AI and the Everything in the Whole Wide World Benchmark",
+      "authors": "Inioluwa Deborah Raji; Emily M. Bender; Amandalynne Paullada; Emily Denton; Alex Hanna",
+      "year": 2021,
+      "venue": "NeurIPS 2021 Datasets and Benchmarks Track",
+      "status": "peer-reviewed",
+      "official_url": "https://arxiv.org/abs/2111.15366",
+      "verification_urls": [
+        "https://arxiv.org/abs/2111.15366"
+      ],
+      "access_depth": "Abstract and bibliographic metadata inspected; no full-text claim",
+      "verified_date": "2026-11-16",
+      "evidence_type": "Review, critique, taxonomy, or methodological synthesis",
+      "verification_note": "Scholarly publication record and bibliographic metadata verified at the listed source(s). The inspected content supports the contribution summarized in the annotated bibliography; access limits are explicit.",
+      "verified_scope": "Benchmark framing can exceed the construct validity supplied by particular tasks and scoring rules.",
+      "interpretation_boundary": "Relevance and transferable ideas are reviewer interpretations for this manuscript, not findings of the source paper."
+    },
+    {
+      "id": "C19",
+      "title": "The Benchmark Lottery",
+      "authors": "Mostafa Dehghani; Yi Tay; Alexey A. Gritsenko; Zhe Zhao; Neil Houlsby; Fernando Diaz; Donald Metzler; Oriol Vinyals",
+      "year": 2021,
+      "venue": "arXiv:2107.07002",
+      "status": "preprint",
+      "official_url": "https://arxiv.org/abs/2107.07002",
+      "verification_urls": [
+        "https://arxiv.org/abs/2107.07002",
+        "https://openreview.net/pdf?id=5Str2l1vmr-"
+      ],
+      "access_depth": "arXiv abstract/metadata and indexed submitted-manuscript header inspected",
+      "verified_date": "2026-11-16",
+      "evidence_type": "Review, critique, taxonomy, or methodological synthesis",
+      "verification_note": "Author manuscript and arXiv metadata verified. No peer-reviewed acceptance established; retained as preprint.",
+      "verified_scope": "Changing the selected tasks can substantially change relative rankings across several ML domains.",
+      "interpretation_boundary": "Relevance and transferable ideas are reviewer interpretations for this manuscript, not findings of the source paper."
+    },
+    {
+      "id": "C20",
+      "title": "Leakage and the reproducibility crisis in machine-learning-based science",
+      "authors": "Sayash Kapoor; Arvind Narayanan",
+      "year": 2023,
+      "venue": "Patterns 4(9):100804",
+      "status": "peer-reviewed",
+      "official_url": "https://doi.org/10.1016/j.patter.2023.100804",
+      "verification_urls": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC10499856/"
+      ],
+      "access_depth": "Primary full-text summary, taxonomy, and discussion excerpts inspected",
+      "verified_date": "2026-11-16",
+      "evidence_type": "Review, critique, taxonomy, or methodological synthesis",
+      "verification_note": "Scholarly publication record and bibliographic metadata verified at the listed source(s). The inspected content supports the contribution summarized in the annotated bibliography; access limits are explicit.",
+      "verified_scope": "A reproducibility case study removes claimed superiority of complex models after methodological errors are corrected.",
+      "interpretation_boundary": "Relevance and transferable ideas are reviewer interpretations for this manuscript, not findings of the source paper."
+    },
+    {
+      "id": "C21",
+      "title": "Statistical Comparisons of Classifiers by Generalized Stochastic Dominance",
+      "authors": "Christoph Jansen; Malte Nalenz; Georg Schollmeyer; Thomas Augustin",
+      "year": 2023,
+      "venue": "Journal of Machine Learning Research 24(231):1–37",
+      "status": "peer-reviewed",
+      "official_url": "https://jmlr.org/papers/v24/22-0902.html",
+      "verification_urls": [
+        "https://jmlr.org/beta/papers/v24/22-0902.html"
+      ],
+      "access_depth": "Abstract and bibliographic metadata inspected; no full-text claim",
+      "verified_date": "2026-11-16",
+      "evidence_type": "Theory/methodology (some papers also provide empirical illustrations)",
+      "verification_note": "Scholarly publication record and bibliographic metadata verified at the listed source(s). The inspected content supports the contribution summarized in the annotated bibliography; access limits are explicit.",
+      "verified_scope": "Generalized stochastic dominance can compare performance without committing to a single potentially inconsistent aggregate.",
+      "interpretation_boundary": "Relevance and transferable ideas are reviewer interpretations for this manuscript, not findings of the source paper."
+    },
+    {
+      "id": "C22",
+      "title": "Rational use of cognitive resources in human planning",
+      "authors": "Frederick Callaway; Bas van Opheusden; Sayan Gul; Priyam Das; Paul M. Krueger; Thomas L. Griffiths; Falk Lieder",
+      "year": 2022,
+      "venue": "Nature Human Behaviour 6:1112–1125",
+      "status": "peer-reviewed",
+      "official_url": "https://doi.org/10.1038/s41562-022-01332-8",
+      "verification_urls": [
+        "https://www.nature.com/articles/s41562-022-01332-8",
+        "https://www.nature.com/articles/s41562-022-01411-w"
+      ],
+      "access_depth": "Abstract and bibliographic metadata inspected; no full-text claim",
+      "verified_date": "2026-11-16",
+      "evidence_type": "Human behavioral experiments",
+      "verification_note": "Publisher article and publisher correction verified; author order follows the correction.",
+      "verified_scope": "People adapt planning strategies to circumstances; a single heuristic does not explain every condition.",
+      "interpretation_boundary": "Relevance and transferable ideas are reviewer interpretations for this manuscript, not findings of the source paper."
+    },
+    {
+      "id": "C23",
+      "title": "Safe Reinforcement Learning via Shielding under Partial Observability",
+      "authors": "Steven Carr; Nils Jansen; Sebastian Junges; Ufuk Topcu",
+      "year": 2023,
+      "venue": "AAAI 2023, 37(12):14748–14756",
+      "status": "peer-reviewed",
+      "official_url": "https://doi.org/10.1609/aaai.v37i12.26723",
+      "verification_urls": [
+        "https://ojs.aaai.org/index.php/AAAI/article/view/26723"
+      ],
+      "access_depth": "Abstract and bibliographic metadata inspected; no full-text claim",
+      "verified_date": "2026-11-16",
+      "evidence_type": "Computational methods and experiments",
+      "verification_note": "Scholarly publication record and bibliographic metadata verified at the listed source(s). The inspected content supports the contribution summarized in the annotated bibliography; access limits are explicit.",
+      "verified_scope": "Carefully integrated shields can preserve safety and improve learning performance; some settings permit removing an initially conservative shield.",
+      "interpretation_boundary": "Relevance and transferable ideas are reviewer interpretations for this manuscript, not findings of the source paper."
+    },
+    {
+      "id": "C24",
+      "title": "The Optimal Control of Partially Observable Markov Processes over a Finite Horizon",
+      "authors": "Richard D. Smallwood; Edward J. Sondik",
+      "year": 1973,
+      "venue": "Operations Research 21(5):1071–1088",
+      "status": "peer-reviewed",
+      "official_url": "https://doi.org/10.1287/opre.21.5.1071",
+      "verification_urls": [
+        "https://pubsonline.informs.org/doi/abs/10.1287/opre.21.5.1071"
+      ],
+      "access_depth": "Abstract and bibliographic metadata inspected; no full-text claim",
+      "verified_date": "2026-11-16",
+      "evidence_type": "Theory/methodology (some papers also provide empirical illustrations)",
+      "verification_note": "Scholarly publication record and bibliographic metadata verified at the listed source(s). The inspected content supports the contribution summarized in the annotated bibliography; access limits are explicit.",
+      "verified_scope": "Shows a piecewise-linear, convex optimal payoff over belief states and outlines a policy-computation algorithm.",
+      "interpretation_boundary": "Relevance and transferable ideas are reviewer interpretations for this manuscript, not findings of the source paper."
+    },
+    {
+      "id": "C25",
+      "title": "Planning and acting in partially observable stochastic domains",
+      "authors": "Leslie Pack Kaelbling; Michael L. Littman; Anthony R. Cassandra",
+      "year": 1998,
+      "venue": "Artificial Intelligence 101(1–2):99–134",
+      "status": "peer-reviewed",
+      "official_url": "https://doi.org/10.1016/S0004-3702(98)00023-X",
+      "verification_urls": [
+        "https://www.sciencedirect.com/science/article/pii/S000437029800023X",
+        "https://cs.brown.edu/research/pubs/techreports/reports/CS-96-08.html"
+      ],
+      "access_depth": "Publisher abstract and primary technical-report introduction inspected",
+      "verified_date": "2026-11-16",
+      "evidence_type": "Theory/methodology (some papers also provide empirical illustrations)",
+      "verification_note": "Scholarly publication record and bibliographic metadata verified at the listed source(s). The inspected content supports the contribution summarized in the annotated bibliography; access limits are explicit.",
+      "verified_scope": "Actions can have informational value as well as directly advancing the objective; finite-memory policies are possible in some cases.",
+      "interpretation_boundary": "Relevance and transferable ideas are reviewer interpretations for this manuscript, not findings of the source paper."
+    },
+    {
+      "id": "C26",
+      "title": "Principles of metareasoning",
+      "authors": "Stuart Russell; Eric Wefald",
+      "year": 1991,
+      "venue": "Artificial Intelligence 49(1–3):361–395",
+      "status": "peer-reviewed",
+      "official_url": "https://doi.org/10.1016/0004-3702(91)90015-C",
+      "verification_urls": [
+        "https://www.sciencedirect.com/science/article/pii/000437029190015C"
+      ],
+      "access_depth": "Abstract and bibliographic metadata inspected; no full-text claim",
+      "verified_date": "2026-11-16",
+      "evidence_type": "Theory/methodology (some papers also provide empirical illustrations)",
+      "verification_note": "Scholarly publication record and bibliographic metadata verified at the listed source(s). The inspected content supports the contribution summarized in the annotated bibliography; access limits are explicit.",
+      "verified_scope": "Probability and utility can justify when additional reasoning is worth its resource cost.",
+      "interpretation_boundary": "Relevance and transferable ideas are reviewer interpretations for this manuscript, not findings of the source paper."
+    },
+    {
+      "id": "C27",
+      "title": "Selecting Computations: Theory and Applications",
+      "authors": "Nicholas Hay; Stuart Russell; David Tolpin; Solomon Eyal Shimony",
+      "year": 2012,
+      "venue": "UAI 2012:346–355",
+      "status": "peer-reviewed",
+      "official_url": "https://www.auai.org/uai2012/papers/123.pdf",
+      "verification_urls": [
+        "https://www.auai.org/uai2012/papers/123.pdf",
+        "https://arxiv.org/abs/1207.5879"
+      ],
+      "access_depth": "Abstract and bibliographic metadata inspected; no full-text claim",
+      "verified_date": "2026-11-16",
+      "evidence_type": "Theory/methodology (some papers also provide empirical illustrations)",
+      "verification_note": "Scholarly publication record and bibliographic metadata verified at the listed source(s). The inspected content supports the contribution summarized in the annotated bibliography; access limits are explicit.",
+      "verified_scope": "Derives sampling results and demonstrates that bandit heuristics can be inappropriate for one-shot decisions.",
+      "interpretation_boundary": "Relevance and transferable ideas are reviewer interpretations for this manuscript, not findings of the source paper."
+    },
+    {
+      "id": "C28",
+      "title": "Rational Use of Cognitive Resources: Levels of Analysis Between the Computational and the Algorithmic",
+      "authors": "Thomas L. Griffiths; Falk Lieder; Noah D. Goodman",
+      "year": 2015,
+      "venue": "Topics in Cognitive Science 7(2):217–229",
+      "status": "peer-reviewed",
+      "official_url": "https://doi.org/10.1111/tops.12142",
+      "verification_urls": [
+        "https://onlinelibrary.wiley.com/doi/abs/10.1111/tops.12142",
+        "https://onlinelibrary.wiley.com/doi/full/10.1111/tops.12142"
+      ],
+      "access_depth": "Publisher abstract and selected full-text resource-rationality sections inspected",
+      "verified_date": "2026-11-16",
+      "evidence_type": "Theory/methodology (some papers also provide empirical illustrations)",
+      "verification_note": "Scholarly publication record and bibliographic metadata verified at the listed source(s). The inspected content supports the contribution summarized in the annotated bibliography; access limits are explicit.",
+      "verified_scope": "Apparent departures from unconstrained optimality may follow from rational allocation of limited computational resources.",
+      "interpretation_boundary": "Relevance and transferable ideas are reviewer interpretations for this manuscript, not findings of the source paper."
+    },
+    {
+      "id": "C29",
+      "title": "Balancing Type I error and power in linear mixed models",
+      "authors": "Hannes Matuschek; Reinhold Kliegl; Shravan Vasishth; Harald Baayen; Douglas Bates",
+      "year": 2017,
+      "venue": "Journal of Memory and Language 94:305–315",
+      "status": "peer-reviewed",
+      "official_url": "https://doi.org/10.1016/j.jml.2017.01.001",
+      "verification_urls": [
+        "https://www.sciencedirect.com/science/article/pii/S0749596X17300013",
+        "https://arxiv.org/abs/1511.01864"
+      ],
+      "access_depth": "Abstract and bibliographic metadata inspected; no full-text claim",
+      "verified_date": "2026-11-16",
+      "evidence_type": "Computational methods and experiments",
+      "verification_note": "Scholarly publication record and bibliographic metadata verified at the listed source(s). The inspected content supports the contribution summarized in the annotated bibliography; access limits are explicit.",
+      "verified_scope": "Simulations show that unsupported maximal structures can lose power and that suitable model selection can balance error control and power.",
+      "interpretation_boundary": "Relevance and transferable ideas are reviewer interpretations for this manuscript, not findings of the source paper."
+    },
+    {
+      "id": "C30",
+      "title": "On optimum recognition error and reject tradeoff",
+      "authors": "C. K. Chow",
+      "year": 1970,
+      "venue": "IEEE Transactions on Information Theory 16(1):41–46",
+      "status": "peer-reviewed",
+      "official_url": "https://doi.org/10.1109/TIT.1970.1054406",
+      "verification_urls": [
+        "https://xplorestaging.ieee.org/document/1054406/",
+        "https://dblp.org/rec/journals/tit/Chow70.html",
+        "https://dspace.mit.edu/handle/1721.1/6177"
+      ],
+      "access_depth": "Publisher abstract and bibliographic metadata plus primary MIT report abstract inspected; no full-text claim",
+      "verified_date": "2026-11-16",
+      "evidence_type": "Theory/methodology (some papers also provide empirical illustrations)",
+      "verification_note": "IEEE publisher record verifies the January 1970 volume, issue, pages, DOI, and abstract. MIT report and scholarly bibliographic record corroborate authorship. Journal full text was not inspected.",
+      "verified_scope": "Abstention trades coverage against errors instead of automatically constituting a desirable outcome.",
+      "interpretation_boundary": "Relevance and transferable ideas are reviewer interpretations for this manuscript, not findings of the source paper."
+    },
+    {
+      "id": "C31",
+      "title": "On the Foundations of Noise-free Selective Classification",
+      "authors": "Ran El-Yaniv; Yair Wiener",
+      "year": 2010,
+      "venue": "Journal of Machine Learning Research 11:1605–1641",
+      "status": "peer-reviewed",
+      "official_url": "https://jmlr.org/papers/v11/el-yaniv10a.html",
+      "verification_urls": [
+        "https://jmlr.org/papers/v11/el-yaniv10a.html"
+      ],
+      "access_depth": "Abstract and bibliographic metadata inspected; no full-text claim",
+      "verified_date": "2026-11-16",
+      "evidence_type": "Theory/methodology (some papers also provide empirical illustrations)",
+      "verification_note": "Scholarly publication record and bibliographic metadata verified at the listed source(s). The inspected content supports the contribution summarized in the annotated bibliography; access limits are explicit.",
+      "verified_scope": "Characterizes achievable trade-offs and develops algorithms for noise-free settings.",
+      "interpretation_boundary": "Relevance and transferable ideas are reviewer interpretations for this manuscript, not findings of the source paper."
+    },
+    {
+      "id": "C32",
+      "title": "Selective Classification for Deep Neural Networks",
+      "authors": "Yonatan Geifman; Ran El-Yaniv",
+      "year": 2017,
+      "venue": "NeurIPS 2017",
+      "status": "peer-reviewed",
+      "official_url": "https://papers.nips.cc/paper_files/paper/2017/hash/4a8423d5e91fda00bb7e46540e2b0cf1-Abstract.html",
+      "verification_urls": [
+        "https://papers.nips.cc/paper_files/paper/2017/hash/4a8423d5e91fda00bb7e46540e2b0cf1-Abstract.html"
+      ],
+      "access_depth": "Abstract and bibliographic metadata inspected; no full-text claim",
+      "verified_date": "2026-11-16",
+      "evidence_type": "Computational methods and experiments",
+      "verification_note": "Scholarly publication record and bibliographic metadata verified at the listed source(s). The inspected content supports the contribution summarized in the annotated bibliography; access limits are explicit.",
+      "verified_scope": "Demonstrates useful risk–coverage operating points on image-classification datasets under the method's assumptions.",
+      "interpretation_boundary": "Relevance and transferable ideas are reviewer interpretations for this manuscript, not findings of the source paper."
+    },
+    {
+      "id": "C33",
+      "title": "On Calibration of Modern Neural Networks",
+      "authors": "Chuan Guo; Geoff Pleiss; Yu Sun; Kilian Q. Weinberger",
+      "year": 2017,
+      "venue": "ICML 2017, PMLR 70:1321–1330",
+      "status": "peer-reviewed",
+      "official_url": "https://proceedings.mlr.press/v70/guo17a.html",
+      "verification_urls": [
+        "https://proceedings.mlr.press/v70/guo17a"
+      ],
+      "access_depth": "Abstract and bibliographic metadata inspected; no full-text claim",
+      "verified_date": "2026-11-16",
+      "evidence_type": "Computational methods and experiments",
+      "verification_note": "Scholarly publication record and bibliographic metadata verified at the listed source(s). The inspected content supports the contribution summarized in the annotated bibliography; access limits are explicit.",
+      "verified_scope": "Modern networks can be miscalibrated; temperature scaling is effective on many evaluated datasets.",
+      "interpretation_boundary": "Relevance and transferable ideas are reviewer interpretations for this manuscript, not findings of the source paper."
+    },
+    {
+      "id": "C34",
+      "title": "When Is a Memory Safe Enough to Act On? Action-Conditioned Verification for Long-Lived Agents",
+      "authors": "Yiqi Wang; Yifei Wang; Jiaqi Zhang; Zhangkai Wu; Yiqun Duan; Taotao Cai; Mingkai Zheng",
+      "year": 2026,
+      "venue": "arXiv:2610.31446",
+      "status": "preprint",
+      "official_url": "https://arxiv.org/abs/2610.31446",
+      "verification_urls": [
+        "https://arxiv.org/abs/2610.31446",
+        "https://arxiv.org/html/2610.31446v1"
+      ],
+      "access_depth": "Full-text formulation, method, and evaluation-protocol sections inspected; results not independently reproduced",
+      "verified_date": "2026-11-16",
+      "evidence_type": "Computational methods and experiments",
+      "verification_note": "arXiv submission and full-text method/protocol sections verified. Preprint; experiments are authors' claims and have not been reproduced.",
+      "verified_scope": "Reports cost reductions against static verification and analyzes reliability, consequence, and complementary checks.",
+      "interpretation_boundary": "Relevance and transferable ideas are reviewer interpretations for this manuscript, not findings of the source paper."
+    },
+    {
+      "id": "C35",
+      "title": "Simple and Scalable Predictive Uncertainty Estimation using Deep Ensembles",
+      "authors": "Balaji Lakshminarayanan; Alexander Pritzel; Charles Blundell",
+      "year": 2017,
+      "venue": "NeurIPS 2017",
+      "status": "peer-reviewed",
+      "official_url": "https://papers.nips.cc/paper/2017/hash/9ef2ed4b7fd2c810847ffa5fa85bce38-Abstract.html",
+      "verification_urls": [
+        "https://papers.nips.cc/paper/2017/hash/9ef2ed4b7fd2c810847ffa5fa85bce38-Abstract.html"
+      ],
+      "access_depth": "Abstract and bibliographic metadata inspected; no full-text claim",
+      "verified_date": "2026-11-16",
+      "evidence_type": "Computational methods and experiments",
+      "verification_note": "Scholarly publication record and bibliographic metadata verified at the listed source(s). The inspected content supports the contribution summarized in the annotated bibliography; access limits are explicit.",
+      "verified_scope": "Demonstrates competitive calibration and useful uncertainty behavior across classification, regression, and shifted inputs.",
+      "interpretation_boundary": "Relevance and transferable ideas are reviewer interpretations for this manuscript, not findings of the source paper."
+    },
+    {
+      "id": "C36",
+      "title": "Can You Trust Your Model’s Uncertainty? Evaluating Predictive Uncertainty Under Dataset Shift",
+      "authors": "Yaniv Ovadia; Emily Fertig; Jie Ren; Zachary Nado; D. Sculley; Sebastian Nowozin; Joshua V. Dillon; Balaji Lakshminarayanan; Jasper Snoek",
+      "year": 2019,
+      "venue": "NeurIPS 2019",
+      "status": "peer-reviewed",
+      "official_url": "https://papers.nips.cc/paper/2019/file/8558cb408c1d76621371888657d2eb1d-Paper.pdf",
+      "verification_urls": [
+        "https://papers.nips.cc/paper/2019/file/8558cb408c1d76621371888657d2eb1d-Paper.pdf"
+      ],
+      "access_depth": "Primary-paper abstract and introduction inspected",
+      "verified_date": "2026-11-16",
+      "evidence_type": "Computational methods and experiments",
+      "verification_note": "Scholarly publication record and bibliographic metadata verified at the listed source(s). The inspected content supports the contribution summarized in the annotated bibliography; access limits are explicit.",
+      "verified_scope": "Common post-hoc calibration methods can fail under shift; some model-marginalizing approaches perform more robustly.",
+      "interpretation_boundary": "Relevance and transferable ideas are reviewer interpretations for this manuscript, not findings of the source paper."
+    },
+    {
+      "id": "C37",
+      "title": "Trust in Automation: Designing for Appropriate Reliance",
+      "authors": "John D. Lee; Katrina A. See",
+      "year": 2004,
+      "venue": "Human Factors 46(1):50–80",
+      "status": "peer-reviewed",
+      "official_url": "https://doi.org/10.1518/hfes.46.1.50_30392",
+      "verification_urls": [
+        "https://journals.sagepub.com/doi/epdf/10.1518/hfes.46.1.50_30392"
+      ],
+      "access_depth": "Abstract and bibliographic metadata inspected; no full-text claim",
+      "verified_date": "2026-11-16",
+      "evidence_type": "Review, critique, taxonomy, or methodological synthesis",
+      "verification_note": "Scholarly publication record and bibliographic metadata verified at the listed source(s). The inspected content supports the contribution summarized in the annotated bibliography; access limits are explicit.",
+      "verified_scope": "Reliance depends on context and automation characteristics; maximizing trust is not the appropriate design objective.",
+      "interpretation_boundary": "Relevance and transferable ideas are reviewer interpretations for this manuscript, not findings of the source paper."
+    },
+    {
+      "id": "C38",
+      "title": "Humans and Automation: Use, Misuse, Disuse, Abuse",
+      "authors": "Raja Parasuraman; Victor Riley",
+      "year": 1997,
+      "venue": "Human Factors 39(2):230–253",
+      "status": "peer-reviewed",
+      "official_url": "https://doi.org/10.1518/001872097778543886",
+      "verification_urls": [
+        "https://journals.sagepub.com/doi/pdf/10.1518/001872097778543886"
+      ],
+      "access_depth": "Abstract and bibliographic metadata inspected; no full-text claim",
+      "verified_date": "2026-11-16",
+      "evidence_type": "Review, critique, taxonomy, or methodological synthesis",
+      "verification_note": "Scholarly publication record and bibliographic metadata verified at the listed source(s). The inspected content supports the contribution summarized in the annotated bibliography; access limits are explicit.",
+      "verified_scope": "False alarms can produce disuse; reliability, workload, and system design interact in reliance decisions.",
+      "interpretation_boundary": "Relevance and transferable ideas are reviewer interpretations for this manuscript, not findings of the source paper."
+    },
+    {
+      "id": "C39",
+      "title": "Ironies of automation",
+      "authors": "Lisanne Bainbridge",
+      "year": 1983,
+      "venue": "Automatica 19(6):775–779",
+      "status": "peer-reviewed",
+      "official_url": "https://doi.org/10.1016/0005-1098(83)90046-8",
+      "verification_urls": [
+        "https://www.sciencedirect.com/science/article/pii/0005109883900468/pdf?md5=63dee2ce59531b69680a4af83c53cd3d&pid=1-s2.0-0005109883900468-main.pdf"
+      ],
+      "access_depth": "Abstract and bibliographic metadata inspected; no full-text claim",
+      "verified_date": "2026-11-16",
+      "evidence_type": "Review, critique, taxonomy, or methodological synthesis",
+      "verification_note": "Scholarly publication record and bibliographic metadata verified at the listed source(s). The inspected content supports the contribution summarized in the annotated bibliography; access limits are explicit.",
+      "verified_scope": "Automating routine control can expand monitoring and recovery problems at the human–machine boundary.",
+      "interpretation_boundary": "Relevance and transferable ideas are reviewer interpretations for this manuscript, not findings of the source paper."
+    },
+    {
+      "id": "C40",
+      "title": "The role of trust in automation reliance",
+      "authors": "Mary T. Dzindolet; Scott A. Peterson; Regina A. Pomranky; Linda G. Pierce; Hall P. Beck",
+      "year": 2003,
+      "venue": "International Journal of Human-Computer Studies 58(6):697–718",
+      "status": "peer-reviewed",
+      "official_url": "https://doi.org/10.1016/S1071-5819(03)00038-7",
+      "verification_urls": [
+        "https://www.sciencedirect.com/science/article/pii/S1071581903000387"
+      ],
+      "access_depth": "Publisher abstract and study/discussion excerpts inspected",
+      "verified_date": "2026-11-16",
+      "evidence_type": "Human behavioral experiments",
+      "verification_note": "Scholarly publication record and bibliographic metadata verified at the listed source(s). The inspected content supports the contribution summarized in the annotated bibliography; access limits are explicit.",
+      "verified_scope": "Explaining why an aid might err increased reliance, including situations in which that trust was unwarranted.",
+      "interpretation_boundary": "Relevance and transferable ideas are reviewer interpretations for this manuscript, not findings of the source paper."
+    },
+    {
+      "id": "C41",
+      "title": "Algorithm aversion: People erroneously avoid algorithms after seeing them err",
+      "authors": "Berkeley J. Dietvorst; Joseph P. Simmons; Cade Massey",
+      "year": 2015,
+      "venue": "Journal of Experimental Psychology: General 144(1):114–126",
+      "status": "peer-reviewed",
+      "official_url": "https://doi.org/10.1037/xge0000033",
+      "verification_urls": [
+        "https://pubmed.ncbi.nlm.nih.gov/25401381/",
+        "https://supp.apa.org/psycarticles/supplemental/xge0000033/xge0000033_supp.html"
+      ],
+      "access_depth": "Abstract and bibliographic metadata inspected; no full-text claim",
+      "verified_date": "2026-11-16",
+      "evidence_type": "Human behavioral experiments",
+      "verification_note": "Scholarly publication record and bibliographic metadata verified at the listed source(s). The inspected content supports the contribution summarized in the annotated bibliography; access limits are explicit.",
+      "verified_scope": "Across the studied conditions, people can reject superior algorithms after observing their mistakes.",
+      "interpretation_boundary": "Relevance and transferable ideas are reviewer interpretations for this manuscript, not findings of the source paper."
+    },
+    {
+      "id": "C42",
+      "title": "Algorithm appreciation: People prefer algorithmic to human judgment",
+      "authors": "Jennifer M. Logg; Julia A. Minson; Don A. Moore",
+      "year": 2019,
+      "venue": "Organizational Behavior and Human Decision Processes 151:90–103",
+      "status": "peer-reviewed",
+      "official_url": "https://doi.org/10.1016/j.obhdp.2018.12.005",
+      "verification_urls": [
+        "https://www.sciencedirect.com/science/article/abs/pii/S0749597818303388",
+        "https://doi.org/10.1016/j.obhdp.2018.12.005"
+      ],
+      "access_depth": "Abstract and bibliographic metadata inspected; no full-text claim",
+      "verified_date": "2026-11-16",
+      "evidence_type": "Human behavioral experiments",
+      "verification_note": "Scholarly publication record and bibliographic metadata verified at the listed source(s). The inspected content supports the contribution summarized in the annotated bibliography; access limits are explicit.",
+      "verified_scope": "Equivalent advice can have different influence depending on the attributed source.",
+      "interpretation_boundary": "Relevance and transferable ideas are reviewer interpretations for this manuscript, not findings of the source paper."
+    },
+    {
+      "id": "C43",
+      "title": "Concrete Problems in AI Safety",
+      "authors": "Dario Amodei; Chris Olah; Jacob Steinhardt; Paul Christiano; John Schulman; Dan Mané",
+      "year": 2016,
+      "venue": "arXiv:1606.06565",
+      "status": "preprint",
+      "official_url": "https://arxiv.org/abs/1606.06565",
+      "verification_urls": [
+        "https://arxiv.org/abs/1606.06565"
+      ],
+      "access_depth": "arXiv abstract and metadata inspected",
+      "verified_date": "2026-11-16",
+      "evidence_type": "Theory/methodology (some papers also provide empirical illustrations)",
+      "verification_note": "Preprint existence and author-deposited bibliographic metadata verified at the listed source(s). The inspected content supports the contribution summarized in the annotated bibliography; access limits are explicit.",
+      "verified_scope": "Highlights how misspecified objectives and imperfect supervision can create harmful behavior without malicious intent.",
+      "interpretation_boundary": "Relevance and transferable ideas are reviewer interpretations for this manuscript, not findings of the source paper."
+    },
+    {
+      "id": "C44",
+      "title": "Inverse Reward Design",
+      "authors": "Dylan Hadfield-Menell; Smitha Milli; Pieter Abbeel; Stuart Russell; Anca D. Dragan",
+      "year": 2017,
+      "venue": "NeurIPS 2017",
+      "status": "peer-reviewed",
+      "official_url": "https://papers.nips.cc/paper_files/paper/2017/hash/32fdab6559cdfa4f167f8c31b9199643-Abstract.html",
+      "verification_urls": [
+        "https://papers.nips.cc/paper_files/paper/2017/hash/32fdab6559cdfa4f167f8c31b9199643-Abstract.html"
+      ],
+      "access_depth": "Abstract and bibliographic metadata inspected; no full-text claim",
+      "verified_date": "2026-11-16",
+      "evidence_type": "Computational methods and experiments",
+      "verification_note": "Scholarly publication record and bibliographic metadata verified at the listed source(s). The inspected content supports the contribution summarized in the annotated bibliography; access limits are explicit.",
+      "verified_scope": "Inferring uncertainty about intended reward can reduce undesirable behavior when moving to new situations.",
+      "interpretation_boundary": "Relevance and transferable ideas are reviewer interpretations for this manuscript, not findings of the source paper."
+    },
+    {
+      "id": "C45",
+      "title": "Reinforcement Learning with a Corrupted Reward Channel",
+      "authors": "Tom Everitt; Victoria Krakovna; Laurent Orseau; Marcus Hutter; Shane Legg",
+      "year": 2017,
+      "venue": "IJCAI 2017, AI and Autonomy Track:4705–4713",
+      "status": "peer-reviewed",
+      "official_url": "https://doi.org/10.24963/ijcai.2017/656",
+      "verification_urls": [
+        "https://www.ijcai.org/proceedings/2017/656",
+        "https://www.ijcai.org/proceedings/2017/0656.pdf"
+      ],
+      "access_depth": "Official proceedings abstract and primary-paper introduction inspected",
+      "verified_date": "2026-11-16",
+      "evidence_type": "Theory/methodology (some papers also provide empirical illustrations)",
+      "verification_note": "Primary proceedings and PDF verify publication. PDF footnote credits Marcus Hutter as fourth author; this resolves the author-list discrepancy.",
+      "verified_scope": "Standard reinforcement learning can perform poorly even under simplified corruption; richer evidence or limited optimization can help under assumptions.",
+      "interpretation_boundary": "Relevance and transferable ideas are reviewer interpretations for this manuscript, not findings of the source paper."
+    },
+    {
+      "id": "C46",
+      "title": "Defining and Characterizing Reward Gaming",
+      "authors": "Joar Skalse; Nikolaus H. R. Howe; Dmitrii Krasheninnikov; David Krueger",
+      "year": 2022,
+      "venue": "NeurIPS 2022",
+      "status": "peer-reviewed",
+      "official_url": "https://papers.nips.cc/paper_files/paper/2022/hash/3d719fee332caa23d5038b8a90e81796-Abstract-Conference.html",
+      "verification_urls": [
+        "https://papers.nips.cc/paper_files/paper/2022/hash/3d719fee332caa23d5038b8a90e81796-Abstract-Conference.html",
+        "https://proceedings.neurips.cc/paper_files/paper/2022/file/3d719fee332caa23d5038b8a90e81796-Paper-Conference.pdf"
+      ],
+      "access_depth": "Official abstract and primary-paper abstract/introduction inspected",
+      "verified_date": "2026-11-16",
+      "evidence_type": "Theory/methodology (some papers also provide empirical illustrations)",
+      "verification_note": "Official proceedings metadata uses Reward Gaming; the linked full paper uses Reward Hacking. These are one publication, not two.",
+      "verified_scope": "Unhackability is highly restrictive across broad policy classes; restricted policy sets permit different relationships.",
+      "interpretation_boundary": "Relevance and transferable ideas are reviewer interpretations for this manuscript, not findings of the source paper."
+    },
+    {
+      "id": "C47",
+      "title": "Scaling Laws for Reward Model Overoptimization",
+      "authors": "Leo Gao; John Schulman; Jacob Hilton",
+      "year": 2023,
+      "venue": "ICML 2023, PMLR 202:10835–10866",
+      "status": "peer-reviewed",
+      "official_url": "https://proceedings.mlr.press/v202/gao23h.html",
+      "verification_urls": [
+        "https://proceedings.mlr.press/v202/gao23h.html"
+      ],
+      "access_depth": "Abstract and bibliographic metadata inspected; no full-text claim",
+      "verified_date": "2026-11-16",
+      "evidence_type": "Computational methods and experiments",
+      "verification_note": "Scholarly publication record and bibliographic metadata verified at the listed source(s). The inspected content supports the contribution summarized in the annotated bibliography; access limits are explicit.",
+      "verified_scope": "Different optimization procedures exhibit different relationships between optimization strength and gold-model score.",
+      "interpretation_boundary": "Relevance and transferable ideas are reviewer interpretations for this manuscript, not findings of the source paper."
+    },
+    {
+      "id": "C48",
+      "title": "Constrained Policy Optimization",
+      "authors": "Joshua Achiam; David Held; Aviv Tamar; Pieter Abbeel",
+      "year": 2017,
+      "venue": "ICML 2017, PMLR 70:22–31",
+      "status": "peer-reviewed",
+      "official_url": "https://proceedings.mlr.press/v70/achiam17a.html",
+      "verification_urls": [
+        "https://proceedings.mlr.press/v70/achiam17a"
+      ],
+      "access_depth": "Abstract and bibliographic metadata inspected; no full-text claim",
+      "verified_date": "2026-11-16",
+      "evidence_type": "Theory/methodology (some papers also provide empirical illustrations)",
+      "verification_note": "Scholarly publication record and bibliographic metadata verified at the listed source(s). The inspected content supports the contribution summarized in the annotated bibliography; access limits are explicit.",
+      "verified_scope": "Provides near-constraint-satisfaction guarantees under the analysis and demonstrates constrained control on simulated locomotion tasks.",
+      "interpretation_boundary": "Relevance and transferable ideas are reviewer interpretations for this manuscript, not findings of the source paper."
+    },
+    {
+      "id": "C49",
+      "title": "A Comprehensive Survey on Safe Reinforcement Learning",
+      "authors": "Javier García; Fernando Fernández",
+      "year": 2015,
+      "venue": "Journal of Machine Learning Research 16:1437–1480",
+      "status": "peer-reviewed",
+      "official_url": "https://jmlr.org/papers/v16/garcia15a.html",
+      "verification_urls": [
+        "https://www.jmlr.org/beta/papers/v16/garcia15a.html"
+      ],
+      "access_depth": "Abstract and bibliographic metadata inspected; no full-text claim",
+      "verified_date": "2026-11-16",
+      "evidence_type": "Review, critique, taxonomy, or methodological synthesis",
+      "verification_note": "Scholarly publication record and bibliographic metadata verified at the listed source(s). The inspected content supports the contribution summarized in the annotated bibliography; access limits are explicit.",
+      "verified_scope": "Separates safety during learning from safety during later deployment, including external guidance and risk-sensitive criteria.",
+      "interpretation_boundary": "Relevance and transferable ideas are reviewer interpretations for this manuscript, not findings of the source paper."
+    },
+    {
+      "id": "C50",
+      "title": "Safe Reinforcement Learning via Shielding",
+      "authors": "Mohammed Alshiekh; Roderick Bloem; Rüdiger Ehlers; Bettina Könighofer; Scott Niekum; Ufuk Topcu",
+      "year": 2018,
+      "venue": "AAAI 2018, 32(1)",
+      "status": "peer-reviewed",
+      "official_url": "https://doi.org/10.1609/aaai.v32i1.11797",
+      "verification_urls": [
+        "https://ojs.aaai.org/index.php/AAAI/article/view/11797"
+      ],
+      "access_depth": "Abstract and bibliographic metadata inspected; no full-text claim",
+      "verified_date": "2026-11-16",
+      "evidence_type": "Computational methods and experiments",
+      "verification_note": "Scholarly publication record and bibliographic metadata verified at the listed source(s). The inspected content supports the contribution summarized in the annotated bibliography; access limits are explicit.",
+      "verified_scope": "Demonstrates a way to combine learning with specification-based protection under explicit model assumptions.",
+      "interpretation_boundary": "Relevance and transferable ideas are reviewer interpretations for this manuscript, not findings of the source paper."
+    }
+  ]
+}

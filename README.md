@@ -6,6 +6,13 @@ This repository studies what a local coding agent does after a security checker 
 
 For a short project review, start with the [research overview](docs/PROJECT_OVERVIEW_20261029.md); the full [research article](paper/final.md) and reproduction instructions are linked below.
 
+The [evidence-sensitive repair experiment](docs/EVIDENCE_SENSITIVE_REPAIR_20261116.md)
+adds a separate source-level feasibility protocol: correct, unsafe, overly
+restrictive, and mixed-defect starting controls; truthful/flipped initial
+feedback; and optional evidence versus a neutral receipt. It scores security
+and functionality separately and preserves the historical cohorts. Its scripted
+harness checks are software validation, not results about model behavior.
+
 For a nontechnical audience, use the [six-slide research presentation](presentation/README.md), with an editable PowerPoint, PDF, and speaker notes.
 
 The [November showcase package](showcase/2026-11-08/README.md) adds a one-page poster, a title plus five content slides, a short abstract, and a timed group speaking script.
