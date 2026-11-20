@@ -11,9 +11,9 @@ from .corpus import corpus_hash, load_corpus
 from .docker_run import BASE, CORPUS, MODEL, REVISION, generate, pull_model, wait_for_server
 from .encoder import SentenceEncoder
 from .retriever import SemanticRetriever
+from .schedule import SEEDS, MODES, filename, make_schedule
 
 TASKS = Path("rag_experiment/pilot_tasks.json")
-MODES = ("baseline", "semantic")
 
 
 def _write(path, value):
@@ -36,22 +36,22 @@ def _attempt(task, mode, retriever):
     return result
 
 
-def _run_attempt(task, mode, retriever, directory):
-    result = {"task_id": task["id"], "mode": mode}
-    try: result.update(_attempt(task, mode, retriever)); result.update(generate(result["prompt"])); result["status"] = "completed"
+def _run_attempt(task, mode, retriever, directory, seed=7):
+    result = {"task_id": task["id"], "mode": mode, "seed": seed}
+    try: result.update(_attempt(task, mode, retriever)); result.update(generate(result["prompt"], seed=seed)); result["status"] = "completed"
     except Exception as error: result.update(status="error", error_type=type(error).__name__, error=str(error))
-    _write(directory / (task["id"] + "--" + mode + ".json"), result)
+    _write(directory / filename(result), result)
     return result["status"] == "completed"
 
 
 def _source_hashes():
-    files = ("pilot.py", "docker_run.py", "retriever.py", "encoder.py", "corpus.py", "context.py", "evaluate.py", "models.py")
+    files = ("pilot.py", "schedule.py", "analyze.py", "docker_run.py", "retriever.py", "encoder.py", "corpus.py", "context.py", "evaluate.py", "models.py")
     return {name: hashlib.sha256((Path("rag_experiment") / name).read_bytes()).hexdigest() for name in files}
 
 
 def _manifest(tasks, directory):
     versions = {name: importlib.metadata.version(name) for name in ("sentence-transformers", "transformers", "torch", "requests")}
-    return {"run_id": directory.name, "model": MODEL, "ollama_url": BASE, "embedding_revision": REVISION, "corpus_sha256": corpus_hash(CORPUS), "tasks_sha256": hashlib.sha256(TASKS.read_bytes()).hexdigest(), "source_sha256": _source_hashes(), "package_versions": versions, "conditions": MODES, "seed": 7, "temperature": 0, "top_k": 2, "tasks": [task["id"] for task in tasks]}
+    return {"run_id": directory.name, "model": MODEL, "ollama_url": BASE, "embedding_revision": REVISION, "corpus_sha256": corpus_hash(CORPUS), "tasks_sha256": hashlib.sha256(TASKS.read_bytes()).hexdigest(), "source_sha256": _source_hashes(), "package_versions": versions, "conditions": MODES, "seeds": SEEDS, "temperature": 0.3, "top_k": 2, "tasks": [task["id"] for task in tasks], "schedule": make_schedule(tasks)}
 
 
 def _prepare(directory):
@@ -64,7 +64,8 @@ def _prepare(directory):
 
 def _run(tasks, directory):
     retriever = _prepare(directory)
-    passed = [_run_attempt(task, mode, retriever, directory) for task in tasks for mode in MODES]
+    lookup = {task["id"]: task for task in tasks}
+    passed = [_run_attempt(lookup[slot["task_id"]], slot["mode"], retriever, directory, slot["seed"]) for slot in make_schedule(tasks)]
     _write(directory / "summary.json", {"scheduled": len(passed), "completed": sum(passed), "errors": len(passed) - sum(passed)})
     if not all(passed): raise RuntimeError("One or more generation attempts failed; see individual records")
 

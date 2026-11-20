@@ -6,8 +6,9 @@ from pathlib import Path
 from unittest.mock import patch
 
 os.environ.setdefault("EMBEDDING_REVISION", "0" * 40)
-from rag_experiment import evaluate, pilot
+from rag_experiment import analyze, evaluate, pilot
 from rag_experiment.corpus import load_corpus
+from rag_experiment.schedule import make_schedule, validate_schedule
 
 
 class PilotTests(unittest.TestCase):
@@ -29,7 +30,7 @@ class PilotTests(unittest.TestCase):
         task = {"id": "sample", "prompt": "hello", "relevant_id": "x"}
         with tempfile.TemporaryDirectory() as directory:
             pilot._run_attempt(task, "semantic", None, Path(directory))
-            result = json.loads((Path(directory) / "sample--semantic.json").read_text(encoding="utf-8"))
+            result = json.loads((Path(directory) / "sample--semantic--seed-7.json").read_text(encoding="utf-8"))
         self.assertEqual(result["status"], "error")
 
     def test_html_and_path_checks_reject_known_bad_behaviors(self):
@@ -48,8 +49,38 @@ class PilotTests(unittest.TestCase):
         tasks = [{"id": "t", "prompt": "repair", "relevant_id": "none"}]
         with tempfile.TemporaryDirectory() as directory, patch.object(pilot, "_prepare") as prepare, patch.object(pilot, "generate", return_value={"response": {"response": "code"}}):
             prepare.return_value.search.return_value = []; pilot._run(tasks, Path(directory))
-            self.assertEqual(json.loads((Path(directory) / "summary.json").read_text())["completed"], 2)
-            self.assertEqual(len(list(Path(directory).glob("*--*.json"))), 2)
+            self.assertEqual(json.loads((Path(directory) / "summary.json").read_text())["completed"], 6)
+            self.assertEqual(len(list(Path(directory).glob("*--*.json"))), 6)
+
+    def test_missing_record_is_reported(self):
+        slot = {"task_id": "sql-name", "mode": "baseline", "seed": 7}
+        with tempfile.TemporaryDirectory() as directory: result = evaluate._evaluate_slot(Path(directory), slot)
+        self.assertEqual(result["status"], "missing_record")
+
+    def test_zero_exit_before_check_does_not_pass(self):
+        result = evaluate._check("import sys; sys.exit(0)", "find_user", "assert False")
+        self.assertEqual(result["status"], "fail")
+
+    def test_schedule_pairs_are_deterministic(self):
+        slots = make_schedule([{"id": "sample"}])
+        self.assertEqual(slots, make_schedule([{"id": "sample"}]))
+        self.assertEqual({(slot["seed"], slot["mode"]) for slot in slots}, {(seed, mode) for seed in (7, 17, 27) for mode in ("baseline", "semantic")})
+
+    def test_duplicate_schedule_is_rejected(self):
+        slots = make_schedule([{"id": "sample"}])
+        with self.assertRaises(ValueError): validate_schedule(slots + slots[:1])
+
+    def test_missing_results_do_not_become_failures(self):
+        schedule = make_schedule([{"id": "sql-name"}])
+        report = analyze.summarize(schedule, {})
+        self.assertEqual(report["pair_counts"], {"incomplete": 3})
+        self.assertEqual(report["statuses"], {"missing_evaluation": 6})
+        self.assertEqual(report["claim_status"], "NOT_READY")
+
+    def test_paired_comparison_excludes_timeout(self):
+        schedule = [{"task_id": "sql-name", "seed": 7, "mode": mode} for mode in ("baseline", "semantic")]
+        rows = {("sql-name", 7, "baseline"): {"status": "evaluated", "functionality": {"status": "pass"}, "security": {"status": "timeout"}}}
+        self.assertEqual(analyze.summarize(schedule, rows)["pair_counts"], {"incomplete": 1})
 
 
 if __name__ == "__main__":

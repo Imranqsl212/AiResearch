@@ -37,6 +37,22 @@ services:
       - ./:/app/rag_experiment:ro
       - ./results:/results:ro
     command: ["python", "-m", "rag_experiment.evaluate"]
+  analyzer:
+    profiles: ["analyze"]
+    image: python:3.11-slim
+    working_dir: /app
+    user: "65534:65534"
+    network_mode: none
+    read_only: true
+    cap_drop: ["ALL"]
+    security_opt: ["no-new-privileges:true"]
+    environment:
+      RUN_ID: ${RUN_ID:-}
+    volumes:
+      - ./:/app/rag_experiment:ro
+      - ./results:/results:ro
+    entrypoint: ["python", "-m", "rag_experiment.analyze"]
+    command: ["/results/${RUN_ID:-}"]
 volumes:
   ollama-models:
   huggingface-cache:

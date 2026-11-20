@@ -30,8 +30,8 @@ def pull_model() -> None:
     if response.json().get("status") != "success": raise RuntimeError(response.text)
 
 
-def generate(prompt: str) -> dict:
-    body = {"model": MODEL, "prompt": prompt, "stream": False, "options": {"temperature": 0, "seed": 7, "num_predict": 400}}
+def generate(prompt: str, seed: int = 7, temperature: float = 0.3) -> dict:
+    body = {"model": MODEL, "prompt": prompt, "stream": False, "options": {"temperature": temperature, "seed": seed, "num_predict": 400}}
     response = requests.post(BASE + "/api/generate", json=body, timeout=600)
     response.raise_for_status()
     return {"prompt": prompt, "response": response.json()}
