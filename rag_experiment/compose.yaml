@@ -1,0 +1,21 @@
+services:
+  ollama:
+    image: ollama/ollama:0.13.5
+    volumes:
+      - ollama-models:/root/.ollama
+  experiment:
+    build:
+      context: ..
+      dockerfile: rag_experiment/Dockerfile
+    depends_on:
+      - ollama
+    environment:
+      OLLAMA_URL: http://ollama:11434
+      MODEL: qwen2.5-coder:1.5b
+      EMBEDDING_REVISION: 680353e66602ffe5bfc6cea86f57a6458ad7e6dd
+    volumes:
+      - ./results:/results
+      - huggingface-cache:/root/.cache/huggingface
+volumes:
+  ollama-models:
+  huggingface-cache:
