@@ -1,0 +1,58 @@
+services:
+  ollama:
+    image: ollama/ollama:0.13.5
+    volumes:
+      - ollama-models:/root/.ollama
+  experiment:
+    build:
+      context: ..
+      dockerfile: rag_experiment/Dockerfile
+    depends_on:
+      - ollama
+    environment:
+      OLLAMA_URL: http://ollama:11434
+      MODEL: qwen2.5-coder:1.5b
+      EMBEDDING_REVISION: 680353e66602ffe5bfc6cea86f57a6458ad7e6dd
+      HF_HUB_DOWNLOAD_TIMEOUT: 120
+    volumes:
+      - ./results:/results
+      - huggingface-cache:/root/.cache/huggingface
+    command: ["python", "-m", "rag_experiment.pilot"]
+  evaluator:
+    profiles: ["evaluate"]
+    image: python:3.11-slim
+    working_dir: /app
+    user: "65534:65534"
+    network_mode: none
+    read_only: true
+    cap_drop: ["ALL"]
+    security_opt: ["no-new-privileges:true"]
+    pids_limit: 32
+    mem_limit: 256m
+    cpus: 1
+    tmpfs: ["/tmp:size=32m,noexec,nosuid,nodev"]
+    environment:
+      RUN_ID: ${RUN_ID:-}
+    volumes:
+      - ./:/app/rag_experiment:ro
+      - ./results:/results:ro
+    command: ["python", "-m", "rag_experiment.evaluate"]
+  analyzer:
+    profiles: ["analyze"]
+    image: python:3.11-slim
+    working_dir: /app
+    user: "65534:65534"
+    network_mode: none
+    read_only: true
+    cap_drop: ["ALL"]
+    security_opt: ["no-new-privileges:true"]
+    environment:
+      RUN_ID: ${RUN_ID:-}
+    volumes:
+      - ./:/app/rag_experiment:ro
+      - ./results:/results:ro
+    entrypoint: ["python", "-m", "rag_experiment.analyze"]
+    command: ["/results/${RUN_ID:-}"]
+volumes:
+  ollama-models:
+  huggingface-cache:
