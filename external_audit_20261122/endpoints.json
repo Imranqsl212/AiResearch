@@ -1,0 +1,1026 @@
+{
+  "selection_sha256": "7b8e1869d1101c0851935686c20e1003f78922bf75840cab17c702d4aa9e23e2",
+  "sources": {
+    "A": {
+      "results": {
+        "url": "https://raw.githubusercontent.com/SWE-bench/experiments/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/evaluation/verified/20240402_sweagent_claude3opus/results/results.json",
+        "sha256": "18a7f9f8ac2ede71046c3d961ce4a7478b025549a5c4298ff811d60245e692b7",
+        "bytes": 43064
+      },
+      "predictions": {
+        "url": "https://swe-bench-submissions.s3.amazonaws.com/verified/20240402_sweagent_claude3opus/all_preds.jsonl",
+        "sha256": "f1d420be50924018af6992267ca636c8bb6aaed51aeaf6c52d5e975421725333",
+        "bytes": 5780246
+      }
+    },
+    "B": {
+      "results": {
+        "url": "https://raw.githubusercontent.com/SWE-bench/experiments/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/evaluation/verified/20241029_OpenHands-CodeAct-2.1-sonnet-20241022/results/results.json",
+        "sha256": "4dcf8bbaa5c2a7d77ba0c5aea3940449aabd307c9e72eaad58da119301ff767b",
+        "bytes": 8096
+      },
+      "predictions": {
+        "url": "https://swe-bench-submissions.s3.amazonaws.com/verified/20241029_OpenHands-CodeAct-2.1-sonnet-20241022/all_preds.jsonl",
+        "sha256": "85600971d3a9b270517197236168284c1e52ffe7c770286ab0f3f91518042808",
+        "bytes": 31227948
+      }
+    }
+  },
+  "rows": [
+    {
+      "series": "A",
+      "instance_id": "django__django-15569",
+      "published_resolved": true,
+      "published_categories": [
+        "generated",
+        "with_logs",
+        "applied",
+        "resolved"
+      ],
+      "nonempty_prediction": true,
+      "predictions": [
+        {
+          "line": 399,
+          "present": true,
+          "bytes": 499,
+          "sha256": "e19a7b66c8bd17c1e170c38e19011cf3486582baa2767f1a90113640c6d55d2c"
+        }
+      ],
+      "evaluator_resolved": null,
+      "evaluation_log": {
+        "url": "https://swe-bench-submissions.s3.amazonaws.com/verified/20240402_sweagent_claude3opus/logs/django__django-15569.20240402_sweagent_claude3opus.eval.log",
+        "sha256": "7998dd6cb0ef5fa26b9a1d010417533a889c32f4a746b62a5e0b2b423f51c322",
+        "bytes": 46762
+      },
+      "evaluation_patch": null,
+      "prediction_matches_eval_patch": null,
+      "log_markers": [
+        {
+          "line": 102,
+          "label": ">>>>> Applied Patch (pred_try)"
+        },
+        {
+          "line": 111,
+          "label": ">>>>> Applied Patch (pred_try)"
+        },
+        {
+          "line": 145,
+          "label": ">>>>> Init Succeeded"
+        },
+        {
+          "line": 154,
+          "label": ">>>>> Applied Patch (pred)"
+        },
+        {
+          "line": 167,
+          "label": ">>>>> Applied Patch (test)"
+        },
+        {
+          "line": 650,
+          "label": ">>>>> All Tests Passed"
+        }
+      ]
+    },
+    {
+      "series": "A",
+      "instance_id": "matplotlib__matplotlib-25479",
+      "published_resolved": false,
+      "published_categories": [
+        "no_generation"
+      ],
+      "nonempty_prediction": false,
+      "predictions": [
+        {
+          "line": 561,
+          "present": false,
+          "bytes": null,
+          "sha256": null
+        }
+      ],
+      "evaluator_resolved": null,
+      "evaluation_log": null,
+      "evaluation_patch": null,
+      "prediction_matches_eval_patch": null
+    },
+    {
+      "series": "A",
+      "instance_id": "astropy__astropy-8872",
+      "published_resolved": false,
+      "published_categories": [
+        "generated",
+        "with_logs",
+        "applied"
+      ],
+      "nonempty_prediction": true,
+      "predictions": [
+        {
+          "line": 326,
+          "present": true,
+          "bytes": 819,
+          "sha256": "c85a0ec57b3268a45fbc1896657feb7e260baceb76b52205454183eba9a75cd9"
+        }
+      ],
+      "evaluator_resolved": null,
+      "evaluation_log": {
+        "url": "https://swe-bench-submissions.s3.amazonaws.com/verified/20240402_sweagent_claude3opus/logs/astropy__astropy-8872.20240402_sweagent_claude3opus.eval.log",
+        "sha256": "fccf376ed956ea4bf36a1bcdf23abacaa930b202b4b3fe9522a8463baae1579c",
+        "bytes": 30204
+      },
+      "evaluation_patch": null,
+      "prediction_matches_eval_patch": null,
+      "log_markers": [
+        {
+          "line": 38,
+          "label": ">>>>> Applied Patch (pred_try)"
+        },
+        {
+          "line": 47,
+          "label": ">>>>> Applied Patch (pred_try)"
+        },
+        {
+          "line": 192,
+          "label": ">>>>> Init Succeeded"
+        },
+        {
+          "line": 201,
+          "label": ">>>>> Applied Patch (pred)"
+        },
+        {
+          "line": 215,
+          "label": ">>>>> Applied Patch (test)"
+        },
+        {
+          "line": 323,
+          "label": ">>>>> Some Tests Failed"
+        }
+      ]
+    },
+    {
+      "series": "A",
+      "instance_id": "django__django-16899",
+      "published_resolved": false,
+      "published_categories": [
+        "generated",
+        "with_logs"
+      ],
+      "nonempty_prediction": true,
+      "predictions": [
+        {
+          "line": 398,
+          "present": true,
+          "bytes": 4636,
+          "sha256": "3f75e025428a514031fe214a6270083c231e026020ab16429f05977581bffa94"
+        }
+      ],
+      "evaluator_resolved": null,
+      "evaluation_log": {
+        "url": "https://swe-bench-submissions.s3.amazonaws.com/verified/20240402_sweagent_claude3opus/logs/django__django-16899.20240402_sweagent_claude3opus.eval.log",
+        "sha256": "13e88b315abdadaa11632691471fe8920e4ccf1bb9b5c0737644c434eb385614",
+        "bytes": 10672
+      },
+      "evaluation_patch": null,
+      "prediction_matches_eval_patch": null,
+      "log_markers": [
+        {
+          "line": 41,
+          "label": ">>>>> Applied Patch (pred_try)"
+        },
+        {
+          "line": 52,
+          "label": ">>>>> Applied Patch (pred_try)"
+        },
+        {
+          "line": 87,
+          "label": ">>>>> Init Succeeded"
+        },
+        {
+          "line": 98,
+          "label": ">>>>> Applied Patch (pred)"
+        },
+        {
+          "line": 118,
+          "label": ">>>>> Patch Apply Failed; (test)"
+        }
+      ]
+    },
+    {
+      "series": "A",
+      "instance_id": "django__django-13406",
+      "published_resolved": false,
+      "published_categories": [
+        "generated",
+        "with_logs",
+        "no_apply"
+      ],
+      "nonempty_prediction": true,
+      "predictions": [
+        {
+          "line": 24,
+          "present": true,
+          "bytes": 10744,
+          "sha256": "0dd5e85b185b95bf457c2e254fd63b61b498479652a95b113f8bdaae7108780c"
+        }
+      ],
+      "evaluator_resolved": null,
+      "evaluation_log": {
+        "url": "https://swe-bench-submissions.s3.amazonaws.com/verified/20240402_sweagent_claude3opus/logs/django__django-13406.20240402_sweagent_claude3opus.eval.log",
+        "sha256": "f9ca788f1641201c4529970dcebda9b7696b1e65cf9cc428ebce12df947f2ea8",
+        "bytes": 9576
+      },
+      "evaluation_patch": null,
+      "prediction_matches_eval_patch": null,
+      "log_markers": [
+        {
+          "line": 114,
+          "label": ">>>>> Patch Apply Failed; (pred_try)"
+        },
+        {
+          "line": 141,
+          "label": ">>>>> Patch Apply Failed; (pred_minimal_try)"
+        }
+      ]
+    },
+    {
+      "series": "A",
+      "instance_id": "sphinx-doc__sphinx-9281",
+      "published_resolved": false,
+      "published_categories": [
+        "generated",
+        "with_logs",
+        "no_apply"
+      ],
+      "nonempty_prediction": true,
+      "predictions": [
+        {
+          "line": 549,
+          "present": true,
+          "bytes": 567539,
+          "sha256": "27983086fcbb4c55a2b5b565d9497ccb6e13c67924552ec719ffc0ce1be312e6"
+        }
+      ],
+      "evaluator_resolved": null,
+      "evaluation_log": {
+        "url": "https://swe-bench-submissions.s3.amazonaws.com/verified/20240402_sweagent_claude3opus/logs/sphinx-doc__sphinx-9281.20240402_sweagent_claude3opus.eval.log",
+        "sha256": "1de71ce20808ccbd6f7deb784894ea38a3aea964598281f731045d2596c3e2d4",
+        "bytes": 12998
+      },
+      "evaluation_patch": null,
+      "prediction_matches_eval_patch": null,
+      "log_markers": [
+        {
+          "line": 88,
+          "label": ">>>>> Patch Apply Failed; (pred_try)"
+        },
+        {
+          "line": 154,
+          "label": ">>>>> Patch Apply Failed; (pred_minimal_try)"
+        }
+      ]
+    },
+    {
+      "series": "A",
+      "instance_id": "django__django-13449",
+      "published_resolved": false,
+      "published_categories": [
+        "generated",
+        "with_logs",
+        "applied"
+      ],
+      "nonempty_prediction": true,
+      "predictions": [
+        {
+          "line": 119,
+          "present": true,
+          "bytes": 9113,
+          "sha256": "0566e4089929c942168416398e05bc0ae33575bc36ca39ca89dd16ac7a658671"
+        }
+      ],
+      "evaluator_resolved": null,
+      "evaluation_log": {
+        "url": "https://swe-bench-submissions.s3.amazonaws.com/verified/20240402_sweagent_claude3opus/logs/django__django-13449.20240402_sweagent_claude3opus.eval.log",
+        "sha256": "3408efe47b7354fda6101377fbf0bd6cf868270c8369bdf760b7fd9a066f00b4",
+        "bytes": 23991
+      },
+      "evaluation_patch": null,
+      "prediction_matches_eval_patch": null,
+      "log_markers": [
+        {
+          "line": 95,
+          "label": ">>>>> Applied Patch (pred_try)"
+        },
+        {
+          "line": 132,
+          "label": ">>>>> Applied Patch (pred_try)"
+        },
+        {
+          "line": 150,
+          "label": ">>>>> Init Succeeded"
+        },
+        {
+          "line": 187,
+          "label": ">>>>> Applied Patch (pred)"
+        },
+        {
+          "line": 198,
+          "label": ">>>>> Applied Patch (test)"
+        },
+        {
+          "line": 340,
+          "label": ">>>>> Some Tests Failed"
+        }
+      ]
+    },
+    {
+      "series": "A",
+      "instance_id": "django__django-11880",
+      "published_resolved": false,
+      "published_categories": [
+        "generated",
+        "with_logs",
+        "applied"
+      ],
+      "nonempty_prediction": true,
+      "predictions": [
+        {
+          "line": 576,
+          "present": true,
+          "bytes": 1167,
+          "sha256": "677610d790c793c42bc88aeb19865abd3b3e01ee1a89dce00c9057e1f7177608"
+        }
+      ],
+      "evaluator_resolved": null,
+      "evaluation_log": {
+        "url": "https://swe-bench-submissions.s3.amazonaws.com/verified/20240402_sweagent_claude3opus/logs/django__django-11880.20240402_sweagent_claude3opus.eval.log",
+        "sha256": "d0b7b8ece19fe3cd56157c77a9c491a1c21aa75e25184778a117eace686f2275",
+        "bytes": 24071
+      },
+      "evaluation_patch": null,
+      "prediction_matches_eval_patch": null,
+      "log_markers": [
+        {
+          "line": 104,
+          "label": ">>>>> Applied Patch (pred_try)"
+        },
+        {
+          "line": 115,
+          "label": ">>>>> Applied Patch (pred_try)"
+        },
+        {
+          "line": 133,
+          "label": ">>>>> Init Succeeded"
+        },
+        {
+          "line": 147,
+          "label": ">>>>> Applied Patch (pred)"
+        },
+        {
+          "line": 156,
+          "label": ">>>>> Applied Patch (test)"
+        },
+        {
+          "line": 308,
+          "label": ">>>>> Some Tests Failed"
+        }
+      ]
+    },
+    {
+      "series": "A",
+      "instance_id": "sphinx-doc__sphinx-8035",
+      "published_resolved": false,
+      "published_categories": [
+        "generated",
+        "with_logs"
+      ],
+      "nonempty_prediction": true,
+      "predictions": [
+        {
+          "line": 186,
+          "present": true,
+          "bytes": 1315,
+          "sha256": "afcefbbaa8a68c06beee8086bb69784219143e8ababfecf1b734e69ac8d3229e"
+        }
+      ],
+      "evaluator_resolved": null,
+      "evaluation_log": {
+        "url": "https://swe-bench-submissions.s3.amazonaws.com/verified/20240402_sweagent_claude3opus/logs/sphinx-doc__sphinx-8035.20240402_sweagent_claude3opus.eval.log",
+        "sha256": "9af70ee845305fda79e6fcac2bdb6cfad81ba908ef4afa78ef3fb954b432f867",
+        "bytes": 27816
+      },
+      "evaluation_patch": null,
+      "prediction_matches_eval_patch": null,
+      "log_markers": [
+        {
+          "line": 43,
+          "label": ">>>>> Applied Patch (pred_try)"
+        },
+        {
+          "line": 54,
+          "label": ">>>>> Applied Patch (pred_try)"
+        },
+        {
+          "line": 193,
+          "label": ">>>>> Init Succeeded"
+        },
+        {
+          "line": 239,
+          "label": ">>>>> Patch Apply Failed; (pred)"
+        }
+      ]
+    },
+    {
+      "series": "A",
+      "instance_id": "django__django-11964",
+      "published_resolved": false,
+      "published_categories": [
+        "generated",
+        "with_logs",
+        "applied"
+      ],
+      "nonempty_prediction": true,
+      "predictions": [
+        {
+          "line": 1,
+          "present": true,
+          "bytes": 2245,
+          "sha256": "0f5777ba23776336319c129f85d576c4d341123700dbfa37ed1e72dc4c561952"
+        },
+        {
+          "line": 129,
+          "present": true,
+          "bytes": 2245,
+          "sha256": "0f5777ba23776336319c129f85d576c4d341123700dbfa37ed1e72dc4c561952"
+        },
+        {
+          "line": 240,
+          "present": true,
+          "bytes": 2245,
+          "sha256": "0f5777ba23776336319c129f85d576c4d341123700dbfa37ed1e72dc4c561952"
+        },
+        {
+          "line": 355,
+          "present": true,
+          "bytes": 2245,
+          "sha256": "0f5777ba23776336319c129f85d576c4d341123700dbfa37ed1e72dc4c561952"
+        },
+        {
+          "line": 469,
+          "present": true,
+          "bytes": 2245,
+          "sha256": "0f5777ba23776336319c129f85d576c4d341123700dbfa37ed1e72dc4c561952"
+        }
+      ],
+      "evaluator_resolved": null,
+      "evaluation_log": {
+        "url": "https://swe-bench-submissions.s3.amazonaws.com/verified/20240402_sweagent_claude3opus/logs/django__django-11964.20240402_sweagent_claude3opus.eval.log",
+        "sha256": "9394bc848dc1f7b3af51b3209a42cb66627fc04fdba110fc79e42ad35c62f258",
+        "bytes": 38845
+      },
+      "evaluation_patch": null,
+      "prediction_matches_eval_patch": null,
+      "log_markers": [
+        {
+          "line": 103,
+          "label": ">>>>> Applied Patch (pred_try)"
+        },
+        {
+          "line": 114,
+          "label": ">>>>> Applied Patch (pred_try)"
+        },
+        {
+          "line": 132,
+          "label": ">>>>> Init Succeeded"
+        },
+        {
+          "line": 146,
+          "label": ">>>>> Applied Patch (pred)"
+        },
+        {
+          "line": 155,
+          "label": ">>>>> Applied Patch (test)"
+        },
+        {
+          "line": 504,
+          "label": ">>>>> Some Tests Failed"
+        }
+      ]
+    },
+    {
+      "series": "B",
+      "instance_id": "django__django-15569",
+      "published_resolved": true,
+      "published_categories": [
+        "resolved"
+      ],
+      "nonempty_prediction": true,
+      "predictions": [
+        {
+          "line": 162,
+          "present": true,
+          "bytes": 489,
+          "sha256": "80eb53df7d7ff50d9963b825c45824a6e995b6d07c04fdf92b2eb6fd44135f52"
+        }
+      ],
+      "evaluator_resolved": true,
+      "evaluation_log": {
+        "url": "https://swe-bench-submissions.s3.amazonaws.com/verified/20241029_OpenHands-CodeAct-2.1-sonnet-20241022/logs/django__django-15569/report.json",
+        "sha256": "f5804abf48d28c3e33d9bc1fa4cb154b4e7a02f97caa650cc4a44306779565df",
+        "bytes": 21481
+      },
+      "evaluation_patch": {
+        "url": "https://swe-bench-submissions.s3.amazonaws.com/verified/20241029_OpenHands-CodeAct-2.1-sonnet-20241022/logs/django__django-15569/patch.diff",
+        "sha256": "80eb53df7d7ff50d9963b825c45824a6e995b6d07c04fdf92b2eb6fd44135f52",
+        "bytes": 489
+      },
+      "prediction_matches_eval_patch": true,
+      "grade_fields": {
+        "patch_is_None": false,
+        "patch_exists": true,
+        "patch_successfully_applied": true,
+        "resolved": true
+      },
+      "grade_test_counts": {
+        "FAIL_TO_PASS": {
+          "success": 2,
+          "failure": 0
+        },
+        "PASS_TO_PASS": {
+          "success": 242,
+          "failure": 0
+        },
+        "FAIL_TO_FAIL": {
+          "success": 0,
+          "failure": 0
+        },
+        "PASS_TO_FAIL": {
+          "success": 0,
+          "failure": 0
+        }
+      }
+    },
+    {
+      "series": "B",
+      "instance_id": "matplotlib__matplotlib-25479",
+      "published_resolved": false,
+      "published_categories": [],
+      "nonempty_prediction": true,
+      "predictions": [
+        {
+          "line": 268,
+          "present": true,
+          "bytes": 3713,
+          "sha256": "e124d24577b56d6bc8c6437b9f0656210ec178ab0409ac5dc25ee7460980a600"
+        }
+      ],
+      "evaluator_resolved": false,
+      "evaluation_log": {
+        "url": "https://swe-bench-submissions.s3.amazonaws.com/verified/20241029_OpenHands-CodeAct-2.1-sonnet-20241022/logs/matplotlib__matplotlib-25479/report.json",
+        "sha256": "afd91b2224b9f95ef031980df967ad5c47c131387b495ae6fc1af3edd7be871e",
+        "bytes": 24935
+      },
+      "evaluation_patch": {
+        "url": "https://swe-bench-submissions.s3.amazonaws.com/verified/20241029_OpenHands-CodeAct-2.1-sonnet-20241022/logs/matplotlib__matplotlib-25479/patch.diff",
+        "sha256": "e124d24577b56d6bc8c6437b9f0656210ec178ab0409ac5dc25ee7460980a600",
+        "bytes": 3713
+      },
+      "prediction_matches_eval_patch": true,
+      "grade_fields": {
+        "patch_is_None": false,
+        "patch_exists": true,
+        "patch_successfully_applied": true,
+        "resolved": false
+      },
+      "grade_test_counts": {
+        "FAIL_TO_PASS": {
+          "success": 0,
+          "failure": 2
+        },
+        "PASS_TO_PASS": {
+          "success": 262,
+          "failure": 1
+        },
+        "FAIL_TO_FAIL": {
+          "success": 0,
+          "failure": 0
+        },
+        "PASS_TO_FAIL": {
+          "success": 0,
+          "failure": 0
+        }
+      }
+    },
+    {
+      "series": "B",
+      "instance_id": "astropy__astropy-8872",
+      "published_resolved": false,
+      "published_categories": [],
+      "nonempty_prediction": true,
+      "predictions": [
+        {
+          "line": 23,
+          "present": true,
+          "bytes": 813,
+          "sha256": "e270af988623d6c12e0333e6ed11d7de6b4cb00260827b822551744b8b5bdee3"
+        }
+      ],
+      "evaluator_resolved": false,
+      "evaluation_log": {
+        "url": "https://swe-bench-submissions.s3.amazonaws.com/verified/20241029_OpenHands-CodeAct-2.1-sonnet-20241022/logs/astropy__astropy-8872/report.json",
+        "sha256": "58ed2b6e266807478f5407f7556cff6f3ddc1872932c3c0c702447b7b7c40790",
+        "bytes": 8504
+      },
+      "evaluation_patch": {
+        "url": "https://swe-bench-submissions.s3.amazonaws.com/verified/20241029_OpenHands-CodeAct-2.1-sonnet-20241022/logs/astropy__astropy-8872/patch.diff",
+        "sha256": "e270af988623d6c12e0333e6ed11d7de6b4cb00260827b822551744b8b5bdee3",
+        "bytes": 813
+      },
+      "prediction_matches_eval_patch": true,
+      "grade_fields": {
+        "patch_is_None": false,
+        "patch_exists": true,
+        "patch_successfully_applied": true,
+        "resolved": false
+      },
+      "grade_test_counts": {
+        "FAIL_TO_PASS": {
+          "success": 0,
+          "failure": 1
+        },
+        "PASS_TO_PASS": {
+          "success": 0,
+          "failure": 80
+        },
+        "FAIL_TO_FAIL": {
+          "success": 0,
+          "failure": 0
+        },
+        "PASS_TO_FAIL": {
+          "success": 0,
+          "failure": 0
+        }
+      }
+    },
+    {
+      "series": "B",
+      "instance_id": "django__django-16899",
+      "published_resolved": true,
+      "published_categories": [
+        "resolved"
+      ],
+      "nonempty_prediction": true,
+      "predictions": [
+        {
+          "line": 213,
+          "present": true,
+          "bytes": 876,
+          "sha256": "bd3d51eecc4e0ff0bb51dc0b8f5ac5826d4421d357ace69089ffddb40162b661"
+        }
+      ],
+      "evaluator_resolved": true,
+      "evaluation_log": {
+        "url": "https://swe-bench-submissions.s3.amazonaws.com/verified/20241029_OpenHands-CodeAct-2.1-sonnet-20241022/logs/django__django-16899/report.json",
+        "sha256": "8dcd1736bce5f91c04788c65c55c9ffe8a64d3fbf202956568d2d43c09c8e3c7",
+        "bytes": 7010
+      },
+      "evaluation_patch": {
+        "url": "https://swe-bench-submissions.s3.amazonaws.com/verified/20241029_OpenHands-CodeAct-2.1-sonnet-20241022/logs/django__django-16899/patch.diff",
+        "sha256": "bd3d51eecc4e0ff0bb51dc0b8f5ac5826d4421d357ace69089ffddb40162b661",
+        "bytes": 876
+      },
+      "prediction_matches_eval_patch": true,
+      "grade_fields": {
+        "patch_is_None": false,
+        "patch_exists": true,
+        "patch_successfully_applied": true,
+        "resolved": true
+      },
+      "grade_test_counts": {
+        "FAIL_TO_PASS": {
+          "success": 2,
+          "failure": 0
+        },
+        "PASS_TO_PASS": {
+          "success": 54,
+          "failure": 0
+        },
+        "FAIL_TO_FAIL": {
+          "success": 0,
+          "failure": 0
+        },
+        "PASS_TO_FAIL": {
+          "success": 0,
+          "failure": 0
+        }
+      }
+    },
+    {
+      "series": "B",
+      "instance_id": "django__django-13406",
+      "published_resolved": true,
+      "published_categories": [
+        "resolved"
+      ],
+      "nonempty_prediction": true,
+      "predictions": [
+        {
+          "line": 189,
+          "present": true,
+          "bytes": 5933,
+          "sha256": "28f18c97357cdb4b3783e50afe9eb4e8fd3149ab7c817d2f2675a6151d59dca6"
+        }
+      ],
+      "evaluator_resolved": true,
+      "evaluation_log": {
+        "url": "https://swe-bench-submissions.s3.amazonaws.com/verified/20241029_OpenHands-CodeAct-2.1-sonnet-20241022/logs/django__django-13406/report.json",
+        "sha256": "5eafda503cccf39bbe5ba687569d2660940e91e7a3c3469f0d2c54bb142afc6d",
+        "bytes": 4288
+      },
+      "evaluation_patch": {
+        "url": "https://swe-bench-submissions.s3.amazonaws.com/verified/20241029_OpenHands-CodeAct-2.1-sonnet-20241022/logs/django__django-13406/patch.diff",
+        "sha256": "28f18c97357cdb4b3783e50afe9eb4e8fd3149ab7c817d2f2675a6151d59dca6",
+        "bytes": 5933
+      },
+      "prediction_matches_eval_patch": true,
+      "grade_fields": {
+        "patch_is_None": false,
+        "patch_exists": true,
+        "patch_successfully_applied": true,
+        "resolved": true
+      },
+      "grade_test_counts": {
+        "FAIL_TO_PASS": {
+          "success": 3,
+          "failure": 0
+        },
+        "PASS_TO_PASS": {
+          "success": 32,
+          "failure": 0
+        },
+        "FAIL_TO_FAIL": {
+          "success": 0,
+          "failure": 0
+        },
+        "PASS_TO_FAIL": {
+          "success": 0,
+          "failure": 0
+        }
+      }
+    },
+    {
+      "series": "B",
+      "instance_id": "sphinx-doc__sphinx-9281",
+      "published_resolved": false,
+      "published_categories": [],
+      "nonempty_prediction": true,
+      "predictions": [
+        {
+          "line": 395,
+          "present": true,
+          "bytes": 7041,
+          "sha256": "253e358b7e9d9b5976d61e1b281dc7367490d3bdb4d47fd0424993919c20e16e"
+        }
+      ],
+      "evaluator_resolved": false,
+      "evaluation_log": {
+        "url": "https://swe-bench-submissions.s3.amazonaws.com/verified/20241029_OpenHands-CodeAct-2.1-sonnet-20241022/logs/sphinx-doc__sphinx-9281/report.json",
+        "sha256": "be67d6ad94097d91f33292e90b04840a2f2561141863697bfd6907b0b393f1be",
+        "bytes": 3707
+      },
+      "evaluation_patch": {
+        "url": "https://swe-bench-submissions.s3.amazonaws.com/verified/20241029_OpenHands-CodeAct-2.1-sonnet-20241022/logs/sphinx-doc__sphinx-9281/patch.diff",
+        "sha256": "253e358b7e9d9b5976d61e1b281dc7367490d3bdb4d47fd0424993919c20e16e",
+        "bytes": 7041
+      },
+      "prediction_matches_eval_patch": true,
+      "grade_fields": {
+        "patch_is_None": false,
+        "patch_exists": true,
+        "patch_successfully_applied": true,
+        "resolved": false
+      },
+      "grade_test_counts": {
+        "FAIL_TO_PASS": {
+          "success": 0,
+          "failure": 1
+        },
+        "PASS_TO_PASS": {
+          "success": 38,
+          "failure": 0
+        },
+        "FAIL_TO_FAIL": {
+          "success": 0,
+          "failure": 0
+        },
+        "PASS_TO_FAIL": {
+          "success": 0,
+          "failure": 0
+        }
+      }
+    },
+    {
+      "series": "B",
+      "instance_id": "django__django-13449",
+      "published_resolved": false,
+      "published_categories": [],
+      "nonempty_prediction": true,
+      "predictions": [
+        {
+          "line": 111,
+          "present": true,
+          "bytes": 5442,
+          "sha256": "cd5dd1d31da649ad545c681fcdfe7365bdfd14617e8f83754857365cedd3ceec"
+        }
+      ],
+      "evaluator_resolved": false,
+      "evaluation_log": {
+        "url": "https://swe-bench-submissions.s3.amazonaws.com/verified/20241029_OpenHands-CodeAct-2.1-sonnet-20241022/logs/django__django-13449/report.json",
+        "sha256": "5e62a28b90dbaa396e00128de448ef7ab999b8e298c76131c5f442ee3a94e00b",
+        "bytes": 5045
+      },
+      "evaluation_patch": {
+        "url": "https://swe-bench-submissions.s3.amazonaws.com/verified/20241029_OpenHands-CodeAct-2.1-sonnet-20241022/logs/django__django-13449/patch.diff",
+        "sha256": "cd5dd1d31da649ad545c681fcdfe7365bdfd14617e8f83754857365cedd3ceec",
+        "bytes": 5442
+      },
+      "prediction_matches_eval_patch": true,
+      "grade_fields": {
+        "patch_is_None": false,
+        "patch_exists": true,
+        "patch_successfully_applied": true,
+        "resolved": false
+      },
+      "grade_test_counts": {
+        "FAIL_TO_PASS": {
+          "success": 1,
+          "failure": 0
+        },
+        "PASS_TO_PASS": {
+          "success": 39,
+          "failure": 7
+        },
+        "FAIL_TO_FAIL": {
+          "success": 0,
+          "failure": 0
+        },
+        "PASS_TO_FAIL": {
+          "success": 0,
+          "failure": 0
+        }
+      }
+    },
+    {
+      "series": "B",
+      "instance_id": "django__django-11880",
+      "published_resolved": true,
+      "published_categories": [
+        "resolved"
+      ],
+      "nonempty_prediction": true,
+      "predictions": [
+        {
+          "line": 57,
+          "present": true,
+          "bytes": 1512,
+          "sha256": "3f24b834c31172f655e64f71b96878daafdf429c9381dba34be71fd1df698a95"
+        }
+      ],
+      "evaluator_resolved": true,
+      "evaluation_log": {
+        "url": "https://swe-bench-submissions.s3.amazonaws.com/verified/20241029_OpenHands-CodeAct-2.1-sonnet-20241022/logs/django__django-11880/report.json",
+        "sha256": "b70d9b10502fc114939ad8f6a0a259dbef884bf8411f7992ed32947a2dcb58ac",
+        "bytes": 11664
+      },
+      "evaluation_patch": {
+        "url": "https://swe-bench-submissions.s3.amazonaws.com/verified/20241029_OpenHands-CodeAct-2.1-sonnet-20241022/logs/django__django-11880/patch.diff",
+        "sha256": "3f24b834c31172f655e64f71b96878daafdf429c9381dba34be71fd1df698a95",
+        "bytes": 1512
+      },
+      "prediction_matches_eval_patch": true,
+      "grade_fields": {
+        "patch_is_None": false,
+        "patch_exists": true,
+        "patch_successfully_applied": true,
+        "resolved": true
+      },
+      "grade_test_counts": {
+        "FAIL_TO_PASS": {
+          "success": 1,
+          "failure": 0
+        },
+        "PASS_TO_PASS": {
+          "success": 114,
+          "failure": 0
+        },
+        "FAIL_TO_FAIL": {
+          "success": 0,
+          "failure": 0
+        },
+        "PASS_TO_FAIL": {
+          "success": 0,
+          "failure": 0
+        }
+      }
+    },
+    {
+      "series": "B",
+      "instance_id": "sphinx-doc__sphinx-8035",
+      "published_resolved": false,
+      "published_categories": [],
+      "nonempty_prediction": true,
+      "predictions": [
+        {
+          "line": 396,
+          "present": true,
+          "bytes": 2291,
+          "sha256": "1ad1e4219c2372c10518bf3c20aaf4b5aaaf8e87a786d83f922b8293f4349687"
+        }
+      ],
+      "evaluator_resolved": false,
+      "evaluation_log": {
+        "url": "https://swe-bench-submissions.s3.amazonaws.com/verified/20241029_OpenHands-CodeAct-2.1-sonnet-20241022/logs/sphinx-doc__sphinx-8035/report.json",
+        "sha256": "a566d1f60c7c91b43060a47b5dbc34eff2860c055ecec6cbfce285f40368e799",
+        "bytes": 959
+      },
+      "evaluation_patch": {
+        "url": "https://swe-bench-submissions.s3.amazonaws.com/verified/20241029_OpenHands-CodeAct-2.1-sonnet-20241022/logs/sphinx-doc__sphinx-8035/patch.diff",
+        "sha256": "1ad1e4219c2372c10518bf3c20aaf4b5aaaf8e87a786d83f922b8293f4349687",
+        "bytes": 2291
+      },
+      "prediction_matches_eval_patch": true,
+      "grade_fields": {
+        "patch_is_None": false,
+        "patch_exists": true,
+        "patch_successfully_applied": true,
+        "resolved": false
+      },
+      "grade_test_counts": {
+        "FAIL_TO_PASS": {
+          "success": 1,
+          "failure": 0
+        },
+        "PASS_TO_PASS": {
+          "success": 1,
+          "failure": 1
+        },
+        "FAIL_TO_FAIL": {
+          "success": 0,
+          "failure": 0
+        },
+        "PASS_TO_FAIL": {
+          "success": 0,
+          "failure": 0
+        }
+      }
+    },
+    {
+      "series": "B",
+      "instance_id": "django__django-11964",
+      "published_resolved": false,
+      "published_categories": [],
+      "nonempty_prediction": true,
+      "predictions": [
+        {
+          "line": 495,
+          "present": true,
+          "bytes": 1160,
+          "sha256": "f8e9f8d4ae99132c7562074698f20357eea81269bc25e6fe30fcec959ecad83d"
+        }
+      ],
+      "evaluator_resolved": false,
+      "evaluation_log": {
+        "url": "https://swe-bench-submissions.s3.amazonaws.com/verified/20241029_OpenHands-CodeAct-2.1-sonnet-20241022/logs/django__django-11964/report.json",
+        "sha256": "724b61d5839c53685f8bc96709fd2cf604ed66fdebbe5f114e2114f54d19717b",
+        "bytes": 2074
+      },
+      "evaluation_patch": {
+        "url": "https://swe-bench-submissions.s3.amazonaws.com/verified/20241029_OpenHands-CodeAct-2.1-sonnet-20241022/logs/django__django-11964/patch.diff",
+        "sha256": "f8e9f8d4ae99132c7562074698f20357eea81269bc25e6fe30fcec959ecad83d",
+        "bytes": 1160
+      },
+      "prediction_matches_eval_patch": true,
+      "grade_fields": {
+        "patch_is_None": false,
+        "patch_exists": true,
+        "patch_successfully_applied": true,
+        "resolved": false
+      },
+      "grade_test_counts": {
+        "FAIL_TO_PASS": {
+          "success": 0,
+          "failure": 2
+        },
+        "PASS_TO_PASS": {
+          "success": 15,
+          "failure": 0
+        },
+        "FAIL_TO_FAIL": {
+          "success": 0,
+          "failure": 0
+        },
+        "PASS_TO_FAIL": {
+          "success": 0,
+          "failure": 0
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+[
+  {
+    "split": "test",
+    "url": "https://raw.githubusercontent.com/SWE-bench/experiments/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/evaluation/test/20240402_sweagent_claude3opus/metadata.yaml",
+    "curl_exit": 0,
+    "sha256": "f12b85e78b91e939f45517cf9ce3e3bdf7a7131f102f33c7c27ce6fe1fd4c73e",
+    "urls_only": [
+      "https://avatars.githubusercontent.com/u/166046056?s=200&v=4",
+      "s3://swe-bench-submissions/test/20240402_sweagent_claude3opus/logs",
+      "s3://swe-bench-submissions/test/20240402_sweagent_claude3opus/trajs"
+    ]
+  },
+  {
+    "split": "lite",
+    "url": "https://raw.githubusercontent.com/SWE-bench/experiments/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/evaluation/lite/20240402_sweagent_claude3opus/metadata.yaml",
+    "curl_exit": 0,
+    "sha256": "9015ede3c183432372d901ebb02e340849952777cd333e2b92eeb4b78132cc12",
+    "urls_only": [
+      "https://arxiv.org/abs/2405.15793",
+      "https://avatars.githubusercontent.com/u/166046056?s=200&v=4",
+      "https://github.com/SWE-agent/SWE-agent",
+      "s3://swe-bench-submissions/lite/20240402_sweagent_claude3opus/logs",
+      "s3://swe-bench-submissions/lite/20240402_sweagent_claude3opus/trajs"
+    ]
+  }
+]

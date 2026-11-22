@@ -1,0 +1,120 @@
+{
+  "catalog_commit": "40f164d5b8f1d249bf95a6df8b74b577fd8e519d",
+  "protocol_sha256": "c05546f93b6dc57606fab61383a9b931f0930d5e906572ebd3ab04812a8905d7",
+  "submission": {
+    "A": "20240402_sweagent_claude3opus",
+    "B": "20241029_OpenHands-CodeAct-2.1-sonnet-20241022"
+  },
+  "discovery_sha256": {
+    "A": "fd856e10c1c362e3d69baa7d6ce75bf23cd0e4c26918b0615c823cd60cc21e30",
+    "B": "9186bc5ff39d2688457ff68a8a2cbb00d3436e0b41215a078892f80f786566dc"
+  },
+  "roster_sizes": {
+    "A": 496,
+    "B": 499
+  },
+  "intersection_size": 495,
+  "slots": [
+    {
+      "series": "A",
+      "instance_id": "django__django-15569",
+      "selection_hash": "009d9cb90c1c0e5cd8a74e9e79b72b239319a1c35c6ee4ae2bb34743c375ed10"
+    },
+    {
+      "series": "A",
+      "instance_id": "matplotlib__matplotlib-25479",
+      "selection_hash": "00a8ab3ef9a5be9f64eafb03c51720ec1af8dec18bf5958830f659bc4afc05a6"
+    },
+    {
+      "series": "A",
+      "instance_id": "astropy__astropy-8872",
+      "selection_hash": "00b9802cb31033194bb00ebb64e5ef37b83b7be15d0cb199cf2d9ac5f7303de5"
+    },
+    {
+      "series": "A",
+      "instance_id": "django__django-16899",
+      "selection_hash": "0100d4ea407eeeff3410cb01b65c7560610ff4369bb40094e02c9c7349d90f90"
+    },
+    {
+      "series": "A",
+      "instance_id": "django__django-13406",
+      "selection_hash": "0161ec44d808d865c3518dfef3269a57a58c57d1abf41ad8011607f2cf634c61"
+    },
+    {
+      "series": "A",
+      "instance_id": "sphinx-doc__sphinx-9281",
+      "selection_hash": "01716026401404670eb7eea60a95f2fe2777953fcda2864dae6abd30c219822a"
+    },
+    {
+      "series": "A",
+      "instance_id": "django__django-13449",
+      "selection_hash": "01a57c5fd641ef4734c6130862847ee80d5a497c3570f863c382d5c04cf606c6"
+    },
+    {
+      "series": "A",
+      "instance_id": "django__django-11880",
+      "selection_hash": "02a91728acef4b419d27f0ed24b27feb6a55e15766aa4e6149af79116a50e71c"
+    },
+    {
+      "series": "A",
+      "instance_id": "sphinx-doc__sphinx-8035",
+      "selection_hash": "02d2f98ab2e17658fe38ad39eed01c104380b295286ce0a84c6f6fae0abd35e3"
+    },
+    {
+      "series": "A",
+      "instance_id": "django__django-11964",
+      "selection_hash": "0462b1238ebb88f0bb92e064ca353a29ea7b341e4ead97d4ba7b96480fb40a96"
+    },
+    {
+      "series": "B",
+      "instance_id": "django__django-15569",
+      "selection_hash": "009d9cb90c1c0e5cd8a74e9e79b72b239319a1c35c6ee4ae2bb34743c375ed10"
+    },
+    {
+      "series": "B",
+      "instance_id": "matplotlib__matplotlib-25479",
+      "selection_hash": "00a8ab3ef9a5be9f64eafb03c51720ec1af8dec18bf5958830f659bc4afc05a6"
+    },
+    {
+      "series": "B",
+      "instance_id": "astropy__astropy-8872",
+      "selection_hash": "00b9802cb31033194bb00ebb64e5ef37b83b7be15d0cb199cf2d9ac5f7303de5"
+    },
+    {
+      "series": "B",
+      "instance_id": "django__django-16899",
+      "selection_hash": "0100d4ea407eeeff3410cb01b65c7560610ff4369bb40094e02c9c7349d90f90"
+    },
+    {
+      "series": "B",
+      "instance_id": "django__django-13406",
+      "selection_hash": "0161ec44d808d865c3518dfef3269a57a58c57d1abf41ad8011607f2cf634c61"
+    },
+    {
+      "series": "B",
+      "instance_id": "sphinx-doc__sphinx-9281",
+      "selection_hash": "01716026401404670eb7eea60a95f2fe2777953fcda2864dae6abd30c219822a"
+    },
+    {
+      "series": "B",
+      "instance_id": "django__django-13449",
+      "selection_hash": "01a57c5fd641ef4734c6130862847ee80d5a497c3570f863c382d5c04cf606c6"
+    },
+    {
+      "series": "B",
+      "instance_id": "django__django-11880",
+      "selection_hash": "02a91728acef4b419d27f0ed24b27feb6a55e15766aa4e6149af79116a50e71c"
+    },
+    {
+      "series": "B",
+      "instance_id": "sphinx-doc__sphinx-8035",
+      "selection_hash": "02d2f98ab2e17658fe38ad39eed01c104380b295286ce0a84c6f6fae0abd35e3"
+    },
+    {
+      "series": "B",
+      "instance_id": "django__django-11964",
+      "selection_hash": "0462b1238ebb88f0bb92e064ca353a29ea7b341e4ead97d4ba7b96480fb40a96"
+    }
+  ],
+  "frozen_utc": "2026-11-22T09:50:01.006976+00:00"
+}

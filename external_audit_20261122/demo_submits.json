@@ -1,0 +1,103 @@
+{
+  "design": "post hoc diagnostic on the frozen sample; exact assistant history.action only",
+  "rows": [
+    {
+      "instance_id": "django__django-15569",
+      "trace_sha256": "6a60ec1ef39d0f5a50c2f24f4eecac9a3c72b13fee2570276b1dd2b4b3aebfe7",
+      "matches": [
+        {
+          "locator": "/history/22/action",
+          "is_demo": true
+        }
+      ]
+    },
+    {
+      "instance_id": "matplotlib__matplotlib-25479",
+      "trace_sha256": "5c78747f54f5fb11c7cbe8569b94173bc80585a5a53cfe12f00d78511d40384f",
+      "matches": [
+        {
+          "locator": "/history/22/action",
+          "is_demo": true
+        }
+      ]
+    },
+    {
+      "instance_id": "astropy__astropy-8872",
+      "trace_sha256": "3d7afe1f8b1e75acaf210ef3696bed4772d2b988d729008b05b9369c507906ef",
+      "matches": [
+        {
+          "locator": "/history/22/action",
+          "is_demo": true
+        },
+        {
+          "locator": "/history/62/action",
+          "is_demo": false
+        }
+      ]
+    },
+    {
+      "instance_id": "django__django-16899",
+      "trace_sha256": "c84d56fd6f9376543da894f67f61256e1ac64267e09166957e32d216d190ecb2",
+      "matches": [
+        {
+          "locator": "/history/22/action",
+          "is_demo": true
+        }
+      ]
+    },
+    {
+      "instance_id": "django__django-13406",
+      "trace_sha256": "cf9c1f08c710d9b0e5d499c7fff4fbd7b46258548673969b92ad61338c941133",
+      "matches": [
+        {
+          "locator": "/history/22/action",
+          "is_demo": true
+        }
+      ]
+    },
+    {
+      "instance_id": "sphinx-doc__sphinx-9281",
+      "trace_sha256": "8f8710939d66533caa47fda6001f6dd855255748d94bae04dc8b6b9e0adf330b",
+      "matches": [
+        {
+          "locator": "/history/22/action",
+          "is_demo": true
+        }
+      ]
+    },
+    {
+      "instance_id": "django__django-13449",
+      "trace_sha256": null,
+      "matches": null
+    },
+    {
+      "instance_id": "django__django-11880",
+      "trace_sha256": null,
+      "matches": null
+    },
+    {
+      "instance_id": "sphinx-doc__sphinx-8035",
+      "trace_sha256": "7be976d8847b9069624174e95c24ade34f2112755e31885e27a5418569c441d8",
+      "matches": [
+        {
+          "locator": "/history/22/action",
+          "is_demo": true
+        },
+        {
+          "locator": "/history/56/action",
+          "is_demo": false
+        }
+      ]
+    },
+    {
+      "instance_id": "django__django-11964",
+      "trace_sha256": "4554023e4b45682216aedd6a56fcd49902bef4203e7462f00d2b1b3f366d5790",
+      "matches": [
+        {
+          "locator": "/history/22/action",
+          "is_demo": true
+        }
+      ]
+    }
+  ]
+}

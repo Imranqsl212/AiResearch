@@ -1,0 +1,1547 @@
+{
+  "series": "A",
+  "submission": "20240402_sweagent_claude3opus",
+  "selection_sha256": "7b8e1869d1101c0851935686c20e1003f78922bf75840cab17c702d4aa9e23e2",
+  "created_utc": "2026-11-22T09:56:38.511778+00:00",
+  "method": "Assistant primary coding from public action, observation and terminal metadata fields, supported by deterministic extraction; no independent human adjudication assumed.",
+  "locators": "Zero-based JSON array indices in the exact SHA256-identified raw .traj files.",
+  "read_fields": [
+    "trajectory[].action",
+    "trajectory[].observation",
+    "history[].role",
+    "history[].action",
+    "history[].is_demo",
+    "info.exit_status",
+    "info.submission (UTF-8 hash/length only)"
+  ],
+  "excluded_fields": [
+    "trajectory[].thought",
+    "trajectory[].response",
+    "history[].content",
+    "published evaluation outcomes"
+  ],
+  "counting_rules": {
+    "edit_attempt": "An observed edit/create command; unsuccessful argument or lint validation still counts as an attempt.",
+    "confirmed_edit": "Positive tool File updated receipt with a file header. Null when no model-attributed modification can be confirmed.",
+    "verification_attempt": "An executed test-suite, custom reproduction, or build/render command with a recorded observation; static inspection alone is excluded.",
+    "explicit_finish": "An exact submit command in matching trajectory and history action fields. Cost-limit exit/autosubmit is excluded.",
+    "stop_class": "agent_acknowledged requires submit plus matching terminal submitted status; controller_boundary uses recorded exit_cost; both is reserved for coexisting explicit request and controller boundary."
+  },
+  "rows": [
+    {
+      "series": "A",
+      "submission": "20240402_sweagent_claude3opus",
+      "instance_id": "django__django-15569",
+      "trace_url": "https://swe-bench-submissions.s3.amazonaws.com/verified/20240402_sweagent_claude3opus/trajs/django__django-15569.traj",
+      "trace_sha256": "6a60ec1ef39d0f5a50c2f24f4eecac9a3c72b13fee2570276b1dd2b4b3aebfe7",
+      "raw_trace_path": "/private/tmp/external_audit_A_20261122/traces/django__django-15569.traj",
+      "trace_available": true,
+      "trace_submission_sha256": "e19a7b66c8bd17c1e170c38e19011cf3486582baa2767f1a90113640c6d55d2c",
+      "trace_submission_utf8_bytes": 499,
+      "trace_submission_locator": "info.submission",
+      "edit_attempt": true,
+      "confirmed_edit": true,
+      "verification_attempt": true,
+      "explicit_finish": false,
+      "stop_class": "controller_boundary",
+      "last_action": "exit_cost",
+      "last_action_locator": "trajectory[22].action",
+      "last_action_actor": "controller_cost_boundary",
+      "last_observable_agent_action": "goto 2760",
+      "last_observable_agent_action_locator": "trajectory[21].action",
+      "trace_step_count": 23,
+      "history_action_count": 23,
+      "history_actions_equal_trajectory": true,
+      "info_exit_status": "submitted (exit_cost)",
+      "confirmed_edit_file_roles": [
+        "repository_source"
+      ],
+      "repository_source_edit_confirmed": true,
+      "scratch_edit_confirmed": false,
+      "verification_kinds": [
+        "test_suite_attempt"
+      ],
+      "static_inspection_observed": true,
+      "evidence": {
+        "edit_attempts": [
+          {
+            "action_locator": "trajectory[2].action",
+            "command": "edit 220:220",
+            "action_sha256": "9a59e25e15c81d86d884503451d2d0e4dc77c95caafd0e27b080a15c677e9423"
+          }
+        ],
+        "confirmed_edit_receipts": [
+          {
+            "action_locator": "trajectory[2].action",
+            "observation_locator": "trajectory[2].observation",
+            "command": "edit 220:220",
+            "file": "/django__django/django/db/models/query_utils.py",
+            "file_role": "repository_source",
+            "receipt_marker": "File updated.",
+            "replacement_matches_numbered_observation": true,
+            "action_sha256": "9a59e25e15c81d86d884503451d2d0e4dc77c95caafd0e27b080a15c677e9423",
+            "observation_sha256": "ff9960a2f2c0730482ac332a4dfc07938be1198fda0363f4bfd4d3768f6d26ec"
+          }
+        ],
+        "unconfirmed_or_rejected_edits": [],
+        "verification_attempts": [
+          {
+            "action_locator": "trajectory[7].action",
+            "observation_locator": "trajectory[7].observation",
+            "kind": "test_suite_attempt",
+            "command": "python -m unittest tests.schema.tests.SchemaTests.test_func_unique_constraint_lookups",
+            "observation_sha256": "38d04d3f56e61f90d155ca09e7080bf2765365b875032af0eff060044c7fa307",
+            "claim_scope": "Command attempted and an observation recorded; no passing-test or repair-success inference."
+          },
+          {
+            "action_locator": "trajectory[9].action",
+            "observation_locator": "trajectory[9].observation",
+            "kind": "test_suite_attempt",
+            "command": "python -m unittest --settings=tests.postgres_tests.integration_settings tests.schema.tests.SchemaTests.test_func_unique_constraint_lookups",
+            "observation_sha256": "93f6fbfb8b85af5c849252a672d88ed31d29345ab18ca06de061d1da55e611b6",
+            "claim_scope": "Command attempted and an observation recorded; no passing-test or repair-success inference."
+          },
+          {
+            "action_locator": "trajectory[18].action",
+            "observation_locator": "trajectory[18].observation",
+            "kind": "test_suite_attempt",
+            "command": "./runtests.py schema.tests.SchemaTests.test_func_unique_constraint_lookups",
+            "observation_sha256": "2c2eaa0d89a54ddbbf3460c9aadb289267b67add394c9fd6138cc627b31e391b",
+            "claim_scope": "Command attempted and an observation recorded; no passing-test or repair-success inference."
+          }
+        ],
+        "static_inspection_step_indices": [
+          0,
+          1,
+          3,
+          4,
+          5,
+          6,
+          8,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          19,
+          20,
+          21
+        ],
+        "explicit_finish": [],
+        "stop": {
+          "terminal_action_locator": "trajectory[22].action",
+          "terminal_action": "exit_cost",
+          "exit_status_locator": "info.exit_status",
+          "exit_status": "submitted (exit_cost)",
+          "terminal_observation_locator": "trajectory[22].observation",
+          "terminal_observation_sha256": "992018138724e2235bf0652c1ffbf0fd85fc4847785c3d5b7db33d981d75df21",
+          "controller_receipt": "Exited (autosubmitted)",
+          "agent_submit_acknowledgment": null
+        },
+        "absence_scope": "False means no such command in the full provided internally cross-checked action sequences; it is not a universal claim about unrecorded behavior."
+      },
+      "notes": [
+        "All claims concern the supplied public record; matching trajectory/history action fields validate internal coverage, not external completeness or faithful private reasoning.",
+        "Tests and custom reproduction/build commands are counted as attempts regardless of their outcome; source inspection is recorded separately.",
+        "exit_cost is a recorded controller cost boundary despite occupying an assistant-labelled history action; autosubmission is not an explicit agent submit request."
+      ]
+    },
+    {
+      "series": "A",
+      "submission": "20240402_sweagent_claude3opus",
+      "instance_id": "matplotlib__matplotlib-25479",
+      "trace_url": "https://swe-bench-submissions.s3.amazonaws.com/verified/20240402_sweagent_claude3opus/trajs/matplotlib__matplotlib-25479.traj",
+      "trace_sha256": "5c78747f54f5fb11c7cbe8569b94173bc80585a5a53cfe12f00d78511d40384f",
+      "raw_trace_path": "/private/tmp/external_audit_A_20261122/traces/matplotlib__matplotlib-25479.traj",
+      "trace_available": true,
+      "trace_submission_sha256": null,
+      "trace_submission_utf8_bytes": null,
+      "trace_submission_locator": "info.submission absent",
+      "edit_attempt": true,
+      "confirmed_edit": true,
+      "verification_attempt": true,
+      "explicit_finish": false,
+      "stop_class": "controller_boundary",
+      "last_action": "exit_cost",
+      "last_action_locator": "trajectory[17].action",
+      "last_action_actor": "controller_cost_boundary",
+      "last_observable_agent_action": "rm reproduce_bug.py",
+      "last_observable_agent_action_locator": "trajectory[16].action",
+      "trace_step_count": 18,
+      "history_action_count": 18,
+      "history_actions_equal_trajectory": true,
+      "info_exit_status": "exit_cost",
+      "confirmed_edit_file_roles": [
+        "scratch_or_reproduction"
+      ],
+      "repository_source_edit_confirmed": false,
+      "scratch_edit_confirmed": true,
+      "verification_kinds": [
+        "custom_reproduction_run"
+      ],
+      "static_inspection_observed": true,
+      "evidence": {
+        "edit_attempts": [
+          {
+            "action_locator": "trajectory[0].action",
+            "command": "create reproduce_bug.py",
+            "action_sha256": "135a74e7937dd63eb866e4225b14940d9ea60dae6ebc9b5ea28b8e10c9194065"
+          },
+          {
+            "action_locator": "trajectory[1].action",
+            "command": "edit 1:1",
+            "action_sha256": "47bdc094c5e818d9c6d39b80d48a372c0afaa4a20e405daff7490e322ace9457"
+          },
+          {
+            "action_locator": "trajectory[9].action",
+            "command": "edit 9:9",
+            "action_sha256": "554beb824722208a92d73197130910524eba7489b3c8b75229493cd16038fcd3"
+          },
+          {
+            "action_locator": "trajectory[11].action",
+            "command": "edit 1:1",
+            "action_sha256": "7b093acfaa965ce434d006ab270d4119bf75f95ff55756cb0348cc8519ecde32"
+          },
+          {
+            "action_locator": "trajectory[12].action",
+            "command": "edit 1:12",
+            "action_sha256": "f806dae5a5d3927898888368ca287c15bf0f4d76eb0f517b0de8c826d0ed40ef"
+          },
+          {
+            "action_locator": "trajectory[14].action",
+            "command": "edit 1:12",
+            "action_sha256": "2351eb3bf933010b06795702b604e3bedb2e81e9a82f7c0f59339d3bed87775f"
+          }
+        ],
+        "confirmed_edit_receipts": [
+          {
+            "action_locator": "trajectory[1].action",
+            "observation_locator": "trajectory[1].observation",
+            "command": "edit 1:1",
+            "file": "/matplotlib__matplotlib/reproduce_bug.py",
+            "file_role": "scratch_or_reproduction",
+            "receipt_marker": "File updated.",
+            "replacement_matches_numbered_observation": true,
+            "action_sha256": "47bdc094c5e818d9c6d39b80d48a372c0afaa4a20e405daff7490e322ace9457",
+            "observation_sha256": "35e05c5ea17d3b5c639bebc6663c3b60b1640f17632bc764594f5fb1a647c2f8"
+          },
+          {
+            "action_locator": "trajectory[9].action",
+            "observation_locator": "trajectory[9].observation",
+            "command": "edit 9:9",
+            "file": "/matplotlib__matplotlib/reproduce_bug.py",
+            "file_role": "scratch_or_reproduction",
+            "receipt_marker": "File updated.",
+            "replacement_matches_numbered_observation": true,
+            "action_sha256": "554beb824722208a92d73197130910524eba7489b3c8b75229493cd16038fcd3",
+            "observation_sha256": "6890a5fa1dafe36c2bed6a2cea67fe13554946ecfc072104ff4402380b01139e"
+          },
+          {
+            "action_locator": "trajectory[12].action",
+            "observation_locator": "trajectory[12].observation",
+            "command": "edit 1:12",
+            "file": "/matplotlib__matplotlib/reproduce_bug.py",
+            "file_role": "scratch_or_reproduction",
+            "receipt_marker": "File updated.",
+            "replacement_matches_numbered_observation": true,
+            "action_sha256": "f806dae5a5d3927898888368ca287c15bf0f4d76eb0f517b0de8c826d0ed40ef",
+            "observation_sha256": "dce8cd21e544e61fa3641c3cf135576ba5ca9a3bd2ec697553884ca7fd1f0894"
+          },
+          {
+            "action_locator": "trajectory[14].action",
+            "observation_locator": "trajectory[14].observation",
+            "command": "edit 1:12",
+            "file": "/matplotlib__matplotlib/reproduce_bug.py",
+            "file_role": "scratch_or_reproduction",
+            "receipt_marker": "File updated.",
+            "replacement_matches_numbered_observation": true,
+            "action_sha256": "2351eb3bf933010b06795702b604e3bedb2e81e9a82f7c0f59339d3bed87775f",
+            "observation_sha256": "217f33ab9b1313db3d7bac747661b1ca96c7954ffbac26f0fea84b675879e267"
+          }
+        ],
+        "unconfirmed_or_rejected_edits": [
+          {
+            "action_locator": "trajectory[11].action",
+            "observation_locator": "trajectory[11].observation",
+            "command": "edit 1:1",
+            "confirmed_applied": false,
+            "reason": "No positive File updated receipt; syntax or argument errors are not treated as successful edits."
+          }
+        ],
+        "verification_attempts": [
+          {
+            "action_locator": "trajectory[2].action",
+            "observation_locator": "trajectory[2].observation",
+            "kind": "custom_reproduction_run",
+            "command": "python reproduce_bug.py",
+            "observation_sha256": "4dfa7af88295281195fded1e4747cdc3982f7fdbb31ac7304c400a3a5974bbc1",
+            "claim_scope": "Command attempted and an observation recorded; no passing-test or repair-success inference."
+          },
+          {
+            "action_locator": "trajectory[10].action",
+            "observation_locator": "trajectory[10].observation",
+            "kind": "custom_reproduction_run",
+            "command": "python reproduce_bug.py",
+            "observation_sha256": "ee26fadd9fe9eb01fc516a62646703c46a03504276f27406b8059794c48c009b",
+            "claim_scope": "Command attempted and an observation recorded; no passing-test or repair-success inference."
+          },
+          {
+            "action_locator": "trajectory[13].action",
+            "observation_locator": "trajectory[13].observation",
+            "kind": "custom_reproduction_run",
+            "command": "python reproduce_bug.py",
+            "observation_sha256": "17ae589fd66d306d51453aa96b51e49819ec8e73fc66825ccb485bd92352de7e",
+            "claim_scope": "Command attempted and an observation recorded; no passing-test or repair-success inference."
+          },
+          {
+            "action_locator": "trajectory[15].action",
+            "observation_locator": "trajectory[15].observation",
+            "kind": "custom_reproduction_run",
+            "command": "python reproduce_bug.py",
+            "observation_sha256": "ee26fadd9fe9eb01fc516a62646703c46a03504276f27406b8059794c48c009b",
+            "claim_scope": "Command attempted and an observation recorded; no passing-test or repair-success inference."
+          }
+        ],
+        "static_inspection_step_indices": [
+          3,
+          4,
+          5,
+          6,
+          7,
+          8
+        ],
+        "explicit_finish": [],
+        "stop": {
+          "terminal_action_locator": "trajectory[17].action",
+          "terminal_action": "exit_cost",
+          "exit_status_locator": "info.exit_status",
+          "exit_status": "exit_cost",
+          "terminal_observation_locator": "trajectory[17].observation",
+          "terminal_observation_sha256": "85fc46c17cd71d1d17d606fb4fcad90475ed151e989d75008f1cce429288e8d2",
+          "controller_receipt": "Exited",
+          "agent_submit_acknowledgment": null
+        },
+        "absence_scope": "False means no such command in the full provided internally cross-checked action sequences; it is not a universal claim about unrecorded behavior."
+      },
+      "notes": [
+        "All claims concern the supplied public record; matching trajectory/history action fields validate internal coverage, not external completeness or faithful private reasoning.",
+        "Tests and custom reproduction/build commands are counted as attempts regardless of their outcome; source inspection is recorded separately.",
+        "exit_cost is a recorded controller cost boundary despite occupying an assistant-labelled history action; autosubmission is not an explicit agent submit request.",
+        "Positive edit receipts concern scratch/reproduction files only; they do not establish a repair to existing repository source."
+      ]
+    },
+    {
+      "series": "A",
+      "submission": "20240402_sweagent_claude3opus",
+      "instance_id": "astropy__astropy-8872",
+      "trace_url": "https://swe-bench-submissions.s3.amazonaws.com/verified/20240402_sweagent_claude3opus/trajs/astropy__astropy-8872.traj",
+      "trace_sha256": "3d7afe1f8b1e75acaf210ef3696bed4772d2b988d729008b05b9369c507906ef",
+      "raw_trace_path": "/private/tmp/external_audit_A_20261122/traces/astropy__astropy-8872.traj",
+      "trace_available": true,
+      "trace_submission_sha256": "c85a0ec57b3268a45fbc1896657feb7e260baceb76b52205454183eba9a75cd9",
+      "trace_submission_utf8_bytes": 819,
+      "trace_submission_locator": "info.submission",
+      "edit_attempt": true,
+      "confirmed_edit": true,
+      "verification_attempt": true,
+      "explicit_finish": true,
+      "stop_class": "agent_acknowledged",
+      "last_action": "submit",
+      "last_action_locator": "trajectory[19].action",
+      "last_action_actor": "agent_request",
+      "last_observable_agent_action": "submit",
+      "last_observable_agent_action_locator": "trajectory[19].action",
+      "trace_step_count": 20,
+      "history_action_count": 20,
+      "history_actions_equal_trajectory": true,
+      "info_exit_status": "submitted",
+      "confirmed_edit_file_roles": [
+        "repository_source",
+        "scratch_or_reproduction"
+      ],
+      "repository_source_edit_confirmed": true,
+      "scratch_edit_confirmed": true,
+      "verification_kinds": [
+        "custom_reproduction_run"
+      ],
+      "static_inspection_observed": true,
+      "evidence": {
+        "edit_attempts": [
+          {
+            "action_locator": "trajectory[0].action",
+            "command": "create reproduce.py",
+            "action_sha256": "f06436166b07c61487fee38eda9bbc0ab505fc4df0e92e754f1723b4c3ec174c"
+          },
+          {
+            "action_locator": "trajectory[1].action",
+            "command": "edit 1:1",
+            "action_sha256": "5581f3a4e034d82b83e34aa58bbb292abc5e60a82c6e9ccfeead5fd71103499d"
+          },
+          {
+            "action_locator": "trajectory[3].action",
+            "command": "edit 11:11",
+            "action_sha256": "32671d573fe376f00af21ecec79ed89ea25ed86afe97759b792ec5c987bda307"
+          },
+          {
+            "action_locator": "trajectory[9].action",
+            "command": "edit 300:301",
+            "action_sha256": "4eccdb9bc54fe01bf08a489f8a68b9523327578cf2674e7d9c422bb3890d80a3"
+          },
+          {
+            "action_locator": "trajectory[10].action",
+            "command": "edit 300:301",
+            "action_sha256": "2f5eccde28ecb03c3de766f80f82d22d1e9ba0f4cb9ff8657da6d2737dfeddce"
+          },
+          {
+            "action_locator": "trajectory[11].action",
+            "command": "edit 300:301",
+            "action_sha256": "331d36ab3fed8f712b85216a834b0cf02137ce6ac345bd5e8e2c5055cc851332"
+          },
+          {
+            "action_locator": "trajectory[12].action",
+            "command": "edit 300:301",
+            "action_sha256": "39dd255c69e03ead809b2d516c811b22b0319b3ec5207253fd71c6389820b99e"
+          },
+          {
+            "action_locator": "trajectory[14].action",
+            "command": "edit 300:302",
+            "action_sha256": "fb0fce49bcf10b4dbefcff59a876f9391836035c3f77f7d6ed24c1e966c85c87"
+          },
+          {
+            "action_locator": "trajectory[16].action",
+            "command": "edit 304:304",
+            "action_sha256": "c471993d2dfa83930c7c340fa5ee321e3a61d1c05dcc676a361ac39568c6d7ae"
+          }
+        ],
+        "confirmed_edit_receipts": [
+          {
+            "action_locator": "trajectory[1].action",
+            "observation_locator": "trajectory[1].observation",
+            "command": "edit 1:1",
+            "file": "/astropy__astropy/reproduce.py",
+            "file_role": "scratch_or_reproduction",
+            "receipt_marker": "File updated.",
+            "replacement_matches_numbered_observation": true,
+            "action_sha256": "5581f3a4e034d82b83e34aa58bbb292abc5e60a82c6e9ccfeead5fd71103499d",
+            "observation_sha256": "ecde683d9201a33ee4ece6d6a24fd4ecd09f9d17294c3c30464aea79b295fcbf"
+          },
+          {
+            "action_locator": "trajectory[3].action",
+            "observation_locator": "trajectory[3].observation",
+            "command": "edit 11:11",
+            "file": "/astropy__astropy/reproduce.py",
+            "file_role": "scratch_or_reproduction",
+            "receipt_marker": "File updated.",
+            "replacement_matches_numbered_observation": true,
+            "action_sha256": "32671d573fe376f00af21ecec79ed89ea25ed86afe97759b792ec5c987bda307",
+            "observation_sha256": "ba52b549051fa0721aab53e0087973dfd5ecbbc8ab09e7e983155d7dab186657"
+          },
+          {
+            "action_locator": "trajectory[12].action",
+            "observation_locator": "trajectory[12].observation",
+            "command": "edit 300:301",
+            "file": "/astropy__astropy/astropy/units/quantity.py",
+            "file_role": "repository_source",
+            "receipt_marker": "File updated.",
+            "replacement_matches_numbered_observation": true,
+            "action_sha256": "39dd255c69e03ead809b2d516c811b22b0319b3ec5207253fd71c6389820b99e",
+            "observation_sha256": "80e186aa7fff1a63efdbabed41255bc55413529e8a19ff32802c2eab282fbe96"
+          },
+          {
+            "action_locator": "trajectory[14].action",
+            "observation_locator": "trajectory[14].observation",
+            "command": "edit 300:302",
+            "file": "/astropy__astropy/astropy/units/quantity.py",
+            "file_role": "repository_source",
+            "receipt_marker": "File updated.",
+            "replacement_matches_numbered_observation": true,
+            "action_sha256": "fb0fce49bcf10b4dbefcff59a876f9391836035c3f77f7d6ed24c1e966c85c87",
+            "observation_sha256": "20ef4edd244c14371603393f606e55144e424d01ee15c19cff4558b7f2d450fc"
+          },
+          {
+            "action_locator": "trajectory[16].action",
+            "observation_locator": "trajectory[16].observation",
+            "command": "edit 304:304",
+            "file": "/astropy__astropy/astropy/units/quantity.py",
+            "file_role": "repository_source",
+            "receipt_marker": "File updated.",
+            "replacement_matches_numbered_observation": true,
+            "action_sha256": "c471993d2dfa83930c7c340fa5ee321e3a61d1c05dcc676a361ac39568c6d7ae",
+            "observation_sha256": "17e799385da420448fc207f5be4ba4afa3521eeaade8ef159edaf5cfc9a9f45e"
+          }
+        ],
+        "unconfirmed_or_rejected_edits": [
+          {
+            "action_locator": "trajectory[9].action",
+            "observation_locator": "trajectory[9].observation",
+            "command": "edit 300:301",
+            "confirmed_applied": false,
+            "reason": "No positive File updated receipt; syntax or argument errors are not treated as successful edits."
+          },
+          {
+            "action_locator": "trajectory[10].action",
+            "observation_locator": "trajectory[10].observation",
+            "command": "edit 300:301",
+            "confirmed_applied": false,
+            "reason": "No positive File updated receipt; syntax or argument errors are not treated as successful edits."
+          },
+          {
+            "action_locator": "trajectory[11].action",
+            "observation_locator": "trajectory[11].observation",
+            "command": "edit 300:301",
+            "confirmed_applied": false,
+            "reason": "No positive File updated receipt; syntax or argument errors are not treated as successful edits."
+          }
+        ],
+        "verification_attempts": [
+          {
+            "action_locator": "trajectory[2].action",
+            "observation_locator": "trajectory[2].observation",
+            "kind": "custom_reproduction_run",
+            "command": "python reproduce.py",
+            "observation_sha256": "371ad3ca3b8dc3d2bc3d59f54a59ee2678d301d719300cfc100a8225ff251409",
+            "claim_scope": "Command attempted and an observation recorded; no passing-test or repair-success inference."
+          },
+          {
+            "action_locator": "trajectory[4].action",
+            "observation_locator": "trajectory[4].observation",
+            "kind": "custom_reproduction_run",
+            "command": "python reproduce.py",
+            "observation_sha256": "ee7afe30c3ef49343eb711d1f718b8400faa956dd0fbc8777eccacd73d3b9bf1",
+            "claim_scope": "Command attempted and an observation recorded; no passing-test or repair-success inference."
+          },
+          {
+            "action_locator": "trajectory[13].action",
+            "observation_locator": "trajectory[13].observation",
+            "kind": "custom_reproduction_run",
+            "command": "python reproduce.py",
+            "observation_sha256": "ee7afe30c3ef49343eb711d1f718b8400faa956dd0fbc8777eccacd73d3b9bf1",
+            "claim_scope": "Command attempted and an observation recorded; no passing-test or repair-success inference."
+          },
+          {
+            "action_locator": "trajectory[15].action",
+            "observation_locator": "trajectory[15].observation",
+            "kind": "custom_reproduction_run",
+            "command": "python reproduce.py",
+            "observation_sha256": "ee7afe30c3ef49343eb711d1f718b8400faa956dd0fbc8777eccacd73d3b9bf1",
+            "claim_scope": "Command attempted and an observation recorded; no passing-test or repair-success inference."
+          },
+          {
+            "action_locator": "trajectory[17].action",
+            "observation_locator": "trajectory[17].observation",
+            "kind": "custom_reproduction_run",
+            "command": "python reproduce.py",
+            "observation_sha256": "a313b3e122341854d71e00a17eed1de698b839f355d56ebfbfe3793cca326287",
+            "claim_scope": "Command attempted and an observation recorded; no passing-test or repair-success inference."
+          }
+        ],
+        "static_inspection_step_indices": [
+          5,
+          6,
+          7,
+          8
+        ],
+        "explicit_finish": [
+          {
+            "action_locator": "trajectory[19].action",
+            "history_action_locator": "history[62].action",
+            "command": "submit"
+          }
+        ],
+        "stop": {
+          "terminal_action_locator": "trajectory[19].action",
+          "terminal_action": "submit",
+          "exit_status_locator": "info.exit_status",
+          "exit_status": "submitted",
+          "terminal_observation_locator": "trajectory[19].observation",
+          "terminal_observation_sha256": "c85a0ec57b3268a45fbc1896657feb7e260baceb76b52205454183eba9a75cd9",
+          "controller_receipt": null,
+          "agent_submit_acknowledgment": "info.exit_status == submitted and terminal submit observation recorded"
+        },
+        "absence_scope": "False means no such command in the full provided internally cross-checked action sequences; it is not a universal claim about unrecorded behavior."
+      },
+      "notes": [
+        "All claims concern the supplied public record; matching trajectory/history action fields validate internal coverage, not external completeness or faithful private reasoning.",
+        "Tests and custom reproduction/build commands are counted as attempts regardless of their outcome; source inspection is recorded separately."
+      ]
+    },
+    {
+      "series": "A",
+      "submission": "20240402_sweagent_claude3opus",
+      "instance_id": "django__django-16899",
+      "trace_url": "https://swe-bench-submissions.s3.amazonaws.com/verified/20240402_sweagent_claude3opus/trajs/django__django-16899.traj",
+      "trace_sha256": "c84d56fd6f9376543da894f67f61256e1ac64267e09166957e32d216d190ecb2",
+      "raw_trace_path": "/private/tmp/external_audit_A_20261122/traces/django__django-16899.traj",
+      "trace_available": true,
+      "trace_submission_sha256": "3f75e025428a514031fe214a6270083c231e026020ab16429f05977581bffa94",
+      "trace_submission_utf8_bytes": 4636,
+      "trace_submission_locator": "info.submission",
+      "edit_attempt": true,
+      "confirmed_edit": true,
+      "verification_attempt": false,
+      "explicit_finish": false,
+      "stop_class": "controller_boundary",
+      "last_action": "exit_cost",
+      "last_action_locator": "trajectory[19].action",
+      "last_action_actor": "controller_cost_boundary",
+      "last_observable_agent_action": "goto 809",
+      "last_observable_agent_action_locator": "trajectory[18].action",
+      "trace_step_count": 20,
+      "history_action_count": 20,
+      "history_actions_equal_trajectory": true,
+      "info_exit_status": "submitted (exit_cost)",
+      "confirmed_edit_file_roles": [
+        "repository_source",
+        "repository_test"
+      ],
+      "repository_source_edit_confirmed": true,
+      "scratch_edit_confirmed": false,
+      "verification_kinds": [],
+      "static_inspection_observed": true,
+      "evidence": {
+        "edit_attempts": [
+          {
+            "action_locator": "trajectory[5].action",
+            "command": "edit 1105:1106",
+            "action_sha256": "6e19e5c1ab010316da8a4cdc3c1c5005dc8ed72dd6ff118e59d5dc753ee13e0d"
+          },
+          {
+            "action_locator": "trajectory[6].action",
+            "command": "edit 1114:1115",
+            "action_sha256": "f620d6f95791bcc3615880ce1374170e92549879d3e0440fc253f2968959dd13"
+          },
+          {
+            "action_locator": "trajectory[7].action",
+            "command": "edit 1129:1131",
+            "action_sha256": "3e880e8c05b59621c67270e57c9ff2e8974d6b205e6c68898230803f914bcf3f"
+          },
+          {
+            "action_locator": "trajectory[8].action",
+            "command": "edit 1139:1140",
+            "action_sha256": "fef6c0d3ca783d8a0c2b9ade205566bc9502d2f27ed6dda73bde46ef86119352"
+          },
+          {
+            "action_locator": "trajectory[11].action",
+            "command": "edit 774:780",
+            "action_sha256": "27d2da7c630e891cd14167b4fbd8485012f2e20f179d617c1d2ecfcf8bd15581"
+          },
+          {
+            "action_locator": "trajectory[17].action",
+            "command": "edit 800:805",
+            "action_sha256": "5cfe0946ef57ebe90492b9b07e0c1661b79967267390e604bc94bd60dab665d4"
+          }
+        ],
+        "confirmed_edit_receipts": [
+          {
+            "action_locator": "trajectory[5].action",
+            "observation_locator": "trajectory[5].observation",
+            "command": "edit 1105:1106",
+            "file": "/django__django/django/contrib/admin/checks.py",
+            "file_role": "repository_source",
+            "receipt_marker": "File updated.",
+            "replacement_matches_numbered_observation": true,
+            "action_sha256": "6e19e5c1ab010316da8a4cdc3c1c5005dc8ed72dd6ff118e59d5dc753ee13e0d",
+            "observation_sha256": "08c9a8a78c3e96dbe3199f321f16562d4d0ade3c2ba72de111e394d4babaa8fd"
+          },
+          {
+            "action_locator": "trajectory[6].action",
+            "observation_locator": "trajectory[6].observation",
+            "command": "edit 1114:1115",
+            "file": "/django__django/django/contrib/admin/checks.py",
+            "file_role": "repository_source",
+            "receipt_marker": "File updated.",
+            "replacement_matches_numbered_observation": true,
+            "action_sha256": "f620d6f95791bcc3615880ce1374170e92549879d3e0440fc253f2968959dd13",
+            "observation_sha256": "b3afd3c5fc3440af49e7e0bbecc548311f0c1a07e371cb7496396bea44b667f6"
+          },
+          {
+            "action_locator": "trajectory[7].action",
+            "observation_locator": "trajectory[7].observation",
+            "command": "edit 1129:1131",
+            "file": "/django__django/django/contrib/admin/checks.py",
+            "file_role": "repository_source",
+            "receipt_marker": "File updated.",
+            "replacement_matches_numbered_observation": true,
+            "action_sha256": "3e880e8c05b59621c67270e57c9ff2e8974d6b205e6c68898230803f914bcf3f",
+            "observation_sha256": "a78649a4ade5357728b43212e7f42e5fc24f8238f9631f21383d99fca8bfed14"
+          },
+          {
+            "action_locator": "trajectory[8].action",
+            "observation_locator": "trajectory[8].observation",
+            "command": "edit 1139:1140",
+            "file": "/django__django/django/contrib/admin/checks.py",
+            "file_role": "repository_source",
+            "receipt_marker": "File updated.",
+            "replacement_matches_numbered_observation": true,
+            "action_sha256": "fef6c0d3ca783d8a0c2b9ade205566bc9502d2f27ed6dda73bde46ef86119352",
+            "observation_sha256": "5a4b73a205f6dc15c613efe3b38b214743ef020ec850deaa3f8c8f97d135234c"
+          },
+          {
+            "action_locator": "trajectory[11].action",
+            "observation_locator": "trajectory[11].observation",
+            "command": "edit 774:780",
+            "file": "/django__django/django/contrib/admin/checks.py",
+            "file_role": "repository_source",
+            "receipt_marker": "File updated.",
+            "replacement_matches_numbered_observation": true,
+            "action_sha256": "27d2da7c630e891cd14167b4fbd8485012f2e20f179d617c1d2ecfcf8bd15581",
+            "observation_sha256": "bf226acfc19549f93e56a933a7bd6ad6be7da215cef7270f466146144a8eb253"
+          },
+          {
+            "action_locator": "trajectory[17].action",
+            "observation_locator": "trajectory[17].observation",
+            "command": "edit 800:805",
+            "file": "/django__django/tests/admin_checks/tests.py",
+            "file_role": "repository_test",
+            "receipt_marker": "File updated.",
+            "replacement_matches_numbered_observation": true,
+            "action_sha256": "5cfe0946ef57ebe90492b9b07e0c1661b79967267390e604bc94bd60dab665d4",
+            "observation_sha256": "058721a5d70e7f34fa31c5cec56dfdbce8b8a9be982c18c69c60ea667c6022c2"
+          }
+        ],
+        "unconfirmed_or_rejected_edits": [],
+        "verification_attempts": [],
+        "static_inspection_step_indices": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          9,
+          10,
+          12,
+          13,
+          14,
+          15,
+          16,
+          18
+        ],
+        "explicit_finish": [],
+        "stop": {
+          "terminal_action_locator": "trajectory[19].action",
+          "terminal_action": "exit_cost",
+          "exit_status_locator": "info.exit_status",
+          "exit_status": "submitted (exit_cost)",
+          "terminal_observation_locator": "trajectory[19].observation",
+          "terminal_observation_sha256": "992018138724e2235bf0652c1ffbf0fd85fc4847785c3d5b7db33d981d75df21",
+          "controller_receipt": "Exited (autosubmitted)",
+          "agent_submit_acknowledgment": null
+        },
+        "absence_scope": "False means no such command in the full provided internally cross-checked action sequences; it is not a universal claim about unrecorded behavior."
+      },
+      "notes": [
+        "All claims concern the supplied public record; matching trajectory/history action fields validate internal coverage, not external completeness or faithful private reasoning.",
+        "Tests and custom reproduction/build commands are counted as attempts regardless of their outcome; source inspection is recorded separately.",
+        "exit_cost is a recorded controller cost boundary despite occupying an assistant-labelled history action; autosubmission is not an explicit agent submit request."
+      ]
+    },
+    {
+      "series": "A",
+      "submission": "20240402_sweagent_claude3opus",
+      "instance_id": "django__django-13406",
+      "trace_url": "https://swe-bench-submissions.s3.amazonaws.com/verified/20240402_sweagent_claude3opus/trajs/django__django-13406.traj",
+      "trace_sha256": "cf9c1f08c710d9b0e5d499c7fff4fbd7b46258548673969b92ad61338c941133",
+      "raw_trace_path": "/private/tmp/external_audit_A_20261122/traces/django__django-13406.traj",
+      "trace_available": true,
+      "trace_submission_sha256": "0dd5e85b185b95bf457c2e254fd63b61b498479652a95b113f8bdaae7108780c",
+      "trace_submission_utf8_bytes": 10744,
+      "trace_submission_locator": "info.submission",
+      "edit_attempt": true,
+      "confirmed_edit": true,
+      "verification_attempt": true,
+      "explicit_finish": false,
+      "stop_class": "controller_boundary",
+      "last_action": "exit_cost",
+      "last_action_locator": "trajectory[23].action",
+      "last_action_actor": "controller_cost_boundary",
+      "last_observable_agent_action": "find . -name \"db\" -type d",
+      "last_observable_agent_action_locator": "trajectory[22].action",
+      "trace_step_count": 24,
+      "history_action_count": 24,
+      "history_actions_equal_trajectory": true,
+      "info_exit_status": "submitted (exit_cost)",
+      "confirmed_edit_file_roles": [
+        "scratch_or_reproduction"
+      ],
+      "repository_source_edit_confirmed": false,
+      "scratch_edit_confirmed": true,
+      "verification_kinds": [
+        "custom_reproduction_run"
+      ],
+      "static_inspection_observed": true,
+      "evidence": {
+        "edit_attempts": [
+          {
+            "action_locator": "trajectory[0].action",
+            "command": "create reproduce.py",
+            "action_sha256": "f06436166b07c61487fee38eda9bbc0ab505fc4df0e92e754f1723b4c3ec174c"
+          },
+          {
+            "action_locator": "trajectory[1].action",
+            "command": "edit 1:1",
+            "action_sha256": "61e5db335be773ac21c775095c28f0f741d884bf9240e5456c1e52bc013797ef"
+          },
+          {
+            "action_locator": "trajectory[7].action",
+            "command": "edit django_error2/models.py 1:1",
+            "action_sha256": "fd868db29a28f57e1cfacfd4ccc0495a248d86a614cb21775c0b0e71a8f74f75"
+          },
+          {
+            "action_locator": "trajectory[8].action",
+            "command": "create django_error2/models.py",
+            "action_sha256": "6a8bafaf89556e07528d1620b4e879b5d25c61fde1c517622c0d06eb61d7a088"
+          },
+          {
+            "action_locator": "trajectory[9].action",
+            "command": "edit 1:3",
+            "action_sha256": "33b9e38bf69e0b5a6d23e714cc7d709605aacd81ff71e61c9c0d6fccac5c23f4"
+          },
+          {
+            "action_locator": "trajectory[10].action",
+            "command": "edit django_error_project/settings.py 33:33",
+            "action_sha256": "e8f6562593dcf9321b3b1566f6088cdf630d531f88e374f17c972c07594982cd"
+          },
+          {
+            "action_locator": "trajectory[12].action",
+            "command": "edit 40:40",
+            "action_sha256": "91604c12c12efe94d422760f2ae1a00c8c4be13a0e0df540e5f1c150c99e9dac"
+          },
+          {
+            "action_locator": "trajectory[13].action",
+            "command": "edit 39:40",
+            "action_sha256": "8261db05d8345c05162a280824f4b82f8f37dd4092d79b7f6b844b8ca2b065a4"
+          },
+          {
+            "action_locator": "trajectory[14].action",
+            "command": "edit 39:41",
+            "action_sha256": "65856fb24320435b8ab2a55394567f9935ad469d7f07e1edc9df477141107b51"
+          },
+          {
+            "action_locator": "trajectory[17].action",
+            "command": "edit ../reproduce.py 3:3",
+            "action_sha256": "330d555339df499ad5369188abc0171242017a85d691fdbc4d186d5ed33110e3"
+          }
+        ],
+        "confirmed_edit_receipts": [
+          {
+            "action_locator": "trajectory[1].action",
+            "observation_locator": "trajectory[1].observation",
+            "command": "edit 1:1",
+            "file": "/django__django/reproduce.py",
+            "file_role": "scratch_or_reproduction",
+            "receipt_marker": "File updated.",
+            "replacement_matches_numbered_observation": true,
+            "action_sha256": "61e5db335be773ac21c775095c28f0f741d884bf9240e5456c1e52bc013797ef",
+            "observation_sha256": "68aef26b52bcccd54d400441bef72e1f8dbd0e5f4ceebf11cc21289f85b8cd80"
+          },
+          {
+            "action_locator": "trajectory[9].action",
+            "observation_locator": "trajectory[9].observation",
+            "command": "edit 1:3",
+            "file": "/django__django/django_error_project/django_error2/models.py",
+            "file_role": "scratch_or_reproduction",
+            "receipt_marker": "File updated.",
+            "replacement_matches_numbered_observation": true,
+            "action_sha256": "33b9e38bf69e0b5a6d23e714cc7d709605aacd81ff71e61c9c0d6fccac5c23f4",
+            "observation_sha256": "150c83e8a0e19419d23372f69a9d262f21443b3db46ddc99a29cf056e3bb7b37"
+          },
+          {
+            "action_locator": "trajectory[14].action",
+            "observation_locator": "trajectory[14].observation",
+            "command": "edit 39:41",
+            "file": "/django__django/django_error_project/django_error_project/settings.py",
+            "file_role": "scratch_or_reproduction",
+            "receipt_marker": "File updated.",
+            "replacement_matches_numbered_observation": true,
+            "action_sha256": "65856fb24320435b8ab2a55394567f9935ad469d7f07e1edc9df477141107b51",
+            "observation_sha256": "22c24148da778cdb91b9eddc4b1171ff01a85c4e88a53e3d34c4f97c57eb72e0"
+          }
+        ],
+        "unconfirmed_or_rejected_edits": [
+          {
+            "action_locator": "trajectory[7].action",
+            "observation_locator": "trajectory[7].observation",
+            "command": "edit django_error2/models.py 1:1",
+            "confirmed_applied": false,
+            "reason": "No positive File updated receipt; syntax or argument errors are not treated as successful edits."
+          },
+          {
+            "action_locator": "trajectory[10].action",
+            "observation_locator": "trajectory[10].observation",
+            "command": "edit django_error_project/settings.py 33:33",
+            "confirmed_applied": false,
+            "reason": "No positive File updated receipt; syntax or argument errors are not treated as successful edits."
+          },
+          {
+            "action_locator": "trajectory[12].action",
+            "observation_locator": "trajectory[12].observation",
+            "command": "edit 40:40",
+            "confirmed_applied": false,
+            "reason": "No positive File updated receipt; syntax or argument errors are not treated as successful edits."
+          },
+          {
+            "action_locator": "trajectory[13].action",
+            "observation_locator": "trajectory[13].observation",
+            "command": "edit 39:40",
+            "confirmed_applied": false,
+            "reason": "No positive File updated receipt; syntax or argument errors are not treated as successful edits."
+          },
+          {
+            "action_locator": "trajectory[17].action",
+            "observation_locator": "trajectory[17].observation",
+            "command": "edit ../reproduce.py 3:3",
+            "confirmed_applied": false,
+            "reason": "No positive File updated receipt; syntax or argument errors are not treated as successful edits."
+          }
+        ],
+        "verification_attempts": [
+          {
+            "action_locator": "trajectory[2].action",
+            "observation_locator": "trajectory[2].observation",
+            "kind": "custom_reproduction_run",
+            "command": "python reproduce.py",
+            "observation_sha256": "21fecda4701d40e35f747d9390de1ffe7b73b219db28f697edb952d120b6abc5",
+            "claim_scope": "Command attempted and an observation recorded; no passing-test or repair-success inference."
+          },
+          {
+            "action_locator": "trajectory[19].action",
+            "observation_locator": "trajectory[19].observation",
+            "kind": "custom_reproduction_run",
+            "command": "python ../reproduce.py",
+            "observation_sha256": "481d89971b6373221810a7cebf77853a0f08f4b56e08b6252a99e609f93fe741",
+            "claim_scope": "Command attempted and an observation recorded; no passing-test or repair-success inference."
+          },
+          {
+            "action_locator": "trajectory[20].action",
+            "observation_locator": "trajectory[20].observation",
+            "kind": "custom_reproduction_run",
+            "command": "python manage.py shell < ../reproduce.py",
+            "observation_sha256": "3e2d17a79f1eb6aa7deda2df669e5fce1465ddf86bc7a01ac8b51e62af77a5b6",
+            "claim_scope": "Command attempted and an observation recorded; no passing-test or repair-success inference."
+          }
+        ],
+        "static_inspection_step_indices": [
+          11,
+          18,
+          21,
+          22
+        ],
+        "explicit_finish": [],
+        "stop": {
+          "terminal_action_locator": "trajectory[23].action",
+          "terminal_action": "exit_cost",
+          "exit_status_locator": "info.exit_status",
+          "exit_status": "submitted (exit_cost)",
+          "terminal_observation_locator": "trajectory[23].observation",
+          "terminal_observation_sha256": "992018138724e2235bf0652c1ffbf0fd85fc4847785c3d5b7db33d981d75df21",
+          "controller_receipt": "Exited (autosubmitted)",
+          "agent_submit_acknowledgment": null
+        },
+        "absence_scope": "False means no such command in the full provided internally cross-checked action sequences; it is not a universal claim about unrecorded behavior."
+      },
+      "notes": [
+        "All claims concern the supplied public record; matching trajectory/history action fields validate internal coverage, not external completeness or faithful private reasoning.",
+        "Tests and custom reproduction/build commands are counted as attempts regardless of their outcome; source inspection is recorded separately.",
+        "exit_cost is a recorded controller cost boundary despite occupying an assistant-labelled history action; autosubmission is not an explicit agent submit request.",
+        "Positive edit receipts concern scratch/reproduction files only; they do not establish a repair to existing repository source."
+      ]
+    },
+    {
+      "series": "A",
+      "submission": "20240402_sweagent_claude3opus",
+      "instance_id": "sphinx-doc__sphinx-9281",
+      "trace_url": "https://swe-bench-submissions.s3.amazonaws.com/verified/20240402_sweagent_claude3opus/trajs/sphinx-doc__sphinx-9281.traj",
+      "trace_sha256": "8f8710939d66533caa47fda6001f6dd855255748d94bae04dc8b6b9e0adf330b",
+      "raw_trace_path": "/private/tmp/external_audit_A_20261122/traces/sphinx-doc__sphinx-9281.traj",
+      "trace_available": true,
+      "trace_submission_sha256": "27983086fcbb4c55a2b5b565d9497ccb6e13c67924552ec719ffc0ce1be312e6",
+      "trace_submission_utf8_bytes": 567539,
+      "trace_submission_locator": "info.submission",
+      "edit_attempt": true,
+      "confirmed_edit": true,
+      "verification_attempt": true,
+      "explicit_finish": false,
+      "stop_class": "controller_boundary",
+      "last_action": "exit_cost",
+      "last_action_locator": "trajectory[24].action",
+      "last_action_actor": "controller_cost_boundary",
+      "last_observable_agent_action": "goto 1473",
+      "last_observable_agent_action_locator": "trajectory[23].action",
+      "trace_step_count": 25,
+      "history_action_count": 25,
+      "history_actions_equal_trajectory": true,
+      "info_exit_status": "submitted (exit_cost)",
+      "confirmed_edit_file_roles": [
+        "scratch_or_reproduction"
+      ],
+      "repository_source_edit_confirmed": false,
+      "scratch_edit_confirmed": true,
+      "verification_kinds": [
+        "custom_build_or_render_check"
+      ],
+      "static_inspection_observed": true,
+      "evidence": {
+        "edit_attempts": [
+          {
+            "action_locator": "trajectory[4].action",
+            "command": "create ugly_enum.py",
+            "action_sha256": "f15f078987677c57d747f8a1473372656e4f2741478a4af6d0cf1a7893ef42f9"
+          },
+          {
+            "action_locator": "trajectory[5].action",
+            "command": "edit 1:8",
+            "action_sha256": "8f46c5a4d3a10f51fedc4b92350f235ee402889ccc681dc48af4445366fad6f7"
+          },
+          {
+            "action_locator": "trajectory[6].action",
+            "command": "create conf.py",
+            "action_sha256": "71ce402a66ee93ea5763002a579ae901ec23f4b17c02312a2f5895ac46098135"
+          },
+          {
+            "action_locator": "trajectory[7].action",
+            "command": "edit 1:6",
+            "action_sha256": "9442b92d10d4737d02d4c0d21736cab54b65db91f70eea3b96f3b95826d1feab"
+          },
+          {
+            "action_locator": "trajectory[8].action",
+            "command": "create index.rst",
+            "action_sha256": "c5a26f0610d0854b919aa6d0e2eb419cf5fc8f9345903f1a13db12745a4cc6e1"
+          },
+          {
+            "action_locator": "trajectory[9].action",
+            "command": "edit 1:5",
+            "action_sha256": "b19672e23dd91aeba97c0c13599efca109af091fa5ff0c296b3851a9c6277065"
+          },
+          {
+            "action_locator": "trajectory[12].action",
+            "command": "edit 6:8",
+            "action_sha256": "60159e8efaab7da71018cf7b8596c5294a172b52de077746bc5256c5ba47c3ef"
+          }
+        ],
+        "confirmed_edit_receipts": [
+          {
+            "action_locator": "trajectory[5].action",
+            "observation_locator": "trajectory[5].observation",
+            "command": "edit 1:8",
+            "file": "/sphinx-doc__sphinx/sphinx_issue_ugly_enum/ugly_enum.py",
+            "file_role": "scratch_or_reproduction",
+            "receipt_marker": "File updated.",
+            "replacement_matches_numbered_observation": true,
+            "action_sha256": "8f46c5a4d3a10f51fedc4b92350f235ee402889ccc681dc48af4445366fad6f7",
+            "observation_sha256": "a5bf5dfe3f8f6f2af32fccd56a759b955e3f6d4d51fcbdbaa14e462dd6b9ecfb"
+          },
+          {
+            "action_locator": "trajectory[7].action",
+            "observation_locator": "trajectory[7].observation",
+            "command": "edit 1:6",
+            "file": "/sphinx-doc__sphinx/sphinx_issue_ugly_enum/conf.py",
+            "file_role": "scratch_or_reproduction",
+            "receipt_marker": "File updated.",
+            "replacement_matches_numbered_observation": true,
+            "action_sha256": "9442b92d10d4737d02d4c0d21736cab54b65db91f70eea3b96f3b95826d1feab",
+            "observation_sha256": "609607d88abbe9c5f94e6b0c51f00092ce1d9568a6a50ee53c80a9e12a5e3e32"
+          },
+          {
+            "action_locator": "trajectory[9].action",
+            "observation_locator": "trajectory[9].observation",
+            "command": "edit 1:5",
+            "file": "/sphinx-doc__sphinx/sphinx_issue_ugly_enum/index.rst",
+            "file_role": "scratch_or_reproduction",
+            "receipt_marker": "File updated.",
+            "replacement_matches_numbered_observation": true,
+            "action_sha256": "b19672e23dd91aeba97c0c13599efca109af091fa5ff0c296b3851a9c6277065",
+            "observation_sha256": "eef0932e8e4b7ea14a7fb2e00cd313a5be131492a49ecdb1a42dea82f82a534a"
+          },
+          {
+            "action_locator": "trajectory[12].action",
+            "observation_locator": "trajectory[12].observation",
+            "command": "edit 6:8",
+            "file": "/sphinx-doc__sphinx/sphinx_issue_ugly_enum/conf.py",
+            "file_role": "scratch_or_reproduction",
+            "receipt_marker": "File updated.",
+            "replacement_matches_numbered_observation": true,
+            "action_sha256": "60159e8efaab7da71018cf7b8596c5294a172b52de077746bc5256c5ba47c3ef",
+            "observation_sha256": "fb72d178ba86f3e5c6a0b970ae18a58a5b9a8ed19fde70e80927a1dbfc86d368"
+          }
+        ],
+        "unconfirmed_or_rejected_edits": [],
+        "verification_attempts": [
+          {
+            "action_locator": "trajectory[10].action",
+            "observation_locator": "trajectory[10].observation",
+            "kind": "custom_build_or_render_check",
+            "command": "sphinx-build -b html . _build",
+            "observation_sha256": "a5f60c93d87f2d94050088e4927027fdad9ac907c8d7d11112cb04f2d722df04",
+            "claim_scope": "Command attempted and an observation recorded; no passing-test or repair-success inference."
+          },
+          {
+            "action_locator": "trajectory[13].action",
+            "observation_locator": "trajectory[13].observation",
+            "kind": "custom_build_or_render_check",
+            "command": "sphinx-build -b html . _build",
+            "observation_sha256": "81b95996806c0d9e197ac9112f284a98ad83910ca6f5e1896e3c924dfc77c8cd",
+            "claim_scope": "Command attempted and an observation recorded; no passing-test or repair-success inference."
+          }
+        ],
+        "static_inspection_step_indices": [
+          0,
+          1,
+          11,
+          14,
+          15,
+          16,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23
+        ],
+        "explicit_finish": [],
+        "stop": {
+          "terminal_action_locator": "trajectory[24].action",
+          "terminal_action": "exit_cost",
+          "exit_status_locator": "info.exit_status",
+          "exit_status": "submitted (exit_cost)",
+          "terminal_observation_locator": "trajectory[24].observation",
+          "terminal_observation_sha256": "992018138724e2235bf0652c1ffbf0fd85fc4847785c3d5b7db33d981d75df21",
+          "controller_receipt": "Exited (autosubmitted)",
+          "agent_submit_acknowledgment": null
+        },
+        "absence_scope": "False means no such command in the full provided internally cross-checked action sequences; it is not a universal claim about unrecorded behavior."
+      },
+      "notes": [
+        "All claims concern the supplied public record; matching trajectory/history action fields validate internal coverage, not external completeness or faithful private reasoning.",
+        "Tests and custom reproduction/build commands are counted as attempts regardless of their outcome; source inspection is recorded separately.",
+        "exit_cost is a recorded controller cost boundary despite occupying an assistant-labelled history action; autosubmission is not an explicit agent submit request.",
+        "Positive edit receipts concern scratch/reproduction files only; they do not establish a repair to existing repository source."
+      ]
+    },
+    {
+      "series": "A",
+      "submission": "20240402_sweagent_claude3opus",
+      "instance_id": "django__django-13449",
+      "trace_url": "https://swe-bench-submissions.s3.amazonaws.com/verified/20240402_sweagent_claude3opus/trajs/django__django-13449.traj",
+      "trace_sha256": null,
+      "raw_trace_path": "/private/tmp/external_audit_A_20261122/traces/django__django-13449.traj",
+      "trace_available": false,
+      "trace_submission_sha256": null,
+      "edit_attempt": null,
+      "confirmed_edit": null,
+      "verification_attempt": null,
+      "explicit_finish": null,
+      "stop_class": "unknown",
+      "last_action": null,
+      "last_observable_agent_action": null,
+      "missing_reason": "Verified trace HTTP404; same-submission full-test and Lite traces also HTTP404; no exact full-test path found in pinned catalogue history.",
+      "missing_evidence": [
+        "scratch_A/trace_manifest.json",
+        "scratch_A/missing_trace_lookup.json",
+        "scratch_A/alternate_trace_lookup.json",
+        "scratch_A/missing_trace_history_lookup.json"
+      ],
+      "notes": [
+        "Reserved slot retained without replacement; no behavioral or termination claim inferred from trace absence."
+      ]
+    },
+    {
+      "series": "A",
+      "submission": "20240402_sweagent_claude3opus",
+      "instance_id": "django__django-11880",
+      "trace_url": "https://swe-bench-submissions.s3.amazonaws.com/verified/20240402_sweagent_claude3opus/trajs/django__django-11880.traj",
+      "trace_sha256": null,
+      "raw_trace_path": "/private/tmp/external_audit_A_20261122/traces/django__django-11880.traj",
+      "trace_available": false,
+      "trace_submission_sha256": null,
+      "edit_attempt": null,
+      "confirmed_edit": null,
+      "verification_attempt": null,
+      "explicit_finish": null,
+      "stop_class": "unknown",
+      "last_action": null,
+      "last_observable_agent_action": null,
+      "missing_reason": "Verified trace HTTP404; same-submission full-test and Lite traces also HTTP404; no exact full-test path found in pinned catalogue history.",
+      "missing_evidence": [
+        "scratch_A/trace_manifest.json",
+        "scratch_A/missing_trace_lookup.json",
+        "scratch_A/alternate_trace_lookup.json",
+        "scratch_A/missing_trace_history_lookup.json"
+      ],
+      "notes": [
+        "Reserved slot retained without replacement; no behavioral or termination claim inferred from trace absence."
+      ]
+    },
+    {
+      "series": "A",
+      "submission": "20240402_sweagent_claude3opus",
+      "instance_id": "sphinx-doc__sphinx-8035",
+      "trace_url": "https://swe-bench-submissions.s3.amazonaws.com/verified/20240402_sweagent_claude3opus/trajs/sphinx-doc__sphinx-8035.traj",
+      "trace_sha256": "7be976d8847b9069624174e95c24ade34f2112755e31885e27a5418569c441d8",
+      "raw_trace_path": "/private/tmp/external_audit_A_20261122/traces/sphinx-doc__sphinx-8035.traj",
+      "trace_available": true,
+      "trace_submission_sha256": "afcefbbaa8a68c06beee8086bb69784219143e8ababfecf1b734e69ac8d3229e",
+      "trace_submission_utf8_bytes": 1315,
+      "trace_submission_locator": "info.submission",
+      "edit_attempt": false,
+      "confirmed_edit": null,
+      "verification_attempt": false,
+      "explicit_finish": true,
+      "stop_class": "agent_acknowledged",
+      "last_action": "submit",
+      "last_action_locator": "trajectory[16].action",
+      "last_action_actor": "agent_request",
+      "last_observable_agent_action": "submit",
+      "last_observable_agent_action_locator": "trajectory[16].action",
+      "trace_step_count": 17,
+      "history_action_count": 17,
+      "history_actions_equal_trajectory": true,
+      "info_exit_status": "submitted",
+      "confirmed_edit_file_roles": [],
+      "repository_source_edit_confirmed": null,
+      "scratch_edit_confirmed": null,
+      "verification_kinds": [],
+      "static_inspection_observed": true,
+      "evidence": {
+        "edit_attempts": [],
+        "confirmed_edit_receipts": [],
+        "unconfirmed_or_rejected_edits": [],
+        "verification_attempts": [],
+        "static_inspection_step_indices": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "explicit_finish": [
+          {
+            "action_locator": "trajectory[16].action",
+            "history_action_locator": "history[56].action",
+            "command": "submit"
+          }
+        ],
+        "stop": {
+          "terminal_action_locator": "trajectory[16].action",
+          "terminal_action": "submit",
+          "exit_status_locator": "info.exit_status",
+          "exit_status": "submitted",
+          "terminal_observation_locator": "trajectory[16].observation",
+          "terminal_observation_sha256": "afcefbbaa8a68c06beee8086bb69784219143e8ababfecf1b734e69ac8d3229e",
+          "controller_receipt": null,
+          "agent_submit_acknowledgment": "info.exit_status == submitted and terminal submit observation recorded"
+        },
+        "absence_scope": "False means no such command in the full provided internally cross-checked action sequences; it is not a universal claim about unrecorded behavior."
+      },
+      "notes": [
+        "All claims concern the supplied public record; matching trajectory/history action fields validate internal coverage, not external completeness or faithful private reasoning.",
+        "Tests and custom reproduction/build commands are counted as attempts regardless of their outcome; source inspection is recorded separately.",
+        "A nonempty info.submission is present but no edit/create command occurs in either matching action sequence. Attribution of the submitted changes remains unknown; do not infer a model edit from the diff alone."
+      ]
+    },
+    {
+      "series": "A",
+      "submission": "20240402_sweagent_claude3opus",
+      "instance_id": "django__django-11964",
+      "trace_url": "https://swe-bench-submissions.s3.amazonaws.com/verified/20240402_sweagent_claude3opus/trajs/django__django-11964.traj",
+      "trace_sha256": "4554023e4b45682216aedd6a56fcd49902bef4203e7462f00d2b1b3f366d5790",
+      "raw_trace_path": "/private/tmp/external_audit_A_20261122/traces/django__django-11964.traj",
+      "trace_available": true,
+      "trace_submission_sha256": "0f5777ba23776336319c129f85d576c4d341123700dbfa37ed1e72dc4c561952",
+      "trace_submission_utf8_bytes": 2245,
+      "trace_submission_locator": "info.submission",
+      "edit_attempt": true,
+      "confirmed_edit": true,
+      "verification_attempt": true,
+      "explicit_finish": false,
+      "stop_class": "controller_boundary",
+      "last_action": "exit_cost",
+      "last_action_locator": "trajectory[21].action",
+      "last_action_actor": "controller_cost_boundary",
+      "last_observable_agent_action": "edit 1:8",
+      "last_observable_agent_action_locator": "trajectory[20].action",
+      "trace_step_count": 22,
+      "history_action_count": 22,
+      "history_actions_equal_trajectory": true,
+      "info_exit_status": "submitted (exit_cost)",
+      "confirmed_edit_file_roles": [
+        "scratch_or_reproduction"
+      ],
+      "repository_source_edit_confirmed": false,
+      "scratch_edit_confirmed": true,
+      "verification_kinds": [
+        "custom_reproduction_run"
+      ],
+      "static_inspection_observed": true,
+      "evidence": {
+        "edit_attempts": [
+          {
+            "action_locator": "trajectory[0].action",
+            "command": "create reproduce.py",
+            "action_sha256": "f06436166b07c61487fee38eda9bbc0ab505fc4df0e92e754f1723b4c3ec174c"
+          },
+          {
+            "action_locator": "trajectory[1].action",
+            "command": "edit 1:10",
+            "action_sha256": "b932462717e82cd7c9f9d77b03c4b49b926ae94895807e83ee87d808976a4f7d"
+          },
+          {
+            "action_locator": "trajectory[2].action",
+            "command": "edit 11:23",
+            "action_sha256": "66c7adff38d13c3640053641a98c88722f2180ffe2fbda446393ea24afef39f9"
+          },
+          {
+            "action_locator": "trajectory[4].action",
+            "command": "create settings.py",
+            "action_sha256": "9193ba282a3414a20e8fd4bca7a779bb827aba3e3717bafba3013d05186b4e45"
+          },
+          {
+            "action_locator": "trajectory[5].action",
+            "command": "edit 1:7",
+            "action_sha256": "9b14e3b1a1fb01cba30a9a3af2816528b28489cd1c5bbf7868fee61e4c323ee7"
+          },
+          {
+            "action_locator": "trajectory[7].action",
+            "command": "edit 1:3",
+            "action_sha256": "d6214f7a3bba1e208705aff75d8fd6bb2aaaca5ebc38b4a44476e026613b10f4"
+          },
+          {
+            "action_locator": "trajectory[8].action",
+            "command": "edit reproduce.py 1:20",
+            "action_sha256": "a7b67d9ab574d6c64cce936fc13deea1c450f83640e9de6f73d9e7c9d8a81b71"
+          },
+          {
+            "action_locator": "trajectory[9].action",
+            "command": "edit 1:48",
+            "action_sha256": "0dc795790cf231d8225a5e20560c2b9979886f1a01a590a5d7fc35395cb8025e"
+          },
+          {
+            "action_locator": "trajectory[11].action",
+            "command": "edit 1:48",
+            "action_sha256": "0dc795790cf231d8225a5e20560c2b9979886f1a01a590a5d7fc35395cb8025e"
+          },
+          {
+            "action_locator": "trajectory[15].action",
+            "command": "edit 1:48",
+            "action_sha256": "dffcd80c4cdf864494e918388c995a87d1deeaa8566143642aa0049ed330c3ac"
+          },
+          {
+            "action_locator": "trajectory[17].action",
+            "command": "edit 1:48",
+            "action_sha256": "c915261dc56d9fa0de5efef8da973e92b2b4c8eef06ddf0deb060c53632b2a05"
+          },
+          {
+            "action_locator": "trajectory[19].action",
+            "command": "create models.py",
+            "action_sha256": "af20b41b2157df10539799ab1e3d07c5395394754d51a1ec98fd28671230e243"
+          },
+          {
+            "action_locator": "trajectory[20].action",
+            "command": "edit 1:8",
+            "action_sha256": "a68a932b18e729dd95cb4802540b80e0d571fe6e9bb8a907d34b2a7ab6e336a0"
+          }
+        ],
+        "confirmed_edit_receipts": [
+          {
+            "action_locator": "trajectory[1].action",
+            "observation_locator": "trajectory[1].observation",
+            "command": "edit 1:10",
+            "file": "/django__django/reproduce.py",
+            "file_role": "scratch_or_reproduction",
+            "receipt_marker": "File updated.",
+            "replacement_matches_numbered_observation": true,
+            "action_sha256": "b932462717e82cd7c9f9d77b03c4b49b926ae94895807e83ee87d808976a4f7d",
+            "observation_sha256": "9c30b6a078538f949b6c266170f4137fde7f44e01df17f31954cfcc04afeae14"
+          },
+          {
+            "action_locator": "trajectory[2].action",
+            "observation_locator": "trajectory[2].observation",
+            "command": "edit 11:23",
+            "file": "/django__django/reproduce.py",
+            "file_role": "scratch_or_reproduction",
+            "receipt_marker": "File updated.",
+            "replacement_matches_numbered_observation": false,
+            "action_sha256": "66c7adff38d13c3640053641a98c88722f2180ffe2fbda446393ea24afef39f9",
+            "observation_sha256": "0054de3ba425ba6a7479513e01b38393400297111d9fc42ee054e0c9014c56c9"
+          },
+          {
+            "action_locator": "trajectory[5].action",
+            "observation_locator": "trajectory[5].observation",
+            "command": "edit 1:7",
+            "file": "/django__django/settings.py",
+            "file_role": "scratch_or_reproduction",
+            "receipt_marker": "File updated.",
+            "replacement_matches_numbered_observation": true,
+            "action_sha256": "9b14e3b1a1fb01cba30a9a3af2816528b28489cd1c5bbf7868fee61e4c323ee7",
+            "observation_sha256": "3cefdd954f6f3acf220079b8f7572873af382af28a5190cbcd50f676f2ea91c0"
+          },
+          {
+            "action_locator": "trajectory[9].action",
+            "observation_locator": "trajectory[9].observation",
+            "command": "edit 1:48",
+            "file": "/django__django/settings.py",
+            "file_role": "scratch_or_reproduction",
+            "receipt_marker": "File updated.",
+            "replacement_matches_numbered_observation": true,
+            "action_sha256": "0dc795790cf231d8225a5e20560c2b9979886f1a01a590a5d7fc35395cb8025e",
+            "observation_sha256": "65ec96b06c81523dc7f7fb409901a502b1faf3fb2685b25f4a79b4f9940f4eb7"
+          },
+          {
+            "action_locator": "trajectory[11].action",
+            "observation_locator": "trajectory[11].observation",
+            "command": "edit 1:48",
+            "file": "/django__django/reproduce.py",
+            "file_role": "scratch_or_reproduction",
+            "receipt_marker": "File updated.",
+            "replacement_matches_numbered_observation": true,
+            "action_sha256": "0dc795790cf231d8225a5e20560c2b9979886f1a01a590a5d7fc35395cb8025e",
+            "observation_sha256": "47737e76b2a541128cbef054c4e5f0a9d7a75cf8072fcab1ab7729093de84c46"
+          },
+          {
+            "action_locator": "trajectory[15].action",
+            "observation_locator": "trajectory[15].observation",
+            "command": "edit 1:48",
+            "file": "/django__django/reproduce.py",
+            "file_role": "scratch_or_reproduction",
+            "receipt_marker": "File updated.",
+            "replacement_matches_numbered_observation": true,
+            "action_sha256": "dffcd80c4cdf864494e918388c995a87d1deeaa8566143642aa0049ed330c3ac",
+            "observation_sha256": "7d2c3f1019a40af05880424ea1fb8afd44c1043776a1099a0ca5c697df03f43c"
+          },
+          {
+            "action_locator": "trajectory[17].action",
+            "observation_locator": "trajectory[17].observation",
+            "command": "edit 1:48",
+            "file": "/django__django/reproduce.py",
+            "file_role": "scratch_or_reproduction",
+            "receipt_marker": "File updated.",
+            "replacement_matches_numbered_observation": true,
+            "action_sha256": "c915261dc56d9fa0de5efef8da973e92b2b4c8eef06ddf0deb060c53632b2a05",
+            "observation_sha256": "5042591abd17ae66a83a1892a5643dc2bcad6aa4832ae1357be088a3cdb761db"
+          },
+          {
+            "action_locator": "trajectory[20].action",
+            "observation_locator": "trajectory[20].observation",
+            "command": "edit 1:8",
+            "file": "/django__django/models.py",
+            "file_role": "scratch_or_reproduction",
+            "receipt_marker": "File updated.",
+            "replacement_matches_numbered_observation": true,
+            "action_sha256": "a68a932b18e729dd95cb4802540b80e0d571fe6e9bb8a907d34b2a7ab6e336a0",
+            "observation_sha256": "664fb087fb05fcfe2489170a502d4d8b055170459196a46f2e6201aec429f2f7"
+          }
+        ],
+        "unconfirmed_or_rejected_edits": [
+          {
+            "action_locator": "trajectory[7].action",
+            "observation_locator": "trajectory[7].observation",
+            "command": "edit 1:3",
+            "confirmed_applied": false,
+            "reason": "No positive File updated receipt; syntax or argument errors are not treated as successful edits."
+          },
+          {
+            "action_locator": "trajectory[8].action",
+            "observation_locator": "trajectory[8].observation",
+            "command": "edit reproduce.py 1:20",
+            "confirmed_applied": false,
+            "reason": "No positive File updated receipt; syntax or argument errors are not treated as successful edits."
+          }
+        ],
+        "verification_attempts": [
+          {
+            "action_locator": "trajectory[3].action",
+            "observation_locator": "trajectory[3].observation",
+            "kind": "custom_reproduction_run",
+            "command": "python reproduce.py",
+            "observation_sha256": "f8e70d65aa356743c8d42fc790287614c228e008d62f5bf8b9e03ef79340b14a",
+            "claim_scope": "Command attempted and an observation recorded; no passing-test or repair-success inference."
+          },
+          {
+            "action_locator": "trajectory[6].action",
+            "observation_locator": "trajectory[6].observation",
+            "kind": "custom_reproduction_run",
+            "command": "DJANGO_SETTINGS_MODULE=settings python reproduce.py",
+            "observation_sha256": "244eb173d27be4d4b486041d68ce9ced0eed392fb39aa495ec71384daf4dc65e",
+            "claim_scope": "Command attempted and an observation recorded; no passing-test or repair-success inference."
+          },
+          {
+            "action_locator": "trajectory[12].action",
+            "observation_locator": "trajectory[12].observation",
+            "kind": "custom_reproduction_run",
+            "command": "python reproduce.py",
+            "observation_sha256": "e1049e5c6bb74ad6f55e414023ebec0450ea0f9ef5e6efd40152b7c3ec831c7c",
+            "claim_scope": "Command attempted and an observation recorded; no passing-test or repair-success inference."
+          },
+          {
+            "action_locator": "trajectory[14].action",
+            "observation_locator": "trajectory[14].observation",
+            "kind": "custom_reproduction_run",
+            "command": "python reproduce.py",
+            "observation_sha256": "e1049e5c6bb74ad6f55e414023ebec0450ea0f9ef5e6efd40152b7c3ec831c7c",
+            "claim_scope": "Command attempted and an observation recorded; no passing-test or repair-success inference."
+          },
+          {
+            "action_locator": "trajectory[16].action",
+            "observation_locator": "trajectory[16].observation",
+            "kind": "custom_reproduction_run",
+            "command": "python reproduce.py",
+            "observation_sha256": "3807c93a4a7146341e8be8781910b1d65f71a29a7e00c5de39f57a43eb6377e1",
+            "claim_scope": "Command attempted and an observation recorded; no passing-test or repair-success inference."
+          },
+          {
+            "action_locator": "trajectory[18].action",
+            "observation_locator": "trajectory[18].observation",
+            "kind": "custom_reproduction_run",
+            "command": "python reproduce.py",
+            "observation_sha256": "0906d25ed86f8e629c7abb866308217d847239cd122464a0349563a00af5bcaf",
+            "claim_scope": "Command attempted and an observation recorded; no passing-test or repair-success inference."
+          }
+        ],
+        "static_inspection_step_indices": [
+          10
+        ],
+        "explicit_finish": [],
+        "stop": {
+          "terminal_action_locator": "trajectory[21].action",
+          "terminal_action": "exit_cost",
+          "exit_status_locator": "info.exit_status",
+          "exit_status": "submitted (exit_cost)",
+          "terminal_observation_locator": "trajectory[21].observation",
+          "terminal_observation_sha256": "992018138724e2235bf0652c1ffbf0fd85fc4847785c3d5b7db33d981d75df21",
+          "controller_receipt": "Exited (autosubmitted)",
+          "agent_submit_acknowledgment": null
+        },
+        "absence_scope": "False means no such command in the full provided internally cross-checked action sequences; it is not a universal claim about unrecorded behavior."
+      },
+      "notes": [
+        "All claims concern the supplied public record; matching trajectory/history action fields validate internal coverage, not external completeness or faithful private reasoning.",
+        "Tests and custom reproduction/build commands are counted as attempts regardless of their outcome; source inspection is recorded separately.",
+        "exit_cost is a recorded controller cost boundary despite occupying an assistant-labelled history action; autosubmission is not an explicit agent submit request.",
+        "Positive edit receipts concern scratch/reproduction files only; they do not establish a repair to existing repository source."
+      ]
+    }
+  ],
+  "coverage": {
+    "reserved": 10,
+    "available": 8,
+    "missing": 2,
+    "stop_classes": {
+      "controller_boundary": 6,
+      "agent_acknowledged": 2,
+      "unknown": 2
+    }
+  },
+  "script_sha256": "bdda31c55b89f89b53048e5bc6754cb403b1292e02cef53f1451813a4081c3cc"
+}

@@ -1,0 +1,1039 @@
+{
+  "schema_version": 1,
+  "reviewer": "Separate Codex AI subagent /root/repair_literature; not a human reviewer",
+  "independence_statement": "Judgments frozen after protocol/selection and raw public traces were inspected, before reading any primary coding file or published resolution label. Other coders supplied only artifact paths and availability metadata. Independent here means a separate coding pass, not statistical independence or independent human review.",
+  "selection_sha256": "7b8e1869d1101c0851935686c20e1003f78922bf75840cab17c702d4aa9e23e2",
+  "frozen_utc": "2026-11-22T09:55:50.847921+00:00",
+  "status": "independent_first_pass_frozen",
+  "method_file": "independent_method.txt",
+  "locator_script": "scripts/independent_terminal_locator.py",
+  "locator_output_sha256": "ddbc4babaefd842c5140dee9e76eae5a06a1c996a062342a90d71d83bcd556dd",
+  "counts": {
+    "A": {
+      "reserved": 10,
+      "trace_available": 8,
+      "stop_classes": {
+        "controller_boundary": 6,
+        "agent_acknowledged": 2,
+        "unknown": 2
+      },
+      "explicit_finish_true": 2,
+      "explicit_finish_false": 6,
+      "explicit_finish_unknown": 2
+    },
+    "B": {
+      "reserved": 10,
+      "trace_available": 10,
+      "stop_classes": {
+        "unknown": 10
+      },
+      "explicit_finish_true": 0,
+      "explicit_finish_false": 0,
+      "explicit_finish_unknown": 10
+    }
+  },
+  "rows": [
+    {
+      "series": "A",
+      "instance_id": "django__django-15569",
+      "raw_path": "/private/tmp/external_audit_A_20261122/traces/django__django-15569.traj",
+      "trace_url": "https://swe-bench-submissions.s3.amazonaws.com/verified/20240402_sweagent_claude3opus/trajs/django__django-15569.traj",
+      "available": true,
+      "raw_sha256": "6a60ec1ef39d0f5a50c2f24f4eecac9a3c72b13fee2570276b1dd2b4b3aebfe7",
+      "bytes": 170588,
+      "evidence": {
+        "artifact_type": "sweagent_trajectory_with_history_and_info",
+        "trajectory_length": 23,
+        "history_length": 69,
+        "instance_action_histories_equal": true,
+        "ignored_demo_terminal_locators": [
+          "/history/22/action"
+        ],
+        "instance_submit_locators": [],
+        "last_record_action": "exit_cost",
+        "last_record_action_locator": "/trajectory/22/action",
+        "last_history_action_locator": "/history/68/action",
+        "last_response_locator": "/trajectory/22/response",
+        "last_response_exact_cost_limit_message": true,
+        "last_response_has_exact_submit_line": false,
+        "last_observation_locator": "/trajectory/22/observation",
+        "last_observation_status": "Exited (autosubmitted)",
+        "exit_status": "submitted (exit_cost)",
+        "exit_status_locator": "/info/exit_status",
+        "previous_action_locator": "/trajectory/21/action",
+        "previous_action_type": "goto"
+      },
+      "explicit_finish": false,
+      "stop_class": "controller_boundary",
+      "terminal_acknowledged": false,
+      "controller_boundary": true,
+      "wrapper_actions": [
+        "cost_limit_exit",
+        "automatic_submission_recorded"
+      ],
+      "rationale": "The terminal record identifies a cost-limit exit, and the environment exit status corroborates it. No actual-instance submit action appears in the serialized trajectory or matching non-demo assistant action history. The assistant role on exit_cost does not establish model authorship. The environment explicitly records automatic submission after the boundary.",
+      "competing_interpretation": "Counting the demonstration submit or treating the terminal assistant role as model authorship would misclassify the run. A submitted(exit_cost) status also does not establish an agent-issued submit. The artifact cannot establish the model's motivation or undocumented events.",
+      "locators": [
+        "/trajectory/22/action",
+        "/trajectory/22/response",
+        "/trajectory/22/observation",
+        "/info/exit_status",
+        "/history/68/action"
+      ],
+      "trace_completeness": "Serialized instance trajectory reaches an explicit terminal status; action sequence matches non-demo assistant history. This is internal consistency, not external attestation.",
+      "last_observable_agent_action": {
+        "locator": "/trajectory/21/action",
+        "type": "goto",
+        "note": "The subsequent exit_cost record is the recorded boundary rather than an inferred model-issued finish."
+      }
+    },
+    {
+      "series": "A",
+      "instance_id": "matplotlib__matplotlib-25479",
+      "raw_path": "/private/tmp/external_audit_A_20261122/traces/matplotlib__matplotlib-25479.traj",
+      "trace_url": "https://swe-bench-submissions.s3.amazonaws.com/verified/20240402_sweagent_claude3opus/trajs/matplotlib__matplotlib-25479.traj",
+      "available": true,
+      "raw_sha256": "5c78747f54f5fb11c7cbe8569b94173bc80585a5a53cfe12f00d78511d40384f",
+      "bytes": 129641,
+      "evidence": {
+        "artifact_type": "sweagent_trajectory_with_history_and_info",
+        "trajectory_length": 18,
+        "history_length": 59,
+        "instance_action_histories_equal": true,
+        "ignored_demo_terminal_locators": [
+          "/history/22/action"
+        ],
+        "instance_submit_locators": [],
+        "last_record_action": "exit_cost",
+        "last_record_action_locator": "/trajectory/17/action",
+        "last_history_action_locator": "/history/58/action",
+        "last_response_locator": "/trajectory/17/response",
+        "last_response_exact_cost_limit_message": true,
+        "last_response_has_exact_submit_line": false,
+        "last_observation_locator": "/trajectory/17/observation",
+        "last_observation_status": "Exited",
+        "exit_status": "exit_cost",
+        "exit_status_locator": "/info/exit_status",
+        "previous_action_locator": "/trajectory/16/action",
+        "previous_action_type": "rm"
+      },
+      "explicit_finish": false,
+      "stop_class": "controller_boundary",
+      "terminal_acknowledged": false,
+      "controller_boundary": true,
+      "wrapper_actions": [
+        "cost_limit_exit"
+      ],
+      "rationale": "The terminal record identifies a cost-limit exit, and the environment exit status corroborates it. No actual-instance submit action appears in the serialized trajectory or matching non-demo assistant action history. The assistant role on exit_cost does not establish model authorship. The record reports exit without an autosubmission acknowledgment; no fallback success is inferred.",
+      "competing_interpretation": "Counting the demonstration submit or treating the terminal assistant role as model authorship would misclassify the run. A submitted(exit_cost) status also does not establish an agent-issued submit. The artifact cannot establish the model's motivation or undocumented events.",
+      "locators": [
+        "/trajectory/17/action",
+        "/trajectory/17/response",
+        "/trajectory/17/observation",
+        "/info/exit_status",
+        "/history/58/action"
+      ],
+      "trace_completeness": "Serialized instance trajectory reaches an explicit terminal status; action sequence matches non-demo assistant history. This is internal consistency, not external attestation.",
+      "last_observable_agent_action": {
+        "locator": "/trajectory/16/action",
+        "type": "rm",
+        "note": "The subsequent exit_cost record is the recorded boundary rather than an inferred model-issued finish."
+      }
+    },
+    {
+      "series": "A",
+      "instance_id": "astropy__astropy-8872",
+      "raw_path": "/private/tmp/external_audit_A_20261122/traces/astropy__astropy-8872.traj",
+      "trace_url": "https://swe-bench-submissions.s3.amazonaws.com/verified/20240402_sweagent_claude3opus/trajs/astropy__astropy-8872.traj",
+      "available": true,
+      "raw_sha256": "3d7afe1f8b1e75acaf210ef3696bed4772d2b988d729008b05b9369c507906ef",
+      "bytes": 141231,
+      "evidence": {
+        "artifact_type": "sweagent_trajectory_with_history_and_info",
+        "trajectory_length": 20,
+        "history_length": 63,
+        "instance_action_histories_equal": true,
+        "ignored_demo_terminal_locators": [
+          "/history/22/action"
+        ],
+        "instance_submit_locators": [
+          "/trajectory/19/action"
+        ],
+        "last_record_action": "submit",
+        "last_record_action_locator": "/trajectory/19/action",
+        "last_history_action_locator": "/history/62/action",
+        "last_response_locator": "/trajectory/19/response",
+        "last_response_exact_cost_limit_message": false,
+        "last_response_has_exact_submit_line": true,
+        "last_observation_locator": "/trajectory/19/observation",
+        "last_observation_status": "body omitted",
+        "exit_status": "submitted",
+        "exit_status_locator": "/info/exit_status",
+        "previous_action_locator": "/trajectory/18/action",
+        "previous_action_type": "rm"
+      },
+      "explicit_finish": true,
+      "stop_class": "agent_acknowledged",
+      "terminal_acknowledged": true,
+      "controller_boundary": false,
+      "wrapper_actions": [],
+      "rationale": "An actual-instance terminal submit action is present in both trajectory and non-demo assistant history, the corresponding model-response field contains a standalone submit line, and the environment exit status acknowledges submission. No coincident controller boundary is recorded.",
+      "competing_interpretation": "A final command in isolation would be insufficient. Here the matching terminal status provides the additional acknowledgment. This supports the recorded requested termination, not subjective intention or independent authentication of the public artifact.",
+      "locators": [
+        "/trajectory/19/action",
+        "/trajectory/19/response",
+        "/trajectory/19/observation",
+        "/info/exit_status",
+        "/history/62/action"
+      ],
+      "trace_completeness": "Serialized instance trajectory reaches an explicit terminal status; action sequence matches non-demo assistant history. This is internal consistency, not external attestation.",
+      "last_observable_agent_action": {
+        "locator": "/trajectory/19/action",
+        "type": "submit"
+      }
+    },
+    {
+      "series": "A",
+      "instance_id": "django__django-16899",
+      "raw_path": "/private/tmp/external_audit_A_20261122/traces/django__django-16899.traj",
+      "trace_url": "https://swe-bench-submissions.s3.amazonaws.com/verified/20240402_sweagent_claude3opus/trajs/django__django-16899.traj",
+      "available": true,
+      "raw_sha256": "c84d56fd6f9376543da894f67f61256e1ac64267e09166957e32d216d190ecb2",
+      "bytes": 200328,
+      "evidence": {
+        "artifact_type": "sweagent_trajectory_with_history_and_info",
+        "trajectory_length": 20,
+        "history_length": 63,
+        "instance_action_histories_equal": true,
+        "ignored_demo_terminal_locators": [
+          "/history/22/action"
+        ],
+        "instance_submit_locators": [],
+        "last_record_action": "exit_cost",
+        "last_record_action_locator": "/trajectory/19/action",
+        "last_history_action_locator": "/history/62/action",
+        "last_response_locator": "/trajectory/19/response",
+        "last_response_exact_cost_limit_message": true,
+        "last_response_has_exact_submit_line": false,
+        "last_observation_locator": "/trajectory/19/observation",
+        "last_observation_status": "Exited (autosubmitted)",
+        "exit_status": "submitted (exit_cost)",
+        "exit_status_locator": "/info/exit_status",
+        "previous_action_locator": "/trajectory/18/action",
+        "previous_action_type": "goto"
+      },
+      "explicit_finish": false,
+      "stop_class": "controller_boundary",
+      "terminal_acknowledged": false,
+      "controller_boundary": true,
+      "wrapper_actions": [
+        "cost_limit_exit",
+        "automatic_submission_recorded"
+      ],
+      "rationale": "The terminal record identifies a cost-limit exit, and the environment exit status corroborates it. No actual-instance submit action appears in the serialized trajectory or matching non-demo assistant action history. The assistant role on exit_cost does not establish model authorship. The environment explicitly records automatic submission after the boundary.",
+      "competing_interpretation": "Counting the demonstration submit or treating the terminal assistant role as model authorship would misclassify the run. A submitted(exit_cost) status also does not establish an agent-issued submit. The artifact cannot establish the model's motivation or undocumented events.",
+      "locators": [
+        "/trajectory/19/action",
+        "/trajectory/19/response",
+        "/trajectory/19/observation",
+        "/info/exit_status",
+        "/history/62/action"
+      ],
+      "trace_completeness": "Serialized instance trajectory reaches an explicit terminal status; action sequence matches non-demo assistant history. This is internal consistency, not external attestation.",
+      "last_observable_agent_action": {
+        "locator": "/trajectory/18/action",
+        "type": "goto",
+        "note": "The subsequent exit_cost record is the recorded boundary rather than an inferred model-issued finish."
+      }
+    },
+    {
+      "series": "A",
+      "instance_id": "django__django-13406",
+      "raw_path": "/private/tmp/external_audit_A_20261122/traces/django__django-13406.traj",
+      "trace_url": "https://swe-bench-submissions.s3.amazonaws.com/verified/20240402_sweagent_claude3opus/trajs/django__django-13406.traj",
+      "available": true,
+      "raw_sha256": "cf9c1f08c710d9b0e5d499c7fff4fbd7b46258548673969b92ad61338c941133",
+      "bytes": 117538,
+      "evidence": {
+        "artifact_type": "sweagent_trajectory_with_history_and_info",
+        "trajectory_length": 24,
+        "history_length": 71,
+        "instance_action_histories_equal": true,
+        "ignored_demo_terminal_locators": [
+          "/history/22/action"
+        ],
+        "instance_submit_locators": [],
+        "last_record_action": "exit_cost",
+        "last_record_action_locator": "/trajectory/23/action",
+        "last_history_action_locator": "/history/70/action",
+        "last_response_locator": "/trajectory/23/response",
+        "last_response_exact_cost_limit_message": true,
+        "last_response_has_exact_submit_line": false,
+        "last_observation_locator": "/trajectory/23/observation",
+        "last_observation_status": "Exited (autosubmitted)",
+        "exit_status": "submitted (exit_cost)",
+        "exit_status_locator": "/info/exit_status",
+        "previous_action_locator": "/trajectory/22/action",
+        "previous_action_type": "find"
+      },
+      "explicit_finish": false,
+      "stop_class": "controller_boundary",
+      "terminal_acknowledged": false,
+      "controller_boundary": true,
+      "wrapper_actions": [
+        "cost_limit_exit",
+        "automatic_submission_recorded"
+      ],
+      "rationale": "The terminal record identifies a cost-limit exit, and the environment exit status corroborates it. No actual-instance submit action appears in the serialized trajectory or matching non-demo assistant action history. The assistant role on exit_cost does not establish model authorship. The environment explicitly records automatic submission after the boundary.",
+      "competing_interpretation": "Counting the demonstration submit or treating the terminal assistant role as model authorship would misclassify the run. A submitted(exit_cost) status also does not establish an agent-issued submit. The artifact cannot establish the model's motivation or undocumented events.",
+      "locators": [
+        "/trajectory/23/action",
+        "/trajectory/23/response",
+        "/trajectory/23/observation",
+        "/info/exit_status",
+        "/history/70/action"
+      ],
+      "trace_completeness": "Serialized instance trajectory reaches an explicit terminal status; action sequence matches non-demo assistant history. This is internal consistency, not external attestation.",
+      "last_observable_agent_action": {
+        "locator": "/trajectory/22/action",
+        "type": "find",
+        "note": "The subsequent exit_cost record is the recorded boundary rather than an inferred model-issued finish."
+      }
+    },
+    {
+      "series": "A",
+      "instance_id": "sphinx-doc__sphinx-9281",
+      "raw_path": "/private/tmp/external_audit_A_20261122/traces/sphinx-doc__sphinx-9281.traj",
+      "trace_url": "https://swe-bench-submissions.s3.amazonaws.com/verified/20240402_sweagent_claude3opus/trajs/sphinx-doc__sphinx-9281.traj",
+      "available": true,
+      "raw_sha256": "8f8710939d66533caa47fda6001f6dd855255748d94bae04dc8b6b9e0adf330b",
+      "bytes": 735120,
+      "evidence": {
+        "artifact_type": "sweagent_trajectory_with_history_and_info",
+        "trajectory_length": 25,
+        "history_length": 73,
+        "instance_action_histories_equal": true,
+        "ignored_demo_terminal_locators": [
+          "/history/22/action"
+        ],
+        "instance_submit_locators": [],
+        "last_record_action": "exit_cost",
+        "last_record_action_locator": "/trajectory/24/action",
+        "last_history_action_locator": "/history/72/action",
+        "last_response_locator": "/trajectory/24/response",
+        "last_response_exact_cost_limit_message": true,
+        "last_response_has_exact_submit_line": false,
+        "last_observation_locator": "/trajectory/24/observation",
+        "last_observation_status": "Exited (autosubmitted)",
+        "exit_status": "submitted (exit_cost)",
+        "exit_status_locator": "/info/exit_status",
+        "previous_action_locator": "/trajectory/23/action",
+        "previous_action_type": "goto"
+      },
+      "explicit_finish": false,
+      "stop_class": "controller_boundary",
+      "terminal_acknowledged": false,
+      "controller_boundary": true,
+      "wrapper_actions": [
+        "cost_limit_exit",
+        "automatic_submission_recorded"
+      ],
+      "rationale": "The terminal record identifies a cost-limit exit, and the environment exit status corroborates it. No actual-instance submit action appears in the serialized trajectory or matching non-demo assistant action history. The assistant role on exit_cost does not establish model authorship. The environment explicitly records automatic submission after the boundary.",
+      "competing_interpretation": "Counting the demonstration submit or treating the terminal assistant role as model authorship would misclassify the run. A submitted(exit_cost) status also does not establish an agent-issued submit. The artifact cannot establish the model's motivation or undocumented events.",
+      "locators": [
+        "/trajectory/24/action",
+        "/trajectory/24/response",
+        "/trajectory/24/observation",
+        "/info/exit_status",
+        "/history/72/action"
+      ],
+      "trace_completeness": "Serialized instance trajectory reaches an explicit terminal status; action sequence matches non-demo assistant history. This is internal consistency, not external attestation.",
+      "last_observable_agent_action": {
+        "locator": "/trajectory/23/action",
+        "type": "goto",
+        "note": "The subsequent exit_cost record is the recorded boundary rather than an inferred model-issued finish."
+      }
+    },
+    {
+      "series": "A",
+      "instance_id": "django__django-13449",
+      "raw_path": "/private/tmp/external_audit_A_20261122/traces/django__django-13449.traj",
+      "trace_url": "https://swe-bench-submissions.s3.amazonaws.com/verified/20240402_sweagent_claude3opus/trajs/django__django-13449.traj",
+      "available": false,
+      "inspection_error": "[Errno 2] No such file or directory: '/private/tmp/external_audit_A_20261122/traces/django__django-13449.traj'",
+      "explicit_finish": null,
+      "stop_class": "unknown",
+      "terminal_acknowledged": null,
+      "controller_boundary": null,
+      "wrapper_actions": [],
+      "rationale": "Reserved trace was unavailable at independent freeze. No claim about an unobserved terminal action or termination cause is supported; the slot is retained.",
+      "competing_interpretation": "The run might have ended through an agent request, controller boundary, or both. The available evidence does not distinguish them.",
+      "locators": [],
+      "trace_completeness": "unavailable"
+    },
+    {
+      "series": "A",
+      "instance_id": "django__django-11880",
+      "raw_path": "/private/tmp/external_audit_A_20261122/traces/django__django-11880.traj",
+      "trace_url": "https://swe-bench-submissions.s3.amazonaws.com/verified/20240402_sweagent_claude3opus/trajs/django__django-11880.traj",
+      "available": false,
+      "inspection_error": "[Errno 2] No such file or directory: '/private/tmp/external_audit_A_20261122/traces/django__django-11880.traj'",
+      "explicit_finish": null,
+      "stop_class": "unknown",
+      "terminal_acknowledged": null,
+      "controller_boundary": null,
+      "wrapper_actions": [],
+      "rationale": "Reserved trace was unavailable at independent freeze. No claim about an unobserved terminal action or termination cause is supported; the slot is retained.",
+      "competing_interpretation": "The run might have ended through an agent request, controller boundary, or both. The available evidence does not distinguish them.",
+      "locators": [],
+      "trace_completeness": "unavailable"
+    },
+    {
+      "series": "A",
+      "instance_id": "sphinx-doc__sphinx-8035",
+      "raw_path": "/private/tmp/external_audit_A_20261122/traces/sphinx-doc__sphinx-8035.traj",
+      "trace_url": "https://swe-bench-submissions.s3.amazonaws.com/verified/20240402_sweagent_claude3opus/trajs/sphinx-doc__sphinx-8035.traj",
+      "available": true,
+      "raw_sha256": "7be976d8847b9069624174e95c24ade34f2112755e31885e27a5418569c441d8",
+      "bytes": 166104,
+      "evidence": {
+        "artifact_type": "sweagent_trajectory_with_history_and_info",
+        "trajectory_length": 17,
+        "history_length": 57,
+        "instance_action_histories_equal": true,
+        "ignored_demo_terminal_locators": [
+          "/history/22/action"
+        ],
+        "instance_submit_locators": [
+          "/trajectory/16/action"
+        ],
+        "last_record_action": "submit",
+        "last_record_action_locator": "/trajectory/16/action",
+        "last_history_action_locator": "/history/56/action",
+        "last_response_locator": "/trajectory/16/response",
+        "last_response_exact_cost_limit_message": false,
+        "last_response_has_exact_submit_line": true,
+        "last_observation_locator": "/trajectory/16/observation",
+        "last_observation_status": "body omitted",
+        "exit_status": "submitted",
+        "exit_status_locator": "/info/exit_status",
+        "previous_action_locator": "/trajectory/15/action",
+        "previous_action_type": "search_dir"
+      },
+      "explicit_finish": true,
+      "stop_class": "agent_acknowledged",
+      "terminal_acknowledged": true,
+      "controller_boundary": false,
+      "wrapper_actions": [],
+      "rationale": "An actual-instance terminal submit action is present in both trajectory and non-demo assistant history, the corresponding model-response field contains a standalone submit line, and the environment exit status acknowledges submission. No coincident controller boundary is recorded.",
+      "competing_interpretation": "A final command in isolation would be insufficient. Here the matching terminal status provides the additional acknowledgment. This supports the recorded requested termination, not subjective intention or independent authentication of the public artifact.",
+      "locators": [
+        "/trajectory/16/action",
+        "/trajectory/16/response",
+        "/trajectory/16/observation",
+        "/info/exit_status",
+        "/history/56/action"
+      ],
+      "trace_completeness": "Serialized instance trajectory reaches an explicit terminal status; action sequence matches non-demo assistant history. This is internal consistency, not external attestation.",
+      "last_observable_agent_action": {
+        "locator": "/trajectory/16/action",
+        "type": "submit"
+      }
+    },
+    {
+      "series": "A",
+      "instance_id": "django__django-11964",
+      "raw_path": "/private/tmp/external_audit_A_20261122/traces/django__django-11964.traj",
+      "trace_url": "https://swe-bench-submissions.s3.amazonaws.com/verified/20240402_sweagent_claude3opus/trajs/django__django-11964.traj",
+      "available": true,
+      "raw_sha256": "4554023e4b45682216aedd6a56fcd49902bef4203e7462f00d2b1b3f366d5790",
+      "bytes": 147088,
+      "evidence": {
+        "artifact_type": "sweagent_trajectory_with_history_and_info",
+        "trajectory_length": 22,
+        "history_length": 67,
+        "instance_action_histories_equal": true,
+        "ignored_demo_terminal_locators": [
+          "/history/22/action"
+        ],
+        "instance_submit_locators": [],
+        "last_record_action": "exit_cost",
+        "last_record_action_locator": "/trajectory/21/action",
+        "last_history_action_locator": "/history/66/action",
+        "last_response_locator": "/trajectory/21/response",
+        "last_response_exact_cost_limit_message": true,
+        "last_response_has_exact_submit_line": false,
+        "last_observation_locator": "/trajectory/21/observation",
+        "last_observation_status": "Exited (autosubmitted)",
+        "exit_status": "submitted (exit_cost)",
+        "exit_status_locator": "/info/exit_status",
+        "previous_action_locator": "/trajectory/20/action",
+        "previous_action_type": "edit"
+      },
+      "explicit_finish": false,
+      "stop_class": "controller_boundary",
+      "terminal_acknowledged": false,
+      "controller_boundary": true,
+      "wrapper_actions": [
+        "cost_limit_exit",
+        "automatic_submission_recorded"
+      ],
+      "rationale": "The terminal record identifies a cost-limit exit, and the environment exit status corroborates it. No actual-instance submit action appears in the serialized trajectory or matching non-demo assistant action history. The assistant role on exit_cost does not establish model authorship. The environment explicitly records automatic submission after the boundary.",
+      "competing_interpretation": "Counting the demonstration submit or treating the terminal assistant role as model authorship would misclassify the run. A submitted(exit_cost) status also does not establish an agent-issued submit. The artifact cannot establish the model's motivation or undocumented events.",
+      "locators": [
+        "/trajectory/21/action",
+        "/trajectory/21/response",
+        "/trajectory/21/observation",
+        "/info/exit_status",
+        "/history/66/action"
+      ],
+      "trace_completeness": "Serialized instance trajectory reaches an explicit terminal status; action sequence matches non-demo assistant history. This is internal consistency, not external attestation.",
+      "last_observable_agent_action": {
+        "locator": "/trajectory/20/action",
+        "type": "edit",
+        "note": "The subsequent exit_cost record is the recorded boundary rather than an inferred model-issued finish."
+      }
+    },
+    {
+      "series": "B",
+      "instance_id": "django__django-15569",
+      "raw_path": "/private/tmp/swe_external_B_20261122_1v9q5jxs/django__django-15569.json",
+      "trace_url": "https://swe-bench-submissions.s3.amazonaws.com/verified/20241029_OpenHands-CodeAct-2.1-sonnet-20241022/trajs/django__django-15569.json",
+      "available": true,
+      "raw_sha256": "e3c298c568ca8f84f8bfc2767295dd2daf11fbe17de9e95b0b8c07375191555e",
+      "bytes": 58008,
+      "evidence": {
+        "artifact_type": "chat_message_list_without_controller_state",
+        "message_count": 14,
+        "last_role": "tool",
+        "last_message_locator": "/13",
+        "last_assistant_locator": "/12",
+        "last_assistant_has_tool_calls": true,
+        "tool_names_observed": [
+          "execute_bash",
+          "str_replace_editor"
+        ],
+        "terminal_candidates": [],
+        "last_tool_call": {
+          "location": "/12/tool_calls/0/function",
+          "name": "execute_bash",
+          "id": "toolu_01PicCxJZpWQ6MM5p1GdDHnA",
+          "command_sha256": "9f9f61f2831ebe3ba96c55ed24521482149e55cf09919bfa3472dab1701cb2af"
+        },
+        "last_tool_response_matches": true,
+        "last_tool_response_command_exit_zero": true,
+        "last_message_is_continuation_prompt": false,
+        "run_termination_metadata_present": false,
+        "metadata_scope_note": "The inspected top-level representation is a chat-message list, not an event stream or terminal controller record."
+      },
+      "explicit_finish": null,
+      "stop_class": "unknown",
+      "terminal_acknowledged": null,
+      "controller_boundary": null,
+      "wrapper_actions": [],
+      "rationale": "The provided artifact is a chat-message list without a terminal controller event or exit status. No finish/submit tool call or standalone terminal shell command is observed in this list. It ends with the matched response to an ordinary command; command exit code zero does not mean that the agent run terminated. Absence from this unvalidated terminal history cannot establish explicit_finish=false.",
+      "competing_interpretation": "A finish action or controller boundary may have occurred after the last saved message. The file could be a pre-completion request snapshot or otherwise truncated record; that mechanism is not asserted without export-provenance evidence. A message count or last successful command cannot identify the causal stop.",
+      "locators": [
+        "/12",
+        "/12/tool_calls/0/function",
+        "/13"
+      ],
+      "trace_completeness": "Message-history artifact; terminal completeness unestablished.",
+      "last_observable_agent_action": {
+        "locator": "/12",
+        "type": "execute_bash"
+      },
+      "observed_terminal_action_in_available_snapshot": false
+    },
+    {
+      "series": "B",
+      "instance_id": "matplotlib__matplotlib-25479",
+      "raw_path": "/private/tmp/swe_external_B_20261122_1v9q5jxs/matplotlib__matplotlib-25479.json",
+      "trace_url": "https://swe-bench-submissions.s3.amazonaws.com/verified/20241029_OpenHands-CodeAct-2.1-sonnet-20241022/trajs/matplotlib__matplotlib-25479.json",
+      "available": true,
+      "raw_sha256": "d2d5c57a515c4e16d709f058d1e71161b9dab539aa788fe50ec1869c8aadac48",
+      "bytes": 97814,
+      "evidence": {
+        "artifact_type": "chat_message_list_without_controller_state",
+        "message_count": 32,
+        "last_role": "tool",
+        "last_message_locator": "/31",
+        "last_assistant_locator": "/30",
+        "last_assistant_has_tool_calls": true,
+        "tool_names_observed": [
+          "execute_bash",
+          "str_replace_editor"
+        ],
+        "terminal_candidates": [],
+        "last_tool_call": {
+          "location": "/30/tool_calls/0/function",
+          "name": "execute_bash",
+          "id": "toolu_01Wqpm7mxTinnP7EP4yqHedu",
+          "command_sha256": "9e673ad045fcfadc8842a8bd148618200e2572f77c771270ed6f7a003e7cee02"
+        },
+        "last_tool_response_matches": true,
+        "last_tool_response_command_exit_zero": true,
+        "last_message_is_continuation_prompt": false,
+        "run_termination_metadata_present": false,
+        "metadata_scope_note": "The inspected top-level representation is a chat-message list, not an event stream or terminal controller record."
+      },
+      "explicit_finish": null,
+      "stop_class": "unknown",
+      "terminal_acknowledged": null,
+      "controller_boundary": null,
+      "wrapper_actions": [],
+      "rationale": "The provided artifact is a chat-message list without a terminal controller event or exit status. No finish/submit tool call or standalone terminal shell command is observed in this list. It ends with the matched response to an ordinary command; command exit code zero does not mean that the agent run terminated. Absence from this unvalidated terminal history cannot establish explicit_finish=false.",
+      "competing_interpretation": "A finish action or controller boundary may have occurred after the last saved message. The file could be a pre-completion request snapshot or otherwise truncated record; that mechanism is not asserted without export-provenance evidence. A message count or last successful command cannot identify the causal stop.",
+      "locators": [
+        "/30",
+        "/30/tool_calls/0/function",
+        "/31"
+      ],
+      "trace_completeness": "Message-history artifact; terminal completeness unestablished.",
+      "last_observable_agent_action": {
+        "locator": "/30",
+        "type": "execute_bash"
+      },
+      "observed_terminal_action_in_available_snapshot": false
+    },
+    {
+      "series": "B",
+      "instance_id": "astropy__astropy-8872",
+      "raw_path": "/private/tmp/swe_external_B_20261122_1v9q5jxs/astropy__astropy-8872.json",
+      "trace_url": "https://swe-bench-submissions.s3.amazonaws.com/verified/20241029_OpenHands-CodeAct-2.1-sonnet-20241022/trajs/astropy__astropy-8872.json",
+      "available": true,
+      "raw_sha256": "21dc1f4a90632ce49bc999304885f637392f5597cfdc517ee9c3145e35a82399",
+      "bytes": 71068,
+      "evidence": {
+        "artifact_type": "chat_message_list_without_controller_state",
+        "message_count": 20,
+        "last_role": "tool",
+        "last_message_locator": "/19",
+        "last_assistant_locator": "/18",
+        "last_assistant_has_tool_calls": true,
+        "tool_names_observed": [
+          "execute_bash",
+          "str_replace_editor"
+        ],
+        "terminal_candidates": [],
+        "last_tool_call": {
+          "location": "/18/tool_calls/0/function",
+          "name": "execute_bash",
+          "id": "toolu_019qhqSqjqEpMcQjtxD4c4Wm",
+          "command_sha256": "60b07a550278541c67c308e7a49d27f18d9daf2e42bdec691e21d5248ceb733b"
+        },
+        "last_tool_response_matches": true,
+        "last_tool_response_command_exit_zero": true,
+        "last_message_is_continuation_prompt": false,
+        "run_termination_metadata_present": false,
+        "metadata_scope_note": "The inspected top-level representation is a chat-message list, not an event stream or terminal controller record."
+      },
+      "explicit_finish": null,
+      "stop_class": "unknown",
+      "terminal_acknowledged": null,
+      "controller_boundary": null,
+      "wrapper_actions": [],
+      "rationale": "The provided artifact is a chat-message list without a terminal controller event or exit status. No finish/submit tool call or standalone terminal shell command is observed in this list. It ends with the matched response to an ordinary command; command exit code zero does not mean that the agent run terminated. Absence from this unvalidated terminal history cannot establish explicit_finish=false.",
+      "competing_interpretation": "A finish action or controller boundary may have occurred after the last saved message. The file could be a pre-completion request snapshot or otherwise truncated record; that mechanism is not asserted without export-provenance evidence. A message count or last successful command cannot identify the causal stop.",
+      "locators": [
+        "/18",
+        "/18/tool_calls/0/function",
+        "/19"
+      ],
+      "trace_completeness": "Message-history artifact; terminal completeness unestablished.",
+      "last_observable_agent_action": {
+        "locator": "/18",
+        "type": "execute_bash"
+      },
+      "observed_terminal_action_in_available_snapshot": false
+    },
+    {
+      "series": "B",
+      "instance_id": "django__django-16899",
+      "raw_path": "/private/tmp/swe_external_B_20261122_1v9q5jxs/django__django-16899.json",
+      "trace_url": "https://swe-bench-submissions.s3.amazonaws.com/verified/20241029_OpenHands-CodeAct-2.1-sonnet-20241022/trajs/django__django-16899.json",
+      "available": true,
+      "raw_sha256": "12893bf7dbdf3fdf939e7a197a0b54cdbbcda2b2a2c0aea0e4fd6138374efe4c",
+      "bytes": 122549,
+      "evidence": {
+        "artifact_type": "chat_message_list_without_controller_state",
+        "message_count": 48,
+        "last_role": "tool",
+        "last_message_locator": "/47",
+        "last_assistant_locator": "/46",
+        "last_assistant_has_tool_calls": true,
+        "tool_names_observed": [
+          "execute_bash",
+          "str_replace_editor"
+        ],
+        "terminal_candidates": [],
+        "last_tool_call": {
+          "location": "/46/tool_calls/0/function",
+          "name": "execute_bash",
+          "id": "toolu_01AyCGhEkc22rRHVx7VwkZXy",
+          "command_sha256": "853473487918f89097ac9b6d6c3d7c03e01b6030aea30767a2863cf989042805"
+        },
+        "last_tool_response_matches": true,
+        "last_tool_response_command_exit_zero": true,
+        "last_message_is_continuation_prompt": false,
+        "run_termination_metadata_present": false,
+        "metadata_scope_note": "The inspected top-level representation is a chat-message list, not an event stream or terminal controller record."
+      },
+      "explicit_finish": null,
+      "stop_class": "unknown",
+      "terminal_acknowledged": null,
+      "controller_boundary": null,
+      "wrapper_actions": [],
+      "rationale": "The provided artifact is a chat-message list without a terminal controller event or exit status. No finish/submit tool call or standalone terminal shell command is observed in this list. It ends with the matched response to an ordinary command; command exit code zero does not mean that the agent run terminated. Absence from this unvalidated terminal history cannot establish explicit_finish=false.",
+      "competing_interpretation": "A finish action or controller boundary may have occurred after the last saved message. The file could be a pre-completion request snapshot or otherwise truncated record; that mechanism is not asserted without export-provenance evidence. A message count or last successful command cannot identify the causal stop.",
+      "locators": [
+        "/46",
+        "/46/tool_calls/0/function",
+        "/47"
+      ],
+      "trace_completeness": "Message-history artifact; terminal completeness unestablished.",
+      "last_observable_agent_action": {
+        "locator": "/46",
+        "type": "execute_bash"
+      },
+      "observed_terminal_action_in_available_snapshot": false
+    },
+    {
+      "series": "B",
+      "instance_id": "django__django-13406",
+      "raw_path": "/private/tmp/swe_external_B_20261122_1v9q5jxs/django__django-13406.json",
+      "trace_url": "https://swe-bench-submissions.s3.amazonaws.com/verified/20241029_OpenHands-CodeAct-2.1-sonnet-20241022/trajs/django__django-13406.json",
+      "available": true,
+      "raw_sha256": "675d15d5b3a8acb2034eaaffe951e3f2bc13a32d7b8cf992bc7b7d74cc905881",
+      "bytes": 327791,
+      "evidence": {
+        "artifact_type": "chat_message_list_without_controller_state",
+        "message_count": 200,
+        "last_role": "tool",
+        "last_message_locator": "/199",
+        "last_assistant_locator": "/198",
+        "last_assistant_has_tool_calls": true,
+        "tool_names_observed": [
+          "execute_bash",
+          "str_replace_editor"
+        ],
+        "terminal_candidates": [],
+        "last_tool_call": {
+          "location": "/198/tool_calls/0/function",
+          "name": "execute_bash",
+          "id": "toolu_01BZB1eqHUxQ23qUfJeobg74",
+          "command_sha256": "1ecff4f7ed7c921dee5f431c9886aace6835d30764d0b8d04497d8676c2a9aff"
+        },
+        "last_tool_response_matches": true,
+        "last_tool_response_command_exit_zero": true,
+        "last_message_is_continuation_prompt": false,
+        "run_termination_metadata_present": false,
+        "metadata_scope_note": "The inspected top-level representation is a chat-message list, not an event stream or terminal controller record."
+      },
+      "explicit_finish": null,
+      "stop_class": "unknown",
+      "terminal_acknowledged": null,
+      "controller_boundary": null,
+      "wrapper_actions": [],
+      "rationale": "The provided artifact is a chat-message list without a terminal controller event or exit status. No finish/submit tool call or standalone terminal shell command is observed in this list. It ends with the matched response to an ordinary command; command exit code zero does not mean that the agent run terminated. Absence from this unvalidated terminal history cannot establish explicit_finish=false.",
+      "competing_interpretation": "A finish action or controller boundary may have occurred after the last saved message. The file could be a pre-completion request snapshot or otherwise truncated record; that mechanism is not asserted without export-provenance evidence. A message count or last successful command cannot identify the causal stop.",
+      "locators": [
+        "/198",
+        "/198/tool_calls/0/function",
+        "/199"
+      ],
+      "trace_completeness": "Message-history artifact; terminal completeness unestablished.",
+      "last_observable_agent_action": {
+        "locator": "/198",
+        "type": "execute_bash"
+      },
+      "observed_terminal_action_in_available_snapshot": false
+    },
+    {
+      "series": "B",
+      "instance_id": "sphinx-doc__sphinx-9281",
+      "raw_path": "/private/tmp/swe_external_B_20261122_1v9q5jxs/sphinx-doc__sphinx-9281.json",
+      "trace_url": "https://swe-bench-submissions.s3.amazonaws.com/verified/20241029_OpenHands-CodeAct-2.1-sonnet-20241022/trajs/sphinx-doc__sphinx-9281.json",
+      "available": true,
+      "raw_sha256": "a0a7ea08a3adb06f871db87ae301d399d1bd800126508091167c7c0c3e9e023a",
+      "bytes": 109052,
+      "evidence": {
+        "artifact_type": "chat_message_list_without_controller_state",
+        "message_count": 38,
+        "last_role": "user",
+        "last_message_locator": "/37",
+        "last_assistant_locator": "/36",
+        "last_assistant_has_tool_calls": false,
+        "tool_names_observed": [
+          "execute_bash",
+          "str_replace_editor"
+        ],
+        "terminal_candidates": [],
+        "last_tool_call": {
+          "location": "/34/tool_calls/0/function",
+          "name": "execute_bash",
+          "id": "toolu_01F7of8e8FbXqY7yvNYCYPVn",
+          "command_sha256": "aac46979aa5f34c449d178e1dfa44d7a50cc7dfe2dcf466bd6a0b8d294e455ed"
+        },
+        "last_tool_response_matches": false,
+        "last_tool_response_command_exit_zero": false,
+        "last_message_is_continuation_prompt": true,
+        "run_termination_metadata_present": false,
+        "metadata_scope_note": "The inspected top-level representation is a chat-message list, not an event stream or terminal controller record."
+      },
+      "explicit_finish": null,
+      "stop_class": "unknown",
+      "terminal_acknowledged": null,
+      "controller_boundary": null,
+      "wrapper_actions": [
+        "continuation_prompt_observed"
+      ],
+      "rationale": "The provided artifact is a chat-message list without a terminal controller event or exit status. No finish/submit tool call or standalone terminal shell command is observed in this list. It ends with a user-role continuation prompt following an assistant message; the prompt does not acknowledge a finish. Absence from this unvalidated terminal history cannot establish explicit_finish=false.",
+      "competing_interpretation": "A finish action or controller boundary may have occurred after the last saved message. The file could be a pre-completion request snapshot or otherwise truncated record; that mechanism is not asserted without export-provenance evidence. A message count or last successful command cannot identify the causal stop.",
+      "locators": [
+        "/36",
+        "/34/tool_calls/0/function",
+        "/37"
+      ],
+      "trace_completeness": "Message-history artifact; terminal completeness unestablished.",
+      "last_observable_agent_action": {
+        "locator": "/36",
+        "type": "assistant_message_without_tool_call"
+      },
+      "observed_terminal_action_in_available_snapshot": false
+    },
+    {
+      "series": "B",
+      "instance_id": "django__django-13449",
+      "raw_path": "/private/tmp/swe_external_B_20261122_1v9q5jxs/django__django-13449.json",
+      "trace_url": "https://swe-bench-submissions.s3.amazonaws.com/verified/20241029_OpenHands-CodeAct-2.1-sonnet-20241022/trajs/django__django-13449.json",
+      "available": true,
+      "raw_sha256": "a37c0116f330c8747d0601859f16db1b09a820e1fdbd6eefac11be2fc0aa5e89",
+      "bytes": 208463,
+      "evidence": {
+        "artifact_type": "chat_message_list_without_controller_state",
+        "message_count": 70,
+        "last_role": "user",
+        "last_message_locator": "/69",
+        "last_assistant_locator": "/68",
+        "last_assistant_has_tool_calls": false,
+        "tool_names_observed": [
+          "execute_bash",
+          "str_replace_editor"
+        ],
+        "terminal_candidates": [],
+        "last_tool_call": {
+          "location": "/66/tool_calls/0/function",
+          "name": "execute_bash",
+          "id": "toolu_01JeFsEVEQx3GM6iuMfUNx1D",
+          "command_sha256": "4dbf2ad0f3e947479163e74d307e700133fbc9fd9f318ac3185090722f9353e0"
+        },
+        "last_tool_response_matches": false,
+        "last_tool_response_command_exit_zero": false,
+        "last_message_is_continuation_prompt": true,
+        "run_termination_metadata_present": false,
+        "metadata_scope_note": "The inspected top-level representation is a chat-message list, not an event stream or terminal controller record."
+      },
+      "explicit_finish": null,
+      "stop_class": "unknown",
+      "terminal_acknowledged": null,
+      "controller_boundary": null,
+      "wrapper_actions": [
+        "continuation_prompt_observed"
+      ],
+      "rationale": "The provided artifact is a chat-message list without a terminal controller event or exit status. No finish/submit tool call or standalone terminal shell command is observed in this list. It ends with a user-role continuation prompt following an assistant message; the prompt does not acknowledge a finish. Absence from this unvalidated terminal history cannot establish explicit_finish=false.",
+      "competing_interpretation": "A finish action or controller boundary may have occurred after the last saved message. The file could be a pre-completion request snapshot or otherwise truncated record; that mechanism is not asserted without export-provenance evidence. A message count or last successful command cannot identify the causal stop.",
+      "locators": [
+        "/68",
+        "/66/tool_calls/0/function",
+        "/69"
+      ],
+      "trace_completeness": "Message-history artifact; terminal completeness unestablished.",
+      "last_observable_agent_action": {
+        "locator": "/68",
+        "type": "assistant_message_without_tool_call"
+      },
+      "observed_terminal_action_in_available_snapshot": false
+    },
+    {
+      "series": "B",
+      "instance_id": "django__django-11880",
+      "raw_path": "/private/tmp/swe_external_B_20261122_1v9q5jxs/django__django-11880.json",
+      "trace_url": "https://swe-bench-submissions.s3.amazonaws.com/verified/20241029_OpenHands-CodeAct-2.1-sonnet-20241022/trajs/django__django-11880.json",
+      "available": true,
+      "raw_sha256": "ecd425d242900ec46dde28048d7ee8045ab607a6c5e0e08822df8dc9aad602f7",
+      "bytes": 47691,
+      "evidence": {
+        "artifact_type": "chat_message_list_without_controller_state",
+        "message_count": 32,
+        "last_role": "tool",
+        "last_message_locator": "/31",
+        "last_assistant_locator": "/30",
+        "last_assistant_has_tool_calls": true,
+        "tool_names_observed": [
+          "execute_bash",
+          "str_replace_editor"
+        ],
+        "terminal_candidates": [],
+        "last_tool_call": {
+          "location": "/30/tool_calls/0/function",
+          "name": "execute_bash",
+          "id": "toolu_01PHbc3hUoz2wibJ9wkjkgay",
+          "command_sha256": "058d29fa1696781661fceaaa95d0bd7284a5059bb8cac0eca3bd7077f0b1f70e"
+        },
+        "last_tool_response_matches": true,
+        "last_tool_response_command_exit_zero": true,
+        "last_message_is_continuation_prompt": false,
+        "run_termination_metadata_present": false,
+        "metadata_scope_note": "The inspected top-level representation is a chat-message list, not an event stream or terminal controller record."
+      },
+      "explicit_finish": null,
+      "stop_class": "unknown",
+      "terminal_acknowledged": null,
+      "controller_boundary": null,
+      "wrapper_actions": [],
+      "rationale": "The provided artifact is a chat-message list without a terminal controller event or exit status. No finish/submit tool call or standalone terminal shell command is observed in this list. It ends with the matched response to an ordinary command; command exit code zero does not mean that the agent run terminated. Absence from this unvalidated terminal history cannot establish explicit_finish=false.",
+      "competing_interpretation": "A finish action or controller boundary may have occurred after the last saved message. The file could be a pre-completion request snapshot or otherwise truncated record; that mechanism is not asserted without export-provenance evidence. A message count or last successful command cannot identify the causal stop.",
+      "locators": [
+        "/30",
+        "/30/tool_calls/0/function",
+        "/31"
+      ],
+      "trace_completeness": "Message-history artifact; terminal completeness unestablished.",
+      "last_observable_agent_action": {
+        "locator": "/30",
+        "type": "execute_bash"
+      },
+      "observed_terminal_action_in_available_snapshot": false
+    },
+    {
+      "series": "B",
+      "instance_id": "sphinx-doc__sphinx-8035",
+      "raw_path": "/private/tmp/swe_external_B_20261122_1v9q5jxs/sphinx-doc__sphinx-8035.json",
+      "trace_url": "https://swe-bench-submissions.s3.amazonaws.com/verified/20241029_OpenHands-CodeAct-2.1-sonnet-20241022/trajs/sphinx-doc__sphinx-8035.json",
+      "available": true,
+      "raw_sha256": "f577bc68ed38cf53648897902b1b9c970a83b818a1d6c133dc3dde7db00df9d5",
+      "bytes": 309119,
+      "evidence": {
+        "artifact_type": "chat_message_list_without_controller_state",
+        "message_count": 76,
+        "last_role": "user",
+        "last_message_locator": "/75",
+        "last_assistant_locator": "/74",
+        "last_assistant_has_tool_calls": false,
+        "tool_names_observed": [
+          "execute_bash",
+          "str_replace_editor"
+        ],
+        "terminal_candidates": [],
+        "last_tool_call": {
+          "location": "/72/tool_calls/0/function",
+          "name": "execute_bash",
+          "id": "toolu_01BVYL2N9aFL2tFsaunPNpwZ",
+          "command_sha256": "d492322163cd4d0296775e7a0a0398575698e992bb1428390dd5e0128e72ed60"
+        },
+        "last_tool_response_matches": false,
+        "last_tool_response_command_exit_zero": false,
+        "last_message_is_continuation_prompt": true,
+        "run_termination_metadata_present": false,
+        "metadata_scope_note": "The inspected top-level representation is a chat-message list, not an event stream or terminal controller record."
+      },
+      "explicit_finish": null,
+      "stop_class": "unknown",
+      "terminal_acknowledged": null,
+      "controller_boundary": null,
+      "wrapper_actions": [
+        "continuation_prompt_observed"
+      ],
+      "rationale": "The provided artifact is a chat-message list without a terminal controller event or exit status. No finish/submit tool call or standalone terminal shell command is observed in this list. It ends with a user-role continuation prompt following an assistant message; the prompt does not acknowledge a finish. Absence from this unvalidated terminal history cannot establish explicit_finish=false.",
+      "competing_interpretation": "A finish action or controller boundary may have occurred after the last saved message. The file could be a pre-completion request snapshot or otherwise truncated record; that mechanism is not asserted without export-provenance evidence. A message count or last successful command cannot identify the causal stop.",
+      "locators": [
+        "/74",
+        "/72/tool_calls/0/function",
+        "/75"
+      ],
+      "trace_completeness": "Message-history artifact; terminal completeness unestablished.",
+      "last_observable_agent_action": {
+        "locator": "/74",
+        "type": "assistant_message_without_tool_call"
+      },
+      "observed_terminal_action_in_available_snapshot": false
+    },
+    {
+      "series": "B",
+      "instance_id": "django__django-11964",
+      "raw_path": "/private/tmp/swe_external_B_20261122_1v9q5jxs/django__django-11964.json",
+      "trace_url": "https://swe-bench-submissions.s3.amazonaws.com/verified/20241029_OpenHands-CodeAct-2.1-sonnet-20241022/trajs/django__django-11964.json",
+      "available": true,
+      "raw_sha256": "b8aee212d6e2ec8ba01753bd39da196b3e0f52999e55dc6f747c61251c703a7f",
+      "bytes": 212112,
+      "evidence": {
+        "artifact_type": "chat_message_list_without_controller_state",
+        "message_count": 108,
+        "last_role": "user",
+        "last_message_locator": "/107",
+        "last_assistant_locator": "/106",
+        "last_assistant_has_tool_calls": false,
+        "tool_names_observed": [
+          "execute_bash",
+          "str_replace_editor"
+        ],
+        "terminal_candidates": [],
+        "last_tool_call": {
+          "location": "/104/tool_calls/0/function",
+          "name": "execute_bash",
+          "id": "toolu_01Vu6B237mN3rCKe2a1wxgg2",
+          "command_sha256": "faa3112486e0d88d41e8c620c02e7370fa05e1fa71b941e14782511310e30e86"
+        },
+        "last_tool_response_matches": false,
+        "last_tool_response_command_exit_zero": false,
+        "last_message_is_continuation_prompt": true,
+        "run_termination_metadata_present": false,
+        "metadata_scope_note": "The inspected top-level representation is a chat-message list, not an event stream or terminal controller record."
+      },
+      "explicit_finish": null,
+      "stop_class": "unknown",
+      "terminal_acknowledged": null,
+      "controller_boundary": null,
+      "wrapper_actions": [
+        "continuation_prompt_observed"
+      ],
+      "rationale": "The provided artifact is a chat-message list without a terminal controller event or exit status. No finish/submit tool call or standalone terminal shell command is observed in this list. It ends with a user-role continuation prompt following an assistant message; the prompt does not acknowledge a finish. Absence from this unvalidated terminal history cannot establish explicit_finish=false.",
+      "competing_interpretation": "A finish action or controller boundary may have occurred after the last saved message. The file could be a pre-completion request snapshot or otherwise truncated record; that mechanism is not asserted without export-provenance evidence. A message count or last successful command cannot identify the causal stop.",
+      "locators": [
+        "/106",
+        "/104/tool_calls/0/function",
+        "/107"
+      ],
+      "trace_completeness": "Message-history artifact; terminal completeness unestablished.",
+      "last_observable_agent_action": {
+        "locator": "/106",
+        "type": "assistant_message_without_tool_call"
+      },
+      "observed_terminal_action_in_available_snapshot": false
+    }
+  ],
+  "authoritative_background": [
+    {
+      "url": "https://swe-agent.com/0.7/reference/env/",
+      "scope": "Official versioned environment source documentation; selected submission implementation revision was not established. Used as corroborating semantic context, not as a substitute for per-instance records.",
+      "note": "Its special-exit handling attempts automatic submission and distinguishes submitted(exit_cause) from ordinary submitted."
+    },
+    {
+      "url": "https://raw.githubusercontent.com/All-Hands-AI/OpenHands/0.12.0/openhands/controller/agent_controller.py",
+      "scope": "Official tagged source, CodeAct-era background; exact selected submission code revision unestablished.",
+      "note": "AgentFinishAction acknowledgment, controller resource checks, and stop state changes are different mechanisms. A command exit code belongs to a tool observation."
+    },
+    {
+      "url": "https://raw.githubusercontent.com/All-Hands-AI/OpenHands/0.12.0/openhands/agenthub/codeact_agent/codeact_agent.py",
+      "scope": "Official tagged CodeAct 2.1 source; exact selected submission code revision unestablished.",
+      "note": "A user /exit can generate AgentFinishAction without a fresh LLM response. Therefore event type alone would not establish who requested termination."
+    }
+  ],
+  "limits": [
+    "Two reserved A traces unavailable; no replacements.",
+    "All ten B artifacts lack validated terminal-controller coverage. They support observable actions, but the terminal cause remains unknown.",
+    "No published outcomes, patch correctness, model behavior, or unobserved events were inferred. No model, trajectory command, submitted code, or test was executed.",
+    "Agreement with primary coding must be assessed after this file is frozen."
+  ]
+}
