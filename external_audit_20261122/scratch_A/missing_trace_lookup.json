@@ -1,0 +1,73 @@
+[
+  {
+    "file": "django__django-13449_prefix.xml",
+    "url": "https://swe-bench-submissions.s3.amazonaws.com/?list-type=2&prefix=verified%2F20240402_sweagent_claude3opus%2Ftrajs%2Fdjango__django-13449",
+    "curl_exit": 0,
+    "keys": []
+  },
+  {
+    "file": "django__django-11880_prefix.xml",
+    "url": "https://swe-bench-submissions.s3.amazonaws.com/?list-type=2&prefix=verified%2F20240402_sweagent_claude3opus%2Ftrajs%2Fdjango__django-11880",
+    "curl_exit": 0,
+    "keys": []
+  },
+  {
+    "file": "test_candidate_index.json",
+    "url": "https://api.github.com/repos/SWE-bench/experiments/contents/evaluation/test/20240402_sweagent_claude3opus?ref=40f164d5b8f1d249bf95a6df8b74b577fd8e519d",
+    "curl_exit": 0,
+    "files": [
+      {
+        "name": "README.md",
+        "type": "file",
+        "url": "https://raw.githubusercontent.com/SWE-bench/experiments/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/evaluation/test/20240402_sweagent_claude3opus/README.md"
+      },
+      {
+        "name": "logo.png",
+        "type": "file",
+        "url": "https://raw.githubusercontent.com/SWE-bench/experiments/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/evaluation/test/20240402_sweagent_claude3opus/logo.png"
+      },
+      {
+        "name": "metadata.yaml",
+        "type": "file",
+        "url": "https://raw.githubusercontent.com/SWE-bench/experiments/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/evaluation/test/20240402_sweagent_claude3opus/metadata.yaml"
+      },
+      {
+        "name": "results",
+        "type": "dir",
+        "url": "https://api.github.com/repos/SWE-bench/experiments/contents/evaluation/test/20240402_sweagent_claude3opus/results?ref=40f164d5b8f1d249bf95a6df8b74b577fd8e519d"
+      }
+    ]
+  },
+  {
+    "file": "lite_candidate_index.json",
+    "url": "https://api.github.com/repos/SWE-bench/experiments/contents/evaluation/lite/20240402_sweagent_claude3opus?ref=40f164d5b8f1d249bf95a6df8b74b577fd8e519d",
+    "curl_exit": 0,
+    "files": [
+      {
+        "name": "README.md",
+        "type": "file",
+        "url": "https://raw.githubusercontent.com/SWE-bench/experiments/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/evaluation/lite/20240402_sweagent_claude3opus/README.md"
+      },
+      {
+        "name": "figures",
+        "type": "dir",
+        "url": "https://api.github.com/repos/SWE-bench/experiments/contents/evaluation/lite/20240402_sweagent_claude3opus/figures?ref=40f164d5b8f1d249bf95a6df8b74b577fd8e519d"
+      },
+      {
+        "name": "logo.png",
+        "type": "file",
+        "url": "https://raw.githubusercontent.com/SWE-bench/experiments/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/evaluation/lite/20240402_sweagent_claude3opus/logo.png"
+      },
+      {
+        "name": "metadata.yaml",
+        "type": "file",
+        "url": "https://raw.githubusercontent.com/SWE-bench/experiments/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/evaluation/lite/20240402_sweagent_claude3opus/metadata.yaml"
+      },
+      {
+        "name": "results",
+        "type": "dir",
+        "url": "https://api.github.com/repos/SWE-bench/experiments/contents/evaluation/lite/20240402_sweagent_claude3opus/results?ref=40f164d5b8f1d249bf95a6df8b74b577fd8e519d"
+      }
+    ]
+  }
+]

@@ -1,0 +1,4 @@
+# Selection receipts and evidence files are verified by their byte hashes.
+* text eol=lf
+# Python's CSV writer uses CRLF consistently on all platforms.
+episodes.csv -text

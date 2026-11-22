@@ -1,0 +1,103 @@
+Independent terminal-action review
+==================================
+
+Reviewer: separate Codex AI subagent /root/repair_literature. This is a second
+coding pass, not a human review or a claim of statistically independent errors.
+
+The reviewer first read protocol.md and selection.json and checked the frozen
+selection SHA-256:
+7b8e1869d1101c0851935686c20e1003f78922bf75840cab17c702d4aa9e23e2
+
+An initial generic locator and method were prepared in /private/tmp before
+selection authorization. No study trajectories or outcomes were inspected at
+that preparation stage. After the root reviewer confirmed the selection freeze,
+the reviewer inspected the eighteen available selected raw artifacts supplied by
+the primary coders. The coders supplied paths, hashes, URLs, and availability
+information only. Neither primary coding files nor published resolution labels
+were read before independent_checks.json was frozen. The two unavailable slots
+were retained. All twenty slots have a row.
+
+Procedure
+---------
+1. Verify raw-file hashes, the frozen selection, and file schema. Read structured
+   action fields and narrow terminal status evidence. Do not execute any command
+   from a trace, import external code, run a model, or evaluate a submitted patch.
+2. For SWE-agent, compare trajectory actions with actual-instance assistant
+   actions in history. Exclude history entries explicitly marked is_demo=true.
+   In all eight available artifacts, the two actual-instance action sequences
+   agree. This is an internal consistency check, not authentication or proof of
+   complete external history. A demonstration submit occurs at /history/22 in
+   all eight and does not count as an action for the selected instance.
+3. Inspect the terminal trajectory action, its model-response field, environment
+   observation, and /info/exit_status. A recorded submit plus matching submission
+   acknowledgment supports agent_acknowledged. A synthetic exit_cost action,
+   exact cost-limit response, and matching environment exit support
+   controller_boundary. A submitted(exit_cost) status is not an agent submit.
+4. For OpenHands, inspect each assistant tool_call function and decoded argument
+   object as data, matching tool observations by tool_call_id. Search narrow
+   finish/submit/exit function or command candidates. The supplied files are
+   message lists rather than full controller event streams. Six end at ordinary
+   command observations; four end at a user-role continuation prompt following
+   an assistant message. None establishes the causal end of the run. A command's
+   zero exit code is not a terminal agent acknowledgment. Absence of a finish in
+   this unvalidated terminal history yields explicit_finish=null, not false.
+5. Distinguish what is observed from what a different logging mechanism could
+   explain. Do not infer intent, giving up, patch quality, or causal stop from a
+   final file record, message count, or patch presence. Preserve alternative
+   interpretations and source limitations in each coding row.
+6. Freeze independent_checks.json and its SHA-256 receipt before examining
+   primary coding. Any later comparison or adjudication should be stored as a
+   separate artifact and should not silently rewrite the independent first pass.
+
+Meaning of fields
+-----------------
+explicit_finish=true: a model-issued instance-level terminal request is recorded.
+explicit_finish=false: no such request appears in an internally consistent
+  instance action stream reaching an explicit controller boundary. This is
+  scoped to the public artifact; it is not a statement about unlogged events.
+explicit_finish=null: the artifact cannot establish presence or absence for the
+  complete run (missing artifact or unvalidated terminal coverage).
+agent_acknowledged: explicit agent request with matching environment terminal
+  acknowledgment.
+controller_boundary: affirmative cost/timeout/error/controller evidence; an
+  automatic submission is recorded separately as a wrapper action.
+both: both supported mechanisms coexist; no selected record required this code.
+unknown: the causal termination is unestablished.
+
+Reproducing structural locators
+------------------------------
+From the repository root, supply the local directories holding the raw artifacts:
+
+python3 external_audit_20261122/scripts/independent_terminal_locator.py \
+  --selection external_audit_20261122/selection.json \
+  --a-root /private/tmp/external_audit_A_20261122/traces \
+  --b-root /private/tmp/swe_external_B_20261122_1v9q5jxs \
+  --output /private/tmp/independent_locators_reproduced.json
+
+The script uses only Python's standard library. It enforces the selection hash,
+rejects duplicate JSON keys, bounds individual reads, never executes artifact
+content, and refuses to overwrite its output. The script provides navigation
+evidence; the judgments in independent_checks.json are the reviewer's separate
+decisions. JSON pointers are zero-indexed. Reasoning, patch bodies, and full tool
+outputs are intentionally omitted. File hashes permit comparison with retrieved
+artifacts. Reproduction is an ordinary data-parsing action, not model inference.
+
+Authoritative implementation context
+------------------------------------
+https://swe-agent.com/0.7/reference/env/
+The official versioned environment source documents special-exit automatic
+submission. Per-instance exit records supply the actual evidence in this audit.
+This documentation was not established as the exact selected submission revision.
+
+https://raw.githubusercontent.com/All-Hands-AI/OpenHands/0.12.0/openhands/controller/agent_controller.py
+The tagged source separately handles finish actions and resource boundaries.
+
+https://raw.githubusercontent.com/All-Hands-AI/OpenHands/0.12.0/openhands/agenthub/codeact_agent/codeact_agent.py
+The tagged CodeAct 2.1 source can generate a finish action in response to a user
+/exit without a new LLM response, so a finish event name alone would be inadequate
+actor evidence. These source files are contextual examples; their exact relation
+to the selected submission was not established and no missing terminal event was
+imputed from them.
+
+Read on 2026-11-22. No outcomes, primary coding, or code execution informed the
+frozen first-pass terminal judgments.

@@ -1,0 +1,34 @@
+[
+  {
+    "split": "test",
+    "instance_id": "django__django-13449",
+    "url": "https://swe-bench-submissions.s3.amazonaws.com/test/20240402_sweagent_claude3opus/trajs/django__django-13449.traj",
+    "path": "/private/tmp/external_audit_A_20261122/alternate_traces/test/django__django-13449.traj",
+    "curl_exit": 22,
+    "error": "curl: (22) The requested URL returned error: 404"
+  },
+  {
+    "split": "test",
+    "instance_id": "django__django-11880",
+    "url": "https://swe-bench-submissions.s3.amazonaws.com/test/20240402_sweagent_claude3opus/trajs/django__django-11880.traj",
+    "path": "/private/tmp/external_audit_A_20261122/alternate_traces/test/django__django-11880.traj",
+    "curl_exit": 22,
+    "error": "curl: (22) The requested URL returned error: 404"
+  },
+  {
+    "split": "lite",
+    "instance_id": "django__django-13449",
+    "url": "https://swe-bench-submissions.s3.amazonaws.com/lite/20240402_sweagent_claude3opus/trajs/django__django-13449.traj",
+    "path": "/private/tmp/external_audit_A_20261122/alternate_traces/lite/django__django-13449.traj",
+    "curl_exit": 22,
+    "error": "curl: (22) The requested URL returned error: 404"
+  },
+  {
+    "split": "lite",
+    "instance_id": "django__django-11880",
+    "url": "https://swe-bench-submissions.s3.amazonaws.com/lite/20240402_sweagent_claude3opus/trajs/django__django-11880.traj",
+    "path": "/private/tmp/external_audit_A_20261122/alternate_traces/lite/django__django-11880.traj",
+    "curl_exit": 22,
+    "error": "curl: (22) The requested URL returned error: 404"
+  }
+]

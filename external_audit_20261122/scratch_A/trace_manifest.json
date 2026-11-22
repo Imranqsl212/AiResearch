@@ -1,0 +1,105 @@
+{
+  "submission": "20240402_sweagent_claude3opus",
+  "selection_sha256": "7b8e1869d1101c0851935686c20e1003f78922bf75840cab17c702d4aa9e23e2",
+  "rows": [
+    {
+      "instance_id": "django__django-15569",
+      "trace_url": "https://swe-bench-submissions.s3.amazonaws.com/verified/20240402_sweagent_claude3opus/trajs/django__django-15569.traj",
+      "raw_path": "/private/tmp/external_audit_A_20261122/traces/django__django-15569.traj",
+      "retrieved_utc": "2026-11-22T09:50:53.484469+00:00",
+      "curl_exit": 0,
+      "available": true,
+      "trace_sha256": "6a60ec1ef39d0f5a50c2f24f4eecac9a3c72b13fee2570276b1dd2b4b3aebfe7",
+      "bytes": 170588
+    },
+    {
+      "instance_id": "matplotlib__matplotlib-25479",
+      "trace_url": "https://swe-bench-submissions.s3.amazonaws.com/verified/20240402_sweagent_claude3opus/trajs/matplotlib__matplotlib-25479.traj",
+      "raw_path": "/private/tmp/external_audit_A_20261122/traces/matplotlib__matplotlib-25479.traj",
+      "retrieved_utc": "2026-11-22T09:50:53.484712+00:00",
+      "curl_exit": 0,
+      "available": true,
+      "trace_sha256": "5c78747f54f5fb11c7cbe8569b94173bc80585a5a53cfe12f00d78511d40384f",
+      "bytes": 129641
+    },
+    {
+      "instance_id": "astropy__astropy-8872",
+      "trace_url": "https://swe-bench-submissions.s3.amazonaws.com/verified/20240402_sweagent_claude3opus/trajs/astropy__astropy-8872.traj",
+      "raw_path": "/private/tmp/external_audit_A_20261122/traces/astropy__astropy-8872.traj",
+      "retrieved_utc": "2026-11-22T09:50:53.484831+00:00",
+      "curl_exit": 0,
+      "available": true,
+      "trace_sha256": "3d7afe1f8b1e75acaf210ef3696bed4772d2b988d729008b05b9369c507906ef",
+      "bytes": 141231
+    },
+    {
+      "instance_id": "django__django-16899",
+      "trace_url": "https://swe-bench-submissions.s3.amazonaws.com/verified/20240402_sweagent_claude3opus/trajs/django__django-16899.traj",
+      "raw_path": "/private/tmp/external_audit_A_20261122/traces/django__django-16899.traj",
+      "retrieved_utc": "2026-11-22T09:50:54.750171+00:00",
+      "curl_exit": 0,
+      "available": true,
+      "trace_sha256": "c84d56fd6f9376543da894f67f61256e1ac64267e09166957e32d216d190ecb2",
+      "bytes": 200328
+    },
+    {
+      "instance_id": "django__django-13406",
+      "trace_url": "https://swe-bench-submissions.s3.amazonaws.com/verified/20240402_sweagent_claude3opus/trajs/django__django-13406.traj",
+      "raw_path": "/private/tmp/external_audit_A_20261122/traces/django__django-13406.traj",
+      "retrieved_utc": "2026-11-22T09:50:54.755959+00:00",
+      "curl_exit": 0,
+      "available": true,
+      "trace_sha256": "cf9c1f08c710d9b0e5d499c7fff4fbd7b46258548673969b92ad61338c941133",
+      "bytes": 117538
+    },
+    {
+      "instance_id": "sphinx-doc__sphinx-9281",
+      "trace_url": "https://swe-bench-submissions.s3.amazonaws.com/verified/20240402_sweagent_claude3opus/trajs/sphinx-doc__sphinx-9281.traj",
+      "raw_path": "/private/tmp/external_audit_A_20261122/traces/sphinx-doc__sphinx-9281.traj",
+      "retrieved_utc": "2026-11-22T09:50:57.157877+00:00",
+      "curl_exit": 0,
+      "available": true,
+      "trace_sha256": "8f8710939d66533caa47fda6001f6dd855255748d94bae04dc8b6b9e0adf330b",
+      "bytes": 735120
+    },
+    {
+      "instance_id": "django__django-13449",
+      "trace_url": "https://swe-bench-submissions.s3.amazonaws.com/verified/20240402_sweagent_claude3opus/trajs/django__django-13449.traj",
+      "raw_path": "/private/tmp/external_audit_A_20261122/traces/django__django-13449.traj",
+      "retrieved_utc": "2026-11-22T09:50:57.524480+00:00",
+      "curl_exit": 22,
+      "available": false,
+      "retrieval_error": "curl: (22) The requested URL returned error: 404"
+    },
+    {
+      "instance_id": "django__django-11880",
+      "trace_url": "https://swe-bench-submissions.s3.amazonaws.com/verified/20240402_sweagent_claude3opus/trajs/django__django-11880.traj",
+      "raw_path": "/private/tmp/external_audit_A_20261122/traces/django__django-11880.traj",
+      "retrieved_utc": "2026-11-22T09:50:58.136737+00:00",
+      "curl_exit": 22,
+      "available": false,
+      "retrieval_error": "curl: (22) The requested URL returned error: 404"
+    },
+    {
+      "instance_id": "sphinx-doc__sphinx-8035",
+      "trace_url": "https://swe-bench-submissions.s3.amazonaws.com/verified/20240402_sweagent_claude3opus/trajs/sphinx-doc__sphinx-8035.traj",
+      "raw_path": "/private/tmp/external_audit_A_20261122/traces/sphinx-doc__sphinx-8035.traj",
+      "retrieved_utc": "2026-11-22T09:50:58.290490+00:00",
+      "curl_exit": 0,
+      "available": true,
+      "trace_sha256": "7be976d8847b9069624174e95c24ade34f2112755e31885e27a5418569c441d8",
+      "bytes": 166104
+    },
+    {
+      "instance_id": "django__django-11964",
+      "trace_url": "https://swe-bench-submissions.s3.amazonaws.com/verified/20240402_sweagent_claude3opus/trajs/django__django-11964.traj",
+      "raw_path": "/private/tmp/external_audit_A_20261122/traces/django__django-11964.traj",
+      "retrieved_utc": "2026-11-22T09:50:58.901632+00:00",
+      "curl_exit": 0,
+      "available": true,
+      "trace_sha256": "4554023e4b45682216aedd6a56fcd49902bef4203e7462f00d2b1b3f366d5790",
+      "bytes": 147088
+    }
+  ],
+  "script_sha256": "d751b767ac468a1f583c78d4272f13f0efa5413e80aa67ce37d4a1a94179b31b"
+}

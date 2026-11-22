@@ -1,0 +1,98 @@
+[
+  {
+    "name": "end_condition.json",
+    "path": "evaluation/verified/20240402_sweagent_claude3opus/results/end_condition.json",
+    "sha": "c773e9539b814224e7351ebf85e62dfac6363459",
+    "size": 73,
+    "url": "https://api.github.com/repos/SWE-bench/experiments/contents/evaluation/verified/20240402_sweagent_claude3opus/results/end_condition.json?ref=40f164d5b8f1d249bf95a6df8b74b577fd8e519d",
+    "html_url": "https://github.com/SWE-bench/experiments/blob/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/evaluation/verified/20240402_sweagent_claude3opus/results/end_condition.json",
+    "git_url": "https://api.github.com/repos/SWE-bench/experiments/git/blobs/c773e9539b814224e7351ebf85e62dfac6363459",
+    "download_url": "https://raw.githubusercontent.com/SWE-bench/experiments/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/evaluation/verified/20240402_sweagent_claude3opus/results/end_condition.json",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/SWE-bench/experiments/contents/evaluation/verified/20240402_sweagent_claude3opus/results/end_condition.json?ref=40f164d5b8f1d249bf95a6df8b74b577fd8e519d",
+      "git": "https://api.github.com/repos/SWE-bench/experiments/git/blobs/c773e9539b814224e7351ebf85e62dfac6363459",
+      "html": "https://github.com/SWE-bench/experiments/blob/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/evaluation/verified/20240402_sweagent_claude3opus/results/end_condition.json"
+    }
+  },
+  {
+    "name": "file_f1.json",
+    "path": "evaluation/verified/20240402_sweagent_claude3opus/results/file_f1.json",
+    "sha": "bb930e63a348c26607f7d2c8bb05553bec27d50a",
+    "size": 7645,
+    "url": "https://api.github.com/repos/SWE-bench/experiments/contents/evaluation/verified/20240402_sweagent_claude3opus/results/file_f1.json?ref=40f164d5b8f1d249bf95a6df8b74b577fd8e519d",
+    "html_url": "https://github.com/SWE-bench/experiments/blob/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/evaluation/verified/20240402_sweagent_claude3opus/results/file_f1.json",
+    "git_url": "https://api.github.com/repos/SWE-bench/experiments/git/blobs/bb930e63a348c26607f7d2c8bb05553bec27d50a",
+    "download_url": "https://raw.githubusercontent.com/SWE-bench/experiments/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/evaluation/verified/20240402_sweagent_claude3opus/results/file_f1.json",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/SWE-bench/experiments/contents/evaluation/verified/20240402_sweagent_claude3opus/results/file_f1.json?ref=40f164d5b8f1d249bf95a6df8b74b577fd8e519d",
+      "git": "https://api.github.com/repos/SWE-bench/experiments/git/blobs/bb930e63a348c26607f7d2c8bb05553bec27d50a",
+      "html": "https://github.com/SWE-bench/experiments/blob/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/evaluation/verified/20240402_sweagent_claude3opus/results/file_f1.json"
+    }
+  },
+  {
+    "name": "patch_stats.json",
+    "path": "evaluation/verified/20240402_sweagent_claude3opus/results/patch_stats.json",
+    "sha": "34bdaaa1f91c7c90f028a49c5d50fe0e93ad4996",
+    "size": 10559,
+    "url": "https://api.github.com/repos/SWE-bench/experiments/contents/evaluation/verified/20240402_sweagent_claude3opus/results/patch_stats.json?ref=40f164d5b8f1d249bf95a6df8b74b577fd8e519d",
+    "html_url": "https://github.com/SWE-bench/experiments/blob/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/evaluation/verified/20240402_sweagent_claude3opus/results/patch_stats.json",
+    "git_url": "https://api.github.com/repos/SWE-bench/experiments/git/blobs/34bdaaa1f91c7c90f028a49c5d50fe0e93ad4996",
+    "download_url": "https://raw.githubusercontent.com/SWE-bench/experiments/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/evaluation/verified/20240402_sweagent_claude3opus/results/patch_stats.json",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/SWE-bench/experiments/contents/evaluation/verified/20240402_sweagent_claude3opus/results/patch_stats.json?ref=40f164d5b8f1d249bf95a6df8b74b577fd8e519d",
+      "git": "https://api.github.com/repos/SWE-bench/experiments/git/blobs/34bdaaa1f91c7c90f028a49c5d50fe0e93ad4996",
+      "html": "https://github.com/SWE-bench/experiments/blob/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/evaluation/verified/20240402_sweagent_claude3opus/results/patch_stats.json"
+    }
+  },
+  {
+    "name": "resolved_by_repo.json",
+    "path": "evaluation/verified/20240402_sweagent_claude3opus/results/resolved_by_repo.json",
+    "sha": "3298a31d56497f671a2d5dff914b13a5db829a9c",
+    "size": 648,
+    "url": "https://api.github.com/repos/SWE-bench/experiments/contents/evaluation/verified/20240402_sweagent_claude3opus/results/resolved_by_repo.json?ref=40f164d5b8f1d249bf95a6df8b74b577fd8e519d",
+    "html_url": "https://github.com/SWE-bench/experiments/blob/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/evaluation/verified/20240402_sweagent_claude3opus/results/resolved_by_repo.json",
+    "git_url": "https://api.github.com/repos/SWE-bench/experiments/git/blobs/3298a31d56497f671a2d5dff914b13a5db829a9c",
+    "download_url": "https://raw.githubusercontent.com/SWE-bench/experiments/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/evaluation/verified/20240402_sweagent_claude3opus/results/resolved_by_repo.json",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/SWE-bench/experiments/contents/evaluation/verified/20240402_sweagent_claude3opus/results/resolved_by_repo.json?ref=40f164d5b8f1d249bf95a6df8b74b577fd8e519d",
+      "git": "https://api.github.com/repos/SWE-bench/experiments/git/blobs/3298a31d56497f671a2d5dff914b13a5db829a9c",
+      "html": "https://github.com/SWE-bench/experiments/blob/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/evaluation/verified/20240402_sweagent_claude3opus/results/resolved_by_repo.json"
+    }
+  },
+  {
+    "name": "resolved_by_time.json",
+    "path": "evaluation/verified/20240402_sweagent_claude3opus/results/resolved_by_time.json",
+    "sha": "6e032e32788d7dbffc9390ef02be23d06320ef95",
+    "size": 278,
+    "url": "https://api.github.com/repos/SWE-bench/experiments/contents/evaluation/verified/20240402_sweagent_claude3opus/results/resolved_by_time.json?ref=40f164d5b8f1d249bf95a6df8b74b577fd8e519d",
+    "html_url": "https://github.com/SWE-bench/experiments/blob/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/evaluation/verified/20240402_sweagent_claude3opus/results/resolved_by_time.json",
+    "git_url": "https://api.github.com/repos/SWE-bench/experiments/git/blobs/6e032e32788d7dbffc9390ef02be23d06320ef95",
+    "download_url": "https://raw.githubusercontent.com/SWE-bench/experiments/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/evaluation/verified/20240402_sweagent_claude3opus/results/resolved_by_time.json",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/SWE-bench/experiments/contents/evaluation/verified/20240402_sweagent_claude3opus/results/resolved_by_time.json?ref=40f164d5b8f1d249bf95a6df8b74b577fd8e519d",
+      "git": "https://api.github.com/repos/SWE-bench/experiments/git/blobs/6e032e32788d7dbffc9390ef02be23d06320ef95",
+      "html": "https://github.com/SWE-bench/experiments/blob/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/evaluation/verified/20240402_sweagent_claude3opus/results/resolved_by_time.json"
+    }
+  },
+  {
+    "name": "results.json",
+    "path": "evaluation/verified/20240402_sweagent_claude3opus/results/results.json",
+    "sha": "2e76b7330b09b1ff0574d2bc324bb678b79c7056",
+    "size": 43064,
+    "url": "https://api.github.com/repos/SWE-bench/experiments/contents/evaluation/verified/20240402_sweagent_claude3opus/results/results.json?ref=40f164d5b8f1d249bf95a6df8b74b577fd8e519d",
+    "html_url": "https://github.com/SWE-bench/experiments/blob/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/evaluation/verified/20240402_sweagent_claude3opus/results/results.json",
+    "git_url": "https://api.github.com/repos/SWE-bench/experiments/git/blobs/2e76b7330b09b1ff0574d2bc324bb678b79c7056",
+    "download_url": "https://raw.githubusercontent.com/SWE-bench/experiments/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/evaluation/verified/20240402_sweagent_claude3opus/results/results.json",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/SWE-bench/experiments/contents/evaluation/verified/20240402_sweagent_claude3opus/results/results.json?ref=40f164d5b8f1d249bf95a6df8b74b577fd8e519d",
+      "git": "https://api.github.com/repos/SWE-bench/experiments/git/blobs/2e76b7330b09b1ff0574d2bc324bb678b79c7056",
+      "html": "https://github.com/SWE-bench/experiments/blob/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/evaluation/verified/20240402_sweagent_claude3opus/results/results.json"
+    }
+  }
+]

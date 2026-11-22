@@ -1,0 +1,31 @@
+{
+  "url": "https://api.github.com/repos/SWE-bench/experiments/contents/evaluation/verified?ref=40f164d5b8f1d249bf95a6df8b74b577fd8e519d",
+  "payload_sha256": "b96f71b49d14b19150558856be476979a4d184af338e526562a35a8d8dd7af5b",
+  "dated_directory_count": 168,
+  "family_A_candidates": [
+    "20240402_sweagent_claude3opus",
+    "20240402_sweagent_gpt4",
+    "20240620_sweagent_claude3.5sonnet",
+    "20240728_sweagent_gpt4o",
+    "20250225_sweagent_claude-3-7-sonnet",
+    "20250511_sweagent_lm_32b",
+    "20250522_sweagent_claude-4-sonnet-20250514",
+    "20250725_sweagent_devstral_small_2507",
+    "20250804_codesweep_sweagent_kimi_k2_instruct",
+    "20251120_livesweagent_gemini-3-pro-preview",
+    "20251215_livesweagent_claude-opus-4-5"
+  ],
+  "family_B_candidates": [
+    "20241029_OpenHands-CodeAct-2.1-sonnet-20241022",
+    "20250203_openhands_4x_scaled",
+    "20250415_openhands",
+    "20250520_openhands_devstral_small",
+    "20250524_openhands_claude_4_sonnet",
+    "20250716_openhands_kimi_k2",
+    "20250805_openhands-Qwen3-Coder-30B-A3B-Instruct",
+    "20250805_openhands-Qwen3-Coder-480B-A35B-Instruct",
+    "20250807_openhands_gpt5",
+    "20251103_SalesforceAIResearch_SAGE_OpenHands",
+    "20251127_openhands_claude-opus-4-5"
+  ]
+}

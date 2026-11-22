@@ -1,10 +1,8 @@
 # Manuscript reproduction and handoff
 
-The manuscript in [final.md](final.md) is an exploratory measurement audit with a separate, excluded corrected-oracle pilot, a post hoc older C5 candidate audit, sequential one-shot engineering waves, and later directional-error analyses. The identified files are [PDF](submission/full_paper.pdf) and [Word](submission/full_paper.docx). The anonymous peer-review files are [PDF](submission/full_paper_anonymous.pdf) and [Word](submission/full_paper_anonymous.docx). It contains five article figures, a separate stop-label chart in `figures/`, and six tables. The pre empirical protocol manuscript is preserved in `archive/protocol_before_empirical_revision.md`.
+[How Do We Know a Coding Agent Chose to Stop?](final.md) examines 38 self-termination labels in 40 local security-repair episodes and stopping evidence in 20 SWE-bench Verified episodes. The identified manuscript is available in [PDF](submission/full_paper.pdf) and [Word](submission/full_paper.docx), with anonymous copies in [PDF](submission/full_paper_anonymous.pdf) and [Word](submission/full_paper_anonymous.docx). Table 1 and the external results are on page 8 of the identified PDF. The [audit report](../external_audit_20261122/REPORT_RU.md) gives the selection rules, all ten paired issues, source links and verification commands. The [episode table](../external_audit_20261122/episodes.csv) links individual traces to evaluator records.
 
-The current filtered [v19 author-review bundle](AUTHOR_REVIEW_BUNDLE_V19_20261104.md) binds the revised manuscript, renderings, and selected derived reports. [V18](AUTHOR_REVIEW_BUNDLE_V18_20261104.md) and earlier bundles are dated snapshots and remain available for audit.
-
-An [author–year venue-format draft](VENUE_FORMAT_DRAFT_20261016.md) has separate identified and anonymous PDF/DOCX files. It preserves the scientific text, figures, and tables while changing citation style; the numbered `final.md` remains the canonical author-review source until a journal and final declarations are approved.
+The [v19 author-review bundle](AUTHOR_REVIEW_BUNDLE_V19_20261104.md) and [author–year venue draft](VENUE_FORMAT_DRAFT_20261016.md) archive earlier manuscript versions. The numbered manuscript above incorporates the SWE-bench audit. The [pre-empirical manuscript](archive/protocol_before_empirical_revision.md) preserves the original protocol.
 
 The [17 October collected-data milestone](milestone/RESULTS_20261017.md) organizes the historical and pilot cohorts, adds a graph of the hidden test–gate veto, and compares the observations with the original H1–H6 hypotheses without treating the exploratory records as confirmatory tests.
 
@@ -90,10 +88,7 @@ sh reproduction/render_paper.sh
 
 This command regenerates six chart assets (five embedded in the article) and both identified and anonymous
 manuscript formats, including six tables, from `final.md`. The abstract has
-204 space-delimited words excluding keywords. The current A4 PDFs have 18
-identified and 18 anonymous pages locally with Arial. A fresh-process
-Bitstream Vera render has 19 pages; the remote Linux recheck for this V19
-revision is pending. The anonymous renderer removes the author,
+229 space-delimited words excluding keywords. The identified and anonymous A4 PDFs each have 19 pages in the local Arial build. The anonymous renderer removes the author,
 affiliation, and correspondence lines, replaces the acknowledgment body with a
 neutral peer-review notice, withholds the source and public data commits, and clears author
 metadata from the PDF and Word files. It checks rendered content and document
