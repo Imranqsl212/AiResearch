@@ -1,0 +1,1171 @@
+{
+  "analysis_source_sha256": "e48ab8fa4d03ecf5360988b51182b99b165d2451e85d206596c761c1ff245b8e",
+  "audit": {
+    "complete_branches": 640,
+    "complete_families": 20,
+    "complete_pairs": 320,
+    "excluded_pair_ids": [],
+    "incomplete_pairs": 0,
+    "model_pair_summaries": {
+      "synthetic_model_0": {
+        "complete_pairs": 80,
+        "contributing_families": 20,
+        "discordance_rate": 0.375,
+        "equal_family_difference": -0.075,
+        "family_rows": [
+          {
+            "complete_pairs": 4,
+            "control_rate": 0.5,
+            "difference": 0.0,
+            "family": "synthetic_family_000",
+            "missing_bound_high": 0.0,
+            "missing_bound_low": 0.0,
+            "scheduled_pairs": 4,
+            "treatment_rate": 0.5
+          },
+          {
+            "complete_pairs": 4,
+            "control_rate": 0.25,
+            "difference": 0.25,
+            "family": "synthetic_family_001",
+            "missing_bound_high": 0.25,
+            "missing_bound_low": 0.25,
+            "scheduled_pairs": 4,
+            "treatment_rate": 0.5
+          },
+          {
+            "complete_pairs": 4,
+            "control_rate": 0.75,
+            "difference": 0.0,
+            "family": "synthetic_family_002",
+            "missing_bound_high": 0.0,
+            "missing_bound_low": 0.0,
+            "scheduled_pairs": 4,
+            "treatment_rate": 0.75
+          },
+          {
+            "complete_pairs": 4,
+            "control_rate": 0.5,
+            "difference": -0.25,
+            "family": "synthetic_family_003",
+            "missing_bound_high": -0.25,
+            "missing_bound_low": -0.25,
+            "scheduled_pairs": 4,
+            "treatment_rate": 0.25
+          },
+          {
+            "complete_pairs": 4,
+            "control_rate": 0.75,
+            "difference": -0.25,
+            "family": "synthetic_family_004",
+            "missing_bound_high": -0.25,
+            "missing_bound_low": -0.25,
+            "scheduled_pairs": 4,
+            "treatment_rate": 0.5
+          },
+          {
+            "complete_pairs": 4,
+            "control_rate": 0.75,
+            "difference": 0.25,
+            "family": "synthetic_family_005",
+            "missing_bound_high": 0.25,
+            "missing_bound_low": 0.25,
+            "scheduled_pairs": 4,
+            "treatment_rate": 1.0
+          },
+          {
+            "complete_pairs": 4,
+            "control_rate": 0.75,
+            "difference": 0.25,
+            "family": "synthetic_family_006",
+            "missing_bound_high": 0.25,
+            "missing_bound_low": 0.25,
+            "scheduled_pairs": 4,
+            "treatment_rate": 1.0
+          },
+          {
+            "complete_pairs": 4,
+            "control_rate": 0.5,
+            "difference": -0.25,
+            "family": "synthetic_family_007",
+            "missing_bound_high": -0.25,
+            "missing_bound_low": -0.25,
+            "scheduled_pairs": 4,
+            "treatment_rate": 0.25
+          },
+          {
+            "complete_pairs": 4,
+            "control_rate": 0.5,
+            "difference": 0.5,
+            "family": "synthetic_family_008",
+            "missing_bound_high": 0.5,
+            "missing_bound_low": 0.5,
+            "scheduled_pairs": 4,
+            "treatment_rate": 1.0
+          },
+          {
+            "complete_pairs": 4,
+            "control_rate": 0.0,
+            "difference": 0.0,
+            "family": "synthetic_family_009",
+            "missing_bound_high": 0.0,
+            "missing_bound_low": 0.0,
+            "scheduled_pairs": 4,
+            "treatment_rate": 0.0
+          },
+          {
+            "complete_pairs": 4,
+            "control_rate": 0.5,
+            "difference": 0.0,
+            "family": "synthetic_family_010",
+            "missing_bound_high": 0.0,
+            "missing_bound_low": 0.0,
+            "scheduled_pairs": 4,
+            "treatment_rate": 0.5
+          },
+          {
+            "complete_pairs": 4,
+            "control_rate": 0.75,
+            "difference": -0.25,
+            "family": "synthetic_family_011",
+            "missing_bound_high": -0.25,
+            "missing_bound_low": -0.25,
+            "scheduled_pairs": 4,
+            "treatment_rate": 0.5
+          },
+          {
+            "complete_pairs": 4,
+            "control_rate": 0.25,
+            "difference": 0.25,
+            "family": "synthetic_family_012",
+            "missing_bound_high": 0.25,
+            "missing_bound_low": 0.25,
+            "scheduled_pairs": 4,
+            "treatment_rate": 0.5
+          },
+          {
+            "complete_pairs": 4,
+            "control_rate": 0.5,
+            "difference": -0.25,
+            "family": "synthetic_family_013",
+            "missing_bound_high": -0.25,
+            "missing_bound_low": -0.25,
+            "scheduled_pairs": 4,
+            "treatment_rate": 0.25
+          },
+          {
+            "complete_pairs": 4,
+            "control_rate": 0.5,
+            "difference": 0.25,
+            "family": "synthetic_family_014",
+            "missing_bound_high": 0.25,
+            "missing_bound_low": 0.25,
+            "scheduled_pairs": 4,
+            "treatment_rate": 0.75
+          },
+          {
+            "complete_pairs": 4,
+            "control_rate": 0.75,
+            "difference": 0.0,
+            "family": "synthetic_family_015",
+            "missing_bound_high": 0.0,
+            "missing_bound_low": 0.0,
+            "scheduled_pairs": 4,
+            "treatment_rate": 0.75
+          },
+          {
+            "complete_pairs": 4,
+            "control_rate": 1.0,
+            "difference": -0.75,
+            "family": "synthetic_family_016",
+            "missing_bound_high": -0.75,
+            "missing_bound_low": -0.75,
+            "scheduled_pairs": 4,
+            "treatment_rate": 0.25
+          },
+          {
+            "complete_pairs": 4,
+            "control_rate": 0.75,
+            "difference": -0.25,
+            "family": "synthetic_family_017",
+            "missing_bound_high": -0.25,
+            "missing_bound_low": -0.25,
+            "scheduled_pairs": 4,
+            "treatment_rate": 0.5
+          },
+          {
+            "complete_pairs": 4,
+            "control_rate": 0.75,
+            "difference": -0.5,
+            "family": "synthetic_family_018",
+            "missing_bound_high": -0.5,
+            "missing_bound_low": -0.5,
+            "scheduled_pairs": 4,
+            "treatment_rate": 0.25
+          },
+          {
+            "complete_pairs": 4,
+            "control_rate": 1.0,
+            "difference": -0.5,
+            "family": "synthetic_family_019",
+            "missing_bound_high": -0.5,
+            "missing_bound_low": -0.5,
+            "scheduled_pairs": 4,
+            "treatment_rate": 0.5
+          }
+        ],
+        "incomplete_pairs": 0,
+        "leave_one_family_out": [
+          -0.07894736842105263,
+          -0.09210526315789473,
+          -0.07894736842105263,
+          -0.06578947368421052,
+          -0.06578947368421052,
+          -0.09210526315789473,
+          -0.09210526315789473,
+          -0.06578947368421052,
+          -0.10526315789473684,
+          -0.07894736842105263,
+          -0.07894736842105263,
+          -0.06578947368421052,
+          -0.09210526315789473,
+          -0.06578947368421052,
+          -0.09210526315789473,
+          -0.07894736842105263,
+          -0.039473684210526314,
+          -0.06578947368421052,
+          -0.05263157894736842,
+          -0.05263157894736842
+        ],
+        "missing_bound_high": -0.075,
+        "missing_bound_low": -0.075,
+        "pair_table": {
+          "both": 30,
+          "control_only": 18,
+          "neither": 20,
+          "treatment_only": 12
+        },
+        "pair_weighted_difference": -0.075,
+        "population_inference": null,
+        "scheduled_families": 20,
+        "scheduled_pairs": 80
+      },
+      "synthetic_model_1": {
+        "complete_pairs": 80,
+        "contributing_families": 20,
+        "discordance_rate": 0.4375,
+        "equal_family_difference": -0.2125,
+        "family_rows": [
+          {
+            "complete_pairs": 4,
+            "control_rate": 0.75,
+            "difference": -0.5,
+            "family": "synthetic_family_000",
+            "missing_bound_high": -0.5,
+            "missing_bound_low": -0.5,
+            "scheduled_pairs": 4,
+            "treatment_rate": 0.25
+          },
+          {
+            "complete_pairs": 4,
+            "control_rate": 0.75,
+            "difference": -0.25,
+            "family": "synthetic_family_001",
+            "missing_bound_high": -0.25,
+            "missing_bound_low": -0.25,
+            "scheduled_pairs": 4,
+            "treatment_rate": 0.5
+          },
+          {
+            "complete_pairs": 4,
+            "control_rate": 0.0,
+            "difference": 0.5,
+            "family": "synthetic_family_002",
+            "missing_bound_high": 0.5,
+            "missing_bound_low": 0.5,
+            "scheduled_pairs": 4,
+            "treatment_rate": 0.5
+          },
+          {
+            "complete_pairs": 4,
+            "control_rate": 0.5,
+            "difference": -0.5,
+            "family": "synthetic_family_003",
+            "missing_bound_high": -0.5,
+            "missing_bound_low": -0.5,
+            "scheduled_pairs": 4,
+            "treatment_rate": 0.0
+          },
+          {
+            "complete_pairs": 4,
+            "control_rate": 0.75,
+            "difference": 0.25,
+            "family": "synthetic_family_004",
+            "missing_bound_high": 0.25,
+            "missing_bound_low": 0.25,
+            "scheduled_pairs": 4,
+            "treatment_rate": 1.0
+          },
+          {
+            "complete_pairs": 4,
+            "control_rate": 0.5,
+            "difference": -0.25,
+            "family": "synthetic_family_005",
+            "missing_bound_high": -0.25,
+            "missing_bound_low": -0.25,
+            "scheduled_pairs": 4,
+            "treatment_rate": 0.25
+          },
+          {
+            "complete_pairs": 4,
+            "control_rate": 1.0,
+            "difference": -0.75,
+            "family": "synthetic_family_006",
+            "missing_bound_high": -0.75,
+            "missing_bound_low": -0.75,
+            "scheduled_pairs": 4,
+            "treatment_rate": 0.25
+          },
+          {
+            "complete_pairs": 4,
+            "control_rate": 0.5,
+            "difference": -0.5,
+            "family": "synthetic_family_007",
+            "missing_bound_high": -0.5,
+            "missing_bound_low": -0.5,
+            "scheduled_pairs": 4,
+            "treatment_rate": 0.0
+          },
+          {
+            "complete_pairs": 4,
+            "control_rate": 0.75,
+            "difference": 0.25,
+            "family": "synthetic_family_008",
+            "missing_bound_high": 0.25,
+            "missing_bound_low": 0.25,
+            "scheduled_pairs": 4,
+            "treatment_rate": 1.0
+          },
+          {
+            "complete_pairs": 4,
+            "control_rate": 0.25,
+            "difference": 0.25,
+            "family": "synthetic_family_009",
+            "missing_bound_high": 0.25,
+            "missing_bound_low": 0.25,
+            "scheduled_pairs": 4,
+            "treatment_rate": 0.5
+          },
+          {
+            "complete_pairs": 4,
+            "control_rate": 1.0,
+            "difference": -0.5,
+            "family": "synthetic_family_010",
+            "missing_bound_high": -0.5,
+            "missing_bound_low": -0.5,
+            "scheduled_pairs": 4,
+            "treatment_rate": 0.5
+          },
+          {
+            "complete_pairs": 4,
+            "control_rate": 0.75,
+            "difference": 0.0,
+            "family": "synthetic_family_011",
+            "missing_bound_high": 0.0,
+            "missing_bound_low": 0.0,
+            "scheduled_pairs": 4,
+            "treatment_rate": 0.75
+          },
+          {
+            "complete_pairs": 4,
+            "control_rate": 0.75,
+            "difference": -0.5,
+            "family": "synthetic_family_012",
+            "missing_bound_high": -0.5,
+            "missing_bound_low": -0.5,
+            "scheduled_pairs": 4,
+            "treatment_rate": 0.25
+          },
+          {
+            "complete_pairs": 4,
+            "control_rate": 1.0,
+            "difference": -0.75,
+            "family": "synthetic_family_013",
+            "missing_bound_high": -0.75,
+            "missing_bound_low": -0.75,
+            "scheduled_pairs": 4,
+            "treatment_rate": 0.25
+          },
+          {
+            "complete_pairs": 4,
+            "control_rate": 1.0,
+            "difference": 0.0,
+            "family": "synthetic_family_014",
+            "missing_bound_high": 0.0,
+            "missing_bound_low": 0.0,
+            "scheduled_pairs": 4,
+            "treatment_rate": 1.0
+          },
+          {
+            "complete_pairs": 4,
+            "control_rate": 1.0,
+            "difference": -0.5,
+            "family": "synthetic_family_015",
+            "missing_bound_high": -0.5,
+            "missing_bound_low": -0.5,
+            "scheduled_pairs": 4,
+            "treatment_rate": 0.5
+          },
+          {
+            "complete_pairs": 4,
+            "control_rate": 1.0,
+            "difference": -0.25,
+            "family": "synthetic_family_016",
+            "missing_bound_high": -0.25,
+            "missing_bound_low": -0.25,
+            "scheduled_pairs": 4,
+            "treatment_rate": 0.75
+          },
+          {
+            "complete_pairs": 4,
+            "control_rate": 0.25,
+            "difference": 0.0,
+            "family": "synthetic_family_017",
+            "missing_bound_high": 0.0,
+            "missing_bound_low": 0.0,
+            "scheduled_pairs": 4,
+            "treatment_rate": 0.25
+          },
+          {
+            "complete_pairs": 4,
+            "control_rate": 0.25,
+            "difference": 0.25,
+            "family": "synthetic_family_018",
+            "missing_bound_high": 0.25,
+            "missing_bound_low": 0.25,
+            "scheduled_pairs": 4,
+            "treatment_rate": 0.5
+          },
+          {
+            "complete_pairs": 4,
+            "control_rate": 0.75,
+            "difference": -0.5,
+            "family": "synthetic_family_019",
+            "missing_bound_high": -0.5,
+            "missing_bound_low": -0.5,
+            "scheduled_pairs": 4,
+            "treatment_rate": 0.25
+          }
+        ],
+        "incomplete_pairs": 0,
+        "leave_one_family_out": [
+          -0.19736842105263158,
+          -0.21052631578947367,
+          -0.25,
+          -0.19736842105263158,
+          -0.23684210526315788,
+          -0.21052631578947367,
+          -0.18421052631578946,
+          -0.19736842105263158,
+          -0.23684210526315788,
+          -0.23684210526315788,
+          -0.19736842105263158,
+          -0.2236842105263158,
+          -0.19736842105263158,
+          -0.18421052631578946,
+          -0.2236842105263158,
+          -0.19736842105263158,
+          -0.21052631578947367,
+          -0.2236842105263158,
+          -0.23684210526315788,
+          -0.19736842105263158
+        ],
+        "missing_bound_high": -0.2125,
+        "missing_bound_low": -0.2125,
+        "pair_table": {
+          "both": 28,
+          "control_only": 26,
+          "neither": 17,
+          "treatment_only": 9
+        },
+        "pair_weighted_difference": -0.2125,
+        "population_inference": null,
+        "scheduled_families": 20,
+        "scheduled_pairs": 80
+      },
+      "synthetic_model_2": {
+        "complete_pairs": 80,
+        "contributing_families": 20,
+        "discordance_rate": 0.45,
+        "equal_family_difference": -0.35,
+        "family_rows": [
+          {
+            "complete_pairs": 4,
+            "control_rate": 1.0,
+            "difference": -1.0,
+            "family": "synthetic_family_000",
+            "missing_bound_high": -1.0,
+            "missing_bound_low": -1.0,
+            "scheduled_pairs": 4,
+            "treatment_rate": 0.0
+          },
+          {
+            "complete_pairs": 4,
+            "control_rate": 1.0,
+            "difference": -0.25,
+            "family": "synthetic_family_001",
+            "missing_bound_high": -0.25,
+            "missing_bound_low": -0.25,
+            "scheduled_pairs": 4,
+            "treatment_rate": 0.75
+          },
+          {
+            "complete_pairs": 4,
+            "control_rate": 0.25,
+            "difference": -0.25,
+            "family": "synthetic_family_002",
+            "missing_bound_high": -0.25,
+            "missing_bound_low": -0.25,
+            "scheduled_pairs": 4,
+            "treatment_rate": 0.0
+          },
+          {
+            "complete_pairs": 4,
+            "control_rate": 0.75,
+            "difference": -0.25,
+            "family": "synthetic_family_003",
+            "missing_bound_high": -0.25,
+            "missing_bound_low": -0.25,
+            "scheduled_pairs": 4,
+            "treatment_rate": 0.5
+          },
+          {
+            "complete_pairs": 4,
+            "control_rate": 0.5,
+            "difference": -0.25,
+            "family": "synthetic_family_004",
+            "missing_bound_high": -0.25,
+            "missing_bound_low": -0.25,
+            "scheduled_pairs": 4,
+            "treatment_rate": 0.25
+          },
+          {
+            "complete_pairs": 4,
+            "control_rate": 1.0,
+            "difference": -0.25,
+            "family": "synthetic_family_005",
+            "missing_bound_high": -0.25,
+            "missing_bound_low": -0.25,
+            "scheduled_pairs": 4,
+            "treatment_rate": 0.75
+          },
+          {
+            "complete_pairs": 4,
+            "control_rate": 1.0,
+            "difference": -0.25,
+            "family": "synthetic_family_006",
+            "missing_bound_high": -0.25,
+            "missing_bound_low": -0.25,
+            "scheduled_pairs": 4,
+            "treatment_rate": 0.75
+          },
+          {
+            "complete_pairs": 4,
+            "control_rate": 0.5,
+            "difference": 0.0,
+            "family": "synthetic_family_007",
+            "missing_bound_high": 0.0,
+            "missing_bound_low": 0.0,
+            "scheduled_pairs": 4,
+            "treatment_rate": 0.5
+          },
+          {
+            "complete_pairs": 4,
+            "control_rate": 0.75,
+            "difference": -0.25,
+            "family": "synthetic_family_008",
+            "missing_bound_high": -0.25,
+            "missing_bound_low": -0.25,
+            "scheduled_pairs": 4,
+            "treatment_rate": 0.5
+          },
+          {
+            "complete_pairs": 4,
+            "control_rate": 1.0,
+            "difference": -1.0,
+            "family": "synthetic_family_009",
+            "missing_bound_high": -1.0,
+            "missing_bound_low": -1.0,
+            "scheduled_pairs": 4,
+            "treatment_rate": 0.0
+          },
+          {
+            "complete_pairs": 4,
+            "control_rate": 0.5,
+            "difference": 0.25,
+            "family": "synthetic_family_010",
+            "missing_bound_high": 0.25,
+            "missing_bound_low": 0.25,
+            "scheduled_pairs": 4,
+            "treatment_rate": 0.75
+          },
+          {
+            "complete_pairs": 4,
+            "control_rate": 1.0,
+            "difference": -0.5,
+            "family": "synthetic_family_011",
+            "missing_bound_high": -0.5,
+            "missing_bound_low": -0.5,
+            "scheduled_pairs": 4,
+            "treatment_rate": 0.5
+          },
+          {
+            "complete_pairs": 4,
+            "control_rate": 0.75,
+            "difference": -0.25,
+            "family": "synthetic_family_012",
+            "missing_bound_high": -0.25,
+            "missing_bound_low": -0.25,
+            "scheduled_pairs": 4,
+            "treatment_rate": 0.5
+          },
+          {
+            "complete_pairs": 4,
+            "control_rate": 0.75,
+            "difference": -0.5,
+            "family": "synthetic_family_013",
+            "missing_bound_high": -0.5,
+            "missing_bound_low": -0.5,
+            "scheduled_pairs": 4,
+            "treatment_rate": 0.25
+          },
+          {
+            "complete_pairs": 4,
+            "control_rate": 0.75,
+            "difference": -0.5,
+            "family": "synthetic_family_014",
+            "missing_bound_high": -0.5,
+            "missing_bound_low": -0.5,
+            "scheduled_pairs": 4,
+            "treatment_rate": 0.25
+          },
+          {
+            "complete_pairs": 4,
+            "control_rate": 1.0,
+            "difference": -0.75,
+            "family": "synthetic_family_015",
+            "missing_bound_high": -0.75,
+            "missing_bound_low": -0.75,
+            "scheduled_pairs": 4,
+            "treatment_rate": 0.25
+          },
+          {
+            "complete_pairs": 4,
+            "control_rate": 1.0,
+            "difference": 0.0,
+            "family": "synthetic_family_016",
+            "missing_bound_high": 0.0,
+            "missing_bound_low": 0.0,
+            "scheduled_pairs": 4,
+            "treatment_rate": 1.0
+          },
+          {
+            "complete_pairs": 4,
+            "control_rate": 0.5,
+            "difference": -0.5,
+            "family": "synthetic_family_017",
+            "missing_bound_high": -0.5,
+            "missing_bound_low": -0.5,
+            "scheduled_pairs": 4,
+            "treatment_rate": 0.0
+          },
+          {
+            "complete_pairs": 4,
+            "control_rate": 0.5,
+            "difference": -0.25,
+            "family": "synthetic_family_018",
+            "missing_bound_high": -0.25,
+            "missing_bound_low": -0.25,
+            "scheduled_pairs": 4,
+            "treatment_rate": 0.25
+          },
+          {
+            "complete_pairs": 4,
+            "control_rate": 1.0,
+            "difference": -0.25,
+            "family": "synthetic_family_019",
+            "missing_bound_high": -0.25,
+            "missing_bound_low": -0.25,
+            "scheduled_pairs": 4,
+            "treatment_rate": 0.75
+          }
+        ],
+        "incomplete_pairs": 0,
+        "leave_one_family_out": [
+          -0.3157894736842105,
+          -0.35526315789473684,
+          -0.35526315789473684,
+          -0.35526315789473684,
+          -0.35526315789473684,
+          -0.35526315789473684,
+          -0.35526315789473684,
+          -0.3684210526315789,
+          -0.35526315789473684,
+          -0.3157894736842105,
+          -0.3815789473684211,
+          -0.34210526315789475,
+          -0.35526315789473684,
+          -0.34210526315789475,
+          -0.34210526315789475,
+          -0.32894736842105265,
+          -0.3684210526315789,
+          -0.34210526315789475,
+          -0.35526315789473684,
+          -0.35526315789473684
+        ],
+        "missing_bound_high": -0.35,
+        "missing_bound_low": -0.35,
+        "pair_table": {
+          "both": 30,
+          "control_only": 32,
+          "neither": 14,
+          "treatment_only": 4
+        },
+        "pair_weighted_difference": -0.35,
+        "population_inference": null,
+        "scheduled_families": 20,
+        "scheduled_pairs": 80
+      },
+      "synthetic_model_3": {
+        "complete_pairs": 80,
+        "contributing_families": 20,
+        "discordance_rate": 0.5,
+        "equal_family_difference": -0.15,
+        "family_rows": [
+          {
+            "complete_pairs": 4,
+            "control_rate": 0.75,
+            "difference": -0.75,
+            "family": "synthetic_family_000",
+            "missing_bound_high": -0.75,
+            "missing_bound_low": -0.75,
+            "scheduled_pairs": 4,
+            "treatment_rate": 0.0
+          },
+          {
+            "complete_pairs": 4,
+            "control_rate": 0.5,
+            "difference": 0.25,
+            "family": "synthetic_family_001",
+            "missing_bound_high": 0.25,
+            "missing_bound_low": 0.25,
+            "scheduled_pairs": 4,
+            "treatment_rate": 0.75
+          },
+          {
+            "complete_pairs": 4,
+            "control_rate": 0.5,
+            "difference": 0.0,
+            "family": "synthetic_family_002",
+            "missing_bound_high": 0.0,
+            "missing_bound_low": 0.0,
+            "scheduled_pairs": 4,
+            "treatment_rate": 0.5
+          },
+          {
+            "complete_pairs": 4,
+            "control_rate": 0.25,
+            "difference": 0.25,
+            "family": "synthetic_family_003",
+            "missing_bound_high": 0.25,
+            "missing_bound_low": 0.25,
+            "scheduled_pairs": 4,
+            "treatment_rate": 0.5
+          },
+          {
+            "complete_pairs": 4,
+            "control_rate": 0.75,
+            "difference": -0.25,
+            "family": "synthetic_family_004",
+            "missing_bound_high": -0.25,
+            "missing_bound_low": -0.25,
+            "scheduled_pairs": 4,
+            "treatment_rate": 0.5
+          },
+          {
+            "complete_pairs": 4,
+            "control_rate": 0.75,
+            "difference": 0.0,
+            "family": "synthetic_family_005",
+            "missing_bound_high": 0.0,
+            "missing_bound_low": 0.0,
+            "scheduled_pairs": 4,
+            "treatment_rate": 0.75
+          },
+          {
+            "complete_pairs": 4,
+            "control_rate": 0.75,
+            "difference": 0.25,
+            "family": "synthetic_family_006",
+            "missing_bound_high": 0.25,
+            "missing_bound_low": 0.25,
+            "scheduled_pairs": 4,
+            "treatment_rate": 1.0
+          },
+          {
+            "complete_pairs": 4,
+            "control_rate": 0.5,
+            "difference": -0.25,
+            "family": "synthetic_family_007",
+            "missing_bound_high": -0.25,
+            "missing_bound_low": -0.25,
+            "scheduled_pairs": 4,
+            "treatment_rate": 0.25
+          },
+          {
+            "complete_pairs": 4,
+            "control_rate": 0.5,
+            "difference": 0.5,
+            "family": "synthetic_family_008",
+            "missing_bound_high": 0.5,
+            "missing_bound_low": 0.5,
+            "scheduled_pairs": 4,
+            "treatment_rate": 1.0
+          },
+          {
+            "complete_pairs": 4,
+            "control_rate": 0.25,
+            "difference": 0.0,
+            "family": "synthetic_family_009",
+            "missing_bound_high": 0.0,
+            "missing_bound_low": 0.0,
+            "scheduled_pairs": 4,
+            "treatment_rate": 0.25
+          },
+          {
+            "complete_pairs": 4,
+            "control_rate": 0.5,
+            "difference": 0.0,
+            "family": "synthetic_family_010",
+            "missing_bound_high": 0.0,
+            "missing_bound_low": 0.0,
+            "scheduled_pairs": 4,
+            "treatment_rate": 0.5
+          },
+          {
+            "complete_pairs": 4,
+            "control_rate": 0.75,
+            "difference": 0.0,
+            "family": "synthetic_family_011",
+            "missing_bound_high": 0.0,
+            "missing_bound_low": 0.0,
+            "scheduled_pairs": 4,
+            "treatment_rate": 0.75
+          },
+          {
+            "complete_pairs": 4,
+            "control_rate": 0.5,
+            "difference": 0.25,
+            "family": "synthetic_family_012",
+            "missing_bound_high": 0.25,
+            "missing_bound_low": 0.25,
+            "scheduled_pairs": 4,
+            "treatment_rate": 0.75
+          },
+          {
+            "complete_pairs": 4,
+            "control_rate": 0.75,
+            "difference": -0.5,
+            "family": "synthetic_family_013",
+            "missing_bound_high": -0.5,
+            "missing_bound_low": -0.5,
+            "scheduled_pairs": 4,
+            "treatment_rate": 0.25
+          },
+          {
+            "complete_pairs": 4,
+            "control_rate": 1.0,
+            "difference": -0.5,
+            "family": "synthetic_family_014",
+            "missing_bound_high": -0.5,
+            "missing_bound_low": -0.5,
+            "scheduled_pairs": 4,
+            "treatment_rate": 0.5
+          },
+          {
+            "complete_pairs": 4,
+            "control_rate": 1.0,
+            "difference": -0.25,
+            "family": "synthetic_family_015",
+            "missing_bound_high": -0.25,
+            "missing_bound_low": -0.25,
+            "scheduled_pairs": 4,
+            "treatment_rate": 0.75
+          },
+          {
+            "complete_pairs": 4,
+            "control_rate": 1.0,
+            "difference": -0.75,
+            "family": "synthetic_family_016",
+            "missing_bound_high": -0.75,
+            "missing_bound_low": -0.75,
+            "scheduled_pairs": 4,
+            "treatment_rate": 0.25
+          },
+          {
+            "complete_pairs": 4,
+            "control_rate": 0.75,
+            "difference": -0.25,
+            "family": "synthetic_family_017",
+            "missing_bound_high": -0.25,
+            "missing_bound_low": -0.25,
+            "scheduled_pairs": 4,
+            "treatment_rate": 0.5
+          },
+          {
+            "complete_pairs": 4,
+            "control_rate": 0.5,
+            "difference": -0.25,
+            "family": "synthetic_family_018",
+            "missing_bound_high": -0.25,
+            "missing_bound_low": -0.25,
+            "scheduled_pairs": 4,
+            "treatment_rate": 0.25
+          },
+          {
+            "complete_pairs": 4,
+            "control_rate": 1.0,
+            "difference": -0.75,
+            "family": "synthetic_family_019",
+            "missing_bound_high": -0.75,
+            "missing_bound_low": -0.75,
+            "scheduled_pairs": 4,
+            "treatment_rate": 0.25
+          }
+        ],
+        "incomplete_pairs": 0,
+        "leave_one_family_out": [
+          -0.11842105263157894,
+          -0.17105263157894737,
+          -0.15789473684210525,
+          -0.17105263157894737,
+          -0.14473684210526316,
+          -0.15789473684210525,
+          -0.17105263157894737,
+          -0.14473684210526316,
+          -0.18421052631578946,
+          -0.15789473684210525,
+          -0.15789473684210525,
+          -0.15789473684210525,
+          -0.17105263157894737,
+          -0.13157894736842105,
+          -0.13157894736842105,
+          -0.14473684210526316,
+          -0.11842105263157894,
+          -0.14473684210526316,
+          -0.14473684210526316,
+          -0.11842105263157894
+        ],
+        "missing_bound_high": -0.15,
+        "missing_bound_low": -0.15,
+        "pair_table": {
+          "both": 27,
+          "control_only": 26,
+          "neither": 13,
+          "treatment_only": 14
+        },
+        "pair_weighted_difference": -0.15,
+        "population_inference": null,
+        "scheduled_families": 20,
+        "scheduled_pairs": 80
+      }
+    },
+    "scheduled_pairs": 320,
+    "source_validation": "Declared pair source hashes/roster checked for consistency only; upstream replay not independently attested."
+  },
+  "coefficients": [
+    {
+      "approximate_credible_high": 0.7237532302258357,
+      "approximate_credible_low": 0.3732426592276622,
+      "posterior_mean_log_odds": 0.548497944726749,
+      "posterior_sd": 0.08941760505880868,
+      "term": "Intercept"
+    },
+    {
+      "approximate_credible_high": 0.7209168896394474,
+      "approximate_credible_low": 0.022580716630669073,
+      "posterior_mean_log_odds": 0.37174880313505826,
+      "posterior_sd": 0.17815025646317592,
+      "term": "C(model)[T.synthetic_model_1]"
+    },
+    {
+      "approximate_credible_high": 1.3212979460104801,
+      "approximate_credible_low": 0.5868002971380084,
+      "posterior_mean_log_odds": 0.9540491215742443,
+      "posterior_sd": 0.18737529226713234,
+      "term": "C(model)[T.synthetic_model_2]"
+    },
+    {
+      "approximate_credible_high": 0.6501792481562955,
+      "approximate_credible_low": -0.04274769190548022,
+      "posterior_mean_log_odds": 0.3037157781254076,
+      "posterior_sd": 0.1767703247425754,
+      "term": "C(model)[T.synthetic_model_3]"
+    },
+    {
+      "approximate_credible_high": 0.28123570787939256,
+      "approximate_credible_low": -0.21458088855695875,
+      "posterior_mean_log_odds": 0.03332740966121692,
+      "posterior_sd": 0.12648614983420692,
+      "term": "C(prompt)[T.synthetic_prompt_1]"
+    },
+    {
+      "approximate_credible_high": 0.09641732621362159,
+      "approximate_credible_low": -0.39647836268517256,
+      "posterior_mean_log_odds": -0.15003051823577548,
+      "posterior_sd": 0.12574100666815974,
+      "term": "C(precursor_condition)[T.C2]"
+    },
+    {
+      "approximate_credible_high": -0.11828547491964328,
+      "approximate_credible_low": -0.6024304490603714,
+      "posterior_mean_log_odds": -0.3603579619900073,
+      "posterior_sd": 0.12350864045452242,
+      "term": "treatment"
+    },
+    {
+      "approximate_credible_high": -0.18678956972310223,
+      "approximate_credible_low": -1.155437936287099,
+      "posterior_mean_log_odds": -0.6711137530051007,
+      "posterior_sd": 0.24710871582452493,
+      "term": "treatment:C(model)[T.synthetic_model_1]"
+    },
+    {
+      "approximate_credible_high": -0.9492123224542699,
+      "approximate_credible_low": -1.924663285967794,
+      "posterior_mean_log_odds": -1.436937804211032,
+      "posterior_sd": 0.24884410407736665,
+      "term": "treatment:C(model)[T.synthetic_model_2]"
+    },
+    {
+      "approximate_credible_high": 0.12795119560144874,
+      "approximate_credible_low": -0.8367355877727689,
+      "posterior_mean_log_odds": -0.3543921960856601,
+      "posterior_sd": 0.24609808929744897,
+      "term": "treatment:C(model)[T.synthetic_model_3]"
+    },
+    {
+      "approximate_credible_high": 0.31023336994301143,
+      "approximate_credible_low": -0.3737685413647974,
+      "posterior_mean_log_odds": -0.03176758571089299,
+      "posterior_sd": 0.17449348985571866,
+      "term": "treatment:C(prompt)[T.synthetic_prompt_1]"
+    }
+  ],
+  "confirmatory_eligibility": "NOT_ATTESTED",
+  "contrast": "C5",
+  "data_kind": "SYNTHETIC_CALIBRATION",
+  "endpoint": "early_stop",
+  "fixed_effect_columns": 11,
+  "fixed_effect_rank": 11,
+  "fixed_effect_separation": null,
+  "formula": "outcome ~ treatment * C(model) + treatment * C(prompt) + C(precursor_condition)",
+  "historical_pilot_fitted": false,
+  "input_content_sha256": "04f6d4e72eda43972f0fa5b64f88640c03aee5f3e21fb552bc0fcafb12c24e77",
+  "marginal_effects": [
+    {
+      "approximate_credible_high": -0.017347491959778385,
+      "approximate_credible_low": -0.13859603703633608,
+      "control_probability": 0.602687844453007,
+      "marginal_risk_difference": -0.07792965153563995,
+      "model": "synthetic_model_0",
+      "treatment_probability": 0.524758192917367
+    },
+    {
+      "approximate_credible_high": -0.09552848632912159,
+      "approximate_credible_low": -0.32792750037739776,
+      "control_probability": 0.6731340861848236,
+      "marginal_risk_difference": -0.21028523013789305,
+      "model": "synthetic_model_1",
+      "treatment_probability": 0.46284885604693066
+    },
+    {
+      "approximate_credible_high": -0.2308585686835628,
+      "approximate_credible_low": -0.4641622991190789,
+      "control_probability": 0.7735066701033625,
+      "marginal_risk_difference": -0.3484376653150266,
+      "model": "synthetic_model_2",
+      "treatment_probability": 0.42506900478833587
+    },
+    {
+      "approximate_credible_high": -0.033011123359202504,
+      "approximate_credible_low": -0.263083407647721,
+      "control_probability": 0.6619272094844966,
+      "marginal_risk_difference": -0.1478636302698813,
+      "model": "synthetic_model_3",
+      "treatment_probability": 0.5140635792146153
+    }
+  ],
+  "optimizer": {
+    "gradient_infinity_norm": 6.895186131006259e-06,
+    "iterations": 201,
+    "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "method": "L-BFGS-B",
+    "objective": 620.7853211516695,
+    "success": true
+  },
+  "package_versions": {
+    "numpy": "2.4.6",
+    "pandas": "3.1.1",
+    "patsy": "1.0.3",
+    "scipy": "1.17.1",
+    "statsmodels": "0.14.6"
+  },
+  "posterior_draws": 2000,
+  "posterior_seed": 20261123,
+  "priors": {
+    "fixed_effects_normal_mean": 0,
+    "fixed_effects_normal_sd": 4.0,
+    "log_random_sd_normal_mean": 0,
+    "log_random_sd_normal_sd": 1.0
+  },
+  "python_version": "3.11.18",
+  "quadrature_check": {
+    "comparison_points": 120,
+    "max_absolute_probability_difference": 9.658940314238862e-15,
+    "points": 60,
+    "tolerance": 0.0001
+  },
+  "random_covariance": "Independent family intercept and slope; covariance fixed to zero, not estimated.",
+  "random_effect_columns": 360,
+  "random_effect_standard_deviations": [
+    {
+      "approximate_credible_high_sd": 0.8750334413904154,
+      "approximate_credible_low_sd": 0.4712313875295808,
+      "component": "family_intercept",
+      "posterior_median_sd": 0.642139566388172
+    },
+    {
+      "approximate_credible_high_sd": 0.49613068311121167,
+      "approximate_credible_low_sd": 0.2647825452742068,
+      "component": "family_treatment_slope",
+      "posterior_median_sd": 0.36244550633552836
+    },
+    {
+      "approximate_credible_high_sd": 0.665371047047557,
+      "approximate_credible_low_sd": 0.569865173348983,
+      "component": "onset_intercept",
+      "posterior_median_sd": 0.6157692644709952
+    }
+  ],
+  "standardization": "Per-model balanced prompt/precursor grid; integrate independent Gaussian family/intercept/slope/onset effects with60-point Gauss-Hermite quadrature. Conditional-on-onset target, not all-task policy effect.",
+  "status": "BAYESIAN_VARIATIONAL_SENSITIVITY_ONLY",
+  "uncertainty": "95% mean-field variational posterior credible intervals; approximate and potentially too narrow, not frequentist CIs or Holm p-values.",
+  "variance_components": {
+    "family_intercept": "0 + C(family)",
+    "family_treatment_slope": "0 + C(family):treatment",
+    "onset_intercept": "0 + C(pair_cluster)"
+  },
+  "version": "c5-mixed-logistic-sensitivity-20261123-v1",
+  "warnings": []
+}

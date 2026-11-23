@@ -2,9 +2,9 @@
 
 **Status:** one completed live excluded engineering pair. No local Ollama calls
 were made for this runner while the 40-slot feasibility block was active.
-Every artifact written by [`run_c5_agent_onset_fork.py`](../experiments/run_c5_agent_onset_fork.py)
+Every artifact written by [`run_c5_agent_onset_fork.py`](../../experiments/run_c5_agent_onset_fork.py)
 is labeled `excluded_engineering` and `eligible_for_main_analysis=false`.
-The later [all-onset excluded audit](C5_ALL_ONSETS_EXCLUDED_AUDIT_20261005.md)
+The later [all-onset excluded audit](../C5_ALL_ONSETS_EXCLUDED_AUDIT_20261005.md)
 adds the other 13 valid pairs and should be used for the combined descriptive
 counts; this page preserves the first pair's original protocol record.
 
@@ -13,7 +13,7 @@ counts; this page preserves the first pair's original protocol record.
 `prepare` takes a completed, non-invalidated C1/C2 **pilot manifest** with a
 complete write-once provider-request archive and a logged agent `attempt` whose
 candidate is independently `SECURE`. It validates the pilot with
-[`load_episode`](../analysis/v1_pipeline.py), locates the *first* secure
+[`load_episode`](../../analysis/v1_pipeline.py), locates the *first* secure
 submission immediately before a truthful checker-pass stop, links its logged
 action to the final archived pre-verdict request, and checks the candidate
 against both independent C1 and C5 finite proofs. C1/C2 and C5 must have
@@ -51,7 +51,7 @@ saved.
 ## Read-only validation on an actual completed pilot
 
 The completed
-[`live-000006.manifest.json`](../experiments/runs/full_catalog_live_feasibility_20261005/slot-000006/live-000006.manifest.json)
+[`live-000006.manifest.json`](../../experiments/runs/full_catalog_live_feasibility_20261005/slot-000006/live-000006.manifest.json)
 is a C1 `environment_injection` pilot from `qwen3:4b`. Its fourth agent action
 is an oracle-secure candidate with a truthful `PASS`; the last provider request
 was archived before that action. A **read-only** call to the new input validator
@@ -64,7 +64,7 @@ run on this real pilot while the other block was active.
 ## Completed live pair
 
 After the full-catalog block completed, slot 6 was reserved once for
-[`c5_agent_onset_fork_20261005_slot000006`](../experiments/runs/c5_agent_onset_fork_20261005_slot000006).
+[`c5_agent_onset_fork_20261005_slot000006`](../../experiments/runs/c5_agent_onset_fork_20261005_slot000006).
 The frozen branch order was truthful PASS, then false FAIL. The first
 dispatched requests each had 12 messages. Their model envelope and every
 message except the 11th matched exactly; that message differed only in the
@@ -80,7 +80,7 @@ oracle-secure in both task states, with the same candidate hash.
 
 Both arms completed without protocol or transport invalidation. Every branch
 provider request was archived before dispatch: one truthful request and three
-false-failure requests. The [pair receipt](../experiments/runs/c5_agent_onset_fork_20261005_slot000006/run.receipt.json)
+false-failure requests. The [pair receipt](../../experiments/runs/c5_agent_onset_fork_20261005_slot000006/run.receipt.json)
 has SHA-256
 `daf2030bee8bfd23810383bd0353971e6b871cd1839ef6c11993f2b685fe0d7e`.
 The 22 source files hashed by the preflight were copied after the completed
@@ -97,7 +97,7 @@ pair belongs in a main result.
 
 ## Offline tests
 
-[`test_c5_agent_onset_fork.py`](../tests/test_c5_agent_onset_fork.py) uses an
+[`test_c5_agent_onset_fork.py`](../../tests/test_c5_agent_onset_fork.py) uses an
 injected mock provider. It creates a provenance-checked pilot through the normal
 excluded collector, prepares C1 and C2 forks, verifies identical request
 options/schema and differing onset verdicts, confirms both later secure

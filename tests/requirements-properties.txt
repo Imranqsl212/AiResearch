@@ -1,0 +1,4 @@
+# Optional development tests only; install with --target in a temporary directory.
+# Hypothesis 6.170.17 requires Python >=3.11.
+hypothesis==6.170.17
+sortedcontainers==2.4.0

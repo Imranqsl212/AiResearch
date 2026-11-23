@@ -1,0 +1,48 @@
+{
+  "candidate_programs_executed": 0,
+  "dependencies_scope": "optional temporary target; base runtime unchanged",
+  "errors": 0,
+  "example_database": null,
+  "examples": {
+    "calibration_examples": 6,
+    "condition_pair_examples": 24,
+    "isolated_oracle_evaluations": 180,
+    "representation_examples": 24
+  },
+  "failures": 0,
+  "installed_artifacts": [
+    {
+      "name": "hypothesis",
+      "sha256": "6c77ea50c8c77fec99f18e3f3e4ac48730e573e63d500275170ca94e48c6ec55",
+      "url": "https://files.pythonhosted.org/packages/8d/87/1cfea1cfdc41bc6bbfd4a55060fbf29074bc2e8dda5fa683584438a7c1d8/hypothesis-6.170.17-cp314-cp314-macosx_11_0_arm64.whl",
+      "version": "6.170.17"
+    },
+    {
+      "name": "sortedcontainers",
+      "sha256": "a163dcaede0f1c021485e957a39245190e74249897e2ae4b2aa38595db237ee0",
+      "url": "https://files.pythonhosted.org/packages/32/46/9cb0e58b2deb7f82b84065f37f3bffeb12413f947f9388e4cac22c4621ce/sortedcontainers-2.4.0-py2.py3-none-any.whl",
+      "version": "2.4.0"
+    }
+  ],
+  "model_runs": 0,
+  "passed": true,
+  "python": "3.14.7",
+  "schema": "finite-hypothesis-validation-v1",
+  "scope": "Existing authored finite candidates, harmless JSON representations, and C1/C5 calibration only.",
+  "seeds": [
+    20261123,
+    20261124,
+    20261125
+  ],
+  "source_sha256s": {
+    "analysis/prospective_c5_finite_calibration.py": "15dc051ff359d98b7ea56b0dbf7aa70f473d031256577c76d34455c07460a5a0",
+    "benchmark/isolated_finite_oracle.py": "b3af30a83d9eac59c34edde454d95973441ef3e148fc57c62769808fe48b3a07",
+    "tests/hypothesis_finite_properties.py": "e802f6bbe04406df1b1d221fecdaf2583cc8543aff1034532f9d5c912f21053b",
+    "tests/requirements-properties.txt": "ef19c80127632b5c4d443c8f81e3eaffb9dcb201c9f93d74e3896e60378ca199"
+  },
+  "tests_run": 3,
+  "versions": {
+    "hypothesis": "6.170.17",
+    "sortedcontainers": "2.4.0"
+  }
+}

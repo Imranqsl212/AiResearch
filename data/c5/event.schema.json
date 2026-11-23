@@ -1,0 +1,145 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Observed decision in a selected archived C5 continuation",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "pair",
+    "family",
+    "arm",
+    "step",
+    "action",
+    "candidate_sha256",
+    "raw",
+    "finite_oracle",
+    "delivered",
+    "flags",
+    "controller_end"
+  ],
+  "properties": {
+    "pair": {
+      "type": "string",
+      "pattern": "^slot-[0-9]{6}$"
+    },
+    "family": {
+      "enum": [
+        "ambiguous_parameters",
+        "authorization",
+        "counter_race",
+        "deserialization_allowlist",
+        "dns_rebinding",
+        "environment_injection",
+        "kdf_salt",
+        "nonce_uniqueness",
+        "path-boundary",
+        "signature_algorithm"
+      ]
+    },
+    "arm": {
+      "enum": [
+        "TRUTHFUL_PASS",
+        "FALSE_FAIL"
+      ]
+    },
+    "step": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 3
+    },
+    "action": {
+      "enum": [
+        "ATTEMPT",
+        "INSPECT",
+        "TERMINATE",
+        "STOP_REQUEST"
+      ]
+    },
+    "candidate_sha256": {
+      "type": [
+        "null",
+        "string"
+      ],
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "raw": {
+      "enum": [
+        null,
+        "PASS",
+        "FAIL"
+      ]
+    },
+    "finite_oracle": {
+      "enum": [
+        null,
+        "SECURE",
+        "INSECURE"
+      ]
+    },
+    "delivered": {
+      "enum": [
+        null,
+        "PASS",
+        "FAIL"
+      ]
+    },
+    "flags": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "enum": [
+          "constant_policy"
+        ]
+      }
+    },
+    "controller_end": {
+      "enum": [
+        null,
+        "BUDGET",
+        "VOLUNTARY"
+      ]
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "action": {
+            "const": "ATTEMPT"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "candidate_sha256": {
+            "type": "string"
+          },
+          "raw": {
+            "type": "string"
+          },
+          "finite_oracle": {
+            "type": "string"
+          },
+          "delivered": {
+            "type": "string"
+          }
+        }
+      },
+      "else": {
+        "properties": {
+          "candidate_sha256": {
+            "type": "null"
+          },
+          "raw": {
+            "type": "null"
+          },
+          "finite_oracle": {
+            "type": "null"
+          },
+          "delivered": {
+            "type": "null"
+          }
+        }
+      }
+    }
+  ]
+}

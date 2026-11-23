@@ -1,0 +1,8 @@
+cohort,endpoint,complete_pairs,contributing_families,pair_weighted_difference,equal_family_difference,discordance_rate,neither,control_only,treatment_only,both,population_ci,causal_p_value
+persistent_veto_14_pairs,early_stop,14,10,-0.21428571428571427,-0.25,0.21428571428571427,11,3,0,0,NOT_ESTIMATED,NOT_ESTIMATED
+persistent_veto_14_pairs,temporary_regression,14,10,-0.07142857142857142,-0.1,0.5,3,4,3,4,NOT_ESTIMATED,NOT_ESTIMATED
+persistent_veto_14_pairs,terminal_regression,14,10,0.14285714285714285,0.15,0.2857142857142857,6,1,3,4,NOT_ESTIMATED,NOT_ESTIMATED
+one_shot_first_wave,early_stop,3,3,-0.3333333333333333,-0.3333333333333333,0.3333333333333333,0,1,0,2,NOT_ESTIMATED,NOT_ESTIMATED
+one_shot_first_wave,terminal_regression,3,3,0.3333333333333333,0.3333333333333333,0.3333333333333333,2,0,1,0,NOT_ESTIMATED,NOT_ESTIMATED
+one_shot_second_wave,early_stop,2,2,0.0,0.0,0.0,1,0,0,1,NOT_ESTIMATED,NOT_ESTIMATED
+one_shot_second_wave,terminal_regression,2,2,0.0,0.0,0.0,1,0,0,1,NOT_ESTIMATED,NOT_ESTIMATED

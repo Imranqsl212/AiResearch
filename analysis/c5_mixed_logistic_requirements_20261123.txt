@@ -1,0 +1,9 @@
+# Optional isolated Python3.11 environment; not a dependency of default replay.
+numpy==2.4.6
+scipy==1.17.1
+pandas==3.1.1
+patsy==1.0.3
+statsmodels==0.14.6
+packaging==26.3
+python-dateutil==4.0.0
+tzdata==2026.6

@@ -1,0 +1,97 @@
+{
+  "source_audit_sha256": "39d25c8009d2625b0297846cc776b7e800a17df33841a859730d8b0c10502eaa",
+  "eligible_pairs": 2,
+  "cohort_pairs": 14,
+  "cases": [
+    {
+      "pair": "slot-000032",
+      "family": "dns_rebinding",
+      "case_index": 1,
+      "required": true,
+      "onset": true,
+      "TRUTHFUL_PASS": true,
+      "FALSE_FAIL": true
+    },
+    {
+      "pair": "slot-000032",
+      "family": "dns_rebinding",
+      "case_index": 2,
+      "required": false,
+      "onset": false,
+      "TRUTHFUL_PASS": true,
+      "FALSE_FAIL": true
+    },
+    {
+      "pair": "slot-000032",
+      "family": "dns_rebinding",
+      "case_index": 3,
+      "required": false,
+      "onset": false,
+      "TRUTHFUL_PASS": false,
+      "FALSE_FAIL": true
+    },
+    {
+      "pair": "slot-000032",
+      "family": "dns_rebinding",
+      "case_index": 4,
+      "required": false,
+      "onset": false,
+      "TRUTHFUL_PASS": false,
+      "FALSE_FAIL": true
+    },
+    {
+      "pair": "slot-000039",
+      "family": "ambiguous_parameters",
+      "case_index": 1,
+      "required": true,
+      "onset": true,
+      "TRUTHFUL_PASS": true,
+      "FALSE_FAIL": true
+    },
+    {
+      "pair": "slot-000039",
+      "family": "ambiguous_parameters",
+      "case_index": 2,
+      "required": false,
+      "onset": false,
+      "TRUTHFUL_PASS": false,
+      "FALSE_FAIL": false
+    },
+    {
+      "pair": "slot-000039",
+      "family": "ambiguous_parameters",
+      "case_index": 3,
+      "required": false,
+      "onset": false,
+      "TRUTHFUL_PASS": false,
+      "FALSE_FAIL": true
+    },
+    {
+      "pair": "slot-000039",
+      "family": "ambiguous_parameters",
+      "case_index": 4,
+      "required": false,
+      "onset": false,
+      "TRUTHFUL_PASS": false,
+      "FALSE_FAIL": true
+    },
+    {
+      "pair": "slot-000039",
+      "family": "ambiguous_parameters",
+      "case_index": 5,
+      "required": true,
+      "onset": true,
+      "TRUTHFUL_PASS": true,
+      "FALSE_FAIL": true
+    },
+    {
+      "pair": "slot-000039",
+      "family": "ambiguous_parameters",
+      "case_index": 6,
+      "required": false,
+      "onset": false,
+      "TRUTHFUL_PASS": false,
+      "FALSE_FAIL": false
+    }
+  ]
+}
