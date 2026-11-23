@@ -16,7 +16,7 @@ from paper import build_author_review_bundle as bundle
 
 
 class AuthorReviewBundleTests(unittest.TestCase):
-    def test_v19_binds_current_render_and_v18_remains_a_snapshot(self) -> None:
+    def test_v20_binds_current_sources_and_older_versions_remain_snapshots(self) -> None:
         self.assertEqual(bundle.BUILD_TARGETS["v14"], (bundle.V14_OUTPUT, bundle.V14_SPEC))
         self.assertEqual(bundle.BUILD_TARGETS["v15"], (bundle.V15_OUTPUT, bundle.V15_SPEC))
         self.assertEqual(bundle.BUILD_TARGETS["v16"], (bundle.V16_OUTPUT, bundle.V16_SPEC))
@@ -115,10 +115,30 @@ class AuthorReviewBundleTests(unittest.TestCase):
         self.assertIn("success-path handshake interval", bundle.V19_README)
         self.assertIn("remote Linux recheck is pending", bundle.V19_README)
         self.assertIsNone(bundle._release_flags(bundle.V19_SPEC)["related_data_public_git_revision"])
-        current = bundle.verify(archive=bundle.V19_OUTPUT)
-        self.assertEqual(current["version"], bundle.V19_VERSION)
-        self.assertEqual(current["archive_members"], 109)
-        self.assertEqual(current["source_file_count"], 107)
+        snapshot = bundle.verify(archive=bundle.V19_OUTPUT, compare_sources=False)
+        self.assertEqual(snapshot["version"], bundle.V19_VERSION)
+        self.assertEqual(snapshot["archive_members"], 109)
+        self.assertEqual(snapshot["source_file_count"], 107)
+        self.assertIsNone(snapshot["local_sources_match"])
+
+        self.assertEqual(bundle.BUILD_TARGETS["v20"], (bundle.V20_OUTPUT, bundle.V20_SPEC))
+        self.assertEqual(bundle.V20_SOURCE_NAMES[:len(bundle.V19_SOURCE_NAMES)],
+                         bundle.V19_SOURCE_NAMES)
+        self.assertEqual(set(bundle.V20_SOURCE_NAMES) - set(bundle.V19_SOURCE_NAMES),
+                         set(bundle.V20_NEW_DERIVED))
+        self.assertEqual(len(bundle.V20_NEW_DERIVED), 7)
+        self.assertEqual(set(bundle._decision_bound_names(bundle.V20_SPEC)) -
+                         set(bundle._decision_bound_names(bundle.V19_SPEC)),
+                         set(bundle.V20_NEW_DERIVED))
+        self.assertIn("explicitly simulated responses", bundle.V20_README)
+        self.assertIn("not the full\nreproduction package", bundle.V20_README)
+        flags = bundle._release_flags(bundle.V20_SPEC)
+        self.assertFalse(flags["journal_supplement_approved"])
+        self.assertIsNone(flags["related_data_public_git_revision"])
+        current = bundle.verify(archive=bundle.V20_OUTPUT)
+        self.assertEqual(current["version"], bundle.V20_VERSION)
+        self.assertEqual(current["archive_members"], 116)
+        self.assertEqual(current["source_file_count"], 114)
         self.assertTrue(current["local_sources_match"])
 
     def test_v13_and_v12_remain_independent_historical_snapshots(self) -> None:
@@ -359,12 +379,30 @@ class AuthorReviewBundleTests(unittest.TestCase):
                 with self.assertRaisesRegex(bundle.BundleError, "full_paper_anonymous.docx"):
                     bundle.build(output=Path(temporary) / "bundle.tar.gz", spec=bundle.V2_SPEC)
 
+    def test_v20_requires_path_and_hash_for_each_new_derived_file(self) -> None:
+        source = bundle._source_bytes(bundle.V20_SPEC)
+        decision_name = "paper/AUTHOR_SUBMISSION_DECISIONS_20261005.md"
+        decision = source[decision_name].decode("utf-8")
+        for name in bundle.V20_NEW_DERIVED:
+            with self.subTest(name=name, alteration="digest"):
+                changed = dict(source)
+                changed[decision_name] = decision.replace(
+                    hashlib.sha256(source[name]).hexdigest(), "0" * 64,
+                ).encode("utf-8")
+                with self.assertRaisesRegex(bundle.BundleError, name):
+                    bundle._check_decision_bindings(changed, bundle.V20_SPEC)
+            with self.subTest(name=name, alteration="path"):
+                changed = dict(source)
+                changed[decision_name] = decision.replace(name, Path(name).name).encode("utf-8")
+                with self.assertRaisesRegex(bundle.BundleError, name):
+                    bundle._check_decision_bindings(changed, bundle.V20_SPEC)
+
     def test_tampering_fails_even_when_outer_receipt_is_recomputed(self) -> None:
         with tempfile.TemporaryDirectory(prefix="author-manuscript-tamper-") as temporary:
             archive_path = Path(temporary) / "bundle.tar.gz"
-            bundle.build(output=archive_path)
+            bundle.build(output=archive_path, spec=bundle.V20_SPEC)
             files = bundle._archive_files(archive_path)
-            files["paper/final.md"] += b"\nmodified after packaging\n"
+            files["submission_audit_20261123/summary.json"] += b"\nmodified after packaging\n"
             with archive_path.open("wb") as raw:
                 with gzip.GzipFile(fileobj=raw, mode="wb", mtime=0, filename="") as compressed:
                     with tarfile.open(fileobj=compressed, mode="w") as archive:
@@ -391,13 +429,13 @@ class AuthorReviewBundleTests(unittest.TestCase):
     def test_workspace_drift_is_detected_without_changing_real_sources(self) -> None:
         with tempfile.TemporaryDirectory(prefix="author-manuscript-drift-") as temporary:
             root = Path(temporary) / "repo"
-            for name in bundle.SOURCE_NAMES:
+            for name in bundle.V20_SOURCE_NAMES:
                 target = root / name
                 target.parent.mkdir(parents=True, exist_ok=True)
                 target.write_bytes((bundle.ROOT / name).read_bytes())
             archive_path = Path(temporary) / "bundle.tar.gz"
             with patch.object(bundle, "ROOT", root):
-                bundle.build(output=archive_path)
+                bundle.build(output=archive_path, spec=bundle.V20_SPEC)
                 with (root / "paper/final.md").open("ab") as stream:
                     stream.write(b"\nlocal edit\n")
                 with self.assertRaisesRegex(bundle.BundleError, "current local source differs"):

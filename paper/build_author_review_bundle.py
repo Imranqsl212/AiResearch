@@ -1,7 +1,7 @@
 """Build a small, deterministic, REVIEW_ONLY manuscript package.
 
 This is a filtered copy of derived manuscript files for local author review.
-It contains no raw trajectory, model response, or sanitized replay archive.
+It contains no raw trajectory, actual model response, or sanitized replay archive.
 The package preserves each selected source file byte for byte and records its
 SHA-256; it does not establish original-run provenance or release clearance.
 """
@@ -42,6 +42,7 @@ V16_OUTPUT = ROOT / "experiments/runs/paper_author_review_manuscript_20261104_v1
 V17_OUTPUT = ROOT / "experiments/runs/paper_author_review_manuscript_20261104_v17.tar.gz"
 V18_OUTPUT = ROOT / "experiments/runs/paper_author_review_manuscript_20261104_v18.tar.gz"
 V19_OUTPUT = ROOT / "experiments/runs/paper_author_review_manuscript_20261104_v19.tar.gz"
+V20_OUTPUT = ROOT / "experiments/runs/paper_author_review_manuscript_20261123_v20.tar.gz"
 OUTPUT = V11_OUTPUT
 V1_VERSION = "paper-author-review-manuscript-1.0.0"
 V2_VERSION = "paper-author-review-manuscript-2.0.0"
@@ -62,6 +63,7 @@ V16_VERSION = "paper-author-review-manuscript-16.0.0"
 V17_VERSION = "paper-author-review-manuscript-17.0.0"
 V18_VERSION = "paper-author-review-manuscript-18.0.0"
 V19_VERSION = "paper-author-review-manuscript-19.0.0"
+V20_VERSION = "paper-author-review-manuscript-20.0.0"
 VERSION = V11_VERSION
 README_NAME = "REVIEW_ONLY_README.md"
 MANIFEST_NAME = "SOURCE_HASH_MANIFEST.json"
@@ -209,6 +211,16 @@ V19_NEW_DERIVED = (
     "paper/test_submission_rendering.py",
 )
 V19_SOURCE_NAMES = V18_SOURCE_NAMES + V19_NEW_DERIVED
+V20_NEW_DERIVED = (
+    "submission_audit_20261123/README.md",
+    "submission_audit_20261123/summary.json",
+    "submission_audit_20261123/openhands/summary.json",
+    "submission_audit_20261123/projection/results.json",
+    "submission_audit_20261123/projection/execution_receipt.json",
+    "submission_audit_20261123/projection/REPORT.md",
+    "external_audit_20261122/summary.json",
+)
+V20_SOURCE_NAMES = V19_SOURCE_NAMES + V20_NEW_DERIVED
 SOURCE_NAMES = V11_SOURCE_NAMES
 FORBIDDEN_MARKERS = {
     "mac_home": re.compile(rb"/Users/[^/\s\"'<>\\]+", re.I),
@@ -772,6 +784,44 @@ Use `--no-local-compare` to verify archived bytes and receipt after workspace
 sources change. This digest receipt is not an independent timestamp,
 signature, source revision, or journal approval.
 """
+V20_README = """# Local author-review manuscript bundle v20
+
+**Status: REVIEW_ONLY. This filtered package is not an approved journal
+supplement or submission.**
+
+This package binds the current manuscript, identified and anonymous PDF/DOCX
+renderings, figures, references, historical derived tables, and pending author
+decision form. It retains the v19 allowlist and adds curated results from the
+external discovery audit, the SWE-agent submission census, the OpenHands
+coverage census, and the controlled, model-free export projection. These
+studies keep their separate populations and evidentiary limits. The projection
+records include explicitly simulated responses; they do not recover missing
+historical responses or establish historical stopping causes.
+
+The seven added files contain summaries, a report, controlled-pair results,
+and an execution receipt. This curated review package is not the full
+reproduction package: the referenced protocols, scripts, per-issue records,
+source manifests, and public source collections remain separate. The package
+contains no raw trajectories, actual model requests/responses, source caches,
+or separate run archives. Packaging performs no model run or new empirical
+study. Its source-hash manifest binds exact selected bytes, not the scientific
+validity or original-run provenance of their contents.
+
+The author decision form binds the current draft and selected derived files;
+it does not record scientific sign-off. Author approval, declarations, privacy
+clearance, the journal data route, and the final source revision remain
+pending. The anonymous files are review drafts. The identified decision form
+must not accompany anonymous peer review. The automated path screen does not
+replace human review of text, metadata, or images.
+
+Verify against the current local source tree with:
+
+    python3 -B -m paper.build_author_review_bundle verify --bundle-version v20
+
+Earlier versioned archives remain frozen. Use `--no-local-compare` to verify
+their archived bytes and receipts after workspace sources change. This digest
+receipt is not an independent timestamp, signature, or journal approval.
+"""
 README = V11_README
 
 
@@ -801,16 +851,17 @@ V16_SPEC = BundleSpec(V16_VERSION, V16_SOURCE_NAMES, V16_README)
 V17_SPEC = BundleSpec(V17_VERSION, V17_SOURCE_NAMES, V17_README)
 V18_SPEC = BundleSpec(V18_VERSION, V18_SOURCE_NAMES, V18_README)
 V19_SPEC = BundleSpec(V19_VERSION, V19_SOURCE_NAMES, V19_README)
+V20_SPEC = BundleSpec(V20_VERSION, V20_SOURCE_NAMES, V20_README)
 SPECS_BY_VERSION = {spec.version: spec for spec in
                     (V1_SPEC, V2_SPEC, V3_SPEC, V4_SPEC, V5_SPEC, V6_SPEC,
                      V7_SPEC, V8_SPEC, V9_SPEC, V10_SPEC, V11_SPEC, V12_SPEC,
                      V13_SPEC, V14_SPEC, V15_SPEC, V16_SPEC, V17_SPEC, V18_SPEC,
-                     V19_SPEC)}
+                     V19_SPEC, V20_SPEC)}
 BUILD_TARGETS = {"v11": (V11_OUTPUT, V11_SPEC), "v12": (V12_OUTPUT, V12_SPEC),
                  "v13": (V13_OUTPUT, V13_SPEC), "v14": (V14_OUTPUT, V14_SPEC),
                  "v15": (V15_OUTPUT, V15_SPEC), "v16": (V16_OUTPUT, V16_SPEC),
                  "v17": (V17_OUTPUT, V17_SPEC), "v18": (V18_OUTPUT, V18_SPEC),
-                 "v19": (V19_OUTPUT, V19_SPEC)}
+                 "v19": (V19_OUTPUT, V19_SPEC), "v20": (V20_OUTPUT, V20_SPEC)}
 
 
 class BundleError(RuntimeError):
@@ -855,17 +906,17 @@ def _decision_bound_names(spec: BundleSpec) -> tuple[str, ...]:
         "paper/submission/full_paper.docx",
         "paper/artifacts/results.json",
     )
-    if spec in (V2_SPEC, V3_SPEC, V4_SPEC, V5_SPEC, V6_SPEC, V7_SPEC, V8_SPEC, V9_SPEC, V10_SPEC, V11_SPEC, V12_SPEC, V13_SPEC, V14_SPEC, V15_SPEC, V16_SPEC, V17_SPEC, V18_SPEC, V19_SPEC):
+    if spec in (V2_SPEC, V3_SPEC, V4_SPEC, V5_SPEC, V6_SPEC, V7_SPEC, V8_SPEC, V9_SPEC, V10_SPEC, V11_SPEC, V12_SPEC, V13_SPEC, V14_SPEC, V15_SPEC, V16_SPEC, V17_SPEC, V18_SPEC, V19_SPEC, V20_SPEC):
         names += (
             "paper/submission/full_paper_anonymous.pdf",
             "paper/submission/full_paper_anonymous.docx",
         )
-    if spec in (V10_SPEC, V11_SPEC, V12_SPEC, V13_SPEC, V14_SPEC, V15_SPEC, V16_SPEC, V17_SPEC, V18_SPEC, V19_SPEC):
+    if spec in (V10_SPEC, V11_SPEC, V12_SPEC, V13_SPEC, V14_SPEC, V15_SPEC, V16_SPEC, V17_SPEC, V18_SPEC, V19_SPEC, V20_SPEC):
         names += (
             "paper/venue_author_year_draft.md",
             "paper/VENUE_SHORTLIST_20261005.md",
         )
-    if spec in (V11_SPEC, V12_SPEC, V13_SPEC, V14_SPEC, V15_SPEC, V16_SPEC, V17_SPEC, V18_SPEC, V19_SPEC):
+    if spec in (V11_SPEC, V12_SPEC, V13_SPEC, V14_SPEC, V15_SPEC, V16_SPEC, V17_SPEC, V18_SPEC, V19_SPEC, V20_SPEC):
         names += (
             "paper/submission/venue_author_year_identified.pdf",
             "paper/submission/venue_author_year_identified.docx",
@@ -876,7 +927,7 @@ def _decision_bound_names(spec: BundleSpec) -> tuple[str, ...]:
             "analysis/fresh_matched_verdict_pilot_20261101.json",
             "analysis/v7_second_wave_20261101.json",
         )
-    if spec in (V12_SPEC, V13_SPEC, V14_SPEC, V15_SPEC, V16_SPEC, V17_SPEC, V18_SPEC, V19_SPEC):
+    if spec in (V12_SPEC, V13_SPEC, V14_SPEC, V15_SPEC, V16_SPEC, V17_SPEC, V18_SPEC, V19_SPEC, V20_SPEC):
         names += (
             "analysis/V7_TEMP_VARIANCE_20261101.md",
             "analysis/v7_temp_variance_20261101.json",
@@ -888,16 +939,18 @@ def _decision_bound_names(spec: BundleSpec) -> tuple[str, ...]:
             "analysis/c5_feedback_action_20261104.json",
             "analysis/figures/v7_temp03_pair_outcomes_20261101.png",
         )
-    if spec in (V14_SPEC, V15_SPEC, V16_SPEC, V17_SPEC, V18_SPEC, V19_SPEC):
+    if spec in (V14_SPEC, V15_SPEC, V16_SPEC, V17_SPEC, V18_SPEC, V19_SPEC, V20_SPEC):
         names += V14_NEW_DERIVED
-    if spec in (V15_SPEC, V16_SPEC, V17_SPEC, V18_SPEC, V19_SPEC):
+    if spec in (V15_SPEC, V16_SPEC, V17_SPEC, V18_SPEC, V19_SPEC, V20_SPEC):
         names += V15_NEW_DERIVED
-    if spec in (V16_SPEC, V17_SPEC, V18_SPEC, V19_SPEC):
+    if spec in (V16_SPEC, V17_SPEC, V18_SPEC, V19_SPEC, V20_SPEC):
         names += V16_NEW_DERIVED
-    if spec in (V18_SPEC, V19_SPEC):
+    if spec in (V18_SPEC, V19_SPEC, V20_SPEC):
         names += V18_NEW_DERIVED
-    if spec is V19_SPEC:
+    if spec in (V19_SPEC, V20_SPEC):
         names += V19_NEW_DERIVED
+    if spec is V20_SPEC:
+        names += V20_NEW_DERIVED
     return names
 
 
@@ -907,7 +960,9 @@ def _check_decision_bindings(source: dict[str, bytes], spec: BundleSpec) -> None
     except UnicodeDecodeError as exc:
         raise BundleError("author decision form is not UTF-8") from exc
     for name in _decision_bound_names(spec):
-        if not any(Path(name).name in line and _sha(source[name]) in line
+        # New audit summaries share basenames: bind their complete relative paths.
+        label = name if spec is V20_SPEC and name in V20_NEW_DERIVED else Path(name).name
+        if not any(label in line and _sha(source[name]) in line
                    for line in decision.splitlines()):
             raise BundleError(f"author decision form does not identify current {name}")
 
@@ -932,7 +987,7 @@ def _source_bytes(spec: BundleSpec = V11_SPEC) -> dict[str, bytes]:
 
 
 def _release_flags(spec: BundleSpec) -> dict[str, Any]:
-    if spec in (V14_SPEC, V15_SPEC, V16_SPEC, V17_SPEC, V18_SPEC, V19_SPEC):
+    if spec in (V14_SPEC, V15_SPEC, V16_SPEC, V17_SPEC, V18_SPEC, V19_SPEC, V20_SPEC):
         return {
             "journal_supplement_approved": False,
             "git_visibility": "not-attested-by-bundle",
@@ -946,7 +1001,7 @@ def _release_flags(spec: BundleSpec) -> dict[str, Any]:
             "related_data_public_git_revision": "9ecd07a3d605cfd812a874835e9b945adc5d5145",
             "historical_data_public_git_revision": PUBLIC_DATA_REVISION,
         }
-    if spec in (V11_SPEC, V12_SPEC, V13_SPEC, V14_SPEC, V15_SPEC, V16_SPEC, V17_SPEC, V18_SPEC, V19_SPEC):
+    if spec in (V11_SPEC, V12_SPEC, V13_SPEC, V14_SPEC, V15_SPEC, V16_SPEC, V17_SPEC, V18_SPEC, V19_SPEC, V20_SPEC):
         return {
             "journal_supplement_approved": False,
             "git_visibility": "not-attested-by-bundle",
@@ -1039,7 +1094,7 @@ def verify(*, archive: Path = OUTPUT, compare_sources: bool = True) -> dict[str,
             or receipt.get("archive_bytes") != archive.stat().st_size):
         raise BundleError("archive differs from review-only receipt")
     if (any(receipt.get(key) != value for key, value in _release_flags(spec).items())
-            or (spec in (V10_SPEC, V11_SPEC, V12_SPEC, V13_SPEC, V14_SPEC, V15_SPEC, V16_SPEC, V17_SPEC, V18_SPEC, V19_SPEC) and "public_release_approved" in receipt)):
+            or (spec in (V10_SPEC, V11_SPEC, V12_SPEC, V13_SPEC, V14_SPEC, V15_SPEC, V16_SPEC, V17_SPEC, V18_SPEC, V19_SPEC, V20_SPEC) and "public_release_approved" in receipt)):
         raise BundleError("receipt release flags differ")
     files = _archive_files(archive)
     expected_names = set(spec.source_names) | {README_NAME, MANIFEST_NAME}
@@ -1056,7 +1111,7 @@ def verify(*, archive: Path = OUTPUT, compare_sources: bool = True) -> dict[str,
             or manifest.get("source_git_revision_bound") is not False):
         raise BundleError("review-only provenance flags differ")
     if (any(manifest.get(key) != value for key, value in _release_flags(spec).items())
-            or (spec in (V10_SPEC, V11_SPEC, V12_SPEC, V13_SPEC, V14_SPEC, V15_SPEC, V16_SPEC, V17_SPEC, V18_SPEC, V19_SPEC) and "public_release_approved" in manifest)):
+            or (spec in (V10_SPEC, V11_SPEC, V12_SPEC, V13_SPEC, V14_SPEC, V15_SPEC, V16_SPEC, V17_SPEC, V18_SPEC, V19_SPEC, V20_SPEC) and "public_release_approved" in manifest)):
         raise BundleError("manifest release flags differ")
     rows = manifest.get("files")
     if not isinstance(rows, list) or len(rows) != len(spec.source_names):

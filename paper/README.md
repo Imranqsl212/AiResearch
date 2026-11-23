@@ -2,7 +2,7 @@
 
 [How Do We Know a Coding Agent Chose to Stop?](final.md) traces the evidence behind 38 local self-termination labels, a matched 20-episode SWE-bench discovery audit, and a follow-up on three historical Verified submissions. The [follow-up supplement](../submission_audit_20261123/README.md) links the 500 OpenHands files, paired export controls, SWE-agent patch checks and reproduction commands. The [discovery report](../external_audit_20261122/REPORT_RU.md) and its [episode records](../external_audit_20261122/episodes.csv) document the original sample. Read the identified manuscript in [PDF](submission/full_paper.pdf) or [Word](submission/full_paper.docx), or the anonymous manuscript in [PDF](submission/full_paper_anonymous.pdf) or [Word](submission/full_paper_anonymous.docx).
 
-The [v19 author-review bundle](AUTHOR_REVIEW_BUNDLE_V19_20261104.md) and [author–year venue draft](VENUE_FORMAT_DRAFT_20261016.md) archive earlier manuscript versions. The numbered manuscript above incorporates the SWE-bench audit. The [pre-empirical manuscript](archive/protocol_before_empirical_revision.md) preserves the original protocol.
+The [v20 author-review bundle](AUTHOR_REVIEW_BUNDLE_V20_20261123.md) binds the current numbered manuscript, its renderings and selected central audit results as a **REVIEW_ONLY** snapshot. The [v19 bundle](AUTHOR_REVIEW_BUNDLE_V19_20261104.md) and [author–year venue draft](VENUE_FORMAT_DRAFT_20261016.md) preserve earlier versions. The full follow-up reproduction package remains separate from the filtered manuscript bundle. The [pre-empirical manuscript](archive/protocol_before_empirical_revision.md) preserves the original protocol.
 
 The [17 October collected-data milestone](milestone/RESULTS_20261017.md) organizes the historical and pilot cohorts, adds a graph of the hidden test–gate veto, and compares the observations with the original H1–H6 hypotheses without treating the exploratory records as confirmatory tests.
 
@@ -88,7 +88,7 @@ sh reproduction/render_paper.sh
 
 This command regenerates six chart assets (five embedded in the article) and both identified and anonymous
 manuscript formats, including six tables, from `final.md`. The abstract has
-229 space-delimited words excluding keywords. The identified and anonymous A4 PDFs each have 19 pages in the local Arial build. The anonymous renderer removes the author,
+233 space-delimited words excluding keywords. The identified and anonymous A4 PDFs each have 18 pages in the current local build. The anonymous renderer removes the author,
 affiliation, and correspondence lines, replaces the acknowledgment body with a
 neutral peer-review notice, withholds the source and public data commits, and clears author
 metadata from the PDF and Word files. It checks rendered content and document
