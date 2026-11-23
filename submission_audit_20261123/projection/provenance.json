@@ -1,0 +1,238 @@
+{
+  "schema_version": "projection-provenance-v1",
+  "upstream_code_commit": "a86275e288087bc7833bc79b0b691ed2ec223205",
+  "catalog_commit": "40f164d5b8f1d249bf95a6df8b74b577fd8e519d",
+  "submission": "20241029_OpenHands-CodeAct-2.1-sonnet-20241022",
+  "prior_selection_sha256": "7b8e1869d1101c0851935686c20e1003f78922bf75840cab17c702d4aa9e23e2",
+  "prior_endpoints_sha256": "3c97b42227babcb12dd2f82a9b1fa4a017d5ada9644dfe4dbb403d069cfa5f7f",
+  "prior_independent_checks_sha256": "212dd1ce88f84033b0df717c9fb4672795fb4e768e5ef9c4a7e98a72eceb1f47",
+  "source_files": [
+    {
+      "repository_path": "openhands/llm/llm.py",
+      "url": "https://raw.githubusercontent.com/All-Hands-AI/OpenHands/a86275e288087bc7833bc79b0b691ed2ec223205/openhands/llm/llm.py",
+      "sha256": "d08f75234de6eba5b9f62389ad6c8172e769cc29f0517a78287b94e8218e168a",
+      "bytes": 18339,
+      "cache_hint": "/private/tmp/openhands_projection_20261123/openhands__llm__llm.py",
+      "relevant_lines_1_based": [
+        [
+          234,
+          263
+        ]
+      ]
+    },
+    {
+      "repository_path": "evaluation/swe_bench/scripts/eval/convert_oh_folder_to_swebench_submission.sh",
+      "url": "https://raw.githubusercontent.com/All-Hands-AI/OpenHands/a86275e288087bc7833bc79b0b691ed2ec223205/evaluation/swe_bench/scripts/eval/convert_oh_folder_to_swebench_submission.sh",
+      "sha256": "7be9e81c269353ed5572b9c358b5c35364050a123b0cc3a40ab8345e66dcd5ca",
+      "bytes": 987,
+      "cache_hint": "/private/tmp/openhands_projection_20261123/evaluation__swe_bench__scripts__eval__convert_oh_folder_to_swebench_submission.sh",
+      "relevant_lines_1_based": [
+        [
+          11,
+          18
+        ]
+      ]
+    },
+    {
+      "repository_path": "openhands/agenthub/codeact_agent/function_calling.py",
+      "url": "https://raw.githubusercontent.com/All-Hands-AI/OpenHands/a86275e288087bc7833bc79b0b691ed2ec223205/openhands/agenthub/codeact_agent/function_calling.py",
+      "sha256": "295363774e18d215d9cedc6049f32b7287d0f9b47f1aa19af60083087a1cac88",
+      "bytes": 15630,
+      "cache_hint": "/private/tmp/openhands_projection_20261123/openhands__agenthub__codeact_agent__function_calling.py",
+      "relevant_lines_1_based": [
+        [
+          38,
+          54
+        ],
+        [
+          297,
+          305
+        ],
+        [
+          316,
+          349
+        ]
+      ]
+    },
+    {
+      "repository_path": "openhands/controller/agent_controller.py",
+      "url": "https://raw.githubusercontent.com/All-Hands-AI/OpenHands/a86275e288087bc7833bc79b0b691ed2ec223205/openhands/controller/agent_controller.py",
+      "sha256": "3370f1750b4c797c6e8f28a73833ef1291465690d9845922dea410a4832de8de",
+      "bytes": 27210,
+      "cache_hint": "/private/tmp/openhands_projection_20261123/openhands__controller__agent_controller.py",
+      "relevant_lines_1_based": [
+        [
+          188,
+          209
+        ],
+        [
+          430,
+          443
+        ]
+      ]
+    },
+    {
+      "repository_path": "openhands/agenthub/codeact_agent/codeact_agent.py",
+      "url": "https://raw.githubusercontent.com/All-Hands-AI/OpenHands/a86275e288087bc7833bc79b0b691ed2ec223205/openhands/agenthub/codeact_agent/codeact_agent.py",
+      "sha256": "aa2853f38b8669aa11191586e43555b36ad763c55f1e8db38dc86277a81f0406",
+      "bytes": 22944,
+      "cache_hint": "/private/tmp/openhands_projection_20261123/openhands__agenthub__codeact_agent__codeact_agent.py",
+      "relevant_lines_1_based": [
+        [
+          327,
+          350
+        ]
+      ]
+    },
+    {
+      "repository_path": "openhands/core/utils/json.py",
+      "url": "https://raw.githubusercontent.com/All-Hands-AI/OpenHands/a86275e288087bc7833bc79b0b691ed2ec223205/openhands/core/utils/json.py",
+      "sha256": "d47db82a15b2f36eb22888837481d3a06fe8954514ce08371db531f6f89aa3b9",
+      "bytes": 1803,
+      "cache_hint": "/private/tmp/openhands_projection_20261123/openhands__core__utils__json.py",
+      "relevant_lines_1_based": [
+        [
+          13,
+          26
+        ]
+      ]
+    }
+  ],
+  "official_endpoint_sources": {
+    "results": {
+      "url": "https://raw.githubusercontent.com/SWE-bench/experiments/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/evaluation/verified/20241029_OpenHands-CodeAct-2.1-sonnet-20241022/results/results.json",
+      "sha256": "4dcf8bbaa5c2a7d77ba0c5aea3940449aabd307c9e72eaad58da119301ff767b",
+      "bytes": 8096,
+      "cache_hint": "/var/folders/19/t_x4_sc94sb5cybhxhgfmwqw0000gn/T/swe_public_io_20261122/1dc780e908ad022ff90b1a00015b162cb95103d51cfba7d344721d04337102c5"
+    },
+    "predictions": {
+      "url": "https://swe-bench-submissions.s3.amazonaws.com/verified/20241029_OpenHands-CodeAct-2.1-sonnet-20241022/all_preds.jsonl",
+      "sha256": "85600971d3a9b270517197236168284c1e52ffe7c770286ab0f3f91518042808",
+      "bytes": 31227948,
+      "cache_hint": "/var/folders/19/t_x4_sc94sb5cybhxhgfmwqw0000gn/T/swe_public_io_20261122/477ae416f1ac446ec746a70859383a58c4c930a70f631ccc353c109fbfd31a9e"
+    }
+  },
+  "inputs": [
+    {
+      "instance_id": "django__django-15569",
+      "messages_url": "https://swe-bench-submissions.s3.amazonaws.com/verified/20241029_OpenHands-CodeAct-2.1-sonnet-20241022/trajs/django__django-15569.json",
+      "messages_sha256": "e3c298c568ca8f84f8bfc2767295dd2daf11fbe17de9e95b0b8c07375191555e",
+      "messages_bytes": 58008,
+      "messages_cache_hint": "/private/tmp/swe_external_B_20261122_1v9q5jxs/django__django-15569.json",
+      "message_count": 14,
+      "prediction_line_1_based": 162,
+      "patch_sha256": "80eb53df7d7ff50d9963b825c45824a6e995b6d07c04fdf92b2eb6fd44135f52",
+      "patch_bytes": 489,
+      "published_resolved": true
+    },
+    {
+      "instance_id": "matplotlib__matplotlib-25479",
+      "messages_url": "https://swe-bench-submissions.s3.amazonaws.com/verified/20241029_OpenHands-CodeAct-2.1-sonnet-20241022/trajs/matplotlib__matplotlib-25479.json",
+      "messages_sha256": "d2d5c57a515c4e16d709f058d1e71161b9dab539aa788fe50ec1869c8aadac48",
+      "messages_bytes": 97814,
+      "messages_cache_hint": "/private/tmp/swe_external_B_20261122_1v9q5jxs/matplotlib__matplotlib-25479.json",
+      "message_count": 32,
+      "prediction_line_1_based": 268,
+      "patch_sha256": "e124d24577b56d6bc8c6437b9f0656210ec178ab0409ac5dc25ee7460980a600",
+      "patch_bytes": 3713,
+      "published_resolved": false
+    },
+    {
+      "instance_id": "astropy__astropy-8872",
+      "messages_url": "https://swe-bench-submissions.s3.amazonaws.com/verified/20241029_OpenHands-CodeAct-2.1-sonnet-20241022/trajs/astropy__astropy-8872.json",
+      "messages_sha256": "21dc1f4a90632ce49bc999304885f637392f5597cfdc517ee9c3145e35a82399",
+      "messages_bytes": 71068,
+      "messages_cache_hint": "/private/tmp/swe_external_B_20261122_1v9q5jxs/astropy__astropy-8872.json",
+      "message_count": 20,
+      "prediction_line_1_based": 23,
+      "patch_sha256": "e270af988623d6c12e0333e6ed11d7de6b4cb00260827b822551744b8b5bdee3",
+      "patch_bytes": 813,
+      "published_resolved": false
+    },
+    {
+      "instance_id": "django__django-16899",
+      "messages_url": "https://swe-bench-submissions.s3.amazonaws.com/verified/20241029_OpenHands-CodeAct-2.1-sonnet-20241022/trajs/django__django-16899.json",
+      "messages_sha256": "12893bf7dbdf3fdf939e7a197a0b54cdbbcda2b2a2c0aea0e4fd6138374efe4c",
+      "messages_bytes": 122549,
+      "messages_cache_hint": "/private/tmp/swe_external_B_20261122_1v9q5jxs/django__django-16899.json",
+      "message_count": 48,
+      "prediction_line_1_based": 213,
+      "patch_sha256": "bd3d51eecc4e0ff0bb51dc0b8f5ac5826d4421d357ace69089ffddb40162b661",
+      "patch_bytes": 876,
+      "published_resolved": true
+    },
+    {
+      "instance_id": "django__django-13406",
+      "messages_url": "https://swe-bench-submissions.s3.amazonaws.com/verified/20241029_OpenHands-CodeAct-2.1-sonnet-20241022/trajs/django__django-13406.json",
+      "messages_sha256": "675d15d5b3a8acb2034eaaffe951e3f2bc13a32d7b8cf992bc7b7d74cc905881",
+      "messages_bytes": 327791,
+      "messages_cache_hint": "/private/tmp/swe_external_B_20261122_1v9q5jxs/django__django-13406.json",
+      "message_count": 200,
+      "prediction_line_1_based": 189,
+      "patch_sha256": "28f18c97357cdb4b3783e50afe9eb4e8fd3149ab7c817d2f2675a6151d59dca6",
+      "patch_bytes": 5933,
+      "published_resolved": true
+    },
+    {
+      "instance_id": "sphinx-doc__sphinx-9281",
+      "messages_url": "https://swe-bench-submissions.s3.amazonaws.com/verified/20241029_OpenHands-CodeAct-2.1-sonnet-20241022/trajs/sphinx-doc__sphinx-9281.json",
+      "messages_sha256": "a0a7ea08a3adb06f871db87ae301d399d1bd800126508091167c7c0c3e9e023a",
+      "messages_bytes": 109052,
+      "messages_cache_hint": "/private/tmp/swe_external_B_20261122_1v9q5jxs/sphinx-doc__sphinx-9281.json",
+      "message_count": 38,
+      "prediction_line_1_based": 395,
+      "patch_sha256": "253e358b7e9d9b5976d61e1b281dc7367490d3bdb4d47fd0424993919c20e16e",
+      "patch_bytes": 7041,
+      "published_resolved": false
+    },
+    {
+      "instance_id": "django__django-13449",
+      "messages_url": "https://swe-bench-submissions.s3.amazonaws.com/verified/20241029_OpenHands-CodeAct-2.1-sonnet-20241022/trajs/django__django-13449.json",
+      "messages_sha256": "a37c0116f330c8747d0601859f16db1b09a820e1fdbd6eefac11be2fc0aa5e89",
+      "messages_bytes": 208463,
+      "messages_cache_hint": "/private/tmp/swe_external_B_20261122_1v9q5jxs/django__django-13449.json",
+      "message_count": 70,
+      "prediction_line_1_based": 111,
+      "patch_sha256": "cd5dd1d31da649ad545c681fcdfe7365bdfd14617e8f83754857365cedd3ceec",
+      "patch_bytes": 5442,
+      "published_resolved": false
+    },
+    {
+      "instance_id": "django__django-11880",
+      "messages_url": "https://swe-bench-submissions.s3.amazonaws.com/verified/20241029_OpenHands-CodeAct-2.1-sonnet-20241022/trajs/django__django-11880.json",
+      "messages_sha256": "ecd425d242900ec46dde28048d7ee8045ab607a6c5e0e08822df8dc9aad602f7",
+      "messages_bytes": 47691,
+      "messages_cache_hint": "/private/tmp/swe_external_B_20261122_1v9q5jxs/django__django-11880.json",
+      "message_count": 32,
+      "prediction_line_1_based": 57,
+      "patch_sha256": "3f24b834c31172f655e64f71b96878daafdf429c9381dba34be71fd1df698a95",
+      "patch_bytes": 1512,
+      "published_resolved": true
+    },
+    {
+      "instance_id": "sphinx-doc__sphinx-8035",
+      "messages_url": "https://swe-bench-submissions.s3.amazonaws.com/verified/20241029_OpenHands-CodeAct-2.1-sonnet-20241022/trajs/sphinx-doc__sphinx-8035.json",
+      "messages_sha256": "f577bc68ed38cf53648897902b1b9c970a83b818a1d6c133dc3dde7db00df9d5",
+      "messages_bytes": 309119,
+      "messages_cache_hint": "/private/tmp/swe_external_B_20261122_1v9q5jxs/sphinx-doc__sphinx-8035.json",
+      "message_count": 76,
+      "prediction_line_1_based": 396,
+      "patch_sha256": "1ad1e4219c2372c10518bf3c20aaf4b5aaaf8e87a786d83f922b8293f4349687",
+      "patch_bytes": 2291,
+      "published_resolved": false
+    },
+    {
+      "instance_id": "django__django-11964",
+      "messages_url": "https://swe-bench-submissions.s3.amazonaws.com/verified/20241029_OpenHands-CodeAct-2.1-sonnet-20241022/trajs/django__django-11964.json",
+      "messages_sha256": "b8aee212d6e2ec8ba01753bd39da196b3e0f52999e55dc6f747c61251c703a7f",
+      "messages_bytes": 212112,
+      "messages_cache_hint": "/private/tmp/swe_external_B_20261122_1v9q5jxs/django__django-11964.json",
+      "message_count": 108,
+      "prediction_line_1_based": 495,
+      "patch_sha256": "f8e9f8d4ae99132c7562074698f20357eea81269bc25e6fe30fcec959ecad83d",
+      "patch_bytes": 1160,
+      "published_resolved": false
+    }
+  ],
+  "prior_knowledge": "These ten published message histories and their outcomes were examined in the earlier audit. This is not a new random or outcome-blinded sample. The new freeze concerns only the controlled synthetic manipulation and analysis rule."
+}

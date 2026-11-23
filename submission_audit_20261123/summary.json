@@ -1,0 +1,812 @@
+{
+  "schema": "submission-census-v1",
+  "protocol_sha256": "6d6a0a284158066007386aa44b76862a9a964aeb9f7993659b1d1c232b68f17d",
+  "freeze_sha256": "1bcbf7f1c131c18c6d10c5706b4da1346f89e2cdcc1eaf2e2f101ebb27f3507d",
+  "catalogue_commit": "40f164d5b8f1d249bf95a6df8b74b577fd8e519d",
+  "excluded_discovery_ids": [
+    "astropy__astropy-8872",
+    "django__django-11880",
+    "django__django-11964",
+    "django__django-13406",
+    "django__django-13449",
+    "django__django-15569",
+    "django__django-16899",
+    "matplotlib__matplotlib-25479",
+    "sphinx-doc__sphinx-8035",
+    "sphinx-doc__sphinx-9281"
+  ],
+  "population_metadata": {
+    "claude3opus": {
+      "submission": "20240402_sweagent_claude3opus",
+      "resolved_count": 79,
+      "prediction_record_count": 584,
+      "prediction_distinct_ids": 496,
+      "trace_object_count": 443,
+      "log_object_count": 455
+    },
+    "gpt4": {
+      "submission": "20240402_sweagent_gpt4",
+      "resolved_count": 112,
+      "prediction_record_count": 502,
+      "prediction_distinct_ids": 495,
+      "trace_object_count": 496,
+      "log_object_count": 472
+    }
+  },
+  "primary_excluding_discovery_issues": {
+    "claude3opus": {
+      "published_resolved_N": 78,
+      "explicit_E": 53,
+      "automatic_A": 13,
+      "unknown_U": 12,
+      "task_denominator": 490,
+      "native_archived_success_score": 0.15918367346938775,
+      "auto_share_identification_bounds": {
+        "numerators": [
+          13,
+          25
+        ],
+        "denominator": 78,
+        "decimal": [
+          0.16666666666666666,
+          0.32051282051282054
+        ]
+      },
+      "explicit_credit_success_count_bounds": [
+        53,
+        65
+      ],
+      "explicit_credit_score_bounds": [
+        0.10816326530612246,
+        0.1326530612244898
+      ],
+      "automatic_boundary_reasons": {
+        "cost": 13
+      },
+      "unknown_reason_counts_nonexclusive": {
+        "confirmed_missing_official_trace": 12
+      },
+      "trace_prediction_byte_matches": 66,
+      "automatic_grader_log_availability": {
+        "available": 13
+      },
+      "automatic_terminal_grader_markers": {
+        ">>>>> All Tests Passed": 12,
+        ">>>>> Some Tests Failed": 1
+      }
+    },
+    "gpt4": {
+      "published_resolved_N": 112,
+      "explicit_E": 0,
+      "automatic_A": 0,
+      "unknown_U": 112,
+      "task_denominator": 490,
+      "native_archived_success_score": 0.22857142857142856,
+      "auto_share_identification_bounds": {
+        "numerators": [
+          0,
+          112
+        ],
+        "denominator": 112,
+        "decimal": [
+          0.0,
+          1.0
+        ]
+      },
+      "explicit_credit_success_count_bounds": [
+        0,
+        112
+      ],
+      "explicit_credit_score_bounds": [
+        0.0,
+        0.22857142857142856
+      ],
+      "automatic_boundary_reasons": {},
+      "unknown_reason_counts_nonexclusive": {
+        "trace_prediction_byte_mismatch": 112
+      },
+      "trace_prediction_byte_matches": 0,
+      "automatic_grader_log_availability": {},
+      "automatic_terminal_grader_markers": {}
+    }
+  },
+  "full_cohort_descriptive_only": {
+    "claude3opus": {
+      "published_resolved_N": 79,
+      "explicit_E": 53,
+      "automatic_A": 14,
+      "unknown_U": 12,
+      "task_denominator": 500,
+      "native_archived_success_score": 0.158,
+      "auto_share_identification_bounds": {
+        "numerators": [
+          14,
+          26
+        ],
+        "denominator": 79,
+        "decimal": [
+          0.17721518987341772,
+          0.3291139240506329
+        ]
+      },
+      "explicit_credit_success_count_bounds": [
+        53,
+        65
+      ],
+      "explicit_credit_score_bounds": [
+        0.106,
+        0.13
+      ],
+      "automatic_boundary_reasons": {
+        "cost": 14
+      },
+      "unknown_reason_counts_nonexclusive": {
+        "confirmed_missing_official_trace": 12
+      },
+      "trace_prediction_byte_matches": 67,
+      "automatic_grader_log_availability": {
+        "available": 14
+      },
+      "automatic_terminal_grader_markers": {
+        ">>>>> All Tests Passed": 13,
+        ">>>>> Some Tests Failed": 1
+      }
+    },
+    "gpt4": {
+      "published_resolved_N": 112,
+      "explicit_E": 0,
+      "automatic_A": 0,
+      "unknown_U": 112,
+      "task_denominator": 500,
+      "native_archived_success_score": 0.224,
+      "auto_share_identification_bounds": {
+        "numerators": [
+          0,
+          112
+        ],
+        "denominator": 112,
+        "decimal": [
+          0.0,
+          1.0
+        ]
+      },
+      "explicit_credit_success_count_bounds": [
+        0,
+        112
+      ],
+      "explicit_credit_score_bounds": [
+        0.0,
+        0.224
+      ],
+      "automatic_boundary_reasons": {},
+      "unknown_reason_counts_nonexclusive": {
+        "trace_prediction_byte_mismatch": 112
+      },
+      "trace_prediction_byte_matches": 0,
+      "automatic_grader_log_availability": {},
+      "automatic_terminal_grader_markers": {}
+    }
+  },
+  "same_issue_joint_successes": {
+    "primary": {
+      "N": 58,
+      "rows": [
+        {
+          "instance_id": "astropy__astropy-14309",
+          "claude3opus": "explicit",
+          "gpt4": "unknown"
+        },
+        {
+          "instance_id": "astropy__astropy-14995",
+          "claude3opus": "explicit",
+          "gpt4": "unknown"
+        },
+        {
+          "instance_id": "astropy__astropy-7166",
+          "claude3opus": "explicit",
+          "gpt4": "unknown"
+        },
+        {
+          "instance_id": "astropy__astropy-7606",
+          "claude3opus": "explicit",
+          "gpt4": "unknown"
+        },
+        {
+          "instance_id": "django__django-10914",
+          "claude3opus": "explicit",
+          "gpt4": "unknown"
+        },
+        {
+          "instance_id": "django__django-11066",
+          "claude3opus": "unknown",
+          "gpt4": "unknown"
+        },
+        {
+          "instance_id": "django__django-11099",
+          "claude3opus": "explicit",
+          "gpt4": "unknown"
+        },
+        {
+          "instance_id": "django__django-11119",
+          "claude3opus": "explicit",
+          "gpt4": "unknown"
+        },
+        {
+          "instance_id": "django__django-11276",
+          "claude3opus": "automatic",
+          "gpt4": "unknown"
+        },
+        {
+          "instance_id": "django__django-12143",
+          "claude3opus": "explicit",
+          "gpt4": "unknown"
+        },
+        {
+          "instance_id": "django__django-12419",
+          "claude3opus": "unknown",
+          "gpt4": "unknown"
+        },
+        {
+          "instance_id": "django__django-13410",
+          "claude3opus": "explicit",
+          "gpt4": "unknown"
+        },
+        {
+          "instance_id": "django__django-13658",
+          "claude3opus": "automatic",
+          "gpt4": "unknown"
+        },
+        {
+          "instance_id": "django__django-13670",
+          "claude3opus": "explicit",
+          "gpt4": "unknown"
+        },
+        {
+          "instance_id": "django__django-13741",
+          "claude3opus": "explicit",
+          "gpt4": "unknown"
+        },
+        {
+          "instance_id": "django__django-13786",
+          "claude3opus": "automatic",
+          "gpt4": "unknown"
+        },
+        {
+          "instance_id": "django__django-13820",
+          "claude3opus": "explicit",
+          "gpt4": "unknown"
+        },
+        {
+          "instance_id": "django__django-14089",
+          "claude3opus": "explicit",
+          "gpt4": "unknown"
+        },
+        {
+          "instance_id": "django__django-14373",
+          "claude3opus": "explicit",
+          "gpt4": "unknown"
+        },
+        {
+          "instance_id": "django__django-14672",
+          "claude3opus": "automatic",
+          "gpt4": "unknown"
+        },
+        {
+          "instance_id": "django__django-14752",
+          "claude3opus": "explicit",
+          "gpt4": "unknown"
+        },
+        {
+          "instance_id": "django__django-14765",
+          "claude3opus": "explicit",
+          "gpt4": "unknown"
+        },
+        {
+          "instance_id": "django__django-14999",
+          "claude3opus": "explicit",
+          "gpt4": "unknown"
+        },
+        {
+          "instance_id": "django__django-15104",
+          "claude3opus": "explicit",
+          "gpt4": "unknown"
+        },
+        {
+          "instance_id": "django__django-15467",
+          "claude3opus": "automatic",
+          "gpt4": "unknown"
+        },
+        {
+          "instance_id": "django__django-15731",
+          "claude3opus": "unknown",
+          "gpt4": "unknown"
+        },
+        {
+          "instance_id": "django__django-15987",
+          "claude3opus": "explicit",
+          "gpt4": "unknown"
+        },
+        {
+          "instance_id": "django__django-16116",
+          "claude3opus": "unknown",
+          "gpt4": "unknown"
+        },
+        {
+          "instance_id": "django__django-16139",
+          "claude3opus": "explicit",
+          "gpt4": "unknown"
+        },
+        {
+          "instance_id": "django__django-16429",
+          "claude3opus": "automatic",
+          "gpt4": "unknown"
+        },
+        {
+          "instance_id": "django__django-16527",
+          "claude3opus": "explicit",
+          "gpt4": "unknown"
+        },
+        {
+          "instance_id": "django__django-16569",
+          "claude3opus": "explicit",
+          "gpt4": "unknown"
+        },
+        {
+          "instance_id": "django__django-16612",
+          "claude3opus": "unknown",
+          "gpt4": "unknown"
+        },
+        {
+          "instance_id": "django__django-16801",
+          "claude3opus": "automatic",
+          "gpt4": "unknown"
+        },
+        {
+          "instance_id": "django__django-9296",
+          "claude3opus": "explicit",
+          "gpt4": "unknown"
+        },
+        {
+          "instance_id": "matplotlib__matplotlib-22719",
+          "claude3opus": "explicit",
+          "gpt4": "unknown"
+        },
+        {
+          "instance_id": "matplotlib__matplotlib-24026",
+          "claude3opus": "explicit",
+          "gpt4": "unknown"
+        },
+        {
+          "instance_id": "matplotlib__matplotlib-25287",
+          "claude3opus": "unknown",
+          "gpt4": "unknown"
+        },
+        {
+          "instance_id": "psf__requests-2317",
+          "claude3opus": "explicit",
+          "gpt4": "unknown"
+        },
+        {
+          "instance_id": "pydata__xarray-4075",
+          "claude3opus": "automatic",
+          "gpt4": "unknown"
+        },
+        {
+          "instance_id": "pylint-dev__pylint-6903",
+          "claude3opus": "explicit",
+          "gpt4": "unknown"
+        },
+        {
+          "instance_id": "pylint-dev__pylint-7277",
+          "claude3opus": "explicit",
+          "gpt4": "unknown"
+        },
+        {
+          "instance_id": "pytest-dev__pytest-6202",
+          "claude3opus": "unknown",
+          "gpt4": "unknown"
+        },
+        {
+          "instance_id": "pytest-dev__pytest-7205",
+          "claude3opus": "explicit",
+          "gpt4": "unknown"
+        },
+        {
+          "instance_id": "pytest-dev__pytest-7982",
+          "claude3opus": "explicit",
+          "gpt4": "unknown"
+        },
+        {
+          "instance_id": "scikit-learn__scikit-learn-10297",
+          "claude3opus": "automatic",
+          "gpt4": "unknown"
+        },
+        {
+          "instance_id": "scikit-learn__scikit-learn-10844",
+          "claude3opus": "explicit",
+          "gpt4": "unknown"
+        },
+        {
+          "instance_id": "scikit-learn__scikit-learn-11310",
+          "claude3opus": "explicit",
+          "gpt4": "unknown"
+        },
+        {
+          "instance_id": "scikit-learn__scikit-learn-11578",
+          "claude3opus": "explicit",
+          "gpt4": "unknown"
+        },
+        {
+          "instance_id": "scikit-learn__scikit-learn-12585",
+          "claude3opus": "explicit",
+          "gpt4": "unknown"
+        },
+        {
+          "instance_id": "scikit-learn__scikit-learn-14496",
+          "claude3opus": "explicit",
+          "gpt4": "unknown"
+        },
+        {
+          "instance_id": "sympy__sympy-13480",
+          "claude3opus": "automatic",
+          "gpt4": "unknown"
+        },
+        {
+          "instance_id": "sympy__sympy-14711",
+          "claude3opus": "explicit",
+          "gpt4": "unknown"
+        },
+        {
+          "instance_id": "sympy__sympy-16450",
+          "claude3opus": "explicit",
+          "gpt4": "unknown"
+        },
+        {
+          "instance_id": "sympy__sympy-16766",
+          "claude3opus": "unknown",
+          "gpt4": "unknown"
+        },
+        {
+          "instance_id": "sympy__sympy-22914",
+          "claude3opus": "explicit",
+          "gpt4": "unknown"
+        },
+        {
+          "instance_id": "sympy__sympy-24443",
+          "claude3opus": "unknown",
+          "gpt4": "unknown"
+        },
+        {
+          "instance_id": "sympy__sympy-24539",
+          "claude3opus": "explicit",
+          "gpt4": "unknown"
+        }
+      ],
+      "cross_classification": {
+        "automatic|unknown": 10,
+        "explicit|unknown": 39,
+        "unknown|unknown": 9
+      }
+    },
+    "full_descriptive": {
+      "N": 58,
+      "rows": [
+        {
+          "instance_id": "astropy__astropy-14309",
+          "claude3opus": "explicit",
+          "gpt4": "unknown"
+        },
+        {
+          "instance_id": "astropy__astropy-14995",
+          "claude3opus": "explicit",
+          "gpt4": "unknown"
+        },
+        {
+          "instance_id": "astropy__astropy-7166",
+          "claude3opus": "explicit",
+          "gpt4": "unknown"
+        },
+        {
+          "instance_id": "astropy__astropy-7606",
+          "claude3opus": "explicit",
+          "gpt4": "unknown"
+        },
+        {
+          "instance_id": "django__django-10914",
+          "claude3opus": "explicit",
+          "gpt4": "unknown"
+        },
+        {
+          "instance_id": "django__django-11066",
+          "claude3opus": "unknown",
+          "gpt4": "unknown"
+        },
+        {
+          "instance_id": "django__django-11099",
+          "claude3opus": "explicit",
+          "gpt4": "unknown"
+        },
+        {
+          "instance_id": "django__django-11119",
+          "claude3opus": "explicit",
+          "gpt4": "unknown"
+        },
+        {
+          "instance_id": "django__django-11276",
+          "claude3opus": "automatic",
+          "gpt4": "unknown"
+        },
+        {
+          "instance_id": "django__django-12143",
+          "claude3opus": "explicit",
+          "gpt4": "unknown"
+        },
+        {
+          "instance_id": "django__django-12419",
+          "claude3opus": "unknown",
+          "gpt4": "unknown"
+        },
+        {
+          "instance_id": "django__django-13410",
+          "claude3opus": "explicit",
+          "gpt4": "unknown"
+        },
+        {
+          "instance_id": "django__django-13658",
+          "claude3opus": "automatic",
+          "gpt4": "unknown"
+        },
+        {
+          "instance_id": "django__django-13670",
+          "claude3opus": "explicit",
+          "gpt4": "unknown"
+        },
+        {
+          "instance_id": "django__django-13741",
+          "claude3opus": "explicit",
+          "gpt4": "unknown"
+        },
+        {
+          "instance_id": "django__django-13786",
+          "claude3opus": "automatic",
+          "gpt4": "unknown"
+        },
+        {
+          "instance_id": "django__django-13820",
+          "claude3opus": "explicit",
+          "gpt4": "unknown"
+        },
+        {
+          "instance_id": "django__django-14089",
+          "claude3opus": "explicit",
+          "gpt4": "unknown"
+        },
+        {
+          "instance_id": "django__django-14373",
+          "claude3opus": "explicit",
+          "gpt4": "unknown"
+        },
+        {
+          "instance_id": "django__django-14672",
+          "claude3opus": "automatic",
+          "gpt4": "unknown"
+        },
+        {
+          "instance_id": "django__django-14752",
+          "claude3opus": "explicit",
+          "gpt4": "unknown"
+        },
+        {
+          "instance_id": "django__django-14765",
+          "claude3opus": "explicit",
+          "gpt4": "unknown"
+        },
+        {
+          "instance_id": "django__django-14999",
+          "claude3opus": "explicit",
+          "gpt4": "unknown"
+        },
+        {
+          "instance_id": "django__django-15104",
+          "claude3opus": "explicit",
+          "gpt4": "unknown"
+        },
+        {
+          "instance_id": "django__django-15467",
+          "claude3opus": "automatic",
+          "gpt4": "unknown"
+        },
+        {
+          "instance_id": "django__django-15731",
+          "claude3opus": "unknown",
+          "gpt4": "unknown"
+        },
+        {
+          "instance_id": "django__django-15987",
+          "claude3opus": "explicit",
+          "gpt4": "unknown"
+        },
+        {
+          "instance_id": "django__django-16116",
+          "claude3opus": "unknown",
+          "gpt4": "unknown"
+        },
+        {
+          "instance_id": "django__django-16139",
+          "claude3opus": "explicit",
+          "gpt4": "unknown"
+        },
+        {
+          "instance_id": "django__django-16429",
+          "claude3opus": "automatic",
+          "gpt4": "unknown"
+        },
+        {
+          "instance_id": "django__django-16527",
+          "claude3opus": "explicit",
+          "gpt4": "unknown"
+        },
+        {
+          "instance_id": "django__django-16569",
+          "claude3opus": "explicit",
+          "gpt4": "unknown"
+        },
+        {
+          "instance_id": "django__django-16612",
+          "claude3opus": "unknown",
+          "gpt4": "unknown"
+        },
+        {
+          "instance_id": "django__django-16801",
+          "claude3opus": "automatic",
+          "gpt4": "unknown"
+        },
+        {
+          "instance_id": "django__django-9296",
+          "claude3opus": "explicit",
+          "gpt4": "unknown"
+        },
+        {
+          "instance_id": "matplotlib__matplotlib-22719",
+          "claude3opus": "explicit",
+          "gpt4": "unknown"
+        },
+        {
+          "instance_id": "matplotlib__matplotlib-24026",
+          "claude3opus": "explicit",
+          "gpt4": "unknown"
+        },
+        {
+          "instance_id": "matplotlib__matplotlib-25287",
+          "claude3opus": "unknown",
+          "gpt4": "unknown"
+        },
+        {
+          "instance_id": "psf__requests-2317",
+          "claude3opus": "explicit",
+          "gpt4": "unknown"
+        },
+        {
+          "instance_id": "pydata__xarray-4075",
+          "claude3opus": "automatic",
+          "gpt4": "unknown"
+        },
+        {
+          "instance_id": "pylint-dev__pylint-6903",
+          "claude3opus": "explicit",
+          "gpt4": "unknown"
+        },
+        {
+          "instance_id": "pylint-dev__pylint-7277",
+          "claude3opus": "explicit",
+          "gpt4": "unknown"
+        },
+        {
+          "instance_id": "pytest-dev__pytest-6202",
+          "claude3opus": "unknown",
+          "gpt4": "unknown"
+        },
+        {
+          "instance_id": "pytest-dev__pytest-7205",
+          "claude3opus": "explicit",
+          "gpt4": "unknown"
+        },
+        {
+          "instance_id": "pytest-dev__pytest-7982",
+          "claude3opus": "explicit",
+          "gpt4": "unknown"
+        },
+        {
+          "instance_id": "scikit-learn__scikit-learn-10297",
+          "claude3opus": "automatic",
+          "gpt4": "unknown"
+        },
+        {
+          "instance_id": "scikit-learn__scikit-learn-10844",
+          "claude3opus": "explicit",
+          "gpt4": "unknown"
+        },
+        {
+          "instance_id": "scikit-learn__scikit-learn-11310",
+          "claude3opus": "explicit",
+          "gpt4": "unknown"
+        },
+        {
+          "instance_id": "scikit-learn__scikit-learn-11578",
+          "claude3opus": "explicit",
+          "gpt4": "unknown"
+        },
+        {
+          "instance_id": "scikit-learn__scikit-learn-12585",
+          "claude3opus": "explicit",
+          "gpt4": "unknown"
+        },
+        {
+          "instance_id": "scikit-learn__scikit-learn-14496",
+          "claude3opus": "explicit",
+          "gpt4": "unknown"
+        },
+        {
+          "instance_id": "sympy__sympy-13480",
+          "claude3opus": "automatic",
+          "gpt4": "unknown"
+        },
+        {
+          "instance_id": "sympy__sympy-14711",
+          "claude3opus": "explicit",
+          "gpt4": "unknown"
+        },
+        {
+          "instance_id": "sympy__sympy-16450",
+          "claude3opus": "explicit",
+          "gpt4": "unknown"
+        },
+        {
+          "instance_id": "sympy__sympy-16766",
+          "claude3opus": "unknown",
+          "gpt4": "unknown"
+        },
+        {
+          "instance_id": "sympy__sympy-22914",
+          "claude3opus": "explicit",
+          "gpt4": "unknown"
+        },
+        {
+          "instance_id": "sympy__sympy-24443",
+          "claude3opus": "unknown",
+          "gpt4": "unknown"
+        },
+        {
+          "instance_id": "sympy__sympy-24539",
+          "claude3opus": "explicit",
+          "gpt4": "unknown"
+        }
+      ],
+      "cross_classification": {
+        "automatic|unknown": 10,
+        "explicit|unknown": 39,
+        "unknown|unknown": 9
+      }
+    }
+  },
+  "interpretation": [
+    "Bounds are exact finite-cohort identification bounds, not sampling confidence intervals.",
+    "The primary cohort excludes the ten discovery issues in both submissions; overlapping issues are paired, not independent replication.",
+    "Official resolved membership is retained regardless of trace or patch linkage; missing evidence is never imputed.",
+    "A trace-to-prediction byte match does not establish evaluated-patch byte identity.",
+    "Grader markers are a positive cross-check, not a reconstruction of SWE-bench grading or patch identity.",
+    "Explicit-credit bounds change only the readout of fixed archived histories; they do not estimate rerun performance or agent intent.",
+    "The original SWE-agent paper tabulated termination reasons. This is independent Verified recoding with artifact-linkage uncertainty, not a first discovery."
+  ],
+  "implementation_details": {
+    "max_concurrent_fetches": 4,
+    "raw_cache": "tempfile.gettempdir()/swe_public_io_20261122",
+    "cache_key": "SHA256(exact UTF-8 URL)",
+    "download_client": "../external_audit_20261122/public_io.py",
+    "history_consistency": "Require matching terminal actions and exclude history is_demo records. Whole-sequence equality is a diagnostic, not an added eligibility restriction.",
+    "raw_reasoning_or_patches_in_outputs": false,
+    "archived_code_or_models_executed": false
+  },
+  "manifest_sha256": "07fd54dc63e21fbce7c3dabea8b375ae0f7fd4382bcb5bc97da3e8be91353eff",
+  "rows_csv_sha256": "7ef67c8c6e51a59bf9b5ddcb362b29a8c46182df8319fcc581e4e4b16416408a"
+}

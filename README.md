@@ -2,6 +2,8 @@
 
 [![Verify saved study](https://github.com/Imranqsl212/AiResearch/actions/workflows/verify-saved-study.yml/badge.svg)](https://github.com/Imranqsl212/AiResearch/actions/workflows/verify-saved-study.yml)
 
+The [current manuscript](paper/final.md) asks how a reader can determine who stopped a coding agent. The [SWE-bench follow-up](submission_audit_20261123/README.md) checks a complete 500-issue OpenHands export, tests ten pairs of opposite final requests, and links SWE-agent submissions to published successes on held-out issues. The [PDF](paper/submission/full_paper.pdf) includes the original local study and discovery audit.
+
 This repository studies what a local coding agent does after a security checker rejects its Python code. It contains a completed **exploratory benchmark audit**, separate feasibility pilots, and an unfinished prospective study. These cohorts have different protocols and are never pooled.
 
 For a short project review, start with the [research overview](docs/PROJECT_OVERVIEW_20261029.md); the full [research article](paper/final.md) and reproduction instructions are linked below.

@@ -1,0 +1,6 @@
+{
+  "frozen_utc": "2026-11-23T16:20:30.601632+00:00",
+  "protocol_sha256": "a14831c9c981f164a597799a3eb54fb03dc7aabfa0b7fa7b1471ab948b9abc93",
+  "provenance_sha256": "86cff26506d858c6adf75bc1e5791f3918caf5c4f6d45650337af3da15ad7f3c",
+  "stage": "before_constructing_or_projecting_simulated_completion_pairs"
+}

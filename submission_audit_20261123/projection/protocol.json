@@ -1,0 +1,47 @@
+{
+  "schema_version": "projection-protocol-v1",
+  "frozen_utc": "2026-11-23T16:20:30.601632+00:00",
+  "provenance_sha256": "86cff26506d858c6adf75bc1e5791f3918caf5c4f6d45650337af3da15ad7f3c",
+  "question": "Can the historical messages-only export distinguish two legitimate but different final model requests when the archived input, patch, and official grade are held fixed?",
+  "design": "Ten pre-existing archived B inputs; exactly two explicitly simulated last-completion records per input; no new agent run or benchmark evaluation.",
+  "sample": "Use all ten inputs in provenance.json, in their frozen earlier selection order. No substitution or outcome-based exclusion; missing or hash-mismatched inputs invalidate the experiment.",
+  "held_fixed": [
+    "Embed each exact archived message-file byte string as the messages value in both synthetic logger envelopes.",
+    "Use identical synthetic logger args, kwargs, timestamp, cost, completion ID, model label, tool-call ID, usage, and finish_reason within each pair.",
+    "Preserve the original predicted patch bytes and published resolved label in both extended observable views; these grades were not generated for the simulated completions."
+  ],
+  "manipulation": {
+    "finish": {
+      "tool_name": "finish",
+      "arguments": {}
+    },
+    "continue": {
+      "tool_name": "execute_bash",
+      "arguments": {
+        "command": "pwd"
+      }
+    },
+    "scope": "Both are model REQUESTS only. The pwd command is never run. Neither constructed request includes an observed controller acknowledgment or termination cause."
+  },
+  "format_validation": "Check the pinned logger/serializer source and extract the static tool names/parameters using AST reading only; validate the two JSON response structures against those definitions without importing or executing upstream code. Finish has no declared parameters and receives an empty argument object.",
+  "projection": "Extract and whitelist the exact jq filter .messages and -r option from the pinned release exporter. Run only jq -r .messages as a subprocess on synthetic logger-envelope JSON in a temporary directory. Never run the upstream shell script, its other commands, upstream Python, model code, or trace commands.",
+  "projection_context": "The test begins after selection of the latest completion file. It does not test file-mtime selection, log completeness, collection provenance, the prediction converter, or evaluator behavior.",
+  "planned_checks": [
+    "Both wrappers contain exactly the same original messages byte string.",
+    "Requested tool names differ and are schema-compatible.",
+    "Release projection output is byte-identical within each pair and JSON-equal to the archived input.",
+    "The extended observable view, including original patch and grade, remains identical within each pair.",
+    "A separately serialized proposed request receipt splits the paired requests while leaving controller acknowledgment, causal stop actor, and termination cause null in both."
+  ],
+  "receipt_rule": "Bind input bytes, exported messages, original patch, and grade to the simulated completion digest, tool-call identifier, tool name, and parsed finish-request flag. Mark provenance simulated. Keep actual termination evidence as separate null fields. A response digest alone binds bytes but is not a semantic label or proof of execution.",
+  "analysis": "Count collisions over exactly ten pairs, receipt splits over ten pairs, and missing inputs separately. Report per-input hashes. No significance tests, model comparisons, or population prevalence estimates.",
+  "bound": "For the constructed equal-weight binary dataset, every observable input occurs once with finish-request label1 and once with label0. Any deterministic full-coverage classifier using only that observable view has exactly50% accuracy; any randomized artifact-only classifier has expected50% accuracy. This is a conditional identifiability bound for this artificial balanced construction, not the frequency or difficulty of real stopping decisions. An unknown/abstention output is permitted but does not recover the missing label.",
+  "prediction": "All ten pairs will collide under the released messages-only projection and separate with the proposed request receipt. Failure of a hash/schema/preservation/projection check invalidates the claimed mechanism result rather than removing a case.",
+  "limitations": [
+    "The synthetic response objects are controlled counterexamples, not recovered historical completions or evidence about actual model choices.",
+    "A recorded finish request does not by itself establish which component actually ended execution; controller acknowledgment and boundary events remain necessary.",
+    "The tested jq binary is1.8.2; the submission's jq version is unknown. Report the binary version used and exact source hashes.",
+    "No external preregistration: this timestamp and receipt are a local pre-execution rule freeze.",
+    "The expected information loss is apparent from the source before this deterministic unit experiment; do not present it as an unexpected empirical discovery."
+  ]
+}

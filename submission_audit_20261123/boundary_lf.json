@@ -1,0 +1,799 @@
+{
+  "design": "Post hoc after the exact-byte mismatch and one-byte length differences were observed. The final-LF check matched zero. Inspection of common suffixes motivated checking one leading LF. Test only these two within-run transformations; retain the strict primary and the cross-model patch comparison exactly as specified.",
+  "rows_csv_sha256": "7ef67c8c6e51a59bf9b5ddcb362b29a8c46182df8319fcc581e4e4b16416408a",
+  "relations": {
+    "trace_equals_one_LF_plus_prediction": 103,
+    "different": 9
+  },
+  "under_LF_rule": {
+    "explicit": 98,
+    "automatic": 5,
+    "unknown": 9
+  },
+  "items": [
+    {
+      "instance_id": "astropy__astropy-14309",
+      "prediction_sha256": "5a5203f271c069d2194cd58902d4a3071778cad26dea73ce2204af731ae7f5bf",
+      "trace_patch_sha256": "48257a4e29e98c65a6ba1c5690fcba70f0a426ba64126f8aaab3dc576a821375",
+      "byte_relation": "trace_equals_one_LF_plus_prediction",
+      "class_with_declared_LF_rule": "explicit"
+    },
+    {
+      "instance_id": "astropy__astropy-14995",
+      "prediction_sha256": "821a3b1e971c200b5b1eea5ce4ee5db52c530519948eeff5ae6dcaa3a290fbab",
+      "trace_patch_sha256": "a1020e2a7fabf74aef2e9eaedde09e97e49ba54c3f3e52692493b3b8d9be9b86",
+      "byte_relation": "trace_equals_one_LF_plus_prediction",
+      "class_with_declared_LF_rule": "explicit"
+    },
+    {
+      "instance_id": "astropy__astropy-7166",
+      "prediction_sha256": "53e0174aa638c9e504413f44466dcd3245f47fa3f0c0f6ec763c3ad30455e83d",
+      "trace_patch_sha256": "9c900c2d424a5489636d03360e3cd17f5390c2aeeacb88f11e6ba9a8857f671a",
+      "byte_relation": "trace_equals_one_LF_plus_prediction",
+      "class_with_declared_LF_rule": "explicit"
+    },
+    {
+      "instance_id": "astropy__astropy-7336",
+      "prediction_sha256": "366d4f579cfd2aef0092ce01455ec9ab2e54b29b7efd934207df5fb8713c9137",
+      "trace_patch_sha256": "726691403b1683716d54d88b1a4dd5cb5b94511b551b4c7261953a70237f7f79",
+      "byte_relation": "trace_equals_one_LF_plus_prediction",
+      "class_with_declared_LF_rule": "explicit"
+    },
+    {
+      "instance_id": "astropy__astropy-7606",
+      "prediction_sha256": "6403a3cc72aaffb05653da5b0fbab28671a28a6b5dad611ecc27d09d207b2847",
+      "trace_patch_sha256": "b1d6225d91a2a45b82f1d1d1856e495bd6bb98abba99d0e83a4eb083f3e6f346",
+      "byte_relation": "trace_equals_one_LF_plus_prediction",
+      "class_with_declared_LF_rule": "explicit"
+    },
+    {
+      "instance_id": "astropy__astropy-7671",
+      "prediction_sha256": "7f7a714a12de29486a131a5f3603bcd62a37b56c60bd31865feec36a7926dc5c",
+      "trace_patch_sha256": "275f1ca5586a970c9ec1a682aa1a4bf0e3e1c0d51443c07df78d303ced75cdfb",
+      "byte_relation": "trace_equals_one_LF_plus_prediction",
+      "class_with_declared_LF_rule": "explicit"
+    },
+    {
+      "instance_id": "django__django-10914",
+      "prediction_sha256": "ff9d1a16893af39c5619afa440f3a3fb2bbeb1341647c4781b5fa824133b0829",
+      "trace_patch_sha256": "10d8db6844e32e3c0b9f8d420b6cf8459ed769cfdd626b19220c42a395d85338",
+      "byte_relation": "trace_equals_one_LF_plus_prediction",
+      "class_with_declared_LF_rule": "explicit"
+    },
+    {
+      "instance_id": "django__django-11066",
+      "prediction_sha256": "c68f5db35459c3e4bd918bbb4cdbfe58162beb6b7646eafa7b208d264e5b9a08",
+      "trace_patch_sha256": "84046f4d8a06684ecdcc50fa78394f5b8c0df63ad4c5d2d62a74467d0ede861d",
+      "byte_relation": "trace_equals_one_LF_plus_prediction",
+      "class_with_declared_LF_rule": "explicit"
+    },
+    {
+      "instance_id": "django__django-11099",
+      "prediction_sha256": "2d0233b409713c1c85cf5c0a6d3a0ff3ea7e65a5c0cbf75934bb8049417de170",
+      "trace_patch_sha256": "e37430c7887856d6cbda0d6f2a8b5a8c7306753b78ee404ab4257a3d195c47b1",
+      "byte_relation": "trace_equals_one_LF_plus_prediction",
+      "class_with_declared_LF_rule": "explicit"
+    },
+    {
+      "instance_id": "django__django-11119",
+      "prediction_sha256": "2065323dcdbfcae812028d52307941075ffbba378ed379061e3332bbb3d22d29",
+      "trace_patch_sha256": "7ce3c4dcedb8ad88d1261334c42cbf5eea249817ebf856f70b7a60a1d46672fc",
+      "byte_relation": "trace_equals_one_LF_plus_prediction",
+      "class_with_declared_LF_rule": "explicit"
+    },
+    {
+      "instance_id": "django__django-11133",
+      "prediction_sha256": "3663ee7c7f289ecf33dfacf4460d1840f860f0ba1165c8723e57547a0ff3a08b",
+      "trace_patch_sha256": "fde4ecf64c417b379256710274c6c2328311dc4543ed955294e10a0c4c7ea01d",
+      "byte_relation": "trace_equals_one_LF_plus_prediction",
+      "class_with_declared_LF_rule": "explicit"
+    },
+    {
+      "instance_id": "django__django-11163",
+      "prediction_sha256": "dbdb40f0b8c6a9fb93dbff45dfd563b600a4b81881b0d6c7e322107d1d3f5501",
+      "trace_patch_sha256": "b6fe490e94828d082f71da4491a3b6a125105f3aa30815cfb38c4ecf732c2a2f",
+      "byte_relation": "trace_equals_one_LF_plus_prediction",
+      "class_with_declared_LF_rule": "explicit"
+    },
+    {
+      "instance_id": "django__django-11276",
+      "prediction_sha256": "f01c643e9defd08d26b90845f5f880d5c81d01e5ccef95ead8570fab929b3f74",
+      "trace_patch_sha256": "895d183bb7be709a574ea2e7c94f8d59710cb727d16a103fb5b68e6c7f7714d6",
+      "byte_relation": "trace_equals_one_LF_plus_prediction",
+      "class_with_declared_LF_rule": "explicit"
+    },
+    {
+      "instance_id": "django__django-11451",
+      "prediction_sha256": "6a8a65f27464542dae84eea9664757addb6550722425a09e25ff681b6e29c923",
+      "trace_patch_sha256": "efe704749d8ae9a48757eb653edce58f18d3e12c6768ca34c937bca2c20d6440",
+      "byte_relation": "trace_equals_one_LF_plus_prediction",
+      "class_with_declared_LF_rule": "explicit"
+    },
+    {
+      "instance_id": "django__django-11551",
+      "prediction_sha256": "a86bda7bcc16fadc2db40d6328be48e9af0961e4a1dbfe39792bd49ca8cc0b0f",
+      "trace_patch_sha256": "0d47f15fb1a479756a6aa1547b5cfea9e3796c6648b7717dc3e8fd6b38888723",
+      "byte_relation": "trace_equals_one_LF_plus_prediction",
+      "class_with_declared_LF_rule": "explicit"
+    },
+    {
+      "instance_id": "django__django-11951",
+      "prediction_sha256": "8c4a81630b2094f3159bd35f37a788d7504e68559689a11ae81aed8931cb1159",
+      "trace_patch_sha256": "604d5b75f54012d2121e70766478be623461ebafdcaf51fe5e6648b5a605fe77",
+      "byte_relation": "trace_equals_one_LF_plus_prediction",
+      "class_with_declared_LF_rule": "explicit"
+    },
+    {
+      "instance_id": "django__django-12143",
+      "prediction_sha256": "132af8d75e205ae5c96c051b2742ccff32effacca2144d04f1ada26456c162c1",
+      "trace_patch_sha256": "bd9c1c6eb8377db99e83108551946db86237033c7cf3bab6c29a2a4ebebf72ee",
+      "byte_relation": "trace_equals_one_LF_plus_prediction",
+      "class_with_declared_LF_rule": "explicit"
+    },
+    {
+      "instance_id": "django__django-12155",
+      "prediction_sha256": "579ceabaca04e8864c3b69caa81fb995b6a96bad500ccf2a4dac25f35e9806a9",
+      "trace_patch_sha256": "3c9d2be27b528797586e02057be85f6dc53aa0c4140f9f94a21493313bba4429",
+      "byte_relation": "trace_equals_one_LF_plus_prediction",
+      "class_with_declared_LF_rule": "explicit"
+    },
+    {
+      "instance_id": "django__django-12193",
+      "prediction_sha256": "4b1a0c800a93faef78c2ee39b65283694e48baf3afbfb329146cc8046e3b09fb",
+      "trace_patch_sha256": "b6310140bc7176c186aac81697aa2eac37162d74b9849dc9da643445ee8275de",
+      "byte_relation": "trace_equals_one_LF_plus_prediction",
+      "class_with_declared_LF_rule": "explicit"
+    },
+    {
+      "instance_id": "django__django-12419",
+      "prediction_sha256": "0b7794efc9e19ef7c7aa513b2b4388ee7c919feed3277dfab0b0394ab4435624",
+      "trace_patch_sha256": "a11d09be6bf513ab42296a8a282b67f02418d72510d6399e58792b61ee5b8e51",
+      "byte_relation": "trace_equals_one_LF_plus_prediction",
+      "class_with_declared_LF_rule": "explicit"
+    },
+    {
+      "instance_id": "django__django-12713",
+      "prediction_sha256": "a6e4ca7baf68cf3c220de6c4a2cac765e5355778fc32cec94dea33c3400d8af4",
+      "trace_patch_sha256": "e564417b53a511e17565117bbbab26d64b6727ba12ca8144a38aa86095f830c8",
+      "byte_relation": "trace_equals_one_LF_plus_prediction",
+      "class_with_declared_LF_rule": "automatic"
+    },
+    {
+      "instance_id": "django__django-12858",
+      "prediction_sha256": "802086992f0644cca68682d6aa855eea1df0240f72682ad2baaa2eb3e8873bdb",
+      "trace_patch_sha256": "5b70d2e66f12ff044c0519ceafa48032ca60a5511aedaea3dc4c9604ccdcdfc5",
+      "byte_relation": "trace_equals_one_LF_plus_prediction",
+      "class_with_declared_LF_rule": "explicit"
+    },
+    {
+      "instance_id": "django__django-13089",
+      "prediction_sha256": "7064664e2002e6765e95677401ffe68d59a9eb8f7adb41f7efca0fb3aba4de4f",
+      "trace_patch_sha256": "1872ad3d7e139113229a819de89e977a73d27d22a726b1665d1bd561f38f5496",
+      "byte_relation": "trace_equals_one_LF_plus_prediction",
+      "class_with_declared_LF_rule": "explicit"
+    },
+    {
+      "instance_id": "django__django-13109",
+      "prediction_sha256": "7483b0751c7b807139f06f0865d1b515a3bcef19cd1d6346cb223a5d40bd86d6",
+      "trace_patch_sha256": "0eb2666d988fa7c816890f76ea15906ddff6864b4dae156f788710e474730274",
+      "byte_relation": "trace_equals_one_LF_plus_prediction",
+      "class_with_declared_LF_rule": "explicit"
+    },
+    {
+      "instance_id": "django__django-13363",
+      "prediction_sha256": "c69dc55838dc2516871a84517790ecfb5a6cb4c6a7d97b1c115dbc387f199626",
+      "trace_patch_sha256": "8260241da4f3dde664634ed82c5f87b8c6eaf98fb2972c631b3362b51b4e8424",
+      "byte_relation": "trace_equals_one_LF_plus_prediction",
+      "class_with_declared_LF_rule": "explicit"
+    },
+    {
+      "instance_id": "django__django-13401",
+      "prediction_sha256": "5aad507b3db44fdedb52956e2616fb542726d07c0ab94a322bc530ea05c70c76",
+      "trace_patch_sha256": "d9c4ebbd45b5a4586397dca61d01037dfdd0b259492e8ba25a674c9809c84df4",
+      "byte_relation": "trace_equals_one_LF_plus_prediction",
+      "class_with_declared_LF_rule": "explicit"
+    },
+    {
+      "instance_id": "django__django-13410",
+      "prediction_sha256": "af70a9136b1588a5b4ede8761bbfb1d8dbc7482bd55847ea951ae70a842b400f",
+      "trace_patch_sha256": "d058f93ec81d3d48a2cd51713b1d5a7b1aa4d9b2b4ebc6dfbf2724b7b17ed3e0",
+      "byte_relation": "trace_equals_one_LF_plus_prediction",
+      "class_with_declared_LF_rule": "explicit"
+    },
+    {
+      "instance_id": "django__django-13658",
+      "prediction_sha256": "ec104edde1f546296c88a5d963b77cb1e62411177f85963a1c921983ae7c65d1",
+      "trace_patch_sha256": "0bdfbb5c5d5ab7f23812bdf379ff87d40988fafd344ba7d7a7f95e5d172ce709",
+      "byte_relation": "trace_equals_one_LF_plus_prediction",
+      "class_with_declared_LF_rule": "explicit"
+    },
+    {
+      "instance_id": "django__django-13670",
+      "prediction_sha256": "6d5fadf112b22f9573795761d5a1287e5cf847755f283cbc53749c158111aaff",
+      "trace_patch_sha256": "c7eb06e8cb99b3ed9e7e66babbc080044fa5e66336d1e4197e766b5fa2f71fbd",
+      "byte_relation": "trace_equals_one_LF_plus_prediction",
+      "class_with_declared_LF_rule": "explicit"
+    },
+    {
+      "instance_id": "django__django-13741",
+      "prediction_sha256": "8f18f2049e64b04693f844b6800566ae639f27cd8e710e3ef9615f9dbd598545",
+      "trace_patch_sha256": "f04ed158e372627bd2dd7f602f8ba21197ca9c20e5601f5c139b66b291623ed0",
+      "byte_relation": "trace_equals_one_LF_plus_prediction",
+      "class_with_declared_LF_rule": "explicit"
+    },
+    {
+      "instance_id": "django__django-13786",
+      "prediction_sha256": "1a9ce7dc6eb9109fde92bd5177b5d2ed2bca733b6be2fab2cc4420f0c5b24f7c",
+      "trace_patch_sha256": "0507221c568ba2e1b60fd9728bb5ed312a3db0a64d1a42d2365b3fe229ebc2a8",
+      "byte_relation": "trace_equals_one_LF_plus_prediction",
+      "class_with_declared_LF_rule": "explicit"
+    },
+    {
+      "instance_id": "django__django-13809",
+      "prediction_sha256": "b27fe65bf307b171e70985e22e853b1762b447e85018cde06cab07c6c12c6776",
+      "trace_patch_sha256": "f569d86b31065022e842ec47c662aeea2c3187f1afce6d0b0aff557a68156096",
+      "byte_relation": "trace_equals_one_LF_plus_prediction",
+      "class_with_declared_LF_rule": "explicit"
+    },
+    {
+      "instance_id": "django__django-13820",
+      "prediction_sha256": "5b1c6230bdfb5c1a0d8bcc3fce8248036c5978dc0407716c7d058aa4abd4661c",
+      "trace_patch_sha256": "8f396aee00cdfb80fb6dc0f80c6ff173d31374e59caec23c3c2da2991e4ec642",
+      "byte_relation": "trace_equals_one_LF_plus_prediction",
+      "class_with_declared_LF_rule": "explicit"
+    },
+    {
+      "instance_id": "django__django-14053",
+      "prediction_sha256": "4e76b3069c66c37ec34b4121193489be2841a7a4e73f7315897aed319e610315",
+      "trace_patch_sha256": "3518a2d35a79fe3ef27d480e248e39ab59d44386a4b29cb56b515eed9c3ccb45",
+      "byte_relation": "trace_equals_one_LF_plus_prediction",
+      "class_with_declared_LF_rule": "explicit"
+    },
+    {
+      "instance_id": "django__django-14089",
+      "prediction_sha256": "d7b282b7b27922b4bcb3992bb9f22ab1662467694b67ceacebe03b08c8b910ff",
+      "trace_patch_sha256": "d229f0e19537d721441e029271b8144c6cf8f35a85ff4ac3ee2220b98f66c60b",
+      "byte_relation": "trace_equals_one_LF_plus_prediction",
+      "class_with_declared_LF_rule": "explicit"
+    },
+    {
+      "instance_id": "django__django-14238",
+      "prediction_sha256": "bc3d1ab861a37a43cb51c27f0e4731fc8116a6d1dca9fdd36274fc2c2286b553",
+      "trace_patch_sha256": "7b5f68176deda9a484a5bbaaea26767c202d2c616e6bc11e04b0c333f8568d15",
+      "byte_relation": "trace_equals_one_LF_plus_prediction",
+      "class_with_declared_LF_rule": "explicit"
+    },
+    {
+      "instance_id": "django__django-14373",
+      "prediction_sha256": "55af9ccb8f775f155294b3dac599c6e92d980e55b3fb9e707c9f91b18074454e",
+      "trace_patch_sha256": "ac871669724b63e5a8fb9b1ca2c42f6e8590b800a61a664a8e5792ef89e9e914",
+      "byte_relation": "trace_equals_one_LF_plus_prediction",
+      "class_with_declared_LF_rule": "explicit"
+    },
+    {
+      "instance_id": "django__django-14493",
+      "prediction_sha256": "31454afd394a6f246297fe56d4dfb4415baf7efc32ce7de73e95d35ebb4875e1",
+      "trace_patch_sha256": "fffdd3e896b3e50a047e69d8af54d32ac6d298da47180bebb7b00685d322b417",
+      "byte_relation": "different",
+      "class_with_declared_LF_rule": "unknown"
+    },
+    {
+      "instance_id": "django__django-14672",
+      "prediction_sha256": "ce4679b4d60c1f44c14de65e83210d685c72594fa23b8ee25821e6443525598f",
+      "trace_patch_sha256": "6171edffa6ffcf816b53cb18447a67d0d0a5aae046ca0a82235e87a9b1636b71",
+      "byte_relation": "trace_equals_one_LF_plus_prediction",
+      "class_with_declared_LF_rule": "explicit"
+    },
+    {
+      "instance_id": "django__django-14752",
+      "prediction_sha256": "3451a0b766654fe78572885ff1349e272476250acc703c65a484efba9d89c7c9",
+      "trace_patch_sha256": "96472c06a0caa8665ee4a5989d53948c8d1a3166f0700bba7f473d7f58d813e9",
+      "byte_relation": "trace_equals_one_LF_plus_prediction",
+      "class_with_declared_LF_rule": "explicit"
+    },
+    {
+      "instance_id": "django__django-14765",
+      "prediction_sha256": "b98e00aee3b09120379c65a5518f399e2915d19e7aaccd47579d3549f4fa41c3",
+      "trace_patch_sha256": "1e388c5e76ff366ce0d35404a64ba906f6d7fec836bb9b672899b567c19602f2",
+      "byte_relation": "trace_equals_one_LF_plus_prediction",
+      "class_with_declared_LF_rule": "explicit"
+    },
+    {
+      "instance_id": "django__django-14787",
+      "prediction_sha256": "ea76160cc4b33fa487cae7a9da53f294d8d49599792a3891aaf5f3e8b2c00ebe",
+      "trace_patch_sha256": "7004b4642c52f3200395ab2d639d154a92dac10bcc33b16b097416baa3e78e33",
+      "byte_relation": "trace_equals_one_LF_plus_prediction",
+      "class_with_declared_LF_rule": "explicit"
+    },
+    {
+      "instance_id": "django__django-14855",
+      "prediction_sha256": "da1196eabf1748a5208d3ed6da0de268f924fe2f2e6822382867dd2c25113141",
+      "trace_patch_sha256": "051262376f73873c7c02d76d1ee4ae57129ed22723fe5e97e6394c0e53d5cebd",
+      "byte_relation": "different",
+      "class_with_declared_LF_rule": "unknown"
+    },
+    {
+      "instance_id": "django__django-14915",
+      "prediction_sha256": "084f14192a426ba342001c1e2f5c38a8e5cb429d5b252a2bd61f64e13f90e3b9",
+      "trace_patch_sha256": "cb7913c790ba3e4f4bde2dba5304106d6de81f00a0c1ba4d98421a2669eabf27",
+      "byte_relation": "trace_equals_one_LF_plus_prediction",
+      "class_with_declared_LF_rule": "explicit"
+    },
+    {
+      "instance_id": "django__django-14999",
+      "prediction_sha256": "814fd035aada98b33d6e7c0e742a7f970aef72a855dd7cf1f96ffdfad80a5f80",
+      "trace_patch_sha256": "7ab54380c7ed857348ebce8bd5a97179d3b476b118ae5315751bae8bdc78c7b0",
+      "byte_relation": "trace_equals_one_LF_plus_prediction",
+      "class_with_declared_LF_rule": "explicit"
+    },
+    {
+      "instance_id": "django__django-15104",
+      "prediction_sha256": "7e6138df945e7c2b4abdb280317fc28f4e86d76c321c5580505232e9d15b9aa3",
+      "trace_patch_sha256": "ce0c35f19c3bb801691056fa19528ea3db01b3f5b117c4eaa2189253180d2c61",
+      "byte_relation": "trace_equals_one_LF_plus_prediction",
+      "class_with_declared_LF_rule": "explicit"
+    },
+    {
+      "instance_id": "django__django-15277",
+      "prediction_sha256": "8512d6bc5111e1339c1786cd5be241461e34fd8ee13a81a04afa5257ef244aae",
+      "trace_patch_sha256": "1a8f9fc9c2ebe309a3b435042f33e1509a72f1eb8a22d474c3b5dff217c1f24c",
+      "byte_relation": "trace_equals_one_LF_plus_prediction",
+      "class_with_declared_LF_rule": "explicit"
+    },
+    {
+      "instance_id": "django__django-15368",
+      "prediction_sha256": "bdc53a324e05ba12575040b61b082d703e603858140288ef52bcb2498f661ad0",
+      "trace_patch_sha256": "1c804463af432488049e45cc8e5c9c3c550761b1a17d7dd793b02b8e6bc2f8d0",
+      "byte_relation": "different",
+      "class_with_declared_LF_rule": "unknown"
+    },
+    {
+      "instance_id": "django__django-15467",
+      "prediction_sha256": "cd617d8efff8ede2c53f40e1e6863a9ca601fa454d0fa84077c6817fe0b9e5d5",
+      "trace_patch_sha256": "3cc5b900e8d0b195ee806d3cd40a69e9a52d2a6db8b3395edbe6cd439a14645a",
+      "byte_relation": "trace_equals_one_LF_plus_prediction",
+      "class_with_declared_LF_rule": "explicit"
+    },
+    {
+      "instance_id": "django__django-15572",
+      "prediction_sha256": "98b1c3948a56a326f2a8e0cd5ae987897154275ca571cb6cc4f7121d67b82ac3",
+      "trace_patch_sha256": "348db6c037090a464a23d6f5e92d2650547743999c037e2e8c1330e87c9de790",
+      "byte_relation": "trace_equals_one_LF_plus_prediction",
+      "class_with_declared_LF_rule": "explicit"
+    },
+    {
+      "instance_id": "django__django-15731",
+      "prediction_sha256": "0b6827fe16f356ccc2879f0f71bc4c7329482613351424ec7c57f53f9467d916",
+      "trace_patch_sha256": "16388d52b4dbad1286a4f36b2e3a3982d1ccba4728e55fb3b3aad273bdbd9894",
+      "byte_relation": "trace_equals_one_LF_plus_prediction",
+      "class_with_declared_LF_rule": "explicit"
+    },
+    {
+      "instance_id": "django__django-15741",
+      "prediction_sha256": "ab7c79a15f16dcff1b3d55ab96214b99c526b5bb72dbb0a58eee91328ebb39ee",
+      "trace_patch_sha256": "e6242bb797c65372fe704a7f030ec274c76b54a8cc69a7703b54dc44efe342d0",
+      "byte_relation": "trace_equals_one_LF_plus_prediction",
+      "class_with_declared_LF_rule": "automatic"
+    },
+    {
+      "instance_id": "django__django-15814",
+      "prediction_sha256": "441df92d15fe08c4b95834c5debcb3ba0c54f8cc24ed2feb44ae63d44867cd14",
+      "trace_patch_sha256": "2beb8cbc0b82bd5029baf6d82dc8df5f25ddf7c71ed280498519aff690263050",
+      "byte_relation": "trace_equals_one_LF_plus_prediction",
+      "class_with_declared_LF_rule": "explicit"
+    },
+    {
+      "instance_id": "django__django-15987",
+      "prediction_sha256": "7291436b2d1c7b6223896f7b7625b082a8472e3697d9e3f8baf3f774145ff95e",
+      "trace_patch_sha256": "988208332f31690e38bae94c2829c9fe593cfad3efb34333fbceb531aef71732",
+      "byte_relation": "trace_equals_one_LF_plus_prediction",
+      "class_with_declared_LF_rule": "explicit"
+    },
+    {
+      "instance_id": "django__django-16116",
+      "prediction_sha256": "be1924ee3a7e16809cbbe04d33b8f9eef607b7ba39626ad778e43c6d317071a9",
+      "trace_patch_sha256": "02c2a70e51523b63cd25989e2e88d35d91658987ee939135dd19e1d3e857abfe",
+      "byte_relation": "trace_equals_one_LF_plus_prediction",
+      "class_with_declared_LF_rule": "explicit"
+    },
+    {
+      "instance_id": "django__django-16139",
+      "prediction_sha256": "f30d465e99c750113574a01864e5259fad5f1c0c35fb91fff69b74551f9b5dfa",
+      "trace_patch_sha256": "6e5981bb756e1b32b4c8cbb143f150efd4dbd55ea2e5677399275da1efb75fe0",
+      "byte_relation": "trace_equals_one_LF_plus_prediction",
+      "class_with_declared_LF_rule": "explicit"
+    },
+    {
+      "instance_id": "django__django-16255",
+      "prediction_sha256": "f9619b7a8eba68e5aa48a2e6e14ce48729a696d80c8cf447dc116013f5be19a0",
+      "trace_patch_sha256": "26109fc987eb1cb17acb338ace3db877e264a55194c3a27b68daade89172c83e",
+      "byte_relation": "trace_equals_one_LF_plus_prediction",
+      "class_with_declared_LF_rule": "explicit"
+    },
+    {
+      "instance_id": "django__django-16429",
+      "prediction_sha256": "8ef43030c9838965f2c49dd23181c8d52124fb21fbbb2849c357c644dcbc6b98",
+      "trace_patch_sha256": "041e7d66aba2e8406cec152967d6e142fae7b3d5c1ad52672785fcd23d3fc0ff",
+      "byte_relation": "trace_equals_one_LF_plus_prediction",
+      "class_with_declared_LF_rule": "explicit"
+    },
+    {
+      "instance_id": "django__django-16527",
+      "prediction_sha256": "551b8781079a495e6493c8ebf6412ba28337f66ea637768b6a2753e1915dc42b",
+      "trace_patch_sha256": "46decfb9b6a54deb64b0edbbd433c9d2e5ed13d0878a9ab7716dd7c0b16d4317",
+      "byte_relation": "trace_equals_one_LF_plus_prediction",
+      "class_with_declared_LF_rule": "explicit"
+    },
+    {
+      "instance_id": "django__django-16569",
+      "prediction_sha256": "6cbe609f9786266de1e87babe20420179e3642a23ea351c9bd1dfbfb1b771297",
+      "trace_patch_sha256": "64cddd4acbbccebcc18a3e85b5aff4f9a99b27c73a29749940232a8e2a15b93a",
+      "byte_relation": "trace_equals_one_LF_plus_prediction",
+      "class_with_declared_LF_rule": "explicit"
+    },
+    {
+      "instance_id": "django__django-16595",
+      "prediction_sha256": "bf35fc3b2cedec00916124144ad525aca559998bb8dfb40acffc7a1a80fc3c9f",
+      "trace_patch_sha256": "1053b780f3e655833bd58e5a0186a5c8bd98f1fe754cdd0ce825f57dde94e9df",
+      "byte_relation": "trace_equals_one_LF_plus_prediction",
+      "class_with_declared_LF_rule": "explicit"
+    },
+    {
+      "instance_id": "django__django-16612",
+      "prediction_sha256": "41c7c16fc7a476785197129142c420669481e1f56e4008de0f1ed3b1950afa95",
+      "trace_patch_sha256": "eca4f18fe1cf2e638efbbcaeb5dcd564c0daf3acaaeb3c34371a6278ae5b6e6c",
+      "byte_relation": "trace_equals_one_LF_plus_prediction",
+      "class_with_declared_LF_rule": "explicit"
+    },
+    {
+      "instance_id": "django__django-16662",
+      "prediction_sha256": "f42e1c1308d4f867a9710dc1ea61b23bc7d36c35f495d07d81b96a542dc589af",
+      "trace_patch_sha256": "e8d825ecd9f16ea03a47b477e3c6e38b640094b82956176d368f998e77a50ee3",
+      "byte_relation": "trace_equals_one_LF_plus_prediction",
+      "class_with_declared_LF_rule": "explicit"
+    },
+    {
+      "instance_id": "django__django-16801",
+      "prediction_sha256": "dabf8326ac6529f30f1ab9db3c5f00ea599dc8e72c748c7e08d51d4937241940",
+      "trace_patch_sha256": "85bd1844c76cc17ba4961bd01b773ca39cdb1a32f9e1ee6159ffe62cb34f56cf",
+      "byte_relation": "trace_equals_one_LF_plus_prediction",
+      "class_with_declared_LF_rule": "explicit"
+    },
+    {
+      "instance_id": "django__django-17029",
+      "prediction_sha256": "bc677062fd340c1c86cc2e0bcbe9326f7204a0a4a3475ba61bd36810469fce6a",
+      "trace_patch_sha256": "f56b734c8c9b14ab206333c8ecc8274c6e03c8dac5362e8d55573988ecce0aa5",
+      "byte_relation": "trace_equals_one_LF_plus_prediction",
+      "class_with_declared_LF_rule": "explicit"
+    },
+    {
+      "instance_id": "django__django-9296",
+      "prediction_sha256": "21c2188f4141c447c18ec67e35d0dfc3c87b64c409a23c41520f1cc835591bb8",
+      "trace_patch_sha256": "faadcb7020b8c6a8d02849c27638f644ba5d871d9a8c8ce62c7e6ef94d171d28",
+      "byte_relation": "trace_equals_one_LF_plus_prediction",
+      "class_with_declared_LF_rule": "explicit"
+    },
+    {
+      "instance_id": "matplotlib__matplotlib-22719",
+      "prediction_sha256": "733470b8598e183a7e81701611da1a35ec973b4ad9e6be4b02bdfe0deb1984a6",
+      "trace_patch_sha256": "10e61f39e10336b10559fb96424f9e0cf9d6ed56ebcb86d843c6344b9c480260",
+      "byte_relation": "trace_equals_one_LF_plus_prediction",
+      "class_with_declared_LF_rule": "explicit"
+    },
+    {
+      "instance_id": "matplotlib__matplotlib-22865",
+      "prediction_sha256": "eb2d26d1f118280fca07fcb3bf0e588695d548e8893470f5cd57a41404cac26b",
+      "trace_patch_sha256": "3f390502183c69ee9c78cd4312061f07dfbf24801b1465abac412c15883ecba7",
+      "byte_relation": "trace_equals_one_LF_plus_prediction",
+      "class_with_declared_LF_rule": "explicit"
+    },
+    {
+      "instance_id": "matplotlib__matplotlib-24026",
+      "prediction_sha256": "1e23834b3fd2cfbc6a789b1e718979de3c6fa87f6bfee7eef3c959ddb0fc9f34",
+      "trace_patch_sha256": "f27409aca1b48cd1bc1f7b763d4573c32d87326af0a7d880b0cec7a7296e47d9",
+      "byte_relation": "trace_equals_one_LF_plus_prediction",
+      "class_with_declared_LF_rule": "explicit"
+    },
+    {
+      "instance_id": "matplotlib__matplotlib-24570",
+      "prediction_sha256": "5853bb3ea4abf2559ffc7178c9a2c0fa233a2c61180d139c134b9380bad8f109",
+      "trace_patch_sha256": "b910367a5eb70690d1cd52e936c4dc54ab2aa5c054c3513c8dea7929a0ce041e",
+      "byte_relation": "trace_equals_one_LF_plus_prediction",
+      "class_with_declared_LF_rule": "explicit"
+    },
+    {
+      "instance_id": "matplotlib__matplotlib-24637",
+      "prediction_sha256": "d669f1b55f79c4bf1e3de4a97df9ff843f4d657fad4086fedf48bb84ab0f3ab7",
+      "trace_patch_sha256": "9b9e21b23721a65e2aa9dad7507a71003c704d1bdc585403193de49c85a63579",
+      "byte_relation": "trace_equals_one_LF_plus_prediction",
+      "class_with_declared_LF_rule": "explicit"
+    },
+    {
+      "instance_id": "matplotlib__matplotlib-25287",
+      "prediction_sha256": "2f6a98b867c7022d4739f3ec4cee1a7f77fb6a4faf8e3daa87ec086fb96067ba",
+      "trace_patch_sha256": "75f45da4f822d82a476212da71423a82f6f7be8d438bd5b230f6b4b4c4d0694d",
+      "byte_relation": "different",
+      "class_with_declared_LF_rule": "unknown"
+    },
+    {
+      "instance_id": "matplotlib__matplotlib-26113",
+      "prediction_sha256": "a70d65b30ec6f5d816e534c86ac4d7baae259b0265abcd7de29dc8f33dac3daf",
+      "trace_patch_sha256": "ab70063ac047f5f90bcaa435e423f6f82bc8f19cf47e7fab2766bc7d3e49ce8c",
+      "byte_relation": "trace_equals_one_LF_plus_prediction",
+      "class_with_declared_LF_rule": "explicit"
+    },
+    {
+      "instance_id": "psf__requests-1724",
+      "prediction_sha256": "7f14fb42dd2e7218b78c4a944e8668207bf2041e0e1431ce116e7f41b7fdc660",
+      "trace_patch_sha256": "44cdcb3241554a93768a6ab07e027ed95b96792cc3b3866a36ff864a80ec0783",
+      "byte_relation": "trace_equals_one_LF_plus_prediction",
+      "class_with_declared_LF_rule": "explicit"
+    },
+    {
+      "instance_id": "psf__requests-1766",
+      "prediction_sha256": "f278843b0b7ee16fba94d243f8436a0d577d2c6897a120ae9d821f066786dd12",
+      "trace_patch_sha256": "c01f316b7a67df8ffab07fa44a47d1a6ae1c02b7e7870372c3a59862006f7664",
+      "byte_relation": "trace_equals_one_LF_plus_prediction",
+      "class_with_declared_LF_rule": "explicit"
+    },
+    {
+      "instance_id": "psf__requests-1921",
+      "prediction_sha256": "2ce0fb51756a172ff7c4ced203bc32b938d787f5ab1541c8656be0ff70dfefa3",
+      "trace_patch_sha256": "8bd168d8e779bf03285bf5df87ede35069ac6107dbef6317abdcbbe0f1c482e7",
+      "byte_relation": "trace_equals_one_LF_plus_prediction",
+      "class_with_declared_LF_rule": "automatic"
+    },
+    {
+      "instance_id": "psf__requests-2317",
+      "prediction_sha256": "9a26b9e127fb2246717d4f40b6da54d593ae2b849d135971a26d8db79c73a38d",
+      "trace_patch_sha256": "484f5a32d8e458f0554d865a01de57f22ed65ca28922cdd8b832f8ac457b3e8f",
+      "byte_relation": "trace_equals_one_LF_plus_prediction",
+      "class_with_declared_LF_rule": "explicit"
+    },
+    {
+      "instance_id": "pydata__xarray-4075",
+      "prediction_sha256": "aaecc33ac2d23a945af1b7c682fc31155df6a591fe74edaa1cc08be4f2bb42db",
+      "trace_patch_sha256": "62a9b4ffb2f52712418a2dd3c23c90607041ddb1447fd21a42e010e7a4d99394",
+      "byte_relation": "trace_equals_one_LF_plus_prediction",
+      "class_with_declared_LF_rule": "explicit"
+    },
+    {
+      "instance_id": "pylint-dev__pylint-6903",
+      "prediction_sha256": "261512376d8974b76a5c5a6976f694e61d150539c98e1f118b3ba02e00c0d48f",
+      "trace_patch_sha256": "0935e3f989ee8be5892acd69178a3f8ae97d8593d2e8715fe827346d4ebf2ca4",
+      "byte_relation": "trace_equals_one_LF_plus_prediction",
+      "class_with_declared_LF_rule": "explicit"
+    },
+    {
+      "instance_id": "pylint-dev__pylint-7277",
+      "prediction_sha256": "771a9babdad241cc5fab4c9b51fd0d8d879516f28de6838a98ba0874e0ae3ce3",
+      "trace_patch_sha256": "651c95b584a79177b036a2a49ad190d61079003f74296f64afca5ed3e8ecab5e",
+      "byte_relation": "trace_equals_one_LF_plus_prediction",
+      "class_with_declared_LF_rule": "explicit"
+    },
+    {
+      "instance_id": "pytest-dev__pytest-5809",
+      "prediction_sha256": "82f7a2cecf06bb50a79120584ae083240b215e5e7fd40ff190ab52b0c1632d77",
+      "trace_patch_sha256": "55b125e9c326d7b8052022e0c68957ab7d5dffa66f5897465fd883fc1e41234e",
+      "byte_relation": "trace_equals_one_LF_plus_prediction",
+      "class_with_declared_LF_rule": "explicit"
+    },
+    {
+      "instance_id": "pytest-dev__pytest-6202",
+      "prediction_sha256": "8d4eb69476716c9ae4f68d84e8349188b3d3e36e9335c6630c1129604c4bf060",
+      "trace_patch_sha256": "ca89fa9fda2329507e0f189cd2ec560d3d3ebad558a031cabb8b1b0e0c918c8a",
+      "byte_relation": "trace_equals_one_LF_plus_prediction",
+      "class_with_declared_LF_rule": "explicit"
+    },
+    {
+      "instance_id": "pytest-dev__pytest-7205",
+      "prediction_sha256": "0b6db3215b508ab745cc4bb16ad66dc33efd2cca8ddbbb4bdaf94ebf7af12907",
+      "trace_patch_sha256": "4b44e581d34739af50a0fec8983680f1e741834d0d1c6cb12c4e93f8e3a2c707",
+      "byte_relation": "trace_equals_one_LF_plus_prediction",
+      "class_with_declared_LF_rule": "explicit"
+    },
+    {
+      "instance_id": "pytest-dev__pytest-7982",
+      "prediction_sha256": "cddf985605d7427416659d9b0f306958ddf3daec898e40a2ae70498b47fbe38b",
+      "trace_patch_sha256": "e672b67e9cc0f26aaae9ff64209074d6d44a0024ebce5475de4e363b62e9248b",
+      "byte_relation": "different",
+      "class_with_declared_LF_rule": "unknown"
+    },
+    {
+      "instance_id": "pytest-dev__pytest-8399",
+      "prediction_sha256": "36f6ec3d7cc5e546bf272d551f476e42b4e26d15c37b880ccfea5bdb249c542a",
+      "trace_patch_sha256": "4a4d7ab03bf97ed295fb522d4748fadf5cf8daa46fd8f30389982a192388eb6e",
+      "byte_relation": "trace_equals_one_LF_plus_prediction",
+      "class_with_declared_LF_rule": "explicit"
+    },
+    {
+      "instance_id": "scikit-learn__scikit-learn-10297",
+      "prediction_sha256": "036cf68cc6840612333d8112653f9e3707c86db79568fc768e0a22625fdafd17",
+      "trace_patch_sha256": "fbceb393a8c174078d88c9498417cd7bdf6cf4abe03b438a7e3ca3759c79a8ff",
+      "byte_relation": "trace_equals_one_LF_plus_prediction",
+      "class_with_declared_LF_rule": "explicit"
+    },
+    {
+      "instance_id": "scikit-learn__scikit-learn-10844",
+      "prediction_sha256": "bf18688ca940a1fd09c8800c3e2bc84808202bda2431b9dff23458a3a8245cc6",
+      "trace_patch_sha256": "d1d559170bf304ed25d605d0623f008383a678827402eb001a11cb2d4cbe0acc",
+      "byte_relation": "trace_equals_one_LF_plus_prediction",
+      "class_with_declared_LF_rule": "explicit"
+    },
+    {
+      "instance_id": "scikit-learn__scikit-learn-11310",
+      "prediction_sha256": "5fa84b3c4eb5172315b9555ddf67f23619411b11e0e4d72bf88d91fb246e3335",
+      "trace_patch_sha256": "f5f63d99ac816c2da5255b27f6ba96d5568d59150fa4a5a9aeca3cd3946bb497",
+      "byte_relation": "trace_equals_one_LF_plus_prediction",
+      "class_with_declared_LF_rule": "explicit"
+    },
+    {
+      "instance_id": "scikit-learn__scikit-learn-11578",
+      "prediction_sha256": "ba61e302ad0bdd53144255bdce3f13ba04d116308881f01fade21449da0fed52",
+      "trace_patch_sha256": "c5841c2bb193ae8b9eac8557fcdd6d24fd4c6cc87aae51c640bd1adf34b28a92",
+      "byte_relation": "trace_equals_one_LF_plus_prediction",
+      "class_with_declared_LF_rule": "explicit"
+    },
+    {
+      "instance_id": "scikit-learn__scikit-learn-12585",
+      "prediction_sha256": "523c6ff9c83223e18894f590f8e12d476dffb7582dd2c1d68ca8fdfb659e8547",
+      "trace_patch_sha256": "991412f7206366aadea4cf596fc5bd2dfa3c3a8b7552e0369d899cc214b409c5",
+      "byte_relation": "trace_equals_one_LF_plus_prediction",
+      "class_with_declared_LF_rule": "explicit"
+    },
+    {
+      "instance_id": "scikit-learn__scikit-learn-14053",
+      "prediction_sha256": "e4347a912fa88c12226a2a86beb8767435c5019be235cd7764435952a8ee8dfd",
+      "trace_patch_sha256": "a608f624f5b2157ce883388b0725b04ff9b9df1e265e2d89049f40bfc2cb4f03",
+      "byte_relation": "trace_equals_one_LF_plus_prediction",
+      "class_with_declared_LF_rule": "explicit"
+    },
+    {
+      "instance_id": "scikit-learn__scikit-learn-14141",
+      "prediction_sha256": "7ee3180ec1d76149903963def8ed83c0185d95f89e3693762619fe60a8188309",
+      "trace_patch_sha256": "fba8dd9430ea419cdd663aaea817e861a47b39db6ac3fa739f63d9084df1ec09",
+      "byte_relation": "trace_equals_one_LF_plus_prediction",
+      "class_with_declared_LF_rule": "explicit"
+    },
+    {
+      "instance_id": "scikit-learn__scikit-learn-14496",
+      "prediction_sha256": "62b43d98a686d9d99ac8fbe981e1bdb75fed8f74960edff3921529d5bebfffe0",
+      "trace_patch_sha256": "40f7fca853a3a9846d21a5a68511659e099deaf79a0520ece9aae0b5274bed7e",
+      "byte_relation": "trace_equals_one_LF_plus_prediction",
+      "class_with_declared_LF_rule": "explicit"
+    },
+    {
+      "instance_id": "scikit-learn__scikit-learn-14894",
+      "prediction_sha256": "2aa78cebdbe206136d11e4b4043af2ebf1c5bdb5736856cebb14b83935ee12bc",
+      "trace_patch_sha256": "ad2c759aef4fdfcd6a93b57b2551573861abeef6bff918f2680c76af0aaa0bf7",
+      "byte_relation": "trace_equals_one_LF_plus_prediction",
+      "class_with_declared_LF_rule": "explicit"
+    },
+    {
+      "instance_id": "scikit-learn__scikit-learn-25931",
+      "prediction_sha256": "5e243b38706987a83bf0f98d70cd90c4a6aa38cf3094e65f70d55e23846edee7",
+      "trace_patch_sha256": "8f99d8245453693aff036a9c7c0da7e606c19d588ceeb748297ab35beec01146",
+      "byte_relation": "trace_equals_one_LF_plus_prediction",
+      "class_with_declared_LF_rule": "explicit"
+    },
+    {
+      "instance_id": "sphinx-doc__sphinx-10466",
+      "prediction_sha256": "1593fc4d1be51ecee37ca1a402d64c4a3d3aff437a8153ece8dc9f74dcea5d81",
+      "trace_patch_sha256": "796748d6c7d9d7859c5a3cfc124a0a9efac3c64b8271f88244bab7ef1a48e6c4",
+      "byte_relation": "different",
+      "class_with_declared_LF_rule": "unknown"
+    },
+    {
+      "instance_id": "sphinx-doc__sphinx-7889",
+      "prediction_sha256": "4e1677785e106a8461b1f1ce89c2ba70dc22dee7a5533a37bdb861453bc755c9",
+      "trace_patch_sha256": "9989ad43b64c258413f117dc533b6f18e7857c27846686e7f7638abb371d0e5f",
+      "byte_relation": "different",
+      "class_with_declared_LF_rule": "unknown"
+    },
+    {
+      "instance_id": "sphinx-doc__sphinx-9320",
+      "prediction_sha256": "4862f8dcd9deb51fee09218ba13a611536fc8513ec99cebc5ed0e5d6b4ed8bc9",
+      "trace_patch_sha256": "3c16ca4d369d95107ca15f0b6b8e132df1195dc25ada6d6ec4132a150b94b956",
+      "byte_relation": "different",
+      "class_with_declared_LF_rule": "unknown"
+    },
+    {
+      "instance_id": "sphinx-doc__sphinx-9711",
+      "prediction_sha256": "92c6bc8f41426651a036fafe754f6db2a1883a04ff5b1d37bd041397ec4bbbf5",
+      "trace_patch_sha256": "3ecfd22d24a35f3021759b9786bc17471e5fa0ff08466bad6046bf586de6ea7e",
+      "byte_relation": "different",
+      "class_with_declared_LF_rule": "unknown"
+    },
+    {
+      "instance_id": "sympy__sympy-13480",
+      "prediction_sha256": "a7587611eb9b53e82e613d59a81ad74e29753b5a7c0cda0c69e72f4942130cb3",
+      "trace_patch_sha256": "e28368bd944cecf70b58de8d3b5df2435504104f1fb84b74f6b213bf0db2c2b3",
+      "byte_relation": "trace_equals_one_LF_plus_prediction",
+      "class_with_declared_LF_rule": "explicit"
+    },
+    {
+      "instance_id": "sympy__sympy-13647",
+      "prediction_sha256": "58ba4c387c50989bb91b6235c17abcb6c003d24469bd0ad3b8c6e9667e527557",
+      "trace_patch_sha256": "80e60072d8dfc889814bc41961afc544c4ef6d59a2e3bf3414d36596edec5745",
+      "byte_relation": "trace_equals_one_LF_plus_prediction",
+      "class_with_declared_LF_rule": "explicit"
+    },
+    {
+      "instance_id": "sympy__sympy-13798",
+      "prediction_sha256": "3d7296ae7ff19855adbf30532617e14835e89a99410ec0c8a9eb6ad3e43e8aa8",
+      "trace_patch_sha256": "0ece90e175a29da7324a10fd76d030ead4a80db6aca5925f5f7affafe6b679c5",
+      "byte_relation": "trace_equals_one_LF_plus_prediction",
+      "class_with_declared_LF_rule": "explicit"
+    },
+    {
+      "instance_id": "sympy__sympy-14531",
+      "prediction_sha256": "ebdb5149745f8a9f9348fe0db164890da7e1d8e8d5b6b169901eca22d81f9f11",
+      "trace_patch_sha256": "6f84b7b9c2894138b07ee1851cc847448867cfce8b546df3d5417ddf4c1102b7",
+      "byte_relation": "trace_equals_one_LF_plus_prediction",
+      "class_with_declared_LF_rule": "explicit"
+    },
+    {
+      "instance_id": "sympy__sympy-14711",
+      "prediction_sha256": "ab9ff0d282a7156c8f090798f48d123bba8774782d5bb2cae98985e574de9a8f",
+      "trace_patch_sha256": "05498c97d00267efa2321c539e040415332125cd8802f3d234ee0fcf16e7ed10",
+      "byte_relation": "trace_equals_one_LF_plus_prediction",
+      "class_with_declared_LF_rule": "explicit"
+    },
+    {
+      "instance_id": "sympy__sympy-16450",
+      "prediction_sha256": "54a8e164b46c698d1379e75cfef9b7d5af220d8cc687f8071e5ceda7f6c23cd6",
+      "trace_patch_sha256": "ae280375a9c1d7e17024acfadf809d5800baaa25e0c0f64e840e77c7eb2b15f3",
+      "byte_relation": "trace_equals_one_LF_plus_prediction",
+      "class_with_declared_LF_rule": "explicit"
+    },
+    {
+      "instance_id": "sympy__sympy-16766",
+      "prediction_sha256": "ac1418d0feebe69b805dbe9c092000ad4c3fd71e2587878c8fcf47384800764e",
+      "trace_patch_sha256": "44567d8d96822a02fa44a8af69ef20c25b478d180f2d65a48cb53fc2599e3021",
+      "byte_relation": "trace_equals_one_LF_plus_prediction",
+      "class_with_declared_LF_rule": "automatic"
+    },
+    {
+      "instance_id": "sympy__sympy-22914",
+      "prediction_sha256": "93e214ca8d189452258863c7c6c3cdfff6454e84befa1a3da56a7eefdd579d5a",
+      "trace_patch_sha256": "fb7e5312ba96942f93794680bbcc8e19916a59a49c1a7a4d2751a55089b46d5c",
+      "byte_relation": "trace_equals_one_LF_plus_prediction",
+      "class_with_declared_LF_rule": "automatic"
+    },
+    {
+      "instance_id": "sympy__sympy-23262",
+      "prediction_sha256": "d82f135a6786f0b0fcf7755df080309049a2d8fdb5e79fd6c74486fa54747961",
+      "trace_patch_sha256": "62a56c5091491ff6f1badccc32a93e93ffc24e7326ccae575eadd2aa0a1f9794",
+      "byte_relation": "trace_equals_one_LF_plus_prediction",
+      "class_with_declared_LF_rule": "explicit"
+    },
+    {
+      "instance_id": "sympy__sympy-23950",
+      "prediction_sha256": "8f9bff65d5e7a2a03b8d2595e4872e2ac85aee4e3a96ca09bca3300705651c49",
+      "trace_patch_sha256": "ebd576a05b0341fcd1a1e0fdc0f02cf97b144934cbef43508b564ab3d365a1f8",
+      "byte_relation": "trace_equals_one_LF_plus_prediction",
+      "class_with_declared_LF_rule": "explicit"
+    },
+    {
+      "instance_id": "sympy__sympy-24213",
+      "prediction_sha256": "3d1868e07bf621c8f12c866ac4525482181eb10e40c89547389b211786bacdcd",
+      "trace_patch_sha256": "9278ebe55aab78927a6f93b855062803fb6526c0449f0d2a5a2665f0e745a6ef",
+      "byte_relation": "trace_equals_one_LF_plus_prediction",
+      "class_with_declared_LF_rule": "explicit"
+    },
+    {
+      "instance_id": "sympy__sympy-24443",
+      "prediction_sha256": "e4437d07a39b6329263af5b45e3d3dad928be2d96c45aa25d8b591b79abd74e2",
+      "trace_patch_sha256": "003eab231f3211963f80969129ba5b73ef053b2c4c13da0f57745b3cc80cb7cb",
+      "byte_relation": "trace_equals_one_LF_plus_prediction",
+      "class_with_declared_LF_rule": "explicit"
+    },
+    {
+      "instance_id": "sympy__sympy-24539",
+      "prediction_sha256": "335078e46f18d9ead5fb5d2714fa16438b853e048113e2fc75de52bb87f17d77",
+      "trace_patch_sha256": "3a4c87b320f2f7a0226c82e592f1ba50bd73351fe5190fd852b5c3e85c07fa59",
+      "byte_relation": "trace_equals_one_LF_plus_prediction",
+      "class_with_declared_LF_rule": "explicit"
+    }
+  ]
+}
