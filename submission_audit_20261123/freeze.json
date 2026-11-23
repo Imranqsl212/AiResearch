@@ -1,0 +1,17 @@
+{
+  "local_freeze_utc": "2026-11-23T16:16:15.052821+00:00",
+  "protocol_sha256": "6d6a0a284158066007386aa44b76862a9a964aeb9f7993659b1d1c232b68f17d",
+  "prior_selection_sha256": "7b8e1869d1101c0851935686c20e1003f78922bf75840cab17c702d4aa9e23e2",
+  "excluded_ids": [
+    "astropy__astropy-8872",
+    "django__django-11880",
+    "django__django-11964",
+    "django__django-13406",
+    "django__django-13449",
+    "django__django-15569",
+    "django__django-16899",
+    "matplotlib__matplotlib-25479",
+    "sphinx-doc__sphinx-8035",
+    "sphinx-doc__sphinx-9281"
+  ]
+}

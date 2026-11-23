@@ -1,0 +1,14 @@
+{
+  "archive_bytes": 3337234,
+  "archive_members": 116,
+  "archive_sha256": "90d9cf11a5ed0e9c92328d187b908482234c2a6f70d23dacfbd1beaac9a48f52",
+  "git_visibility": "not-attested-by-bundle",
+  "historical_data_public_git_revision": "37074c198237ade67eb76921333b2835d329c863",
+  "journal_submission_approved": false,
+  "journal_supplement_approved": false,
+  "manifest_sha256": "dac5e10d8c262e93ac807797fccd01dee7ed7db2ac714c7b5dc4a95a8e9361bc",
+  "related_data_public_git_revision": null,
+  "source_file_count": 114,
+  "status": "REVIEW_ONLY",
+  "version": "paper-author-review-manuscript-20.0.0"
+}

@@ -1,0 +1,32 @@
+{
+  "matched_plan_sha256": "367312eef606c492b235b9dc69b376e2a28b3e870eebf1c261a6b28459c3c863",
+  "rows_csv_sha256": "7ef67c8c6e51a59bf9b5ddcb362b29a8c46182df8319fcc581e4e4b16416408a",
+  "held_out": {
+    "same_issue": {
+      "pairs": 58,
+      "both_known": 0,
+      "unknown": 58,
+      "opposite": 0,
+      "opposite_examples": [],
+      "cross_tab": {
+        "automatic|unknown": 10,
+        "explicit|unknown": 39,
+        "unknown|unknown": 9
+      }
+    },
+    "same_issue_and_patch": {
+      "pairs": 0,
+      "both_known": 0,
+      "unknown": 0,
+      "opposite": 0,
+      "opposite_examples": [],
+      "cross_tab": {}
+    }
+  },
+  "independently_checked_against_sources": {
+    "automatic": 14,
+    "explicit": 53,
+    "missing_trace_rows": 12,
+    "unknown": 112
+  }
+}

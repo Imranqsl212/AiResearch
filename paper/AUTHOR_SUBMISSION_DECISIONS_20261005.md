@@ -1,6 +1,6 @@
 # Author submission decision record — pending
 
-**Review copy refreshed:** 4 November 2026.
+**Review copy refreshed:** 23 November 2026 (v20).
 
 This record identifies the exact exploratory manuscript files for **local author
 review**. It does not approve journal submission, a journal data deposit, or the scientific
@@ -12,11 +12,11 @@ separately. Do not infer their absence from a missing response.
 
 | Artifact | Current SHA-256 |
 | --- | --- |
-| [`final.md`](final.md) | `58b71372f2742392f7e7748b45bee7053db6b124b6852090555fc19fc2348196` |
-| [Identified `full_paper.pdf`](submission/full_paper.pdf) | `668317261aab4f95d5f748f70bb5b3a4f83ceaeee8a61d49b52540975334cb2b` |
-| [Identified `full_paper.docx`](submission/full_paper.docx) | `a4e828577deed98f165c2c0048cd6413bb638cd9db892ff9c4e6af09ae18728f` |
-| [Anonymous `full_paper_anonymous.pdf`](submission/full_paper_anonymous.pdf) | `92a7141a7f0896088d1514e706d3cb21cb9ef341dc807a203f77acbbd3e05532` |
-| [Anonymous `full_paper_anonymous.docx`](submission/full_paper_anonymous.docx) | `670ae0e0c7852e4a0903a1802089b32fa2f50000752c5e6f562a0c95311dd83d` |
+| [`final.md`](final.md) | `87a0f4a5254f56a825f50509f1972c945373167eefdf38c8972be904f547caf3` |
+| [Identified `full_paper.pdf`](submission/full_paper.pdf) | `5ff3c3a33f42bf2a283fd379acbe3124bb9a0c3979b615fdb8d36a9fd65bc5b3` |
+| [Identified `full_paper.docx`](submission/full_paper.docx) | `52c863eb1f3ec317e39d24cb3ff7e5a6ff93d44d6d1868dfdb9bbb0f2d16ed44` |
+| [Anonymous `full_paper_anonymous.pdf`](submission/full_paper_anonymous.pdf) | `77e774f203e9cc578b3e907dde285447d35d2b2499429f546d74f4239bc4f74d` |
+| [Anonymous `full_paper_anonymous.docx`](submission/full_paper_anonymous.docx) | `7e4e928d36c03a8aa1467ae94f0f63d8b9c072b65b8aae1a9b0984fdb1cfc5fc` |
 | [`results.json`](artifacts/results.json) | `3d7ef25bfa07ef25ae20cea8d6ee34b59c5d9158e20c2e9b7013bfbd5a3cb229` |
 | [Working author-year conversion](venue_author_year_draft.md) | `d56b469d919986c7da430c7d003121776e37c86b06bdac5f7f69f480011791dd` |
 | [Author-year `venue_author_year_identified.pdf`](submission/venue_author_year_identified.pdf) | `eebb1832db3bc60ebfd342e31483982909c1aac17729abb9a4f48f4a17c0e1b8` |
@@ -86,16 +86,29 @@ separately. Do not infer their absence from a missing response.
 | [stop_contract_control_20261104.py](../analysis/stop_contract_control_20261104.py) | `3e47f4555fd0f71981410da6b20040ab3a6695ab1e312959e2123f0212e06d8b` |
 | [test_stop_contract_control_20261104.py](../tests/test_stop_contract_control_20261104.py) | `6aa72ae447a0db30a5f34eda64f13c57194d7c3a8edc323167e5a1bca75e4178` |
 | [test_submission_rendering.py](test_submission_rendering.py) | `13f2534238b93f64c6791fcdcc49833c105e95a10e55d708746e31362cff7392` |
+| [submission_audit_20261123/README.md](../submission_audit_20261123/README.md) | `a07dc85124519370dda40790399ee23322f6e8b2c710c4a2468ce6beed0aa41e` |
+| [submission_audit_20261123/summary.json](../submission_audit_20261123/summary.json) | `d399db8568a82e4e04dbdadb8f2dc158cec236ce69fed68485158f4e58f33167` |
+| [submission_audit_20261123/openhands/summary.json](../submission_audit_20261123/openhands/summary.json) | `d2e2a45b7df60e39f11ec9d43c5baca6cf46bd82df717d215088e53f12e2c23e` |
+| [submission_audit_20261123/projection/results.json](../submission_audit_20261123/projection/results.json) | `701f17ff3004276ca0a7dd220482c41f812eb8ed1f5e3f612afe913f8c567ff2` |
+| [submission_audit_20261123/projection/execution_receipt.json](../submission_audit_20261123/projection/execution_receipt.json) | `5e1f24c4975e3f812e7a658aa653f362925c01d3da7ef9931a9500d698f3ac40` |
+| [submission_audit_20261123/projection/REPORT.md](../submission_audit_20261123/projection/REPORT.md) | `570ca5a19cee78c56fba4b0e841c11f13e8c3dab3b73f4e88960578757cead7e` |
+| [external_audit_20261122/summary.json](../external_audit_20261122/summary.json) | `8a1d960fa06f4c356f6c406dc3be96384deef50d9504b3ee1714721e5fd15fe5` |
 
-The identified and anonymous PDFs each have 18 A4 pages locally with Arial; a fresh-process Bitstream Vera render has 19 pages. The remote Linux recheck for this V19 revision is pending. PDF text,
-including captions and tables, is 12 pt;
-the DOCX styles are 12 pt with single line spacing. The abstract has 204 space-delimited words
-and the article contains five figures and six tables. The identified and
-anonymous PDF/DOCX pairs were regenerated from the source on this workspace.
-The anonymous files have blank author metadata and automated scans found no
-author name, contact, location, study-commit marker, or linkable public data
-revision in their content. Word
-page count and final venue compliance must be checked in the journal's editor.
+The identified and anonymous PDFs each have 18 A4 pages in the current local
+render. The abstract has 233 space-delimited words, excluding keywords; the
+article contains five figures and six tables. The current anonymous PDF/DOCX
+pair passed the automated author-identifier and metadata screen. The v20
+remote Linux recheck remains pending. Word page count and final venue
+compliance must be checked in the journal's editor.
+
+The [v20 review bundle](AUTHOR_REVIEW_BUNDLE_V20_20261123.md) adds seven
+curated discovery and follow-up files to the earlier filtered source scope.
+These bind the main SWE-agent census, OpenHands coverage and the paired
+projection result described in the current manuscript. The complete
+[follow-up reproduction package](../submission_audit_20261123/README.md)
+contains additional scripts, protocols, per-issue records and verification
+instructions; those are not all included in this filtered manuscript bundle.
+The older author-year adaptation remains a separately labeled working draft.
 
 These hashes identify this review draft only. Recompute them and repeat
 scientific review after any manuscript, analysis, or rendering change. The

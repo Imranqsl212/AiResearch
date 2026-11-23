@@ -1,0 +1,16 @@
+{
+  "executed_utc": "2026-11-23T16:22:14.995035+00:00",
+  "protocol_sha256": "a14831c9c981f164a597799a3eb54fb03dc7aabfa0b7fa7b1471ab948b9abc93",
+  "script_sha256": "f344321747902200c8ace1ee591556b051472dcb7a6e2169cdb6783492d88b07",
+  "result_sha256": "701f17ff3004276ca0a7dd220482c41f812eb8ed1f5e3f612afe913f8c567ff2",
+  "jq_version": "jq-1.8.2",
+  "python_version": "3.14.7",
+  "offline": true,
+  "upstream_programs_executed": [],
+  "executed_projection": [
+    "jq",
+    "-r",
+    ".messages"
+  ],
+  "agent_or_trajectory_commands_executed": []
+}

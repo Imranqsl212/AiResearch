@@ -1,0 +1,1354 @@
+{
+  "schema_version": "projection-result-v1",
+  "protocol_sha256": "a14831c9c981f164a597799a3eb54fb03dc7aabfa0b7fa7b1471ab948b9abc93",
+  "provenance_sha256": "86cff26506d858c6adf75bc1e5791f3918caf5c4f6d45650337af3da15ad7f3c",
+  "upstream_code_commit": "a86275e288087bc7833bc79b0b691ed2ec223205",
+  "projection_expression": ".messages",
+  "counts": {
+    "archived_inputs": 10,
+    "simulated_completions": 20,
+    "executed_agent_runs": 0,
+    "projection_collisions": 10,
+    "extended_view_collisions": 10,
+    "receipt_splits": 10,
+    "missing_inputs": 0,
+    "synthetic_records_with_observed_termination_cause": 0
+  },
+  "balanced_construction_bound": {
+    "artifact_only_full_coverage_accuracy": 0.5,
+    "deterministic_errors_per_20": 10,
+    "scope": "mathematical bound for these equally weighted simulated opposite-label pairs only"
+  },
+  "cases": [
+    {
+      "instance_id": "django__django-15569",
+      "input_messages_sha256": "e3c298c568ca8f84f8bfc2767295dd2daf11fbe17de9e95b0b8c07375191555e",
+      "input_messages_bytes": 58008,
+      "message_count": 14,
+      "original_patch_sha256": "80eb53df7d7ff50d9963b825c45824a6e995b6d07c04fdf92b2eb6fd44135f52",
+      "original_patch_bytes": 489,
+      "original_published_resolved": true,
+      "exact_input_bytes_held_fixed": true,
+      "projection_collision": true,
+      "extended_view_collision": true,
+      "receipt_split": true,
+      "projected_bytes_equal_archived_export": true,
+      "actual_termination_cause": null,
+      "variants": {
+        "finish": {
+          "simulated_response": {
+            "id": "simulated-django__django-15569",
+            "object": "chat.completion",
+            "created": 0,
+            "model": "synthetic-projection-control",
+            "choices": [
+              {
+                "index": 0,
+                "finish_reason": "tool_calls",
+                "message": {
+                  "role": "assistant",
+                  "content": "",
+                  "tool_calls": [
+                    {
+                      "id": "simulated_call_0",
+                      "type": "function",
+                      "function": {
+                        "name": "finish",
+                        "arguments": "{}"
+                      }
+                    }
+                  ]
+                }
+              }
+            ],
+            "usage": {
+              "prompt_tokens": 0,
+              "completion_tokens": 0,
+              "total_tokens": 0
+            }
+          },
+          "logger_envelope_sha256": "cd5ef2c22b4eeacb37a7012169a465bf8ab6a9c12c8adc649d1b1a1423a37ca3",
+          "export_sha256": "e3c298c568ca8f84f8bfc2767295dd2daf11fbe17de9e95b0b8c07375191555e",
+          "extended_observable_view_sha256": "851a39169a01f10498c9e1bb0af9b700efeaee0baf9b6cc8ae913da681575597",
+          "receipt": {
+            "schema": "proposed-final-request-receipt-v1",
+            "provenance": "explicitly_simulated_completion",
+            "instance_id": "django__django-15569",
+            "input_messages_sha256": "e3c298c568ca8f84f8bfc2767295dd2daf11fbe17de9e95b0b8c07375191555e",
+            "projected_messages_sha256": "e3c298c568ca8f84f8bfc2767295dd2daf11fbe17de9e95b0b8c07375191555e",
+            "original_patch_sha256": "80eb53df7d7ff50d9963b825c45824a6e995b6d07c04fdf92b2eb6fd44135f52",
+            "original_published_resolved": true,
+            "completion_sha256": "e605b09b9ca239b0352e526111795d430ed7f44ee5b77e3d4ded9727c8565822",
+            "model_request": {
+              "tool_call_id": "simulated_call_0",
+              "tool_name": "finish",
+              "finish_requested": true
+            },
+            "termination_evidence": {
+              "controller_acknowledged": null,
+              "causal_stop_actor": null,
+              "termination_cause": null,
+              "terminal_event_id": null
+            }
+          },
+          "receipt_sha256": "04eb4f2147e614217209694784f55f8116050b4c05e3c14dade8cea9ef490cac"
+        },
+        "continue": {
+          "simulated_response": {
+            "id": "simulated-django__django-15569",
+            "object": "chat.completion",
+            "created": 0,
+            "model": "synthetic-projection-control",
+            "choices": [
+              {
+                "index": 0,
+                "finish_reason": "tool_calls",
+                "message": {
+                  "role": "assistant",
+                  "content": "",
+                  "tool_calls": [
+                    {
+                      "id": "simulated_call_0",
+                      "type": "function",
+                      "function": {
+                        "name": "execute_bash",
+                        "arguments": "{\"command\":\"pwd\"}"
+                      }
+                    }
+                  ]
+                }
+              }
+            ],
+            "usage": {
+              "prompt_tokens": 0,
+              "completion_tokens": 0,
+              "total_tokens": 0
+            }
+          },
+          "logger_envelope_sha256": "8bc3961399deb253b4fb288a855ffede28443d6dc89b47c71565e2ee02fe1332",
+          "export_sha256": "e3c298c568ca8f84f8bfc2767295dd2daf11fbe17de9e95b0b8c07375191555e",
+          "extended_observable_view_sha256": "851a39169a01f10498c9e1bb0af9b700efeaee0baf9b6cc8ae913da681575597",
+          "receipt": {
+            "schema": "proposed-final-request-receipt-v1",
+            "provenance": "explicitly_simulated_completion",
+            "instance_id": "django__django-15569",
+            "input_messages_sha256": "e3c298c568ca8f84f8bfc2767295dd2daf11fbe17de9e95b0b8c07375191555e",
+            "projected_messages_sha256": "e3c298c568ca8f84f8bfc2767295dd2daf11fbe17de9e95b0b8c07375191555e",
+            "original_patch_sha256": "80eb53df7d7ff50d9963b825c45824a6e995b6d07c04fdf92b2eb6fd44135f52",
+            "original_published_resolved": true,
+            "completion_sha256": "47866e089e2af97dc7a1bd14031b3ad9fc4abbdf8a126a02935b255aa351c078",
+            "model_request": {
+              "tool_call_id": "simulated_call_0",
+              "tool_name": "execute_bash",
+              "finish_requested": false
+            },
+            "termination_evidence": {
+              "controller_acknowledged": null,
+              "causal_stop_actor": null,
+              "termination_cause": null,
+              "terminal_event_id": null
+            }
+          },
+          "receipt_sha256": "ec4c687bf6c7f1773d42b306a8b8129a57a4be5d5211a5e4342dd038737efb23"
+        }
+      }
+    },
+    {
+      "instance_id": "matplotlib__matplotlib-25479",
+      "input_messages_sha256": "d2d5c57a515c4e16d709f058d1e71161b9dab539aa788fe50ec1869c8aadac48",
+      "input_messages_bytes": 97814,
+      "message_count": 32,
+      "original_patch_sha256": "e124d24577b56d6bc8c6437b9f0656210ec178ab0409ac5dc25ee7460980a600",
+      "original_patch_bytes": 3713,
+      "original_published_resolved": false,
+      "exact_input_bytes_held_fixed": true,
+      "projection_collision": true,
+      "extended_view_collision": true,
+      "receipt_split": true,
+      "projected_bytes_equal_archived_export": true,
+      "actual_termination_cause": null,
+      "variants": {
+        "finish": {
+          "simulated_response": {
+            "id": "simulated-matplotlib__matplotlib-25479",
+            "object": "chat.completion",
+            "created": 0,
+            "model": "synthetic-projection-control",
+            "choices": [
+              {
+                "index": 0,
+                "finish_reason": "tool_calls",
+                "message": {
+                  "role": "assistant",
+                  "content": "",
+                  "tool_calls": [
+                    {
+                      "id": "simulated_call_0",
+                      "type": "function",
+                      "function": {
+                        "name": "finish",
+                        "arguments": "{}"
+                      }
+                    }
+                  ]
+                }
+              }
+            ],
+            "usage": {
+              "prompt_tokens": 0,
+              "completion_tokens": 0,
+              "total_tokens": 0
+            }
+          },
+          "logger_envelope_sha256": "9708ed6d109066793abcf519d6c5d6cbb1ff1b0620b687c6f831936434075f38",
+          "export_sha256": "d2d5c57a515c4e16d709f058d1e71161b9dab539aa788fe50ec1869c8aadac48",
+          "extended_observable_view_sha256": "55fa9a502c37b9fddb2a955180975af7648cde28c76bdf8cecfaa8aea422e325",
+          "receipt": {
+            "schema": "proposed-final-request-receipt-v1",
+            "provenance": "explicitly_simulated_completion",
+            "instance_id": "matplotlib__matplotlib-25479",
+            "input_messages_sha256": "d2d5c57a515c4e16d709f058d1e71161b9dab539aa788fe50ec1869c8aadac48",
+            "projected_messages_sha256": "d2d5c57a515c4e16d709f058d1e71161b9dab539aa788fe50ec1869c8aadac48",
+            "original_patch_sha256": "e124d24577b56d6bc8c6437b9f0656210ec178ab0409ac5dc25ee7460980a600",
+            "original_published_resolved": false,
+            "completion_sha256": "232864f12125639114d97e3fedb07eb83240447a0dc5cb694daba85c0b5c16bd",
+            "model_request": {
+              "tool_call_id": "simulated_call_0",
+              "tool_name": "finish",
+              "finish_requested": true
+            },
+            "termination_evidence": {
+              "controller_acknowledged": null,
+              "causal_stop_actor": null,
+              "termination_cause": null,
+              "terminal_event_id": null
+            }
+          },
+          "receipt_sha256": "719ac67a2d26b42bb191908517475abf163cc4c40fd69938995caab483d6fc2c"
+        },
+        "continue": {
+          "simulated_response": {
+            "id": "simulated-matplotlib__matplotlib-25479",
+            "object": "chat.completion",
+            "created": 0,
+            "model": "synthetic-projection-control",
+            "choices": [
+              {
+                "index": 0,
+                "finish_reason": "tool_calls",
+                "message": {
+                  "role": "assistant",
+                  "content": "",
+                  "tool_calls": [
+                    {
+                      "id": "simulated_call_0",
+                      "type": "function",
+                      "function": {
+                        "name": "execute_bash",
+                        "arguments": "{\"command\":\"pwd\"}"
+                      }
+                    }
+                  ]
+                }
+              }
+            ],
+            "usage": {
+              "prompt_tokens": 0,
+              "completion_tokens": 0,
+              "total_tokens": 0
+            }
+          },
+          "logger_envelope_sha256": "da2b6f1a079aab3152e139b548641ae9da01c87802237b2822c4ef04540dd6c0",
+          "export_sha256": "d2d5c57a515c4e16d709f058d1e71161b9dab539aa788fe50ec1869c8aadac48",
+          "extended_observable_view_sha256": "55fa9a502c37b9fddb2a955180975af7648cde28c76bdf8cecfaa8aea422e325",
+          "receipt": {
+            "schema": "proposed-final-request-receipt-v1",
+            "provenance": "explicitly_simulated_completion",
+            "instance_id": "matplotlib__matplotlib-25479",
+            "input_messages_sha256": "d2d5c57a515c4e16d709f058d1e71161b9dab539aa788fe50ec1869c8aadac48",
+            "projected_messages_sha256": "d2d5c57a515c4e16d709f058d1e71161b9dab539aa788fe50ec1869c8aadac48",
+            "original_patch_sha256": "e124d24577b56d6bc8c6437b9f0656210ec178ab0409ac5dc25ee7460980a600",
+            "original_published_resolved": false,
+            "completion_sha256": "8061ea618285292b422dc58739aa982769c7a3fafffb21553493b68adea9a5a2",
+            "model_request": {
+              "tool_call_id": "simulated_call_0",
+              "tool_name": "execute_bash",
+              "finish_requested": false
+            },
+            "termination_evidence": {
+              "controller_acknowledged": null,
+              "causal_stop_actor": null,
+              "termination_cause": null,
+              "terminal_event_id": null
+            }
+          },
+          "receipt_sha256": "b0d390cb78d106c69cbb26dfecd4eb3266f026942694f0c765470eb8ff340a03"
+        }
+      }
+    },
+    {
+      "instance_id": "astropy__astropy-8872",
+      "input_messages_sha256": "21dc1f4a90632ce49bc999304885f637392f5597cfdc517ee9c3145e35a82399",
+      "input_messages_bytes": 71068,
+      "message_count": 20,
+      "original_patch_sha256": "e270af988623d6c12e0333e6ed11d7de6b4cb00260827b822551744b8b5bdee3",
+      "original_patch_bytes": 813,
+      "original_published_resolved": false,
+      "exact_input_bytes_held_fixed": true,
+      "projection_collision": true,
+      "extended_view_collision": true,
+      "receipt_split": true,
+      "projected_bytes_equal_archived_export": true,
+      "actual_termination_cause": null,
+      "variants": {
+        "finish": {
+          "simulated_response": {
+            "id": "simulated-astropy__astropy-8872",
+            "object": "chat.completion",
+            "created": 0,
+            "model": "synthetic-projection-control",
+            "choices": [
+              {
+                "index": 0,
+                "finish_reason": "tool_calls",
+                "message": {
+                  "role": "assistant",
+                  "content": "",
+                  "tool_calls": [
+                    {
+                      "id": "simulated_call_0",
+                      "type": "function",
+                      "function": {
+                        "name": "finish",
+                        "arguments": "{}"
+                      }
+                    }
+                  ]
+                }
+              }
+            ],
+            "usage": {
+              "prompt_tokens": 0,
+              "completion_tokens": 0,
+              "total_tokens": 0
+            }
+          },
+          "logger_envelope_sha256": "2b1bf680ce916bff5f9b65d7cd552a177031ca891716a3e50d4d429ef9e9c6d5",
+          "export_sha256": "21dc1f4a90632ce49bc999304885f637392f5597cfdc517ee9c3145e35a82399",
+          "extended_observable_view_sha256": "ad8c97cdb6d163ade8f8c4def32a0ff0786b88ece1412a744a1939563ac630f4",
+          "receipt": {
+            "schema": "proposed-final-request-receipt-v1",
+            "provenance": "explicitly_simulated_completion",
+            "instance_id": "astropy__astropy-8872",
+            "input_messages_sha256": "21dc1f4a90632ce49bc999304885f637392f5597cfdc517ee9c3145e35a82399",
+            "projected_messages_sha256": "21dc1f4a90632ce49bc999304885f637392f5597cfdc517ee9c3145e35a82399",
+            "original_patch_sha256": "e270af988623d6c12e0333e6ed11d7de6b4cb00260827b822551744b8b5bdee3",
+            "original_published_resolved": false,
+            "completion_sha256": "c6e06be47e8beae508beced15d650c79ded0409d35902fff472874f1f2d85fa8",
+            "model_request": {
+              "tool_call_id": "simulated_call_0",
+              "tool_name": "finish",
+              "finish_requested": true
+            },
+            "termination_evidence": {
+              "controller_acknowledged": null,
+              "causal_stop_actor": null,
+              "termination_cause": null,
+              "terminal_event_id": null
+            }
+          },
+          "receipt_sha256": "3d02ac00896bf7368d7a15a544a91fffd728c8e1a48ee0cfe5ab388290ce9fe3"
+        },
+        "continue": {
+          "simulated_response": {
+            "id": "simulated-astropy__astropy-8872",
+            "object": "chat.completion",
+            "created": 0,
+            "model": "synthetic-projection-control",
+            "choices": [
+              {
+                "index": 0,
+                "finish_reason": "tool_calls",
+                "message": {
+                  "role": "assistant",
+                  "content": "",
+                  "tool_calls": [
+                    {
+                      "id": "simulated_call_0",
+                      "type": "function",
+                      "function": {
+                        "name": "execute_bash",
+                        "arguments": "{\"command\":\"pwd\"}"
+                      }
+                    }
+                  ]
+                }
+              }
+            ],
+            "usage": {
+              "prompt_tokens": 0,
+              "completion_tokens": 0,
+              "total_tokens": 0
+            }
+          },
+          "logger_envelope_sha256": "86760982cd27bfad4cf2cba2bf013836799dfd507f50d707cafe21ae1ea94237",
+          "export_sha256": "21dc1f4a90632ce49bc999304885f637392f5597cfdc517ee9c3145e35a82399",
+          "extended_observable_view_sha256": "ad8c97cdb6d163ade8f8c4def32a0ff0786b88ece1412a744a1939563ac630f4",
+          "receipt": {
+            "schema": "proposed-final-request-receipt-v1",
+            "provenance": "explicitly_simulated_completion",
+            "instance_id": "astropy__astropy-8872",
+            "input_messages_sha256": "21dc1f4a90632ce49bc999304885f637392f5597cfdc517ee9c3145e35a82399",
+            "projected_messages_sha256": "21dc1f4a90632ce49bc999304885f637392f5597cfdc517ee9c3145e35a82399",
+            "original_patch_sha256": "e270af988623d6c12e0333e6ed11d7de6b4cb00260827b822551744b8b5bdee3",
+            "original_published_resolved": false,
+            "completion_sha256": "79778d357577c03f2fcef5b926a5ccaa97c1dea6a020672a139386130801306e",
+            "model_request": {
+              "tool_call_id": "simulated_call_0",
+              "tool_name": "execute_bash",
+              "finish_requested": false
+            },
+            "termination_evidence": {
+              "controller_acknowledged": null,
+              "causal_stop_actor": null,
+              "termination_cause": null,
+              "terminal_event_id": null
+            }
+          },
+          "receipt_sha256": "cc2924dd785d463011f6d01cb829c2abf274ae19d9b9bb3780adfaa600bbdeef"
+        }
+      }
+    },
+    {
+      "instance_id": "django__django-16899",
+      "input_messages_sha256": "12893bf7dbdf3fdf939e7a197a0b54cdbbcda2b2a2c0aea0e4fd6138374efe4c",
+      "input_messages_bytes": 122549,
+      "message_count": 48,
+      "original_patch_sha256": "bd3d51eecc4e0ff0bb51dc0b8f5ac5826d4421d357ace69089ffddb40162b661",
+      "original_patch_bytes": 876,
+      "original_published_resolved": true,
+      "exact_input_bytes_held_fixed": true,
+      "projection_collision": true,
+      "extended_view_collision": true,
+      "receipt_split": true,
+      "projected_bytes_equal_archived_export": true,
+      "actual_termination_cause": null,
+      "variants": {
+        "finish": {
+          "simulated_response": {
+            "id": "simulated-django__django-16899",
+            "object": "chat.completion",
+            "created": 0,
+            "model": "synthetic-projection-control",
+            "choices": [
+              {
+                "index": 0,
+                "finish_reason": "tool_calls",
+                "message": {
+                  "role": "assistant",
+                  "content": "",
+                  "tool_calls": [
+                    {
+                      "id": "simulated_call_0",
+                      "type": "function",
+                      "function": {
+                        "name": "finish",
+                        "arguments": "{}"
+                      }
+                    }
+                  ]
+                }
+              }
+            ],
+            "usage": {
+              "prompt_tokens": 0,
+              "completion_tokens": 0,
+              "total_tokens": 0
+            }
+          },
+          "logger_envelope_sha256": "15d8c140d5ff7b2f04cae7f1159c6792a221d983466ce5b05a95a47fc6c49daf",
+          "export_sha256": "12893bf7dbdf3fdf939e7a197a0b54cdbbcda2b2a2c0aea0e4fd6138374efe4c",
+          "extended_observable_view_sha256": "f0e4ea4244c6bd985d5ef0c64fde92366b70262db96cf8c2e30888356d8599e6",
+          "receipt": {
+            "schema": "proposed-final-request-receipt-v1",
+            "provenance": "explicitly_simulated_completion",
+            "instance_id": "django__django-16899",
+            "input_messages_sha256": "12893bf7dbdf3fdf939e7a197a0b54cdbbcda2b2a2c0aea0e4fd6138374efe4c",
+            "projected_messages_sha256": "12893bf7dbdf3fdf939e7a197a0b54cdbbcda2b2a2c0aea0e4fd6138374efe4c",
+            "original_patch_sha256": "bd3d51eecc4e0ff0bb51dc0b8f5ac5826d4421d357ace69089ffddb40162b661",
+            "original_published_resolved": true,
+            "completion_sha256": "7960b131ec750ba1610c9bf07a084e5267e76d20d9f75dff1e70d4948fbe38ed",
+            "model_request": {
+              "tool_call_id": "simulated_call_0",
+              "tool_name": "finish",
+              "finish_requested": true
+            },
+            "termination_evidence": {
+              "controller_acknowledged": null,
+              "causal_stop_actor": null,
+              "termination_cause": null,
+              "terminal_event_id": null
+            }
+          },
+          "receipt_sha256": "9965f50ccbeb1fc576782e87dd01e879e66c92339bef4d2a79375bf85973f975"
+        },
+        "continue": {
+          "simulated_response": {
+            "id": "simulated-django__django-16899",
+            "object": "chat.completion",
+            "created": 0,
+            "model": "synthetic-projection-control",
+            "choices": [
+              {
+                "index": 0,
+                "finish_reason": "tool_calls",
+                "message": {
+                  "role": "assistant",
+                  "content": "",
+                  "tool_calls": [
+                    {
+                      "id": "simulated_call_0",
+                      "type": "function",
+                      "function": {
+                        "name": "execute_bash",
+                        "arguments": "{\"command\":\"pwd\"}"
+                      }
+                    }
+                  ]
+                }
+              }
+            ],
+            "usage": {
+              "prompt_tokens": 0,
+              "completion_tokens": 0,
+              "total_tokens": 0
+            }
+          },
+          "logger_envelope_sha256": "66bd5d4302f68abd12965ccd03b63c7465826e75386914dfe4d89412e0ba287d",
+          "export_sha256": "12893bf7dbdf3fdf939e7a197a0b54cdbbcda2b2a2c0aea0e4fd6138374efe4c",
+          "extended_observable_view_sha256": "f0e4ea4244c6bd985d5ef0c64fde92366b70262db96cf8c2e30888356d8599e6",
+          "receipt": {
+            "schema": "proposed-final-request-receipt-v1",
+            "provenance": "explicitly_simulated_completion",
+            "instance_id": "django__django-16899",
+            "input_messages_sha256": "12893bf7dbdf3fdf939e7a197a0b54cdbbcda2b2a2c0aea0e4fd6138374efe4c",
+            "projected_messages_sha256": "12893bf7dbdf3fdf939e7a197a0b54cdbbcda2b2a2c0aea0e4fd6138374efe4c",
+            "original_patch_sha256": "bd3d51eecc4e0ff0bb51dc0b8f5ac5826d4421d357ace69089ffddb40162b661",
+            "original_published_resolved": true,
+            "completion_sha256": "dc9fa03173b14aa16aa325c9a1f3067415f45b7c1d67b9940f4b4669591e0ce4",
+            "model_request": {
+              "tool_call_id": "simulated_call_0",
+              "tool_name": "execute_bash",
+              "finish_requested": false
+            },
+            "termination_evidence": {
+              "controller_acknowledged": null,
+              "causal_stop_actor": null,
+              "termination_cause": null,
+              "terminal_event_id": null
+            }
+          },
+          "receipt_sha256": "cc1e7c514578a45bee262d13e8e44bb393b7a6006ce82cac74cd1ac30d7e5570"
+        }
+      }
+    },
+    {
+      "instance_id": "django__django-13406",
+      "input_messages_sha256": "675d15d5b3a8acb2034eaaffe951e3f2bc13a32d7b8cf992bc7b7d74cc905881",
+      "input_messages_bytes": 327791,
+      "message_count": 200,
+      "original_patch_sha256": "28f18c97357cdb4b3783e50afe9eb4e8fd3149ab7c817d2f2675a6151d59dca6",
+      "original_patch_bytes": 5933,
+      "original_published_resolved": true,
+      "exact_input_bytes_held_fixed": true,
+      "projection_collision": true,
+      "extended_view_collision": true,
+      "receipt_split": true,
+      "projected_bytes_equal_archived_export": true,
+      "actual_termination_cause": null,
+      "variants": {
+        "finish": {
+          "simulated_response": {
+            "id": "simulated-django__django-13406",
+            "object": "chat.completion",
+            "created": 0,
+            "model": "synthetic-projection-control",
+            "choices": [
+              {
+                "index": 0,
+                "finish_reason": "tool_calls",
+                "message": {
+                  "role": "assistant",
+                  "content": "",
+                  "tool_calls": [
+                    {
+                      "id": "simulated_call_0",
+                      "type": "function",
+                      "function": {
+                        "name": "finish",
+                        "arguments": "{}"
+                      }
+                    }
+                  ]
+                }
+              }
+            ],
+            "usage": {
+              "prompt_tokens": 0,
+              "completion_tokens": 0,
+              "total_tokens": 0
+            }
+          },
+          "logger_envelope_sha256": "95fa675af9feb8723412babd78f544388e1f569315176758c11bc66f532de21b",
+          "export_sha256": "675d15d5b3a8acb2034eaaffe951e3f2bc13a32d7b8cf992bc7b7d74cc905881",
+          "extended_observable_view_sha256": "a921469ff5125c109b08d668f6e590b122c21a783177ba783584d52dbabe0ac8",
+          "receipt": {
+            "schema": "proposed-final-request-receipt-v1",
+            "provenance": "explicitly_simulated_completion",
+            "instance_id": "django__django-13406",
+            "input_messages_sha256": "675d15d5b3a8acb2034eaaffe951e3f2bc13a32d7b8cf992bc7b7d74cc905881",
+            "projected_messages_sha256": "675d15d5b3a8acb2034eaaffe951e3f2bc13a32d7b8cf992bc7b7d74cc905881",
+            "original_patch_sha256": "28f18c97357cdb4b3783e50afe9eb4e8fd3149ab7c817d2f2675a6151d59dca6",
+            "original_published_resolved": true,
+            "completion_sha256": "be2044111be7b3a435c4be66f478d79f50413858a680378c4e13d91ff0aff888",
+            "model_request": {
+              "tool_call_id": "simulated_call_0",
+              "tool_name": "finish",
+              "finish_requested": true
+            },
+            "termination_evidence": {
+              "controller_acknowledged": null,
+              "causal_stop_actor": null,
+              "termination_cause": null,
+              "terminal_event_id": null
+            }
+          },
+          "receipt_sha256": "09a4fd57633e11a2cf7563830c41d78b1209f2d12c97526bfa91ced99acff8cd"
+        },
+        "continue": {
+          "simulated_response": {
+            "id": "simulated-django__django-13406",
+            "object": "chat.completion",
+            "created": 0,
+            "model": "synthetic-projection-control",
+            "choices": [
+              {
+                "index": 0,
+                "finish_reason": "tool_calls",
+                "message": {
+                  "role": "assistant",
+                  "content": "",
+                  "tool_calls": [
+                    {
+                      "id": "simulated_call_0",
+                      "type": "function",
+                      "function": {
+                        "name": "execute_bash",
+                        "arguments": "{\"command\":\"pwd\"}"
+                      }
+                    }
+                  ]
+                }
+              }
+            ],
+            "usage": {
+              "prompt_tokens": 0,
+              "completion_tokens": 0,
+              "total_tokens": 0
+            }
+          },
+          "logger_envelope_sha256": "2fdd6c163affa3900a97bf53313be3a5540370d39345f6c1c54fefddd794fe04",
+          "export_sha256": "675d15d5b3a8acb2034eaaffe951e3f2bc13a32d7b8cf992bc7b7d74cc905881",
+          "extended_observable_view_sha256": "a921469ff5125c109b08d668f6e590b122c21a783177ba783584d52dbabe0ac8",
+          "receipt": {
+            "schema": "proposed-final-request-receipt-v1",
+            "provenance": "explicitly_simulated_completion",
+            "instance_id": "django__django-13406",
+            "input_messages_sha256": "675d15d5b3a8acb2034eaaffe951e3f2bc13a32d7b8cf992bc7b7d74cc905881",
+            "projected_messages_sha256": "675d15d5b3a8acb2034eaaffe951e3f2bc13a32d7b8cf992bc7b7d74cc905881",
+            "original_patch_sha256": "28f18c97357cdb4b3783e50afe9eb4e8fd3149ab7c817d2f2675a6151d59dca6",
+            "original_published_resolved": true,
+            "completion_sha256": "7d52594d642a7906aad369b0cc11eb052552a2a2a5980f69cf85030aa23e9290",
+            "model_request": {
+              "tool_call_id": "simulated_call_0",
+              "tool_name": "execute_bash",
+              "finish_requested": false
+            },
+            "termination_evidence": {
+              "controller_acknowledged": null,
+              "causal_stop_actor": null,
+              "termination_cause": null,
+              "terminal_event_id": null
+            }
+          },
+          "receipt_sha256": "eabb29520d2371ae2948eb03a1c208f16cd43797c2eef787621a169dbbcf854a"
+        }
+      }
+    },
+    {
+      "instance_id": "sphinx-doc__sphinx-9281",
+      "input_messages_sha256": "a0a7ea08a3adb06f871db87ae301d399d1bd800126508091167c7c0c3e9e023a",
+      "input_messages_bytes": 109052,
+      "message_count": 38,
+      "original_patch_sha256": "253e358b7e9d9b5976d61e1b281dc7367490d3bdb4d47fd0424993919c20e16e",
+      "original_patch_bytes": 7041,
+      "original_published_resolved": false,
+      "exact_input_bytes_held_fixed": true,
+      "projection_collision": true,
+      "extended_view_collision": true,
+      "receipt_split": true,
+      "projected_bytes_equal_archived_export": true,
+      "actual_termination_cause": null,
+      "variants": {
+        "finish": {
+          "simulated_response": {
+            "id": "simulated-sphinx-doc__sphinx-9281",
+            "object": "chat.completion",
+            "created": 0,
+            "model": "synthetic-projection-control",
+            "choices": [
+              {
+                "index": 0,
+                "finish_reason": "tool_calls",
+                "message": {
+                  "role": "assistant",
+                  "content": "",
+                  "tool_calls": [
+                    {
+                      "id": "simulated_call_0",
+                      "type": "function",
+                      "function": {
+                        "name": "finish",
+                        "arguments": "{}"
+                      }
+                    }
+                  ]
+                }
+              }
+            ],
+            "usage": {
+              "prompt_tokens": 0,
+              "completion_tokens": 0,
+              "total_tokens": 0
+            }
+          },
+          "logger_envelope_sha256": "294b9cd3ef10362564c7d83aa767f8b8a6fc31bd55aa08bd261d6d2ce72cfba8",
+          "export_sha256": "a0a7ea08a3adb06f871db87ae301d399d1bd800126508091167c7c0c3e9e023a",
+          "extended_observable_view_sha256": "df880a5ce8590cc707c0d5830ad29c929e50b098b6c0f92f925b11b7520a93b1",
+          "receipt": {
+            "schema": "proposed-final-request-receipt-v1",
+            "provenance": "explicitly_simulated_completion",
+            "instance_id": "sphinx-doc__sphinx-9281",
+            "input_messages_sha256": "a0a7ea08a3adb06f871db87ae301d399d1bd800126508091167c7c0c3e9e023a",
+            "projected_messages_sha256": "a0a7ea08a3adb06f871db87ae301d399d1bd800126508091167c7c0c3e9e023a",
+            "original_patch_sha256": "253e358b7e9d9b5976d61e1b281dc7367490d3bdb4d47fd0424993919c20e16e",
+            "original_published_resolved": false,
+            "completion_sha256": "e5d40769a2d5c76bb12f785390c4e6ac939843a17479f2287982a18d46f60a25",
+            "model_request": {
+              "tool_call_id": "simulated_call_0",
+              "tool_name": "finish",
+              "finish_requested": true
+            },
+            "termination_evidence": {
+              "controller_acknowledged": null,
+              "causal_stop_actor": null,
+              "termination_cause": null,
+              "terminal_event_id": null
+            }
+          },
+          "receipt_sha256": "5ca03934588fc778cd092e0680bfc13bec55711896e414a269e217b031ff2f2e"
+        },
+        "continue": {
+          "simulated_response": {
+            "id": "simulated-sphinx-doc__sphinx-9281",
+            "object": "chat.completion",
+            "created": 0,
+            "model": "synthetic-projection-control",
+            "choices": [
+              {
+                "index": 0,
+                "finish_reason": "tool_calls",
+                "message": {
+                  "role": "assistant",
+                  "content": "",
+                  "tool_calls": [
+                    {
+                      "id": "simulated_call_0",
+                      "type": "function",
+                      "function": {
+                        "name": "execute_bash",
+                        "arguments": "{\"command\":\"pwd\"}"
+                      }
+                    }
+                  ]
+                }
+              }
+            ],
+            "usage": {
+              "prompt_tokens": 0,
+              "completion_tokens": 0,
+              "total_tokens": 0
+            }
+          },
+          "logger_envelope_sha256": "008fcc15db2cf048ab70e0a35f0146af139e1bbd21ba4cbf30b922615f590408",
+          "export_sha256": "a0a7ea08a3adb06f871db87ae301d399d1bd800126508091167c7c0c3e9e023a",
+          "extended_observable_view_sha256": "df880a5ce8590cc707c0d5830ad29c929e50b098b6c0f92f925b11b7520a93b1",
+          "receipt": {
+            "schema": "proposed-final-request-receipt-v1",
+            "provenance": "explicitly_simulated_completion",
+            "instance_id": "sphinx-doc__sphinx-9281",
+            "input_messages_sha256": "a0a7ea08a3adb06f871db87ae301d399d1bd800126508091167c7c0c3e9e023a",
+            "projected_messages_sha256": "a0a7ea08a3adb06f871db87ae301d399d1bd800126508091167c7c0c3e9e023a",
+            "original_patch_sha256": "253e358b7e9d9b5976d61e1b281dc7367490d3bdb4d47fd0424993919c20e16e",
+            "original_published_resolved": false,
+            "completion_sha256": "3037fe5bb95dbdbd0b6fc4c3c720a18f8ab8d85d025ba50ffda2fd0322eb7f21",
+            "model_request": {
+              "tool_call_id": "simulated_call_0",
+              "tool_name": "execute_bash",
+              "finish_requested": false
+            },
+            "termination_evidence": {
+              "controller_acknowledged": null,
+              "causal_stop_actor": null,
+              "termination_cause": null,
+              "terminal_event_id": null
+            }
+          },
+          "receipt_sha256": "18ea78ddcd5a5a356567e7161203bb7584c16905c41ada6f31208c16c350dd2b"
+        }
+      }
+    },
+    {
+      "instance_id": "django__django-13449",
+      "input_messages_sha256": "a37c0116f330c8747d0601859f16db1b09a820e1fdbd6eefac11be2fc0aa5e89",
+      "input_messages_bytes": 208463,
+      "message_count": 70,
+      "original_patch_sha256": "cd5dd1d31da649ad545c681fcdfe7365bdfd14617e8f83754857365cedd3ceec",
+      "original_patch_bytes": 5442,
+      "original_published_resolved": false,
+      "exact_input_bytes_held_fixed": true,
+      "projection_collision": true,
+      "extended_view_collision": true,
+      "receipt_split": true,
+      "projected_bytes_equal_archived_export": true,
+      "actual_termination_cause": null,
+      "variants": {
+        "finish": {
+          "simulated_response": {
+            "id": "simulated-django__django-13449",
+            "object": "chat.completion",
+            "created": 0,
+            "model": "synthetic-projection-control",
+            "choices": [
+              {
+                "index": 0,
+                "finish_reason": "tool_calls",
+                "message": {
+                  "role": "assistant",
+                  "content": "",
+                  "tool_calls": [
+                    {
+                      "id": "simulated_call_0",
+                      "type": "function",
+                      "function": {
+                        "name": "finish",
+                        "arguments": "{}"
+                      }
+                    }
+                  ]
+                }
+              }
+            ],
+            "usage": {
+              "prompt_tokens": 0,
+              "completion_tokens": 0,
+              "total_tokens": 0
+            }
+          },
+          "logger_envelope_sha256": "04fdbf9d67d69c224d52eddf5f532544fa7728fd21b7cd96698bf2f55c47e5f2",
+          "export_sha256": "a37c0116f330c8747d0601859f16db1b09a820e1fdbd6eefac11be2fc0aa5e89",
+          "extended_observable_view_sha256": "d981e9163f7948194a8a1ae0ea5976a825451e5433fcf85659e1c739ba55ea7a",
+          "receipt": {
+            "schema": "proposed-final-request-receipt-v1",
+            "provenance": "explicitly_simulated_completion",
+            "instance_id": "django__django-13449",
+            "input_messages_sha256": "a37c0116f330c8747d0601859f16db1b09a820e1fdbd6eefac11be2fc0aa5e89",
+            "projected_messages_sha256": "a37c0116f330c8747d0601859f16db1b09a820e1fdbd6eefac11be2fc0aa5e89",
+            "original_patch_sha256": "cd5dd1d31da649ad545c681fcdfe7365bdfd14617e8f83754857365cedd3ceec",
+            "original_published_resolved": false,
+            "completion_sha256": "4925221f16fe9b7424a3b6b48ed6d4ce49cb9e88e0118d709cdcbe169de8ee37",
+            "model_request": {
+              "tool_call_id": "simulated_call_0",
+              "tool_name": "finish",
+              "finish_requested": true
+            },
+            "termination_evidence": {
+              "controller_acknowledged": null,
+              "causal_stop_actor": null,
+              "termination_cause": null,
+              "terminal_event_id": null
+            }
+          },
+          "receipt_sha256": "c78e09eee79f3c1f532a0ebfbe1bb7adbbb2b2b810457ae925377fe77f2b6f3a"
+        },
+        "continue": {
+          "simulated_response": {
+            "id": "simulated-django__django-13449",
+            "object": "chat.completion",
+            "created": 0,
+            "model": "synthetic-projection-control",
+            "choices": [
+              {
+                "index": 0,
+                "finish_reason": "tool_calls",
+                "message": {
+                  "role": "assistant",
+                  "content": "",
+                  "tool_calls": [
+                    {
+                      "id": "simulated_call_0",
+                      "type": "function",
+                      "function": {
+                        "name": "execute_bash",
+                        "arguments": "{\"command\":\"pwd\"}"
+                      }
+                    }
+                  ]
+                }
+              }
+            ],
+            "usage": {
+              "prompt_tokens": 0,
+              "completion_tokens": 0,
+              "total_tokens": 0
+            }
+          },
+          "logger_envelope_sha256": "b182a123a7a04cdc8155d3ca38e071bca40e5f258d30937b3084c118d3d7fddd",
+          "export_sha256": "a37c0116f330c8747d0601859f16db1b09a820e1fdbd6eefac11be2fc0aa5e89",
+          "extended_observable_view_sha256": "d981e9163f7948194a8a1ae0ea5976a825451e5433fcf85659e1c739ba55ea7a",
+          "receipt": {
+            "schema": "proposed-final-request-receipt-v1",
+            "provenance": "explicitly_simulated_completion",
+            "instance_id": "django__django-13449",
+            "input_messages_sha256": "a37c0116f330c8747d0601859f16db1b09a820e1fdbd6eefac11be2fc0aa5e89",
+            "projected_messages_sha256": "a37c0116f330c8747d0601859f16db1b09a820e1fdbd6eefac11be2fc0aa5e89",
+            "original_patch_sha256": "cd5dd1d31da649ad545c681fcdfe7365bdfd14617e8f83754857365cedd3ceec",
+            "original_published_resolved": false,
+            "completion_sha256": "bac879825a2f125c65831c19b95e0ab4df1c8feb2bcba2def6a4820c68560cef",
+            "model_request": {
+              "tool_call_id": "simulated_call_0",
+              "tool_name": "execute_bash",
+              "finish_requested": false
+            },
+            "termination_evidence": {
+              "controller_acknowledged": null,
+              "causal_stop_actor": null,
+              "termination_cause": null,
+              "terminal_event_id": null
+            }
+          },
+          "receipt_sha256": "189642b1a35f82e1b38171c47038e9299db1b735af114ec34aba55c7c7132d01"
+        }
+      }
+    },
+    {
+      "instance_id": "django__django-11880",
+      "input_messages_sha256": "ecd425d242900ec46dde28048d7ee8045ab607a6c5e0e08822df8dc9aad602f7",
+      "input_messages_bytes": 47691,
+      "message_count": 32,
+      "original_patch_sha256": "3f24b834c31172f655e64f71b96878daafdf429c9381dba34be71fd1df698a95",
+      "original_patch_bytes": 1512,
+      "original_published_resolved": true,
+      "exact_input_bytes_held_fixed": true,
+      "projection_collision": true,
+      "extended_view_collision": true,
+      "receipt_split": true,
+      "projected_bytes_equal_archived_export": true,
+      "actual_termination_cause": null,
+      "variants": {
+        "finish": {
+          "simulated_response": {
+            "id": "simulated-django__django-11880",
+            "object": "chat.completion",
+            "created": 0,
+            "model": "synthetic-projection-control",
+            "choices": [
+              {
+                "index": 0,
+                "finish_reason": "tool_calls",
+                "message": {
+                  "role": "assistant",
+                  "content": "",
+                  "tool_calls": [
+                    {
+                      "id": "simulated_call_0",
+                      "type": "function",
+                      "function": {
+                        "name": "finish",
+                        "arguments": "{}"
+                      }
+                    }
+                  ]
+                }
+              }
+            ],
+            "usage": {
+              "prompt_tokens": 0,
+              "completion_tokens": 0,
+              "total_tokens": 0
+            }
+          },
+          "logger_envelope_sha256": "14829a72d2f3771e38f2d0a1d8fde8416a9d57fc5088c621ca38229aa909df65",
+          "export_sha256": "ecd425d242900ec46dde28048d7ee8045ab607a6c5e0e08822df8dc9aad602f7",
+          "extended_observable_view_sha256": "15f01627b935e63084daabf45fda609a3349363f5031ee143acb8c1c19528e4e",
+          "receipt": {
+            "schema": "proposed-final-request-receipt-v1",
+            "provenance": "explicitly_simulated_completion",
+            "instance_id": "django__django-11880",
+            "input_messages_sha256": "ecd425d242900ec46dde28048d7ee8045ab607a6c5e0e08822df8dc9aad602f7",
+            "projected_messages_sha256": "ecd425d242900ec46dde28048d7ee8045ab607a6c5e0e08822df8dc9aad602f7",
+            "original_patch_sha256": "3f24b834c31172f655e64f71b96878daafdf429c9381dba34be71fd1df698a95",
+            "original_published_resolved": true,
+            "completion_sha256": "80904472d44aea0a236ef78fbf52c589f2a92ebd2f9c1843cd9c77705a016f82",
+            "model_request": {
+              "tool_call_id": "simulated_call_0",
+              "tool_name": "finish",
+              "finish_requested": true
+            },
+            "termination_evidence": {
+              "controller_acknowledged": null,
+              "causal_stop_actor": null,
+              "termination_cause": null,
+              "terminal_event_id": null
+            }
+          },
+          "receipt_sha256": "ac52465ba1f0fdd1677ad04a207c0567ca5a9be5d4e9ae720a19dfce524b7912"
+        },
+        "continue": {
+          "simulated_response": {
+            "id": "simulated-django__django-11880",
+            "object": "chat.completion",
+            "created": 0,
+            "model": "synthetic-projection-control",
+            "choices": [
+              {
+                "index": 0,
+                "finish_reason": "tool_calls",
+                "message": {
+                  "role": "assistant",
+                  "content": "",
+                  "tool_calls": [
+                    {
+                      "id": "simulated_call_0",
+                      "type": "function",
+                      "function": {
+                        "name": "execute_bash",
+                        "arguments": "{\"command\":\"pwd\"}"
+                      }
+                    }
+                  ]
+                }
+              }
+            ],
+            "usage": {
+              "prompt_tokens": 0,
+              "completion_tokens": 0,
+              "total_tokens": 0
+            }
+          },
+          "logger_envelope_sha256": "251ec4ec9c07db61896244a17735f0eaf5ab3619ceb6b851b547402edf08c91b",
+          "export_sha256": "ecd425d242900ec46dde28048d7ee8045ab607a6c5e0e08822df8dc9aad602f7",
+          "extended_observable_view_sha256": "15f01627b935e63084daabf45fda609a3349363f5031ee143acb8c1c19528e4e",
+          "receipt": {
+            "schema": "proposed-final-request-receipt-v1",
+            "provenance": "explicitly_simulated_completion",
+            "instance_id": "django__django-11880",
+            "input_messages_sha256": "ecd425d242900ec46dde28048d7ee8045ab607a6c5e0e08822df8dc9aad602f7",
+            "projected_messages_sha256": "ecd425d242900ec46dde28048d7ee8045ab607a6c5e0e08822df8dc9aad602f7",
+            "original_patch_sha256": "3f24b834c31172f655e64f71b96878daafdf429c9381dba34be71fd1df698a95",
+            "original_published_resolved": true,
+            "completion_sha256": "c2e9ec20990473f6ef8f7c714b9c8a2e8cf2e2838361d5f48635ed70602d0862",
+            "model_request": {
+              "tool_call_id": "simulated_call_0",
+              "tool_name": "execute_bash",
+              "finish_requested": false
+            },
+            "termination_evidence": {
+              "controller_acknowledged": null,
+              "causal_stop_actor": null,
+              "termination_cause": null,
+              "terminal_event_id": null
+            }
+          },
+          "receipt_sha256": "b19401067ac1c9278410d1b5359213ac939be9dfcc2fa37c119eec6c8079350e"
+        }
+      }
+    },
+    {
+      "instance_id": "sphinx-doc__sphinx-8035",
+      "input_messages_sha256": "f577bc68ed38cf53648897902b1b9c970a83b818a1d6c133dc3dde7db00df9d5",
+      "input_messages_bytes": 309119,
+      "message_count": 76,
+      "original_patch_sha256": "1ad1e4219c2372c10518bf3c20aaf4b5aaaf8e87a786d83f922b8293f4349687",
+      "original_patch_bytes": 2291,
+      "original_published_resolved": false,
+      "exact_input_bytes_held_fixed": true,
+      "projection_collision": true,
+      "extended_view_collision": true,
+      "receipt_split": true,
+      "projected_bytes_equal_archived_export": true,
+      "actual_termination_cause": null,
+      "variants": {
+        "finish": {
+          "simulated_response": {
+            "id": "simulated-sphinx-doc__sphinx-8035",
+            "object": "chat.completion",
+            "created": 0,
+            "model": "synthetic-projection-control",
+            "choices": [
+              {
+                "index": 0,
+                "finish_reason": "tool_calls",
+                "message": {
+                  "role": "assistant",
+                  "content": "",
+                  "tool_calls": [
+                    {
+                      "id": "simulated_call_0",
+                      "type": "function",
+                      "function": {
+                        "name": "finish",
+                        "arguments": "{}"
+                      }
+                    }
+                  ]
+                }
+              }
+            ],
+            "usage": {
+              "prompt_tokens": 0,
+              "completion_tokens": 0,
+              "total_tokens": 0
+            }
+          },
+          "logger_envelope_sha256": "fea2a14cc37a5fe8400f8e548ae5031e42a6d5b5651bf4d067cac8da8f03641a",
+          "export_sha256": "f577bc68ed38cf53648897902b1b9c970a83b818a1d6c133dc3dde7db00df9d5",
+          "extended_observable_view_sha256": "ae17177fe54c10a85a435e1c89b99f9cceb917ec19efca3872d5c60d0c88a173",
+          "receipt": {
+            "schema": "proposed-final-request-receipt-v1",
+            "provenance": "explicitly_simulated_completion",
+            "instance_id": "sphinx-doc__sphinx-8035",
+            "input_messages_sha256": "f577bc68ed38cf53648897902b1b9c970a83b818a1d6c133dc3dde7db00df9d5",
+            "projected_messages_sha256": "f577bc68ed38cf53648897902b1b9c970a83b818a1d6c133dc3dde7db00df9d5",
+            "original_patch_sha256": "1ad1e4219c2372c10518bf3c20aaf4b5aaaf8e87a786d83f922b8293f4349687",
+            "original_published_resolved": false,
+            "completion_sha256": "9b597e35263e7d9fb54b389e408de4b0e2d8c726b68b27e56775a032308f48f5",
+            "model_request": {
+              "tool_call_id": "simulated_call_0",
+              "tool_name": "finish",
+              "finish_requested": true
+            },
+            "termination_evidence": {
+              "controller_acknowledged": null,
+              "causal_stop_actor": null,
+              "termination_cause": null,
+              "terminal_event_id": null
+            }
+          },
+          "receipt_sha256": "bb4ff455e997727a3bcf09f9386caf314c90ac26af447f54127743d8dcafe16b"
+        },
+        "continue": {
+          "simulated_response": {
+            "id": "simulated-sphinx-doc__sphinx-8035",
+            "object": "chat.completion",
+            "created": 0,
+            "model": "synthetic-projection-control",
+            "choices": [
+              {
+                "index": 0,
+                "finish_reason": "tool_calls",
+                "message": {
+                  "role": "assistant",
+                  "content": "",
+                  "tool_calls": [
+                    {
+                      "id": "simulated_call_0",
+                      "type": "function",
+                      "function": {
+                        "name": "execute_bash",
+                        "arguments": "{\"command\":\"pwd\"}"
+                      }
+                    }
+                  ]
+                }
+              }
+            ],
+            "usage": {
+              "prompt_tokens": 0,
+              "completion_tokens": 0,
+              "total_tokens": 0
+            }
+          },
+          "logger_envelope_sha256": "40a37e858b299b0f516fa88db94a1029063008982fe9495a97d545410748da49",
+          "export_sha256": "f577bc68ed38cf53648897902b1b9c970a83b818a1d6c133dc3dde7db00df9d5",
+          "extended_observable_view_sha256": "ae17177fe54c10a85a435e1c89b99f9cceb917ec19efca3872d5c60d0c88a173",
+          "receipt": {
+            "schema": "proposed-final-request-receipt-v1",
+            "provenance": "explicitly_simulated_completion",
+            "instance_id": "sphinx-doc__sphinx-8035",
+            "input_messages_sha256": "f577bc68ed38cf53648897902b1b9c970a83b818a1d6c133dc3dde7db00df9d5",
+            "projected_messages_sha256": "f577bc68ed38cf53648897902b1b9c970a83b818a1d6c133dc3dde7db00df9d5",
+            "original_patch_sha256": "1ad1e4219c2372c10518bf3c20aaf4b5aaaf8e87a786d83f922b8293f4349687",
+            "original_published_resolved": false,
+            "completion_sha256": "370ae45f00c3db5064f1788394a18141773240fec33481c0f4d778d375b8dc38",
+            "model_request": {
+              "tool_call_id": "simulated_call_0",
+              "tool_name": "execute_bash",
+              "finish_requested": false
+            },
+            "termination_evidence": {
+              "controller_acknowledged": null,
+              "causal_stop_actor": null,
+              "termination_cause": null,
+              "terminal_event_id": null
+            }
+          },
+          "receipt_sha256": "1891d03f108dbd33dba3777dac0ea622ede836111bc3b74a29ef4b2059f78a71"
+        }
+      }
+    },
+    {
+      "instance_id": "django__django-11964",
+      "input_messages_sha256": "b8aee212d6e2ec8ba01753bd39da196b3e0f52999e55dc6f747c61251c703a7f",
+      "input_messages_bytes": 212112,
+      "message_count": 108,
+      "original_patch_sha256": "f8e9f8d4ae99132c7562074698f20357eea81269bc25e6fe30fcec959ecad83d",
+      "original_patch_bytes": 1160,
+      "original_published_resolved": false,
+      "exact_input_bytes_held_fixed": true,
+      "projection_collision": true,
+      "extended_view_collision": true,
+      "receipt_split": true,
+      "projected_bytes_equal_archived_export": true,
+      "actual_termination_cause": null,
+      "variants": {
+        "finish": {
+          "simulated_response": {
+            "id": "simulated-django__django-11964",
+            "object": "chat.completion",
+            "created": 0,
+            "model": "synthetic-projection-control",
+            "choices": [
+              {
+                "index": 0,
+                "finish_reason": "tool_calls",
+                "message": {
+                  "role": "assistant",
+                  "content": "",
+                  "tool_calls": [
+                    {
+                      "id": "simulated_call_0",
+                      "type": "function",
+                      "function": {
+                        "name": "finish",
+                        "arguments": "{}"
+                      }
+                    }
+                  ]
+                }
+              }
+            ],
+            "usage": {
+              "prompt_tokens": 0,
+              "completion_tokens": 0,
+              "total_tokens": 0
+            }
+          },
+          "logger_envelope_sha256": "510da9cf164b30df2646d73d5c8f04bdecfe011eca5eeea61c1ab4e9aab76a6c",
+          "export_sha256": "b8aee212d6e2ec8ba01753bd39da196b3e0f52999e55dc6f747c61251c703a7f",
+          "extended_observable_view_sha256": "c5ea2bb986688dc646f948367624c2a603cbd584b7732eea5c852725105d2175",
+          "receipt": {
+            "schema": "proposed-final-request-receipt-v1",
+            "provenance": "explicitly_simulated_completion",
+            "instance_id": "django__django-11964",
+            "input_messages_sha256": "b8aee212d6e2ec8ba01753bd39da196b3e0f52999e55dc6f747c61251c703a7f",
+            "projected_messages_sha256": "b8aee212d6e2ec8ba01753bd39da196b3e0f52999e55dc6f747c61251c703a7f",
+            "original_patch_sha256": "f8e9f8d4ae99132c7562074698f20357eea81269bc25e6fe30fcec959ecad83d",
+            "original_published_resolved": false,
+            "completion_sha256": "2e644d7009bd9960b53fa4585774df640a3c841dbd3f3a494734eb90cb21597c",
+            "model_request": {
+              "tool_call_id": "simulated_call_0",
+              "tool_name": "finish",
+              "finish_requested": true
+            },
+            "termination_evidence": {
+              "controller_acknowledged": null,
+              "causal_stop_actor": null,
+              "termination_cause": null,
+              "terminal_event_id": null
+            }
+          },
+          "receipt_sha256": "66bab3f1b7cc4242052a2bce40a71ff84eb076c6cff5269cc9d8b6f7eae0dd48"
+        },
+        "continue": {
+          "simulated_response": {
+            "id": "simulated-django__django-11964",
+            "object": "chat.completion",
+            "created": 0,
+            "model": "synthetic-projection-control",
+            "choices": [
+              {
+                "index": 0,
+                "finish_reason": "tool_calls",
+                "message": {
+                  "role": "assistant",
+                  "content": "",
+                  "tool_calls": [
+                    {
+                      "id": "simulated_call_0",
+                      "type": "function",
+                      "function": {
+                        "name": "execute_bash",
+                        "arguments": "{\"command\":\"pwd\"}"
+                      }
+                    }
+                  ]
+                }
+              }
+            ],
+            "usage": {
+              "prompt_tokens": 0,
+              "completion_tokens": 0,
+              "total_tokens": 0
+            }
+          },
+          "logger_envelope_sha256": "e3e25e6ab3a0775d91fec1f287b39ab76c83ccedfb2b8f99c7bb0a27ab7b47c4",
+          "export_sha256": "b8aee212d6e2ec8ba01753bd39da196b3e0f52999e55dc6f747c61251c703a7f",
+          "extended_observable_view_sha256": "c5ea2bb986688dc646f948367624c2a603cbd584b7732eea5c852725105d2175",
+          "receipt": {
+            "schema": "proposed-final-request-receipt-v1",
+            "provenance": "explicitly_simulated_completion",
+            "instance_id": "django__django-11964",
+            "input_messages_sha256": "b8aee212d6e2ec8ba01753bd39da196b3e0f52999e55dc6f747c61251c703a7f",
+            "projected_messages_sha256": "b8aee212d6e2ec8ba01753bd39da196b3e0f52999e55dc6f747c61251c703a7f",
+            "original_patch_sha256": "f8e9f8d4ae99132c7562074698f20357eea81269bc25e6fe30fcec959ecad83d",
+            "original_published_resolved": false,
+            "completion_sha256": "10f6a7a337868e05c02a420746c33f31d89adbea6ae2e15a5ae28607c439edf2",
+            "model_request": {
+              "tool_call_id": "simulated_call_0",
+              "tool_name": "execute_bash",
+              "finish_requested": false
+            },
+            "termination_evidence": {
+              "controller_acknowledged": null,
+              "causal_stop_actor": null,
+              "termination_cause": null,
+              "terminal_event_id": null
+            }
+          },
+          "receipt_sha256": "a9e376a476b39facd2b0a1a071514cf731e38dc97e966460c2fa56c74ce658c9"
+        }
+      }
+    }
+  ]
+}

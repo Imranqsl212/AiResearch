@@ -1,0 +1,78 @@
+{
+  "plan_sha256": "b7b325b07996828a37cc69b47874448bc85cbeeb2fd89228bdc2d3d2d964851b",
+  "selection_sha256": "7b8e1869d1101c0851935686c20e1003f78922bf75840cab17c702d4aa9e23e2",
+  "listing": {
+    "url": "https://swe-bench-submissions.s3.amazonaws.com/?list-type=2&prefix=verified%2F20241029_OpenHands-CodeAct-2.1-sonnet-20241022%2Ftrajs&max-keys=1000",
+    "sha256": "a767fb274dde22f4bc317a47138a49ade1864373ef5158edb9e6cb6cd9064b00",
+    "bytes": 187271
+  },
+  "original_listing_sha256": "a767fb274dde22f4bc317a47138a49ade1864373ef5158edb9e6cb6cd9064b00",
+  "published_results": {
+    "url": "https://raw.githubusercontent.com/SWE-bench/experiments/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/evaluation/verified/20241029_OpenHands-CodeAct-2.1-sonnet-20241022/results/results.json",
+    "sha256": "4dcf8bbaa5c2a7d77ba0c5aea3940449aabd307c9e72eaad58da119301ff767b",
+    "bytes": 8096
+  },
+  "row_sha256": "c127a58956c2228b678b4a76904b3c3aa1d7524b03dabeb816a67cf6f375db08",
+  "groups": {
+    "full": {
+      "indexed": 500,
+      "unique_trace_digests": 500,
+      "with_prediction": 499,
+      "listed_as_resolved": 265,
+      "root_types": {
+        "list": 500
+      },
+      "last_roles": {
+        "user": 278,
+        "tool": 222
+      },
+      "with_assistant_finish_or_submit": 0,
+      "with_separate_response_or_stop_field": 0,
+      "last_role_by_resolution": {
+        "true": {
+          "user": 146,
+          "tool": 119
+        },
+        "false": {
+          "user": 132,
+          "tool": 103
+        }
+      },
+      "official_categories": {
+        "resolved": 265,
+        "no_generation": 6,
+        "no_logs": 1
+      }
+    },
+    "held_out": {
+      "indexed": 490,
+      "unique_trace_digests": 490,
+      "with_prediction": 489,
+      "listed_as_resolved": 261,
+      "root_types": {
+        "list": 490
+      },
+      "last_roles": {
+        "user": 274,
+        "tool": 216
+      },
+      "with_assistant_finish_or_submit": 0,
+      "with_separate_response_or_stop_field": 0,
+      "last_role_by_resolution": {
+        "true": {
+          "user": 146,
+          "tool": 115
+        },
+        "false": {
+          "user": 128,
+          "tool": 101
+        }
+      },
+      "official_categories": {
+        "resolved": 261,
+        "no_generation": 6,
+        "no_logs": 1
+      }
+    }
+  }
+}
