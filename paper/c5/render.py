@@ -8,11 +8,14 @@ from reportlab.graphics.shapes import Circle, Drawing, Line, PolyLine, Rect, Str
 from pypdf import PdfReader
 from reportlab.lib import colors
 from reportlab.lib.enums import TA_LEFT
-from reportlab.lib.pagesizes import A4
+from reportlab.lib.pagesizes import A4, landscape
 from reportlab.lib.styles import ParagraphStyle
 from reportlab.pdfbase import pdfmetrics
 from reportlab.pdfbase.ttfonts import TTFont
-from reportlab.platypus import KeepTogether, LongTable, Paragraph, SimpleDocTemplate, Spacer, TableStyle
+from reportlab.platypus import (
+    BaseDocTemplate, Frame, Image, KeepTogether, LongTable, PageBreak, PageTemplate,
+    Paragraph, Spacer, TableStyle,
+)
 from paper.build_submission import AUTHOR, FONT_REG, FONT_BOLD, inline, markdown_blocks, review_manuscript
 
 HERE = Path(__file__).resolve().parent
@@ -84,9 +87,14 @@ def render(source, destination, author):
             story.append(para(f"**{label}**", title if depth == 1 else heading))
         elif kind == "figure":
             description, target = value
-            if target != "figures/observed_horizon.png":
+            if target == "figures/observed_horizon.png":
+                story.append(KeepTogether([observed_horizon(), para(description, caption)]))
+            elif target == "figures/effort_panel.png":
+                width, height = landscape(A4)
+                figure = Image(str(HERE / target), width=width-104, height=height-160, kind="proportional")
+                story.extend([PageBreak("wide"), figure, para(description, caption), PageBreak("text")])
+            else:
                 raise ValueError(f"Unknown figure {target}")
-            story.append(KeepTogether([observed_horizon(), para(description, caption)]))
         elif kind == "table":
             cells = [[para(f"**{c}**" if i == 0 else c, cell) for c in row] for i, row in enumerate(value)]
             width = A4[0] - 104
@@ -108,16 +116,22 @@ def render(source, destination, author):
         canvas.setFont("C5Body", 9)
         canvas.setFillColor(colors.HexColor("#50636b"))
         canvas.drawString(52, 26, "Checker feedback and coding-agent stopping")
-        canvas.drawRightString(A4[0]-52, 26, str(doc.page))
-    doc = SimpleDocTemplate(str(destination), pagesize=A4, leftMargin=46, rightMargin=46,
-                            topMargin=43, bottomMargin=46, author=author, title=source.splitlines()[0][2:],
-                            invariant=True, pageCompression=True)
-    doc.build(story, onFirstPage=footer, onLaterPages=footer)
+        canvas.drawRightString(doc.pageTemplate.pagesize[0]-52, 26, str(doc.page))
+    doc = BaseDocTemplate(str(destination), pagesize=A4, leftMargin=46, rightMargin=46,
+                          topMargin=43, bottomMargin=46, author=author, title=source.splitlines()[0][2:],
+                          invariant=True, pageCompression=True)
+    for name, size in (("text", A4), ("wide", landscape(A4))):
+        frame = Frame(doc.leftMargin, doc.bottomMargin, size[0]-doc.leftMargin-doc.rightMargin,
+                      size[1]-doc.topMargin-doc.bottomMargin, id=name)
+        doc.addPageTemplates(PageTemplate(id=name, frames=frame, onPage=footer, pagesize=size))
+    doc.build(story)
     reader = PdfReader(str(destination))
     pages = [" ".join((p.extract_text() or "").split()) for p in reader.pages]
     for n, column in ((1, "Truthful PASS"), (2, "Verified pairs"),
                       (3, "Invalid policies caught"), (4, "Effort change")):
         assert any(f"Table {n}." in t and column in t for t in pages)
+    assert any("Figure 2." in text and page.mediabox.width > page.mediabox.height and len(page.images) == 1
+               for page, text in zip(reader.pages, pages))
     if not author:
         assert not re.search(r"Zakirov|Iosifova|Kramich|Imranqsl212", " ".join(pages), re.I)
     print(destination.name, len(pages), "pages")

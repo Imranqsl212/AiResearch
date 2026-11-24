@@ -1,4 +1,5 @@
 paper/submission/*.pdf binary
+paper/c5/*.pdf binary
 paper/submission/*.docx binary
 paper/figures/*.png binary
 paper/artifacts/*.csv text eol=lf

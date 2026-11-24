@@ -98,7 +98,9 @@ A second question concerns work within a single decision. We gave all eleven sel
 
 At low versus high, two models improved their total score, one declined and six tied. Equal scores could conceal a change in both directions. GPT-6 Luna solved two of six tasks and used 58 output tokens at both low and medium. At medium it preserved the correct queue table it had damaged at low, but missed the subsequence defect it had previously repaired.
 
-From xhigh to max, all eleven used more reasoning tokens and every one of the 66 model–task outcomes stayed the same. This included errors: both Luna aliases replaced the same correct FIFO queue table with an incorrect one at both settings. The nine aliases supporting ultra already solved all six tasks at xhigh. Eight of the nine used fewer reasoning tokens at ultra than at max. Each configuration saw all six tasks together in one request. With one reply per setting, these observations describe the realized cost and correctness of this batch.
+Figure 2 pairs the functional score of each reply with its reported reasoning-token count. From xhigh to max, all eleven models used more reasoning tokens and every one of the 66 model–task outcomes stayed the same. Both Luna aliases replaced the same correct FIFO queue table with an incorrect one at both settings. The nine aliases supporting ultra already solved all six tasks at xhigh. Eight of the nine used fewer reasoning tokens at ultra than at max. Each configuration saw all six tasks together in one request. With one reply per setting, these observations describe the realized cost and correctness of this batch.
+
+![Figure 2. Correct tables (left) and reported reasoning tokens (right) for 11 Codex models across 64 supported settings. Each setting received the same six tasks in one request. Fractions count correct tables among those that could be scored. A star marks a partial score, fmt means no table could be scored, and n/a marks an unsupported setting.](figures/effort_panel.png)
 
 ## External test corrections
 
