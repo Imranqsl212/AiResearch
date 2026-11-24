@@ -1,0 +1,120 @@
+{
+  "status": "CANDIDATE_NOT_FROZEN_NO_GENERATION",
+  "retrieved_date": "2026-11-23",
+  "catalogue": "https://openrouter.ai/api/v1/models",
+  "catalogue_sha256": "0806fb49146d77c869a126eacad25e723433792ff36c4d6b258c9757dd1be59f",
+  "models": [
+    {
+      "requested_id": "google/gemini-3.1-pro-preview",
+      "catalogue_slug": "google/gemini-3.1-pro-preview-20260219",
+      "open_checkpoint_reference": null,
+      "catalogue_supported_sampling_fields": [
+        "max_tokens",
+        "seed",
+        "temperature"
+      ],
+      "deployment_or_provider_route": null,
+      "served_weights_digest": null,
+      "served_quantization": null,
+      "runtime_version": null,
+      "catalogue_base_USD_per_million_text_tokens": {
+        "prompt": "2.000000",
+        "completion": "12.000000"
+      }
+    },
+    {
+      "requested_id": "anthropic/claude-sonnet-4.6",
+      "catalogue_slug": "anthropic/claude-4.6-sonnet-20260217",
+      "open_checkpoint_reference": null,
+      "catalogue_supported_sampling_fields": [
+        "max_tokens",
+        "temperature"
+      ],
+      "deployment_or_provider_route": null,
+      "served_weights_digest": null,
+      "served_quantization": null,
+      "runtime_version": null,
+      "catalogue_base_USD_per_million_text_tokens": {
+        "prompt": "3.000000",
+        "completion": "15.000000"
+      }
+    },
+    {
+      "requested_id": "qwen/qwen3-32b",
+      "catalogue_slug": "qwen/qwen3-32b-04-28",
+      "open_checkpoint_reference": "https://huggingface.co/Qwen/Qwen3-32B/tree/9216db5781bf21249d130ec9da846c4624c16137",
+      "catalogue_supported_sampling_fields": [
+        "max_tokens",
+        "seed",
+        "temperature"
+      ],
+      "deployment_or_provider_route": null,
+      "served_weights_digest": null,
+      "served_quantization": null,
+      "runtime_version": null,
+      "catalogue_base_USD_per_million_text_tokens": {
+        "prompt": "0.08000000",
+        "completion": "0.28000000"
+      }
+    },
+    {
+      "requested_id": "google/gemma-3-27b-it",
+      "catalogue_slug": "google/gemma-3-27b-it",
+      "open_checkpoint_reference": "https://huggingface.co/google/gemma-3-27b-it/tree/005ad3404e59d6023443cb575daa05336842228a",
+      "catalogue_supported_sampling_fields": [
+        "max_tokens",
+        "seed",
+        "temperature"
+      ],
+      "deployment_or_provider_route": null,
+      "served_weights_digest": null,
+      "served_quantization": null,
+      "runtime_version": null,
+      "catalogue_base_USD_per_million_text_tokens": {
+        "prompt": "0.08000000",
+        "completion": "0.16000000"
+      }
+    }
+  ],
+  "interpretation": "Public model-directory metadata, not an attestation of deployed weights or a budget authorization. Resolve the actual provider route and record dated returned model, runtime metadata, seed support and quantization evidence before collection. Proprietary or unavailable fields remain explicitly undisclosed.",
+  "notes": "Closed candidates are Claude Sonnet and Gemini Pro. Gemini is a preview deployment: withdrawal or inability to pin a route is grounds to amend before collection. Gemma and Qwen are open-weight families. A public checkpoint revision does not identify the hosted quantization. Do not silently substitute a model.",
+  "illustrative_text_cost": {
+    "schedule": "proposed broad19 with four models, 13680 calls/model if all branches use their full allowance",
+    "assumptions": "Fixed illustrative billed token counts below, base text rates, no caching, credits, other fees or distinct reasoning charges. These are not observed usage, spend ceilings or provider quotations. Record actual prices and billing before dispatch.",
+    "scenarios": [
+      {
+        "assumed_billed_prompt_tokens_per_call": 512,
+        "assumed_billed_completion_tokens_per_call": 128,
+        "model_USD": {
+          "google/gemini-3.1-pro-preview": "35.02",
+          "anthropic/claude-sonnet-4.6": "47.28",
+          "qwen/qwen3-32b": "1.05",
+          "google/gemma-3-27b-it": "0.84"
+        },
+        "sum_rounded_model_USD": "84.19"
+      },
+      {
+        "assumed_billed_prompt_tokens_per_call": 1024,
+        "assumed_billed_completion_tokens_per_call": 256,
+        "model_USD": {
+          "google/gemini-3.1-pro-preview": "70.04",
+          "anthropic/claude-sonnet-4.6": "94.56",
+          "qwen/qwen3-32b": "2.10",
+          "google/gemma-3-27b-it": "1.68"
+        },
+        "sum_rounded_model_USD": "168.38"
+      },
+      {
+        "assumed_billed_prompt_tokens_per_call": 2048,
+        "assumed_billed_completion_tokens_per_call": 256,
+        "model_USD": {
+          "google/gemini-3.1-pro-preview": "98.06",
+          "anthropic/claude-sonnet-4.6": "136.58",
+          "qwen/qwen3-32b": "3.22",
+          "google/gemma-3-27b-it": "2.80"
+        },
+        "sum_rounded_model_USD": "240.66"
+      }
+    ]
+  }
+}

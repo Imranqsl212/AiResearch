@@ -1,0 +1,112 @@
+{
+  "study_status": "EXTERNAL_INSTRUMENT_AUDIT_HUMAN_DECISIONS_PENDING",
+  "model_calls": 0,
+  "independent_human_reviews": 0,
+  "source_sha256": {
+    "cases.py": "74b9cc7c09155a66f01322fc5f4aad400c104528e3fd5382efd469ecaddf85b5",
+    "replay.py": "96e1de12239fd49ce847c3c82a9fb03574df54a822267527cf55c870408c0fba",
+    "selection.md": "909a71419c778722a29cfda69fe066f207b00cfe393168fbf48e789697ec98f7",
+    "sources.json": "d1f8ba45f3247f2345cb0b9c9b14f96a712f7810bc6d6ea4349a1d9646f9c124"
+  },
+  "measured": {
+    "seed": {
+      "case": "case-01",
+      "python": "3.14.7",
+      "outcomes_parent_then_fixed": {
+        "inherited_fixed_seed": [
+          "FAIL",
+          "PASS"
+        ],
+        "ordinary_isolated_child": [
+          "PASS",
+          "PASS"
+        ]
+      },
+      "model_calls": 0,
+      "review_status": "PENDING_INDEPENDENT_REVIEW"
+    },
+    "order": {
+      "case": "case-02",
+      "python": "3.14.7",
+      "outcomes_parent_then_fixed": {
+        "one_first": [
+          "PASS",
+          "PASS"
+        ],
+        "none_first": [
+          "FAIL",
+          "PASS"
+        ]
+      },
+      "model_calls": 0,
+      "review_status": "PENDING_INDEPENDENT_REVIEW"
+    },
+    "fold": {
+      "case": "case-04",
+      "python": "3.14.7",
+      "outcomes_parent_then_fixed": {
+        "normal": [
+          "PASS",
+          "PASS"
+        ],
+        "first_01": [
+          "FAIL",
+          "PASS"
+        ],
+        "second_01": [
+          "FAIL",
+          "PASS"
+        ]
+      },
+      "model_calls": 0,
+      "review_status": "PENDING_INDEPENDENT_REVIEW"
+    },
+    "plot": {
+      "case": "case-03",
+      "python": "3.11.18",
+      "outcomes_parent_then_fixed": {
+        "identical": [
+          "PASS",
+          "PASS"
+        ],
+        "one_ulp": [
+          "FAIL",
+          "PASS"
+        ],
+        "wrong_tick": [
+          "FAIL",
+          "FAIL"
+        ]
+      },
+      "model_calls": 0,
+      "review_status": "PENDING_INDEPENDENT_REVIEW"
+    },
+    "fold-property": {
+      "case": "case-04",
+      "python": "3.14.7",
+      "outcomes": {
+        "parent": {
+          "published_test_fixed_seed": "PASS",
+          "same_test_with_reported_inputs": "FAIL"
+        },
+        "fix": {
+          "published_test_fixed_seed": "PASS",
+          "same_test_with_reported_inputs": "PASS"
+        }
+      },
+      "hypothesis": "6.170.17",
+      "pytest": "8.4.2",
+      "model_calls": 0
+    }
+  },
+  "dependencies": {
+    "plot": {
+      "pandas": "3.1.1",
+      "numpy": "2.4.6"
+    },
+    "fold": {
+      "six": "1.17.0"
+    }
+  },
+  "limits": "Four targeted local witnesses; no full historical CI suite or agent behavior measured."
+}

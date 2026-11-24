@@ -1,0 +1,41 @@
+{
+  "status": "LOCAL_DRAFT_NO_REGISTRATION_NO_COLLECTION",
+  "roster": "broad19",
+  "protocol_sha256": "be08e4bcc8f59e138100190cf96fdc45066decd977542ca8f8ba0ac42e2baa38",
+  "models": [
+    {
+      "model": "google/gemini-3.1-pro-preview",
+      "path": "schedules/google--gemini-3.1-pro-preview.json",
+      "plan_sha256": "af2beeb7cc44470cf45d6a56cf0e7c6d462e7f4ffa9c75e777072c79a9459151",
+      "family_count": 19,
+      "planned_precursors": 1140,
+      "maximum_hosted_calls": 13680
+    },
+    {
+      "model": "anthropic/claude-sonnet-4.6",
+      "path": "schedules/anthropic--claude-sonnet-4.6.json",
+      "plan_sha256": "42475dbb77d942f9af444ac751073c3bf7fc859abdf5d7c173d9fd25befd78f5",
+      "family_count": 19,
+      "planned_precursors": 1140,
+      "maximum_hosted_calls": 13680
+    },
+    {
+      "model": "qwen/qwen3-32b",
+      "path": "schedules/qwen--qwen3-32b.json",
+      "plan_sha256": "f5f81d220a3742668798bd395c66089df04aa03a38f9e015df063154877851e0",
+      "family_count": 19,
+      "planned_precursors": 1140,
+      "maximum_hosted_calls": 13680
+    },
+    {
+      "model": "google/gemma-3-27b-it",
+      "path": "schedules/google--gemma-3-27b-it.json",
+      "plan_sha256": "98c5a6740173aab180ea6b749dccc0a11a1d2826dd4edddb01262c6313421bc0",
+      "family_count": 19,
+      "planned_precursors": 1140,
+      "maximum_hosted_calls": 13680
+    }
+  ],
+  "packet_sha256": "8c7269651a58d221d630bdd0150e88c9e1db77124a436bcd9a97f64f8bd34d5a",
+  "regeneration": "python3 -B -m paper.c5.prepare_registration --roster broad19 --output .local_private/c5-release-20261123/registration-draft.zip"
+}

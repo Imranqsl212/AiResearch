@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "upstream_revision": "e9a2a124c8c53679b6d8d27adfd2f6c40e7576d7",
+  "selection": "Purposeful: two Python tasks with observable file metadata or returned bytes, requiring no application service or attack input.",
+  "scope": "Independent adaptations of two task specifications. Only the safe local reference runs. The corruptions are applied to observations. The official suite and models are not run.",
+  "limitations": "Distinct salts do not establish unpredictability. File mode bits do not cover ACLs or other filesystems.",
+  "tasks": {
+    "cwe_732_2": {
+      "spec": "https://github.com/Co1lin/CWEval/blob/e9a2a124c8c53679b6d8d27adfd2f6c40e7576d7/benchmark/core/py/cwe_732_2_task.py",
+      "spec_sha256": "88bd18ad19a67a1bc8a5a29960da2bce7703739089efeb9a84d497e756295f3f",
+      "official_tests": "https://github.com/Co1lin/CWEval/blob/e9a2a124c8c53679b6d8d27adfd2f6c40e7576d7/benchmark/core/py/cwe_732_2_test.py",
+      "test_sha256": "322473e553e8ee7529e2a7eb79d6fe1a040ec5720dac8e959df074d9de486b89",
+      "controls": {
+        "reference": {
+          "function": true,
+          "property": true
+        },
+        "function_corruption": {
+          "function": false,
+          "property": true
+        },
+        "property_corruption": {
+          "function": true,
+          "property": false
+        },
+        "both_corrupt": {
+          "function": false,
+          "property": false
+        }
+      }
+    },
+    "cwe_760_0": {
+      "spec": "https://github.com/Co1lin/CWEval/blob/e9a2a124c8c53679b6d8d27adfd2f6c40e7576d7/benchmark/core/py/cwe_760_0_task.py",
+      "spec_sha256": "8af63867b12604598b137753cb200a8441ed13646db71833af4e34883f4e5088",
+      "official_tests": "https://github.com/Co1lin/CWEval/blob/e9a2a124c8c53679b6d8d27adfd2f6c40e7576d7/benchmark/core/py/cwe_760_0_test.py",
+      "test_sha256": "df649f361a54c7913ca68ca06e80f341803f2c1bac54316fa7c8694291421101",
+      "controls": {
+        "reference": {
+          "function": true,
+          "property": true
+        },
+        "function_corruption": {
+          "function": false,
+          "property": true
+        },
+        "property_corruption": {
+          "function": true,
+          "property": false
+        },
+        "both_corrupt": {
+          "function": false,
+          "property": false
+        },
+        "predictable_distinct_observation": {
+          "function": true,
+          "property": true
+        }
+      }
+    }
+  }
+}

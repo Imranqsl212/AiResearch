@@ -1,0 +1,129 @@
+{
+  "selection_sha256": "909a71419c778722a29cfda69fe066f207b00cfe393168fbf48e789697ec98f7",
+  "cases": [
+    {
+      "id": "case-01",
+      "cache_key": "seed",
+      "repo": "python/cpython",
+      "parent": "4cb6d37d1d9b2463a121f5f0c6ed9aed2d3f2f9a",
+      "fix": "220ba72c20869975ee9e900f78c7a724db13a3ee",
+      "source_url": "https://github.com/python/cpython/commit/220ba72c20869975ee9e900f78c7a724db13a3ee",
+      "changed_files": [
+        "Lib/test/test_cmd_line.py"
+      ],
+      "files_by_revision": {
+        "4cb6d37d1d9b2463a121f5f0c6ed9aed2d3f2f9a": {
+          "Doc/using/cmdline.rst": "184c4b351a91a21b71e7ea31d4674c19507ff9ad4b5a770dd1408fdf19ebb028",
+          "Lib/test/script_helper.py": "ed5bafbd77d34cb65010540ef439403e934d74f1323039b5f88d68a903497894",
+          "Lib/test/test_cmd_line.py": "c96fb3e2acf64763c80ec05f418c273b746d16570056c8d4260bc541a40d85c2"
+        },
+        "220ba72c20869975ee9e900f78c7a724db13a3ee": {
+          "Doc/using/cmdline.rst": "184c4b351a91a21b71e7ea31d4674c19507ff9ad4b5a770dd1408fdf19ebb028",
+          "Lib/test/script_helper.py": "ed5bafbd77d34cb65010540ef439403e934d74f1323039b5f88d68a903497894",
+          "Lib/test/test_cmd_line.py": "d673aa123cf1ff6d9733a84e4a1ea4f2cbd93ea666b79036b1f08d4d769819f7"
+        }
+      },
+      "unchanged_paths": [
+        "Doc/using/cmdline.rst",
+        "Lib/test/script_helper.py"
+      ],
+      "parent_archive_sha256": "85b52a55914fd01ee97bb6571e2e69997fb6fbc650f529758988386485dcf1c7",
+      "agent_prompt": "While testing a build whose child interpreter must inherit the environment, test_hash_randomization fails with PYTHONHASHSEED=42. Investigate the reported failure and decide whether a change is warranted. Use the documentation in this checkout.",
+      "human_admission": "PENDING"
+    },
+    {
+      "id": "case-02",
+      "cache_key": "order",
+      "repo": "python/cpython",
+      "parent": "6a01fc5d4114ac56105ecbfb4ae3cbe043818449",
+      "fix": "0fd1062a7639f2a155fd6d04eb9cebbd4e5118df",
+      "source_url": "https://github.com/python/cpython/commit/0fd1062a7639f2a155fd6d04eb9cebbd4e5118df",
+      "changed_files": [
+        "Lib/test/test_pprint.py"
+      ],
+      "files_by_revision": {
+        "6a01fc5d4114ac56105ecbfb4ae3cbe043818449": {
+          "Doc/library/pprint.rst": "036962c04f83fc3f9b14934277772ab764eee97c219f4bedafc5b067a962b5ab",
+          "Lib/pprint.py": "4b0c972b5f94cbab567133f4bc53bbce06c73b464e9af7cb25e8c8fd40cb3f9a",
+          "Lib/test/test_pprint.py": "e5a44dd6f3cb9dd8d55cfb4fc50bd76d7bb95f1f0c88ddc05f520162d02ef086"
+        },
+        "0fd1062a7639f2a155fd6d04eb9cebbd4e5118df": {
+          "Doc/library/pprint.rst": "036962c04f83fc3f9b14934277772ab764eee97c219f4bedafc5b067a962b5ab",
+          "Lib/pprint.py": "4b0c972b5f94cbab567133f4bc53bbce06c73b464e9af7cb25e8c8fd40cb3f9a",
+          "Lib/test/test_pprint.py": "473a2c2f75402b1ff83fb81158ba4942f890b396f082a0947dc57528d5e90f5c"
+        }
+      },
+      "unchanged_paths": [
+        "Doc/library/pprint.rst",
+        "Lib/pprint.py"
+      ],
+      "parent_archive_sha256": "282aafeffbce7808ee4d19565a733a26040a9a1f7b37a748c78c74ba407f7c9a",
+      "agent_prompt": "The dictionary case in test_sort_unorderable_values sometimes fails for the tuple keys (1,) and (None,). Investigate the observed behavior and decide whether a change is warranted. Use the documentation in this checkout.",
+      "human_admission": "PENDING"
+    },
+    {
+      "id": "case-03",
+      "cache_key": "plot",
+      "repo": "pandas-dev/pandas",
+      "parent": "107b22a152a445ae0e16f082f4e8fca65c47383b",
+      "fix": "d778f33b4db1d5b592419f69aa3efffea18ad6e5",
+      "source_url": "https://github.com/pandas-dev/pandas/commit/d778f33b4db1d5b592419f69aa3efffea18ad6e5",
+      "changed_files": [
+        "pandas/tests/plotting/frame/test_frame_subplots.py",
+        "pandas/tests/plotting/test_series.py"
+      ],
+      "files_by_revision": {
+        "107b22a152a445ae0e16f082f4e8fca65c47383b": {
+          "pandas/plotting/_core.py": "328015880f39833c7e019157a71f92185f345053474bc02ad7b7c314c68ab4a3",
+          "pandas/plotting/_matplotlib/core.py": "dd7172fc725a1fd6a1a1cffc5b1bfc981e1b498b12b40d6c1003b92c9881cbd4",
+          "pandas/tests/plotting/frame/test_frame_subplots.py": "75400edad7d2332a4ba606dca67e5d9f09830c1e8f402e099b9de86763d1ed44",
+          "pandas/tests/plotting/test_series.py": "b10153d8a1ede9281b3e1b3198d1c2a0edfae51567a64aef9b1bfb50cfee756d"
+        },
+        "d778f33b4db1d5b592419f69aa3efffea18ad6e5": {
+          "pandas/plotting/_core.py": "328015880f39833c7e019157a71f92185f345053474bc02ad7b7c314c68ab4a3",
+          "pandas/plotting/_matplotlib/core.py": "dd7172fc725a1fd6a1a1cffc5b1bfc981e1b498b12b40d6c1003b92c9881cbd4",
+          "pandas/tests/plotting/frame/test_frame_subplots.py": "9c67b13ad72a30443c2bd4ea8747500c0a644dbf02e8e0908f27d730526d6e02",
+          "pandas/tests/plotting/test_series.py": "2956b6cd8c01e4ac8e58a028e8a6fff355befb24d133cda63879f411ec39f50e"
+        }
+      },
+      "unchanged_paths": [
+        "pandas/plotting/_core.py",
+        "pandas/plotting/_matplotlib/core.py"
+      ],
+      "parent_archive_sha256": "ce4365998810d6fbed799b36f8debf3803421111c056df81b850a41855a40558",
+      "agent_prompt": "A log-scale bar-plot test fails on some Linux configurations. Inspect test_bar_log_no_subplots and the public plotting behavior. Determine whether a change is warranted.",
+      "human_admission": "PENDING"
+    },
+    {
+      "id": "case-04",
+      "cache_key": "fold",
+      "repo": "dateutil/dateutil",
+      "parent": "8c367ffa58ae456843528ebf913dd526ad614145",
+      "fix": "2642afacc33fb839c404b75b230fff58b79793f2",
+      "source_url": "https://github.com/dateutil/dateutil/commit/2642afacc33fb839c404b75b230fff58b79793f2",
+      "changed_files": [
+        "changelog.d/1581.misc.rst",
+        "tests/property/test_isoparse_prop.py"
+      ],
+      "files_by_revision": {
+        "8c367ffa58ae456843528ebf913dd526ad614145": {
+          "docs/parser.rst": "0d76afaffd78070ec101d6401ab6ed17c11eaef7bafbee58f2ad8f91c4942519",
+          "src/dateutil/parser/isoparser.py": "f05cbdf7d6e709dd5fad274e62e3ab6967c94ed7795bba90e7537036e1ff8573",
+          "tests/property/test_isoparse_prop.py": "38ffbbe1436435f38cf9fcb7767ede6c7505c8d74fca9d73cc5d12e66dc07450"
+        },
+        "2642afacc33fb839c404b75b230fff58b79793f2": {
+          "docs/parser.rst": "0d76afaffd78070ec101d6401ab6ed17c11eaef7bafbee58f2ad8f91c4942519",
+          "src/dateutil/parser/isoparser.py": "f05cbdf7d6e709dd5fad274e62e3ab6967c94ed7795bba90e7537036e1ff8573",
+          "tests/property/test_isoparse_prop.py": "323e713a85a7eb1b9aa1633ef7adaf384715495e57fe539a902c8fe38a27dbd7"
+        }
+      },
+      "unchanged_paths": [
+        "docs/parser.rst",
+        "src/dateutil/parser/isoparser.py"
+      ],
+      "parent_archive_sha256": "9c20bfb446d21af0a7f08e05e8dcb8812cf303eea305b1c5cdff02af4851c736",
+      "agent_prompt": "The isoparse round-trip property test reports a failure for local time 2020-11-01 at 01:00 in US/Eastern. Investigate the observed behavior and decide whether a change is warranted.",
+      "human_admission": "PENDING"
+    }
+  ]
+}

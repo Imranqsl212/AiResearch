@@ -1,0 +1,101 @@
+{
+  "description": "Synthetic runner controls. Every onset is an authored fixture. All finite decisions were replayed from archived inputs. The counts test software control flow and carry no model-behavior interpretation.",
+  "runs": {
+    "v7eight": {
+      "balanced_plan_slots_validated": 480,
+      "eligible_for_main_analysis": false,
+      "families_exercised": 1,
+      "families_in_plan": 8,
+      "hosted_calls": 0,
+      "roster": "v7eight",
+      "runner_slots_executed": 12,
+      "simulated": true,
+      "status": "MODEL_FREE_RUNNER_SMOKE_PASSED",
+      "verification": {
+        "decisions": 96,
+        "eligible_for_main_analysis": false,
+        "files": 756,
+        "status": "ARCHIVE_AND_FINITE_REPLAY_VERIFIED"
+      },
+      "by_policy": {
+        "stop": {
+          "precursor_paths": 4,
+          "onsets": 2,
+          "AA_branches": 4,
+          "AA_early_stops": 4,
+          "C5_branches": 4,
+          "C5_early_stops": 4
+        },
+        "continue": {
+          "precursor_paths": 4,
+          "onsets": 2,
+          "AA_branches": 4,
+          "AA_early_stops": 0,
+          "C5_branches": 4,
+          "C5_early_stops": 0
+        },
+        "random": {
+          "precursor_paths": 4,
+          "onsets": 2,
+          "AA_branches": 4,
+          "AA_early_stops": 3,
+          "C5_branches": 4,
+          "C5_early_stops": 4
+        }
+      },
+      "digests": {
+        "plan.json": "ee83efbcb89e2f7daa225c4c073d7c59b2055e97691e5882f606a93ff75b67b8",
+        "archive_manifest.json": "74ce8d1b655accc05b63a7ff65acab70bd5f712edce695b0298c0d7fa395c91c",
+        "summary.json": "ae74c8b49e2a2c12d992d227f068e46e385ccf033fb5d9b2979db7a9aa3f13d8"
+      }
+    },
+    "broad19": {
+      "balanced_plan_slots_validated": 1140,
+      "eligible_for_main_analysis": false,
+      "families_exercised": 19,
+      "families_in_plan": 19,
+      "hosted_calls": 0,
+      "roster": "broad19",
+      "runner_slots_executed": 84,
+      "simulated": true,
+      "status": "MODEL_FREE_RUNNER_SMOKE_PASSED",
+      "verification": {
+        "decisions": 381,
+        "eligible_for_main_analysis": false,
+        "files": 3386,
+        "status": "ARCHIVE_AND_FINITE_REPLAY_VERIFIED"
+      },
+      "by_policy": {
+        "stop": {
+          "precursor_paths": 76,
+          "onsets": 38,
+          "AA_branches": 76,
+          "AA_early_stops": 76,
+          "C5_branches": 76,
+          "C5_early_stops": 76
+        },
+        "continue": {
+          "precursor_paths": 4,
+          "onsets": 2,
+          "AA_branches": 4,
+          "AA_early_stops": 0,
+          "C5_branches": 4,
+          "C5_early_stops": 0
+        },
+        "random": {
+          "precursor_paths": 4,
+          "onsets": 2,
+          "AA_branches": 4,
+          "AA_early_stops": 3,
+          "C5_branches": 4,
+          "C5_early_stops": 4
+        }
+      },
+      "digests": {
+        "plan.json": "ca38f56cd5cf1c5ee490fdc330483f96ff41e6762f6c6b571e917b8e0bf56015",
+        "archive_manifest.json": "0e19eb47c1e1a5fa6224292076a49aa2733792a8d9a376527766efceeb83e78d",
+        "summary.json": "c14d9a9097e0e0a6869e12722446b94a1fc50d48d7c2979a419a0cf29467fab5"
+      }
+    }
+  }
+}

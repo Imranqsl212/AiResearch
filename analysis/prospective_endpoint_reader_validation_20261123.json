@@ -1,0 +1,215 @@
+{
+  "archive_provenance": [
+    {
+      "archive_manifest_sha256": "0e19eb47c1e1a5fa6224292076a49aa2733792a8d9a376527766efceeb83e78d",
+      "plan_sha256": "ca38f56cd5cf1c5ee490fdc330483f96ff41e6762f6c6b571e917b8e0bf56015",
+      "reservation_kind": "EXECUTED_SIMULATED_FIXTURE_ONLY",
+      "reserved_slots": [
+        "slot-000001",
+        "slot-000016",
+        "slot-000031",
+        "slot-000046",
+        "slot-000061",
+        "slot-000076",
+        "slot-000091",
+        "slot-000106",
+        "slot-000121",
+        "slot-000126",
+        "slot-000131",
+        "slot-000136",
+        "slot-000141",
+        "slot-000146",
+        "slot-000151",
+        "slot-000156",
+        "slot-000161",
+        "slot-000166",
+        "slot-000171",
+        "slot-000176",
+        "slot-000181",
+        "slot-000196",
+        "slot-000211",
+        "slot-000226",
+        "slot-000241",
+        "slot-000256",
+        "slot-000271",
+        "slot-000286",
+        "slot-000301",
+        "slot-000316",
+        "slot-000331",
+        "slot-000346",
+        "slot-000361",
+        "slot-000376",
+        "slot-000391",
+        "slot-000406",
+        "slot-000421",
+        "slot-000436",
+        "slot-000451",
+        "slot-000466",
+        "slot-000481",
+        "slot-000496",
+        "slot-000511",
+        "slot-000526",
+        "slot-000541",
+        "slot-000556",
+        "slot-000571",
+        "slot-000586",
+        "slot-000601",
+        "slot-000616",
+        "slot-000631",
+        "slot-000646",
+        "slot-000661",
+        "slot-000676",
+        "slot-000691",
+        "slot-000706",
+        "slot-000721",
+        "slot-000736",
+        "slot-000751",
+        "slot-000766",
+        "slot-000781",
+        "slot-000796",
+        "slot-000811",
+        "slot-000826",
+        "slot-000841",
+        "slot-000856",
+        "slot-000871",
+        "slot-000886",
+        "slot-000901",
+        "slot-000916",
+        "slot-000931",
+        "slot-000946",
+        "slot-000961",
+        "slot-000976",
+        "slot-000991",
+        "slot-001006",
+        "slot-001021",
+        "slot-001036",
+        "slot-001051",
+        "slot-001066",
+        "slot-001081",
+        "slot-001096",
+        "slot-001111",
+        "slot-001126"
+      ],
+      "simulated": true,
+      "verification": {
+        "decisions": 381,
+        "eligible_for_main_analysis": false,
+        "files": 3386,
+        "status": "ARCHIVE_AND_FINITE_REPLAY_VERIFIED"
+      }
+    }
+  ],
+  "candidate_code_executed": false,
+  "denominators_and_coverage": [
+    {
+      "AA_reserved_onset_pairs": 42,
+      "C4_C3_scheduled_pairs": 285,
+      "C5_reserved_onset_pairs": 42,
+      "C5_terminal_component_coverage": {
+        "control": {
+          "allowed_case_count": 30,
+          "arms_with_false_acceptance": 1,
+          "arms_with_false_denial": 0,
+          "both_components_measurable": 28,
+          "false_accept_case_count": 1,
+          "false_denial_case_count": 0,
+          "missing_reasons": {
+            "FAMILY_HAS_NO_IMPLEMENTED_BOOLEAN_COMPONENT_ADAPTER": 12,
+            "NON_BOOLEAN_REQUIREMENT_OR_OBSERVATION": 2
+          },
+          "prohibited_case_count": 62,
+          "reserved_arms": 42,
+          "unsupported_or_missing": 14
+        },
+        "treatment": {
+          "allowed_case_count": 30,
+          "arms_with_false_acceptance": 1,
+          "arms_with_false_denial": 0,
+          "both_components_measurable": 28,
+          "false_accept_case_count": 1,
+          "false_denial_case_count": 0,
+          "missing_reasons": {
+            "FAMILY_HAS_NO_IMPLEMENTED_BOOLEAN_COMPONENT_ADAPTER": 12,
+            "NON_BOOLEAN_REQUIREMENT_OR_OBSERVATION": 2
+          },
+          "prohibited_case_count": 62,
+          "reserved_arms": 42,
+          "unsupported_or_missing": 14
+        }
+      },
+      "model": "simulated-control",
+      "observed_precursor_receipts": 84,
+      "onset_statuses": {
+        "OBSERVED": 42,
+        "UNOBSERVED": 528
+      },
+      "plan_sha256": "ca38f56cd5cf1c5ee490fdc330483f96ff41e6762f6c6b571e917b8e0bf56015",
+      "planned_precursors": 1140,
+      "precursor_statuses": {
+        "COMPLETED": 84,
+        "UNRESERVED": 1056
+      },
+      "reserved_precursors": 84,
+      "simulated": true
+    }
+  ],
+  "eligible_for_main_analysis": false,
+  "endpoint_export_manifest_sha256": "0ad2c7894e5f9031312dd05b5e96abcc2ce6bb74e48e9d1169f9c5f8d1c7ea28",
+  "hosted_calls": 0,
+  "limitations": [
+    "All decisions are authored scripted calibration; no hosted model result or admitted study.",
+    "Temporary captures/exports are local validation artifacts; public source and regression tests reproduce the reader behavior.",
+    "Separate Boolean components are distinct endpoints from shared finite cases, not independent evaluator implementations.",
+    "Unsealed/incomplete captures fail closed; actual onset pairs never substitute for unreached or unreserved precursors.",
+    "Quota overflow action vectors remain unsupported; ambiguous parameters uses native scalar Boolean semantics and historical numbered case IDs."
+  ],
+  "output_table_sha256s": {
+    "m-a505a3a274c8__AA__early_stop.json": "eb609265f136d7c5c1ff06bb8f22633bee42837ee2c63da39b9667371f64817a",
+    "m-a505a3a274c8__AA__temporary_regression.json": "86dd171eacfef680ef33c57b24957877610bff1c230850c20554dd8405653486",
+    "m-a505a3a274c8__AA__terminal_regression.json": "5895ce8301bccaf068b6d13ad34ef74b9c554d8742dd56e439083593bdc26f58",
+    "m-a505a3a274c8__C4_C3__early_stop.json": "fc9d8274c8262162dfe6178528c7aa988cb007957beb315d9c29252a76ee6706",
+    "m-a505a3a274c8__C5__early_stop.json": "cff5e80d96626439f0c504ad785974a82a0f79341ae215c291a8320c54ccdfeb",
+    "m-a505a3a274c8__C5__temporary_regression.json": "91ffb1396bf10c9b0fe200ba81f20bcb98c07abd36c7352c90b42baa897fd90e",
+    "m-a505a3a274c8__C5__terminal_regression.json": "252111dc9138701ea39708c3fb74226d8da6d50a1b97368878b62f919b1bdf85"
+  },
+  "schema_version": "c5-prospective-endpoint-reader-validation-v1",
+  "simulated": true,
+  "source_file_sha256s": {
+    "analysis/c5_prospective_endpoints.py": "10113dcc2ee4330e9e7d2794becf3db19f755fe9316f2bbaa7777ba77b47e9f9",
+    "analysis/c5_statistical_summary_20261123.py": "d4b2f8dc4bf83baf92eada74e7280567536e8dce163bb8b7407645497fae8671",
+    "docs/PROSPECTIVE_ENDPOINT_READER.md": "549a04c274f3ea26209477ed0b394142a2af82767a6cff544e0543e83026f88a",
+    "tests/test_c5_prospective_endpoints.py": "c9dddbf02811f11179b4fc7ccd0a93b289314f689def87495df558110969ae83"
+  },
+  "status": "SYNTHETIC_VALIDATION_PASSED",
+  "summary_cli_checks": [
+    {
+      "analysis_release": "NOT_ATTESTED_BY_ENDPOINT_READER",
+      "complete_pairs": 42,
+      "contrast": "C5",
+      "data_kind": "SYNTHETIC_CALIBRATION",
+      "eligible_for_main_analysis": false,
+      "endpoint": "terminal_regression",
+      "incomplete_pairs": 0,
+      "output_sha256": "a29612be8f3d06d9a8d771357c48cb4e16f38f4f350fd64505fc75fd38115caf",
+      "scheduled_pairs": 42,
+      "simulated": true
+    },
+    {
+      "analysis_release": "NOT_ATTESTED_BY_ENDPOINT_READER",
+      "complete_pairs": 21,
+      "contrast": "C4_C3",
+      "data_kind": "SYNTHETIC_CALIBRATION",
+      "eligible_for_main_analysis": false,
+      "endpoint": "early_stop",
+      "incomplete_pairs": 264,
+      "output_sha256": "896664c07bd47a0d15ac7b2d222360ceab0a1a923ad84351b0d8d9311c82841f",
+      "scheduled_pairs": 285,
+      "simulated": true
+    }
+  ],
+  "tests": {
+    "command": "python3 -B -m unittest tests.test_c5_prospective_endpoints -v",
+    "elapsed_seconds": 13.882,
+    "tests_passed": 12
+  }
+}

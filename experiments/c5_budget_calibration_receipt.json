@@ -1,0 +1,308 @@
+{
+  "controls": [
+    {
+      "block_id": "slot-000121",
+      "branch_status": {
+        "FAIL2": "VALID",
+        "FAIL3": "VALID",
+        "PASS2": "VALID",
+        "PASS3": "VALID"
+      },
+      "condition": "C1",
+      "decision_count": {
+        "FAIL2": 1,
+        "FAIL3": 1,
+        "PASS2": 1,
+        "PASS3": 1
+      },
+      "policy": "stop",
+      "terminal_correct": {
+        "FAIL2": true,
+        "FAIL3": true,
+        "PASS2": true,
+        "PASS3": true
+      }
+    },
+    {
+      "block_id": "slot-000122",
+      "branch_status": {
+        "FAIL2": "VALID",
+        "FAIL3": "VALID",
+        "PASS2": "VALID",
+        "PASS3": "VALID"
+      },
+      "condition": "C1",
+      "decision_count": {
+        "FAIL2": 2,
+        "FAIL3": 3,
+        "PASS2": 2,
+        "PASS3": 3
+      },
+      "policy": "continue",
+      "terminal_correct": {
+        "FAIL2": true,
+        "FAIL3": true,
+        "PASS2": true,
+        "PASS3": true
+      }
+    },
+    {
+      "block_id": "slot-000123",
+      "branch_status": {
+        "FAIL2": "VALID",
+        "FAIL3": "VALID",
+        "PASS2": "VALID",
+        "PASS3": "VALID"
+      },
+      "condition": "C1",
+      "decision_count": {
+        "FAIL2": 1,
+        "FAIL3": 2,
+        "PASS2": 1,
+        "PASS3": 2
+      },
+      "policy": "budget_sensitive",
+      "terminal_correct": {
+        "FAIL2": true,
+        "FAIL3": true,
+        "PASS2": true,
+        "PASS3": true
+      }
+    },
+    {
+      "block_id": "slot-000124",
+      "branch_status": {
+        "FAIL2": "VALID",
+        "FAIL3": "VALID",
+        "PASS2": "VALID",
+        "PASS3": "VALID"
+      },
+      "condition": "C1",
+      "decision_count": {
+        "FAIL2": 2,
+        "FAIL3": 3,
+        "PASS2": 2,
+        "PASS3": 3
+      },
+      "policy": "false_fail_damage",
+      "terminal_correct": {
+        "FAIL2": true,
+        "FAIL3": false,
+        "PASS2": true,
+        "PASS3": true
+      }
+    },
+    {
+      "block_id": "slot-000125",
+      "branch_status": {
+        "FAIL2": "VALID",
+        "FAIL3": "TECHNICAL_INVALID",
+        "PASS2": "VALID",
+        "PASS3": "VALID"
+      },
+      "condition": "C1",
+      "decision_count": {
+        "FAIL2": 1,
+        "FAIL3": 0,
+        "PASS2": 1,
+        "PASS3": 1
+      },
+      "policy": "technical_failure",
+      "terminal_correct": {
+        "FAIL2": true,
+        "FAIL3": null,
+        "PASS2": true,
+        "PASS3": true
+      }
+    },
+    {
+      "block_id": "slot-000126",
+      "branch_status": {
+        "FAIL2": "UNSTARTED",
+        "FAIL3": "UNSTARTED",
+        "PASS2": "UNSTARTED",
+        "PASS3": "UNSTARTED"
+      },
+      "condition": "C1",
+      "decision_count": {
+        "FAIL2": null,
+        "FAIL3": null,
+        "PASS2": null,
+        "PASS3": null
+      },
+      "policy": "no_onset",
+      "terminal_correct": {
+        "FAIL2": null,
+        "FAIL3": null,
+        "PASS2": null,
+        "PASS3": null
+      }
+    },
+    {
+      "block_id": "slot-000136",
+      "branch_status": {
+        "FAIL2": "VALID",
+        "FAIL3": "VALID",
+        "PASS2": "VALID",
+        "PASS3": "VALID"
+      },
+      "condition": "C2",
+      "decision_count": {
+        "FAIL2": 1,
+        "FAIL3": 1,
+        "PASS2": 1,
+        "PASS3": 1
+      },
+      "policy": "stop",
+      "terminal_correct": {
+        "FAIL2": true,
+        "FAIL3": true,
+        "PASS2": true,
+        "PASS3": true
+      }
+    },
+    {
+      "block_id": "slot-000137",
+      "branch_status": {
+        "FAIL2": "VALID",
+        "FAIL3": "VALID",
+        "PASS2": "VALID",
+        "PASS3": "VALID"
+      },
+      "condition": "C2",
+      "decision_count": {
+        "FAIL2": 2,
+        "FAIL3": 3,
+        "PASS2": 2,
+        "PASS3": 3
+      },
+      "policy": "continue",
+      "terminal_correct": {
+        "FAIL2": true,
+        "FAIL3": true,
+        "PASS2": true,
+        "PASS3": true
+      }
+    },
+    {
+      "block_id": "slot-000138",
+      "branch_status": {
+        "FAIL2": "VALID",
+        "FAIL3": "VALID",
+        "PASS2": "VALID",
+        "PASS3": "VALID"
+      },
+      "condition": "C2",
+      "decision_count": {
+        "FAIL2": 1,
+        "FAIL3": 2,
+        "PASS2": 1,
+        "PASS3": 2
+      },
+      "policy": "budget_sensitive",
+      "terminal_correct": {
+        "FAIL2": true,
+        "FAIL3": true,
+        "PASS2": true,
+        "PASS3": true
+      }
+    },
+    {
+      "block_id": "slot-000139",
+      "branch_status": {
+        "FAIL2": "VALID",
+        "FAIL3": "VALID",
+        "PASS2": "VALID",
+        "PASS3": "VALID"
+      },
+      "condition": "C2",
+      "decision_count": {
+        "FAIL2": 2,
+        "FAIL3": 3,
+        "PASS2": 2,
+        "PASS3": 3
+      },
+      "policy": "false_fail_damage",
+      "terminal_correct": {
+        "FAIL2": true,
+        "FAIL3": false,
+        "PASS2": true,
+        "PASS3": true
+      }
+    },
+    {
+      "block_id": "slot-000140",
+      "branch_status": {
+        "FAIL2": "VALID",
+        "FAIL3": "TECHNICAL_INVALID",
+        "PASS2": "VALID",
+        "PASS3": "VALID"
+      },
+      "condition": "C2",
+      "decision_count": {
+        "FAIL2": 1,
+        "FAIL3": 0,
+        "PASS2": 1,
+        "PASS3": 1
+      },
+      "policy": "technical_failure",
+      "terminal_correct": {
+        "FAIL2": true,
+        "FAIL3": null,
+        "PASS2": true,
+        "PASS3": true
+      }
+    },
+    {
+      "block_id": "slot-000141",
+      "branch_status": {
+        "FAIL2": "UNSTARTED",
+        "FAIL3": "UNSTARTED",
+        "PASS2": "UNSTARTED",
+        "PASS3": "UNSTARTED"
+      },
+      "condition": "C2",
+      "decision_count": {
+        "FAIL2": null,
+        "FAIL3": null,
+        "PASS2": null,
+        "PASS3": null
+      },
+      "policy": "no_onset",
+      "terminal_correct": {
+        "FAIL2": null,
+        "FAIL3": null,
+        "PASS2": null,
+        "PASS3": null
+      }
+    }
+  ],
+  "eligible_for_main_analysis": false,
+  "families_exercised": [
+    "csrf_origin"
+  ],
+  "hosted_calls": 0,
+  "manifest_sha256": "bfcb2c83724e265eda59c9b7b94a35ea3d8a5222ceaa2c9b4b4d5813966a899f",
+  "observed_authored_onsets": 10,
+  "plan_sha256": "c6e44e4d1b570f653b373a18f3bd875267eef94790cee7bd8cd7acc6cef6e500",
+  "planned_families": 19,
+  "previous_runtime_plan_sha256": "7e4b0646af2a527af94efd62cea234b48ddfd66f28fd831d3a4b6f306e1682e2",
+  "runner_sha256": "306b5a170d2de959257b7f20d9295cd27bedb9ab98fc839e17d1329c3c845e82",
+  "runtime_binding": {
+    "platform": "darwin",
+    "python_executable_sha256": "d8f1d508de5acfd500f20d1949528375ff4a1f470efb267f00d1770941cdeee3",
+    "python_implementation": "cpython",
+    "python_version": [
+      3,
+      14,
+      7
+    ]
+  },
+  "schema_version": "c5-budget-factorial-v1",
+  "simulated": true,
+  "source_bundle_sha256": "b8dc8baab5ae5233525e78bf7c72484d80941156cb7d268b82925debce011022",
+  "status": "MODEL_FREE_CALIBRATION_PASSED",
+  "unstarted_no_onset_blocks": 2,
+  "verified_blocks": 12,
+  "verified_decisions": 88
+}

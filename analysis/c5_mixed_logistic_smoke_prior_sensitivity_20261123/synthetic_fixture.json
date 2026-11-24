@@ -1,0 +1,7068 @@
+{
+  "contrast": "C5",
+  "data_kind": "SYNTHETIC_CALIBRATION",
+  "endpoint": "early_stop",
+  "models": [
+    "synthetic_model_0",
+    "synthetic_model_1",
+    "synthetic_model_2",
+    "synthetic_model_3"
+  ],
+  "pair_roster": [
+    {
+      "family": "synthetic_family_000",
+      "model": "synthetic_model_0",
+      "pair_id": "f0-m0-p0-c0",
+      "pair_source_sha256": "1007c6413877a46e6d7482e23bbde7250d5bdb2728491bf4061348eac0708404",
+      "precursor_condition": "C1",
+      "prompt": "synthetic_prompt_0"
+    },
+    {
+      "family": "synthetic_family_000",
+      "model": "synthetic_model_0",
+      "pair_id": "f0-m0-p0-c1",
+      "pair_source_sha256": "4eae947992dffe45bdda58818e43e412456c1050d96b0734e08435fe178f670d",
+      "precursor_condition": "C2",
+      "prompt": "synthetic_prompt_0"
+    },
+    {
+      "family": "synthetic_family_000",
+      "model": "synthetic_model_0",
+      "pair_id": "f0-m0-p1-c0",
+      "pair_source_sha256": "8a2fbe5c1984feed8f2b46e2a4a1a7e89c83ceab3b3be79ea0cefc7a67a2ea75",
+      "precursor_condition": "C1",
+      "prompt": "synthetic_prompt_1"
+    },
+    {
+      "family": "synthetic_family_000",
+      "model": "synthetic_model_0",
+      "pair_id": "f0-m0-p1-c1",
+      "pair_source_sha256": "20816dd5ee2170d23be82e0d4f256f59816be4b29cde9c9cd4e249bc7881b938",
+      "precursor_condition": "C2",
+      "prompt": "synthetic_prompt_1"
+    },
+    {
+      "family": "synthetic_family_000",
+      "model": "synthetic_model_1",
+      "pair_id": "f0-m1-p0-c0",
+      "pair_source_sha256": "e6cbddc57b0b9cd0b0a8c02ddfdd5c5093043bd7675cd0b576cc407461e59fba",
+      "precursor_condition": "C1",
+      "prompt": "synthetic_prompt_0"
+    },
+    {
+      "family": "synthetic_family_000",
+      "model": "synthetic_model_1",
+      "pair_id": "f0-m1-p0-c1",
+      "pair_source_sha256": "f272b27d1459b5680f57932009eb508c183c5f9e4ca230cce9b6bdfc38e7f176",
+      "precursor_condition": "C2",
+      "prompt": "synthetic_prompt_0"
+    },
+    {
+      "family": "synthetic_family_000",
+      "model": "synthetic_model_1",
+      "pair_id": "f0-m1-p1-c0",
+      "pair_source_sha256": "3e44166484bbb8cc16260d960c0ec7e32bc475429ab4f6a9773af2fa420602a3",
+      "precursor_condition": "C1",
+      "prompt": "synthetic_prompt_1"
+    },
+    {
+      "family": "synthetic_family_000",
+      "model": "synthetic_model_1",
+      "pair_id": "f0-m1-p1-c1",
+      "pair_source_sha256": "36a6bdc57f19881bde5f033fc0dfa8104f9a017018253d1b9fbf81207d75b8ca",
+      "precursor_condition": "C2",
+      "prompt": "synthetic_prompt_1"
+    },
+    {
+      "family": "synthetic_family_000",
+      "model": "synthetic_model_2",
+      "pair_id": "f0-m2-p0-c0",
+      "pair_source_sha256": "001d933dd4035c7f86e2befd2666cad9502a3a5f55f10d2d30ff1ed3873863b3",
+      "precursor_condition": "C1",
+      "prompt": "synthetic_prompt_0"
+    },
+    {
+      "family": "synthetic_family_000",
+      "model": "synthetic_model_2",
+      "pair_id": "f0-m2-p0-c1",
+      "pair_source_sha256": "cab19db145c2523484a903d864d95eb57ae8872c1c856372486b84fabf99c157",
+      "precursor_condition": "C2",
+      "prompt": "synthetic_prompt_0"
+    },
+    {
+      "family": "synthetic_family_000",
+      "model": "synthetic_model_2",
+      "pair_id": "f0-m2-p1-c0",
+      "pair_source_sha256": "80ac81af5100f1b70c7890b3fdc56ceb8672a60e0683878d28be49823678fd9b",
+      "precursor_condition": "C1",
+      "prompt": "synthetic_prompt_1"
+    },
+    {
+      "family": "synthetic_family_000",
+      "model": "synthetic_model_2",
+      "pair_id": "f0-m2-p1-c1",
+      "pair_source_sha256": "08b474cc4d0eb7298f1d3d65426abe189f07fe083c95a1e7f6305141c5d4f3fc",
+      "precursor_condition": "C2",
+      "prompt": "synthetic_prompt_1"
+    },
+    {
+      "family": "synthetic_family_000",
+      "model": "synthetic_model_3",
+      "pair_id": "f0-m3-p0-c0",
+      "pair_source_sha256": "5e4f0d5aec0264a172d86795172231cb51205926d5bb151efacdf8c8c4281e68",
+      "precursor_condition": "C1",
+      "prompt": "synthetic_prompt_0"
+    },
+    {
+      "family": "synthetic_family_000",
+      "model": "synthetic_model_3",
+      "pair_id": "f0-m3-p0-c1",
+      "pair_source_sha256": "0dd316767c088daf5e96bd2328dd88d47a436961e9e5f360c1ceccb54a6626e8",
+      "precursor_condition": "C2",
+      "prompt": "synthetic_prompt_0"
+    },
+    {
+      "family": "synthetic_family_000",
+      "model": "synthetic_model_3",
+      "pair_id": "f0-m3-p1-c0",
+      "pair_source_sha256": "187f7483a68bd88f1dddead470d5a18e2804eab6c233a2d4f2eb80bc070d1c96",
+      "precursor_condition": "C1",
+      "prompt": "synthetic_prompt_1"
+    },
+    {
+      "family": "synthetic_family_000",
+      "model": "synthetic_model_3",
+      "pair_id": "f0-m3-p1-c1",
+      "pair_source_sha256": "4caee0c4d561ce933a4f0ae593a1829eb7ac701a5025043d58c21990588c617d",
+      "precursor_condition": "C2",
+      "prompt": "synthetic_prompt_1"
+    },
+    {
+      "family": "synthetic_family_001",
+      "model": "synthetic_model_0",
+      "pair_id": "f1-m0-p0-c0",
+      "pair_source_sha256": "ffa1e76d258865d2c27173aae96c2f81dec434a6aa89f1ac7729e3cd638c02d1",
+      "precursor_condition": "C1",
+      "prompt": "synthetic_prompt_0"
+    },
+    {
+      "family": "synthetic_family_001",
+      "model": "synthetic_model_0",
+      "pair_id": "f1-m0-p0-c1",
+      "pair_source_sha256": "f21d52a8c796bad18c55a5938d41084eb6b66f07411c9ef25a257e8df116e399",
+      "precursor_condition": "C2",
+      "prompt": "synthetic_prompt_0"
+    },
+    {
+      "family": "synthetic_family_001",
+      "model": "synthetic_model_0",
+      "pair_id": "f1-m0-p1-c0",
+      "pair_source_sha256": "38d95b8113bd5a3af992a4514e55bb8a55ca4b086ef69a2d1dcdae403cfd815f",
+      "precursor_condition": "C1",
+      "prompt": "synthetic_prompt_1"
+    },
+    {
+      "family": "synthetic_family_001",
+      "model": "synthetic_model_0",
+      "pair_id": "f1-m0-p1-c1",
+      "pair_source_sha256": "7a7e0e9ffa0fce9d48a10b71316a89b7172932d500589ddb31f5a3ff17623d48",
+      "precursor_condition": "C2",
+      "prompt": "synthetic_prompt_1"
+    },
+    {
+      "family": "synthetic_family_001",
+      "model": "synthetic_model_1",
+      "pair_id": "f1-m1-p0-c0",
+      "pair_source_sha256": "f84b6235ad010c4ae4631d3ccdb96136039eba58aad5e217fe39b675065523a6",
+      "precursor_condition": "C1",
+      "prompt": "synthetic_prompt_0"
+    },
+    {
+      "family": "synthetic_family_001",
+      "model": "synthetic_model_1",
+      "pair_id": "f1-m1-p0-c1",
+      "pair_source_sha256": "faf73e912553301dac8c20de9b25817c7c2daad80b41eff16a39b51195b4c7ca",
+      "precursor_condition": "C2",
+      "prompt": "synthetic_prompt_0"
+    },
+    {
+      "family": "synthetic_family_001",
+      "model": "synthetic_model_1",
+      "pair_id": "f1-m1-p1-c0",
+      "pair_source_sha256": "b1e99068a8cc62ccbc39aab2e5f208df495a5eab0dcbd766f5b71c57c2ccd4d2",
+      "precursor_condition": "C1",
+      "prompt": "synthetic_prompt_1"
+    },
+    {
+      "family": "synthetic_family_001",
+      "model": "synthetic_model_1",
+      "pair_id": "f1-m1-p1-c1",
+      "pair_source_sha256": "c2d09709ba7edd2bd319e6a1b6d23347fa8fd433b4920edce1040a8d4d7bdbde",
+      "precursor_condition": "C2",
+      "prompt": "synthetic_prompt_1"
+    },
+    {
+      "family": "synthetic_family_001",
+      "model": "synthetic_model_2",
+      "pair_id": "f1-m2-p0-c0",
+      "pair_source_sha256": "2845dd21240bd4e17520d2fc6046704e09da87efca2059fc159c4daf754f311a",
+      "precursor_condition": "C1",
+      "prompt": "synthetic_prompt_0"
+    },
+    {
+      "family": "synthetic_family_001",
+      "model": "synthetic_model_2",
+      "pair_id": "f1-m2-p0-c1",
+      "pair_source_sha256": "b899f0e7d6bfe7f6382a7635e63d2ad7c5df8bfd5094eaed4c1eb46fac84c83e",
+      "precursor_condition": "C2",
+      "prompt": "synthetic_prompt_0"
+    },
+    {
+      "family": "synthetic_family_001",
+      "model": "synthetic_model_2",
+      "pair_id": "f1-m2-p1-c0",
+      "pair_source_sha256": "5d29103fcfc57ab9bd27559fadda13098617d9ee3c6b812409cc2676e7c6182c",
+      "precursor_condition": "C1",
+      "prompt": "synthetic_prompt_1"
+    },
+    {
+      "family": "synthetic_family_001",
+      "model": "synthetic_model_2",
+      "pair_id": "f1-m2-p1-c1",
+      "pair_source_sha256": "a36a947f23be090c96b0098d0c3d2dd407e07bfc41cb762d346c826c3a106f5b",
+      "precursor_condition": "C2",
+      "prompt": "synthetic_prompt_1"
+    },
+    {
+      "family": "synthetic_family_001",
+      "model": "synthetic_model_3",
+      "pair_id": "f1-m3-p0-c0",
+      "pair_source_sha256": "0e4e1415dd8628ae181541824d3d48035377727d1aeb3b60a85fbc6f302da113",
+      "precursor_condition": "C1",
+      "prompt": "synthetic_prompt_0"
+    },
+    {
+      "family": "synthetic_family_001",
+      "model": "synthetic_model_3",
+      "pair_id": "f1-m3-p0-c1",
+      "pair_source_sha256": "0809d2544ef02040102e99f051e59e419a89f9d114db5958b5d1574ee674f353",
+      "precursor_condition": "C2",
+      "prompt": "synthetic_prompt_0"
+    },
+    {
+      "family": "synthetic_family_001",
+      "model": "synthetic_model_3",
+      "pair_id": "f1-m3-p1-c0",
+      "pair_source_sha256": "a2b28d18a1aa1e5e8962949197831677d57901a105face2c358acb08b3e16be0",
+      "precursor_condition": "C1",
+      "prompt": "synthetic_prompt_1"
+    },
+    {
+      "family": "synthetic_family_001",
+      "model": "synthetic_model_3",
+      "pair_id": "f1-m3-p1-c1",
+      "pair_source_sha256": "233a6589ed00575462ba65965689bde3dab0343bf941b046c60e12ea81da0c4a",
+      "precursor_condition": "C2",
+      "prompt": "synthetic_prompt_1"
+    },
+    {
+      "family": "synthetic_family_002",
+      "model": "synthetic_model_0",
+      "pair_id": "f2-m0-p0-c0",
+      "pair_source_sha256": "e96b7a4ab00a5b5da060f6f0784a546e03da0b714b7410cb77333e7a6a6aaaee",
+      "precursor_condition": "C1",
+      "prompt": "synthetic_prompt_0"
+    },
+    {
+      "family": "synthetic_family_002",
+      "model": "synthetic_model_0",
+      "pair_id": "f2-m0-p0-c1",
+      "pair_source_sha256": "def567b9c167a00d515af2636a88c8d779d70789df8a51cfb5c14598779e626c",
+      "precursor_condition": "C2",
+      "prompt": "synthetic_prompt_0"
+    },
+    {
+      "family": "synthetic_family_002",
+      "model": "synthetic_model_0",
+      "pair_id": "f2-m0-p1-c0",
+      "pair_source_sha256": "3b6c35ecec40f2fce23181c1703ad7a0cb2d074fe8f26877241f6bab52c20d3f",
+      "precursor_condition": "C1",
+      "prompt": "synthetic_prompt_1"
+    },
+    {
+      "family": "synthetic_family_002",
+      "model": "synthetic_model_0",
+      "pair_id": "f2-m0-p1-c1",
+      "pair_source_sha256": "a08899586a9f79a51d1a0ee50bc8e5b4d9359d0f4f70043a77e8894a9f46d632",
+      "precursor_condition": "C2",
+      "prompt": "synthetic_prompt_1"
+    },
+    {
+      "family": "synthetic_family_002",
+      "model": "synthetic_model_1",
+      "pair_id": "f2-m1-p0-c0",
+      "pair_source_sha256": "5986776070c213e63d504cb93c32196186f6663317edda38515f99a60c01d8fa",
+      "precursor_condition": "C1",
+      "prompt": "synthetic_prompt_0"
+    },
+    {
+      "family": "synthetic_family_002",
+      "model": "synthetic_model_1",
+      "pair_id": "f2-m1-p0-c1",
+      "pair_source_sha256": "19b8888a7a95abc87b66e89d3ded5121004765c8038162eff41ca9616a63519c",
+      "precursor_condition": "C2",
+      "prompt": "synthetic_prompt_0"
+    },
+    {
+      "family": "synthetic_family_002",
+      "model": "synthetic_model_1",
+      "pair_id": "f2-m1-p1-c0",
+      "pair_source_sha256": "52073c83adf24863121151a8f6bd55ef4cf00f4cf73bc1998ddeeab677d80b70",
+      "precursor_condition": "C1",
+      "prompt": "synthetic_prompt_1"
+    },
+    {
+      "family": "synthetic_family_002",
+      "model": "synthetic_model_1",
+      "pair_id": "f2-m1-p1-c1",
+      "pair_source_sha256": "8a9b592dfab2435019692f3c299118d7a999dbe9723a07ccaf844684a3cd5b04",
+      "precursor_condition": "C2",
+      "prompt": "synthetic_prompt_1"
+    },
+    {
+      "family": "synthetic_family_002",
+      "model": "synthetic_model_2",
+      "pair_id": "f2-m2-p0-c0",
+      "pair_source_sha256": "512f066b1384aff510321d6a75e31280476563dd37da66608e91b10a34f36780",
+      "precursor_condition": "C1",
+      "prompt": "synthetic_prompt_0"
+    },
+    {
+      "family": "synthetic_family_002",
+      "model": "synthetic_model_2",
+      "pair_id": "f2-m2-p0-c1",
+      "pair_source_sha256": "b56964030eca855bfeda2bf685ee931859c337ceed5e63f4eaa39bdc7e37bb86",
+      "precursor_condition": "C2",
+      "prompt": "synthetic_prompt_0"
+    },
+    {
+      "family": "synthetic_family_002",
+      "model": "synthetic_model_2",
+      "pair_id": "f2-m2-p1-c0",
+      "pair_source_sha256": "62c46c0470c03ddc0fada578b41f8206e8a2fc7cd84d76bc2d8ba38288d12778",
+      "precursor_condition": "C1",
+      "prompt": "synthetic_prompt_1"
+    },
+    {
+      "family": "synthetic_family_002",
+      "model": "synthetic_model_2",
+      "pair_id": "f2-m2-p1-c1",
+      "pair_source_sha256": "0d3bc0b1a3130e02eb58b426154cd329dd3248f165ee2964debf3e1289427b3d",
+      "precursor_condition": "C2",
+      "prompt": "synthetic_prompt_1"
+    },
+    {
+      "family": "synthetic_family_002",
+      "model": "synthetic_model_3",
+      "pair_id": "f2-m3-p0-c0",
+      "pair_source_sha256": "442696e1f12d4aea1bb28a1727b20be75544760ba82095960a5423cd3a6039d4",
+      "precursor_condition": "C1",
+      "prompt": "synthetic_prompt_0"
+    },
+    {
+      "family": "synthetic_family_002",
+      "model": "synthetic_model_3",
+      "pair_id": "f2-m3-p0-c1",
+      "pair_source_sha256": "f532f7203b2c3b73bc96bedcfa6c2e72baa493c1c7b96353f6b77c7ecb2149b5",
+      "precursor_condition": "C2",
+      "prompt": "synthetic_prompt_0"
+    },
+    {
+      "family": "synthetic_family_002",
+      "model": "synthetic_model_3",
+      "pair_id": "f2-m3-p1-c0",
+      "pair_source_sha256": "67434064010e4d6455f4d94ac22841e2f04e18cc7183080cd5241b1c4154a0ed",
+      "precursor_condition": "C1",
+      "prompt": "synthetic_prompt_1"
+    },
+    {
+      "family": "synthetic_family_002",
+      "model": "synthetic_model_3",
+      "pair_id": "f2-m3-p1-c1",
+      "pair_source_sha256": "72b03bad9b854e64c32a177c4aa352cbd0c8da1b89d5aaa7bfb077c1c467b0c9",
+      "precursor_condition": "C2",
+      "prompt": "synthetic_prompt_1"
+    },
+    {
+      "family": "synthetic_family_003",
+      "model": "synthetic_model_0",
+      "pair_id": "f3-m0-p0-c0",
+      "pair_source_sha256": "47d35a19e0ef5c0a47d5339c21e1b94f90e1f08c373248168ecf5ea32b25ab9b",
+      "precursor_condition": "C1",
+      "prompt": "synthetic_prompt_0"
+    },
+    {
+      "family": "synthetic_family_003",
+      "model": "synthetic_model_0",
+      "pair_id": "f3-m0-p0-c1",
+      "pair_source_sha256": "502554e5c9d3921c1a7ffa6bb842664ecd02ac1781ec6e41d1481530f238341e",
+      "precursor_condition": "C2",
+      "prompt": "synthetic_prompt_0"
+    },
+    {
+      "family": "synthetic_family_003",
+      "model": "synthetic_model_0",
+      "pair_id": "f3-m0-p1-c0",
+      "pair_source_sha256": "5c75f111811e730fe3f4fce79ad818fc011ca80a119f52455b62909ccbaf1766",
+      "precursor_condition": "C1",
+      "prompt": "synthetic_prompt_1"
+    },
+    {
+      "family": "synthetic_family_003",
+      "model": "synthetic_model_0",
+      "pair_id": "f3-m0-p1-c1",
+      "pair_source_sha256": "2bb4fb83cdd12cd9b541316009e0787569fe296f017718a578ac60fe2d8cd604",
+      "precursor_condition": "C2",
+      "prompt": "synthetic_prompt_1"
+    },
+    {
+      "family": "synthetic_family_003",
+      "model": "synthetic_model_1",
+      "pair_id": "f3-m1-p0-c0",
+      "pair_source_sha256": "798ed5444f3903e13756e17d6a8fcce27e7e4fa5f7d7310fd8fe71ad8c4baed4",
+      "precursor_condition": "C1",
+      "prompt": "synthetic_prompt_0"
+    },
+    {
+      "family": "synthetic_family_003",
+      "model": "synthetic_model_1",
+      "pair_id": "f3-m1-p0-c1",
+      "pair_source_sha256": "fc803ad86dec8487522819ad71ae5a36d061beda65ce23b900527df021b8ffb0",
+      "precursor_condition": "C2",
+      "prompt": "synthetic_prompt_0"
+    },
+    {
+      "family": "synthetic_family_003",
+      "model": "synthetic_model_1",
+      "pair_id": "f3-m1-p1-c0",
+      "pair_source_sha256": "9cf19e0086f215298ec0cca5b93bf6c84b3be9cad4f01ac8239ea1f522b3e8c7",
+      "precursor_condition": "C1",
+      "prompt": "synthetic_prompt_1"
+    },
+    {
+      "family": "synthetic_family_003",
+      "model": "synthetic_model_1",
+      "pair_id": "f3-m1-p1-c1",
+      "pair_source_sha256": "4e6cf719b59123172f531fc98b2266c81cf79d7926b83cfbbcf52729b5059dd8",
+      "precursor_condition": "C2",
+      "prompt": "synthetic_prompt_1"
+    },
+    {
+      "family": "synthetic_family_003",
+      "model": "synthetic_model_2",
+      "pair_id": "f3-m2-p0-c0",
+      "pair_source_sha256": "0038b9d7743c20bc34534ce1517c6e2869da307f61107919874f1d468e2ff639",
+      "precursor_condition": "C1",
+      "prompt": "synthetic_prompt_0"
+    },
+    {
+      "family": "synthetic_family_003",
+      "model": "synthetic_model_2",
+      "pair_id": "f3-m2-p0-c1",
+      "pair_source_sha256": "904edb0e7c8631eb94cfd35ac09b70a7106546814b60c137dfb3c285c6d6665a",
+      "precursor_condition": "C2",
+      "prompt": "synthetic_prompt_0"
+    },
+    {
+      "family": "synthetic_family_003",
+      "model": "synthetic_model_2",
+      "pair_id": "f3-m2-p1-c0",
+      "pair_source_sha256": "6e0a36b1390c04443d38656f471f6bd3e3dddda8c344eb8cc4049581c030f59a",
+      "precursor_condition": "C1",
+      "prompt": "synthetic_prompt_1"
+    },
+    {
+      "family": "synthetic_family_003",
+      "model": "synthetic_model_2",
+      "pair_id": "f3-m2-p1-c1",
+      "pair_source_sha256": "e4407cd50b20075eddfaf55c38a1f1a61da928300d438f1ffaa42542736df75e",
+      "precursor_condition": "C2",
+      "prompt": "synthetic_prompt_1"
+    },
+    {
+      "family": "synthetic_family_003",
+      "model": "synthetic_model_3",
+      "pair_id": "f3-m3-p0-c0",
+      "pair_source_sha256": "971faccb77fc5501c605bfe6f44e2b7b5003864c2009e630bf58baa0bb6510c4",
+      "precursor_condition": "C1",
+      "prompt": "synthetic_prompt_0"
+    },
+    {
+      "family": "synthetic_family_003",
+      "model": "synthetic_model_3",
+      "pair_id": "f3-m3-p0-c1",
+      "pair_source_sha256": "ef7632a192df9b11d05cbe99d344ffaad70b446b3987f6a3af182e8ce50ee801",
+      "precursor_condition": "C2",
+      "prompt": "synthetic_prompt_0"
+    },
+    {
+      "family": "synthetic_family_003",
+      "model": "synthetic_model_3",
+      "pair_id": "f3-m3-p1-c0",
+      "pair_source_sha256": "13c01e53303af1ba4ded48facccba9ebd968fad9a6566b14a475cedb64b3ea59",
+      "precursor_condition": "C1",
+      "prompt": "synthetic_prompt_1"
+    },
+    {
+      "family": "synthetic_family_003",
+      "model": "synthetic_model_3",
+      "pair_id": "f3-m3-p1-c1",
+      "pair_source_sha256": "7ffd6209e49b6e7682e95303ba03cfbf02823b54b28af8d7d8523ae40137b477",
+      "precursor_condition": "C2",
+      "prompt": "synthetic_prompt_1"
+    },
+    {
+      "family": "synthetic_family_004",
+      "model": "synthetic_model_0",
+      "pair_id": "f4-m0-p0-c0",
+      "pair_source_sha256": "aa0a19dbba16302374a7174b0ac0c43252f3098bb449c68defeaade34b20d946",
+      "precursor_condition": "C1",
+      "prompt": "synthetic_prompt_0"
+    },
+    {
+      "family": "synthetic_family_004",
+      "model": "synthetic_model_0",
+      "pair_id": "f4-m0-p0-c1",
+      "pair_source_sha256": "6dbc2712815e98f5f5790dc42a8f66aa8c909fb1f4704dde09f980ee92ebbaa0",
+      "precursor_condition": "C2",
+      "prompt": "synthetic_prompt_0"
+    },
+    {
+      "family": "synthetic_family_004",
+      "model": "synthetic_model_0",
+      "pair_id": "f4-m0-p1-c0",
+      "pair_source_sha256": "c10c02e1ff3ec6e557313f5383b6fcfc3fceba06abb507764ca6b3d40f1bb8d9",
+      "precursor_condition": "C1",
+      "prompt": "synthetic_prompt_1"
+    },
+    {
+      "family": "synthetic_family_004",
+      "model": "synthetic_model_0",
+      "pair_id": "f4-m0-p1-c1",
+      "pair_source_sha256": "718326b88215e1dc13e7c6653bddca82a4ac003d2b8768ed76a508c85b01fcd0",
+      "precursor_condition": "C2",
+      "prompt": "synthetic_prompt_1"
+    },
+    {
+      "family": "synthetic_family_004",
+      "model": "synthetic_model_1",
+      "pair_id": "f4-m1-p0-c0",
+      "pair_source_sha256": "7ecb1ce47fad1b5990659f689a63c376dd4591dd6ccf3f4c60bb06f455bf6c7c",
+      "precursor_condition": "C1",
+      "prompt": "synthetic_prompt_0"
+    },
+    {
+      "family": "synthetic_family_004",
+      "model": "synthetic_model_1",
+      "pair_id": "f4-m1-p0-c1",
+      "pair_source_sha256": "01ae85ba9a39563788b7dcf01778f4a1912fe596af425693265607203e0e179a",
+      "precursor_condition": "C2",
+      "prompt": "synthetic_prompt_0"
+    },
+    {
+      "family": "synthetic_family_004",
+      "model": "synthetic_model_1",
+      "pair_id": "f4-m1-p1-c0",
+      "pair_source_sha256": "deabf21497f2b6d70d112a322287fe438b48edaaa71056cdedc359202d3d10ae",
+      "precursor_condition": "C1",
+      "prompt": "synthetic_prompt_1"
+    },
+    {
+      "family": "synthetic_family_004",
+      "model": "synthetic_model_1",
+      "pair_id": "f4-m1-p1-c1",
+      "pair_source_sha256": "a3b5941b67fc17876cc55ad8efd9bae0d4ad12fee365e2455c4d4f80bd55e2e7",
+      "precursor_condition": "C2",
+      "prompt": "synthetic_prompt_1"
+    },
+    {
+      "family": "synthetic_family_004",
+      "model": "synthetic_model_2",
+      "pair_id": "f4-m2-p0-c0",
+      "pair_source_sha256": "ef25cb174fb00252aa2cb6f0327bc280b406ac1c4027a5025dff86dd36cd261a",
+      "precursor_condition": "C1",
+      "prompt": "synthetic_prompt_0"
+    },
+    {
+      "family": "synthetic_family_004",
+      "model": "synthetic_model_2",
+      "pair_id": "f4-m2-p0-c1",
+      "pair_source_sha256": "9d454f79607831bd063390f0120d60cb751728c432ab0681d7829d44b42361a8",
+      "precursor_condition": "C2",
+      "prompt": "synthetic_prompt_0"
+    },
+    {
+      "family": "synthetic_family_004",
+      "model": "synthetic_model_2",
+      "pair_id": "f4-m2-p1-c0",
+      "pair_source_sha256": "e91fa37fb2f00795c5c82adb6a0b725e25a2c49ccbce79f6ce591f6f3aa1f268",
+      "precursor_condition": "C1",
+      "prompt": "synthetic_prompt_1"
+    },
+    {
+      "family": "synthetic_family_004",
+      "model": "synthetic_model_2",
+      "pair_id": "f4-m2-p1-c1",
+      "pair_source_sha256": "a255a3ebc316b682ccc6d6ac3d62287679b928f50fbebe7528de2fd23a48657c",
+      "precursor_condition": "C2",
+      "prompt": "synthetic_prompt_1"
+    },
+    {
+      "family": "synthetic_family_004",
+      "model": "synthetic_model_3",
+      "pair_id": "f4-m3-p0-c0",
+      "pair_source_sha256": "3cde618acfda65e74437619d1f0d0ae3aff3bfe2beeaddd3b88264d74bbd78df",
+      "precursor_condition": "C1",
+      "prompt": "synthetic_prompt_0"
+    },
+    {
+      "family": "synthetic_family_004",
+      "model": "synthetic_model_3",
+      "pair_id": "f4-m3-p0-c1",
+      "pair_source_sha256": "e630364e97408f8c9dde24bd3e40fb50e88953633e2eaf6bd99caa17c3a14372",
+      "precursor_condition": "C2",
+      "prompt": "synthetic_prompt_0"
+    },
+    {
+      "family": "synthetic_family_004",
+      "model": "synthetic_model_3",
+      "pair_id": "f4-m3-p1-c0",
+      "pair_source_sha256": "5bc11f83cd3ec02e44518a71c7f35381550ec9ac4ad3f92768c352b057816515",
+      "precursor_condition": "C1",
+      "prompt": "synthetic_prompt_1"
+    },
+    {
+      "family": "synthetic_family_004",
+      "model": "synthetic_model_3",
+      "pair_id": "f4-m3-p1-c1",
+      "pair_source_sha256": "829f2f00e8f936fe54792387afa6b4b4107f561c6ec7d7d098cbbfd51d739a6c",
+      "precursor_condition": "C2",
+      "prompt": "synthetic_prompt_1"
+    },
+    {
+      "family": "synthetic_family_005",
+      "model": "synthetic_model_0",
+      "pair_id": "f5-m0-p0-c0",
+      "pair_source_sha256": "75b9316a96f38f551ae4fd52f436acd47046185a0a43fdb4fbb057ca0d7ab4d4",
+      "precursor_condition": "C1",
+      "prompt": "synthetic_prompt_0"
+    },
+    {
+      "family": "synthetic_family_005",
+      "model": "synthetic_model_0",
+      "pair_id": "f5-m0-p0-c1",
+      "pair_source_sha256": "f991337b9372ff7618af92567d979e7d73deebd961910bb1c80a00c3c0b5241c",
+      "precursor_condition": "C2",
+      "prompt": "synthetic_prompt_0"
+    },
+    {
+      "family": "synthetic_family_005",
+      "model": "synthetic_model_0",
+      "pair_id": "f5-m0-p1-c0",
+      "pair_source_sha256": "5cc21b8002a0576ab1961951c813ed15ede87870990982fec3bc0351ca357803",
+      "precursor_condition": "C1",
+      "prompt": "synthetic_prompt_1"
+    },
+    {
+      "family": "synthetic_family_005",
+      "model": "synthetic_model_0",
+      "pair_id": "f5-m0-p1-c1",
+      "pair_source_sha256": "ff78ffa40f49e2fea362129c6bb84bccd447d2efeb74e7d77109cac736a135a8",
+      "precursor_condition": "C2",
+      "prompt": "synthetic_prompt_1"
+    },
+    {
+      "family": "synthetic_family_005",
+      "model": "synthetic_model_1",
+      "pair_id": "f5-m1-p0-c0",
+      "pair_source_sha256": "e7946bb1f07aa0971374f9426b827d554e4ac9e830f2bce73cdecc640046b7bd",
+      "precursor_condition": "C1",
+      "prompt": "synthetic_prompt_0"
+    },
+    {
+      "family": "synthetic_family_005",
+      "model": "synthetic_model_1",
+      "pair_id": "f5-m1-p0-c1",
+      "pair_source_sha256": "c73ab70010e19f450e9268f7df38ddfa1870f464f6668719a1f59501f8a34282",
+      "precursor_condition": "C2",
+      "prompt": "synthetic_prompt_0"
+    },
+    {
+      "family": "synthetic_family_005",
+      "model": "synthetic_model_1",
+      "pair_id": "f5-m1-p1-c0",
+      "pair_source_sha256": "022af30f81aaaef68bc8cbda24f9100988882bf01b90a56a54de117c89e5683c",
+      "precursor_condition": "C1",
+      "prompt": "synthetic_prompt_1"
+    },
+    {
+      "family": "synthetic_family_005",
+      "model": "synthetic_model_1",
+      "pair_id": "f5-m1-p1-c1",
+      "pair_source_sha256": "4f32c8a511946fb10ffeb3cd142027802ebcbadcb631b9e437bd9ccee28e2c89",
+      "precursor_condition": "C2",
+      "prompt": "synthetic_prompt_1"
+    },
+    {
+      "family": "synthetic_family_005",
+      "model": "synthetic_model_2",
+      "pair_id": "f5-m2-p0-c0",
+      "pair_source_sha256": "e9912cb80f4c9d182641bd967dddeab2fee3e6032d18727b466f7fa4cabf35cd",
+      "precursor_condition": "C1",
+      "prompt": "synthetic_prompt_0"
+    },
+    {
+      "family": "synthetic_family_005",
+      "model": "synthetic_model_2",
+      "pair_id": "f5-m2-p0-c1",
+      "pair_source_sha256": "1068d05fa1c120ecb65f5c4ec47b5e4964397a61548edc3bfe112608cbd3a7dc",
+      "precursor_condition": "C2",
+      "prompt": "synthetic_prompt_0"
+    },
+    {
+      "family": "synthetic_family_005",
+      "model": "synthetic_model_2",
+      "pair_id": "f5-m2-p1-c0",
+      "pair_source_sha256": "1109496d115548546d79d897156b961af2b3fcc6e7b07ed8b247ceabc4e9753e",
+      "precursor_condition": "C1",
+      "prompt": "synthetic_prompt_1"
+    },
+    {
+      "family": "synthetic_family_005",
+      "model": "synthetic_model_2",
+      "pair_id": "f5-m2-p1-c1",
+      "pair_source_sha256": "4685a22dc622228178e79dc6355ac7823e443c64dd70106e4d880a1fb74b2826",
+      "precursor_condition": "C2",
+      "prompt": "synthetic_prompt_1"
+    },
+    {
+      "family": "synthetic_family_005",
+      "model": "synthetic_model_3",
+      "pair_id": "f5-m3-p0-c0",
+      "pair_source_sha256": "d9fb5333e26952c03835e3759d19d50da3a7b099da9774f7e6259807fc9271ba",
+      "precursor_condition": "C1",
+      "prompt": "synthetic_prompt_0"
+    },
+    {
+      "family": "synthetic_family_005",
+      "model": "synthetic_model_3",
+      "pair_id": "f5-m3-p0-c1",
+      "pair_source_sha256": "4db89fd6028ea75f4ab7b234272eb2e26a436d2b550c06c703a5746485c49370",
+      "precursor_condition": "C2",
+      "prompt": "synthetic_prompt_0"
+    },
+    {
+      "family": "synthetic_family_005",
+      "model": "synthetic_model_3",
+      "pair_id": "f5-m3-p1-c0",
+      "pair_source_sha256": "4fa1177314eef189798ad2390b6406b55cf75391b8d8e23d306c20c7f8558088",
+      "precursor_condition": "C1",
+      "prompt": "synthetic_prompt_1"
+    },
+    {
+      "family": "synthetic_family_005",
+      "model": "synthetic_model_3",
+      "pair_id": "f5-m3-p1-c1",
+      "pair_source_sha256": "611a90f08fbc0327d8f1cd5aa483c4ff7b1242f6f01acc63e4535e051fae5d98",
+      "precursor_condition": "C2",
+      "prompt": "synthetic_prompt_1"
+    },
+    {
+      "family": "synthetic_family_006",
+      "model": "synthetic_model_0",
+      "pair_id": "f6-m0-p0-c0",
+      "pair_source_sha256": "2125a490facb85e81054128beae5e0b9af66e13bf52b8d5cd10ded44e5edfe58",
+      "precursor_condition": "C1",
+      "prompt": "synthetic_prompt_0"
+    },
+    {
+      "family": "synthetic_family_006",
+      "model": "synthetic_model_0",
+      "pair_id": "f6-m0-p0-c1",
+      "pair_source_sha256": "9fb2a76bca5df43b61ebbabb4a38435adb85798fb1a1b52515ae81e05d9825f5",
+      "precursor_condition": "C2",
+      "prompt": "synthetic_prompt_0"
+    },
+    {
+      "family": "synthetic_family_006",
+      "model": "synthetic_model_0",
+      "pair_id": "f6-m0-p1-c0",
+      "pair_source_sha256": "3d8ddac99fba8854d6a316ff05c6c26f2b84989925441b61988b7012fb1deeb5",
+      "precursor_condition": "C1",
+      "prompt": "synthetic_prompt_1"
+    },
+    {
+      "family": "synthetic_family_006",
+      "model": "synthetic_model_0",
+      "pair_id": "f6-m0-p1-c1",
+      "pair_source_sha256": "47d0492c536ed379b2d6e5e9ba506134e456988972c93999bb26d44d691d0d87",
+      "precursor_condition": "C2",
+      "prompt": "synthetic_prompt_1"
+    },
+    {
+      "family": "synthetic_family_006",
+      "model": "synthetic_model_1",
+      "pair_id": "f6-m1-p0-c0",
+      "pair_source_sha256": "8a6dd892348a7fa896b328ef06c6c8310db7139708fe27c7521075aaf712ef25",
+      "precursor_condition": "C1",
+      "prompt": "synthetic_prompt_0"
+    },
+    {
+      "family": "synthetic_family_006",
+      "model": "synthetic_model_1",
+      "pair_id": "f6-m1-p0-c1",
+      "pair_source_sha256": "92726eba0372e16400063274980d58ebdab4f0b9a22a697e99630e4f246d6e99",
+      "precursor_condition": "C2",
+      "prompt": "synthetic_prompt_0"
+    },
+    {
+      "family": "synthetic_family_006",
+      "model": "synthetic_model_1",
+      "pair_id": "f6-m1-p1-c0",
+      "pair_source_sha256": "7428eeab3de23e64185d6a5262b032204b37896243ce9a0985fab9cadc54020e",
+      "precursor_condition": "C1",
+      "prompt": "synthetic_prompt_1"
+    },
+    {
+      "family": "synthetic_family_006",
+      "model": "synthetic_model_1",
+      "pair_id": "f6-m1-p1-c1",
+      "pair_source_sha256": "4b34cea216314824c030683ead77708d559878fff540ddd10c7f14e33f886c84",
+      "precursor_condition": "C2",
+      "prompt": "synthetic_prompt_1"
+    },
+    {
+      "family": "synthetic_family_006",
+      "model": "synthetic_model_2",
+      "pair_id": "f6-m2-p0-c0",
+      "pair_source_sha256": "cb931e410368c2c8d3cdeffb85b36d8dbdb27c7fb3d0c22ad7e6eb7c21f78e34",
+      "precursor_condition": "C1",
+      "prompt": "synthetic_prompt_0"
+    },
+    {
+      "family": "synthetic_family_006",
+      "model": "synthetic_model_2",
+      "pair_id": "f6-m2-p0-c1",
+      "pair_source_sha256": "d50a81852b06f63ef47f9bb0aac58de352a46f46e7757bd7b87f38816eb76f48",
+      "precursor_condition": "C2",
+      "prompt": "synthetic_prompt_0"
+    },
+    {
+      "family": "synthetic_family_006",
+      "model": "synthetic_model_2",
+      "pair_id": "f6-m2-p1-c0",
+      "pair_source_sha256": "c9165378f279f06a5326c3b8a401f4d30f788e77dda426a82b462bbe79c42f00",
+      "precursor_condition": "C1",
+      "prompt": "synthetic_prompt_1"
+    },
+    {
+      "family": "synthetic_family_006",
+      "model": "synthetic_model_2",
+      "pair_id": "f6-m2-p1-c1",
+      "pair_source_sha256": "fd03647605a647c4c04a9feede238236294ce90a7a94fb146c5db7f8b6d7d527",
+      "precursor_condition": "C2",
+      "prompt": "synthetic_prompt_1"
+    },
+    {
+      "family": "synthetic_family_006",
+      "model": "synthetic_model_3",
+      "pair_id": "f6-m3-p0-c0",
+      "pair_source_sha256": "cad09cc10ed035b1fc87f239bc2f14247ef77e18f50b472db71a70e20b6e2f9d",
+      "precursor_condition": "C1",
+      "prompt": "synthetic_prompt_0"
+    },
+    {
+      "family": "synthetic_family_006",
+      "model": "synthetic_model_3",
+      "pair_id": "f6-m3-p0-c1",
+      "pair_source_sha256": "53d50c29c5081ebec2a3ca67e6c41bf78b6c4a7fe120b7cbe587df59edaea84e",
+      "precursor_condition": "C2",
+      "prompt": "synthetic_prompt_0"
+    },
+    {
+      "family": "synthetic_family_006",
+      "model": "synthetic_model_3",
+      "pair_id": "f6-m3-p1-c0",
+      "pair_source_sha256": "4c444b4c8f26c940acf46a87a56bac5fdb7f6037f33d721639322389f66247ba",
+      "precursor_condition": "C1",
+      "prompt": "synthetic_prompt_1"
+    },
+    {
+      "family": "synthetic_family_006",
+      "model": "synthetic_model_3",
+      "pair_id": "f6-m3-p1-c1",
+      "pair_source_sha256": "a7f50ded5825d99b0ab07c5631c9593b41681d9febd8a8350e831da2e614032b",
+      "precursor_condition": "C2",
+      "prompt": "synthetic_prompt_1"
+    },
+    {
+      "family": "synthetic_family_007",
+      "model": "synthetic_model_0",
+      "pair_id": "f7-m0-p0-c0",
+      "pair_source_sha256": "ce42f7fd1bb1a70bd0779715a6c9a25dfeac149d0439726fbf1bf3d97a8d051b",
+      "precursor_condition": "C1",
+      "prompt": "synthetic_prompt_0"
+    },
+    {
+      "family": "synthetic_family_007",
+      "model": "synthetic_model_0",
+      "pair_id": "f7-m0-p0-c1",
+      "pair_source_sha256": "c305d45cd5de9f65a79c4a101ec508b583cb06f4aaec65bfd18e9ba3daa7c620",
+      "precursor_condition": "C2",
+      "prompt": "synthetic_prompt_0"
+    },
+    {
+      "family": "synthetic_family_007",
+      "model": "synthetic_model_0",
+      "pair_id": "f7-m0-p1-c0",
+      "pair_source_sha256": "505c87b6029e2a3270350099ba407a8a4c0146216553d42e3834280cef50bfed",
+      "precursor_condition": "C1",
+      "prompt": "synthetic_prompt_1"
+    },
+    {
+      "family": "synthetic_family_007",
+      "model": "synthetic_model_0",
+      "pair_id": "f7-m0-p1-c1",
+      "pair_source_sha256": "955f19b9d6ff3d16199e0f7da11da31c9de1533fb652bbe4c65506c7d4894444",
+      "precursor_condition": "C2",
+      "prompt": "synthetic_prompt_1"
+    },
+    {
+      "family": "synthetic_family_007",
+      "model": "synthetic_model_1",
+      "pair_id": "f7-m1-p0-c0",
+      "pair_source_sha256": "32f15da480646bdb3f595b8d08c845621daf7ac59a1215a06f4a30192d6a4053",
+      "precursor_condition": "C1",
+      "prompt": "synthetic_prompt_0"
+    },
+    {
+      "family": "synthetic_family_007",
+      "model": "synthetic_model_1",
+      "pair_id": "f7-m1-p0-c1",
+      "pair_source_sha256": "dd5c10dbebdd06d3f254b6e09ebac3959e4923d6263e4836531730272f7eb400",
+      "precursor_condition": "C2",
+      "prompt": "synthetic_prompt_0"
+    },
+    {
+      "family": "synthetic_family_007",
+      "model": "synthetic_model_1",
+      "pair_id": "f7-m1-p1-c0",
+      "pair_source_sha256": "37140a33104f9fa871c9c4bc597c7fcf8478879adcda9b5d16e162fba7f8cba9",
+      "precursor_condition": "C1",
+      "prompt": "synthetic_prompt_1"
+    },
+    {
+      "family": "synthetic_family_007",
+      "model": "synthetic_model_1",
+      "pair_id": "f7-m1-p1-c1",
+      "pair_source_sha256": "e4339df41375d9f2622cf5d664c255f83693f2e85d72507e39bf4253a8db6822",
+      "precursor_condition": "C2",
+      "prompt": "synthetic_prompt_1"
+    },
+    {
+      "family": "synthetic_family_007",
+      "model": "synthetic_model_2",
+      "pair_id": "f7-m2-p0-c0",
+      "pair_source_sha256": "3da35f91a5cb9f91442b0c6235703335ccf6ebb43c3584304c83b0b796382b2f",
+      "precursor_condition": "C1",
+      "prompt": "synthetic_prompt_0"
+    },
+    {
+      "family": "synthetic_family_007",
+      "model": "synthetic_model_2",
+      "pair_id": "f7-m2-p0-c1",
+      "pair_source_sha256": "f0272e866425213892bb0f793b111ad27cc97738f0585e1780ff5a057b3378ee",
+      "precursor_condition": "C2",
+      "prompt": "synthetic_prompt_0"
+    },
+    {
+      "family": "synthetic_family_007",
+      "model": "synthetic_model_2",
+      "pair_id": "f7-m2-p1-c0",
+      "pair_source_sha256": "b643e68a4a9e71512b6ab14330e96ed3edf71c40e3ea46fb5ce637e3397da609",
+      "precursor_condition": "C1",
+      "prompt": "synthetic_prompt_1"
+    },
+    {
+      "family": "synthetic_family_007",
+      "model": "synthetic_model_2",
+      "pair_id": "f7-m2-p1-c1",
+      "pair_source_sha256": "a7376fc6b28cead69f65edf3433d5f239863df5757b230a80e8637551683b995",
+      "precursor_condition": "C2",
+      "prompt": "synthetic_prompt_1"
+    },
+    {
+      "family": "synthetic_family_007",
+      "model": "synthetic_model_3",
+      "pair_id": "f7-m3-p0-c0",
+      "pair_source_sha256": "2ef041a2b5f3941fd27d6a6b1dc24de74c9cff5939cd90e8d4e51837e5d24887",
+      "precursor_condition": "C1",
+      "prompt": "synthetic_prompt_0"
+    },
+    {
+      "family": "synthetic_family_007",
+      "model": "synthetic_model_3",
+      "pair_id": "f7-m3-p0-c1",
+      "pair_source_sha256": "ceed6fc7bf04aaa150f89fa0541527e03129c4d17c33157e4220d375be801c65",
+      "precursor_condition": "C2",
+      "prompt": "synthetic_prompt_0"
+    },
+    {
+      "family": "synthetic_family_007",
+      "model": "synthetic_model_3",
+      "pair_id": "f7-m3-p1-c0",
+      "pair_source_sha256": "c28e8a7bf397ece7e572f58bc7cce892838758db01121f6beb03e560c60c1896",
+      "precursor_condition": "C1",
+      "prompt": "synthetic_prompt_1"
+    },
+    {
+      "family": "synthetic_family_007",
+      "model": "synthetic_model_3",
+      "pair_id": "f7-m3-p1-c1",
+      "pair_source_sha256": "ca75eaea40870bf4e0a7fe3ac3243a8320fe5f4f3a4b6cee7a4480d7258057f9",
+      "precursor_condition": "C2",
+      "prompt": "synthetic_prompt_1"
+    },
+    {
+      "family": "synthetic_family_008",
+      "model": "synthetic_model_0",
+      "pair_id": "f8-m0-p0-c0",
+      "pair_source_sha256": "8edea6442ecd94d219c0523084bcf16a795bead94c531fbccb93f671bbcc340f",
+      "precursor_condition": "C1",
+      "prompt": "synthetic_prompt_0"
+    },
+    {
+      "family": "synthetic_family_008",
+      "model": "synthetic_model_0",
+      "pair_id": "f8-m0-p0-c1",
+      "pair_source_sha256": "34c547fe49a3238db40408f9ea3fe30f5772b1dbec255c5f332c1296f09ebef2",
+      "precursor_condition": "C2",
+      "prompt": "synthetic_prompt_0"
+    },
+    {
+      "family": "synthetic_family_008",
+      "model": "synthetic_model_0",
+      "pair_id": "f8-m0-p1-c0",
+      "pair_source_sha256": "6f625feaba1ccf1e33bfb002947895c4489c19abefeb126efbe1f098bdc9564c",
+      "precursor_condition": "C1",
+      "prompt": "synthetic_prompt_1"
+    },
+    {
+      "family": "synthetic_family_008",
+      "model": "synthetic_model_0",
+      "pair_id": "f8-m0-p1-c1",
+      "pair_source_sha256": "ed55d72a31ab6b0d6166932e711ea49ad957a4fb670bb4fdd43f64be5f07268f",
+      "precursor_condition": "C2",
+      "prompt": "synthetic_prompt_1"
+    },
+    {
+      "family": "synthetic_family_008",
+      "model": "synthetic_model_1",
+      "pair_id": "f8-m1-p0-c0",
+      "pair_source_sha256": "ec660e0a4326f273458e74579a43de8f06b21ed271cd8b4c6d52534cefae422b",
+      "precursor_condition": "C1",
+      "prompt": "synthetic_prompt_0"
+    },
+    {
+      "family": "synthetic_family_008",
+      "model": "synthetic_model_1",
+      "pair_id": "f8-m1-p0-c1",
+      "pair_source_sha256": "3b9eca2c7189b139ae6f52eac1e06ca6073e7315f73c87d0e0bd5f0e4adf00f2",
+      "precursor_condition": "C2",
+      "prompt": "synthetic_prompt_0"
+    },
+    {
+      "family": "synthetic_family_008",
+      "model": "synthetic_model_1",
+      "pair_id": "f8-m1-p1-c0",
+      "pair_source_sha256": "648f7ef6571d38b991678a7999e9b8378d51cdf557d9691e2100b6312e17e962",
+      "precursor_condition": "C1",
+      "prompt": "synthetic_prompt_1"
+    },
+    {
+      "family": "synthetic_family_008",
+      "model": "synthetic_model_1",
+      "pair_id": "f8-m1-p1-c1",
+      "pair_source_sha256": "302f286b4cd1d47ddf9463c3ce24b101669a7eb04383bf84a1a46a7baa0e2d26",
+      "precursor_condition": "C2",
+      "prompt": "synthetic_prompt_1"
+    },
+    {
+      "family": "synthetic_family_008",
+      "model": "synthetic_model_2",
+      "pair_id": "f8-m2-p0-c0",
+      "pair_source_sha256": "52d797dd34bcc859ed5c538711cbcc0782597f5653ca78b76f4ce18868652906",
+      "precursor_condition": "C1",
+      "prompt": "synthetic_prompt_0"
+    },
+    {
+      "family": "synthetic_family_008",
+      "model": "synthetic_model_2",
+      "pair_id": "f8-m2-p0-c1",
+      "pair_source_sha256": "7b4b76621d798ac4e638cb5985ddb5ec6f60d79b7bf770978150077da6b045eb",
+      "precursor_condition": "C2",
+      "prompt": "synthetic_prompt_0"
+    },
+    {
+      "family": "synthetic_family_008",
+      "model": "synthetic_model_2",
+      "pair_id": "f8-m2-p1-c0",
+      "pair_source_sha256": "dacb13b48350a550ae8a6fe0812a0f7997a663e5734dcebba4fc3da44ec5f7d6",
+      "precursor_condition": "C1",
+      "prompt": "synthetic_prompt_1"
+    },
+    {
+      "family": "synthetic_family_008",
+      "model": "synthetic_model_2",
+      "pair_id": "f8-m2-p1-c1",
+      "pair_source_sha256": "a9ec0ecc121321d84d01fda007fa33912a789d846d6ef1b75195edaeb4f0554d",
+      "precursor_condition": "C2",
+      "prompt": "synthetic_prompt_1"
+    },
+    {
+      "family": "synthetic_family_008",
+      "model": "synthetic_model_3",
+      "pair_id": "f8-m3-p0-c0",
+      "pair_source_sha256": "b89e8f32b403f973bb19c70e60b4d0499dd3989eecc93cf709904e8c4ea59e37",
+      "precursor_condition": "C1",
+      "prompt": "synthetic_prompt_0"
+    },
+    {
+      "family": "synthetic_family_008",
+      "model": "synthetic_model_3",
+      "pair_id": "f8-m3-p0-c1",
+      "pair_source_sha256": "439becc345c5c4ca5195408f4e645681e98665d034a28fd4287126ce9628e2ee",
+      "precursor_condition": "C2",
+      "prompt": "synthetic_prompt_0"
+    },
+    {
+      "family": "synthetic_family_008",
+      "model": "synthetic_model_3",
+      "pair_id": "f8-m3-p1-c0",
+      "pair_source_sha256": "62fff70d00bfdbb539edce99c973aa0b738bd13269dd487b82979479e7f0a3d5",
+      "precursor_condition": "C1",
+      "prompt": "synthetic_prompt_1"
+    },
+    {
+      "family": "synthetic_family_008",
+      "model": "synthetic_model_3",
+      "pair_id": "f8-m3-p1-c1",
+      "pair_source_sha256": "0047571bd50d2983899e248596156242686f19f6aeb463d399d80c093c172036",
+      "precursor_condition": "C2",
+      "prompt": "synthetic_prompt_1"
+    },
+    {
+      "family": "synthetic_family_009",
+      "model": "synthetic_model_0",
+      "pair_id": "f9-m0-p0-c0",
+      "pair_source_sha256": "687532e0edb01786b7c29631795219b1f99c082594672d4f35e089c3e48143f6",
+      "precursor_condition": "C1",
+      "prompt": "synthetic_prompt_0"
+    },
+    {
+      "family": "synthetic_family_009",
+      "model": "synthetic_model_0",
+      "pair_id": "f9-m0-p0-c1",
+      "pair_source_sha256": "847bc1ecd03400c731bcf27d862f31e19cad37795bef0f8ffadb7bdbe3346155",
+      "precursor_condition": "C2",
+      "prompt": "synthetic_prompt_0"
+    },
+    {
+      "family": "synthetic_family_009",
+      "model": "synthetic_model_0",
+      "pair_id": "f9-m0-p1-c0",
+      "pair_source_sha256": "2d155e4bb34ad9122736cde73cf660a16407e45c79209f9525c817abd5af5051",
+      "precursor_condition": "C1",
+      "prompt": "synthetic_prompt_1"
+    },
+    {
+      "family": "synthetic_family_009",
+      "model": "synthetic_model_0",
+      "pair_id": "f9-m0-p1-c1",
+      "pair_source_sha256": "9c39f0149abe9e5cda83f91c1df945ed5201d11584cde0e956b602233ff4d865",
+      "precursor_condition": "C2",
+      "prompt": "synthetic_prompt_1"
+    },
+    {
+      "family": "synthetic_family_009",
+      "model": "synthetic_model_1",
+      "pair_id": "f9-m1-p0-c0",
+      "pair_source_sha256": "b7bf6ab353c8597a2f8ee3808b0aac396dcf67ef639277421cad589736832576",
+      "precursor_condition": "C1",
+      "prompt": "synthetic_prompt_0"
+    },
+    {
+      "family": "synthetic_family_009",
+      "model": "synthetic_model_1",
+      "pair_id": "f9-m1-p0-c1",
+      "pair_source_sha256": "cc18b2eb649be723c507df62c80c9570c5b86d1dbfc950949b7f0143d3f9b38b",
+      "precursor_condition": "C2",
+      "prompt": "synthetic_prompt_0"
+    },
+    {
+      "family": "synthetic_family_009",
+      "model": "synthetic_model_1",
+      "pair_id": "f9-m1-p1-c0",
+      "pair_source_sha256": "aaf3f5333554eab41258f759acb3ad0ddbcc68261630c16be606dc02389467a0",
+      "precursor_condition": "C1",
+      "prompt": "synthetic_prompt_1"
+    },
+    {
+      "family": "synthetic_family_009",
+      "model": "synthetic_model_1",
+      "pair_id": "f9-m1-p1-c1",
+      "pair_source_sha256": "ee9e1fc14ae188bfb1e70cc7ecf59c38fe1c33b495d0e246807b306d3ebcefb1",
+      "precursor_condition": "C2",
+      "prompt": "synthetic_prompt_1"
+    },
+    {
+      "family": "synthetic_family_009",
+      "model": "synthetic_model_2",
+      "pair_id": "f9-m2-p0-c0",
+      "pair_source_sha256": "7b33ebded1d091c43e0635b35adee563aabca6476cfcac79f453b46630f3699c",
+      "precursor_condition": "C1",
+      "prompt": "synthetic_prompt_0"
+    },
+    {
+      "family": "synthetic_family_009",
+      "model": "synthetic_model_2",
+      "pair_id": "f9-m2-p0-c1",
+      "pair_source_sha256": "2e9e64f4975ab6a30927731c7160781371579a299df306f446d862f3f6f2efd2",
+      "precursor_condition": "C2",
+      "prompt": "synthetic_prompt_0"
+    },
+    {
+      "family": "synthetic_family_009",
+      "model": "synthetic_model_2",
+      "pair_id": "f9-m2-p1-c0",
+      "pair_source_sha256": "85138977b2eed5c26fafc19181052cb95a07bd9642cc80f6a4ddc7701920763a",
+      "precursor_condition": "C1",
+      "prompt": "synthetic_prompt_1"
+    },
+    {
+      "family": "synthetic_family_009",
+      "model": "synthetic_model_2",
+      "pair_id": "f9-m2-p1-c1",
+      "pair_source_sha256": "a9b86c8a8730a8ff39dc0a0e43b63a9c8dcdf926e0fd37b702ecab29c20c6def",
+      "precursor_condition": "C2",
+      "prompt": "synthetic_prompt_1"
+    },
+    {
+      "family": "synthetic_family_009",
+      "model": "synthetic_model_3",
+      "pair_id": "f9-m3-p0-c0",
+      "pair_source_sha256": "fc6d709f82619f3e5d2509a19ea6adbf7bdc275345c01a1bb98fbf6a5dd287c7",
+      "precursor_condition": "C1",
+      "prompt": "synthetic_prompt_0"
+    },
+    {
+      "family": "synthetic_family_009",
+      "model": "synthetic_model_3",
+      "pair_id": "f9-m3-p0-c1",
+      "pair_source_sha256": "68a08748aaac4f46fb98e2aaf7494a8afa43ce20d277a571d97a255e74dad216",
+      "precursor_condition": "C2",
+      "prompt": "synthetic_prompt_0"
+    },
+    {
+      "family": "synthetic_family_009",
+      "model": "synthetic_model_3",
+      "pair_id": "f9-m3-p1-c0",
+      "pair_source_sha256": "7ec5d1c56a3432ed17b3fead23fa6399b0e2f8f778cbbfb1f18e19c13dda5290",
+      "precursor_condition": "C1",
+      "prompt": "synthetic_prompt_1"
+    },
+    {
+      "family": "synthetic_family_009",
+      "model": "synthetic_model_3",
+      "pair_id": "f9-m3-p1-c1",
+      "pair_source_sha256": "2a00345a15948336951eca08f22c7c055010c2ccb52f5b5e0f589a6ef5f273a6",
+      "precursor_condition": "C2",
+      "prompt": "synthetic_prompt_1"
+    },
+    {
+      "family": "synthetic_family_010",
+      "model": "synthetic_model_0",
+      "pair_id": "f10-m0-p0-c0",
+      "pair_source_sha256": "1aeb15962862fc71c328a02b99e426ab37d5bdf1415ade9fa161e9dcd868d83f",
+      "precursor_condition": "C1",
+      "prompt": "synthetic_prompt_0"
+    },
+    {
+      "family": "synthetic_family_010",
+      "model": "synthetic_model_0",
+      "pair_id": "f10-m0-p0-c1",
+      "pair_source_sha256": "1acf286250f555f7b886dc3436223763dbf6d5c770490585cf0f1486843c6997",
+      "precursor_condition": "C2",
+      "prompt": "synthetic_prompt_0"
+    },
+    {
+      "family": "synthetic_family_010",
+      "model": "synthetic_model_0",
+      "pair_id": "f10-m0-p1-c0",
+      "pair_source_sha256": "db15078987512fb9fed35b9999d121b833dcb8b7467cf507857708f32563fb09",
+      "precursor_condition": "C1",
+      "prompt": "synthetic_prompt_1"
+    },
+    {
+      "family": "synthetic_family_010",
+      "model": "synthetic_model_0",
+      "pair_id": "f10-m0-p1-c1",
+      "pair_source_sha256": "ea9078485d5b420dda95c4abf1f316081d8dffe82a2691713bb9ae843f55aa90",
+      "precursor_condition": "C2",
+      "prompt": "synthetic_prompt_1"
+    },
+    {
+      "family": "synthetic_family_010",
+      "model": "synthetic_model_1",
+      "pair_id": "f10-m1-p0-c0",
+      "pair_source_sha256": "b147516b7bdb3f5550c370bee3a02eebf9d0d26283eee449ec6a8db7eceead76",
+      "precursor_condition": "C1",
+      "prompt": "synthetic_prompt_0"
+    },
+    {
+      "family": "synthetic_family_010",
+      "model": "synthetic_model_1",
+      "pair_id": "f10-m1-p0-c1",
+      "pair_source_sha256": "55be1da05dbb4e36cc326330b4571c7d660055fe8d62dfd1e6770498c8272f42",
+      "precursor_condition": "C2",
+      "prompt": "synthetic_prompt_0"
+    },
+    {
+      "family": "synthetic_family_010",
+      "model": "synthetic_model_1",
+      "pair_id": "f10-m1-p1-c0",
+      "pair_source_sha256": "0735a34e3f9749da3304f054b10ba5231432c7820565fdd83f31409a458cfa17",
+      "precursor_condition": "C1",
+      "prompt": "synthetic_prompt_1"
+    },
+    {
+      "family": "synthetic_family_010",
+      "model": "synthetic_model_1",
+      "pair_id": "f10-m1-p1-c1",
+      "pair_source_sha256": "d35f9bc9b0ff704f4843c384d32f0d6e73c026a85226da9f9a7322bb9e817eda",
+      "precursor_condition": "C2",
+      "prompt": "synthetic_prompt_1"
+    },
+    {
+      "family": "synthetic_family_010",
+      "model": "synthetic_model_2",
+      "pair_id": "f10-m2-p0-c0",
+      "pair_source_sha256": "2b8ceabeca74877ef5ee032614f648803c0f518ab12aa970c2dfe1d03346b6e3",
+      "precursor_condition": "C1",
+      "prompt": "synthetic_prompt_0"
+    },
+    {
+      "family": "synthetic_family_010",
+      "model": "synthetic_model_2",
+      "pair_id": "f10-m2-p0-c1",
+      "pair_source_sha256": "1f54d0268346ead67e511b6ae013877d6b44634d25824a289e41347a965b0669",
+      "precursor_condition": "C2",
+      "prompt": "synthetic_prompt_0"
+    },
+    {
+      "family": "synthetic_family_010",
+      "model": "synthetic_model_2",
+      "pair_id": "f10-m2-p1-c0",
+      "pair_source_sha256": "37d776901bc75a2baeaed3782660f29f153d398587542f88c9776407c4a93e29",
+      "precursor_condition": "C1",
+      "prompt": "synthetic_prompt_1"
+    },
+    {
+      "family": "synthetic_family_010",
+      "model": "synthetic_model_2",
+      "pair_id": "f10-m2-p1-c1",
+      "pair_source_sha256": "3a0a2c53102f29bccd73a775d388ecfe10bb97ab78841f314e65e610847a39be",
+      "precursor_condition": "C2",
+      "prompt": "synthetic_prompt_1"
+    },
+    {
+      "family": "synthetic_family_010",
+      "model": "synthetic_model_3",
+      "pair_id": "f10-m3-p0-c0",
+      "pair_source_sha256": "8bc3924ba290d267271f315a40dd9b97a58fe5b2f9877e4002cfa310e62e3174",
+      "precursor_condition": "C1",
+      "prompt": "synthetic_prompt_0"
+    },
+    {
+      "family": "synthetic_family_010",
+      "model": "synthetic_model_3",
+      "pair_id": "f10-m3-p0-c1",
+      "pair_source_sha256": "768c6ae26bb35c54335dddb0231db1c2b1005911f1c83cf64c276a92fa79e478",
+      "precursor_condition": "C2",
+      "prompt": "synthetic_prompt_0"
+    },
+    {
+      "family": "synthetic_family_010",
+      "model": "synthetic_model_3",
+      "pair_id": "f10-m3-p1-c0",
+      "pair_source_sha256": "40f1a76f92db8e2d3d3d3f37fbbe9b55ecd3b67e9e85615ce1145d16dc43a4fc",
+      "precursor_condition": "C1",
+      "prompt": "synthetic_prompt_1"
+    },
+    {
+      "family": "synthetic_family_010",
+      "model": "synthetic_model_3",
+      "pair_id": "f10-m3-p1-c1",
+      "pair_source_sha256": "867ce8f4e9aa97c156f75ba0a7314cf48f6fdb8c0469ad95f0a913e751aa3fb4",
+      "precursor_condition": "C2",
+      "prompt": "synthetic_prompt_1"
+    },
+    {
+      "family": "synthetic_family_011",
+      "model": "synthetic_model_0",
+      "pair_id": "f11-m0-p0-c0",
+      "pair_source_sha256": "66d5e9067fa139d7c4f6265626934ae46f813dbc0de36290ba9efa405b6ce225",
+      "precursor_condition": "C1",
+      "prompt": "synthetic_prompt_0"
+    },
+    {
+      "family": "synthetic_family_011",
+      "model": "synthetic_model_0",
+      "pair_id": "f11-m0-p0-c1",
+      "pair_source_sha256": "a9bd49980839282db4ad49ea33f56baa101ef0b611956f62d25e997c23bcb8f5",
+      "precursor_condition": "C2",
+      "prompt": "synthetic_prompt_0"
+    },
+    {
+      "family": "synthetic_family_011",
+      "model": "synthetic_model_0",
+      "pair_id": "f11-m0-p1-c0",
+      "pair_source_sha256": "c0180ddcb5ab67ffd64bbcb72845fcd6e06eb0f0bf67479de170cb05f45cd965",
+      "precursor_condition": "C1",
+      "prompt": "synthetic_prompt_1"
+    },
+    {
+      "family": "synthetic_family_011",
+      "model": "synthetic_model_0",
+      "pair_id": "f11-m0-p1-c1",
+      "pair_source_sha256": "d112b74f6a800a7eb6156606e2272926fcfc26360541710461fedc20f1b4e41d",
+      "precursor_condition": "C2",
+      "prompt": "synthetic_prompt_1"
+    },
+    {
+      "family": "synthetic_family_011",
+      "model": "synthetic_model_1",
+      "pair_id": "f11-m1-p0-c0",
+      "pair_source_sha256": "b3a4117b08b982971f9b87bf19a7e4536117ddedb27b6f787e9ddd43dd5db134",
+      "precursor_condition": "C1",
+      "prompt": "synthetic_prompt_0"
+    },
+    {
+      "family": "synthetic_family_011",
+      "model": "synthetic_model_1",
+      "pair_id": "f11-m1-p0-c1",
+      "pair_source_sha256": "1d6e18bfd10822263e938a862b6df8c3a3caf0c1c1b2e8e44ac5e94e310fd2cb",
+      "precursor_condition": "C2",
+      "prompt": "synthetic_prompt_0"
+    },
+    {
+      "family": "synthetic_family_011",
+      "model": "synthetic_model_1",
+      "pair_id": "f11-m1-p1-c0",
+      "pair_source_sha256": "6f5f9c00a1b691aab81b3727438fc5659804f426b5b0fb38fa57ee36be66c848",
+      "precursor_condition": "C1",
+      "prompt": "synthetic_prompt_1"
+    },
+    {
+      "family": "synthetic_family_011",
+      "model": "synthetic_model_1",
+      "pair_id": "f11-m1-p1-c1",
+      "pair_source_sha256": "4bda45d8cf026422437ddef435678843a2ffc60a4b4da545d7e3911ed9ffc799",
+      "precursor_condition": "C2",
+      "prompt": "synthetic_prompt_1"
+    },
+    {
+      "family": "synthetic_family_011",
+      "model": "synthetic_model_2",
+      "pair_id": "f11-m2-p0-c0",
+      "pair_source_sha256": "517dd44223eb913a2be4e37758eaa8e39eb8f721a4bc8b386505684c5d354614",
+      "precursor_condition": "C1",
+      "prompt": "synthetic_prompt_0"
+    },
+    {
+      "family": "synthetic_family_011",
+      "model": "synthetic_model_2",
+      "pair_id": "f11-m2-p0-c1",
+      "pair_source_sha256": "4f6cbe4807cea34ce38502c8eceae88a67f3e23e779c2762340d5062b9569631",
+      "precursor_condition": "C2",
+      "prompt": "synthetic_prompt_0"
+    },
+    {
+      "family": "synthetic_family_011",
+      "model": "synthetic_model_2",
+      "pair_id": "f11-m2-p1-c0",
+      "pair_source_sha256": "ff435e3d8ad59cf81da86043e104b9876648bb46b06ebaf61268df4e1545f8fa",
+      "precursor_condition": "C1",
+      "prompt": "synthetic_prompt_1"
+    },
+    {
+      "family": "synthetic_family_011",
+      "model": "synthetic_model_2",
+      "pair_id": "f11-m2-p1-c1",
+      "pair_source_sha256": "102a7dbfbb667be5a305c0ddb8e46776cb633a93b82504af1d111499846642d5",
+      "precursor_condition": "C2",
+      "prompt": "synthetic_prompt_1"
+    },
+    {
+      "family": "synthetic_family_011",
+      "model": "synthetic_model_3",
+      "pair_id": "f11-m3-p0-c0",
+      "pair_source_sha256": "076837222eb19bd13f08f684507510acb70db0923e840a895c5e2093cec8208d",
+      "precursor_condition": "C1",
+      "prompt": "synthetic_prompt_0"
+    },
+    {
+      "family": "synthetic_family_011",
+      "model": "synthetic_model_3",
+      "pair_id": "f11-m3-p0-c1",
+      "pair_source_sha256": "b58ba415da5a087cd2ebcde086eb8019f0da9e8a50b15806150994c65fe3e28c",
+      "precursor_condition": "C2",
+      "prompt": "synthetic_prompt_0"
+    },
+    {
+      "family": "synthetic_family_011",
+      "model": "synthetic_model_3",
+      "pair_id": "f11-m3-p1-c0",
+      "pair_source_sha256": "6455c6fbd06039840cd4c61e022536317d7fc68906f7ed36d2b8ed0b69f79fff",
+      "precursor_condition": "C1",
+      "prompt": "synthetic_prompt_1"
+    },
+    {
+      "family": "synthetic_family_011",
+      "model": "synthetic_model_3",
+      "pair_id": "f11-m3-p1-c1",
+      "pair_source_sha256": "5985e6a61a9c28b62caeed3afef546f0b4f366b8aa84a78f88f1c181ee47fbda",
+      "precursor_condition": "C2",
+      "prompt": "synthetic_prompt_1"
+    },
+    {
+      "family": "synthetic_family_012",
+      "model": "synthetic_model_0",
+      "pair_id": "f12-m0-p0-c0",
+      "pair_source_sha256": "cf8d2b40f22f6e7b43cf29d6ba1b939d0fc18c39bcfe7aa9b2b0a11d65216db1",
+      "precursor_condition": "C1",
+      "prompt": "synthetic_prompt_0"
+    },
+    {
+      "family": "synthetic_family_012",
+      "model": "synthetic_model_0",
+      "pair_id": "f12-m0-p0-c1",
+      "pair_source_sha256": "45f76f340154cb3dc51c55608c515d89a9edbcb40979bc6ee0c9bd8abbe66e85",
+      "precursor_condition": "C2",
+      "prompt": "synthetic_prompt_0"
+    },
+    {
+      "family": "synthetic_family_012",
+      "model": "synthetic_model_0",
+      "pair_id": "f12-m0-p1-c0",
+      "pair_source_sha256": "5742fb33cb389f98126a1a3957e2779f7febeea3c730c100968de0ece979ce1e",
+      "precursor_condition": "C1",
+      "prompt": "synthetic_prompt_1"
+    },
+    {
+      "family": "synthetic_family_012",
+      "model": "synthetic_model_0",
+      "pair_id": "f12-m0-p1-c1",
+      "pair_source_sha256": "9ed19ccdc1fb79c415074b56dbcf06afe89575e4edd5e133c0c0783816a45181",
+      "precursor_condition": "C2",
+      "prompt": "synthetic_prompt_1"
+    },
+    {
+      "family": "synthetic_family_012",
+      "model": "synthetic_model_1",
+      "pair_id": "f12-m1-p0-c0",
+      "pair_source_sha256": "1ca62990002133ecfb85edc953eed1ce910d8e6647251ee25145ba777d90416b",
+      "precursor_condition": "C1",
+      "prompt": "synthetic_prompt_0"
+    },
+    {
+      "family": "synthetic_family_012",
+      "model": "synthetic_model_1",
+      "pair_id": "f12-m1-p0-c1",
+      "pair_source_sha256": "9b79968e0749e7c058a364e9f897698e53a59e55cc2d25dad0423f0ac5cdf12f",
+      "precursor_condition": "C2",
+      "prompt": "synthetic_prompt_0"
+    },
+    {
+      "family": "synthetic_family_012",
+      "model": "synthetic_model_1",
+      "pair_id": "f12-m1-p1-c0",
+      "pair_source_sha256": "694c4ef65e1b69facf8659e0f5d6bf7256de5a494c65ac65389770276d76c98c",
+      "precursor_condition": "C1",
+      "prompt": "synthetic_prompt_1"
+    },
+    {
+      "family": "synthetic_family_012",
+      "model": "synthetic_model_1",
+      "pair_id": "f12-m1-p1-c1",
+      "pair_source_sha256": "34ebf3e389aede8da6f2d720aec5b45fe7bcad027a7d98f06dcd20d218d3ed24",
+      "precursor_condition": "C2",
+      "prompt": "synthetic_prompt_1"
+    },
+    {
+      "family": "synthetic_family_012",
+      "model": "synthetic_model_2",
+      "pair_id": "f12-m2-p0-c0",
+      "pair_source_sha256": "49a33edcb7060d1c9f557d3ea07c2d9f19867135b340c1454de1b7e824eede51",
+      "precursor_condition": "C1",
+      "prompt": "synthetic_prompt_0"
+    },
+    {
+      "family": "synthetic_family_012",
+      "model": "synthetic_model_2",
+      "pair_id": "f12-m2-p0-c1",
+      "pair_source_sha256": "d229e89bfd0b93a6d38631acbd5070233a63a1f4bde899096e43633c9aa2178a",
+      "precursor_condition": "C2",
+      "prompt": "synthetic_prompt_0"
+    },
+    {
+      "family": "synthetic_family_012",
+      "model": "synthetic_model_2",
+      "pair_id": "f12-m2-p1-c0",
+      "pair_source_sha256": "882c080978005794ce4a9b2339f472dbfc3060974f3def7882409238c5015366",
+      "precursor_condition": "C1",
+      "prompt": "synthetic_prompt_1"
+    },
+    {
+      "family": "synthetic_family_012",
+      "model": "synthetic_model_2",
+      "pair_id": "f12-m2-p1-c1",
+      "pair_source_sha256": "b448c545bc294c512ea3acd264fe1b9b68181e1fcf6472f6aa7f1d53fb5f2937",
+      "precursor_condition": "C2",
+      "prompt": "synthetic_prompt_1"
+    },
+    {
+      "family": "synthetic_family_012",
+      "model": "synthetic_model_3",
+      "pair_id": "f12-m3-p0-c0",
+      "pair_source_sha256": "69612b55107bcc17f96abdbbea65d273a2b431c9dbd54e569530b67694dd81e5",
+      "precursor_condition": "C1",
+      "prompt": "synthetic_prompt_0"
+    },
+    {
+      "family": "synthetic_family_012",
+      "model": "synthetic_model_3",
+      "pair_id": "f12-m3-p0-c1",
+      "pair_source_sha256": "55e7d1d60e9155cc0ef833d332e685f7b9ac50310030469005d96a72fcbc5018",
+      "precursor_condition": "C2",
+      "prompt": "synthetic_prompt_0"
+    },
+    {
+      "family": "synthetic_family_012",
+      "model": "synthetic_model_3",
+      "pair_id": "f12-m3-p1-c0",
+      "pair_source_sha256": "00705e4ceee8bee09cfa17319e71fee4106bc1b90bfeb93822569a5c61bc8d81",
+      "precursor_condition": "C1",
+      "prompt": "synthetic_prompt_1"
+    },
+    {
+      "family": "synthetic_family_012",
+      "model": "synthetic_model_3",
+      "pair_id": "f12-m3-p1-c1",
+      "pair_source_sha256": "cd309bed43398c0e7a691b7601c6c40ad3e0c0fd21a96e5378659684b1bd9b46",
+      "precursor_condition": "C2",
+      "prompt": "synthetic_prompt_1"
+    },
+    {
+      "family": "synthetic_family_013",
+      "model": "synthetic_model_0",
+      "pair_id": "f13-m0-p0-c0",
+      "pair_source_sha256": "bf7405ecc563c4a44717063e47aa724d1b290189273b3077100ac6b3a89abc92",
+      "precursor_condition": "C1",
+      "prompt": "synthetic_prompt_0"
+    },
+    {
+      "family": "synthetic_family_013",
+      "model": "synthetic_model_0",
+      "pair_id": "f13-m0-p0-c1",
+      "pair_source_sha256": "87301f8b7a5bb8cefb65c43b2d46acaca8212a2f4abf931c6d2cd5f65bba8c77",
+      "precursor_condition": "C2",
+      "prompt": "synthetic_prompt_0"
+    },
+    {
+      "family": "synthetic_family_013",
+      "model": "synthetic_model_0",
+      "pair_id": "f13-m0-p1-c0",
+      "pair_source_sha256": "927853e01e394b6cb56daa24c24f1e059cd7b7770f0339eb2de49647efd1ecd8",
+      "precursor_condition": "C1",
+      "prompt": "synthetic_prompt_1"
+    },
+    {
+      "family": "synthetic_family_013",
+      "model": "synthetic_model_0",
+      "pair_id": "f13-m0-p1-c1",
+      "pair_source_sha256": "e0eb7d01baa3cf58ab5d8a81e9414f818e048664407d972f9e46d25e8d27c4f5",
+      "precursor_condition": "C2",
+      "prompt": "synthetic_prompt_1"
+    },
+    {
+      "family": "synthetic_family_013",
+      "model": "synthetic_model_1",
+      "pair_id": "f13-m1-p0-c0",
+      "pair_source_sha256": "ca9b1e5f4d085fa50c8efd42615988d99fec85a0a3b1dec640ebe773caa89119",
+      "precursor_condition": "C1",
+      "prompt": "synthetic_prompt_0"
+    },
+    {
+      "family": "synthetic_family_013",
+      "model": "synthetic_model_1",
+      "pair_id": "f13-m1-p0-c1",
+      "pair_source_sha256": "67b2ae44ff0f5174a2373c1d6025a7cd78c8f19b692b3fb0d00a185b617c983e",
+      "precursor_condition": "C2",
+      "prompt": "synthetic_prompt_0"
+    },
+    {
+      "family": "synthetic_family_013",
+      "model": "synthetic_model_1",
+      "pair_id": "f13-m1-p1-c0",
+      "pair_source_sha256": "ffa46cd9e8b99cbfeccfb16d6581786edf436128583e7e7ed9bfda0e0f2e81d1",
+      "precursor_condition": "C1",
+      "prompt": "synthetic_prompt_1"
+    },
+    {
+      "family": "synthetic_family_013",
+      "model": "synthetic_model_1",
+      "pair_id": "f13-m1-p1-c1",
+      "pair_source_sha256": "f2d2290c481307c081952764dc1a6af5d9474a6fb8fb0f2e1425535f215c351a",
+      "precursor_condition": "C2",
+      "prompt": "synthetic_prompt_1"
+    },
+    {
+      "family": "synthetic_family_013",
+      "model": "synthetic_model_2",
+      "pair_id": "f13-m2-p0-c0",
+      "pair_source_sha256": "a8753fc39629f5e36b8b200b607aeb16d843909c3908f45242cb9c765dc13521",
+      "precursor_condition": "C1",
+      "prompt": "synthetic_prompt_0"
+    },
+    {
+      "family": "synthetic_family_013",
+      "model": "synthetic_model_2",
+      "pair_id": "f13-m2-p0-c1",
+      "pair_source_sha256": "e8de27733a9e020b8c7b5794b411c42946991eb0177696ff48c536b460abc05c",
+      "precursor_condition": "C2",
+      "prompt": "synthetic_prompt_0"
+    },
+    {
+      "family": "synthetic_family_013",
+      "model": "synthetic_model_2",
+      "pair_id": "f13-m2-p1-c0",
+      "pair_source_sha256": "4af17683110ea4ee7900a884b890b7220bfa76a0b8c0599ebcbcd6d6abdd181f",
+      "precursor_condition": "C1",
+      "prompt": "synthetic_prompt_1"
+    },
+    {
+      "family": "synthetic_family_013",
+      "model": "synthetic_model_2",
+      "pair_id": "f13-m2-p1-c1",
+      "pair_source_sha256": "b472a3c0f942199eabe12969b665e8fad683def9e36e609e9bdf6d9f6fddd067",
+      "precursor_condition": "C2",
+      "prompt": "synthetic_prompt_1"
+    },
+    {
+      "family": "synthetic_family_013",
+      "model": "synthetic_model_3",
+      "pair_id": "f13-m3-p0-c0",
+      "pair_source_sha256": "53f90632bd169be031ad8fd892d30e02bb960c486b109345e367efc0327d5d05",
+      "precursor_condition": "C1",
+      "prompt": "synthetic_prompt_0"
+    },
+    {
+      "family": "synthetic_family_013",
+      "model": "synthetic_model_3",
+      "pair_id": "f13-m3-p0-c1",
+      "pair_source_sha256": "b7fabb396f6e5e1ac512642b7b9a11138c0a091571361e487aed4f93ecc5d9b4",
+      "precursor_condition": "C2",
+      "prompt": "synthetic_prompt_0"
+    },
+    {
+      "family": "synthetic_family_013",
+      "model": "synthetic_model_3",
+      "pair_id": "f13-m3-p1-c0",
+      "pair_source_sha256": "27f7f5dda78167d94e67b01da3a0ddba1f910744369f9c6ed2cdfc56faf27e33",
+      "precursor_condition": "C1",
+      "prompt": "synthetic_prompt_1"
+    },
+    {
+      "family": "synthetic_family_013",
+      "model": "synthetic_model_3",
+      "pair_id": "f13-m3-p1-c1",
+      "pair_source_sha256": "af660b4c425dd60fa54aed2f9fcfdd293522cdbc0f23077a3a85d4d6e3994796",
+      "precursor_condition": "C2",
+      "prompt": "synthetic_prompt_1"
+    },
+    {
+      "family": "synthetic_family_014",
+      "model": "synthetic_model_0",
+      "pair_id": "f14-m0-p0-c0",
+      "pair_source_sha256": "d4a54668368d24dd91b2da3c2fdaa47bce5dbe23f1e0318a48307ff89f48f757",
+      "precursor_condition": "C1",
+      "prompt": "synthetic_prompt_0"
+    },
+    {
+      "family": "synthetic_family_014",
+      "model": "synthetic_model_0",
+      "pair_id": "f14-m0-p0-c1",
+      "pair_source_sha256": "a510c97ffefeebc0f4d2d74719cc232e071f2c051368e6db76f5becf2e663564",
+      "precursor_condition": "C2",
+      "prompt": "synthetic_prompt_0"
+    },
+    {
+      "family": "synthetic_family_014",
+      "model": "synthetic_model_0",
+      "pair_id": "f14-m0-p1-c0",
+      "pair_source_sha256": "ffac5a07497dc28b1da75b509c6840da7a2b558857ae9ab09925c6b0cb6006d8",
+      "precursor_condition": "C1",
+      "prompt": "synthetic_prompt_1"
+    },
+    {
+      "family": "synthetic_family_014",
+      "model": "synthetic_model_0",
+      "pair_id": "f14-m0-p1-c1",
+      "pair_source_sha256": "bad094c1f603af066e1e71153e6c0e15599e09399ef1887cffda1dae8afe35f6",
+      "precursor_condition": "C2",
+      "prompt": "synthetic_prompt_1"
+    },
+    {
+      "family": "synthetic_family_014",
+      "model": "synthetic_model_1",
+      "pair_id": "f14-m1-p0-c0",
+      "pair_source_sha256": "fcfebb274216b91d64643e378596d0dabd49935c0cc118953de5d4ca89f3e7c8",
+      "precursor_condition": "C1",
+      "prompt": "synthetic_prompt_0"
+    },
+    {
+      "family": "synthetic_family_014",
+      "model": "synthetic_model_1",
+      "pair_id": "f14-m1-p0-c1",
+      "pair_source_sha256": "86d664597af2b7ba75f9dad96d2a04ac6fbf2eaa1b1a6c707528c351486d520c",
+      "precursor_condition": "C2",
+      "prompt": "synthetic_prompt_0"
+    },
+    {
+      "family": "synthetic_family_014",
+      "model": "synthetic_model_1",
+      "pair_id": "f14-m1-p1-c0",
+      "pair_source_sha256": "7ed3385fb79a95c624dd5df92a306d448b33a0e0b8cfa283ab3758ddbc4ac65f",
+      "precursor_condition": "C1",
+      "prompt": "synthetic_prompt_1"
+    },
+    {
+      "family": "synthetic_family_014",
+      "model": "synthetic_model_1",
+      "pair_id": "f14-m1-p1-c1",
+      "pair_source_sha256": "5e3dd10ddd08db3b0a2159af5e58ea86179a131b19f9ee7f9027f6790e3fcb2a",
+      "precursor_condition": "C2",
+      "prompt": "synthetic_prompt_1"
+    },
+    {
+      "family": "synthetic_family_014",
+      "model": "synthetic_model_2",
+      "pair_id": "f14-m2-p0-c0",
+      "pair_source_sha256": "5784e3153b387f0f823ad1f7d752e17474d44cb9ec2a3b43bfabcb45da0a1828",
+      "precursor_condition": "C1",
+      "prompt": "synthetic_prompt_0"
+    },
+    {
+      "family": "synthetic_family_014",
+      "model": "synthetic_model_2",
+      "pair_id": "f14-m2-p0-c1",
+      "pair_source_sha256": "5b3c10a68ce3b58d177f6d592502127b506f07dcd4654eae6447fcd57e803410",
+      "precursor_condition": "C2",
+      "prompt": "synthetic_prompt_0"
+    },
+    {
+      "family": "synthetic_family_014",
+      "model": "synthetic_model_2",
+      "pair_id": "f14-m2-p1-c0",
+      "pair_source_sha256": "bae1509d5b0d86849cd2cbdadc2e9d33c300e71ef96e10f079ab1a8dcafcab15",
+      "precursor_condition": "C1",
+      "prompt": "synthetic_prompt_1"
+    },
+    {
+      "family": "synthetic_family_014",
+      "model": "synthetic_model_2",
+      "pair_id": "f14-m2-p1-c1",
+      "pair_source_sha256": "ca3bd6094066921538874b38f09400f31382601522b047fd0a611e8d1a3f76a4",
+      "precursor_condition": "C2",
+      "prompt": "synthetic_prompt_1"
+    },
+    {
+      "family": "synthetic_family_014",
+      "model": "synthetic_model_3",
+      "pair_id": "f14-m3-p0-c0",
+      "pair_source_sha256": "b1e1d44f0bd7fdbac0b942d3e3280fe5c87adb6bde51a9d6c743f9e8313431de",
+      "precursor_condition": "C1",
+      "prompt": "synthetic_prompt_0"
+    },
+    {
+      "family": "synthetic_family_014",
+      "model": "synthetic_model_3",
+      "pair_id": "f14-m3-p0-c1",
+      "pair_source_sha256": "90b3cb47e499312404be0802e7ae15510c5d63cdf8565ce5a9cd9bbf5e6c40a8",
+      "precursor_condition": "C2",
+      "prompt": "synthetic_prompt_0"
+    },
+    {
+      "family": "synthetic_family_014",
+      "model": "synthetic_model_3",
+      "pair_id": "f14-m3-p1-c0",
+      "pair_source_sha256": "df1876709fcb66bd13e1eaaa436817d510a02d27d324afd074b178e87fba7057",
+      "precursor_condition": "C1",
+      "prompt": "synthetic_prompt_1"
+    },
+    {
+      "family": "synthetic_family_014",
+      "model": "synthetic_model_3",
+      "pair_id": "f14-m3-p1-c1",
+      "pair_source_sha256": "dd73c106d2e4fb6bcea10ccdfaeb20bde08d6e526078120dcd7dcec99e0f2507",
+      "precursor_condition": "C2",
+      "prompt": "synthetic_prompt_1"
+    },
+    {
+      "family": "synthetic_family_015",
+      "model": "synthetic_model_0",
+      "pair_id": "f15-m0-p0-c0",
+      "pair_source_sha256": "c107aeb94e75ce9b4469b9926ff1873ba342bd0b25059cd6ab35f4edd27f0c34",
+      "precursor_condition": "C1",
+      "prompt": "synthetic_prompt_0"
+    },
+    {
+      "family": "synthetic_family_015",
+      "model": "synthetic_model_0",
+      "pair_id": "f15-m0-p0-c1",
+      "pair_source_sha256": "6a0946f8915b01c187157f363822f144192138a1275a0bbd09ca438d7e2c8091",
+      "precursor_condition": "C2",
+      "prompt": "synthetic_prompt_0"
+    },
+    {
+      "family": "synthetic_family_015",
+      "model": "synthetic_model_0",
+      "pair_id": "f15-m0-p1-c0",
+      "pair_source_sha256": "5992cd8ab5b0d824310bf1b08d227d273aecd170b74f7d02f830fcabf240e00b",
+      "precursor_condition": "C1",
+      "prompt": "synthetic_prompt_1"
+    },
+    {
+      "family": "synthetic_family_015",
+      "model": "synthetic_model_0",
+      "pair_id": "f15-m0-p1-c1",
+      "pair_source_sha256": "c593bc065692f3e36c7ede0b1cb1c7c278f81e4fc7b461160a39a82cf2f3ccc5",
+      "precursor_condition": "C2",
+      "prompt": "synthetic_prompt_1"
+    },
+    {
+      "family": "synthetic_family_015",
+      "model": "synthetic_model_1",
+      "pair_id": "f15-m1-p0-c0",
+      "pair_source_sha256": "453a85ebd3c35fc3fc6a89da1d0b1b10ef9731b6e19ffacffce3508895a926be",
+      "precursor_condition": "C1",
+      "prompt": "synthetic_prompt_0"
+    },
+    {
+      "family": "synthetic_family_015",
+      "model": "synthetic_model_1",
+      "pair_id": "f15-m1-p0-c1",
+      "pair_source_sha256": "16c349f673aaff168d55edf08728c2f4cd09b760e0408961396622ad293b48ec",
+      "precursor_condition": "C2",
+      "prompt": "synthetic_prompt_0"
+    },
+    {
+      "family": "synthetic_family_015",
+      "model": "synthetic_model_1",
+      "pair_id": "f15-m1-p1-c0",
+      "pair_source_sha256": "972b8f412610cf68d64b8bc25385d4d8cf815f1b5959399d03a689ab4d8a0d57",
+      "precursor_condition": "C1",
+      "prompt": "synthetic_prompt_1"
+    },
+    {
+      "family": "synthetic_family_015",
+      "model": "synthetic_model_1",
+      "pair_id": "f15-m1-p1-c1",
+      "pair_source_sha256": "69590ac5f37df90646fc7ccf40de2a2caf938cf6ecf90f98e350dfd0b607d9c9",
+      "precursor_condition": "C2",
+      "prompt": "synthetic_prompt_1"
+    },
+    {
+      "family": "synthetic_family_015",
+      "model": "synthetic_model_2",
+      "pair_id": "f15-m2-p0-c0",
+      "pair_source_sha256": "760f206946659d88f880056545adf5075801dd026f71aaf836531bcb327def4b",
+      "precursor_condition": "C1",
+      "prompt": "synthetic_prompt_0"
+    },
+    {
+      "family": "synthetic_family_015",
+      "model": "synthetic_model_2",
+      "pair_id": "f15-m2-p0-c1",
+      "pair_source_sha256": "6be94de11c7f1bd09f3784b6b19cbc253a5a2fb31b5ffdbabc2a84d91ba5cb8b",
+      "precursor_condition": "C2",
+      "prompt": "synthetic_prompt_0"
+    },
+    {
+      "family": "synthetic_family_015",
+      "model": "synthetic_model_2",
+      "pair_id": "f15-m2-p1-c0",
+      "pair_source_sha256": "e852dc1af6632747e840c16ffe754ccee46cfe96ea8a5858981d06c7af0cd075",
+      "precursor_condition": "C1",
+      "prompt": "synthetic_prompt_1"
+    },
+    {
+      "family": "synthetic_family_015",
+      "model": "synthetic_model_2",
+      "pair_id": "f15-m2-p1-c1",
+      "pair_source_sha256": "a739d18d656252efd0e8718c6d78b3b6e9eb211e411f3c0b6c2df35c4733fd51",
+      "precursor_condition": "C2",
+      "prompt": "synthetic_prompt_1"
+    },
+    {
+      "family": "synthetic_family_015",
+      "model": "synthetic_model_3",
+      "pair_id": "f15-m3-p0-c0",
+      "pair_source_sha256": "4637687c33e2f5a21d16214766c29761b72a02f50a3354267a440d61e4a1be01",
+      "precursor_condition": "C1",
+      "prompt": "synthetic_prompt_0"
+    },
+    {
+      "family": "synthetic_family_015",
+      "model": "synthetic_model_3",
+      "pair_id": "f15-m3-p0-c1",
+      "pair_source_sha256": "2219d66118e6ecb91a19b0310992aa7b1fb9dd0c0c0d3a417589cfcaa8ed0f2a",
+      "precursor_condition": "C2",
+      "prompt": "synthetic_prompt_0"
+    },
+    {
+      "family": "synthetic_family_015",
+      "model": "synthetic_model_3",
+      "pair_id": "f15-m3-p1-c0",
+      "pair_source_sha256": "316f75bf06d444dc4a7f5581df86c492fed7ea6de5eef1d3a098c80cc5fde0fb",
+      "precursor_condition": "C1",
+      "prompt": "synthetic_prompt_1"
+    },
+    {
+      "family": "synthetic_family_015",
+      "model": "synthetic_model_3",
+      "pair_id": "f15-m3-p1-c1",
+      "pair_source_sha256": "498a28d2ebecc0a66d4b714ba3ca3d15f5a00b72a5ef6c7189ae76fd2e141081",
+      "precursor_condition": "C2",
+      "prompt": "synthetic_prompt_1"
+    },
+    {
+      "family": "synthetic_family_016",
+      "model": "synthetic_model_0",
+      "pair_id": "f16-m0-p0-c0",
+      "pair_source_sha256": "022ce24d2b87a833f6270a12cba18a58cec510091427990737afbcbffd9cf909",
+      "precursor_condition": "C1",
+      "prompt": "synthetic_prompt_0"
+    },
+    {
+      "family": "synthetic_family_016",
+      "model": "synthetic_model_0",
+      "pair_id": "f16-m0-p0-c1",
+      "pair_source_sha256": "86f7ec9e84ca947a2b3877936d927b13b1e8b07327f59201e4e3a6c489fa2d6a",
+      "precursor_condition": "C2",
+      "prompt": "synthetic_prompt_0"
+    },
+    {
+      "family": "synthetic_family_016",
+      "model": "synthetic_model_0",
+      "pair_id": "f16-m0-p1-c0",
+      "pair_source_sha256": "ff6e7a004a48e83f350bac0345cad2d671b12fa5f828f5f25d8fd77e20a67577",
+      "precursor_condition": "C1",
+      "prompt": "synthetic_prompt_1"
+    },
+    {
+      "family": "synthetic_family_016",
+      "model": "synthetic_model_0",
+      "pair_id": "f16-m0-p1-c1",
+      "pair_source_sha256": "3aa1cdf2184d253f789afd28c69980a3140db0ef9ea3a98e4b30f1cbffa01092",
+      "precursor_condition": "C2",
+      "prompt": "synthetic_prompt_1"
+    },
+    {
+      "family": "synthetic_family_016",
+      "model": "synthetic_model_1",
+      "pair_id": "f16-m1-p0-c0",
+      "pair_source_sha256": "d2a4838a98e4d3b50fcbc75180c6672cf09003b7e2d06f6dd5406e54ef06823f",
+      "precursor_condition": "C1",
+      "prompt": "synthetic_prompt_0"
+    },
+    {
+      "family": "synthetic_family_016",
+      "model": "synthetic_model_1",
+      "pair_id": "f16-m1-p0-c1",
+      "pair_source_sha256": "e6023f4d800ce53dbdf5477bf1309d32f4c7957777f7497a0e1c2c3c017fddf7",
+      "precursor_condition": "C2",
+      "prompt": "synthetic_prompt_0"
+    },
+    {
+      "family": "synthetic_family_016",
+      "model": "synthetic_model_1",
+      "pair_id": "f16-m1-p1-c0",
+      "pair_source_sha256": "7262324a504debe2b42b9b75878e8a117134ce4d79079900ab7171ab2b23b26b",
+      "precursor_condition": "C1",
+      "prompt": "synthetic_prompt_1"
+    },
+    {
+      "family": "synthetic_family_016",
+      "model": "synthetic_model_1",
+      "pair_id": "f16-m1-p1-c1",
+      "pair_source_sha256": "11e8cfe19ca1952dc06a7ff7a0f766b9fa1e9518e4372a320653af286bb7fde7",
+      "precursor_condition": "C2",
+      "prompt": "synthetic_prompt_1"
+    },
+    {
+      "family": "synthetic_family_016",
+      "model": "synthetic_model_2",
+      "pair_id": "f16-m2-p0-c0",
+      "pair_source_sha256": "3e77539ae3d2b0a60d6cb83a4e8aec4a4f38cb53734371db6821e84db801b6ba",
+      "precursor_condition": "C1",
+      "prompt": "synthetic_prompt_0"
+    },
+    {
+      "family": "synthetic_family_016",
+      "model": "synthetic_model_2",
+      "pair_id": "f16-m2-p0-c1",
+      "pair_source_sha256": "85d35e59d051d627d72c03cdc0c2ffd7df7573028d8b0b71ca76e33d9d6de200",
+      "precursor_condition": "C2",
+      "prompt": "synthetic_prompt_0"
+    },
+    {
+      "family": "synthetic_family_016",
+      "model": "synthetic_model_2",
+      "pair_id": "f16-m2-p1-c0",
+      "pair_source_sha256": "527b1d0c13f18e3e37be405aeb2fd2f98722d0429ec6e781a71af646729b1695",
+      "precursor_condition": "C1",
+      "prompt": "synthetic_prompt_1"
+    },
+    {
+      "family": "synthetic_family_016",
+      "model": "synthetic_model_2",
+      "pair_id": "f16-m2-p1-c1",
+      "pair_source_sha256": "32aff35acfce035a3fbc31c20fa658c9671258d4b987ad6e547da9cabe605e2b",
+      "precursor_condition": "C2",
+      "prompt": "synthetic_prompt_1"
+    },
+    {
+      "family": "synthetic_family_016",
+      "model": "synthetic_model_3",
+      "pair_id": "f16-m3-p0-c0",
+      "pair_source_sha256": "15d8c2718bee1277dfc678d5ab8f37d7671aa9630c8f36635a573de9523215be",
+      "precursor_condition": "C1",
+      "prompt": "synthetic_prompt_0"
+    },
+    {
+      "family": "synthetic_family_016",
+      "model": "synthetic_model_3",
+      "pair_id": "f16-m3-p0-c1",
+      "pair_source_sha256": "16f040ce9fbd635aa37e8043434532fbd03ef5a046d3d3dcccfa2ba53550ce53",
+      "precursor_condition": "C2",
+      "prompt": "synthetic_prompt_0"
+    },
+    {
+      "family": "synthetic_family_016",
+      "model": "synthetic_model_3",
+      "pair_id": "f16-m3-p1-c0",
+      "pair_source_sha256": "ded363976f9ff63925221b9deef0cb5d88e9965d6d1a0ba01b9c5698636e8de2",
+      "precursor_condition": "C1",
+      "prompt": "synthetic_prompt_1"
+    },
+    {
+      "family": "synthetic_family_016",
+      "model": "synthetic_model_3",
+      "pair_id": "f16-m3-p1-c1",
+      "pair_source_sha256": "4a5bc67c58c727b21312ccf94632475a284992535be8c1bd666efa8509f15585",
+      "precursor_condition": "C2",
+      "prompt": "synthetic_prompt_1"
+    },
+    {
+      "family": "synthetic_family_017",
+      "model": "synthetic_model_0",
+      "pair_id": "f17-m0-p0-c0",
+      "pair_source_sha256": "9d18746b6008427532888a3f6c840259c8d6fe61a8215b1e0f344013a3ca8ccb",
+      "precursor_condition": "C1",
+      "prompt": "synthetic_prompt_0"
+    },
+    {
+      "family": "synthetic_family_017",
+      "model": "synthetic_model_0",
+      "pair_id": "f17-m0-p0-c1",
+      "pair_source_sha256": "9972f13196954bd49800b60191e6db2cda86dc7a1946a9ad309eca6a55ace9b1",
+      "precursor_condition": "C2",
+      "prompt": "synthetic_prompt_0"
+    },
+    {
+      "family": "synthetic_family_017",
+      "model": "synthetic_model_0",
+      "pair_id": "f17-m0-p1-c0",
+      "pair_source_sha256": "bb7e5315a8d3e373aa9849558b39bff5daba7aef37bd62c197e516460b04dd42",
+      "precursor_condition": "C1",
+      "prompt": "synthetic_prompt_1"
+    },
+    {
+      "family": "synthetic_family_017",
+      "model": "synthetic_model_0",
+      "pair_id": "f17-m0-p1-c1",
+      "pair_source_sha256": "c2af8bb865ff3d8db8bab18337a78a9519875857a5f53e9bca6474d8ff4c0ded",
+      "precursor_condition": "C2",
+      "prompt": "synthetic_prompt_1"
+    },
+    {
+      "family": "synthetic_family_017",
+      "model": "synthetic_model_1",
+      "pair_id": "f17-m1-p0-c0",
+      "pair_source_sha256": "f2ece72ebbd34a7350c9e629dce555618f4cd6debf9bdcbf0800b4650aa7b0ed",
+      "precursor_condition": "C1",
+      "prompt": "synthetic_prompt_0"
+    },
+    {
+      "family": "synthetic_family_017",
+      "model": "synthetic_model_1",
+      "pair_id": "f17-m1-p0-c1",
+      "pair_source_sha256": "9d035ed3808f3e8a9f4e12c43fd74761eb1284d237849f97ed5b8910b5ad57c0",
+      "precursor_condition": "C2",
+      "prompt": "synthetic_prompt_0"
+    },
+    {
+      "family": "synthetic_family_017",
+      "model": "synthetic_model_1",
+      "pair_id": "f17-m1-p1-c0",
+      "pair_source_sha256": "eb1064b79d6f0ccfbdf4964cb3097a7884986150bc001d6c436ee0de389161c4",
+      "precursor_condition": "C1",
+      "prompt": "synthetic_prompt_1"
+    },
+    {
+      "family": "synthetic_family_017",
+      "model": "synthetic_model_1",
+      "pair_id": "f17-m1-p1-c1",
+      "pair_source_sha256": "51ff43f243f28115f764875833a9bf93ce47c1459ce8160a8df57f159f017347",
+      "precursor_condition": "C2",
+      "prompt": "synthetic_prompt_1"
+    },
+    {
+      "family": "synthetic_family_017",
+      "model": "synthetic_model_2",
+      "pair_id": "f17-m2-p0-c0",
+      "pair_source_sha256": "bd1bfefb5ada7e76498785c3730094f033fdfdc4f87d491c3343f1271f076664",
+      "precursor_condition": "C1",
+      "prompt": "synthetic_prompt_0"
+    },
+    {
+      "family": "synthetic_family_017",
+      "model": "synthetic_model_2",
+      "pair_id": "f17-m2-p0-c1",
+      "pair_source_sha256": "3ad62bd6cbd2fc1804150fe9d3f1def5ac24cddec77347ac510fc6bf11697367",
+      "precursor_condition": "C2",
+      "prompt": "synthetic_prompt_0"
+    },
+    {
+      "family": "synthetic_family_017",
+      "model": "synthetic_model_2",
+      "pair_id": "f17-m2-p1-c0",
+      "pair_source_sha256": "3e7cacfc85fdc29cf13924c788b56e7c88d21f9f46f06a9dc96e1d912db77347",
+      "precursor_condition": "C1",
+      "prompt": "synthetic_prompt_1"
+    },
+    {
+      "family": "synthetic_family_017",
+      "model": "synthetic_model_2",
+      "pair_id": "f17-m2-p1-c1",
+      "pair_source_sha256": "a46a9641aeda74781794639607b03c0a42d9310f275584a1ce1d4c1bb5656da5",
+      "precursor_condition": "C2",
+      "prompt": "synthetic_prompt_1"
+    },
+    {
+      "family": "synthetic_family_017",
+      "model": "synthetic_model_3",
+      "pair_id": "f17-m3-p0-c0",
+      "pair_source_sha256": "3c284f00d8a2a5055d3a5f9768828486a392150b010cf7dd5930e4a55f23e429",
+      "precursor_condition": "C1",
+      "prompt": "synthetic_prompt_0"
+    },
+    {
+      "family": "synthetic_family_017",
+      "model": "synthetic_model_3",
+      "pair_id": "f17-m3-p0-c1",
+      "pair_source_sha256": "5d74a6089f0df65f790415716afcee2ef56df2743ffd818c38a1d7fd88f6f05d",
+      "precursor_condition": "C2",
+      "prompt": "synthetic_prompt_0"
+    },
+    {
+      "family": "synthetic_family_017",
+      "model": "synthetic_model_3",
+      "pair_id": "f17-m3-p1-c0",
+      "pair_source_sha256": "31a1ab026a59b0999d5f3b3955ee21109bd09c1812d309cd4560c8d0e2b37b41",
+      "precursor_condition": "C1",
+      "prompt": "synthetic_prompt_1"
+    },
+    {
+      "family": "synthetic_family_017",
+      "model": "synthetic_model_3",
+      "pair_id": "f17-m3-p1-c1",
+      "pair_source_sha256": "c56e12e14274b89a5fff407f8a61e5dbb0cf063f8008fbe1dd7695e3d775b0ee",
+      "precursor_condition": "C2",
+      "prompt": "synthetic_prompt_1"
+    },
+    {
+      "family": "synthetic_family_018",
+      "model": "synthetic_model_0",
+      "pair_id": "f18-m0-p0-c0",
+      "pair_source_sha256": "a5ea8b5055a4d70befb1a8be7c10d4f9b6e4d4c15509b19fa2eb3b1fe9ceeddf",
+      "precursor_condition": "C1",
+      "prompt": "synthetic_prompt_0"
+    },
+    {
+      "family": "synthetic_family_018",
+      "model": "synthetic_model_0",
+      "pair_id": "f18-m0-p0-c1",
+      "pair_source_sha256": "bb2bc20cd4ff37f25a41a5757aa99a5b535807c740968529bfa9ef6a3bee7891",
+      "precursor_condition": "C2",
+      "prompt": "synthetic_prompt_0"
+    },
+    {
+      "family": "synthetic_family_018",
+      "model": "synthetic_model_0",
+      "pair_id": "f18-m0-p1-c0",
+      "pair_source_sha256": "03784e71df65df370d33a90a0e0743781222eb8f4b1fe3a91586ea645e776038",
+      "precursor_condition": "C1",
+      "prompt": "synthetic_prompt_1"
+    },
+    {
+      "family": "synthetic_family_018",
+      "model": "synthetic_model_0",
+      "pair_id": "f18-m0-p1-c1",
+      "pair_source_sha256": "bb6dc819d44e8b45f98c1be86a123557a9644f02ad17feb872bb27a4a313055a",
+      "precursor_condition": "C2",
+      "prompt": "synthetic_prompt_1"
+    },
+    {
+      "family": "synthetic_family_018",
+      "model": "synthetic_model_1",
+      "pair_id": "f18-m1-p0-c0",
+      "pair_source_sha256": "9a2217a1f507aa0e62710f8b676b9e02688adfdb82fab2335545f3579a6a08ec",
+      "precursor_condition": "C1",
+      "prompt": "synthetic_prompt_0"
+    },
+    {
+      "family": "synthetic_family_018",
+      "model": "synthetic_model_1",
+      "pair_id": "f18-m1-p0-c1",
+      "pair_source_sha256": "fbe7bc8845b8684e9f384ee236be184f15bdc27104c73f40152378e67522cc59",
+      "precursor_condition": "C2",
+      "prompt": "synthetic_prompt_0"
+    },
+    {
+      "family": "synthetic_family_018",
+      "model": "synthetic_model_1",
+      "pair_id": "f18-m1-p1-c0",
+      "pair_source_sha256": "3ba3d2b4bef2bed229b718b45485fceae466cd0ba83d2db2c487a06d8081eead",
+      "precursor_condition": "C1",
+      "prompt": "synthetic_prompt_1"
+    },
+    {
+      "family": "synthetic_family_018",
+      "model": "synthetic_model_1",
+      "pair_id": "f18-m1-p1-c1",
+      "pair_source_sha256": "a85fdeaac850661343c06cbebd437802a162306ed28675f297e5cc4740060792",
+      "precursor_condition": "C2",
+      "prompt": "synthetic_prompt_1"
+    },
+    {
+      "family": "synthetic_family_018",
+      "model": "synthetic_model_2",
+      "pair_id": "f18-m2-p0-c0",
+      "pair_source_sha256": "70842b27f78225e24ebee9b54d68cf521e020a5c654a4784a93c3e5721131f81",
+      "precursor_condition": "C1",
+      "prompt": "synthetic_prompt_0"
+    },
+    {
+      "family": "synthetic_family_018",
+      "model": "synthetic_model_2",
+      "pair_id": "f18-m2-p0-c1",
+      "pair_source_sha256": "ee2143c1b9c514070337ff4c4aa182b3e812da2876985dd937b9563619603bc9",
+      "precursor_condition": "C2",
+      "prompt": "synthetic_prompt_0"
+    },
+    {
+      "family": "synthetic_family_018",
+      "model": "synthetic_model_2",
+      "pair_id": "f18-m2-p1-c0",
+      "pair_source_sha256": "3d08f348e7a5fe6033a3221df78fa070b27880507d795ea4db015f77b99bf399",
+      "precursor_condition": "C1",
+      "prompt": "synthetic_prompt_1"
+    },
+    {
+      "family": "synthetic_family_018",
+      "model": "synthetic_model_2",
+      "pair_id": "f18-m2-p1-c1",
+      "pair_source_sha256": "cd8e165c1b9b2cefaedfced480b3a3a03142886c893887bfcc1f6dcd9a6e1b64",
+      "precursor_condition": "C2",
+      "prompt": "synthetic_prompt_1"
+    },
+    {
+      "family": "synthetic_family_018",
+      "model": "synthetic_model_3",
+      "pair_id": "f18-m3-p0-c0",
+      "pair_source_sha256": "57e45e4d86f0e2c512781a21566fdc50cb3f3a030b9294c779eefa09ab72da6d",
+      "precursor_condition": "C1",
+      "prompt": "synthetic_prompt_0"
+    },
+    {
+      "family": "synthetic_family_018",
+      "model": "synthetic_model_3",
+      "pair_id": "f18-m3-p0-c1",
+      "pair_source_sha256": "b93cc93855f5fced35a68122a2a7b09f4f62927cb5caaa984862f05936c6274b",
+      "precursor_condition": "C2",
+      "prompt": "synthetic_prompt_0"
+    },
+    {
+      "family": "synthetic_family_018",
+      "model": "synthetic_model_3",
+      "pair_id": "f18-m3-p1-c0",
+      "pair_source_sha256": "e518ea2d81ce57b86e3195d1006a58c44873cd23651dbac85690d7f703ba3c27",
+      "precursor_condition": "C1",
+      "prompt": "synthetic_prompt_1"
+    },
+    {
+      "family": "synthetic_family_018",
+      "model": "synthetic_model_3",
+      "pair_id": "f18-m3-p1-c1",
+      "pair_source_sha256": "aeec2930aa27c78513ada60fef8da6d235f4485ab7627f776d70881dfb7c888e",
+      "precursor_condition": "C2",
+      "prompt": "synthetic_prompt_1"
+    },
+    {
+      "family": "synthetic_family_019",
+      "model": "synthetic_model_0",
+      "pair_id": "f19-m0-p0-c0",
+      "pair_source_sha256": "60f70ff6ac533478965347916d3c234fba1313e7f028bc20cd0f191b52f5e9bd",
+      "precursor_condition": "C1",
+      "prompt": "synthetic_prompt_0"
+    },
+    {
+      "family": "synthetic_family_019",
+      "model": "synthetic_model_0",
+      "pair_id": "f19-m0-p0-c1",
+      "pair_source_sha256": "14171277f39a0ac7f3926aaa47bdd0a70813ac947848fd1f35423927f983fb0b",
+      "precursor_condition": "C2",
+      "prompt": "synthetic_prompt_0"
+    },
+    {
+      "family": "synthetic_family_019",
+      "model": "synthetic_model_0",
+      "pair_id": "f19-m0-p1-c0",
+      "pair_source_sha256": "dc0aa0effa99d3ab2497f33431bb52fd76050c2c2908b968bb9a45570235a754",
+      "precursor_condition": "C1",
+      "prompt": "synthetic_prompt_1"
+    },
+    {
+      "family": "synthetic_family_019",
+      "model": "synthetic_model_0",
+      "pair_id": "f19-m0-p1-c1",
+      "pair_source_sha256": "03b3c7b0c259970f730c58bb8cb958e6fbcdf6afe435190a50931657af4e246d",
+      "precursor_condition": "C2",
+      "prompt": "synthetic_prompt_1"
+    },
+    {
+      "family": "synthetic_family_019",
+      "model": "synthetic_model_1",
+      "pair_id": "f19-m1-p0-c0",
+      "pair_source_sha256": "4d04a5a4ac0566963398e5523fa3777943f82cf7fc140d5c671cb6046b4c9234",
+      "precursor_condition": "C1",
+      "prompt": "synthetic_prompt_0"
+    },
+    {
+      "family": "synthetic_family_019",
+      "model": "synthetic_model_1",
+      "pair_id": "f19-m1-p0-c1",
+      "pair_source_sha256": "2320bc63b094800d58f41c259ef67d1ea5742c6290b99ede0cccac6f8aac33ef",
+      "precursor_condition": "C2",
+      "prompt": "synthetic_prompt_0"
+    },
+    {
+      "family": "synthetic_family_019",
+      "model": "synthetic_model_1",
+      "pair_id": "f19-m1-p1-c0",
+      "pair_source_sha256": "30f499a8fd72381575f5ac1e663729ee0bcd13fbd066b0afbae05a254eca90ed",
+      "precursor_condition": "C1",
+      "prompt": "synthetic_prompt_1"
+    },
+    {
+      "family": "synthetic_family_019",
+      "model": "synthetic_model_1",
+      "pair_id": "f19-m1-p1-c1",
+      "pair_source_sha256": "2c889562ffa8e2854136250ebe06eecd5be44b5016bcf49a5e2e04b3640098f5",
+      "precursor_condition": "C2",
+      "prompt": "synthetic_prompt_1"
+    },
+    {
+      "family": "synthetic_family_019",
+      "model": "synthetic_model_2",
+      "pair_id": "f19-m2-p0-c0",
+      "pair_source_sha256": "5bd8cbd94f926e7597d48fb3127f6240f07e2bd28f9eb2ef4c70cae13889a095",
+      "precursor_condition": "C1",
+      "prompt": "synthetic_prompt_0"
+    },
+    {
+      "family": "synthetic_family_019",
+      "model": "synthetic_model_2",
+      "pair_id": "f19-m2-p0-c1",
+      "pair_source_sha256": "cae3c8cb4adcaa7b1f451306507d1bc60f438aaa9903434f8b07560ab15c93e7",
+      "precursor_condition": "C2",
+      "prompt": "synthetic_prompt_0"
+    },
+    {
+      "family": "synthetic_family_019",
+      "model": "synthetic_model_2",
+      "pair_id": "f19-m2-p1-c0",
+      "pair_source_sha256": "8fd9e3ff800e278db4e5e5238c097634c8336a3ddb5e3ce7efe79200dc0cf26b",
+      "precursor_condition": "C1",
+      "prompt": "synthetic_prompt_1"
+    },
+    {
+      "family": "synthetic_family_019",
+      "model": "synthetic_model_2",
+      "pair_id": "f19-m2-p1-c1",
+      "pair_source_sha256": "3098bc6c4bda76b0d4589430629e4cdd446a2c25744452b412a049097021b59b",
+      "precursor_condition": "C2",
+      "prompt": "synthetic_prompt_1"
+    },
+    {
+      "family": "synthetic_family_019",
+      "model": "synthetic_model_3",
+      "pair_id": "f19-m3-p0-c0",
+      "pair_source_sha256": "eb6e6df9c0b9a9d0c0f551f83eb51180155bd97d84b45f5c49bc34d9978e720a",
+      "precursor_condition": "C1",
+      "prompt": "synthetic_prompt_0"
+    },
+    {
+      "family": "synthetic_family_019",
+      "model": "synthetic_model_3",
+      "pair_id": "f19-m3-p0-c1",
+      "pair_source_sha256": "49e96997e88b91b7dce6b2d8b01d3df63913461b5ee098028bdc274afc49185a",
+      "precursor_condition": "C2",
+      "prompt": "synthetic_prompt_0"
+    },
+    {
+      "family": "synthetic_family_019",
+      "model": "synthetic_model_3",
+      "pair_id": "f19-m3-p1-c0",
+      "pair_source_sha256": "0990cd3d8beb8a1d6c7c9ec91552a5386afa4062d3f5d354cfa8607219aa64d4",
+      "precursor_condition": "C1",
+      "prompt": "synthetic_prompt_1"
+    },
+    {
+      "family": "synthetic_family_019",
+      "model": "synthetic_model_3",
+      "pair_id": "f19-m3-p1-c1",
+      "pair_source_sha256": "fa3425579bab03ff814251571b97233980d1b85f2973a9ff150aa05b53eaba44",
+      "precursor_condition": "C2",
+      "prompt": "synthetic_prompt_1"
+    }
+  ],
+  "prompts": [
+    "synthetic_prompt_0",
+    "synthetic_prompt_1"
+  ],
+  "rows": [
+    {
+      "model": "synthetic_model_0",
+      "outcome": 0,
+      "pair_id": "f0-m0-p0-c0",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_0",
+      "outcome": 1,
+      "pair_id": "f0-m0-p0-c0",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_0",
+      "outcome": 0,
+      "pair_id": "f0-m0-p0-c1",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_0",
+      "outcome": 0,
+      "pair_id": "f0-m0-p0-c1",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_0",
+      "outcome": 1,
+      "pair_id": "f0-m0-p1-c0",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_0",
+      "outcome": 0,
+      "pair_id": "f0-m0-p1-c0",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_0",
+      "outcome": 1,
+      "pair_id": "f0-m0-p1-c1",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_0",
+      "outcome": 1,
+      "pair_id": "f0-m0-p1-c1",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_1",
+      "outcome": 1,
+      "pair_id": "f0-m1-p0-c0",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_1",
+      "outcome": 1,
+      "pair_id": "f0-m1-p0-c0",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_1",
+      "outcome": 0,
+      "pair_id": "f0-m1-p0-c1",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_1",
+      "outcome": 0,
+      "pair_id": "f0-m1-p0-c1",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_1",
+      "outcome": 1,
+      "pair_id": "f0-m1-p1-c0",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_1",
+      "outcome": 0,
+      "pair_id": "f0-m1-p1-c0",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_1",
+      "outcome": 1,
+      "pair_id": "f0-m1-p1-c1",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_1",
+      "outcome": 0,
+      "pair_id": "f0-m1-p1-c1",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_2",
+      "outcome": 1,
+      "pair_id": "f0-m2-p0-c0",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_2",
+      "outcome": 0,
+      "pair_id": "f0-m2-p0-c0",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_2",
+      "outcome": 1,
+      "pair_id": "f0-m2-p0-c1",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_2",
+      "outcome": 0,
+      "pair_id": "f0-m2-p0-c1",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_2",
+      "outcome": 1,
+      "pair_id": "f0-m2-p1-c0",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_2",
+      "outcome": 0,
+      "pair_id": "f0-m2-p1-c0",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_2",
+      "outcome": 1,
+      "pair_id": "f0-m2-p1-c1",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_2",
+      "outcome": 0,
+      "pair_id": "f0-m2-p1-c1",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_3",
+      "outcome": 1,
+      "pair_id": "f0-m3-p0-c0",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_3",
+      "outcome": 0,
+      "pair_id": "f0-m3-p0-c0",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_3",
+      "outcome": 1,
+      "pair_id": "f0-m3-p0-c1",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_3",
+      "outcome": 0,
+      "pair_id": "f0-m3-p0-c1",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_3",
+      "outcome": 0,
+      "pair_id": "f0-m3-p1-c0",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_3",
+      "outcome": 0,
+      "pair_id": "f0-m3-p1-c0",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_3",
+      "outcome": 1,
+      "pair_id": "f0-m3-p1-c1",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_3",
+      "outcome": 0,
+      "pair_id": "f0-m3-p1-c1",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_0",
+      "outcome": 0,
+      "pair_id": "f1-m0-p0-c0",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_0",
+      "outcome": 0,
+      "pair_id": "f1-m0-p0-c0",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_0",
+      "outcome": 0,
+      "pair_id": "f1-m0-p0-c1",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_0",
+      "outcome": 0,
+      "pair_id": "f1-m0-p0-c1",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_0",
+      "outcome": 0,
+      "pair_id": "f1-m0-p1-c0",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_0",
+      "outcome": 1,
+      "pair_id": "f1-m0-p1-c0",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_0",
+      "outcome": 1,
+      "pair_id": "f1-m0-p1-c1",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_0",
+      "outcome": 1,
+      "pair_id": "f1-m0-p1-c1",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_1",
+      "outcome": 1,
+      "pair_id": "f1-m1-p0-c0",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_1",
+      "outcome": 0,
+      "pair_id": "f1-m1-p0-c0",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_1",
+      "outcome": 0,
+      "pair_id": "f1-m1-p0-c1",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_1",
+      "outcome": 1,
+      "pair_id": "f1-m1-p0-c1",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_1",
+      "outcome": 1,
+      "pair_id": "f1-m1-p1-c0",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_1",
+      "outcome": 0,
+      "pair_id": "f1-m1-p1-c0",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_1",
+      "outcome": 1,
+      "pair_id": "f1-m1-p1-c1",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_1",
+      "outcome": 1,
+      "pair_id": "f1-m1-p1-c1",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_2",
+      "outcome": 1,
+      "pair_id": "f1-m2-p0-c0",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_2",
+      "outcome": 0,
+      "pair_id": "f1-m2-p0-c0",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_2",
+      "outcome": 1,
+      "pair_id": "f1-m2-p0-c1",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_2",
+      "outcome": 1,
+      "pair_id": "f1-m2-p0-c1",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_2",
+      "outcome": 1,
+      "pair_id": "f1-m2-p1-c0",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_2",
+      "outcome": 1,
+      "pair_id": "f1-m2-p1-c0",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_2",
+      "outcome": 1,
+      "pair_id": "f1-m2-p1-c1",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_2",
+      "outcome": 1,
+      "pair_id": "f1-m2-p1-c1",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_3",
+      "outcome": 0,
+      "pair_id": "f1-m3-p0-c0",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_3",
+      "outcome": 1,
+      "pair_id": "f1-m3-p0-c0",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_3",
+      "outcome": 0,
+      "pair_id": "f1-m3-p0-c1",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_3",
+      "outcome": 1,
+      "pair_id": "f1-m3-p0-c1",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_3",
+      "outcome": 1,
+      "pair_id": "f1-m3-p1-c0",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_3",
+      "outcome": 0,
+      "pair_id": "f1-m3-p1-c0",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_3",
+      "outcome": 1,
+      "pair_id": "f1-m3-p1-c1",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_3",
+      "outcome": 1,
+      "pair_id": "f1-m3-p1-c1",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_0",
+      "outcome": 1,
+      "pair_id": "f2-m0-p0-c0",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_0",
+      "outcome": 1,
+      "pair_id": "f2-m0-p0-c0",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_0",
+      "outcome": 1,
+      "pair_id": "f2-m0-p0-c1",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_0",
+      "outcome": 1,
+      "pair_id": "f2-m0-p0-c1",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_0",
+      "outcome": 0,
+      "pair_id": "f2-m0-p1-c0",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_0",
+      "outcome": 0,
+      "pair_id": "f2-m0-p1-c0",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_0",
+      "outcome": 1,
+      "pair_id": "f2-m0-p1-c1",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_0",
+      "outcome": 1,
+      "pair_id": "f2-m0-p1-c1",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_1",
+      "outcome": 0,
+      "pair_id": "f2-m1-p0-c0",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_1",
+      "outcome": 0,
+      "pair_id": "f2-m1-p0-c0",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_1",
+      "outcome": 0,
+      "pair_id": "f2-m1-p0-c1",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_1",
+      "outcome": 1,
+      "pair_id": "f2-m1-p0-c1",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_1",
+      "outcome": 0,
+      "pair_id": "f2-m1-p1-c0",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_1",
+      "outcome": 0,
+      "pair_id": "f2-m1-p1-c0",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_1",
+      "outcome": 0,
+      "pair_id": "f2-m1-p1-c1",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_1",
+      "outcome": 1,
+      "pair_id": "f2-m1-p1-c1",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_2",
+      "outcome": 0,
+      "pair_id": "f2-m2-p0-c0",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_2",
+      "outcome": 0,
+      "pair_id": "f2-m2-p0-c0",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_2",
+      "outcome": 0,
+      "pair_id": "f2-m2-p0-c1",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_2",
+      "outcome": 0,
+      "pair_id": "f2-m2-p0-c1",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_2",
+      "outcome": 0,
+      "pair_id": "f2-m2-p1-c0",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_2",
+      "outcome": 0,
+      "pair_id": "f2-m2-p1-c0",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_2",
+      "outcome": 1,
+      "pair_id": "f2-m2-p1-c1",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_2",
+      "outcome": 0,
+      "pair_id": "f2-m2-p1-c1",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_3",
+      "outcome": 1,
+      "pair_id": "f2-m3-p0-c0",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_3",
+      "outcome": 0,
+      "pair_id": "f2-m3-p0-c0",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_3",
+      "outcome": 0,
+      "pair_id": "f2-m3-p0-c1",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_3",
+      "outcome": 0,
+      "pair_id": "f2-m3-p0-c1",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_3",
+      "outcome": 0,
+      "pair_id": "f2-m3-p1-c0",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_3",
+      "outcome": 1,
+      "pair_id": "f2-m3-p1-c0",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_3",
+      "outcome": 1,
+      "pair_id": "f2-m3-p1-c1",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_3",
+      "outcome": 1,
+      "pair_id": "f2-m3-p1-c1",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_0",
+      "outcome": 1,
+      "pair_id": "f3-m0-p0-c0",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_0",
+      "outcome": 0,
+      "pair_id": "f3-m0-p0-c0",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_0",
+      "outcome": 0,
+      "pair_id": "f3-m0-p0-c1",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_0",
+      "outcome": 0,
+      "pair_id": "f3-m0-p0-c1",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_0",
+      "outcome": 0,
+      "pair_id": "f3-m0-p1-c0",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_0",
+      "outcome": 1,
+      "pair_id": "f3-m0-p1-c0",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_0",
+      "outcome": 1,
+      "pair_id": "f3-m0-p1-c1",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_0",
+      "outcome": 0,
+      "pair_id": "f3-m0-p1-c1",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_1",
+      "outcome": 1,
+      "pair_id": "f3-m1-p0-c0",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_1",
+      "outcome": 0,
+      "pair_id": "f3-m1-p0-c0",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_1",
+      "outcome": 0,
+      "pair_id": "f3-m1-p0-c1",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_1",
+      "outcome": 0,
+      "pair_id": "f3-m1-p0-c1",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_1",
+      "outcome": 0,
+      "pair_id": "f3-m1-p1-c0",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_1",
+      "outcome": 0,
+      "pair_id": "f3-m1-p1-c0",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_1",
+      "outcome": 1,
+      "pair_id": "f3-m1-p1-c1",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_1",
+      "outcome": 0,
+      "pair_id": "f3-m1-p1-c1",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_2",
+      "outcome": 1,
+      "pair_id": "f3-m2-p0-c0",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_2",
+      "outcome": 1,
+      "pair_id": "f3-m2-p0-c0",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_2",
+      "outcome": 1,
+      "pair_id": "f3-m2-p0-c1",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_2",
+      "outcome": 0,
+      "pair_id": "f3-m2-p0-c1",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_2",
+      "outcome": 1,
+      "pair_id": "f3-m2-p1-c0",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_2",
+      "outcome": 1,
+      "pair_id": "f3-m2-p1-c0",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_2",
+      "outcome": 0,
+      "pair_id": "f3-m2-p1-c1",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_2",
+      "outcome": 0,
+      "pair_id": "f3-m2-p1-c1",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_3",
+      "outcome": 0,
+      "pair_id": "f3-m3-p0-c0",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_3",
+      "outcome": 1,
+      "pair_id": "f3-m3-p0-c0",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_3",
+      "outcome": 0,
+      "pair_id": "f3-m3-p0-c1",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_3",
+      "outcome": 0,
+      "pair_id": "f3-m3-p0-c1",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_3",
+      "outcome": 0,
+      "pair_id": "f3-m3-p1-c0",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_3",
+      "outcome": 0,
+      "pair_id": "f3-m3-p1-c0",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_3",
+      "outcome": 1,
+      "pair_id": "f3-m3-p1-c1",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_3",
+      "outcome": 1,
+      "pair_id": "f3-m3-p1-c1",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_0",
+      "outcome": 1,
+      "pair_id": "f4-m0-p0-c0",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_0",
+      "outcome": 1,
+      "pair_id": "f4-m0-p0-c0",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_0",
+      "outcome": 1,
+      "pair_id": "f4-m0-p0-c1",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_0",
+      "outcome": 0,
+      "pair_id": "f4-m0-p0-c1",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_0",
+      "outcome": 0,
+      "pair_id": "f4-m0-p1-c0",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_0",
+      "outcome": 1,
+      "pair_id": "f4-m0-p1-c0",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_0",
+      "outcome": 1,
+      "pair_id": "f4-m0-p1-c1",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_0",
+      "outcome": 0,
+      "pair_id": "f4-m0-p1-c1",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_1",
+      "outcome": 1,
+      "pair_id": "f4-m1-p0-c0",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_1",
+      "outcome": 1,
+      "pair_id": "f4-m1-p0-c0",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_1",
+      "outcome": 0,
+      "pair_id": "f4-m1-p0-c1",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_1",
+      "outcome": 1,
+      "pair_id": "f4-m1-p0-c1",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_1",
+      "outcome": 1,
+      "pair_id": "f4-m1-p1-c0",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_1",
+      "outcome": 1,
+      "pair_id": "f4-m1-p1-c0",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_1",
+      "outcome": 1,
+      "pair_id": "f4-m1-p1-c1",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_1",
+      "outcome": 1,
+      "pair_id": "f4-m1-p1-c1",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_2",
+      "outcome": 0,
+      "pair_id": "f4-m2-p0-c0",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_2",
+      "outcome": 0,
+      "pair_id": "f4-m2-p0-c0",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_2",
+      "outcome": 1,
+      "pair_id": "f4-m2-p0-c1",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_2",
+      "outcome": 1,
+      "pair_id": "f4-m2-p0-c1",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_2",
+      "outcome": 1,
+      "pair_id": "f4-m2-p1-c0",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_2",
+      "outcome": 0,
+      "pair_id": "f4-m2-p1-c0",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_2",
+      "outcome": 0,
+      "pair_id": "f4-m2-p1-c1",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_2",
+      "outcome": 0,
+      "pair_id": "f4-m2-p1-c1",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_3",
+      "outcome": 1,
+      "pair_id": "f4-m3-p0-c0",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_3",
+      "outcome": 1,
+      "pair_id": "f4-m3-p0-c0",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_3",
+      "outcome": 1,
+      "pair_id": "f4-m3-p0-c1",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_3",
+      "outcome": 0,
+      "pair_id": "f4-m3-p0-c1",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_3",
+      "outcome": 1,
+      "pair_id": "f4-m3-p1-c0",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_3",
+      "outcome": 1,
+      "pair_id": "f4-m3-p1-c0",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_3",
+      "outcome": 0,
+      "pair_id": "f4-m3-p1-c1",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_3",
+      "outcome": 0,
+      "pair_id": "f4-m3-p1-c1",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_0",
+      "outcome": 1,
+      "pair_id": "f5-m0-p0-c0",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_0",
+      "outcome": 1,
+      "pair_id": "f5-m0-p0-c0",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_0",
+      "outcome": 1,
+      "pair_id": "f5-m0-p0-c1",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_0",
+      "outcome": 1,
+      "pair_id": "f5-m0-p0-c1",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_0",
+      "outcome": 1,
+      "pair_id": "f5-m0-p1-c0",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_0",
+      "outcome": 1,
+      "pair_id": "f5-m0-p1-c0",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_0",
+      "outcome": 0,
+      "pair_id": "f5-m0-p1-c1",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_0",
+      "outcome": 1,
+      "pair_id": "f5-m0-p1-c1",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_1",
+      "outcome": 0,
+      "pair_id": "f5-m1-p0-c0",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_1",
+      "outcome": 1,
+      "pair_id": "f5-m1-p0-c0",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_1",
+      "outcome": 1,
+      "pair_id": "f5-m1-p0-c1",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_1",
+      "outcome": 0,
+      "pair_id": "f5-m1-p0-c1",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_1",
+      "outcome": 1,
+      "pair_id": "f5-m1-p1-c0",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_1",
+      "outcome": 0,
+      "pair_id": "f5-m1-p1-c0",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_1",
+      "outcome": 0,
+      "pair_id": "f5-m1-p1-c1",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_1",
+      "outcome": 0,
+      "pair_id": "f5-m1-p1-c1",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_2",
+      "outcome": 1,
+      "pair_id": "f5-m2-p0-c0",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_2",
+      "outcome": 0,
+      "pair_id": "f5-m2-p0-c0",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_2",
+      "outcome": 1,
+      "pair_id": "f5-m2-p0-c1",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_2",
+      "outcome": 1,
+      "pair_id": "f5-m2-p0-c1",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_2",
+      "outcome": 1,
+      "pair_id": "f5-m2-p1-c0",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_2",
+      "outcome": 1,
+      "pair_id": "f5-m2-p1-c0",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_2",
+      "outcome": 1,
+      "pair_id": "f5-m2-p1-c1",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_2",
+      "outcome": 1,
+      "pair_id": "f5-m2-p1-c1",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_3",
+      "outcome": 1,
+      "pair_id": "f5-m3-p0-c0",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_3",
+      "outcome": 1,
+      "pair_id": "f5-m3-p0-c0",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_3",
+      "outcome": 0,
+      "pair_id": "f5-m3-p0-c1",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_3",
+      "outcome": 1,
+      "pair_id": "f5-m3-p0-c1",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_3",
+      "outcome": 1,
+      "pair_id": "f5-m3-p1-c0",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_3",
+      "outcome": 1,
+      "pair_id": "f5-m3-p1-c0",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_3",
+      "outcome": 1,
+      "pair_id": "f5-m3-p1-c1",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_3",
+      "outcome": 0,
+      "pair_id": "f5-m3-p1-c1",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_0",
+      "outcome": 0,
+      "pair_id": "f6-m0-p0-c0",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_0",
+      "outcome": 1,
+      "pair_id": "f6-m0-p0-c0",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_0",
+      "outcome": 1,
+      "pair_id": "f6-m0-p0-c1",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_0",
+      "outcome": 1,
+      "pair_id": "f6-m0-p0-c1",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_0",
+      "outcome": 1,
+      "pair_id": "f6-m0-p1-c0",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_0",
+      "outcome": 1,
+      "pair_id": "f6-m0-p1-c0",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_0",
+      "outcome": 1,
+      "pair_id": "f6-m0-p1-c1",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_0",
+      "outcome": 1,
+      "pair_id": "f6-m0-p1-c1",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_1",
+      "outcome": 1,
+      "pair_id": "f6-m1-p0-c0",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_1",
+      "outcome": 1,
+      "pair_id": "f6-m1-p0-c0",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_1",
+      "outcome": 1,
+      "pair_id": "f6-m1-p0-c1",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_1",
+      "outcome": 0,
+      "pair_id": "f6-m1-p0-c1",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_1",
+      "outcome": 1,
+      "pair_id": "f6-m1-p1-c0",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_1",
+      "outcome": 0,
+      "pair_id": "f6-m1-p1-c0",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_1",
+      "outcome": 1,
+      "pair_id": "f6-m1-p1-c1",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_1",
+      "outcome": 0,
+      "pair_id": "f6-m1-p1-c1",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_2",
+      "outcome": 1,
+      "pair_id": "f6-m2-p0-c0",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_2",
+      "outcome": 1,
+      "pair_id": "f6-m2-p0-c0",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_2",
+      "outcome": 1,
+      "pair_id": "f6-m2-p0-c1",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_2",
+      "outcome": 1,
+      "pair_id": "f6-m2-p0-c1",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_2",
+      "outcome": 1,
+      "pair_id": "f6-m2-p1-c0",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_2",
+      "outcome": 1,
+      "pair_id": "f6-m2-p1-c0",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_2",
+      "outcome": 1,
+      "pair_id": "f6-m2-p1-c1",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_2",
+      "outcome": 0,
+      "pair_id": "f6-m2-p1-c1",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_3",
+      "outcome": 1,
+      "pair_id": "f6-m3-p0-c0",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_3",
+      "outcome": 1,
+      "pair_id": "f6-m3-p0-c0",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_3",
+      "outcome": 1,
+      "pair_id": "f6-m3-p0-c1",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_3",
+      "outcome": 1,
+      "pair_id": "f6-m3-p0-c1",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_3",
+      "outcome": 1,
+      "pair_id": "f6-m3-p1-c0",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_3",
+      "outcome": 1,
+      "pair_id": "f6-m3-p1-c0",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_3",
+      "outcome": 0,
+      "pair_id": "f6-m3-p1-c1",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_3",
+      "outcome": 1,
+      "pair_id": "f6-m3-p1-c1",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_0",
+      "outcome": 0,
+      "pair_id": "f7-m0-p0-c0",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_0",
+      "outcome": 0,
+      "pair_id": "f7-m0-p0-c0",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_0",
+      "outcome": 1,
+      "pair_id": "f7-m0-p0-c1",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_0",
+      "outcome": 0,
+      "pair_id": "f7-m0-p0-c1",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_0",
+      "outcome": 0,
+      "pair_id": "f7-m0-p1-c0",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_0",
+      "outcome": 0,
+      "pair_id": "f7-m0-p1-c0",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_0",
+      "outcome": 1,
+      "pair_id": "f7-m0-p1-c1",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_0",
+      "outcome": 1,
+      "pair_id": "f7-m0-p1-c1",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_1",
+      "outcome": 1,
+      "pair_id": "f7-m1-p0-c0",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_1",
+      "outcome": 0,
+      "pair_id": "f7-m1-p0-c0",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_1",
+      "outcome": 0,
+      "pair_id": "f7-m1-p0-c1",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_1",
+      "outcome": 0,
+      "pair_id": "f7-m1-p0-c1",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_1",
+      "outcome": 1,
+      "pair_id": "f7-m1-p1-c0",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_1",
+      "outcome": 0,
+      "pair_id": "f7-m1-p1-c0",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_1",
+      "outcome": 0,
+      "pair_id": "f7-m1-p1-c1",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_1",
+      "outcome": 0,
+      "pair_id": "f7-m1-p1-c1",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_2",
+      "outcome": 1,
+      "pair_id": "f7-m2-p0-c0",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_2",
+      "outcome": 1,
+      "pair_id": "f7-m2-p0-c0",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_2",
+      "outcome": 0,
+      "pair_id": "f7-m2-p0-c1",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_2",
+      "outcome": 0,
+      "pair_id": "f7-m2-p0-c1",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_2",
+      "outcome": 0,
+      "pair_id": "f7-m2-p1-c0",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_2",
+      "outcome": 1,
+      "pair_id": "f7-m2-p1-c0",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_2",
+      "outcome": 1,
+      "pair_id": "f7-m2-p1-c1",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_2",
+      "outcome": 0,
+      "pair_id": "f7-m2-p1-c1",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_3",
+      "outcome": 0,
+      "pair_id": "f7-m3-p0-c0",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_3",
+      "outcome": 1,
+      "pair_id": "f7-m3-p0-c0",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_3",
+      "outcome": 1,
+      "pair_id": "f7-m3-p0-c1",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_3",
+      "outcome": 0,
+      "pair_id": "f7-m3-p0-c1",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_3",
+      "outcome": 0,
+      "pair_id": "f7-m3-p1-c0",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_3",
+      "outcome": 0,
+      "pair_id": "f7-m3-p1-c0",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_3",
+      "outcome": 1,
+      "pair_id": "f7-m3-p1-c1",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_3",
+      "outcome": 0,
+      "pair_id": "f7-m3-p1-c1",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_0",
+      "outcome": 1,
+      "pair_id": "f8-m0-p0-c0",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_0",
+      "outcome": 1,
+      "pair_id": "f8-m0-p0-c0",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_0",
+      "outcome": 0,
+      "pair_id": "f8-m0-p0-c1",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_0",
+      "outcome": 1,
+      "pair_id": "f8-m0-p0-c1",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_0",
+      "outcome": 0,
+      "pair_id": "f8-m0-p1-c0",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_0",
+      "outcome": 1,
+      "pair_id": "f8-m0-p1-c0",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_0",
+      "outcome": 1,
+      "pair_id": "f8-m0-p1-c1",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_0",
+      "outcome": 1,
+      "pair_id": "f8-m0-p1-c1",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_1",
+      "outcome": 1,
+      "pair_id": "f8-m1-p0-c0",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_1",
+      "outcome": 1,
+      "pair_id": "f8-m1-p0-c0",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_1",
+      "outcome": 1,
+      "pair_id": "f8-m1-p0-c1",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_1",
+      "outcome": 1,
+      "pair_id": "f8-m1-p0-c1",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_1",
+      "outcome": 1,
+      "pair_id": "f8-m1-p1-c0",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_1",
+      "outcome": 1,
+      "pair_id": "f8-m1-p1-c0",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_1",
+      "outcome": 0,
+      "pair_id": "f8-m1-p1-c1",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_1",
+      "outcome": 1,
+      "pair_id": "f8-m1-p1-c1",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_2",
+      "outcome": 1,
+      "pair_id": "f8-m2-p0-c0",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_2",
+      "outcome": 1,
+      "pair_id": "f8-m2-p0-c0",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_2",
+      "outcome": 1,
+      "pair_id": "f8-m2-p0-c1",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_2",
+      "outcome": 0,
+      "pair_id": "f8-m2-p0-c1",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_2",
+      "outcome": 1,
+      "pair_id": "f8-m2-p1-c0",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_2",
+      "outcome": 0,
+      "pair_id": "f8-m2-p1-c0",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_2",
+      "outcome": 0,
+      "pair_id": "f8-m2-p1-c1",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_2",
+      "outcome": 1,
+      "pair_id": "f8-m2-p1-c1",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_3",
+      "outcome": 0,
+      "pair_id": "f8-m3-p0-c0",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_3",
+      "outcome": 1,
+      "pair_id": "f8-m3-p0-c0",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_3",
+      "outcome": 1,
+      "pair_id": "f8-m3-p0-c1",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_3",
+      "outcome": 1,
+      "pair_id": "f8-m3-p0-c1",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_3",
+      "outcome": 1,
+      "pair_id": "f8-m3-p1-c0",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_3",
+      "outcome": 1,
+      "pair_id": "f8-m3-p1-c0",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_3",
+      "outcome": 0,
+      "pair_id": "f8-m3-p1-c1",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_3",
+      "outcome": 1,
+      "pair_id": "f8-m3-p1-c1",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_0",
+      "outcome": 0,
+      "pair_id": "f9-m0-p0-c0",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_0",
+      "outcome": 0,
+      "pair_id": "f9-m0-p0-c0",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_0",
+      "outcome": 0,
+      "pair_id": "f9-m0-p0-c1",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_0",
+      "outcome": 0,
+      "pair_id": "f9-m0-p0-c1",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_0",
+      "outcome": 0,
+      "pair_id": "f9-m0-p1-c0",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_0",
+      "outcome": 0,
+      "pair_id": "f9-m0-p1-c0",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_0",
+      "outcome": 0,
+      "pair_id": "f9-m0-p1-c1",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_0",
+      "outcome": 0,
+      "pair_id": "f9-m0-p1-c1",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_1",
+      "outcome": 0,
+      "pair_id": "f9-m1-p0-c0",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_1",
+      "outcome": 0,
+      "pair_id": "f9-m1-p0-c0",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_1",
+      "outcome": 0,
+      "pair_id": "f9-m1-p0-c1",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_1",
+      "outcome": 0,
+      "pair_id": "f9-m1-p0-c1",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_1",
+      "outcome": 1,
+      "pair_id": "f9-m1-p1-c0",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_1",
+      "outcome": 1,
+      "pair_id": "f9-m1-p1-c0",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_1",
+      "outcome": 0,
+      "pair_id": "f9-m1-p1-c1",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_1",
+      "outcome": 1,
+      "pair_id": "f9-m1-p1-c1",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_2",
+      "outcome": 1,
+      "pair_id": "f9-m2-p0-c0",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_2",
+      "outcome": 0,
+      "pair_id": "f9-m2-p0-c0",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_2",
+      "outcome": 1,
+      "pair_id": "f9-m2-p0-c1",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_2",
+      "outcome": 0,
+      "pair_id": "f9-m2-p0-c1",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_2",
+      "outcome": 1,
+      "pair_id": "f9-m2-p1-c0",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_2",
+      "outcome": 0,
+      "pair_id": "f9-m2-p1-c0",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_2",
+      "outcome": 1,
+      "pair_id": "f9-m2-p1-c1",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_2",
+      "outcome": 0,
+      "pair_id": "f9-m2-p1-c1",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_3",
+      "outcome": 0,
+      "pair_id": "f9-m3-p0-c0",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_3",
+      "outcome": 1,
+      "pair_id": "f9-m3-p0-c0",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_3",
+      "outcome": 0,
+      "pair_id": "f9-m3-p0-c1",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_3",
+      "outcome": 0,
+      "pair_id": "f9-m3-p0-c1",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_3",
+      "outcome": 0,
+      "pair_id": "f9-m3-p1-c0",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_3",
+      "outcome": 0,
+      "pair_id": "f9-m3-p1-c0",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_3",
+      "outcome": 1,
+      "pair_id": "f9-m3-p1-c1",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_3",
+      "outcome": 0,
+      "pair_id": "f9-m3-p1-c1",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_0",
+      "outcome": 0,
+      "pair_id": "f10-m0-p0-c0",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_0",
+      "outcome": 0,
+      "pair_id": "f10-m0-p0-c0",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_0",
+      "outcome": 1,
+      "pair_id": "f10-m0-p0-c1",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_0",
+      "outcome": 1,
+      "pair_id": "f10-m0-p0-c1",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_0",
+      "outcome": 1,
+      "pair_id": "f10-m0-p1-c0",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_0",
+      "outcome": 0,
+      "pair_id": "f10-m0-p1-c0",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_0",
+      "outcome": 0,
+      "pair_id": "f10-m0-p1-c1",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_0",
+      "outcome": 1,
+      "pair_id": "f10-m0-p1-c1",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_1",
+      "outcome": 1,
+      "pair_id": "f10-m1-p0-c0",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_1",
+      "outcome": 0,
+      "pair_id": "f10-m1-p0-c0",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_1",
+      "outcome": 1,
+      "pair_id": "f10-m1-p0-c1",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_1",
+      "outcome": 0,
+      "pair_id": "f10-m1-p0-c1",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_1",
+      "outcome": 1,
+      "pair_id": "f10-m1-p1-c0",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_1",
+      "outcome": 1,
+      "pair_id": "f10-m1-p1-c0",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_1",
+      "outcome": 1,
+      "pair_id": "f10-m1-p1-c1",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_1",
+      "outcome": 1,
+      "pair_id": "f10-m1-p1-c1",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_2",
+      "outcome": 1,
+      "pair_id": "f10-m2-p0-c0",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_2",
+      "outcome": 1,
+      "pair_id": "f10-m2-p0-c0",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_2",
+      "outcome": 0,
+      "pair_id": "f10-m2-p0-c1",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_2",
+      "outcome": 0,
+      "pair_id": "f10-m2-p0-c1",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_2",
+      "outcome": 1,
+      "pair_id": "f10-m2-p1-c0",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_2",
+      "outcome": 1,
+      "pair_id": "f10-m2-p1-c0",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_2",
+      "outcome": 0,
+      "pair_id": "f10-m2-p1-c1",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_2",
+      "outcome": 1,
+      "pair_id": "f10-m2-p1-c1",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_3",
+      "outcome": 1,
+      "pair_id": "f10-m3-p0-c0",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_3",
+      "outcome": 0,
+      "pair_id": "f10-m3-p0-c0",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_3",
+      "outcome": 1,
+      "pair_id": "f10-m3-p0-c1",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_3",
+      "outcome": 1,
+      "pair_id": "f10-m3-p0-c1",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_3",
+      "outcome": 0,
+      "pair_id": "f10-m3-p1-c0",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_3",
+      "outcome": 1,
+      "pair_id": "f10-m3-p1-c0",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_3",
+      "outcome": 0,
+      "pair_id": "f10-m3-p1-c1",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_3",
+      "outcome": 0,
+      "pair_id": "f10-m3-p1-c1",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_0",
+      "outcome": 1,
+      "pair_id": "f11-m0-p0-c0",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_0",
+      "outcome": 1,
+      "pair_id": "f11-m0-p0-c0",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_0",
+      "outcome": 1,
+      "pair_id": "f11-m0-p0-c1",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_0",
+      "outcome": 0,
+      "pair_id": "f11-m0-p0-c1",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_0",
+      "outcome": 0,
+      "pair_id": "f11-m0-p1-c0",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_0",
+      "outcome": 0,
+      "pair_id": "f11-m0-p1-c0",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_0",
+      "outcome": 1,
+      "pair_id": "f11-m0-p1-c1",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_0",
+      "outcome": 1,
+      "pair_id": "f11-m0-p1-c1",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_1",
+      "outcome": 1,
+      "pair_id": "f11-m1-p0-c0",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_1",
+      "outcome": 0,
+      "pair_id": "f11-m1-p0-c0",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_1",
+      "outcome": 0,
+      "pair_id": "f11-m1-p0-c1",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_1",
+      "outcome": 1,
+      "pair_id": "f11-m1-p0-c1",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_1",
+      "outcome": 1,
+      "pair_id": "f11-m1-p1-c0",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_1",
+      "outcome": 1,
+      "pair_id": "f11-m1-p1-c0",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_1",
+      "outcome": 1,
+      "pair_id": "f11-m1-p1-c1",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_1",
+      "outcome": 1,
+      "pair_id": "f11-m1-p1-c1",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_2",
+      "outcome": 1,
+      "pair_id": "f11-m2-p0-c0",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_2",
+      "outcome": 1,
+      "pair_id": "f11-m2-p0-c0",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_2",
+      "outcome": 1,
+      "pair_id": "f11-m2-p0-c1",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_2",
+      "outcome": 0,
+      "pair_id": "f11-m2-p0-c1",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_2",
+      "outcome": 1,
+      "pair_id": "f11-m2-p1-c0",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_2",
+      "outcome": 0,
+      "pair_id": "f11-m2-p1-c0",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_2",
+      "outcome": 1,
+      "pair_id": "f11-m2-p1-c1",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_2",
+      "outcome": 1,
+      "pair_id": "f11-m2-p1-c1",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_3",
+      "outcome": 1,
+      "pair_id": "f11-m3-p0-c0",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_3",
+      "outcome": 0,
+      "pair_id": "f11-m3-p0-c0",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_3",
+      "outcome": 1,
+      "pair_id": "f11-m3-p0-c1",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_3",
+      "outcome": 1,
+      "pair_id": "f11-m3-p0-c1",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_3",
+      "outcome": 0,
+      "pair_id": "f11-m3-p1-c0",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_3",
+      "outcome": 1,
+      "pair_id": "f11-m3-p1-c0",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_3",
+      "outcome": 1,
+      "pair_id": "f11-m3-p1-c1",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_3",
+      "outcome": 1,
+      "pair_id": "f11-m3-p1-c1",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_0",
+      "outcome": 0,
+      "pair_id": "f12-m0-p0-c0",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_0",
+      "outcome": 0,
+      "pair_id": "f12-m0-p0-c0",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_0",
+      "outcome": 1,
+      "pair_id": "f12-m0-p0-c1",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_0",
+      "outcome": 1,
+      "pair_id": "f12-m0-p0-c1",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_0",
+      "outcome": 0,
+      "pair_id": "f12-m0-p1-c0",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_0",
+      "outcome": 0,
+      "pair_id": "f12-m0-p1-c0",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_0",
+      "outcome": 0,
+      "pair_id": "f12-m0-p1-c1",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_0",
+      "outcome": 1,
+      "pair_id": "f12-m0-p1-c1",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_1",
+      "outcome": 1,
+      "pair_id": "f12-m1-p0-c0",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_1",
+      "outcome": 1,
+      "pair_id": "f12-m1-p0-c0",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_1",
+      "outcome": 0,
+      "pair_id": "f12-m1-p0-c1",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_1",
+      "outcome": 0,
+      "pair_id": "f12-m1-p0-c1",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_1",
+      "outcome": 1,
+      "pair_id": "f12-m1-p1-c0",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_1",
+      "outcome": 0,
+      "pair_id": "f12-m1-p1-c0",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_1",
+      "outcome": 1,
+      "pair_id": "f12-m1-p1-c1",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_1",
+      "outcome": 0,
+      "pair_id": "f12-m1-p1-c1",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_2",
+      "outcome": 1,
+      "pair_id": "f12-m2-p0-c0",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_2",
+      "outcome": 1,
+      "pair_id": "f12-m2-p0-c0",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_2",
+      "outcome": 0,
+      "pair_id": "f12-m2-p0-c1",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_2",
+      "outcome": 0,
+      "pair_id": "f12-m2-p0-c1",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_2",
+      "outcome": 1,
+      "pair_id": "f12-m2-p1-c0",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_2",
+      "outcome": 0,
+      "pair_id": "f12-m2-p1-c0",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_2",
+      "outcome": 1,
+      "pair_id": "f12-m2-p1-c1",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_2",
+      "outcome": 1,
+      "pair_id": "f12-m2-p1-c1",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_3",
+      "outcome": 1,
+      "pair_id": "f12-m3-p0-c0",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_3",
+      "outcome": 1,
+      "pair_id": "f12-m3-p0-c0",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_3",
+      "outcome": 1,
+      "pair_id": "f12-m3-p0-c1",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_3",
+      "outcome": 1,
+      "pair_id": "f12-m3-p0-c1",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_3",
+      "outcome": 0,
+      "pair_id": "f12-m3-p1-c0",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_3",
+      "outcome": 1,
+      "pair_id": "f12-m3-p1-c0",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_3",
+      "outcome": 0,
+      "pair_id": "f12-m3-p1-c1",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_3",
+      "outcome": 0,
+      "pair_id": "f12-m3-p1-c1",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_0",
+      "outcome": 0,
+      "pair_id": "f13-m0-p0-c0",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_0",
+      "outcome": 0,
+      "pair_id": "f13-m0-p0-c0",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_0",
+      "outcome": 1,
+      "pair_id": "f13-m0-p0-c1",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_0",
+      "outcome": 1,
+      "pair_id": "f13-m0-p0-c1",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_0",
+      "outcome": 0,
+      "pair_id": "f13-m0-p1-c0",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_0",
+      "outcome": 0,
+      "pair_id": "f13-m0-p1-c0",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_0",
+      "outcome": 1,
+      "pair_id": "f13-m0-p1-c1",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_0",
+      "outcome": 0,
+      "pair_id": "f13-m0-p1-c1",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_1",
+      "outcome": 1,
+      "pair_id": "f13-m1-p0-c0",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_1",
+      "outcome": 0,
+      "pair_id": "f13-m1-p0-c0",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_1",
+      "outcome": 1,
+      "pair_id": "f13-m1-p0-c1",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_1",
+      "outcome": 1,
+      "pair_id": "f13-m1-p0-c1",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_1",
+      "outcome": 1,
+      "pair_id": "f13-m1-p1-c0",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_1",
+      "outcome": 0,
+      "pair_id": "f13-m1-p1-c0",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_1",
+      "outcome": 1,
+      "pair_id": "f13-m1-p1-c1",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_1",
+      "outcome": 0,
+      "pair_id": "f13-m1-p1-c1",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_2",
+      "outcome": 1,
+      "pair_id": "f13-m2-p0-c0",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_2",
+      "outcome": 0,
+      "pair_id": "f13-m2-p0-c0",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_2",
+      "outcome": 1,
+      "pair_id": "f13-m2-p0-c1",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_2",
+      "outcome": 0,
+      "pair_id": "f13-m2-p0-c1",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_2",
+      "outcome": 1,
+      "pair_id": "f13-m2-p1-c0",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_2",
+      "outcome": 1,
+      "pair_id": "f13-m2-p1-c0",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_2",
+      "outcome": 0,
+      "pair_id": "f13-m2-p1-c1",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_2",
+      "outcome": 0,
+      "pair_id": "f13-m2-p1-c1",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_3",
+      "outcome": 0,
+      "pair_id": "f13-m3-p0-c0",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_3",
+      "outcome": 0,
+      "pair_id": "f13-m3-p0-c0",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_3",
+      "outcome": 1,
+      "pair_id": "f13-m3-p0-c1",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_3",
+      "outcome": 0,
+      "pair_id": "f13-m3-p0-c1",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_3",
+      "outcome": 1,
+      "pair_id": "f13-m3-p1-c0",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_3",
+      "outcome": 0,
+      "pair_id": "f13-m3-p1-c0",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_3",
+      "outcome": 1,
+      "pair_id": "f13-m3-p1-c1",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_3",
+      "outcome": 1,
+      "pair_id": "f13-m3-p1-c1",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_0",
+      "outcome": 1,
+      "pair_id": "f14-m0-p0-c0",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_0",
+      "outcome": 1,
+      "pair_id": "f14-m0-p0-c0",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_0",
+      "outcome": 0,
+      "pair_id": "f14-m0-p0-c1",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_0",
+      "outcome": 0,
+      "pair_id": "f14-m0-p0-c1",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_0",
+      "outcome": 1,
+      "pair_id": "f14-m0-p1-c0",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_0",
+      "outcome": 1,
+      "pair_id": "f14-m0-p1-c0",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_0",
+      "outcome": 0,
+      "pair_id": "f14-m0-p1-c1",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_0",
+      "outcome": 1,
+      "pair_id": "f14-m0-p1-c1",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_1",
+      "outcome": 1,
+      "pair_id": "f14-m1-p0-c0",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_1",
+      "outcome": 1,
+      "pair_id": "f14-m1-p0-c0",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_1",
+      "outcome": 1,
+      "pair_id": "f14-m1-p0-c1",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_1",
+      "outcome": 1,
+      "pair_id": "f14-m1-p0-c1",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_1",
+      "outcome": 1,
+      "pair_id": "f14-m1-p1-c0",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_1",
+      "outcome": 1,
+      "pair_id": "f14-m1-p1-c0",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_1",
+      "outcome": 1,
+      "pair_id": "f14-m1-p1-c1",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_1",
+      "outcome": 1,
+      "pair_id": "f14-m1-p1-c1",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_2",
+      "outcome": 1,
+      "pair_id": "f14-m2-p0-c0",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_2",
+      "outcome": 1,
+      "pair_id": "f14-m2-p0-c0",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_2",
+      "outcome": 0,
+      "pair_id": "f14-m2-p0-c1",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_2",
+      "outcome": 0,
+      "pair_id": "f14-m2-p0-c1",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_2",
+      "outcome": 1,
+      "pair_id": "f14-m2-p1-c0",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_2",
+      "outcome": 0,
+      "pair_id": "f14-m2-p1-c0",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_2",
+      "outcome": 1,
+      "pair_id": "f14-m2-p1-c1",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_2",
+      "outcome": 0,
+      "pair_id": "f14-m2-p1-c1",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_3",
+      "outcome": 1,
+      "pair_id": "f14-m3-p0-c0",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_3",
+      "outcome": 1,
+      "pair_id": "f14-m3-p0-c0",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_3",
+      "outcome": 1,
+      "pair_id": "f14-m3-p0-c1",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_3",
+      "outcome": 0,
+      "pair_id": "f14-m3-p0-c1",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_3",
+      "outcome": 1,
+      "pair_id": "f14-m3-p1-c0",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_3",
+      "outcome": 1,
+      "pair_id": "f14-m3-p1-c0",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_3",
+      "outcome": 1,
+      "pair_id": "f14-m3-p1-c1",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_3",
+      "outcome": 0,
+      "pair_id": "f14-m3-p1-c1",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_0",
+      "outcome": 0,
+      "pair_id": "f15-m0-p0-c0",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_0",
+      "outcome": 1,
+      "pair_id": "f15-m0-p0-c0",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_0",
+      "outcome": 1,
+      "pair_id": "f15-m0-p0-c1",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_0",
+      "outcome": 0,
+      "pair_id": "f15-m0-p0-c1",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_0",
+      "outcome": 1,
+      "pair_id": "f15-m0-p1-c0",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_0",
+      "outcome": 1,
+      "pair_id": "f15-m0-p1-c0",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_0",
+      "outcome": 1,
+      "pair_id": "f15-m0-p1-c1",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_0",
+      "outcome": 1,
+      "pair_id": "f15-m0-p1-c1",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_1",
+      "outcome": 1,
+      "pair_id": "f15-m1-p0-c0",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_1",
+      "outcome": 1,
+      "pair_id": "f15-m1-p0-c0",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_1",
+      "outcome": 1,
+      "pair_id": "f15-m1-p0-c1",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_1",
+      "outcome": 1,
+      "pair_id": "f15-m1-p0-c1",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_1",
+      "outcome": 1,
+      "pair_id": "f15-m1-p1-c0",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_1",
+      "outcome": 0,
+      "pair_id": "f15-m1-p1-c0",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_1",
+      "outcome": 1,
+      "pair_id": "f15-m1-p1-c1",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_1",
+      "outcome": 0,
+      "pair_id": "f15-m1-p1-c1",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_2",
+      "outcome": 1,
+      "pair_id": "f15-m2-p0-c0",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_2",
+      "outcome": 0,
+      "pair_id": "f15-m2-p0-c0",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_2",
+      "outcome": 1,
+      "pair_id": "f15-m2-p0-c1",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_2",
+      "outcome": 0,
+      "pair_id": "f15-m2-p0-c1",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_2",
+      "outcome": 1,
+      "pair_id": "f15-m2-p1-c0",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_2",
+      "outcome": 0,
+      "pair_id": "f15-m2-p1-c0",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_2",
+      "outcome": 1,
+      "pair_id": "f15-m2-p1-c1",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_2",
+      "outcome": 1,
+      "pair_id": "f15-m2-p1-c1",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_3",
+      "outcome": 1,
+      "pair_id": "f15-m3-p0-c0",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_3",
+      "outcome": 1,
+      "pair_id": "f15-m3-p0-c0",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_3",
+      "outcome": 1,
+      "pair_id": "f15-m3-p0-c1",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_3",
+      "outcome": 1,
+      "pair_id": "f15-m3-p0-c1",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_3",
+      "outcome": 1,
+      "pair_id": "f15-m3-p1-c0",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_3",
+      "outcome": 1,
+      "pair_id": "f15-m3-p1-c0",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_3",
+      "outcome": 1,
+      "pair_id": "f15-m3-p1-c1",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_3",
+      "outcome": 0,
+      "pair_id": "f15-m3-p1-c1",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_0",
+      "outcome": 1,
+      "pair_id": "f16-m0-p0-c0",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_0",
+      "outcome": 1,
+      "pair_id": "f16-m0-p0-c0",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_0",
+      "outcome": 1,
+      "pair_id": "f16-m0-p0-c1",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_0",
+      "outcome": 0,
+      "pair_id": "f16-m0-p0-c1",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_0",
+      "outcome": 1,
+      "pair_id": "f16-m0-p1-c0",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_0",
+      "outcome": 0,
+      "pair_id": "f16-m0-p1-c0",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_0",
+      "outcome": 1,
+      "pair_id": "f16-m0-p1-c1",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_0",
+      "outcome": 0,
+      "pair_id": "f16-m0-p1-c1",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_1",
+      "outcome": 1,
+      "pair_id": "f16-m1-p0-c0",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_1",
+      "outcome": 1,
+      "pair_id": "f16-m1-p0-c0",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_1",
+      "outcome": 1,
+      "pair_id": "f16-m1-p0-c1",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_1",
+      "outcome": 1,
+      "pair_id": "f16-m1-p0-c1",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_1",
+      "outcome": 1,
+      "pair_id": "f16-m1-p1-c0",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_1",
+      "outcome": 0,
+      "pair_id": "f16-m1-p1-c0",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_1",
+      "outcome": 1,
+      "pair_id": "f16-m1-p1-c1",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_1",
+      "outcome": 1,
+      "pair_id": "f16-m1-p1-c1",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_2",
+      "outcome": 1,
+      "pair_id": "f16-m2-p0-c0",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_2",
+      "outcome": 1,
+      "pair_id": "f16-m2-p0-c0",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_2",
+      "outcome": 1,
+      "pair_id": "f16-m2-p0-c1",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_2",
+      "outcome": 1,
+      "pair_id": "f16-m2-p0-c1",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_2",
+      "outcome": 1,
+      "pair_id": "f16-m2-p1-c0",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_2",
+      "outcome": 1,
+      "pair_id": "f16-m2-p1-c0",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_2",
+      "outcome": 1,
+      "pair_id": "f16-m2-p1-c1",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_2",
+      "outcome": 1,
+      "pair_id": "f16-m2-p1-c1",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_3",
+      "outcome": 1,
+      "pair_id": "f16-m3-p0-c0",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_3",
+      "outcome": 0,
+      "pair_id": "f16-m3-p0-c0",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_3",
+      "outcome": 1,
+      "pair_id": "f16-m3-p0-c1",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_3",
+      "outcome": 1,
+      "pair_id": "f16-m3-p0-c1",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_3",
+      "outcome": 1,
+      "pair_id": "f16-m3-p1-c0",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_3",
+      "outcome": 0,
+      "pair_id": "f16-m3-p1-c0",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_3",
+      "outcome": 1,
+      "pair_id": "f16-m3-p1-c1",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_3",
+      "outcome": 0,
+      "pair_id": "f16-m3-p1-c1",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_0",
+      "outcome": 1,
+      "pair_id": "f17-m0-p0-c0",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_0",
+      "outcome": 1,
+      "pair_id": "f17-m0-p0-c0",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_0",
+      "outcome": 1,
+      "pair_id": "f17-m0-p0-c1",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_0",
+      "outcome": 1,
+      "pair_id": "f17-m0-p0-c1",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_0",
+      "outcome": 0,
+      "pair_id": "f17-m0-p1-c0",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_0",
+      "outcome": 0,
+      "pair_id": "f17-m0-p1-c0",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_0",
+      "outcome": 1,
+      "pair_id": "f17-m0-p1-c1",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_0",
+      "outcome": 0,
+      "pair_id": "f17-m0-p1-c1",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_1",
+      "outcome": 0,
+      "pair_id": "f17-m1-p0-c0",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_1",
+      "outcome": 0,
+      "pair_id": "f17-m1-p0-c0",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_1",
+      "outcome": 0,
+      "pair_id": "f17-m1-p0-c1",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_1",
+      "outcome": 0,
+      "pair_id": "f17-m1-p0-c1",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_1",
+      "outcome": 1,
+      "pair_id": "f17-m1-p1-c0",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_1",
+      "outcome": 1,
+      "pair_id": "f17-m1-p1-c0",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_1",
+      "outcome": 0,
+      "pair_id": "f17-m1-p1-c1",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_1",
+      "outcome": 0,
+      "pair_id": "f17-m1-p1-c1",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_2",
+      "outcome": 1,
+      "pair_id": "f17-m2-p0-c0",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_2",
+      "outcome": 0,
+      "pair_id": "f17-m2-p0-c0",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_2",
+      "outcome": 0,
+      "pair_id": "f17-m2-p0-c1",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_2",
+      "outcome": 0,
+      "pair_id": "f17-m2-p0-c1",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_2",
+      "outcome": 0,
+      "pair_id": "f17-m2-p1-c0",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_2",
+      "outcome": 0,
+      "pair_id": "f17-m2-p1-c0",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_2",
+      "outcome": 1,
+      "pair_id": "f17-m2-p1-c1",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_2",
+      "outcome": 0,
+      "pair_id": "f17-m2-p1-c1",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_3",
+      "outcome": 1,
+      "pair_id": "f17-m3-p0-c0",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_3",
+      "outcome": 1,
+      "pair_id": "f17-m3-p0-c0",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_3",
+      "outcome": 1,
+      "pair_id": "f17-m3-p0-c1",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_3",
+      "outcome": 1,
+      "pair_id": "f17-m3-p0-c1",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_3",
+      "outcome": 0,
+      "pair_id": "f17-m3-p1-c0",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_3",
+      "outcome": 0,
+      "pair_id": "f17-m3-p1-c0",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_3",
+      "outcome": 1,
+      "pair_id": "f17-m3-p1-c1",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_3",
+      "outcome": 0,
+      "pair_id": "f17-m3-p1-c1",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_0",
+      "outcome": 0,
+      "pair_id": "f18-m0-p0-c0",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_0",
+      "outcome": 0,
+      "pair_id": "f18-m0-p0-c0",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_0",
+      "outcome": 1,
+      "pair_id": "f18-m0-p0-c1",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_0",
+      "outcome": 1,
+      "pair_id": "f18-m0-p0-c1",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_0",
+      "outcome": 1,
+      "pair_id": "f18-m0-p1-c0",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_0",
+      "outcome": 0,
+      "pair_id": "f18-m0-p1-c0",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_0",
+      "outcome": 1,
+      "pair_id": "f18-m0-p1-c1",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_0",
+      "outcome": 0,
+      "pair_id": "f18-m0-p1-c1",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_1",
+      "outcome": 0,
+      "pair_id": "f18-m1-p0-c0",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_1",
+      "outcome": 0,
+      "pair_id": "f18-m1-p0-c0",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_1",
+      "outcome": 0,
+      "pair_id": "f18-m1-p0-c1",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_1",
+      "outcome": 0,
+      "pair_id": "f18-m1-p0-c1",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_1",
+      "outcome": 1,
+      "pair_id": "f18-m1-p1-c0",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_1",
+      "outcome": 1,
+      "pair_id": "f18-m1-p1-c0",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_1",
+      "outcome": 0,
+      "pair_id": "f18-m1-p1-c1",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_1",
+      "outcome": 1,
+      "pair_id": "f18-m1-p1-c1",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_2",
+      "outcome": 1,
+      "pair_id": "f18-m2-p0-c0",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_2",
+      "outcome": 0,
+      "pair_id": "f18-m2-p0-c0",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_2",
+      "outcome": 0,
+      "pair_id": "f18-m2-p0-c1",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_2",
+      "outcome": 0,
+      "pair_id": "f18-m2-p0-c1",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_2",
+      "outcome": 0,
+      "pair_id": "f18-m2-p1-c0",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_2",
+      "outcome": 1,
+      "pair_id": "f18-m2-p1-c0",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_2",
+      "outcome": 1,
+      "pair_id": "f18-m2-p1-c1",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_2",
+      "outcome": 0,
+      "pair_id": "f18-m2-p1-c1",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_3",
+      "outcome": 1,
+      "pair_id": "f18-m3-p0-c0",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_3",
+      "outcome": 0,
+      "pair_id": "f18-m3-p0-c0",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_3",
+      "outcome": 1,
+      "pair_id": "f18-m3-p0-c1",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_3",
+      "outcome": 0,
+      "pair_id": "f18-m3-p0-c1",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_3",
+      "outcome": 0,
+      "pair_id": "f18-m3-p1-c0",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_3",
+      "outcome": 0,
+      "pair_id": "f18-m3-p1-c0",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_3",
+      "outcome": 0,
+      "pair_id": "f18-m3-p1-c1",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_3",
+      "outcome": 1,
+      "pair_id": "f18-m3-p1-c1",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_0",
+      "outcome": 1,
+      "pair_id": "f19-m0-p0-c0",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_0",
+      "outcome": 1,
+      "pair_id": "f19-m0-p0-c0",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_0",
+      "outcome": 1,
+      "pair_id": "f19-m0-p0-c1",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_0",
+      "outcome": 0,
+      "pair_id": "f19-m0-p0-c1",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_0",
+      "outcome": 1,
+      "pair_id": "f19-m0-p1-c0",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_0",
+      "outcome": 0,
+      "pair_id": "f19-m0-p1-c0",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_0",
+      "outcome": 1,
+      "pair_id": "f19-m0-p1-c1",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_0",
+      "outcome": 1,
+      "pair_id": "f19-m0-p1-c1",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_1",
+      "outcome": 1,
+      "pair_id": "f19-m1-p0-c0",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_1",
+      "outcome": 0,
+      "pair_id": "f19-m1-p0-c0",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_1",
+      "outcome": 1,
+      "pair_id": "f19-m1-p0-c1",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_1",
+      "outcome": 0,
+      "pair_id": "f19-m1-p0-c1",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_1",
+      "outcome": 1,
+      "pair_id": "f19-m1-p1-c0",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_1",
+      "outcome": 1,
+      "pair_id": "f19-m1-p1-c0",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_1",
+      "outcome": 0,
+      "pair_id": "f19-m1-p1-c1",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_1",
+      "outcome": 0,
+      "pair_id": "f19-m1-p1-c1",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_2",
+      "outcome": 1,
+      "pair_id": "f19-m2-p0-c0",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_2",
+      "outcome": 1,
+      "pair_id": "f19-m2-p0-c0",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_2",
+      "outcome": 1,
+      "pair_id": "f19-m2-p0-c1",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_2",
+      "outcome": 1,
+      "pair_id": "f19-m2-p0-c1",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_2",
+      "outcome": 1,
+      "pair_id": "f19-m2-p1-c0",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_2",
+      "outcome": 1,
+      "pair_id": "f19-m2-p1-c0",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_2",
+      "outcome": 1,
+      "pair_id": "f19-m2-p1-c1",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_2",
+      "outcome": 0,
+      "pair_id": "f19-m2-p1-c1",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_3",
+      "outcome": 1,
+      "pair_id": "f19-m3-p0-c0",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_3",
+      "outcome": 0,
+      "pair_id": "f19-m3-p0-c0",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_3",
+      "outcome": 1,
+      "pair_id": "f19-m3-p0-c1",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_3",
+      "outcome": 0,
+      "pair_id": "f19-m3-p0-c1",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_3",
+      "outcome": 1,
+      "pair_id": "f19-m3-p1-c0",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_3",
+      "outcome": 0,
+      "pair_id": "f19-m3-p1-c0",
+      "treatment": 1,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_3",
+      "outcome": 1,
+      "pair_id": "f19-m3-p1-c1",
+      "treatment": 0,
+      "validity": "VALID"
+    },
+    {
+      "model": "synthetic_model_3",
+      "outcome": 1,
+      "pair_id": "f19-m3-p1-c1",
+      "treatment": 1,
+      "validity": "VALID"
+    }
+  ],
+  "schema_version": "c5-glmm-branch-table-v1",
+  "synthetic_truth": {
+    "family_intercept_sd": 0.65,
+    "family_intercept_slope_covariance": 0.0,
+    "family_treatment_slope_sd": 0.3,
+    "onset_intercept_sd": 0.5,
+    "seed": 20261123,
+    "treatment_log_odds": -0.9
+  }
+}

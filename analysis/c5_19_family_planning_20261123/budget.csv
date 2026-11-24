@@ -1,0 +1,2 @@
+models,families,prompts,repeats,c1_c2_precursors,c3_c4_full_episodes,c5_pair_reservations,c5_continuations_max,aa_pair_reservations,aa_continuations_max,total_episode_or_branch_max,provider_decisions_max
+4,19,3,5,2280,2280,2280,4560,2280,4560,13680,54720

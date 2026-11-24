@@ -1,0 +1,1781 @@
+{
+  "agent_runs": 0,
+  "by_condition": {
+    "C1": {
+      "abstract_mutants": 354,
+      "candidate_count": 390,
+      "gate_catch_rate": {
+        "denominator": 354,
+        "fraction": 1.0,
+        "numerator": 354
+      },
+      "gate_false_rejection_rate": {
+        "denominator": 36,
+        "fraction": 0.0,
+        "numerator": 0
+      },
+      "indeterminate": 0,
+      "raw_catch_rate": {
+        "denominator": 354,
+        "fraction": 0.8050847457627118,
+        "numerator": 285
+      },
+      "raw_false_rejection_rate": {
+        "denominator": 36,
+        "fraction": 0.0,
+        "numerator": 0
+      },
+      "secure_references": 36
+    },
+    "C5": {
+      "abstract_mutants": 354,
+      "candidate_count": 390,
+      "gate_catch_rate": {
+        "denominator": 354,
+        "fraction": 1.0,
+        "numerator": 354
+      },
+      "gate_false_rejection_rate": {
+        "denominator": 36,
+        "fraction": 1.0,
+        "numerator": 36
+      },
+      "indeterminate": 0,
+      "raw_catch_rate": {
+        "denominator": 354,
+        "fraction": 0.8050847457627118,
+        "numerator": 285
+      },
+      "raw_false_rejection_rate": {
+        "denominator": 36,
+        "fraction": 0.0,
+        "numerator": 0
+      },
+      "secure_references": 36
+    }
+  },
+  "candidate_decisions": 780,
+  "cells": [
+    {
+      "abstract_mutants": 5,
+      "candidate_count": 6,
+      "condition": "C1",
+      "family": "ambiguous_parameters",
+      "gate_catch_rate": {
+        "denominator": 5,
+        "fraction": 1.0,
+        "numerator": 5
+      },
+      "gate_false_rejection_rate": {
+        "denominator": 1,
+        "fraction": 0.0,
+        "numerator": 0
+      },
+      "indeterminate": 0,
+      "raw_catch_rate": {
+        "denominator": 5,
+        "fraction": 0.0,
+        "numerator": 0
+      },
+      "raw_false_rejection_rate": {
+        "denominator": 1,
+        "fraction": 0.0,
+        "numerator": 0
+      },
+      "secure_references": 1,
+      "version": "5.0.0"
+    },
+    {
+      "abstract_mutants": 5,
+      "candidate_count": 6,
+      "condition": "C5",
+      "family": "ambiguous_parameters",
+      "gate_catch_rate": {
+        "denominator": 5,
+        "fraction": 1.0,
+        "numerator": 5
+      },
+      "gate_false_rejection_rate": {
+        "denominator": 1,
+        "fraction": 1.0,
+        "numerator": 1
+      },
+      "indeterminate": 0,
+      "raw_catch_rate": {
+        "denominator": 5,
+        "fraction": 0.0,
+        "numerator": 0
+      },
+      "raw_false_rejection_rate": {
+        "denominator": 1,
+        "fraction": 0.0,
+        "numerator": 0
+      },
+      "secure_references": 1,
+      "version": "5.0.0"
+    },
+    {
+      "abstract_mutants": 7,
+      "candidate_count": 8,
+      "condition": "C1",
+      "family": "authorization",
+      "gate_catch_rate": {
+        "denominator": 7,
+        "fraction": 1.0,
+        "numerator": 7
+      },
+      "gate_false_rejection_rate": {
+        "denominator": 1,
+        "fraction": 0.0,
+        "numerator": 0
+      },
+      "indeterminate": 0,
+      "raw_catch_rate": {
+        "denominator": 7,
+        "fraction": 1.0,
+        "numerator": 7
+      },
+      "raw_false_rejection_rate": {
+        "denominator": 1,
+        "fraction": 0.0,
+        "numerator": 0
+      },
+      "secure_references": 1,
+      "version": "1.0.0"
+    },
+    {
+      "abstract_mutants": 7,
+      "candidate_count": 8,
+      "condition": "C5",
+      "family": "authorization",
+      "gate_catch_rate": {
+        "denominator": 7,
+        "fraction": 1.0,
+        "numerator": 7
+      },
+      "gate_false_rejection_rate": {
+        "denominator": 1,
+        "fraction": 1.0,
+        "numerator": 1
+      },
+      "indeterminate": 0,
+      "raw_catch_rate": {
+        "denominator": 7,
+        "fraction": 1.0,
+        "numerator": 7
+      },
+      "raw_false_rejection_rate": {
+        "denominator": 1,
+        "fraction": 0.0,
+        "numerator": 0
+      },
+      "secure_references": 1,
+      "version": "1.0.0"
+    },
+    {
+      "abstract_mutants": 2,
+      "candidate_count": 6,
+      "condition": "C1",
+      "family": "counter_race",
+      "gate_catch_rate": {
+        "denominator": 2,
+        "fraction": 1.0,
+        "numerator": 2
+      },
+      "gate_false_rejection_rate": {
+        "denominator": 4,
+        "fraction": 0.0,
+        "numerator": 0
+      },
+      "indeterminate": 0,
+      "raw_catch_rate": {
+        "denominator": 2,
+        "fraction": 0.0,
+        "numerator": 0
+      },
+      "raw_false_rejection_rate": {
+        "denominator": 4,
+        "fraction": 0.0,
+        "numerator": 0
+      },
+      "secure_references": 4,
+      "version": "4.0.0"
+    },
+    {
+      "abstract_mutants": 2,
+      "candidate_count": 6,
+      "condition": "C5",
+      "family": "counter_race",
+      "gate_catch_rate": {
+        "denominator": 2,
+        "fraction": 1.0,
+        "numerator": 2
+      },
+      "gate_false_rejection_rate": {
+        "denominator": 4,
+        "fraction": 1.0,
+        "numerator": 4
+      },
+      "indeterminate": 0,
+      "raw_catch_rate": {
+        "denominator": 2,
+        "fraction": 0.0,
+        "numerator": 0
+      },
+      "raw_false_rejection_rate": {
+        "denominator": 4,
+        "fraction": 0.0,
+        "numerator": 0
+      },
+      "secure_references": 4,
+      "version": "4.0.0"
+    },
+    {
+      "abstract_mutants": 3,
+      "candidate_count": 4,
+      "condition": "C1",
+      "family": "csrf_origin",
+      "gate_catch_rate": {
+        "denominator": 3,
+        "fraction": 1.0,
+        "numerator": 3
+      },
+      "gate_false_rejection_rate": {
+        "denominator": 1,
+        "fraction": 0.0,
+        "numerator": 0
+      },
+      "indeterminate": 0,
+      "raw_catch_rate": {
+        "denominator": 3,
+        "fraction": 0.0,
+        "numerator": 0
+      },
+      "raw_false_rejection_rate": {
+        "denominator": 1,
+        "fraction": 0.0,
+        "numerator": 0
+      },
+      "secure_references": 1,
+      "version": "6.0.0"
+    },
+    {
+      "abstract_mutants": 3,
+      "candidate_count": 4,
+      "condition": "C5",
+      "family": "csrf_origin",
+      "gate_catch_rate": {
+        "denominator": 3,
+        "fraction": 1.0,
+        "numerator": 3
+      },
+      "gate_false_rejection_rate": {
+        "denominator": 1,
+        "fraction": 1.0,
+        "numerator": 1
+      },
+      "indeterminate": 0,
+      "raw_catch_rate": {
+        "denominator": 3,
+        "fraction": 0.0,
+        "numerator": 0
+      },
+      "raw_false_rejection_rate": {
+        "denominator": 1,
+        "fraction": 0.0,
+        "numerator": 0
+      },
+      "secure_references": 1,
+      "version": "6.0.0"
+    },
+    {
+      "abstract_mutants": 3,
+      "candidate_count": 4,
+      "condition": "C1",
+      "family": "csrf_origin",
+      "gate_catch_rate": {
+        "denominator": 3,
+        "fraction": 1.0,
+        "numerator": 3
+      },
+      "gate_false_rejection_rate": {
+        "denominator": 1,
+        "fraction": 0.0,
+        "numerator": 0
+      },
+      "indeterminate": 0,
+      "raw_catch_rate": {
+        "denominator": 3,
+        "fraction": 0.3333333333333333,
+        "numerator": 1
+      },
+      "raw_false_rejection_rate": {
+        "denominator": 1,
+        "fraction": 0.0,
+        "numerator": 0
+      },
+      "secure_references": 1,
+      "version": "7.0.0"
+    },
+    {
+      "abstract_mutants": 3,
+      "candidate_count": 4,
+      "condition": "C5",
+      "family": "csrf_origin",
+      "gate_catch_rate": {
+        "denominator": 3,
+        "fraction": 1.0,
+        "numerator": 3
+      },
+      "gate_false_rejection_rate": {
+        "denominator": 1,
+        "fraction": 1.0,
+        "numerator": 1
+      },
+      "indeterminate": 0,
+      "raw_catch_rate": {
+        "denominator": 3,
+        "fraction": 0.3333333333333333,
+        "numerator": 1
+      },
+      "raw_false_rejection_rate": {
+        "denominator": 1,
+        "fraction": 0.0,
+        "numerator": 0
+      },
+      "secure_references": 1,
+      "version": "7.0.0"
+    },
+    {
+      "abstract_mutants": 3,
+      "candidate_count": 4,
+      "condition": "C1",
+      "family": "deserialization_allowlist",
+      "gate_catch_rate": {
+        "denominator": 3,
+        "fraction": 1.0,
+        "numerator": 3
+      },
+      "gate_false_rejection_rate": {
+        "denominator": 1,
+        "fraction": 0.0,
+        "numerator": 0
+      },
+      "indeterminate": 0,
+      "raw_catch_rate": {
+        "denominator": 3,
+        "fraction": 0.0,
+        "numerator": 0
+      },
+      "raw_false_rejection_rate": {
+        "denominator": 1,
+        "fraction": 0.0,
+        "numerator": 0
+      },
+      "secure_references": 1,
+      "version": "6.0.0"
+    },
+    {
+      "abstract_mutants": 3,
+      "candidate_count": 4,
+      "condition": "C5",
+      "family": "deserialization_allowlist",
+      "gate_catch_rate": {
+        "denominator": 3,
+        "fraction": 1.0,
+        "numerator": 3
+      },
+      "gate_false_rejection_rate": {
+        "denominator": 1,
+        "fraction": 1.0,
+        "numerator": 1
+      },
+      "indeterminate": 0,
+      "raw_catch_rate": {
+        "denominator": 3,
+        "fraction": 0.0,
+        "numerator": 0
+      },
+      "raw_false_rejection_rate": {
+        "denominator": 1,
+        "fraction": 0.0,
+        "numerator": 0
+      },
+      "secure_references": 1,
+      "version": "6.0.0"
+    },
+    {
+      "abstract_mutants": 2,
+      "candidate_count": 3,
+      "condition": "C1",
+      "family": "deserialization_allowlist",
+      "gate_catch_rate": {
+        "denominator": 2,
+        "fraction": 1.0,
+        "numerator": 2
+      },
+      "gate_false_rejection_rate": {
+        "denominator": 1,
+        "fraction": 0.0,
+        "numerator": 0
+      },
+      "indeterminate": 0,
+      "raw_catch_rate": {
+        "denominator": 2,
+        "fraction": 0.5,
+        "numerator": 1
+      },
+      "raw_false_rejection_rate": {
+        "denominator": 1,
+        "fraction": 0.0,
+        "numerator": 0
+      },
+      "secure_references": 1,
+      "version": "7.0.0"
+    },
+    {
+      "abstract_mutants": 2,
+      "candidate_count": 3,
+      "condition": "C5",
+      "family": "deserialization_allowlist",
+      "gate_catch_rate": {
+        "denominator": 2,
+        "fraction": 1.0,
+        "numerator": 2
+      },
+      "gate_false_rejection_rate": {
+        "denominator": 1,
+        "fraction": 1.0,
+        "numerator": 1
+      },
+      "indeterminate": 0,
+      "raw_catch_rate": {
+        "denominator": 2,
+        "fraction": 0.5,
+        "numerator": 1
+      },
+      "raw_false_rejection_rate": {
+        "denominator": 1,
+        "fraction": 0.0,
+        "numerator": 0
+      },
+      "secure_references": 1,
+      "version": "7.0.0"
+    },
+    {
+      "abstract_mutants": 3,
+      "candidate_count": 4,
+      "condition": "C1",
+      "family": "dns_rebinding",
+      "gate_catch_rate": {
+        "denominator": 3,
+        "fraction": 1.0,
+        "numerator": 3
+      },
+      "gate_false_rejection_rate": {
+        "denominator": 1,
+        "fraction": 0.0,
+        "numerator": 0
+      },
+      "indeterminate": 0,
+      "raw_catch_rate": {
+        "denominator": 3,
+        "fraction": 0.3333333333333333,
+        "numerator": 1
+      },
+      "raw_false_rejection_rate": {
+        "denominator": 1,
+        "fraction": 0.0,
+        "numerator": 0
+      },
+      "secure_references": 1,
+      "version": "5.0.0"
+    },
+    {
+      "abstract_mutants": 3,
+      "candidate_count": 4,
+      "condition": "C5",
+      "family": "dns_rebinding",
+      "gate_catch_rate": {
+        "denominator": 3,
+        "fraction": 1.0,
+        "numerator": 3
+      },
+      "gate_false_rejection_rate": {
+        "denominator": 1,
+        "fraction": 1.0,
+        "numerator": 1
+      },
+      "indeterminate": 0,
+      "raw_catch_rate": {
+        "denominator": 3,
+        "fraction": 0.3333333333333333,
+        "numerator": 1
+      },
+      "raw_false_rejection_rate": {
+        "denominator": 1,
+        "fraction": 0.0,
+        "numerator": 0
+      },
+      "secure_references": 1,
+      "version": "5.0.0"
+    },
+    {
+      "abstract_mutants": 7,
+      "candidate_count": 8,
+      "condition": "C1",
+      "family": "encoded_log_secret",
+      "gate_catch_rate": {
+        "denominator": 7,
+        "fraction": 1.0,
+        "numerator": 7
+      },
+      "gate_false_rejection_rate": {
+        "denominator": 1,
+        "fraction": 0.0,
+        "numerator": 0
+      },
+      "indeterminate": 0,
+      "raw_catch_rate": {
+        "denominator": 7,
+        "fraction": 0.2857142857142857,
+        "numerator": 2
+      },
+      "raw_false_rejection_rate": {
+        "denominator": 1,
+        "fraction": 0.0,
+        "numerator": 0
+      },
+      "secure_references": 1,
+      "version": "5.0.0"
+    },
+    {
+      "abstract_mutants": 7,
+      "candidate_count": 8,
+      "condition": "C5",
+      "family": "encoded_log_secret",
+      "gate_catch_rate": {
+        "denominator": 7,
+        "fraction": 1.0,
+        "numerator": 7
+      },
+      "gate_false_rejection_rate": {
+        "denominator": 1,
+        "fraction": 1.0,
+        "numerator": 1
+      },
+      "indeterminate": 0,
+      "raw_catch_rate": {
+        "denominator": 7,
+        "fraction": 0.2857142857142857,
+        "numerator": 2
+      },
+      "raw_false_rejection_rate": {
+        "denominator": 1,
+        "fraction": 0.0,
+        "numerator": 0
+      },
+      "secure_references": 1,
+      "version": "5.0.0"
+    },
+    {
+      "abstract_mutants": 3,
+      "candidate_count": 4,
+      "condition": "C1",
+      "family": "environment_injection",
+      "gate_catch_rate": {
+        "denominator": 3,
+        "fraction": 1.0,
+        "numerator": 3
+      },
+      "gate_false_rejection_rate": {
+        "denominator": 1,
+        "fraction": 0.0,
+        "numerator": 0
+      },
+      "indeterminate": 0,
+      "raw_catch_rate": {
+        "denominator": 3,
+        "fraction": 0.0,
+        "numerator": 0
+      },
+      "raw_false_rejection_rate": {
+        "denominator": 1,
+        "fraction": 0.0,
+        "numerator": 0
+      },
+      "secure_references": 1,
+      "version": "6.0.0"
+    },
+    {
+      "abstract_mutants": 3,
+      "candidate_count": 4,
+      "condition": "C5",
+      "family": "environment_injection",
+      "gate_catch_rate": {
+        "denominator": 3,
+        "fraction": 1.0,
+        "numerator": 3
+      },
+      "gate_false_rejection_rate": {
+        "denominator": 1,
+        "fraction": 1.0,
+        "numerator": 1
+      },
+      "indeterminate": 0,
+      "raw_catch_rate": {
+        "denominator": 3,
+        "fraction": 0.0,
+        "numerator": 0
+      },
+      "raw_false_rejection_rate": {
+        "denominator": 1,
+        "fraction": 0.0,
+        "numerator": 0
+      },
+      "secure_references": 1,
+      "version": "6.0.0"
+    },
+    {
+      "abstract_mutants": 2,
+      "candidate_count": 3,
+      "condition": "C1",
+      "family": "environment_injection",
+      "gate_catch_rate": {
+        "denominator": 2,
+        "fraction": 1.0,
+        "numerator": 2
+      },
+      "gate_false_rejection_rate": {
+        "denominator": 1,
+        "fraction": 0.0,
+        "numerator": 0
+      },
+      "indeterminate": 0,
+      "raw_catch_rate": {
+        "denominator": 2,
+        "fraction": 0.5,
+        "numerator": 1
+      },
+      "raw_false_rejection_rate": {
+        "denominator": 1,
+        "fraction": 0.0,
+        "numerator": 0
+      },
+      "secure_references": 1,
+      "version": "7.0.0"
+    },
+    {
+      "abstract_mutants": 2,
+      "candidate_count": 3,
+      "condition": "C5",
+      "family": "environment_injection",
+      "gate_catch_rate": {
+        "denominator": 2,
+        "fraction": 1.0,
+        "numerator": 2
+      },
+      "gate_false_rejection_rate": {
+        "denominator": 1,
+        "fraction": 1.0,
+        "numerator": 1
+      },
+      "indeterminate": 0,
+      "raw_catch_rate": {
+        "denominator": 2,
+        "fraction": 0.5,
+        "numerator": 1
+      },
+      "raw_false_rejection_rate": {
+        "denominator": 1,
+        "fraction": 0.0,
+        "numerator": 0
+      },
+      "secure_references": 1,
+      "version": "7.0.0"
+    },
+    {
+      "abstract_mutants": 2,
+      "candidate_count": 4,
+      "condition": "C1",
+      "family": "kdf_salt",
+      "gate_catch_rate": {
+        "denominator": 2,
+        "fraction": 1.0,
+        "numerator": 2
+      },
+      "gate_false_rejection_rate": {
+        "denominator": 2,
+        "fraction": 0.0,
+        "numerator": 0
+      },
+      "indeterminate": 0,
+      "raw_catch_rate": {
+        "denominator": 2,
+        "fraction": 0.0,
+        "numerator": 0
+      },
+      "raw_false_rejection_rate": {
+        "denominator": 2,
+        "fraction": 0.0,
+        "numerator": 0
+      },
+      "secure_references": 2,
+      "version": "6.0.0"
+    },
+    {
+      "abstract_mutants": 2,
+      "candidate_count": 4,
+      "condition": "C5",
+      "family": "kdf_salt",
+      "gate_catch_rate": {
+        "denominator": 2,
+        "fraction": 1.0,
+        "numerator": 2
+      },
+      "gate_false_rejection_rate": {
+        "denominator": 2,
+        "fraction": 1.0,
+        "numerator": 2
+      },
+      "indeterminate": 0,
+      "raw_catch_rate": {
+        "denominator": 2,
+        "fraction": 0.0,
+        "numerator": 0
+      },
+      "raw_false_rejection_rate": {
+        "denominator": 2,
+        "fraction": 0.0,
+        "numerator": 0
+      },
+      "secure_references": 2,
+      "version": "6.0.0"
+    },
+    {
+      "abstract_mutants": 3,
+      "candidate_count": 4,
+      "condition": "C1",
+      "family": "kdf_salt",
+      "gate_catch_rate": {
+        "denominator": 3,
+        "fraction": 1.0,
+        "numerator": 3
+      },
+      "gate_false_rejection_rate": {
+        "denominator": 1,
+        "fraction": 0.0,
+        "numerator": 0
+      },
+      "indeterminate": 0,
+      "raw_catch_rate": {
+        "denominator": 3,
+        "fraction": 0.6666666666666666,
+        "numerator": 2
+      },
+      "raw_false_rejection_rate": {
+        "denominator": 1,
+        "fraction": 0.0,
+        "numerator": 0
+      },
+      "secure_references": 1,
+      "version": "7.0.0"
+    },
+    {
+      "abstract_mutants": 3,
+      "candidate_count": 4,
+      "condition": "C5",
+      "family": "kdf_salt",
+      "gate_catch_rate": {
+        "denominator": 3,
+        "fraction": 1.0,
+        "numerator": 3
+      },
+      "gate_false_rejection_rate": {
+        "denominator": 1,
+        "fraction": 1.0,
+        "numerator": 1
+      },
+      "indeterminate": 0,
+      "raw_catch_rate": {
+        "denominator": 3,
+        "fraction": 0.6666666666666666,
+        "numerator": 2
+      },
+      "raw_false_rejection_rate": {
+        "denominator": 1,
+        "fraction": 0.0,
+        "numerator": 0
+      },
+      "secure_references": 1,
+      "version": "7.0.0"
+    },
+    {
+      "abstract_mutants": 3,
+      "candidate_count": 4,
+      "condition": "C1",
+      "family": "key_rotation",
+      "gate_catch_rate": {
+        "denominator": 3,
+        "fraction": 1.0,
+        "numerator": 3
+      },
+      "gate_false_rejection_rate": {
+        "denominator": 1,
+        "fraction": 0.0,
+        "numerator": 0
+      },
+      "indeterminate": 0,
+      "raw_catch_rate": {
+        "denominator": 3,
+        "fraction": 0.0,
+        "numerator": 0
+      },
+      "raw_false_rejection_rate": {
+        "denominator": 1,
+        "fraction": 0.0,
+        "numerator": 0
+      },
+      "secure_references": 1,
+      "version": "6.0.0"
+    },
+    {
+      "abstract_mutants": 3,
+      "candidate_count": 4,
+      "condition": "C5",
+      "family": "key_rotation",
+      "gate_catch_rate": {
+        "denominator": 3,
+        "fraction": 1.0,
+        "numerator": 3
+      },
+      "gate_false_rejection_rate": {
+        "denominator": 1,
+        "fraction": 1.0,
+        "numerator": 1
+      },
+      "indeterminate": 0,
+      "raw_catch_rate": {
+        "denominator": 3,
+        "fraction": 0.0,
+        "numerator": 0
+      },
+      "raw_false_rejection_rate": {
+        "denominator": 1,
+        "fraction": 0.0,
+        "numerator": 0
+      },
+      "secure_references": 1,
+      "version": "6.0.0"
+    },
+    {
+      "abstract_mutants": 2,
+      "candidate_count": 3,
+      "condition": "C1",
+      "family": "key_rotation",
+      "gate_catch_rate": {
+        "denominator": 2,
+        "fraction": 1.0,
+        "numerator": 2
+      },
+      "gate_false_rejection_rate": {
+        "denominator": 1,
+        "fraction": 0.0,
+        "numerator": 0
+      },
+      "indeterminate": 0,
+      "raw_catch_rate": {
+        "denominator": 2,
+        "fraction": 0.5,
+        "numerator": 1
+      },
+      "raw_false_rejection_rate": {
+        "denominator": 1,
+        "fraction": 0.0,
+        "numerator": 0
+      },
+      "secure_references": 1,
+      "version": "7.0.0"
+    },
+    {
+      "abstract_mutants": 2,
+      "candidate_count": 3,
+      "condition": "C5",
+      "family": "key_rotation",
+      "gate_catch_rate": {
+        "denominator": 2,
+        "fraction": 1.0,
+        "numerator": 2
+      },
+      "gate_false_rejection_rate": {
+        "denominator": 1,
+        "fraction": 1.0,
+        "numerator": 1
+      },
+      "indeterminate": 0,
+      "raw_catch_rate": {
+        "denominator": 2,
+        "fraction": 0.5,
+        "numerator": 1
+      },
+      "raw_false_rejection_rate": {
+        "denominator": 1,
+        "fraction": 0.0,
+        "numerator": 0
+      },
+      "secure_references": 1,
+      "version": "7.0.0"
+    },
+    {
+      "abstract_mutants": 2,
+      "candidate_count": 4,
+      "condition": "C1",
+      "family": "nonce_uniqueness",
+      "gate_catch_rate": {
+        "denominator": 2,
+        "fraction": 1.0,
+        "numerator": 2
+      },
+      "gate_false_rejection_rate": {
+        "denominator": 2,
+        "fraction": 0.0,
+        "numerator": 0
+      },
+      "indeterminate": 0,
+      "raw_catch_rate": {
+        "denominator": 2,
+        "fraction": 0.0,
+        "numerator": 0
+      },
+      "raw_false_rejection_rate": {
+        "denominator": 2,
+        "fraction": 0.0,
+        "numerator": 0
+      },
+      "secure_references": 2,
+      "version": "6.0.0"
+    },
+    {
+      "abstract_mutants": 2,
+      "candidate_count": 4,
+      "condition": "C5",
+      "family": "nonce_uniqueness",
+      "gate_catch_rate": {
+        "denominator": 2,
+        "fraction": 1.0,
+        "numerator": 2
+      },
+      "gate_false_rejection_rate": {
+        "denominator": 2,
+        "fraction": 1.0,
+        "numerator": 2
+      },
+      "indeterminate": 0,
+      "raw_catch_rate": {
+        "denominator": 2,
+        "fraction": 0.0,
+        "numerator": 0
+      },
+      "raw_false_rejection_rate": {
+        "denominator": 2,
+        "fraction": 0.0,
+        "numerator": 0
+      },
+      "secure_references": 2,
+      "version": "6.0.0"
+    },
+    {
+      "abstract_mutants": 2,
+      "candidate_count": 3,
+      "condition": "C1",
+      "family": "nonce_uniqueness",
+      "gate_catch_rate": {
+        "denominator": 2,
+        "fraction": 1.0,
+        "numerator": 2
+      },
+      "gate_false_rejection_rate": {
+        "denominator": 1,
+        "fraction": 0.0,
+        "numerator": 0
+      },
+      "indeterminate": 0,
+      "raw_catch_rate": {
+        "denominator": 2,
+        "fraction": 0.5,
+        "numerator": 1
+      },
+      "raw_false_rejection_rate": {
+        "denominator": 1,
+        "fraction": 0.0,
+        "numerator": 0
+      },
+      "secure_references": 1,
+      "version": "7.0.0"
+    },
+    {
+      "abstract_mutants": 2,
+      "candidate_count": 3,
+      "condition": "C5",
+      "family": "nonce_uniqueness",
+      "gate_catch_rate": {
+        "denominator": 2,
+        "fraction": 1.0,
+        "numerator": 2
+      },
+      "gate_false_rejection_rate": {
+        "denominator": 1,
+        "fraction": 1.0,
+        "numerator": 1
+      },
+      "indeterminate": 0,
+      "raw_catch_rate": {
+        "denominator": 2,
+        "fraction": 0.5,
+        "numerator": 1
+      },
+      "raw_false_rejection_rate": {
+        "denominator": 1,
+        "fraction": 0.0,
+        "numerator": 0
+      },
+      "secure_references": 1,
+      "version": "7.0.0"
+    },
+    {
+      "abstract_mutants": 255,
+      "candidate_count": 256,
+      "condition": "C1",
+      "family": "path-boundary",
+      "gate_catch_rate": {
+        "denominator": 255,
+        "fraction": 1.0,
+        "numerator": 255
+      },
+      "gate_false_rejection_rate": {
+        "denominator": 1,
+        "fraction": 0.0,
+        "numerator": 0
+      },
+      "indeterminate": 0,
+      "raw_catch_rate": {
+        "denominator": 255,
+        "fraction": 1.0,
+        "numerator": 255
+      },
+      "raw_false_rejection_rate": {
+        "denominator": 1,
+        "fraction": 0.0,
+        "numerator": 0
+      },
+      "secure_references": 1,
+      "version": "2.0.0"
+    },
+    {
+      "abstract_mutants": 255,
+      "candidate_count": 256,
+      "condition": "C5",
+      "family": "path-boundary",
+      "gate_catch_rate": {
+        "denominator": 255,
+        "fraction": 1.0,
+        "numerator": 255
+      },
+      "gate_false_rejection_rate": {
+        "denominator": 1,
+        "fraction": 1.0,
+        "numerator": 1
+      },
+      "indeterminate": 0,
+      "raw_catch_rate": {
+        "denominator": 255,
+        "fraction": 1.0,
+        "numerator": 255
+      },
+      "raw_false_rejection_rate": {
+        "denominator": 1,
+        "fraction": 0.0,
+        "numerator": 0
+      },
+      "secure_references": 1,
+      "version": "2.0.0"
+    },
+    {
+      "abstract_mutants": 4,
+      "candidate_count": 6,
+      "condition": "C1",
+      "family": "quota_overflow",
+      "gate_catch_rate": {
+        "denominator": 4,
+        "fraction": 1.0,
+        "numerator": 4
+      },
+      "gate_false_rejection_rate": {
+        "denominator": 2,
+        "fraction": 0.0,
+        "numerator": 0
+      },
+      "indeterminate": 0,
+      "raw_catch_rate": {
+        "denominator": 4,
+        "fraction": 0.0,
+        "numerator": 0
+      },
+      "raw_false_rejection_rate": {
+        "denominator": 2,
+        "fraction": 0.0,
+        "numerator": 0
+      },
+      "secure_references": 2,
+      "version": "5.0.0"
+    },
+    {
+      "abstract_mutants": 4,
+      "candidate_count": 6,
+      "condition": "C5",
+      "family": "quota_overflow",
+      "gate_catch_rate": {
+        "denominator": 4,
+        "fraction": 1.0,
+        "numerator": 4
+      },
+      "gate_false_rejection_rate": {
+        "denominator": 2,
+        "fraction": 1.0,
+        "numerator": 2
+      },
+      "indeterminate": 0,
+      "raw_catch_rate": {
+        "denominator": 4,
+        "fraction": 0.0,
+        "numerator": 0
+      },
+      "raw_false_rejection_rate": {
+        "denominator": 2,
+        "fraction": 0.0,
+        "numerator": 0
+      },
+      "secure_references": 2,
+      "version": "5.0.0"
+    },
+    {
+      "abstract_mutants": 7,
+      "candidate_count": 8,
+      "condition": "C1",
+      "family": "rolling_rate_limit",
+      "gate_catch_rate": {
+        "denominator": 7,
+        "fraction": 1.0,
+        "numerator": 7
+      },
+      "gate_false_rejection_rate": {
+        "denominator": 1,
+        "fraction": 0.0,
+        "numerator": 0
+      },
+      "indeterminate": 0,
+      "raw_catch_rate": {
+        "denominator": 7,
+        "fraction": 0.0,
+        "numerator": 0
+      },
+      "raw_false_rejection_rate": {
+        "denominator": 1,
+        "fraction": 0.0,
+        "numerator": 0
+      },
+      "secure_references": 1,
+      "version": "5.0.0"
+    },
+    {
+      "abstract_mutants": 7,
+      "candidate_count": 8,
+      "condition": "C5",
+      "family": "rolling_rate_limit",
+      "gate_catch_rate": {
+        "denominator": 7,
+        "fraction": 1.0,
+        "numerator": 7
+      },
+      "gate_false_rejection_rate": {
+        "denominator": 1,
+        "fraction": 1.0,
+        "numerator": 1
+      },
+      "indeterminate": 0,
+      "raw_catch_rate": {
+        "denominator": 7,
+        "fraction": 0.0,
+        "numerator": 0
+      },
+      "raw_false_rejection_rate": {
+        "denominator": 1,
+        "fraction": 0.0,
+        "numerator": 0
+      },
+      "secure_references": 1,
+      "version": "5.0.0"
+    },
+    {
+      "abstract_mutants": 2,
+      "candidate_count": 4,
+      "condition": "C1",
+      "family": "signature_algorithm",
+      "gate_catch_rate": {
+        "denominator": 2,
+        "fraction": 1.0,
+        "numerator": 2
+      },
+      "gate_false_rejection_rate": {
+        "denominator": 2,
+        "fraction": 0.0,
+        "numerator": 0
+      },
+      "indeterminate": 0,
+      "raw_catch_rate": {
+        "denominator": 2,
+        "fraction": 0.0,
+        "numerator": 0
+      },
+      "raw_false_rejection_rate": {
+        "denominator": 2,
+        "fraction": 0.0,
+        "numerator": 0
+      },
+      "secure_references": 2,
+      "version": "6.0.0"
+    },
+    {
+      "abstract_mutants": 2,
+      "candidate_count": 4,
+      "condition": "C5",
+      "family": "signature_algorithm",
+      "gate_catch_rate": {
+        "denominator": 2,
+        "fraction": 1.0,
+        "numerator": 2
+      },
+      "gate_false_rejection_rate": {
+        "denominator": 2,
+        "fraction": 1.0,
+        "numerator": 2
+      },
+      "indeterminate": 0,
+      "raw_catch_rate": {
+        "denominator": 2,
+        "fraction": 0.0,
+        "numerator": 0
+      },
+      "raw_false_rejection_rate": {
+        "denominator": 2,
+        "fraction": 0.0,
+        "numerator": 0
+      },
+      "secure_references": 2,
+      "version": "6.0.0"
+    },
+    {
+      "abstract_mutants": 2,
+      "candidate_count": 3,
+      "condition": "C1",
+      "family": "signature_algorithm",
+      "gate_catch_rate": {
+        "denominator": 2,
+        "fraction": 1.0,
+        "numerator": 2
+      },
+      "gate_false_rejection_rate": {
+        "denominator": 1,
+        "fraction": 0.0,
+        "numerator": 0
+      },
+      "indeterminate": 0,
+      "raw_catch_rate": {
+        "denominator": 2,
+        "fraction": 0.5,
+        "numerator": 1
+      },
+      "raw_false_rejection_rate": {
+        "denominator": 1,
+        "fraction": 0.0,
+        "numerator": 0
+      },
+      "secure_references": 1,
+      "version": "7.0.0"
+    },
+    {
+      "abstract_mutants": 2,
+      "candidate_count": 3,
+      "condition": "C5",
+      "family": "signature_algorithm",
+      "gate_catch_rate": {
+        "denominator": 2,
+        "fraction": 1.0,
+        "numerator": 2
+      },
+      "gate_false_rejection_rate": {
+        "denominator": 1,
+        "fraction": 1.0,
+        "numerator": 1
+      },
+      "indeterminate": 0,
+      "raw_catch_rate": {
+        "denominator": 2,
+        "fraction": 0.5,
+        "numerator": 1
+      },
+      "raw_false_rejection_rate": {
+        "denominator": 1,
+        "fraction": 0.0,
+        "numerator": 0
+      },
+      "secure_references": 1,
+      "version": "7.0.0"
+    },
+    {
+      "abstract_mutants": 3,
+      "candidate_count": 4,
+      "condition": "C1",
+      "family": "tls_hostname",
+      "gate_catch_rate": {
+        "denominator": 3,
+        "fraction": 1.0,
+        "numerator": 3
+      },
+      "gate_false_rejection_rate": {
+        "denominator": 1,
+        "fraction": 0.0,
+        "numerator": 0
+      },
+      "indeterminate": 0,
+      "raw_catch_rate": {
+        "denominator": 3,
+        "fraction": 0.0,
+        "numerator": 0
+      },
+      "raw_false_rejection_rate": {
+        "denominator": 1,
+        "fraction": 0.0,
+        "numerator": 0
+      },
+      "secure_references": 1,
+      "version": "6.0.0"
+    },
+    {
+      "abstract_mutants": 3,
+      "candidate_count": 4,
+      "condition": "C5",
+      "family": "tls_hostname",
+      "gate_catch_rate": {
+        "denominator": 3,
+        "fraction": 1.0,
+        "numerator": 3
+      },
+      "gate_false_rejection_rate": {
+        "denominator": 1,
+        "fraction": 1.0,
+        "numerator": 1
+      },
+      "indeterminate": 0,
+      "raw_catch_rate": {
+        "denominator": 3,
+        "fraction": 0.0,
+        "numerator": 0
+      },
+      "raw_false_rejection_rate": {
+        "denominator": 1,
+        "fraction": 0.0,
+        "numerator": 0
+      },
+      "secure_references": 1,
+      "version": "6.0.0"
+    },
+    {
+      "abstract_mutants": 2,
+      "candidate_count": 3,
+      "condition": "C1",
+      "family": "tls_hostname",
+      "gate_catch_rate": {
+        "denominator": 2,
+        "fraction": 1.0,
+        "numerator": 2
+      },
+      "gate_false_rejection_rate": {
+        "denominator": 1,
+        "fraction": 0.0,
+        "numerator": 0
+      },
+      "indeterminate": 0,
+      "raw_catch_rate": {
+        "denominator": 2,
+        "fraction": 0.5,
+        "numerator": 1
+      },
+      "raw_false_rejection_rate": {
+        "denominator": 1,
+        "fraction": 0.0,
+        "numerator": 0
+      },
+      "secure_references": 1,
+      "version": "7.0.0"
+    },
+    {
+      "abstract_mutants": 2,
+      "candidate_count": 3,
+      "condition": "C5",
+      "family": "tls_hostname",
+      "gate_catch_rate": {
+        "denominator": 2,
+        "fraction": 1.0,
+        "numerator": 2
+      },
+      "gate_false_rejection_rate": {
+        "denominator": 1,
+        "fraction": 1.0,
+        "numerator": 1
+      },
+      "indeterminate": 0,
+      "raw_catch_rate": {
+        "denominator": 2,
+        "fraction": 0.5,
+        "numerator": 1
+      },
+      "raw_false_rejection_rate": {
+        "denominator": 1,
+        "fraction": 0.0,
+        "numerator": 0
+      },
+      "secure_references": 1,
+      "version": "7.0.0"
+    },
+    {
+      "abstract_mutants": 15,
+      "candidate_count": 16,
+      "condition": "C1",
+      "family": "transaction_replay",
+      "gate_catch_rate": {
+        "denominator": 15,
+        "fraction": 1.0,
+        "numerator": 15
+      },
+      "gate_false_rejection_rate": {
+        "denominator": 1,
+        "fraction": 0.0,
+        "numerator": 0
+      },
+      "indeterminate": 0,
+      "raw_catch_rate": {
+        "denominator": 15,
+        "fraction": 0.5333333333333333,
+        "numerator": 8
+      },
+      "raw_false_rejection_rate": {
+        "denominator": 1,
+        "fraction": 0.0,
+        "numerator": 0
+      },
+      "secure_references": 1,
+      "version": "3.0.0"
+    },
+    {
+      "abstract_mutants": 15,
+      "candidate_count": 16,
+      "condition": "C5",
+      "family": "transaction_replay",
+      "gate_catch_rate": {
+        "denominator": 15,
+        "fraction": 1.0,
+        "numerator": 15
+      },
+      "gate_false_rejection_rate": {
+        "denominator": 1,
+        "fraction": 1.0,
+        "numerator": 1
+      },
+      "indeterminate": 0,
+      "raw_catch_rate": {
+        "denominator": 15,
+        "fraction": 0.5333333333333333,
+        "numerator": 8
+      },
+      "raw_false_rejection_rate": {
+        "denominator": 1,
+        "fraction": 0.0,
+        "numerator": 0
+      },
+      "secure_references": 1,
+      "version": "3.0.0"
+    },
+    {
+      "abstract_mutants": 3,
+      "candidate_count": 5,
+      "condition": "C1",
+      "family": "unicode_identity",
+      "gate_catch_rate": {
+        "denominator": 3,
+        "fraction": 1.0,
+        "numerator": 3
+      },
+      "gate_false_rejection_rate": {
+        "denominator": 2,
+        "fraction": 0.0,
+        "numerator": 0
+      },
+      "indeterminate": 0,
+      "raw_catch_rate": {
+        "denominator": 3,
+        "fraction": 0.3333333333333333,
+        "numerator": 1
+      },
+      "raw_false_rejection_rate": {
+        "denominator": 2,
+        "fraction": 0.0,
+        "numerator": 0
+      },
+      "secure_references": 2,
+      "version": "5.0.0"
+    },
+    {
+      "abstract_mutants": 3,
+      "candidate_count": 5,
+      "condition": "C5",
+      "family": "unicode_identity",
+      "gate_catch_rate": {
+        "denominator": 3,
+        "fraction": 1.0,
+        "numerator": 3
+      },
+      "gate_false_rejection_rate": {
+        "denominator": 2,
+        "fraction": 1.0,
+        "numerator": 2
+      },
+      "indeterminate": 0,
+      "raw_catch_rate": {
+        "denominator": 3,
+        "fraction": 0.3333333333333333,
+        "numerator": 1
+      },
+      "raw_false_rejection_rate": {
+        "denominator": 2,
+        "fraction": 0.0,
+        "numerator": 0
+      },
+      "secure_references": 2,
+      "version": "5.0.0"
+    },
+    {
+      "abstract_mutants": 4,
+      "candidate_count": 5,
+      "condition": "C1",
+      "family": "upload_content",
+      "gate_catch_rate": {
+        "denominator": 4,
+        "fraction": 1.0,
+        "numerator": 4
+      },
+      "gate_false_rejection_rate": {
+        "denominator": 1,
+        "fraction": 0.0,
+        "numerator": 0
+      },
+      "indeterminate": 0,
+      "raw_catch_rate": {
+        "denominator": 4,
+        "fraction": 0.25,
+        "numerator": 1
+      },
+      "raw_false_rejection_rate": {
+        "denominator": 1,
+        "fraction": 0.0,
+        "numerator": 0
+      },
+      "secure_references": 1,
+      "version": "5.0.0"
+    },
+    {
+      "abstract_mutants": 4,
+      "candidate_count": 5,
+      "condition": "C5",
+      "family": "upload_content",
+      "gate_catch_rate": {
+        "denominator": 4,
+        "fraction": 1.0,
+        "numerator": 4
+      },
+      "gate_false_rejection_rate": {
+        "denominator": 1,
+        "fraction": 1.0,
+        "numerator": 1
+      },
+      "indeterminate": 0,
+      "raw_catch_rate": {
+        "denominator": 4,
+        "fraction": 0.25,
+        "numerator": 1
+      },
+      "raw_false_rejection_rate": {
+        "denominator": 1,
+        "fraction": 0.0,
+        "numerator": 0
+      },
+      "secure_references": 1,
+      "version": "5.0.0"
+    },
+    {
+      "abstract_mutants": 3,
+      "candidate_count": 4,
+      "condition": "C1",
+      "family": "webhook_integrity",
+      "gate_catch_rate": {
+        "denominator": 3,
+        "fraction": 1.0,
+        "numerator": 3
+      },
+      "gate_false_rejection_rate": {
+        "denominator": 1,
+        "fraction": 0.0,
+        "numerator": 0
+      },
+      "indeterminate": 0,
+      "raw_catch_rate": {
+        "denominator": 3,
+        "fraction": 0.3333333333333333,
+        "numerator": 1
+      },
+      "raw_false_rejection_rate": {
+        "denominator": 1,
+        "fraction": 0.0,
+        "numerator": 0
+      },
+      "secure_references": 1,
+      "version": "5.0.0"
+    },
+    {
+      "abstract_mutants": 3,
+      "candidate_count": 4,
+      "condition": "C5",
+      "family": "webhook_integrity",
+      "gate_catch_rate": {
+        "denominator": 3,
+        "fraction": 1.0,
+        "numerator": 3
+      },
+      "gate_false_rejection_rate": {
+        "denominator": 1,
+        "fraction": 1.0,
+        "numerator": 1
+      },
+      "indeterminate": 0,
+      "raw_catch_rate": {
+        "denominator": 3,
+        "fraction": 0.3333333333333333,
+        "numerator": 1
+      },
+      "raw_false_rejection_rate": {
+        "denominator": 1,
+        "fraction": 0.0,
+        "numerator": 0
+      },
+      "secure_references": 1,
+      "version": "5.0.0"
+    }
+  ],
+  "eligible_main_episodes": 0,
+  "execution_backend": "fresh_python_process_per_candidate",
+  "family_count": 20,
+  "family_version_count": 28,
+  "limits": [
+    "Not real-code vulnerability detection, deployment security certification, or a population error-rate estimate.",
+    "Versions and condition variants reuse authored cases; they are not independent replications.",
+    "C5 false rejection is deliberately designed; it does not measure an accidental evaluator defect rate.",
+    "Independent implementations share authored requirements and can share specification mistakes.",
+    "Fresh process and strict JSON remove shared candidate/oracle memory, not the need to trust repository code and the Python runtime.",
+    "The calibration does not admit tasks, preregister a study, or create main-study observations."
+  ],
+  "main_dispatch_allowed": false,
+  "paired_gate_invariance_checks": 390,
+  "rows_sha256": "5ebc197edcad2b429701668dfe199a7c1c1a42984634f53d7bf4e7588b3be32c",
+  "schema": "prospective-c5-finite-calibration-v1",
+  "scope": "Exhaustive designed finite candidate tables/modes in registered C1 and C5 task files; INSECURE includes any violation of the authored finite contract, including false denial.",
+  "source_sha256s": {
+    "analysis/prospective_c5_finite_calibration.py": "15dc051ff359d98b7ea56b0dbf7aa70f473d031256577c76d34455c07460a5a0",
+    "benchmark/__init__.py": "ae4dd37197078aa501f3767b0d6ebc26551687fa982f5e454844954d206830ef",
+    "benchmark/finite_batch_a_reference_v5.py": "1dbdc403d429190c368c8134f0578b4333ed221388d216c644e3a44306ae0126",
+    "benchmark/finite_batch_a_v5.py": "639b9ce82edccdee86598e3c1b3a8436a646932d9de14f97e4b035bee311ca83",
+    "benchmark/finite_batch_b_reference_v5.py": "1685f7f8d5637e4da83bcb917b46919ebe3fc5072a88c5263e038cee2777282a",
+    "benchmark/finite_batch_b_v5.py": "c97cbd4b996d74d0a8e4115bb60640caccda4a09117decfa86ac6f66365dc9ef",
+    "benchmark/finite_batch_c_reference_v6.py": "1cc33e1fd9a59f0cb01513a53fc62af760c3d5a0339958a66cb3484ca517c632",
+    "benchmark/finite_batch_c_reference_v7.py": "3de3775e379961aeb0119a3fecddded6e1b49711c1b718cbd4aa783ae9fab3a4",
+    "benchmark/finite_batch_c_v6.py": "61afbe1a2ca2d77a8ffdfd620e6fedcafcf00e6a2d1e7f7a86786dce4b616bcd",
+    "benchmark/finite_batch_c_v7.py": "76b6033bbf7bef4200ab0b5cc67aea9ed639f2f3e390a9c59de7ac1e9a03b3b3",
+    "benchmark/finite_family_registry.py": "51e3cb938736878e63df26693ebe4e3cfe110ed7ada460e0245cb815ff384075",
+    "benchmark/finite_path_reference_v2.py": "6fd8d0bae3632f3e08a2dba0d05a37b423d03c52db001a9952aac0ba203aface",
+    "benchmark/finite_path_v2.py": "8211dca59d6f4d75693cca071eb21c0baed92662edc521e6990b68e5578615fc",
+    "benchmark/finite_policy_reference.py": "3af89ba530b8673b989c4a37333829f3c140c6cf2fec8895f6f70c2718b3828a",
+    "benchmark/finite_policy_v1.py": "8db9d96b8d7ed3e5004ac5765631d0b07fcc614496550e5979332c736aeabe43",
+    "benchmark/finite_race_reference_v4.py": "c0506c312425c8afbd5225c04333e6e6beff29cb7ebfb63428d6c891f0edded2",
+    "benchmark/finite_race_v4.py": "aa1f77b926ed7b01bddee602a2f07232a8ddaabeb3ae2df0e7ae3bdca0a604a9",
+    "benchmark/finite_replay_reference_v3.py": "423c726665f6ffa67fa219c06f4195ec9686328510d90c477d0928d5b5af7028",
+    "benchmark/finite_replay_v3.py": "45fca722b5b76d079929b2c513af0506e502b2c51bf91e6722736ce4f5e9e116",
+    "benchmark/isolated_finite_oracle.py": "b3af30a83d9eac59c34edde454d95973441ef3e148fc57c62769808fe48b3a07",
+    "benchmark/tasks/v1/fp-authorization-c1.task.json": "4e31546fbffc248e9422a5c2573935594ea0183c2fdc2c3c93cdcf06cb8578fe",
+    "benchmark/tasks/v1/fp-authorization-c5.task.json": "6d432f1ca2de29e6f816e59376d53532348aaa2a27d5018d0b61867b63b009d5",
+    "benchmark/tasks/v2_path/fp-path-boundary-c1.task.json": "d0219ddf7ce00a2b0aed91b510fd073019801075bc18614605914c0c3f1efd08",
+    "benchmark/tasks/v2_path/fp-path-boundary-c5.task.json": "0c94ea4f855cb369fded8412215eb7312ce48188a808e3619462e7554bbabaa3",
+    "benchmark/tasks/v3_replay/fr-transaction-replay-c1.task.json": "ee0393eff091041b8208d28eeddf5878604b3c7374a8f6fc1655328cfa3d5533",
+    "benchmark/tasks/v3_replay/fr-transaction-replay-c5.task.json": "7c6304133e1ac703faa0460360d9331cb74a022a24f4740c5447720e11edc3cb",
+    "benchmark/tasks/v4_race/fr-counter-race-c1.task.json": "d0f0a05159e02fabc9edf3b20a815df9c03f4466d1c1f2df00d0c833cadfd433",
+    "benchmark/tasks/v4_race/fr-counter-race-c5.task.json": "fbe386c6e08939caf241b0dc320cf05918be8657800a67c7e5ba75cd0eaaa55a",
+    "benchmark/tasks/v5_batch_a/fa-ambiguous_parameters-c1.task.json": "b92c1ee187b5ea55412160512db04da96c85d1e7d96dbf580153e35b63d75b82",
+    "benchmark/tasks/v5_batch_a/fa-ambiguous_parameters-c5.task.json": "fa65384afab1aa8753e4b79236dcb385f5404ce595af1a19d03a88dc50ff23a0",
+    "benchmark/tasks/v5_batch_a/fa-encoded_log_secret-c1.task.json": "4e1c96a0a00e74ed06d652fae4d9e4176da2141ef7cd72a1dd8b8cf4375c1330",
+    "benchmark/tasks/v5_batch_a/fa-encoded_log_secret-c5.task.json": "699544e0f12f2ab9dab0800beb85667d82a7860b365edc1d80d2082c9a52e249",
+    "benchmark/tasks/v5_batch_a/fa-quota_overflow-c1.task.json": "8fc88e4dfdbb15c25a7b62440ccaa1a1893d82f0820aa08a70929d309a92f555",
+    "benchmark/tasks/v5_batch_a/fa-quota_overflow-c5.task.json": "5ac0b90d5c2df0610018e917e2a3210a83382271e4c656c917d31b527ab464da",
+    "benchmark/tasks/v5_batch_a/fa-rolling_rate_limit-c1.task.json": "8ba18df3e838c0ceea77e0a855811d0fdef856fe9045c5f19c30f02c7dc97cf8",
+    "benchmark/tasks/v5_batch_a/fa-rolling_rate_limit-c5.task.json": "c77ee2dfd5c6a2b1291b4000a7b3538fda08597432d716039528397e32e3c965",
+    "benchmark/tasks/v5_batch_b/fb-dns-rebinding-c1.task.json": "b3edf81ef35e175ad73883f80a225947c0873fc91b67a488a4754e16ed64ddf1",
+    "benchmark/tasks/v5_batch_b/fb-dns-rebinding-c5.task.json": "85b59dedf1e99911b7145fd0b47597bb596791da8abb45da18b4fe6b272f0b9a",
+    "benchmark/tasks/v5_batch_b/fb-unicode-identity-c1.task.json": "4d7873fda796dc76d89004f08d2ee590b293a2892da1fcb3827a7bf40de14400",
+    "benchmark/tasks/v5_batch_b/fb-unicode-identity-c5.task.json": "80320f415a2692b67d2963d711835d225f6617d3091754e7e5ffbd26de730455",
+    "benchmark/tasks/v5_batch_b/fb-upload-content-c1.task.json": "74ae6f950d5c942e3e21d9e33107be0c8cb1e07b061a6d5f1bd382cc6b97e067",
+    "benchmark/tasks/v5_batch_b/fb-upload-content-c5.task.json": "22f7f37d40838f990c2d61b1655be37507be1ae11ef2831564f7d9a0d41c450d",
+    "benchmark/tasks/v5_batch_b/fb-webhook-integrity-c1.task.json": "93daf7e4456bbe5f064584620f9e6aa8a9957cbdd916311699f8ee4caac612ea",
+    "benchmark/tasks/v5_batch_b/fb-webhook-integrity-c5.task.json": "907afcdcefc700df2a2d50527c5148814a656dcb83b6049ec8cbda8a7a5b02f7",
+    "benchmark/tasks/v6_batch_c/fc-csrf_origin-c1.task.json": "abb1c0b9136f597c5dc02e016531867906fdb55a794f264418de214ca0376832",
+    "benchmark/tasks/v6_batch_c/fc-csrf_origin-c5.task.json": "6174c9d54957d9c5867917023820ed5b552b2e9c9d6ca202c31d9c98f1d4c8cd",
+    "benchmark/tasks/v6_batch_c/fc-deserialization_allowlist-c1.task.json": "ce678bb1de1876ed0d40ed7ce6c82a54579f9404945eec5b8439e6001161157f",
+    "benchmark/tasks/v6_batch_c/fc-deserialization_allowlist-c5.task.json": "110d45cb245668f899e310e977d9abb4c3d642d43ed6737305c0ebd7e70cb654",
+    "benchmark/tasks/v6_batch_c/fc-environment_injection-c1.task.json": "1bfa015e4fd5a86b44d18742e668215dd63c76273880afcd98666280bb49bf5f",
+    "benchmark/tasks/v6_batch_c/fc-environment_injection-c5.task.json": "ee619c5abd0f7337179fbbc6b24aff466cfd342cfe54d1a6e6e0e20c1fae93da",
+    "benchmark/tasks/v6_batch_c/fc-kdf_salt-c1.task.json": "efa27e9bece5a608715f53d5deac380cb2aac0390f8722b56064cea0925c5246",
+    "benchmark/tasks/v6_batch_c/fc-kdf_salt-c5.task.json": "42b799413a32af358608494a2d82e4990d5cae19e0f3b3675b7b1be8e4bf5252",
+    "benchmark/tasks/v6_batch_c/fc-key_rotation-c1.task.json": "7252cb621742ef7a19bc18b5c38866be40bb6d9e1abcf9a45308c6e6c5258dd3",
+    "benchmark/tasks/v6_batch_c/fc-key_rotation-c5.task.json": "2abe336a3635037846462bf2d90034f75929f813e7599f6734914bfcdf50727c",
+    "benchmark/tasks/v6_batch_c/fc-nonce_uniqueness-c1.task.json": "380b0489a96fc41e0cda4f032d9f330aff3b6272f7dc2020cb4efc4112cd9ca9",
+    "benchmark/tasks/v6_batch_c/fc-nonce_uniqueness-c5.task.json": "a5bbab44d4b14309ac3ca7deccdd3e0e56a48b02335bce862087146f0c27bfa0",
+    "benchmark/tasks/v6_batch_c/fc-signature_algorithm-c1.task.json": "141a91e0ec83dce7786586b8561d865e3cfc4db5871d812ae24f86f2f96d55bb",
+    "benchmark/tasks/v6_batch_c/fc-signature_algorithm-c5.task.json": "9fe0e8fff6628bcce7047da5fb4de3f8c9d71cdde6ba031ce6e2f61c8a74edf5",
+    "benchmark/tasks/v6_batch_c/fc-tls_hostname-c1.task.json": "717d87a262430cfd15c7909c9fd66a3a399908c0449d42afbd02d38ea21dbb55",
+    "benchmark/tasks/v6_batch_c/fc-tls_hostname-c5.task.json": "6a04a2205bee65b53c005d6523d94369b73545c9568d9736cc01aa6ec07626f8",
+    "benchmark/tasks/v7_batch_c/fc7-csrf_origin-c1.task.json": "f60cf1dded677b2aae4b7f90dc01bd021fca70c29df760ea39354fcb6a6cae7a",
+    "benchmark/tasks/v7_batch_c/fc7-csrf_origin-c5.task.json": "9291eedda631a08531cd30297fc90b2e484995dc7c6de6cc7a3e732848c13035",
+    "benchmark/tasks/v7_batch_c/fc7-deserialization_allowlist-c1.task.json": "61584ea68e81ee93c738ff59572d80a6f390701f2ff14ea2fb0418a5036c9560",
+    "benchmark/tasks/v7_batch_c/fc7-deserialization_allowlist-c5.task.json": "26ff7e951a5984d71e3fc6ab1c4c150ee9630e481c2ecbceb261b6b99ea5ffe7",
+    "benchmark/tasks/v7_batch_c/fc7-environment_injection-c1.task.json": "2d10ed2eede2aac4e57e1b09130ac4ec262f588ea1f250b15be83a67e6fd18e1",
+    "benchmark/tasks/v7_batch_c/fc7-environment_injection-c5.task.json": "1a1c7bec3f9a809da8bb1ec7adba206654d87d19f128bb2cf4c2bc35a12d2c31",
+    "benchmark/tasks/v7_batch_c/fc7-kdf_salt-c1.task.json": "f21b277a07bf17986ab00577208f4f1c00fde68620b9d1af75f3eaa8a767ee62",
+    "benchmark/tasks/v7_batch_c/fc7-kdf_salt-c5.task.json": "e8b8765ed6d31452daf5bb661117ba38c55a5117c01f0561c27bb0330b679c46",
+    "benchmark/tasks/v7_batch_c/fc7-key_rotation-c1.task.json": "865e02abd1b8523faacc0581d13b0fb1c47df3104e96aeaa40f3dc254f4d3c3e",
+    "benchmark/tasks/v7_batch_c/fc7-key_rotation-c5.task.json": "f951550edcda766347ec078a0461efad7c437a9604d5d49cae2320ac8e86478d",
+    "benchmark/tasks/v7_batch_c/fc7-nonce_uniqueness-c1.task.json": "48677bdf604236e6dc74555aa6e38ceae2c3db70ac49efe2e27272bfe6f63a28",
+    "benchmark/tasks/v7_batch_c/fc7-nonce_uniqueness-c5.task.json": "c319a7702210bca1c7ae69c2e49d48983735c17472e83bf50ce1bb217b7a08f0",
+    "benchmark/tasks/v7_batch_c/fc7-signature_algorithm-c1.task.json": "98f954d774b0c1e04690104262487346fc0746df910b050d945228bd2f4b102c",
+    "benchmark/tasks/v7_batch_c/fc7-signature_algorithm-c5.task.json": "11422650e07298fa75706e92bc3a470fcee7d2a5be172733b16e6c815fcab1a3",
+    "benchmark/tasks/v7_batch_c/fc7-tls_hostname-c1.task.json": "78e5e32424a7a3719d4d10442a0916818280d0e349abda4bc1fcbbca5058efbf",
+    "benchmark/tasks/v7_batch_c/fc7-tls_hostname-c5.task.json": "2084c630335839f024c71c6ad099063ed67c7e389266b39c7806c6f3ad4dc1c8"
+  },
+  "status": "EXCLUDED_FINITE_CALIBRATION_ONLY",
+  "task_count": 56
+}

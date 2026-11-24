@@ -1,0 +1,86 @@
+{
+  "analysis_source_sha256": "44bad780baf9297276c3043cacc8a6969a8abcf94dd7f38808161ec5b06cf13f",
+  "correct_preservation_actions": {
+    "kept_correct_tables": 171,
+    "resubmitted_unchanged_correct_tables": 3
+  },
+  "format_errors": [
+    {
+      "class": "TASK_VALUE_FORMAT_ERROR",
+      "effort": "high",
+      "fence_only_added_correct": 0,
+      "fence_only_added_scorable": 0,
+      "literal_keep_added_correct": 4,
+      "literal_keep_added_scorable": 4,
+      "literal_keep_added_wrong": 0,
+      "literal_keep_new_task_correctness": {
+        "C": true,
+        "D": true,
+        "E": true,
+        "F": true
+      },
+      "model": "gpt-6-luna",
+      "nested_item_counts": {
+        "integer": 2,
+        "keep_marker": 12
+      },
+      "primary_correct": 1,
+      "primary_valid": 2,
+      "single_surrounding_fence": false,
+      "task_formats": {
+        "A": "VALID_INTEGER_VECTOR",
+        "B": "VALID_INTEGER_VECTOR",
+        "C": "ELEMENT_LEVEL_KEEP",
+        "D": "ELEMENT_LEVEL_KEEP",
+        "E": "ELEMENT_LEVEL_KEEP",
+        "F": "ELEMENT_LEVEL_KEEP"
+      }
+    },
+    {
+      "class": "TASK_VALUE_FORMAT_ERROR",
+      "effort": "low",
+      "fence_only_added_correct": 0,
+      "fence_only_added_scorable": 0,
+      "literal_keep_added_correct": 4,
+      "literal_keep_added_scorable": 5,
+      "literal_keep_added_wrong": 1,
+      "literal_keep_new_task_correctness": {
+        "B": false,
+        "C": true,
+        "D": true,
+        "E": true,
+        "F": true
+      },
+      "model": "gpt-5.6-luna",
+      "nested_item_counts": {
+        "integer": 5,
+        "keep_marker": 15,
+        "nested_list": 1
+      },
+      "primary_correct": 0,
+      "primary_valid": 0,
+      "single_surrounding_fence": false,
+      "task_formats": {
+        "A": "ELEMENT_LEVEL_KEEP",
+        "B": "ELEMENT_LEVEL_KEEP",
+        "C": "ELEMENT_LEVEL_KEEP",
+        "D": "ELEMENT_LEVEL_KEEP",
+        "E": "ELEMENT_LEVEL_KEEP",
+        "F": "ELEMENT_LEVEL_KEEP"
+      }
+    }
+  ],
+  "frozen_plan_sha256": "bcd2b1faa5e1b3322bc867f4dfe2d9c41e88d024372900d89669f2ba2d41d581",
+  "kind": "POST_HOC_FORMAT_AUDIT",
+  "limitations": "Post-hoc syntax classification. A refusal-like text prefix is only a heuristic label. Two independent sensitivity checks. One strips exactly one enclosing code fence. The second was specified after inspecting two responses that used keep inside arrays. In an unfenced strict JSON object, for a previously unscored task with a flat same-length array of bounded integers or literal keep, retain the initial candidate value at each marked index. No flattening, guessing, or combining the two rules. Primary outcomes unchanged.",
+  "literal_keep_added_correct": 8,
+  "literal_keep_added_valid": 9,
+  "literal_keep_added_wrong": 1,
+  "phase": "Excluded single-invocation numerical panel",
+  "single_fence_added_correct": 0,
+  "single_fence_added_valid": 0,
+  "status_counts": {
+    "RETURNED": 62,
+    "RETURNED_WITH_FORMAT_ERROR": 2
+  }
+}

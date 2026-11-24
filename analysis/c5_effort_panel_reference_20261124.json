@@ -1,0 +1,127 @@
+{
+  "status": "INDEPENDENT_REFERENCE_MATCH",
+  "new_model_calls": 0,
+  "model_outputs_read": 0,
+  "prompt_sha256": "4d11db37422866847eabdded631f2e53501263a6b379efe3eb381c87eecd9054",
+  "scoring_source_sha256": "f3a45d44e855df5d368b2f264fad418cc5d86f08fefbc3023567d85f4d528eb0",
+  "comparison_source_sha256": "d679d1460e53e5f9ce772365bc33a6cee86d1ff78935b2cd1cffb9081faf53e5",
+  "tasks": 6,
+  "input_cases": 20,
+  "correct_tables": 3,
+  "wrong_entries": 3,
+  "cards": {
+    "A": {
+      "method": "Dynamic programming over interval end times.",
+      "candidate": [
+        13,
+        16,
+        18
+      ],
+      "independent_reference": [
+        13,
+        16,
+        17
+      ],
+      "correct_at_start": false,
+      "discrepancies": [
+        {
+          "case_1based": 3,
+          "candidate": 18,
+          "reference": 17
+        }
+      ]
+    },
+    "B": {
+      "method": "Tick-by-tick FIFO queue simulation; serve after arrivals for that tick.",
+      "candidate": [
+        4,
+        4,
+        5
+      ],
+      "independent_reference": [
+        4,
+        4,
+        5
+      ],
+      "correct_at_start": true,
+      "discrepancies": []
+    },
+    "C": {
+      "method": "Iteratively update integer coefficients of the subset-sum generating polynomial.",
+      "candidate": [
+        8,
+        6,
+        4
+      ],
+      "independent_reference": [
+        8,
+        7,
+        4
+      ],
+      "correct_at_start": false,
+      "discrepancies": [
+        {
+          "case_1based": 2,
+          "candidate": 6,
+          "reference": 7
+        }
+      ]
+    },
+    "D": {
+      "method": "Filter candidate shifts by each successive character, then retain the earliest tie.",
+      "candidate": [
+        1,
+        2,
+        1
+      ],
+      "independent_reference": [
+        1,
+        2,
+        1
+      ],
+      "correct_at_start": true,
+      "discrepancies": []
+    },
+    "E": {
+      "method": "Compare twice the Euclidean remainder with its positive denominator and apply parity.",
+      "candidate": [
+        -2,
+        4,
+        -3,
+        2,
+        4
+      ],
+      "independent_reference": [
+        -2,
+        4,
+        -3,
+        2,
+        4
+      ],
+      "correct_at_start": true,
+      "discrepancies": []
+    },
+    "F": {
+      "method": "Join strict increasing/decreasing subsequence lengths at each eligible peak.",
+      "candidate": [
+        4,
+        4,
+        0
+      ],
+      "independent_reference": [
+        5,
+        4,
+        0
+      ],
+      "correct_at_start": false,
+      "discrepancies": [
+        {
+          "case_1based": 1,
+          "candidate": 4,
+          "reference": 5
+        }
+      ]
+    }
+  },
+  "scope": "Checks the disclosed cases and perturbations. No general oracle completeness or security claim."
+}
