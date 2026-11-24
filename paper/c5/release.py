@@ -10,6 +10,7 @@ from pathlib import Path
 from zipfile import ZIP_DEFLATED, ZipFile, ZipInfo
 from pypdf import PdfReader
 from data.c5.check_release import verify
+from paper.c5.check_cli_table import verify as verify_cli, FILENAME as CLI_FILENAME
 
 ROOT = Path(__file__).resolve().parents[2]
 DATA = ROOT / "data/c5"
@@ -19,9 +20,14 @@ IDENTITY = re.compile(rb"imranqsl212|AiResearch|zakirov|iosifova|kramich", re.I)
 
 def payload(blind):
     verify(DATA)
+    cli_path = ROOT / "analysis" / CLI_FILENAME
+    verify_cli(cli_path)
     common = ["trajectories.jsonl", "event.schema.json", "check_release.py", "provenance.json",
               "terminal_boolean_cases.json"]
     result = {name:(DATA/name).read_bytes() for name in common}
+    result[CLI_FILENAME] = cli_path.read_bytes()
+    result["check_cli_table.py"] = (ROOT / "paper/c5/check_cli_table.py").read_bytes()
+    result["c5_cli_repair_timing_20261124.json"] = (ROOT / "analysis/c5_cli_repair_timing_20261124.json").read_bytes()
     if blind:
         manifest = json.loads(result["provenance.json"])
         result["provenance.json"] = (json.dumps({k:manifest[k] for k in
@@ -50,6 +56,17 @@ def payload(blind):
             b"These prefixes do not estimate separately announced budget interventions. "
             b"The module commands above use the source repository.\n")
         result["CITATION.cff"] = (ROOT/"CITATION.cff").read_bytes()
+    result["README.md"] += (b"\n## Separate CLI pilot table\n\n"
+        b"Run `python3 check_cli_table.py` in this directory to recount `c5_cli_pilot_20261124.json` "
+        b"by requested CLI alias, checker and initial correct/defective state. "
+        b"The checker retains all five requested aliases and forty reserved episodes, verifies reported counters, "
+        b"and leaves unstarted or incomplete outcomes missing. A model without completed episodes has no measured correctness rate. "
+        b"Logged action totals are separate from behavioral outcomes. No expected model performance is built into the check. "
+        b"This checks public-table consistency only: raw prompts, CLI responses and private candidate-evaluation receipts are not included, "
+        b"so it does not independently authenticate providers or replay the private oracle. "
+        b"The authored benign lookup task is an excluded descriptive pilot, separate from the historical continuations and prospective budget experiment. "
+        b"The separate `c5_cli_repair_timing_20261124.json` records the post hoc correctness-by-step audit. "
+        b"The public action-table checker does not reconstruct candidate correctness or verify that separate timing audit from private responses.\n")
     for name, item in result.items():
         if name.endswith(".pdf"):
             continue
@@ -99,6 +116,7 @@ def review_repository(archive, target):
         if set(git("ls-files").splitlines()) != set(bundle.namelist()):
             raise ValueError("Review repository and review archive differ")
     verify(target)
+    verify_cli(target)
     print("Anonymous review repository:", target, git("rev-parse", "--short", "HEAD"))
 
 

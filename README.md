@@ -23,11 +23,13 @@ These are descriptive observations from one local model under persistent false f
 
 The finite-oracle [calibration report](analysis/PROSPECTIVE_C5_FINITE_CALIBRATION.md) and [two CWEval observation controls](data/c5/external_controls.json) remain separate engineering evidence. None of these calibrations measures a population false-alarm rate or proves security of unrestricted programs.
 
+In the [candidate-identity audit](analysis/c5_recovery_identity_20261124.json), all three truthful final-step recoveries matched a previously verified candidate. Two matched decision one and a third matched the starting policy.
+
 ## The prospective comparison
 
 The [new protocol](docs/C5_BUDGET_STATISTICAL_PROTOCOL_20261124.md) crosses a single initial PASS/FAIL with an explicitly announced and enforced allowance of two/three new decisions. It compares the gain from the third decision under FAIL with that gain under PASS. Four candidate models and nineteen families are proposed; family weighting, missing-outcome bounds and four-model Holm correction are specified. Announcing a horizon and supplying another opportunity are jointly manipulated. Under the protocol's stated moderate-clustering simulation, the nineteen-family design has limited power for small interactions.
 
-Independent review, actual preregistration and a compute budget remain outstanding. An optional, separately authorized CLI pilot is **pending** and would not by itself constitute confirmatory collection. The [earlier stopping-focused plan](docs/C5_PROSPECTIVE_STATISTICAL_PLAN_20261123.md), including its C4/C3 comparison, remains available as a distinct design.
+Independent review, actual preregistration and a compute budget remain outstanding. In a separate [hosted CLI pilot](docs/C5_CLI_PILOT_20261124.md), Sol and Luna each preserved four correct starts and repaired four defective starts on a single arithmetic task. All eight repairs occurred on the first action, before any requested check returned. The [public action table](analysis/c5_cli_pilot_20261124.json) retains 24 unattempted Claude episodes. The [earlier stopping-focused plan](docs/C5_PROSPECTIVE_STATISTICAL_PLAN_20261123.md), including its C4/C3 comparison, remains available as a distinct design.
 
 ## Reproduce without models
 
