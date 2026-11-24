@@ -49,9 +49,25 @@ class EffortAnalysis(unittest.TestCase):
         self.assertEqual(model["high"]["complete_episode_input_plus_output_tokens"]["sum_observed"], 13 * 17)
         self.assertEqual(model["high"]["per_call_token_coverage"]["cached_input_tokens"]["sum_observed"], 13*4)
         self.assertEqual(model["matched_high_minus_low"]["terminal_correct"]["equal"], 8)
+        self.assertEqual(model["matched_high_minus_low"]["reasoning_output_tokens"]["high_greater"], 1)
         actions = model["matched_high_minus_low"]["cli_attempts"]
         self.assertEqual((actions["high_greater"], actions["equal"], actions["mean_high_minus_low"]), (1, 7, 0.125))
         self.assertEqual(report["observed_capture_span_seconds"], 2)
+
+    def test_pooled_pairs_keep_models_separate(self):
+        a = fixture()
+        b = copy.deepcopy(a)
+        for cfg in b["configurations"]:
+            cfg["model"] = "gpt-6-luna"
+        for ep in b["episodes"]:
+            ep["model"] = "gpt-6-luna"
+            ep["episode_id"] += "-luna"
+        a["configurations"] += b["configurations"]
+        a["episodes"] += b["episodes"]
+        report = analysis.build_report(a)
+        pairs = report["all_matched_high_minus_low"]
+        self.assertEqual((pairs["complete_pairs"], pairs["terminal_correct"]["equal"]), (16,16))
+        self.assertEqual(pairs["cli_attempts"]["high_greater"], 2)
 
     def test_technical_failure_and_no_start(self):
         capture = fixture()

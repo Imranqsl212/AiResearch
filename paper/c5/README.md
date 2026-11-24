@@ -6,6 +6,10 @@ The [new factorial protocol](../../docs/C5_BUDGET_STATISTICAL_PROTOCOL_20261124.
 
 The prospective analysis weights families equally, retains missingness bounds and corrects four model-specific tests. The proposed nineteen-family design is not generally powered for small interactions. No confirmatory episodes have been collected. The [separate CLI pilot](../../docs/C5_CLI_PILOT_20261124.md) collected 16 of 40 planned episodes across two configurations on one benign numerical task. The [public decision table](../../analysis/c5_cli_pilot_20261124.json) records the outcome and action sequence for each scheduled episode. The earlier stopping-attribution manuscript and [November 23 stopping-focused plan](../../docs/C5_PROSPECTIVE_STATISTICAL_PLAN_20261123.md) retain their original paths and questions.
 
+## Explicit Codex reasoning effort
+
+The [six-task panel](../../analysis/c5_effort_panel_20261124.md) measures functional correctness and token use at every catalogue-supported effort. Its [figure](figures/effort_panel.png) marks incomplete responses. The [sequential report](../../analysis/c5_codex_effort_20261124/comparison.md) follows the earlier doubling task at explicitly requested low and high effort. All 88 defective starts were repaired before an additional check. At high effort the agents resubmitted an unchanged table seven times, compared with 27 at low effort. Both comparisons describe the observed runs. The fixed [selection rule and resource definitions](../../docs/C5_CODEX_EFFORT_DESIGN_20261124.md) precede collection.
+
 ## Rebuild
 
 The following commands run from the repository root. The PDF builder uses ReportLab, pypdf, Pillow and python-docx from the existing manuscript runtime. Change the Python path to use a matching local environment.
@@ -17,6 +21,8 @@ paper_python="${PAPER_PYTHON:-$HOME/.cache/codex-runtimes/codex-primary-runtime/
 python3 -B -m analysis.c5_public_trajectories
 python3 -B data/c5/check_release.py
 ```
+
+Run `python3 -I check_effort.py` in either extracted ZIP to recount the six-task panel and matched low/high trajectories using only the included public data.
 
 The identified data ZIP contains the JSONL, schema, provenance, external observation controls, dataset card, citation file, standalone checker and checksums. The anonymous ZIP contains its own README, a standalone checker, the anonymous PDF, bounded event fields and digests. A closed allowlist omits private decision forms, earlier author-review archives, raw model text and Git history. The PDF and archive text are screened for direct identities and host-specific markers. Previously published counts and searchable paper text can still identify the research. The local anonymous copy supports review; distribution depends on the venue’s policy. The repository itself is publicly identified.
 

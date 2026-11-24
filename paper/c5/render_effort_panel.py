@@ -62,21 +62,26 @@ def render(panel, catalog, output):
             for k, origin in enumerate(origins):
                 x = origin + i*cell_w
                 value, amount = None, 0
+                format_error = bool(row and k == 0 and row["status"] == "RETURNED_WITH_FORMAT_ERROR")
                 if row is None:
                     mark = "n/a"
                 elif k == 0 and row["valid_tasks"]:
                     total, value = row["valid_tasks"], row["correct"]
-                    mark, amount = f"{value}/{total}", value/total
+                    mark, amount = f"{value}/{total}" + ("*" if format_error else ""), value/total
+                elif format_error:
+                    mark = "fmt"
                 elif k == 1 and row["usage"]["reasoning_output_tokens"] is not None:
                     value = row["usage"]["reasoning_output_tokens"]
                     mark, amount = f"{value:,}", math.log1p(value) / math.log1p(largest)
                 else:
                     mark = "--"
                 shade = tint(amount, ((.42,.73,.68),(.57,.71,.86))[k]) if value is not None else colors.HexColor("#efefef")
+                if format_error:
+                    shade = colors.HexColor("#f1e3c8")
                 cv.setFillColor(shade)
                 cv.roundRect(x+1.5, y, cell_w-3, cell_h, 2.5, fill=1, stroke=0)
                 label(x+cell_w/2, y+7.5, mark, size=9.5, color=ink if value is not None else muted, centered=True)
-    label(20, 30, "Fractions use the number of scorable tasks. n/a = unsupported effort. -- = no observed value.", size=10, color=muted)
+    label(20, 30, "Fractions use scorable tasks. * = format error with scorable items; fmt = none scorable. n/a = unsupported effort. -- = unavailable.", size=10, color=muted)
     label(20, 14, "Colour on the token panel uses a logarithmic scale. CLI usage reports reasoning tokens as part of output tokens.", size=9, color=muted)
     cv.showPage()
     cv.save()

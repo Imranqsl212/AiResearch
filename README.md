@@ -25,6 +25,12 @@ The finite-oracle [calibration report](analysis/PROSPECTIVE_C5_FINITE_CALIBRATIO
 
 In the [candidate-identity audit](analysis/c5_recovery_identity_20261124.json), all three truthful final-step recoveries matched a previously verified candidate. Two matched decision one and a third matched the starting policy.
 
+## Codex models and reasoning effort
+
+We compared eleven selectable CLI aliases. On the six-task panel, moving from `xhigh` to `max` left correctness unchanged on all 66 matched model–task outcomes while increasing output tokens for every model. Each setting received the same six tasks in a single invocation. [All 64 configurations, timings and token counts](analysis/c5_effort_panel_20261124.md) · [Figure by model](paper/c5/figures/effort_panel.png) · [Task definitions](experiments/c5_effort_panel.md) · [Design fixed before collection](docs/C5_CODEX_EFFORT_DESIGN_20261124.md)
+
+On the separate eight-episode arithmetic task, low and high each preserved 44/44 correct tables and repaired 44/44 defective ones on the first decision. All 41 diagnostic requests followed a correct table. Unchanged resubmissions fell from 27 to 7. [Paired outcomes and actions across 176 episodes](analysis/c5_codex_effort_20261124/comparison.md)
+
 ## The prospective comparison
 
 The [new protocol](docs/C5_BUDGET_STATISTICAL_PROTOCOL_20261124.md) crosses a single initial PASS/FAIL with an explicitly announced and enforced allowance of two/three new decisions. It compares the gain from the third decision under FAIL with that gain under PASS. Four candidate models and nineteen families are proposed; family weighting, missing-outcome bounds and four-model Holm correction are specified. Announcing a horizon and supplying another opportunity are jointly manipulated. Under the protocol's stated moderate-clustering simulation, the nineteen-family design has limited power for small interactions.

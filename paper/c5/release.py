@@ -11,6 +11,7 @@ from zipfile import ZIP_DEFLATED, ZipFile, ZipInfo
 from pypdf import PdfReader
 from data.c5.check_release import verify
 from paper.c5.check_cli_table import verify as verify_cli, FILENAME as CLI_FILENAME
+from paper.c5.check_effort import verify as verify_effort
 
 ROOT = Path(__file__).resolve().parents[2]
 DATA = ROOT / "data/c5"
@@ -28,6 +29,20 @@ def payload(blind):
     result[CLI_FILENAME] = cli_path.read_bytes()
     result["check_cli_table.py"] = (ROOT / "paper/c5/check_cli_table.py").read_bytes()
     result["c5_cli_repair_timing_20261124.json"] = (ROOT / "analysis/c5_cli_repair_timing_20261124.json").read_bytes()
+    for name, relative in (
+        ("codex_effort_sequential.json", "analysis/c5_codex_effort_20261124/results.json"),
+        ("codex_effort_panel.json", "analysis/c5_effort_panel_20261124.json"),
+        ("codex_effort_panel_reference.json", "analysis/c5_effort_panel_reference_20261124.json"),
+        ("codex_effort_format_audit.json", "analysis/c5_effort_format_audit_20261124.json"),
+        ("codex_effort_design.md", "docs/C5_CODEX_EFFORT_DESIGN_20261124.md"),
+        ("c5_codex_catalog_20261124.json", "docs/c5_codex_catalog_20261124.json"),
+    ):
+        result[name] = (ROOT / relative).read_bytes()
+    verify_effort(ROOT/"analysis/c5_effort_panel_20261124.json", ROOT/"analysis/c5_codex_effort_20261124/results.json",
+                  ROOT/"docs/c5_codex_catalog_20261124.json")
+    result["check_effort.py"] = (ROOT/"paper/c5/check_effort.py").read_bytes()
+    result["codex_effort_design.md"] = result["codex_effort_design.md"].replace(
+        b"(C5_CLI_PILOT_20261124.md)", b"(" + CLI_FILENAME.encode() + b")")
     if blind:
         manifest = json.loads(result["provenance.json"])
         result["provenance.json"] = (json.dumps({k:manifest[k] for k in
@@ -67,6 +82,18 @@ def payload(blind):
         b"The authored benign lookup task is an excluded descriptive pilot, separate from the historical continuations and prospective budget experiment. "
         b"The separate `c5_cli_repair_timing_20261124.json` records the post hoc correctness-by-step audit. "
         b"The public action-table checker does not reconstruct candidate correctness or verify that separate timing audit from private responses.\n")
+    result["README.md"] += (
+        b"\nThe follow-up Codex effort comparison has two separate records. "
+        b"`codex_effort_sequential.json` contains the action and usage ledger for the low/high repair episodes. "
+        b"`codex_effort_panel.json` contains the six-task assessments and resource use by model and effort. "
+        b"`codex_effort_panel_reference.json` checks the twenty finite input answers with separate algorithms. "
+        b"`codex_effort_format_audit.json` describes a post-hoc alternative reading of malformed replies. "
+        b"See [the design](codex_effort_design.md) for the selection rule and denominators.\n")
+    result["README.md"] += (
+        b"\nRun `python3 -I check_effort.py` here to reconstruct the paired effort comparisons from the "
+        b"[panel task assessments](codex_effort_panel.json) and [episode action ledger](codex_effort_sequential.json). "
+        b"The command checks the available correctness denominators, dispatch and action counts, paired terminal "
+        b"outcomes, usage and duration. Unavailable measures remain missing.\n")
     for name, item in result.items():
         if name.endswith(".pdf"):
             continue
@@ -117,6 +144,8 @@ def review_repository(archive, target):
             raise ValueError("Review repository and review archive differ")
     verify(target)
     verify_cli(target)
+    verify_effort(target/"codex_effort_panel.json", target/"codex_effort_sequential.json",
+                  target/"c5_codex_catalog_20261124.json")
     print("Anonymous review repository:", target, git("rev-parse", "--short", "HEAD"))
 
 

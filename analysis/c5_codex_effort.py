@@ -119,6 +119,7 @@ def project_episode(raw):
             "unchanged_repairs": sum(s["action"] == "repair" and s["same_candidate"] for s in steps),
             "duration_seconds": sum_if_complete([s["duration_seconds"] for s in steps]),
             "input_plus_output_tokens": inputs + outputs if inputs is not None and outputs is not None else None,
+            "reasoning_output_tokens": sum_if_complete([s["usage"]["reasoning_output_tokens"] for s in steps]),
             "steps": steps}
 
 
@@ -140,6 +141,7 @@ def summarize(rows):
             "unchanged_repairs_from_correct_starts": sum(r["unchanged_repairs"] for r in rows if r["state"] == "CORRECT"),
             "complete_episode_active_seconds": quantitative(r["duration_seconds"] for r in done),
             "complete_episode_input_plus_output_tokens": quantitative(r["input_plus_output_tokens"] for r in done),
+            "complete_episode_reasoning_output_tokens": quantitative(r["reasoning_output_tokens"] for r in done),
             "per_call_token_coverage": {k: quantitative(s["usage"][k] for s in attempted_steps) for k in TOKEN_FIELDS},
             "returned_model_identifiers": sorted({m for s in attempted_steps for m in s["effective_model_ids"]}),
             "calls_with_returned_model_id": sum(bool(s["effective_model_ids"]) for s in attempted_steps)}
@@ -148,12 +150,12 @@ def summarize(rows):
 def matched(rows):
     by_case = defaultdict(dict)
     for row in rows:
-        by_case[row["case_id"]][row["effort"]] = row
+        by_case[row["model"], row["case_id"]][row["effort"]] = row
     complete = [(pair["low"], pair["high"]) for pair in by_case.values()
                 if all(pair[e]["status"] == "COMPLETED" for e in EFFORTS)]
     result = {"scheduled_cases": len(by_case), "complete_pairs": len(complete)}
     measures = ("terminal_correct", "cli_attempts", "checks", "unchanged_repairs",
-                "duration_seconds", "input_plus_output_tokens")
+                "duration_seconds", "input_plus_output_tokens", "reasoning_output_tokens")
     for key in measures:
         delta = [h[key] - l[key] for l, h in complete if l[key] is not None and h[key] is not None]
         result[key] = {"observed_pairs": len(delta), "high_greater": sum(x > 0 for x in delta),
@@ -219,7 +221,7 @@ def build_report(archive):
                 "paired_effect": "High minus low on the identical case_id in the same model. All signs are numerical. For decisions, latency and tokens, a negative difference denotes less use at high. Ties are retained.",
                 "scope": "Effort and model are requested CLI settings. Observed runtime metadata cannot attest model weights or internal reasoning. Repeated starts from one task give no general model ranking."},
             "all_episodes": summarize(rows), "by_effort": {e: summarize([r for r in rows if r["effort"] == e]) for e in EFFORTS},
-            "models": by_model, "episode_ledger": rows}
+            "all_matched_high_minus_low": matched(rows), "models": by_model, "episode_ledger": rows}
 
 
 def quantity(value, digits=1):
@@ -255,24 +257,33 @@ def report_md(report):
         "Каждая пара начинается с одного и того же варианта задачи. В тройках показано число случаев, "
         "где high дал больше / столько же / меньше, чем low. Для правильности «больше» означает лучший исход, "
         "для числа действий — больший расход. Расчёты опираются на пары с двумя завершёнными эпизодами.",
-        "", "| Модель | Полных пар | Правильность (+/=/-) | Действия (+/=/-) | Медиана разницы, с | Медиана разницы, токены |",
-        "| --- | ---: | ---: | ---: | ---: | ---: |"]
-    for name, model in report["models"].items():
-        paired = model["matched_high_minus_low"]
+        "", "| Модель | Полных пар | Правильность (+/=/-) | Действия (+/=/-) | Медиана разницы, с | Медиана разницы, все токены | Медиана разницы, токены рассуждения |",
+        "| --- | ---: | ---: | ---: | ---: | ---: | ---: |"]
+    paired_table = [(name, model["matched_high_minus_low"]) for name, model in report["models"].items()]
+    paired_table.append(("Все пары", report["all_matched_high_minus_low"]))
+    for name, paired in paired_table:
         def signs(key):
             x = paired[key]
             return f"{x['high_greater']}/{x['equal']}/{x['high_lower']}" if x["observed_pairs"] else "—"
         cells = [name, f"{paired['complete_pairs']}/{paired['scheduled_cases']}", signs("terminal_correct"),
                  signs("cli_attempts"), quantity(paired["duration_seconds"]["median_high_minus_low"]),
-                 quantity(paired["input_plus_output_tokens"]["median_high_minus_low"], 0)]
+                 quantity(paired["input_plus_output_tokens"]["median_high_minus_low"], 0),
+                 quantity(paired["reasoning_output_tokens"]["median_high_minus_low"], 1)]
         lines.append("| " + " | ".join(cells) + " |")
-    lines += ["", "Один запуск на условие. Изменение в отдельной паре может зависеть от случайности ответа и нагрузки сервера. "
+    lines += ["", "Каждый из восьми назначенных эпизодов проходил один раз для каждой настройки. Изменение в отдельной паре может зависеть от случайности ответа и нагрузки сервера. "
         "Параллельное выполнение влияет на наблюдаемое время. Названия моделей и уровней — параметры запроса. "
         "Ответы CLI могут содержать дополнительные идентификаторы, их наличие отмечено в данных.",
         "", "[Полный журнал обезличенных действий и знаменатели](results.json)", ""]
+    overall = report["all_matched_high_minus_low"]
+    quality = overall["terminal_correct"]
+    if quality["observed_pairs"]:
+        lines[3:3] = ["", f"Сопоставлены {quality['observed_pairs']} пар с известным исходом при обоих уровнях. "
+            f"При high правильность итоговой таблицы улучшилась в {quality['high_greater']} парах, "
+            f"ухудшилась в {quality['high_lower']}, совпала в {quality['equal']}. "
+            "Каждая пара относится к одному варианту задачи у одной модели."]
     if total["technical_errors"]:
         coverage = ", ".join(f"{code} ({n})" for code, n in sorted(total["technical_errors"].items()))
-        lines[2] += " Технические исходы зарегистрированных вызовов: " + coverage + "."
+        lines[2] += " Среди технических исходов зарегистрированы " + coverage + "."
     return "\n".join(lines)
 
 

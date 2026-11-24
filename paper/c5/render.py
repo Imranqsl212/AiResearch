@@ -115,9 +115,9 @@ def render(source, destination, author):
     doc.build(story, onFirstPage=footer, onLaterPages=footer)
     reader = PdfReader(str(destination))
     pages = [" ".join((p.extract_text() or "").split()) for p in reader.pages]
-    for n in (1, 2, 3):
-        assert any(f"Table {n}." in t and ("Truthful PASS" in t or "Verified pairs" in t or "Invalid policies caught" in t)
-                   for t in pages)
+    for n, column in ((1, "Truthful PASS"), (2, "Verified pairs"),
+                      (3, "Invalid policies caught"), (4, "Effort change")):
+        assert any(f"Table {n}." in t and column in t for t in pages)
     if not author:
         assert not re.search(r"Zakirov|Iosifova|Kramich|Imranqsl212", " ".join(pages), re.I)
     print(destination.name, len(pages), "pages")

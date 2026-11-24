@@ -89,15 +89,16 @@ def render(panel, digest):
     partial = [r for r in rows if 0 < r["valid_tasks"] < 6]
     first = ["# Сравнение уровней усилия Codex на шести задачах", "",
              f"Моделей в каталоге — **{len(models)}**, поддерживаемых сочетаний — **{len(rows)}**. "
-             f"Полные ответы получены в **{len(complete)}** сочетаниях, частичные — в {len(partial)}. "
-             f"Ещё {len(rows)-len(complete)-len(partial)} сочетаний не дали оцениваемых ответов. "
+             f"Ответов, в которых удалось оценить все шесть задач, — **{len(complete)}**. "
+             f"С частичной оценкой — {len(partial)}, без оценки — {len(rows)-len(complete)-len(partial)}. "
              f"Всего оценено {sum(r['valid_tasks'] for r in rows)} из {6*len(rows)} запланированных решений.",
              "", "Каждое сочетание получило один запрос с теми же шестью задачами. На старте три таблицы верны, "
              "у трёх ошибочна одна ячейка. Если сохранить все таблицы без изменений, итог составит **3/6**. "
              "Верный ответ требует проверки каждой таблицы на всех перечисленных входах.", "",
              "## Сколько задач решено", "",
-             "В ячейке указаны верные и оценённые ответы. «Н/Д» означает, что сочетание запланировано, "
-             "но результат отсутствует. Тире означает, что такого уровня нет в каталоге.", "",
+             "В дроби указаны верные и оценённые ответы. Знаменатель меньше шести означает частичный результат. "
+             "«Формат» означает, что ответ получен, но ни одну таблицу в нём нельзя оценить по исходным правилам. "
+             "«Н/Д» означает отсутствие наблюдения. Тире означает, что такого уровня нет в каталоге.", "",
              "| Модель | low | medium | high | xhigh | max | ultra |",
              "| --- | ---: | ---: | ---: | ---: | ---: | ---: |"]
     for model, group in models.items():
@@ -108,6 +109,8 @@ def render(panel, digest):
                 cell = "—"
             elif row["valid_tasks"]:
                 cell = fraction((row["correct"],row["valid_tasks"]))
+            elif row["status"] == "RETURNED_WITH_FORMAT_ERROR":
+                cell = "Формат"
             else:
                 cell = "Н/Д"
             cells.append(cell)
@@ -141,6 +144,27 @@ def render(panel, digest):
     for model, level, p in pairs:
         first.append(f"| {model} | {level} | {show(p['net'],signed=True)} | {', '.join(p['gains']) or '—'} | "
                      f"{', '.join(p['losses']) or '—'} | {show(p['seconds'],signed=True)} | {show(p['output'],signed=True)} |")
+    first.extend(["", "## Два перехода между верхними уровнями", "",
+                  "Здесь сопоставлены задачи по отдельности. Одинаковый суммарный балл может скрывать исправление одной таблицы и порчу другой.",
+                  "", "| Переход | Полных пар моделей | Сменился исход задачи | Расход токенов рассуждения вырос / совпал / упал | Медиана Δ токенов рассуждения |",
+                  "| --- | ---: | ---: | ---: | ---: |"])
+    for old, new in (("xhigh", "max"), ("max", "ultra")):
+        flips, totals, token_differences = 0, 0, []
+        for group in models.values():
+            if old not in group or new not in group:
+                continue
+            left, right = group[old], group[new]
+            pair = compare(left, right)
+            if pair is None:
+                continue
+            flips += len(pair["losses"]) + len(pair["gains"])
+            totals += 1
+            a, b = (row["usage"]["reasoning_output_tokens"] for row in (left, right))
+            if a is not None and b is not None:
+                token_differences.append(b-a)
+        counts = [sum(d > 0 for d in token_differences), token_differences.count(0), sum(d < 0 for d in token_differences)]
+        first.append(f"| {old} → {new} | {totals} | {flips}/{6*totals} | "
+                     + " / ".join(map(str, counts)) + " | " + metric(token_differences) + " |")
     first.extend(["", "## Результаты каждого запроса", "",
                   "«Оценено» даёт покрытие из шести задач. В последовательности A–F символ ✓ означает правильный итог, × — ошибку, "
                   "· — отсутствие оценки. «Лишние» считает предложения заменить исходно верную таблицу, включая повтор её содержимого. "

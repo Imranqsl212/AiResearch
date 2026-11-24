@@ -1,5 +1,10 @@
 # Project changes
 
+## 24 November 2026 — reasoning effort across hosted Codex models
+
+- All eleven selectable aliases completed the [176-episode repair comparison](analysis/c5_codex_effort_20261124/comparison.md). Every defect was repaired before a requested check. Low and high effort produced 27 and 7 unchanged submissions.
+- On a [six-task panel at all 64 supported model and effort settings](analysis/c5_effort_panel_20261124.md), every model used more reasoning tokens at max than at xhigh. All 66 matched task outcomes stayed the same. The [updated manuscript](paper/c5/manuscript.md) includes the per-task contrasts and their denominators.
+
 ## 24 November 2026 — remaining decisions after a false alarm
 
 - Added the [hosted CLI pilot](docs/C5_CLI_PILOT_20261124.md). Sol and Luna completed eight episodes each. All eight defective starts were repaired before any new check; the 24 planned Claude episodes have no observations. The [historical recovery audit](analysis/c5_recovery_identity_20261124.json) also identifies each previously verified candidate restored on the final decision.
