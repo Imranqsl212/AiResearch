@@ -1,5 +1,12 @@
 # Project changes
 
+## 24 November 2026 — remaining decisions after a false alarm
+
+- Reframed the C5 manuscript as [What Is One More Step Worth After a False Alarm?](paper/c5/manuscript.md). A [source-bound historical audit](analysis/c5_budget_prefix_audit_20261124/audit.json) reports failing-candidate counts of 4/1, 8/6 and 5/7 after the three observed decisions (truthful PASS / false FAIL, fourteen branches each). The reversal is descriptive; every branch knew the same three-decision cap.
+- Added a separate [verdict × announced-budget protocol](docs/C5_BUDGET_STATISTICAL_PROTOCOL_20261124.md), [runner](experiments/c5_budget_README.md) and interaction-specific planning simulation. The design jointly changes the announced and enforced horizon. Family weighting, missingness bounds, incomplete-window reporting and four-model multiplicity are explicit; nineteen families have limited power under plausible clustering assumptions.
+- Kept [synthetic factorial calibration](experiments/c5_budget_calibration_receipt.json), the [matched correct/defective challenge](docs/C5_EVIDENCE_CHALLENGE.md), and [four upstream test-correction cases](external_checker_audit_20261124/README.md) separate from model evidence. External-case admission and agent outcomes remain pending.
+- Added the [budget registration builder](paper/c5/prepare_budget_registration.py) and [local packet receipt](docs/c5_budget_registration_receipt_20261124.json). No registry timestamp or confirmatory model collection is claimed. An optional CLI pilot is pending separate authorization. The earlier registration builder, statistical plan, historical data and companion stopping-attribution paper remain available.
+
 ## 23 November 2026 — checker feedback study
 
 - Added a [focused manuscript](paper/c5/manuscript.md) comparing stopping and damage after matched truthful and false verdicts. Its empirical tables distinguish persistent and one-shot interventions.

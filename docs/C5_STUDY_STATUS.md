@@ -1,5 +1,7 @@
 # C5 study status, 23 November 2026
 
+**24 November update:** the manuscript now centers on [What Is One More Step Worth After a False Alarm?](../paper/c5/manuscript.md). Its separate [verdict × announced-budget protocol](C5_BUDGET_STATISTICAL_PROTOCOL_20261124.md), synthetic checks, external cases and new registration builder are indexed in the [current project overview](../README.md). The table and cost scenarios below describe the earlier stopping-focused design and remain historical context. The new design has no confirmatory model outcomes; an optional CLI pilot is pending separate authorization.
+
 The [focused manuscript](../paper/c5/manuscript.md) asks what a coding agent does after its own correct finite repair receives a false failure. The team has archived observations from one model and a calibrated instrument. The count of prospectively collected confirmatory episodes is **zero**.
 
 | Workstream | Available evidence | Remaining decision or observation |

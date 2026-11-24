@@ -1,0 +1,50 @@
+{
+  "analysis_source_sha256": "3daf4f57bc4215c9afb6762d2eaf472403078eebf107517146584d7915d976a0",
+  "attempted_slots": 12,
+  "checks": [
+    "Both derived archives replayed through current verify_archive before analysis.",
+    "Exact-plan window merge preserved twelve unique captured blocks and complete 570-slot roster.",
+    "No-onset and unattempted slots were not encoded as behavioral zero.",
+    "Technical branches retained missing correctness.",
+    "Partial coverage suppressed optional inference.",
+    "Original calibration bytes were not modified to derive windows."
+  ],
+  "complete_four_cell_blocks": 8,
+  "eligible_for_main_analysis": false,
+  "executed_agent_runs": 0,
+  "input_captures": [
+    {
+      "archive_manifest_sha256": "2473c2ba2fa967ceaed63b44dfc5b0c4cb6f0ab9ca8c363b03857a433d47a953",
+      "capture_name": "c5_budget_derived_window_20261124_v3_a",
+      "data_kind": "SYNTHETIC_CALIBRATION",
+      "model": "simulated-budget-control",
+      "plan_sha256": "c6e44e4d1b570f653b373a18f3bd875267eef94790cee7bd8cd7acc6cef6e500",
+      "simulated": true,
+      "verified_blocks": 6
+    },
+    {
+      "archive_manifest_sha256": "fb915a5393e9fe5855e5e5af2ee01bebacb96bfc71655f7fecb85e98fed41964",
+      "capture_name": "c5_budget_derived_window_20261124_v3_b",
+      "data_kind": "SYNTHETIC_CALIBRATION",
+      "model": "simulated-budget-control",
+      "plan_sha256": "c6e44e4d1b570f653b373a18f3bd875267eef94790cee7bd8cd7acc6cef6e500",
+      "simulated": true,
+      "verified_blocks": 6
+    }
+  ],
+  "limitations": "This validates software/schema integration only; it supplies no empirical model effect or scientific admission.",
+  "merged_output_sha256": "fe0e671334aae8a95bfd1bf328789b68ff714cd36d95c9d781188c5646991d77",
+  "no_onset": 2,
+  "observed_authored_onsets": 10,
+  "optional_inference_enabled": false,
+  "optional_inference_requested": true,
+  "origin": "Two derived, separately sealed, disjoint six-block subsets of the final twelve-block synthetic calibration; no hosted capture.",
+  "original_calibration_manifest_sha256": "bfcb2c83724e265eda59c9b7b94a35ea3d8a5222ceaa2c9b4b4d5813966a899f",
+  "plan_sha256": "c6e44e4d1b570f653b373a18f3bd875267eef94790cee7bd8cd7acc6cef6e500",
+  "scheduled_slots": 570,
+  "schema_version": "c5-budget-analysis-integration-check-v1",
+  "simulated": true,
+  "status": "PASSED_SYNTHETIC_ONLY",
+  "technical_invalid_branches": 2,
+  "unattempted_slots": 558
+}

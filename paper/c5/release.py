@@ -32,7 +32,10 @@ def payload(blind):
         assert not IDENTITY.search(visible) and not SENSITIVE.search(visible)
         result["manuscript.pdf"] = pdf.read_bytes()
         result["README.md"] = (b"# Review copy\n\nThe PDF reports an exploratory paired study. "
-            b"Run `python3 check_release.py` in this directory to reproduce its first table from 78 decisions. "
+            b"Run `python3 check_release.py` in this directory to reproduce its first table and observed-prefix figure from 78 decisions. "
+            b"The figure's failing-candidate counts (truthful PASS / false FAIL) at decisions 1, 2 and 3 are 4/1, 8/6 and 5/7. "
+            b"Only a candidate submission updates the retained state; inspection, stopping and later prefixes after completion preserve it. "
+            b"These are prefixes of the same three-decision workflow, not separately assigned budget interventions. "
             b"Rows are observed decisions in selected historical pairs. Candidate and source text were omitted.\n")
     else:
         for name in ("README.md", "external_controls.json"):
@@ -40,7 +43,12 @@ def payload(blind):
         result["README.md"] = result["README.md"].replace(b"(../../analysis/c5_feedback_action_20261104.json)",
             b"(https://github.com/Imranqsl212/AiResearch/blob/3b5679d5b2df0d231a981fdd1419eb37fb0df721/analysis/c5_feedback_action_20261104.json)")
         result["README.md"] = b"---\npretty_name: C5 paired continuation decisions\nconfigs:\n- config_name: default\n  data_files:\n  - split: observation\n    path: trajectories.jsonl\n---\n\n" + result["README.md"]
-        result["README.md"] += b"\nFor a standalone check, run `python3 check_release.py` next to the JSONL. The module commands above use the source repository.\n"
+        result["README.md"] += (b"\nFor a standalone check, run `python3 check_release.py` next to the JSONL. "
+            b"It independently reproduces the first table and the observed-prefix figure's failing-candidate counts "
+            b"(truthful PASS / false FAIL): 4/1, 8/6 and 5/7 at decisions 1, 2 and 3. "
+            b"Only submissions change retained candidate state; an early completed branch keeps its terminal state at later prefixes. "
+            b"These prefixes do not estimate separately announced budget interventions. "
+            b"The module commands above use the source repository.\n")
         result["CITATION.cff"] = (ROOT/"CITATION.cff").read_bytes()
     for name, item in result.items():
         if name.endswith(".pdf"):

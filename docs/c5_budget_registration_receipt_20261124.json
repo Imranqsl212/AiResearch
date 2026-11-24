@@ -1,0 +1,40 @@
+{
+  "status": "LOCAL_DRAFT_NO_REGISTRATION_NO_MODEL_CALLS",
+  "protocol_sha256": "f701346263b097a7be3f15a91c8bc4fa030618ccd9f9eb8f23c8f9375bcfc67a",
+  "models": [
+    {
+      "model": "google/gemini-3.1-pro-preview",
+      "path": "schedules/google--gemini-3.1-pro-preview.json",
+      "plan_sha256": "6a75a3c12ed438c9e5a8bf1e30f611312bb1a206ce471ce93da6770adaa33a75",
+      "family_count": 19,
+      "planned_precursors": 570,
+      "maximum_hosted_calls": 9120
+    },
+    {
+      "model": "anthropic/claude-sonnet-4.6",
+      "path": "schedules/anthropic--claude-sonnet-4.6.json",
+      "plan_sha256": "946dd5e721505e224777743d67f3b21503b400628c7ae6f376cc37ab3c465f4b",
+      "family_count": 19,
+      "planned_precursors": 570,
+      "maximum_hosted_calls": 9120
+    },
+    {
+      "model": "qwen/qwen3-32b",
+      "path": "schedules/qwen--qwen3-32b.json",
+      "plan_sha256": "f66a6f3006e82a633bb8bfe15efe168dbd383d2948f782b2aa5f116c9a457e8c",
+      "family_count": 19,
+      "planned_precursors": 570,
+      "maximum_hosted_calls": 9120
+    },
+    {
+      "model": "google/gemma-3-27b-it",
+      "path": "schedules/google--gemma-3-27b-it.json",
+      "plan_sha256": "ee2cd21cb551c3b44728289956786eb4bbeb801caa1e884483ade69e2c3f2d60",
+      "family_count": 19,
+      "planned_precursors": 570,
+      "maximum_hosted_calls": 9120
+    }
+  ],
+  "precursor_slots": 2280,
+  "upper_bound_model_decisions": 36480
+}

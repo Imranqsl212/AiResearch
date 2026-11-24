@@ -9,6 +9,7 @@ from pathlib import Path
 EXPECTED = {"arms": 28, "pairs": 14, "decisions": 78, "submissions": 45,
             "early_stop_PASS_FAIL": [3, 0], "first_inspect_PASS_FAIL": [0, 12],
             "ever_regressed_PASS_FAIL": [8, 7], "final_regressed_PASS_FAIL": [5, 7],
+            "prefix_regressed_PASS_FAIL": [[4, 1], [8, 6], [5, 7]],
             "submissions_PASS_FAIL": [28, 17]}
 
 
@@ -53,6 +54,17 @@ def verify(directory):
             numerator["submissions"] += len(submitted)
             numerator["ever_regressed"] += "INSECURE" in submitted
             numerator["final_regressed"] += bool(submitted) and submitted[-1] == "INSECURE"
+            # Selected branches begin with a correct candidate. Only an ATTEMPT
+            # replaces it; inspecting or stopping retains the current candidate.
+            # A completed branch retains that observed state at later prefixes.
+            state = "SECURE"
+            for prefix in range(1, 4):
+                if prefix <= len(arm_rows):
+                    row = arm_rows[prefix - 1]
+                    if row["action"] == "ATTEMPT":
+                        state = row["finite_oracle"]
+                assert state in {"SECURE", "INSECURE"}
+                numerator[f"prefix_{prefix}_regressed"] += state == "INSECURE"
         counts[arm] = numerator
     pairs = {pair for pair, _ in arms}
     assert len(arms) == len(pairs) * 2
@@ -63,6 +75,9 @@ def verify(directory):
               "submissions":sum(r["action"] == "ATTEMPT" for r in rows)}
     for key in ("early_stop", "first_inspect", "ever_regressed", "final_regressed", "submissions"):
         result[key + "_PASS_FAIL"] = [counts[arm][key] for arm in ("TRUTHFUL_PASS","FALSE_FAIL")]
+    result["prefix_regressed_PASS_FAIL"] = [
+        [counts[arm][f"prefix_{prefix}_regressed"] for arm in ("TRUTHFUL_PASS", "FALSE_FAIL")]
+        for prefix in range(1, 4)]
     if result != EXPECTED:
         raise ValueError(f"Derived outcomes differ: {result}")
     case_bytes = (directory / "terminal_boolean_cases.json").read_bytes()

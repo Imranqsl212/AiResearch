@@ -1,0 +1,19 @@
+{
+  "assumption": "One provider request per decision, no retries; token/latency/financial costs not estimated.",
+  "branches_max": 9120,
+  "by_cell_decisions_max": {
+    "FAIL2": 4560,
+    "FAIL3": 6840,
+    "PASS2": 4560,
+    "PASS3": 6840
+  },
+  "continuation_decisions_max": 22800,
+  "families": 19,
+  "models": 4,
+  "onset_reservations_max": 2280,
+  "precursor_decisions_max": 13680,
+  "precursors": 2280,
+  "prompts": 3,
+  "repeats": 5,
+  "total_decisions_max": 36480
+}

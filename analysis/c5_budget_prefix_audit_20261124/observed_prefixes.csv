@@ -1,0 +1,4 @@
+observed_prefix_decisions,pairs,truthful_correct,false_fail_correct,equal_family_false_minus_truth_correct,both_correct,truthful_only_correct,false_only_correct,neither_correct
+1,14,10,13,0.2,9,1,4,0
+2,14,6,8,0.15,4,2,4,4
+3,14,9,7,-0.15,6,3,1,4
