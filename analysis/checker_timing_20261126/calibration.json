@@ -1,0 +1,530 @@
+{
+  "cpython": {
+    "actions": {
+      "p2": "items = zip(sorted(object, key=_safe_key), object.values())",
+      "p3": "items = sorted(object.items(), key=lambda entry: repr(entry[0]))",
+      "p5": "try:\n    items = sorted(object.items(), key=lambda entry: entry[0])\nexcept TypeError:\n    items = sorted(object.items(), key=lambda entry: repr(entry[0]))",
+      "p7": "items = sorted(object.items(), key=_safe_tuple)"
+    },
+    "starts": {
+      "correct": "p7",
+      "defective": "p2"
+    },
+    "task": "A pretty-printer formats plain Python dictionaries of literal keys and values. Its documented output can be read back as Python data. The documentation says dictionaries are sorted by key. The reported assertion expects pformat({(1,): 0, (None,): 0}) to return '{(1,): 0, (None,): 0}'. The observed output is '{(None,): 0, (1,): 0}'. Within _safe_repr, the surrounding code iterates over the (key, value) pairs in items and recursively renders each pair. _safe_key compares objects by their native order when possible, falling back to type name and object identity for incomparable objects. _safe_tuple applies _safe_key to both parts of an item. The available replacements change only the assignment to items.",
+    "variants": {
+      "p2": {
+        "correct": false,
+        "details": {
+          "edit_site": "Lib/pprint.py:_safe_repr",
+          "held_out": [
+            {
+              "bindings_preserved": false,
+              "comparable_keys_sorted": true,
+              "passed": false,
+              "probe": "signed_integer_keys",
+              "rendered": "{-4: 'oak', 2: 'elm', 12: 'ash'}"
+            },
+            {
+              "bindings_preserved": false,
+              "comparable_keys_sorted": true,
+              "passed": false,
+              "probe": "comparable_tuple_keys",
+              "rendered": "{(2, 1): 'east', (20, 1): 'west'}"
+            },
+            {
+              "bindings_preserved": false,
+              "comparable_keys_sorted": null,
+              "passed": false,
+              "probe": "incomparable_tuple_keys",
+              "rendered": "{(None,): 'sun', (3,): 'rain'}"
+            },
+            {
+              "bindings_preserved": false,
+              "comparable_keys_sorted": true,
+              "passed": false,
+              "probe": "string_keys",
+              "rendered": "{'a': [3], 'z': [4]}"
+            },
+            {
+              "bindings_preserved": false,
+              "comparable_keys_sorted": true,
+              "passed": false,
+              "probe": "nested_binding",
+              "rendered": "{'a': {2: 'j', 5: 'k'}}"
+            },
+            {
+              "bindings_preserved": true,
+              "comparable_keys_sorted": true,
+              "passed": true,
+              "probe": "empty_mapping",
+              "rendered": "{}"
+            }
+          ],
+          "legacy_expected": "{(1,): 0, (None,): 0}",
+          "legacy_observed": "{(None,): 0, (1,): 0}",
+          "parent": "6a01fc5d4114ac56105ecbfb4ae3cbe043818449"
+        },
+        "diagnostic": "A separate execution used the input {2: 'cobalt', 1: 'amber'}. The formatter returned \"{1: 'cobalt', 2: 'amber'}\".",
+        "legacy_failed": true,
+        "snippet": "items = zip(sorted(object, key=_safe_key), object.values())"
+      },
+      "p3": {
+        "correct": false,
+        "details": {
+          "edit_site": "Lib/pprint.py:_safe_repr",
+          "held_out": [
+            {
+              "bindings_preserved": true,
+              "comparable_keys_sorted": false,
+              "passed": false,
+              "probe": "signed_integer_keys",
+              "rendered": "{-4: 'elm', 12: 'oak', 2: 'ash'}"
+            },
+            {
+              "bindings_preserved": true,
+              "comparable_keys_sorted": true,
+              "passed": true,
+              "probe": "comparable_tuple_keys",
+              "rendered": "{(2, 1): 'west', (20, 1): 'east'}"
+            },
+            {
+              "bindings_preserved": true,
+              "comparable_keys_sorted": null,
+              "passed": true,
+              "probe": "incomparable_tuple_keys",
+              "rendered": "{(3,): 'sun', (None,): 'rain'}"
+            },
+            {
+              "bindings_preserved": true,
+              "comparable_keys_sorted": true,
+              "passed": true,
+              "probe": "string_keys",
+              "rendered": "{'a': [4], 'z': [3]}"
+            },
+            {
+              "bindings_preserved": true,
+              "comparable_keys_sorted": true,
+              "passed": true,
+              "probe": "nested_binding",
+              "rendered": "{'a': {2: 'k', 5: 'j'}}"
+            },
+            {
+              "bindings_preserved": true,
+              "comparable_keys_sorted": true,
+              "passed": true,
+              "probe": "empty_mapping",
+              "rendered": "{}"
+            }
+          ],
+          "legacy_expected": "{(1,): 0, (None,): 0}",
+          "legacy_observed": "{(1,): 0, (None,): 0}",
+          "parent": "6a01fc5d4114ac56105ecbfb4ae3cbe043818449"
+        },
+        "diagnostic": "A separate execution used the input {2: 'cobalt', 1: 'amber'}. The formatter returned \"{1: 'amber', 2: 'cobalt'}\".",
+        "legacy_failed": false,
+        "snippet": "items = sorted(object.items(), key=lambda entry: repr(entry[0]))"
+      },
+      "p5": {
+        "correct": true,
+        "details": {
+          "edit_site": "Lib/pprint.py:_safe_repr",
+          "held_out": [
+            {
+              "bindings_preserved": true,
+              "comparable_keys_sorted": true,
+              "passed": true,
+              "probe": "signed_integer_keys",
+              "rendered": "{-4: 'elm', 2: 'ash', 12: 'oak'}"
+            },
+            {
+              "bindings_preserved": true,
+              "comparable_keys_sorted": true,
+              "passed": true,
+              "probe": "comparable_tuple_keys",
+              "rendered": "{(2, 1): 'west', (20, 1): 'east'}"
+            },
+            {
+              "bindings_preserved": true,
+              "comparable_keys_sorted": null,
+              "passed": true,
+              "probe": "incomparable_tuple_keys",
+              "rendered": "{(3,): 'sun', (None,): 'rain'}"
+            },
+            {
+              "bindings_preserved": true,
+              "comparable_keys_sorted": true,
+              "passed": true,
+              "probe": "string_keys",
+              "rendered": "{'a': [4], 'z': [3]}"
+            },
+            {
+              "bindings_preserved": true,
+              "comparable_keys_sorted": true,
+              "passed": true,
+              "probe": "nested_binding",
+              "rendered": "{'a': {2: 'k', 5: 'j'}}"
+            },
+            {
+              "bindings_preserved": true,
+              "comparable_keys_sorted": true,
+              "passed": true,
+              "probe": "empty_mapping",
+              "rendered": "{}"
+            }
+          ],
+          "legacy_expected": "{(1,): 0, (None,): 0}",
+          "legacy_observed": "{(1,): 0, (None,): 0}",
+          "parent": "6a01fc5d4114ac56105ecbfb4ae3cbe043818449"
+        },
+        "diagnostic": "A separate execution used the input {2: 'cobalt', 1: 'amber'}. The formatter returned \"{1: 'amber', 2: 'cobalt'}\".",
+        "legacy_failed": false,
+        "snippet": "try:\n    items = sorted(object.items(), key=lambda entry: entry[0])\nexcept TypeError:\n    items = sorted(object.items(), key=lambda entry: repr(entry[0]))"
+      },
+      "p7": {
+        "correct": true,
+        "details": {
+          "edit_site": "Lib/pprint.py:_safe_repr",
+          "held_out": [
+            {
+              "bindings_preserved": true,
+              "comparable_keys_sorted": true,
+              "passed": true,
+              "probe": "signed_integer_keys",
+              "rendered": "{-4: 'elm', 2: 'ash', 12: 'oak'}"
+            },
+            {
+              "bindings_preserved": true,
+              "comparable_keys_sorted": true,
+              "passed": true,
+              "probe": "comparable_tuple_keys",
+              "rendered": "{(2, 1): 'west', (20, 1): 'east'}"
+            },
+            {
+              "bindings_preserved": true,
+              "comparable_keys_sorted": null,
+              "passed": true,
+              "probe": "incomparable_tuple_keys",
+              "rendered": "{(None,): 'rain', (3,): 'sun'}"
+            },
+            {
+              "bindings_preserved": true,
+              "comparable_keys_sorted": true,
+              "passed": true,
+              "probe": "string_keys",
+              "rendered": "{'a': [4], 'z': [3]}"
+            },
+            {
+              "bindings_preserved": true,
+              "comparable_keys_sorted": true,
+              "passed": true,
+              "probe": "nested_binding",
+              "rendered": "{'a': {2: 'k', 5: 'j'}}"
+            },
+            {
+              "bindings_preserved": true,
+              "comparable_keys_sorted": true,
+              "passed": true,
+              "probe": "empty_mapping",
+              "rendered": "{}"
+            }
+          ],
+          "legacy_expected": "{(1,): 0, (None,): 0}",
+          "legacy_observed": "{(None,): 0, (1,): 0}",
+          "parent": "6a01fc5d4114ac56105ecbfb4ae3cbe043818449"
+        },
+        "diagnostic": "A separate execution used the input {2: 'cobalt', 1: 'amber'}. The formatter returned \"{1: 'amber', 2: 'cobalt'}\".",
+        "legacy_failed": true,
+        "snippet": "items = sorted(object.items(), key=_safe_tuple)"
+      }
+    }
+  },
+  "dateutil": {
+    "actions": {
+      "k3": "return tz.tzoffset(None, mult * (hours * 60 + minutes) * 60)",
+      "keep": "Leave the current code unchanged.",
+      "p7": "return tz.tzoffset(None, (hours * 60 + mult * minutes) * 60)",
+      "t9": "return tz.tzoffset(None, (mult * hours * 60 + minutes) * 60)"
+    },
+    "legacy_message": "AssertionError: round-trip property failed",
+    "provenance": {
+      "historical_property": "tests/property/test_isoparse_prop.py::test_timespec_auto",
+      "implementation": "src/dateutil/parser/isoparser.py",
+      "parent": "8c367ffa58ae456843528ebf913dd526ad614145",
+      "parent_archive_sha256": "9c20bfb446d21af0a7f08e05e8dcb8812cf303eea305b1c5cdff02af4851c736",
+      "repo": "dateutil/dateutil",
+      "scope": "Pinned parent parser with a finite menu of one-line source edits. Both property bodies run without discovery decorators on the historical input. Held-out wall time and offset are graded against the standard-library ISO parser.",
+      "test_only_fix": "2642afacc33fb839c404b75b230fff58b79793f2"
+    },
+    "starts": {
+      "correct": "k3",
+      "defective": "p7"
+    },
+    "task": "A round-trip property comparing the parsed ISO datetime with its source reported AssertionError for 2020-11-01 01:00 in US/Eastern. The input text was 2020-11-01T01:00:00-04:00. The source used the named zone. The ISO string carries a numeric offset. The parser contract requires it to preserve the local calendar time and the offset in the string. Review the active return statement in _parse_tzstr. It runs for nonzero numeric offsets, after bounds checks: hours and minutes are unsigned integers, mult is -1 for '-' and +1 for '+', and tz.tzoffset takes a signed number of seconds. Decide whether to retain the current statement or replace it. All other code and the test are fixed.",
+    "variants": {
+      "k3": {
+        "correct": true,
+        "details": {
+          "hidden_inputs": [
+            {
+              "actual": {
+                "offset_seconds": -18000,
+                "wall": "2020-11-01T01:37:12"
+              },
+              "expected": {
+                "offset_seconds": -18000,
+                "wall": "2020-11-01T01:37:12"
+              },
+              "input": "2020-11-01T01:37:12-05:00",
+              "pass": true
+            },
+            {
+              "actual": {
+                "offset_seconds": -14400,
+                "wall": "2023-11-05T01:14:38"
+              },
+              "expected": {
+                "offset_seconds": -14400,
+                "wall": "2023-11-05T01:14:38"
+              },
+              "input": "2023-11-05T01:14:38-04:00",
+              "pass": true
+            },
+            {
+              "actual": {
+                "offset_seconds": -12600,
+                "wall": "2023-11-05T01:21:43"
+              },
+              "expected": {
+                "offset_seconds": -12600,
+                "wall": "2023-11-05T01:21:43"
+              },
+              "input": "2023-11-05T01:21:43-03:30",
+              "pass": true
+            },
+            {
+              "actual": {
+                "offset_seconds": 20700,
+                "wall": "2021-07-02T13:09:10"
+              },
+              "expected": {
+                "offset_seconds": 20700,
+                "wall": "2021-07-02T13:09:10"
+              },
+              "input": "2021-07-02T13:09:10+05:45",
+              "pass": true
+            },
+            {
+              "actual": {
+                "offset_seconds": 0,
+                "wall": "2022-03-03T17:08:09"
+              },
+              "expected": {
+                "offset_seconds": 0,
+                "wall": "2022-03-03T17:08:09"
+              },
+              "input": "2022-03-03T17:08:09Z",
+              "pass": true
+            },
+            {
+              "actual": {
+                "offset_seconds": null,
+                "wall": "2024-08-09T06:05:04"
+              },
+              "expected": {
+                "offset_seconds": null,
+                "wall": "2024-08-09T06:05:04"
+              },
+              "input": "2024-08-09T06:05:04",
+              "pass": true
+            }
+          ],
+          "historical_fixed_test_failed": false,
+          "input": "2020-11-01T01:00:00-04:00",
+          "observed": {
+            "offset_seconds": -14400,
+            "wall": "2020-11-01T01:00:00"
+          }
+        },
+        "diagnostic": "Independent observation on the initial candidate. Input ISO text = 2020-11-01T01:00:00-04:00; parsed wall time = 2020-11-01T01:00:00; parsed UTC offset in seconds = -14400.",
+        "legacy_failed": true,
+        "snippet": "return tz.tzoffset(None, mult * (hours * 60 + minutes) * 60)"
+      },
+      "p7": {
+        "correct": false,
+        "details": {
+          "hidden_inputs": [
+            {
+              "actual": {
+                "offset_seconds": 18000,
+                "wall": "2020-11-01T01:37:12"
+              },
+              "expected": {
+                "offset_seconds": -18000,
+                "wall": "2020-11-01T01:37:12"
+              },
+              "input": "2020-11-01T01:37:12-05:00",
+              "pass": false
+            },
+            {
+              "actual": {
+                "offset_seconds": 14400,
+                "wall": "2023-11-05T01:14:38"
+              },
+              "expected": {
+                "offset_seconds": -14400,
+                "wall": "2023-11-05T01:14:38"
+              },
+              "input": "2023-11-05T01:14:38-04:00",
+              "pass": false
+            },
+            {
+              "actual": {
+                "offset_seconds": 9000,
+                "wall": "2023-11-05T01:21:43"
+              },
+              "expected": {
+                "offset_seconds": -12600,
+                "wall": "2023-11-05T01:21:43"
+              },
+              "input": "2023-11-05T01:21:43-03:30",
+              "pass": false
+            },
+            {
+              "actual": {
+                "offset_seconds": 20700,
+                "wall": "2021-07-02T13:09:10"
+              },
+              "expected": {
+                "offset_seconds": 20700,
+                "wall": "2021-07-02T13:09:10"
+              },
+              "input": "2021-07-02T13:09:10+05:45",
+              "pass": true
+            },
+            {
+              "actual": {
+                "offset_seconds": 0,
+                "wall": "2022-03-03T17:08:09"
+              },
+              "expected": {
+                "offset_seconds": 0,
+                "wall": "2022-03-03T17:08:09"
+              },
+              "input": "2022-03-03T17:08:09Z",
+              "pass": true
+            },
+            {
+              "actual": {
+                "offset_seconds": null,
+                "wall": "2024-08-09T06:05:04"
+              },
+              "expected": {
+                "offset_seconds": null,
+                "wall": "2024-08-09T06:05:04"
+              },
+              "input": "2024-08-09T06:05:04",
+              "pass": true
+            }
+          ],
+          "historical_fixed_test_failed": true,
+          "input": "2020-11-01T01:00:00-04:00",
+          "observed": {
+            "offset_seconds": 14400,
+            "wall": "2020-11-01T01:00:00"
+          }
+        },
+        "diagnostic": "Independent observation on the initial candidate. Input ISO text = 2020-11-01T01:00:00-04:00; parsed wall time = 2020-11-01T01:00:00; parsed UTC offset in seconds = 14400.",
+        "legacy_failed": true,
+        "snippet": "return tz.tzoffset(None, (hours * 60 + mult * minutes) * 60)"
+      },
+      "t9": {
+        "correct": false,
+        "details": {
+          "hidden_inputs": [
+            {
+              "actual": {
+                "offset_seconds": -18000,
+                "wall": "2020-11-01T01:37:12"
+              },
+              "expected": {
+                "offset_seconds": -18000,
+                "wall": "2020-11-01T01:37:12"
+              },
+              "input": "2020-11-01T01:37:12-05:00",
+              "pass": true
+            },
+            {
+              "actual": {
+                "offset_seconds": -14400,
+                "wall": "2023-11-05T01:14:38"
+              },
+              "expected": {
+                "offset_seconds": -14400,
+                "wall": "2023-11-05T01:14:38"
+              },
+              "input": "2023-11-05T01:14:38-04:00",
+              "pass": true
+            },
+            {
+              "actual": {
+                "offset_seconds": -9000,
+                "wall": "2023-11-05T01:21:43"
+              },
+              "expected": {
+                "offset_seconds": -12600,
+                "wall": "2023-11-05T01:21:43"
+              },
+              "input": "2023-11-05T01:21:43-03:30",
+              "pass": false
+            },
+            {
+              "actual": {
+                "offset_seconds": 20700,
+                "wall": "2021-07-02T13:09:10"
+              },
+              "expected": {
+                "offset_seconds": 20700,
+                "wall": "2021-07-02T13:09:10"
+              },
+              "input": "2021-07-02T13:09:10+05:45",
+              "pass": true
+            },
+            {
+              "actual": {
+                "offset_seconds": 0,
+                "wall": "2022-03-03T17:08:09"
+              },
+              "expected": {
+                "offset_seconds": 0,
+                "wall": "2022-03-03T17:08:09"
+              },
+              "input": "2022-03-03T17:08:09Z",
+              "pass": true
+            },
+            {
+              "actual": {
+                "offset_seconds": null,
+                "wall": "2024-08-09T06:05:04"
+              },
+              "expected": {
+                "offset_seconds": null,
+                "wall": "2024-08-09T06:05:04"
+              },
+              "input": "2024-08-09T06:05:04",
+              "pass": true
+            }
+          ],
+          "historical_fixed_test_failed": false,
+          "input": "2020-11-01T01:00:00-04:00",
+          "observed": {
+            "offset_seconds": -14400,
+            "wall": "2020-11-01T01:00:00"
+          }
+        },
+        "diagnostic": "Independent observation on the initial candidate. Input ISO text = 2020-11-01T01:00:00-04:00; parsed wall time = 2020-11-01T01:00:00; parsed UTC offset in seconds = -14400.",
+        "legacy_failed": true,
+        "snippet": "return tz.tzoffset(None, (mult * hours * 60 + minutes) * 60)"
+      }
+    }
+  }
+}
