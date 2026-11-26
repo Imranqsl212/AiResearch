@@ -31,6 +31,12 @@ We compared eleven selectable CLI aliases. On the six-task panel, moving from `x
 
 On the separate eight-episode arithmetic task, low and high each preserved 44/44 correct tables and repaired 44/44 defective ones on the first decision. All 41 diagnostic requests followed a correct table. Unchanged resubmissions fell from 27 to 7. [Paired outcomes and actions across 176 episodes](analysis/c5_codex_effort_20261124/comparison.md)
 
+## Diagnostic timing on dateutil and CPython
+
+An exploratory pilot paired a historically correct implementation with a constructed defect in each project. GPT-6.2 Astra and GPT-6 Luna chose among concrete edits to the pinned source. Early and late arms received the same diagnostic of the initial version on opposite sides of the first decision. Both arms repaired 8/8 defective starts immediately and damaged 2/8 correct starts. All 16 matched pairs selected the same first implementation. Both timings ended with 15/16 correct implementations.
+
+All four first-decision regressions came from Luna on CPython. It chose a textual key ordering that satisfied the old assertion but placed integer key 12 before 2. Astra also rewrote the four correct CPython starts and its alternatives passed all six held-out probes. Every second decision used a fresh session. The second prompts matched byte for byte in all 16 pairs and yielded different final implementations in two. These observations describe two selected tasks before human admission. [Counts, paired decisions and raw-response hashes](analysis/checker_timing_20261126/comparison.md) · [Frozen protocol](docs/CHECKER_TIMING_PILOT_20261126.md) · [Code variants and held-out outcomes](analysis/checker_timing_20261126/calibration.json)
+
 ## The prospective comparison
 
 The [new protocol](docs/C5_BUDGET_STATISTICAL_PROTOCOL_20261124.md) crosses a single initial PASS/FAIL with an explicitly announced and enforced allowance of two/three new decisions. It compares the gain from the third decision under FAIL with that gain under PASS. Four candidate models and nineteen families are proposed; family weighting, missing-outcome bounds and four-model Holm correction are specified. Announcing a horizon and supplying another opportunity are jointly manipulated. Under the protocol's stated moderate-clustering simulation, the nineteen-family design has limited power for small interactions.
