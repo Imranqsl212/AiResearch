@@ -1,0 +1,376 @@
+{
+  "blocks": [
+    {
+      "before_correct": false,
+      "before_variant": "p3",
+      "first_response_sha256": "a36982a66da19481ebfe693a3e9ea4ec86365c0804dc106cb96ade7c9d89e08f",
+      "history_sha256": "668e9e2d31cfdde29966bc10a6cf3337f5c346df426537909cde79ae74423c09",
+      "model": "gpt-6-luna",
+      "options": {
+        "v1": "p7",
+        "v2": "p3",
+        "v3": "p2",
+        "v4": "p5"
+      },
+      "order": [
+        "single",
+        "mixed"
+      ],
+      "parent_id": "gpt-6-luna_cpython_correct_r1_early",
+      "prompt_sha256": {
+        "mixed": "24d8499f04f94f01d4792402b1569f6702d0e2a23205eaebe0c7e669eef12616",
+        "single": "6081b2fc60cf1546b9479bdf1d8a4598ed61df2a77a9bacf51e6b56988fc5ff8"
+      }
+    },
+    {
+      "before_correct": true,
+      "before_variant": "p5",
+      "first_response_sha256": "7152ec918274cccbbe93b197aae70d51e56b2979a49e7223df4aa3bd7d282714",
+      "history_sha256": "431f57ff9caff4bf21217f0f0caf292fbb0ce1f122d8f4a5dd80a637f8e032c4",
+      "model": "gpt-6-luna",
+      "options": {
+        "v1": "p5",
+        "v2": "p2",
+        "v3": "p3",
+        "v4": "p7"
+      },
+      "order": [
+        "single",
+        "mixed"
+      ],
+      "parent_id": "gpt-6-luna_cpython_defective_r1_late",
+      "prompt_sha256": {
+        "mixed": "9463a8bcddb22ee1628b4dd8a370c9552ead8819de504d13d5fe1b4e097975b8",
+        "single": "6d1776cdbe823c50efa6b68f94bc589df2474c25d532a32bb81321541700847e"
+      }
+    },
+    {
+      "before_correct": false,
+      "before_variant": "p3",
+      "first_response_sha256": "cb118614b9ca960204a36e7c5606ec307b486c308482672e07df1072aca318cf",
+      "history_sha256": "65852bf3b3f74275d21c324eaad2b9e81fa7b8a3236341722549c2ecc8ea8f97",
+      "model": "gpt-6-luna",
+      "options": {
+        "v1": "p3",
+        "v2": "p7",
+        "v3": "p2",
+        "v4": "p5"
+      },
+      "order": [
+        "mixed",
+        "single"
+      ],
+      "parent_id": "gpt-6-luna_cpython_correct_r2_late",
+      "prompt_sha256": {
+        "mixed": "a2570a1d466f8db191aa9325606c190a0196c5710d331bd6c0d65509918cdc5f",
+        "single": "75674c157d9707a074272933e94f77197d32239b38923d40397e9f273cc7a56c"
+      }
+    },
+    {
+      "before_correct": true,
+      "before_variant": "p5",
+      "first_response_sha256": "3d30e76d79ffa6ebb5be03413ae7b809ab6e2b0e99a1e255654163b19d01a02e",
+      "history_sha256": "ddd6b0c862373ce623b1382fbb94441efe7ad79edf0890946422f5527e9bdda1",
+      "model": "gpt-6.2-astra",
+      "options": {
+        "v1": "p3",
+        "v2": "p7",
+        "v3": "p2",
+        "v4": "p5"
+      },
+      "order": [
+        "single",
+        "mixed"
+      ],
+      "parent_id": "gpt-6.2-astra_cpython_correct_r2_late",
+      "prompt_sha256": {
+        "mixed": "88d750c62380825d72d8f8fc9744fb372efe5d181230eedde23fb5a3ca8c95e8",
+        "single": "ec7d19b4846cf68edd4594680cc3e1a4880ce5a3b7dc3ee029b51c25719b9274"
+      }
+    },
+    {
+      "before_correct": true,
+      "before_variant": "p7",
+      "first_response_sha256": "be79f81aa91be692d7433d75d5adabce72d00675deca0a31e12b496ddc49d998",
+      "history_sha256": "0cbfb261d38b4afbe3be880ebbd47a871f6fae20a780398ca115e7dbf5ea1579",
+      "model": "gpt-6-luna",
+      "options": {
+        "v1": "p7",
+        "v2": "p5",
+        "v3": "p2",
+        "v4": "p3"
+      },
+      "order": [
+        "single",
+        "mixed"
+      ],
+      "parent_id": "gpt-6-luna_cpython_defective_r2_early",
+      "prompt_sha256": {
+        "mixed": "bc75c9d349fd7aeefcc6502615acc9a080e0373a4a73d9bde58d0098f964ae0f",
+        "single": "b088cc0c8004ed488d81318ac4caa7ad7ce1dedee88f18fa1e4e4c3e8b7500e2"
+      }
+    },
+    {
+      "before_correct": true,
+      "before_variant": "p5",
+      "first_response_sha256": "125d83371d4cb6141fa6887362f0983992ce1f47e43cee2a3e62d8635c8372d3",
+      "history_sha256": "75d2bee0c4aad086a22049791532d104896430ba615971c5790e08ba3c206a18",
+      "model": "gpt-6.2-astra",
+      "options": {
+        "v1": "p3",
+        "v2": "p7",
+        "v3": "p2",
+        "v4": "p5"
+      },
+      "order": [
+        "single",
+        "mixed"
+      ],
+      "parent_id": "gpt-6.2-astra_cpython_correct_r2_early",
+      "prompt_sha256": {
+        "mixed": "10c4864a64775f4c1ab386f425cb3a468a81220b1895712ae408f236c25611c2",
+        "single": "eac354f0e97be5c7503ea6561e8cb4df396e4b3136168419d7801c8ff149f10b"
+      }
+    },
+    {
+      "before_correct": true,
+      "before_variant": "p7",
+      "first_response_sha256": "123cd08a800e1095e86a0c1d6d796c4ca495ef6f0f46a86d57e7cd4263aafc99",
+      "history_sha256": "95e5781106e6ff9b1de39af9817828f5573c7463463fd709d1f03bf55a234126",
+      "model": "gpt-6.2-astra",
+      "options": {
+        "v1": "p2",
+        "v2": "p5",
+        "v3": "p3",
+        "v4": "p7"
+      },
+      "order": [
+        "mixed",
+        "single"
+      ],
+      "parent_id": "gpt-6.2-astra_cpython_defective_r1_early",
+      "prompt_sha256": {
+        "mixed": "eefa7abe50806b7a4fd696c25b265064688504bc47faf7b2254e2cfc9a139f59",
+        "single": "72697f6231045125f053fbcf0357e9c03c934ac0f4753e5204ed7d3b72ada742"
+      }
+    },
+    {
+      "before_correct": false,
+      "before_variant": "p3",
+      "first_response_sha256": "65fc85c92e484a0002d0a8831eb6b84570ed729e7e430f460147f901eb4baeb3",
+      "history_sha256": "c79e58dd813053d11a083648393abf8ff094bfab33f1c2a807db4d860671a719",
+      "model": "gpt-6-luna",
+      "options": {
+        "v1": "p3",
+        "v2": "p7",
+        "v3": "p2",
+        "v4": "p5"
+      },
+      "order": [
+        "mixed",
+        "single"
+      ],
+      "parent_id": "gpt-6-luna_cpython_correct_r2_early",
+      "prompt_sha256": {
+        "mixed": "5df9352f32a03686329e41d5fc93aa93f4061c938f942cd6cfe3e94c737a3a58",
+        "single": "a8577ca6548313a8d244b888cb36aa910058c9a9cfe4410634b8768387b2ad41"
+      }
+    },
+    {
+      "before_correct": true,
+      "before_variant": "p5",
+      "first_response_sha256": "e06d50d9c9cc16a33d617644124fa536da36fc6b23729a87eff0c0af0ee65220",
+      "history_sha256": "0a8792e910dd5e600d8910f79776b24e1457e6a4a416e02a6dc5d1a155932735",
+      "model": "gpt-6.2-astra",
+      "options": {
+        "v1": "p7",
+        "v2": "p3",
+        "v3": "p2",
+        "v4": "p5"
+      },
+      "order": [
+        "mixed",
+        "single"
+      ],
+      "parent_id": "gpt-6.2-astra_cpython_correct_r1_late",
+      "prompt_sha256": {
+        "mixed": "95bf2938e6c976853848aa8b8237da10803fbfd32dc82fb7e8ff8f86486f4941",
+        "single": "d46fe989051ced98a480d64337eacbc3203562ca4cfad86771ec35761b29544d"
+      }
+    },
+    {
+      "before_correct": true,
+      "before_variant": "p7",
+      "first_response_sha256": "0fdac05280881af05b94bc0648c696ac362b821ce3625805bb99560ed64f4d75",
+      "history_sha256": "9ea7858ccc58dc582bd27953ee2a2fc788bd37e473b2c9d3bbfad7fb42e0baf7",
+      "model": "gpt-6-luna",
+      "options": {
+        "v1": "p7",
+        "v2": "p5",
+        "v3": "p2",
+        "v4": "p3"
+      },
+      "order": [
+        "mixed",
+        "single"
+      ],
+      "parent_id": "gpt-6-luna_cpython_defective_r2_late",
+      "prompt_sha256": {
+        "mixed": "10d6eefd41c73cc81756a5055ab2bfd9cc15662e95e1e906745e1a8c0b5881fe",
+        "single": "c94048dd3aade282beb19965fa55c3b43da652f37ad7000cd586ad0e35448451"
+      }
+    },
+    {
+      "before_correct": true,
+      "before_variant": "p7",
+      "first_response_sha256": "670b54266b71ebb137301dd60063845a9380fe5300bfde20a1269dbf02806c6c",
+      "history_sha256": "6fac32c13186be8846b97581efa9659ba55685b3b64ffabd28989006110a89a8",
+      "model": "gpt-6.2-astra",
+      "options": {
+        "v1": "p7",
+        "v2": "p3",
+        "v3": "p2",
+        "v4": "p5"
+      },
+      "order": [
+        "single",
+        "mixed"
+      ],
+      "parent_id": "gpt-6.2-astra_cpython_defective_r2_late",
+      "prompt_sha256": {
+        "mixed": "0b853f3fc3d932bd56cd5e1cc1adbb9c1c950433ff2de55548f9353007311973",
+        "single": "45555c635de886fa11287d3c36e8e21b42b0431999a58fbebe826d3e98fdbe39"
+      }
+    },
+    {
+      "before_correct": true,
+      "before_variant": "p5",
+      "first_response_sha256": "07ed82d9125f11e566461248f89483dc33558b11020ffb5e481c10d0a9520b2b",
+      "history_sha256": "e93039dab17606dc720d4c12eb21b2755c63e5f7b4cb1963430c62f1dfed9ee5",
+      "model": "gpt-6.2-astra",
+      "options": {
+        "v1": "p7",
+        "v2": "p3",
+        "v3": "p2",
+        "v4": "p5"
+      },
+      "order": [
+        "mixed",
+        "single"
+      ],
+      "parent_id": "gpt-6.2-astra_cpython_correct_r1_early",
+      "prompt_sha256": {
+        "mixed": "69ec9a4281bbd289243a29ce898ec15e25efc2a2867b37b419097411f234c872",
+        "single": "295a5ae4e822b2d64e25741249ddba735da001bd0debf6769b3a68ea77acf61e"
+      }
+    },
+    {
+      "before_correct": true,
+      "before_variant": "p5",
+      "first_response_sha256": "41d57f811aee1b459866c0e2db36c9af25141c8fdbd49d6097505e3990a511c9",
+      "history_sha256": "4f921c107c0b0e5df9bffd05eb785821d63871709f0d6ce6d049591fc24ec8b3",
+      "model": "gpt-6-luna",
+      "options": {
+        "v1": "p5",
+        "v2": "p2",
+        "v3": "p3",
+        "v4": "p7"
+      },
+      "order": [
+        "mixed",
+        "single"
+      ],
+      "parent_id": "gpt-6-luna_cpython_defective_r1_early",
+      "prompt_sha256": {
+        "mixed": "fdf9ff1568a55de8a3be44aa42a20d52d7f629f8e38e9ebc48d453f1f88018d9",
+        "single": "35fc4819c55b8332c7a05286450f678f2e97ee722073d21d5927325117554c9b"
+      }
+    },
+    {
+      "before_correct": true,
+      "before_variant": "p7",
+      "first_response_sha256": "b2eb95d224753fcc9e1a070f974c8e4f91454c9edc2d5bea3ba6732a6976041d",
+      "history_sha256": "bdd0534208afb7f60ddcc421a58b03e063993f61136ebc153ca2abb40ddcfb68",
+      "model": "gpt-6.2-astra",
+      "options": {
+        "v1": "p7",
+        "v2": "p3",
+        "v3": "p2",
+        "v4": "p5"
+      },
+      "order": [
+        "single",
+        "mixed"
+      ],
+      "parent_id": "gpt-6.2-astra_cpython_defective_r2_early",
+      "prompt_sha256": {
+        "mixed": "5e908d46fd2852339a143cfaadedcdad173176780a72bf325861062fef140c23",
+        "single": "3b2b95eeb5c5107683ce8e31a28c2b5d99e3acee82dc3b761a166745f1091840"
+      }
+    },
+    {
+      "before_correct": false,
+      "before_variant": "p3",
+      "first_response_sha256": "bd99ec4ed870b34da26c6f028830323aa7ef5a04b3c19bc5d918a18d5ffa5100",
+      "history_sha256": "c776a41f5fa47b5e552f7161942f6a2cbf1a0123bfbb57d6d9990b7af645db45",
+      "model": "gpt-6-luna",
+      "options": {
+        "v1": "p7",
+        "v2": "p3",
+        "v3": "p2",
+        "v4": "p5"
+      },
+      "order": [
+        "single",
+        "mixed"
+      ],
+      "parent_id": "gpt-6-luna_cpython_correct_r1_late",
+      "prompt_sha256": {
+        "mixed": "aaebd6e8a36d612192e55dc35955ef2e327186a1e4f6cb079c2ad2fee39c72ca",
+        "single": "37f0f64c79b4fb79d5e842bcabe2ef8c385568a55be969cb03f9fbf14f51bca2"
+      }
+    },
+    {
+      "before_correct": true,
+      "before_variant": "p7",
+      "first_response_sha256": "911b80008bc4a6dcd1aea23e0d6ed761cfb239c6946a37227d0ba8c328be388b",
+      "history_sha256": "96e760d102c9fbea0ec0620ea092391e586f7def4af461b488166ff6207beb3d",
+      "model": "gpt-6.2-astra",
+      "options": {
+        "v1": "p2",
+        "v2": "p5",
+        "v3": "p3",
+        "v4": "p7"
+      },
+      "order": [
+        "mixed",
+        "single"
+      ],
+      "parent_id": "gpt-6.2-astra_cpython_defective_r1_late",
+      "prompt_sha256": {
+        "mixed": "d8722a5a38609a786de86817523726747a6cc6f1b338bda0a44eb794dd17624a",
+        "single": "2c9d8bf77c84a9b6cf3bdb929802b8e15ec27bfcc7d63e6077a2d14cbff0be15"
+      }
+    }
+  ],
+  "calibration_sha256": "196f8e3bec9800157a150ec732544943825f602f841be5208a3ef0be543ed4d6",
+  "design": "docs/PPRINT_POSTEDIT_20261127.md",
+  "eligible_for_main_analysis": false,
+  "seed": 20261127,
+  "source_sha256": {
+    "analysis/checker_timing_20261126/calibration.json": "9e0471dd03c4a9efe09b6f36c9bc4543444ed8730441b18ec1b44820b95f9687",
+    "analysis/checker_timing_20261126/plan.json": "209c858a60a5380a1bd1ad1664ed27a410ee41ba4795a4d5f0b2edd45a7818cb",
+    "analysis/checker_timing_20261126/results.json": "d4871c6c918439ed178eae09c111fa4b49f0aaede6af82b48aefbb479da8d5e5",
+    "docs/CHECKER_TIMING_PILOT_20261126.md": "d04a6009aa06c1d9345b4ca16a79d31fffab434491ceefd985f1eed96148b530",
+    "docs/PPRINT_POSTEDIT_20261127.md": "fe00c952f6909f06048f42972263c25f4784d8d1eecce079434196673cb3f7a6",
+    "experiments/c5_cli_pilot.py": "2f4809ea243fe0f913dabe343050caf03273c77a46d8f70b7dd186ef93dabbba",
+    "experiments/c5_codex_effort.py": "90e7e315693ea039ad9b9a698efd0925f4b1c83f846245132a9d6acc4fcbdbcf",
+    "experiments/c5_evidence_challenge.py": "fae76c3366dc96670912095a2684d959c4811d3c0edc7b14a636fea147b49cc7",
+    "experiments/checker_timing_dateutil.py": "27d45149f4589b8016f3d1196b7effe057b0b5061a42bd89712bc495b0e1fa3a",
+    "experiments/checker_timing_pilot.py": "48f52b1ad3139ecda58a3cc01760550cad4f47873d65a16c1da78cddfd0ccda3",
+    "experiments/checker_timing_pprint.py": "6175cb337ace28a23104c7d3d61c53dd00fabce8c9da009632a27317a7b8490c",
+    "experiments/pprint_postedit_fork.py": "dc34ac1d2c1fe9fc692cd6c8c6a1f5959f9e2e50b28c21e0e97213761c2b0af1",
+    "experiments/pprint_postedit_probes.py": "48cfe94257e77b169895816f24683165620a1268acd6b7989bbdb721b635b461",
+    "external_checker_audit_20261124/sources.json": "d1f8ba45f3247f2345cb0b9c9b14f96a712f7810bc6d6ea4349a1d9646f9c124"
+  }
+}

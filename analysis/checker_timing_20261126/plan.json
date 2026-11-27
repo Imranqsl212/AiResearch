@@ -1,0 +1,492 @@
+{
+  "access": {
+    "gpt-6-luna": "AVAILABLE",
+    "gpt-6.2-astra": "AVAILABLE",
+    "sonnet": "AUTH_FAILED"
+  },
+  "cards_sha256": "9e0471dd03c4a9efe09b6f36c9bc4543444ed8730441b18ec1b44820b95f9687",
+  "design": "docs/CHECKER_TIMING_PILOT_20261126.md",
+  "eligible_for_main_analysis": false,
+  "episodes": [
+    {
+      "case": "dateutil",
+      "episode_id": "gpt-6.2-astra_dateutil_defective_r1_late",
+      "model": "gpt-6.2-astra",
+      "options": {
+        "v1": "k3",
+        "v2": "t9",
+        "v3": "p7"
+      },
+      "repeat": 1,
+      "start_variant": "p7",
+      "state": "defective",
+      "timing": "late"
+    },
+    {
+      "case": "dateutil",
+      "episode_id": "gpt-6.2-astra_dateutil_defective_r1_early",
+      "model": "gpt-6.2-astra",
+      "options": {
+        "v1": "k3",
+        "v2": "t9",
+        "v3": "p7"
+      },
+      "repeat": 1,
+      "start_variant": "p7",
+      "state": "defective",
+      "timing": "early"
+    },
+    {
+      "case": "cpython",
+      "episode_id": "gpt-6.2-astra_cpython_correct_r1_late",
+      "model": "gpt-6.2-astra",
+      "options": {
+        "v1": "p7",
+        "v2": "p3",
+        "v3": "p2",
+        "v4": "p5"
+      },
+      "repeat": 1,
+      "start_variant": "p7",
+      "state": "correct",
+      "timing": "late"
+    },
+    {
+      "case": "cpython",
+      "episode_id": "gpt-6.2-astra_cpython_correct_r1_early",
+      "model": "gpt-6.2-astra",
+      "options": {
+        "v1": "p7",
+        "v2": "p3",
+        "v3": "p2",
+        "v4": "p5"
+      },
+      "repeat": 1,
+      "start_variant": "p7",
+      "state": "correct",
+      "timing": "early"
+    },
+    {
+      "case": "dateutil",
+      "episode_id": "gpt-6.2-astra_dateutil_correct_r2_late",
+      "model": "gpt-6.2-astra",
+      "options": {
+        "v1": "p7",
+        "v2": "t9",
+        "v3": "k3"
+      },
+      "repeat": 2,
+      "start_variant": "k3",
+      "state": "correct",
+      "timing": "late"
+    },
+    {
+      "case": "dateutil",
+      "episode_id": "gpt-6.2-astra_dateutil_correct_r2_early",
+      "model": "gpt-6.2-astra",
+      "options": {
+        "v1": "p7",
+        "v2": "t9",
+        "v3": "k3"
+      },
+      "repeat": 2,
+      "start_variant": "k3",
+      "state": "correct",
+      "timing": "early"
+    },
+    {
+      "case": "cpython",
+      "episode_id": "gpt-6-luna_cpython_defective_r2_early",
+      "model": "gpt-6-luna",
+      "options": {
+        "v1": "p7",
+        "v2": "p5",
+        "v3": "p2",
+        "v4": "p3"
+      },
+      "repeat": 2,
+      "start_variant": "p2",
+      "state": "defective",
+      "timing": "early"
+    },
+    {
+      "case": "cpython",
+      "episode_id": "gpt-6-luna_cpython_defective_r2_late",
+      "model": "gpt-6-luna",
+      "options": {
+        "v1": "p7",
+        "v2": "p5",
+        "v3": "p2",
+        "v4": "p3"
+      },
+      "repeat": 2,
+      "start_variant": "p2",
+      "state": "defective",
+      "timing": "late"
+    },
+    {
+      "case": "dateutil",
+      "episode_id": "gpt-6-luna_dateutil_correct_r1_late",
+      "model": "gpt-6-luna",
+      "options": {
+        "v1": "p7",
+        "v2": "t9",
+        "v3": "k3"
+      },
+      "repeat": 1,
+      "start_variant": "k3",
+      "state": "correct",
+      "timing": "late"
+    },
+    {
+      "case": "dateutil",
+      "episode_id": "gpt-6-luna_dateutil_correct_r1_early",
+      "model": "gpt-6-luna",
+      "options": {
+        "v1": "p7",
+        "v2": "t9",
+        "v3": "k3"
+      },
+      "repeat": 1,
+      "start_variant": "k3",
+      "state": "correct",
+      "timing": "early"
+    },
+    {
+      "case": "dateutil",
+      "episode_id": "gpt-6.2-astra_dateutil_correct_r1_early",
+      "model": "gpt-6.2-astra",
+      "options": {
+        "v1": "k3",
+        "v2": "t9",
+        "v3": "p7"
+      },
+      "repeat": 1,
+      "start_variant": "k3",
+      "state": "correct",
+      "timing": "early"
+    },
+    {
+      "case": "dateutil",
+      "episode_id": "gpt-6.2-astra_dateutil_correct_r1_late",
+      "model": "gpt-6.2-astra",
+      "options": {
+        "v1": "k3",
+        "v2": "t9",
+        "v3": "p7"
+      },
+      "repeat": 1,
+      "start_variant": "k3",
+      "state": "correct",
+      "timing": "late"
+    },
+    {
+      "case": "dateutil",
+      "episode_id": "gpt-6.2-astra_dateutil_defective_r2_early",
+      "model": "gpt-6.2-astra",
+      "options": {
+        "v1": "p7",
+        "v2": "k3",
+        "v3": "t9"
+      },
+      "repeat": 2,
+      "start_variant": "p7",
+      "state": "defective",
+      "timing": "early"
+    },
+    {
+      "case": "dateutil",
+      "episode_id": "gpt-6.2-astra_dateutil_defective_r2_late",
+      "model": "gpt-6.2-astra",
+      "options": {
+        "v1": "p7",
+        "v2": "k3",
+        "v3": "t9"
+      },
+      "repeat": 2,
+      "start_variant": "p7",
+      "state": "defective",
+      "timing": "late"
+    },
+    {
+      "case": "dateutil",
+      "episode_id": "gpt-6-luna_dateutil_defective_r2_late",
+      "model": "gpt-6-luna",
+      "options": {
+        "v1": "k3",
+        "v2": "t9",
+        "v3": "p7"
+      },
+      "repeat": 2,
+      "start_variant": "p7",
+      "state": "defective",
+      "timing": "late"
+    },
+    {
+      "case": "dateutil",
+      "episode_id": "gpt-6-luna_dateutil_defective_r2_early",
+      "model": "gpt-6-luna",
+      "options": {
+        "v1": "k3",
+        "v2": "t9",
+        "v3": "p7"
+      },
+      "repeat": 2,
+      "start_variant": "p7",
+      "state": "defective",
+      "timing": "early"
+    },
+    {
+      "case": "cpython",
+      "episode_id": "gpt-6.2-astra_cpython_defective_r1_early",
+      "model": "gpt-6.2-astra",
+      "options": {
+        "v1": "p2",
+        "v2": "p5",
+        "v3": "p3",
+        "v4": "p7"
+      },
+      "repeat": 1,
+      "start_variant": "p2",
+      "state": "defective",
+      "timing": "early"
+    },
+    {
+      "case": "cpython",
+      "episode_id": "gpt-6.2-astra_cpython_defective_r1_late",
+      "model": "gpt-6.2-astra",
+      "options": {
+        "v1": "p2",
+        "v2": "p5",
+        "v3": "p3",
+        "v4": "p7"
+      },
+      "repeat": 1,
+      "start_variant": "p2",
+      "state": "defective",
+      "timing": "late"
+    },
+    {
+      "case": "cpython",
+      "episode_id": "gpt-6.2-astra_cpython_correct_r2_early",
+      "model": "gpt-6.2-astra",
+      "options": {
+        "v1": "p3",
+        "v2": "p7",
+        "v3": "p2",
+        "v4": "p5"
+      },
+      "repeat": 2,
+      "start_variant": "p7",
+      "state": "correct",
+      "timing": "early"
+    },
+    {
+      "case": "cpython",
+      "episode_id": "gpt-6.2-astra_cpython_correct_r2_late",
+      "model": "gpt-6.2-astra",
+      "options": {
+        "v1": "p3",
+        "v2": "p7",
+        "v3": "p2",
+        "v4": "p5"
+      },
+      "repeat": 2,
+      "start_variant": "p7",
+      "state": "correct",
+      "timing": "late"
+    },
+    {
+      "case": "dateutil",
+      "episode_id": "gpt-6-luna_dateutil_correct_r2_early",
+      "model": "gpt-6-luna",
+      "options": {
+        "v1": "p7",
+        "v2": "k3",
+        "v3": "t9"
+      },
+      "repeat": 2,
+      "start_variant": "k3",
+      "state": "correct",
+      "timing": "early"
+    },
+    {
+      "case": "dateutil",
+      "episode_id": "gpt-6-luna_dateutil_correct_r2_late",
+      "model": "gpt-6-luna",
+      "options": {
+        "v1": "p7",
+        "v2": "k3",
+        "v3": "t9"
+      },
+      "repeat": 2,
+      "start_variant": "k3",
+      "state": "correct",
+      "timing": "late"
+    },
+    {
+      "case": "cpython",
+      "episode_id": "gpt-6.2-astra_cpython_defective_r2_late",
+      "model": "gpt-6.2-astra",
+      "options": {
+        "v1": "p7",
+        "v2": "p3",
+        "v3": "p2",
+        "v4": "p5"
+      },
+      "repeat": 2,
+      "start_variant": "p2",
+      "state": "defective",
+      "timing": "late"
+    },
+    {
+      "case": "cpython",
+      "episode_id": "gpt-6.2-astra_cpython_defective_r2_early",
+      "model": "gpt-6.2-astra",
+      "options": {
+        "v1": "p7",
+        "v2": "p3",
+        "v3": "p2",
+        "v4": "p5"
+      },
+      "repeat": 2,
+      "start_variant": "p2",
+      "state": "defective",
+      "timing": "early"
+    },
+    {
+      "case": "cpython",
+      "episode_id": "gpt-6-luna_cpython_defective_r1_late",
+      "model": "gpt-6-luna",
+      "options": {
+        "v1": "p5",
+        "v2": "p2",
+        "v3": "p3",
+        "v4": "p7"
+      },
+      "repeat": 1,
+      "start_variant": "p2",
+      "state": "defective",
+      "timing": "late"
+    },
+    {
+      "case": "cpython",
+      "episode_id": "gpt-6-luna_cpython_defective_r1_early",
+      "model": "gpt-6-luna",
+      "options": {
+        "v1": "p5",
+        "v2": "p2",
+        "v3": "p3",
+        "v4": "p7"
+      },
+      "repeat": 1,
+      "start_variant": "p2",
+      "state": "defective",
+      "timing": "early"
+    },
+    {
+      "case": "cpython",
+      "episode_id": "gpt-6-luna_cpython_correct_r2_late",
+      "model": "gpt-6-luna",
+      "options": {
+        "v1": "p3",
+        "v2": "p7",
+        "v3": "p2",
+        "v4": "p5"
+      },
+      "repeat": 2,
+      "start_variant": "p7",
+      "state": "correct",
+      "timing": "late"
+    },
+    {
+      "case": "cpython",
+      "episode_id": "gpt-6-luna_cpython_correct_r2_early",
+      "model": "gpt-6-luna",
+      "options": {
+        "v1": "p3",
+        "v2": "p7",
+        "v3": "p2",
+        "v4": "p5"
+      },
+      "repeat": 2,
+      "start_variant": "p7",
+      "state": "correct",
+      "timing": "early"
+    },
+    {
+      "case": "cpython",
+      "episode_id": "gpt-6-luna_cpython_correct_r1_early",
+      "model": "gpt-6-luna",
+      "options": {
+        "v1": "p7",
+        "v2": "p3",
+        "v3": "p2",
+        "v4": "p5"
+      },
+      "repeat": 1,
+      "start_variant": "p7",
+      "state": "correct",
+      "timing": "early"
+    },
+    {
+      "case": "cpython",
+      "episode_id": "gpt-6-luna_cpython_correct_r1_late",
+      "model": "gpt-6-luna",
+      "options": {
+        "v1": "p7",
+        "v2": "p3",
+        "v3": "p2",
+        "v4": "p5"
+      },
+      "repeat": 1,
+      "start_variant": "p7",
+      "state": "correct",
+      "timing": "late"
+    },
+    {
+      "case": "dateutil",
+      "episode_id": "gpt-6-luna_dateutil_defective_r1_early",
+      "model": "gpt-6-luna",
+      "options": {
+        "v1": "k3",
+        "v2": "t9",
+        "v3": "p7"
+      },
+      "repeat": 1,
+      "start_variant": "p7",
+      "state": "defective",
+      "timing": "early"
+    },
+    {
+      "case": "dateutil",
+      "episode_id": "gpt-6-luna_dateutil_defective_r1_late",
+      "model": "gpt-6-luna",
+      "options": {
+        "v1": "k3",
+        "v2": "t9",
+        "v3": "p7"
+      },
+      "repeat": 1,
+      "start_variant": "p7",
+      "state": "defective",
+      "timing": "late"
+    }
+  ],
+  "roster": [
+    "gpt-6.2-astra",
+    "gpt-6-luna"
+  ],
+  "seed": 20261126,
+  "source_sha256": {
+    "docs/CHECKER_TIMING_PILOT_20261126.md": "d04a6009aa06c1d9345b4ca16a79d31fffab434491ceefd985f1eed96148b530",
+    "experiments/c5_cli_pilot.py": "2f4809ea243fe0f913dabe343050caf03273c77a46d8f70b7dd186ef93dabbba",
+    "experiments/c5_codex_effort.py": "90e7e315693ea039ad9b9a698efd0925f4b1c83f846245132a9d6acc4fcbdbcf",
+    "experiments/c5_evidence_challenge.py": "fae76c3366dc96670912095a2684d959c4811d3c0edc7b14a636fea147b49cc7",
+    "experiments/checker_timing_dateutil.py": "27d45149f4589b8016f3d1196b7effe057b0b5061a42bd89712bc495b0e1fa3a",
+    "experiments/checker_timing_pilot.py": "48f52b1ad3139ecda58a3cc01760550cad4f47873d65a16c1da78cddfd0ccda3",
+    "experiments/checker_timing_pprint.py": "6175cb337ace28a23104c7d3d61c53dd00fabce8c9da009632a27317a7b8490c",
+    "external_checker_audit_20261124/sources.json": "d1f8ba45f3247f2345cb0b9c9b14f96a712f7810bc6d6ea4349a1d9646f9c124"
+  },
+  "status": "EXPLORATORY_BEFORE_HUMAN_REVIEW"
+}

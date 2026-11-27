@@ -1,0 +1,1269 @@
+{
+  "access": {
+    "gpt-6-luna": "AVAILABLE",
+    "gpt-6.2-astra": "AVAILABLE",
+    "sonnet": "AUTH_FAILED"
+  },
+  "eligible_for_main_analysis": false,
+  "episodes": [
+    {
+      "case": "dateutil",
+      "episode_id": "gpt-6.2-astra_dateutil_defective_r1_late",
+      "model": "gpt-6.2-astra",
+      "repeat": 1,
+      "start_variant": "p7",
+      "state": "defective",
+      "steps": [
+        {
+          "action": "k3",
+          "after_variant": "k3",
+          "before_variant": "p7",
+          "choice": "v1",
+          "correct_after": true,
+          "correct_before": false,
+          "decision": 1,
+          "native_response_sha256": "d33b08e324a62450c2e72c0b412374df1937ef3831ae087d376ef38e879abe74",
+          "observed_diagnostic_before": false,
+          "prompt_sha256": "7202020e0fa8f1868c77d16f3a220db5a972bcd44c8e1886d02befeff0e6ff74",
+          "seconds": 7.186669749906287,
+          "status": "OK"
+        },
+        {
+          "action": "keep",
+          "after_variant": "k3",
+          "before_variant": "k3",
+          "choice": "keep",
+          "correct_after": true,
+          "correct_before": true,
+          "decision": 2,
+          "native_response_sha256": "315d7957e45630a39e0c4ef13c40dc73dbc7c5933b87dc5235003f48dc0899cb",
+          "observed_diagnostic_before": true,
+          "prompt_sha256": "43258965763984c55ccec854b6033e614e8237628233bdc2f43897df51eb9fc3",
+          "seconds": 7.011721083894372,
+          "status": "OK"
+        }
+      ],
+      "timing": "late"
+    },
+    {
+      "case": "dateutil",
+      "episode_id": "gpt-6.2-astra_dateutil_defective_r1_early",
+      "model": "gpt-6.2-astra",
+      "repeat": 1,
+      "start_variant": "p7",
+      "state": "defective",
+      "steps": [
+        {
+          "action": "k3",
+          "after_variant": "k3",
+          "before_variant": "p7",
+          "choice": "v1",
+          "correct_after": true,
+          "correct_before": false,
+          "decision": 1,
+          "native_response_sha256": "6455a3556d7904a582af32b85b1e84e29e75c1ba8c4d2adeee5f05ba823cfa3b",
+          "observed_diagnostic_before": true,
+          "prompt_sha256": "72049c4b3e3a30d09b79f3917eddb039a944eb2421ff5266881038f2285b9a17",
+          "seconds": 12.582362541928887,
+          "status": "OK"
+        },
+        {
+          "action": "keep",
+          "after_variant": "k3",
+          "before_variant": "k3",
+          "choice": "keep",
+          "correct_after": true,
+          "correct_before": true,
+          "decision": 2,
+          "native_response_sha256": "7cab853d97f260d7f017dce12d7ae970ebd1e980237ddddf26b1d6dc28287673",
+          "observed_diagnostic_before": true,
+          "prompt_sha256": "43258965763984c55ccec854b6033e614e8237628233bdc2f43897df51eb9fc3",
+          "seconds": 7.44261374999769,
+          "status": "OK"
+        }
+      ],
+      "timing": "early"
+    },
+    {
+      "case": "cpython",
+      "episode_id": "gpt-6.2-astra_cpython_correct_r1_late",
+      "model": "gpt-6.2-astra",
+      "repeat": 1,
+      "start_variant": "p7",
+      "state": "correct",
+      "steps": [
+        {
+          "action": "p5",
+          "after_variant": "p5",
+          "before_variant": "p7",
+          "choice": "v4",
+          "correct_after": true,
+          "correct_before": true,
+          "decision": 1,
+          "native_response_sha256": "e06d50d9c9cc16a33d617644124fa536da36fc6b23729a87eff0c0af0ee65220",
+          "observed_diagnostic_before": false,
+          "prompt_sha256": "dfbc9032b6e1ab34979bb1f7ab4f16b45f461d6fbf310fafa520019b28d4c0a0",
+          "seconds": 6.992633874993771,
+          "status": "OK"
+        },
+        {
+          "action": "keep",
+          "after_variant": "p5",
+          "before_variant": "p5",
+          "choice": "keep",
+          "correct_after": true,
+          "correct_before": true,
+          "decision": 2,
+          "native_response_sha256": "1815c550c3a2bc8c648fc06c0d9964413be5bcfe780d4eb7631c3417c7050cc4",
+          "observed_diagnostic_before": true,
+          "prompt_sha256": "713fd17f4b196fc527e9f7974c1df84f692a192c08a59c063a9194e12f0145a8",
+          "seconds": 7.389071583049372,
+          "status": "OK"
+        }
+      ],
+      "timing": "late"
+    },
+    {
+      "case": "cpython",
+      "episode_id": "gpt-6.2-astra_cpython_correct_r1_early",
+      "model": "gpt-6.2-astra",
+      "repeat": 1,
+      "start_variant": "p7",
+      "state": "correct",
+      "steps": [
+        {
+          "action": "p5",
+          "after_variant": "p5",
+          "before_variant": "p7",
+          "choice": "v4",
+          "correct_after": true,
+          "correct_before": true,
+          "decision": 1,
+          "native_response_sha256": "07ed82d9125f11e566461248f89483dc33558b11020ffb5e481c10d0a9520b2b",
+          "observed_diagnostic_before": true,
+          "prompt_sha256": "eaea2bea0d19e6c3e267a8ac6f89690dbb0279b1d1717a8f44dd9e769755a029",
+          "seconds": 9.006023792084306,
+          "status": "OK"
+        },
+        {
+          "action": "keep",
+          "after_variant": "p5",
+          "before_variant": "p5",
+          "choice": "keep",
+          "correct_after": true,
+          "correct_before": true,
+          "decision": 2,
+          "native_response_sha256": "2c577252e48858e0ef098dad9b6d7dd3098046a29eda9ec55cc858049e67152d",
+          "observed_diagnostic_before": true,
+          "prompt_sha256": "713fd17f4b196fc527e9f7974c1df84f692a192c08a59c063a9194e12f0145a8",
+          "seconds": 6.795920292148367,
+          "status": "OK"
+        }
+      ],
+      "timing": "early"
+    },
+    {
+      "case": "dateutil",
+      "episode_id": "gpt-6.2-astra_dateutil_correct_r2_late",
+      "model": "gpt-6.2-astra",
+      "repeat": 2,
+      "start_variant": "k3",
+      "state": "correct",
+      "steps": [
+        {
+          "action": "keep",
+          "after_variant": "k3",
+          "before_variant": "k3",
+          "choice": "keep",
+          "correct_after": true,
+          "correct_before": true,
+          "decision": 1,
+          "native_response_sha256": "e5865cefa560abc13a4c48eac6dace0bed7b3074a4640fa2aa92ab0059248f64",
+          "observed_diagnostic_before": false,
+          "prompt_sha256": "88bce70c3f5922c29d064b8c1fc66789935c61a6634c49a9fda1438fa640462d",
+          "seconds": 8.844727833056822,
+          "status": "OK"
+        },
+        {
+          "action": "keep",
+          "after_variant": "k3",
+          "before_variant": "k3",
+          "choice": "keep",
+          "correct_after": true,
+          "correct_before": true,
+          "decision": 2,
+          "native_response_sha256": "3f8450181c1c10ed3a31337c4acd3e14dd2326c983f880cb5eb9b97523338065",
+          "observed_diagnostic_before": true,
+          "prompt_sha256": "49959a2e0ea5dd385a2cbda06021b1e03afe3d23bce6abcf779c2f607b6b5276",
+          "seconds": 8.80106716719456,
+          "status": "OK"
+        }
+      ],
+      "timing": "late"
+    },
+    {
+      "case": "dateutil",
+      "episode_id": "gpt-6.2-astra_dateutil_correct_r2_early",
+      "model": "gpt-6.2-astra",
+      "repeat": 2,
+      "start_variant": "k3",
+      "state": "correct",
+      "steps": [
+        {
+          "action": "keep",
+          "after_variant": "k3",
+          "before_variant": "k3",
+          "choice": "keep",
+          "correct_after": true,
+          "correct_before": true,
+          "decision": 1,
+          "native_response_sha256": "c41ebc01ab9a70704fb51a634faf0e0ff8e1ab34c2151a7ace2ddc635ac38656",
+          "observed_diagnostic_before": true,
+          "prompt_sha256": "d311cd00c25a2d710c1d066df7b38e72e0a71e055ea3d7d43bc4ebc24f952525",
+          "seconds": 14.465597375063226,
+          "status": "OK"
+        },
+        {
+          "action": "keep",
+          "after_variant": "k3",
+          "before_variant": "k3",
+          "choice": "keep",
+          "correct_after": true,
+          "correct_before": true,
+          "decision": 2,
+          "native_response_sha256": "f8ea2ec8192a4e0ccec5d606d34024adbbe88ceaf7b291afc238d59506c20181",
+          "observed_diagnostic_before": true,
+          "prompt_sha256": "49959a2e0ea5dd385a2cbda06021b1e03afe3d23bce6abcf779c2f607b6b5276",
+          "seconds": 9.36211962508969,
+          "status": "OK"
+        }
+      ],
+      "timing": "early"
+    },
+    {
+      "case": "cpython",
+      "episode_id": "gpt-6-luna_cpython_defective_r2_early",
+      "model": "gpt-6-luna",
+      "repeat": 2,
+      "start_variant": "p2",
+      "state": "defective",
+      "steps": [
+        {
+          "action": "p7",
+          "after_variant": "p7",
+          "before_variant": "p2",
+          "choice": "v1",
+          "correct_after": true,
+          "correct_before": false,
+          "decision": 1,
+          "native_response_sha256": "be79f81aa91be692d7433d75d5adabce72d00675deca0a31e12b496ddc49d998",
+          "observed_diagnostic_before": true,
+          "prompt_sha256": "b43b4cb6f30d5015190616f5c5d5b35eaf8e15578a0e0b58fa38fab5a6727ffc",
+          "seconds": 6.131226958008483,
+          "status": "OK"
+        },
+        {
+          "action": "p2",
+          "after_variant": "p2",
+          "before_variant": "p7",
+          "choice": "v3",
+          "correct_after": false,
+          "correct_before": true,
+          "decision": 2,
+          "native_response_sha256": "ea8c90d4fc0146ede34b02074283271aba5e8471bca7ac1d1b41e8c64a3e57d0",
+          "observed_diagnostic_before": true,
+          "prompt_sha256": "0324222c1e28d3ee4af0c1a43f6823539acbb8c121a748cb87e27578904dd5d9",
+          "seconds": 5.826337625039741,
+          "status": "OK"
+        }
+      ],
+      "timing": "early"
+    },
+    {
+      "case": "cpython",
+      "episode_id": "gpt-6-luna_cpython_defective_r2_late",
+      "model": "gpt-6-luna",
+      "repeat": 2,
+      "start_variant": "p2",
+      "state": "defective",
+      "steps": [
+        {
+          "action": "p7",
+          "after_variant": "p7",
+          "before_variant": "p2",
+          "choice": "v1",
+          "correct_after": true,
+          "correct_before": false,
+          "decision": 1,
+          "native_response_sha256": "0fdac05280881af05b94bc0648c696ac362b821ce3625805bb99560ed64f4d75",
+          "observed_diagnostic_before": false,
+          "prompt_sha256": "37f57486978f93d667949956b37965febee412ce42abde4e7eb27f89f204499b",
+          "seconds": 6.0347582921385765,
+          "status": "OK"
+        },
+        {
+          "action": "keep",
+          "after_variant": "p7",
+          "before_variant": "p7",
+          "choice": "keep",
+          "correct_after": true,
+          "correct_before": true,
+          "decision": 2,
+          "native_response_sha256": "60b8e62444de1fb6b1d9f6b3b9d58ebf2964a7be9bf48bac6cf700ff82ac03aa",
+          "observed_diagnostic_before": true,
+          "prompt_sha256": "0324222c1e28d3ee4af0c1a43f6823539acbb8c121a748cb87e27578904dd5d9",
+          "seconds": 5.466299083083868,
+          "status": "OK"
+        }
+      ],
+      "timing": "late"
+    },
+    {
+      "case": "dateutil",
+      "episode_id": "gpt-6-luna_dateutil_correct_r1_late",
+      "model": "gpt-6-luna",
+      "repeat": 1,
+      "start_variant": "k3",
+      "state": "correct",
+      "steps": [
+        {
+          "action": "keep",
+          "after_variant": "k3",
+          "before_variant": "k3",
+          "choice": "keep",
+          "correct_after": true,
+          "correct_before": true,
+          "decision": 1,
+          "native_response_sha256": "2f1074527e765f0120f4465ff479aacba1dd47a338bd6a4b7c35440af901dac6",
+          "observed_diagnostic_before": false,
+          "prompt_sha256": "88bce70c3f5922c29d064b8c1fc66789935c61a6634c49a9fda1438fa640462d",
+          "seconds": 5.802270375192165,
+          "status": "OK"
+        },
+        {
+          "action": "keep",
+          "after_variant": "k3",
+          "before_variant": "k3",
+          "choice": "keep",
+          "correct_after": true,
+          "correct_before": true,
+          "decision": 2,
+          "native_response_sha256": "af54193b314da4cd7154c5a8c95a094b54642ac10ab28e73307430ebd6b597be",
+          "observed_diagnostic_before": true,
+          "prompt_sha256": "49959a2e0ea5dd385a2cbda06021b1e03afe3d23bce6abcf779c2f607b6b5276",
+          "seconds": 5.324726082850248,
+          "status": "OK"
+        }
+      ],
+      "timing": "late"
+    },
+    {
+      "case": "dateutil",
+      "episode_id": "gpt-6-luna_dateutil_correct_r1_early",
+      "model": "gpt-6-luna",
+      "repeat": 1,
+      "start_variant": "k3",
+      "state": "correct",
+      "steps": [
+        {
+          "action": "keep",
+          "after_variant": "k3",
+          "before_variant": "k3",
+          "choice": "keep",
+          "correct_after": true,
+          "correct_before": true,
+          "decision": 1,
+          "native_response_sha256": "3b9cb3dd551a64368c7e51347205253cf1324d975f93da18d30ecc78701cd561",
+          "observed_diagnostic_before": true,
+          "prompt_sha256": "d311cd00c25a2d710c1d066df7b38e72e0a71e055ea3d7d43bc4ebc24f952525",
+          "seconds": 5.86555829201825,
+          "status": "OK"
+        },
+        {
+          "action": "keep",
+          "after_variant": "k3",
+          "before_variant": "k3",
+          "choice": "keep",
+          "correct_after": true,
+          "correct_before": true,
+          "decision": 2,
+          "native_response_sha256": "386ecd9e43d8ff3b6d3039cb648dd45282f0459c01c8a4e31932e467a6f29f44",
+          "observed_diagnostic_before": true,
+          "prompt_sha256": "49959a2e0ea5dd385a2cbda06021b1e03afe3d23bce6abcf779c2f607b6b5276",
+          "seconds": 5.303960541961715,
+          "status": "OK"
+        }
+      ],
+      "timing": "early"
+    },
+    {
+      "case": "dateutil",
+      "episode_id": "gpt-6.2-astra_dateutil_correct_r1_early",
+      "model": "gpt-6.2-astra",
+      "repeat": 1,
+      "start_variant": "k3",
+      "state": "correct",
+      "steps": [
+        {
+          "action": "keep",
+          "after_variant": "k3",
+          "before_variant": "k3",
+          "choice": "keep",
+          "correct_after": true,
+          "correct_before": true,
+          "decision": 1,
+          "native_response_sha256": "77edd0b9d0897a07b6dab8dceca2512a1ec60a36975115856ea2560e0b38e0fa",
+          "observed_diagnostic_before": true,
+          "prompt_sha256": "b3ed7e1d38d1e04b6188a2f5e9b0266af407bf8b7df9ad31de4de3c0a8e9a619",
+          "seconds": 7.066558707971126,
+          "status": "OK"
+        },
+        {
+          "action": "keep",
+          "after_variant": "k3",
+          "before_variant": "k3",
+          "choice": "keep",
+          "correct_after": true,
+          "correct_before": true,
+          "decision": 2,
+          "native_response_sha256": "a08308282b951853636fbe3c93e2a04cebc53e704d4cd0afb13d8d910f5cae04",
+          "observed_diagnostic_before": true,
+          "prompt_sha256": "d20bc72980288f995969062b750a8aac278a8d4a8b39ebba689ce429bb712bd2",
+          "seconds": 6.636922916164622,
+          "status": "OK"
+        }
+      ],
+      "timing": "early"
+    },
+    {
+      "case": "dateutil",
+      "episode_id": "gpt-6.2-astra_dateutil_correct_r1_late",
+      "model": "gpt-6.2-astra",
+      "repeat": 1,
+      "start_variant": "k3",
+      "state": "correct",
+      "steps": [
+        {
+          "action": "keep",
+          "after_variant": "k3",
+          "before_variant": "k3",
+          "choice": "keep",
+          "correct_after": true,
+          "correct_before": true,
+          "decision": 1,
+          "native_response_sha256": "d2af447386ac0a0944bfa38f96c4b1e873a758f5cf4dec73bdf00a8ecd5b0ee6",
+          "observed_diagnostic_before": false,
+          "prompt_sha256": "bd9315251319cf01c8de21f10075fc06a33de6526494ed2a904660c64c28dd3f",
+          "seconds": 7.285086791031063,
+          "status": "OK"
+        },
+        {
+          "action": "keep",
+          "after_variant": "k3",
+          "before_variant": "k3",
+          "choice": "keep",
+          "correct_after": true,
+          "correct_before": true,
+          "decision": 2,
+          "native_response_sha256": "88a2b940d4478aed7189a1a2cbf98d79c325e90c181a164ae266b45151071737",
+          "observed_diagnostic_before": true,
+          "prompt_sha256": "d20bc72980288f995969062b750a8aac278a8d4a8b39ebba689ce429bb712bd2",
+          "seconds": 12.467003124998882,
+          "status": "OK"
+        }
+      ],
+      "timing": "late"
+    },
+    {
+      "case": "dateutil",
+      "episode_id": "gpt-6.2-astra_dateutil_defective_r2_early",
+      "model": "gpt-6.2-astra",
+      "repeat": 2,
+      "start_variant": "p7",
+      "state": "defective",
+      "steps": [
+        {
+          "action": "k3",
+          "after_variant": "k3",
+          "before_variant": "p7",
+          "choice": "v2",
+          "correct_after": true,
+          "correct_before": false,
+          "decision": 1,
+          "native_response_sha256": "caec7d03f88c7bba31e6b7c1564948287199806019110e065b8abb7ba56d2245",
+          "observed_diagnostic_before": true,
+          "prompt_sha256": "19e94086c08dd5ac3ba32b503e93c43284e97a1ac8c139314c5a377f806b1982",
+          "seconds": 7.554785875137895,
+          "status": "OK"
+        },
+        {
+          "action": "keep",
+          "after_variant": "k3",
+          "before_variant": "k3",
+          "choice": "keep",
+          "correct_after": true,
+          "correct_before": true,
+          "decision": 2,
+          "native_response_sha256": "6d082986ef6f6b510d8daf5077003f1174fda569e878e536eb6b76e716646a1e",
+          "observed_diagnostic_before": true,
+          "prompt_sha256": "eb051fa426dfe78fe13cce20a9dda20937dd6219d8e49b78b6efebc89d9d0e54",
+          "seconds": 10.860743707977235,
+          "status": "OK"
+        }
+      ],
+      "timing": "early"
+    },
+    {
+      "case": "dateutil",
+      "episode_id": "gpt-6.2-astra_dateutil_defective_r2_late",
+      "model": "gpt-6.2-astra",
+      "repeat": 2,
+      "start_variant": "p7",
+      "state": "defective",
+      "steps": [
+        {
+          "action": "k3",
+          "after_variant": "k3",
+          "before_variant": "p7",
+          "choice": "v2",
+          "correct_after": true,
+          "correct_before": false,
+          "decision": 1,
+          "native_response_sha256": "b13d4667e1007f097e46529c3ce83f50928ffda000356295d2e79aa5ee7c2506",
+          "observed_diagnostic_before": false,
+          "prompt_sha256": "d22eefab235d9053c5c5a4546fa17618b3053acf96e490a3040e88907c81b55b",
+          "seconds": 7.1151629579253495,
+          "status": "OK"
+        },
+        {
+          "action": "keep",
+          "after_variant": "k3",
+          "before_variant": "k3",
+          "choice": "keep",
+          "correct_after": true,
+          "correct_before": true,
+          "decision": 2,
+          "native_response_sha256": "ad2e20f0c2cf0db2b5ae4e775fcf787cab4cbe7769bc5f782fb4c75083e9081c",
+          "observed_diagnostic_before": true,
+          "prompt_sha256": "eb051fa426dfe78fe13cce20a9dda20937dd6219d8e49b78b6efebc89d9d0e54",
+          "seconds": 7.80543995811604,
+          "status": "OK"
+        }
+      ],
+      "timing": "late"
+    },
+    {
+      "case": "dateutil",
+      "episode_id": "gpt-6-luna_dateutil_defective_r2_late",
+      "model": "gpt-6-luna",
+      "repeat": 2,
+      "start_variant": "p7",
+      "state": "defective",
+      "steps": [
+        {
+          "action": "k3",
+          "after_variant": "k3",
+          "before_variant": "p7",
+          "choice": "v1",
+          "correct_after": true,
+          "correct_before": false,
+          "decision": 1,
+          "native_response_sha256": "19a2300428b4ce1274567eadc77ebe185ba9653f2e3dc26fabc8a8499af08201",
+          "observed_diagnostic_before": false,
+          "prompt_sha256": "7202020e0fa8f1868c77d16f3a220db5a972bcd44c8e1886d02befeff0e6ff74",
+          "seconds": 6.076549291843548,
+          "status": "OK"
+        },
+        {
+          "action": "keep",
+          "after_variant": "k3",
+          "before_variant": "k3",
+          "choice": "keep",
+          "correct_after": true,
+          "correct_before": true,
+          "decision": 2,
+          "native_response_sha256": "a124e249a0b32681d7a1d511475fa77e2501bd038007efefeb3998d5b65dd48e",
+          "observed_diagnostic_before": true,
+          "prompt_sha256": "43258965763984c55ccec854b6033e614e8237628233bdc2f43897df51eb9fc3",
+          "seconds": 5.5305205408949405,
+          "status": "OK"
+        }
+      ],
+      "timing": "late"
+    },
+    {
+      "case": "dateutil",
+      "episode_id": "gpt-6-luna_dateutil_defective_r2_early",
+      "model": "gpt-6-luna",
+      "repeat": 2,
+      "start_variant": "p7",
+      "state": "defective",
+      "steps": [
+        {
+          "action": "k3",
+          "after_variant": "k3",
+          "before_variant": "p7",
+          "choice": "v1",
+          "correct_after": true,
+          "correct_before": false,
+          "decision": 1,
+          "native_response_sha256": "a9db15cc48dc6d29ee5e00da15f81895479711a3ed1e9f96565cd302116caf1f",
+          "observed_diagnostic_before": true,
+          "prompt_sha256": "72049c4b3e3a30d09b79f3917eddb039a944eb2421ff5266881038f2285b9a17",
+          "seconds": 6.485106083098799,
+          "status": "OK"
+        },
+        {
+          "action": "keep",
+          "after_variant": "k3",
+          "before_variant": "k3",
+          "choice": "keep",
+          "correct_after": true,
+          "correct_before": true,
+          "decision": 2,
+          "native_response_sha256": "7efb99c2b2479785e978f1289134c73eb31752d2d936b793727ae4c0915823bb",
+          "observed_diagnostic_before": true,
+          "prompt_sha256": "43258965763984c55ccec854b6033e614e8237628233bdc2f43897df51eb9fc3",
+          "seconds": 5.105650292010978,
+          "status": "OK"
+        }
+      ],
+      "timing": "early"
+    },
+    {
+      "case": "cpython",
+      "episode_id": "gpt-6.2-astra_cpython_defective_r1_early",
+      "model": "gpt-6.2-astra",
+      "repeat": 1,
+      "start_variant": "p2",
+      "state": "defective",
+      "steps": [
+        {
+          "action": "p7",
+          "after_variant": "p7",
+          "before_variant": "p2",
+          "choice": "v4",
+          "correct_after": true,
+          "correct_before": false,
+          "decision": 1,
+          "native_response_sha256": "123cd08a800e1095e86a0c1d6d796c4ca495ef6f0f46a86d57e7cd4263aafc99",
+          "observed_diagnostic_before": true,
+          "prompt_sha256": "8188855c8de95b757976b849d03ec0bca5ba3987da5cbe824a9a0abdb0f5efd3",
+          "seconds": 9.091220292029902,
+          "status": "OK"
+        },
+        {
+          "action": "keep",
+          "after_variant": "p7",
+          "before_variant": "p7",
+          "choice": "keep",
+          "correct_after": true,
+          "correct_before": true,
+          "decision": 2,
+          "native_response_sha256": "cd7d75058a17c0898575d74767ef9891d92ccfc9191e45e30c24eba4f358de8d",
+          "observed_diagnostic_before": true,
+          "prompt_sha256": "b097e92d13d5f95772f7d03c8598994c8a82d4ba771323c8a83a6dbd4e6ff3e4",
+          "seconds": 6.316314790863544,
+          "status": "OK"
+        }
+      ],
+      "timing": "early"
+    },
+    {
+      "case": "cpython",
+      "episode_id": "gpt-6.2-astra_cpython_defective_r1_late",
+      "model": "gpt-6.2-astra",
+      "repeat": 1,
+      "start_variant": "p2",
+      "state": "defective",
+      "steps": [
+        {
+          "action": "p7",
+          "after_variant": "p7",
+          "before_variant": "p2",
+          "choice": "v4",
+          "correct_after": true,
+          "correct_before": false,
+          "decision": 1,
+          "native_response_sha256": "911b80008bc4a6dcd1aea23e0d6ed761cfb239c6946a37227d0ba8c328be388b",
+          "observed_diagnostic_before": false,
+          "prompt_sha256": "a40a5f2a08172c3d3a73974f09b6ec010e864366e98e41aa296a591e56fd7534",
+          "seconds": 7.540854583028704,
+          "status": "OK"
+        },
+        {
+          "action": "keep",
+          "after_variant": "p7",
+          "before_variant": "p7",
+          "choice": "keep",
+          "correct_after": true,
+          "correct_before": true,
+          "decision": 2,
+          "native_response_sha256": "c718297ba3435503ab08317d434a74c31d2ec8dca30386db98a498669431a6fc",
+          "observed_diagnostic_before": true,
+          "prompt_sha256": "b097e92d13d5f95772f7d03c8598994c8a82d4ba771323c8a83a6dbd4e6ff3e4",
+          "seconds": 6.389027040917426,
+          "status": "OK"
+        }
+      ],
+      "timing": "late"
+    },
+    {
+      "case": "cpython",
+      "episode_id": "gpt-6.2-astra_cpython_correct_r2_early",
+      "model": "gpt-6.2-astra",
+      "repeat": 2,
+      "start_variant": "p7",
+      "state": "correct",
+      "steps": [
+        {
+          "action": "p5",
+          "after_variant": "p5",
+          "before_variant": "p7",
+          "choice": "v4",
+          "correct_after": true,
+          "correct_before": true,
+          "decision": 1,
+          "native_response_sha256": "125d83371d4cb6141fa6887362f0983992ce1f47e43cee2a3e62d8635c8372d3",
+          "observed_diagnostic_before": true,
+          "prompt_sha256": "700f7641770a99b85f1c2ad88d3fa25c435ec643a5c792099ccb20927d05cf1f",
+          "seconds": 6.758527749916539,
+          "status": "OK"
+        },
+        {
+          "action": "keep",
+          "after_variant": "p5",
+          "before_variant": "p5",
+          "choice": "keep",
+          "correct_after": true,
+          "correct_before": true,
+          "decision": 2,
+          "native_response_sha256": "1e5a74999b3daad6e12528806950fd0c112910a350e3cc0896ab466b99f36436",
+          "observed_diagnostic_before": true,
+          "prompt_sha256": "2a6798cf18db3fa325d6776a4dfc5562f4a2277a5541a3b185cabcf6d864ede9",
+          "seconds": 8.64456966612488,
+          "status": "OK"
+        }
+      ],
+      "timing": "early"
+    },
+    {
+      "case": "cpython",
+      "episode_id": "gpt-6.2-astra_cpython_correct_r2_late",
+      "model": "gpt-6.2-astra",
+      "repeat": 2,
+      "start_variant": "p7",
+      "state": "correct",
+      "steps": [
+        {
+          "action": "p5",
+          "after_variant": "p5",
+          "before_variant": "p7",
+          "choice": "v4",
+          "correct_after": true,
+          "correct_before": true,
+          "decision": 1,
+          "native_response_sha256": "3d30e76d79ffa6ebb5be03413ae7b809ab6e2b0e99a1e255654163b19d01a02e",
+          "observed_diagnostic_before": false,
+          "prompt_sha256": "536230dc78b48ff3bd72602632c8ef020876d969147c0dddc200bab4cef1336b",
+          "seconds": 6.189410749822855,
+          "status": "OK"
+        },
+        {
+          "action": "keep",
+          "after_variant": "p5",
+          "before_variant": "p5",
+          "choice": "keep",
+          "correct_after": true,
+          "correct_before": true,
+          "decision": 2,
+          "native_response_sha256": "9134579f5941ee0b135eab607c54bd7f2eab440a37ea857130b9de9416c42f62",
+          "observed_diagnostic_before": true,
+          "prompt_sha256": "2a6798cf18db3fa325d6776a4dfc5562f4a2277a5541a3b185cabcf6d864ede9",
+          "seconds": 6.607267166953534,
+          "status": "OK"
+        }
+      ],
+      "timing": "late"
+    },
+    {
+      "case": "dateutil",
+      "episode_id": "gpt-6-luna_dateutil_correct_r2_early",
+      "model": "gpt-6-luna",
+      "repeat": 2,
+      "start_variant": "k3",
+      "state": "correct",
+      "steps": [
+        {
+          "action": "keep",
+          "after_variant": "k3",
+          "before_variant": "k3",
+          "choice": "keep",
+          "correct_after": true,
+          "correct_before": true,
+          "decision": 1,
+          "native_response_sha256": "e6efc536118ab8f24d70e1a772ed7994582222c34e497718af7993488bf6cd94",
+          "observed_diagnostic_before": true,
+          "prompt_sha256": "c2f6242d7151374953b5ed68bcd947f2eb40cc34fdcf46c2a317cdf8055b8d8c",
+          "seconds": 5.6372290421277285,
+          "status": "OK"
+        },
+        {
+          "action": "keep",
+          "after_variant": "k3",
+          "before_variant": "k3",
+          "choice": "keep",
+          "correct_after": true,
+          "correct_before": true,
+          "decision": 2,
+          "native_response_sha256": "b2eeff5cfce4266aadcfedf946c345393ce652c40ae5af292dd603e54c8cff3c",
+          "observed_diagnostic_before": true,
+          "prompt_sha256": "b4af55b11060d20e250cedc1cbf3bdaa8ea90f35002cac7755f00877458e6c2c",
+          "seconds": 5.64248758321628,
+          "status": "OK"
+        }
+      ],
+      "timing": "early"
+    },
+    {
+      "case": "dateutil",
+      "episode_id": "gpt-6-luna_dateutil_correct_r2_late",
+      "model": "gpt-6-luna",
+      "repeat": 2,
+      "start_variant": "k3",
+      "state": "correct",
+      "steps": [
+        {
+          "action": "keep",
+          "after_variant": "k3",
+          "before_variant": "k3",
+          "choice": "keep",
+          "correct_after": true,
+          "correct_before": true,
+          "decision": 1,
+          "native_response_sha256": "02f29a5bdf15d693438e3d479d3056346f40114df05386d190df9c312e91baec",
+          "observed_diagnostic_before": false,
+          "prompt_sha256": "e34491e4d6b5acdacdf757d6b1c04fd17b66d876d7435bed69cc0ab71d52d21c",
+          "seconds": 5.270003791898489,
+          "status": "OK"
+        },
+        {
+          "action": "keep",
+          "after_variant": "k3",
+          "before_variant": "k3",
+          "choice": "keep",
+          "correct_after": true,
+          "correct_before": true,
+          "decision": 2,
+          "native_response_sha256": "d2413ad62fa177ec915d22d27783b5df40fd012d28c36d6ee64b404f11190275",
+          "observed_diagnostic_before": true,
+          "prompt_sha256": "b4af55b11060d20e250cedc1cbf3bdaa8ea90f35002cac7755f00877458e6c2c",
+          "seconds": 9.685194875113666,
+          "status": "OK"
+        }
+      ],
+      "timing": "late"
+    },
+    {
+      "case": "cpython",
+      "episode_id": "gpt-6.2-astra_cpython_defective_r2_late",
+      "model": "gpt-6.2-astra",
+      "repeat": 2,
+      "start_variant": "p2",
+      "state": "defective",
+      "steps": [
+        {
+          "action": "p7",
+          "after_variant": "p7",
+          "before_variant": "p2",
+          "choice": "v1",
+          "correct_after": true,
+          "correct_before": false,
+          "decision": 1,
+          "native_response_sha256": "670b54266b71ebb137301dd60063845a9380fe5300bfde20a1269dbf02806c6c",
+          "observed_diagnostic_before": false,
+          "prompt_sha256": "980274797f44a05bc46df046e8c4df6aa9fc425ff1385b0cdc218e286e7fea35",
+          "seconds": 8.532187500037253,
+          "status": "OK"
+        },
+        {
+          "action": "keep",
+          "after_variant": "p7",
+          "before_variant": "p7",
+          "choice": "keep",
+          "correct_after": true,
+          "correct_before": true,
+          "decision": 2,
+          "native_response_sha256": "5b812bf7a369c70e01f8dacc9daa3479757d864ad78bb477f56016f2a9d6417e",
+          "observed_diagnostic_before": true,
+          "prompt_sha256": "fad6b57c96275a85028a4b56195f350a85a6e2f15208afd20637d2e14c677699",
+          "seconds": 8.27190575003624,
+          "status": "OK"
+        }
+      ],
+      "timing": "late"
+    },
+    {
+      "case": "cpython",
+      "episode_id": "gpt-6.2-astra_cpython_defective_r2_early",
+      "model": "gpt-6.2-astra",
+      "repeat": 2,
+      "start_variant": "p2",
+      "state": "defective",
+      "steps": [
+        {
+          "action": "p7",
+          "after_variant": "p7",
+          "before_variant": "p2",
+          "choice": "v1",
+          "correct_after": true,
+          "correct_before": false,
+          "decision": 1,
+          "native_response_sha256": "b2eb95d224753fcc9e1a070f974c8e4f91454c9edc2d5bea3ba6732a6976041d",
+          "observed_diagnostic_before": true,
+          "prompt_sha256": "2b4417b768b1c44786ae509cde7ef510f628a9075d71f08363f55fb176e73a75",
+          "seconds": 8.514518458861858,
+          "status": "OK"
+        },
+        {
+          "action": "keep",
+          "after_variant": "p7",
+          "before_variant": "p7",
+          "choice": "keep",
+          "correct_after": true,
+          "correct_before": true,
+          "decision": 2,
+          "native_response_sha256": "8ceb9cf0789b3f68dbc80b126118cc58cf5a7cb16750431f00ee9be7464661ea",
+          "observed_diagnostic_before": true,
+          "prompt_sha256": "fad6b57c96275a85028a4b56195f350a85a6e2f15208afd20637d2e14c677699",
+          "seconds": 9.137208209140226,
+          "status": "OK"
+        }
+      ],
+      "timing": "early"
+    },
+    {
+      "case": "cpython",
+      "episode_id": "gpt-6-luna_cpython_defective_r1_late",
+      "model": "gpt-6-luna",
+      "repeat": 1,
+      "start_variant": "p2",
+      "state": "defective",
+      "steps": [
+        {
+          "action": "p5",
+          "after_variant": "p5",
+          "before_variant": "p2",
+          "choice": "v1",
+          "correct_after": true,
+          "correct_before": false,
+          "decision": 1,
+          "native_response_sha256": "7152ec918274cccbbe93b197aae70d51e56b2979a49e7223df4aa3bd7d282714",
+          "observed_diagnostic_before": false,
+          "prompt_sha256": "b5e36b96aa0ae049fb20cbdad1997465358dfee5186e935aedb890cba76556fb",
+          "seconds": 6.268554833019152,
+          "status": "OK"
+        },
+        {
+          "action": "p7",
+          "after_variant": "p7",
+          "before_variant": "p5",
+          "choice": "v4",
+          "correct_after": true,
+          "correct_before": true,
+          "decision": 2,
+          "native_response_sha256": "2898dd2f56d55dbde17f8cf4de2512dd97765bd495c85bab2a8730e6a6999d29",
+          "observed_diagnostic_before": true,
+          "prompt_sha256": "58423df396441d036dc697fd989e3b6492bbfc4f9fe713b2cc05e1477ffa2557",
+          "seconds": 7.359604917000979,
+          "status": "OK"
+        }
+      ],
+      "timing": "late"
+    },
+    {
+      "case": "cpython",
+      "episode_id": "gpt-6-luna_cpython_defective_r1_early",
+      "model": "gpt-6-luna",
+      "repeat": 1,
+      "start_variant": "p2",
+      "state": "defective",
+      "steps": [
+        {
+          "action": "p5",
+          "after_variant": "p5",
+          "before_variant": "p2",
+          "choice": "v1",
+          "correct_after": true,
+          "correct_before": false,
+          "decision": 1,
+          "native_response_sha256": "41d57f811aee1b459866c0e2db36c9af25141c8fdbd49d6097505e3990a511c9",
+          "observed_diagnostic_before": true,
+          "prompt_sha256": "2fec027c4e88b942ab51a64d7633dc2faf473ddd43070855e295dbae27c19959",
+          "seconds": 7.308607500046492,
+          "status": "OK"
+        },
+        {
+          "action": "p7",
+          "after_variant": "p7",
+          "before_variant": "p5",
+          "choice": "v4",
+          "correct_after": true,
+          "correct_before": true,
+          "decision": 2,
+          "native_response_sha256": "387e8c410eec7fad6a73dcf93e4ea2af2a20be1ed7a3b4388eba66658c17d7dc",
+          "observed_diagnostic_before": true,
+          "prompt_sha256": "58423df396441d036dc697fd989e3b6492bbfc4f9fe713b2cc05e1477ffa2557",
+          "seconds": 5.6201896669808775,
+          "status": "OK"
+        }
+      ],
+      "timing": "early"
+    },
+    {
+      "case": "cpython",
+      "episode_id": "gpt-6-luna_cpython_correct_r2_late",
+      "model": "gpt-6-luna",
+      "repeat": 2,
+      "start_variant": "p7",
+      "state": "correct",
+      "steps": [
+        {
+          "action": "p3",
+          "after_variant": "p3",
+          "before_variant": "p7",
+          "choice": "v1",
+          "correct_after": false,
+          "correct_before": true,
+          "decision": 1,
+          "native_response_sha256": "cb118614b9ca960204a36e7c5606ec307b486c308482672e07df1072aca318cf",
+          "observed_diagnostic_before": false,
+          "prompt_sha256": "536230dc78b48ff3bd72602632c8ef020876d969147c0dddc200bab4cef1336b",
+          "seconds": 6.102338833967224,
+          "status": "OK"
+        },
+        {
+          "action": "p7",
+          "after_variant": "p7",
+          "before_variant": "p3",
+          "choice": "v2",
+          "correct_after": true,
+          "correct_before": false,
+          "decision": 2,
+          "native_response_sha256": "8f19a67d222d5b9ccb95ec41ed316b243ec9bffdb00db31fa90c30776627e855",
+          "observed_diagnostic_before": true,
+          "prompt_sha256": "2577de08bdff5d26d9d9b59cffe2f7b05738c710b086d831797370853ab97ce3",
+          "seconds": 5.634515542071313,
+          "status": "OK"
+        }
+      ],
+      "timing": "late"
+    },
+    {
+      "case": "cpython",
+      "episode_id": "gpt-6-luna_cpython_correct_r2_early",
+      "model": "gpt-6-luna",
+      "repeat": 2,
+      "start_variant": "p7",
+      "state": "correct",
+      "steps": [
+        {
+          "action": "p3",
+          "after_variant": "p3",
+          "before_variant": "p7",
+          "choice": "v1",
+          "correct_after": false,
+          "correct_before": true,
+          "decision": 1,
+          "native_response_sha256": "65fc85c92e484a0002d0a8831eb6b84570ed729e7e430f460147f901eb4baeb3",
+          "observed_diagnostic_before": true,
+          "prompt_sha256": "700f7641770a99b85f1c2ad88d3fa25c435ec643a5c792099ccb20927d05cf1f",
+          "seconds": 6.735719624906778,
+          "status": "OK"
+        },
+        {
+          "action": "p7",
+          "after_variant": "p7",
+          "before_variant": "p3",
+          "choice": "v2",
+          "correct_after": true,
+          "correct_before": false,
+          "decision": 2,
+          "native_response_sha256": "cfcd0983ac8e7dd60e70acacd9ca8e4c14799aaf90c97964539e36651a51ff96",
+          "observed_diagnostic_before": true,
+          "prompt_sha256": "2577de08bdff5d26d9d9b59cffe2f7b05738c710b086d831797370853ab97ce3",
+          "seconds": 6.109541958896443,
+          "status": "OK"
+        }
+      ],
+      "timing": "early"
+    },
+    {
+      "case": "cpython",
+      "episode_id": "gpt-6-luna_cpython_correct_r1_early",
+      "model": "gpt-6-luna",
+      "repeat": 1,
+      "start_variant": "p7",
+      "state": "correct",
+      "steps": [
+        {
+          "action": "p3",
+          "after_variant": "p3",
+          "before_variant": "p7",
+          "choice": "v2",
+          "correct_after": false,
+          "correct_before": true,
+          "decision": 1,
+          "native_response_sha256": "a36982a66da19481ebfe693a3e9ea4ec86365c0804dc106cb96ade7c9d89e08f",
+          "observed_diagnostic_before": true,
+          "prompt_sha256": "eaea2bea0d19e6c3e267a8ac6f89690dbb0279b1d1717a8f44dd9e769755a029",
+          "seconds": 7.12883779197,
+          "status": "OK"
+        },
+        {
+          "action": "p5",
+          "after_variant": "p5",
+          "before_variant": "p3",
+          "choice": "v4",
+          "correct_after": true,
+          "correct_before": false,
+          "decision": 2,
+          "native_response_sha256": "fe8d43e21332f329b88d3683dc8bc52d6259d4708698af781eb0ba60f86268f7",
+          "observed_diagnostic_before": true,
+          "prompt_sha256": "f2c660e3d53757da01f6e7d29ed1d58783f15c7fde02c10ba6a0fe5495401e77",
+          "seconds": 6.4055355419404805,
+          "status": "OK"
+        }
+      ],
+      "timing": "early"
+    },
+    {
+      "case": "cpython",
+      "episode_id": "gpt-6-luna_cpython_correct_r1_late",
+      "model": "gpt-6-luna",
+      "repeat": 1,
+      "start_variant": "p7",
+      "state": "correct",
+      "steps": [
+        {
+          "action": "p3",
+          "after_variant": "p3",
+          "before_variant": "p7",
+          "choice": "v2",
+          "correct_after": false,
+          "correct_before": true,
+          "decision": 1,
+          "native_response_sha256": "bd99ec4ed870b34da26c6f028830323aa7ef5a04b3c19bc5d918a18d5ffa5100",
+          "observed_diagnostic_before": false,
+          "prompt_sha256": "dfbc9032b6e1ab34979bb1f7ab4f16b45f461d6fbf310fafa520019b28d4c0a0",
+          "seconds": 5.519500167109072,
+          "status": "OK"
+        },
+        {
+          "action": "keep",
+          "after_variant": "p3",
+          "before_variant": "p3",
+          "choice": "keep",
+          "correct_after": false,
+          "correct_before": false,
+          "decision": 2,
+          "native_response_sha256": "da3e3e942cb2f13d5c40d5927989c71b8ccd9493c517045723168cb16f6da24e",
+          "observed_diagnostic_before": true,
+          "prompt_sha256": "f2c660e3d53757da01f6e7d29ed1d58783f15c7fde02c10ba6a0fe5495401e77",
+          "seconds": 5.010869499994442,
+          "status": "OK"
+        }
+      ],
+      "timing": "late"
+    },
+    {
+      "case": "dateutil",
+      "episode_id": "gpt-6-luna_dateutil_defective_r1_early",
+      "model": "gpt-6-luna",
+      "repeat": 1,
+      "start_variant": "p7",
+      "state": "defective",
+      "steps": [
+        {
+          "action": "k3",
+          "after_variant": "k3",
+          "before_variant": "p7",
+          "choice": "v1",
+          "correct_after": true,
+          "correct_before": false,
+          "decision": 1,
+          "native_response_sha256": "8e1dae98349a8ecf8a90cda05b133a47e9e8e3b403aa3b14ddeafe57f755aedf",
+          "observed_diagnostic_before": true,
+          "prompt_sha256": "72049c4b3e3a30d09b79f3917eddb039a944eb2421ff5266881038f2285b9a17",
+          "seconds": 6.729892333038151,
+          "status": "OK"
+        },
+        {
+          "action": "keep",
+          "after_variant": "k3",
+          "before_variant": "k3",
+          "choice": "keep",
+          "correct_after": true,
+          "correct_before": true,
+          "decision": 2,
+          "native_response_sha256": "4369731d9509b7013d2060c8e36b329f60d3f75b6ad186a9d017ae5a7b2ca910",
+          "observed_diagnostic_before": true,
+          "prompt_sha256": "43258965763984c55ccec854b6033e614e8237628233bdc2f43897df51eb9fc3",
+          "seconds": 12.017641624901444,
+          "status": "OK"
+        }
+      ],
+      "timing": "early"
+    },
+    {
+      "case": "dateutil",
+      "episode_id": "gpt-6-luna_dateutil_defective_r1_late",
+      "model": "gpt-6-luna",
+      "repeat": 1,
+      "start_variant": "p7",
+      "state": "defective",
+      "steps": [
+        {
+          "action": "k3",
+          "after_variant": "k3",
+          "before_variant": "p7",
+          "choice": "v1",
+          "correct_after": true,
+          "correct_before": false,
+          "decision": 1,
+          "native_response_sha256": "485314397da51a9187d607d547560b3a23b0ce090ea1caa1bf21a76f8f9abe62",
+          "observed_diagnostic_before": false,
+          "prompt_sha256": "7202020e0fa8f1868c77d16f3a220db5a972bcd44c8e1886d02befeff0e6ff74",
+          "seconds": 7.9144827499985695,
+          "status": "OK"
+        },
+        {
+          "action": "keep",
+          "after_variant": "k3",
+          "before_variant": "k3",
+          "choice": "keep",
+          "correct_after": true,
+          "correct_before": true,
+          "decision": 2,
+          "native_response_sha256": "976a974c33ae8647bd57e7f974c9d6f98efaa98be0c66ecb3a62787c04cf8fc4",
+          "observed_diagnostic_before": true,
+          "prompt_sha256": "43258965763984c55ccec854b6033e614e8237628233bdc2f43897df51eb9fc3",
+          "seconds": 5.5522915839683264,
+          "status": "OK"
+        }
+      ],
+      "timing": "late"
+    }
+  ],
+  "frozen_at_utc": "2026-11-26T15:44:52.318823+00:00",
+  "launchers": {
+    "gpt-6-luna": "codex-cli 0.169.0",
+    "gpt-6.2-astra": "codex-cli 0.169.0"
+  },
+  "plan_sha256": "209c858a60a5380a1bd1ad1664ed27a410ee41ba4795a4d5f0b2edd45a7818cb",
+  "protocol": "docs/CHECKER_TIMING_PILOT_20261126.md",
+  "roster": [
+    "gpt-6.2-astra",
+    "gpt-6-luna"
+  ]
+}
