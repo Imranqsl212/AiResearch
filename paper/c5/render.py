@@ -129,7 +129,7 @@ def render(source, destination, author):
     pages = [" ".join((p.extract_text() or "").split()) for p in reader.pages]
     for n, column in ((1, "Truthful PASS"), (2, "Verified pairs"),
                       (3, "Invalid policies caught"), (4, "Effort change"),
-                      (5, "Diagnostic before first choice")):
+                      (5, "Diagnostic before first choice"), (6, "Keys shown")):
         assert any(f"Table {n}." in t and column in t for t in pages)
     assert any("Figure 2." in text and page.mediabox.width > page.mediabox.height and len(page.images) == 1
                for page, text in zip(reader.pages, pages))

@@ -126,6 +126,19 @@ The first choices matched in all 16 pairs, down to the selected implementation. 
 
 The two errors behind the matching scores both occurred in CPython. In the early arm, Luna repaired a defective CPython formatter on its first choice, then restored the original defect on its second. It paired sorted keys with values in their original order, assigning values to the wrong keys. In the late arm, Luna started from a working formatter, introduced the numeric-order error and kept it on the second choice. Each second decision used a fresh session. The second prompts were byte-identical within all 16 pairs, and only these two pairs produced different final versions. Those differences therefore document variation between calls. This pilot provides no evidence that diagnostic timing caused either final error.
 
+## One more decision after a CPython edit
+
+Could a model recover from the sorting error if it saw the formatter put 10 before 2? In an exploratory follow-up, we took all 16 CPython episodes from the timing pilot at the end of the first decision. Four contained the same faulty Luna edit and twelve held working code. We copied each history and its current source into two branches. In each branch the original model saw the formatter's actual output on one dictionary, then had one decision to keep the code or choose another implementation. Both dictionaries had the same two distinct values and the larger integer key was inserted first.
+
+**Table 6. Recovery and preservation after one more decision on CPython.** Only the keys 2 and 10 exposed the sorting error in the displayed output. We scored each final implementation on ten held-out checks of key order and key–value bindings.
+
+| Keys shown | Key order printed by faulty code | Faulty states repaired | Working states preserved |
+| --- | --- | --- | --- |
+| 1 and 2 | 1 then 2 | 4/4 | 12/12 |
+| 2 and 10 | 10 then 2 | 4/4 | 12/12 |
+
+With keys 1 and 2, the faulty formatter produced exactly the same output as the correct formatter. Luna nevertheless repaired all four faulty states in that condition, just as it did when the output exposed the error. Across the twelve working states, the models chose a different implementation four times with keys 1 and 2 and six times with keys 2 and 10. Every replacement passed. The visible error yielded no additional repairs in these runs. We chose the second input after observing the regression, and all four recoveries per condition concern one defect on one task.
+
 ## Limitations and conclusion
 
 The archival cohorts use one small model, selected secure onsets and a small number of authored families. Some waves stopped after technical failures and one deterministic trajectory recurred. The historical contrasts are descriptive. Public-repository audits of stopping establish what records survive an export but cannot identify the causal effect of feedback. No confirmatory model outcomes or independent human agreement estimates are available. Registry publication, model access and independent semantic review are prerequisites for the prospective claims. Context retrieval, second opinions and false passes are separate interventions for future work.
@@ -136,4 +149,4 @@ At the second decision, the false-failure branches held fewer failing repairs. O
 
 ## Data and research contributions
 
-The data supplement contains 78 structured decisions from the 28 persistent-verdict continuations. Source receipts bind the derived records to their archived events. The supplement includes a machine-readable schema, calibration controls and a separate statistical plan. The hosted effort comparison includes a public ledger of 324 decisions, six-task assessments for every supported setting, and a standalone script to reproduce the paired comparisons. The repository also provides the 64 timing-pilot decisions, their prompt hashes and the held-out results for each code variant. The historical model observations predate the new plan. Codex assisted with analysis and drafting. Human author approval and an external data deposit are pending.
+The data supplement contains 78 structured decisions from the 28 persistent-verdict continuations. Source receipts bind the derived records to their archived events. The supplement includes a machine-readable schema, calibration controls and a separate statistical plan. The hosted effort comparison includes a public ledger of 324 decisions, six-task assessments for every supported setting, and a standalone script to reproduce the paired comparisons. The repository also provides the 64 timing-pilot decisions, the 32 CPython follow-up choices from 16 first-edit histories, their prompt hashes and the held-out results for each code variant. The historical model observations predate the new plan. Codex assisted with analysis and drafting. Human author approval and an external data deposit are pending.
