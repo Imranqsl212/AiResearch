@@ -1,0 +1,9 @@
+# Which observation helps an agent recover after an edit?
+
+Exploratory follow-up on one CPython dictionary-formatting task before independent human review. The two-digit probe was chosen after inspecting the earlier lexical sorting regression. This study is excluded from confirmatory analysis.
+
+Use all sixteen recorded CPython histories from the timing pilot immediately after their first edit. Four of those edits left a failing implementation, all from GPT-6 Luna. The other twelve passed. Fork each exact first exchange, using the same originating model, initial and current source, and option identifiers. Omit the original second decision. Each branch sees the current source's actual output on exactly one new execution. Use keys 1 and 2 in one branch, and 2 and 10 in the other. Insert the larger key first; keep value strings and insertion positions matched. Show no expected output or PASS/FAIL for the new execution.
+
+Give each branch one decision at low effort, using the subscription CLI, with tools disabled and at most one cloud client at a time. Keep the current source or select a calibrated implementation. Within each model and current correctness stratum, balance which probe is dispatched first. Shuffle blocks with seed 20261127. Record response failures or missing observations and do not resample decisions.
+
+Measure repairs among the four failing checkpoints, preservation among the twelve working checkpoints, and new damage. A replacement that passes still counts as preservation. Score bindings and applicable key order using six existing and four fresh held-out checks fixed before dispatch. Compare within the same first-edit history and report discordance. Each arm has one sampled continuation per checkpoint; the sixteen checkpoints are repeated observations of one task. Previously observed diagnostics in the first exchange remain part of that history.
