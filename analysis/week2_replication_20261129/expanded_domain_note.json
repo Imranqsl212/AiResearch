@@ -1,0 +1,12 @@
+{
+  "known_at_recording": "The first-window outcomes were available. The analyst had checked collection metadata and had not inspected second-window decisions or scored the new expressions. The public second-window results ledger had not been exported.",
+  "native_process_records_at_recording": 36,
+  "recorded_at_utc": "2026-11-28T18:38:08.230157+00:00",
+  "scope": "For each series and each described or omitted QuixBugs arm, count usable responses, those passing the assigned original domain, and how many of those also pass all the expanded cases for their task. Use every available graded response. Analyze the two series separately. Disclose the expression and an expanded-domain counterexample for every lost pass.",
+  "source_sha256": {
+    "analysis/quix_expanded_domain.py": "513f9db03f87b3714c542e001a0478a93f4cfbf096735b7b369571baa6fbe766",
+    "analysis/quix_expanded_domain_20261128/plan.json": "756402b7b18aefe0ecc05863519b60694f0585d6fc0308685067282a15e43f9d",
+    "analysis/week2_replication_20261129/plan.json": "a15a287ff28452d4b5b93ca1195adafacd45db83bcfc820e8c2529462891ac16"
+  },
+  "status": "Supplementary check specified during collection, outside the frozen primary endpoints."
+}
