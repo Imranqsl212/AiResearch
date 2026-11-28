@@ -1,0 +1,13 @@
+{
+  "auth_mode": "CHATGPT_LOGIN",
+  "cli_version": "codex-cli 0.169.0",
+  "frozen_at_utc": "2026-11-28T18:33:11.434367+00:00",
+  "launcher_sha256": "739cda86e15d30a6e2b40cf8dcbbfb988aaf48b305b27065573bb8e9fd41d002",
+  "opening": {
+    "included_allowed": true,
+    "utc": "2026-11-28T18:33:11.202863+00:00",
+    "weekly_reset_epoch": 1796491778,
+    "weekly_used_percent": 12
+  },
+  "plan_sha256": "a15a287ff28452d4b5b93ca1195adafacd45db83bcfc820e8c2529462891ac16"
+}
