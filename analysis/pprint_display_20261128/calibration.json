@@ -1,0 +1,346 @@
+{
+  "inputs": {
+    "revealing": "{20: 'cobalt', 3: 'amber'}",
+    "shared": "{7: 'cobalt', 3: 'amber'}"
+  },
+  "parent_commit": "6a01fc5d4114ac56105ecbfb4ae3cbe043818449",
+  "scope": "Six historical and four fresh held-out functional checks on compact dictionary representations. Correctness requires every check to pass, including preservation of key/value bindings and native key order where specified. Displayed probes are excluded from grading.",
+  "variants": {
+    "p2": {
+      "checks": [
+        {
+          "bindings_preserved": false,
+          "comparable_keys_sorted": true,
+          "passed": false,
+          "probe": "signed_integer_keys",
+          "rendered": "{-4: 'oak', 2: 'elm', 12: 'ash'}"
+        },
+        {
+          "bindings_preserved": false,
+          "comparable_keys_sorted": true,
+          "passed": false,
+          "probe": "comparable_tuple_keys",
+          "rendered": "{(2, 1): 'east', (20, 1): 'west'}"
+        },
+        {
+          "bindings_preserved": false,
+          "comparable_keys_sorted": null,
+          "passed": false,
+          "probe": "incomparable_tuple_keys",
+          "rendered": "{(None,): 'sun', (3,): 'rain'}"
+        },
+        {
+          "bindings_preserved": false,
+          "comparable_keys_sorted": true,
+          "passed": false,
+          "probe": "string_keys",
+          "rendered": "{'a': [3], 'z': [4]}"
+        },
+        {
+          "bindings_preserved": false,
+          "comparable_keys_sorted": true,
+          "passed": false,
+          "probe": "nested_binding",
+          "rendered": "{'a': {2: 'j', 5: 'k'}}"
+        },
+        {
+          "bindings_preserved": true,
+          "comparable_keys_sorted": true,
+          "passed": true,
+          "probe": "empty_mapping",
+          "rendered": "{}"
+        },
+        {
+          "bindings_preserved": false,
+          "comparable_keys_sorted": true,
+          "input": "{-7: 'quartz', -18: 'jade', -35: 'onyx'}",
+          "passed": false,
+          "probe": "negative_numeric_order",
+          "rendered": "{-35: 'quartz', -18: 'jade', -7: 'onyx'}"
+        },
+        {
+          "bindings_preserved": false,
+          "comparable_keys_sorted": true,
+          "input": "{43: 'satin', 8: 'linen', 305: 'wool'}",
+          "passed": false,
+          "probe": "unsigned_numeric_widths",
+          "rendered": "{8: 'satin', 43: 'linen', 305: 'wool'}"
+        },
+        {
+          "bindings_preserved": false,
+          "comparable_keys_sorted": true,
+          "input": "{(4, 31): 'finch', (4, 6): 'wren', (4,): 'gull'}",
+          "passed": false,
+          "probe": "comparable_tuple_prefix",
+          "rendered": "{(4,): 'finch', (4, 6): 'wren', (4, 31): 'gull'}"
+        },
+        {
+          "bindings_preserved": false,
+          "comparable_keys_sorted": true,
+          "input": "{'violet': 'north', 'lilac': 'south', 'rose': 'west'}",
+          "passed": false,
+          "probe": "reversed_word_keys",
+          "rendered": "{'lilac': 'north', 'rose': 'south', 'violet': 'west'}"
+        }
+      ],
+      "correct": false,
+      "outputs": {
+        "revealing": "{3: 'cobalt', 20: 'amber'}",
+        "shared": "{3: 'cobalt', 7: 'amber'}"
+      },
+      "snippet": "items = zip(sorted(object, key=_safe_key), object.values())"
+    },
+    "p3": {
+      "checks": [
+        {
+          "bindings_preserved": true,
+          "comparable_keys_sorted": false,
+          "passed": false,
+          "probe": "signed_integer_keys",
+          "rendered": "{-4: 'elm', 12: 'oak', 2: 'ash'}"
+        },
+        {
+          "bindings_preserved": true,
+          "comparable_keys_sorted": true,
+          "passed": true,
+          "probe": "comparable_tuple_keys",
+          "rendered": "{(2, 1): 'west', (20, 1): 'east'}"
+        },
+        {
+          "bindings_preserved": true,
+          "comparable_keys_sorted": null,
+          "passed": true,
+          "probe": "incomparable_tuple_keys",
+          "rendered": "{(3,): 'sun', (None,): 'rain'}"
+        },
+        {
+          "bindings_preserved": true,
+          "comparable_keys_sorted": true,
+          "passed": true,
+          "probe": "string_keys",
+          "rendered": "{'a': [4], 'z': [3]}"
+        },
+        {
+          "bindings_preserved": true,
+          "comparable_keys_sorted": true,
+          "passed": true,
+          "probe": "nested_binding",
+          "rendered": "{'a': {2: 'k', 5: 'j'}}"
+        },
+        {
+          "bindings_preserved": true,
+          "comparable_keys_sorted": true,
+          "passed": true,
+          "probe": "empty_mapping",
+          "rendered": "{}"
+        },
+        {
+          "bindings_preserved": true,
+          "comparable_keys_sorted": false,
+          "input": "{-7: 'quartz', -18: 'jade', -35: 'onyx'}",
+          "passed": false,
+          "probe": "negative_numeric_order",
+          "rendered": "{-18: 'jade', -35: 'onyx', -7: 'quartz'}"
+        },
+        {
+          "bindings_preserved": true,
+          "comparable_keys_sorted": false,
+          "input": "{43: 'satin', 8: 'linen', 305: 'wool'}",
+          "passed": false,
+          "probe": "unsigned_numeric_widths",
+          "rendered": "{305: 'wool', 43: 'satin', 8: 'linen'}"
+        },
+        {
+          "bindings_preserved": true,
+          "comparable_keys_sorted": false,
+          "input": "{(4, 31): 'finch', (4, 6): 'wren', (4,): 'gull'}",
+          "passed": false,
+          "probe": "comparable_tuple_prefix",
+          "rendered": "{(4, 31): 'finch', (4, 6): 'wren', (4,): 'gull'}"
+        },
+        {
+          "bindings_preserved": true,
+          "comparable_keys_sorted": true,
+          "input": "{'violet': 'north', 'lilac': 'south', 'rose': 'west'}",
+          "passed": true,
+          "probe": "reversed_word_keys",
+          "rendered": "{'lilac': 'south', 'rose': 'west', 'violet': 'north'}"
+        }
+      ],
+      "correct": false,
+      "outputs": {
+        "revealing": "{20: 'cobalt', 3: 'amber'}",
+        "shared": "{3: 'amber', 7: 'cobalt'}"
+      },
+      "snippet": "items = sorted(object.items(), key=lambda entry: repr(entry[0]))"
+    },
+    "p5": {
+      "checks": [
+        {
+          "bindings_preserved": true,
+          "comparable_keys_sorted": true,
+          "passed": true,
+          "probe": "signed_integer_keys",
+          "rendered": "{-4: 'elm', 2: 'ash', 12: 'oak'}"
+        },
+        {
+          "bindings_preserved": true,
+          "comparable_keys_sorted": true,
+          "passed": true,
+          "probe": "comparable_tuple_keys",
+          "rendered": "{(2, 1): 'west', (20, 1): 'east'}"
+        },
+        {
+          "bindings_preserved": true,
+          "comparable_keys_sorted": null,
+          "passed": true,
+          "probe": "incomparable_tuple_keys",
+          "rendered": "{(3,): 'sun', (None,): 'rain'}"
+        },
+        {
+          "bindings_preserved": true,
+          "comparable_keys_sorted": true,
+          "passed": true,
+          "probe": "string_keys",
+          "rendered": "{'a': [4], 'z': [3]}"
+        },
+        {
+          "bindings_preserved": true,
+          "comparable_keys_sorted": true,
+          "passed": true,
+          "probe": "nested_binding",
+          "rendered": "{'a': {2: 'k', 5: 'j'}}"
+        },
+        {
+          "bindings_preserved": true,
+          "comparable_keys_sorted": true,
+          "passed": true,
+          "probe": "empty_mapping",
+          "rendered": "{}"
+        },
+        {
+          "bindings_preserved": true,
+          "comparable_keys_sorted": true,
+          "input": "{-7: 'quartz', -18: 'jade', -35: 'onyx'}",
+          "passed": true,
+          "probe": "negative_numeric_order",
+          "rendered": "{-35: 'onyx', -18: 'jade', -7: 'quartz'}"
+        },
+        {
+          "bindings_preserved": true,
+          "comparable_keys_sorted": true,
+          "input": "{43: 'satin', 8: 'linen', 305: 'wool'}",
+          "passed": true,
+          "probe": "unsigned_numeric_widths",
+          "rendered": "{8: 'linen', 43: 'satin', 305: 'wool'}"
+        },
+        {
+          "bindings_preserved": true,
+          "comparable_keys_sorted": true,
+          "input": "{(4, 31): 'finch', (4, 6): 'wren', (4,): 'gull'}",
+          "passed": true,
+          "probe": "comparable_tuple_prefix",
+          "rendered": "{(4,): 'gull', (4, 6): 'wren', (4, 31): 'finch'}"
+        },
+        {
+          "bindings_preserved": true,
+          "comparable_keys_sorted": true,
+          "input": "{'violet': 'north', 'lilac': 'south', 'rose': 'west'}",
+          "passed": true,
+          "probe": "reversed_word_keys",
+          "rendered": "{'lilac': 'south', 'rose': 'west', 'violet': 'north'}"
+        }
+      ],
+      "correct": true,
+      "outputs": {
+        "revealing": "{3: 'amber', 20: 'cobalt'}",
+        "shared": "{3: 'amber', 7: 'cobalt'}"
+      },
+      "snippet": "try:\n    items = sorted(object.items(), key=lambda entry: entry[0])\nexcept TypeError:\n    items = sorted(object.items(), key=lambda entry: repr(entry[0]))"
+    },
+    "p7": {
+      "checks": [
+        {
+          "bindings_preserved": true,
+          "comparable_keys_sorted": true,
+          "passed": true,
+          "probe": "signed_integer_keys",
+          "rendered": "{-4: 'elm', 2: 'ash', 12: 'oak'}"
+        },
+        {
+          "bindings_preserved": true,
+          "comparable_keys_sorted": true,
+          "passed": true,
+          "probe": "comparable_tuple_keys",
+          "rendered": "{(2, 1): 'west', (20, 1): 'east'}"
+        },
+        {
+          "bindings_preserved": true,
+          "comparable_keys_sorted": null,
+          "passed": true,
+          "probe": "incomparable_tuple_keys",
+          "rendered": "{(None,): 'rain', (3,): 'sun'}"
+        },
+        {
+          "bindings_preserved": true,
+          "comparable_keys_sorted": true,
+          "passed": true,
+          "probe": "string_keys",
+          "rendered": "{'a': [4], 'z': [3]}"
+        },
+        {
+          "bindings_preserved": true,
+          "comparable_keys_sorted": true,
+          "passed": true,
+          "probe": "nested_binding",
+          "rendered": "{'a': {2: 'k', 5: 'j'}}"
+        },
+        {
+          "bindings_preserved": true,
+          "comparable_keys_sorted": true,
+          "passed": true,
+          "probe": "empty_mapping",
+          "rendered": "{}"
+        },
+        {
+          "bindings_preserved": true,
+          "comparable_keys_sorted": true,
+          "input": "{-7: 'quartz', -18: 'jade', -35: 'onyx'}",
+          "passed": true,
+          "probe": "negative_numeric_order",
+          "rendered": "{-35: 'onyx', -18: 'jade', -7: 'quartz'}"
+        },
+        {
+          "bindings_preserved": true,
+          "comparable_keys_sorted": true,
+          "input": "{43: 'satin', 8: 'linen', 305: 'wool'}",
+          "passed": true,
+          "probe": "unsigned_numeric_widths",
+          "rendered": "{8: 'linen', 43: 'satin', 305: 'wool'}"
+        },
+        {
+          "bindings_preserved": true,
+          "comparable_keys_sorted": true,
+          "input": "{(4, 31): 'finch', (4, 6): 'wren', (4,): 'gull'}",
+          "passed": true,
+          "probe": "comparable_tuple_prefix",
+          "rendered": "{(4,): 'gull', (4, 6): 'wren', (4, 31): 'finch'}"
+        },
+        {
+          "bindings_preserved": true,
+          "comparable_keys_sorted": true,
+          "input": "{'violet': 'north', 'lilac': 'south', 'rose': 'west'}",
+          "passed": true,
+          "probe": "reversed_word_keys",
+          "rendered": "{'lilac': 'south', 'rose': 'west', 'violet': 'north'}"
+        }
+      ],
+      "correct": true,
+      "outputs": {
+        "revealing": "{3: 'amber', 20: 'cobalt'}",
+        "shared": "{3: 'amber', 7: 'cobalt'}"
+      },
+      "snippet": "items = sorted(object.items(), key=_safe_tuple)"
+    }
+  }
+}

@@ -1,0 +1,2283 @@
+{
+  "cases": {
+    "is_valid_parenthesization": [
+      {
+        "alternative": true,
+        "distinguishes": false,
+        "in_display": false,
+        "in_original_domain": false,
+        "input": [
+          "((()()))()"
+        ],
+        "line": 1,
+        "published": true,
+        "status": "graded"
+      },
+      {
+        "alternative": false,
+        "distinguishes": false,
+        "in_display": false,
+        "in_original_domain": true,
+        "input": [
+          ")()("
+        ],
+        "line": 2,
+        "published": false,
+        "status": "graded"
+      },
+      {
+        "alternative": true,
+        "distinguishes": true,
+        "in_display": false,
+        "in_original_domain": true,
+        "input": [
+          "(("
+        ],
+        "line": 3,
+        "published": false,
+        "status": "graded"
+      }
+    ],
+    "knapsack": [
+      {
+        "alternative": 19,
+        "distinguishes": false,
+        "in_display": false,
+        "in_original_domain": false,
+        "input": [
+          100,
+          [
+            [
+              60,
+              10
+            ],
+            [
+              50,
+              8
+            ],
+            [
+              20,
+              4
+            ],
+            [
+              20,
+              4
+            ],
+            [
+              8,
+              3
+            ],
+            [
+              3,
+              2
+            ]
+          ]
+        ],
+        "line": 1,
+        "published": 19,
+        "status": "graded"
+      },
+      {
+        "alternative": 20,
+        "distinguishes": true,
+        "in_display": false,
+        "in_original_domain": false,
+        "input": [
+          40,
+          [
+            [
+              30,
+              10
+            ],
+            [
+              50,
+              5
+            ],
+            [
+              10,
+              20
+            ],
+            [
+              40,
+              25
+            ]
+          ]
+        ],
+        "line": 2,
+        "published": 30,
+        "status": "graded"
+      },
+      {
+        "alternative": 1458,
+        "distinguishes": false,
+        "in_display": false,
+        "in_original_domain": false,
+        "input": [
+          750,
+          [
+            [
+              70,
+              135
+            ],
+            [
+              73,
+              139
+            ],
+            [
+              77,
+              149
+            ],
+            [
+              80,
+              150
+            ],
+            [
+              82,
+              156
+            ],
+            [
+              87,
+              163
+            ],
+            [
+              90,
+              173
+            ],
+            [
+              94,
+              184
+            ],
+            [
+              98,
+              192
+            ],
+            [
+              106,
+              201
+            ],
+            [
+              110,
+              210
+            ],
+            [
+              113,
+              214
+            ],
+            [
+              115,
+              221
+            ],
+            [
+              118,
+              229
+            ],
+            [
+              120,
+              240
+            ]
+          ]
+        ],
+        "line": 3,
+        "published": 1458,
+        "status": "graded"
+      },
+      {
+        "alternative": 47,
+        "distinguishes": true,
+        "in_display": false,
+        "in_original_domain": false,
+        "input": [
+          26,
+          [
+            [
+              12,
+              24
+            ],
+            [
+              7,
+              13
+            ],
+            [
+              11,
+              23
+            ],
+            [
+              8,
+              15
+            ],
+            [
+              9,
+              16
+            ]
+          ]
+        ],
+        "line": 4,
+        "published": 51,
+        "status": "graded"
+      },
+      {
+        "alternative": 102,
+        "distinguishes": true,
+        "in_display": false,
+        "in_original_domain": false,
+        "input": [
+          50,
+          [
+            [
+              31,
+              70
+            ],
+            [
+              10,
+              20
+            ],
+            [
+              20,
+              39
+            ],
+            [
+              19,
+              37
+            ],
+            [
+              4,
+              7
+            ],
+            [
+              3,
+              5
+            ],
+            [
+              6,
+              10
+            ]
+          ]
+        ],
+        "line": 5,
+        "published": 107,
+        "status": "graded"
+      },
+      {
+        "alternative": 146,
+        "distinguishes": true,
+        "in_display": false,
+        "in_original_domain": false,
+        "input": [
+          190,
+          [
+            [
+              56,
+              50
+            ],
+            [
+              59,
+              50
+            ],
+            [
+              80,
+              64
+            ],
+            [
+              64,
+              46
+            ],
+            [
+              75,
+              50
+            ],
+            [
+              17,
+              5
+            ]
+          ]
+        ],
+        "line": 6,
+        "published": 150,
+        "status": "graded"
+      },
+      {
+        "alternative": 898,
+        "distinguishes": true,
+        "in_display": false,
+        "in_original_domain": false,
+        "input": [
+          104,
+          [
+            [
+              25,
+              350
+            ],
+            [
+              35,
+              400
+            ],
+            [
+              45,
+              450
+            ],
+            [
+              5,
+              20
+            ],
+            [
+              25,
+              70
+            ],
+            [
+              3,
+              8
+            ],
+            [
+              2,
+              5
+            ],
+            [
+              2,
+              5
+            ]
+          ]
+        ],
+        "line": 7,
+        "published": 900,
+        "status": "graded"
+      },
+      {
+        "alternative": 284,
+        "distinguishes": true,
+        "in_display": false,
+        "in_original_domain": false,
+        "input": [
+          165,
+          [
+            [
+              23,
+              92
+            ],
+            [
+              31,
+              57
+            ],
+            [
+              29,
+              49
+            ],
+            [
+              44,
+              68
+            ],
+            [
+              53,
+              60
+            ],
+            [
+              38,
+              43
+            ],
+            [
+              63,
+              67
+            ],
+            [
+              85,
+              84
+            ],
+            [
+              89,
+              87
+            ],
+            [
+              82,
+              72
+            ]
+          ]
+        ],
+        "line": 8,
+        "published": 309,
+        "status": "graded"
+      },
+      {
+        "alternative": 1735,
+        "distinguishes": false,
+        "in_display": false,
+        "in_original_domain": false,
+        "input": [
+          170,
+          [
+            [
+              41,
+              442
+            ],
+            [
+              50,
+              525
+            ],
+            [
+              49,
+              511
+            ],
+            [
+              59,
+              593
+            ],
+            [
+              55,
+              546
+            ],
+            [
+              57,
+              564
+            ],
+            [
+              60,
+              617
+            ]
+          ]
+        ],
+        "line": 9,
+        "published": 1735,
+        "status": "graded"
+      },
+      {
+        "in_display": false,
+        "in_original_domain": false,
+        "input": [
+          6404180,
+          [
+            [
+              382745,
+              825594
+            ],
+            [
+              799601,
+              1677009
+            ],
+            [
+              909247,
+              1676628
+            ],
+            [
+              729069,
+              1523970
+            ],
+            [
+              467902,
+              943972
+            ],
+            [
+              44328,
+              97426
+            ],
+            [
+              34610,
+              69666
+            ],
+            [
+              698150,
+              1296457
+            ],
+            [
+              823460,
+              1679693
+            ],
+            [
+              903959,
+              1902996
+            ],
+            [
+              853665,
+              1844992
+            ],
+            [
+              551830,
+              1049289
+            ],
+            [
+              610856,
+              1252836
+            ],
+            [
+              670702,
+              1319836
+            ],
+            [
+              488960,
+              953277
+            ],
+            [
+              951111,
+              2067538
+            ],
+            [
+              323046,
+              675367
+            ],
+            [
+              446298,
+              853655
+            ],
+            [
+              931161,
+              1826027
+            ],
+            [
+              31385,
+              65731
+            ],
+            [
+              496951,
+              901489
+            ],
+            [
+              264724,
+              577243
+            ],
+            [
+              224916,
+              466257
+            ],
+            [
+              169684,
+              369261
+            ]
+          ]
+        ],
+        "line": 10,
+        "published": 13549094,
+        "status": "excluded_by_upstream_default"
+      }
+    ],
+    "max_sublist_sum": [
+      {
+        "alternative": 4,
+        "distinguishes": true,
+        "in_display": false,
+        "in_original_domain": false,
+        "input": [
+          [
+            4,
+            -5,
+            2,
+            1,
+            -1,
+            3
+          ]
+        ],
+        "line": 1,
+        "published": 5,
+        "status": "graded"
+      },
+      {
+        "alternative": 3,
+        "distinguishes": true,
+        "in_display": false,
+        "in_original_domain": false,
+        "input": [
+          [
+            0,
+            -1,
+            2,
+            -1,
+            3,
+            -1,
+            0
+          ]
+        ],
+        "line": 2,
+        "published": 4,
+        "status": "graded"
+      },
+      {
+        "alternative": 12,
+        "distinguishes": false,
+        "in_display": false,
+        "in_original_domain": false,
+        "input": [
+          [
+            3,
+            4,
+            5
+          ]
+        ],
+        "line": 3,
+        "published": 12,
+        "status": "graded"
+      },
+      {
+        "alternative": 13,
+        "distinguishes": true,
+        "in_display": false,
+        "in_original_domain": false,
+        "input": [
+          [
+            4,
+            -2,
+            -8,
+            5,
+            -2,
+            7,
+            7,
+            2,
+            -6,
+            5
+          ]
+        ],
+        "line": 4,
+        "published": 19,
+        "status": "graded"
+      },
+      {
+        "alternative": 0,
+        "distinguishes": false,
+        "in_display": false,
+        "in_original_domain": false,
+        "input": [
+          [
+            -4,
+            -4,
+            -5
+          ]
+        ],
+        "line": 5,
+        "published": 0,
+        "status": "graded"
+      },
+      {
+        "alternative": 2,
+        "distinguishes": true,
+        "in_display": false,
+        "in_original_domain": false,
+        "input": [
+          [
+            -2,
+            1,
+            -3,
+            4,
+            -1,
+            2,
+            1,
+            -5,
+            4
+          ]
+        ],
+        "line": 6,
+        "published": 6,
+        "status": "graded"
+      }
+    ],
+    "quicksort": [
+      {
+        "alternative": [
+          1,
+          2,
+          4,
+          6,
+          7,
+          33,
+          72
+        ],
+        "distinguishes": false,
+        "in_display": false,
+        "in_original_domain": false,
+        "input": [
+          [
+            1,
+            2,
+            6,
+            72,
+            7,
+            33,
+            4
+          ]
+        ],
+        "line": 1,
+        "published": [
+          1,
+          2,
+          4,
+          6,
+          7,
+          33,
+          72
+        ],
+        "status": "graded"
+      },
+      {
+        "alternative": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "distinguishes": true,
+        "in_display": false,
+        "in_original_domain": false,
+        "input": [
+          [
+            3,
+            1,
+            4,
+            1,
+            5,
+            9,
+            2,
+            6,
+            5,
+            3,
+            5,
+            8,
+            9,
+            7,
+            9,
+            3
+          ]
+        ],
+        "line": 2,
+        "published": [
+          1,
+          1,
+          2,
+          3,
+          3,
+          3,
+          4,
+          5,
+          5,
+          5,
+          6,
+          7,
+          8,
+          9,
+          9,
+          9
+        ],
+        "status": "graded"
+      },
+      {
+        "alternative": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "distinguishes": false,
+        "in_display": false,
+        "in_original_domain": false,
+        "input": [
+          [
+            5,
+            4,
+            3,
+            2,
+            1
+          ]
+        ],
+        "line": 3,
+        "published": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "status": "graded"
+      },
+      {
+        "alternative": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "distinguishes": false,
+        "in_display": false,
+        "in_original_domain": false,
+        "input": [
+          [
+            5,
+            4,
+            3,
+            1,
+            2
+          ]
+        ],
+        "line": 4,
+        "published": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "status": "graded"
+      },
+      {
+        "alternative": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18
+        ],
+        "distinguishes": false,
+        "in_display": false,
+        "in_original_domain": false,
+        "input": [
+          [
+            8,
+            1,
+            14,
+            9,
+            15,
+            5,
+            4,
+            3,
+            7,
+            17,
+            11,
+            18,
+            2,
+            12,
+            16,
+            13,
+            6,
+            10
+          ]
+        ],
+        "line": 5,
+        "published": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18
+        ],
+        "status": "graded"
+      },
+      {
+        "alternative": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17
+        ],
+        "distinguishes": false,
+        "in_display": false,
+        "in_original_domain": false,
+        "input": [
+          [
+            9,
+            4,
+            5,
+            2,
+            17,
+            14,
+            10,
+            6,
+            15,
+            8,
+            12,
+            13,
+            16,
+            3,
+            1,
+            7,
+            11
+          ]
+        ],
+        "line": 6,
+        "published": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17
+        ],
+        "status": "graded"
+      },
+      {
+        "alternative": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25
+        ],
+        "distinguishes": false,
+        "in_display": false,
+        "in_original_domain": false,
+        "input": [
+          [
+            13,
+            14,
+            7,
+            16,
+            9,
+            5,
+            24,
+            21,
+            19,
+            17,
+            12,
+            10,
+            1,
+            15,
+            23,
+            25,
+            11,
+            3,
+            2,
+            6,
+            22,
+            8,
+            20,
+            4,
+            18
+          ]
+        ],
+        "line": 7,
+        "published": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25
+        ],
+        "status": "graded"
+      },
+      {
+        "alternative": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "distinguishes": false,
+        "in_display": false,
+        "in_original_domain": false,
+        "input": [
+          [
+            8,
+            5,
+            15,
+            7,
+            9,
+            14,
+            11,
+            12,
+            10,
+            6,
+            2,
+            4,
+            13,
+            1,
+            3
+          ]
+        ],
+        "line": 8,
+        "published": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "status": "graded"
+      },
+      {
+        "alternative": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "distinguishes": false,
+        "in_display": false,
+        "in_original_domain": false,
+        "input": [
+          [
+            4,
+            3,
+            7,
+            6,
+            5,
+            2,
+            1
+          ]
+        ],
+        "line": 9,
+        "published": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "status": "graded"
+      },
+      {
+        "alternative": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "distinguishes": false,
+        "in_display": false,
+        "in_original_domain": false,
+        "input": [
+          [
+            4,
+            3,
+            1,
+            5,
+            2
+          ]
+        ],
+        "line": 10,
+        "published": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "status": "graded"
+      },
+      {
+        "alternative": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "distinguishes": false,
+        "in_display": false,
+        "in_original_domain": false,
+        "input": [
+          [
+            5,
+            4,
+            2,
+            3,
+            6,
+            7,
+            1
+          ]
+        ],
+        "line": 11,
+        "published": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "status": "graded"
+      },
+      {
+        "alternative": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19
+        ],
+        "distinguishes": false,
+        "in_display": false,
+        "in_original_domain": false,
+        "input": [
+          [
+            10,
+            16,
+            6,
+            1,
+            14,
+            19,
+            15,
+            2,
+            9,
+            4,
+            18,
+            17,
+            12,
+            3,
+            11,
+            8,
+            13,
+            5,
+            7
+          ]
+        ],
+        "line": 12,
+        "published": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19
+        ],
+        "status": "graded"
+      },
+      {
+        "alternative": [
+          1,
+          2,
+          4,
+          6,
+          9,
+          10,
+          14,
+          15,
+          16,
+          18,
+          19
+        ],
+        "distinguishes": false,
+        "in_display": false,
+        "in_original_domain": false,
+        "input": [
+          [
+            10,
+            16,
+            6,
+            1,
+            14,
+            19,
+            15,
+            2,
+            9,
+            4,
+            18
+          ]
+        ],
+        "line": 13,
+        "published": [
+          1,
+          2,
+          4,
+          6,
+          9,
+          10,
+          14,
+          15,
+          16,
+          18,
+          19
+        ],
+        "status": "graded"
+      }
+    ]
+  },
+  "choices": [
+    {
+      "arm": "revealing",
+      "block": "gpt-6.2-astra_is_valid_parenthesization_working",
+      "implements": null,
+      "passes_published": true,
+      "program_id": "351f4deea5a89e135208909786d0cabce82e51bf2e50e160b8d09a3e76cace29",
+      "study": "original",
+      "task": "is_valid_parenthesization"
+    },
+    {
+      "arm": "shared",
+      "block": "gpt-6.2-astra_is_valid_parenthesization_working",
+      "implements": null,
+      "passes_published": true,
+      "program_id": "351f4deea5a89e135208909786d0cabce82e51bf2e50e160b8d09a3e76cace29",
+      "study": "original",
+      "task": "is_valid_parenthesization"
+    },
+    {
+      "arm": "none",
+      "block": "gpt-6.2-astra_is_valid_parenthesization_working",
+      "implements": null,
+      "passes_published": true,
+      "program_id": "351f4deea5a89e135208909786d0cabce82e51bf2e50e160b8d09a3e76cace29",
+      "study": "original",
+      "task": "is_valid_parenthesization"
+    },
+    {
+      "arm": "none",
+      "block": "gpt-6-luna_knapsack_working",
+      "implements": null,
+      "passes_published": true,
+      "program_id": "1bc5e149fdb0ba6dc1716911eb07b0e57c3c92bf768214488ec435fd4a1d6790",
+      "study": "original",
+      "task": "knapsack"
+    },
+    {
+      "arm": "revealing",
+      "block": "gpt-6-luna_knapsack_working",
+      "implements": null,
+      "passes_published": true,
+      "program_id": "1bc5e149fdb0ba6dc1716911eb07b0e57c3c92bf768214488ec435fd4a1d6790",
+      "study": "original",
+      "task": "knapsack"
+    },
+    {
+      "arm": "shared",
+      "block": "gpt-6-luna_knapsack_working",
+      "implements": null,
+      "passes_published": true,
+      "program_id": "1bc5e149fdb0ba6dc1716911eb07b0e57c3c92bf768214488ec435fd4a1d6790",
+      "study": "original",
+      "task": "knapsack"
+    },
+    {
+      "arm": "revealing",
+      "block": "gpt-6.2-astra_max_sublist_sum_faulty",
+      "implements": null,
+      "passes_published": true,
+      "program_id": "42c068f796c139d1a1aefb11973e40b9eaadb3d4f6d5dff552340e926adee0bb",
+      "study": "original",
+      "task": "max_sublist_sum"
+    },
+    {
+      "arm": "shared",
+      "block": "gpt-6.2-astra_max_sublist_sum_faulty",
+      "implements": null,
+      "passes_published": true,
+      "program_id": "42c068f796c139d1a1aefb11973e40b9eaadb3d4f6d5dff552340e926adee0bb",
+      "study": "original",
+      "task": "max_sublist_sum"
+    },
+    {
+      "arm": "none",
+      "block": "gpt-6.2-astra_max_sublist_sum_faulty",
+      "implements": null,
+      "passes_published": true,
+      "program_id": "42c068f796c139d1a1aefb11973e40b9eaadb3d4f6d5dff552340e926adee0bb",
+      "study": "original",
+      "task": "max_sublist_sum"
+    },
+    {
+      "arm": "shared",
+      "block": "gpt-6-luna_quicksort_faulty",
+      "implements": null,
+      "passes_published": true,
+      "program_id": "145b19d473e800cbfb9457e5ce983645daba10e4f490a68d3370209ccc1c9753",
+      "study": "original",
+      "task": "quicksort"
+    },
+    {
+      "arm": "none",
+      "block": "gpt-6-luna_quicksort_faulty",
+      "implements": null,
+      "passes_published": true,
+      "program_id": "145b19d473e800cbfb9457e5ce983645daba10e4f490a68d3370209ccc1c9753",
+      "study": "original",
+      "task": "quicksort"
+    },
+    {
+      "arm": "revealing",
+      "block": "gpt-6-luna_quicksort_faulty",
+      "implements": null,
+      "passes_published": true,
+      "program_id": "145b19d473e800cbfb9457e5ce983645daba10e4f490a68d3370209ccc1c9753",
+      "study": "original",
+      "task": "quicksort"
+    },
+    {
+      "arm": "revealing",
+      "block": "gpt-6.2-astra_knapsack_faulty",
+      "implements": null,
+      "passes_published": true,
+      "program_id": "1bc5e149fdb0ba6dc1716911eb07b0e57c3c92bf768214488ec435fd4a1d6790",
+      "study": "original",
+      "task": "knapsack"
+    },
+    {
+      "arm": "shared",
+      "block": "gpt-6.2-astra_knapsack_faulty",
+      "implements": null,
+      "passes_published": true,
+      "program_id": "1bc5e149fdb0ba6dc1716911eb07b0e57c3c92bf768214488ec435fd4a1d6790",
+      "study": "original",
+      "task": "knapsack"
+    },
+    {
+      "arm": "none",
+      "block": "gpt-6.2-astra_knapsack_faulty",
+      "implements": null,
+      "passes_published": true,
+      "program_id": "1bc5e149fdb0ba6dc1716911eb07b0e57c3c92bf768214488ec435fd4a1d6790",
+      "study": "original",
+      "task": "knapsack"
+    },
+    {
+      "arm": "shared",
+      "block": "gpt-6.2-astra_max_sublist_sum_working",
+      "implements": null,
+      "passes_published": true,
+      "program_id": "42c068f796c139d1a1aefb11973e40b9eaadb3d4f6d5dff552340e926adee0bb",
+      "study": "original",
+      "task": "max_sublist_sum"
+    },
+    {
+      "arm": "none",
+      "block": "gpt-6.2-astra_max_sublist_sum_working",
+      "implements": null,
+      "passes_published": true,
+      "program_id": "42c068f796c139d1a1aefb11973e40b9eaadb3d4f6d5dff552340e926adee0bb",
+      "study": "original",
+      "task": "max_sublist_sum"
+    },
+    {
+      "arm": "revealing",
+      "block": "gpt-6.2-astra_max_sublist_sum_working",
+      "implements": null,
+      "passes_published": true,
+      "program_id": "42c068f796c139d1a1aefb11973e40b9eaadb3d4f6d5dff552340e926adee0bb",
+      "study": "original",
+      "task": "max_sublist_sum"
+    },
+    {
+      "arm": "shared",
+      "block": "gpt-6-luna_is_valid_parenthesization_faulty",
+      "implements": null,
+      "passes_published": true,
+      "program_id": "351f4deea5a89e135208909786d0cabce82e51bf2e50e160b8d09a3e76cace29",
+      "study": "original",
+      "task": "is_valid_parenthesization"
+    },
+    {
+      "arm": "none",
+      "block": "gpt-6-luna_is_valid_parenthesization_faulty",
+      "implements": null,
+      "passes_published": true,
+      "program_id": "351f4deea5a89e135208909786d0cabce82e51bf2e50e160b8d09a3e76cace29",
+      "study": "original",
+      "task": "is_valid_parenthesization"
+    },
+    {
+      "arm": "revealing",
+      "block": "gpt-6-luna_is_valid_parenthesization_faulty",
+      "implements": null,
+      "passes_published": true,
+      "program_id": "351f4deea5a89e135208909786d0cabce82e51bf2e50e160b8d09a3e76cace29",
+      "study": "original",
+      "task": "is_valid_parenthesization"
+    },
+    {
+      "arm": "none",
+      "block": "gpt-6-luna_quicksort_working",
+      "implements": null,
+      "passes_published": true,
+      "program_id": "145b19d473e800cbfb9457e5ce983645daba10e4f490a68d3370209ccc1c9753",
+      "study": "original",
+      "task": "quicksort"
+    },
+    {
+      "arm": "revealing",
+      "block": "gpt-6-luna_quicksort_working",
+      "implements": null,
+      "passes_published": true,
+      "program_id": "145b19d473e800cbfb9457e5ce983645daba10e4f490a68d3370209ccc1c9753",
+      "study": "original",
+      "task": "quicksort"
+    },
+    {
+      "arm": "shared",
+      "block": "gpt-6-luna_quicksort_working",
+      "implements": null,
+      "passes_published": true,
+      "program_id": "145b19d473e800cbfb9457e5ce983645daba10e4f490a68d3370209ccc1c9753",
+      "study": "original",
+      "task": "quicksort"
+    },
+    {
+      "arm": "none",
+      "block": "gpt-6-luna_max_sublist_sum_faulty",
+      "implements": null,
+      "passes_published": false,
+      "program_id": "c0dce9c622faf96cb4aedc488393a14435f8756970c631419bc0f675422d7c23",
+      "study": "original",
+      "task": "max_sublist_sum"
+    },
+    {
+      "arm": "revealing",
+      "block": "gpt-6-luna_max_sublist_sum_faulty",
+      "implements": null,
+      "passes_published": true,
+      "program_id": "42c068f796c139d1a1aefb11973e40b9eaadb3d4f6d5dff552340e926adee0bb",
+      "study": "original",
+      "task": "max_sublist_sum"
+    },
+    {
+      "arm": "shared",
+      "block": "gpt-6-luna_max_sublist_sum_faulty",
+      "implements": null,
+      "passes_published": true,
+      "program_id": "42c068f796c139d1a1aefb11973e40b9eaadb3d4f6d5dff552340e926adee0bb",
+      "study": "original",
+      "task": "max_sublist_sum"
+    },
+    {
+      "arm": "none",
+      "block": "gpt-6-luna_is_valid_parenthesization_working",
+      "implements": null,
+      "passes_published": true,
+      "program_id": "351f4deea5a89e135208909786d0cabce82e51bf2e50e160b8d09a3e76cace29",
+      "study": "original",
+      "task": "is_valid_parenthesization"
+    },
+    {
+      "arm": "revealing",
+      "block": "gpt-6-luna_is_valid_parenthesization_working",
+      "implements": null,
+      "passes_published": true,
+      "program_id": "351f4deea5a89e135208909786d0cabce82e51bf2e50e160b8d09a3e76cace29",
+      "study": "original",
+      "task": "is_valid_parenthesization"
+    },
+    {
+      "arm": "shared",
+      "block": "gpt-6-luna_is_valid_parenthesization_working",
+      "implements": null,
+      "passes_published": true,
+      "program_id": "351f4deea5a89e135208909786d0cabce82e51bf2e50e160b8d09a3e76cace29",
+      "study": "original",
+      "task": "is_valid_parenthesization"
+    },
+    {
+      "arm": "shared",
+      "block": "gpt-6.2-astra_knapsack_working",
+      "implements": null,
+      "passes_published": true,
+      "program_id": "1bc5e149fdb0ba6dc1716911eb07b0e57c3c92bf768214488ec435fd4a1d6790",
+      "study": "original",
+      "task": "knapsack"
+    },
+    {
+      "arm": "none",
+      "block": "gpt-6.2-astra_knapsack_working",
+      "implements": null,
+      "passes_published": true,
+      "program_id": "1bc5e149fdb0ba6dc1716911eb07b0e57c3c92bf768214488ec435fd4a1d6790",
+      "study": "original",
+      "task": "knapsack"
+    },
+    {
+      "arm": "revealing",
+      "block": "gpt-6.2-astra_knapsack_working",
+      "implements": null,
+      "passes_published": true,
+      "program_id": "1bc5e149fdb0ba6dc1716911eb07b0e57c3c92bf768214488ec435fd4a1d6790",
+      "study": "original",
+      "task": "knapsack"
+    },
+    {
+      "arm": "revealing",
+      "block": "gpt-6.2-astra_quicksort_faulty",
+      "implements": null,
+      "passes_published": true,
+      "program_id": "145b19d473e800cbfb9457e5ce983645daba10e4f490a68d3370209ccc1c9753",
+      "study": "original",
+      "task": "quicksort"
+    },
+    {
+      "arm": "shared",
+      "block": "gpt-6.2-astra_quicksort_faulty",
+      "implements": null,
+      "passes_published": true,
+      "program_id": "145b19d473e800cbfb9457e5ce983645daba10e4f490a68d3370209ccc1c9753",
+      "study": "original",
+      "task": "quicksort"
+    },
+    {
+      "arm": "none",
+      "block": "gpt-6.2-astra_quicksort_faulty",
+      "implements": null,
+      "passes_published": true,
+      "program_id": "145b19d473e800cbfb9457e5ce983645daba10e4f490a68d3370209ccc1c9753",
+      "study": "original",
+      "task": "quicksort"
+    },
+    {
+      "arm": "none",
+      "block": "gpt-6-luna_knapsack_faulty",
+      "implements": null,
+      "passes_published": true,
+      "program_id": "1bc5e149fdb0ba6dc1716911eb07b0e57c3c92bf768214488ec435fd4a1d6790",
+      "study": "original",
+      "task": "knapsack"
+    },
+    {
+      "arm": "revealing",
+      "block": "gpt-6-luna_knapsack_faulty",
+      "implements": null,
+      "passes_published": true,
+      "program_id": "1bc5e149fdb0ba6dc1716911eb07b0e57c3c92bf768214488ec435fd4a1d6790",
+      "study": "original",
+      "task": "knapsack"
+    },
+    {
+      "arm": "shared",
+      "block": "gpt-6-luna_knapsack_faulty",
+      "implements": null,
+      "passes_published": true,
+      "program_id": "1bc5e149fdb0ba6dc1716911eb07b0e57c3c92bf768214488ec435fd4a1d6790",
+      "study": "original",
+      "task": "knapsack"
+    },
+    {
+      "arm": "revealing",
+      "block": "gpt-6-luna_max_sublist_sum_working",
+      "implements": null,
+      "passes_published": true,
+      "program_id": "42c068f796c139d1a1aefb11973e40b9eaadb3d4f6d5dff552340e926adee0bb",
+      "study": "original",
+      "task": "max_sublist_sum"
+    },
+    {
+      "arm": "shared",
+      "block": "gpt-6-luna_max_sublist_sum_working",
+      "implements": null,
+      "passes_published": true,
+      "program_id": "42c068f796c139d1a1aefb11973e40b9eaadb3d4f6d5dff552340e926adee0bb",
+      "study": "original",
+      "task": "max_sublist_sum"
+    },
+    {
+      "arm": "none",
+      "block": "gpt-6-luna_max_sublist_sum_working",
+      "implements": null,
+      "passes_published": true,
+      "program_id": "42c068f796c139d1a1aefb11973e40b9eaadb3d4f6d5dff552340e926adee0bb",
+      "study": "original",
+      "task": "max_sublist_sum"
+    },
+    {
+      "arm": "revealing",
+      "block": "gpt-6.2-astra_is_valid_parenthesization_faulty",
+      "implements": null,
+      "passes_published": true,
+      "program_id": "351f4deea5a89e135208909786d0cabce82e51bf2e50e160b8d09a3e76cace29",
+      "study": "original",
+      "task": "is_valid_parenthesization"
+    },
+    {
+      "arm": "shared",
+      "block": "gpt-6.2-astra_is_valid_parenthesization_faulty",
+      "implements": null,
+      "passes_published": true,
+      "program_id": "351f4deea5a89e135208909786d0cabce82e51bf2e50e160b8d09a3e76cace29",
+      "study": "original",
+      "task": "is_valid_parenthesization"
+    },
+    {
+      "arm": "none",
+      "block": "gpt-6.2-astra_is_valid_parenthesization_faulty",
+      "implements": null,
+      "passes_published": true,
+      "program_id": "351f4deea5a89e135208909786d0cabce82e51bf2e50e160b8d09a3e76cace29",
+      "study": "original",
+      "task": "is_valid_parenthesization"
+    },
+    {
+      "arm": "shared",
+      "block": "gpt-6.2-astra_quicksort_working",
+      "implements": null,
+      "passes_published": true,
+      "program_id": "145b19d473e800cbfb9457e5ce983645daba10e4f490a68d3370209ccc1c9753",
+      "study": "original",
+      "task": "quicksort"
+    },
+    {
+      "arm": "none",
+      "block": "gpt-6.2-astra_quicksort_working",
+      "implements": null,
+      "passes_published": true,
+      "program_id": "145b19d473e800cbfb9457e5ce983645daba10e4f490a68d3370209ccc1c9753",
+      "study": "original",
+      "task": "quicksort"
+    },
+    {
+      "arm": "revealing",
+      "block": "gpt-6.2-astra_quicksort_working",
+      "implements": null,
+      "passes_published": true,
+      "program_id": "145b19d473e800cbfb9457e5ce983645daba10e4f490a68d3370209ccc1c9753",
+      "study": "original",
+      "task": "quicksort"
+    },
+    {
+      "arm": "concealed",
+      "block": "gpt-6.2-astra_max_sublist_sum_faulty",
+      "implements": "alternative",
+      "passes_published": false,
+      "program_id": "c0dce9c622faf96cb4aedc488393a14435f8756970c631419bc0f675422d7c23",
+      "study": "reversal",
+      "task": "max_sublist_sum"
+    },
+    {
+      "arm": "alternative",
+      "block": "gpt-6.2-astra_max_sublist_sum_faulty",
+      "implements": "alternative",
+      "passes_published": false,
+      "program_id": "c0dce9c622faf96cb4aedc488393a14435f8756970c631419bc0f675422d7c23",
+      "study": "reversal",
+      "task": "max_sublist_sum"
+    },
+    {
+      "arm": "upstream",
+      "block": "gpt-6.2-astra_max_sublist_sum_faulty",
+      "implements": "upstream",
+      "passes_published": true,
+      "program_id": "42c068f796c139d1a1aefb11973e40b9eaadb3d4f6d5dff552340e926adee0bb",
+      "study": "reversal",
+      "task": "max_sublist_sum"
+    },
+    {
+      "arm": "upstream",
+      "block": "gpt-6.2-astra_quicksort_working",
+      "implements": "upstream",
+      "passes_published": true,
+      "program_id": "145b19d473e800cbfb9457e5ce983645daba10e4f490a68d3370209ccc1c9753",
+      "study": "reversal",
+      "task": "quicksort"
+    },
+    {
+      "arm": "alternative",
+      "block": "gpt-6.2-astra_quicksort_working",
+      "implements": "alternative",
+      "passes_published": false,
+      "program_id": "cc2bc08b2bee65ab762dd6bc8efffd75112c2f0dcce68725b5faf9fcc6a49aff",
+      "study": "reversal",
+      "task": "quicksort"
+    },
+    {
+      "arm": "concealed",
+      "block": "gpt-6.2-astra_quicksort_working",
+      "implements": "upstream",
+      "passes_published": true,
+      "program_id": "145b19d473e800cbfb9457e5ce983645daba10e4f490a68d3370209ccc1c9753",
+      "study": "reversal",
+      "task": "quicksort"
+    },
+    {
+      "arm": "upstream",
+      "block": "gpt-6-luna_knapsack_working",
+      "implements": "alternative",
+      "passes_published": false,
+      "program_id": "ec797371fe1640bc0673b2d99df2b03cb2af87c8edd76ccf182e2ae6a935811f",
+      "study": "reversal",
+      "task": "knapsack"
+    },
+    {
+      "arm": "alternative",
+      "block": "gpt-6-luna_knapsack_working",
+      "implements": "alternative",
+      "passes_published": false,
+      "program_id": "ec797371fe1640bc0673b2d99df2b03cb2af87c8edd76ccf182e2ae6a935811f",
+      "study": "reversal",
+      "task": "knapsack"
+    },
+    {
+      "arm": "concealed",
+      "block": "gpt-6-luna_knapsack_working",
+      "implements": "alternative",
+      "passes_published": false,
+      "program_id": "ec797371fe1640bc0673b2d99df2b03cb2af87c8edd76ccf182e2ae6a935811f",
+      "study": "reversal",
+      "task": "knapsack"
+    },
+    {
+      "arm": "upstream",
+      "block": "gpt-6-luna_is_valid_parenthesization_faulty",
+      "implements": "upstream",
+      "passes_published": true,
+      "program_id": "351f4deea5a89e135208909786d0cabce82e51bf2e50e160b8d09a3e76cace29",
+      "study": "reversal",
+      "task": "is_valid_parenthesization"
+    },
+    {
+      "arm": "alternative",
+      "block": "gpt-6-luna_is_valid_parenthesization_faulty",
+      "implements": "alternative",
+      "passes_published": false,
+      "program_id": "ffb6c2e14d140deff008e9291ff68ae3365561af79b11241a7435ba5a6415881",
+      "study": "reversal",
+      "task": "is_valid_parenthesization"
+    },
+    {
+      "arm": "concealed",
+      "block": "gpt-6-luna_is_valid_parenthesization_faulty",
+      "implements": "alternative",
+      "passes_published": false,
+      "program_id": "9aba6f8358a25a38fe1266010f28b459f64b86ee991b88d0369e2df070aee9e5",
+      "study": "reversal",
+      "task": "is_valid_parenthesization"
+    },
+    {
+      "arm": "alternative",
+      "block": "gpt-6.2-astra_max_sublist_sum_working",
+      "implements": "alternative",
+      "passes_published": false,
+      "program_id": "c0dce9c622faf96cb4aedc488393a14435f8756970c631419bc0f675422d7c23",
+      "study": "reversal",
+      "task": "max_sublist_sum"
+    },
+    {
+      "arm": "concealed",
+      "block": "gpt-6.2-astra_max_sublist_sum_working",
+      "implements": "upstream",
+      "passes_published": true,
+      "program_id": "42c068f796c139d1a1aefb11973e40b9eaadb3d4f6d5dff552340e926adee0bb",
+      "study": "reversal",
+      "task": "max_sublist_sum"
+    },
+    {
+      "arm": "upstream",
+      "block": "gpt-6.2-astra_max_sublist_sum_working",
+      "implements": "upstream",
+      "passes_published": true,
+      "program_id": "42c068f796c139d1a1aefb11973e40b9eaadb3d4f6d5dff552340e926adee0bb",
+      "study": "reversal",
+      "task": "max_sublist_sum"
+    },
+    {
+      "arm": "concealed",
+      "block": "gpt-6-luna_quicksort_faulty",
+      "implements": "alternative",
+      "passes_published": false,
+      "program_id": "cc2bc08b2bee65ab762dd6bc8efffd75112c2f0dcce68725b5faf9fcc6a49aff",
+      "study": "reversal",
+      "task": "quicksort"
+    },
+    {
+      "arm": "alternative",
+      "block": "gpt-6-luna_quicksort_faulty",
+      "implements": "upstream",
+      "passes_published": true,
+      "program_id": "145b19d473e800cbfb9457e5ce983645daba10e4f490a68d3370209ccc1c9753",
+      "study": "reversal",
+      "task": "quicksort"
+    },
+    {
+      "arm": "upstream",
+      "block": "gpt-6-luna_quicksort_faulty",
+      "implements": "upstream",
+      "passes_published": true,
+      "program_id": "145b19d473e800cbfb9457e5ce983645daba10e4f490a68d3370209ccc1c9753",
+      "study": "reversal",
+      "task": "quicksort"
+    },
+    {
+      "arm": "upstream",
+      "block": "gpt-6.2-astra_knapsack_faulty",
+      "implements": "upstream",
+      "passes_published": true,
+      "program_id": "1bc5e149fdb0ba6dc1716911eb07b0e57c3c92bf768214488ec435fd4a1d6790",
+      "study": "reversal",
+      "task": "knapsack"
+    },
+    {
+      "arm": "alternative",
+      "block": "gpt-6.2-astra_knapsack_faulty",
+      "implements": "alternative",
+      "passes_published": false,
+      "program_id": "ec797371fe1640bc0673b2d99df2b03cb2af87c8edd76ccf182e2ae6a935811f",
+      "study": "reversal",
+      "task": "knapsack"
+    },
+    {
+      "arm": "concealed",
+      "block": "gpt-6.2-astra_knapsack_faulty",
+      "implements": "alternative",
+      "passes_published": false,
+      "program_id": "ec797371fe1640bc0673b2d99df2b03cb2af87c8edd76ccf182e2ae6a935811f",
+      "study": "reversal",
+      "task": "knapsack"
+    },
+    {
+      "arm": "upstream",
+      "block": "gpt-6-luna_is_valid_parenthesization_working",
+      "implements": "alternative",
+      "passes_published": false,
+      "program_id": "ffb6c2e14d140deff008e9291ff68ae3365561af79b11241a7435ba5a6415881",
+      "study": "reversal",
+      "task": "is_valid_parenthesization"
+    },
+    {
+      "arm": "concealed",
+      "block": "gpt-6-luna_is_valid_parenthesization_working",
+      "implements": "alternative",
+      "passes_published": false,
+      "program_id": "ffb6c2e14d140deff008e9291ff68ae3365561af79b11241a7435ba5a6415881",
+      "study": "reversal",
+      "task": "is_valid_parenthesization"
+    },
+    {
+      "arm": "alternative",
+      "block": "gpt-6-luna_is_valid_parenthesization_working",
+      "implements": "alternative",
+      "passes_published": false,
+      "program_id": "ffb6c2e14d140deff008e9291ff68ae3365561af79b11241a7435ba5a6415881",
+      "study": "reversal",
+      "task": "is_valid_parenthesization"
+    },
+    {
+      "arm": "alternative",
+      "block": "gpt-6-luna_max_sublist_sum_faulty",
+      "implements": "alternative",
+      "passes_published": false,
+      "program_id": "c0dce9c622faf96cb4aedc488393a14435f8756970c631419bc0f675422d7c23",
+      "study": "reversal",
+      "task": "max_sublist_sum"
+    },
+    {
+      "arm": "upstream",
+      "block": "gpt-6-luna_max_sublist_sum_faulty",
+      "implements": "alternative",
+      "passes_published": false,
+      "program_id": "c0dce9c622faf96cb4aedc488393a14435f8756970c631419bc0f675422d7c23",
+      "study": "reversal",
+      "task": "max_sublist_sum"
+    },
+    {
+      "arm": "concealed",
+      "block": "gpt-6-luna_max_sublist_sum_faulty",
+      "implements": "alternative",
+      "passes_published": false,
+      "program_id": "c0dce9c622faf96cb4aedc488393a14435f8756970c631419bc0f675422d7c23",
+      "study": "reversal",
+      "task": "max_sublist_sum"
+    },
+    {
+      "arm": "concealed",
+      "block": "gpt-6.2-astra_is_valid_parenthesization_faulty",
+      "implements": "alternative",
+      "passes_published": false,
+      "program_id": "9aba6f8358a25a38fe1266010f28b459f64b86ee991b88d0369e2df070aee9e5",
+      "study": "reversal",
+      "task": "is_valid_parenthesization"
+    },
+    {
+      "arm": "alternative",
+      "block": "gpt-6.2-astra_is_valid_parenthesization_faulty",
+      "implements": "alternative",
+      "passes_published": false,
+      "program_id": "9aba6f8358a25a38fe1266010f28b459f64b86ee991b88d0369e2df070aee9e5",
+      "study": "reversal",
+      "task": "is_valid_parenthesization"
+    },
+    {
+      "arm": "upstream",
+      "block": "gpt-6.2-astra_is_valid_parenthesization_faulty",
+      "implements": "upstream",
+      "passes_published": true,
+      "program_id": "351f4deea5a89e135208909786d0cabce82e51bf2e50e160b8d09a3e76cace29",
+      "study": "reversal",
+      "task": "is_valid_parenthesization"
+    },
+    {
+      "arm": "upstream",
+      "block": "gpt-6-luna_quicksort_working",
+      "implements": "upstream",
+      "passes_published": true,
+      "program_id": "145b19d473e800cbfb9457e5ce983645daba10e4f490a68d3370209ccc1c9753",
+      "study": "reversal",
+      "task": "quicksort"
+    },
+    {
+      "arm": "alternative",
+      "block": "gpt-6-luna_quicksort_working",
+      "implements": "alternative",
+      "passes_published": false,
+      "program_id": "cc2bc08b2bee65ab762dd6bc8efffd75112c2f0dcce68725b5faf9fcc6a49aff",
+      "study": "reversal",
+      "task": "quicksort"
+    },
+    {
+      "arm": "concealed",
+      "block": "gpt-6-luna_quicksort_working",
+      "implements": "upstream",
+      "passes_published": true,
+      "program_id": "145b19d473e800cbfb9457e5ce983645daba10e4f490a68d3370209ccc1c9753",
+      "study": "reversal",
+      "task": "quicksort"
+    },
+    {
+      "arm": "alternative",
+      "block": "gpt-6.2-astra_knapsack_working",
+      "implements": "alternative",
+      "passes_published": false,
+      "program_id": "ec797371fe1640bc0673b2d99df2b03cb2af87c8edd76ccf182e2ae6a935811f",
+      "study": "reversal",
+      "task": "knapsack"
+    },
+    {
+      "arm": "concealed",
+      "block": "gpt-6.2-astra_knapsack_working",
+      "implements": "upstream",
+      "passes_published": true,
+      "program_id": "1bc5e149fdb0ba6dc1716911eb07b0e57c3c92bf768214488ec435fd4a1d6790",
+      "study": "reversal",
+      "task": "knapsack"
+    },
+    {
+      "arm": "upstream",
+      "block": "gpt-6.2-astra_knapsack_working",
+      "implements": "upstream",
+      "passes_published": true,
+      "program_id": "1bc5e149fdb0ba6dc1716911eb07b0e57c3c92bf768214488ec435fd4a1d6790",
+      "study": "reversal",
+      "task": "knapsack"
+    },
+    {
+      "arm": "upstream",
+      "block": "gpt-6.2-astra_is_valid_parenthesization_working",
+      "implements": "upstream",
+      "passes_published": true,
+      "program_id": "351f4deea5a89e135208909786d0cabce82e51bf2e50e160b8d09a3e76cace29",
+      "study": "reversal",
+      "task": "is_valid_parenthesization"
+    },
+    {
+      "arm": "concealed",
+      "block": "gpt-6.2-astra_is_valid_parenthesization_working",
+      "implements": "upstream",
+      "passes_published": true,
+      "program_id": "351f4deea5a89e135208909786d0cabce82e51bf2e50e160b8d09a3e76cace29",
+      "study": "reversal",
+      "task": "is_valid_parenthesization"
+    },
+    {
+      "arm": "alternative",
+      "block": "gpt-6.2-astra_is_valid_parenthesization_working",
+      "implements": "alternative",
+      "passes_published": false,
+      "program_id": "ffb6c2e14d140deff008e9291ff68ae3365561af79b11241a7435ba5a6415881",
+      "study": "reversal",
+      "task": "is_valid_parenthesization"
+    },
+    {
+      "arm": "concealed",
+      "block": "gpt-6-luna_knapsack_faulty",
+      "implements": "upstream",
+      "passes_published": true,
+      "program_id": "1bc5e149fdb0ba6dc1716911eb07b0e57c3c92bf768214488ec435fd4a1d6790",
+      "study": "reversal",
+      "task": "knapsack"
+    },
+    {
+      "arm": "upstream",
+      "block": "gpt-6-luna_knapsack_faulty",
+      "implements": "upstream",
+      "passes_published": true,
+      "program_id": "1bc5e149fdb0ba6dc1716911eb07b0e57c3c92bf768214488ec435fd4a1d6790",
+      "study": "reversal",
+      "task": "knapsack"
+    },
+    {
+      "arm": "alternative",
+      "block": "gpt-6-luna_knapsack_faulty",
+      "implements": "upstream",
+      "passes_published": true,
+      "program_id": "1bc5e149fdb0ba6dc1716911eb07b0e57c3c92bf768214488ec435fd4a1d6790",
+      "study": "reversal",
+      "task": "knapsack"
+    },
+    {
+      "arm": "concealed",
+      "block": "gpt-6-luna_max_sublist_sum_working",
+      "implements": "upstream",
+      "passes_published": true,
+      "program_id": "42c068f796c139d1a1aefb11973e40b9eaadb3d4f6d5dff552340e926adee0bb",
+      "study": "reversal",
+      "task": "max_sublist_sum"
+    },
+    {
+      "arm": "upstream",
+      "block": "gpt-6-luna_max_sublist_sum_working",
+      "implements": "upstream",
+      "passes_published": true,
+      "program_id": "42c068f796c139d1a1aefb11973e40b9eaadb3d4f6d5dff552340e926adee0bb",
+      "study": "reversal",
+      "task": "max_sublist_sum"
+    },
+    {
+      "arm": "alternative",
+      "block": "gpt-6-luna_max_sublist_sum_working",
+      "implements": "upstream",
+      "passes_published": true,
+      "program_id": "42c068f796c139d1a1aefb11973e40b9eaadb3d4f6d5dff552340e926adee0bb",
+      "study": "reversal",
+      "task": "max_sublist_sum"
+    },
+    {
+      "arm": "concealed",
+      "block": "gpt-6.2-astra_quicksort_faulty",
+      "implements": "alternative",
+      "passes_published": false,
+      "program_id": "cc2bc08b2bee65ab762dd6bc8efffd75112c2f0dcce68725b5faf9fcc6a49aff",
+      "study": "reversal",
+      "task": "quicksort"
+    },
+    {
+      "arm": "upstream",
+      "block": "gpt-6.2-astra_quicksort_faulty",
+      "implements": "upstream",
+      "passes_published": true,
+      "program_id": "145b19d473e800cbfb9457e5ce983645daba10e4f490a68d3370209ccc1c9753",
+      "study": "reversal",
+      "task": "quicksort"
+    },
+    {
+      "arm": "alternative",
+      "block": "gpt-6.2-astra_quicksort_faulty",
+      "implements": "alternative",
+      "passes_published": false,
+      "program_id": "cc2bc08b2bee65ab762dd6bc8efffd75112c2f0dcce68725b5faf9fcc6a49aff",
+      "study": "reversal",
+      "task": "quicksort"
+    }
+  ],
+  "programs": {
+    "145b19d473e800cbfb9457e5ce983645daba10e4f490a68d3370209ccc1c9753": {
+      "correct": 13,
+      "expression": "x >= pivot",
+      "failing_lines": [],
+      "task": "quicksort",
+      "total": 13
+    },
+    "1bc5e149fdb0ba6dc1716911eb07b0e57c3c92bf768214488ec435fd4a1d6790": {
+      "correct": 9,
+      "expression": "weight <= j",
+      "failing_lines": [],
+      "task": "knapsack",
+      "total": 9
+    },
+    "351f4deea5a89e135208909786d0cabce82e51bf2e50e160b8d09a3e76cace29": {
+      "correct": 3,
+      "expression": "depth == 0",
+      "failing_lines": [],
+      "task": "is_valid_parenthesization",
+      "total": 3
+    },
+    "42c068f796c139d1a1aefb11973e40b9eaadb3d4f6d5dff552340e926adee0bb": {
+      "correct": 6,
+      "expression": "max(0, max_ending_here + x)",
+      "failing_lines": [],
+      "task": "max_sublist_sum",
+      "total": 6
+    },
+    "9aba6f8358a25a38fe1266010f28b459f64b86ee991b88d0369e2df070aee9e5": {
+      "correct": 2,
+      "expression": "True",
+      "failing_lines": [
+        3
+      ],
+      "task": "is_valid_parenthesization",
+      "total": 3
+    },
+    "c0dce9c622faf96cb4aedc488393a14435f8756970c631419bc0f675422d7c23": {
+      "correct": 2,
+      "expression": "max_ending_here + x",
+      "failing_lines": [
+        1,
+        2,
+        4,
+        6
+      ],
+      "task": "max_sublist_sum",
+      "total": 6
+    },
+    "cc2bc08b2bee65ab762dd6bc8efffd75112c2f0dcce68725b5faf9fcc6a49aff": {
+      "correct": 12,
+      "expression": "x > pivot",
+      "failing_lines": [
+        2
+      ],
+      "task": "quicksort",
+      "total": 13
+    },
+    "ec797371fe1640bc0673b2d99df2b03cb2af87c8edd76ccf182e2ae6a935811f": {
+      "correct": 3,
+      "expression": "weight < j",
+      "failing_lines": [
+        2,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "task": "knapsack",
+      "total": 9
+    },
+    "ffb6c2e14d140deff008e9291ff68ae3365561af79b11241a7435ba5a6415881": {
+      "correct": 2,
+      "expression": "depth >= 0",
+      "failing_lines": [
+        3
+      ],
+      "task": "is_valid_parenthesization",
+      "total": 3
+    }
+  },
+  "source_sha256": "dbb7ec7a454565ed8974cbdd6b2d80eb6dbe8060ceb8aca9fa407de423d576b0",
+  "study_sha256": {
+    "original": "5240a357adecd36faee130beaed1ec438f302a511202684323eb5d4471a381cd",
+    "reversal": "ff6445f3c608c8e727f00eddf940b094ea5d1dd65d4d1abb892df12b5683a623"
+  }
+}

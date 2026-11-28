@@ -1,0 +1,233 @@
+{
+  "blocks": [
+    {
+      "id": "gpt-6-luna_sort_A",
+      "model": "gpt-6-luna",
+      "order": [
+        "shared",
+        "target_a",
+        "none",
+        "target_b"
+      ],
+      "prompt_sha256": {
+        "none": "93b5718096b2aafb8d934204810ad1432a758f0f4858bdc250bf8606d6fd603e",
+        "shared": "579966bb6c1472ac2ddbb681f7eec716e4595e945e0e3d602794fd1d4071925d",
+        "target_a": "d6d4fc73a6fb6854e8b01d10a1ae275eb73aaa0e95c4936790486cdfd7251ace",
+        "target_b": "f173ecaea5ed2ffa0876eee756c8eda5150752d5a880b050ec9d5217f2f07d99"
+      },
+      "start": "A",
+      "task": "sort"
+    },
+    {
+      "id": "gpt-6.2-astra_sort_B",
+      "model": "gpt-6.2-astra",
+      "order": [
+        "target_a",
+        "shared",
+        "target_b",
+        "none"
+      ],
+      "prompt_sha256": {
+        "none": "0dc3d3070b59a81fe958d1fd6149733039c4af7d1b34bc8f10b21e175a16a08a",
+        "shared": "a82ac249fe2bd4ae40373040d33ce459c75e41be8a2a88ef62ad461e31b6991c",
+        "target_a": "168669c2f31bb7dfc18cd67529c9acbdc374649270e11ccd99c59f97dd7e6e60",
+        "target_b": "0e0039eba91bcbd01219e770f20f85b693f7b2de79ba327cdd0db3e0f5a075c5"
+      },
+      "start": "B",
+      "task": "sort"
+    },
+    {
+      "id": "gpt-6.2-astra_round_A",
+      "model": "gpt-6.2-astra",
+      "order": [
+        "target_a",
+        "target_b",
+        "none",
+        "shared"
+      ],
+      "prompt_sha256": {
+        "none": "5c92fa41a381ec4467423a6d364a902af889cbeb1f7c7551e11e8b3940078341",
+        "shared": "0679626b5466e910baabad74504165c7f362c17f9b28ea52bea6fbf6f22d69c1",
+        "target_a": "d8017a2fed5467531a307a93ea13d930f7b9ed778c0eeb2b49a6f7ce85c245cc",
+        "target_b": "1c5a956d0db34e54772ded817b903e12549d9bae8b99a696195753274231f08e"
+      },
+      "start": "A",
+      "task": "round"
+    },
+    {
+      "id": "gpt-6-luna_argmax_A",
+      "model": "gpt-6-luna",
+      "order": [
+        "target_a",
+        "none",
+        "shared",
+        "target_b"
+      ],
+      "prompt_sha256": {
+        "none": "4d8b5a709e0225acc60e729bfe75466a33ca5798da66b9983fdf75fa223066a8",
+        "shared": "3edea3ca551addd979e3c4b3f790b89bba246275f8cabe9cced8863623578631",
+        "target_a": "24fd6f4e3d46868c466e53d87232cf560d341b3dfcaa1a9268c1444c25e6dbf7",
+        "target_b": "95952b00ccd6d2766b97b8c9fc3ee24e924c01967692002bc1f52378f6ce6bd5"
+      },
+      "start": "A",
+      "task": "argmax"
+    },
+    {
+      "id": "gpt-6.2-astra_argmax_A",
+      "model": "gpt-6.2-astra",
+      "order": [
+        "none",
+        "target_a",
+        "shared",
+        "target_b"
+      ],
+      "prompt_sha256": {
+        "none": "4d8b5a709e0225acc60e729bfe75466a33ca5798da66b9983fdf75fa223066a8",
+        "shared": "3edea3ca551addd979e3c4b3f790b89bba246275f8cabe9cced8863623578631",
+        "target_a": "24fd6f4e3d46868c466e53d87232cf560d341b3dfcaa1a9268c1444c25e6dbf7",
+        "target_b": "95952b00ccd6d2766b97b8c9fc3ee24e924c01967692002bc1f52378f6ce6bd5"
+      },
+      "start": "A",
+      "task": "argmax"
+    },
+    {
+      "id": "gpt-6-luna_sort_B",
+      "model": "gpt-6-luna",
+      "order": [
+        "target_b",
+        "shared",
+        "target_a",
+        "none"
+      ],
+      "prompt_sha256": {
+        "none": "0dc3d3070b59a81fe958d1fd6149733039c4af7d1b34bc8f10b21e175a16a08a",
+        "shared": "a82ac249fe2bd4ae40373040d33ce459c75e41be8a2a88ef62ad461e31b6991c",
+        "target_a": "168669c2f31bb7dfc18cd67529c9acbdc374649270e11ccd99c59f97dd7e6e60",
+        "target_b": "0e0039eba91bcbd01219e770f20f85b693f7b2de79ba327cdd0db3e0f5a075c5"
+      },
+      "start": "B",
+      "task": "sort"
+    },
+    {
+      "id": "gpt-6-luna_round_B",
+      "model": "gpt-6-luna",
+      "order": [
+        "none",
+        "target_a",
+        "target_b",
+        "shared"
+      ],
+      "prompt_sha256": {
+        "none": "08134cef657fba118fb2b082719bf7a6b718697309e126a688dba039fb3efa59",
+        "shared": "97eb735caba2c5601e50a704ed213424cebc9c5eb65860968d4f326939787601",
+        "target_a": "d44cb598758e16135161daf74435d4c4adcafbd71e375c4d16e984b3aea386c8",
+        "target_b": "cd667042eb82fe35c06dc1ccb499bbd5761cc44f2f7ec4073b618cf4452466bf"
+      },
+      "start": "B",
+      "task": "round"
+    },
+    {
+      "id": "gpt-6-luna_argmax_B",
+      "model": "gpt-6-luna",
+      "order": [
+        "none",
+        "target_b",
+        "target_a",
+        "shared"
+      ],
+      "prompt_sha256": {
+        "none": "51bcf2edb58c5164cc80cb84328754df7db7d774f53fb4bf3ab6266f072fd874",
+        "shared": "2ed2538d9dbbd3ac9ff0f73899e970e3450d4aef21aa0f90d64d6e7f232785a3",
+        "target_a": "a8faff14f7d7b4bd017078833cfc1f7c6043d4f29ea18192d3f649c9c4a7baff",
+        "target_b": "03f856025fa98245e7a67c34815feacecfc073947fe43f3826dd9ac61c670908"
+      },
+      "start": "B",
+      "task": "argmax"
+    },
+    {
+      "id": "gpt-6.2-astra_argmax_B",
+      "model": "gpt-6.2-astra",
+      "order": [
+        "target_a",
+        "target_b",
+        "none",
+        "shared"
+      ],
+      "prompt_sha256": {
+        "none": "51bcf2edb58c5164cc80cb84328754df7db7d774f53fb4bf3ab6266f072fd874",
+        "shared": "2ed2538d9dbbd3ac9ff0f73899e970e3450d4aef21aa0f90d64d6e7f232785a3",
+        "target_a": "a8faff14f7d7b4bd017078833cfc1f7c6043d4f29ea18192d3f649c9c4a7baff",
+        "target_b": "03f856025fa98245e7a67c34815feacecfc073947fe43f3826dd9ac61c670908"
+      },
+      "start": "B",
+      "task": "argmax"
+    },
+    {
+      "id": "gpt-6-luna_round_A",
+      "model": "gpt-6-luna",
+      "order": [
+        "target_b",
+        "shared",
+        "target_a",
+        "none"
+      ],
+      "prompt_sha256": {
+        "none": "5c92fa41a381ec4467423a6d364a902af889cbeb1f7c7551e11e8b3940078341",
+        "shared": "0679626b5466e910baabad74504165c7f362c17f9b28ea52bea6fbf6f22d69c1",
+        "target_a": "d8017a2fed5467531a307a93ea13d930f7b9ed778c0eeb2b49a6f7ce85c245cc",
+        "target_b": "1c5a956d0db34e54772ded817b903e12549d9bae8b99a696195753274231f08e"
+      },
+      "start": "A",
+      "task": "round"
+    },
+    {
+      "id": "gpt-6.2-astra_round_B",
+      "model": "gpt-6.2-astra",
+      "order": [
+        "shared",
+        "target_a",
+        "target_b",
+        "none"
+      ],
+      "prompt_sha256": {
+        "none": "08134cef657fba118fb2b082719bf7a6b718697309e126a688dba039fb3efa59",
+        "shared": "97eb735caba2c5601e50a704ed213424cebc9c5eb65860968d4f326939787601",
+        "target_a": "d44cb598758e16135161daf74435d4c4adcafbd71e375c4d16e984b3aea386c8",
+        "target_b": "cd667042eb82fe35c06dc1ccb499bbd5761cc44f2f7ec4073b618cf4452466bf"
+      },
+      "start": "B",
+      "task": "round"
+    },
+    {
+      "id": "gpt-6.2-astra_sort_A",
+      "model": "gpt-6.2-astra",
+      "order": [
+        "shared",
+        "none",
+        "target_b",
+        "target_a"
+      ],
+      "prompt_sha256": {
+        "none": "93b5718096b2aafb8d934204810ad1432a758f0f4858bdc250bf8606d6fd603e",
+        "shared": "579966bb6c1472ac2ddbb681f7eec716e4595e945e0e3d602794fd1d4071925d",
+        "target_a": "d6d4fc73a6fb6854e8b01d10a1ae275eb73aaa0e95c4936790486cdfd7251ace",
+        "target_b": "f173ecaea5ed2ffa0876eee756c8eda5150752d5a880b050ec9d5217f2f07d99"
+      },
+      "start": "A",
+      "task": "sort"
+    }
+  ],
+  "calibration_sha256": "7973ec05a09021f5aded48779fa66ef143c15349099156659befaae33a3ae5e6",
+  "design": "docs/REFERENCE_EXAMPLE_CONTROL_20261128.md",
+  "effort": "low",
+  "eligible_for_main_analysis": false,
+  "seed": 20261128,
+  "source_sha256": {
+    "analysis/reference_example_report.py": "49bf31c956442f62e2094ae06b41b27f635d039a305c2dfd5e9fc1c0b852cdb2",
+    "docs/REFERENCE_EXAMPLE_CONTROL_20261128.md": "4fdc26d53e8ce2b52a45bdbe85335c0799094638d147caf181191586215b7395",
+    "experiments/c5_cli_pilot.py": "2f4809ea243fe0f913dabe343050caf03273c77a46d8f70b7dd186ef93dabbba",
+    "experiments/c5_codex_effort.py": "90e7e315693ea039ad9b9a698efd0925f4b1c83f846245132a9d6acc4fcbdbcf",
+    "experiments/checker_timing_pilot.py": "48f52b1ad3139ecda58a3cc01760550cad4f47873d65a16c1da78cddfd0ccda3",
+    "experiments/reference_example_control.py": "bc51de14b5804d0dfe4ad9c70cff3b14c446137f34d59808b2a3a67921daf8f8"
+  }
+}

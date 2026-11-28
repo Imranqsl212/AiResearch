@@ -1,0 +1,2615 @@
+{
+  "controls": {
+    "matplotlib": {
+      "faulty": {
+        "cases": 96,
+        "first_failures": {
+          "direction_preserved": {
+            "expected": {
+              "output": [
+                0,
+                -2
+              ],
+              "wrapped": null
+            },
+            "input": [
+              0,
+              -2,
+              -1,
+              -1
+            ],
+            "observed": {
+              "output": [
+                -1,
+                -1
+              ],
+              "wrapped": null
+            }
+          },
+          "interval_extent": {
+            "expected": {
+              "output": [
+                0,
+                -3
+              ],
+              "wrapped": null
+            },
+            "input": [
+              0,
+              -2,
+              -3,
+              -3
+            ],
+            "observed": {
+              "output": [
+                -2,
+                -3
+              ],
+              "wrapped": null
+            }
+          }
+        },
+        "interval_strata": {
+          "ascending_contained": {
+            "exact": 6,
+            "total": 6
+          },
+          "ascending_expanding": {
+            "exact": 42,
+            "total": 42
+          },
+          "descending_contained": {
+            "exact": 0,
+            "total": 6
+          },
+          "descending_expanding": {
+            "exact": 10,
+            "total": 42
+          }
+        },
+        "passed": {
+          "direction_preserved": 92,
+          "interval_extent": 58
+        }
+      },
+      "working": {
+        "cases": 96,
+        "first_failures": {},
+        "interval_strata": {
+          "ascending_contained": {
+            "exact": 6,
+            "total": 6
+          },
+          "ascending_expanding": {
+            "exact": 42,
+            "total": 42
+          },
+          "descending_contained": {
+            "exact": 6,
+            "total": 6
+          },
+          "descending_expanding": {
+            "exact": 42,
+            "total": 42
+          }
+        },
+        "passed": {
+          "direction_preserved": 96,
+          "interval_extent": 96
+        }
+      }
+    },
+    "tqdm": {
+      "bypass_wrapper_fixture": {
+        "cases": 45,
+        "first_failures": {
+          "progress_forwarding": {
+            "expected": {
+              "output": [],
+              "wrapped": true
+            },
+            "input": [
+              [],
+              -2
+            ],
+            "observed": {
+              "output": [],
+              "wrapped": false
+            }
+          }
+        },
+        "passed": {
+          "index_value_pairs": 45,
+          "progress_forwarding": 0
+        }
+      },
+      "faulty": {
+        "cases": 45,
+        "first_failures": {
+          "index_value_pairs": {
+            "expected": {
+              "output": [
+                [
+                  -2,
+                  "a"
+                ]
+              ],
+              "wrapped": true
+            },
+            "input": [
+              [
+                "a"
+              ],
+              -2
+            ],
+            "observed": {
+              "output": [
+                [
+                  0,
+                  "a"
+                ]
+              ],
+              "wrapped": true
+            }
+          }
+        },
+        "passed": {
+          "index_value_pairs": 17,
+          "progress_forwarding": 45
+        }
+      },
+      "working": {
+        "cases": 45,
+        "first_failures": {},
+        "passed": {
+          "index_value_pairs": 45,
+          "progress_forwarding": 45
+        }
+      }
+    }
+  },
+  "results_sha256": "a51315960c781770b294bd8708944ec288d7d66ff6d4cbd360f27fd6a5c3466f",
+  "rows": [
+    {
+      "action": "keep",
+      "arm": "none",
+      "block": "gpt-6-luna_tqdm_working",
+      "components": {
+        "cases": 45,
+        "first_failures": {},
+        "passed": {
+          "index_value_pairs": 45,
+          "progress_forwarding": 45
+        }
+      },
+      "expression": "enumerate(tqdm_class(iterable, **tqdm_kwargs), start)",
+      "fault_comparison": {
+        "displayed_inputs": {
+          "revealing": {
+            "expected_output": [
+              [
+                7,
+                "fig"
+              ],
+              [
+                8,
+                "kiwi"
+              ]
+            ],
+            "historical_output": [
+              [
+                0,
+                "fig"
+              ],
+              [
+                1,
+                "kiwi"
+              ]
+            ],
+            "input": [
+              [
+                "fig",
+                "kiwi"
+              ],
+              7
+            ],
+            "selected_output": [
+              [
+                7,
+                "fig"
+              ],
+              [
+                8,
+                "kiwi"
+              ]
+            ]
+          },
+          "shared": {
+            "expected_output": [
+              [
+                0,
+                "fig"
+              ],
+              [
+                1,
+                "kiwi"
+              ]
+            ],
+            "historical_output": [
+              [
+                0,
+                "fig"
+              ],
+              [
+                1,
+                "kiwi"
+              ]
+            ],
+            "input": [
+              [
+                "fig",
+                "kiwi"
+              ],
+              0
+            ],
+            "selected_output": [
+              [
+                0,
+                "fig"
+              ],
+              [
+                1,
+                "kiwi"
+              ]
+            ]
+          }
+        },
+        "heldout_failed_by": {
+          "both": 0,
+          "historical_only": 28,
+          "neither": 17,
+          "selected_only": 0
+        },
+        "three_distinct_heldout_outputs": 0
+      },
+      "model": "gpt-6-luna",
+      "start": "working",
+      "status": "OK",
+      "task": "tqdm"
+    },
+    {
+      "action": "keep",
+      "arm": "revealing",
+      "block": "gpt-6-luna_tqdm_working",
+      "components": {
+        "cases": 45,
+        "first_failures": {},
+        "passed": {
+          "index_value_pairs": 45,
+          "progress_forwarding": 45
+        }
+      },
+      "expression": "enumerate(tqdm_class(iterable, **tqdm_kwargs), start)",
+      "fault_comparison": {
+        "displayed_inputs": {
+          "revealing": {
+            "expected_output": [
+              [
+                7,
+                "fig"
+              ],
+              [
+                8,
+                "kiwi"
+              ]
+            ],
+            "historical_output": [
+              [
+                0,
+                "fig"
+              ],
+              [
+                1,
+                "kiwi"
+              ]
+            ],
+            "input": [
+              [
+                "fig",
+                "kiwi"
+              ],
+              7
+            ],
+            "selected_output": [
+              [
+                7,
+                "fig"
+              ],
+              [
+                8,
+                "kiwi"
+              ]
+            ]
+          },
+          "shared": {
+            "expected_output": [
+              [
+                0,
+                "fig"
+              ],
+              [
+                1,
+                "kiwi"
+              ]
+            ],
+            "historical_output": [
+              [
+                0,
+                "fig"
+              ],
+              [
+                1,
+                "kiwi"
+              ]
+            ],
+            "input": [
+              [
+                "fig",
+                "kiwi"
+              ],
+              0
+            ],
+            "selected_output": [
+              [
+                0,
+                "fig"
+              ],
+              [
+                1,
+                "kiwi"
+              ]
+            ]
+          }
+        },
+        "heldout_failed_by": {
+          "both": 0,
+          "historical_only": 28,
+          "neither": 17,
+          "selected_only": 0
+        },
+        "three_distinct_heldout_outputs": 0
+      },
+      "model": "gpt-6-luna",
+      "start": "working",
+      "status": "OK",
+      "task": "tqdm"
+    },
+    {
+      "action": "keep",
+      "arm": "shared",
+      "block": "gpt-6-luna_tqdm_working",
+      "components": {
+        "cases": 45,
+        "first_failures": {},
+        "passed": {
+          "index_value_pairs": 45,
+          "progress_forwarding": 45
+        }
+      },
+      "expression": "enumerate(tqdm_class(iterable, **tqdm_kwargs), start)",
+      "fault_comparison": {
+        "displayed_inputs": {
+          "revealing": {
+            "expected_output": [
+              [
+                7,
+                "fig"
+              ],
+              [
+                8,
+                "kiwi"
+              ]
+            ],
+            "historical_output": [
+              [
+                0,
+                "fig"
+              ],
+              [
+                1,
+                "kiwi"
+              ]
+            ],
+            "input": [
+              [
+                "fig",
+                "kiwi"
+              ],
+              7
+            ],
+            "selected_output": [
+              [
+                7,
+                "fig"
+              ],
+              [
+                8,
+                "kiwi"
+              ]
+            ]
+          },
+          "shared": {
+            "expected_output": [
+              [
+                0,
+                "fig"
+              ],
+              [
+                1,
+                "kiwi"
+              ]
+            ],
+            "historical_output": [
+              [
+                0,
+                "fig"
+              ],
+              [
+                1,
+                "kiwi"
+              ]
+            ],
+            "input": [
+              [
+                "fig",
+                "kiwi"
+              ],
+              0
+            ],
+            "selected_output": [
+              [
+                0,
+                "fig"
+              ],
+              [
+                1,
+                "kiwi"
+              ]
+            ]
+          }
+        },
+        "heldout_failed_by": {
+          "both": 0,
+          "historical_only": 28,
+          "neither": 17,
+          "selected_only": 0
+        },
+        "three_distinct_heldout_outputs": 0
+      },
+      "model": "gpt-6-luna",
+      "start": "working",
+      "status": "OK",
+      "task": "tqdm"
+    },
+    {
+      "action": "keep",
+      "arm": "shared",
+      "block": "gpt-6.2-astra_matplotlib_working",
+      "components": {
+        "cases": 96,
+        "first_failures": {},
+        "interval_strata": {
+          "ascending_contained": {
+            "exact": 6,
+            "total": 6
+          },
+          "ascending_expanding": {
+            "exact": 42,
+            "total": 42
+          },
+          "descending_contained": {
+            "exact": 6,
+            "total": 6
+          },
+          "descending_expanding": {
+            "exact": 42,
+            "total": 42
+          }
+        },
+        "passed": {
+          "direction_preserved": 96,
+          "interval_extent": 96
+        }
+      },
+      "expression": "(max(vmin, vmax, oldmin), min(vmin, vmax, oldmax))",
+      "fault_comparison": {
+        "displayed_inputs": {
+          "revealing": {
+            "expected_output": [
+              8,
+              2
+            ],
+            "historical_output": [
+              7,
+              3
+            ],
+            "input": [
+              8,
+              2,
+              3,
+              7
+            ],
+            "selected_output": [
+              8,
+              2
+            ]
+          },
+          "shared": {
+            "expected_output": [
+              10,
+              0
+            ],
+            "historical_output": [
+              10,
+              0
+            ],
+            "input": [
+              8,
+              2,
+              0,
+              10
+            ],
+            "selected_output": [
+              10,
+              0
+            ]
+          }
+        },
+        "heldout_failed_by": {
+          "both": 0,
+          "historical_only": 38,
+          "neither": 58,
+          "selected_only": 0
+        },
+        "three_distinct_heldout_outputs": 0
+      },
+      "model": "gpt-6.2-astra",
+      "start": "working",
+      "status": "OK",
+      "task": "matplotlib"
+    },
+    {
+      "action": "keep",
+      "arm": "revealing",
+      "block": "gpt-6.2-astra_matplotlib_working",
+      "components": {
+        "cases": 96,
+        "first_failures": {},
+        "interval_strata": {
+          "ascending_contained": {
+            "exact": 6,
+            "total": 6
+          },
+          "ascending_expanding": {
+            "exact": 42,
+            "total": 42
+          },
+          "descending_contained": {
+            "exact": 6,
+            "total": 6
+          },
+          "descending_expanding": {
+            "exact": 42,
+            "total": 42
+          }
+        },
+        "passed": {
+          "direction_preserved": 96,
+          "interval_extent": 96
+        }
+      },
+      "expression": "(max(vmin, vmax, oldmin), min(vmin, vmax, oldmax))",
+      "fault_comparison": {
+        "displayed_inputs": {
+          "revealing": {
+            "expected_output": [
+              8,
+              2
+            ],
+            "historical_output": [
+              7,
+              3
+            ],
+            "input": [
+              8,
+              2,
+              3,
+              7
+            ],
+            "selected_output": [
+              8,
+              2
+            ]
+          },
+          "shared": {
+            "expected_output": [
+              10,
+              0
+            ],
+            "historical_output": [
+              10,
+              0
+            ],
+            "input": [
+              8,
+              2,
+              0,
+              10
+            ],
+            "selected_output": [
+              10,
+              0
+            ]
+          }
+        },
+        "heldout_failed_by": {
+          "both": 0,
+          "historical_only": 38,
+          "neither": 58,
+          "selected_only": 0
+        },
+        "three_distinct_heldout_outputs": 0
+      },
+      "model": "gpt-6.2-astra",
+      "start": "working",
+      "status": "OK",
+      "task": "matplotlib"
+    },
+    {
+      "action": "keep",
+      "arm": "none",
+      "block": "gpt-6.2-astra_matplotlib_working",
+      "components": {
+        "cases": 96,
+        "first_failures": {},
+        "interval_strata": {
+          "ascending_contained": {
+            "exact": 6,
+            "total": 6
+          },
+          "ascending_expanding": {
+            "exact": 42,
+            "total": 42
+          },
+          "descending_contained": {
+            "exact": 6,
+            "total": 6
+          },
+          "descending_expanding": {
+            "exact": 42,
+            "total": 42
+          }
+        },
+        "passed": {
+          "direction_preserved": 96,
+          "interval_extent": 96
+        }
+      },
+      "expression": "(max(vmin, vmax, oldmin), min(vmin, vmax, oldmax))",
+      "fault_comparison": {
+        "displayed_inputs": {
+          "revealing": {
+            "expected_output": [
+              8,
+              2
+            ],
+            "historical_output": [
+              7,
+              3
+            ],
+            "input": [
+              8,
+              2,
+              3,
+              7
+            ],
+            "selected_output": [
+              8,
+              2
+            ]
+          },
+          "shared": {
+            "expected_output": [
+              10,
+              0
+            ],
+            "historical_output": [
+              10,
+              0
+            ],
+            "input": [
+              8,
+              2,
+              0,
+              10
+            ],
+            "selected_output": [
+              10,
+              0
+            ]
+          }
+        },
+        "heldout_failed_by": {
+          "both": 0,
+          "historical_only": 38,
+          "neither": 58,
+          "selected_only": 0
+        },
+        "three_distinct_heldout_outputs": 0
+      },
+      "model": "gpt-6.2-astra",
+      "start": "working",
+      "status": "OK",
+      "task": "matplotlib"
+    },
+    {
+      "action": "replace",
+      "arm": "shared",
+      "block": "gpt-6.2-astra_tqdm_faulty",
+      "components": {
+        "cases": 45,
+        "first_failures": {},
+        "passed": {
+          "index_value_pairs": 45,
+          "progress_forwarding": 45
+        }
+      },
+      "expression": "enumerate(tqdm_class(iterable, **tqdm_kwargs), start=start)",
+      "fault_comparison": {
+        "displayed_inputs": {
+          "revealing": {
+            "expected_output": [
+              [
+                7,
+                "fig"
+              ],
+              [
+                8,
+                "kiwi"
+              ]
+            ],
+            "historical_output": [
+              [
+                0,
+                "fig"
+              ],
+              [
+                1,
+                "kiwi"
+              ]
+            ],
+            "input": [
+              [
+                "fig",
+                "kiwi"
+              ],
+              7
+            ],
+            "selected_output": [
+              [
+                7,
+                "fig"
+              ],
+              [
+                8,
+                "kiwi"
+              ]
+            ]
+          },
+          "shared": {
+            "expected_output": [
+              [
+                0,
+                "fig"
+              ],
+              [
+                1,
+                "kiwi"
+              ]
+            ],
+            "historical_output": [
+              [
+                0,
+                "fig"
+              ],
+              [
+                1,
+                "kiwi"
+              ]
+            ],
+            "input": [
+              [
+                "fig",
+                "kiwi"
+              ],
+              0
+            ],
+            "selected_output": [
+              [
+                0,
+                "fig"
+              ],
+              [
+                1,
+                "kiwi"
+              ]
+            ]
+          }
+        },
+        "heldout_failed_by": {
+          "both": 0,
+          "historical_only": 28,
+          "neither": 17,
+          "selected_only": 0
+        },
+        "three_distinct_heldout_outputs": 0
+      },
+      "model": "gpt-6.2-astra",
+      "start": "faulty",
+      "status": "OK",
+      "task": "tqdm"
+    },
+    {
+      "action": "replace",
+      "arm": "none",
+      "block": "gpt-6.2-astra_tqdm_faulty",
+      "components": {
+        "cases": 45,
+        "first_failures": {},
+        "passed": {
+          "index_value_pairs": 45,
+          "progress_forwarding": 45
+        }
+      },
+      "expression": "enumerate(tqdm_class(iterable, **tqdm_kwargs), start=start)",
+      "fault_comparison": {
+        "displayed_inputs": {
+          "revealing": {
+            "expected_output": [
+              [
+                7,
+                "fig"
+              ],
+              [
+                8,
+                "kiwi"
+              ]
+            ],
+            "historical_output": [
+              [
+                0,
+                "fig"
+              ],
+              [
+                1,
+                "kiwi"
+              ]
+            ],
+            "input": [
+              [
+                "fig",
+                "kiwi"
+              ],
+              7
+            ],
+            "selected_output": [
+              [
+                7,
+                "fig"
+              ],
+              [
+                8,
+                "kiwi"
+              ]
+            ]
+          },
+          "shared": {
+            "expected_output": [
+              [
+                0,
+                "fig"
+              ],
+              [
+                1,
+                "kiwi"
+              ]
+            ],
+            "historical_output": [
+              [
+                0,
+                "fig"
+              ],
+              [
+                1,
+                "kiwi"
+              ]
+            ],
+            "input": [
+              [
+                "fig",
+                "kiwi"
+              ],
+              0
+            ],
+            "selected_output": [
+              [
+                0,
+                "fig"
+              ],
+              [
+                1,
+                "kiwi"
+              ]
+            ]
+          }
+        },
+        "heldout_failed_by": {
+          "both": 0,
+          "historical_only": 28,
+          "neither": 17,
+          "selected_only": 0
+        },
+        "three_distinct_heldout_outputs": 0
+      },
+      "model": "gpt-6.2-astra",
+      "start": "faulty",
+      "status": "OK",
+      "task": "tqdm"
+    },
+    {
+      "action": "replace",
+      "arm": "revealing",
+      "block": "gpt-6.2-astra_tqdm_faulty",
+      "components": {
+        "cases": 45,
+        "first_failures": {},
+        "passed": {
+          "index_value_pairs": 45,
+          "progress_forwarding": 45
+        }
+      },
+      "expression": "enumerate(tqdm_class(iterable, **tqdm_kwargs), start)",
+      "fault_comparison": {
+        "displayed_inputs": {
+          "revealing": {
+            "expected_output": [
+              [
+                7,
+                "fig"
+              ],
+              [
+                8,
+                "kiwi"
+              ]
+            ],
+            "historical_output": [
+              [
+                0,
+                "fig"
+              ],
+              [
+                1,
+                "kiwi"
+              ]
+            ],
+            "input": [
+              [
+                "fig",
+                "kiwi"
+              ],
+              7
+            ],
+            "selected_output": [
+              [
+                7,
+                "fig"
+              ],
+              [
+                8,
+                "kiwi"
+              ]
+            ]
+          },
+          "shared": {
+            "expected_output": [
+              [
+                0,
+                "fig"
+              ],
+              [
+                1,
+                "kiwi"
+              ]
+            ],
+            "historical_output": [
+              [
+                0,
+                "fig"
+              ],
+              [
+                1,
+                "kiwi"
+              ]
+            ],
+            "input": [
+              [
+                "fig",
+                "kiwi"
+              ],
+              0
+            ],
+            "selected_output": [
+              [
+                0,
+                "fig"
+              ],
+              [
+                1,
+                "kiwi"
+              ]
+            ]
+          }
+        },
+        "heldout_failed_by": {
+          "both": 0,
+          "historical_only": 28,
+          "neither": 17,
+          "selected_only": 0
+        },
+        "three_distinct_heldout_outputs": 0
+      },
+      "model": "gpt-6.2-astra",
+      "start": "faulty",
+      "status": "OK",
+      "task": "tqdm"
+    },
+    {
+      "action": "replace",
+      "arm": "shared",
+      "block": "gpt-6-luna_matplotlib_faulty",
+      "components": {
+        "cases": 96,
+        "first_failures": {},
+        "interval_strata": {
+          "ascending_contained": {
+            "exact": 6,
+            "total": 6
+          },
+          "ascending_expanding": {
+            "exact": 42,
+            "total": 42
+          },
+          "descending_contained": {
+            "exact": 6,
+            "total": 6
+          },
+          "descending_expanding": {
+            "exact": 42,
+            "total": 42
+          }
+        },
+        "passed": {
+          "direction_preserved": 96,
+          "interval_extent": 96
+        }
+      },
+      "expression": "(max(oldmin, vmin, vmax), min(oldmax, vmin, vmax))",
+      "fault_comparison": {
+        "displayed_inputs": {
+          "revealing": {
+            "expected_output": [
+              8,
+              2
+            ],
+            "historical_output": [
+              7,
+              3
+            ],
+            "input": [
+              8,
+              2,
+              3,
+              7
+            ],
+            "selected_output": [
+              8,
+              2
+            ]
+          },
+          "shared": {
+            "expected_output": [
+              10,
+              0
+            ],
+            "historical_output": [
+              10,
+              0
+            ],
+            "input": [
+              8,
+              2,
+              0,
+              10
+            ],
+            "selected_output": [
+              10,
+              0
+            ]
+          }
+        },
+        "heldout_failed_by": {
+          "both": 0,
+          "historical_only": 38,
+          "neither": 58,
+          "selected_only": 0
+        },
+        "three_distinct_heldout_outputs": 0
+      },
+      "model": "gpt-6-luna",
+      "start": "faulty",
+      "status": "OK",
+      "task": "matplotlib"
+    },
+    {
+      "action": "keep",
+      "arm": "none",
+      "block": "gpt-6-luna_matplotlib_faulty",
+      "components": {
+        "cases": 96,
+        "first_failures": {
+          "direction_preserved": {
+            "expected": {
+              "output": [
+                0,
+                -2
+              ],
+              "wrapped": null
+            },
+            "input": [
+              0,
+              -2,
+              -1,
+              -1
+            ],
+            "observed": {
+              "output": [
+                -1,
+                -1
+              ],
+              "wrapped": null
+            }
+          },
+          "interval_extent": {
+            "expected": {
+              "output": [
+                0,
+                -3
+              ],
+              "wrapped": null
+            },
+            "input": [
+              0,
+              -2,
+              -3,
+              -3
+            ],
+            "observed": {
+              "output": [
+                -2,
+                -3
+              ],
+              "wrapped": null
+            }
+          }
+        },
+        "interval_strata": {
+          "ascending_contained": {
+            "exact": 6,
+            "total": 6
+          },
+          "ascending_expanding": {
+            "exact": 42,
+            "total": 42
+          },
+          "descending_contained": {
+            "exact": 0,
+            "total": 6
+          },
+          "descending_expanding": {
+            "exact": 10,
+            "total": 42
+          }
+        },
+        "passed": {
+          "direction_preserved": 92,
+          "interval_extent": 58
+        }
+      },
+      "expression": "(max(vmin, vmax, oldmax), min(vmin, vmax, oldmin))",
+      "fault_comparison": {
+        "displayed_inputs": {
+          "revealing": {
+            "expected_output": [
+              8,
+              2
+            ],
+            "historical_output": [
+              7,
+              3
+            ],
+            "input": [
+              8,
+              2,
+              3,
+              7
+            ],
+            "selected_output": [
+              7,
+              3
+            ]
+          },
+          "shared": {
+            "expected_output": [
+              10,
+              0
+            ],
+            "historical_output": [
+              10,
+              0
+            ],
+            "input": [
+              8,
+              2,
+              0,
+              10
+            ],
+            "selected_output": [
+              10,
+              0
+            ]
+          }
+        },
+        "heldout_failed_by": {
+          "both": 38,
+          "historical_only": 0,
+          "neither": 58,
+          "selected_only": 0
+        },
+        "three_distinct_heldout_outputs": 0
+      },
+      "model": "gpt-6-luna",
+      "start": "faulty",
+      "status": "OK",
+      "task": "matplotlib"
+    },
+    {
+      "action": "keep",
+      "arm": "revealing",
+      "block": "gpt-6-luna_matplotlib_faulty",
+      "components": {
+        "cases": 96,
+        "first_failures": {
+          "direction_preserved": {
+            "expected": {
+              "output": [
+                0,
+                -2
+              ],
+              "wrapped": null
+            },
+            "input": [
+              0,
+              -2,
+              -1,
+              -1
+            ],
+            "observed": {
+              "output": [
+                -1,
+                -1
+              ],
+              "wrapped": null
+            }
+          },
+          "interval_extent": {
+            "expected": {
+              "output": [
+                0,
+                -3
+              ],
+              "wrapped": null
+            },
+            "input": [
+              0,
+              -2,
+              -3,
+              -3
+            ],
+            "observed": {
+              "output": [
+                -2,
+                -3
+              ],
+              "wrapped": null
+            }
+          }
+        },
+        "interval_strata": {
+          "ascending_contained": {
+            "exact": 6,
+            "total": 6
+          },
+          "ascending_expanding": {
+            "exact": 42,
+            "total": 42
+          },
+          "descending_contained": {
+            "exact": 0,
+            "total": 6
+          },
+          "descending_expanding": {
+            "exact": 10,
+            "total": 42
+          }
+        },
+        "passed": {
+          "direction_preserved": 92,
+          "interval_extent": 58
+        }
+      },
+      "expression": "(max(vmin, vmax, oldmax), min(vmin, vmax, oldmin))",
+      "fault_comparison": {
+        "displayed_inputs": {
+          "revealing": {
+            "expected_output": [
+              8,
+              2
+            ],
+            "historical_output": [
+              7,
+              3
+            ],
+            "input": [
+              8,
+              2,
+              3,
+              7
+            ],
+            "selected_output": [
+              7,
+              3
+            ]
+          },
+          "shared": {
+            "expected_output": [
+              10,
+              0
+            ],
+            "historical_output": [
+              10,
+              0
+            ],
+            "input": [
+              8,
+              2,
+              0,
+              10
+            ],
+            "selected_output": [
+              10,
+              0
+            ]
+          }
+        },
+        "heldout_failed_by": {
+          "both": 38,
+          "historical_only": 0,
+          "neither": 58,
+          "selected_only": 0
+        },
+        "three_distinct_heldout_outputs": 0
+      },
+      "model": "gpt-6-luna",
+      "start": "faulty",
+      "status": "OK",
+      "task": "matplotlib"
+    },
+    {
+      "action": "replace",
+      "arm": "revealing",
+      "block": "gpt-6-luna_tqdm_faulty",
+      "components": {
+        "cases": 45,
+        "first_failures": {},
+        "passed": {
+          "index_value_pairs": 45,
+          "progress_forwarding": 45
+        }
+      },
+      "expression": "enumerate(tqdm_class(iterable, **tqdm_kwargs), start=start)",
+      "fault_comparison": {
+        "displayed_inputs": {
+          "revealing": {
+            "expected_output": [
+              [
+                7,
+                "fig"
+              ],
+              [
+                8,
+                "kiwi"
+              ]
+            ],
+            "historical_output": [
+              [
+                0,
+                "fig"
+              ],
+              [
+                1,
+                "kiwi"
+              ]
+            ],
+            "input": [
+              [
+                "fig",
+                "kiwi"
+              ],
+              7
+            ],
+            "selected_output": [
+              [
+                7,
+                "fig"
+              ],
+              [
+                8,
+                "kiwi"
+              ]
+            ]
+          },
+          "shared": {
+            "expected_output": [
+              [
+                0,
+                "fig"
+              ],
+              [
+                1,
+                "kiwi"
+              ]
+            ],
+            "historical_output": [
+              [
+                0,
+                "fig"
+              ],
+              [
+                1,
+                "kiwi"
+              ]
+            ],
+            "input": [
+              [
+                "fig",
+                "kiwi"
+              ],
+              0
+            ],
+            "selected_output": [
+              [
+                0,
+                "fig"
+              ],
+              [
+                1,
+                "kiwi"
+              ]
+            ]
+          }
+        },
+        "heldout_failed_by": {
+          "both": 0,
+          "historical_only": 28,
+          "neither": 17,
+          "selected_only": 0
+        },
+        "three_distinct_heldout_outputs": 0
+      },
+      "model": "gpt-6-luna",
+      "start": "faulty",
+      "status": "OK",
+      "task": "tqdm"
+    },
+    {
+      "action": "replace",
+      "arm": "shared",
+      "block": "gpt-6-luna_tqdm_faulty",
+      "components": {
+        "cases": 45,
+        "first_failures": {},
+        "passed": {
+          "index_value_pairs": 45,
+          "progress_forwarding": 45
+        }
+      },
+      "expression": "enumerate(tqdm_class(iterable, **tqdm_kwargs), start)",
+      "fault_comparison": {
+        "displayed_inputs": {
+          "revealing": {
+            "expected_output": [
+              [
+                7,
+                "fig"
+              ],
+              [
+                8,
+                "kiwi"
+              ]
+            ],
+            "historical_output": [
+              [
+                0,
+                "fig"
+              ],
+              [
+                1,
+                "kiwi"
+              ]
+            ],
+            "input": [
+              [
+                "fig",
+                "kiwi"
+              ],
+              7
+            ],
+            "selected_output": [
+              [
+                7,
+                "fig"
+              ],
+              [
+                8,
+                "kiwi"
+              ]
+            ]
+          },
+          "shared": {
+            "expected_output": [
+              [
+                0,
+                "fig"
+              ],
+              [
+                1,
+                "kiwi"
+              ]
+            ],
+            "historical_output": [
+              [
+                0,
+                "fig"
+              ],
+              [
+                1,
+                "kiwi"
+              ]
+            ],
+            "input": [
+              [
+                "fig",
+                "kiwi"
+              ],
+              0
+            ],
+            "selected_output": [
+              [
+                0,
+                "fig"
+              ],
+              [
+                1,
+                "kiwi"
+              ]
+            ]
+          }
+        },
+        "heldout_failed_by": {
+          "both": 0,
+          "historical_only": 28,
+          "neither": 17,
+          "selected_only": 0
+        },
+        "three_distinct_heldout_outputs": 0
+      },
+      "model": "gpt-6-luna",
+      "start": "faulty",
+      "status": "OK",
+      "task": "tqdm"
+    },
+    {
+      "action": "replace",
+      "arm": "none",
+      "block": "gpt-6-luna_tqdm_faulty",
+      "components": {
+        "cases": 45,
+        "first_failures": {},
+        "passed": {
+          "index_value_pairs": 45,
+          "progress_forwarding": 45
+        }
+      },
+      "expression": "enumerate(tqdm_class(iterable, **tqdm_kwargs), start=start)",
+      "fault_comparison": {
+        "displayed_inputs": {
+          "revealing": {
+            "expected_output": [
+              [
+                7,
+                "fig"
+              ],
+              [
+                8,
+                "kiwi"
+              ]
+            ],
+            "historical_output": [
+              [
+                0,
+                "fig"
+              ],
+              [
+                1,
+                "kiwi"
+              ]
+            ],
+            "input": [
+              [
+                "fig",
+                "kiwi"
+              ],
+              7
+            ],
+            "selected_output": [
+              [
+                7,
+                "fig"
+              ],
+              [
+                8,
+                "kiwi"
+              ]
+            ]
+          },
+          "shared": {
+            "expected_output": [
+              [
+                0,
+                "fig"
+              ],
+              [
+                1,
+                "kiwi"
+              ]
+            ],
+            "historical_output": [
+              [
+                0,
+                "fig"
+              ],
+              [
+                1,
+                "kiwi"
+              ]
+            ],
+            "input": [
+              [
+                "fig",
+                "kiwi"
+              ],
+              0
+            ],
+            "selected_output": [
+              [
+                0,
+                "fig"
+              ],
+              [
+                1,
+                "kiwi"
+              ]
+            ]
+          }
+        },
+        "heldout_failed_by": {
+          "both": 0,
+          "historical_only": 28,
+          "neither": 17,
+          "selected_only": 0
+        },
+        "three_distinct_heldout_outputs": 0
+      },
+      "model": "gpt-6-luna",
+      "start": "faulty",
+      "status": "OK",
+      "task": "tqdm"
+    },
+    {
+      "action": "replace",
+      "arm": "revealing",
+      "block": "gpt-6-luna_matplotlib_working",
+      "components": {
+        "cases": 96,
+        "first_failures": {
+          "interval_extent": {
+            "expected": {
+              "output": [
+                0,
+                -3
+              ],
+              "wrapped": null
+            },
+            "input": [
+              0,
+              -2,
+              -3,
+              -1
+            ],
+            "observed": {
+              "output": [
+                0,
+                -2
+              ],
+              "wrapped": null
+            }
+          }
+        },
+        "interval_strata": {
+          "ascending_contained": {
+            "exact": 6,
+            "total": 6
+          },
+          "ascending_expanding": {
+            "exact": 42,
+            "total": 42
+          },
+          "descending_contained": {
+            "exact": 6,
+            "total": 6
+          },
+          "descending_expanding": {
+            "exact": 8,
+            "total": 42
+          }
+        },
+        "passed": {
+          "direction_preserved": 96,
+          "interval_extent": 62
+        }
+      },
+      "expression": "(max(oldmin, min(vmin, vmax)), min(oldmax, max(vmin, vmax)))",
+      "fault_comparison": {
+        "displayed_inputs": {
+          "revealing": {
+            "expected_output": [
+              8,
+              2
+            ],
+            "historical_output": [
+              7,
+              3
+            ],
+            "input": [
+              8,
+              2,
+              3,
+              7
+            ],
+            "selected_output": [
+              8,
+              2
+            ]
+          },
+          "shared": {
+            "expected_output": [
+              10,
+              0
+            ],
+            "historical_output": [
+              10,
+              0
+            ],
+            "input": [
+              8,
+              2,
+              0,
+              10
+            ],
+            "selected_output": [
+              8,
+              2
+            ]
+          }
+        },
+        "heldout_failed_by": {
+          "both": 24,
+          "historical_only": 14,
+          "neither": 48,
+          "selected_only": 10
+        },
+        "three_distinct_heldout_outputs": 24
+      },
+      "model": "gpt-6-luna",
+      "start": "working",
+      "status": "OK",
+      "task": "matplotlib"
+    },
+    {
+      "action": "keep",
+      "arm": "none",
+      "block": "gpt-6-luna_matplotlib_working",
+      "components": {
+        "cases": 96,
+        "first_failures": {},
+        "interval_strata": {
+          "ascending_contained": {
+            "exact": 6,
+            "total": 6
+          },
+          "ascending_expanding": {
+            "exact": 42,
+            "total": 42
+          },
+          "descending_contained": {
+            "exact": 6,
+            "total": 6
+          },
+          "descending_expanding": {
+            "exact": 42,
+            "total": 42
+          }
+        },
+        "passed": {
+          "direction_preserved": 96,
+          "interval_extent": 96
+        }
+      },
+      "expression": "(max(vmin, vmax, oldmin), min(vmin, vmax, oldmax))",
+      "fault_comparison": {
+        "displayed_inputs": {
+          "revealing": {
+            "expected_output": [
+              8,
+              2
+            ],
+            "historical_output": [
+              7,
+              3
+            ],
+            "input": [
+              8,
+              2,
+              3,
+              7
+            ],
+            "selected_output": [
+              8,
+              2
+            ]
+          },
+          "shared": {
+            "expected_output": [
+              10,
+              0
+            ],
+            "historical_output": [
+              10,
+              0
+            ],
+            "input": [
+              8,
+              2,
+              0,
+              10
+            ],
+            "selected_output": [
+              10,
+              0
+            ]
+          }
+        },
+        "heldout_failed_by": {
+          "both": 0,
+          "historical_only": 38,
+          "neither": 58,
+          "selected_only": 0
+        },
+        "three_distinct_heldout_outputs": 0
+      },
+      "model": "gpt-6-luna",
+      "start": "working",
+      "status": "OK",
+      "task": "matplotlib"
+    },
+    {
+      "action": "replace",
+      "arm": "shared",
+      "block": "gpt-6-luna_matplotlib_working",
+      "components": {
+        "cases": 96,
+        "first_failures": {},
+        "interval_strata": {
+          "ascending_contained": {
+            "exact": 6,
+            "total": 6
+          },
+          "ascending_expanding": {
+            "exact": 42,
+            "total": 42
+          },
+          "descending_contained": {
+            "exact": 6,
+            "total": 6
+          },
+          "descending_expanding": {
+            "exact": 42,
+            "total": 42
+          }
+        },
+        "passed": {
+          "direction_preserved": 96,
+          "interval_extent": 96
+        }
+      },
+      "expression": "(max(vmin, vmax, oldmin, oldmax), min(vmin, vmax, oldmin, oldmax))",
+      "fault_comparison": {
+        "displayed_inputs": {
+          "revealing": {
+            "expected_output": [
+              8,
+              2
+            ],
+            "historical_output": [
+              7,
+              3
+            ],
+            "input": [
+              8,
+              2,
+              3,
+              7
+            ],
+            "selected_output": [
+              8,
+              2
+            ]
+          },
+          "shared": {
+            "expected_output": [
+              10,
+              0
+            ],
+            "historical_output": [
+              10,
+              0
+            ],
+            "input": [
+              8,
+              2,
+              0,
+              10
+            ],
+            "selected_output": [
+              10,
+              0
+            ]
+          }
+        },
+        "heldout_failed_by": {
+          "both": 0,
+          "historical_only": 38,
+          "neither": 58,
+          "selected_only": 0
+        },
+        "three_distinct_heldout_outputs": 0
+      },
+      "model": "gpt-6-luna",
+      "start": "working",
+      "status": "OK",
+      "task": "matplotlib"
+    },
+    {
+      "action": "replace",
+      "arm": "shared",
+      "block": "gpt-6.2-astra_matplotlib_faulty",
+      "components": {
+        "cases": 96,
+        "first_failures": {},
+        "interval_strata": {
+          "ascending_contained": {
+            "exact": 6,
+            "total": 6
+          },
+          "ascending_expanding": {
+            "exact": 42,
+            "total": 42
+          },
+          "descending_contained": {
+            "exact": 6,
+            "total": 6
+          },
+          "descending_expanding": {
+            "exact": 42,
+            "total": 42
+          }
+        },
+        "passed": {
+          "direction_preserved": 96,
+          "interval_extent": 96
+        }
+      },
+      "expression": "(max(vmin, vmax, oldmin), min(vmin, vmax, oldmax))",
+      "fault_comparison": {
+        "displayed_inputs": {
+          "revealing": {
+            "expected_output": [
+              8,
+              2
+            ],
+            "historical_output": [
+              7,
+              3
+            ],
+            "input": [
+              8,
+              2,
+              3,
+              7
+            ],
+            "selected_output": [
+              8,
+              2
+            ]
+          },
+          "shared": {
+            "expected_output": [
+              10,
+              0
+            ],
+            "historical_output": [
+              10,
+              0
+            ],
+            "input": [
+              8,
+              2,
+              0,
+              10
+            ],
+            "selected_output": [
+              10,
+              0
+            ]
+          }
+        },
+        "heldout_failed_by": {
+          "both": 0,
+          "historical_only": 38,
+          "neither": 58,
+          "selected_only": 0
+        },
+        "three_distinct_heldout_outputs": 0
+      },
+      "model": "gpt-6.2-astra",
+      "start": "faulty",
+      "status": "OK",
+      "task": "matplotlib"
+    },
+    {
+      "action": "replace",
+      "arm": "none",
+      "block": "gpt-6.2-astra_matplotlib_faulty",
+      "components": {
+        "cases": 96,
+        "first_failures": {},
+        "interval_strata": {
+          "ascending_contained": {
+            "exact": 6,
+            "total": 6
+          },
+          "ascending_expanding": {
+            "exact": 42,
+            "total": 42
+          },
+          "descending_contained": {
+            "exact": 6,
+            "total": 6
+          },
+          "descending_expanding": {
+            "exact": 42,
+            "total": 42
+          }
+        },
+        "passed": {
+          "direction_preserved": 96,
+          "interval_extent": 96
+        }
+      },
+      "expression": "(max(vmin, vmax, oldmin), min(vmin, vmax, oldmax))",
+      "fault_comparison": {
+        "displayed_inputs": {
+          "revealing": {
+            "expected_output": [
+              8,
+              2
+            ],
+            "historical_output": [
+              7,
+              3
+            ],
+            "input": [
+              8,
+              2,
+              3,
+              7
+            ],
+            "selected_output": [
+              8,
+              2
+            ]
+          },
+          "shared": {
+            "expected_output": [
+              10,
+              0
+            ],
+            "historical_output": [
+              10,
+              0
+            ],
+            "input": [
+              8,
+              2,
+              0,
+              10
+            ],
+            "selected_output": [
+              10,
+              0
+            ]
+          }
+        },
+        "heldout_failed_by": {
+          "both": 0,
+          "historical_only": 38,
+          "neither": 58,
+          "selected_only": 0
+        },
+        "three_distinct_heldout_outputs": 0
+      },
+      "model": "gpt-6.2-astra",
+      "start": "faulty",
+      "status": "OK",
+      "task": "matplotlib"
+    },
+    {
+      "action": "replace",
+      "arm": "revealing",
+      "block": "gpt-6.2-astra_matplotlib_faulty",
+      "components": {
+        "cases": 96,
+        "first_failures": {},
+        "interval_strata": {
+          "ascending_contained": {
+            "exact": 6,
+            "total": 6
+          },
+          "ascending_expanding": {
+            "exact": 42,
+            "total": 42
+          },
+          "descending_contained": {
+            "exact": 6,
+            "total": 6
+          },
+          "descending_expanding": {
+            "exact": 42,
+            "total": 42
+          }
+        },
+        "passed": {
+          "direction_preserved": 96,
+          "interval_extent": 96
+        }
+      },
+      "expression": "(max(vmin, vmax, oldmin), min(vmin, vmax, oldmax))",
+      "fault_comparison": {
+        "displayed_inputs": {
+          "revealing": {
+            "expected_output": [
+              8,
+              2
+            ],
+            "historical_output": [
+              7,
+              3
+            ],
+            "input": [
+              8,
+              2,
+              3,
+              7
+            ],
+            "selected_output": [
+              8,
+              2
+            ]
+          },
+          "shared": {
+            "expected_output": [
+              10,
+              0
+            ],
+            "historical_output": [
+              10,
+              0
+            ],
+            "input": [
+              8,
+              2,
+              0,
+              10
+            ],
+            "selected_output": [
+              10,
+              0
+            ]
+          }
+        },
+        "heldout_failed_by": {
+          "both": 0,
+          "historical_only": 38,
+          "neither": 58,
+          "selected_only": 0
+        },
+        "three_distinct_heldout_outputs": 0
+      },
+      "model": "gpt-6.2-astra",
+      "start": "faulty",
+      "status": "OK",
+      "task": "matplotlib"
+    },
+    {
+      "action": "keep",
+      "arm": "revealing",
+      "block": "gpt-6.2-astra_tqdm_working",
+      "components": {
+        "cases": 45,
+        "first_failures": {},
+        "passed": {
+          "index_value_pairs": 45,
+          "progress_forwarding": 45
+        }
+      },
+      "expression": "enumerate(tqdm_class(iterable, **tqdm_kwargs), start)",
+      "fault_comparison": {
+        "displayed_inputs": {
+          "revealing": {
+            "expected_output": [
+              [
+                7,
+                "fig"
+              ],
+              [
+                8,
+                "kiwi"
+              ]
+            ],
+            "historical_output": [
+              [
+                0,
+                "fig"
+              ],
+              [
+                1,
+                "kiwi"
+              ]
+            ],
+            "input": [
+              [
+                "fig",
+                "kiwi"
+              ],
+              7
+            ],
+            "selected_output": [
+              [
+                7,
+                "fig"
+              ],
+              [
+                8,
+                "kiwi"
+              ]
+            ]
+          },
+          "shared": {
+            "expected_output": [
+              [
+                0,
+                "fig"
+              ],
+              [
+                1,
+                "kiwi"
+              ]
+            ],
+            "historical_output": [
+              [
+                0,
+                "fig"
+              ],
+              [
+                1,
+                "kiwi"
+              ]
+            ],
+            "input": [
+              [
+                "fig",
+                "kiwi"
+              ],
+              0
+            ],
+            "selected_output": [
+              [
+                0,
+                "fig"
+              ],
+              [
+                1,
+                "kiwi"
+              ]
+            ]
+          }
+        },
+        "heldout_failed_by": {
+          "both": 0,
+          "historical_only": 28,
+          "neither": 17,
+          "selected_only": 0
+        },
+        "three_distinct_heldout_outputs": 0
+      },
+      "model": "gpt-6.2-astra",
+      "start": "working",
+      "status": "OK",
+      "task": "tqdm"
+    },
+    {
+      "action": "keep",
+      "arm": "none",
+      "block": "gpt-6.2-astra_tqdm_working",
+      "components": {
+        "cases": 45,
+        "first_failures": {},
+        "passed": {
+          "index_value_pairs": 45,
+          "progress_forwarding": 45
+        }
+      },
+      "expression": "enumerate(tqdm_class(iterable, **tqdm_kwargs), start)",
+      "fault_comparison": {
+        "displayed_inputs": {
+          "revealing": {
+            "expected_output": [
+              [
+                7,
+                "fig"
+              ],
+              [
+                8,
+                "kiwi"
+              ]
+            ],
+            "historical_output": [
+              [
+                0,
+                "fig"
+              ],
+              [
+                1,
+                "kiwi"
+              ]
+            ],
+            "input": [
+              [
+                "fig",
+                "kiwi"
+              ],
+              7
+            ],
+            "selected_output": [
+              [
+                7,
+                "fig"
+              ],
+              [
+                8,
+                "kiwi"
+              ]
+            ]
+          },
+          "shared": {
+            "expected_output": [
+              [
+                0,
+                "fig"
+              ],
+              [
+                1,
+                "kiwi"
+              ]
+            ],
+            "historical_output": [
+              [
+                0,
+                "fig"
+              ],
+              [
+                1,
+                "kiwi"
+              ]
+            ],
+            "input": [
+              [
+                "fig",
+                "kiwi"
+              ],
+              0
+            ],
+            "selected_output": [
+              [
+                0,
+                "fig"
+              ],
+              [
+                1,
+                "kiwi"
+              ]
+            ]
+          }
+        },
+        "heldout_failed_by": {
+          "both": 0,
+          "historical_only": 28,
+          "neither": 17,
+          "selected_only": 0
+        },
+        "three_distinct_heldout_outputs": 0
+      },
+      "model": "gpt-6.2-astra",
+      "start": "working",
+      "status": "OK",
+      "task": "tqdm"
+    },
+    {
+      "action": "keep",
+      "arm": "shared",
+      "block": "gpt-6.2-astra_tqdm_working",
+      "components": {
+        "cases": 45,
+        "first_failures": {},
+        "passed": {
+          "index_value_pairs": 45,
+          "progress_forwarding": 45
+        }
+      },
+      "expression": "enumerate(tqdm_class(iterable, **tqdm_kwargs), start)",
+      "fault_comparison": {
+        "displayed_inputs": {
+          "revealing": {
+            "expected_output": [
+              [
+                7,
+                "fig"
+              ],
+              [
+                8,
+                "kiwi"
+              ]
+            ],
+            "historical_output": [
+              [
+                0,
+                "fig"
+              ],
+              [
+                1,
+                "kiwi"
+              ]
+            ],
+            "input": [
+              [
+                "fig",
+                "kiwi"
+              ],
+              7
+            ],
+            "selected_output": [
+              [
+                7,
+                "fig"
+              ],
+              [
+                8,
+                "kiwi"
+              ]
+            ]
+          },
+          "shared": {
+            "expected_output": [
+              [
+                0,
+                "fig"
+              ],
+              [
+                1,
+                "kiwi"
+              ]
+            ],
+            "historical_output": [
+              [
+                0,
+                "fig"
+              ],
+              [
+                1,
+                "kiwi"
+              ]
+            ],
+            "input": [
+              [
+                "fig",
+                "kiwi"
+              ],
+              0
+            ],
+            "selected_output": [
+              [
+                0,
+                "fig"
+              ],
+              [
+                1,
+                "kiwi"
+              ]
+            ]
+          }
+        },
+        "heldout_failed_by": {
+          "both": 0,
+          "historical_only": 28,
+          "neither": 17,
+          "selected_only": 0
+        },
+        "three_distinct_heldout_outputs": 0
+      },
+      "model": "gpt-6.2-astra",
+      "start": "working",
+      "status": "OK",
+      "task": "tqdm"
+    }
+  ]
+}

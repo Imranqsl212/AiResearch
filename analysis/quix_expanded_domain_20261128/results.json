@@ -1,0 +1,1133 @@
+{
+  "plan_sha256": "756402b7b18aefe0ecc05863519b60694f0585d6fc0308685067282a15e43f9d",
+  "programs": {
+    "145b19d473e800cbfb9457e5ce983645daba10e4f490a68d3370209ccc1c9753": {
+      "expression": "x >= pivot",
+      "grades": {
+        "alternative": {
+          "expanded_pass": false,
+          "expanded_passed": 64,
+          "expanded_total": 5460,
+          "original_pass": false
+        },
+        "upstream": {
+          "expanded_pass": true,
+          "expanded_passed": 5460,
+          "expanded_total": 5460,
+          "original_pass": true
+        }
+      },
+      "task": "quicksort"
+    },
+    "1bc5e149fdb0ba6dc1716911eb07b0e57c3c92bf768214488ec435fd4a1d6790": {
+      "expression": "weight <= j",
+      "grades": {
+        "alternative": {
+          "expanded_pass": false,
+          "expanded_passed": 1538,
+          "expanded_total": 3060,
+          "original_pass": false
+        },
+        "upstream": {
+          "expanded_pass": true,
+          "expanded_passed": 3060,
+          "expanded_total": 3060,
+          "original_pass": true
+        }
+      },
+      "task": "knapsack"
+    },
+    "351f4deea5a89e135208909786d0cabce82e51bf2e50e160b8d09a3e76cace29": {
+      "expression": "depth == 0",
+      "grades": {
+        "alternative": {
+          "expanded_pass": false,
+          "expanded_passed": 1541,
+          "expanded_total": 1982,
+          "original_pass": false
+        },
+        "upstream": {
+          "expanded_pass": true,
+          "expanded_passed": 1982,
+          "expanded_total": 1982,
+          "original_pass": true
+        }
+      },
+      "task": "is_valid_parenthesization"
+    },
+    "42c068f796c139d1a1aefb11973e40b9eaadb3d4f6d5dff552340e926adee0bb": {
+      "expression": "max(0, max_ending_here + x)",
+      "grades": {
+        "alternative": {
+          "expanded_pass": false,
+          "expanded_passed": 2275,
+          "expanded_total": 5460,
+          "original_pass": false
+        },
+        "upstream": {
+          "expanded_pass": true,
+          "expanded_passed": 5460,
+          "expanded_total": 5460,
+          "original_pass": true
+        }
+      },
+      "task": "max_sublist_sum"
+    },
+    "9aba6f8358a25a38fe1266010f28b459f64b86ee991b88d0369e2df070aee9e5": {
+      "expression": "True",
+      "grades": {
+        "alternative": {
+          "expanded_pass": true,
+          "expanded_passed": 1982,
+          "expanded_total": 1982,
+          "original_pass": true
+        },
+        "upstream": {
+          "expanded_pass": false,
+          "expanded_passed": 1541,
+          "expanded_total": 1982,
+          "original_pass": false
+        }
+      },
+      "task": "is_valid_parenthesization"
+    },
+    "c0dce9c622faf96cb4aedc488393a14435f8756970c631419bc0f675422d7c23": {
+      "expression": "max_ending_here + x",
+      "grades": {
+        "alternative": {
+          "expanded_pass": true,
+          "expanded_passed": 5460,
+          "expanded_total": 5460,
+          "original_pass": true
+        },
+        "upstream": {
+          "expanded_pass": false,
+          "expanded_passed": 2275,
+          "expanded_total": 5460,
+          "original_pass": false
+        }
+      },
+      "task": "max_sublist_sum"
+    },
+    "cc2bc08b2bee65ab762dd6bc8efffd75112c2f0dcce68725b5faf9fcc6a49aff": {
+      "expression": "x > pivot",
+      "grades": {
+        "alternative": {
+          "expanded_pass": true,
+          "expanded_passed": 5460,
+          "expanded_total": 5460,
+          "original_pass": true
+        },
+        "upstream": {
+          "expanded_pass": false,
+          "expanded_passed": 64,
+          "expanded_total": 5460,
+          "original_pass": false
+        }
+      },
+      "task": "quicksort"
+    },
+    "ec797371fe1640bc0673b2d99df2b03cb2af87c8edd76ccf182e2ae6a935811f": {
+      "expression": "weight < j",
+      "grades": {
+        "alternative": {
+          "expanded_pass": true,
+          "expanded_passed": 3060,
+          "expanded_total": 3060,
+          "original_pass": true
+        },
+        "upstream": {
+          "expanded_pass": false,
+          "expanded_passed": 1538,
+          "expanded_total": 3060,
+          "original_pass": false
+        }
+      },
+      "task": "knapsack"
+    },
+    "ffb6c2e14d140deff008e9291ff68ae3365561af79b11241a7435ba5a6415881": {
+      "expression": "depth >= 0",
+      "grades": {
+        "alternative": {
+          "expanded_pass": true,
+          "expanded_passed": 1982,
+          "expanded_total": 1982,
+          "original_pass": true
+        },
+        "upstream": {
+          "expanded_pass": false,
+          "expanded_passed": 1541,
+          "expanded_total": 1982,
+          "original_pass": false
+        }
+      },
+      "task": "is_valid_parenthesization"
+    }
+  },
+  "rows": [
+    {
+      "arm": "revealing",
+      "block": "gpt-6.2-astra_is_valid_parenthesization_working",
+      "model": "gpt-6.2-astra",
+      "program_id": "351f4deea5a89e135208909786d0cabce82e51bf2e50e160b8d09a3e76cace29",
+      "start": "working",
+      "status": "OK",
+      "study": "free_patch",
+      "task": "is_valid_parenthesization"
+    },
+    {
+      "arm": "shared",
+      "block": "gpt-6.2-astra_is_valid_parenthesization_working",
+      "model": "gpt-6.2-astra",
+      "program_id": "351f4deea5a89e135208909786d0cabce82e51bf2e50e160b8d09a3e76cace29",
+      "start": "working",
+      "status": "OK",
+      "study": "free_patch",
+      "task": "is_valid_parenthesization"
+    },
+    {
+      "arm": "none",
+      "block": "gpt-6.2-astra_is_valid_parenthesization_working",
+      "model": "gpt-6.2-astra",
+      "program_id": "351f4deea5a89e135208909786d0cabce82e51bf2e50e160b8d09a3e76cace29",
+      "start": "working",
+      "status": "OK",
+      "study": "free_patch",
+      "task": "is_valid_parenthesization"
+    },
+    {
+      "arm": "none",
+      "block": "gpt-6-luna_knapsack_working",
+      "model": "gpt-6-luna",
+      "program_id": "1bc5e149fdb0ba6dc1716911eb07b0e57c3c92bf768214488ec435fd4a1d6790",
+      "start": "working",
+      "status": "OK",
+      "study": "free_patch",
+      "task": "knapsack"
+    },
+    {
+      "arm": "revealing",
+      "block": "gpt-6-luna_knapsack_working",
+      "model": "gpt-6-luna",
+      "program_id": "1bc5e149fdb0ba6dc1716911eb07b0e57c3c92bf768214488ec435fd4a1d6790",
+      "start": "working",
+      "status": "OK",
+      "study": "free_patch",
+      "task": "knapsack"
+    },
+    {
+      "arm": "shared",
+      "block": "gpt-6-luna_knapsack_working",
+      "model": "gpt-6-luna",
+      "program_id": "1bc5e149fdb0ba6dc1716911eb07b0e57c3c92bf768214488ec435fd4a1d6790",
+      "start": "working",
+      "status": "OK",
+      "study": "free_patch",
+      "task": "knapsack"
+    },
+    {
+      "arm": "revealing",
+      "block": "gpt-6.2-astra_max_sublist_sum_faulty",
+      "model": "gpt-6.2-astra",
+      "program_id": "42c068f796c139d1a1aefb11973e40b9eaadb3d4f6d5dff552340e926adee0bb",
+      "start": "faulty",
+      "status": "OK",
+      "study": "free_patch",
+      "task": "max_sublist_sum"
+    },
+    {
+      "arm": "shared",
+      "block": "gpt-6.2-astra_max_sublist_sum_faulty",
+      "model": "gpt-6.2-astra",
+      "program_id": "42c068f796c139d1a1aefb11973e40b9eaadb3d4f6d5dff552340e926adee0bb",
+      "start": "faulty",
+      "status": "OK",
+      "study": "free_patch",
+      "task": "max_sublist_sum"
+    },
+    {
+      "arm": "none",
+      "block": "gpt-6.2-astra_max_sublist_sum_faulty",
+      "model": "gpt-6.2-astra",
+      "program_id": "42c068f796c139d1a1aefb11973e40b9eaadb3d4f6d5dff552340e926adee0bb",
+      "start": "faulty",
+      "status": "OK",
+      "study": "free_patch",
+      "task": "max_sublist_sum"
+    },
+    {
+      "arm": "shared",
+      "block": "gpt-6-luna_quicksort_faulty",
+      "model": "gpt-6-luna",
+      "program_id": "145b19d473e800cbfb9457e5ce983645daba10e4f490a68d3370209ccc1c9753",
+      "start": "faulty",
+      "status": "OK",
+      "study": "free_patch",
+      "task": "quicksort"
+    },
+    {
+      "arm": "none",
+      "block": "gpt-6-luna_quicksort_faulty",
+      "model": "gpt-6-luna",
+      "program_id": "145b19d473e800cbfb9457e5ce983645daba10e4f490a68d3370209ccc1c9753",
+      "start": "faulty",
+      "status": "OK",
+      "study": "free_patch",
+      "task": "quicksort"
+    },
+    {
+      "arm": "revealing",
+      "block": "gpt-6-luna_quicksort_faulty",
+      "model": "gpt-6-luna",
+      "program_id": "145b19d473e800cbfb9457e5ce983645daba10e4f490a68d3370209ccc1c9753",
+      "start": "faulty",
+      "status": "OK",
+      "study": "free_patch",
+      "task": "quicksort"
+    },
+    {
+      "arm": "revealing",
+      "block": "gpt-6.2-astra_knapsack_faulty",
+      "model": "gpt-6.2-astra",
+      "program_id": "1bc5e149fdb0ba6dc1716911eb07b0e57c3c92bf768214488ec435fd4a1d6790",
+      "start": "faulty",
+      "status": "OK",
+      "study": "free_patch",
+      "task": "knapsack"
+    },
+    {
+      "arm": "shared",
+      "block": "gpt-6.2-astra_knapsack_faulty",
+      "model": "gpt-6.2-astra",
+      "program_id": "1bc5e149fdb0ba6dc1716911eb07b0e57c3c92bf768214488ec435fd4a1d6790",
+      "start": "faulty",
+      "status": "OK",
+      "study": "free_patch",
+      "task": "knapsack"
+    },
+    {
+      "arm": "none",
+      "block": "gpt-6.2-astra_knapsack_faulty",
+      "model": "gpt-6.2-astra",
+      "program_id": "1bc5e149fdb0ba6dc1716911eb07b0e57c3c92bf768214488ec435fd4a1d6790",
+      "start": "faulty",
+      "status": "OK",
+      "study": "free_patch",
+      "task": "knapsack"
+    },
+    {
+      "arm": "shared",
+      "block": "gpt-6.2-astra_max_sublist_sum_working",
+      "model": "gpt-6.2-astra",
+      "program_id": "42c068f796c139d1a1aefb11973e40b9eaadb3d4f6d5dff552340e926adee0bb",
+      "start": "working",
+      "status": "OK",
+      "study": "free_patch",
+      "task": "max_sublist_sum"
+    },
+    {
+      "arm": "none",
+      "block": "gpt-6.2-astra_max_sublist_sum_working",
+      "model": "gpt-6.2-astra",
+      "program_id": "42c068f796c139d1a1aefb11973e40b9eaadb3d4f6d5dff552340e926adee0bb",
+      "start": "working",
+      "status": "OK",
+      "study": "free_patch",
+      "task": "max_sublist_sum"
+    },
+    {
+      "arm": "revealing",
+      "block": "gpt-6.2-astra_max_sublist_sum_working",
+      "model": "gpt-6.2-astra",
+      "program_id": "42c068f796c139d1a1aefb11973e40b9eaadb3d4f6d5dff552340e926adee0bb",
+      "start": "working",
+      "status": "OK",
+      "study": "free_patch",
+      "task": "max_sublist_sum"
+    },
+    {
+      "arm": "shared",
+      "block": "gpt-6-luna_is_valid_parenthesization_faulty",
+      "model": "gpt-6-luna",
+      "program_id": "351f4deea5a89e135208909786d0cabce82e51bf2e50e160b8d09a3e76cace29",
+      "start": "faulty",
+      "status": "OK",
+      "study": "free_patch",
+      "task": "is_valid_parenthesization"
+    },
+    {
+      "arm": "none",
+      "block": "gpt-6-luna_is_valid_parenthesization_faulty",
+      "model": "gpt-6-luna",
+      "program_id": "351f4deea5a89e135208909786d0cabce82e51bf2e50e160b8d09a3e76cace29",
+      "start": "faulty",
+      "status": "OK",
+      "study": "free_patch",
+      "task": "is_valid_parenthesization"
+    },
+    {
+      "arm": "revealing",
+      "block": "gpt-6-luna_is_valid_parenthesization_faulty",
+      "model": "gpt-6-luna",
+      "program_id": "351f4deea5a89e135208909786d0cabce82e51bf2e50e160b8d09a3e76cace29",
+      "start": "faulty",
+      "status": "OK",
+      "study": "free_patch",
+      "task": "is_valid_parenthesization"
+    },
+    {
+      "arm": "none",
+      "block": "gpt-6-luna_quicksort_working",
+      "model": "gpt-6-luna",
+      "program_id": "145b19d473e800cbfb9457e5ce983645daba10e4f490a68d3370209ccc1c9753",
+      "start": "working",
+      "status": "OK",
+      "study": "free_patch",
+      "task": "quicksort"
+    },
+    {
+      "arm": "revealing",
+      "block": "gpt-6-luna_quicksort_working",
+      "model": "gpt-6-luna",
+      "program_id": "145b19d473e800cbfb9457e5ce983645daba10e4f490a68d3370209ccc1c9753",
+      "start": "working",
+      "status": "OK",
+      "study": "free_patch",
+      "task": "quicksort"
+    },
+    {
+      "arm": "shared",
+      "block": "gpt-6-luna_quicksort_working",
+      "model": "gpt-6-luna",
+      "program_id": "145b19d473e800cbfb9457e5ce983645daba10e4f490a68d3370209ccc1c9753",
+      "start": "working",
+      "status": "OK",
+      "study": "free_patch",
+      "task": "quicksort"
+    },
+    {
+      "arm": "none",
+      "block": "gpt-6-luna_max_sublist_sum_faulty",
+      "model": "gpt-6-luna",
+      "program_id": "c0dce9c622faf96cb4aedc488393a14435f8756970c631419bc0f675422d7c23",
+      "start": "faulty",
+      "status": "OK",
+      "study": "free_patch",
+      "task": "max_sublist_sum"
+    },
+    {
+      "arm": "revealing",
+      "block": "gpt-6-luna_max_sublist_sum_faulty",
+      "model": "gpt-6-luna",
+      "program_id": "42c068f796c139d1a1aefb11973e40b9eaadb3d4f6d5dff552340e926adee0bb",
+      "start": "faulty",
+      "status": "OK",
+      "study": "free_patch",
+      "task": "max_sublist_sum"
+    },
+    {
+      "arm": "shared",
+      "block": "gpt-6-luna_max_sublist_sum_faulty",
+      "model": "gpt-6-luna",
+      "program_id": "42c068f796c139d1a1aefb11973e40b9eaadb3d4f6d5dff552340e926adee0bb",
+      "start": "faulty",
+      "status": "OK",
+      "study": "free_patch",
+      "task": "max_sublist_sum"
+    },
+    {
+      "arm": "none",
+      "block": "gpt-6-luna_is_valid_parenthesization_working",
+      "model": "gpt-6-luna",
+      "program_id": "351f4deea5a89e135208909786d0cabce82e51bf2e50e160b8d09a3e76cace29",
+      "start": "working",
+      "status": "OK",
+      "study": "free_patch",
+      "task": "is_valid_parenthesization"
+    },
+    {
+      "arm": "revealing",
+      "block": "gpt-6-luna_is_valid_parenthesization_working",
+      "model": "gpt-6-luna",
+      "program_id": "351f4deea5a89e135208909786d0cabce82e51bf2e50e160b8d09a3e76cace29",
+      "start": "working",
+      "status": "OK",
+      "study": "free_patch",
+      "task": "is_valid_parenthesization"
+    },
+    {
+      "arm": "shared",
+      "block": "gpt-6-luna_is_valid_parenthesization_working",
+      "model": "gpt-6-luna",
+      "program_id": "351f4deea5a89e135208909786d0cabce82e51bf2e50e160b8d09a3e76cace29",
+      "start": "working",
+      "status": "OK",
+      "study": "free_patch",
+      "task": "is_valid_parenthesization"
+    },
+    {
+      "arm": "shared",
+      "block": "gpt-6.2-astra_knapsack_working",
+      "model": "gpt-6.2-astra",
+      "program_id": "1bc5e149fdb0ba6dc1716911eb07b0e57c3c92bf768214488ec435fd4a1d6790",
+      "start": "working",
+      "status": "OK",
+      "study": "free_patch",
+      "task": "knapsack"
+    },
+    {
+      "arm": "none",
+      "block": "gpt-6.2-astra_knapsack_working",
+      "model": "gpt-6.2-astra",
+      "program_id": "1bc5e149fdb0ba6dc1716911eb07b0e57c3c92bf768214488ec435fd4a1d6790",
+      "start": "working",
+      "status": "OK",
+      "study": "free_patch",
+      "task": "knapsack"
+    },
+    {
+      "arm": "revealing",
+      "block": "gpt-6.2-astra_knapsack_working",
+      "model": "gpt-6.2-astra",
+      "program_id": "1bc5e149fdb0ba6dc1716911eb07b0e57c3c92bf768214488ec435fd4a1d6790",
+      "start": "working",
+      "status": "OK",
+      "study": "free_patch",
+      "task": "knapsack"
+    },
+    {
+      "arm": "revealing",
+      "block": "gpt-6.2-astra_quicksort_faulty",
+      "model": "gpt-6.2-astra",
+      "program_id": "145b19d473e800cbfb9457e5ce983645daba10e4f490a68d3370209ccc1c9753",
+      "start": "faulty",
+      "status": "OK",
+      "study": "free_patch",
+      "task": "quicksort"
+    },
+    {
+      "arm": "shared",
+      "block": "gpt-6.2-astra_quicksort_faulty",
+      "model": "gpt-6.2-astra",
+      "program_id": "145b19d473e800cbfb9457e5ce983645daba10e4f490a68d3370209ccc1c9753",
+      "start": "faulty",
+      "status": "OK",
+      "study": "free_patch",
+      "task": "quicksort"
+    },
+    {
+      "arm": "none",
+      "block": "gpt-6.2-astra_quicksort_faulty",
+      "model": "gpt-6.2-astra",
+      "program_id": "145b19d473e800cbfb9457e5ce983645daba10e4f490a68d3370209ccc1c9753",
+      "start": "faulty",
+      "status": "OK",
+      "study": "free_patch",
+      "task": "quicksort"
+    },
+    {
+      "arm": "none",
+      "block": "gpt-6-luna_knapsack_faulty",
+      "model": "gpt-6-luna",
+      "program_id": "1bc5e149fdb0ba6dc1716911eb07b0e57c3c92bf768214488ec435fd4a1d6790",
+      "start": "faulty",
+      "status": "OK",
+      "study": "free_patch",
+      "task": "knapsack"
+    },
+    {
+      "arm": "revealing",
+      "block": "gpt-6-luna_knapsack_faulty",
+      "model": "gpt-6-luna",
+      "program_id": "1bc5e149fdb0ba6dc1716911eb07b0e57c3c92bf768214488ec435fd4a1d6790",
+      "start": "faulty",
+      "status": "OK",
+      "study": "free_patch",
+      "task": "knapsack"
+    },
+    {
+      "arm": "shared",
+      "block": "gpt-6-luna_knapsack_faulty",
+      "model": "gpt-6-luna",
+      "program_id": "1bc5e149fdb0ba6dc1716911eb07b0e57c3c92bf768214488ec435fd4a1d6790",
+      "start": "faulty",
+      "status": "OK",
+      "study": "free_patch",
+      "task": "knapsack"
+    },
+    {
+      "arm": "revealing",
+      "block": "gpt-6-luna_max_sublist_sum_working",
+      "model": "gpt-6-luna",
+      "program_id": "42c068f796c139d1a1aefb11973e40b9eaadb3d4f6d5dff552340e926adee0bb",
+      "start": "working",
+      "status": "OK",
+      "study": "free_patch",
+      "task": "max_sublist_sum"
+    },
+    {
+      "arm": "shared",
+      "block": "gpt-6-luna_max_sublist_sum_working",
+      "model": "gpt-6-luna",
+      "program_id": "42c068f796c139d1a1aefb11973e40b9eaadb3d4f6d5dff552340e926adee0bb",
+      "start": "working",
+      "status": "OK",
+      "study": "free_patch",
+      "task": "max_sublist_sum"
+    },
+    {
+      "arm": "none",
+      "block": "gpt-6-luna_max_sublist_sum_working",
+      "model": "gpt-6-luna",
+      "program_id": "42c068f796c139d1a1aefb11973e40b9eaadb3d4f6d5dff552340e926adee0bb",
+      "start": "working",
+      "status": "OK",
+      "study": "free_patch",
+      "task": "max_sublist_sum"
+    },
+    {
+      "arm": "revealing",
+      "block": "gpt-6.2-astra_is_valid_parenthesization_faulty",
+      "model": "gpt-6.2-astra",
+      "program_id": "351f4deea5a89e135208909786d0cabce82e51bf2e50e160b8d09a3e76cace29",
+      "start": "faulty",
+      "status": "OK",
+      "study": "free_patch",
+      "task": "is_valid_parenthesization"
+    },
+    {
+      "arm": "shared",
+      "block": "gpt-6.2-astra_is_valid_parenthesization_faulty",
+      "model": "gpt-6.2-astra",
+      "program_id": "351f4deea5a89e135208909786d0cabce82e51bf2e50e160b8d09a3e76cace29",
+      "start": "faulty",
+      "status": "OK",
+      "study": "free_patch",
+      "task": "is_valid_parenthesization"
+    },
+    {
+      "arm": "none",
+      "block": "gpt-6.2-astra_is_valid_parenthesization_faulty",
+      "model": "gpt-6.2-astra",
+      "program_id": "351f4deea5a89e135208909786d0cabce82e51bf2e50e160b8d09a3e76cace29",
+      "start": "faulty",
+      "status": "OK",
+      "study": "free_patch",
+      "task": "is_valid_parenthesization"
+    },
+    {
+      "arm": "shared",
+      "block": "gpt-6.2-astra_quicksort_working",
+      "model": "gpt-6.2-astra",
+      "program_id": "145b19d473e800cbfb9457e5ce983645daba10e4f490a68d3370209ccc1c9753",
+      "start": "working",
+      "status": "OK",
+      "study": "free_patch",
+      "task": "quicksort"
+    },
+    {
+      "arm": "none",
+      "block": "gpt-6.2-astra_quicksort_working",
+      "model": "gpt-6.2-astra",
+      "program_id": "145b19d473e800cbfb9457e5ce983645daba10e4f490a68d3370209ccc1c9753",
+      "start": "working",
+      "status": "OK",
+      "study": "free_patch",
+      "task": "quicksort"
+    },
+    {
+      "arm": "revealing",
+      "block": "gpt-6.2-astra_quicksort_working",
+      "model": "gpt-6.2-astra",
+      "program_id": "145b19d473e800cbfb9457e5ce983645daba10e4f490a68d3370209ccc1c9753",
+      "start": "working",
+      "status": "OK",
+      "study": "free_patch",
+      "task": "quicksort"
+    },
+    {
+      "arm": "concealed",
+      "block": "gpt-6.2-astra_max_sublist_sum_faulty",
+      "model": "gpt-6.2-astra",
+      "program_id": "c0dce9c622faf96cb4aedc488393a14435f8756970c631419bc0f675422d7c23",
+      "start": "faulty",
+      "status": "OK",
+      "study": "reversal",
+      "task": "max_sublist_sum"
+    },
+    {
+      "arm": "alternative",
+      "block": "gpt-6.2-astra_max_sublist_sum_faulty",
+      "model": "gpt-6.2-astra",
+      "program_id": "c0dce9c622faf96cb4aedc488393a14435f8756970c631419bc0f675422d7c23",
+      "start": "faulty",
+      "status": "OK",
+      "study": "reversal",
+      "task": "max_sublist_sum"
+    },
+    {
+      "arm": "upstream",
+      "block": "gpt-6.2-astra_max_sublist_sum_faulty",
+      "model": "gpt-6.2-astra",
+      "program_id": "42c068f796c139d1a1aefb11973e40b9eaadb3d4f6d5dff552340e926adee0bb",
+      "start": "faulty",
+      "status": "OK",
+      "study": "reversal",
+      "task": "max_sublist_sum"
+    },
+    {
+      "arm": "upstream",
+      "block": "gpt-6.2-astra_quicksort_working",
+      "model": "gpt-6.2-astra",
+      "program_id": "145b19d473e800cbfb9457e5ce983645daba10e4f490a68d3370209ccc1c9753",
+      "start": "working",
+      "status": "OK",
+      "study": "reversal",
+      "task": "quicksort"
+    },
+    {
+      "arm": "alternative",
+      "block": "gpt-6.2-astra_quicksort_working",
+      "model": "gpt-6.2-astra",
+      "program_id": "cc2bc08b2bee65ab762dd6bc8efffd75112c2f0dcce68725b5faf9fcc6a49aff",
+      "start": "working",
+      "status": "OK",
+      "study": "reversal",
+      "task": "quicksort"
+    },
+    {
+      "arm": "concealed",
+      "block": "gpt-6.2-astra_quicksort_working",
+      "model": "gpt-6.2-astra",
+      "program_id": "145b19d473e800cbfb9457e5ce983645daba10e4f490a68d3370209ccc1c9753",
+      "start": "working",
+      "status": "OK",
+      "study": "reversal",
+      "task": "quicksort"
+    },
+    {
+      "arm": "upstream",
+      "block": "gpt-6-luna_knapsack_working",
+      "model": "gpt-6-luna",
+      "program_id": "ec797371fe1640bc0673b2d99df2b03cb2af87c8edd76ccf182e2ae6a935811f",
+      "start": "working",
+      "status": "OK",
+      "study": "reversal",
+      "task": "knapsack"
+    },
+    {
+      "arm": "alternative",
+      "block": "gpt-6-luna_knapsack_working",
+      "model": "gpt-6-luna",
+      "program_id": "ec797371fe1640bc0673b2d99df2b03cb2af87c8edd76ccf182e2ae6a935811f",
+      "start": "working",
+      "status": "OK",
+      "study": "reversal",
+      "task": "knapsack"
+    },
+    {
+      "arm": "concealed",
+      "block": "gpt-6-luna_knapsack_working",
+      "model": "gpt-6-luna",
+      "program_id": "ec797371fe1640bc0673b2d99df2b03cb2af87c8edd76ccf182e2ae6a935811f",
+      "start": "working",
+      "status": "OK",
+      "study": "reversal",
+      "task": "knapsack"
+    },
+    {
+      "arm": "upstream",
+      "block": "gpt-6-luna_is_valid_parenthesization_faulty",
+      "model": "gpt-6-luna",
+      "program_id": "351f4deea5a89e135208909786d0cabce82e51bf2e50e160b8d09a3e76cace29",
+      "start": "faulty",
+      "status": "OK",
+      "study": "reversal",
+      "task": "is_valid_parenthesization"
+    },
+    {
+      "arm": "alternative",
+      "block": "gpt-6-luna_is_valid_parenthesization_faulty",
+      "model": "gpt-6-luna",
+      "program_id": "ffb6c2e14d140deff008e9291ff68ae3365561af79b11241a7435ba5a6415881",
+      "start": "faulty",
+      "status": "OK",
+      "study": "reversal",
+      "task": "is_valid_parenthesization"
+    },
+    {
+      "arm": "concealed",
+      "block": "gpt-6-luna_is_valid_parenthesization_faulty",
+      "model": "gpt-6-luna",
+      "program_id": "9aba6f8358a25a38fe1266010f28b459f64b86ee991b88d0369e2df070aee9e5",
+      "start": "faulty",
+      "status": "OK",
+      "study": "reversal",
+      "task": "is_valid_parenthesization"
+    },
+    {
+      "arm": "alternative",
+      "block": "gpt-6.2-astra_max_sublist_sum_working",
+      "model": "gpt-6.2-astra",
+      "program_id": "c0dce9c622faf96cb4aedc488393a14435f8756970c631419bc0f675422d7c23",
+      "start": "working",
+      "status": "OK",
+      "study": "reversal",
+      "task": "max_sublist_sum"
+    },
+    {
+      "arm": "concealed",
+      "block": "gpt-6.2-astra_max_sublist_sum_working",
+      "model": "gpt-6.2-astra",
+      "program_id": "42c068f796c139d1a1aefb11973e40b9eaadb3d4f6d5dff552340e926adee0bb",
+      "start": "working",
+      "status": "OK",
+      "study": "reversal",
+      "task": "max_sublist_sum"
+    },
+    {
+      "arm": "upstream",
+      "block": "gpt-6.2-astra_max_sublist_sum_working",
+      "model": "gpt-6.2-astra",
+      "program_id": "42c068f796c139d1a1aefb11973e40b9eaadb3d4f6d5dff552340e926adee0bb",
+      "start": "working",
+      "status": "OK",
+      "study": "reversal",
+      "task": "max_sublist_sum"
+    },
+    {
+      "arm": "concealed",
+      "block": "gpt-6-luna_quicksort_faulty",
+      "model": "gpt-6-luna",
+      "program_id": "cc2bc08b2bee65ab762dd6bc8efffd75112c2f0dcce68725b5faf9fcc6a49aff",
+      "start": "faulty",
+      "status": "OK",
+      "study": "reversal",
+      "task": "quicksort"
+    },
+    {
+      "arm": "alternative",
+      "block": "gpt-6-luna_quicksort_faulty",
+      "model": "gpt-6-luna",
+      "program_id": "145b19d473e800cbfb9457e5ce983645daba10e4f490a68d3370209ccc1c9753",
+      "start": "faulty",
+      "status": "OK",
+      "study": "reversal",
+      "task": "quicksort"
+    },
+    {
+      "arm": "upstream",
+      "block": "gpt-6-luna_quicksort_faulty",
+      "model": "gpt-6-luna",
+      "program_id": "145b19d473e800cbfb9457e5ce983645daba10e4f490a68d3370209ccc1c9753",
+      "start": "faulty",
+      "status": "OK",
+      "study": "reversal",
+      "task": "quicksort"
+    },
+    {
+      "arm": "upstream",
+      "block": "gpt-6.2-astra_knapsack_faulty",
+      "model": "gpt-6.2-astra",
+      "program_id": "1bc5e149fdb0ba6dc1716911eb07b0e57c3c92bf768214488ec435fd4a1d6790",
+      "start": "faulty",
+      "status": "OK",
+      "study": "reversal",
+      "task": "knapsack"
+    },
+    {
+      "arm": "alternative",
+      "block": "gpt-6.2-astra_knapsack_faulty",
+      "model": "gpt-6.2-astra",
+      "program_id": "ec797371fe1640bc0673b2d99df2b03cb2af87c8edd76ccf182e2ae6a935811f",
+      "start": "faulty",
+      "status": "OK",
+      "study": "reversal",
+      "task": "knapsack"
+    },
+    {
+      "arm": "concealed",
+      "block": "gpt-6.2-astra_knapsack_faulty",
+      "model": "gpt-6.2-astra",
+      "program_id": "ec797371fe1640bc0673b2d99df2b03cb2af87c8edd76ccf182e2ae6a935811f",
+      "start": "faulty",
+      "status": "OK",
+      "study": "reversal",
+      "task": "knapsack"
+    },
+    {
+      "arm": "upstream",
+      "block": "gpt-6-luna_is_valid_parenthesization_working",
+      "model": "gpt-6-luna",
+      "program_id": "ffb6c2e14d140deff008e9291ff68ae3365561af79b11241a7435ba5a6415881",
+      "start": "working",
+      "status": "OK",
+      "study": "reversal",
+      "task": "is_valid_parenthesization"
+    },
+    {
+      "arm": "concealed",
+      "block": "gpt-6-luna_is_valid_parenthesization_working",
+      "model": "gpt-6-luna",
+      "program_id": "ffb6c2e14d140deff008e9291ff68ae3365561af79b11241a7435ba5a6415881",
+      "start": "working",
+      "status": "OK",
+      "study": "reversal",
+      "task": "is_valid_parenthesization"
+    },
+    {
+      "arm": "alternative",
+      "block": "gpt-6-luna_is_valid_parenthesization_working",
+      "model": "gpt-6-luna",
+      "program_id": "ffb6c2e14d140deff008e9291ff68ae3365561af79b11241a7435ba5a6415881",
+      "start": "working",
+      "status": "OK",
+      "study": "reversal",
+      "task": "is_valid_parenthesization"
+    },
+    {
+      "arm": "alternative",
+      "block": "gpt-6-luna_max_sublist_sum_faulty",
+      "model": "gpt-6-luna",
+      "program_id": "c0dce9c622faf96cb4aedc488393a14435f8756970c631419bc0f675422d7c23",
+      "start": "faulty",
+      "status": "OK",
+      "study": "reversal",
+      "task": "max_sublist_sum"
+    },
+    {
+      "arm": "upstream",
+      "block": "gpt-6-luna_max_sublist_sum_faulty",
+      "model": "gpt-6-luna",
+      "program_id": "c0dce9c622faf96cb4aedc488393a14435f8756970c631419bc0f675422d7c23",
+      "start": "faulty",
+      "status": "OK",
+      "study": "reversal",
+      "task": "max_sublist_sum"
+    },
+    {
+      "arm": "concealed",
+      "block": "gpt-6-luna_max_sublist_sum_faulty",
+      "model": "gpt-6-luna",
+      "program_id": "c0dce9c622faf96cb4aedc488393a14435f8756970c631419bc0f675422d7c23",
+      "start": "faulty",
+      "status": "OK",
+      "study": "reversal",
+      "task": "max_sublist_sum"
+    },
+    {
+      "arm": "concealed",
+      "block": "gpt-6.2-astra_is_valid_parenthesization_faulty",
+      "model": "gpt-6.2-astra",
+      "program_id": "9aba6f8358a25a38fe1266010f28b459f64b86ee991b88d0369e2df070aee9e5",
+      "start": "faulty",
+      "status": "OK",
+      "study": "reversal",
+      "task": "is_valid_parenthesization"
+    },
+    {
+      "arm": "alternative",
+      "block": "gpt-6.2-astra_is_valid_parenthesization_faulty",
+      "model": "gpt-6.2-astra",
+      "program_id": "9aba6f8358a25a38fe1266010f28b459f64b86ee991b88d0369e2df070aee9e5",
+      "start": "faulty",
+      "status": "OK",
+      "study": "reversal",
+      "task": "is_valid_parenthesization"
+    },
+    {
+      "arm": "upstream",
+      "block": "gpt-6.2-astra_is_valid_parenthesization_faulty",
+      "model": "gpt-6.2-astra",
+      "program_id": "351f4deea5a89e135208909786d0cabce82e51bf2e50e160b8d09a3e76cace29",
+      "start": "faulty",
+      "status": "OK",
+      "study": "reversal",
+      "task": "is_valid_parenthesization"
+    },
+    {
+      "arm": "upstream",
+      "block": "gpt-6-luna_quicksort_working",
+      "model": "gpt-6-luna",
+      "program_id": "145b19d473e800cbfb9457e5ce983645daba10e4f490a68d3370209ccc1c9753",
+      "start": "working",
+      "status": "OK",
+      "study": "reversal",
+      "task": "quicksort"
+    },
+    {
+      "arm": "alternative",
+      "block": "gpt-6-luna_quicksort_working",
+      "model": "gpt-6-luna",
+      "program_id": "cc2bc08b2bee65ab762dd6bc8efffd75112c2f0dcce68725b5faf9fcc6a49aff",
+      "start": "working",
+      "status": "OK",
+      "study": "reversal",
+      "task": "quicksort"
+    },
+    {
+      "arm": "concealed",
+      "block": "gpt-6-luna_quicksort_working",
+      "model": "gpt-6-luna",
+      "program_id": "145b19d473e800cbfb9457e5ce983645daba10e4f490a68d3370209ccc1c9753",
+      "start": "working",
+      "status": "OK",
+      "study": "reversal",
+      "task": "quicksort"
+    },
+    {
+      "arm": "alternative",
+      "block": "gpt-6.2-astra_knapsack_working",
+      "model": "gpt-6.2-astra",
+      "program_id": "ec797371fe1640bc0673b2d99df2b03cb2af87c8edd76ccf182e2ae6a935811f",
+      "start": "working",
+      "status": "OK",
+      "study": "reversal",
+      "task": "knapsack"
+    },
+    {
+      "arm": "concealed",
+      "block": "gpt-6.2-astra_knapsack_working",
+      "model": "gpt-6.2-astra",
+      "program_id": "1bc5e149fdb0ba6dc1716911eb07b0e57c3c92bf768214488ec435fd4a1d6790",
+      "start": "working",
+      "status": "OK",
+      "study": "reversal",
+      "task": "knapsack"
+    },
+    {
+      "arm": "upstream",
+      "block": "gpt-6.2-astra_knapsack_working",
+      "model": "gpt-6.2-astra",
+      "program_id": "1bc5e149fdb0ba6dc1716911eb07b0e57c3c92bf768214488ec435fd4a1d6790",
+      "start": "working",
+      "status": "OK",
+      "study": "reversal",
+      "task": "knapsack"
+    },
+    {
+      "arm": "upstream",
+      "block": "gpt-6.2-astra_is_valid_parenthesization_working",
+      "model": "gpt-6.2-astra",
+      "program_id": "351f4deea5a89e135208909786d0cabce82e51bf2e50e160b8d09a3e76cace29",
+      "start": "working",
+      "status": "OK",
+      "study": "reversal",
+      "task": "is_valid_parenthesization"
+    },
+    {
+      "arm": "concealed",
+      "block": "gpt-6.2-astra_is_valid_parenthesization_working",
+      "model": "gpt-6.2-astra",
+      "program_id": "351f4deea5a89e135208909786d0cabce82e51bf2e50e160b8d09a3e76cace29",
+      "start": "working",
+      "status": "OK",
+      "study": "reversal",
+      "task": "is_valid_parenthesization"
+    },
+    {
+      "arm": "alternative",
+      "block": "gpt-6.2-astra_is_valid_parenthesization_working",
+      "model": "gpt-6.2-astra",
+      "program_id": "ffb6c2e14d140deff008e9291ff68ae3365561af79b11241a7435ba5a6415881",
+      "start": "working",
+      "status": "OK",
+      "study": "reversal",
+      "task": "is_valid_parenthesization"
+    },
+    {
+      "arm": "concealed",
+      "block": "gpt-6-luna_knapsack_faulty",
+      "model": "gpt-6-luna",
+      "program_id": "1bc5e149fdb0ba6dc1716911eb07b0e57c3c92bf768214488ec435fd4a1d6790",
+      "start": "faulty",
+      "status": "OK",
+      "study": "reversal",
+      "task": "knapsack"
+    },
+    {
+      "arm": "upstream",
+      "block": "gpt-6-luna_knapsack_faulty",
+      "model": "gpt-6-luna",
+      "program_id": "1bc5e149fdb0ba6dc1716911eb07b0e57c3c92bf768214488ec435fd4a1d6790",
+      "start": "faulty",
+      "status": "OK",
+      "study": "reversal",
+      "task": "knapsack"
+    },
+    {
+      "arm": "alternative",
+      "block": "gpt-6-luna_knapsack_faulty",
+      "model": "gpt-6-luna",
+      "program_id": "1bc5e149fdb0ba6dc1716911eb07b0e57c3c92bf768214488ec435fd4a1d6790",
+      "start": "faulty",
+      "status": "OK",
+      "study": "reversal",
+      "task": "knapsack"
+    },
+    {
+      "arm": "concealed",
+      "block": "gpt-6-luna_max_sublist_sum_working",
+      "model": "gpt-6-luna",
+      "program_id": "42c068f796c139d1a1aefb11973e40b9eaadb3d4f6d5dff552340e926adee0bb",
+      "start": "working",
+      "status": "OK",
+      "study": "reversal",
+      "task": "max_sublist_sum"
+    },
+    {
+      "arm": "upstream",
+      "block": "gpt-6-luna_max_sublist_sum_working",
+      "model": "gpt-6-luna",
+      "program_id": "42c068f796c139d1a1aefb11973e40b9eaadb3d4f6d5dff552340e926adee0bb",
+      "start": "working",
+      "status": "OK",
+      "study": "reversal",
+      "task": "max_sublist_sum"
+    },
+    {
+      "arm": "alternative",
+      "block": "gpt-6-luna_max_sublist_sum_working",
+      "model": "gpt-6-luna",
+      "program_id": "42c068f796c139d1a1aefb11973e40b9eaadb3d4f6d5dff552340e926adee0bb",
+      "start": "working",
+      "status": "OK",
+      "study": "reversal",
+      "task": "max_sublist_sum"
+    },
+    {
+      "arm": "concealed",
+      "block": "gpt-6.2-astra_quicksort_faulty",
+      "model": "gpt-6.2-astra",
+      "program_id": "cc2bc08b2bee65ab762dd6bc8efffd75112c2f0dcce68725b5faf9fcc6a49aff",
+      "start": "faulty",
+      "status": "OK",
+      "study": "reversal",
+      "task": "quicksort"
+    },
+    {
+      "arm": "upstream",
+      "block": "gpt-6.2-astra_quicksort_faulty",
+      "model": "gpt-6.2-astra",
+      "program_id": "145b19d473e800cbfb9457e5ce983645daba10e4f490a68d3370209ccc1c9753",
+      "start": "faulty",
+      "status": "OK",
+      "study": "reversal",
+      "task": "quicksort"
+    },
+    {
+      "arm": "alternative",
+      "block": "gpt-6.2-astra_quicksort_faulty",
+      "model": "gpt-6.2-astra",
+      "program_id": "cc2bc08b2bee65ab762dd6bc8efffd75112c2f0dcce68725b5faf9fcc6a49aff",
+      "start": "faulty",
+      "status": "OK",
+      "study": "reversal",
+      "task": "quicksort"
+    }
+  ],
+  "studies_sha256": {
+    "free_patch": "5240a357adecd36faee130beaed1ec438f302a511202684323eb5d4471a381cd",
+    "reversal": "ff6445f3c608c8e727f00eddf940b094ea5d1dd65d4d1abb892df12b5683a623"
+  }
+}

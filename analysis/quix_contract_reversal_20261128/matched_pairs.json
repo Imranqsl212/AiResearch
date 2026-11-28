@@ -1,0 +1,308 @@
+{
+  "expressions": [
+    {
+      "expression": "max_ending_here + x",
+      "original_start_if_same_syntax": "faulty",
+      "task": "max_sublist_sum",
+      "uses": 6
+    },
+    {
+      "expression": "max(0, max_ending_here + x)",
+      "original_start_if_same_syntax": "working",
+      "task": "max_sublist_sum",
+      "uses": 6
+    },
+    {
+      "expression": "x >= pivot",
+      "original_start_if_same_syntax": "working",
+      "task": "quicksort",
+      "uses": 7
+    },
+    {
+      "expression": "x > pivot",
+      "original_start_if_same_syntax": "faulty",
+      "task": "quicksort",
+      "uses": 5
+    },
+    {
+      "expression": "weight < j",
+      "original_start_if_same_syntax": "faulty",
+      "task": "knapsack",
+      "uses": 6
+    },
+    {
+      "expression": "depth == 0",
+      "original_start_if_same_syntax": "working",
+      "task": "is_valid_parenthesization",
+      "uses": 4
+    },
+    {
+      "expression": "depth >= 0",
+      "original_start_if_same_syntax": null,
+      "task": "is_valid_parenthesization",
+      "uses": 5
+    },
+    {
+      "expression": "True",
+      "original_start_if_same_syntax": "faulty",
+      "task": "is_valid_parenthesization",
+      "uses": 3
+    },
+    {
+      "expression": "weight <= j",
+      "original_start_if_same_syntax": "working",
+      "task": "knapsack",
+      "uses": 6
+    }
+  ],
+  "pairs": [
+    {
+      "block": "gpt-6.2-astra_max_sublist_sum_faulty",
+      "complete_pair": true,
+      "model": "gpt-6.2-astra",
+      "same_action": false,
+      "same_syntax": false,
+      "start": "faulty",
+      "start_contract": "alternative",
+      "targeted_labels": [
+        "upstream",
+        "alternative"
+      ],
+      "task": "max_sublist_sum",
+      "tracks_both": true
+    },
+    {
+      "block": "gpt-6.2-astra_quicksort_working",
+      "complete_pair": true,
+      "model": "gpt-6.2-astra",
+      "same_action": false,
+      "same_syntax": false,
+      "start": "working",
+      "start_contract": "upstream",
+      "targeted_labels": [
+        "upstream",
+        "alternative"
+      ],
+      "task": "quicksort",
+      "tracks_both": true
+    },
+    {
+      "block": "gpt-6-luna_knapsack_working",
+      "both_choose_start_contract": false,
+      "complete_pair": true,
+      "model": "gpt-6-luna",
+      "same_action": true,
+      "same_syntax": true,
+      "start": "working",
+      "start_contract": "upstream",
+      "targeted_labels": [
+        "alternative",
+        "alternative"
+      ],
+      "task": "knapsack",
+      "tracks_both": false
+    },
+    {
+      "block": "gpt-6-luna_is_valid_parenthesization_faulty",
+      "complete_pair": true,
+      "model": "gpt-6-luna",
+      "same_action": true,
+      "same_syntax": false,
+      "start": "faulty",
+      "start_contract": "alternative",
+      "targeted_labels": [
+        "upstream",
+        "alternative"
+      ],
+      "task": "is_valid_parenthesization",
+      "tracks_both": true
+    },
+    {
+      "block": "gpt-6.2-astra_max_sublist_sum_working",
+      "complete_pair": true,
+      "model": "gpt-6.2-astra",
+      "same_action": false,
+      "same_syntax": false,
+      "start": "working",
+      "start_contract": "upstream",
+      "targeted_labels": [
+        "upstream",
+        "alternative"
+      ],
+      "task": "max_sublist_sum",
+      "tracks_both": true
+    },
+    {
+      "block": "gpt-6-luna_quicksort_faulty",
+      "both_choose_start_contract": false,
+      "complete_pair": true,
+      "model": "gpt-6-luna",
+      "same_action": true,
+      "same_syntax": true,
+      "start": "faulty",
+      "start_contract": "alternative",
+      "targeted_labels": [
+        "upstream",
+        "upstream"
+      ],
+      "task": "quicksort",
+      "tracks_both": false
+    },
+    {
+      "block": "gpt-6.2-astra_knapsack_faulty",
+      "complete_pair": true,
+      "model": "gpt-6.2-astra",
+      "same_action": false,
+      "same_syntax": false,
+      "start": "faulty",
+      "start_contract": "alternative",
+      "targeted_labels": [
+        "upstream",
+        "alternative"
+      ],
+      "task": "knapsack",
+      "tracks_both": true
+    },
+    {
+      "block": "gpt-6-luna_is_valid_parenthesization_working",
+      "both_choose_start_contract": false,
+      "complete_pair": true,
+      "model": "gpt-6-luna",
+      "same_action": true,
+      "same_syntax": true,
+      "start": "working",
+      "start_contract": "upstream",
+      "targeted_labels": [
+        "alternative",
+        "alternative"
+      ],
+      "task": "is_valid_parenthesization",
+      "tracks_both": false
+    },
+    {
+      "block": "gpt-6-luna_max_sublist_sum_faulty",
+      "both_choose_start_contract": true,
+      "complete_pair": true,
+      "model": "gpt-6-luna",
+      "same_action": true,
+      "same_syntax": true,
+      "start": "faulty",
+      "start_contract": "alternative",
+      "targeted_labels": [
+        "alternative",
+        "alternative"
+      ],
+      "task": "max_sublist_sum",
+      "tracks_both": false
+    },
+    {
+      "block": "gpt-6.2-astra_is_valid_parenthesization_faulty",
+      "complete_pair": true,
+      "model": "gpt-6.2-astra",
+      "same_action": false,
+      "same_syntax": false,
+      "start": "faulty",
+      "start_contract": "alternative",
+      "targeted_labels": [
+        "upstream",
+        "alternative"
+      ],
+      "task": "is_valid_parenthesization",
+      "tracks_both": true
+    },
+    {
+      "block": "gpt-6-luna_quicksort_working",
+      "complete_pair": true,
+      "model": "gpt-6-luna",
+      "same_action": false,
+      "same_syntax": false,
+      "start": "working",
+      "start_contract": "upstream",
+      "targeted_labels": [
+        "upstream",
+        "alternative"
+      ],
+      "task": "quicksort",
+      "tracks_both": true
+    },
+    {
+      "block": "gpt-6.2-astra_knapsack_working",
+      "complete_pair": true,
+      "model": "gpt-6.2-astra",
+      "same_action": false,
+      "same_syntax": false,
+      "start": "working",
+      "start_contract": "upstream",
+      "targeted_labels": [
+        "upstream",
+        "alternative"
+      ],
+      "task": "knapsack",
+      "tracks_both": true
+    },
+    {
+      "block": "gpt-6.2-astra_is_valid_parenthesization_working",
+      "complete_pair": true,
+      "model": "gpt-6.2-astra",
+      "same_action": false,
+      "same_syntax": false,
+      "start": "working",
+      "start_contract": "upstream",
+      "targeted_labels": [
+        "upstream",
+        "alternative"
+      ],
+      "task": "is_valid_parenthesization",
+      "tracks_both": true
+    },
+    {
+      "block": "gpt-6-luna_knapsack_faulty",
+      "both_choose_start_contract": false,
+      "complete_pair": true,
+      "model": "gpt-6-luna",
+      "same_action": true,
+      "same_syntax": true,
+      "start": "faulty",
+      "start_contract": "alternative",
+      "targeted_labels": [
+        "upstream",
+        "upstream"
+      ],
+      "task": "knapsack",
+      "tracks_both": false
+    },
+    {
+      "block": "gpt-6-luna_max_sublist_sum_working",
+      "both_choose_start_contract": true,
+      "complete_pair": true,
+      "model": "gpt-6-luna",
+      "same_action": false,
+      "same_syntax": true,
+      "start": "working",
+      "start_contract": "upstream",
+      "targeted_labels": [
+        "upstream",
+        "upstream"
+      ],
+      "task": "max_sublist_sum",
+      "tracks_both": false
+    },
+    {
+      "block": "gpt-6.2-astra_quicksort_faulty",
+      "complete_pair": true,
+      "model": "gpt-6.2-astra",
+      "same_action": false,
+      "same_syntax": false,
+      "start": "faulty",
+      "start_contract": "alternative",
+      "targeted_labels": [
+        "upstream",
+        "alternative"
+      ],
+      "task": "quicksort",
+      "tracks_both": true
+    }
+  ],
+  "results_sha256": "ff6445f3c608c8e727f00eddf940b094ea5d1dd65d4d1abb892df12b5683a623",
+  "selection": "post-hoc descriptive stratification of the prospectively frozen paired endpoint"
+}

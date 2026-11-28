@@ -1,0 +1,289 @@
+{
+  "assignments": [
+    {
+      "arm": "shared",
+      "id": "repeat1_faulty_shared",
+      "model": "gpt-6-luna",
+      "original_block": "gpt-6-luna_matplotlib_faulty",
+      "prompt_sha256": "657d8b0ace8b7baca609940508c12f3838b6ddbc8818b2b00bbbdf226943419e",
+      "start": "faulty",
+      "task": "matplotlib",
+      "wave": 1
+    },
+    {
+      "arm": "none",
+      "id": "repeat1_faulty_none",
+      "model": "gpt-6-luna",
+      "original_block": "gpt-6-luna_matplotlib_faulty",
+      "prompt_sha256": "f070716c27586fb9d2def22bbcd2c6796c905eb39ccf34d01ac68bad2dead0c2",
+      "start": "faulty",
+      "task": "matplotlib",
+      "wave": 1
+    },
+    {
+      "arm": "revealing",
+      "id": "repeat1_faulty_revealing",
+      "model": "gpt-6-luna",
+      "original_block": "gpt-6-luna_matplotlib_faulty",
+      "prompt_sha256": "ea3b264cdad7c7197ac2232d85255095a13d423d0098495fa4765bea4a0ff0a0",
+      "start": "faulty",
+      "task": "matplotlib",
+      "wave": 1
+    },
+    {
+      "arm": "shared",
+      "id": "repeat1_working_shared",
+      "model": "gpt-6-luna",
+      "original_block": "gpt-6-luna_matplotlib_working",
+      "prompt_sha256": "484c4a24412e4d38ec521f16a37f1bcd05e20fd16c3cad8d038e7c6db74a7ff9",
+      "start": "working",
+      "task": "matplotlib",
+      "wave": 1
+    },
+    {
+      "arm": "revealing",
+      "id": "repeat1_working_revealing",
+      "model": "gpt-6-luna",
+      "original_block": "gpt-6-luna_matplotlib_working",
+      "prompt_sha256": "138e22429d55e8e3133bb593825513725984fa82a3891a97ef04c03c14063ca2",
+      "start": "working",
+      "task": "matplotlib",
+      "wave": 1
+    },
+    {
+      "arm": "none",
+      "id": "repeat1_working_none",
+      "model": "gpt-6-luna",
+      "original_block": "gpt-6-luna_matplotlib_working",
+      "prompt_sha256": "cd67de044fe48260fcade55e7abf53c51602c2ed78b4bd42ebc0b0956b7d04d0",
+      "start": "working",
+      "task": "matplotlib",
+      "wave": 1
+    },
+    {
+      "arm": "shared",
+      "id": "repeat2_working_shared",
+      "model": "gpt-6-luna",
+      "original_block": "gpt-6-luna_matplotlib_working",
+      "prompt_sha256": "484c4a24412e4d38ec521f16a37f1bcd05e20fd16c3cad8d038e7c6db74a7ff9",
+      "start": "working",
+      "task": "matplotlib",
+      "wave": 2
+    },
+    {
+      "arm": "revealing",
+      "id": "repeat2_working_revealing",
+      "model": "gpt-6-luna",
+      "original_block": "gpt-6-luna_matplotlib_working",
+      "prompt_sha256": "138e22429d55e8e3133bb593825513725984fa82a3891a97ef04c03c14063ca2",
+      "start": "working",
+      "task": "matplotlib",
+      "wave": 2
+    },
+    {
+      "arm": "none",
+      "id": "repeat2_working_none",
+      "model": "gpt-6-luna",
+      "original_block": "gpt-6-luna_matplotlib_working",
+      "prompt_sha256": "cd67de044fe48260fcade55e7abf53c51602c2ed78b4bd42ebc0b0956b7d04d0",
+      "start": "working",
+      "task": "matplotlib",
+      "wave": 2
+    },
+    {
+      "arm": "none",
+      "id": "repeat2_faulty_none",
+      "model": "gpt-6-luna",
+      "original_block": "gpt-6-luna_matplotlib_faulty",
+      "prompt_sha256": "f070716c27586fb9d2def22bbcd2c6796c905eb39ccf34d01ac68bad2dead0c2",
+      "start": "faulty",
+      "task": "matplotlib",
+      "wave": 2
+    },
+    {
+      "arm": "shared",
+      "id": "repeat2_faulty_shared",
+      "model": "gpt-6-luna",
+      "original_block": "gpt-6-luna_matplotlib_faulty",
+      "prompt_sha256": "657d8b0ace8b7baca609940508c12f3838b6ddbc8818b2b00bbbdf226943419e",
+      "start": "faulty",
+      "task": "matplotlib",
+      "wave": 2
+    },
+    {
+      "arm": "revealing",
+      "id": "repeat2_faulty_revealing",
+      "model": "gpt-6-luna",
+      "original_block": "gpt-6-luna_matplotlib_faulty",
+      "prompt_sha256": "ea3b264cdad7c7197ac2232d85255095a13d423d0098495fa4765bea4a0ff0a0",
+      "start": "faulty",
+      "task": "matplotlib",
+      "wave": 2
+    },
+    {
+      "arm": "shared",
+      "id": "repeat3_working_shared",
+      "model": "gpt-6-luna",
+      "original_block": "gpt-6-luna_matplotlib_working",
+      "prompt_sha256": "484c4a24412e4d38ec521f16a37f1bcd05e20fd16c3cad8d038e7c6db74a7ff9",
+      "start": "working",
+      "task": "matplotlib",
+      "wave": 3
+    },
+    {
+      "arm": "shared",
+      "id": "repeat3_faulty_shared",
+      "model": "gpt-6-luna",
+      "original_block": "gpt-6-luna_matplotlib_faulty",
+      "prompt_sha256": "657d8b0ace8b7baca609940508c12f3838b6ddbc8818b2b00bbbdf226943419e",
+      "start": "faulty",
+      "task": "matplotlib",
+      "wave": 3
+    },
+    {
+      "arm": "revealing",
+      "id": "repeat3_working_revealing",
+      "model": "gpt-6-luna",
+      "original_block": "gpt-6-luna_matplotlib_working",
+      "prompt_sha256": "138e22429d55e8e3133bb593825513725984fa82a3891a97ef04c03c14063ca2",
+      "start": "working",
+      "task": "matplotlib",
+      "wave": 3
+    },
+    {
+      "arm": "none",
+      "id": "repeat3_faulty_none",
+      "model": "gpt-6-luna",
+      "original_block": "gpt-6-luna_matplotlib_faulty",
+      "prompt_sha256": "f070716c27586fb9d2def22bbcd2c6796c905eb39ccf34d01ac68bad2dead0c2",
+      "start": "faulty",
+      "task": "matplotlib",
+      "wave": 3
+    },
+    {
+      "arm": "revealing",
+      "id": "repeat3_faulty_revealing",
+      "model": "gpt-6-luna",
+      "original_block": "gpt-6-luna_matplotlib_faulty",
+      "prompt_sha256": "ea3b264cdad7c7197ac2232d85255095a13d423d0098495fa4765bea4a0ff0a0",
+      "start": "faulty",
+      "task": "matplotlib",
+      "wave": 3
+    },
+    {
+      "arm": "none",
+      "id": "repeat3_working_none",
+      "model": "gpt-6-luna",
+      "original_block": "gpt-6-luna_matplotlib_working",
+      "prompt_sha256": "cd67de044fe48260fcade55e7abf53c51602c2ed78b4bd42ebc0b0956b7d04d0",
+      "start": "working",
+      "task": "matplotlib",
+      "wave": 3
+    },
+    {
+      "arm": "shared",
+      "id": "repeat4_working_shared",
+      "model": "gpt-6-luna",
+      "original_block": "gpt-6-luna_matplotlib_working",
+      "prompt_sha256": "484c4a24412e4d38ec521f16a37f1bcd05e20fd16c3cad8d038e7c6db74a7ff9",
+      "start": "working",
+      "task": "matplotlib",
+      "wave": 4
+    },
+    {
+      "arm": "none",
+      "id": "repeat4_working_none",
+      "model": "gpt-6-luna",
+      "original_block": "gpt-6-luna_matplotlib_working",
+      "prompt_sha256": "cd67de044fe48260fcade55e7abf53c51602c2ed78b4bd42ebc0b0956b7d04d0",
+      "start": "working",
+      "task": "matplotlib",
+      "wave": 4
+    },
+    {
+      "arm": "shared",
+      "id": "repeat4_faulty_shared",
+      "model": "gpt-6-luna",
+      "original_block": "gpt-6-luna_matplotlib_faulty",
+      "prompt_sha256": "657d8b0ace8b7baca609940508c12f3838b6ddbc8818b2b00bbbdf226943419e",
+      "start": "faulty",
+      "task": "matplotlib",
+      "wave": 4
+    },
+    {
+      "arm": "revealing",
+      "id": "repeat4_working_revealing",
+      "model": "gpt-6-luna",
+      "original_block": "gpt-6-luna_matplotlib_working",
+      "prompt_sha256": "138e22429d55e8e3133bb593825513725984fa82a3891a97ef04c03c14063ca2",
+      "start": "working",
+      "task": "matplotlib",
+      "wave": 4
+    },
+    {
+      "arm": "revealing",
+      "id": "repeat4_faulty_revealing",
+      "model": "gpt-6-luna",
+      "original_block": "gpt-6-luna_matplotlib_faulty",
+      "prompt_sha256": "ea3b264cdad7c7197ac2232d85255095a13d423d0098495fa4765bea4a0ff0a0",
+      "start": "faulty",
+      "task": "matplotlib",
+      "wave": 4
+    },
+    {
+      "arm": "none",
+      "id": "repeat4_faulty_none",
+      "model": "gpt-6-luna",
+      "original_block": "gpt-6-luna_matplotlib_faulty",
+      "prompt_sha256": "f070716c27586fb9d2def22bbcd2c6796c905eb39ccf34d01ac68bad2dead0c2",
+      "start": "faulty",
+      "task": "matplotlib",
+      "wave": 4
+    }
+  ],
+  "design": "docs/MATPLOTLIB_REPLICATION_20261128.md",
+  "discovery_files_sha256": {
+    "calibration.json": "6d597f6758c47109e726c8e425d8e056e35419fa410a2284b188e5633e89ac16",
+    "plan.json": "ccdb478a0008057d0c3b33b857a26a9a848791b6c8e289dd067e938e2288c809",
+    "results.json": "a51315960c781770b294bd8708944ec288d7d66ff6d4cbd360f27fd6a5c3466f",
+    "sources.json": "85a9950af6031e977102c47590911ee8ba7f3263b91eb59d026d5989151f279d",
+    "upstream_check.json": "1190562cac33fd0f5ebf1c0a386a893e8517fbf0654e4212c2570bfeabfc52ce"
+  },
+  "effort": "low",
+  "eligible_for_main_analysis": false,
+  "included_window_end": 1795890789,
+  "mixed_unshown_probe": [
+    8,
+    2,
+    0,
+    7
+  ],
+  "seed": 2026112807,
+  "source": {
+    "file_sha256": {
+      "faulty": "d3aa55854960e9c9063102c6b8bd9afc954fd288f65e56be8715fad7bf3ad2b1",
+      "working": "f094a2d41b8b5da475ad94e546ee4ddc5dcb01f85799c9b9653e5314fcd70e58"
+    },
+    "fixed_commit": "407a9fe71a4c0a8ba4914b8f54f21d32d6dd2d74",
+    "parent_commit": "9a5473dbac05f3d6773b42c8e16d58a7dc3159b8",
+    "path": "lib/matplotlib/axis.py",
+    "repository": "https://github.com/matplotlib/matplotlib"
+  },
+  "workflow_sha256": {
+    "analysis/free_patch_report.py": "efea6337f71844863275f81be3ef7874ae4fc1d29d9e5b98883aa031a1e24369",
+    "analysis/matplotlib_order_types.py": "b71bc9cedf3404bcc3fd86b24d9468f7fec6d4a9b1165e9d9b42904507c02895",
+    "analysis/matplotlib_replication_report.py": "1331008c85005dd4942a91a39843936aaa22b3ebd63b4b9b413999cabf745744",
+    "analysis/production_patch_report.py": "2541865a0797cfa021b1189c1284155ee8385ae7e54622e4bb2d985afd038387",
+    "docs/FREE_PATCH_20261128.md": "fa859841abf65937d835ef3765a499cd1e9ed9b3e0ce87cd6f6601b001089c36",
+    "docs/MATPLOTLIB_ORDER_TYPES_20261128.md": "d7f797094d0945f6594cedef3bd8a2b656ccb3e3a320f189d023e27059f71bf6",
+    "docs/MATPLOTLIB_REPLICATION_20261128.md": "d687f74366cf56054abfdcbf48c44153fa11433783f49125895fa3bcd3117bc7",
+    "docs/PRODUCTION_PATCH_20261128.md": "54c07c1f3008115d05bff357ce176c0f4527043fbcddf59ce3cd9a3402e8a077",
+    "experiments/c5_cli_pilot.py": "2f4809ea243fe0f913dabe343050caf03273c77a46d8f70b7dd186ef93dabbba",
+    "experiments/c5_codex_effort.py": "90e7e315693ea039ad9b9a698efd0925f4b1c83f846245132a9d6acc4fcbdbcf",
+    "experiments/c5_evidence_challenge.py": "fae76c3366dc96670912095a2684d959c4811d3c0edc7b14a636fea147b49cc7",
+    "experiments/checker_timing_pilot.py": "48f52b1ad3139ecda58a3cc01760550cad4f47873d65a16c1da78cddfd0ccda3",
+    "experiments/free_patch.py": "a8539675c574dbec38385a19cadc69d7d17b8f90ed33b436bcbefce61e12e257",
+    "experiments/matplotlib_replication.py": "d484fa7b630f1e745bf1d4fc1d9f9e3b11a518163a1a175d222825d7c352bcba",
+    "experiments/production_patch.py": "abc6dd213fd7e5dacaf7a951a2af8d7773be500c3d3677c6b6bdb40551f7feb1"
+  }
+}

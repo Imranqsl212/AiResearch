@@ -1,0 +1,3621 @@
+{
+  "auth_mode": "CHATGPT",
+  "cli_version": "codex-cli 0.169.0",
+  "eligible_for_main_analysis": false,
+  "frozen_at_utc": "2026-11-28T16:41:58.827928+00:00",
+  "plan_sha256": "ef2415aa2c6c3661e165aa79a965390d92dcde1d14dd53c27c0e513fda672ccc",
+  "rows": [
+    {
+      "after": "A",
+      "arm": "required",
+      "assessments": [
+        {
+          "after_correct": true,
+          "before_correct": true,
+          "target": "A"
+        }
+      ],
+      "block": "gpt-6.2-astra_round_A",
+      "call_id": "explicit_required_A",
+      "choice": "keep",
+      "elapsed_seconds": 7.473258499987423,
+      "model": "gpt-6.2-astra",
+      "native_response_sha256": "248ece262c9c9cf544a595b7fefda954c36841503552da79f82ad72b8c8324ae",
+      "prompt_sha256": "2c194a4ce28c83652c876f048fc82313f9a90cba7288b36bb83a94a4d4fe6611",
+      "start": "A",
+      "status": "OK",
+      "targets": [
+        "A"
+      ],
+      "task": "round",
+      "wording": "explicit"
+    },
+    {
+      "after": "A",
+      "arm": "actual",
+      "assessments": [
+        {
+          "after_correct": true,
+          "before_correct": true,
+          "target": "A"
+        },
+        {
+          "after_correct": false,
+          "before_correct": false,
+          "target": "B"
+        }
+      ],
+      "block": "gpt-6.2-astra_round_A",
+      "call_id": "hidden_actual_AB",
+      "choice": "keep",
+      "elapsed_seconds": 7.151917833136395,
+      "model": "gpt-6.2-astra",
+      "native_response_sha256": "00ec5502a7d6345614a26cb78efa7e059096ac3a6cb42ebfe333bbbc4b582bbe",
+      "prompt_sha256": "b2b766a043411ad8ec9f3ec99fb4847ae1f9ad1971f774e6f6f5fb360f54c924",
+      "start": "A",
+      "status": "OK",
+      "targets": [
+        "A",
+        "B"
+      ],
+      "task": "round",
+      "wording": "hidden"
+    },
+    {
+      "after": "A",
+      "arm": "none",
+      "assessments": [
+        {
+          "after_correct": true,
+          "before_correct": true,
+          "target": "A"
+        },
+        {
+          "after_correct": false,
+          "before_correct": false,
+          "target": "B"
+        }
+      ],
+      "block": "gpt-6.2-astra_round_A",
+      "call_id": "hidden_none_AB",
+      "choice": "keep",
+      "elapsed_seconds": 6.572755292057991,
+      "model": "gpt-6.2-astra",
+      "native_response_sha256": "5dc43b30c78bbbe6dd953bb6fb9f5f5de94e67b94f2d955a5135c043215fdaaf",
+      "prompt_sha256": "3cadac142dd44e29af35a5d3df14a088a1a06af49dede9e285caf06cdaca8413",
+      "start": "A",
+      "status": "OK",
+      "targets": [
+        "A",
+        "B"
+      ],
+      "task": "round",
+      "wording": "hidden"
+    },
+    {
+      "after": "A",
+      "arm": "actual",
+      "assessments": [
+        {
+          "after_correct": true,
+          "before_correct": true,
+          "target": "A"
+        }
+      ],
+      "block": "gpt-6.2-astra_round_A",
+      "call_id": "explicit_actual_A",
+      "choice": "keep",
+      "elapsed_seconds": 9.0700375828892,
+      "model": "gpt-6.2-astra",
+      "native_response_sha256": "2ea6a66b88d7d0b3726b7f078ba95d714d475a72f719a1932f4e8fd32a3bbb8c",
+      "prompt_sha256": "5ad43019660d4efebb223dfbb5c006fb7a75e192726489e057e70fea85b57725",
+      "start": "A",
+      "status": "OK",
+      "targets": [
+        "A"
+      ],
+      "task": "round",
+      "wording": "explicit"
+    },
+    {
+      "after": "B",
+      "arm": "required",
+      "assessments": [
+        {
+          "after_correct": true,
+          "before_correct": false,
+          "target": "B"
+        }
+      ],
+      "block": "gpt-6.2-astra_round_A",
+      "call_id": "hidden_required_B",
+      "choice": "switch",
+      "elapsed_seconds": 8.906736416975036,
+      "model": "gpt-6.2-astra",
+      "native_response_sha256": "9ce11a7d441b8428cbe7599479f1226b33526a2503df6f9674324af41539f7de",
+      "prompt_sha256": "c2abee8ed29aefd034c45e1077c4c75b44bc77a5bc3c12b7fd27a50a90abbd47",
+      "start": "A",
+      "status": "OK",
+      "targets": [
+        "B"
+      ],
+      "task": "round",
+      "wording": "hidden"
+    },
+    {
+      "after": "B",
+      "arm": "both",
+      "assessments": [
+        {
+          "after_correct": true,
+          "before_correct": false,
+          "target": "B"
+        }
+      ],
+      "block": "gpt-6.2-astra_round_A",
+      "call_id": "hidden_both_B",
+      "choice": "switch",
+      "elapsed_seconds": 6.644229958066717,
+      "model": "gpt-6.2-astra",
+      "native_response_sha256": "edc3fb743dfdf6a339e443caf0638b70aea17d7fc05f102f01314852c8f13ca8",
+      "prompt_sha256": "719dd3c3483eaba820a4d9c53687de622592a8dd239af943f9408283dc895e47",
+      "start": "A",
+      "status": "OK",
+      "targets": [
+        "B"
+      ],
+      "task": "round",
+      "wording": "hidden"
+    },
+    {
+      "after": "B",
+      "arm": "none",
+      "assessments": [
+        {
+          "after_correct": true,
+          "before_correct": false,
+          "target": "B"
+        }
+      ],
+      "block": "gpt-6.2-astra_round_A",
+      "call_id": "explicit_none_B",
+      "choice": "switch",
+      "elapsed_seconds": 7.284988791914657,
+      "model": "gpt-6.2-astra",
+      "native_response_sha256": "4b6df352351006b338d52069b3286b52f3017aac0186d5e24c9ce03ab23a7a37",
+      "prompt_sha256": "cfb07d81c19f0b890820b9445e5057da281b07e200ee5f6d63c2ba2534c6f1ae",
+      "start": "A",
+      "status": "OK",
+      "targets": [
+        "B"
+      ],
+      "task": "round",
+      "wording": "explicit"
+    },
+    {
+      "after": "B",
+      "arm": "actual",
+      "assessments": [
+        {
+          "after_correct": true,
+          "before_correct": false,
+          "target": "B"
+        }
+      ],
+      "block": "gpt-6.2-astra_round_A",
+      "call_id": "explicit_actual_B",
+      "choice": "switch",
+      "elapsed_seconds": 7.478826541919261,
+      "model": "gpt-6.2-astra",
+      "native_response_sha256": "ac0eeb885eeec59ffaadfa2846f983a1c9e6e9be0a4d498979e8c61d8e13c06c",
+      "prompt_sha256": "379798c72b2ae6a0d4b771bfd7ef2c2e88334c8b3959c1ba8344983c68274b9b",
+      "start": "A",
+      "status": "OK",
+      "targets": [
+        "B"
+      ],
+      "task": "round",
+      "wording": "explicit"
+    },
+    {
+      "after": "A",
+      "arm": "both",
+      "assessments": [
+        {
+          "after_correct": true,
+          "before_correct": true,
+          "target": "A"
+        }
+      ],
+      "block": "gpt-6.2-astra_round_A",
+      "call_id": "explicit_both_A",
+      "choice": "keep",
+      "elapsed_seconds": 8.239815125009045,
+      "model": "gpt-6.2-astra",
+      "native_response_sha256": "17ff65b4535c406b8df3c4f9624036113507490fc244e40917264758dd95be5b",
+      "prompt_sha256": "a93bee6251657c21bc28e4a4c525884a80397bd4935ad19128c673936efe0726",
+      "start": "A",
+      "status": "OK",
+      "targets": [
+        "A"
+      ],
+      "task": "round",
+      "wording": "explicit"
+    },
+    {
+      "after": "B",
+      "arm": "required",
+      "assessments": [
+        {
+          "after_correct": true,
+          "before_correct": false,
+          "target": "B"
+        }
+      ],
+      "block": "gpt-6.2-astra_round_A",
+      "call_id": "explicit_required_B",
+      "choice": "switch",
+      "elapsed_seconds": 6.37651600013487,
+      "model": "gpt-6.2-astra",
+      "native_response_sha256": "8a79475375188698036c9b917a38c1375b6492e88ae78c71ce9d81b74a379ca6",
+      "prompt_sha256": "cd48842a0690556e573f5f04aba2ab350d1da9dea6399b3706a7c05489b66ca9",
+      "start": "A",
+      "status": "OK",
+      "targets": [
+        "B"
+      ],
+      "task": "round",
+      "wording": "explicit"
+    },
+    {
+      "after": "B",
+      "arm": "both",
+      "assessments": [
+        {
+          "after_correct": true,
+          "before_correct": false,
+          "target": "B"
+        }
+      ],
+      "block": "gpt-6.2-astra_round_A",
+      "call_id": "explicit_both_B",
+      "choice": "switch",
+      "elapsed_seconds": 7.733564290916547,
+      "model": "gpt-6.2-astra",
+      "native_response_sha256": "de4db66e736ff3a671867ed26c59fd61a5e126d8801ad0edc1efad107d4e7158",
+      "prompt_sha256": "01ba4de4f2d17a6183d45783f3519e2a34cf97dd2bf4d84a81cec49fa4e5dfa4",
+      "start": "A",
+      "status": "OK",
+      "targets": [
+        "B"
+      ],
+      "task": "round",
+      "wording": "explicit"
+    },
+    {
+      "after": "A",
+      "arm": "both",
+      "assessments": [
+        {
+          "after_correct": true,
+          "before_correct": true,
+          "target": "A"
+        }
+      ],
+      "block": "gpt-6.2-astra_round_A",
+      "call_id": "hidden_both_A",
+      "choice": "keep",
+      "elapsed_seconds": 6.828624374931678,
+      "model": "gpt-6.2-astra",
+      "native_response_sha256": "9c0e880309af89eb0c06feb79760ff1e4c19753a29564d52f6015a7903db863e",
+      "prompt_sha256": "78590e60d4560dd5a2ed021432fc7d8108ee78c52f1084d2c881f3d16bd4356f",
+      "start": "A",
+      "status": "OK",
+      "targets": [
+        "A"
+      ],
+      "task": "round",
+      "wording": "hidden"
+    },
+    {
+      "after": "A",
+      "arm": "required",
+      "assessments": [
+        {
+          "after_correct": true,
+          "before_correct": true,
+          "target": "A"
+        }
+      ],
+      "block": "gpt-6.2-astra_round_A",
+      "call_id": "hidden_required_A",
+      "choice": "keep",
+      "elapsed_seconds": 8.284520166926086,
+      "model": "gpt-6.2-astra",
+      "native_response_sha256": "0badce19b28f771d2b536b77fef293ed89deba189f27886373bd87ecd295ef57",
+      "prompt_sha256": "a04b25f7be6f89fff952849eae3e11f79b91b7479b0bd40801bc4517e3f25ec2",
+      "start": "A",
+      "status": "OK",
+      "targets": [
+        "A"
+      ],
+      "task": "round",
+      "wording": "hidden"
+    },
+    {
+      "after": "A",
+      "arm": "none",
+      "assessments": [
+        {
+          "after_correct": true,
+          "before_correct": true,
+          "target": "A"
+        }
+      ],
+      "block": "gpt-6.2-astra_round_A",
+      "call_id": "explicit_none_A",
+      "choice": "keep",
+      "elapsed_seconds": 6.724330875091255,
+      "model": "gpt-6.2-astra",
+      "native_response_sha256": "3420d4df222fa0451cdf5fd0b704b00cdbcea831d9450f5cb59a58d6be482f72",
+      "prompt_sha256": "8fa48383719b126aec66e3e3658d7a6b03714301ac2fc70d989e9fc859862fd3",
+      "start": "A",
+      "status": "OK",
+      "targets": [
+        "A"
+      ],
+      "task": "round",
+      "wording": "explicit"
+    },
+    {
+      "after": "B",
+      "arm": "actual",
+      "assessments": [
+        {
+          "after_correct": true,
+          "before_correct": true,
+          "target": "B"
+        }
+      ],
+      "block": "gpt-6-luna_round_B",
+      "call_id": "explicit_actual_B",
+      "choice": "keep",
+      "elapsed_seconds": 5.918119334150106,
+      "model": "gpt-6-luna",
+      "native_response_sha256": "60fed2bfe1ffe7ae1ae55c62d8841a9b0dd6cc3ad18f2307b1e05d4759bfc6b3",
+      "prompt_sha256": "0b8178d0daff331c2acb5a172f552ca8de0abcc133857da9157df7ef2b7e0555",
+      "start": "B",
+      "status": "OK",
+      "targets": [
+        "B"
+      ],
+      "task": "round",
+      "wording": "explicit"
+    },
+    {
+      "after": "B",
+      "arm": "none",
+      "assessments": [
+        {
+          "after_correct": false,
+          "before_correct": false,
+          "target": "A"
+        },
+        {
+          "after_correct": true,
+          "before_correct": true,
+          "target": "B"
+        }
+      ],
+      "block": "gpt-6-luna_round_B",
+      "call_id": "hidden_none_AB",
+      "choice": "keep",
+      "elapsed_seconds": 5.54828333389014,
+      "model": "gpt-6-luna",
+      "native_response_sha256": "e5e88ea4cf20997cc85446606e157df84640754cf7822160ba12236a185b067c",
+      "prompt_sha256": "e22f8b16a04127cf65d7f7474f258b5d8936f1137b2bf5f863ab50229c024a25",
+      "start": "B",
+      "status": "OK",
+      "targets": [
+        "A",
+        "B"
+      ],
+      "task": "round",
+      "wording": "hidden"
+    },
+    {
+      "after": "A",
+      "arm": "required",
+      "assessments": [
+        {
+          "after_correct": true,
+          "before_correct": false,
+          "target": "A"
+        }
+      ],
+      "block": "gpt-6-luna_round_B",
+      "call_id": "explicit_required_A",
+      "choice": "switch",
+      "elapsed_seconds": 5.226616916013882,
+      "model": "gpt-6-luna",
+      "native_response_sha256": "8190fbf8414f6668efd6114c853c4b5da596aa44014ccef7472ca7c635a9ab6d",
+      "prompt_sha256": "f1c7b374c1a08012800c3407f506815507033c2ae1e7b5816704734c5590f61e",
+      "start": "B",
+      "status": "OK",
+      "targets": [
+        "A"
+      ],
+      "task": "round",
+      "wording": "explicit"
+    },
+    {
+      "after": "B",
+      "arm": "both",
+      "assessments": [
+        {
+          "after_correct": true,
+          "before_correct": true,
+          "target": "B"
+        }
+      ],
+      "block": "gpt-6-luna_round_B",
+      "call_id": "hidden_both_B",
+      "choice": "keep",
+      "elapsed_seconds": 6.9882297499571,
+      "model": "gpt-6-luna",
+      "native_response_sha256": "dec09a8fefd078178bd41be6cd9ffe300dc8a370ad0fc65ffb961bcd8ebd0738",
+      "prompt_sha256": "ee1d4d21bc9aca566677f13089f5fba722fd33ae3315cc6cfe684ab584fb88f7",
+      "start": "B",
+      "status": "OK",
+      "targets": [
+        "B"
+      ],
+      "task": "round",
+      "wording": "hidden"
+    },
+    {
+      "after": "A",
+      "arm": "actual",
+      "assessments": [
+        {
+          "after_correct": true,
+          "before_correct": false,
+          "target": "A"
+        }
+      ],
+      "block": "gpt-6-luna_round_B",
+      "call_id": "explicit_actual_A",
+      "choice": "switch",
+      "elapsed_seconds": 5.914108624914661,
+      "model": "gpt-6-luna",
+      "native_response_sha256": "6b00aa5b6193460ec1bae0de8c1cc678952c779c7fdb08c624eff9cb5e4ce3c3",
+      "prompt_sha256": "b201013c4e9fca43e2bcdd9a28c04019a9ae50c1130b73f9d4b03e53ac6785d2",
+      "start": "B",
+      "status": "OK",
+      "targets": [
+        "A"
+      ],
+      "task": "round",
+      "wording": "explicit"
+    },
+    {
+      "after": "B",
+      "arm": "both",
+      "assessments": [
+        {
+          "after_correct": true,
+          "before_correct": true,
+          "target": "B"
+        }
+      ],
+      "block": "gpt-6-luna_round_B",
+      "call_id": "explicit_both_B",
+      "choice": "keep",
+      "elapsed_seconds": 5.322547915857285,
+      "model": "gpt-6-luna",
+      "native_response_sha256": "bc3b2c61e3bf3495daca37708519376a10195953cbba6661e4f2c05ac149e506",
+      "prompt_sha256": "6155d6dd27b273eeaa7b7df97641a7cd825463a40b306065bcd7e615a2b0410d",
+      "start": "B",
+      "status": "OK",
+      "targets": [
+        "B"
+      ],
+      "task": "round",
+      "wording": "explicit"
+    },
+    {
+      "after": "B",
+      "arm": "required",
+      "assessments": [
+        {
+          "after_correct": true,
+          "before_correct": true,
+          "target": "B"
+        }
+      ],
+      "block": "gpt-6-luna_round_B",
+      "call_id": "explicit_required_B",
+      "choice": "keep",
+      "elapsed_seconds": 5.863245917018503,
+      "model": "gpt-6-luna",
+      "native_response_sha256": "bfede5e0b724bc937c7bd2a166f74e31ecdfb68affbbb88b1a9643e457e982a5",
+      "prompt_sha256": "dff76874b993b1ff2ae1f39f0ac823f01a5bd268101d60cd42e27d28543b8a76",
+      "start": "B",
+      "status": "OK",
+      "targets": [
+        "B"
+      ],
+      "task": "round",
+      "wording": "explicit"
+    },
+    {
+      "after": "A",
+      "arm": "none",
+      "assessments": [
+        {
+          "after_correct": true,
+          "before_correct": false,
+          "target": "A"
+        }
+      ],
+      "block": "gpt-6-luna_round_B",
+      "call_id": "explicit_none_A",
+      "choice": "switch",
+      "elapsed_seconds": 6.110887041082606,
+      "model": "gpt-6-luna",
+      "native_response_sha256": "d9678246389710a3cfb94a73df79d723a614ec026659c1ac89494925b48fcf90",
+      "prompt_sha256": "1e19016a3595a6963db6071ff3555a9d401727f0bb1ce8dda20e8a02e254ff1e",
+      "start": "B",
+      "status": "OK",
+      "targets": [
+        "A"
+      ],
+      "task": "round",
+      "wording": "explicit"
+    },
+    {
+      "after": "A",
+      "arm": "required",
+      "assessments": [
+        {
+          "after_correct": true,
+          "before_correct": false,
+          "target": "A"
+        }
+      ],
+      "block": "gpt-6-luna_round_B",
+      "call_id": "hidden_required_A",
+      "choice": "switch",
+      "elapsed_seconds": 4.9638989579398185,
+      "model": "gpt-6-luna",
+      "native_response_sha256": "5f67e23099eb63ba914a1109218303cdc3580ef6ecf58d741ae73bd15f1efe5b",
+      "prompt_sha256": "40409569726e405c2e0840db1bb9ac6d0ace084e33d99d6f8913c24ff609aaa8",
+      "start": "B",
+      "status": "OK",
+      "targets": [
+        "A"
+      ],
+      "task": "round",
+      "wording": "hidden"
+    },
+    {
+      "after": "B",
+      "arm": "required",
+      "assessments": [
+        {
+          "after_correct": true,
+          "before_correct": true,
+          "target": "B"
+        }
+      ],
+      "block": "gpt-6-luna_round_B",
+      "call_id": "hidden_required_B",
+      "choice": "keep",
+      "elapsed_seconds": 6.954189083073288,
+      "model": "gpt-6-luna",
+      "native_response_sha256": "2ba7d1237b12e1e3f346dbd02262d487a5954995e92427342a04c97d15f174e8",
+      "prompt_sha256": "7a06ad8a2de2ef970e7dbfd376cadfcc3e4cb7f2a2c384fcd53a88c6d30c6028",
+      "start": "B",
+      "status": "OK",
+      "targets": [
+        "B"
+      ],
+      "task": "round",
+      "wording": "hidden"
+    },
+    {
+      "after": "B",
+      "arm": "none",
+      "assessments": [
+        {
+          "after_correct": true,
+          "before_correct": true,
+          "target": "B"
+        }
+      ],
+      "block": "gpt-6-luna_round_B",
+      "call_id": "explicit_none_B",
+      "choice": "keep",
+      "elapsed_seconds": 6.407889541937038,
+      "model": "gpt-6-luna",
+      "native_response_sha256": "07048eef7c9170fc942ff3df52ace9e079750e8284117509f9016066afed92ff",
+      "prompt_sha256": "0693ac3b6da5d9510319616b801a9c4e073ea0e55aaea2904875feb191324a99",
+      "start": "B",
+      "status": "OK",
+      "targets": [
+        "B"
+      ],
+      "task": "round",
+      "wording": "explicit"
+    },
+    {
+      "after": "A",
+      "arm": "both",
+      "assessments": [
+        {
+          "after_correct": true,
+          "before_correct": false,
+          "target": "A"
+        }
+      ],
+      "block": "gpt-6-luna_round_B",
+      "call_id": "hidden_both_A",
+      "choice": "switch",
+      "elapsed_seconds": 5.170733958017081,
+      "model": "gpt-6-luna",
+      "native_response_sha256": "d699d25da30b5aac164c44b0a967af3e49b2dc090dfc9c550a92e2d50d2fd9ac",
+      "prompt_sha256": "0d20aef241970c289f4166c249dd55963d147c0aab5e72fd832246eff2e5fea5",
+      "start": "B",
+      "status": "OK",
+      "targets": [
+        "A"
+      ],
+      "task": "round",
+      "wording": "hidden"
+    },
+    {
+      "after": "A",
+      "arm": "both",
+      "assessments": [
+        {
+          "after_correct": true,
+          "before_correct": false,
+          "target": "A"
+        }
+      ],
+      "block": "gpt-6-luna_round_B",
+      "call_id": "explicit_both_A",
+      "choice": "switch",
+      "elapsed_seconds": 5.403074542060494,
+      "model": "gpt-6-luna",
+      "native_response_sha256": "5545cb7787cab3d1a35808111d50c5f691df8aa42c5fdadc5a165fd2e2f0b533",
+      "prompt_sha256": "6812598a12ed964026be1e12c813297de31a0868580328857dcf5ed9354ad616",
+      "start": "B",
+      "status": "OK",
+      "targets": [
+        "A"
+      ],
+      "task": "round",
+      "wording": "explicit"
+    },
+    {
+      "after": "A",
+      "arm": "actual",
+      "assessments": [
+        {
+          "after_correct": true,
+          "before_correct": false,
+          "target": "A"
+        },
+        {
+          "after_correct": false,
+          "before_correct": true,
+          "target": "B"
+        }
+      ],
+      "block": "gpt-6-luna_round_B",
+      "call_id": "hidden_actual_AB",
+      "choice": "switch",
+      "elapsed_seconds": 5.96751358313486,
+      "model": "gpt-6-luna",
+      "native_response_sha256": "52b83f2e31c182bd7a97e18e6211ac832f0c396adf9a04b4dd7d592c4361307a",
+      "prompt_sha256": "24cf0a00d205cf14a1017d891e2a145df1a454b7a5a7182cc20912e04e70a461",
+      "start": "B",
+      "status": "OK",
+      "targets": [
+        "A",
+        "B"
+      ],
+      "task": "round",
+      "wording": "hidden"
+    },
+    {
+      "after": "A",
+      "arm": "required",
+      "assessments": [
+        {
+          "after_correct": true,
+          "before_correct": false,
+          "target": "A"
+        }
+      ],
+      "block": "gpt-6-luna_sort_B",
+      "call_id": "hidden_required_A",
+      "choice": "switch",
+      "elapsed_seconds": 5.564203958027065,
+      "model": "gpt-6-luna",
+      "native_response_sha256": "865da0ccee87b61b820a4f9736101beaff4874d28ee0b0ea9c18f5ef8123451a",
+      "prompt_sha256": "e6cb56100e7201c6f42bbfa32e70ed9de4261bd1c7a31b07794e9a0ab502d0ea",
+      "start": "B",
+      "status": "OK",
+      "targets": [
+        "A"
+      ],
+      "task": "sort",
+      "wording": "hidden"
+    },
+    {
+      "after": "B",
+      "arm": "required",
+      "assessments": [
+        {
+          "after_correct": true,
+          "before_correct": true,
+          "target": "B"
+        }
+      ],
+      "block": "gpt-6-luna_sort_B",
+      "call_id": "explicit_required_B",
+      "choice": "keep",
+      "elapsed_seconds": 5.570958166150376,
+      "model": "gpt-6-luna",
+      "native_response_sha256": "21276db7ab8b7fbf62a8824aecf0aa7752649b89425372d5fb8ca00a89fb7efd",
+      "prompt_sha256": "d6abd767eca78c0d368383a8c7d61f06ae03875f80a360b24be1b4c7a6a07953",
+      "start": "B",
+      "status": "OK",
+      "targets": [
+        "B"
+      ],
+      "task": "sort",
+      "wording": "explicit"
+    },
+    {
+      "after": "B",
+      "arm": "actual",
+      "assessments": [
+        {
+          "after_correct": true,
+          "before_correct": true,
+          "target": "B"
+        }
+      ],
+      "block": "gpt-6-luna_sort_B",
+      "call_id": "explicit_actual_B",
+      "choice": "keep",
+      "elapsed_seconds": 5.614658499835059,
+      "model": "gpt-6-luna",
+      "native_response_sha256": "db81532deebcf2d6a8d9182900bcb600aead5d6c38a78a3acc018475c34bf4f1",
+      "prompt_sha256": "9602722ce36ae6465791485c78166e9307e25be917ad056cc0509d5b367ea58f",
+      "start": "B",
+      "status": "OK",
+      "targets": [
+        "B"
+      ],
+      "task": "sort",
+      "wording": "explicit"
+    },
+    {
+      "after": "B",
+      "arm": "actual",
+      "assessments": [
+        {
+          "after_correct": false,
+          "before_correct": false,
+          "target": "A"
+        },
+        {
+          "after_correct": true,
+          "before_correct": true,
+          "target": "B"
+        }
+      ],
+      "block": "gpt-6-luna_sort_B",
+      "call_id": "hidden_actual_AB",
+      "choice": "keep",
+      "elapsed_seconds": 5.607019958086312,
+      "model": "gpt-6-luna",
+      "native_response_sha256": "15c8b9834102ad9ad284d25ab2d9ce1d972e56bd2f9b75d41826cc5e9b6eb8d3",
+      "prompt_sha256": "d1a1bf7e95a60aac467451f8fbcf4f1355210b82b9fe8f57e3a9291455fdf5d4",
+      "start": "B",
+      "status": "OK",
+      "targets": [
+        "A",
+        "B"
+      ],
+      "task": "sort",
+      "wording": "hidden"
+    },
+    {
+      "after": "B",
+      "arm": "both",
+      "assessments": [
+        {
+          "after_correct": true,
+          "before_correct": true,
+          "target": "B"
+        }
+      ],
+      "block": "gpt-6-luna_sort_B",
+      "call_id": "explicit_both_B",
+      "choice": "keep",
+      "elapsed_seconds": 5.839443083154038,
+      "model": "gpt-6-luna",
+      "native_response_sha256": "92d8b53e2e1012946ea16476136e550f9e55ef0639fa1ec133e35486bcb26b5b",
+      "prompt_sha256": "b1a8fe385cbf1092e58c3ae13c12fcba0d024493a01f172496a6fdc07c4d8105",
+      "start": "B",
+      "status": "OK",
+      "targets": [
+        "B"
+      ],
+      "task": "sort",
+      "wording": "explicit"
+    },
+    {
+      "after": "A",
+      "arm": "actual",
+      "assessments": [
+        {
+          "after_correct": true,
+          "before_correct": false,
+          "target": "A"
+        }
+      ],
+      "block": "gpt-6-luna_sort_B",
+      "call_id": "explicit_actual_A",
+      "choice": "switch",
+      "elapsed_seconds": 6.387546374928206,
+      "model": "gpt-6-luna",
+      "native_response_sha256": "c389d4cd2cdaac54f348e59adf6be48cedc0be84c81e5b37f7669768bd3af458",
+      "prompt_sha256": "11b47ca24a2d70f150deb7190ecd0d68ce9362e5860a56cba22f68165ec328c3",
+      "start": "B",
+      "status": "OK",
+      "targets": [
+        "A"
+      ],
+      "task": "sort",
+      "wording": "explicit"
+    },
+    {
+      "after": "B",
+      "arm": "both",
+      "assessments": [
+        {
+          "after_correct": true,
+          "before_correct": true,
+          "target": "B"
+        }
+      ],
+      "block": "gpt-6-luna_sort_B",
+      "call_id": "hidden_both_B",
+      "choice": "keep",
+      "elapsed_seconds": 5.974514750065282,
+      "model": "gpt-6-luna",
+      "native_response_sha256": "5ddac338015e2f71224d2b71c6dd241119f60404387fbb9e7900086bdadb0a75",
+      "prompt_sha256": "be2954c41e5defe0a03a67c554dc4a5eed099c0c72a736dd10a95976c4e14490",
+      "start": "B",
+      "status": "OK",
+      "targets": [
+        "B"
+      ],
+      "task": "sort",
+      "wording": "hidden"
+    },
+    {
+      "after": "B",
+      "arm": "none",
+      "assessments": [
+        {
+          "after_correct": false,
+          "before_correct": false,
+          "target": "A"
+        },
+        {
+          "after_correct": true,
+          "before_correct": true,
+          "target": "B"
+        }
+      ],
+      "block": "gpt-6-luna_sort_B",
+      "call_id": "hidden_none_AB",
+      "choice": "keep",
+      "elapsed_seconds": 5.6719963329378515,
+      "model": "gpt-6-luna",
+      "native_response_sha256": "f04c4d131d26e6befff0ef265226ee5e8abf2ace5ecfa4ad49b00ee583a8653c",
+      "prompt_sha256": "1878f99b59534aaeb8864754e46b969ac0b65bee3866722424ed3f90d72a98c0",
+      "start": "B",
+      "status": "OK",
+      "targets": [
+        "A",
+        "B"
+      ],
+      "task": "sort",
+      "wording": "hidden"
+    },
+    {
+      "after": "B",
+      "arm": "none",
+      "assessments": [
+        {
+          "after_correct": true,
+          "before_correct": true,
+          "target": "B"
+        }
+      ],
+      "block": "gpt-6-luna_sort_B",
+      "call_id": "explicit_none_B",
+      "choice": "keep",
+      "elapsed_seconds": 6.270128416130319,
+      "model": "gpt-6-luna",
+      "native_response_sha256": "a9f7555c7cceefb03f06802680152e411c9f4decb87593033f9691354bf22872",
+      "prompt_sha256": "003ed93583dc2713c5be2142358ea43b79f920a3bb3678e020216261f8b4ffb9",
+      "start": "B",
+      "status": "OK",
+      "targets": [
+        "B"
+      ],
+      "task": "sort",
+      "wording": "explicit"
+    },
+    {
+      "after": "A",
+      "arm": "both",
+      "assessments": [
+        {
+          "after_correct": true,
+          "before_correct": false,
+          "target": "A"
+        }
+      ],
+      "block": "gpt-6-luna_sort_B",
+      "call_id": "hidden_both_A",
+      "choice": "switch",
+      "elapsed_seconds": 8.14462916716002,
+      "model": "gpt-6-luna",
+      "native_response_sha256": "828743e36a1ca9e872bb0004d26664a9d5689ae2595f1ae46c382da7daeda9ec",
+      "prompt_sha256": "723f95b65710997d5deffcbbca8356b826d89b837bf75986e324cf31ae927a86",
+      "start": "B",
+      "status": "OK",
+      "targets": [
+        "A"
+      ],
+      "task": "sort",
+      "wording": "hidden"
+    },
+    {
+      "after": "A",
+      "arm": "none",
+      "assessments": [
+        {
+          "after_correct": true,
+          "before_correct": false,
+          "target": "A"
+        }
+      ],
+      "block": "gpt-6-luna_sort_B",
+      "call_id": "explicit_none_A",
+      "choice": "switch",
+      "elapsed_seconds": 7.142082459060475,
+      "model": "gpt-6-luna",
+      "native_response_sha256": "7003e633ff81dfa21a86e7c5363f7de9eb7b19b714673a104b02191e2ff5918a",
+      "prompt_sha256": "2ffff2b767d4308642f8229860438ea7117b4fd828bd9538f61ee0e930ceaefc",
+      "start": "B",
+      "status": "OK",
+      "targets": [
+        "A"
+      ],
+      "task": "sort",
+      "wording": "explicit"
+    },
+    {
+      "after": "A",
+      "arm": "required",
+      "assessments": [
+        {
+          "after_correct": true,
+          "before_correct": false,
+          "target": "A"
+        }
+      ],
+      "block": "gpt-6-luna_sort_B",
+      "call_id": "explicit_required_A",
+      "choice": "switch",
+      "elapsed_seconds": 6.324039583094418,
+      "model": "gpt-6-luna",
+      "native_response_sha256": "90220731deb6df7f52008d140adfb0bd7ade103405c7759102efa9cf5092c71e",
+      "prompt_sha256": "3863ba9bcdd234d4f536bf5d9b60651af075240979b8c4e5e9d8c932e3003870",
+      "start": "B",
+      "status": "OK",
+      "targets": [
+        "A"
+      ],
+      "task": "sort",
+      "wording": "explicit"
+    },
+    {
+      "after": "B",
+      "arm": "required",
+      "assessments": [
+        {
+          "after_correct": true,
+          "before_correct": true,
+          "target": "B"
+        }
+      ],
+      "block": "gpt-6-luna_sort_B",
+      "call_id": "hidden_required_B",
+      "choice": "keep",
+      "elapsed_seconds": 5.969068250153214,
+      "model": "gpt-6-luna",
+      "native_response_sha256": "84ea366b8c795e4643f4342654988c8deefe361954c67f931d602252ef483849",
+      "prompt_sha256": "a64c293b2a0fabe6ed3247407a7d8827a1d7c8bdf530506150b415509d6f6b07",
+      "start": "B",
+      "status": "OK",
+      "targets": [
+        "B"
+      ],
+      "task": "sort",
+      "wording": "hidden"
+    },
+    {
+      "after": "A",
+      "arm": "both",
+      "assessments": [
+        {
+          "after_correct": true,
+          "before_correct": false,
+          "target": "A"
+        }
+      ],
+      "block": "gpt-6-luna_sort_B",
+      "call_id": "explicit_both_A",
+      "choice": "switch",
+      "elapsed_seconds": 6.075156125007197,
+      "model": "gpt-6-luna",
+      "native_response_sha256": "f60cb3da41a2911a1696d4afcd3c981f553e394cce142bdd021bca0bd87e386f",
+      "prompt_sha256": "e97793b0180668bb41cc4991842b3d3e33c18647ce3efb0d32fb9041dbe710b5",
+      "start": "B",
+      "status": "OK",
+      "targets": [
+        "A"
+      ],
+      "task": "sort",
+      "wording": "explicit"
+    },
+    {
+      "after": "A",
+      "arm": "required",
+      "assessments": [
+        {
+          "after_correct": true,
+          "before_correct": true,
+          "target": "A"
+        }
+      ],
+      "block": "gpt-6.2-astra_sort_A",
+      "call_id": "hidden_required_A",
+      "choice": "keep",
+      "elapsed_seconds": 6.815219165990129,
+      "model": "gpt-6.2-astra",
+      "native_response_sha256": "3d0b1e14bb34d5086553d346cfe6b4d0ad5901a384338d9bb76ac8ba327ff325",
+      "prompt_sha256": "d841d5c813e4cceef5c67bc2a2f2fd866615a0482a992a21c6e55d39063ebcd5",
+      "start": "A",
+      "status": "OK",
+      "targets": [
+        "A"
+      ],
+      "task": "sort",
+      "wording": "hidden"
+    },
+    {
+      "after": "B",
+      "arm": "none",
+      "assessments": [
+        {
+          "after_correct": true,
+          "before_correct": false,
+          "target": "B"
+        }
+      ],
+      "block": "gpt-6.2-astra_sort_A",
+      "call_id": "explicit_none_B",
+      "choice": "switch",
+      "elapsed_seconds": 6.559573083883151,
+      "model": "gpt-6.2-astra",
+      "native_response_sha256": "be3621f8a56470d124d86feba96c3c4032d9e3c125dc018b516c16b3f800d616",
+      "prompt_sha256": "7be7850b4d6126c4bfddf9a303a63d2824f45fdd2a7eb9f658f311ce44076b53",
+      "start": "A",
+      "status": "OK",
+      "targets": [
+        "B"
+      ],
+      "task": "sort",
+      "wording": "explicit"
+    },
+    {
+      "after": "A",
+      "arm": "actual",
+      "assessments": [
+        {
+          "after_correct": true,
+          "before_correct": true,
+          "target": "A"
+        }
+      ],
+      "block": "gpt-6.2-astra_sort_A",
+      "call_id": "explicit_actual_A",
+      "choice": "keep",
+      "elapsed_seconds": 9.416370624909177,
+      "model": "gpt-6.2-astra",
+      "native_response_sha256": "a24c8fd89323c9b9a6a1e289fc2d3edace7ba0d4c26e24596b13b3c1b9c66eee",
+      "prompt_sha256": "f2ac7ecc4d98c43d4b21848e4062ca26aefeebd58b7af247e58ec0d32350250f",
+      "start": "A",
+      "status": "OK",
+      "targets": [
+        "A"
+      ],
+      "task": "sort",
+      "wording": "explicit"
+    },
+    {
+      "after": "B",
+      "arm": "both",
+      "assessments": [
+        {
+          "after_correct": true,
+          "before_correct": false,
+          "target": "B"
+        }
+      ],
+      "block": "gpt-6.2-astra_sort_A",
+      "call_id": "explicit_both_B",
+      "choice": "switch",
+      "elapsed_seconds": 7.152495957911015,
+      "model": "gpt-6.2-astra",
+      "native_response_sha256": "5d390dcef3b22340aca047091a155665e5931c7fca36fd469980060077ff0b1a",
+      "prompt_sha256": "9c79330a2d6f18cffb2a3a69f0212f3c206a721c5cf9a7e8f4b200a4d4dbc06b",
+      "start": "A",
+      "status": "OK",
+      "targets": [
+        "B"
+      ],
+      "task": "sort",
+      "wording": "explicit"
+    },
+    {
+      "after": "A",
+      "arm": "none",
+      "assessments": [
+        {
+          "after_correct": true,
+          "before_correct": true,
+          "target": "A"
+        },
+        {
+          "after_correct": false,
+          "before_correct": false,
+          "target": "B"
+        }
+      ],
+      "block": "gpt-6.2-astra_sort_A",
+      "call_id": "hidden_none_AB",
+      "choice": "keep",
+      "elapsed_seconds": 7.615519625134766,
+      "model": "gpt-6.2-astra",
+      "native_response_sha256": "b154cddb2eda848ff053396619db69db8d7e4a1697071e3d37beb368fc8d062a",
+      "prompt_sha256": "2e58850ffe00b63160c05ff2b8e519d02047eccadc8a9c62e5c4606e9e58c737",
+      "start": "A",
+      "status": "OK",
+      "targets": [
+        "A",
+        "B"
+      ],
+      "task": "sort",
+      "wording": "hidden"
+    },
+    {
+      "after": "A",
+      "arm": "both",
+      "assessments": [
+        {
+          "after_correct": true,
+          "before_correct": true,
+          "target": "A"
+        }
+      ],
+      "block": "gpt-6.2-astra_sort_A",
+      "call_id": "hidden_both_A",
+      "choice": "keep",
+      "elapsed_seconds": 7.8128406659234315,
+      "model": "gpt-6.2-astra",
+      "native_response_sha256": "3e0ade95db525fec74db28b84806dfaef46657b98249c9c5f7576bfd72331d20",
+      "prompt_sha256": "e83480064fe57da198fc939a19c4824182b2c8b8e055d5b38b64ca481641e987",
+      "start": "A",
+      "status": "OK",
+      "targets": [
+        "A"
+      ],
+      "task": "sort",
+      "wording": "hidden"
+    },
+    {
+      "after": "A",
+      "arm": "both",
+      "assessments": [
+        {
+          "after_correct": true,
+          "before_correct": true,
+          "target": "A"
+        }
+      ],
+      "block": "gpt-6.2-astra_sort_A",
+      "call_id": "explicit_both_A",
+      "choice": "keep",
+      "elapsed_seconds": 8.459555999841541,
+      "model": "gpt-6.2-astra",
+      "native_response_sha256": "d0fc8f45d15d4b4ded6621bcb5201fac66f3e0c4929610c37fbb3744a833cb50",
+      "prompt_sha256": "bedc361ca942e12bce83c51e46a41aefd12dcde8b96b9a0a78c01bdda971c8e8",
+      "start": "A",
+      "status": "OK",
+      "targets": [
+        "A"
+      ],
+      "task": "sort",
+      "wording": "explicit"
+    },
+    {
+      "after": "A",
+      "arm": "required",
+      "assessments": [
+        {
+          "after_correct": true,
+          "before_correct": true,
+          "target": "A"
+        }
+      ],
+      "block": "gpt-6.2-astra_sort_A",
+      "call_id": "explicit_required_A",
+      "choice": "keep",
+      "elapsed_seconds": 7.497892959043384,
+      "model": "gpt-6.2-astra",
+      "native_response_sha256": "4eff9b48afcdbf8f51f24315b29a5bd6369fc8c7dd85efd75d511d7d5ee113c9",
+      "prompt_sha256": "d759c05d2c1a468324d37b8a80f591fd3dfa31ed3e754419e118a857f084cf78",
+      "start": "A",
+      "status": "OK",
+      "targets": [
+        "A"
+      ],
+      "task": "sort",
+      "wording": "explicit"
+    },
+    {
+      "after": "A",
+      "arm": "actual",
+      "assessments": [
+        {
+          "after_correct": true,
+          "before_correct": true,
+          "target": "A"
+        },
+        {
+          "after_correct": false,
+          "before_correct": false,
+          "target": "B"
+        }
+      ],
+      "block": "gpt-6.2-astra_sort_A",
+      "call_id": "hidden_actual_AB",
+      "choice": "keep",
+      "elapsed_seconds": 8.28688812511973,
+      "model": "gpt-6.2-astra",
+      "native_response_sha256": "35b4ff3d071d06b05fe7aa4b3d9b332b90e3919cda7dbab867bc4250ee7d1caf",
+      "prompt_sha256": "3776bbc00a15ce1215594a89c6b940751964213599a2f9f67a61b1bb676c57f3",
+      "start": "A",
+      "status": "OK",
+      "targets": [
+        "A",
+        "B"
+      ],
+      "task": "sort",
+      "wording": "hidden"
+    },
+    {
+      "after": "B",
+      "arm": "actual",
+      "assessments": [
+        {
+          "after_correct": true,
+          "before_correct": false,
+          "target": "B"
+        }
+      ],
+      "block": "gpt-6.2-astra_sort_A",
+      "call_id": "explicit_actual_B",
+      "choice": "switch",
+      "elapsed_seconds": 9.411899707978591,
+      "model": "gpt-6.2-astra",
+      "native_response_sha256": "336bb057467fd14aa8c56dd59cf7531060040aaf7a50d960f3fdb4ba4e97b0f1",
+      "prompt_sha256": "41c29216ae48571026afa6557fcd26065943a6bbded5c357ab4c8c1462e29b81",
+      "start": "A",
+      "status": "OK",
+      "targets": [
+        "B"
+      ],
+      "task": "sort",
+      "wording": "explicit"
+    },
+    {
+      "after": "B",
+      "arm": "required",
+      "assessments": [
+        {
+          "after_correct": true,
+          "before_correct": false,
+          "target": "B"
+        }
+      ],
+      "block": "gpt-6.2-astra_sort_A",
+      "call_id": "explicit_required_B",
+      "choice": "switch",
+      "elapsed_seconds": 7.67146383295767,
+      "model": "gpt-6.2-astra",
+      "native_response_sha256": "3f348b8762b4a0b4a016e990a79bf02d02fc84dde5289f3e982be684072e5c9c",
+      "prompt_sha256": "6805a0124901fd0919096354fec69c6fdec0f4cc0d927b8e4f175ed67b02f6a3",
+      "start": "A",
+      "status": "OK",
+      "targets": [
+        "B"
+      ],
+      "task": "sort",
+      "wording": "explicit"
+    },
+    {
+      "after": "A",
+      "arm": "none",
+      "assessments": [
+        {
+          "after_correct": true,
+          "before_correct": true,
+          "target": "A"
+        }
+      ],
+      "block": "gpt-6.2-astra_sort_A",
+      "call_id": "explicit_none_A",
+      "choice": "keep",
+      "elapsed_seconds": 7.21650725021027,
+      "model": "gpt-6.2-astra",
+      "native_response_sha256": "937dbbcedad4a09399c8973cbbaad1d822aefb52fa0035d72cd54be282acc296",
+      "prompt_sha256": "7c92e79a921d023520791c6767130bc9c57df6b2d08236d3da022803007ab917",
+      "start": "A",
+      "status": "OK",
+      "targets": [
+        "A"
+      ],
+      "task": "sort",
+      "wording": "explicit"
+    },
+    {
+      "after": "B",
+      "arm": "both",
+      "assessments": [
+        {
+          "after_correct": true,
+          "before_correct": false,
+          "target": "B"
+        }
+      ],
+      "block": "gpt-6.2-astra_sort_A",
+      "call_id": "hidden_both_B",
+      "choice": "switch",
+      "elapsed_seconds": 7.289106708019972,
+      "model": "gpt-6.2-astra",
+      "native_response_sha256": "0118e3f1d35ef821b8231d90f25e22f6558a6d1a8541b13b9c2a72a6f6d5893d",
+      "prompt_sha256": "59a6d5d6b7876725564b10553722edc7f2d9751a5bf7a60e62992d8a9bd2793a",
+      "start": "A",
+      "status": "OK",
+      "targets": [
+        "B"
+      ],
+      "task": "sort",
+      "wording": "hidden"
+    },
+    {
+      "after": "B",
+      "arm": "required",
+      "assessments": [
+        {
+          "after_correct": true,
+          "before_correct": false,
+          "target": "B"
+        }
+      ],
+      "block": "gpt-6.2-astra_sort_A",
+      "call_id": "hidden_required_B",
+      "choice": "switch",
+      "elapsed_seconds": 9.272930375067517,
+      "model": "gpt-6.2-astra",
+      "native_response_sha256": "a0e4940be86cd41f999e6e4cd6d0be1909087ad02e6f39052dc761949e357f72",
+      "prompt_sha256": "28631705c2d51a066a8b36da99a98770c1fba1501e6fd35cb5d3f95ed0feb395",
+      "start": "A",
+      "status": "OK",
+      "targets": [
+        "B"
+      ],
+      "task": "sort",
+      "wording": "hidden"
+    },
+    {
+      "after": "A",
+      "arm": "none",
+      "assessments": [
+        {
+          "after_correct": true,
+          "before_correct": true,
+          "target": "A"
+        }
+      ],
+      "block": "gpt-6-luna_argmax_A",
+      "call_id": "explicit_none_A",
+      "choice": "keep",
+      "elapsed_seconds": 6.033518207957968,
+      "model": "gpt-6-luna",
+      "native_response_sha256": "8fd757e69565361cf55fbe5a0e755c95f6820ce947b0b17e581644a00f57b8b6",
+      "prompt_sha256": "04c19b131bfa2b8d1a1907afb6eeda1005d103be9607bb9f8b1523cea127a8cb",
+      "start": "A",
+      "status": "OK",
+      "targets": [
+        "A"
+      ],
+      "task": "argmax",
+      "wording": "explicit"
+    },
+    {
+      "after": "A",
+      "arm": "both",
+      "assessments": [
+        {
+          "after_correct": true,
+          "before_correct": true,
+          "target": "A"
+        }
+      ],
+      "block": "gpt-6-luna_argmax_A",
+      "call_id": "explicit_both_A",
+      "choice": "keep",
+      "elapsed_seconds": 7.853143667103723,
+      "model": "gpt-6-luna",
+      "native_response_sha256": "53e0c919191903aeb16865100cce212f522ebe54eaa74756abd6c1fe21ddb6d6",
+      "prompt_sha256": "afe42adb83b826a8fc6cd911531e085daa19094b803544c990ecd8f3393f1ca1",
+      "start": "A",
+      "status": "OK",
+      "targets": [
+        "A"
+      ],
+      "task": "argmax",
+      "wording": "explicit"
+    },
+    {
+      "after": "A",
+      "arm": "actual",
+      "assessments": [
+        {
+          "after_correct": true,
+          "before_correct": true,
+          "target": "A"
+        }
+      ],
+      "block": "gpt-6-luna_argmax_A",
+      "call_id": "explicit_actual_A",
+      "choice": "keep",
+      "elapsed_seconds": 8.320095124887303,
+      "model": "gpt-6-luna",
+      "native_response_sha256": "765975332c406e3ecce5b447c830249ab27fda2b3e1f2c6c3320a32573ea4e53",
+      "prompt_sha256": "8e5c64abaa0faa7670702b3b8d555813db58dce0dca550e2a69148b439c79763",
+      "start": "A",
+      "status": "OK",
+      "targets": [
+        "A"
+      ],
+      "task": "argmax",
+      "wording": "explicit"
+    },
+    {
+      "after": "B",
+      "arm": "both",
+      "assessments": [
+        {
+          "after_correct": true,
+          "before_correct": false,
+          "target": "B"
+        }
+      ],
+      "block": "gpt-6-luna_argmax_A",
+      "call_id": "explicit_both_B",
+      "choice": "switch",
+      "elapsed_seconds": 6.69307416700758,
+      "model": "gpt-6-luna",
+      "native_response_sha256": "27bb2437e70b9edd571a6cb677149293e5ac1262ceff279485a9af62a909222b",
+      "prompt_sha256": "1a5c868bee860741d2ec9778b91260517c45a013838d4b7b1f73fe5c495c651f",
+      "start": "A",
+      "status": "OK",
+      "targets": [
+        "B"
+      ],
+      "task": "argmax",
+      "wording": "explicit"
+    },
+    {
+      "after": "A",
+      "arm": "both",
+      "assessments": [
+        {
+          "after_correct": true,
+          "before_correct": true,
+          "target": "A"
+        }
+      ],
+      "block": "gpt-6-luna_argmax_A",
+      "call_id": "hidden_both_A",
+      "choice": "keep",
+      "elapsed_seconds": 5.675489875022322,
+      "model": "gpt-6-luna",
+      "native_response_sha256": "7f58f87ac3d2ee5ee93241229ae69dbe059a35e2b3d2458cae16fb58b791c71b",
+      "prompt_sha256": "31cf27d6fb00a58dbdbe3cfb06a00212f835fed2c4a1612e42f3534bdd7a4316",
+      "start": "A",
+      "status": "OK",
+      "targets": [
+        "A"
+      ],
+      "task": "argmax",
+      "wording": "hidden"
+    },
+    {
+      "after": "B",
+      "arm": "none",
+      "assessments": [
+        {
+          "after_correct": true,
+          "before_correct": false,
+          "target": "B"
+        }
+      ],
+      "block": "gpt-6-luna_argmax_A",
+      "call_id": "explicit_none_B",
+      "choice": "switch",
+      "elapsed_seconds": 6.339807624928653,
+      "model": "gpt-6-luna",
+      "native_response_sha256": "28db4f26b8146dd24d8ca7023bd02423f35484ae777cd35417dc0820850db07e",
+      "prompt_sha256": "3d1808a0e4fa59561f8666d745086a67bb6ad9f98a00f209809c5e54ceb43ced",
+      "start": "A",
+      "status": "OK",
+      "targets": [
+        "B"
+      ],
+      "task": "argmax",
+      "wording": "explicit"
+    },
+    {
+      "after": "A",
+      "arm": "actual",
+      "assessments": [
+        {
+          "after_correct": true,
+          "before_correct": true,
+          "target": "A"
+        },
+        {
+          "after_correct": false,
+          "before_correct": false,
+          "target": "B"
+        }
+      ],
+      "block": "gpt-6-luna_argmax_A",
+      "call_id": "hidden_actual_AB",
+      "choice": "keep",
+      "elapsed_seconds": 6.62884833291173,
+      "model": "gpt-6-luna",
+      "native_response_sha256": "70139c7758815e7327821512e9b54a401c8d0ac238bacbf20fa2c071d4e3fe64",
+      "prompt_sha256": "f4c0fb844c2a50eb77428b3c0984627856aca80da398e70eecbe0d174309281b",
+      "start": "A",
+      "status": "OK",
+      "targets": [
+        "A",
+        "B"
+      ],
+      "task": "argmax",
+      "wording": "hidden"
+    },
+    {
+      "after": "B",
+      "arm": "required",
+      "assessments": [
+        {
+          "after_correct": true,
+          "before_correct": false,
+          "target": "B"
+        }
+      ],
+      "block": "gpt-6-luna_argmax_A",
+      "call_id": "hidden_required_B",
+      "choice": "switch",
+      "elapsed_seconds": 6.915648665977642,
+      "model": "gpt-6-luna",
+      "native_response_sha256": "e4ba0d864ea51a7593f96f1657e8584fd59924a70fa6b7b7a19cbe364657d261",
+      "prompt_sha256": "30ac14550e0826ec276f32dbd3d8fe6e451cc8aacfede663f955a694e682034e",
+      "start": "A",
+      "status": "OK",
+      "targets": [
+        "B"
+      ],
+      "task": "argmax",
+      "wording": "hidden"
+    },
+    {
+      "after": "A",
+      "arm": "none",
+      "assessments": [
+        {
+          "after_correct": true,
+          "before_correct": true,
+          "target": "A"
+        },
+        {
+          "after_correct": false,
+          "before_correct": false,
+          "target": "B"
+        }
+      ],
+      "block": "gpt-6-luna_argmax_A",
+      "call_id": "hidden_none_AB",
+      "choice": "keep",
+      "elapsed_seconds": 6.107157958904281,
+      "model": "gpt-6-luna",
+      "native_response_sha256": "1c0ff5dd60f7eb957f00a387b71c36a536fdeadada564fb942edf5000a53d0e7",
+      "prompt_sha256": "83910105222a23bfff2656894565f25c9b50ade181bb0dbbf2603e836507c779",
+      "start": "A",
+      "status": "OK",
+      "targets": [
+        "A",
+        "B"
+      ],
+      "task": "argmax",
+      "wording": "hidden"
+    },
+    {
+      "after": "A",
+      "arm": "required",
+      "assessments": [
+        {
+          "after_correct": true,
+          "before_correct": true,
+          "target": "A"
+        }
+      ],
+      "block": "gpt-6-luna_argmax_A",
+      "call_id": "explicit_required_A",
+      "choice": "keep",
+      "elapsed_seconds": 5.9448070409707725,
+      "model": "gpt-6-luna",
+      "native_response_sha256": "ea82cdfd375a61f637acb284e2863db646313eafc18f4c8e9ab900afed4f9e08",
+      "prompt_sha256": "2902eebc61085277fefd6b76f4cad91309056ba9ed1c87b6bb8eb4d4ea01a9a2",
+      "start": "A",
+      "status": "OK",
+      "targets": [
+        "A"
+      ],
+      "task": "argmax",
+      "wording": "explicit"
+    },
+    {
+      "after": "B",
+      "arm": "actual",
+      "assessments": [
+        {
+          "after_correct": true,
+          "before_correct": false,
+          "target": "B"
+        }
+      ],
+      "block": "gpt-6-luna_argmax_A",
+      "call_id": "explicit_actual_B",
+      "choice": "switch",
+      "elapsed_seconds": 5.769464999902993,
+      "model": "gpt-6-luna",
+      "native_response_sha256": "3d384a72db37deb1bcd40f801003e7bd20ac0ffd331dee1a13eb9cac8ed450b2",
+      "prompt_sha256": "d0049336d885de8f7c07d359827a783b13c880f2de32288645997b051476b4c3",
+      "start": "A",
+      "status": "OK",
+      "targets": [
+        "B"
+      ],
+      "task": "argmax",
+      "wording": "explicit"
+    },
+    {
+      "after": "A",
+      "arm": "required",
+      "assessments": [
+        {
+          "after_correct": true,
+          "before_correct": true,
+          "target": "A"
+        }
+      ],
+      "block": "gpt-6-luna_argmax_A",
+      "call_id": "hidden_required_A",
+      "choice": "keep",
+      "elapsed_seconds": 6.0761255419347435,
+      "model": "gpt-6-luna",
+      "native_response_sha256": "32824b5da08b5badbf77cacac584a09ec808e9f5b941e8a1071230f997edd616",
+      "prompt_sha256": "d3af3332e83960a993055a1120636a0fba790234175c0c503b5225dc63ab7300",
+      "start": "A",
+      "status": "OK",
+      "targets": [
+        "A"
+      ],
+      "task": "argmax",
+      "wording": "hidden"
+    },
+    {
+      "after": "B",
+      "arm": "both",
+      "assessments": [
+        {
+          "after_correct": true,
+          "before_correct": false,
+          "target": "B"
+        }
+      ],
+      "block": "gpt-6-luna_argmax_A",
+      "call_id": "hidden_both_B",
+      "choice": "switch",
+      "elapsed_seconds": 6.765612083021551,
+      "model": "gpt-6-luna",
+      "native_response_sha256": "85a546ec7a8900e949e9b1274d188fcecf3550e093450fbd48906f466ad81e2d",
+      "prompt_sha256": "414f181c64dee6784ef1127d10b0c163ab7747ebc3ddcb3e9ac728033c046b30",
+      "start": "A",
+      "status": "OK",
+      "targets": [
+        "B"
+      ],
+      "task": "argmax",
+      "wording": "hidden"
+    },
+    {
+      "after": "B",
+      "arm": "required",
+      "assessments": [
+        {
+          "after_correct": true,
+          "before_correct": false,
+          "target": "B"
+        }
+      ],
+      "block": "gpt-6-luna_argmax_A",
+      "call_id": "explicit_required_B",
+      "choice": "switch",
+      "elapsed_seconds": 7.971316333161667,
+      "model": "gpt-6-luna",
+      "native_response_sha256": "67de9a4432d4b0073476055511e1a6a2884879c6209a643a3e53030e38358558",
+      "prompt_sha256": "7caf095c88a331d3458498caa03718f58a01e251e8d536623fe74cf26861628a",
+      "start": "A",
+      "status": "OK",
+      "targets": [
+        "B"
+      ],
+      "task": "argmax",
+      "wording": "explicit"
+    },
+    {
+      "after": "B",
+      "arm": "actual",
+      "assessments": [
+        {
+          "after_correct": false,
+          "before_correct": false,
+          "target": "A"
+        },
+        {
+          "after_correct": true,
+          "before_correct": true,
+          "target": "B"
+        }
+      ],
+      "block": "gpt-6.2-astra_argmax_B",
+      "call_id": "hidden_actual_AB",
+      "choice": "keep",
+      "elapsed_seconds": 8.386427625082433,
+      "model": "gpt-6.2-astra",
+      "native_response_sha256": "0124179345692bbcebc558ab96404cb5cf6aa1f8acfe3f36e46f75199cc65b6a",
+      "prompt_sha256": "7eafbb139ebd645242814fec3007b5ae4041f181318b1c316c1f94ca8a664139",
+      "start": "B",
+      "status": "OK",
+      "targets": [
+        "A",
+        "B"
+      ],
+      "task": "argmax",
+      "wording": "hidden"
+    },
+    {
+      "after": "B",
+      "arm": "none",
+      "assessments": [
+        {
+          "after_correct": true,
+          "before_correct": true,
+          "target": "B"
+        }
+      ],
+      "block": "gpt-6.2-astra_argmax_B",
+      "call_id": "explicit_none_B",
+      "choice": "keep",
+      "elapsed_seconds": 9.26407920802012,
+      "model": "gpt-6.2-astra",
+      "native_response_sha256": "61a6c2a6161e7cb65c989991f3b451320de0b7100dad01c2739742ce643eb0bd",
+      "prompt_sha256": "ba7d9baad84e0cc3e7e904de5a4eb8b09a40e6a365cb564fd6ed76049a4fff58",
+      "start": "B",
+      "status": "OK",
+      "targets": [
+        "B"
+      ],
+      "task": "argmax",
+      "wording": "explicit"
+    },
+    {
+      "after": "B",
+      "arm": "both",
+      "assessments": [
+        {
+          "after_correct": true,
+          "before_correct": true,
+          "target": "B"
+        }
+      ],
+      "block": "gpt-6.2-astra_argmax_B",
+      "call_id": "explicit_both_B",
+      "choice": "keep",
+      "elapsed_seconds": 9.842023583129048,
+      "model": "gpt-6.2-astra",
+      "native_response_sha256": "1115b9ee45861f0e9fcfff04ae6b0557dc4ddf398ada0578608385aa04ca94b3",
+      "prompt_sha256": "cea7e37d05bb27021d35f2047d831f0bf7d346e32f8480a44d3022f31914a365",
+      "start": "B",
+      "status": "OK",
+      "targets": [
+        "B"
+      ],
+      "task": "argmax",
+      "wording": "explicit"
+    },
+    {
+      "after": "A",
+      "arm": "both",
+      "assessments": [
+        {
+          "after_correct": true,
+          "before_correct": false,
+          "target": "A"
+        }
+      ],
+      "block": "gpt-6.2-astra_argmax_B",
+      "call_id": "hidden_both_A",
+      "choice": "switch",
+      "elapsed_seconds": 8.64014495909214,
+      "model": "gpt-6.2-astra",
+      "native_response_sha256": "3684c17b78e8365e98be78e7c198f0dc641f660196db65976f6a642052fa3170",
+      "prompt_sha256": "8f111b341744f7a15d1ceabc49594429780d3c11b1a486bc40cbdb354b9e0db3",
+      "start": "B",
+      "status": "OK",
+      "targets": [
+        "A"
+      ],
+      "task": "argmax",
+      "wording": "hidden"
+    },
+    {
+      "after": "A",
+      "arm": "both",
+      "assessments": [
+        {
+          "after_correct": true,
+          "before_correct": false,
+          "target": "A"
+        }
+      ],
+      "block": "gpt-6.2-astra_argmax_B",
+      "call_id": "explicit_both_A",
+      "choice": "switch",
+      "elapsed_seconds": 7.6578152498696,
+      "model": "gpt-6.2-astra",
+      "native_response_sha256": "8e55600e39161ba63883f3b59c6d52b1005960e924fbfd11928f0b10b23172c1",
+      "prompt_sha256": "375fa3b8000dc2ea4484f111e691a579bc5b56c0d433cecdc61dab0632c61d79",
+      "start": "B",
+      "status": "OK",
+      "targets": [
+        "A"
+      ],
+      "task": "argmax",
+      "wording": "explicit"
+    },
+    {
+      "after": "B",
+      "arm": "required",
+      "assessments": [
+        {
+          "after_correct": true,
+          "before_correct": true,
+          "target": "B"
+        }
+      ],
+      "block": "gpt-6.2-astra_argmax_B",
+      "call_id": "explicit_required_B",
+      "choice": "keep",
+      "elapsed_seconds": 7.268620958086103,
+      "model": "gpt-6.2-astra",
+      "native_response_sha256": "88b0c1a061cc3cd2400af22a75d57579634bdda7876c48c3e3635caeefce89e1",
+      "prompt_sha256": "6f8602e74888e64d647cd132e968594c3a7a227707c463ba0bd817f873b770d0",
+      "start": "B",
+      "status": "OK",
+      "targets": [
+        "B"
+      ],
+      "task": "argmax",
+      "wording": "explicit"
+    },
+    {
+      "after": "B",
+      "arm": "both",
+      "assessments": [
+        {
+          "after_correct": true,
+          "before_correct": true,
+          "target": "B"
+        }
+      ],
+      "block": "gpt-6.2-astra_argmax_B",
+      "call_id": "hidden_both_B",
+      "choice": "keep",
+      "elapsed_seconds": 11.138047500047833,
+      "model": "gpt-6.2-astra",
+      "native_response_sha256": "018cd29b1d05a80707e62fb44e68bc8a11994e6958971146405686901ec59e87",
+      "prompt_sha256": "df7602c0af3c05bd8f5ae85f6c79a78bca9033b76e005f6066ad9413ed1a73a9",
+      "start": "B",
+      "status": "OK",
+      "targets": [
+        "B"
+      ],
+      "task": "argmax",
+      "wording": "hidden"
+    },
+    {
+      "after": "B",
+      "arm": "none",
+      "assessments": [
+        {
+          "after_correct": false,
+          "before_correct": false,
+          "target": "A"
+        },
+        {
+          "after_correct": true,
+          "before_correct": true,
+          "target": "B"
+        }
+      ],
+      "block": "gpt-6.2-astra_argmax_B",
+      "call_id": "hidden_none_AB",
+      "choice": "keep",
+      "elapsed_seconds": 11.24010383314453,
+      "model": "gpt-6.2-astra",
+      "native_response_sha256": "94ea885cb026fb4293296d2f21473ee05bcd80cfc092d039db6e148c80e922e4",
+      "prompt_sha256": "409f1255752177dafa9525af0f7f0fe90b747bbe20a16afa3015139abac5bf69",
+      "start": "B",
+      "status": "OK",
+      "targets": [
+        "A",
+        "B"
+      ],
+      "task": "argmax",
+      "wording": "hidden"
+    },
+    {
+      "after": "A",
+      "arm": "required",
+      "assessments": [
+        {
+          "after_correct": true,
+          "before_correct": false,
+          "target": "A"
+        }
+      ],
+      "block": "gpt-6.2-astra_argmax_B",
+      "call_id": "hidden_required_A",
+      "choice": "switch",
+      "elapsed_seconds": 7.193926624953747,
+      "model": "gpt-6.2-astra",
+      "native_response_sha256": "907b7ffc96a1883be468d364b4e0ca8f5b24ab2c5b59414f1214b1b7f9b102e8",
+      "prompt_sha256": "490cf9766af9d27426be0411d03ad82c02a9f08e6e762d1dce265bb47efb72dc",
+      "start": "B",
+      "status": "OK",
+      "targets": [
+        "A"
+      ],
+      "task": "argmax",
+      "wording": "hidden"
+    },
+    {
+      "after": "B",
+      "arm": "actual",
+      "assessments": [
+        {
+          "after_correct": true,
+          "before_correct": true,
+          "target": "B"
+        }
+      ],
+      "block": "gpt-6.2-astra_argmax_B",
+      "call_id": "explicit_actual_B",
+      "choice": "keep",
+      "elapsed_seconds": 10.628293042071164,
+      "model": "gpt-6.2-astra",
+      "native_response_sha256": "fab284dbb31dbaacc17ab853bb7e2d6f1c0ed4ba4e109a5f88504d37b9531f63",
+      "prompt_sha256": "e421ab45291c63fba6a6a82b7ea626d9d5b9eb2f63995dceca25785caf6ed21e",
+      "start": "B",
+      "status": "OK",
+      "targets": [
+        "B"
+      ],
+      "task": "argmax",
+      "wording": "explicit"
+    },
+    {
+      "after": "B",
+      "arm": "required",
+      "assessments": [
+        {
+          "after_correct": true,
+          "before_correct": true,
+          "target": "B"
+        }
+      ],
+      "block": "gpt-6.2-astra_argmax_B",
+      "call_id": "hidden_required_B",
+      "choice": "keep",
+      "elapsed_seconds": 7.749695958103985,
+      "model": "gpt-6.2-astra",
+      "native_response_sha256": "2099ddd6de6043f2a23da30303e81f6cf943904bc831a7e89ae17d1e58b51a2c",
+      "prompt_sha256": "f0236a1e2753e30d39d13c48f9eb8ff1a02984425fdab63747f6e9d3875dc9c2",
+      "start": "B",
+      "status": "OK",
+      "targets": [
+        "B"
+      ],
+      "task": "argmax",
+      "wording": "hidden"
+    },
+    {
+      "after": "A",
+      "arm": "required",
+      "assessments": [
+        {
+          "after_correct": true,
+          "before_correct": false,
+          "target": "A"
+        }
+      ],
+      "block": "gpt-6.2-astra_argmax_B",
+      "call_id": "explicit_required_A",
+      "choice": "switch",
+      "elapsed_seconds": 7.760972749907523,
+      "model": "gpt-6.2-astra",
+      "native_response_sha256": "de655bfc3011b417f2e011808c276eaf2077516e38a01dbe319ee62b342ea6ba",
+      "prompt_sha256": "6eb1b5fb9b49e2db2f7313ddf92103621e773ce40b80ce3c8d39e5cfbdbe5218",
+      "start": "B",
+      "status": "OK",
+      "targets": [
+        "A"
+      ],
+      "task": "argmax",
+      "wording": "explicit"
+    },
+    {
+      "after": "A",
+      "arm": "actual",
+      "assessments": [
+        {
+          "after_correct": true,
+          "before_correct": false,
+          "target": "A"
+        }
+      ],
+      "block": "gpt-6.2-astra_argmax_B",
+      "call_id": "explicit_actual_A",
+      "choice": "switch",
+      "elapsed_seconds": 6.018969124881551,
+      "model": "gpt-6.2-astra",
+      "native_response_sha256": "b8cf16334ffc4fc7d8d2b9baea86a2428467dec767faf7bcefd00181c0995666",
+      "prompt_sha256": "2b6f90e7c3d42e4c8ec04cfa9f281bc40528c00e9e777cca74a25bb70319a1e7",
+      "start": "B",
+      "status": "OK",
+      "targets": [
+        "A"
+      ],
+      "task": "argmax",
+      "wording": "explicit"
+    },
+    {
+      "after": "A",
+      "arm": "none",
+      "assessments": [
+        {
+          "after_correct": true,
+          "before_correct": false,
+          "target": "A"
+        }
+      ],
+      "block": "gpt-6.2-astra_argmax_B",
+      "call_id": "explicit_none_A",
+      "choice": "switch",
+      "elapsed_seconds": 7.997274416964501,
+      "model": "gpt-6.2-astra",
+      "native_response_sha256": "f372259a42ad665eee478a25b955bd6ca4fa4f8bdf5ed3023f71fdf2f0abff41",
+      "prompt_sha256": "f9f90440752008a7be16dbb3f953127e7fe5b1db184e400f8d76fbce0be4f1c4",
+      "start": "B",
+      "status": "OK",
+      "targets": [
+        "A"
+      ],
+      "task": "argmax",
+      "wording": "explicit"
+    },
+    {
+      "after": null,
+      "arm": "required",
+      "assessments": [],
+      "block": "gpt-6.2-astra_sort_B",
+      "call_id": "hidden_required_B",
+      "choice": null,
+      "model": "gpt-6.2-astra",
+      "prompt_sha256": "a64c293b2a0fabe6ed3247407a7d8827a1d7c8bdf530506150b415509d6f6b07",
+      "start": "B",
+      "status": "UNSTARTED",
+      "targets": [
+        "B"
+      ],
+      "task": "sort",
+      "wording": "hidden"
+    },
+    {
+      "after": null,
+      "arm": "required",
+      "assessments": [],
+      "block": "gpt-6.2-astra_sort_B",
+      "call_id": "explicit_required_A",
+      "choice": null,
+      "model": "gpt-6.2-astra",
+      "prompt_sha256": "3863ba9bcdd234d4f536bf5d9b60651af075240979b8c4e5e9d8c932e3003870",
+      "start": "B",
+      "status": "UNSTARTED",
+      "targets": [
+        "A"
+      ],
+      "task": "sort",
+      "wording": "explicit"
+    },
+    {
+      "after": null,
+      "arm": "actual",
+      "assessments": [],
+      "block": "gpt-6.2-astra_sort_B",
+      "call_id": "explicit_actual_A",
+      "choice": null,
+      "model": "gpt-6.2-astra",
+      "prompt_sha256": "11b47ca24a2d70f150deb7190ecd0d68ce9362e5860a56cba22f68165ec328c3",
+      "start": "B",
+      "status": "UNSTARTED",
+      "targets": [
+        "A"
+      ],
+      "task": "sort",
+      "wording": "explicit"
+    },
+    {
+      "after": null,
+      "arm": "required",
+      "assessments": [],
+      "block": "gpt-6.2-astra_sort_B",
+      "call_id": "hidden_required_A",
+      "choice": null,
+      "model": "gpt-6.2-astra",
+      "prompt_sha256": "e6cb56100e7201c6f42bbfa32e70ed9de4261bd1c7a31b07794e9a0ab502d0ea",
+      "start": "B",
+      "status": "UNSTARTED",
+      "targets": [
+        "A"
+      ],
+      "task": "sort",
+      "wording": "hidden"
+    },
+    {
+      "after": null,
+      "arm": "actual",
+      "assessments": [],
+      "block": "gpt-6.2-astra_sort_B",
+      "call_id": "explicit_actual_B",
+      "choice": null,
+      "model": "gpt-6.2-astra",
+      "prompt_sha256": "9602722ce36ae6465791485c78166e9307e25be917ad056cc0509d5b367ea58f",
+      "start": "B",
+      "status": "UNSTARTED",
+      "targets": [
+        "B"
+      ],
+      "task": "sort",
+      "wording": "explicit"
+    },
+    {
+      "after": null,
+      "arm": "required",
+      "assessments": [],
+      "block": "gpt-6.2-astra_sort_B",
+      "call_id": "explicit_required_B",
+      "choice": null,
+      "model": "gpt-6.2-astra",
+      "prompt_sha256": "d6abd767eca78c0d368383a8c7d61f06ae03875f80a360b24be1b4c7a6a07953",
+      "start": "B",
+      "status": "UNSTARTED",
+      "targets": [
+        "B"
+      ],
+      "task": "sort",
+      "wording": "explicit"
+    },
+    {
+      "after": null,
+      "arm": "none",
+      "assessments": [],
+      "block": "gpt-6.2-astra_sort_B",
+      "call_id": "hidden_none_AB",
+      "choice": null,
+      "model": "gpt-6.2-astra",
+      "prompt_sha256": "1878f99b59534aaeb8864754e46b969ac0b65bee3866722424ed3f90d72a98c0",
+      "start": "B",
+      "status": "UNSTARTED",
+      "targets": [
+        "A",
+        "B"
+      ],
+      "task": "sort",
+      "wording": "hidden"
+    },
+    {
+      "after": null,
+      "arm": "none",
+      "assessments": [],
+      "block": "gpt-6.2-astra_sort_B",
+      "call_id": "explicit_none_A",
+      "choice": null,
+      "model": "gpt-6.2-astra",
+      "prompt_sha256": "2ffff2b767d4308642f8229860438ea7117b4fd828bd9538f61ee0e930ceaefc",
+      "start": "B",
+      "status": "UNSTARTED",
+      "targets": [
+        "A"
+      ],
+      "task": "sort",
+      "wording": "explicit"
+    },
+    {
+      "after": null,
+      "arm": "both",
+      "assessments": [],
+      "block": "gpt-6.2-astra_sort_B",
+      "call_id": "explicit_both_A",
+      "choice": null,
+      "model": "gpt-6.2-astra",
+      "prompt_sha256": "e97793b0180668bb41cc4991842b3d3e33c18647ce3efb0d32fb9041dbe710b5",
+      "start": "B",
+      "status": "UNSTARTED",
+      "targets": [
+        "A"
+      ],
+      "task": "sort",
+      "wording": "explicit"
+    },
+    {
+      "after": null,
+      "arm": "both",
+      "assessments": [],
+      "block": "gpt-6.2-astra_sort_B",
+      "call_id": "explicit_both_B",
+      "choice": null,
+      "model": "gpt-6.2-astra",
+      "prompt_sha256": "b1a8fe385cbf1092e58c3ae13c12fcba0d024493a01f172496a6fdc07c4d8105",
+      "start": "B",
+      "status": "UNSTARTED",
+      "targets": [
+        "B"
+      ],
+      "task": "sort",
+      "wording": "explicit"
+    },
+    {
+      "after": null,
+      "arm": "both",
+      "assessments": [],
+      "block": "gpt-6.2-astra_sort_B",
+      "call_id": "hidden_both_A",
+      "choice": null,
+      "model": "gpt-6.2-astra",
+      "prompt_sha256": "723f95b65710997d5deffcbbca8356b826d89b837bf75986e324cf31ae927a86",
+      "start": "B",
+      "status": "UNSTARTED",
+      "targets": [
+        "A"
+      ],
+      "task": "sort",
+      "wording": "hidden"
+    },
+    {
+      "after": null,
+      "arm": "actual",
+      "assessments": [],
+      "block": "gpt-6.2-astra_sort_B",
+      "call_id": "hidden_actual_AB",
+      "choice": null,
+      "model": "gpt-6.2-astra",
+      "prompt_sha256": "d1a1bf7e95a60aac467451f8fbcf4f1355210b82b9fe8f57e3a9291455fdf5d4",
+      "start": "B",
+      "status": "UNSTARTED",
+      "targets": [
+        "A",
+        "B"
+      ],
+      "task": "sort",
+      "wording": "hidden"
+    },
+    {
+      "after": null,
+      "arm": "none",
+      "assessments": [],
+      "block": "gpt-6.2-astra_sort_B",
+      "call_id": "explicit_none_B",
+      "choice": null,
+      "model": "gpt-6.2-astra",
+      "prompt_sha256": "003ed93583dc2713c5be2142358ea43b79f920a3bb3678e020216261f8b4ffb9",
+      "start": "B",
+      "status": "UNSTARTED",
+      "targets": [
+        "B"
+      ],
+      "task": "sort",
+      "wording": "explicit"
+    },
+    {
+      "after": null,
+      "arm": "both",
+      "assessments": [],
+      "block": "gpt-6.2-astra_sort_B",
+      "call_id": "hidden_both_B",
+      "choice": null,
+      "model": "gpt-6.2-astra",
+      "prompt_sha256": "be2954c41e5defe0a03a67c554dc4a5eed099c0c72a736dd10a95976c4e14490",
+      "start": "B",
+      "status": "UNSTARTED",
+      "targets": [
+        "B"
+      ],
+      "task": "sort",
+      "wording": "hidden"
+    },
+    {
+      "after": null,
+      "arm": "both",
+      "assessments": [],
+      "block": "gpt-6-luna_sort_A",
+      "call_id": "hidden_both_B",
+      "choice": null,
+      "model": "gpt-6-luna",
+      "prompt_sha256": "59a6d5d6b7876725564b10553722edc7f2d9751a5bf7a60e62992d8a9bd2793a",
+      "start": "A",
+      "status": "UNSTARTED",
+      "targets": [
+        "B"
+      ],
+      "task": "sort",
+      "wording": "hidden"
+    },
+    {
+      "after": null,
+      "arm": "both",
+      "assessments": [],
+      "block": "gpt-6-luna_sort_A",
+      "call_id": "explicit_both_B",
+      "choice": null,
+      "model": "gpt-6-luna",
+      "prompt_sha256": "9c79330a2d6f18cffb2a3a69f0212f3c206a721c5cf9a7e8f4b200a4d4dbc06b",
+      "start": "A",
+      "status": "UNSTARTED",
+      "targets": [
+        "B"
+      ],
+      "task": "sort",
+      "wording": "explicit"
+    },
+    {
+      "after": null,
+      "arm": "none",
+      "assessments": [],
+      "block": "gpt-6-luna_sort_A",
+      "call_id": "explicit_none_A",
+      "choice": null,
+      "model": "gpt-6-luna",
+      "prompt_sha256": "7c92e79a921d023520791c6767130bc9c57df6b2d08236d3da022803007ab917",
+      "start": "A",
+      "status": "UNSTARTED",
+      "targets": [
+        "A"
+      ],
+      "task": "sort",
+      "wording": "explicit"
+    },
+    {
+      "after": null,
+      "arm": "required",
+      "assessments": [],
+      "block": "gpt-6-luna_sort_A",
+      "call_id": "hidden_required_A",
+      "choice": null,
+      "model": "gpt-6-luna",
+      "prompt_sha256": "d841d5c813e4cceef5c67bc2a2f2fd866615a0482a992a21c6e55d39063ebcd5",
+      "start": "A",
+      "status": "UNSTARTED",
+      "targets": [
+        "A"
+      ],
+      "task": "sort",
+      "wording": "hidden"
+    },
+    {
+      "after": null,
+      "arm": "actual",
+      "assessments": [],
+      "block": "gpt-6-luna_sort_A",
+      "call_id": "explicit_actual_A",
+      "choice": null,
+      "model": "gpt-6-luna",
+      "prompt_sha256": "f2ac7ecc4d98c43d4b21848e4062ca26aefeebd58b7af247e58ec0d32350250f",
+      "start": "A",
+      "status": "UNSTARTED",
+      "targets": [
+        "A"
+      ],
+      "task": "sort",
+      "wording": "explicit"
+    },
+    {
+      "after": null,
+      "arm": "actual",
+      "assessments": [],
+      "block": "gpt-6-luna_sort_A",
+      "call_id": "hidden_actual_AB",
+      "choice": null,
+      "model": "gpt-6-luna",
+      "prompt_sha256": "3776bbc00a15ce1215594a89c6b940751964213599a2f9f67a61b1bb676c57f3",
+      "start": "A",
+      "status": "UNSTARTED",
+      "targets": [
+        "A",
+        "B"
+      ],
+      "task": "sort",
+      "wording": "hidden"
+    },
+    {
+      "after": null,
+      "arm": "required",
+      "assessments": [],
+      "block": "gpt-6-luna_sort_A",
+      "call_id": "explicit_required_A",
+      "choice": null,
+      "model": "gpt-6-luna",
+      "prompt_sha256": "d759c05d2c1a468324d37b8a80f591fd3dfa31ed3e754419e118a857f084cf78",
+      "start": "A",
+      "status": "UNSTARTED",
+      "targets": [
+        "A"
+      ],
+      "task": "sort",
+      "wording": "explicit"
+    },
+    {
+      "after": null,
+      "arm": "none",
+      "assessments": [],
+      "block": "gpt-6-luna_sort_A",
+      "call_id": "explicit_none_B",
+      "choice": null,
+      "model": "gpt-6-luna",
+      "prompt_sha256": "7be7850b4d6126c4bfddf9a303a63d2824f45fdd2a7eb9f658f311ce44076b53",
+      "start": "A",
+      "status": "UNSTARTED",
+      "targets": [
+        "B"
+      ],
+      "task": "sort",
+      "wording": "explicit"
+    },
+    {
+      "after": null,
+      "arm": "both",
+      "assessments": [],
+      "block": "gpt-6-luna_sort_A",
+      "call_id": "hidden_both_A",
+      "choice": null,
+      "model": "gpt-6-luna",
+      "prompt_sha256": "e83480064fe57da198fc939a19c4824182b2c8b8e055d5b38b64ca481641e987",
+      "start": "A",
+      "status": "UNSTARTED",
+      "targets": [
+        "A"
+      ],
+      "task": "sort",
+      "wording": "hidden"
+    },
+    {
+      "after": null,
+      "arm": "both",
+      "assessments": [],
+      "block": "gpt-6-luna_sort_A",
+      "call_id": "explicit_both_A",
+      "choice": null,
+      "model": "gpt-6-luna",
+      "prompt_sha256": "bedc361ca942e12bce83c51e46a41aefd12dcde8b96b9a0a78c01bdda971c8e8",
+      "start": "A",
+      "status": "UNSTARTED",
+      "targets": [
+        "A"
+      ],
+      "task": "sort",
+      "wording": "explicit"
+    },
+    {
+      "after": null,
+      "arm": "actual",
+      "assessments": [],
+      "block": "gpt-6-luna_sort_A",
+      "call_id": "explicit_actual_B",
+      "choice": null,
+      "model": "gpt-6-luna",
+      "prompt_sha256": "41c29216ae48571026afa6557fcd26065943a6bbded5c357ab4c8c1462e29b81",
+      "start": "A",
+      "status": "UNSTARTED",
+      "targets": [
+        "B"
+      ],
+      "task": "sort",
+      "wording": "explicit"
+    },
+    {
+      "after": null,
+      "arm": "none",
+      "assessments": [],
+      "block": "gpt-6-luna_sort_A",
+      "call_id": "hidden_none_AB",
+      "choice": null,
+      "model": "gpt-6-luna",
+      "prompt_sha256": "2e58850ffe00b63160c05ff2b8e519d02047eccadc8a9c62e5c4606e9e58c737",
+      "start": "A",
+      "status": "UNSTARTED",
+      "targets": [
+        "A",
+        "B"
+      ],
+      "task": "sort",
+      "wording": "hidden"
+    },
+    {
+      "after": null,
+      "arm": "required",
+      "assessments": [],
+      "block": "gpt-6-luna_sort_A",
+      "call_id": "explicit_required_B",
+      "choice": null,
+      "model": "gpt-6-luna",
+      "prompt_sha256": "6805a0124901fd0919096354fec69c6fdec0f4cc0d927b8e4f175ed67b02f6a3",
+      "start": "A",
+      "status": "UNSTARTED",
+      "targets": [
+        "B"
+      ],
+      "task": "sort",
+      "wording": "explicit"
+    },
+    {
+      "after": null,
+      "arm": "required",
+      "assessments": [],
+      "block": "gpt-6-luna_sort_A",
+      "call_id": "hidden_required_B",
+      "choice": null,
+      "model": "gpt-6-luna",
+      "prompt_sha256": "28631705c2d51a066a8b36da99a98770c1fba1501e6fd35cb5d3f95ed0feb395",
+      "start": "A",
+      "status": "UNSTARTED",
+      "targets": [
+        "B"
+      ],
+      "task": "sort",
+      "wording": "hidden"
+    },
+    {
+      "after": null,
+      "arm": "required",
+      "assessments": [],
+      "block": "gpt-6-luna_round_A",
+      "call_id": "hidden_required_B",
+      "choice": null,
+      "model": "gpt-6-luna",
+      "prompt_sha256": "c2abee8ed29aefd034c45e1077c4c75b44bc77a5bc3c12b7fd27a50a90abbd47",
+      "start": "A",
+      "status": "UNSTARTED",
+      "targets": [
+        "B"
+      ],
+      "task": "round",
+      "wording": "hidden"
+    },
+    {
+      "after": null,
+      "arm": "required",
+      "assessments": [],
+      "block": "gpt-6-luna_round_A",
+      "call_id": "explicit_required_B",
+      "choice": null,
+      "model": "gpt-6-luna",
+      "prompt_sha256": "cd48842a0690556e573f5f04aba2ab350d1da9dea6399b3706a7c05489b66ca9",
+      "start": "A",
+      "status": "UNSTARTED",
+      "targets": [
+        "B"
+      ],
+      "task": "round",
+      "wording": "explicit"
+    },
+    {
+      "after": null,
+      "arm": "actual",
+      "assessments": [],
+      "block": "gpt-6-luna_round_A",
+      "call_id": "explicit_actual_A",
+      "choice": null,
+      "model": "gpt-6-luna",
+      "prompt_sha256": "5ad43019660d4efebb223dfbb5c006fb7a75e192726489e057e70fea85b57725",
+      "start": "A",
+      "status": "UNSTARTED",
+      "targets": [
+        "A"
+      ],
+      "task": "round",
+      "wording": "explicit"
+    },
+    {
+      "after": null,
+      "arm": "both",
+      "assessments": [],
+      "block": "gpt-6-luna_round_A",
+      "call_id": "explicit_both_B",
+      "choice": null,
+      "model": "gpt-6-luna",
+      "prompt_sha256": "01ba4de4f2d17a6183d45783f3519e2a34cf97dd2bf4d84a81cec49fa4e5dfa4",
+      "start": "A",
+      "status": "UNSTARTED",
+      "targets": [
+        "B"
+      ],
+      "task": "round",
+      "wording": "explicit"
+    },
+    {
+      "after": null,
+      "arm": "actual",
+      "assessments": [],
+      "block": "gpt-6-luna_round_A",
+      "call_id": "explicit_actual_B",
+      "choice": null,
+      "model": "gpt-6-luna",
+      "prompt_sha256": "379798c72b2ae6a0d4b771bfd7ef2c2e88334c8b3959c1ba8344983c68274b9b",
+      "start": "A",
+      "status": "UNSTARTED",
+      "targets": [
+        "B"
+      ],
+      "task": "round",
+      "wording": "explicit"
+    },
+    {
+      "after": null,
+      "arm": "required",
+      "assessments": [],
+      "block": "gpt-6-luna_round_A",
+      "call_id": "explicit_required_A",
+      "choice": null,
+      "model": "gpt-6-luna",
+      "prompt_sha256": "2c194a4ce28c83652c876f048fc82313f9a90cba7288b36bb83a94a4d4fe6611",
+      "start": "A",
+      "status": "UNSTARTED",
+      "targets": [
+        "A"
+      ],
+      "task": "round",
+      "wording": "explicit"
+    },
+    {
+      "after": null,
+      "arm": "none",
+      "assessments": [],
+      "block": "gpt-6-luna_round_A",
+      "call_id": "hidden_none_AB",
+      "choice": null,
+      "model": "gpt-6-luna",
+      "prompt_sha256": "3cadac142dd44e29af35a5d3df14a088a1a06af49dede9e285caf06cdaca8413",
+      "start": "A",
+      "status": "UNSTARTED",
+      "targets": [
+        "A",
+        "B"
+      ],
+      "task": "round",
+      "wording": "hidden"
+    },
+    {
+      "after": null,
+      "arm": "none",
+      "assessments": [],
+      "block": "gpt-6-luna_round_A",
+      "call_id": "explicit_none_A",
+      "choice": null,
+      "model": "gpt-6-luna",
+      "prompt_sha256": "8fa48383719b126aec66e3e3658d7a6b03714301ac2fc70d989e9fc859862fd3",
+      "start": "A",
+      "status": "UNSTARTED",
+      "targets": [
+        "A"
+      ],
+      "task": "round",
+      "wording": "explicit"
+    },
+    {
+      "after": null,
+      "arm": "both",
+      "assessments": [],
+      "block": "gpt-6-luna_round_A",
+      "call_id": "hidden_both_A",
+      "choice": null,
+      "model": "gpt-6-luna",
+      "prompt_sha256": "78590e60d4560dd5a2ed021432fc7d8108ee78c52f1084d2c881f3d16bd4356f",
+      "start": "A",
+      "status": "UNSTARTED",
+      "targets": [
+        "A"
+      ],
+      "task": "round",
+      "wording": "hidden"
+    },
+    {
+      "after": null,
+      "arm": "both",
+      "assessments": [],
+      "block": "gpt-6-luna_round_A",
+      "call_id": "hidden_both_B",
+      "choice": null,
+      "model": "gpt-6-luna",
+      "prompt_sha256": "719dd3c3483eaba820a4d9c53687de622592a8dd239af943f9408283dc895e47",
+      "start": "A",
+      "status": "UNSTARTED",
+      "targets": [
+        "B"
+      ],
+      "task": "round",
+      "wording": "hidden"
+    },
+    {
+      "after": null,
+      "arm": "none",
+      "assessments": [],
+      "block": "gpt-6-luna_round_A",
+      "call_id": "explicit_none_B",
+      "choice": null,
+      "model": "gpt-6-luna",
+      "prompt_sha256": "cfb07d81c19f0b890820b9445e5057da281b07e200ee5f6d63c2ba2534c6f1ae",
+      "start": "A",
+      "status": "UNSTARTED",
+      "targets": [
+        "B"
+      ],
+      "task": "round",
+      "wording": "explicit"
+    },
+    {
+      "after": null,
+      "arm": "required",
+      "assessments": [],
+      "block": "gpt-6-luna_round_A",
+      "call_id": "hidden_required_A",
+      "choice": null,
+      "model": "gpt-6-luna",
+      "prompt_sha256": "a04b25f7be6f89fff952849eae3e11f79b91b7479b0bd40801bc4517e3f25ec2",
+      "start": "A",
+      "status": "UNSTARTED",
+      "targets": [
+        "A"
+      ],
+      "task": "round",
+      "wording": "hidden"
+    },
+    {
+      "after": null,
+      "arm": "both",
+      "assessments": [],
+      "block": "gpt-6-luna_round_A",
+      "call_id": "explicit_both_A",
+      "choice": null,
+      "model": "gpt-6-luna",
+      "prompt_sha256": "a93bee6251657c21bc28e4a4c525884a80397bd4935ad19128c673936efe0726",
+      "start": "A",
+      "status": "UNSTARTED",
+      "targets": [
+        "A"
+      ],
+      "task": "round",
+      "wording": "explicit"
+    },
+    {
+      "after": null,
+      "arm": "actual",
+      "assessments": [],
+      "block": "gpt-6-luna_round_A",
+      "call_id": "hidden_actual_AB",
+      "choice": null,
+      "model": "gpt-6-luna",
+      "prompt_sha256": "b2b766a043411ad8ec9f3ec99fb4847ae1f9ad1971f774e6f6f5fb360f54c924",
+      "start": "A",
+      "status": "UNSTARTED",
+      "targets": [
+        "A",
+        "B"
+      ],
+      "task": "round",
+      "wording": "hidden"
+    },
+    {
+      "after": null,
+      "arm": "none",
+      "assessments": [],
+      "block": "gpt-6.2-astra_round_B",
+      "call_id": "explicit_none_A",
+      "choice": null,
+      "model": "gpt-6.2-astra",
+      "prompt_sha256": "1e19016a3595a6963db6071ff3555a9d401727f0bb1ce8dda20e8a02e254ff1e",
+      "start": "B",
+      "status": "UNSTARTED",
+      "targets": [
+        "A"
+      ],
+      "task": "round",
+      "wording": "explicit"
+    },
+    {
+      "after": null,
+      "arm": "required",
+      "assessments": [],
+      "block": "gpt-6.2-astra_round_B",
+      "call_id": "explicit_required_A",
+      "choice": null,
+      "model": "gpt-6.2-astra",
+      "prompt_sha256": "f1c7b374c1a08012800c3407f506815507033c2ae1e7b5816704734c5590f61e",
+      "start": "B",
+      "status": "UNSTARTED",
+      "targets": [
+        "A"
+      ],
+      "task": "round",
+      "wording": "explicit"
+    },
+    {
+      "after": null,
+      "arm": "both",
+      "assessments": [],
+      "block": "gpt-6.2-astra_round_B",
+      "call_id": "hidden_both_A",
+      "choice": null,
+      "model": "gpt-6.2-astra",
+      "prompt_sha256": "0d20aef241970c289f4166c249dd55963d147c0aab5e72fd832246eff2e5fea5",
+      "start": "B",
+      "status": "UNSTARTED",
+      "targets": [
+        "A"
+      ],
+      "task": "round",
+      "wording": "hidden"
+    },
+    {
+      "after": null,
+      "arm": "none",
+      "assessments": [],
+      "block": "gpt-6.2-astra_round_B",
+      "call_id": "hidden_none_AB",
+      "choice": null,
+      "model": "gpt-6.2-astra",
+      "prompt_sha256": "e22f8b16a04127cf65d7f7474f258b5d8936f1137b2bf5f863ab50229c024a25",
+      "start": "B",
+      "status": "UNSTARTED",
+      "targets": [
+        "A",
+        "B"
+      ],
+      "task": "round",
+      "wording": "hidden"
+    },
+    {
+      "after": null,
+      "arm": "actual",
+      "assessments": [],
+      "block": "gpt-6.2-astra_round_B",
+      "call_id": "explicit_actual_A",
+      "choice": null,
+      "model": "gpt-6.2-astra",
+      "prompt_sha256": "b201013c4e9fca43e2bcdd9a28c04019a9ae50c1130b73f9d4b03e53ac6785d2",
+      "start": "B",
+      "status": "UNSTARTED",
+      "targets": [
+        "A"
+      ],
+      "task": "round",
+      "wording": "explicit"
+    },
+    {
+      "after": null,
+      "arm": "none",
+      "assessments": [],
+      "block": "gpt-6.2-astra_round_B",
+      "call_id": "explicit_none_B",
+      "choice": null,
+      "model": "gpt-6.2-astra",
+      "prompt_sha256": "0693ac3b6da5d9510319616b801a9c4e073ea0e55aaea2904875feb191324a99",
+      "start": "B",
+      "status": "UNSTARTED",
+      "targets": [
+        "B"
+      ],
+      "task": "round",
+      "wording": "explicit"
+    },
+    {
+      "after": null,
+      "arm": "required",
+      "assessments": [],
+      "block": "gpt-6.2-astra_round_B",
+      "call_id": "hidden_required_A",
+      "choice": null,
+      "model": "gpt-6.2-astra",
+      "prompt_sha256": "40409569726e405c2e0840db1bb9ac6d0ace084e33d99d6f8913c24ff609aaa8",
+      "start": "B",
+      "status": "UNSTARTED",
+      "targets": [
+        "A"
+      ],
+      "task": "round",
+      "wording": "hidden"
+    },
+    {
+      "after": null,
+      "arm": "required",
+      "assessments": [],
+      "block": "gpt-6.2-astra_round_B",
+      "call_id": "explicit_required_B",
+      "choice": null,
+      "model": "gpt-6.2-astra",
+      "prompt_sha256": "dff76874b993b1ff2ae1f39f0ac823f01a5bd268101d60cd42e27d28543b8a76",
+      "start": "B",
+      "status": "UNSTARTED",
+      "targets": [
+        "B"
+      ],
+      "task": "round",
+      "wording": "explicit"
+    },
+    {
+      "after": null,
+      "arm": "required",
+      "assessments": [],
+      "block": "gpt-6.2-astra_round_B",
+      "call_id": "hidden_required_B",
+      "choice": null,
+      "model": "gpt-6.2-astra",
+      "prompt_sha256": "7a06ad8a2de2ef970e7dbfd376cadfcc3e4cb7f2a2c384fcd53a88c6d30c6028",
+      "start": "B",
+      "status": "UNSTARTED",
+      "targets": [
+        "B"
+      ],
+      "task": "round",
+      "wording": "hidden"
+    },
+    {
+      "after": null,
+      "arm": "both",
+      "assessments": [],
+      "block": "gpt-6.2-astra_round_B",
+      "call_id": "hidden_both_B",
+      "choice": null,
+      "model": "gpt-6.2-astra",
+      "prompt_sha256": "ee1d4d21bc9aca566677f13089f5fba722fd33ae3315cc6cfe684ab584fb88f7",
+      "start": "B",
+      "status": "UNSTARTED",
+      "targets": [
+        "B"
+      ],
+      "task": "round",
+      "wording": "hidden"
+    },
+    {
+      "after": null,
+      "arm": "actual",
+      "assessments": [],
+      "block": "gpt-6.2-astra_round_B",
+      "call_id": "hidden_actual_AB",
+      "choice": null,
+      "model": "gpt-6.2-astra",
+      "prompt_sha256": "24cf0a00d205cf14a1017d891e2a145df1a454b7a5a7182cc20912e04e70a461",
+      "start": "B",
+      "status": "UNSTARTED",
+      "targets": [
+        "A",
+        "B"
+      ],
+      "task": "round",
+      "wording": "hidden"
+    },
+    {
+      "after": null,
+      "arm": "actual",
+      "assessments": [],
+      "block": "gpt-6.2-astra_round_B",
+      "call_id": "explicit_actual_B",
+      "choice": null,
+      "model": "gpt-6.2-astra",
+      "prompt_sha256": "0b8178d0daff331c2acb5a172f552ca8de0abcc133857da9157df7ef2b7e0555",
+      "start": "B",
+      "status": "UNSTARTED",
+      "targets": [
+        "B"
+      ],
+      "task": "round",
+      "wording": "explicit"
+    },
+    {
+      "after": null,
+      "arm": "both",
+      "assessments": [],
+      "block": "gpt-6.2-astra_round_B",
+      "call_id": "explicit_both_B",
+      "choice": null,
+      "model": "gpt-6.2-astra",
+      "prompt_sha256": "6155d6dd27b273eeaa7b7df97641a7cd825463a40b306065bcd7e615a2b0410d",
+      "start": "B",
+      "status": "UNSTARTED",
+      "targets": [
+        "B"
+      ],
+      "task": "round",
+      "wording": "explicit"
+    },
+    {
+      "after": null,
+      "arm": "both",
+      "assessments": [],
+      "block": "gpt-6.2-astra_round_B",
+      "call_id": "explicit_both_A",
+      "choice": null,
+      "model": "gpt-6.2-astra",
+      "prompt_sha256": "6812598a12ed964026be1e12c813297de31a0868580328857dcf5ed9354ad616",
+      "start": "B",
+      "status": "UNSTARTED",
+      "targets": [
+        "A"
+      ],
+      "task": "round",
+      "wording": "explicit"
+    },
+    {
+      "after": null,
+      "arm": "both",
+      "assessments": [],
+      "block": "gpt-6-luna_argmax_B",
+      "call_id": "hidden_both_B",
+      "choice": null,
+      "model": "gpt-6-luna",
+      "prompt_sha256": "df7602c0af3c05bd8f5ae85f6c79a78bca9033b76e005f6066ad9413ed1a73a9",
+      "start": "B",
+      "status": "UNSTARTED",
+      "targets": [
+        "B"
+      ],
+      "task": "argmax",
+      "wording": "hidden"
+    },
+    {
+      "after": null,
+      "arm": "required",
+      "assessments": [],
+      "block": "gpt-6-luna_argmax_B",
+      "call_id": "hidden_required_A",
+      "choice": null,
+      "model": "gpt-6-luna",
+      "prompt_sha256": "490cf9766af9d27426be0411d03ad82c02a9f08e6e762d1dce265bb47efb72dc",
+      "start": "B",
+      "status": "UNSTARTED",
+      "targets": [
+        "A"
+      ],
+      "task": "argmax",
+      "wording": "hidden"
+    },
+    {
+      "after": null,
+      "arm": "none",
+      "assessments": [],
+      "block": "gpt-6-luna_argmax_B",
+      "call_id": "hidden_none_AB",
+      "choice": null,
+      "model": "gpt-6-luna",
+      "prompt_sha256": "409f1255752177dafa9525af0f7f0fe90b747bbe20a16afa3015139abac5bf69",
+      "start": "B",
+      "status": "UNSTARTED",
+      "targets": [
+        "A",
+        "B"
+      ],
+      "task": "argmax",
+      "wording": "hidden"
+    },
+    {
+      "after": null,
+      "arm": "both",
+      "assessments": [],
+      "block": "gpt-6-luna_argmax_B",
+      "call_id": "hidden_both_A",
+      "choice": null,
+      "model": "gpt-6-luna",
+      "prompt_sha256": "8f111b341744f7a15d1ceabc49594429780d3c11b1a486bc40cbdb354b9e0db3",
+      "start": "B",
+      "status": "UNSTARTED",
+      "targets": [
+        "A"
+      ],
+      "task": "argmax",
+      "wording": "hidden"
+    },
+    {
+      "after": null,
+      "arm": "none",
+      "assessments": [],
+      "block": "gpt-6-luna_argmax_B",
+      "call_id": "explicit_none_A",
+      "choice": null,
+      "model": "gpt-6-luna",
+      "prompt_sha256": "f9f90440752008a7be16dbb3f953127e7fe5b1db184e400f8d76fbce0be4f1c4",
+      "start": "B",
+      "status": "UNSTARTED",
+      "targets": [
+        "A"
+      ],
+      "task": "argmax",
+      "wording": "explicit"
+    },
+    {
+      "after": null,
+      "arm": "actual",
+      "assessments": [],
+      "block": "gpt-6-luna_argmax_B",
+      "call_id": "explicit_actual_A",
+      "choice": null,
+      "model": "gpt-6-luna",
+      "prompt_sha256": "2b6f90e7c3d42e4c8ec04cfa9f281bc40528c00e9e777cca74a25bb70319a1e7",
+      "start": "B",
+      "status": "UNSTARTED",
+      "targets": [
+        "A"
+      ],
+      "task": "argmax",
+      "wording": "explicit"
+    },
+    {
+      "after": null,
+      "arm": "required",
+      "assessments": [],
+      "block": "gpt-6-luna_argmax_B",
+      "call_id": "explicit_required_B",
+      "choice": null,
+      "model": "gpt-6-luna",
+      "prompt_sha256": "6f8602e74888e64d647cd132e968594c3a7a227707c463ba0bd817f873b770d0",
+      "start": "B",
+      "status": "UNSTARTED",
+      "targets": [
+        "B"
+      ],
+      "task": "argmax",
+      "wording": "explicit"
+    },
+    {
+      "after": null,
+      "arm": "both",
+      "assessments": [],
+      "block": "gpt-6-luna_argmax_B",
+      "call_id": "explicit_both_B",
+      "choice": null,
+      "model": "gpt-6-luna",
+      "prompt_sha256": "cea7e37d05bb27021d35f2047d831f0bf7d346e32f8480a44d3022f31914a365",
+      "start": "B",
+      "status": "UNSTARTED",
+      "targets": [
+        "B"
+      ],
+      "task": "argmax",
+      "wording": "explicit"
+    },
+    {
+      "after": null,
+      "arm": "actual",
+      "assessments": [],
+      "block": "gpt-6-luna_argmax_B",
+      "call_id": "explicit_actual_B",
+      "choice": null,
+      "model": "gpt-6-luna",
+      "prompt_sha256": "e421ab45291c63fba6a6a82b7ea626d9d5b9eb2f63995dceca25785caf6ed21e",
+      "start": "B",
+      "status": "UNSTARTED",
+      "targets": [
+        "B"
+      ],
+      "task": "argmax",
+      "wording": "explicit"
+    },
+    {
+      "after": null,
+      "arm": "required",
+      "assessments": [],
+      "block": "gpt-6-luna_argmax_B",
+      "call_id": "explicit_required_A",
+      "choice": null,
+      "model": "gpt-6-luna",
+      "prompt_sha256": "6eb1b5fb9b49e2db2f7313ddf92103621e773ce40b80ce3c8d39e5cfbdbe5218",
+      "start": "B",
+      "status": "UNSTARTED",
+      "targets": [
+        "A"
+      ],
+      "task": "argmax",
+      "wording": "explicit"
+    },
+    {
+      "after": null,
+      "arm": "actual",
+      "assessments": [],
+      "block": "gpt-6-luna_argmax_B",
+      "call_id": "hidden_actual_AB",
+      "choice": null,
+      "model": "gpt-6-luna",
+      "prompt_sha256": "7eafbb139ebd645242814fec3007b5ae4041f181318b1c316c1f94ca8a664139",
+      "start": "B",
+      "status": "UNSTARTED",
+      "targets": [
+        "A",
+        "B"
+      ],
+      "task": "argmax",
+      "wording": "hidden"
+    },
+    {
+      "after": null,
+      "arm": "none",
+      "assessments": [],
+      "block": "gpt-6-luna_argmax_B",
+      "call_id": "explicit_none_B",
+      "choice": null,
+      "model": "gpt-6-luna",
+      "prompt_sha256": "ba7d9baad84e0cc3e7e904de5a4eb8b09a40e6a365cb564fd6ed76049a4fff58",
+      "start": "B",
+      "status": "UNSTARTED",
+      "targets": [
+        "B"
+      ],
+      "task": "argmax",
+      "wording": "explicit"
+    },
+    {
+      "after": null,
+      "arm": "both",
+      "assessments": [],
+      "block": "gpt-6-luna_argmax_B",
+      "call_id": "explicit_both_A",
+      "choice": null,
+      "model": "gpt-6-luna",
+      "prompt_sha256": "375fa3b8000dc2ea4484f111e691a579bc5b56c0d433cecdc61dab0632c61d79",
+      "start": "B",
+      "status": "UNSTARTED",
+      "targets": [
+        "A"
+      ],
+      "task": "argmax",
+      "wording": "explicit"
+    },
+    {
+      "after": null,
+      "arm": "required",
+      "assessments": [],
+      "block": "gpt-6-luna_argmax_B",
+      "call_id": "hidden_required_B",
+      "choice": null,
+      "model": "gpt-6-luna",
+      "prompt_sha256": "f0236a1e2753e30d39d13c48f9eb8ff1a02984425fdab63747f6e9d3875dc9c2",
+      "start": "B",
+      "status": "UNSTARTED",
+      "targets": [
+        "B"
+      ],
+      "task": "argmax",
+      "wording": "hidden"
+    },
+    {
+      "after": null,
+      "arm": "none",
+      "assessments": [],
+      "block": "gpt-6.2-astra_argmax_A",
+      "call_id": "hidden_none_AB",
+      "choice": null,
+      "model": "gpt-6.2-astra",
+      "prompt_sha256": "83910105222a23bfff2656894565f25c9b50ade181bb0dbbf2603e836507c779",
+      "start": "A",
+      "status": "UNSTARTED",
+      "targets": [
+        "A",
+        "B"
+      ],
+      "task": "argmax",
+      "wording": "hidden"
+    },
+    {
+      "after": null,
+      "arm": "actual",
+      "assessments": [],
+      "block": "gpt-6.2-astra_argmax_A",
+      "call_id": "hidden_actual_AB",
+      "choice": null,
+      "model": "gpt-6.2-astra",
+      "prompt_sha256": "f4c0fb844c2a50eb77428b3c0984627856aca80da398e70eecbe0d174309281b",
+      "start": "A",
+      "status": "UNSTARTED",
+      "targets": [
+        "A",
+        "B"
+      ],
+      "task": "argmax",
+      "wording": "hidden"
+    },
+    {
+      "after": null,
+      "arm": "both",
+      "assessments": [],
+      "block": "gpt-6.2-astra_argmax_A",
+      "call_id": "hidden_both_B",
+      "choice": null,
+      "model": "gpt-6.2-astra",
+      "prompt_sha256": "414f181c64dee6784ef1127d10b0c163ab7747ebc3ddcb3e9ac728033c046b30",
+      "start": "A",
+      "status": "UNSTARTED",
+      "targets": [
+        "B"
+      ],
+      "task": "argmax",
+      "wording": "hidden"
+    },
+    {
+      "after": null,
+      "arm": "none",
+      "assessments": [],
+      "block": "gpt-6.2-astra_argmax_A",
+      "call_id": "explicit_none_B",
+      "choice": null,
+      "model": "gpt-6.2-astra",
+      "prompt_sha256": "3d1808a0e4fa59561f8666d745086a67bb6ad9f98a00f209809c5e54ceb43ced",
+      "start": "A",
+      "status": "UNSTARTED",
+      "targets": [
+        "B"
+      ],
+      "task": "argmax",
+      "wording": "explicit"
+    },
+    {
+      "after": null,
+      "arm": "required",
+      "assessments": [],
+      "block": "gpt-6.2-astra_argmax_A",
+      "call_id": "explicit_required_A",
+      "choice": null,
+      "model": "gpt-6.2-astra",
+      "prompt_sha256": "2902eebc61085277fefd6b76f4cad91309056ba9ed1c87b6bb8eb4d4ea01a9a2",
+      "start": "A",
+      "status": "UNSTARTED",
+      "targets": [
+        "A"
+      ],
+      "task": "argmax",
+      "wording": "explicit"
+    },
+    {
+      "after": null,
+      "arm": "actual",
+      "assessments": [],
+      "block": "gpt-6.2-astra_argmax_A",
+      "call_id": "explicit_actual_A",
+      "choice": null,
+      "model": "gpt-6.2-astra",
+      "prompt_sha256": "8e5c64abaa0faa7670702b3b8d555813db58dce0dca550e2a69148b439c79763",
+      "start": "A",
+      "status": "UNSTARTED",
+      "targets": [
+        "A"
+      ],
+      "task": "argmax",
+      "wording": "explicit"
+    },
+    {
+      "after": null,
+      "arm": "both",
+      "assessments": [],
+      "block": "gpt-6.2-astra_argmax_A",
+      "call_id": "hidden_both_A",
+      "choice": null,
+      "model": "gpt-6.2-astra",
+      "prompt_sha256": "31cf27d6fb00a58dbdbe3cfb06a00212f835fed2c4a1612e42f3534bdd7a4316",
+      "start": "A",
+      "status": "UNSTARTED",
+      "targets": [
+        "A"
+      ],
+      "task": "argmax",
+      "wording": "hidden"
+    },
+    {
+      "after": null,
+      "arm": "required",
+      "assessments": [],
+      "block": "gpt-6.2-astra_argmax_A",
+      "call_id": "explicit_required_B",
+      "choice": null,
+      "model": "gpt-6.2-astra",
+      "prompt_sha256": "7caf095c88a331d3458498caa03718f58a01e251e8d536623fe74cf26861628a",
+      "start": "A",
+      "status": "UNSTARTED",
+      "targets": [
+        "B"
+      ],
+      "task": "argmax",
+      "wording": "explicit"
+    },
+    {
+      "after": null,
+      "arm": "none",
+      "assessments": [],
+      "block": "gpt-6.2-astra_argmax_A",
+      "call_id": "explicit_none_A",
+      "choice": null,
+      "model": "gpt-6.2-astra",
+      "prompt_sha256": "04c19b131bfa2b8d1a1907afb6eeda1005d103be9607bb9f8b1523cea127a8cb",
+      "start": "A",
+      "status": "UNSTARTED",
+      "targets": [
+        "A"
+      ],
+      "task": "argmax",
+      "wording": "explicit"
+    },
+    {
+      "after": null,
+      "arm": "both",
+      "assessments": [],
+      "block": "gpt-6.2-astra_argmax_A",
+      "call_id": "explicit_both_B",
+      "choice": null,
+      "model": "gpt-6.2-astra",
+      "prompt_sha256": "1a5c868bee860741d2ec9778b91260517c45a013838d4b7b1f73fe5c495c651f",
+      "start": "A",
+      "status": "UNSTARTED",
+      "targets": [
+        "B"
+      ],
+      "task": "argmax",
+      "wording": "explicit"
+    },
+    {
+      "after": null,
+      "arm": "required",
+      "assessments": [],
+      "block": "gpt-6.2-astra_argmax_A",
+      "call_id": "hidden_required_A",
+      "choice": null,
+      "model": "gpt-6.2-astra",
+      "prompt_sha256": "d3af3332e83960a993055a1120636a0fba790234175c0c503b5225dc63ab7300",
+      "start": "A",
+      "status": "UNSTARTED",
+      "targets": [
+        "A"
+      ],
+      "task": "argmax",
+      "wording": "hidden"
+    },
+    {
+      "after": null,
+      "arm": "required",
+      "assessments": [],
+      "block": "gpt-6.2-astra_argmax_A",
+      "call_id": "hidden_required_B",
+      "choice": null,
+      "model": "gpt-6.2-astra",
+      "prompt_sha256": "30ac14550e0826ec276f32dbd3d8fe6e451cc8aacfede663f955a694e682034e",
+      "start": "A",
+      "status": "UNSTARTED",
+      "targets": [
+        "B"
+      ],
+      "task": "argmax",
+      "wording": "hidden"
+    },
+    {
+      "after": null,
+      "arm": "actual",
+      "assessments": [],
+      "block": "gpt-6.2-astra_argmax_A",
+      "call_id": "explicit_actual_B",
+      "choice": null,
+      "model": "gpt-6.2-astra",
+      "prompt_sha256": "d0049336d885de8f7c07d359827a783b13c880f2de32288645997b051476b4c3",
+      "start": "A",
+      "status": "UNSTARTED",
+      "targets": [
+        "B"
+      ],
+      "task": "argmax",
+      "wording": "explicit"
+    },
+    {
+      "after": null,
+      "arm": "both",
+      "assessments": [],
+      "block": "gpt-6.2-astra_argmax_A",
+      "call_id": "explicit_both_A",
+      "choice": null,
+      "model": "gpt-6.2-astra",
+      "prompt_sha256": "afe42adb83b826a8fc6cd911531e085daa19094b803544c990ecd8f3393f1ca1",
+      "start": "A",
+      "status": "UNSTARTED",
+      "targets": [
+        "A"
+      ],
+      "task": "argmax",
+      "wording": "explicit"
+    }
+  ]
+}

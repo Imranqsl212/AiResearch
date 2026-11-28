@@ -1,0 +1,7580 @@
+{
+  "cli_version": "codex-cli 0.169.0",
+  "eligible_for_main_analysis": false,
+  "frozen_at_utc": "2026-11-28T17:10:50.631840+00:00",
+  "plan_sha256": "705d2658999c294ee8e10ca09b071af993a09cdfab2b41974b8e7411c6522a37",
+  "rows": [
+    {
+      "arm": "shared",
+      "elapsed_seconds": 6.8229872500523925,
+      "grade": {
+        "action": "replace",
+        "cases_passed": 96,
+        "expression": "(max(vmin, vmax, oldmin), min(vmin, vmax, oldmax))",
+        "order_certificate": {
+          "failures": [],
+          "passed_order_types": 62,
+          "status": "ALL_ORDER_TYPES_PASS",
+          "total_order_types": 62
+        },
+        "passes": true,
+        "probes": {
+          "maintainer": {
+            "expected": [
+              1,
+              0
+            ],
+            "input": [
+              1,
+              0,
+              0.3,
+              0.7
+            ],
+            "output": [
+              1,
+              0
+            ],
+            "passes": true
+          },
+          "mixed": {
+            "expected": [
+              8,
+              0
+            ],
+            "input": [
+              8,
+              2,
+              0,
+              7
+            ],
+            "output": [
+              8,
+              0
+            ],
+            "passes": true
+          },
+          "revealing": {
+            "expected": [
+              8,
+              2
+            ],
+            "input": [
+              8,
+              2,
+              3,
+              7
+            ],
+            "matches_start": false,
+            "output": [
+              8,
+              2
+            ],
+            "passes": true,
+            "start_output": [
+              7,
+              3
+            ]
+          },
+          "shared": {
+            "expected": [
+              10,
+              0
+            ],
+            "input": [
+              8,
+              2,
+              0,
+              10
+            ],
+            "matches_start": true,
+            "output": [
+              10,
+              0
+            ],
+            "passes": true,
+            "start_output": [
+              10,
+              0
+            ]
+          }
+        }
+      },
+      "id": "repeat1_faulty_shared",
+      "model": "gpt-6-luna",
+      "native_response_sha256": "5dd3bf2cea294e21fb57d90e66fd3a7e1263bb5edcf58f954bdddfe6af29f9d8",
+      "original_block": "gpt-6-luna_matplotlib_faulty",
+      "prompt_sha256": "657d8b0ace8b7baca609940508c12f3838b6ddbc8818b2b00bbbdf226943419e",
+      "start": "faulty",
+      "status": "OK",
+      "task": "matplotlib",
+      "wave": 1
+    },
+    {
+      "arm": "none",
+      "elapsed_seconds": 5.710689082974568,
+      "grade": {
+        "action": "replace",
+        "cases_passed": 58,
+        "expression": "(max(vmin, vmax, oldmax), min(vmin, vmax, oldmin))",
+        "order_certificate": {
+          "failures": [
+            {
+              "actual": [
+                0,
+                0
+              ],
+              "expected": [
+                1,
+                0
+              ],
+              "input": [
+                1,
+                0,
+                0,
+                0
+              ]
+            },
+            {
+              "actual": [
+                1,
+                1
+              ],
+              "expected": [
+                1,
+                0
+              ],
+              "input": [
+                1,
+                0,
+                1,
+                1
+              ]
+            },
+            {
+              "actual": [
+                2,
+                1
+              ],
+              "expected": [
+                2,
+                0
+              ],
+              "input": [
+                1,
+                0,
+                1,
+                2
+              ]
+            },
+            {
+              "actual": [
+                2,
+                1
+              ],
+              "expected": [
+                2,
+                0
+              ],
+              "input": [
+                1,
+                0,
+                2,
+                1
+              ]
+            },
+            {
+              "actual": [
+                2,
+                1
+              ],
+              "expected": [
+                2,
+                0
+              ],
+              "input": [
+                1,
+                0,
+                2,
+                2
+              ]
+            },
+            {
+              "actual": [
+                3,
+                1
+              ],
+              "expected": [
+                3,
+                0
+              ],
+              "input": [
+                1,
+                0,
+                2,
+                3
+              ]
+            },
+            {
+              "actual": [
+                3,
+                1
+              ],
+              "expected": [
+                3,
+                0
+              ],
+              "input": [
+                1,
+                0,
+                3,
+                2
+              ]
+            },
+            {
+              "actual": [
+                1,
+                0
+              ],
+              "expected": [
+                2,
+                0
+              ],
+              "input": [
+                2,
+                0,
+                0,
+                1
+              ]
+            },
+            {
+              "actual": [
+                1,
+                0
+              ],
+              "expected": [
+                2,
+                0
+              ],
+              "input": [
+                2,
+                0,
+                1,
+                0
+              ]
+            },
+            {
+              "actual": [
+                1,
+                1
+              ],
+              "expected": [
+                2,
+                0
+              ],
+              "input": [
+                2,
+                0,
+                1,
+                1
+              ]
+            },
+            {
+              "actual": [
+                2,
+                1
+              ],
+              "expected": [
+                2,
+                0
+              ],
+              "input": [
+                2,
+                0,
+                1,
+                2
+              ]
+            },
+            {
+              "actual": [
+                3,
+                1
+              ],
+              "expected": [
+                3,
+                0
+              ],
+              "input": [
+                2,
+                0,
+                1,
+                3
+              ]
+            },
+            {
+              "actual": [
+                2,
+                1
+              ],
+              "expected": [
+                2,
+                0
+              ],
+              "input": [
+                2,
+                0,
+                2,
+                1
+              ]
+            },
+            {
+              "actual": [
+                3,
+                1
+              ],
+              "expected": [
+                3,
+                0
+              ],
+              "input": [
+                2,
+                0,
+                3,
+                1
+              ]
+            },
+            {
+              "actual": [
+                1,
+                0
+              ],
+              "expected": [
+                2,
+                0
+              ],
+              "input": [
+                2,
+                1,
+                0,
+                0
+              ]
+            },
+            {
+              "actual": [
+                1,
+                0
+              ],
+              "expected": [
+                2,
+                0
+              ],
+              "input": [
+                2,
+                1,
+                0,
+                1
+              ]
+            },
+            {
+              "actual": [
+                1,
+                0
+              ],
+              "expected": [
+                2,
+                0
+              ],
+              "input": [
+                2,
+                1,
+                1,
+                0
+              ]
+            },
+            {
+              "actual": [
+                2,
+                1
+              ],
+              "expected": [
+                3,
+                0
+              ],
+              "input": [
+                3,
+                0,
+                1,
+                2
+              ]
+            },
+            {
+              "actual": [
+                2,
+                1
+              ],
+              "expected": [
+                3,
+                0
+              ],
+              "input": [
+                3,
+                0,
+                2,
+                1
+              ]
+            },
+            {
+              "actual": [
+                2,
+                0
+              ],
+              "expected": [
+                3,
+                0
+              ],
+              "input": [
+                3,
+                1,
+                0,
+                2
+              ]
+            },
+            {
+              "actual": [
+                2,
+                0
+              ],
+              "expected": [
+                3,
+                0
+              ],
+              "input": [
+                3,
+                1,
+                2,
+                0
+              ]
+            },
+            {
+              "actual": [
+                2,
+                0
+              ],
+              "expected": [
+                3,
+                0
+              ],
+              "input": [
+                3,
+                2,
+                0,
+                1
+              ]
+            },
+            {
+              "actual": [
+                2,
+                0
+              ],
+              "expected": [
+                3,
+                0
+              ],
+              "input": [
+                3,
+                2,
+                1,
+                0
+              ]
+            }
+          ],
+          "passed_order_types": 39,
+          "status": "COUNTEREXAMPLE",
+          "total_order_types": 62
+        },
+        "passes": false,
+        "probes": {
+          "maintainer": {
+            "expected": [
+              1,
+              0
+            ],
+            "input": [
+              1,
+              0,
+              0.3,
+              0.7
+            ],
+            "output": [
+              0.7,
+              0.3
+            ],
+            "passes": false
+          },
+          "mixed": {
+            "expected": [
+              8,
+              0
+            ],
+            "input": [
+              8,
+              2,
+              0,
+              7
+            ],
+            "output": [
+              7,
+              0
+            ],
+            "passes": false
+          },
+          "revealing": {
+            "expected": [
+              8,
+              2
+            ],
+            "input": [
+              8,
+              2,
+              3,
+              7
+            ],
+            "matches_start": true,
+            "output": [
+              7,
+              3
+            ],
+            "passes": false,
+            "start_output": [
+              7,
+              3
+            ]
+          },
+          "shared": {
+            "expected": [
+              10,
+              0
+            ],
+            "input": [
+              8,
+              2,
+              0,
+              10
+            ],
+            "matches_start": true,
+            "output": [
+              10,
+              0
+            ],
+            "passes": true,
+            "start_output": [
+              10,
+              0
+            ]
+          }
+        }
+      },
+      "id": "repeat1_faulty_none",
+      "model": "gpt-6-luna",
+      "native_response_sha256": "c3bd5ecf8341e2379571e6e9370b74abee056e92b1e9fc0f6e0b571f4b64f339",
+      "original_block": "gpt-6-luna_matplotlib_faulty",
+      "prompt_sha256": "f070716c27586fb9d2def22bbcd2c6796c905eb39ccf34d01ac68bad2dead0c2",
+      "start": "faulty",
+      "status": "OK",
+      "task": "matplotlib",
+      "wave": 1
+    },
+    {
+      "arm": "revealing",
+      "elapsed_seconds": 6.4046670000534505,
+      "grade": {
+        "action": "replace",
+        "cases_passed": 96,
+        "expression": "(max(vmin, vmax, oldmin), min(vmin, vmax, oldmax))",
+        "order_certificate": {
+          "failures": [],
+          "passed_order_types": 62,
+          "status": "ALL_ORDER_TYPES_PASS",
+          "total_order_types": 62
+        },
+        "passes": true,
+        "probes": {
+          "maintainer": {
+            "expected": [
+              1,
+              0
+            ],
+            "input": [
+              1,
+              0,
+              0.3,
+              0.7
+            ],
+            "output": [
+              1,
+              0
+            ],
+            "passes": true
+          },
+          "mixed": {
+            "expected": [
+              8,
+              0
+            ],
+            "input": [
+              8,
+              2,
+              0,
+              7
+            ],
+            "output": [
+              8,
+              0
+            ],
+            "passes": true
+          },
+          "revealing": {
+            "expected": [
+              8,
+              2
+            ],
+            "input": [
+              8,
+              2,
+              3,
+              7
+            ],
+            "matches_start": false,
+            "output": [
+              8,
+              2
+            ],
+            "passes": true,
+            "start_output": [
+              7,
+              3
+            ]
+          },
+          "shared": {
+            "expected": [
+              10,
+              0
+            ],
+            "input": [
+              8,
+              2,
+              0,
+              10
+            ],
+            "matches_start": true,
+            "output": [
+              10,
+              0
+            ],
+            "passes": true,
+            "start_output": [
+              10,
+              0
+            ]
+          }
+        }
+      },
+      "id": "repeat1_faulty_revealing",
+      "model": "gpt-6-luna",
+      "native_response_sha256": "468bac84fa8a821455917e361dc51b907519a1d13df9ac212600ece04c03689b",
+      "original_block": "gpt-6-luna_matplotlib_faulty",
+      "prompt_sha256": "ea3b264cdad7c7197ac2232d85255095a13d423d0098495fa4765bea4a0ff0a0",
+      "start": "faulty",
+      "status": "OK",
+      "task": "matplotlib",
+      "wave": 1
+    },
+    {
+      "arm": "shared",
+      "elapsed_seconds": 7.015368832973763,
+      "grade": {
+        "action": "replace",
+        "cases_passed": 96,
+        "expression": "(max(vmin, vmax, oldmin), min(vmin, vmax, oldmax))",
+        "order_certificate": {
+          "failures": [],
+          "passed_order_types": 62,
+          "status": "ALL_ORDER_TYPES_PASS",
+          "total_order_types": 62
+        },
+        "passes": true,
+        "probes": {
+          "maintainer": {
+            "expected": [
+              1,
+              0
+            ],
+            "input": [
+              1,
+              0,
+              0.3,
+              0.7
+            ],
+            "output": [
+              1,
+              0
+            ],
+            "passes": true
+          },
+          "mixed": {
+            "expected": [
+              8,
+              0
+            ],
+            "input": [
+              8,
+              2,
+              0,
+              7
+            ],
+            "output": [
+              8,
+              0
+            ],
+            "passes": true
+          },
+          "revealing": {
+            "expected": [
+              8,
+              2
+            ],
+            "input": [
+              8,
+              2,
+              3,
+              7
+            ],
+            "matches_start": true,
+            "output": [
+              8,
+              2
+            ],
+            "passes": true,
+            "start_output": [
+              8,
+              2
+            ]
+          },
+          "shared": {
+            "expected": [
+              10,
+              0
+            ],
+            "input": [
+              8,
+              2,
+              0,
+              10
+            ],
+            "matches_start": true,
+            "output": [
+              10,
+              0
+            ],
+            "passes": true,
+            "start_output": [
+              10,
+              0
+            ]
+          }
+        }
+      },
+      "id": "repeat1_working_shared",
+      "model": "gpt-6-luna",
+      "native_response_sha256": "2815dea44ca7bc17bba13ebc1ce4111d9b52b7c4f86350043d4a75f2d9c3344a",
+      "original_block": "gpt-6-luna_matplotlib_working",
+      "prompt_sha256": "484c4a24412e4d38ec521f16a37f1bcd05e20fd16c3cad8d038e7c6db74a7ff9",
+      "start": "working",
+      "status": "OK",
+      "task": "matplotlib",
+      "wave": 1
+    },
+    {
+      "arm": "revealing",
+      "elapsed_seconds": 7.162418749881908,
+      "grade": {
+        "action": "replace",
+        "cases_passed": 62,
+        "expression": "(max(oldmin, min(vmin, vmax)), min(oldmax, max(vmin, vmax)))",
+        "order_certificate": {
+          "failures": [
+            {
+              "actual": [
+                1,
+                0
+              ],
+              "expected": [
+                2,
+                0
+              ],
+              "input": [
+                1,
+                0,
+                0,
+                2
+              ]
+            },
+            {
+              "actual": [
+                1,
+                0
+              ],
+              "expected": [
+                2,
+                0
+              ],
+              "input": [
+                1,
+                0,
+                1,
+                2
+              ]
+            },
+            {
+              "actual": [
+                1,
+                0
+              ],
+              "expected": [
+                2,
+                0
+              ],
+              "input": [
+                1,
+                0,
+                2,
+                0
+              ]
+            },
+            {
+              "actual": [
+                1,
+                0
+              ],
+              "expected": [
+                2,
+                0
+              ],
+              "input": [
+                1,
+                0,
+                2,
+                1
+              ]
+            },
+            {
+              "actual": [
+                2,
+                0
+              ],
+              "expected": [
+                3,
+                0
+              ],
+              "input": [
+                1,
+                0,
+                2,
+                3
+              ]
+            },
+            {
+              "actual": [
+                2,
+                0
+              ],
+              "expected": [
+                3,
+                0
+              ],
+              "input": [
+                1,
+                0,
+                3,
+                2
+              ]
+            },
+            {
+              "actual": [
+                2,
+                0
+              ],
+              "expected": [
+                3,
+                0
+              ],
+              "input": [
+                2,
+                0,
+                1,
+                3
+              ]
+            },
+            {
+              "actual": [
+                2,
+                0
+              ],
+              "expected": [
+                3,
+                0
+              ],
+              "input": [
+                2,
+                0,
+                3,
+                1
+              ]
+            },
+            {
+              "actual": [
+                2,
+                1
+              ],
+              "expected": [
+                2,
+                0
+              ],
+              "input": [
+                2,
+                1,
+                0,
+                1
+              ]
+            },
+            {
+              "actual": [
+                2,
+                1
+              ],
+              "expected": [
+                2,
+                0
+              ],
+              "input": [
+                2,
+                1,
+                0,
+                2
+              ]
+            },
+            {
+              "actual": [
+                2,
+                1
+              ],
+              "expected": [
+                3,
+                0
+              ],
+              "input": [
+                2,
+                1,
+                0,
+                3
+              ]
+            },
+            {
+              "actual": [
+                2,
+                1
+              ],
+              "expected": [
+                2,
+                0
+              ],
+              "input": [
+                2,
+                1,
+                1,
+                0
+              ]
+            },
+            {
+              "actual": [
+                2,
+                1
+              ],
+              "expected": [
+                2,
+                0
+              ],
+              "input": [
+                2,
+                1,
+                2,
+                0
+              ]
+            },
+            {
+              "actual": [
+                2,
+                1
+              ],
+              "expected": [
+                3,
+                0
+              ],
+              "input": [
+                2,
+                1,
+                3,
+                0
+              ]
+            },
+            {
+              "actual": [
+                3,
+                1
+              ],
+              "expected": [
+                3,
+                0
+              ],
+              "input": [
+                3,
+                1,
+                0,
+                2
+              ]
+            },
+            {
+              "actual": [
+                3,
+                1
+              ],
+              "expected": [
+                3,
+                0
+              ],
+              "input": [
+                3,
+                1,
+                2,
+                0
+              ]
+            },
+            {
+              "actual": [
+                3,
+                1
+              ],
+              "expected": [
+                3,
+                0
+              ],
+              "input": [
+                3,
+                2,
+                0,
+                1
+              ]
+            },
+            {
+              "actual": [
+                3,
+                1
+              ],
+              "expected": [
+                3,
+                0
+              ],
+              "input": [
+                3,
+                2,
+                1,
+                0
+              ]
+            }
+          ],
+          "passed_order_types": 44,
+          "status": "COUNTEREXAMPLE",
+          "total_order_types": 62
+        },
+        "passes": false,
+        "probes": {
+          "maintainer": {
+            "expected": [
+              1,
+              0
+            ],
+            "input": [
+              1,
+              0,
+              0.3,
+              0.7
+            ],
+            "output": [
+              1,
+              0
+            ],
+            "passes": true
+          },
+          "mixed": {
+            "expected": [
+              8,
+              0
+            ],
+            "input": [
+              8,
+              2,
+              0,
+              7
+            ],
+            "output": [
+              8,
+              2
+            ],
+            "passes": false
+          },
+          "revealing": {
+            "expected": [
+              8,
+              2
+            ],
+            "input": [
+              8,
+              2,
+              3,
+              7
+            ],
+            "matches_start": true,
+            "output": [
+              8,
+              2
+            ],
+            "passes": true,
+            "start_output": [
+              8,
+              2
+            ]
+          },
+          "shared": {
+            "expected": [
+              10,
+              0
+            ],
+            "input": [
+              8,
+              2,
+              0,
+              10
+            ],
+            "matches_start": false,
+            "output": [
+              8,
+              2
+            ],
+            "passes": false,
+            "start_output": [
+              10,
+              0
+            ]
+          }
+        }
+      },
+      "id": "repeat1_working_revealing",
+      "model": "gpt-6-luna",
+      "native_response_sha256": "c811a516a99475ac86cc775b85390d6be05920acb6b5335efdefbe56bf101876",
+      "original_block": "gpt-6-luna_matplotlib_working",
+      "prompt_sha256": "138e22429d55e8e3133bb593825513725984fa82a3891a97ef04c03c14063ca2",
+      "start": "working",
+      "status": "OK",
+      "task": "matplotlib",
+      "wave": 1
+    },
+    {
+      "arm": "none",
+      "elapsed_seconds": 6.883577999891713,
+      "grade": {
+        "action": "replace",
+        "cases_passed": 96,
+        "expression": "(max(vmin, vmax, oldmin), min(vmin, vmax, oldmax))",
+        "order_certificate": {
+          "failures": [],
+          "passed_order_types": 62,
+          "status": "ALL_ORDER_TYPES_PASS",
+          "total_order_types": 62
+        },
+        "passes": true,
+        "probes": {
+          "maintainer": {
+            "expected": [
+              1,
+              0
+            ],
+            "input": [
+              1,
+              0,
+              0.3,
+              0.7
+            ],
+            "output": [
+              1,
+              0
+            ],
+            "passes": true
+          },
+          "mixed": {
+            "expected": [
+              8,
+              0
+            ],
+            "input": [
+              8,
+              2,
+              0,
+              7
+            ],
+            "output": [
+              8,
+              0
+            ],
+            "passes": true
+          },
+          "revealing": {
+            "expected": [
+              8,
+              2
+            ],
+            "input": [
+              8,
+              2,
+              3,
+              7
+            ],
+            "matches_start": true,
+            "output": [
+              8,
+              2
+            ],
+            "passes": true,
+            "start_output": [
+              8,
+              2
+            ]
+          },
+          "shared": {
+            "expected": [
+              10,
+              0
+            ],
+            "input": [
+              8,
+              2,
+              0,
+              10
+            ],
+            "matches_start": true,
+            "output": [
+              10,
+              0
+            ],
+            "passes": true,
+            "start_output": [
+              10,
+              0
+            ]
+          }
+        }
+      },
+      "id": "repeat1_working_none",
+      "model": "gpt-6-luna",
+      "native_response_sha256": "484925f71d4b54f7330c7f914654c0033e17248d815da444ed52d2839661ed3e",
+      "original_block": "gpt-6-luna_matplotlib_working",
+      "prompt_sha256": "cd67de044fe48260fcade55e7abf53c51602c2ed78b4bd42ebc0b0956b7d04d0",
+      "start": "working",
+      "status": "OK",
+      "task": "matplotlib",
+      "wave": 1
+    },
+    {
+      "arm": "shared",
+      "elapsed_seconds": 5.261886333813891,
+      "grade": {
+        "action": "keep",
+        "cases_passed": 96,
+        "expression": "(max(vmin, vmax, oldmin), min(vmin, vmax, oldmax))",
+        "order_certificate": {
+          "failures": [],
+          "passed_order_types": 62,
+          "status": "ALL_ORDER_TYPES_PASS",
+          "total_order_types": 62
+        },
+        "passes": true,
+        "probes": {
+          "maintainer": {
+            "expected": [
+              1,
+              0
+            ],
+            "input": [
+              1,
+              0,
+              0.3,
+              0.7
+            ],
+            "output": [
+              1,
+              0
+            ],
+            "passes": true
+          },
+          "mixed": {
+            "expected": [
+              8,
+              0
+            ],
+            "input": [
+              8,
+              2,
+              0,
+              7
+            ],
+            "output": [
+              8,
+              0
+            ],
+            "passes": true
+          },
+          "revealing": {
+            "expected": [
+              8,
+              2
+            ],
+            "input": [
+              8,
+              2,
+              3,
+              7
+            ],
+            "matches_start": true,
+            "output": [
+              8,
+              2
+            ],
+            "passes": true,
+            "start_output": [
+              8,
+              2
+            ]
+          },
+          "shared": {
+            "expected": [
+              10,
+              0
+            ],
+            "input": [
+              8,
+              2,
+              0,
+              10
+            ],
+            "matches_start": true,
+            "output": [
+              10,
+              0
+            ],
+            "passes": true,
+            "start_output": [
+              10,
+              0
+            ]
+          }
+        }
+      },
+      "id": "repeat2_working_shared",
+      "model": "gpt-6-luna",
+      "native_response_sha256": "1e6e51a1d7b93d3e50d618a4c7536f1d3b02dcc2e00f8c2c9a0959e12565995f",
+      "original_block": "gpt-6-luna_matplotlib_working",
+      "prompt_sha256": "484c4a24412e4d38ec521f16a37f1bcd05e20fd16c3cad8d038e7c6db74a7ff9",
+      "start": "working",
+      "status": "OK",
+      "task": "matplotlib",
+      "wave": 2
+    },
+    {
+      "arm": "revealing",
+      "elapsed_seconds": 6.205283124931157,
+      "grade": {
+        "action": "keep",
+        "cases_passed": 96,
+        "expression": "(max(vmin, vmax, oldmin), min(vmin, vmax, oldmax))",
+        "order_certificate": {
+          "failures": [],
+          "passed_order_types": 62,
+          "status": "ALL_ORDER_TYPES_PASS",
+          "total_order_types": 62
+        },
+        "passes": true,
+        "probes": {
+          "maintainer": {
+            "expected": [
+              1,
+              0
+            ],
+            "input": [
+              1,
+              0,
+              0.3,
+              0.7
+            ],
+            "output": [
+              1,
+              0
+            ],
+            "passes": true
+          },
+          "mixed": {
+            "expected": [
+              8,
+              0
+            ],
+            "input": [
+              8,
+              2,
+              0,
+              7
+            ],
+            "output": [
+              8,
+              0
+            ],
+            "passes": true
+          },
+          "revealing": {
+            "expected": [
+              8,
+              2
+            ],
+            "input": [
+              8,
+              2,
+              3,
+              7
+            ],
+            "matches_start": true,
+            "output": [
+              8,
+              2
+            ],
+            "passes": true,
+            "start_output": [
+              8,
+              2
+            ]
+          },
+          "shared": {
+            "expected": [
+              10,
+              0
+            ],
+            "input": [
+              8,
+              2,
+              0,
+              10
+            ],
+            "matches_start": true,
+            "output": [
+              10,
+              0
+            ],
+            "passes": true,
+            "start_output": [
+              10,
+              0
+            ]
+          }
+        }
+      },
+      "id": "repeat2_working_revealing",
+      "model": "gpt-6-luna",
+      "native_response_sha256": "b7414ed4aa271d31bc93e7f51edaea3263c7101387bb4119915559440408a6ed",
+      "original_block": "gpt-6-luna_matplotlib_working",
+      "prompt_sha256": "138e22429d55e8e3133bb593825513725984fa82a3891a97ef04c03c14063ca2",
+      "start": "working",
+      "status": "OK",
+      "task": "matplotlib",
+      "wave": 2
+    },
+    {
+      "arm": "none",
+      "elapsed_seconds": 5.919508709106594,
+      "grade": {
+        "action": "keep",
+        "cases_passed": 96,
+        "expression": "(max(vmin, vmax, oldmin), min(vmin, vmax, oldmax))",
+        "order_certificate": {
+          "failures": [],
+          "passed_order_types": 62,
+          "status": "ALL_ORDER_TYPES_PASS",
+          "total_order_types": 62
+        },
+        "passes": true,
+        "probes": {
+          "maintainer": {
+            "expected": [
+              1,
+              0
+            ],
+            "input": [
+              1,
+              0,
+              0.3,
+              0.7
+            ],
+            "output": [
+              1,
+              0
+            ],
+            "passes": true
+          },
+          "mixed": {
+            "expected": [
+              8,
+              0
+            ],
+            "input": [
+              8,
+              2,
+              0,
+              7
+            ],
+            "output": [
+              8,
+              0
+            ],
+            "passes": true
+          },
+          "revealing": {
+            "expected": [
+              8,
+              2
+            ],
+            "input": [
+              8,
+              2,
+              3,
+              7
+            ],
+            "matches_start": true,
+            "output": [
+              8,
+              2
+            ],
+            "passes": true,
+            "start_output": [
+              8,
+              2
+            ]
+          },
+          "shared": {
+            "expected": [
+              10,
+              0
+            ],
+            "input": [
+              8,
+              2,
+              0,
+              10
+            ],
+            "matches_start": true,
+            "output": [
+              10,
+              0
+            ],
+            "passes": true,
+            "start_output": [
+              10,
+              0
+            ]
+          }
+        }
+      },
+      "id": "repeat2_working_none",
+      "model": "gpt-6-luna",
+      "native_response_sha256": "4720eebb413e2e20c8643510b616e92a10309b3d106e6f56240f1c12c31064f7",
+      "original_block": "gpt-6-luna_matplotlib_working",
+      "prompt_sha256": "cd67de044fe48260fcade55e7abf53c51602c2ed78b4bd42ebc0b0956b7d04d0",
+      "start": "working",
+      "status": "OK",
+      "task": "matplotlib",
+      "wave": 2
+    },
+    {
+      "arm": "none",
+      "elapsed_seconds": 5.475491000106558,
+      "grade": {
+        "action": "keep",
+        "cases_passed": 58,
+        "expression": "(max(vmin, vmax, oldmax), min(vmin, vmax, oldmin))",
+        "order_certificate": {
+          "failures": [
+            {
+              "actual": [
+                0,
+                0
+              ],
+              "expected": [
+                1,
+                0
+              ],
+              "input": [
+                1,
+                0,
+                0,
+                0
+              ]
+            },
+            {
+              "actual": [
+                1,
+                1
+              ],
+              "expected": [
+                1,
+                0
+              ],
+              "input": [
+                1,
+                0,
+                1,
+                1
+              ]
+            },
+            {
+              "actual": [
+                2,
+                1
+              ],
+              "expected": [
+                2,
+                0
+              ],
+              "input": [
+                1,
+                0,
+                1,
+                2
+              ]
+            },
+            {
+              "actual": [
+                2,
+                1
+              ],
+              "expected": [
+                2,
+                0
+              ],
+              "input": [
+                1,
+                0,
+                2,
+                1
+              ]
+            },
+            {
+              "actual": [
+                2,
+                1
+              ],
+              "expected": [
+                2,
+                0
+              ],
+              "input": [
+                1,
+                0,
+                2,
+                2
+              ]
+            },
+            {
+              "actual": [
+                3,
+                1
+              ],
+              "expected": [
+                3,
+                0
+              ],
+              "input": [
+                1,
+                0,
+                2,
+                3
+              ]
+            },
+            {
+              "actual": [
+                3,
+                1
+              ],
+              "expected": [
+                3,
+                0
+              ],
+              "input": [
+                1,
+                0,
+                3,
+                2
+              ]
+            },
+            {
+              "actual": [
+                1,
+                0
+              ],
+              "expected": [
+                2,
+                0
+              ],
+              "input": [
+                2,
+                0,
+                0,
+                1
+              ]
+            },
+            {
+              "actual": [
+                1,
+                0
+              ],
+              "expected": [
+                2,
+                0
+              ],
+              "input": [
+                2,
+                0,
+                1,
+                0
+              ]
+            },
+            {
+              "actual": [
+                1,
+                1
+              ],
+              "expected": [
+                2,
+                0
+              ],
+              "input": [
+                2,
+                0,
+                1,
+                1
+              ]
+            },
+            {
+              "actual": [
+                2,
+                1
+              ],
+              "expected": [
+                2,
+                0
+              ],
+              "input": [
+                2,
+                0,
+                1,
+                2
+              ]
+            },
+            {
+              "actual": [
+                3,
+                1
+              ],
+              "expected": [
+                3,
+                0
+              ],
+              "input": [
+                2,
+                0,
+                1,
+                3
+              ]
+            },
+            {
+              "actual": [
+                2,
+                1
+              ],
+              "expected": [
+                2,
+                0
+              ],
+              "input": [
+                2,
+                0,
+                2,
+                1
+              ]
+            },
+            {
+              "actual": [
+                3,
+                1
+              ],
+              "expected": [
+                3,
+                0
+              ],
+              "input": [
+                2,
+                0,
+                3,
+                1
+              ]
+            },
+            {
+              "actual": [
+                1,
+                0
+              ],
+              "expected": [
+                2,
+                0
+              ],
+              "input": [
+                2,
+                1,
+                0,
+                0
+              ]
+            },
+            {
+              "actual": [
+                1,
+                0
+              ],
+              "expected": [
+                2,
+                0
+              ],
+              "input": [
+                2,
+                1,
+                0,
+                1
+              ]
+            },
+            {
+              "actual": [
+                1,
+                0
+              ],
+              "expected": [
+                2,
+                0
+              ],
+              "input": [
+                2,
+                1,
+                1,
+                0
+              ]
+            },
+            {
+              "actual": [
+                2,
+                1
+              ],
+              "expected": [
+                3,
+                0
+              ],
+              "input": [
+                3,
+                0,
+                1,
+                2
+              ]
+            },
+            {
+              "actual": [
+                2,
+                1
+              ],
+              "expected": [
+                3,
+                0
+              ],
+              "input": [
+                3,
+                0,
+                2,
+                1
+              ]
+            },
+            {
+              "actual": [
+                2,
+                0
+              ],
+              "expected": [
+                3,
+                0
+              ],
+              "input": [
+                3,
+                1,
+                0,
+                2
+              ]
+            },
+            {
+              "actual": [
+                2,
+                0
+              ],
+              "expected": [
+                3,
+                0
+              ],
+              "input": [
+                3,
+                1,
+                2,
+                0
+              ]
+            },
+            {
+              "actual": [
+                2,
+                0
+              ],
+              "expected": [
+                3,
+                0
+              ],
+              "input": [
+                3,
+                2,
+                0,
+                1
+              ]
+            },
+            {
+              "actual": [
+                2,
+                0
+              ],
+              "expected": [
+                3,
+                0
+              ],
+              "input": [
+                3,
+                2,
+                1,
+                0
+              ]
+            }
+          ],
+          "passed_order_types": 39,
+          "status": "COUNTEREXAMPLE",
+          "total_order_types": 62
+        },
+        "passes": false,
+        "probes": {
+          "maintainer": {
+            "expected": [
+              1,
+              0
+            ],
+            "input": [
+              1,
+              0,
+              0.3,
+              0.7
+            ],
+            "output": [
+              0.7,
+              0.3
+            ],
+            "passes": false
+          },
+          "mixed": {
+            "expected": [
+              8,
+              0
+            ],
+            "input": [
+              8,
+              2,
+              0,
+              7
+            ],
+            "output": [
+              7,
+              0
+            ],
+            "passes": false
+          },
+          "revealing": {
+            "expected": [
+              8,
+              2
+            ],
+            "input": [
+              8,
+              2,
+              3,
+              7
+            ],
+            "matches_start": true,
+            "output": [
+              7,
+              3
+            ],
+            "passes": false,
+            "start_output": [
+              7,
+              3
+            ]
+          },
+          "shared": {
+            "expected": [
+              10,
+              0
+            ],
+            "input": [
+              8,
+              2,
+              0,
+              10
+            ],
+            "matches_start": true,
+            "output": [
+              10,
+              0
+            ],
+            "passes": true,
+            "start_output": [
+              10,
+              0
+            ]
+          }
+        }
+      },
+      "id": "repeat2_faulty_none",
+      "model": "gpt-6-luna",
+      "native_response_sha256": "ceb6fc153aeb8ad11a895908c22cadc60052fd4fb9080226734c96620b33d20a",
+      "original_block": "gpt-6-luna_matplotlib_faulty",
+      "prompt_sha256": "f070716c27586fb9d2def22bbcd2c6796c905eb39ccf34d01ac68bad2dead0c2",
+      "start": "faulty",
+      "status": "OK",
+      "task": "matplotlib",
+      "wave": 2
+    },
+    {
+      "arm": "shared",
+      "elapsed_seconds": 5.5777535832021385,
+      "grade": {
+        "action": "keep",
+        "cases_passed": 58,
+        "expression": "(max(vmin, vmax, oldmax), min(vmin, vmax, oldmin))",
+        "order_certificate": {
+          "failures": [
+            {
+              "actual": [
+                0,
+                0
+              ],
+              "expected": [
+                1,
+                0
+              ],
+              "input": [
+                1,
+                0,
+                0,
+                0
+              ]
+            },
+            {
+              "actual": [
+                1,
+                1
+              ],
+              "expected": [
+                1,
+                0
+              ],
+              "input": [
+                1,
+                0,
+                1,
+                1
+              ]
+            },
+            {
+              "actual": [
+                2,
+                1
+              ],
+              "expected": [
+                2,
+                0
+              ],
+              "input": [
+                1,
+                0,
+                1,
+                2
+              ]
+            },
+            {
+              "actual": [
+                2,
+                1
+              ],
+              "expected": [
+                2,
+                0
+              ],
+              "input": [
+                1,
+                0,
+                2,
+                1
+              ]
+            },
+            {
+              "actual": [
+                2,
+                1
+              ],
+              "expected": [
+                2,
+                0
+              ],
+              "input": [
+                1,
+                0,
+                2,
+                2
+              ]
+            },
+            {
+              "actual": [
+                3,
+                1
+              ],
+              "expected": [
+                3,
+                0
+              ],
+              "input": [
+                1,
+                0,
+                2,
+                3
+              ]
+            },
+            {
+              "actual": [
+                3,
+                1
+              ],
+              "expected": [
+                3,
+                0
+              ],
+              "input": [
+                1,
+                0,
+                3,
+                2
+              ]
+            },
+            {
+              "actual": [
+                1,
+                0
+              ],
+              "expected": [
+                2,
+                0
+              ],
+              "input": [
+                2,
+                0,
+                0,
+                1
+              ]
+            },
+            {
+              "actual": [
+                1,
+                0
+              ],
+              "expected": [
+                2,
+                0
+              ],
+              "input": [
+                2,
+                0,
+                1,
+                0
+              ]
+            },
+            {
+              "actual": [
+                1,
+                1
+              ],
+              "expected": [
+                2,
+                0
+              ],
+              "input": [
+                2,
+                0,
+                1,
+                1
+              ]
+            },
+            {
+              "actual": [
+                2,
+                1
+              ],
+              "expected": [
+                2,
+                0
+              ],
+              "input": [
+                2,
+                0,
+                1,
+                2
+              ]
+            },
+            {
+              "actual": [
+                3,
+                1
+              ],
+              "expected": [
+                3,
+                0
+              ],
+              "input": [
+                2,
+                0,
+                1,
+                3
+              ]
+            },
+            {
+              "actual": [
+                2,
+                1
+              ],
+              "expected": [
+                2,
+                0
+              ],
+              "input": [
+                2,
+                0,
+                2,
+                1
+              ]
+            },
+            {
+              "actual": [
+                3,
+                1
+              ],
+              "expected": [
+                3,
+                0
+              ],
+              "input": [
+                2,
+                0,
+                3,
+                1
+              ]
+            },
+            {
+              "actual": [
+                1,
+                0
+              ],
+              "expected": [
+                2,
+                0
+              ],
+              "input": [
+                2,
+                1,
+                0,
+                0
+              ]
+            },
+            {
+              "actual": [
+                1,
+                0
+              ],
+              "expected": [
+                2,
+                0
+              ],
+              "input": [
+                2,
+                1,
+                0,
+                1
+              ]
+            },
+            {
+              "actual": [
+                1,
+                0
+              ],
+              "expected": [
+                2,
+                0
+              ],
+              "input": [
+                2,
+                1,
+                1,
+                0
+              ]
+            },
+            {
+              "actual": [
+                2,
+                1
+              ],
+              "expected": [
+                3,
+                0
+              ],
+              "input": [
+                3,
+                0,
+                1,
+                2
+              ]
+            },
+            {
+              "actual": [
+                2,
+                1
+              ],
+              "expected": [
+                3,
+                0
+              ],
+              "input": [
+                3,
+                0,
+                2,
+                1
+              ]
+            },
+            {
+              "actual": [
+                2,
+                0
+              ],
+              "expected": [
+                3,
+                0
+              ],
+              "input": [
+                3,
+                1,
+                0,
+                2
+              ]
+            },
+            {
+              "actual": [
+                2,
+                0
+              ],
+              "expected": [
+                3,
+                0
+              ],
+              "input": [
+                3,
+                1,
+                2,
+                0
+              ]
+            },
+            {
+              "actual": [
+                2,
+                0
+              ],
+              "expected": [
+                3,
+                0
+              ],
+              "input": [
+                3,
+                2,
+                0,
+                1
+              ]
+            },
+            {
+              "actual": [
+                2,
+                0
+              ],
+              "expected": [
+                3,
+                0
+              ],
+              "input": [
+                3,
+                2,
+                1,
+                0
+              ]
+            }
+          ],
+          "passed_order_types": 39,
+          "status": "COUNTEREXAMPLE",
+          "total_order_types": 62
+        },
+        "passes": false,
+        "probes": {
+          "maintainer": {
+            "expected": [
+              1,
+              0
+            ],
+            "input": [
+              1,
+              0,
+              0.3,
+              0.7
+            ],
+            "output": [
+              0.7,
+              0.3
+            ],
+            "passes": false
+          },
+          "mixed": {
+            "expected": [
+              8,
+              0
+            ],
+            "input": [
+              8,
+              2,
+              0,
+              7
+            ],
+            "output": [
+              7,
+              0
+            ],
+            "passes": false
+          },
+          "revealing": {
+            "expected": [
+              8,
+              2
+            ],
+            "input": [
+              8,
+              2,
+              3,
+              7
+            ],
+            "matches_start": true,
+            "output": [
+              7,
+              3
+            ],
+            "passes": false,
+            "start_output": [
+              7,
+              3
+            ]
+          },
+          "shared": {
+            "expected": [
+              10,
+              0
+            ],
+            "input": [
+              8,
+              2,
+              0,
+              10
+            ],
+            "matches_start": true,
+            "output": [
+              10,
+              0
+            ],
+            "passes": true,
+            "start_output": [
+              10,
+              0
+            ]
+          }
+        }
+      },
+      "id": "repeat2_faulty_shared",
+      "model": "gpt-6-luna",
+      "native_response_sha256": "853c2c7e6c413449a9a9ad221f2f390ee59723c51bf881ddac617fc843ded096",
+      "original_block": "gpt-6-luna_matplotlib_faulty",
+      "prompt_sha256": "657d8b0ace8b7baca609940508c12f3838b6ddbc8818b2b00bbbdf226943419e",
+      "start": "faulty",
+      "status": "OK",
+      "task": "matplotlib",
+      "wave": 2
+    },
+    {
+      "arm": "revealing",
+      "elapsed_seconds": 6.01211449992843,
+      "grade": {
+        "action": "replace",
+        "cases_passed": 48,
+        "expression": "(min(vmin, vmax, oldmax), max(vmin, vmax, oldmin))",
+        "order_certificate": {
+          "failures": [
+            {
+              "actual": [
+                0,
+                1
+              ],
+              "expected": [
+                1,
+                0
+              ],
+              "input": [
+                1,
+                0,
+                0,
+                0
+              ]
+            },
+            {
+              "actual": [
+                0,
+                1
+              ],
+              "expected": [
+                1,
+                0
+              ],
+              "input": [
+                1,
+                0,
+                0,
+                1
+              ]
+            },
+            {
+              "actual": [
+                0,
+                2
+              ],
+              "expected": [
+                2,
+                0
+              ],
+              "input": [
+                1,
+                0,
+                0,
+                2
+              ]
+            },
+            {
+              "actual": [
+                0,
+                1
+              ],
+              "expected": [
+                1,
+                0
+              ],
+              "input": [
+                1,
+                0,
+                1,
+                0
+              ]
+            },
+            {
+              "actual": [
+                0,
+                1
+              ],
+              "expected": [
+                1,
+                0
+              ],
+              "input": [
+                1,
+                0,
+                1,
+                1
+              ]
+            },
+            {
+              "actual": [
+                0,
+                2
+              ],
+              "expected": [
+                2,
+                0
+              ],
+              "input": [
+                1,
+                0,
+                1,
+                2
+              ]
+            },
+            {
+              "actual": [
+                0,
+                2
+              ],
+              "expected": [
+                2,
+                0
+              ],
+              "input": [
+                1,
+                0,
+                2,
+                0
+              ]
+            },
+            {
+              "actual": [
+                0,
+                2
+              ],
+              "expected": [
+                2,
+                0
+              ],
+              "input": [
+                1,
+                0,
+                2,
+                1
+              ]
+            },
+            {
+              "actual": [
+                0,
+                2
+              ],
+              "expected": [
+                2,
+                0
+              ],
+              "input": [
+                1,
+                0,
+                2,
+                2
+              ]
+            },
+            {
+              "actual": [
+                0,
+                3
+              ],
+              "expected": [
+                3,
+                0
+              ],
+              "input": [
+                1,
+                0,
+                2,
+                3
+              ]
+            },
+            {
+              "actual": [
+                0,
+                3
+              ],
+              "expected": [
+                3,
+                0
+              ],
+              "input": [
+                1,
+                0,
+                3,
+                2
+              ]
+            },
+            {
+              "actual": [
+                0,
+                2
+              ],
+              "expected": [
+                2,
+                0
+              ],
+              "input": [
+                2,
+                0,
+                0,
+                1
+              ]
+            },
+            {
+              "actual": [
+                0,
+                2
+              ],
+              "expected": [
+                2,
+                0
+              ],
+              "input": [
+                2,
+                0,
+                1,
+                0
+              ]
+            },
+            {
+              "actual": [
+                0,
+                2
+              ],
+              "expected": [
+                2,
+                0
+              ],
+              "input": [
+                2,
+                0,
+                1,
+                1
+              ]
+            },
+            {
+              "actual": [
+                0,
+                2
+              ],
+              "expected": [
+                2,
+                0
+              ],
+              "input": [
+                2,
+                0,
+                1,
+                2
+              ]
+            },
+            {
+              "actual": [
+                0,
+                3
+              ],
+              "expected": [
+                3,
+                0
+              ],
+              "input": [
+                2,
+                0,
+                1,
+                3
+              ]
+            },
+            {
+              "actual": [
+                0,
+                2
+              ],
+              "expected": [
+                2,
+                0
+              ],
+              "input": [
+                2,
+                0,
+                2,
+                1
+              ]
+            },
+            {
+              "actual": [
+                0,
+                3
+              ],
+              "expected": [
+                3,
+                0
+              ],
+              "input": [
+                2,
+                0,
+                3,
+                1
+              ]
+            },
+            {
+              "actual": [
+                0,
+                2
+              ],
+              "expected": [
+                2,
+                0
+              ],
+              "input": [
+                2,
+                1,
+                0,
+                0
+              ]
+            },
+            {
+              "actual": [
+                0,
+                2
+              ],
+              "expected": [
+                2,
+                0
+              ],
+              "input": [
+                2,
+                1,
+                0,
+                1
+              ]
+            },
+            {
+              "actual": [
+                0,
+                2
+              ],
+              "expected": [
+                2,
+                0
+              ],
+              "input": [
+                2,
+                1,
+                0,
+                2
+              ]
+            },
+            {
+              "actual": [
+                0,
+                3
+              ],
+              "expected": [
+                3,
+                0
+              ],
+              "input": [
+                2,
+                1,
+                0,
+                3
+              ]
+            },
+            {
+              "actual": [
+                0,
+                2
+              ],
+              "expected": [
+                2,
+                0
+              ],
+              "input": [
+                2,
+                1,
+                1,
+                0
+              ]
+            },
+            {
+              "actual": [
+                0,
+                2
+              ],
+              "expected": [
+                2,
+                0
+              ],
+              "input": [
+                2,
+                1,
+                2,
+                0
+              ]
+            },
+            {
+              "actual": [
+                0,
+                3
+              ],
+              "expected": [
+                3,
+                0
+              ],
+              "input": [
+                2,
+                1,
+                3,
+                0
+              ]
+            },
+            {
+              "actual": [
+                0,
+                3
+              ],
+              "expected": [
+                3,
+                0
+              ],
+              "input": [
+                3,
+                0,
+                1,
+                2
+              ]
+            },
+            {
+              "actual": [
+                0,
+                3
+              ],
+              "expected": [
+                3,
+                0
+              ],
+              "input": [
+                3,
+                0,
+                2,
+                1
+              ]
+            },
+            {
+              "actual": [
+                0,
+                3
+              ],
+              "expected": [
+                3,
+                0
+              ],
+              "input": [
+                3,
+                1,
+                0,
+                2
+              ]
+            },
+            {
+              "actual": [
+                0,
+                3
+              ],
+              "expected": [
+                3,
+                0
+              ],
+              "input": [
+                3,
+                1,
+                2,
+                0
+              ]
+            },
+            {
+              "actual": [
+                0,
+                3
+              ],
+              "expected": [
+                3,
+                0
+              ],
+              "input": [
+                3,
+                2,
+                0,
+                1
+              ]
+            },
+            {
+              "actual": [
+                0,
+                3
+              ],
+              "expected": [
+                3,
+                0
+              ],
+              "input": [
+                3,
+                2,
+                1,
+                0
+              ]
+            }
+          ],
+          "passed_order_types": 31,
+          "status": "COUNTEREXAMPLE",
+          "total_order_types": 62
+        },
+        "passes": false,
+        "probes": {
+          "maintainer": {
+            "expected": [
+              1,
+              0
+            ],
+            "input": [
+              1,
+              0,
+              0.3,
+              0.7
+            ],
+            "output": [
+              0,
+              1
+            ],
+            "passes": false
+          },
+          "mixed": {
+            "expected": [
+              8,
+              0
+            ],
+            "input": [
+              8,
+              2,
+              0,
+              7
+            ],
+            "output": [
+              0,
+              8
+            ],
+            "passes": false
+          },
+          "revealing": {
+            "expected": [
+              8,
+              2
+            ],
+            "input": [
+              8,
+              2,
+              3,
+              7
+            ],
+            "matches_start": false,
+            "output": [
+              2,
+              8
+            ],
+            "passes": false,
+            "start_output": [
+              7,
+              3
+            ]
+          },
+          "shared": {
+            "expected": [
+              10,
+              0
+            ],
+            "input": [
+              8,
+              2,
+              0,
+              10
+            ],
+            "matches_start": false,
+            "output": [
+              0,
+              10
+            ],
+            "passes": false,
+            "start_output": [
+              10,
+              0
+            ]
+          }
+        }
+      },
+      "id": "repeat2_faulty_revealing",
+      "model": "gpt-6-luna",
+      "native_response_sha256": "c07564af6f6b7782f42f6baaaf693c678efe567c6b537e646aab5b1c521d206d",
+      "original_block": "gpt-6-luna_matplotlib_faulty",
+      "prompt_sha256": "ea3b264cdad7c7197ac2232d85255095a13d423d0098495fa4765bea4a0ff0a0",
+      "start": "faulty",
+      "status": "OK",
+      "task": "matplotlib",
+      "wave": 2
+    },
+    {
+      "arm": "shared",
+      "elapsed_seconds": 6.091312415897846,
+      "grade": {
+        "action": "replace",
+        "cases_passed": 58,
+        "expression": "(max(vmin, vmax, oldmax), min(vmin, vmax, oldmin))",
+        "order_certificate": {
+          "failures": [
+            {
+              "actual": [
+                0,
+                0
+              ],
+              "expected": [
+                1,
+                0
+              ],
+              "input": [
+                1,
+                0,
+                0,
+                0
+              ]
+            },
+            {
+              "actual": [
+                1,
+                1
+              ],
+              "expected": [
+                1,
+                0
+              ],
+              "input": [
+                1,
+                0,
+                1,
+                1
+              ]
+            },
+            {
+              "actual": [
+                2,
+                1
+              ],
+              "expected": [
+                2,
+                0
+              ],
+              "input": [
+                1,
+                0,
+                1,
+                2
+              ]
+            },
+            {
+              "actual": [
+                2,
+                1
+              ],
+              "expected": [
+                2,
+                0
+              ],
+              "input": [
+                1,
+                0,
+                2,
+                1
+              ]
+            },
+            {
+              "actual": [
+                2,
+                1
+              ],
+              "expected": [
+                2,
+                0
+              ],
+              "input": [
+                1,
+                0,
+                2,
+                2
+              ]
+            },
+            {
+              "actual": [
+                3,
+                1
+              ],
+              "expected": [
+                3,
+                0
+              ],
+              "input": [
+                1,
+                0,
+                2,
+                3
+              ]
+            },
+            {
+              "actual": [
+                3,
+                1
+              ],
+              "expected": [
+                3,
+                0
+              ],
+              "input": [
+                1,
+                0,
+                3,
+                2
+              ]
+            },
+            {
+              "actual": [
+                1,
+                0
+              ],
+              "expected": [
+                2,
+                0
+              ],
+              "input": [
+                2,
+                0,
+                0,
+                1
+              ]
+            },
+            {
+              "actual": [
+                1,
+                0
+              ],
+              "expected": [
+                2,
+                0
+              ],
+              "input": [
+                2,
+                0,
+                1,
+                0
+              ]
+            },
+            {
+              "actual": [
+                1,
+                1
+              ],
+              "expected": [
+                2,
+                0
+              ],
+              "input": [
+                2,
+                0,
+                1,
+                1
+              ]
+            },
+            {
+              "actual": [
+                2,
+                1
+              ],
+              "expected": [
+                2,
+                0
+              ],
+              "input": [
+                2,
+                0,
+                1,
+                2
+              ]
+            },
+            {
+              "actual": [
+                3,
+                1
+              ],
+              "expected": [
+                3,
+                0
+              ],
+              "input": [
+                2,
+                0,
+                1,
+                3
+              ]
+            },
+            {
+              "actual": [
+                2,
+                1
+              ],
+              "expected": [
+                2,
+                0
+              ],
+              "input": [
+                2,
+                0,
+                2,
+                1
+              ]
+            },
+            {
+              "actual": [
+                3,
+                1
+              ],
+              "expected": [
+                3,
+                0
+              ],
+              "input": [
+                2,
+                0,
+                3,
+                1
+              ]
+            },
+            {
+              "actual": [
+                1,
+                0
+              ],
+              "expected": [
+                2,
+                0
+              ],
+              "input": [
+                2,
+                1,
+                0,
+                0
+              ]
+            },
+            {
+              "actual": [
+                1,
+                0
+              ],
+              "expected": [
+                2,
+                0
+              ],
+              "input": [
+                2,
+                1,
+                0,
+                1
+              ]
+            },
+            {
+              "actual": [
+                1,
+                0
+              ],
+              "expected": [
+                2,
+                0
+              ],
+              "input": [
+                2,
+                1,
+                1,
+                0
+              ]
+            },
+            {
+              "actual": [
+                2,
+                1
+              ],
+              "expected": [
+                3,
+                0
+              ],
+              "input": [
+                3,
+                0,
+                1,
+                2
+              ]
+            },
+            {
+              "actual": [
+                2,
+                1
+              ],
+              "expected": [
+                3,
+                0
+              ],
+              "input": [
+                3,
+                0,
+                2,
+                1
+              ]
+            },
+            {
+              "actual": [
+                2,
+                0
+              ],
+              "expected": [
+                3,
+                0
+              ],
+              "input": [
+                3,
+                1,
+                0,
+                2
+              ]
+            },
+            {
+              "actual": [
+                2,
+                0
+              ],
+              "expected": [
+                3,
+                0
+              ],
+              "input": [
+                3,
+                1,
+                2,
+                0
+              ]
+            },
+            {
+              "actual": [
+                2,
+                0
+              ],
+              "expected": [
+                3,
+                0
+              ],
+              "input": [
+                3,
+                2,
+                0,
+                1
+              ]
+            },
+            {
+              "actual": [
+                2,
+                0
+              ],
+              "expected": [
+                3,
+                0
+              ],
+              "input": [
+                3,
+                2,
+                1,
+                0
+              ]
+            }
+          ],
+          "passed_order_types": 39,
+          "status": "COUNTEREXAMPLE",
+          "total_order_types": 62
+        },
+        "passes": false,
+        "probes": {
+          "maintainer": {
+            "expected": [
+              1,
+              0
+            ],
+            "input": [
+              1,
+              0,
+              0.3,
+              0.7
+            ],
+            "output": [
+              0.7,
+              0.3
+            ],
+            "passes": false
+          },
+          "mixed": {
+            "expected": [
+              8,
+              0
+            ],
+            "input": [
+              8,
+              2,
+              0,
+              7
+            ],
+            "output": [
+              7,
+              0
+            ],
+            "passes": false
+          },
+          "revealing": {
+            "expected": [
+              8,
+              2
+            ],
+            "input": [
+              8,
+              2,
+              3,
+              7
+            ],
+            "matches_start": false,
+            "output": [
+              7,
+              3
+            ],
+            "passes": false,
+            "start_output": [
+              8,
+              2
+            ]
+          },
+          "shared": {
+            "expected": [
+              10,
+              0
+            ],
+            "input": [
+              8,
+              2,
+              0,
+              10
+            ],
+            "matches_start": true,
+            "output": [
+              10,
+              0
+            ],
+            "passes": true,
+            "start_output": [
+              10,
+              0
+            ]
+          }
+        }
+      },
+      "id": "repeat3_working_shared",
+      "model": "gpt-6-luna",
+      "native_response_sha256": "38832d7e5b285625c6ba641c592390e1837bb11deee924e242cc294ffcf7d344",
+      "original_block": "gpt-6-luna_matplotlib_working",
+      "prompt_sha256": "484c4a24412e4d38ec521f16a37f1bcd05e20fd16c3cad8d038e7c6db74a7ff9",
+      "start": "working",
+      "status": "OK",
+      "task": "matplotlib",
+      "wave": 3
+    },
+    {
+      "arm": "shared",
+      "elapsed_seconds": 5.64865312515758,
+      "grade": {
+        "action": "keep",
+        "cases_passed": 58,
+        "expression": "(max(vmin, vmax, oldmax), min(vmin, vmax, oldmin))",
+        "order_certificate": {
+          "failures": [
+            {
+              "actual": [
+                0,
+                0
+              ],
+              "expected": [
+                1,
+                0
+              ],
+              "input": [
+                1,
+                0,
+                0,
+                0
+              ]
+            },
+            {
+              "actual": [
+                1,
+                1
+              ],
+              "expected": [
+                1,
+                0
+              ],
+              "input": [
+                1,
+                0,
+                1,
+                1
+              ]
+            },
+            {
+              "actual": [
+                2,
+                1
+              ],
+              "expected": [
+                2,
+                0
+              ],
+              "input": [
+                1,
+                0,
+                1,
+                2
+              ]
+            },
+            {
+              "actual": [
+                2,
+                1
+              ],
+              "expected": [
+                2,
+                0
+              ],
+              "input": [
+                1,
+                0,
+                2,
+                1
+              ]
+            },
+            {
+              "actual": [
+                2,
+                1
+              ],
+              "expected": [
+                2,
+                0
+              ],
+              "input": [
+                1,
+                0,
+                2,
+                2
+              ]
+            },
+            {
+              "actual": [
+                3,
+                1
+              ],
+              "expected": [
+                3,
+                0
+              ],
+              "input": [
+                1,
+                0,
+                2,
+                3
+              ]
+            },
+            {
+              "actual": [
+                3,
+                1
+              ],
+              "expected": [
+                3,
+                0
+              ],
+              "input": [
+                1,
+                0,
+                3,
+                2
+              ]
+            },
+            {
+              "actual": [
+                1,
+                0
+              ],
+              "expected": [
+                2,
+                0
+              ],
+              "input": [
+                2,
+                0,
+                0,
+                1
+              ]
+            },
+            {
+              "actual": [
+                1,
+                0
+              ],
+              "expected": [
+                2,
+                0
+              ],
+              "input": [
+                2,
+                0,
+                1,
+                0
+              ]
+            },
+            {
+              "actual": [
+                1,
+                1
+              ],
+              "expected": [
+                2,
+                0
+              ],
+              "input": [
+                2,
+                0,
+                1,
+                1
+              ]
+            },
+            {
+              "actual": [
+                2,
+                1
+              ],
+              "expected": [
+                2,
+                0
+              ],
+              "input": [
+                2,
+                0,
+                1,
+                2
+              ]
+            },
+            {
+              "actual": [
+                3,
+                1
+              ],
+              "expected": [
+                3,
+                0
+              ],
+              "input": [
+                2,
+                0,
+                1,
+                3
+              ]
+            },
+            {
+              "actual": [
+                2,
+                1
+              ],
+              "expected": [
+                2,
+                0
+              ],
+              "input": [
+                2,
+                0,
+                2,
+                1
+              ]
+            },
+            {
+              "actual": [
+                3,
+                1
+              ],
+              "expected": [
+                3,
+                0
+              ],
+              "input": [
+                2,
+                0,
+                3,
+                1
+              ]
+            },
+            {
+              "actual": [
+                1,
+                0
+              ],
+              "expected": [
+                2,
+                0
+              ],
+              "input": [
+                2,
+                1,
+                0,
+                0
+              ]
+            },
+            {
+              "actual": [
+                1,
+                0
+              ],
+              "expected": [
+                2,
+                0
+              ],
+              "input": [
+                2,
+                1,
+                0,
+                1
+              ]
+            },
+            {
+              "actual": [
+                1,
+                0
+              ],
+              "expected": [
+                2,
+                0
+              ],
+              "input": [
+                2,
+                1,
+                1,
+                0
+              ]
+            },
+            {
+              "actual": [
+                2,
+                1
+              ],
+              "expected": [
+                3,
+                0
+              ],
+              "input": [
+                3,
+                0,
+                1,
+                2
+              ]
+            },
+            {
+              "actual": [
+                2,
+                1
+              ],
+              "expected": [
+                3,
+                0
+              ],
+              "input": [
+                3,
+                0,
+                2,
+                1
+              ]
+            },
+            {
+              "actual": [
+                2,
+                0
+              ],
+              "expected": [
+                3,
+                0
+              ],
+              "input": [
+                3,
+                1,
+                0,
+                2
+              ]
+            },
+            {
+              "actual": [
+                2,
+                0
+              ],
+              "expected": [
+                3,
+                0
+              ],
+              "input": [
+                3,
+                1,
+                2,
+                0
+              ]
+            },
+            {
+              "actual": [
+                2,
+                0
+              ],
+              "expected": [
+                3,
+                0
+              ],
+              "input": [
+                3,
+                2,
+                0,
+                1
+              ]
+            },
+            {
+              "actual": [
+                2,
+                0
+              ],
+              "expected": [
+                3,
+                0
+              ],
+              "input": [
+                3,
+                2,
+                1,
+                0
+              ]
+            }
+          ],
+          "passed_order_types": 39,
+          "status": "COUNTEREXAMPLE",
+          "total_order_types": 62
+        },
+        "passes": false,
+        "probes": {
+          "maintainer": {
+            "expected": [
+              1,
+              0
+            ],
+            "input": [
+              1,
+              0,
+              0.3,
+              0.7
+            ],
+            "output": [
+              0.7,
+              0.3
+            ],
+            "passes": false
+          },
+          "mixed": {
+            "expected": [
+              8,
+              0
+            ],
+            "input": [
+              8,
+              2,
+              0,
+              7
+            ],
+            "output": [
+              7,
+              0
+            ],
+            "passes": false
+          },
+          "revealing": {
+            "expected": [
+              8,
+              2
+            ],
+            "input": [
+              8,
+              2,
+              3,
+              7
+            ],
+            "matches_start": true,
+            "output": [
+              7,
+              3
+            ],
+            "passes": false,
+            "start_output": [
+              7,
+              3
+            ]
+          },
+          "shared": {
+            "expected": [
+              10,
+              0
+            ],
+            "input": [
+              8,
+              2,
+              0,
+              10
+            ],
+            "matches_start": true,
+            "output": [
+              10,
+              0
+            ],
+            "passes": true,
+            "start_output": [
+              10,
+              0
+            ]
+          }
+        }
+      },
+      "id": "repeat3_faulty_shared",
+      "model": "gpt-6-luna",
+      "native_response_sha256": "a942c223b55b90eeb478d77b3fc0b2d902c34889e2aae68abdd9fa6e41b019d7",
+      "original_block": "gpt-6-luna_matplotlib_faulty",
+      "prompt_sha256": "657d8b0ace8b7baca609940508c12f3838b6ddbc8818b2b00bbbdf226943419e",
+      "start": "faulty",
+      "status": "OK",
+      "task": "matplotlib",
+      "wave": 3
+    },
+    {
+      "arm": "revealing",
+      "elapsed_seconds": 5.76256849989295,
+      "grade": {
+        "action": "keep",
+        "cases_passed": 96,
+        "expression": "(max(vmin, vmax, oldmin), min(vmin, vmax, oldmax))",
+        "order_certificate": {
+          "failures": [],
+          "passed_order_types": 62,
+          "status": "ALL_ORDER_TYPES_PASS",
+          "total_order_types": 62
+        },
+        "passes": true,
+        "probes": {
+          "maintainer": {
+            "expected": [
+              1,
+              0
+            ],
+            "input": [
+              1,
+              0,
+              0.3,
+              0.7
+            ],
+            "output": [
+              1,
+              0
+            ],
+            "passes": true
+          },
+          "mixed": {
+            "expected": [
+              8,
+              0
+            ],
+            "input": [
+              8,
+              2,
+              0,
+              7
+            ],
+            "output": [
+              8,
+              0
+            ],
+            "passes": true
+          },
+          "revealing": {
+            "expected": [
+              8,
+              2
+            ],
+            "input": [
+              8,
+              2,
+              3,
+              7
+            ],
+            "matches_start": true,
+            "output": [
+              8,
+              2
+            ],
+            "passes": true,
+            "start_output": [
+              8,
+              2
+            ]
+          },
+          "shared": {
+            "expected": [
+              10,
+              0
+            ],
+            "input": [
+              8,
+              2,
+              0,
+              10
+            ],
+            "matches_start": true,
+            "output": [
+              10,
+              0
+            ],
+            "passes": true,
+            "start_output": [
+              10,
+              0
+            ]
+          }
+        }
+      },
+      "id": "repeat3_working_revealing",
+      "model": "gpt-6-luna",
+      "native_response_sha256": "39f16523ca1c6e251b83c49f4adc46c5df1d0894e6086f467e7f6f0ad684c0c5",
+      "original_block": "gpt-6-luna_matplotlib_working",
+      "prompt_sha256": "138e22429d55e8e3133bb593825513725984fa82a3891a97ef04c03c14063ca2",
+      "start": "working",
+      "status": "OK",
+      "task": "matplotlib",
+      "wave": 3
+    },
+    {
+      "arm": "none",
+      "elapsed_seconds": 6.25553591712378,
+      "grade": {
+        "action": "replace",
+        "cases_passed": 58,
+        "expression": "(max(vmin, vmax, oldmax), min(vmin, vmax, oldmin))",
+        "order_certificate": {
+          "failures": [
+            {
+              "actual": [
+                0,
+                0
+              ],
+              "expected": [
+                1,
+                0
+              ],
+              "input": [
+                1,
+                0,
+                0,
+                0
+              ]
+            },
+            {
+              "actual": [
+                1,
+                1
+              ],
+              "expected": [
+                1,
+                0
+              ],
+              "input": [
+                1,
+                0,
+                1,
+                1
+              ]
+            },
+            {
+              "actual": [
+                2,
+                1
+              ],
+              "expected": [
+                2,
+                0
+              ],
+              "input": [
+                1,
+                0,
+                1,
+                2
+              ]
+            },
+            {
+              "actual": [
+                2,
+                1
+              ],
+              "expected": [
+                2,
+                0
+              ],
+              "input": [
+                1,
+                0,
+                2,
+                1
+              ]
+            },
+            {
+              "actual": [
+                2,
+                1
+              ],
+              "expected": [
+                2,
+                0
+              ],
+              "input": [
+                1,
+                0,
+                2,
+                2
+              ]
+            },
+            {
+              "actual": [
+                3,
+                1
+              ],
+              "expected": [
+                3,
+                0
+              ],
+              "input": [
+                1,
+                0,
+                2,
+                3
+              ]
+            },
+            {
+              "actual": [
+                3,
+                1
+              ],
+              "expected": [
+                3,
+                0
+              ],
+              "input": [
+                1,
+                0,
+                3,
+                2
+              ]
+            },
+            {
+              "actual": [
+                1,
+                0
+              ],
+              "expected": [
+                2,
+                0
+              ],
+              "input": [
+                2,
+                0,
+                0,
+                1
+              ]
+            },
+            {
+              "actual": [
+                1,
+                0
+              ],
+              "expected": [
+                2,
+                0
+              ],
+              "input": [
+                2,
+                0,
+                1,
+                0
+              ]
+            },
+            {
+              "actual": [
+                1,
+                1
+              ],
+              "expected": [
+                2,
+                0
+              ],
+              "input": [
+                2,
+                0,
+                1,
+                1
+              ]
+            },
+            {
+              "actual": [
+                2,
+                1
+              ],
+              "expected": [
+                2,
+                0
+              ],
+              "input": [
+                2,
+                0,
+                1,
+                2
+              ]
+            },
+            {
+              "actual": [
+                3,
+                1
+              ],
+              "expected": [
+                3,
+                0
+              ],
+              "input": [
+                2,
+                0,
+                1,
+                3
+              ]
+            },
+            {
+              "actual": [
+                2,
+                1
+              ],
+              "expected": [
+                2,
+                0
+              ],
+              "input": [
+                2,
+                0,
+                2,
+                1
+              ]
+            },
+            {
+              "actual": [
+                3,
+                1
+              ],
+              "expected": [
+                3,
+                0
+              ],
+              "input": [
+                2,
+                0,
+                3,
+                1
+              ]
+            },
+            {
+              "actual": [
+                1,
+                0
+              ],
+              "expected": [
+                2,
+                0
+              ],
+              "input": [
+                2,
+                1,
+                0,
+                0
+              ]
+            },
+            {
+              "actual": [
+                1,
+                0
+              ],
+              "expected": [
+                2,
+                0
+              ],
+              "input": [
+                2,
+                1,
+                0,
+                1
+              ]
+            },
+            {
+              "actual": [
+                1,
+                0
+              ],
+              "expected": [
+                2,
+                0
+              ],
+              "input": [
+                2,
+                1,
+                1,
+                0
+              ]
+            },
+            {
+              "actual": [
+                2,
+                1
+              ],
+              "expected": [
+                3,
+                0
+              ],
+              "input": [
+                3,
+                0,
+                1,
+                2
+              ]
+            },
+            {
+              "actual": [
+                2,
+                1
+              ],
+              "expected": [
+                3,
+                0
+              ],
+              "input": [
+                3,
+                0,
+                2,
+                1
+              ]
+            },
+            {
+              "actual": [
+                2,
+                0
+              ],
+              "expected": [
+                3,
+                0
+              ],
+              "input": [
+                3,
+                1,
+                0,
+                2
+              ]
+            },
+            {
+              "actual": [
+                2,
+                0
+              ],
+              "expected": [
+                3,
+                0
+              ],
+              "input": [
+                3,
+                1,
+                2,
+                0
+              ]
+            },
+            {
+              "actual": [
+                2,
+                0
+              ],
+              "expected": [
+                3,
+                0
+              ],
+              "input": [
+                3,
+                2,
+                0,
+                1
+              ]
+            },
+            {
+              "actual": [
+                2,
+                0
+              ],
+              "expected": [
+                3,
+                0
+              ],
+              "input": [
+                3,
+                2,
+                1,
+                0
+              ]
+            }
+          ],
+          "passed_order_types": 39,
+          "status": "COUNTEREXAMPLE",
+          "total_order_types": 62
+        },
+        "passes": false,
+        "probes": {
+          "maintainer": {
+            "expected": [
+              1,
+              0
+            ],
+            "input": [
+              1,
+              0,
+              0.3,
+              0.7
+            ],
+            "output": [
+              0.7,
+              0.3
+            ],
+            "passes": false
+          },
+          "mixed": {
+            "expected": [
+              8,
+              0
+            ],
+            "input": [
+              8,
+              2,
+              0,
+              7
+            ],
+            "output": [
+              7,
+              0
+            ],
+            "passes": false
+          },
+          "revealing": {
+            "expected": [
+              8,
+              2
+            ],
+            "input": [
+              8,
+              2,
+              3,
+              7
+            ],
+            "matches_start": true,
+            "output": [
+              7,
+              3
+            ],
+            "passes": false,
+            "start_output": [
+              7,
+              3
+            ]
+          },
+          "shared": {
+            "expected": [
+              10,
+              0
+            ],
+            "input": [
+              8,
+              2,
+              0,
+              10
+            ],
+            "matches_start": true,
+            "output": [
+              10,
+              0
+            ],
+            "passes": true,
+            "start_output": [
+              10,
+              0
+            ]
+          }
+        }
+      },
+      "id": "repeat3_faulty_none",
+      "model": "gpt-6-luna",
+      "native_response_sha256": "0d94d973fb91ba229aad9b23eea9bc7d1d84ea668f9abdd95720920d75f04cbb",
+      "original_block": "gpt-6-luna_matplotlib_faulty",
+      "prompt_sha256": "f070716c27586fb9d2def22bbcd2c6796c905eb39ccf34d01ac68bad2dead0c2",
+      "start": "faulty",
+      "status": "OK",
+      "task": "matplotlib",
+      "wave": 3
+    },
+    {
+      "arm": "revealing",
+      "elapsed_seconds": 5.649856250034645,
+      "grade": {
+        "action": "keep",
+        "cases_passed": 58,
+        "expression": "(max(vmin, vmax, oldmax), min(vmin, vmax, oldmin))",
+        "order_certificate": {
+          "failures": [
+            {
+              "actual": [
+                0,
+                0
+              ],
+              "expected": [
+                1,
+                0
+              ],
+              "input": [
+                1,
+                0,
+                0,
+                0
+              ]
+            },
+            {
+              "actual": [
+                1,
+                1
+              ],
+              "expected": [
+                1,
+                0
+              ],
+              "input": [
+                1,
+                0,
+                1,
+                1
+              ]
+            },
+            {
+              "actual": [
+                2,
+                1
+              ],
+              "expected": [
+                2,
+                0
+              ],
+              "input": [
+                1,
+                0,
+                1,
+                2
+              ]
+            },
+            {
+              "actual": [
+                2,
+                1
+              ],
+              "expected": [
+                2,
+                0
+              ],
+              "input": [
+                1,
+                0,
+                2,
+                1
+              ]
+            },
+            {
+              "actual": [
+                2,
+                1
+              ],
+              "expected": [
+                2,
+                0
+              ],
+              "input": [
+                1,
+                0,
+                2,
+                2
+              ]
+            },
+            {
+              "actual": [
+                3,
+                1
+              ],
+              "expected": [
+                3,
+                0
+              ],
+              "input": [
+                1,
+                0,
+                2,
+                3
+              ]
+            },
+            {
+              "actual": [
+                3,
+                1
+              ],
+              "expected": [
+                3,
+                0
+              ],
+              "input": [
+                1,
+                0,
+                3,
+                2
+              ]
+            },
+            {
+              "actual": [
+                1,
+                0
+              ],
+              "expected": [
+                2,
+                0
+              ],
+              "input": [
+                2,
+                0,
+                0,
+                1
+              ]
+            },
+            {
+              "actual": [
+                1,
+                0
+              ],
+              "expected": [
+                2,
+                0
+              ],
+              "input": [
+                2,
+                0,
+                1,
+                0
+              ]
+            },
+            {
+              "actual": [
+                1,
+                1
+              ],
+              "expected": [
+                2,
+                0
+              ],
+              "input": [
+                2,
+                0,
+                1,
+                1
+              ]
+            },
+            {
+              "actual": [
+                2,
+                1
+              ],
+              "expected": [
+                2,
+                0
+              ],
+              "input": [
+                2,
+                0,
+                1,
+                2
+              ]
+            },
+            {
+              "actual": [
+                3,
+                1
+              ],
+              "expected": [
+                3,
+                0
+              ],
+              "input": [
+                2,
+                0,
+                1,
+                3
+              ]
+            },
+            {
+              "actual": [
+                2,
+                1
+              ],
+              "expected": [
+                2,
+                0
+              ],
+              "input": [
+                2,
+                0,
+                2,
+                1
+              ]
+            },
+            {
+              "actual": [
+                3,
+                1
+              ],
+              "expected": [
+                3,
+                0
+              ],
+              "input": [
+                2,
+                0,
+                3,
+                1
+              ]
+            },
+            {
+              "actual": [
+                1,
+                0
+              ],
+              "expected": [
+                2,
+                0
+              ],
+              "input": [
+                2,
+                1,
+                0,
+                0
+              ]
+            },
+            {
+              "actual": [
+                1,
+                0
+              ],
+              "expected": [
+                2,
+                0
+              ],
+              "input": [
+                2,
+                1,
+                0,
+                1
+              ]
+            },
+            {
+              "actual": [
+                1,
+                0
+              ],
+              "expected": [
+                2,
+                0
+              ],
+              "input": [
+                2,
+                1,
+                1,
+                0
+              ]
+            },
+            {
+              "actual": [
+                2,
+                1
+              ],
+              "expected": [
+                3,
+                0
+              ],
+              "input": [
+                3,
+                0,
+                1,
+                2
+              ]
+            },
+            {
+              "actual": [
+                2,
+                1
+              ],
+              "expected": [
+                3,
+                0
+              ],
+              "input": [
+                3,
+                0,
+                2,
+                1
+              ]
+            },
+            {
+              "actual": [
+                2,
+                0
+              ],
+              "expected": [
+                3,
+                0
+              ],
+              "input": [
+                3,
+                1,
+                0,
+                2
+              ]
+            },
+            {
+              "actual": [
+                2,
+                0
+              ],
+              "expected": [
+                3,
+                0
+              ],
+              "input": [
+                3,
+                1,
+                2,
+                0
+              ]
+            },
+            {
+              "actual": [
+                2,
+                0
+              ],
+              "expected": [
+                3,
+                0
+              ],
+              "input": [
+                3,
+                2,
+                0,
+                1
+              ]
+            },
+            {
+              "actual": [
+                2,
+                0
+              ],
+              "expected": [
+                3,
+                0
+              ],
+              "input": [
+                3,
+                2,
+                1,
+                0
+              ]
+            }
+          ],
+          "passed_order_types": 39,
+          "status": "COUNTEREXAMPLE",
+          "total_order_types": 62
+        },
+        "passes": false,
+        "probes": {
+          "maintainer": {
+            "expected": [
+              1,
+              0
+            ],
+            "input": [
+              1,
+              0,
+              0.3,
+              0.7
+            ],
+            "output": [
+              0.7,
+              0.3
+            ],
+            "passes": false
+          },
+          "mixed": {
+            "expected": [
+              8,
+              0
+            ],
+            "input": [
+              8,
+              2,
+              0,
+              7
+            ],
+            "output": [
+              7,
+              0
+            ],
+            "passes": false
+          },
+          "revealing": {
+            "expected": [
+              8,
+              2
+            ],
+            "input": [
+              8,
+              2,
+              3,
+              7
+            ],
+            "matches_start": true,
+            "output": [
+              7,
+              3
+            ],
+            "passes": false,
+            "start_output": [
+              7,
+              3
+            ]
+          },
+          "shared": {
+            "expected": [
+              10,
+              0
+            ],
+            "input": [
+              8,
+              2,
+              0,
+              10
+            ],
+            "matches_start": true,
+            "output": [
+              10,
+              0
+            ],
+            "passes": true,
+            "start_output": [
+              10,
+              0
+            ]
+          }
+        }
+      },
+      "id": "repeat3_faulty_revealing",
+      "model": "gpt-6-luna",
+      "native_response_sha256": "ff97060db63233bbecf199de607f241ff17203efa84a197128cc3013bff2174c",
+      "original_block": "gpt-6-luna_matplotlib_faulty",
+      "prompt_sha256": "ea3b264cdad7c7197ac2232d85255095a13d423d0098495fa4765bea4a0ff0a0",
+      "start": "faulty",
+      "status": "OK",
+      "task": "matplotlib",
+      "wave": 3
+    },
+    {
+      "arm": "none",
+      "elapsed_seconds": 8.5419139158912,
+      "grade": {
+        "action": "keep",
+        "cases_passed": 96,
+        "expression": "(max(vmin, vmax, oldmin), min(vmin, vmax, oldmax))",
+        "order_certificate": {
+          "failures": [],
+          "passed_order_types": 62,
+          "status": "ALL_ORDER_TYPES_PASS",
+          "total_order_types": 62
+        },
+        "passes": true,
+        "probes": {
+          "maintainer": {
+            "expected": [
+              1,
+              0
+            ],
+            "input": [
+              1,
+              0,
+              0.3,
+              0.7
+            ],
+            "output": [
+              1,
+              0
+            ],
+            "passes": true
+          },
+          "mixed": {
+            "expected": [
+              8,
+              0
+            ],
+            "input": [
+              8,
+              2,
+              0,
+              7
+            ],
+            "output": [
+              8,
+              0
+            ],
+            "passes": true
+          },
+          "revealing": {
+            "expected": [
+              8,
+              2
+            ],
+            "input": [
+              8,
+              2,
+              3,
+              7
+            ],
+            "matches_start": true,
+            "output": [
+              8,
+              2
+            ],
+            "passes": true,
+            "start_output": [
+              8,
+              2
+            ]
+          },
+          "shared": {
+            "expected": [
+              10,
+              0
+            ],
+            "input": [
+              8,
+              2,
+              0,
+              10
+            ],
+            "matches_start": true,
+            "output": [
+              10,
+              0
+            ],
+            "passes": true,
+            "start_output": [
+              10,
+              0
+            ]
+          }
+        }
+      },
+      "id": "repeat3_working_none",
+      "model": "gpt-6-luna",
+      "native_response_sha256": "9a15821e353d8a0c4e5e2449820158ccee7c2c5ec2b2605b6639f10df41b7bc9",
+      "original_block": "gpt-6-luna_matplotlib_working",
+      "prompt_sha256": "cd67de044fe48260fcade55e7abf53c51602c2ed78b4bd42ebc0b0956b7d04d0",
+      "start": "working",
+      "status": "OK",
+      "task": "matplotlib",
+      "wave": 3
+    },
+    {
+      "arm": "shared",
+      "elapsed_seconds": 7.503940375056118,
+      "grade": {
+        "action": "replace",
+        "cases_passed": 48,
+        "expression": "(min(vmin, vmax, oldmin), max(vmin, vmax, oldmax))",
+        "order_certificate": {
+          "failures": [
+            {
+              "actual": [
+                0,
+                0
+              ],
+              "expected": [
+                1,
+                0
+              ],
+              "input": [
+                1,
+                0,
+                0,
+                0
+              ]
+            },
+            {
+              "actual": [
+                0,
+                1
+              ],
+              "expected": [
+                1,
+                0
+              ],
+              "input": [
+                1,
+                0,
+                0,
+                1
+              ]
+            },
+            {
+              "actual": [
+                0,
+                2
+              ],
+              "expected": [
+                2,
+                0
+              ],
+              "input": [
+                1,
+                0,
+                0,
+                2
+              ]
+            },
+            {
+              "actual": [
+                0,
+                1
+              ],
+              "expected": [
+                1,
+                0
+              ],
+              "input": [
+                1,
+                0,
+                1,
+                0
+              ]
+            },
+            {
+              "actual": [
+                1,
+                1
+              ],
+              "expected": [
+                1,
+                0
+              ],
+              "input": [
+                1,
+                0,
+                1,
+                1
+              ]
+            },
+            {
+              "actual": [
+                1,
+                2
+              ],
+              "expected": [
+                2,
+                0
+              ],
+              "input": [
+                1,
+                0,
+                1,
+                2
+              ]
+            },
+            {
+              "actual": [
+                0,
+                2
+              ],
+              "expected": [
+                2,
+                0
+              ],
+              "input": [
+                1,
+                0,
+                2,
+                0
+              ]
+            },
+            {
+              "actual": [
+                1,
+                2
+              ],
+              "expected": [
+                2,
+                0
+              ],
+              "input": [
+                1,
+                0,
+                2,
+                1
+              ]
+            },
+            {
+              "actual": [
+                1,
+                2
+              ],
+              "expected": [
+                2,
+                0
+              ],
+              "input": [
+                1,
+                0,
+                2,
+                2
+              ]
+            },
+            {
+              "actual": [
+                1,
+                3
+              ],
+              "expected": [
+                3,
+                0
+              ],
+              "input": [
+                1,
+                0,
+                2,
+                3
+              ]
+            },
+            {
+              "actual": [
+                1,
+                3
+              ],
+              "expected": [
+                3,
+                0
+              ],
+              "input": [
+                1,
+                0,
+                3,
+                2
+              ]
+            },
+            {
+              "actual": [
+                0,
+                1
+              ],
+              "expected": [
+                2,
+                0
+              ],
+              "input": [
+                2,
+                0,
+                0,
+                1
+              ]
+            },
+            {
+              "actual": [
+                0,
+                1
+              ],
+              "expected": [
+                2,
+                0
+              ],
+              "input": [
+                2,
+                0,
+                1,
+                0
+              ]
+            },
+            {
+              "actual": [
+                1,
+                1
+              ],
+              "expected": [
+                2,
+                0
+              ],
+              "input": [
+                2,
+                0,
+                1,
+                1
+              ]
+            },
+            {
+              "actual": [
+                1,
+                2
+              ],
+              "expected": [
+                2,
+                0
+              ],
+              "input": [
+                2,
+                0,
+                1,
+                2
+              ]
+            },
+            {
+              "actual": [
+                1,
+                3
+              ],
+              "expected": [
+                3,
+                0
+              ],
+              "input": [
+                2,
+                0,
+                1,
+                3
+              ]
+            },
+            {
+              "actual": [
+                1,
+                2
+              ],
+              "expected": [
+                2,
+                0
+              ],
+              "input": [
+                2,
+                0,
+                2,
+                1
+              ]
+            },
+            {
+              "actual": [
+                1,
+                3
+              ],
+              "expected": [
+                3,
+                0
+              ],
+              "input": [
+                2,
+                0,
+                3,
+                1
+              ]
+            },
+            {
+              "actual": [
+                0,
+                1
+              ],
+              "expected": [
+                2,
+                0
+              ],
+              "input": [
+                2,
+                1,
+                0,
+                0
+              ]
+            },
+            {
+              "actual": [
+                0,
+                1
+              ],
+              "expected": [
+                2,
+                0
+              ],
+              "input": [
+                2,
+                1,
+                0,
+                1
+              ]
+            },
+            {
+              "actual": [
+                0,
+                2
+              ],
+              "expected": [
+                2,
+                0
+              ],
+              "input": [
+                2,
+                1,
+                0,
+                2
+              ]
+            },
+            {
+              "actual": [
+                0,
+                3
+              ],
+              "expected": [
+                3,
+                0
+              ],
+              "input": [
+                2,
+                1,
+                0,
+                3
+              ]
+            },
+            {
+              "actual": [
+                0,
+                1
+              ],
+              "expected": [
+                2,
+                0
+              ],
+              "input": [
+                2,
+                1,
+                1,
+                0
+              ]
+            },
+            {
+              "actual": [
+                0,
+                2
+              ],
+              "expected": [
+                2,
+                0
+              ],
+              "input": [
+                2,
+                1,
+                2,
+                0
+              ]
+            },
+            {
+              "actual": [
+                0,
+                3
+              ],
+              "expected": [
+                3,
+                0
+              ],
+              "input": [
+                2,
+                1,
+                3,
+                0
+              ]
+            },
+            {
+              "actual": [
+                1,
+                2
+              ],
+              "expected": [
+                3,
+                0
+              ],
+              "input": [
+                3,
+                0,
+                1,
+                2
+              ]
+            },
+            {
+              "actual": [
+                1,
+                2
+              ],
+              "expected": [
+                3,
+                0
+              ],
+              "input": [
+                3,
+                0,
+                2,
+                1
+              ]
+            },
+            {
+              "actual": [
+                0,
+                2
+              ],
+              "expected": [
+                3,
+                0
+              ],
+              "input": [
+                3,
+                1,
+                0,
+                2
+              ]
+            },
+            {
+              "actual": [
+                0,
+                2
+              ],
+              "expected": [
+                3,
+                0
+              ],
+              "input": [
+                3,
+                1,
+                2,
+                0
+              ]
+            },
+            {
+              "actual": [
+                0,
+                2
+              ],
+              "expected": [
+                3,
+                0
+              ],
+              "input": [
+                3,
+                2,
+                0,
+                1
+              ]
+            },
+            {
+              "actual": [
+                0,
+                2
+              ],
+              "expected": [
+                3,
+                0
+              ],
+              "input": [
+                3,
+                2,
+                1,
+                0
+              ]
+            }
+          ],
+          "passed_order_types": 31,
+          "status": "COUNTEREXAMPLE",
+          "total_order_types": 62
+        },
+        "passes": false,
+        "probes": {
+          "maintainer": {
+            "expected": [
+              1,
+              0
+            ],
+            "input": [
+              1,
+              0,
+              0.3,
+              0.7
+            ],
+            "output": [
+              0.3,
+              0.7
+            ],
+            "passes": false
+          },
+          "mixed": {
+            "expected": [
+              8,
+              0
+            ],
+            "input": [
+              8,
+              2,
+              0,
+              7
+            ],
+            "output": [
+              0,
+              7
+            ],
+            "passes": false
+          },
+          "revealing": {
+            "expected": [
+              8,
+              2
+            ],
+            "input": [
+              8,
+              2,
+              3,
+              7
+            ],
+            "matches_start": false,
+            "output": [
+              3,
+              7
+            ],
+            "passes": false,
+            "start_output": [
+              8,
+              2
+            ]
+          },
+          "shared": {
+            "expected": [
+              10,
+              0
+            ],
+            "input": [
+              8,
+              2,
+              0,
+              10
+            ],
+            "matches_start": false,
+            "output": [
+              0,
+              10
+            ],
+            "passes": false,
+            "start_output": [
+              10,
+              0
+            ]
+          }
+        }
+      },
+      "id": "repeat4_working_shared",
+      "model": "gpt-6-luna",
+      "native_response_sha256": "2316e64cd37a47df0e6ba1b2df891c70916bc5b3049dfa97ad086ff80e0c0c77",
+      "original_block": "gpt-6-luna_matplotlib_working",
+      "prompt_sha256": "484c4a24412e4d38ec521f16a37f1bcd05e20fd16c3cad8d038e7c6db74a7ff9",
+      "start": "working",
+      "status": "OK",
+      "task": "matplotlib",
+      "wave": 4
+    },
+    {
+      "arm": "none",
+      "elapsed_seconds": 5.833654083078727,
+      "grade": {
+        "action": "replace",
+        "cases_passed": 96,
+        "expression": "(max(vmin, vmax, oldmin), min(vmin, vmax, oldmax))",
+        "order_certificate": {
+          "failures": [],
+          "passed_order_types": 62,
+          "status": "ALL_ORDER_TYPES_PASS",
+          "total_order_types": 62
+        },
+        "passes": true,
+        "probes": {
+          "maintainer": {
+            "expected": [
+              1,
+              0
+            ],
+            "input": [
+              1,
+              0,
+              0.3,
+              0.7
+            ],
+            "output": [
+              1,
+              0
+            ],
+            "passes": true
+          },
+          "mixed": {
+            "expected": [
+              8,
+              0
+            ],
+            "input": [
+              8,
+              2,
+              0,
+              7
+            ],
+            "output": [
+              8,
+              0
+            ],
+            "passes": true
+          },
+          "revealing": {
+            "expected": [
+              8,
+              2
+            ],
+            "input": [
+              8,
+              2,
+              3,
+              7
+            ],
+            "matches_start": true,
+            "output": [
+              8,
+              2
+            ],
+            "passes": true,
+            "start_output": [
+              8,
+              2
+            ]
+          },
+          "shared": {
+            "expected": [
+              10,
+              0
+            ],
+            "input": [
+              8,
+              2,
+              0,
+              10
+            ],
+            "matches_start": true,
+            "output": [
+              10,
+              0
+            ],
+            "passes": true,
+            "start_output": [
+              10,
+              0
+            ]
+          }
+        }
+      },
+      "id": "repeat4_working_none",
+      "model": "gpt-6-luna",
+      "native_response_sha256": "972b92de0102e0f83e3867b3522a4a34780b1d1abbe4846c6f244596f0f13620",
+      "original_block": "gpt-6-luna_matplotlib_working",
+      "prompt_sha256": "cd67de044fe48260fcade55e7abf53c51602c2ed78b4bd42ebc0b0956b7d04d0",
+      "start": "working",
+      "status": "OK",
+      "task": "matplotlib",
+      "wave": 4
+    },
+    {
+      "arm": "shared",
+      "elapsed_seconds": 5.921186124905944,
+      "grade": {
+        "action": "keep",
+        "cases_passed": 58,
+        "expression": "(max(vmin, vmax, oldmax), min(vmin, vmax, oldmin))",
+        "order_certificate": {
+          "failures": [
+            {
+              "actual": [
+                0,
+                0
+              ],
+              "expected": [
+                1,
+                0
+              ],
+              "input": [
+                1,
+                0,
+                0,
+                0
+              ]
+            },
+            {
+              "actual": [
+                1,
+                1
+              ],
+              "expected": [
+                1,
+                0
+              ],
+              "input": [
+                1,
+                0,
+                1,
+                1
+              ]
+            },
+            {
+              "actual": [
+                2,
+                1
+              ],
+              "expected": [
+                2,
+                0
+              ],
+              "input": [
+                1,
+                0,
+                1,
+                2
+              ]
+            },
+            {
+              "actual": [
+                2,
+                1
+              ],
+              "expected": [
+                2,
+                0
+              ],
+              "input": [
+                1,
+                0,
+                2,
+                1
+              ]
+            },
+            {
+              "actual": [
+                2,
+                1
+              ],
+              "expected": [
+                2,
+                0
+              ],
+              "input": [
+                1,
+                0,
+                2,
+                2
+              ]
+            },
+            {
+              "actual": [
+                3,
+                1
+              ],
+              "expected": [
+                3,
+                0
+              ],
+              "input": [
+                1,
+                0,
+                2,
+                3
+              ]
+            },
+            {
+              "actual": [
+                3,
+                1
+              ],
+              "expected": [
+                3,
+                0
+              ],
+              "input": [
+                1,
+                0,
+                3,
+                2
+              ]
+            },
+            {
+              "actual": [
+                1,
+                0
+              ],
+              "expected": [
+                2,
+                0
+              ],
+              "input": [
+                2,
+                0,
+                0,
+                1
+              ]
+            },
+            {
+              "actual": [
+                1,
+                0
+              ],
+              "expected": [
+                2,
+                0
+              ],
+              "input": [
+                2,
+                0,
+                1,
+                0
+              ]
+            },
+            {
+              "actual": [
+                1,
+                1
+              ],
+              "expected": [
+                2,
+                0
+              ],
+              "input": [
+                2,
+                0,
+                1,
+                1
+              ]
+            },
+            {
+              "actual": [
+                2,
+                1
+              ],
+              "expected": [
+                2,
+                0
+              ],
+              "input": [
+                2,
+                0,
+                1,
+                2
+              ]
+            },
+            {
+              "actual": [
+                3,
+                1
+              ],
+              "expected": [
+                3,
+                0
+              ],
+              "input": [
+                2,
+                0,
+                1,
+                3
+              ]
+            },
+            {
+              "actual": [
+                2,
+                1
+              ],
+              "expected": [
+                2,
+                0
+              ],
+              "input": [
+                2,
+                0,
+                2,
+                1
+              ]
+            },
+            {
+              "actual": [
+                3,
+                1
+              ],
+              "expected": [
+                3,
+                0
+              ],
+              "input": [
+                2,
+                0,
+                3,
+                1
+              ]
+            },
+            {
+              "actual": [
+                1,
+                0
+              ],
+              "expected": [
+                2,
+                0
+              ],
+              "input": [
+                2,
+                1,
+                0,
+                0
+              ]
+            },
+            {
+              "actual": [
+                1,
+                0
+              ],
+              "expected": [
+                2,
+                0
+              ],
+              "input": [
+                2,
+                1,
+                0,
+                1
+              ]
+            },
+            {
+              "actual": [
+                1,
+                0
+              ],
+              "expected": [
+                2,
+                0
+              ],
+              "input": [
+                2,
+                1,
+                1,
+                0
+              ]
+            },
+            {
+              "actual": [
+                2,
+                1
+              ],
+              "expected": [
+                3,
+                0
+              ],
+              "input": [
+                3,
+                0,
+                1,
+                2
+              ]
+            },
+            {
+              "actual": [
+                2,
+                1
+              ],
+              "expected": [
+                3,
+                0
+              ],
+              "input": [
+                3,
+                0,
+                2,
+                1
+              ]
+            },
+            {
+              "actual": [
+                2,
+                0
+              ],
+              "expected": [
+                3,
+                0
+              ],
+              "input": [
+                3,
+                1,
+                0,
+                2
+              ]
+            },
+            {
+              "actual": [
+                2,
+                0
+              ],
+              "expected": [
+                3,
+                0
+              ],
+              "input": [
+                3,
+                1,
+                2,
+                0
+              ]
+            },
+            {
+              "actual": [
+                2,
+                0
+              ],
+              "expected": [
+                3,
+                0
+              ],
+              "input": [
+                3,
+                2,
+                0,
+                1
+              ]
+            },
+            {
+              "actual": [
+                2,
+                0
+              ],
+              "expected": [
+                3,
+                0
+              ],
+              "input": [
+                3,
+                2,
+                1,
+                0
+              ]
+            }
+          ],
+          "passed_order_types": 39,
+          "status": "COUNTEREXAMPLE",
+          "total_order_types": 62
+        },
+        "passes": false,
+        "probes": {
+          "maintainer": {
+            "expected": [
+              1,
+              0
+            ],
+            "input": [
+              1,
+              0,
+              0.3,
+              0.7
+            ],
+            "output": [
+              0.7,
+              0.3
+            ],
+            "passes": false
+          },
+          "mixed": {
+            "expected": [
+              8,
+              0
+            ],
+            "input": [
+              8,
+              2,
+              0,
+              7
+            ],
+            "output": [
+              7,
+              0
+            ],
+            "passes": false
+          },
+          "revealing": {
+            "expected": [
+              8,
+              2
+            ],
+            "input": [
+              8,
+              2,
+              3,
+              7
+            ],
+            "matches_start": true,
+            "output": [
+              7,
+              3
+            ],
+            "passes": false,
+            "start_output": [
+              7,
+              3
+            ]
+          },
+          "shared": {
+            "expected": [
+              10,
+              0
+            ],
+            "input": [
+              8,
+              2,
+              0,
+              10
+            ],
+            "matches_start": true,
+            "output": [
+              10,
+              0
+            ],
+            "passes": true,
+            "start_output": [
+              10,
+              0
+            ]
+          }
+        }
+      },
+      "id": "repeat4_faulty_shared",
+      "model": "gpt-6-luna",
+      "native_response_sha256": "f63558789dd4199d133979b527b774556f99493f34e27aee782ed9cd1e6b79dd",
+      "original_block": "gpt-6-luna_matplotlib_faulty",
+      "prompt_sha256": "657d8b0ace8b7baca609940508c12f3838b6ddbc8818b2b00bbbdf226943419e",
+      "start": "faulty",
+      "status": "OK",
+      "task": "matplotlib",
+      "wave": 4
+    },
+    {
+      "arm": "revealing",
+      "elapsed_seconds": 5.6591979172080755,
+      "grade": {
+        "action": "keep",
+        "cases_passed": 96,
+        "expression": "(max(vmin, vmax, oldmin), min(vmin, vmax, oldmax))",
+        "order_certificate": {
+          "failures": [],
+          "passed_order_types": 62,
+          "status": "ALL_ORDER_TYPES_PASS",
+          "total_order_types": 62
+        },
+        "passes": true,
+        "probes": {
+          "maintainer": {
+            "expected": [
+              1,
+              0
+            ],
+            "input": [
+              1,
+              0,
+              0.3,
+              0.7
+            ],
+            "output": [
+              1,
+              0
+            ],
+            "passes": true
+          },
+          "mixed": {
+            "expected": [
+              8,
+              0
+            ],
+            "input": [
+              8,
+              2,
+              0,
+              7
+            ],
+            "output": [
+              8,
+              0
+            ],
+            "passes": true
+          },
+          "revealing": {
+            "expected": [
+              8,
+              2
+            ],
+            "input": [
+              8,
+              2,
+              3,
+              7
+            ],
+            "matches_start": true,
+            "output": [
+              8,
+              2
+            ],
+            "passes": true,
+            "start_output": [
+              8,
+              2
+            ]
+          },
+          "shared": {
+            "expected": [
+              10,
+              0
+            ],
+            "input": [
+              8,
+              2,
+              0,
+              10
+            ],
+            "matches_start": true,
+            "output": [
+              10,
+              0
+            ],
+            "passes": true,
+            "start_output": [
+              10,
+              0
+            ]
+          }
+        }
+      },
+      "id": "repeat4_working_revealing",
+      "model": "gpt-6-luna",
+      "native_response_sha256": "aad4ee087fd1eb45946bcb5b942ae23516e292531b71b76936645c5c53cad18d",
+      "original_block": "gpt-6-luna_matplotlib_working",
+      "prompt_sha256": "138e22429d55e8e3133bb593825513725984fa82a3891a97ef04c03c14063ca2",
+      "start": "working",
+      "status": "OK",
+      "task": "matplotlib",
+      "wave": 4
+    },
+    {
+      "arm": "revealing",
+      "elapsed_seconds": 6.481181791983545,
+      "grade": {
+        "action": "keep",
+        "cases_passed": 58,
+        "expression": "(max(vmin, vmax, oldmax), min(vmin, vmax, oldmin))",
+        "order_certificate": {
+          "failures": [
+            {
+              "actual": [
+                0,
+                0
+              ],
+              "expected": [
+                1,
+                0
+              ],
+              "input": [
+                1,
+                0,
+                0,
+                0
+              ]
+            },
+            {
+              "actual": [
+                1,
+                1
+              ],
+              "expected": [
+                1,
+                0
+              ],
+              "input": [
+                1,
+                0,
+                1,
+                1
+              ]
+            },
+            {
+              "actual": [
+                2,
+                1
+              ],
+              "expected": [
+                2,
+                0
+              ],
+              "input": [
+                1,
+                0,
+                1,
+                2
+              ]
+            },
+            {
+              "actual": [
+                2,
+                1
+              ],
+              "expected": [
+                2,
+                0
+              ],
+              "input": [
+                1,
+                0,
+                2,
+                1
+              ]
+            },
+            {
+              "actual": [
+                2,
+                1
+              ],
+              "expected": [
+                2,
+                0
+              ],
+              "input": [
+                1,
+                0,
+                2,
+                2
+              ]
+            },
+            {
+              "actual": [
+                3,
+                1
+              ],
+              "expected": [
+                3,
+                0
+              ],
+              "input": [
+                1,
+                0,
+                2,
+                3
+              ]
+            },
+            {
+              "actual": [
+                3,
+                1
+              ],
+              "expected": [
+                3,
+                0
+              ],
+              "input": [
+                1,
+                0,
+                3,
+                2
+              ]
+            },
+            {
+              "actual": [
+                1,
+                0
+              ],
+              "expected": [
+                2,
+                0
+              ],
+              "input": [
+                2,
+                0,
+                0,
+                1
+              ]
+            },
+            {
+              "actual": [
+                1,
+                0
+              ],
+              "expected": [
+                2,
+                0
+              ],
+              "input": [
+                2,
+                0,
+                1,
+                0
+              ]
+            },
+            {
+              "actual": [
+                1,
+                1
+              ],
+              "expected": [
+                2,
+                0
+              ],
+              "input": [
+                2,
+                0,
+                1,
+                1
+              ]
+            },
+            {
+              "actual": [
+                2,
+                1
+              ],
+              "expected": [
+                2,
+                0
+              ],
+              "input": [
+                2,
+                0,
+                1,
+                2
+              ]
+            },
+            {
+              "actual": [
+                3,
+                1
+              ],
+              "expected": [
+                3,
+                0
+              ],
+              "input": [
+                2,
+                0,
+                1,
+                3
+              ]
+            },
+            {
+              "actual": [
+                2,
+                1
+              ],
+              "expected": [
+                2,
+                0
+              ],
+              "input": [
+                2,
+                0,
+                2,
+                1
+              ]
+            },
+            {
+              "actual": [
+                3,
+                1
+              ],
+              "expected": [
+                3,
+                0
+              ],
+              "input": [
+                2,
+                0,
+                3,
+                1
+              ]
+            },
+            {
+              "actual": [
+                1,
+                0
+              ],
+              "expected": [
+                2,
+                0
+              ],
+              "input": [
+                2,
+                1,
+                0,
+                0
+              ]
+            },
+            {
+              "actual": [
+                1,
+                0
+              ],
+              "expected": [
+                2,
+                0
+              ],
+              "input": [
+                2,
+                1,
+                0,
+                1
+              ]
+            },
+            {
+              "actual": [
+                1,
+                0
+              ],
+              "expected": [
+                2,
+                0
+              ],
+              "input": [
+                2,
+                1,
+                1,
+                0
+              ]
+            },
+            {
+              "actual": [
+                2,
+                1
+              ],
+              "expected": [
+                3,
+                0
+              ],
+              "input": [
+                3,
+                0,
+                1,
+                2
+              ]
+            },
+            {
+              "actual": [
+                2,
+                1
+              ],
+              "expected": [
+                3,
+                0
+              ],
+              "input": [
+                3,
+                0,
+                2,
+                1
+              ]
+            },
+            {
+              "actual": [
+                2,
+                0
+              ],
+              "expected": [
+                3,
+                0
+              ],
+              "input": [
+                3,
+                1,
+                0,
+                2
+              ]
+            },
+            {
+              "actual": [
+                2,
+                0
+              ],
+              "expected": [
+                3,
+                0
+              ],
+              "input": [
+                3,
+                1,
+                2,
+                0
+              ]
+            },
+            {
+              "actual": [
+                2,
+                0
+              ],
+              "expected": [
+                3,
+                0
+              ],
+              "input": [
+                3,
+                2,
+                0,
+                1
+              ]
+            },
+            {
+              "actual": [
+                2,
+                0
+              ],
+              "expected": [
+                3,
+                0
+              ],
+              "input": [
+                3,
+                2,
+                1,
+                0
+              ]
+            }
+          ],
+          "passed_order_types": 39,
+          "status": "COUNTEREXAMPLE",
+          "total_order_types": 62
+        },
+        "passes": false,
+        "probes": {
+          "maintainer": {
+            "expected": [
+              1,
+              0
+            ],
+            "input": [
+              1,
+              0,
+              0.3,
+              0.7
+            ],
+            "output": [
+              0.7,
+              0.3
+            ],
+            "passes": false
+          },
+          "mixed": {
+            "expected": [
+              8,
+              0
+            ],
+            "input": [
+              8,
+              2,
+              0,
+              7
+            ],
+            "output": [
+              7,
+              0
+            ],
+            "passes": false
+          },
+          "revealing": {
+            "expected": [
+              8,
+              2
+            ],
+            "input": [
+              8,
+              2,
+              3,
+              7
+            ],
+            "matches_start": true,
+            "output": [
+              7,
+              3
+            ],
+            "passes": false,
+            "start_output": [
+              7,
+              3
+            ]
+          },
+          "shared": {
+            "expected": [
+              10,
+              0
+            ],
+            "input": [
+              8,
+              2,
+              0,
+              10
+            ],
+            "matches_start": true,
+            "output": [
+              10,
+              0
+            ],
+            "passes": true,
+            "start_output": [
+              10,
+              0
+            ]
+          }
+        }
+      },
+      "id": "repeat4_faulty_revealing",
+      "model": "gpt-6-luna",
+      "native_response_sha256": "4eb4c9f459057599c85dcb9a279b1ea2e84c2d503fe3667f5f76b6de512814ea",
+      "original_block": "gpt-6-luna_matplotlib_faulty",
+      "prompt_sha256": "ea3b264cdad7c7197ac2232d85255095a13d423d0098495fa4765bea4a0ff0a0",
+      "start": "faulty",
+      "status": "OK",
+      "task": "matplotlib",
+      "wave": 4
+    },
+    {
+      "arm": "none",
+      "elapsed_seconds": 6.493250999832526,
+      "grade": {
+        "action": "replace",
+        "cases_passed": 58,
+        "expression": "(max(vmin, vmax, oldmax), min(vmin, vmax, oldmin))",
+        "order_certificate": {
+          "failures": [
+            {
+              "actual": [
+                0,
+                0
+              ],
+              "expected": [
+                1,
+                0
+              ],
+              "input": [
+                1,
+                0,
+                0,
+                0
+              ]
+            },
+            {
+              "actual": [
+                1,
+                1
+              ],
+              "expected": [
+                1,
+                0
+              ],
+              "input": [
+                1,
+                0,
+                1,
+                1
+              ]
+            },
+            {
+              "actual": [
+                2,
+                1
+              ],
+              "expected": [
+                2,
+                0
+              ],
+              "input": [
+                1,
+                0,
+                1,
+                2
+              ]
+            },
+            {
+              "actual": [
+                2,
+                1
+              ],
+              "expected": [
+                2,
+                0
+              ],
+              "input": [
+                1,
+                0,
+                2,
+                1
+              ]
+            },
+            {
+              "actual": [
+                2,
+                1
+              ],
+              "expected": [
+                2,
+                0
+              ],
+              "input": [
+                1,
+                0,
+                2,
+                2
+              ]
+            },
+            {
+              "actual": [
+                3,
+                1
+              ],
+              "expected": [
+                3,
+                0
+              ],
+              "input": [
+                1,
+                0,
+                2,
+                3
+              ]
+            },
+            {
+              "actual": [
+                3,
+                1
+              ],
+              "expected": [
+                3,
+                0
+              ],
+              "input": [
+                1,
+                0,
+                3,
+                2
+              ]
+            },
+            {
+              "actual": [
+                1,
+                0
+              ],
+              "expected": [
+                2,
+                0
+              ],
+              "input": [
+                2,
+                0,
+                0,
+                1
+              ]
+            },
+            {
+              "actual": [
+                1,
+                0
+              ],
+              "expected": [
+                2,
+                0
+              ],
+              "input": [
+                2,
+                0,
+                1,
+                0
+              ]
+            },
+            {
+              "actual": [
+                1,
+                1
+              ],
+              "expected": [
+                2,
+                0
+              ],
+              "input": [
+                2,
+                0,
+                1,
+                1
+              ]
+            },
+            {
+              "actual": [
+                2,
+                1
+              ],
+              "expected": [
+                2,
+                0
+              ],
+              "input": [
+                2,
+                0,
+                1,
+                2
+              ]
+            },
+            {
+              "actual": [
+                3,
+                1
+              ],
+              "expected": [
+                3,
+                0
+              ],
+              "input": [
+                2,
+                0,
+                1,
+                3
+              ]
+            },
+            {
+              "actual": [
+                2,
+                1
+              ],
+              "expected": [
+                2,
+                0
+              ],
+              "input": [
+                2,
+                0,
+                2,
+                1
+              ]
+            },
+            {
+              "actual": [
+                3,
+                1
+              ],
+              "expected": [
+                3,
+                0
+              ],
+              "input": [
+                2,
+                0,
+                3,
+                1
+              ]
+            },
+            {
+              "actual": [
+                1,
+                0
+              ],
+              "expected": [
+                2,
+                0
+              ],
+              "input": [
+                2,
+                1,
+                0,
+                0
+              ]
+            },
+            {
+              "actual": [
+                1,
+                0
+              ],
+              "expected": [
+                2,
+                0
+              ],
+              "input": [
+                2,
+                1,
+                0,
+                1
+              ]
+            },
+            {
+              "actual": [
+                1,
+                0
+              ],
+              "expected": [
+                2,
+                0
+              ],
+              "input": [
+                2,
+                1,
+                1,
+                0
+              ]
+            },
+            {
+              "actual": [
+                2,
+                1
+              ],
+              "expected": [
+                3,
+                0
+              ],
+              "input": [
+                3,
+                0,
+                1,
+                2
+              ]
+            },
+            {
+              "actual": [
+                2,
+                1
+              ],
+              "expected": [
+                3,
+                0
+              ],
+              "input": [
+                3,
+                0,
+                2,
+                1
+              ]
+            },
+            {
+              "actual": [
+                2,
+                0
+              ],
+              "expected": [
+                3,
+                0
+              ],
+              "input": [
+                3,
+                1,
+                0,
+                2
+              ]
+            },
+            {
+              "actual": [
+                2,
+                0
+              ],
+              "expected": [
+                3,
+                0
+              ],
+              "input": [
+                3,
+                1,
+                2,
+                0
+              ]
+            },
+            {
+              "actual": [
+                2,
+                0
+              ],
+              "expected": [
+                3,
+                0
+              ],
+              "input": [
+                3,
+                2,
+                0,
+                1
+              ]
+            },
+            {
+              "actual": [
+                2,
+                0
+              ],
+              "expected": [
+                3,
+                0
+              ],
+              "input": [
+                3,
+                2,
+                1,
+                0
+              ]
+            }
+          ],
+          "passed_order_types": 39,
+          "status": "COUNTEREXAMPLE",
+          "total_order_types": 62
+        },
+        "passes": false,
+        "probes": {
+          "maintainer": {
+            "expected": [
+              1,
+              0
+            ],
+            "input": [
+              1,
+              0,
+              0.3,
+              0.7
+            ],
+            "output": [
+              0.7,
+              0.3
+            ],
+            "passes": false
+          },
+          "mixed": {
+            "expected": [
+              8,
+              0
+            ],
+            "input": [
+              8,
+              2,
+              0,
+              7
+            ],
+            "output": [
+              7,
+              0
+            ],
+            "passes": false
+          },
+          "revealing": {
+            "expected": [
+              8,
+              2
+            ],
+            "input": [
+              8,
+              2,
+              3,
+              7
+            ],
+            "matches_start": true,
+            "output": [
+              7,
+              3
+            ],
+            "passes": false,
+            "start_output": [
+              7,
+              3
+            ]
+          },
+          "shared": {
+            "expected": [
+              10,
+              0
+            ],
+            "input": [
+              8,
+              2,
+              0,
+              10
+            ],
+            "matches_start": true,
+            "output": [
+              10,
+              0
+            ],
+            "passes": true,
+            "start_output": [
+              10,
+              0
+            ]
+          }
+        }
+      },
+      "id": "repeat4_faulty_none",
+      "model": "gpt-6-luna",
+      "native_response_sha256": "1984155cab3d33794755d0b0c613eb2ccb08e2109cf107b9d4fe664062a35fca",
+      "original_block": "gpt-6-luna_matplotlib_faulty",
+      "prompt_sha256": "f070716c27586fb9d2def22bbcd2c6796c905eb39ccf34d01ac68bad2dead0c2",
+      "start": "faulty",
+      "status": "OK",
+      "task": "matplotlib",
+      "wave": 4
+    }
+  ],
+  "summary": {
+    "faulty": {
+      "none": {
+        "failed": 4,
+        "maintainer_accepts_failure": 0,
+        "mixed_catches_failure": 4,
+        "passes": 0,
+        "replacements": 3,
+        "scheduled": 4,
+        "shared_catches_revealing_and_maintainer_miss": 0,
+        "shared_catches_revealing_misses": 0,
+        "valid": 4
+      },
+      "revealing": {
+        "failed": 3,
+        "maintainer_accepts_failure": 0,
+        "mixed_catches_failure": 3,
+        "passes": 1,
+        "replacements": 2,
+        "reproduces_starting_display_despite_failure": 2,
+        "scheduled": 4,
+        "shared_catches_revealing_and_maintainer_miss": 0,
+        "shared_catches_revealing_misses": 0,
+        "shown_and_maintainer_accept_failure": 0,
+        "shown_contract_accepts_failure": 0,
+        "valid": 4
+      },
+      "shared": {
+        "failed": 3,
+        "maintainer_accepts_failure": 0,
+        "mixed_catches_failure": 3,
+        "passes": 1,
+        "replacements": 1,
+        "reproduces_starting_display_despite_failure": 3,
+        "scheduled": 4,
+        "shared_catches_revealing_and_maintainer_miss": 0,
+        "shared_catches_revealing_misses": 0,
+        "shown_and_maintainer_accept_failure": 0,
+        "shown_contract_accepts_failure": 3,
+        "valid": 4
+      }
+    },
+    "working": {
+      "none": {
+        "passes": 4,
+        "replacements": 2,
+        "scheduled": 4,
+        "valid": 4
+      },
+      "revealing": {
+        "failed": 1,
+        "maintainer_accepts_failure": 1,
+        "mixed_catches_failure": 1,
+        "passes": 3,
+        "replacements": 1,
+        "reproduces_starting_display_despite_failure": 1,
+        "scheduled": 4,
+        "shared_catches_revealing_and_maintainer_miss": 1,
+        "shared_catches_revealing_misses": 1,
+        "shown_and_maintainer_accept_failure": 1,
+        "shown_contract_accepts_failure": 1,
+        "valid": 4
+      },
+      "shared": {
+        "failed": 2,
+        "maintainer_accepts_failure": 0,
+        "mixed_catches_failure": 2,
+        "passes": 2,
+        "replacements": 3,
+        "reproduces_starting_display_despite_failure": 1,
+        "scheduled": 4,
+        "shared_catches_revealing_and_maintainer_miss": 0,
+        "shared_catches_revealing_misses": 0,
+        "shown_and_maintainer_accept_failure": 0,
+        "shown_contract_accepts_failure": 1,
+        "valid": 4
+      }
+    }
+  }
+}

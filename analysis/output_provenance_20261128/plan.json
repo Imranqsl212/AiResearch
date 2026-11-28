@@ -1,0 +1,4948 @@
+{
+  "blocks": [
+    {
+      "calls": [
+        {
+          "id": "required_B",
+          "label": "required",
+          "prompt_sha256": "74d2368c83b774c2105206779ed9736019794dba42b592a1e7a31da04c4d416b",
+          "targets": [
+            "B"
+          ],
+          "value_contract": "B"
+        },
+        {
+          "id": "anonymous_B",
+          "label": "anonymous",
+          "prompt_sha256": "43021a3b231d6e7ee68acc5847c773dd0bb1bcada029a640a0283890e9520c39",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "B"
+        },
+        {
+          "id": "none",
+          "label": "none",
+          "prompt_sha256": "91e9baaed13616ce5bbfb1fb1384c5c45a87fa16efd287d0490ced5e79dc2067",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": null
+        },
+        {
+          "id": "named_B",
+          "label": "named",
+          "prompt_sha256": "82274ac9f8a07ba2bf555515af5d4002751d9a7a4bdb346173d75a333130094c",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "B"
+        },
+        {
+          "id": "named_A",
+          "label": "named",
+          "prompt_sha256": "36e7390872b83279da22ba8cfa37d55f7c694a2eb961e609a1af1221aa23bfb2",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "A"
+        },
+        {
+          "id": "anonymous_A",
+          "label": "anonymous",
+          "prompt_sha256": "2e8722b336e94886ee075cc264505019c70896fe482982fb1a923ffad5d83e5d",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "A"
+        },
+        {
+          "id": "required_A",
+          "label": "required",
+          "prompt_sha256": "9a9051ba052c0c0cee2ff05972d078ab5a074ebbb80d1f00fe838322c1da6e26",
+          "targets": [
+            "A"
+          ],
+          "value_contract": "A"
+        }
+      ],
+      "id": "gpt-6-luna_moving_sum_A",
+      "model": "gpt-6-luna",
+      "start": "A",
+      "task": "moving_sum",
+      "wave": 1
+    },
+    {
+      "calls": [
+        {
+          "id": "none",
+          "label": "none",
+          "prompt_sha256": "02524bfd2c0f1ef76aaf466bba5d361526d28a744d018f5aaea398213f6aebcb",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": null
+        },
+        {
+          "id": "required_B",
+          "label": "required",
+          "prompt_sha256": "b772ba0e980fae6628f0e941a98327e7a723c35f9cbc3af128034eed60eab642",
+          "targets": [
+            "B"
+          ],
+          "value_contract": "B"
+        },
+        {
+          "id": "anonymous_A",
+          "label": "anonymous",
+          "prompt_sha256": "0627fa9e5488a51fe4ca3c15cc16ca5dff241043a91348a9c0c2d95ff93d9492",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "A"
+        },
+        {
+          "id": "named_B",
+          "label": "named",
+          "prompt_sha256": "cc445b5f2ed00e9f4e3d5124bc8abd6ebca84af4b4a070248b1358264fd632d7",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "B"
+        },
+        {
+          "id": "anonymous_B",
+          "label": "anonymous",
+          "prompt_sha256": "ba582659f1ec961a69a72c86dd58850c66587a5613f24df11c67491474f618bf",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "B"
+        },
+        {
+          "id": "required_A",
+          "label": "required",
+          "prompt_sha256": "8320d7c6aa3f1fcfb32f7529980d897f76cb5182fcfc2439d1b35141a1c71ac6",
+          "targets": [
+            "A"
+          ],
+          "value_contract": "A"
+        },
+        {
+          "id": "named_A",
+          "label": "named",
+          "prompt_sha256": "be5355230928da0a01c7559c55a486a5c6e3c38a948bae78d8065dad21a629ff",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "A"
+        }
+      ],
+      "id": "gpt-6.2-astra_range_B",
+      "model": "gpt-6.2-astra",
+      "start": "B",
+      "task": "range",
+      "wave": 1
+    },
+    {
+      "calls": [
+        {
+          "id": "named_A",
+          "label": "named",
+          "prompt_sha256": "9f42c99314803eb6b8e2dc5088bab3e469017cea1d6edc0d971f863b64eeaa00",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "A"
+        },
+        {
+          "id": "required_A",
+          "label": "required",
+          "prompt_sha256": "38f0faff2d2da91c3ac90856e069fb0f123ef2b914eab9ce10a0998db06b4d3d",
+          "targets": [
+            "A"
+          ],
+          "value_contract": "A"
+        },
+        {
+          "id": "none",
+          "label": "none",
+          "prompt_sha256": "9af40181cad950f21278c78daa0f95ede479a2e9f2b1edfdbf735a850b3f0ea6",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": null
+        },
+        {
+          "id": "named_B",
+          "label": "named",
+          "prompt_sha256": "78d6cd93e941cdcba1b614eac7035da9569c3b3b390ba76960ec37f2f4534b47",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "B"
+        },
+        {
+          "id": "anonymous_B",
+          "label": "anonymous",
+          "prompt_sha256": "4dc9fae01f9876e0deec61ed70a4c732c8ddaadaaa615805c84fe6a3eb9bdbfc",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "B"
+        },
+        {
+          "id": "required_B",
+          "label": "required",
+          "prompt_sha256": "b8e5ea121741b4c92c83b3538e8ceda897d88a46cdb3391fc8d7f141fcae35ef",
+          "targets": [
+            "B"
+          ],
+          "value_contract": "B"
+        },
+        {
+          "id": "anonymous_A",
+          "label": "anonymous",
+          "prompt_sha256": "83b595fbc24b28f8b3fe3050e467f4a40400bf1226b7020140717091b6aa304e",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "A"
+        }
+      ],
+      "id": "gpt-6.1-terra_calendar_B",
+      "model": "gpt-6.1-terra",
+      "start": "B",
+      "task": "calendar",
+      "wave": 1
+    },
+    {
+      "calls": [
+        {
+          "id": "required_A",
+          "label": "required",
+          "prompt_sha256": "aef2f90990912a6f66be8d77442275cad5148c0b3696703e33172b468881b540",
+          "targets": [
+            "A"
+          ],
+          "value_contract": "A"
+        },
+        {
+          "id": "anonymous_A",
+          "label": "anonymous",
+          "prompt_sha256": "696add2141ec60b01f8008ae62ffb4a83f085dc0d62e348c54056841f64bf27d",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "A"
+        },
+        {
+          "id": "named_B",
+          "label": "named",
+          "prompt_sha256": "d906c98947e4e802bb9407267a143f9d15cfd5699daeb8d814de9d163dd59ae1",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "B"
+        },
+        {
+          "id": "none",
+          "label": "none",
+          "prompt_sha256": "e7d8ac0ecc903fb4d882dbce57cf019075322ab0d85bfabf0f68c16753b4819d",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": null
+        },
+        {
+          "id": "required_B",
+          "label": "required",
+          "prompt_sha256": "90bb630d7a7c8c726b5b02b4110c762aca010596912ddbef90cfa57fbb5ff397",
+          "targets": [
+            "B"
+          ],
+          "value_contract": "B"
+        },
+        {
+          "id": "named_A",
+          "label": "named",
+          "prompt_sha256": "ed8bf4a0776a814a6dcb6b2bca68b2b44bc6322616fb028427185b9a4c3f2c3e",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "A"
+        },
+        {
+          "id": "anonymous_B",
+          "label": "anonymous",
+          "prompt_sha256": "2caf7ec4a488c038500f95de8876345675e0bd6e9bd5869bd740b94816964b61",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "B"
+        }
+      ],
+      "id": "gpt-6.2-sol_distance_B",
+      "model": "gpt-6.2-sol",
+      "start": "B",
+      "task": "distance",
+      "wave": 1
+    },
+    {
+      "calls": [
+        {
+          "id": "anonymous_A",
+          "label": "anonymous",
+          "prompt_sha256": "77faca49f748816fb9de761fcd62a28907c591a28148daaddb4b1bb3bb5f5e72",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "A"
+        },
+        {
+          "id": "named_B",
+          "label": "named",
+          "prompt_sha256": "92976e217034d3f67dc77f3e05596cd39b68cdb5e2efa3736697a5ae86f99255",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "B"
+        },
+        {
+          "id": "anonymous_B",
+          "label": "anonymous",
+          "prompt_sha256": "d0efc34ba322278d1c8945bc71cb02458dbceee9499cd4d71b2ee8ed2213bc0e",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "B"
+        },
+        {
+          "id": "required_A",
+          "label": "required",
+          "prompt_sha256": "ed6f1839325891934c2c95515eeac6bba520d713f81e28f573f01a6704b55dd9",
+          "targets": [
+            "A"
+          ],
+          "value_contract": "A"
+        },
+        {
+          "id": "required_B",
+          "label": "required",
+          "prompt_sha256": "2d900b1fbaa7392476f7c8d668401750ee5733776eaa7f9443a50fcad5538f82",
+          "targets": [
+            "B"
+          ],
+          "value_contract": "B"
+        },
+        {
+          "id": "named_A",
+          "label": "named",
+          "prompt_sha256": "150783df931a5dadc3638556d1c4d02140969043685bb1ab3c5a34c53bc053e1",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "A"
+        },
+        {
+          "id": "none",
+          "label": "none",
+          "prompt_sha256": "6066dd4cb584dac51470ebc6929470fc7b4b97e5420840dfcd5128e828cc02ca",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": null
+        }
+      ],
+      "id": "gpt-6-luna_fields_B",
+      "model": "gpt-6-luna",
+      "start": "B",
+      "task": "fields",
+      "wave": 1
+    },
+    {
+      "calls": [
+        {
+          "id": "none",
+          "label": "none",
+          "prompt_sha256": "529b6fe22694683d2968dade5d04c9bd379fd74647dfe098ea2cc9f327697b5b",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": null
+        },
+        {
+          "id": "named_A",
+          "label": "named",
+          "prompt_sha256": "03e3c453b357adfbaa517a94a0ca0edfc6bfc837871a51c15e3882b791e25e7e",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "A"
+        },
+        {
+          "id": "required_B",
+          "label": "required",
+          "prompt_sha256": "2fd0a721c393f53f5de9d4a077a4944c62c0ac671d7ea78b8cee23785eb43bed",
+          "targets": [
+            "B"
+          ],
+          "value_contract": "B"
+        },
+        {
+          "id": "anonymous_B",
+          "label": "anonymous",
+          "prompt_sha256": "9d83c962db696f1f3c8ee95520c51c147c1c5351167b8e09921dc261ebcbe84f",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "B"
+        },
+        {
+          "id": "anonymous_A",
+          "label": "anonymous",
+          "prompt_sha256": "850d1fb9d89ff81dad96e39c8bf07d91a130c93badbdd583197d03740aa630ee",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "A"
+        },
+        {
+          "id": "named_B",
+          "label": "named",
+          "prompt_sha256": "865dd5cc2feb920e209bd0af3f3e1880f7f0ba718680d66ea5c429b4bfd7ebf6",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "B"
+        },
+        {
+          "id": "required_A",
+          "label": "required",
+          "prompt_sha256": "7869e75b3013883f30299d9a2c0a08ebd8592fb9a154e2e745e1dab088c2bb55",
+          "targets": [
+            "A"
+          ],
+          "value_contract": "A"
+        }
+      ],
+      "id": "gpt-6.2-astra_quotient_A",
+      "model": "gpt-6.2-astra",
+      "start": "A",
+      "task": "quotient",
+      "wave": 1
+    },
+    {
+      "calls": [
+        {
+          "id": "required_B",
+          "label": "required",
+          "prompt_sha256": "3ad40ca79eb59a6c7fa565510c5ad7845589758e1622ab6af8c58277fb1ebcbd",
+          "targets": [
+            "B"
+          ],
+          "value_contract": "B"
+        },
+        {
+          "id": "anonymous_A",
+          "label": "anonymous",
+          "prompt_sha256": "4bbfd9fda7efc3d6365f43e5d2478e25c880fab41b820490ae16239bc198284b",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "A"
+        },
+        {
+          "id": "none",
+          "label": "none",
+          "prompt_sha256": "ad09b71f24a1f24c5de0283f323987830616f109570045c3da5fd7a9e213002e",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": null
+        },
+        {
+          "id": "named_B",
+          "label": "named",
+          "prompt_sha256": "5a33ae950859a4cae1ec4b41d6dbe5f5e31ef4be118dcc53b00cc9ff87865165",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "B"
+        },
+        {
+          "id": "named_A",
+          "label": "named",
+          "prompt_sha256": "57634b7098d55e192b041692717329028104d64cab73d24a951773a52c98509f",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "A"
+        },
+        {
+          "id": "required_A",
+          "label": "required",
+          "prompt_sha256": "465fa6a3d29c70d8e4da42c23da87a29814e46971c4823863960cc6fe0a362c5",
+          "targets": [
+            "A"
+          ],
+          "value_contract": "A"
+        },
+        {
+          "id": "anonymous_B",
+          "label": "anonymous",
+          "prompt_sha256": "d5fd69c7e9a65d55c103e407febedf595140eca747fad059542ab6ffd271ae2b",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "B"
+        }
+      ],
+      "id": "gpt-6.1-terra_flatten_A",
+      "model": "gpt-6.1-terra",
+      "start": "A",
+      "task": "flatten",
+      "wave": 1
+    },
+    {
+      "calls": [
+        {
+          "id": "required_A",
+          "label": "required",
+          "prompt_sha256": "9ece7f14c6024beeb7ffcff0c3c188fd5af75d4d85e6c5ee7ec6404baff99d0c",
+          "targets": [
+            "A"
+          ],
+          "value_contract": "A"
+        },
+        {
+          "id": "none",
+          "label": "none",
+          "prompt_sha256": "fd1479ebd09b6ffc572c5a51a4016fe9a96671f51b88dd4ba58c2db916b807b0",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": null
+        },
+        {
+          "id": "named_B",
+          "label": "named",
+          "prompt_sha256": "ca7e2e93a6739a6822b01b07ce731b64e36383a183463cdef0a096194593be8e",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "B"
+        },
+        {
+          "id": "anonymous_B",
+          "label": "anonymous",
+          "prompt_sha256": "3742ef68f50101046b9ea7e334b0aa9f1446ca1487c07fcad8a25972540c2ab9",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "B"
+        },
+        {
+          "id": "anonymous_A",
+          "label": "anonymous",
+          "prompt_sha256": "bb2f6618db52c677f73f5013c90b675965cbf12e79dca5f930d87b9767e43f2d",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "A"
+        },
+        {
+          "id": "required_B",
+          "label": "required",
+          "prompt_sha256": "9d01e38ed1f6e02401e8aec168303d3f8c10090849955c7d65bca40e30a6eaf4",
+          "targets": [
+            "B"
+          ],
+          "value_contract": "B"
+        },
+        {
+          "id": "named_A",
+          "label": "named",
+          "prompt_sha256": "c520d60cfeebbeb4503146e145cf863be8168ae8eee618f417fde94a2a888a9e",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "A"
+        }
+      ],
+      "id": "gpt-6.2-sol_dedup_A",
+      "model": "gpt-6.2-sol",
+      "start": "A",
+      "task": "dedup",
+      "wave": 1
+    },
+    {
+      "calls": [
+        {
+          "id": "anonymous_B",
+          "label": "anonymous",
+          "prompt_sha256": "43021a3b231d6e7ee68acc5847c773dd0bb1bcada029a640a0283890e9520c39",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "B"
+        },
+        {
+          "id": "required_A",
+          "label": "required",
+          "prompt_sha256": "9a9051ba052c0c0cee2ff05972d078ab5a074ebbb80d1f00fe838322c1da6e26",
+          "targets": [
+            "A"
+          ],
+          "value_contract": "A"
+        },
+        {
+          "id": "named_A",
+          "label": "named",
+          "prompt_sha256": "36e7390872b83279da22ba8cfa37d55f7c694a2eb961e609a1af1221aa23bfb2",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "A"
+        },
+        {
+          "id": "anonymous_A",
+          "label": "anonymous",
+          "prompt_sha256": "2e8722b336e94886ee075cc264505019c70896fe482982fb1a923ffad5d83e5d",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "A"
+        },
+        {
+          "id": "named_B",
+          "label": "named",
+          "prompt_sha256": "82274ac9f8a07ba2bf555515af5d4002751d9a7a4bdb346173d75a333130094c",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "B"
+        },
+        {
+          "id": "none",
+          "label": "none",
+          "prompt_sha256": "91e9baaed13616ce5bbfb1fb1384c5c45a87fa16efd287d0490ced5e79dc2067",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": null
+        },
+        {
+          "id": "required_B",
+          "label": "required",
+          "prompt_sha256": "74d2368c83b774c2105206779ed9736019794dba42b592a1e7a31da04c4d416b",
+          "targets": [
+            "B"
+          ],
+          "value_contract": "B"
+        }
+      ],
+      "id": "gpt-6.1-terra_moving_sum_A",
+      "model": "gpt-6.1-terra",
+      "start": "A",
+      "task": "moving_sum",
+      "wave": 2
+    },
+    {
+      "calls": [
+        {
+          "id": "anonymous_B",
+          "label": "anonymous",
+          "prompt_sha256": "4dc9fae01f9876e0deec61ed70a4c732c8ddaadaaa615805c84fe6a3eb9bdbfc",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "B"
+        },
+        {
+          "id": "required_A",
+          "label": "required",
+          "prompt_sha256": "38f0faff2d2da91c3ac90856e069fb0f123ef2b914eab9ce10a0998db06b4d3d",
+          "targets": [
+            "A"
+          ],
+          "value_contract": "A"
+        },
+        {
+          "id": "none",
+          "label": "none",
+          "prompt_sha256": "9af40181cad950f21278c78daa0f95ede479a2e9f2b1edfdbf735a850b3f0ea6",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": null
+        },
+        {
+          "id": "named_B",
+          "label": "named",
+          "prompt_sha256": "78d6cd93e941cdcba1b614eac7035da9569c3b3b390ba76960ec37f2f4534b47",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "B"
+        },
+        {
+          "id": "required_B",
+          "label": "required",
+          "prompt_sha256": "b8e5ea121741b4c92c83b3538e8ceda897d88a46cdb3391fc8d7f141fcae35ef",
+          "targets": [
+            "B"
+          ],
+          "value_contract": "B"
+        },
+        {
+          "id": "anonymous_A",
+          "label": "anonymous",
+          "prompt_sha256": "83b595fbc24b28f8b3fe3050e467f4a40400bf1226b7020140717091b6aa304e",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "A"
+        },
+        {
+          "id": "named_A",
+          "label": "named",
+          "prompt_sha256": "9f42c99314803eb6b8e2dc5088bab3e469017cea1d6edc0d971f863b64eeaa00",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "A"
+        }
+      ],
+      "id": "gpt-6.2-sol_calendar_B",
+      "model": "gpt-6.2-sol",
+      "start": "B",
+      "task": "calendar",
+      "wave": 2
+    },
+    {
+      "calls": [
+        {
+          "id": "none",
+          "label": "none",
+          "prompt_sha256": "e7d8ac0ecc903fb4d882dbce57cf019075322ab0d85bfabf0f68c16753b4819d",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": null
+        },
+        {
+          "id": "required_B",
+          "label": "required",
+          "prompt_sha256": "90bb630d7a7c8c726b5b02b4110c762aca010596912ddbef90cfa57fbb5ff397",
+          "targets": [
+            "B"
+          ],
+          "value_contract": "B"
+        },
+        {
+          "id": "anonymous_B",
+          "label": "anonymous",
+          "prompt_sha256": "2caf7ec4a488c038500f95de8876345675e0bd6e9bd5869bd740b94816964b61",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "B"
+        },
+        {
+          "id": "named_A",
+          "label": "named",
+          "prompt_sha256": "ed8bf4a0776a814a6dcb6b2bca68b2b44bc6322616fb028427185b9a4c3f2c3e",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "A"
+        },
+        {
+          "id": "required_A",
+          "label": "required",
+          "prompt_sha256": "aef2f90990912a6f66be8d77442275cad5148c0b3696703e33172b468881b540",
+          "targets": [
+            "A"
+          ],
+          "value_contract": "A"
+        },
+        {
+          "id": "anonymous_A",
+          "label": "anonymous",
+          "prompt_sha256": "696add2141ec60b01f8008ae62ffb4a83f085dc0d62e348c54056841f64bf27d",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "A"
+        },
+        {
+          "id": "named_B",
+          "label": "named",
+          "prompt_sha256": "d906c98947e4e802bb9407267a143f9d15cfd5699daeb8d814de9d163dd59ae1",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "B"
+        }
+      ],
+      "id": "gpt-6.2-astra_distance_B",
+      "model": "gpt-6.2-astra",
+      "start": "B",
+      "task": "distance",
+      "wave": 2
+    },
+    {
+      "calls": [
+        {
+          "id": "named_B",
+          "label": "named",
+          "prompt_sha256": "cc445b5f2ed00e9f4e3d5124bc8abd6ebca84af4b4a070248b1358264fd632d7",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "B"
+        },
+        {
+          "id": "required_B",
+          "label": "required",
+          "prompt_sha256": "b772ba0e980fae6628f0e941a98327e7a723c35f9cbc3af128034eed60eab642",
+          "targets": [
+            "B"
+          ],
+          "value_contract": "B"
+        },
+        {
+          "id": "named_A",
+          "label": "named",
+          "prompt_sha256": "be5355230928da0a01c7559c55a486a5c6e3c38a948bae78d8065dad21a629ff",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "A"
+        },
+        {
+          "id": "required_A",
+          "label": "required",
+          "prompt_sha256": "8320d7c6aa3f1fcfb32f7529980d897f76cb5182fcfc2439d1b35141a1c71ac6",
+          "targets": [
+            "A"
+          ],
+          "value_contract": "A"
+        },
+        {
+          "id": "none",
+          "label": "none",
+          "prompt_sha256": "02524bfd2c0f1ef76aaf466bba5d361526d28a744d018f5aaea398213f6aebcb",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": null
+        },
+        {
+          "id": "anonymous_A",
+          "label": "anonymous",
+          "prompt_sha256": "0627fa9e5488a51fe4ca3c15cc16ca5dff241043a91348a9c0c2d95ff93d9492",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "A"
+        },
+        {
+          "id": "anonymous_B",
+          "label": "anonymous",
+          "prompt_sha256": "ba582659f1ec961a69a72c86dd58850c66587a5613f24df11c67491474f618bf",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "B"
+        }
+      ],
+      "id": "gpt-6-luna_range_B",
+      "model": "gpt-6-luna",
+      "start": "B",
+      "task": "range",
+      "wave": 2
+    },
+    {
+      "calls": [
+        {
+          "id": "named_B",
+          "label": "named",
+          "prompt_sha256": "5a33ae950859a4cae1ec4b41d6dbe5f5e31ef4be118dcc53b00cc9ff87865165",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "B"
+        },
+        {
+          "id": "none",
+          "label": "none",
+          "prompt_sha256": "ad09b71f24a1f24c5de0283f323987830616f109570045c3da5fd7a9e213002e",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": null
+        },
+        {
+          "id": "required_B",
+          "label": "required",
+          "prompt_sha256": "3ad40ca79eb59a6c7fa565510c5ad7845589758e1622ab6af8c58277fb1ebcbd",
+          "targets": [
+            "B"
+          ],
+          "value_contract": "B"
+        },
+        {
+          "id": "named_A",
+          "label": "named",
+          "prompt_sha256": "57634b7098d55e192b041692717329028104d64cab73d24a951773a52c98509f",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "A"
+        },
+        {
+          "id": "required_A",
+          "label": "required",
+          "prompt_sha256": "465fa6a3d29c70d8e4da42c23da87a29814e46971c4823863960cc6fe0a362c5",
+          "targets": [
+            "A"
+          ],
+          "value_contract": "A"
+        },
+        {
+          "id": "anonymous_A",
+          "label": "anonymous",
+          "prompt_sha256": "4bbfd9fda7efc3d6365f43e5d2478e25c880fab41b820490ae16239bc198284b",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "A"
+        },
+        {
+          "id": "anonymous_B",
+          "label": "anonymous",
+          "prompt_sha256": "d5fd69c7e9a65d55c103e407febedf595140eca747fad059542ab6ffd271ae2b",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "B"
+        }
+      ],
+      "id": "gpt-6.2-sol_flatten_A",
+      "model": "gpt-6.2-sol",
+      "start": "A",
+      "task": "flatten",
+      "wave": 2
+    },
+    {
+      "calls": [
+        {
+          "id": "required_A",
+          "label": "required",
+          "prompt_sha256": "9ece7f14c6024beeb7ffcff0c3c188fd5af75d4d85e6c5ee7ec6404baff99d0c",
+          "targets": [
+            "A"
+          ],
+          "value_contract": "A"
+        },
+        {
+          "id": "anonymous_B",
+          "label": "anonymous",
+          "prompt_sha256": "3742ef68f50101046b9ea7e334b0aa9f1446ca1487c07fcad8a25972540c2ab9",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "B"
+        },
+        {
+          "id": "required_B",
+          "label": "required",
+          "prompt_sha256": "9d01e38ed1f6e02401e8aec168303d3f8c10090849955c7d65bca40e30a6eaf4",
+          "targets": [
+            "B"
+          ],
+          "value_contract": "B"
+        },
+        {
+          "id": "named_A",
+          "label": "named",
+          "prompt_sha256": "c520d60cfeebbeb4503146e145cf863be8168ae8eee618f417fde94a2a888a9e",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "A"
+        },
+        {
+          "id": "none",
+          "label": "none",
+          "prompt_sha256": "fd1479ebd09b6ffc572c5a51a4016fe9a96671f51b88dd4ba58c2db916b807b0",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": null
+        },
+        {
+          "id": "named_B",
+          "label": "named",
+          "prompt_sha256": "ca7e2e93a6739a6822b01b07ce731b64e36383a183463cdef0a096194593be8e",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "B"
+        },
+        {
+          "id": "anonymous_A",
+          "label": "anonymous",
+          "prompt_sha256": "bb2f6618db52c677f73f5013c90b675965cbf12e79dca5f930d87b9767e43f2d",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "A"
+        }
+      ],
+      "id": "gpt-6.2-astra_dedup_A",
+      "model": "gpt-6.2-astra",
+      "start": "A",
+      "task": "dedup",
+      "wave": 2
+    },
+    {
+      "calls": [
+        {
+          "id": "required_A",
+          "label": "required",
+          "prompt_sha256": "ed6f1839325891934c2c95515eeac6bba520d713f81e28f573f01a6704b55dd9",
+          "targets": [
+            "A"
+          ],
+          "value_contract": "A"
+        },
+        {
+          "id": "anonymous_A",
+          "label": "anonymous",
+          "prompt_sha256": "77faca49f748816fb9de761fcd62a28907c591a28148daaddb4b1bb3bb5f5e72",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "A"
+        },
+        {
+          "id": "named_A",
+          "label": "named",
+          "prompt_sha256": "150783df931a5dadc3638556d1c4d02140969043685bb1ab3c5a34c53bc053e1",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "A"
+        },
+        {
+          "id": "required_B",
+          "label": "required",
+          "prompt_sha256": "2d900b1fbaa7392476f7c8d668401750ee5733776eaa7f9443a50fcad5538f82",
+          "targets": [
+            "B"
+          ],
+          "value_contract": "B"
+        },
+        {
+          "id": "named_B",
+          "label": "named",
+          "prompt_sha256": "92976e217034d3f67dc77f3e05596cd39b68cdb5e2efa3736697a5ae86f99255",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "B"
+        },
+        {
+          "id": "anonymous_B",
+          "label": "anonymous",
+          "prompt_sha256": "d0efc34ba322278d1c8945bc71cb02458dbceee9499cd4d71b2ee8ed2213bc0e",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "B"
+        },
+        {
+          "id": "none",
+          "label": "none",
+          "prompt_sha256": "6066dd4cb584dac51470ebc6929470fc7b4b97e5420840dfcd5128e828cc02ca",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": null
+        }
+      ],
+      "id": "gpt-6.1-terra_fields_B",
+      "model": "gpt-6.1-terra",
+      "start": "B",
+      "task": "fields",
+      "wave": 2
+    },
+    {
+      "calls": [
+        {
+          "id": "anonymous_B",
+          "label": "anonymous",
+          "prompt_sha256": "9d83c962db696f1f3c8ee95520c51c147c1c5351167b8e09921dc261ebcbe84f",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "B"
+        },
+        {
+          "id": "anonymous_A",
+          "label": "anonymous",
+          "prompt_sha256": "850d1fb9d89ff81dad96e39c8bf07d91a130c93badbdd583197d03740aa630ee",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "A"
+        },
+        {
+          "id": "required_B",
+          "label": "required",
+          "prompt_sha256": "2fd0a721c393f53f5de9d4a077a4944c62c0ac671d7ea78b8cee23785eb43bed",
+          "targets": [
+            "B"
+          ],
+          "value_contract": "B"
+        },
+        {
+          "id": "named_A",
+          "label": "named",
+          "prompt_sha256": "03e3c453b357adfbaa517a94a0ca0edfc6bfc837871a51c15e3882b791e25e7e",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "A"
+        },
+        {
+          "id": "none",
+          "label": "none",
+          "prompt_sha256": "529b6fe22694683d2968dade5d04c9bd379fd74647dfe098ea2cc9f327697b5b",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": null
+        },
+        {
+          "id": "required_A",
+          "label": "required",
+          "prompt_sha256": "7869e75b3013883f30299d9a2c0a08ebd8592fb9a154e2e745e1dab088c2bb55",
+          "targets": [
+            "A"
+          ],
+          "value_contract": "A"
+        },
+        {
+          "id": "named_B",
+          "label": "named",
+          "prompt_sha256": "865dd5cc2feb920e209bd0af3f3e1880f7f0ba718680d66ea5c429b4bfd7ebf6",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "B"
+        }
+      ],
+      "id": "gpt-6-luna_quotient_A",
+      "model": "gpt-6-luna",
+      "start": "A",
+      "task": "quotient",
+      "wave": 2
+    },
+    {
+      "calls": [
+        {
+          "id": "required_A",
+          "label": "required",
+          "prompt_sha256": "9a9051ba052c0c0cee2ff05972d078ab5a074ebbb80d1f00fe838322c1da6e26",
+          "targets": [
+            "A"
+          ],
+          "value_contract": "A"
+        },
+        {
+          "id": "anonymous_B",
+          "label": "anonymous",
+          "prompt_sha256": "43021a3b231d6e7ee68acc5847c773dd0bb1bcada029a640a0283890e9520c39",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "B"
+        },
+        {
+          "id": "required_B",
+          "label": "required",
+          "prompt_sha256": "74d2368c83b774c2105206779ed9736019794dba42b592a1e7a31da04c4d416b",
+          "targets": [
+            "B"
+          ],
+          "value_contract": "B"
+        },
+        {
+          "id": "named_B",
+          "label": "named",
+          "prompt_sha256": "82274ac9f8a07ba2bf555515af5d4002751d9a7a4bdb346173d75a333130094c",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "B"
+        },
+        {
+          "id": "none",
+          "label": "none",
+          "prompt_sha256": "91e9baaed13616ce5bbfb1fb1384c5c45a87fa16efd287d0490ced5e79dc2067",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": null
+        },
+        {
+          "id": "anonymous_A",
+          "label": "anonymous",
+          "prompt_sha256": "2e8722b336e94886ee075cc264505019c70896fe482982fb1a923ffad5d83e5d",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "A"
+        },
+        {
+          "id": "named_A",
+          "label": "named",
+          "prompt_sha256": "36e7390872b83279da22ba8cfa37d55f7c694a2eb961e609a1af1221aa23bfb2",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "A"
+        }
+      ],
+      "id": "gpt-6.2-sol_moving_sum_A",
+      "model": "gpt-6.2-sol",
+      "start": "A",
+      "task": "moving_sum",
+      "wave": 3
+    },
+    {
+      "calls": [
+        {
+          "id": "required_A",
+          "label": "required",
+          "prompt_sha256": "9ece7f14c6024beeb7ffcff0c3c188fd5af75d4d85e6c5ee7ec6404baff99d0c",
+          "targets": [
+            "A"
+          ],
+          "value_contract": "A"
+        },
+        {
+          "id": "none",
+          "label": "none",
+          "prompt_sha256": "fd1479ebd09b6ffc572c5a51a4016fe9a96671f51b88dd4ba58c2db916b807b0",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": null
+        },
+        {
+          "id": "named_A",
+          "label": "named",
+          "prompt_sha256": "c520d60cfeebbeb4503146e145cf863be8168ae8eee618f417fde94a2a888a9e",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "A"
+        },
+        {
+          "id": "anonymous_A",
+          "label": "anonymous",
+          "prompt_sha256": "bb2f6618db52c677f73f5013c90b675965cbf12e79dca5f930d87b9767e43f2d",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "A"
+        },
+        {
+          "id": "required_B",
+          "label": "required",
+          "prompt_sha256": "9d01e38ed1f6e02401e8aec168303d3f8c10090849955c7d65bca40e30a6eaf4",
+          "targets": [
+            "B"
+          ],
+          "value_contract": "B"
+        },
+        {
+          "id": "anonymous_B",
+          "label": "anonymous",
+          "prompt_sha256": "3742ef68f50101046b9ea7e334b0aa9f1446ca1487c07fcad8a25972540c2ab9",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "B"
+        },
+        {
+          "id": "named_B",
+          "label": "named",
+          "prompt_sha256": "ca7e2e93a6739a6822b01b07ce731b64e36383a183463cdef0a096194593be8e",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "B"
+        }
+      ],
+      "id": "gpt-6-luna_dedup_A",
+      "model": "gpt-6-luna",
+      "start": "A",
+      "task": "dedup",
+      "wave": 3
+    },
+    {
+      "calls": [
+        {
+          "id": "none",
+          "label": "none",
+          "prompt_sha256": "02524bfd2c0f1ef76aaf466bba5d361526d28a744d018f5aaea398213f6aebcb",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": null
+        },
+        {
+          "id": "named_A",
+          "label": "named",
+          "prompt_sha256": "be5355230928da0a01c7559c55a486a5c6e3c38a948bae78d8065dad21a629ff",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "A"
+        },
+        {
+          "id": "required_B",
+          "label": "required",
+          "prompt_sha256": "b772ba0e980fae6628f0e941a98327e7a723c35f9cbc3af128034eed60eab642",
+          "targets": [
+            "B"
+          ],
+          "value_contract": "B"
+        },
+        {
+          "id": "required_A",
+          "label": "required",
+          "prompt_sha256": "8320d7c6aa3f1fcfb32f7529980d897f76cb5182fcfc2439d1b35141a1c71ac6",
+          "targets": [
+            "A"
+          ],
+          "value_contract": "A"
+        },
+        {
+          "id": "anonymous_A",
+          "label": "anonymous",
+          "prompt_sha256": "0627fa9e5488a51fe4ca3c15cc16ca5dff241043a91348a9c0c2d95ff93d9492",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "A"
+        },
+        {
+          "id": "named_B",
+          "label": "named",
+          "prompt_sha256": "cc445b5f2ed00e9f4e3d5124bc8abd6ebca84af4b4a070248b1358264fd632d7",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "B"
+        },
+        {
+          "id": "anonymous_B",
+          "label": "anonymous",
+          "prompt_sha256": "ba582659f1ec961a69a72c86dd58850c66587a5613f24df11c67491474f618bf",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "B"
+        }
+      ],
+      "id": "gpt-6.1-terra_range_B",
+      "model": "gpt-6.1-terra",
+      "start": "B",
+      "task": "range",
+      "wave": 3
+    },
+    {
+      "calls": [
+        {
+          "id": "anonymous_B",
+          "label": "anonymous",
+          "prompt_sha256": "2caf7ec4a488c038500f95de8876345675e0bd6e9bd5869bd740b94816964b61",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "B"
+        },
+        {
+          "id": "required_B",
+          "label": "required",
+          "prompt_sha256": "90bb630d7a7c8c726b5b02b4110c762aca010596912ddbef90cfa57fbb5ff397",
+          "targets": [
+            "B"
+          ],
+          "value_contract": "B"
+        },
+        {
+          "id": "named_B",
+          "label": "named",
+          "prompt_sha256": "d906c98947e4e802bb9407267a143f9d15cfd5699daeb8d814de9d163dd59ae1",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "B"
+        },
+        {
+          "id": "anonymous_A",
+          "label": "anonymous",
+          "prompt_sha256": "696add2141ec60b01f8008ae62ffb4a83f085dc0d62e348c54056841f64bf27d",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "A"
+        },
+        {
+          "id": "required_A",
+          "label": "required",
+          "prompt_sha256": "aef2f90990912a6f66be8d77442275cad5148c0b3696703e33172b468881b540",
+          "targets": [
+            "A"
+          ],
+          "value_contract": "A"
+        },
+        {
+          "id": "named_A",
+          "label": "named",
+          "prompt_sha256": "ed8bf4a0776a814a6dcb6b2bca68b2b44bc6322616fb028427185b9a4c3f2c3e",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "A"
+        },
+        {
+          "id": "none",
+          "label": "none",
+          "prompt_sha256": "e7d8ac0ecc903fb4d882dbce57cf019075322ab0d85bfabf0f68c16753b4819d",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": null
+        }
+      ],
+      "id": "gpt-6-luna_distance_B",
+      "model": "gpt-6-luna",
+      "start": "B",
+      "task": "distance",
+      "wave": 3
+    },
+    {
+      "calls": [
+        {
+          "id": "required_A",
+          "label": "required",
+          "prompt_sha256": "ed6f1839325891934c2c95515eeac6bba520d713f81e28f573f01a6704b55dd9",
+          "targets": [
+            "A"
+          ],
+          "value_contract": "A"
+        },
+        {
+          "id": "named_A",
+          "label": "named",
+          "prompt_sha256": "150783df931a5dadc3638556d1c4d02140969043685bb1ab3c5a34c53bc053e1",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "A"
+        },
+        {
+          "id": "required_B",
+          "label": "required",
+          "prompt_sha256": "2d900b1fbaa7392476f7c8d668401750ee5733776eaa7f9443a50fcad5538f82",
+          "targets": [
+            "B"
+          ],
+          "value_contract": "B"
+        },
+        {
+          "id": "named_B",
+          "label": "named",
+          "prompt_sha256": "92976e217034d3f67dc77f3e05596cd39b68cdb5e2efa3736697a5ae86f99255",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "B"
+        },
+        {
+          "id": "none",
+          "label": "none",
+          "prompt_sha256": "6066dd4cb584dac51470ebc6929470fc7b4b97e5420840dfcd5128e828cc02ca",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": null
+        },
+        {
+          "id": "anonymous_B",
+          "label": "anonymous",
+          "prompt_sha256": "d0efc34ba322278d1c8945bc71cb02458dbceee9499cd4d71b2ee8ed2213bc0e",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "B"
+        },
+        {
+          "id": "anonymous_A",
+          "label": "anonymous",
+          "prompt_sha256": "77faca49f748816fb9de761fcd62a28907c591a28148daaddb4b1bb3bb5f5e72",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "A"
+        }
+      ],
+      "id": "gpt-6.2-sol_fields_B",
+      "model": "gpt-6.2-sol",
+      "start": "B",
+      "task": "fields",
+      "wave": 3
+    },
+    {
+      "calls": [
+        {
+          "id": "anonymous_A",
+          "label": "anonymous",
+          "prompt_sha256": "83b595fbc24b28f8b3fe3050e467f4a40400bf1226b7020140717091b6aa304e",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "A"
+        },
+        {
+          "id": "none",
+          "label": "none",
+          "prompt_sha256": "9af40181cad950f21278c78daa0f95ede479a2e9f2b1edfdbf735a850b3f0ea6",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": null
+        },
+        {
+          "id": "required_B",
+          "label": "required",
+          "prompt_sha256": "b8e5ea121741b4c92c83b3538e8ceda897d88a46cdb3391fc8d7f141fcae35ef",
+          "targets": [
+            "B"
+          ],
+          "value_contract": "B"
+        },
+        {
+          "id": "named_B",
+          "label": "named",
+          "prompt_sha256": "78d6cd93e941cdcba1b614eac7035da9569c3b3b390ba76960ec37f2f4534b47",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "B"
+        },
+        {
+          "id": "named_A",
+          "label": "named",
+          "prompt_sha256": "9f42c99314803eb6b8e2dc5088bab3e469017cea1d6edc0d971f863b64eeaa00",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "A"
+        },
+        {
+          "id": "anonymous_B",
+          "label": "anonymous",
+          "prompt_sha256": "4dc9fae01f9876e0deec61ed70a4c732c8ddaadaaa615805c84fe6a3eb9bdbfc",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "B"
+        },
+        {
+          "id": "required_A",
+          "label": "required",
+          "prompt_sha256": "38f0faff2d2da91c3ac90856e069fb0f123ef2b914eab9ce10a0998db06b4d3d",
+          "targets": [
+            "A"
+          ],
+          "value_contract": "A"
+        }
+      ],
+      "id": "gpt-6.2-astra_calendar_B",
+      "model": "gpt-6.2-astra",
+      "start": "B",
+      "task": "calendar",
+      "wave": 3
+    },
+    {
+      "calls": [
+        {
+          "id": "anonymous_B",
+          "label": "anonymous",
+          "prompt_sha256": "9d83c962db696f1f3c8ee95520c51c147c1c5351167b8e09921dc261ebcbe84f",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "B"
+        },
+        {
+          "id": "anonymous_A",
+          "label": "anonymous",
+          "prompt_sha256": "850d1fb9d89ff81dad96e39c8bf07d91a130c93badbdd583197d03740aa630ee",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "A"
+        },
+        {
+          "id": "named_B",
+          "label": "named",
+          "prompt_sha256": "865dd5cc2feb920e209bd0af3f3e1880f7f0ba718680d66ea5c429b4bfd7ebf6",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "B"
+        },
+        {
+          "id": "required_A",
+          "label": "required",
+          "prompt_sha256": "7869e75b3013883f30299d9a2c0a08ebd8592fb9a154e2e745e1dab088c2bb55",
+          "targets": [
+            "A"
+          ],
+          "value_contract": "A"
+        },
+        {
+          "id": "required_B",
+          "label": "required",
+          "prompt_sha256": "2fd0a721c393f53f5de9d4a077a4944c62c0ac671d7ea78b8cee23785eb43bed",
+          "targets": [
+            "B"
+          ],
+          "value_contract": "B"
+        },
+        {
+          "id": "none",
+          "label": "none",
+          "prompt_sha256": "529b6fe22694683d2968dade5d04c9bd379fd74647dfe098ea2cc9f327697b5b",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": null
+        },
+        {
+          "id": "named_A",
+          "label": "named",
+          "prompt_sha256": "03e3c453b357adfbaa517a94a0ca0edfc6bfc837871a51c15e3882b791e25e7e",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "A"
+        }
+      ],
+      "id": "gpt-6.1-terra_quotient_A",
+      "model": "gpt-6.1-terra",
+      "start": "A",
+      "task": "quotient",
+      "wave": 3
+    },
+    {
+      "calls": [
+        {
+          "id": "none",
+          "label": "none",
+          "prompt_sha256": "ad09b71f24a1f24c5de0283f323987830616f109570045c3da5fd7a9e213002e",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": null
+        },
+        {
+          "id": "named_A",
+          "label": "named",
+          "prompt_sha256": "57634b7098d55e192b041692717329028104d64cab73d24a951773a52c98509f",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "A"
+        },
+        {
+          "id": "named_B",
+          "label": "named",
+          "prompt_sha256": "5a33ae950859a4cae1ec4b41d6dbe5f5e31ef4be118dcc53b00cc9ff87865165",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "B"
+        },
+        {
+          "id": "anonymous_A",
+          "label": "anonymous",
+          "prompt_sha256": "4bbfd9fda7efc3d6365f43e5d2478e25c880fab41b820490ae16239bc198284b",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "A"
+        },
+        {
+          "id": "required_A",
+          "label": "required",
+          "prompt_sha256": "465fa6a3d29c70d8e4da42c23da87a29814e46971c4823863960cc6fe0a362c5",
+          "targets": [
+            "A"
+          ],
+          "value_contract": "A"
+        },
+        {
+          "id": "anonymous_B",
+          "label": "anonymous",
+          "prompt_sha256": "d5fd69c7e9a65d55c103e407febedf595140eca747fad059542ab6ffd271ae2b",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "B"
+        },
+        {
+          "id": "required_B",
+          "label": "required",
+          "prompt_sha256": "3ad40ca79eb59a6c7fa565510c5ad7845589758e1622ab6af8c58277fb1ebcbd",
+          "targets": [
+            "B"
+          ],
+          "value_contract": "B"
+        }
+      ],
+      "id": "gpt-6.2-astra_flatten_A",
+      "model": "gpt-6.2-astra",
+      "start": "A",
+      "task": "flatten",
+      "wave": 3
+    },
+    {
+      "calls": [
+        {
+          "id": "none",
+          "label": "none",
+          "prompt_sha256": "ad09b71f24a1f24c5de0283f323987830616f109570045c3da5fd7a9e213002e",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": null
+        },
+        {
+          "id": "anonymous_A",
+          "label": "anonymous",
+          "prompt_sha256": "4bbfd9fda7efc3d6365f43e5d2478e25c880fab41b820490ae16239bc198284b",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "A"
+        },
+        {
+          "id": "anonymous_B",
+          "label": "anonymous",
+          "prompt_sha256": "d5fd69c7e9a65d55c103e407febedf595140eca747fad059542ab6ffd271ae2b",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "B"
+        },
+        {
+          "id": "required_B",
+          "label": "required",
+          "prompt_sha256": "3ad40ca79eb59a6c7fa565510c5ad7845589758e1622ab6af8c58277fb1ebcbd",
+          "targets": [
+            "B"
+          ],
+          "value_contract": "B"
+        },
+        {
+          "id": "named_A",
+          "label": "named",
+          "prompt_sha256": "57634b7098d55e192b041692717329028104d64cab73d24a951773a52c98509f",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "A"
+        },
+        {
+          "id": "required_A",
+          "label": "required",
+          "prompt_sha256": "465fa6a3d29c70d8e4da42c23da87a29814e46971c4823863960cc6fe0a362c5",
+          "targets": [
+            "A"
+          ],
+          "value_contract": "A"
+        },
+        {
+          "id": "named_B",
+          "label": "named",
+          "prompt_sha256": "5a33ae950859a4cae1ec4b41d6dbe5f5e31ef4be118dcc53b00cc9ff87865165",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "B"
+        }
+      ],
+      "id": "gpt-6-luna_flatten_A",
+      "model": "gpt-6-luna",
+      "start": "A",
+      "task": "flatten",
+      "wave": 4
+    },
+    {
+      "calls": [
+        {
+          "id": "anonymous_B",
+          "label": "anonymous",
+          "prompt_sha256": "4dc9fae01f9876e0deec61ed70a4c732c8ddaadaaa615805c84fe6a3eb9bdbfc",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "B"
+        },
+        {
+          "id": "required_B",
+          "label": "required",
+          "prompt_sha256": "b8e5ea121741b4c92c83b3538e8ceda897d88a46cdb3391fc8d7f141fcae35ef",
+          "targets": [
+            "B"
+          ],
+          "value_contract": "B"
+        },
+        {
+          "id": "named_A",
+          "label": "named",
+          "prompt_sha256": "9f42c99314803eb6b8e2dc5088bab3e469017cea1d6edc0d971f863b64eeaa00",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "A"
+        },
+        {
+          "id": "none",
+          "label": "none",
+          "prompt_sha256": "9af40181cad950f21278c78daa0f95ede479a2e9f2b1edfdbf735a850b3f0ea6",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": null
+        },
+        {
+          "id": "required_A",
+          "label": "required",
+          "prompt_sha256": "38f0faff2d2da91c3ac90856e069fb0f123ef2b914eab9ce10a0998db06b4d3d",
+          "targets": [
+            "A"
+          ],
+          "value_contract": "A"
+        },
+        {
+          "id": "named_B",
+          "label": "named",
+          "prompt_sha256": "78d6cd93e941cdcba1b614eac7035da9569c3b3b390ba76960ec37f2f4534b47",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "B"
+        },
+        {
+          "id": "anonymous_A",
+          "label": "anonymous",
+          "prompt_sha256": "83b595fbc24b28f8b3fe3050e467f4a40400bf1226b7020140717091b6aa304e",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "A"
+        }
+      ],
+      "id": "gpt-6-luna_calendar_B",
+      "model": "gpt-6-luna",
+      "start": "B",
+      "task": "calendar",
+      "wave": 4
+    },
+    {
+      "calls": [
+        {
+          "id": "named_A",
+          "label": "named",
+          "prompt_sha256": "c520d60cfeebbeb4503146e145cf863be8168ae8eee618f417fde94a2a888a9e",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "A"
+        },
+        {
+          "id": "anonymous_A",
+          "label": "anonymous",
+          "prompt_sha256": "bb2f6618db52c677f73f5013c90b675965cbf12e79dca5f930d87b9767e43f2d",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "A"
+        },
+        {
+          "id": "none",
+          "label": "none",
+          "prompt_sha256": "fd1479ebd09b6ffc572c5a51a4016fe9a96671f51b88dd4ba58c2db916b807b0",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": null
+        },
+        {
+          "id": "required_A",
+          "label": "required",
+          "prompt_sha256": "9ece7f14c6024beeb7ffcff0c3c188fd5af75d4d85e6c5ee7ec6404baff99d0c",
+          "targets": [
+            "A"
+          ],
+          "value_contract": "A"
+        },
+        {
+          "id": "named_B",
+          "label": "named",
+          "prompt_sha256": "ca7e2e93a6739a6822b01b07ce731b64e36383a183463cdef0a096194593be8e",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "B"
+        },
+        {
+          "id": "anonymous_B",
+          "label": "anonymous",
+          "prompt_sha256": "3742ef68f50101046b9ea7e334b0aa9f1446ca1487c07fcad8a25972540c2ab9",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "B"
+        },
+        {
+          "id": "required_B",
+          "label": "required",
+          "prompt_sha256": "9d01e38ed1f6e02401e8aec168303d3f8c10090849955c7d65bca40e30a6eaf4",
+          "targets": [
+            "B"
+          ],
+          "value_contract": "B"
+        }
+      ],
+      "id": "gpt-6.1-terra_dedup_A",
+      "model": "gpt-6.1-terra",
+      "start": "A",
+      "task": "dedup",
+      "wave": 4
+    },
+    {
+      "calls": [
+        {
+          "id": "anonymous_A",
+          "label": "anonymous",
+          "prompt_sha256": "850d1fb9d89ff81dad96e39c8bf07d91a130c93badbdd583197d03740aa630ee",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "A"
+        },
+        {
+          "id": "named_A",
+          "label": "named",
+          "prompt_sha256": "03e3c453b357adfbaa517a94a0ca0edfc6bfc837871a51c15e3882b791e25e7e",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "A"
+        },
+        {
+          "id": "anonymous_B",
+          "label": "anonymous",
+          "prompt_sha256": "9d83c962db696f1f3c8ee95520c51c147c1c5351167b8e09921dc261ebcbe84f",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "B"
+        },
+        {
+          "id": "none",
+          "label": "none",
+          "prompt_sha256": "529b6fe22694683d2968dade5d04c9bd379fd74647dfe098ea2cc9f327697b5b",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": null
+        },
+        {
+          "id": "required_A",
+          "label": "required",
+          "prompt_sha256": "7869e75b3013883f30299d9a2c0a08ebd8592fb9a154e2e745e1dab088c2bb55",
+          "targets": [
+            "A"
+          ],
+          "value_contract": "A"
+        },
+        {
+          "id": "named_B",
+          "label": "named",
+          "prompt_sha256": "865dd5cc2feb920e209bd0af3f3e1880f7f0ba718680d66ea5c429b4bfd7ebf6",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "B"
+        },
+        {
+          "id": "required_B",
+          "label": "required",
+          "prompt_sha256": "2fd0a721c393f53f5de9d4a077a4944c62c0ac671d7ea78b8cee23785eb43bed",
+          "targets": [
+            "B"
+          ],
+          "value_contract": "B"
+        }
+      ],
+      "id": "gpt-6.2-sol_quotient_A",
+      "model": "gpt-6.2-sol",
+      "start": "A",
+      "task": "quotient",
+      "wave": 4
+    },
+    {
+      "calls": [
+        {
+          "id": "required_A",
+          "label": "required",
+          "prompt_sha256": "ed6f1839325891934c2c95515eeac6bba520d713f81e28f573f01a6704b55dd9",
+          "targets": [
+            "A"
+          ],
+          "value_contract": "A"
+        },
+        {
+          "id": "named_A",
+          "label": "named",
+          "prompt_sha256": "150783df931a5dadc3638556d1c4d02140969043685bb1ab3c5a34c53bc053e1",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "A"
+        },
+        {
+          "id": "required_B",
+          "label": "required",
+          "prompt_sha256": "2d900b1fbaa7392476f7c8d668401750ee5733776eaa7f9443a50fcad5538f82",
+          "targets": [
+            "B"
+          ],
+          "value_contract": "B"
+        },
+        {
+          "id": "named_B",
+          "label": "named",
+          "prompt_sha256": "92976e217034d3f67dc77f3e05596cd39b68cdb5e2efa3736697a5ae86f99255",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "B"
+        },
+        {
+          "id": "none",
+          "label": "none",
+          "prompt_sha256": "6066dd4cb584dac51470ebc6929470fc7b4b97e5420840dfcd5128e828cc02ca",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": null
+        },
+        {
+          "id": "anonymous_A",
+          "label": "anonymous",
+          "prompt_sha256": "77faca49f748816fb9de761fcd62a28907c591a28148daaddb4b1bb3bb5f5e72",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "A"
+        },
+        {
+          "id": "anonymous_B",
+          "label": "anonymous",
+          "prompt_sha256": "d0efc34ba322278d1c8945bc71cb02458dbceee9499cd4d71b2ee8ed2213bc0e",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "B"
+        }
+      ],
+      "id": "gpt-6.2-astra_fields_B",
+      "model": "gpt-6.2-astra",
+      "start": "B",
+      "task": "fields",
+      "wave": 4
+    },
+    {
+      "calls": [
+        {
+          "id": "none",
+          "label": "none",
+          "prompt_sha256": "e7d8ac0ecc903fb4d882dbce57cf019075322ab0d85bfabf0f68c16753b4819d",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": null
+        },
+        {
+          "id": "named_A",
+          "label": "named",
+          "prompt_sha256": "ed8bf4a0776a814a6dcb6b2bca68b2b44bc6322616fb028427185b9a4c3f2c3e",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "A"
+        },
+        {
+          "id": "anonymous_A",
+          "label": "anonymous",
+          "prompt_sha256": "696add2141ec60b01f8008ae62ffb4a83f085dc0d62e348c54056841f64bf27d",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "A"
+        },
+        {
+          "id": "required_B",
+          "label": "required",
+          "prompt_sha256": "90bb630d7a7c8c726b5b02b4110c762aca010596912ddbef90cfa57fbb5ff397",
+          "targets": [
+            "B"
+          ],
+          "value_contract": "B"
+        },
+        {
+          "id": "named_B",
+          "label": "named",
+          "prompt_sha256": "d906c98947e4e802bb9407267a143f9d15cfd5699daeb8d814de9d163dd59ae1",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "B"
+        },
+        {
+          "id": "required_A",
+          "label": "required",
+          "prompt_sha256": "aef2f90990912a6f66be8d77442275cad5148c0b3696703e33172b468881b540",
+          "targets": [
+            "A"
+          ],
+          "value_contract": "A"
+        },
+        {
+          "id": "anonymous_B",
+          "label": "anonymous",
+          "prompt_sha256": "2caf7ec4a488c038500f95de8876345675e0bd6e9bd5869bd740b94816964b61",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "B"
+        }
+      ],
+      "id": "gpt-6.1-terra_distance_B",
+      "model": "gpt-6.1-terra",
+      "start": "B",
+      "task": "distance",
+      "wave": 4
+    },
+    {
+      "calls": [
+        {
+          "id": "anonymous_A",
+          "label": "anonymous",
+          "prompt_sha256": "2e8722b336e94886ee075cc264505019c70896fe482982fb1a923ffad5d83e5d",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "A"
+        },
+        {
+          "id": "named_A",
+          "label": "named",
+          "prompt_sha256": "36e7390872b83279da22ba8cfa37d55f7c694a2eb961e609a1af1221aa23bfb2",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "A"
+        },
+        {
+          "id": "required_A",
+          "label": "required",
+          "prompt_sha256": "9a9051ba052c0c0cee2ff05972d078ab5a074ebbb80d1f00fe838322c1da6e26",
+          "targets": [
+            "A"
+          ],
+          "value_contract": "A"
+        },
+        {
+          "id": "anonymous_B",
+          "label": "anonymous",
+          "prompt_sha256": "43021a3b231d6e7ee68acc5847c773dd0bb1bcada029a640a0283890e9520c39",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "B"
+        },
+        {
+          "id": "required_B",
+          "label": "required",
+          "prompt_sha256": "74d2368c83b774c2105206779ed9736019794dba42b592a1e7a31da04c4d416b",
+          "targets": [
+            "B"
+          ],
+          "value_contract": "B"
+        },
+        {
+          "id": "none",
+          "label": "none",
+          "prompt_sha256": "91e9baaed13616ce5bbfb1fb1384c5c45a87fa16efd287d0490ced5e79dc2067",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": null
+        },
+        {
+          "id": "named_B",
+          "label": "named",
+          "prompt_sha256": "82274ac9f8a07ba2bf555515af5d4002751d9a7a4bdb346173d75a333130094c",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "B"
+        }
+      ],
+      "id": "gpt-6.2-astra_moving_sum_A",
+      "model": "gpt-6.2-astra",
+      "start": "A",
+      "task": "moving_sum",
+      "wave": 4
+    },
+    {
+      "calls": [
+        {
+          "id": "named_B",
+          "label": "named",
+          "prompt_sha256": "cc445b5f2ed00e9f4e3d5124bc8abd6ebca84af4b4a070248b1358264fd632d7",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "B"
+        },
+        {
+          "id": "named_A",
+          "label": "named",
+          "prompt_sha256": "be5355230928da0a01c7559c55a486a5c6e3c38a948bae78d8065dad21a629ff",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "A"
+        },
+        {
+          "id": "none",
+          "label": "none",
+          "prompt_sha256": "02524bfd2c0f1ef76aaf466bba5d361526d28a744d018f5aaea398213f6aebcb",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": null
+        },
+        {
+          "id": "anonymous_B",
+          "label": "anonymous",
+          "prompt_sha256": "ba582659f1ec961a69a72c86dd58850c66587a5613f24df11c67491474f618bf",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "B"
+        },
+        {
+          "id": "required_B",
+          "label": "required",
+          "prompt_sha256": "b772ba0e980fae6628f0e941a98327e7a723c35f9cbc3af128034eed60eab642",
+          "targets": [
+            "B"
+          ],
+          "value_contract": "B"
+        },
+        {
+          "id": "anonymous_A",
+          "label": "anonymous",
+          "prompt_sha256": "0627fa9e5488a51fe4ca3c15cc16ca5dff241043a91348a9c0c2d95ff93d9492",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "A"
+        },
+        {
+          "id": "required_A",
+          "label": "required",
+          "prompt_sha256": "8320d7c6aa3f1fcfb32f7529980d897f76cb5182fcfc2439d1b35141a1c71ac6",
+          "targets": [
+            "A"
+          ],
+          "value_contract": "A"
+        }
+      ],
+      "id": "gpt-6.2-sol_range_B",
+      "model": "gpt-6.2-sol",
+      "start": "B",
+      "task": "range",
+      "wave": 4
+    },
+    {
+      "calls": [
+        {
+          "id": "anonymous_B",
+          "label": "anonymous",
+          "prompt_sha256": "473f03a6512dde86de582324f6def18d9d594a43de5a40fbe375164206fc7f26",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "B"
+        },
+        {
+          "id": "none",
+          "label": "none",
+          "prompt_sha256": "6ff9c5914871488ba1b3622a4ea9706e72d28779b990174a5a17e60e5e880019",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": null
+        },
+        {
+          "id": "required_A",
+          "label": "required",
+          "prompt_sha256": "885a1a6924a4b0e1a746ce42cfa3595285eb7c30a8569c54dbeb60a485db669a",
+          "targets": [
+            "A"
+          ],
+          "value_contract": "A"
+        },
+        {
+          "id": "required_B",
+          "label": "required",
+          "prompt_sha256": "cb8c04fb12e5c0f092316ff4c7d910412760470c52b95fb6767c8c53618a16ee",
+          "targets": [
+            "B"
+          ],
+          "value_contract": "B"
+        },
+        {
+          "id": "anonymous_A",
+          "label": "anonymous",
+          "prompt_sha256": "46d9fbd7da5721ab98e95a33f8b73aaa9b73e6b70ac135c77fa823092739a527",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "A"
+        },
+        {
+          "id": "named_B",
+          "label": "named",
+          "prompt_sha256": "dd92b015c5e52259bc62fd3fe21654e1dc8259685a1be8b12a484cdb95f7170b",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "B"
+        },
+        {
+          "id": "named_A",
+          "label": "named",
+          "prompt_sha256": "86f8394a4f35b0171abb066bf9d9cddcf68c95213a72e6a3d8ece19d52796647",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "A"
+        }
+      ],
+      "id": "gpt-6.1-terra_flatten_B",
+      "model": "gpt-6.1-terra",
+      "start": "B",
+      "task": "flatten",
+      "wave": 5
+    },
+    {
+      "calls": [
+        {
+          "id": "anonymous_A",
+          "label": "anonymous",
+          "prompt_sha256": "323a232a927f0243bd8d7fddfe39ce25c00c31a9d1ffe8b1b758477b5f580e67",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "A"
+        },
+        {
+          "id": "required_A",
+          "label": "required",
+          "prompt_sha256": "c16d12ae23fd6686f853d74ddaa75823c423ebf7d62861ce84453bbba0e3eee3",
+          "targets": [
+            "A"
+          ],
+          "value_contract": "A"
+        },
+        {
+          "id": "none",
+          "label": "none",
+          "prompt_sha256": "8f569601e408901c2b20a9e2a6c324e3bb51d745a1c41ec2c53962a36dab9972",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": null
+        },
+        {
+          "id": "required_B",
+          "label": "required",
+          "prompt_sha256": "89b716fe27bc2c4d60e369d5be1876aa83919d0cba9e170b73ba15beb32220b6",
+          "targets": [
+            "B"
+          ],
+          "value_contract": "B"
+        },
+        {
+          "id": "anonymous_B",
+          "label": "anonymous",
+          "prompt_sha256": "4109ab6e107f92b6f76f479bf811800051bfb22842749ca5ff96d5474dcf2530",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "B"
+        },
+        {
+          "id": "named_A",
+          "label": "named",
+          "prompt_sha256": "ba11ddd87f95f3bd4ead1cca72717b448041ec4da81eb97e99bbcd10d4a3cee4",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "A"
+        },
+        {
+          "id": "named_B",
+          "label": "named",
+          "prompt_sha256": "c134d3fe1061e52b2858d31f87cfd13b12da9f491a1a13282158c862149f4339",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "B"
+        }
+      ],
+      "id": "gpt-6.1-terra_calendar_A",
+      "model": "gpt-6.1-terra",
+      "start": "A",
+      "task": "calendar",
+      "wave": 5
+    },
+    {
+      "calls": [
+        {
+          "id": "named_B",
+          "label": "named",
+          "prompt_sha256": "278cfcc242a15234e391d9baf25aaa2a29dc4428caa1df2276f87ee7cc3c5cbd",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "B"
+        },
+        {
+          "id": "anonymous_A",
+          "label": "anonymous",
+          "prompt_sha256": "864518160ed476a667ee29dd356a978d667ce93511a3a0bfaf53343ffe551b0d",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "A"
+        },
+        {
+          "id": "none",
+          "label": "none",
+          "prompt_sha256": "a5df4eeb29bc0629de1211a7d7a1398cafc8a5e75c815a93576c4b010817e4e8",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": null
+        },
+        {
+          "id": "anonymous_B",
+          "label": "anonymous",
+          "prompt_sha256": "3fde2eb278bee1284ef7c0bdfdb238df1987f633e38457787ab3f9f9aee00c39",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "B"
+        },
+        {
+          "id": "named_A",
+          "label": "named",
+          "prompt_sha256": "1977ba534cf4fcb6f743b72f8b07ae5c2392651c337ad1108340462fe9336d75",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "A"
+        },
+        {
+          "id": "required_A",
+          "label": "required",
+          "prompt_sha256": "637c72d6d6675aa90e63c1978bd69ad3ef0977ac0c4fea369551c1f3a658b11f",
+          "targets": [
+            "A"
+          ],
+          "value_contract": "A"
+        },
+        {
+          "id": "required_B",
+          "label": "required",
+          "prompt_sha256": "cac6dfc42261ddc0bcba449970cc178957a475629a70cc45c47fedb01ea693db",
+          "targets": [
+            "B"
+          ],
+          "value_contract": "B"
+        }
+      ],
+      "id": "gpt-6.2-sol_dedup_B",
+      "model": "gpt-6.2-sol",
+      "start": "B",
+      "task": "dedup",
+      "wave": 5
+    },
+    {
+      "calls": [
+        {
+          "id": "none",
+          "label": "none",
+          "prompt_sha256": "da3bcdb88711bb0c15cb372a31af45eb0987ea35302584a9a0d3c5a1592e2ee9",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": null
+        },
+        {
+          "id": "anonymous_A",
+          "label": "anonymous",
+          "prompt_sha256": "7372fa7b108dd0605c821403f5796aff2a9a83696792c30fd18edbe5e8a290f2",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "A"
+        },
+        {
+          "id": "required_B",
+          "label": "required",
+          "prompt_sha256": "521f52e7aacb99ff31bec055d92a113c321fc48f45ca19ad7a42b02f1250e174",
+          "targets": [
+            "B"
+          ],
+          "value_contract": "B"
+        },
+        {
+          "id": "named_A",
+          "label": "named",
+          "prompt_sha256": "cf6879924c2c6abdf023c84a955abae653dd0883e9da8a29833941972bbe0d4c",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "A"
+        },
+        {
+          "id": "anonymous_B",
+          "label": "anonymous",
+          "prompt_sha256": "d8f6bafddd3f61b3ac630c44aa29afae633d63950dfb8799ca4019cd1b3afe34",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "B"
+        },
+        {
+          "id": "required_A",
+          "label": "required",
+          "prompt_sha256": "5fa11343774da337667709b1c5f2e4fcfc5a2b0b910ff60709e3beec986dd0f3",
+          "targets": [
+            "A"
+          ],
+          "value_contract": "A"
+        },
+        {
+          "id": "named_B",
+          "label": "named",
+          "prompt_sha256": "8bda85d2058167ba0645ec7e230118386e068982af82fa2aba192c5919633b3a",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "B"
+        }
+      ],
+      "id": "gpt-6.2-sol_distance_A",
+      "model": "gpt-6.2-sol",
+      "start": "A",
+      "task": "distance",
+      "wave": 5
+    },
+    {
+      "calls": [
+        {
+          "id": "required_B",
+          "label": "required",
+          "prompt_sha256": "cf6da75c5248ce538d35f99e93246a959f700f4412fc48047809a7e3b0ca881e",
+          "targets": [
+            "B"
+          ],
+          "value_contract": "B"
+        },
+        {
+          "id": "named_A",
+          "label": "named",
+          "prompt_sha256": "318f3199934f2a13bbeeae0efc5f56447ee7708588eb43780d43524a7c7f634f",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "A"
+        },
+        {
+          "id": "anonymous_B",
+          "label": "anonymous",
+          "prompt_sha256": "f7991f43473b618c75ed39ea53a4fc8e8cac12170c18fba049c14daee688d7c9",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "B"
+        },
+        {
+          "id": "none",
+          "label": "none",
+          "prompt_sha256": "ebe9527e2551062bf6d6deecab6487bb5d30072b8690ed7b81469311ad52e91f",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": null
+        },
+        {
+          "id": "required_A",
+          "label": "required",
+          "prompt_sha256": "70d422c6f527ed0ff769a2a8bc9bc6d6f8532fc28b0cfbc393c7c5f4c033c8d3",
+          "targets": [
+            "A"
+          ],
+          "value_contract": "A"
+        },
+        {
+          "id": "anonymous_A",
+          "label": "anonymous",
+          "prompt_sha256": "61b54fa906ce0db9d09495364bd70e7c2217aada9a83edc16debdbaa8ae70a25",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "A"
+        },
+        {
+          "id": "named_B",
+          "label": "named",
+          "prompt_sha256": "b36468b17304b7536e0c54de631468fdf8e563cdd31fdb4bfec48fa165329a5e",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "B"
+        }
+      ],
+      "id": "gpt-6.2-astra_quotient_B",
+      "model": "gpt-6.2-astra",
+      "start": "B",
+      "task": "quotient",
+      "wave": 5
+    },
+    {
+      "calls": [
+        {
+          "id": "required_A",
+          "label": "required",
+          "prompt_sha256": "c06f28f48fb3e3c5011ecb538fb59fdc612a0cdce454870e33cfc9af0fa44ab3",
+          "targets": [
+            "A"
+          ],
+          "value_contract": "A"
+        },
+        {
+          "id": "named_A",
+          "label": "named",
+          "prompt_sha256": "8dc0937e984e42e9120ef985cb675a2b6a62fa0d2c016a760997f6d14fde0817",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "A"
+        },
+        {
+          "id": "anonymous_A",
+          "label": "anonymous",
+          "prompt_sha256": "298891743f22f4b5fa772d3659611b62cd1f1028871a9971f1b34151b61e93e6",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "A"
+        },
+        {
+          "id": "named_B",
+          "label": "named",
+          "prompt_sha256": "91750aa0d39fde6dc6f91030775ec4f09923d9bb3679d4e613332dfc0bc2455c",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "B"
+        },
+        {
+          "id": "none",
+          "label": "none",
+          "prompt_sha256": "7a94ea3e54febe0bb240f8e3281fbd1458ee999efd75718985e74c26cbb41865",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": null
+        },
+        {
+          "id": "anonymous_B",
+          "label": "anonymous",
+          "prompt_sha256": "d734c6e54aece2bcfee5b2ccd601fcfe00abcf2d033011da173451c5ee5a8add",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "B"
+        },
+        {
+          "id": "required_B",
+          "label": "required",
+          "prompt_sha256": "b6e78da4f70f202d448779513ce882b57a889c3a57348988de579fd482957cff",
+          "targets": [
+            "B"
+          ],
+          "value_contract": "B"
+        }
+      ],
+      "id": "gpt-6-luna_moving_sum_B",
+      "model": "gpt-6-luna",
+      "start": "B",
+      "task": "moving_sum",
+      "wave": 5
+    },
+    {
+      "calls": [
+        {
+          "id": "anonymous_A",
+          "label": "anonymous",
+          "prompt_sha256": "8ededabaacc4c8383a60e6c86c209f2c8a43674490f016c4594b97b951829855",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "A"
+        },
+        {
+          "id": "required_A",
+          "label": "required",
+          "prompt_sha256": "414c9aa3d7f208256addce941e7fb326c1ae33a88e66a6d6abfae2f9d0b3aa89",
+          "targets": [
+            "A"
+          ],
+          "value_contract": "A"
+        },
+        {
+          "id": "required_B",
+          "label": "required",
+          "prompt_sha256": "450f5fe6fa4460fbe441ed36b41e7b2a413eb514a1d98abc2d692dc0060671cc",
+          "targets": [
+            "B"
+          ],
+          "value_contract": "B"
+        },
+        {
+          "id": "named_B",
+          "label": "named",
+          "prompt_sha256": "0926b3a6e337adbfde20f00c2400ad6664bf9ad823d4a5224caab8317c5916db",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "B"
+        },
+        {
+          "id": "anonymous_B",
+          "label": "anonymous",
+          "prompt_sha256": "1e149ef6916b87fed28bf096a481c2c4665c135ffbfafec64b529352be992621",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "B"
+        },
+        {
+          "id": "none",
+          "label": "none",
+          "prompt_sha256": "bb7ea90fbf1ddc7f40e4e64b8f2d4ec3d809cbd88fe0d3573661eb2cc4f99746",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": null
+        },
+        {
+          "id": "named_A",
+          "label": "named",
+          "prompt_sha256": "512525036916d2692927f28e4c0e823e25bee567cd625143da59964f219e548c",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "A"
+        }
+      ],
+      "id": "gpt-6.2-astra_range_A",
+      "model": "gpt-6.2-astra",
+      "start": "A",
+      "task": "range",
+      "wave": 5
+    },
+    {
+      "calls": [
+        {
+          "id": "named_B",
+          "label": "named",
+          "prompt_sha256": "b22e8bdcf10706b35925a1951a405e33ebd77b31d4fd40c6bf0aefa53e1bfabc",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "B"
+        },
+        {
+          "id": "anonymous_A",
+          "label": "anonymous",
+          "prompt_sha256": "8d64a782bbfa5085a881c2c13e5c1b0359dad1b08d13ca4441ea515191ed6e7f",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "A"
+        },
+        {
+          "id": "none",
+          "label": "none",
+          "prompt_sha256": "4601c141b68cf2e4e85f66ee38a6b83f7936545927bb522f548272c7ee4cf4e5",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": null
+        },
+        {
+          "id": "named_A",
+          "label": "named",
+          "prompt_sha256": "612e5c92c71ca81eb9653b74449e1bf95ceb658da97885e84ac2eb182cb65123",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "A"
+        },
+        {
+          "id": "required_A",
+          "label": "required",
+          "prompt_sha256": "c9c89792b2fe7bfeb3aa2dc29fe0711cea3effdb3fc6b4f79d3ae8e9e3b63a76",
+          "targets": [
+            "A"
+          ],
+          "value_contract": "A"
+        },
+        {
+          "id": "anonymous_B",
+          "label": "anonymous",
+          "prompt_sha256": "b4c9a3fabcf82f58e4b32664d1ab5f5c5e31e7918b0e6df5192f085a218cb23f",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "B"
+        },
+        {
+          "id": "required_B",
+          "label": "required",
+          "prompt_sha256": "4395e286b4a2239a78959f7ce8019171b10b19c4f69b6125e0c19100184dc764",
+          "targets": [
+            "B"
+          ],
+          "value_contract": "B"
+        }
+      ],
+      "id": "gpt-6-luna_fields_A",
+      "model": "gpt-6-luna",
+      "start": "A",
+      "task": "fields",
+      "wave": 5
+    },
+    {
+      "calls": [
+        {
+          "id": "named_A",
+          "label": "named",
+          "prompt_sha256": "8dc0937e984e42e9120ef985cb675a2b6a62fa0d2c016a760997f6d14fde0817",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "A"
+        },
+        {
+          "id": "none",
+          "label": "none",
+          "prompt_sha256": "7a94ea3e54febe0bb240f8e3281fbd1458ee999efd75718985e74c26cbb41865",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": null
+        },
+        {
+          "id": "required_A",
+          "label": "required",
+          "prompt_sha256": "c06f28f48fb3e3c5011ecb538fb59fdc612a0cdce454870e33cfc9af0fa44ab3",
+          "targets": [
+            "A"
+          ],
+          "value_contract": "A"
+        },
+        {
+          "id": "named_B",
+          "label": "named",
+          "prompt_sha256": "91750aa0d39fde6dc6f91030775ec4f09923d9bb3679d4e613332dfc0bc2455c",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "B"
+        },
+        {
+          "id": "anonymous_A",
+          "label": "anonymous",
+          "prompt_sha256": "298891743f22f4b5fa772d3659611b62cd1f1028871a9971f1b34151b61e93e6",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "A"
+        },
+        {
+          "id": "anonymous_B",
+          "label": "anonymous",
+          "prompt_sha256": "d734c6e54aece2bcfee5b2ccd601fcfe00abcf2d033011da173451c5ee5a8add",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "B"
+        },
+        {
+          "id": "required_B",
+          "label": "required",
+          "prompt_sha256": "b6e78da4f70f202d448779513ce882b57a889c3a57348988de579fd482957cff",
+          "targets": [
+            "B"
+          ],
+          "value_contract": "B"
+        }
+      ],
+      "id": "gpt-6.1-terra_moving_sum_B",
+      "model": "gpt-6.1-terra",
+      "start": "B",
+      "task": "moving_sum",
+      "wave": 6
+    },
+    {
+      "calls": [
+        {
+          "id": "anonymous_B",
+          "label": "anonymous",
+          "prompt_sha256": "4109ab6e107f92b6f76f479bf811800051bfb22842749ca5ff96d5474dcf2530",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "B"
+        },
+        {
+          "id": "anonymous_A",
+          "label": "anonymous",
+          "prompt_sha256": "323a232a927f0243bd8d7fddfe39ce25c00c31a9d1ffe8b1b758477b5f580e67",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "A"
+        },
+        {
+          "id": "named_B",
+          "label": "named",
+          "prompt_sha256": "c134d3fe1061e52b2858d31f87cfd13b12da9f491a1a13282158c862149f4339",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "B"
+        },
+        {
+          "id": "required_A",
+          "label": "required",
+          "prompt_sha256": "c16d12ae23fd6686f853d74ddaa75823c423ebf7d62861ce84453bbba0e3eee3",
+          "targets": [
+            "A"
+          ],
+          "value_contract": "A"
+        },
+        {
+          "id": "none",
+          "label": "none",
+          "prompt_sha256": "8f569601e408901c2b20a9e2a6c324e3bb51d745a1c41ec2c53962a36dab9972",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": null
+        },
+        {
+          "id": "named_A",
+          "label": "named",
+          "prompt_sha256": "ba11ddd87f95f3bd4ead1cca72717b448041ec4da81eb97e99bbcd10d4a3cee4",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "A"
+        },
+        {
+          "id": "required_B",
+          "label": "required",
+          "prompt_sha256": "89b716fe27bc2c4d60e369d5be1876aa83919d0cba9e170b73ba15beb32220b6",
+          "targets": [
+            "B"
+          ],
+          "value_contract": "B"
+        }
+      ],
+      "id": "gpt-6.2-sol_calendar_A",
+      "model": "gpt-6.2-sol",
+      "start": "A",
+      "task": "calendar",
+      "wave": 6
+    },
+    {
+      "calls": [
+        {
+          "id": "required_B",
+          "label": "required",
+          "prompt_sha256": "cf6da75c5248ce538d35f99e93246a959f700f4412fc48047809a7e3b0ca881e",
+          "targets": [
+            "B"
+          ],
+          "value_contract": "B"
+        },
+        {
+          "id": "anonymous_B",
+          "label": "anonymous",
+          "prompt_sha256": "f7991f43473b618c75ed39ea53a4fc8e8cac12170c18fba049c14daee688d7c9",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "B"
+        },
+        {
+          "id": "named_B",
+          "label": "named",
+          "prompt_sha256": "b36468b17304b7536e0c54de631468fdf8e563cdd31fdb4bfec48fa165329a5e",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "B"
+        },
+        {
+          "id": "none",
+          "label": "none",
+          "prompt_sha256": "ebe9527e2551062bf6d6deecab6487bb5d30072b8690ed7b81469311ad52e91f",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": null
+        },
+        {
+          "id": "anonymous_A",
+          "label": "anonymous",
+          "prompt_sha256": "61b54fa906ce0db9d09495364bd70e7c2217aada9a83edc16debdbaa8ae70a25",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "A"
+        },
+        {
+          "id": "named_A",
+          "label": "named",
+          "prompt_sha256": "318f3199934f2a13bbeeae0efc5f56447ee7708588eb43780d43524a7c7f634f",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "A"
+        },
+        {
+          "id": "required_A",
+          "label": "required",
+          "prompt_sha256": "70d422c6f527ed0ff769a2a8bc9bc6d6f8532fc28b0cfbc393c7c5f4c033c8d3",
+          "targets": [
+            "A"
+          ],
+          "value_contract": "A"
+        }
+      ],
+      "id": "gpt-6-luna_quotient_B",
+      "model": "gpt-6-luna",
+      "start": "B",
+      "task": "quotient",
+      "wave": 6
+    },
+    {
+      "calls": [
+        {
+          "id": "anonymous_B",
+          "label": "anonymous",
+          "prompt_sha256": "b4c9a3fabcf82f58e4b32664d1ab5f5c5e31e7918b0e6df5192f085a218cb23f",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "B"
+        },
+        {
+          "id": "required_B",
+          "label": "required",
+          "prompt_sha256": "4395e286b4a2239a78959f7ce8019171b10b19c4f69b6125e0c19100184dc764",
+          "targets": [
+            "B"
+          ],
+          "value_contract": "B"
+        },
+        {
+          "id": "named_B",
+          "label": "named",
+          "prompt_sha256": "b22e8bdcf10706b35925a1951a405e33ebd77b31d4fd40c6bf0aefa53e1bfabc",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "B"
+        },
+        {
+          "id": "anonymous_A",
+          "label": "anonymous",
+          "prompt_sha256": "8d64a782bbfa5085a881c2c13e5c1b0359dad1b08d13ca4441ea515191ed6e7f",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "A"
+        },
+        {
+          "id": "named_A",
+          "label": "named",
+          "prompt_sha256": "612e5c92c71ca81eb9653b74449e1bf95ceb658da97885e84ac2eb182cb65123",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "A"
+        },
+        {
+          "id": "required_A",
+          "label": "required",
+          "prompt_sha256": "c9c89792b2fe7bfeb3aa2dc29fe0711cea3effdb3fc6b4f79d3ae8e9e3b63a76",
+          "targets": [
+            "A"
+          ],
+          "value_contract": "A"
+        },
+        {
+          "id": "none",
+          "label": "none",
+          "prompt_sha256": "4601c141b68cf2e4e85f66ee38a6b83f7936545927bb522f548272c7ee4cf4e5",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": null
+        }
+      ],
+      "id": "gpt-6.1-terra_fields_A",
+      "model": "gpt-6.1-terra",
+      "start": "A",
+      "task": "fields",
+      "wave": 6
+    },
+    {
+      "calls": [
+        {
+          "id": "named_A",
+          "label": "named",
+          "prompt_sha256": "86f8394a4f35b0171abb066bf9d9cddcf68c95213a72e6a3d8ece19d52796647",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "A"
+        },
+        {
+          "id": "anonymous_B",
+          "label": "anonymous",
+          "prompt_sha256": "473f03a6512dde86de582324f6def18d9d594a43de5a40fbe375164206fc7f26",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "B"
+        },
+        {
+          "id": "anonymous_A",
+          "label": "anonymous",
+          "prompt_sha256": "46d9fbd7da5721ab98e95a33f8b73aaa9b73e6b70ac135c77fa823092739a527",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "A"
+        },
+        {
+          "id": "required_B",
+          "label": "required",
+          "prompt_sha256": "cb8c04fb12e5c0f092316ff4c7d910412760470c52b95fb6767c8c53618a16ee",
+          "targets": [
+            "B"
+          ],
+          "value_contract": "B"
+        },
+        {
+          "id": "named_B",
+          "label": "named",
+          "prompt_sha256": "dd92b015c5e52259bc62fd3fe21654e1dc8259685a1be8b12a484cdb95f7170b",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "B"
+        },
+        {
+          "id": "required_A",
+          "label": "required",
+          "prompt_sha256": "885a1a6924a4b0e1a746ce42cfa3595285eb7c30a8569c54dbeb60a485db669a",
+          "targets": [
+            "A"
+          ],
+          "value_contract": "A"
+        },
+        {
+          "id": "none",
+          "label": "none",
+          "prompt_sha256": "6ff9c5914871488ba1b3622a4ea9706e72d28779b990174a5a17e60e5e880019",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": null
+        }
+      ],
+      "id": "gpt-6.2-sol_flatten_B",
+      "model": "gpt-6.2-sol",
+      "start": "B",
+      "task": "flatten",
+      "wave": 6
+    },
+    {
+      "calls": [
+        {
+          "id": "named_A",
+          "label": "named",
+          "prompt_sha256": "1977ba534cf4fcb6f743b72f8b07ae5c2392651c337ad1108340462fe9336d75",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "A"
+        },
+        {
+          "id": "none",
+          "label": "none",
+          "prompt_sha256": "a5df4eeb29bc0629de1211a7d7a1398cafc8a5e75c815a93576c4b010817e4e8",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": null
+        },
+        {
+          "id": "required_A",
+          "label": "required",
+          "prompt_sha256": "637c72d6d6675aa90e63c1978bd69ad3ef0977ac0c4fea369551c1f3a658b11f",
+          "targets": [
+            "A"
+          ],
+          "value_contract": "A"
+        },
+        {
+          "id": "named_B",
+          "label": "named",
+          "prompt_sha256": "278cfcc242a15234e391d9baf25aaa2a29dc4428caa1df2276f87ee7cc3c5cbd",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "B"
+        },
+        {
+          "id": "anonymous_A",
+          "label": "anonymous",
+          "prompt_sha256": "864518160ed476a667ee29dd356a978d667ce93511a3a0bfaf53343ffe551b0d",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "A"
+        },
+        {
+          "id": "anonymous_B",
+          "label": "anonymous",
+          "prompt_sha256": "3fde2eb278bee1284ef7c0bdfdb238df1987f633e38457787ab3f9f9aee00c39",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "B"
+        },
+        {
+          "id": "required_B",
+          "label": "required",
+          "prompt_sha256": "cac6dfc42261ddc0bcba449970cc178957a475629a70cc45c47fedb01ea693db",
+          "targets": [
+            "B"
+          ],
+          "value_contract": "B"
+        }
+      ],
+      "id": "gpt-6.2-astra_dedup_B",
+      "model": "gpt-6.2-astra",
+      "start": "B",
+      "task": "dedup",
+      "wave": 6
+    },
+    {
+      "calls": [
+        {
+          "id": "anonymous_B",
+          "label": "anonymous",
+          "prompt_sha256": "d8f6bafddd3f61b3ac630c44aa29afae633d63950dfb8799ca4019cd1b3afe34",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "B"
+        },
+        {
+          "id": "none",
+          "label": "none",
+          "prompt_sha256": "da3bcdb88711bb0c15cb372a31af45eb0987ea35302584a9a0d3c5a1592e2ee9",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": null
+        },
+        {
+          "id": "anonymous_A",
+          "label": "anonymous",
+          "prompt_sha256": "7372fa7b108dd0605c821403f5796aff2a9a83696792c30fd18edbe5e8a290f2",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "A"
+        },
+        {
+          "id": "named_A",
+          "label": "named",
+          "prompt_sha256": "cf6879924c2c6abdf023c84a955abae653dd0883e9da8a29833941972bbe0d4c",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "A"
+        },
+        {
+          "id": "named_B",
+          "label": "named",
+          "prompt_sha256": "8bda85d2058167ba0645ec7e230118386e068982af82fa2aba192c5919633b3a",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "B"
+        },
+        {
+          "id": "required_B",
+          "label": "required",
+          "prompt_sha256": "521f52e7aacb99ff31bec055d92a113c321fc48f45ca19ad7a42b02f1250e174",
+          "targets": [
+            "B"
+          ],
+          "value_contract": "B"
+        },
+        {
+          "id": "required_A",
+          "label": "required",
+          "prompt_sha256": "5fa11343774da337667709b1c5f2e4fcfc5a2b0b910ff60709e3beec986dd0f3",
+          "targets": [
+            "A"
+          ],
+          "value_contract": "A"
+        }
+      ],
+      "id": "gpt-6.2-astra_distance_A",
+      "model": "gpt-6.2-astra",
+      "start": "A",
+      "task": "distance",
+      "wave": 6
+    },
+    {
+      "calls": [
+        {
+          "id": "none",
+          "label": "none",
+          "prompt_sha256": "bb7ea90fbf1ddc7f40e4e64b8f2d4ec3d809cbd88fe0d3573661eb2cc4f99746",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": null
+        },
+        {
+          "id": "anonymous_A",
+          "label": "anonymous",
+          "prompt_sha256": "8ededabaacc4c8383a60e6c86c209f2c8a43674490f016c4594b97b951829855",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "A"
+        },
+        {
+          "id": "anonymous_B",
+          "label": "anonymous",
+          "prompt_sha256": "1e149ef6916b87fed28bf096a481c2c4665c135ffbfafec64b529352be992621",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "B"
+        },
+        {
+          "id": "named_B",
+          "label": "named",
+          "prompt_sha256": "0926b3a6e337adbfde20f00c2400ad6664bf9ad823d4a5224caab8317c5916db",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "B"
+        },
+        {
+          "id": "required_B",
+          "label": "required",
+          "prompt_sha256": "450f5fe6fa4460fbe441ed36b41e7b2a413eb514a1d98abc2d692dc0060671cc",
+          "targets": [
+            "B"
+          ],
+          "value_contract": "B"
+        },
+        {
+          "id": "required_A",
+          "label": "required",
+          "prompt_sha256": "414c9aa3d7f208256addce941e7fb326c1ae33a88e66a6d6abfae2f9d0b3aa89",
+          "targets": [
+            "A"
+          ],
+          "value_contract": "A"
+        },
+        {
+          "id": "named_A",
+          "label": "named",
+          "prompt_sha256": "512525036916d2692927f28e4c0e823e25bee567cd625143da59964f219e548c",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "A"
+        }
+      ],
+      "id": "gpt-6-luna_range_A",
+      "model": "gpt-6-luna",
+      "start": "A",
+      "task": "range",
+      "wave": 6
+    },
+    {
+      "calls": [
+        {
+          "id": "anonymous_A",
+          "label": "anonymous",
+          "prompt_sha256": "7372fa7b108dd0605c821403f5796aff2a9a83696792c30fd18edbe5e8a290f2",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "A"
+        },
+        {
+          "id": "named_B",
+          "label": "named",
+          "prompt_sha256": "8bda85d2058167ba0645ec7e230118386e068982af82fa2aba192c5919633b3a",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "B"
+        },
+        {
+          "id": "required_B",
+          "label": "required",
+          "prompt_sha256": "521f52e7aacb99ff31bec055d92a113c321fc48f45ca19ad7a42b02f1250e174",
+          "targets": [
+            "B"
+          ],
+          "value_contract": "B"
+        },
+        {
+          "id": "named_A",
+          "label": "named",
+          "prompt_sha256": "cf6879924c2c6abdf023c84a955abae653dd0883e9da8a29833941972bbe0d4c",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "A"
+        },
+        {
+          "id": "required_A",
+          "label": "required",
+          "prompt_sha256": "5fa11343774da337667709b1c5f2e4fcfc5a2b0b910ff60709e3beec986dd0f3",
+          "targets": [
+            "A"
+          ],
+          "value_contract": "A"
+        },
+        {
+          "id": "anonymous_B",
+          "label": "anonymous",
+          "prompt_sha256": "d8f6bafddd3f61b3ac630c44aa29afae633d63950dfb8799ca4019cd1b3afe34",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "B"
+        },
+        {
+          "id": "none",
+          "label": "none",
+          "prompt_sha256": "da3bcdb88711bb0c15cb372a31af45eb0987ea35302584a9a0d3c5a1592e2ee9",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": null
+        }
+      ],
+      "id": "gpt-6-luna_distance_A",
+      "model": "gpt-6-luna",
+      "start": "A",
+      "task": "distance",
+      "wave": 7
+    },
+    {
+      "calls": [
+        {
+          "id": "required_A",
+          "label": "required",
+          "prompt_sha256": "c06f28f48fb3e3c5011ecb538fb59fdc612a0cdce454870e33cfc9af0fa44ab3",
+          "targets": [
+            "A"
+          ],
+          "value_contract": "A"
+        },
+        {
+          "id": "none",
+          "label": "none",
+          "prompt_sha256": "7a94ea3e54febe0bb240f8e3281fbd1458ee999efd75718985e74c26cbb41865",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": null
+        },
+        {
+          "id": "required_B",
+          "label": "required",
+          "prompt_sha256": "b6e78da4f70f202d448779513ce882b57a889c3a57348988de579fd482957cff",
+          "targets": [
+            "B"
+          ],
+          "value_contract": "B"
+        },
+        {
+          "id": "named_A",
+          "label": "named",
+          "prompt_sha256": "8dc0937e984e42e9120ef985cb675a2b6a62fa0d2c016a760997f6d14fde0817",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "A"
+        },
+        {
+          "id": "anonymous_A",
+          "label": "anonymous",
+          "prompt_sha256": "298891743f22f4b5fa772d3659611b62cd1f1028871a9971f1b34151b61e93e6",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "A"
+        },
+        {
+          "id": "anonymous_B",
+          "label": "anonymous",
+          "prompt_sha256": "d734c6e54aece2bcfee5b2ccd601fcfe00abcf2d033011da173451c5ee5a8add",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "B"
+        },
+        {
+          "id": "named_B",
+          "label": "named",
+          "prompt_sha256": "91750aa0d39fde6dc6f91030775ec4f09923d9bb3679d4e613332dfc0bc2455c",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "B"
+        }
+      ],
+      "id": "gpt-6.2-sol_moving_sum_B",
+      "model": "gpt-6.2-sol",
+      "start": "B",
+      "task": "moving_sum",
+      "wave": 7
+    },
+    {
+      "calls": [
+        {
+          "id": "anonymous_B",
+          "label": "anonymous",
+          "prompt_sha256": "f7991f43473b618c75ed39ea53a4fc8e8cac12170c18fba049c14daee688d7c9",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "B"
+        },
+        {
+          "id": "none",
+          "label": "none",
+          "prompt_sha256": "ebe9527e2551062bf6d6deecab6487bb5d30072b8690ed7b81469311ad52e91f",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": null
+        },
+        {
+          "id": "named_A",
+          "label": "named",
+          "prompt_sha256": "318f3199934f2a13bbeeae0efc5f56447ee7708588eb43780d43524a7c7f634f",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "A"
+        },
+        {
+          "id": "required_A",
+          "label": "required",
+          "prompt_sha256": "70d422c6f527ed0ff769a2a8bc9bc6d6f8532fc28b0cfbc393c7c5f4c033c8d3",
+          "targets": [
+            "A"
+          ],
+          "value_contract": "A"
+        },
+        {
+          "id": "named_B",
+          "label": "named",
+          "prompt_sha256": "b36468b17304b7536e0c54de631468fdf8e563cdd31fdb4bfec48fa165329a5e",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "B"
+        },
+        {
+          "id": "anonymous_A",
+          "label": "anonymous",
+          "prompt_sha256": "61b54fa906ce0db9d09495364bd70e7c2217aada9a83edc16debdbaa8ae70a25",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "A"
+        },
+        {
+          "id": "required_B",
+          "label": "required",
+          "prompt_sha256": "cf6da75c5248ce538d35f99e93246a959f700f4412fc48047809a7e3b0ca881e",
+          "targets": [
+            "B"
+          ],
+          "value_contract": "B"
+        }
+      ],
+      "id": "gpt-6.1-terra_quotient_B",
+      "model": "gpt-6.1-terra",
+      "start": "B",
+      "task": "quotient",
+      "wave": 7
+    },
+    {
+      "calls": [
+        {
+          "id": "required_A",
+          "label": "required",
+          "prompt_sha256": "c16d12ae23fd6686f853d74ddaa75823c423ebf7d62861ce84453bbba0e3eee3",
+          "targets": [
+            "A"
+          ],
+          "value_contract": "A"
+        },
+        {
+          "id": "none",
+          "label": "none",
+          "prompt_sha256": "8f569601e408901c2b20a9e2a6c324e3bb51d745a1c41ec2c53962a36dab9972",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": null
+        },
+        {
+          "id": "required_B",
+          "label": "required",
+          "prompt_sha256": "89b716fe27bc2c4d60e369d5be1876aa83919d0cba9e170b73ba15beb32220b6",
+          "targets": [
+            "B"
+          ],
+          "value_contract": "B"
+        },
+        {
+          "id": "anonymous_B",
+          "label": "anonymous",
+          "prompt_sha256": "4109ab6e107f92b6f76f479bf811800051bfb22842749ca5ff96d5474dcf2530",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "B"
+        },
+        {
+          "id": "named_B",
+          "label": "named",
+          "prompt_sha256": "c134d3fe1061e52b2858d31f87cfd13b12da9f491a1a13282158c862149f4339",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "B"
+        },
+        {
+          "id": "named_A",
+          "label": "named",
+          "prompt_sha256": "ba11ddd87f95f3bd4ead1cca72717b448041ec4da81eb97e99bbcd10d4a3cee4",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "A"
+        },
+        {
+          "id": "anonymous_A",
+          "label": "anonymous",
+          "prompt_sha256": "323a232a927f0243bd8d7fddfe39ce25c00c31a9d1ffe8b1b758477b5f580e67",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "A"
+        }
+      ],
+      "id": "gpt-6.2-astra_calendar_A",
+      "model": "gpt-6.2-astra",
+      "start": "A",
+      "task": "calendar",
+      "wave": 7
+    },
+    {
+      "calls": [
+        {
+          "id": "required_A",
+          "label": "required",
+          "prompt_sha256": "414c9aa3d7f208256addce941e7fb326c1ae33a88e66a6d6abfae2f9d0b3aa89",
+          "targets": [
+            "A"
+          ],
+          "value_contract": "A"
+        },
+        {
+          "id": "required_B",
+          "label": "required",
+          "prompt_sha256": "450f5fe6fa4460fbe441ed36b41e7b2a413eb514a1d98abc2d692dc0060671cc",
+          "targets": [
+            "B"
+          ],
+          "value_contract": "B"
+        },
+        {
+          "id": "anonymous_B",
+          "label": "anonymous",
+          "prompt_sha256": "1e149ef6916b87fed28bf096a481c2c4665c135ffbfafec64b529352be992621",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "B"
+        },
+        {
+          "id": "named_A",
+          "label": "named",
+          "prompt_sha256": "512525036916d2692927f28e4c0e823e25bee567cd625143da59964f219e548c",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "A"
+        },
+        {
+          "id": "named_B",
+          "label": "named",
+          "prompt_sha256": "0926b3a6e337adbfde20f00c2400ad6664bf9ad823d4a5224caab8317c5916db",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "B"
+        },
+        {
+          "id": "anonymous_A",
+          "label": "anonymous",
+          "prompt_sha256": "8ededabaacc4c8383a60e6c86c209f2c8a43674490f016c4594b97b951829855",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "A"
+        },
+        {
+          "id": "none",
+          "label": "none",
+          "prompt_sha256": "bb7ea90fbf1ddc7f40e4e64b8f2d4ec3d809cbd88fe0d3573661eb2cc4f99746",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": null
+        }
+      ],
+      "id": "gpt-6.1-terra_range_A",
+      "model": "gpt-6.1-terra",
+      "start": "A",
+      "task": "range",
+      "wave": 7
+    },
+    {
+      "calls": [
+        {
+          "id": "named_B",
+          "label": "named",
+          "prompt_sha256": "dd92b015c5e52259bc62fd3fe21654e1dc8259685a1be8b12a484cdb95f7170b",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "B"
+        },
+        {
+          "id": "anonymous_A",
+          "label": "anonymous",
+          "prompt_sha256": "46d9fbd7da5721ab98e95a33f8b73aaa9b73e6b70ac135c77fa823092739a527",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "A"
+        },
+        {
+          "id": "anonymous_B",
+          "label": "anonymous",
+          "prompt_sha256": "473f03a6512dde86de582324f6def18d9d594a43de5a40fbe375164206fc7f26",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "B"
+        },
+        {
+          "id": "none",
+          "label": "none",
+          "prompt_sha256": "6ff9c5914871488ba1b3622a4ea9706e72d28779b990174a5a17e60e5e880019",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": null
+        },
+        {
+          "id": "required_B",
+          "label": "required",
+          "prompt_sha256": "cb8c04fb12e5c0f092316ff4c7d910412760470c52b95fb6767c8c53618a16ee",
+          "targets": [
+            "B"
+          ],
+          "value_contract": "B"
+        },
+        {
+          "id": "required_A",
+          "label": "required",
+          "prompt_sha256": "885a1a6924a4b0e1a746ce42cfa3595285eb7c30a8569c54dbeb60a485db669a",
+          "targets": [
+            "A"
+          ],
+          "value_contract": "A"
+        },
+        {
+          "id": "named_A",
+          "label": "named",
+          "prompt_sha256": "86f8394a4f35b0171abb066bf9d9cddcf68c95213a72e6a3d8ece19d52796647",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "A"
+        }
+      ],
+      "id": "gpt-6.2-astra_flatten_B",
+      "model": "gpt-6.2-astra",
+      "start": "B",
+      "task": "flatten",
+      "wave": 7
+    },
+    {
+      "calls": [
+        {
+          "id": "anonymous_B",
+          "label": "anonymous",
+          "prompt_sha256": "3fde2eb278bee1284ef7c0bdfdb238df1987f633e38457787ab3f9f9aee00c39",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "B"
+        },
+        {
+          "id": "required_B",
+          "label": "required",
+          "prompt_sha256": "cac6dfc42261ddc0bcba449970cc178957a475629a70cc45c47fedb01ea693db",
+          "targets": [
+            "B"
+          ],
+          "value_contract": "B"
+        },
+        {
+          "id": "required_A",
+          "label": "required",
+          "prompt_sha256": "637c72d6d6675aa90e63c1978bd69ad3ef0977ac0c4fea369551c1f3a658b11f",
+          "targets": [
+            "A"
+          ],
+          "value_contract": "A"
+        },
+        {
+          "id": "named_A",
+          "label": "named",
+          "prompt_sha256": "1977ba534cf4fcb6f743b72f8b07ae5c2392651c337ad1108340462fe9336d75",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "A"
+        },
+        {
+          "id": "none",
+          "label": "none",
+          "prompt_sha256": "a5df4eeb29bc0629de1211a7d7a1398cafc8a5e75c815a93576c4b010817e4e8",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": null
+        },
+        {
+          "id": "named_B",
+          "label": "named",
+          "prompt_sha256": "278cfcc242a15234e391d9baf25aaa2a29dc4428caa1df2276f87ee7cc3c5cbd",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "B"
+        },
+        {
+          "id": "anonymous_A",
+          "label": "anonymous",
+          "prompt_sha256": "864518160ed476a667ee29dd356a978d667ce93511a3a0bfaf53343ffe551b0d",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "A"
+        }
+      ],
+      "id": "gpt-6-luna_dedup_B",
+      "model": "gpt-6-luna",
+      "start": "B",
+      "task": "dedup",
+      "wave": 7
+    },
+    {
+      "calls": [
+        {
+          "id": "named_B",
+          "label": "named",
+          "prompt_sha256": "b22e8bdcf10706b35925a1951a405e33ebd77b31d4fd40c6bf0aefa53e1bfabc",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "B"
+        },
+        {
+          "id": "named_A",
+          "label": "named",
+          "prompt_sha256": "612e5c92c71ca81eb9653b74449e1bf95ceb658da97885e84ac2eb182cb65123",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "A"
+        },
+        {
+          "id": "anonymous_A",
+          "label": "anonymous",
+          "prompt_sha256": "8d64a782bbfa5085a881c2c13e5c1b0359dad1b08d13ca4441ea515191ed6e7f",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "A"
+        },
+        {
+          "id": "anonymous_B",
+          "label": "anonymous",
+          "prompt_sha256": "b4c9a3fabcf82f58e4b32664d1ab5f5c5e31e7918b0e6df5192f085a218cb23f",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "B"
+        },
+        {
+          "id": "none",
+          "label": "none",
+          "prompt_sha256": "4601c141b68cf2e4e85f66ee38a6b83f7936545927bb522f548272c7ee4cf4e5",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": null
+        },
+        {
+          "id": "required_A",
+          "label": "required",
+          "prompt_sha256": "c9c89792b2fe7bfeb3aa2dc29fe0711cea3effdb3fc6b4f79d3ae8e9e3b63a76",
+          "targets": [
+            "A"
+          ],
+          "value_contract": "A"
+        },
+        {
+          "id": "required_B",
+          "label": "required",
+          "prompt_sha256": "4395e286b4a2239a78959f7ce8019171b10b19c4f69b6125e0c19100184dc764",
+          "targets": [
+            "B"
+          ],
+          "value_contract": "B"
+        }
+      ],
+      "id": "gpt-6.2-sol_fields_A",
+      "model": "gpt-6.2-sol",
+      "start": "A",
+      "task": "fields",
+      "wave": 7
+    },
+    {
+      "calls": [
+        {
+          "id": "anonymous_A",
+          "label": "anonymous",
+          "prompt_sha256": "8ededabaacc4c8383a60e6c86c209f2c8a43674490f016c4594b97b951829855",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "A"
+        },
+        {
+          "id": "named_B",
+          "label": "named",
+          "prompt_sha256": "0926b3a6e337adbfde20f00c2400ad6664bf9ad823d4a5224caab8317c5916db",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "B"
+        },
+        {
+          "id": "anonymous_B",
+          "label": "anonymous",
+          "prompt_sha256": "1e149ef6916b87fed28bf096a481c2c4665c135ffbfafec64b529352be992621",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "B"
+        },
+        {
+          "id": "named_A",
+          "label": "named",
+          "prompt_sha256": "512525036916d2692927f28e4c0e823e25bee567cd625143da59964f219e548c",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "A"
+        },
+        {
+          "id": "required_A",
+          "label": "required",
+          "prompt_sha256": "414c9aa3d7f208256addce941e7fb326c1ae33a88e66a6d6abfae2f9d0b3aa89",
+          "targets": [
+            "A"
+          ],
+          "value_contract": "A"
+        },
+        {
+          "id": "required_B",
+          "label": "required",
+          "prompt_sha256": "450f5fe6fa4460fbe441ed36b41e7b2a413eb514a1d98abc2d692dc0060671cc",
+          "targets": [
+            "B"
+          ],
+          "value_contract": "B"
+        },
+        {
+          "id": "none",
+          "label": "none",
+          "prompt_sha256": "bb7ea90fbf1ddc7f40e4e64b8f2d4ec3d809cbd88fe0d3573661eb2cc4f99746",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": null
+        }
+      ],
+      "id": "gpt-6.2-sol_range_A",
+      "model": "gpt-6.2-sol",
+      "start": "A",
+      "task": "range",
+      "wave": 8
+    },
+    {
+      "calls": [
+        {
+          "id": "anonymous_A",
+          "label": "anonymous",
+          "prompt_sha256": "864518160ed476a667ee29dd356a978d667ce93511a3a0bfaf53343ffe551b0d",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "A"
+        },
+        {
+          "id": "required_B",
+          "label": "required",
+          "prompt_sha256": "cac6dfc42261ddc0bcba449970cc178957a475629a70cc45c47fedb01ea693db",
+          "targets": [
+            "B"
+          ],
+          "value_contract": "B"
+        },
+        {
+          "id": "anonymous_B",
+          "label": "anonymous",
+          "prompt_sha256": "3fde2eb278bee1284ef7c0bdfdb238df1987f633e38457787ab3f9f9aee00c39",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "B"
+        },
+        {
+          "id": "none",
+          "label": "none",
+          "prompt_sha256": "a5df4eeb29bc0629de1211a7d7a1398cafc8a5e75c815a93576c4b010817e4e8",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": null
+        },
+        {
+          "id": "named_A",
+          "label": "named",
+          "prompt_sha256": "1977ba534cf4fcb6f743b72f8b07ae5c2392651c337ad1108340462fe9336d75",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "A"
+        },
+        {
+          "id": "required_A",
+          "label": "required",
+          "prompt_sha256": "637c72d6d6675aa90e63c1978bd69ad3ef0977ac0c4fea369551c1f3a658b11f",
+          "targets": [
+            "A"
+          ],
+          "value_contract": "A"
+        },
+        {
+          "id": "named_B",
+          "label": "named",
+          "prompt_sha256": "278cfcc242a15234e391d9baf25aaa2a29dc4428caa1df2276f87ee7cc3c5cbd",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "B"
+        }
+      ],
+      "id": "gpt-6.1-terra_dedup_B",
+      "model": "gpt-6.1-terra",
+      "start": "B",
+      "task": "dedup",
+      "wave": 8
+    },
+    {
+      "calls": [
+        {
+          "id": "required_B",
+          "label": "required",
+          "prompt_sha256": "cb8c04fb12e5c0f092316ff4c7d910412760470c52b95fb6767c8c53618a16ee",
+          "targets": [
+            "B"
+          ],
+          "value_contract": "B"
+        },
+        {
+          "id": "named_A",
+          "label": "named",
+          "prompt_sha256": "86f8394a4f35b0171abb066bf9d9cddcf68c95213a72e6a3d8ece19d52796647",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "A"
+        },
+        {
+          "id": "none",
+          "label": "none",
+          "prompt_sha256": "6ff9c5914871488ba1b3622a4ea9706e72d28779b990174a5a17e60e5e880019",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": null
+        },
+        {
+          "id": "required_A",
+          "label": "required",
+          "prompt_sha256": "885a1a6924a4b0e1a746ce42cfa3595285eb7c30a8569c54dbeb60a485db669a",
+          "targets": [
+            "A"
+          ],
+          "value_contract": "A"
+        },
+        {
+          "id": "anonymous_A",
+          "label": "anonymous",
+          "prompt_sha256": "46d9fbd7da5721ab98e95a33f8b73aaa9b73e6b70ac135c77fa823092739a527",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "A"
+        },
+        {
+          "id": "named_B",
+          "label": "named",
+          "prompt_sha256": "dd92b015c5e52259bc62fd3fe21654e1dc8259685a1be8b12a484cdb95f7170b",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "B"
+        },
+        {
+          "id": "anonymous_B",
+          "label": "anonymous",
+          "prompt_sha256": "473f03a6512dde86de582324f6def18d9d594a43de5a40fbe375164206fc7f26",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "B"
+        }
+      ],
+      "id": "gpt-6-luna_flatten_B",
+      "model": "gpt-6-luna",
+      "start": "B",
+      "task": "flatten",
+      "wave": 8
+    },
+    {
+      "calls": [
+        {
+          "id": "named_B",
+          "label": "named",
+          "prompt_sha256": "b36468b17304b7536e0c54de631468fdf8e563cdd31fdb4bfec48fa165329a5e",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "B"
+        },
+        {
+          "id": "required_B",
+          "label": "required",
+          "prompt_sha256": "cf6da75c5248ce538d35f99e93246a959f700f4412fc48047809a7e3b0ca881e",
+          "targets": [
+            "B"
+          ],
+          "value_contract": "B"
+        },
+        {
+          "id": "named_A",
+          "label": "named",
+          "prompt_sha256": "318f3199934f2a13bbeeae0efc5f56447ee7708588eb43780d43524a7c7f634f",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "A"
+        },
+        {
+          "id": "anonymous_A",
+          "label": "anonymous",
+          "prompt_sha256": "61b54fa906ce0db9d09495364bd70e7c2217aada9a83edc16debdbaa8ae70a25",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "A"
+        },
+        {
+          "id": "none",
+          "label": "none",
+          "prompt_sha256": "ebe9527e2551062bf6d6deecab6487bb5d30072b8690ed7b81469311ad52e91f",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": null
+        },
+        {
+          "id": "required_A",
+          "label": "required",
+          "prompt_sha256": "70d422c6f527ed0ff769a2a8bc9bc6d6f8532fc28b0cfbc393c7c5f4c033c8d3",
+          "targets": [
+            "A"
+          ],
+          "value_contract": "A"
+        },
+        {
+          "id": "anonymous_B",
+          "label": "anonymous",
+          "prompt_sha256": "f7991f43473b618c75ed39ea53a4fc8e8cac12170c18fba049c14daee688d7c9",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "B"
+        }
+      ],
+      "id": "gpt-6.2-sol_quotient_B",
+      "model": "gpt-6.2-sol",
+      "start": "B",
+      "task": "quotient",
+      "wave": 8
+    },
+    {
+      "calls": [
+        {
+          "id": "none",
+          "label": "none",
+          "prompt_sha256": "4601c141b68cf2e4e85f66ee38a6b83f7936545927bb522f548272c7ee4cf4e5",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": null
+        },
+        {
+          "id": "required_B",
+          "label": "required",
+          "prompt_sha256": "4395e286b4a2239a78959f7ce8019171b10b19c4f69b6125e0c19100184dc764",
+          "targets": [
+            "B"
+          ],
+          "value_contract": "B"
+        },
+        {
+          "id": "anonymous_B",
+          "label": "anonymous",
+          "prompt_sha256": "b4c9a3fabcf82f58e4b32664d1ab5f5c5e31e7918b0e6df5192f085a218cb23f",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "B"
+        },
+        {
+          "id": "named_A",
+          "label": "named",
+          "prompt_sha256": "612e5c92c71ca81eb9653b74449e1bf95ceb658da97885e84ac2eb182cb65123",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "A"
+        },
+        {
+          "id": "required_A",
+          "label": "required",
+          "prompt_sha256": "c9c89792b2fe7bfeb3aa2dc29fe0711cea3effdb3fc6b4f79d3ae8e9e3b63a76",
+          "targets": [
+            "A"
+          ],
+          "value_contract": "A"
+        },
+        {
+          "id": "anonymous_A",
+          "label": "anonymous",
+          "prompt_sha256": "8d64a782bbfa5085a881c2c13e5c1b0359dad1b08d13ca4441ea515191ed6e7f",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "A"
+        },
+        {
+          "id": "named_B",
+          "label": "named",
+          "prompt_sha256": "b22e8bdcf10706b35925a1951a405e33ebd77b31d4fd40c6bf0aefa53e1bfabc",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "B"
+        }
+      ],
+      "id": "gpt-6.2-astra_fields_A",
+      "model": "gpt-6.2-astra",
+      "start": "A",
+      "task": "fields",
+      "wave": 8
+    },
+    {
+      "calls": [
+        {
+          "id": "required_B",
+          "label": "required",
+          "prompt_sha256": "521f52e7aacb99ff31bec055d92a113c321fc48f45ca19ad7a42b02f1250e174",
+          "targets": [
+            "B"
+          ],
+          "value_contract": "B"
+        },
+        {
+          "id": "none",
+          "label": "none",
+          "prompt_sha256": "da3bcdb88711bb0c15cb372a31af45eb0987ea35302584a9a0d3c5a1592e2ee9",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": null
+        },
+        {
+          "id": "anonymous_A",
+          "label": "anonymous",
+          "prompt_sha256": "7372fa7b108dd0605c821403f5796aff2a9a83696792c30fd18edbe5e8a290f2",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "A"
+        },
+        {
+          "id": "named_B",
+          "label": "named",
+          "prompt_sha256": "8bda85d2058167ba0645ec7e230118386e068982af82fa2aba192c5919633b3a",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "B"
+        },
+        {
+          "id": "required_A",
+          "label": "required",
+          "prompt_sha256": "5fa11343774da337667709b1c5f2e4fcfc5a2b0b910ff60709e3beec986dd0f3",
+          "targets": [
+            "A"
+          ],
+          "value_contract": "A"
+        },
+        {
+          "id": "anonymous_B",
+          "label": "anonymous",
+          "prompt_sha256": "d8f6bafddd3f61b3ac630c44aa29afae633d63950dfb8799ca4019cd1b3afe34",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "B"
+        },
+        {
+          "id": "named_A",
+          "label": "named",
+          "prompt_sha256": "cf6879924c2c6abdf023c84a955abae653dd0883e9da8a29833941972bbe0d4c",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "A"
+        }
+      ],
+      "id": "gpt-6.1-terra_distance_A",
+      "model": "gpt-6.1-terra",
+      "start": "A",
+      "task": "distance",
+      "wave": 8
+    },
+    {
+      "calls": [
+        {
+          "id": "anonymous_A",
+          "label": "anonymous",
+          "prompt_sha256": "298891743f22f4b5fa772d3659611b62cd1f1028871a9971f1b34151b61e93e6",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "A"
+        },
+        {
+          "id": "none",
+          "label": "none",
+          "prompt_sha256": "7a94ea3e54febe0bb240f8e3281fbd1458ee999efd75718985e74c26cbb41865",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": null
+        },
+        {
+          "id": "named_A",
+          "label": "named",
+          "prompt_sha256": "8dc0937e984e42e9120ef985cb675a2b6a62fa0d2c016a760997f6d14fde0817",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "A"
+        },
+        {
+          "id": "named_B",
+          "label": "named",
+          "prompt_sha256": "91750aa0d39fde6dc6f91030775ec4f09923d9bb3679d4e613332dfc0bc2455c",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "B"
+        },
+        {
+          "id": "required_A",
+          "label": "required",
+          "prompt_sha256": "c06f28f48fb3e3c5011ecb538fb59fdc612a0cdce454870e33cfc9af0fa44ab3",
+          "targets": [
+            "A"
+          ],
+          "value_contract": "A"
+        },
+        {
+          "id": "required_B",
+          "label": "required",
+          "prompt_sha256": "b6e78da4f70f202d448779513ce882b57a889c3a57348988de579fd482957cff",
+          "targets": [
+            "B"
+          ],
+          "value_contract": "B"
+        },
+        {
+          "id": "anonymous_B",
+          "label": "anonymous",
+          "prompt_sha256": "d734c6e54aece2bcfee5b2ccd601fcfe00abcf2d033011da173451c5ee5a8add",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "B"
+        }
+      ],
+      "id": "gpt-6.2-astra_moving_sum_B",
+      "model": "gpt-6.2-astra",
+      "start": "B",
+      "task": "moving_sum",
+      "wave": 8
+    },
+    {
+      "calls": [
+        {
+          "id": "none",
+          "label": "none",
+          "prompt_sha256": "8f569601e408901c2b20a9e2a6c324e3bb51d745a1c41ec2c53962a36dab9972",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": null
+        },
+        {
+          "id": "required_A",
+          "label": "required",
+          "prompt_sha256": "c16d12ae23fd6686f853d74ddaa75823c423ebf7d62861ce84453bbba0e3eee3",
+          "targets": [
+            "A"
+          ],
+          "value_contract": "A"
+        },
+        {
+          "id": "required_B",
+          "label": "required",
+          "prompt_sha256": "89b716fe27bc2c4d60e369d5be1876aa83919d0cba9e170b73ba15beb32220b6",
+          "targets": [
+            "B"
+          ],
+          "value_contract": "B"
+        },
+        {
+          "id": "anonymous_A",
+          "label": "anonymous",
+          "prompt_sha256": "323a232a927f0243bd8d7fddfe39ce25c00c31a9d1ffe8b1b758477b5f580e67",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "A"
+        },
+        {
+          "id": "named_A",
+          "label": "named",
+          "prompt_sha256": "ba11ddd87f95f3bd4ead1cca72717b448041ec4da81eb97e99bbcd10d4a3cee4",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "A"
+        },
+        {
+          "id": "anonymous_B",
+          "label": "anonymous",
+          "prompt_sha256": "4109ab6e107f92b6f76f479bf811800051bfb22842749ca5ff96d5474dcf2530",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "B"
+        },
+        {
+          "id": "named_B",
+          "label": "named",
+          "prompt_sha256": "c134d3fe1061e52b2858d31f87cfd13b12da9f491a1a13282158c862149f4339",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "value_contract": "B"
+        }
+      ],
+      "id": "gpt-6-luna_calendar_A",
+      "model": "gpt-6-luna",
+      "start": "A",
+      "task": "calendar",
+      "wave": 8
+    }
+  ],
+  "calibration_sha256": "ccd76e511232c7919803975586c7fd1b8bdbe29313274365bd72c4fbdc99c513",
+  "design": "docs/OUTPUT_PROVENANCE_20261128.md",
+  "effort": "low",
+  "eligible_for_main_analysis": false,
+  "seed": 2026112804,
+  "source_sha256": {
+    "docs/OUTPUT_PROVENANCE_20261128.md": "eca050a12ebab161f746466559085fdc885caad217dde173d36ba06850b59a59",
+    "experiments/c5_cli_pilot.py": "2f4809ea243fe0f913dabe343050caf03273c77a46d8f70b7dd186ef93dabbba",
+    "experiments/c5_codex_effort.py": "90e7e315693ea039ad9b9a698efd0925f4b1c83f846245132a9d6acc4fcbdbcf",
+    "experiments/c5_evidence_challenge.py": "fae76c3366dc96670912095a2684d959c4811d3c0edc7b14a636fea147b49cc7",
+    "experiments/checker_timing_pilot.py": "48f52b1ad3139ecda58a3cc01760550cad4f47873d65a16c1da78cddfd0ccda3",
+    "experiments/feedback_factorial.py": "4441f15ebfce665c0fb43da2ca203a0c95ea4e5183b7e9e9402c9cca784d36dc",
+    "experiments/output_provenance.py": "473a819675d276af3dfdcff5a69017b422b1feed7ea7d56ed356ae5bc3f5ff42",
+    "experiments/output_provenance_tasks.py": "68ca03c2f4347bb197a0843cfbd64617717df5be36b44bc7c6ed44269714b638",
+    "experiments/reference_example_control.py": "bc51de14b5804d0dfe4ad9c70cff3b14c446137f34d59808b2a3a67921daf8f8"
+  }
+}

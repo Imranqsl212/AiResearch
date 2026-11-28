@@ -1,0 +1,42 @@
+{
+  "is_valid_parenthesization": {
+    "faulty": {
+      "inputs": 65,
+      "outputs_sha256": "5355c3553f3f9633cc6169b1a6905e27dd3fdd3101ed3835a67de6591f11d671"
+    },
+    "working": {
+      "inputs": 65,
+      "outputs_sha256": "2465034b9f841db1bf5d87e69320a55250449311c69e78dfe183268916f6afdf"
+    }
+  },
+  "knapsack": {
+    "faulty": {
+      "inputs": 242,
+      "outputs_sha256": "7794901eb74b6717dfaf7aa92a0ccb2db753a384caf48cabd135393a6a06b5b0"
+    },
+    "working": {
+      "inputs": 242,
+      "outputs_sha256": "74781e9d8f69a685eb21bd1e931ff8a391ca5bd040a78c3b07d6591028497f82"
+    }
+  },
+  "max_sublist_sum": {
+    "faulty": {
+      "inputs": 123,
+      "outputs_sha256": "8169769a7314064a0b04b8863da97c09e19ec11c0c600350630f5868edff2492"
+    },
+    "working": {
+      "inputs": 123,
+      "outputs_sha256": "56018aaca4f1e3221912dc22a03ba28728382667877903691f23d6667bf97edb"
+    }
+  },
+  "quicksort": {
+    "faulty": {
+      "inputs": 123,
+      "outputs_sha256": "0085659c9492fcf30f9a5316933ea03d1e8668e2d944d790f9e9a69c285a5ec4"
+    },
+    "working": {
+      "inputs": 123,
+      "outputs_sha256": "a5c0ae3c43452c0ba694fb2600682d4ced0f35d4cd324a5ca0b61de1248a8e33"
+    }
+  }
+}

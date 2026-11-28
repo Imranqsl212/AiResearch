@@ -1,0 +1,1009 @@
+{
+  "calendar": {
+    "checks": {
+      "A": {
+        "A": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "B": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ]
+      },
+      "B": {
+        "A": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "B": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ]
+      }
+    },
+    "code": [
+      "return x",
+      "return (x+1) % 7"
+    ],
+    "description": "Convert a zero-based Monday-first weekday to the target format. Numbering is either Monday-first or Sunday-first; both are zero-based.",
+    "diagnostic": [
+      6,
+      6,
+      0
+    ],
+    "held_out": [
+      [
+        0,
+        0,
+        1
+      ],
+      [
+        1,
+        1,
+        2
+      ],
+      [
+        2,
+        2,
+        3
+      ],
+      [
+        3,
+        3,
+        4
+      ],
+      [
+        4,
+        4,
+        5
+      ],
+      [
+        5,
+        5,
+        6
+      ]
+    ]
+  },
+  "dedup": {
+    "checks": {
+      "A": {
+        "A": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "B": [
+          true,
+          true,
+          false,
+          true,
+          false,
+          true
+        ]
+      },
+      "B": {
+        "A": [
+          true,
+          true,
+          false,
+          true,
+          false,
+          true
+        ],
+        "B": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ]
+      }
+    },
+    "code": [
+      "return list(dict.fromkeys(x))",
+      "return list(reversed(dict.fromkeys(reversed(x))))"
+    ],
+    "description": "Remove duplicate integers. Emit them in order of first occurrence or of last occurrence.",
+    "diagnostic": [
+      [
+        4,
+        2,
+        4
+      ],
+      [
+        4,
+        2
+      ],
+      [
+        2,
+        4
+      ]
+    ],
+    "held_out": [
+      [
+        [],
+        [],
+        []
+      ],
+      [
+        [
+          8
+        ],
+        [
+          8
+        ],
+        [
+          8
+        ]
+      ],
+      [
+        [
+          1,
+          2,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      [
+        [
+          3,
+          3
+        ],
+        [
+          3
+        ],
+        [
+          3
+        ]
+      ],
+      [
+        [
+          3,
+          0,
+          3,
+          2,
+          0
+        ],
+        [
+          3,
+          0,
+          2
+        ],
+        [
+          3,
+          2,
+          0
+        ]
+      ],
+      [
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          1,
+          2,
+          3
+        ]
+      ]
+    ]
+  },
+  "distance": {
+    "checks": {
+      "A": {
+        "A": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "B": [
+          true,
+          false,
+          true,
+          false,
+          true,
+          false
+        ]
+      },
+      "B": {
+        "A": [
+          true,
+          false,
+          true,
+          false,
+          true,
+          false
+        ],
+        "B": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ]
+      }
+    },
+    "code": [
+      "return sum(a != b for a,b in zip(*x)) + abs(len(x[0])-len(x[1]))",
+      "return sum(a != b for a,b in zip(*x))"
+    ],
+    "description": "Count positional disagreements between two integer sequences. Unmatched trailing elements count as disagreements or are ignored.",
+    "diagnostic": [
+      [
+        [
+          1,
+          4
+        ],
+        [
+          2,
+          4,
+          3
+        ]
+      ],
+      2,
+      1
+    ],
+    "held_out": [
+      [
+        [
+          [],
+          []
+        ],
+        0,
+        0
+      ],
+      [
+        [
+          [
+            1
+          ],
+          []
+        ],
+        1,
+        0
+      ],
+      [
+        [
+          [
+            3
+          ],
+          [
+            2
+          ]
+        ],
+        1,
+        1
+      ],
+      [
+        [
+          [
+            1,
+            2,
+            3
+          ],
+          [
+            1
+          ]
+        ],
+        2,
+        0
+      ],
+      [
+        [
+          [
+            8
+          ],
+          [
+            8
+          ]
+        ],
+        0,
+        0
+      ],
+      [
+        [
+          [
+            0,
+            2
+          ],
+          [
+            4,
+            2,
+            3,
+            7
+          ]
+        ],
+        3,
+        1
+      ]
+    ]
+  },
+  "fields": {
+    "checks": {
+      "A": {
+        "A": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "B": [
+          true,
+          false,
+          false,
+          false,
+          true,
+          false
+        ]
+      },
+      "B": {
+        "A": [
+          true,
+          false,
+          false,
+          false,
+          true,
+          false
+        ],
+        "B": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ]
+      }
+    },
+    "code": [
+      "return x.split(\",\")",
+      "return [v for v in x.split(\",\") if v]"
+    ],
+    "description": "Split a nonempty string at commas. Retain or drop empty fields according to the installation convention.",
+    "diagnostic": [
+      "a,,b",
+      [
+        "a",
+        "",
+        "b"
+      ],
+      [
+        "a",
+        "b"
+      ]
+    ],
+    "held_out": [
+      [
+        "x",
+        [
+          "x"
+        ],
+        [
+          "x"
+        ]
+      ],
+      [
+        ",a",
+        [
+          "",
+          "a"
+        ],
+        [
+          "a"
+        ]
+      ],
+      [
+        "p,",
+        [
+          "p",
+          ""
+        ],
+        [
+          "p"
+        ]
+      ],
+      [
+        ",,",
+        [
+          "",
+          "",
+          ""
+        ],
+        []
+      ],
+      [
+        "d,e",
+        [
+          "d",
+          "e"
+        ],
+        [
+          "d",
+          "e"
+        ]
+      ],
+      [
+        " q,,r,",
+        [
+          " q",
+          "",
+          "r",
+          ""
+        ],
+        [
+          " q",
+          "r"
+        ]
+      ]
+    ]
+  },
+  "flatten": {
+    "checks": {
+      "A": {
+        "A": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "B": [
+          true,
+          true,
+          true,
+          false,
+          false,
+          true
+        ]
+      },
+      "B": {
+        "A": [
+          true,
+          true,
+          true,
+          false,
+          false,
+          true
+        ],
+        "B": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ]
+      }
+    },
+    "code": [
+      "return [v for row in x for v in row]",
+      "return [v for col in zip(*x) for v in col]"
+    ],
+    "description": "Flatten a nonempty rectangular array with at least one column. The installation uses row-major or column-major order.",
+    "diagnostic": [
+      [
+        [
+          3,
+          5
+        ],
+        [
+          1,
+          8
+        ]
+      ],
+      [
+        3,
+        5,
+        1,
+        8
+      ],
+      [
+        3,
+        1,
+        5,
+        8
+      ]
+    ],
+    "held_out": [
+      [
+        [
+          [
+            1
+          ]
+        ],
+        [
+          1
+        ],
+        [
+          1
+        ]
+      ],
+      [
+        [
+          [
+            1,
+            2
+          ]
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      [
+        [
+          [
+            1
+          ],
+          [
+            2
+          ]
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      [
+        [
+          [
+            1,
+            2
+          ],
+          [
+            3,
+            4
+          ]
+        ],
+        [
+          1,
+          2,
+          3,
+          4
+        ],
+        [
+          1,
+          3,
+          2,
+          4
+        ]
+      ],
+      [
+        [
+          [
+            0,
+            3,
+            0
+          ],
+          [
+            1,
+            2,
+            4
+          ]
+        ],
+        [
+          0,
+          3,
+          0,
+          1,
+          2,
+          4
+        ],
+        [
+          0,
+          1,
+          3,
+          2,
+          0,
+          4
+        ]
+      ],
+      [
+        [
+          [
+            4,
+            4
+          ],
+          [
+            4,
+            4
+          ]
+        ],
+        [
+          4,
+          4,
+          4,
+          4
+        ],
+        [
+          4,
+          4,
+          4,
+          4
+        ]
+      ]
+    ]
+  },
+  "moving_sum": {
+    "checks": {
+      "A": {
+        "A": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "B": [
+          true,
+          false,
+          false,
+          false,
+          false,
+          false
+        ]
+      },
+      "B": {
+        "A": [
+          true,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "B": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ]
+      }
+    },
+    "code": [
+      "return [sum(x[max(0,i-2):i+1]) for i in range(len(x))]",
+      "return [sum(x[i-2:i+1]) for i in range(2,len(x))]"
+    ],
+    "description": "Emit sums of trailing windows of width three. Initial windows may be emitted when partial or only once complete.",
+    "diagnostic": [
+      [
+        2,
+        1,
+        4,
+        2
+      ],
+      [
+        2,
+        3,
+        7,
+        7
+      ],
+      [
+        7,
+        7
+      ]
+    ],
+    "held_out": [
+      [
+        [],
+        [],
+        []
+      ],
+      [
+        [
+          3
+        ],
+        [
+          3
+        ],
+        []
+      ],
+      [
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        []
+      ],
+      [
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          1,
+          3,
+          6
+        ],
+        [
+          6
+        ]
+      ],
+      [
+        [
+          0,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      [
+        [
+          -1,
+          3,
+          2,
+          0
+        ],
+        [
+          -1,
+          2,
+          4,
+          5
+        ],
+        [
+          4,
+          5
+        ]
+      ]
+    ]
+  },
+  "quotient": {
+    "checks": {
+      "A": {
+        "A": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "B": [
+          false,
+          true,
+          true,
+          false,
+          true,
+          true
+        ]
+      },
+      "B": {
+        "A": [
+          false,
+          true,
+          true,
+          false,
+          true,
+          true
+        ],
+        "B": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ]
+      }
+    },
+    "code": [
+      "return x // 4",
+      "return (abs(x) // 4) * (-1 if x < 0 else 1)"
+    ],
+    "description": "Compute the integer quotient on division by four. Nonintegral values round toward zero or minus infinity.",
+    "diagnostic": [
+      -6,
+      -2,
+      -1
+    ],
+    "held_out": [
+      [
+        -1,
+        -1,
+        0
+      ],
+      [
+        7,
+        1,
+        1
+      ],
+      [
+        -4,
+        -1,
+        -1
+      ],
+      [
+        -9,
+        -3,
+        -2
+      ],
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        12,
+        3,
+        3
+      ]
+    ]
+  },
+  "range": {
+    "checks": {
+      "A": {
+        "A": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "B": [
+          true,
+          false,
+          true,
+          false,
+          true,
+          true
+        ]
+      },
+      "B": {
+        "A": [
+          true,
+          false,
+          true,
+          false,
+          true,
+          true
+        ],
+        "B": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ]
+      }
+    },
+    "code": [
+      "return x[0] <= x[2] <= x[1]",
+      "return x[0] <= x[2] < x[1]"
+    ],
+    "description": "Decide if a number is in an interval. Include the left endpoint; the right endpoint may be included or excluded.",
+    "diagnostic": [
+      [
+        2,
+        5,
+        5
+      ],
+      true,
+      false
+    ],
+    "held_out": [
+      [
+        [
+          1,
+          3,
+          1
+        ],
+        true,
+        true
+      ],
+      [
+        [
+          1,
+          3,
+          3
+        ],
+        true,
+        false
+      ],
+      [
+        [
+          1,
+          3,
+          4
+        ],
+        false,
+        false
+      ],
+      [
+        [
+          -2,
+          -2,
+          -2
+        ],
+        true,
+        false
+      ],
+      [
+        [
+          0,
+          7,
+          4
+        ],
+        true,
+        true
+      ],
+      [
+        [
+          -8,
+          1,
+          -9
+        ],
+        false,
+        false
+      ]
+    ]
+  }
+}

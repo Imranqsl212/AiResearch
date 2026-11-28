@@ -1,10 +1,18 @@
-# What Is One More Step Worth After a False Alarm?
+# When Should a Model Put the Bug Back?
+
+The [alternative article](alternative_manuscript.md) ([PDF](alternative_manuscript.pdf)) develops the pilot-first argument from the PaperOrchestra writing brief and predates the benchmark reversal and the additional controls.
 
 The [manuscript](manuscript.md) is the primary C5 research draft. Read the [identified PDF](checker_feedback.pdf) or [anonymous PDF](checker_feedback_anonymous.pdf). Its historical graph shows failing-candidate counts of **4/1, 8/6 and 5/7** after decisions one, two and three (truthful PASS / false FAIL; 14 branches per arm). All historical branches knew a three-decision limit; the graph does not identify the effect of announcing a shorter budget. See the [prefix audit](../../analysis/c5_budget_prefix_audit_20261124/audit.json).
 
 The [new factorial protocol](../../docs/C5_BUDGET_STATISTICAL_PROTOCOL_20261124.md) and [runner](../../experiments/c5_budget_README.md) generate four fresh continuations from a common verified repair. The announced and enforced horizon changes together. The [synthetic runner receipt](../../experiments/c5_budget_calibration_receipt.json), [matched correct/defective challenge](../../docs/C5_EVIDENCE_CHALLENGE.md) and [four upstream test-correction cases](../../external_checker_audit_20261124/README.md) have separate provenance and limitations. Scripted policies are not model findings; independent human review and unrestricted repository runs remain pending. The [preliminary dateutil and CPython pilot](../../analysis/checker_timing_20261126/comparison.md) reports 64 decisions on bounded code edits. Table 5 shows how both timing conditions finished with 15/16 correct. Table 6 reports [the one-decision CPython follow-up](../../analysis/pprint_postedit_20261127/comparison.md). Both probes yielded 4/4 repairs and 12/12 preserved working states, although only keys 2 and 10 exposed the sorting error.
 
 The prospective analysis weights families equally, retains missingness bounds and corrects four model-specific tests. The proposed nineteen-family design is not generally powered for small interactions. No confirmatory episodes have been collected. The [separate CLI pilot](../../docs/C5_CLI_PILOT_20261124.md) collected 16 of 40 planned episodes across two configurations on one benign numerical task. The [public decision table](../../analysis/c5_cli_pilot_20261124.json) records the outcome and action sequence for each scheduled episode. The earlier stopping-attribution manuscript and [November 23 stopping-focused plan](../../docs/C5_PROSPECTIVE_STATISTICAL_PLAN_20261123.md) retain their original paths and questions.
+
+## Review the matched decisions
+
+On a real Matplotlib axis, the generated regression passed the maintainer's original test and failed 34 of 96 other intervals. The historical defect failed that test and the maintainer's fix passed all 96 intervals. The [integration replay](../../analysis/matplotlib_axis_integration_20261128/comparison.md) includes the observed axis limits for all three programs.
+
+The [reviewer packet](feedback_evidence.zip) and [blinded reviewer packet](feedback_evidence_anonymous.zip) include the corresponding manuscript, frozen assignment rosters, public decision records, independent graders, upstream cases and resource counters. Extract it and run `python3 -B -m paper.c5.verify_feedback` in the extracted directory. This uses the Python standard library and the included files. Figure 1 gives the two required outputs and observed responses for the four QuixBugs tasks. Figure 2 shows the Matplotlib test that passed a new regression. The [expanded-domain analysis](../../analysis/quix_expanded_domain_20261128/comparison.md) and [test-suite replay](../../analysis/quix_upstream_tests_20261128/comparison.md) distinguish two sources of independent grading. Tables 5 and 6 retain their original cohorts and numbering.
 
 ## Explicit Codex reasoning effort
 
@@ -17,12 +25,15 @@ The following commands run from the repository root. The PDF builder uses Report
 ```sh
 paper_python="${PAPER_PYTHON:-$HOME/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3}"
 "$paper_python" -B -m paper.c5.render
+python3 -B -m paper.c5.verify_feedback
+python3 -B -m paper.c5.evidence_packet --output paper/c5/feedback_evidence.zip
+"$paper_python" -B -m paper.c5.evidence_packet --anonymous --output paper/c5/feedback_evidence_anonymous.zip
 "$paper_python" -B -m paper.c5.release --output .local_private/c5-release-20261123
 python3 -B -m analysis.c5_public_trajectories
 python3 -B data/c5/check_release.py
 ```
 
-Run `python3 -I check_effort.py` in either extracted ZIP to recount the six-task panel and matched low/high trajectories using only the included public data.
+Run `python3 -I check_effort.py` in either historical data ZIP to recount the six-task panel and matched low/high trajectories using only the included public data.
 
 The identified data ZIP contains the JSONL, schema, provenance, external observation controls, dataset card, citation file, standalone checker and checksums. The anonymous ZIP contains its own README, a standalone checker, the anonymous PDF, bounded event fields and digests. A closed allowlist omits private decision forms, earlier author-review archives, raw model text and Git history. The PDF and archive text are screened for direct identities and host-specific markers. Previously published counts and searchable paper text can still identify the research. The local anonymous copy supports review; distribution depends on the venue’s policy. The repository itself is publicly identified.
 

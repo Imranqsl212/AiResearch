@@ -1,0 +1,11 @@
+# Can a coding agent follow an example that distinguishes two contracts?
+
+This exploratory positive control supplies an authoritative output from the target specification. The CPython pilot instead shows the output of the current program. The two interventions answer different questions.
+
+Each of three tasks has two supplied candidate implementations. They sort integers numerically or by decimal text, return the first or last index of a tied maximum, or round nonnegative integers to the nearest ten with midpoints going down or up. Use both starting implementations, GPT-6 Luna and GPT-6.2 Astra, and low reasoning effort. Each model–task–start combination is one block. The action is keep or switch.
+
+Prepare four calls in each of twelve blocks. One has no new example. One shows an input on which both contracts agree, paired with its shared required output. The other two display the same distinguishing input, once with the required output of contract A and once with that of B. The surrounding task, implementations and response format are identical within each block. Shuffle block order and within-block order with seed 20261128.
+
+The primary endpoint is the number of blocks in which the model selects the correct implementation for both distinguishing outputs. Also report both wrong and repeated actions, and separately count repairs among defective starts and preservation among working ones. Score using six prespecified held-out cases per task, independently specified for each contract. Displayed and graded inputs are disjoint. Each concealed or shared-example response is scored twice, once for each possible contract. Exactly one of those two assessments is correct for any valid response by construction. There are 48 native calls and 72 target assessments. Report scheduled and observed denominators and bounds for missing primary outcomes. The tasks, models and starts form a fixed small panel.
+
+Freeze public plan, calibration, prompts and source digests before collecting answers. Record CLI version and subscription login; keep native requests and replies in the private workspace. Run one external client at a time, with tools disabled, no API-key fallback and no replacement samples. Preserve skipped or failed calls. This control is excluded from the confirmatory study.

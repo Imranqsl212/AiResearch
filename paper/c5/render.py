@@ -1,10 +1,11 @@
-"""Render the focused C5 paper into an identified PDF and an anonymous review PDF."""
+"""Render the two C5 manuscripts and the anonymous review copy of the primary paper."""
 import csv
+import json
 import re
 from pathlib import Path
 
 from reportlab.graphics import renderPDF
-from reportlab.graphics.shapes import Circle, Drawing, Line, PolyLine, Rect, String
+from reportlab.graphics.shapes import Circle, Drawing, Group, Line, PolyLine, Rect, String
 from pypdf import PdfReader
 from reportlab.lib import colors
 from reportlab.lib.enums import TA_LEFT
@@ -16,6 +17,9 @@ from reportlab.platypus import (
     BaseDocTemplate, Frame, Image, KeepTogether, LongTable, PageBreak, PageTemplate,
     Paragraph, Spacer, TableStyle,
 )
+from paper.c5.feedback_example import feedback_example
+from paper.c5.contract_figure import contract_figure
+from paper.c5.interval_figure import interval_figure
 from paper.build_submission import AUTHOR, FONT_REG, FONT_BOLD, inline, markdown_blocks, review_manuscript
 
 HERE = Path(__file__).resolve().parent
@@ -62,10 +66,39 @@ def observed_horizon():
         label(dx+20, 149, legend, anchor="start", color=shade)
     for i, x in enumerate(xs, 1):
         label(x, 12, f"Decision {i}")
-    return plot
+    # Link the two marginal curves to the joint states of the same fourteen pairs.
+    audit = HERE.parents[1] / "analysis/c5_horizon_sensitivity_20261128/results.json"
+    transitions = json.loads(audit.read_text())["paired_transitions"]
+    states = ("Neither passes", "Truthful only", "False-failure only", "Both pass")
+    if sum(sum(row.values()) for row in transitions.values()) != den:
+        raise ValueError("Paired transitions and prefix cohort differ")
+    combined = Drawing(460, 305)
+    lines = Group(*plot.contents)
+    lines.translate(0, 142)
+    combined.add(lines)
+    def matrix_label(x, y, value, size=9, anchor="middle", bold=False):
+        combined.add(String(x, y, value, fontName="Helvetica-Bold" if bold else "Helvetica",
+                            fontSize=size, textAnchor=anchor, fillColor=dark))
+    matrix_label(12, 127, "The same pairs from decision 2 to decision 3", 10, "start", True)
+    matrix_label(12, 111, "Row: decision 2", 8, "start")
+    matrix_label(288, 111, "Decision 3: which branch holds a passing candidate?", 8)
+    left, step = 122, 80
+    for j, state in enumerate(states):
+        matrix_label(left + (j + .5) * step, 94, state, 8)
+    for i, start in enumerate(states):
+        y0 = 72 - 19 * i
+        matrix_label(12, y0 + 5, start, 9, "start")
+        for j, end in enumerate(states):
+            n = transitions[start][end]
+            shade = "#e5ebec" if i == j else "#b6dcd5" if n else "#ffffff"
+            x0 = left + j * step
+            combined.add(Rect(x0, y0, step - 2, 17, fillColor=colors.HexColor(shade),
+                              strokeColor=colors.HexColor("#d1dadd"), strokeWidth=.35))
+            matrix_label(x0 + step / 2, y0 + 5, str(n), bold=bool(n))
+    return combined
 
 
-def render(source, destination, author):
+def _render_pdf(source, destination, author):
     pdfmetrics.registerFont(TTFont("C5Body", str(FONT_REG)))
     pdfmetrics.registerFont(TTFont("C5Bold", str(FONT_BOLD)))
     pdfmetrics.registerFontFamily("C5Body", normal="C5Body", bold="C5Bold", italic="C5Body", boldItalic="C5Bold")
@@ -87,7 +120,13 @@ def render(source, destination, author):
             story.append(para(f"**{label}**", title if depth == 1 else heading))
         elif kind == "figure":
             description, target = value
-            if target == "figures/observed_horizon.png":
+            if target == "figures/contract_reversal.png":
+                story.append(KeepTogether([contract_figure(), para(description, caption)]))
+            elif target == "figures/probe_reversal.png":
+                story.append(KeepTogether([interval_figure(), para(description, caption)]))
+            elif target == "figures/feedback_example.png":
+                story.append(KeepTogether([feedback_example(), para(description, caption)]))
+            elif target == "figures/observed_horizon.png":
                 story.append(KeepTogether([observed_horizon(), para(description, caption)]))
             elif target == "figures/effort_panel.png":
                 width, height = landscape(A4)
@@ -115,7 +154,7 @@ def render(source, destination, author):
     def footer(canvas, doc):
         canvas.setFont("C5Body", 9)
         canvas.setFillColor(colors.HexColor("#50636b"))
-        canvas.drawString(52, 26, "Checker feedback and coding-agent stopping")
+        canvas.drawString(52, 26, "Checker feedback in coding-agent repair")
         canvas.drawRightString(doc.pageTemplate.pagesize[0]-52, 26, str(doc.page))
     doc = BaseDocTemplate(str(destination), pagesize=A4, leftMargin=46, rightMargin=46,
                           topMargin=43, bottomMargin=46, author=author, title=source.splitlines()[0][2:],
@@ -127,23 +166,41 @@ def render(source, destination, author):
     doc.build(story)
     reader = PdfReader(str(destination))
     pages = [" ".join((p.extract_text() or "").split()) for p in reader.pages]
-    for n, column in ((1, "Truthful PASS"), (2, "Verified pairs"),
-                      (3, "Invalid policies caught"), (4, "Effort change"),
-                      (5, "Diagnostic before first choice"), (6, "Keys shown")):
-        assert any(f"Table {n}." in t and column in t for t in pages)
-    assert any("Figure 2." in text and page.mediabox.width > page.mediabox.height and len(page.images) == 1
-               for page, text in zip(reader.pages, pages))
     if not author:
         assert not re.search(r"Zakirov|Iosifova|Kramich|Imranqsl212", " ".join(pages), re.I)
     print(destination.name, len(pages), "pages")
+    return reader, pages
+
+
+def render(source, destination, author):
+    reader, pages = _render_pdf(source, destination, author)
+    for n, column in (("S1", "New display"), ("S2", "Project"), ("S3", "Reference example"),
+                      ("S4", "Truthful PASS"), ("S5", "Verified pairs"),
+                      ("S6", "Invalid policies caught"), ("S7", "Effort change"),
+                      (5, "Diagnostic before first choice"), (6, "Keys shown"),
+                      (1, "Target shown"), (2, "Source of value"), (3, "Rule and display"),
+                      (4, "Source collection"), (7, "Cross-display"), ("S8", "Scheduled")):
+        assert any(f"Table {n}." in t and column in t for t in pages)
+    assert any("Figure 3." in text and page.mediabox.width > page.mediabox.height and len(page.images) == 1
+               for page, text in zip(reader.pages, pages))
 
 
 if __name__ == "__main__":
     import pypdfium2 as pdfium
     directory = HERE / "figures"
     directory.mkdir(exist_ok=True)
-    graph = pdfium.PdfDocument(renderPDF.drawToString(observed_horizon()))
-    graph[0].render(scale=3).to_pil().save(directory / "observed_horizon.png")
     manuscript = (HERE / "manuscript.md").read_text()
+    figures = [("feedback_example", feedback_example()), ("observed_horizon", observed_horizon())]
+    if "figures/contract_reversal.png" in manuscript:
+        figures.append(("contract_reversal", contract_figure()))
+    if "figures/probe_reversal.png" in manuscript:
+        figures.append(("probe_reversal", interval_figure()))
+    for name, drawing in figures:
+        graph = pdfium.PdfDocument(renderPDF.drawToString(drawing))
+        graph[0].render(scale=3).to_pil().save(directory / f"{name}.png")
     render(manuscript, HERE / "checker_feedback.pdf", AUTHOR)
     render(review_manuscript(manuscript), HERE / "checker_feedback_anonymous.pdf", "")
+    alternative = (HERE / "alternative_manuscript.md").read_text()
+    _, pages = _render_pdf(alternative, HERE / "alternative_manuscript.pdf", AUTHOR)
+    for n, column in ((1, "Outcome by starting state"), (2, "Keys in the displayed run")):
+        assert any(f"Table {n}." in page and column in page for page in pages)

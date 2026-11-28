@@ -1,0 +1,1135 @@
+{
+  "cli_version": "codex-cli 0.169.0",
+  "eligible_for_main_analysis": false,
+  "frozen_at_utc": "2026-11-28T16:17:56.104629+00:00",
+  "plan_sha256": "5104cad7670386f875200ddaf47a35eafbaf1484df5a7f1b29ae0a9ab4f6f364",
+  "rows": [
+    {
+      "after": "A",
+      "arm": "shared",
+      "assessments": [
+        {
+          "after_correct": true,
+          "before_correct": true,
+          "target": "A"
+        },
+        {
+          "after_correct": false,
+          "before_correct": false,
+          "target": "B"
+        }
+      ],
+      "block": "gpt-6-luna_sort_A",
+      "choice": "keep",
+      "elapsed_seconds": 9.296272082952783,
+      "model": "gpt-6-luna",
+      "native_response_sha256": "fbc6d4f5ea899fdd960768c3236fc09bd6e9cd557cb9d037b8d7e9e8dcc396b2",
+      "prompt_sha256": "579966bb6c1472ac2ddbb681f7eec716e4595e945e0e3d602794fd1d4071925d",
+      "start": "A",
+      "status": "OK",
+      "task": "sort"
+    },
+    {
+      "after": "A",
+      "arm": "target_a",
+      "assessments": [
+        {
+          "after_correct": true,
+          "before_correct": true,
+          "target": "A"
+        }
+      ],
+      "block": "gpt-6-luna_sort_A",
+      "choice": "keep",
+      "elapsed_seconds": 8.9204190839082,
+      "model": "gpt-6-luna",
+      "native_response_sha256": "2db298d7b03fcd31677acdbb8c4778956ce5aa3cee0f7c1ddadc6ecf719edc48",
+      "prompt_sha256": "d6d4fc73a6fb6854e8b01d10a1ae275eb73aaa0e95c4936790486cdfd7251ace",
+      "start": "A",
+      "status": "OK",
+      "task": "sort"
+    },
+    {
+      "after": "A",
+      "arm": "none",
+      "assessments": [
+        {
+          "after_correct": true,
+          "before_correct": true,
+          "target": "A"
+        },
+        {
+          "after_correct": false,
+          "before_correct": false,
+          "target": "B"
+        }
+      ],
+      "block": "gpt-6-luna_sort_A",
+      "choice": "keep",
+      "elapsed_seconds": 10.702546124812216,
+      "model": "gpt-6-luna",
+      "native_response_sha256": "a301368254dc4c444928320d89dbd31526e49352875fca7cab2ee0f98850e03e",
+      "prompt_sha256": "93b5718096b2aafb8d934204810ad1432a758f0f4858bdc250bf8606d6fd603e",
+      "start": "A",
+      "status": "OK",
+      "task": "sort"
+    },
+    {
+      "after": "B",
+      "arm": "target_b",
+      "assessments": [
+        {
+          "after_correct": true,
+          "before_correct": false,
+          "target": "B"
+        }
+      ],
+      "block": "gpt-6-luna_sort_A",
+      "choice": "switch",
+      "elapsed_seconds": 21.89577104197815,
+      "model": "gpt-6-luna",
+      "native_response_sha256": "1ac3b4b6ae3bb90562457c5c8d87a5d4e9a623629bb292412ca4b828f065652e",
+      "prompt_sha256": "f173ecaea5ed2ffa0876eee756c8eda5150752d5a880b050ec9d5217f2f07d99",
+      "start": "A",
+      "status": "OK",
+      "task": "sort"
+    },
+    {
+      "after": "A",
+      "arm": "target_a",
+      "assessments": [
+        {
+          "after_correct": true,
+          "before_correct": false,
+          "target": "A"
+        }
+      ],
+      "block": "gpt-6.2-astra_sort_B",
+      "choice": "switch",
+      "elapsed_seconds": 11.468266624957323,
+      "model": "gpt-6.2-astra",
+      "native_response_sha256": "854f96b968c3e562f98bb483e2c604447f3dd9772666a4d332daf1d0bd273665",
+      "prompt_sha256": "168669c2f31bb7dfc18cd67529c9acbdc374649270e11ccd99c59f97dd7e6e60",
+      "start": "B",
+      "status": "OK",
+      "task": "sort"
+    },
+    {
+      "after": "B",
+      "arm": "shared",
+      "assessments": [
+        {
+          "after_correct": false,
+          "before_correct": false,
+          "target": "A"
+        },
+        {
+          "after_correct": true,
+          "before_correct": true,
+          "target": "B"
+        }
+      ],
+      "block": "gpt-6.2-astra_sort_B",
+      "choice": "keep",
+      "elapsed_seconds": 17.06213974999264,
+      "model": "gpt-6.2-astra",
+      "native_response_sha256": "017ff9ec6154ade57ac4c1017627baf91a6306dec5caa44440e8ad27ce5c9999",
+      "prompt_sha256": "a82ac249fe2bd4ae40373040d33ce459c75e41be8a2a88ef62ad461e31b6991c",
+      "start": "B",
+      "status": "OK",
+      "task": "sort"
+    },
+    {
+      "after": "B",
+      "arm": "target_b",
+      "assessments": [
+        {
+          "after_correct": true,
+          "before_correct": true,
+          "target": "B"
+        }
+      ],
+      "block": "gpt-6.2-astra_sort_B",
+      "choice": "keep",
+      "elapsed_seconds": 9.742685334058478,
+      "model": "gpt-6.2-astra",
+      "native_response_sha256": "f5ef2f4cf63f4eba62f98d245fdef3128724d55f3dde7600dcba4173220edf87",
+      "prompt_sha256": "0e0039eba91bcbd01219e770f20f85b693f7b2de79ba327cdd0db3e0f5a075c5",
+      "start": "B",
+      "status": "OK",
+      "task": "sort"
+    },
+    {
+      "after": "A",
+      "arm": "none",
+      "assessments": [
+        {
+          "after_correct": true,
+          "before_correct": false,
+          "target": "A"
+        },
+        {
+          "after_correct": false,
+          "before_correct": true,
+          "target": "B"
+        }
+      ],
+      "block": "gpt-6.2-astra_sort_B",
+      "choice": "switch",
+      "elapsed_seconds": 9.883308375021443,
+      "model": "gpt-6.2-astra",
+      "native_response_sha256": "5ef534b31b0e37b77c830bdfac1ed5cf6eb11224e3779b5f9a1aecf1495a10ff",
+      "prompt_sha256": "0dc3d3070b59a81fe958d1fd6149733039c4af7d1b34bc8f10b21e175a16a08a",
+      "start": "B",
+      "status": "OK",
+      "task": "sort"
+    },
+    {
+      "after": "A",
+      "arm": "target_a",
+      "assessments": [
+        {
+          "after_correct": true,
+          "before_correct": true,
+          "target": "A"
+        }
+      ],
+      "block": "gpt-6.2-astra_round_A",
+      "choice": "keep",
+      "elapsed_seconds": 9.82386254100129,
+      "model": "gpt-6.2-astra",
+      "native_response_sha256": "a2723b398793b0a107bab510852b8eb4a09b6fa28200898d88d1850be0c9f570",
+      "prompt_sha256": "d8017a2fed5467531a307a93ea13d930f7b9ed778c0eeb2b49a6f7ce85c245cc",
+      "start": "A",
+      "status": "OK",
+      "task": "round"
+    },
+    {
+      "after": "B",
+      "arm": "target_b",
+      "assessments": [
+        {
+          "after_correct": true,
+          "before_correct": false,
+          "target": "B"
+        }
+      ],
+      "block": "gpt-6.2-astra_round_A",
+      "choice": "switch",
+      "elapsed_seconds": 11.966835750034079,
+      "model": "gpt-6.2-astra",
+      "native_response_sha256": "7f9f1cb616a36d7965d7e3210dafe55dd8ab03ac4e5fe5b3ce95356c5770f980",
+      "prompt_sha256": "1c5a956d0db34e54772ded817b903e12549d9bae8b99a696195753274231f08e",
+      "start": "A",
+      "status": "OK",
+      "task": "round"
+    },
+    {
+      "after": "A",
+      "arm": "none",
+      "assessments": [
+        {
+          "after_correct": true,
+          "before_correct": true,
+          "target": "A"
+        },
+        {
+          "after_correct": false,
+          "before_correct": false,
+          "target": "B"
+        }
+      ],
+      "block": "gpt-6.2-astra_round_A",
+      "choice": "keep",
+      "elapsed_seconds": 10.43982966686599,
+      "model": "gpt-6.2-astra",
+      "native_response_sha256": "301dc82aaa95ca75629d0b9a9b662e5ca8d0662fb6e0a8ddccd1b3680f99b416",
+      "prompt_sha256": "5c92fa41a381ec4467423a6d364a902af889cbeb1f7c7551e11e8b3940078341",
+      "start": "A",
+      "status": "OK",
+      "task": "round"
+    },
+    {
+      "after": "A",
+      "arm": "shared",
+      "assessments": [
+        {
+          "after_correct": true,
+          "before_correct": true,
+          "target": "A"
+        },
+        {
+          "after_correct": false,
+          "before_correct": false,
+          "target": "B"
+        }
+      ],
+      "block": "gpt-6.2-astra_round_A",
+      "choice": "keep",
+      "elapsed_seconds": 9.340942707844079,
+      "model": "gpt-6.2-astra",
+      "native_response_sha256": "7878060fdc1295f362106ec4d8ce3cce9e8f0b05126651f73ac3d3698c2f4deb",
+      "prompt_sha256": "0679626b5466e910baabad74504165c7f362c17f9b28ea52bea6fbf6f22d69c1",
+      "start": "A",
+      "status": "OK",
+      "task": "round"
+    },
+    {
+      "after": "A",
+      "arm": "target_a",
+      "assessments": [
+        {
+          "after_correct": true,
+          "before_correct": true,
+          "target": "A"
+        }
+      ],
+      "block": "gpt-6-luna_argmax_A",
+      "choice": "keep",
+      "elapsed_seconds": 6.79767325008288,
+      "model": "gpt-6-luna",
+      "native_response_sha256": "20a44f85278d3b470a9e36292cb8efd73c3658b087cacfd7b40ed75af76564cd",
+      "prompt_sha256": "24fd6f4e3d46868c466e53d87232cf560d341b3dfcaa1a9268c1444c25e6dbf7",
+      "start": "A",
+      "status": "OK",
+      "task": "argmax"
+    },
+    {
+      "after": "A",
+      "arm": "none",
+      "assessments": [
+        {
+          "after_correct": true,
+          "before_correct": true,
+          "target": "A"
+        },
+        {
+          "after_correct": false,
+          "before_correct": false,
+          "target": "B"
+        }
+      ],
+      "block": "gpt-6-luna_argmax_A",
+      "choice": "keep",
+      "elapsed_seconds": 7.318142125150189,
+      "model": "gpt-6-luna",
+      "native_response_sha256": "18116478af4d491e1a62fb136215ec75640e026ec63971ec1ff7074334f94b0d",
+      "prompt_sha256": "4d8b5a709e0225acc60e729bfe75466a33ca5798da66b9983fdf75fa223066a8",
+      "start": "A",
+      "status": "OK",
+      "task": "argmax"
+    },
+    {
+      "after": "A",
+      "arm": "shared",
+      "assessments": [
+        {
+          "after_correct": true,
+          "before_correct": true,
+          "target": "A"
+        },
+        {
+          "after_correct": false,
+          "before_correct": false,
+          "target": "B"
+        }
+      ],
+      "block": "gpt-6-luna_argmax_A",
+      "choice": "keep",
+      "elapsed_seconds": 6.8445082909893245,
+      "model": "gpt-6-luna",
+      "native_response_sha256": "1df32136024fd76aedad6dc1d86856cf8b68e614063e2bc79de45a8e45165d87",
+      "prompt_sha256": "3edea3ca551addd979e3c4b3f790b89bba246275f8cabe9cced8863623578631",
+      "start": "A",
+      "status": "OK",
+      "task": "argmax"
+    },
+    {
+      "after": "B",
+      "arm": "target_b",
+      "assessments": [
+        {
+          "after_correct": true,
+          "before_correct": false,
+          "target": "B"
+        }
+      ],
+      "block": "gpt-6-luna_argmax_A",
+      "choice": "switch",
+      "elapsed_seconds": 7.35028574988246,
+      "model": "gpt-6-luna",
+      "native_response_sha256": "d2fe0b3757882fe52e0064b89059069b06aed194acb20f029f57c24c61ea7a9d",
+      "prompt_sha256": "95952b00ccd6d2766b97b8c9fc3ee24e924c01967692002bc1f52378f6ce6bd5",
+      "start": "A",
+      "status": "OK",
+      "task": "argmax"
+    },
+    {
+      "after": "A",
+      "arm": "none",
+      "assessments": [
+        {
+          "after_correct": true,
+          "before_correct": true,
+          "target": "A"
+        },
+        {
+          "after_correct": false,
+          "before_correct": false,
+          "target": "B"
+        }
+      ],
+      "block": "gpt-6.2-astra_argmax_A",
+      "choice": "keep",
+      "elapsed_seconds": 7.070860708830878,
+      "model": "gpt-6.2-astra",
+      "native_response_sha256": "b7a733d0b28cee3558ccfe2200fefca3528703905d56d7969f21001ad8836ebe",
+      "prompt_sha256": "4d8b5a709e0225acc60e729bfe75466a33ca5798da66b9983fdf75fa223066a8",
+      "start": "A",
+      "status": "OK",
+      "task": "argmax"
+    },
+    {
+      "after": "A",
+      "arm": "target_a",
+      "assessments": [
+        {
+          "after_correct": true,
+          "before_correct": true,
+          "target": "A"
+        }
+      ],
+      "block": "gpt-6.2-astra_argmax_A",
+      "choice": "keep",
+      "elapsed_seconds": 10.462365166051313,
+      "model": "gpt-6.2-astra",
+      "native_response_sha256": "f6ec9fd251e3a46248db702fa24fd1925dc2c586e5e14236ec82d15e81464570",
+      "prompt_sha256": "24fd6f4e3d46868c466e53d87232cf560d341b3dfcaa1a9268c1444c25e6dbf7",
+      "start": "A",
+      "status": "OK",
+      "task": "argmax"
+    },
+    {
+      "after": "A",
+      "arm": "shared",
+      "assessments": [
+        {
+          "after_correct": true,
+          "before_correct": true,
+          "target": "A"
+        },
+        {
+          "after_correct": false,
+          "before_correct": false,
+          "target": "B"
+        }
+      ],
+      "block": "gpt-6.2-astra_argmax_A",
+      "choice": "keep",
+      "elapsed_seconds": 7.358447833918035,
+      "model": "gpt-6.2-astra",
+      "native_response_sha256": "5b2e8c596e0ffb39d1d736ad51eb181e0d91d86024a1ad0236523200660d1306",
+      "prompt_sha256": "3edea3ca551addd979e3c4b3f790b89bba246275f8cabe9cced8863623578631",
+      "start": "A",
+      "status": "OK",
+      "task": "argmax"
+    },
+    {
+      "after": "B",
+      "arm": "target_b",
+      "assessments": [
+        {
+          "after_correct": true,
+          "before_correct": false,
+          "target": "B"
+        }
+      ],
+      "block": "gpt-6.2-astra_argmax_A",
+      "choice": "switch",
+      "elapsed_seconds": 8.512941875029355,
+      "model": "gpt-6.2-astra",
+      "native_response_sha256": "0dca8e3c7f91b92b6f9c3cc05065f5bba1cd16ef2f861afc66f51804a4fdd5ff",
+      "prompt_sha256": "95952b00ccd6d2766b97b8c9fc3ee24e924c01967692002bc1f52378f6ce6bd5",
+      "start": "A",
+      "status": "OK",
+      "task": "argmax"
+    },
+    {
+      "after": "B",
+      "arm": "target_b",
+      "assessments": [
+        {
+          "after_correct": true,
+          "before_correct": true,
+          "target": "B"
+        }
+      ],
+      "block": "gpt-6-luna_sort_B",
+      "choice": "keep",
+      "elapsed_seconds": 6.487002333858982,
+      "model": "gpt-6-luna",
+      "native_response_sha256": "6c027716c78558a03e30ee063352487981a3e6da1219e206cd5e034792458861",
+      "prompt_sha256": "0e0039eba91bcbd01219e770f20f85b693f7b2de79ba327cdd0db3e0f5a075c5",
+      "start": "B",
+      "status": "OK",
+      "task": "sort"
+    },
+    {
+      "after": "A",
+      "arm": "shared",
+      "assessments": [
+        {
+          "after_correct": true,
+          "before_correct": false,
+          "target": "A"
+        },
+        {
+          "after_correct": false,
+          "before_correct": true,
+          "target": "B"
+        }
+      ],
+      "block": "gpt-6-luna_sort_B",
+      "choice": "switch",
+      "elapsed_seconds": 6.3419657500926405,
+      "model": "gpt-6-luna",
+      "native_response_sha256": "37cb05dbd727afccca5eda9d6c34befcf9d1f71c341a13c351ea411e0eee3f18",
+      "prompt_sha256": "a82ac249fe2bd4ae40373040d33ce459c75e41be8a2a88ef62ad461e31b6991c",
+      "start": "B",
+      "status": "OK",
+      "task": "sort"
+    },
+    {
+      "after": "A",
+      "arm": "target_a",
+      "assessments": [
+        {
+          "after_correct": true,
+          "before_correct": false,
+          "target": "A"
+        }
+      ],
+      "block": "gpt-6-luna_sort_B",
+      "choice": "switch",
+      "elapsed_seconds": 6.588963832939044,
+      "model": "gpt-6-luna",
+      "native_response_sha256": "0f7f8cef66e5486472dc0deddd2003e4e9c077bc40daa9a725eb819609781338",
+      "prompt_sha256": "168669c2f31bb7dfc18cd67529c9acbdc374649270e11ccd99c59f97dd7e6e60",
+      "start": "B",
+      "status": "OK",
+      "task": "sort"
+    },
+    {
+      "after": "A",
+      "arm": "none",
+      "assessments": [
+        {
+          "after_correct": true,
+          "before_correct": false,
+          "target": "A"
+        },
+        {
+          "after_correct": false,
+          "before_correct": true,
+          "target": "B"
+        }
+      ],
+      "block": "gpt-6-luna_sort_B",
+      "choice": "switch",
+      "elapsed_seconds": 7.406770915957168,
+      "model": "gpt-6-luna",
+      "native_response_sha256": "616de26c466742108be7d431e181e4fd55753106f561dea4d7786a47f55e7dc7",
+      "prompt_sha256": "0dc3d3070b59a81fe958d1fd6149733039c4af7d1b34bc8f10b21e175a16a08a",
+      "start": "B",
+      "status": "OK",
+      "task": "sort"
+    },
+    {
+      "after": "B",
+      "arm": "none",
+      "assessments": [
+        {
+          "after_correct": false,
+          "before_correct": false,
+          "target": "A"
+        },
+        {
+          "after_correct": true,
+          "before_correct": true,
+          "target": "B"
+        }
+      ],
+      "block": "gpt-6-luna_round_B",
+      "choice": "keep",
+      "elapsed_seconds": 10.25337649998255,
+      "model": "gpt-6-luna",
+      "native_response_sha256": "afa068d80c454a0d83587aafd0ec9b8f488cd87739f156cf6b0e264ee74ca44e",
+      "prompt_sha256": "08134cef657fba118fb2b082719bf7a6b718697309e126a688dba039fb3efa59",
+      "start": "B",
+      "status": "OK",
+      "task": "round"
+    },
+    {
+      "after": "A",
+      "arm": "target_a",
+      "assessments": [
+        {
+          "after_correct": true,
+          "before_correct": false,
+          "target": "A"
+        }
+      ],
+      "block": "gpt-6-luna_round_B",
+      "choice": "switch",
+      "elapsed_seconds": 11.996075333794579,
+      "model": "gpt-6-luna",
+      "native_response_sha256": "2d5b6476b9ccf2e22f275fe30cba13d42149d1fa2c16fcb4f242f8247ac37ab6",
+      "prompt_sha256": "d44cb598758e16135161daf74435d4c4adcafbd71e375c4d16e984b3aea386c8",
+      "start": "B",
+      "status": "OK",
+      "task": "round"
+    },
+    {
+      "after": "B",
+      "arm": "target_b",
+      "assessments": [
+        {
+          "after_correct": true,
+          "before_correct": true,
+          "target": "B"
+        }
+      ],
+      "block": "gpt-6-luna_round_B",
+      "choice": "keep",
+      "elapsed_seconds": 8.42809558287263,
+      "model": "gpt-6-luna",
+      "native_response_sha256": "6b4988de3851a7062512416230cbbac28e7cbca9ed30f75fc9d436eaf532ff35",
+      "prompt_sha256": "cd667042eb82fe35c06dc1ccb499bbd5761cc44f2f7ec4073b618cf4452466bf",
+      "start": "B",
+      "status": "OK",
+      "task": "round"
+    },
+    {
+      "after": "A",
+      "arm": "shared",
+      "assessments": [
+        {
+          "after_correct": true,
+          "before_correct": false,
+          "target": "A"
+        },
+        {
+          "after_correct": false,
+          "before_correct": true,
+          "target": "B"
+        }
+      ],
+      "block": "gpt-6-luna_round_B",
+      "choice": "switch",
+      "elapsed_seconds": 8.390411333879456,
+      "model": "gpt-6-luna",
+      "native_response_sha256": "d2f8276367c60eb0950b6dcdfe481551469c8165a166310fe379d5f2a6c5d347",
+      "prompt_sha256": "97eb735caba2c5601e50a704ed213424cebc9c5eb65860968d4f326939787601",
+      "start": "B",
+      "status": "OK",
+      "task": "round"
+    },
+    {
+      "after": "B",
+      "arm": "none",
+      "assessments": [
+        {
+          "after_correct": false,
+          "before_correct": false,
+          "target": "A"
+        },
+        {
+          "after_correct": true,
+          "before_correct": true,
+          "target": "B"
+        }
+      ],
+      "block": "gpt-6-luna_argmax_B",
+      "choice": "keep",
+      "elapsed_seconds": 7.871437249938026,
+      "model": "gpt-6-luna",
+      "native_response_sha256": "722f1c9e8740f3dcba57034d82b2fbd5ad2891807e09ec44533b097363da615f",
+      "prompt_sha256": "51bcf2edb58c5164cc80cb84328754df7db7d774f53fb4bf3ab6266f072fd874",
+      "start": "B",
+      "status": "OK",
+      "task": "argmax"
+    },
+    {
+      "after": "B",
+      "arm": "target_b",
+      "assessments": [
+        {
+          "after_correct": true,
+          "before_correct": true,
+          "target": "B"
+        }
+      ],
+      "block": "gpt-6-luna_argmax_B",
+      "choice": "keep",
+      "elapsed_seconds": 6.531572208041325,
+      "model": "gpt-6-luna",
+      "native_response_sha256": "94e1cecd51ec856eba815a99d30257602a9fa2f2d3fd2cea9bbd00a34115f638",
+      "prompt_sha256": "03f856025fa98245e7a67c34815feacecfc073947fe43f3826dd9ac61c670908",
+      "start": "B",
+      "status": "OK",
+      "task": "argmax"
+    },
+    {
+      "after": "A",
+      "arm": "target_a",
+      "assessments": [
+        {
+          "after_correct": true,
+          "before_correct": false,
+          "target": "A"
+        }
+      ],
+      "block": "gpt-6-luna_argmax_B",
+      "choice": "switch",
+      "elapsed_seconds": 6.811955374898389,
+      "model": "gpt-6-luna",
+      "native_response_sha256": "652dcda8b58983506139ca311f396202e60a8a07ab8baea5f0e31545b98a69eb",
+      "prompt_sha256": "a8faff14f7d7b4bd017078833cfc1f7c6043d4f29ea18192d3f649c9c4a7baff",
+      "start": "B",
+      "status": "OK",
+      "task": "argmax"
+    },
+    {
+      "after": "A",
+      "arm": "shared",
+      "assessments": [
+        {
+          "after_correct": true,
+          "before_correct": false,
+          "target": "A"
+        },
+        {
+          "after_correct": false,
+          "before_correct": true,
+          "target": "B"
+        }
+      ],
+      "block": "gpt-6-luna_argmax_B",
+      "choice": "switch",
+      "elapsed_seconds": 8.596007416024804,
+      "model": "gpt-6-luna",
+      "native_response_sha256": "63883f5b4a1c9f2265f288d6a9d2ea466f5d01c1d44f5f6f70deb5711aec94cf",
+      "prompt_sha256": "2ed2538d9dbbd3ac9ff0f73899e970e3450d4aef21aa0f90d64d6e7f232785a3",
+      "start": "B",
+      "status": "OK",
+      "task": "argmax"
+    },
+    {
+      "after": "A",
+      "arm": "target_a",
+      "assessments": [
+        {
+          "after_correct": true,
+          "before_correct": false,
+          "target": "A"
+        }
+      ],
+      "block": "gpt-6.2-astra_argmax_B",
+      "choice": "switch",
+      "elapsed_seconds": 11.279698374914005,
+      "model": "gpt-6.2-astra",
+      "native_response_sha256": "e92956f62015dfa692e70bd0ebc2dea49e151658214a625c54b87d92dfa0bf66",
+      "prompt_sha256": "a8faff14f7d7b4bd017078833cfc1f7c6043d4f29ea18192d3f649c9c4a7baff",
+      "start": "B",
+      "status": "OK",
+      "task": "argmax"
+    },
+    {
+      "after": "B",
+      "arm": "target_b",
+      "assessments": [
+        {
+          "after_correct": true,
+          "before_correct": true,
+          "target": "B"
+        }
+      ],
+      "block": "gpt-6.2-astra_argmax_B",
+      "choice": "keep",
+      "elapsed_seconds": 8.087741249939427,
+      "model": "gpt-6.2-astra",
+      "native_response_sha256": "07ed1d0a28f74402d148c99f15ab04f58261d2263d6b2723a548b020c759ef86",
+      "prompt_sha256": "03f856025fa98245e7a67c34815feacecfc073947fe43f3826dd9ac61c670908",
+      "start": "B",
+      "status": "OK",
+      "task": "argmax"
+    },
+    {
+      "after": "B",
+      "arm": "none",
+      "assessments": [
+        {
+          "after_correct": false,
+          "before_correct": false,
+          "target": "A"
+        },
+        {
+          "after_correct": true,
+          "before_correct": true,
+          "target": "B"
+        }
+      ],
+      "block": "gpt-6.2-astra_argmax_B",
+      "choice": "keep",
+      "elapsed_seconds": 7.400534041924402,
+      "model": "gpt-6.2-astra",
+      "native_response_sha256": "8d7c789e55379d519b38634d9d6dbf17334b9feb4584716f38cc5cd1092fe62b",
+      "prompt_sha256": "51bcf2edb58c5164cc80cb84328754df7db7d774f53fb4bf3ab6266f072fd874",
+      "start": "B",
+      "status": "OK",
+      "task": "argmax"
+    },
+    {
+      "after": "B",
+      "arm": "shared",
+      "assessments": [
+        {
+          "after_correct": false,
+          "before_correct": false,
+          "target": "A"
+        },
+        {
+          "after_correct": true,
+          "before_correct": true,
+          "target": "B"
+        }
+      ],
+      "block": "gpt-6.2-astra_argmax_B",
+      "choice": "keep",
+      "elapsed_seconds": 7.314903499791399,
+      "model": "gpt-6.2-astra",
+      "native_response_sha256": "5f317e95437d74d1ecb6cb5b46e3628a3054eefd72bcd8d38611d134f4ddd06b",
+      "prompt_sha256": "2ed2538d9dbbd3ac9ff0f73899e970e3450d4aef21aa0f90d64d6e7f232785a3",
+      "start": "B",
+      "status": "OK",
+      "task": "argmax"
+    },
+    {
+      "after": "B",
+      "arm": "target_b",
+      "assessments": [
+        {
+          "after_correct": true,
+          "before_correct": false,
+          "target": "B"
+        }
+      ],
+      "block": "gpt-6-luna_round_A",
+      "choice": "switch",
+      "elapsed_seconds": 5.961957999970764,
+      "model": "gpt-6-luna",
+      "native_response_sha256": "22cf7902ffb5515dcb9d8e554329f3e63e5d9688c7c16492c45c47a7be2e1bb3",
+      "prompt_sha256": "1c5a956d0db34e54772ded817b903e12549d9bae8b99a696195753274231f08e",
+      "start": "A",
+      "status": "OK",
+      "task": "round"
+    },
+    {
+      "after": "A",
+      "arm": "shared",
+      "assessments": [
+        {
+          "after_correct": true,
+          "before_correct": true,
+          "target": "A"
+        },
+        {
+          "after_correct": false,
+          "before_correct": false,
+          "target": "B"
+        }
+      ],
+      "block": "gpt-6-luna_round_A",
+      "choice": "keep",
+      "elapsed_seconds": 7.840553458081558,
+      "model": "gpt-6-luna",
+      "native_response_sha256": "838c41bc857db1799dfb15f84def2b8ec57e9503f56e8f4aafdd890ced1e5a1e",
+      "prompt_sha256": "0679626b5466e910baabad74504165c7f362c17f9b28ea52bea6fbf6f22d69c1",
+      "start": "A",
+      "status": "OK",
+      "task": "round"
+    },
+    {
+      "after": "A",
+      "arm": "target_a",
+      "assessments": [
+        {
+          "after_correct": true,
+          "before_correct": true,
+          "target": "A"
+        }
+      ],
+      "block": "gpt-6-luna_round_A",
+      "choice": "keep",
+      "elapsed_seconds": 8.103597541106865,
+      "model": "gpt-6-luna",
+      "native_response_sha256": "1169213ec54bb7d45ac4b3b9c52a3c1acb1e11b9ffc4aa3f8349db21b6a79b91",
+      "prompt_sha256": "d8017a2fed5467531a307a93ea13d930f7b9ed778c0eeb2b49a6f7ce85c245cc",
+      "start": "A",
+      "status": "OK",
+      "task": "round"
+    },
+    {
+      "after": "A",
+      "arm": "none",
+      "assessments": [
+        {
+          "after_correct": true,
+          "before_correct": true,
+          "target": "A"
+        },
+        {
+          "after_correct": false,
+          "before_correct": false,
+          "target": "B"
+        }
+      ],
+      "block": "gpt-6-luna_round_A",
+      "choice": "keep",
+      "elapsed_seconds": 8.532975499983877,
+      "model": "gpt-6-luna",
+      "native_response_sha256": "bc93e7c2c2ccf7b3860409d817e0057cb18e9bae76e96a6970a0c7164184d85f",
+      "prompt_sha256": "5c92fa41a381ec4467423a6d364a902af889cbeb1f7c7551e11e8b3940078341",
+      "start": "A",
+      "status": "OK",
+      "task": "round"
+    },
+    {
+      "after": "B",
+      "arm": "shared",
+      "assessments": [
+        {
+          "after_correct": false,
+          "before_correct": false,
+          "target": "A"
+        },
+        {
+          "after_correct": true,
+          "before_correct": true,
+          "target": "B"
+        }
+      ],
+      "block": "gpt-6.2-astra_round_B",
+      "choice": "keep",
+      "elapsed_seconds": 6.834006249904633,
+      "model": "gpt-6.2-astra",
+      "native_response_sha256": "9129867861c5954968c194fc071f9e9baadc69ba1fc0a10806f2f4ab5bc4573b",
+      "prompt_sha256": "97eb735caba2c5601e50a704ed213424cebc9c5eb65860968d4f326939787601",
+      "start": "B",
+      "status": "OK",
+      "task": "round"
+    },
+    {
+      "after": "A",
+      "arm": "target_a",
+      "assessments": [
+        {
+          "after_correct": true,
+          "before_correct": false,
+          "target": "A"
+        }
+      ],
+      "block": "gpt-6.2-astra_round_B",
+      "choice": "switch",
+      "elapsed_seconds": 6.830132832983509,
+      "model": "gpt-6.2-astra",
+      "native_response_sha256": "d796d8e15ad97f98bd1e0355a8a2071d2763717e48cb72b9852778ba378ca519",
+      "prompt_sha256": "d44cb598758e16135161daf74435d4c4adcafbd71e375c4d16e984b3aea386c8",
+      "start": "B",
+      "status": "OK",
+      "task": "round"
+    },
+    {
+      "after": "B",
+      "arm": "target_b",
+      "assessments": [
+        {
+          "after_correct": true,
+          "before_correct": true,
+          "target": "B"
+        }
+      ],
+      "block": "gpt-6.2-astra_round_B",
+      "choice": "keep",
+      "elapsed_seconds": 6.56788545800373,
+      "model": "gpt-6.2-astra",
+      "native_response_sha256": "1b05f4feef4c2a4bf959e60c7bd27bd01a27b1afe2ed725a74407a0dfea81c8b",
+      "prompt_sha256": "cd667042eb82fe35c06dc1ccb499bbd5761cc44f2f7ec4073b618cf4452466bf",
+      "start": "B",
+      "status": "OK",
+      "task": "round"
+    },
+    {
+      "after": "B",
+      "arm": "none",
+      "assessments": [
+        {
+          "after_correct": false,
+          "before_correct": false,
+          "target": "A"
+        },
+        {
+          "after_correct": true,
+          "before_correct": true,
+          "target": "B"
+        }
+      ],
+      "block": "gpt-6.2-astra_round_B",
+      "choice": "keep",
+      "elapsed_seconds": 6.540366957895458,
+      "model": "gpt-6.2-astra",
+      "native_response_sha256": "2aceaa7aa79e5066556c5e5eada212aa03bdd74060b847e216edbc647247e45e",
+      "prompt_sha256": "08134cef657fba118fb2b082719bf7a6b718697309e126a688dba039fb3efa59",
+      "start": "B",
+      "status": "OK",
+      "task": "round"
+    },
+    {
+      "after": "A",
+      "arm": "shared",
+      "assessments": [
+        {
+          "after_correct": true,
+          "before_correct": true,
+          "target": "A"
+        },
+        {
+          "after_correct": false,
+          "before_correct": false,
+          "target": "B"
+        }
+      ],
+      "block": "gpt-6.2-astra_sort_A",
+      "choice": "keep",
+      "elapsed_seconds": 8.340351041872054,
+      "model": "gpt-6.2-astra",
+      "native_response_sha256": "66910fce294b02eb14502179259d0fe9f8cd1e698f48f9f5435aad267fd906d5",
+      "prompt_sha256": "579966bb6c1472ac2ddbb681f7eec716e4595e945e0e3d602794fd1d4071925d",
+      "start": "A",
+      "status": "OK",
+      "task": "sort"
+    },
+    {
+      "after": "A",
+      "arm": "none",
+      "assessments": [
+        {
+          "after_correct": true,
+          "before_correct": true,
+          "target": "A"
+        },
+        {
+          "after_correct": false,
+          "before_correct": false,
+          "target": "B"
+        }
+      ],
+      "block": "gpt-6.2-astra_sort_A",
+      "choice": "keep",
+      "elapsed_seconds": 8.3598647499457,
+      "model": "gpt-6.2-astra",
+      "native_response_sha256": "f8011d85c597a9a1364c7950d82ec91dd1e08a2e4d784b595122e5aef2f69d0b",
+      "prompt_sha256": "93b5718096b2aafb8d934204810ad1432a758f0f4858bdc250bf8606d6fd603e",
+      "start": "A",
+      "status": "OK",
+      "task": "sort"
+    },
+    {
+      "after": "B",
+      "arm": "target_b",
+      "assessments": [
+        {
+          "after_correct": true,
+          "before_correct": false,
+          "target": "B"
+        }
+      ],
+      "block": "gpt-6.2-astra_sort_A",
+      "choice": "switch",
+      "elapsed_seconds": 7.0272365000564605,
+      "model": "gpt-6.2-astra",
+      "native_response_sha256": "00b9cb3fe9a8c3c365b9392dbe0c4679e1f4123a90d786c08e14306184adc176",
+      "prompt_sha256": "f173ecaea5ed2ffa0876eee756c8eda5150752d5a880b050ec9d5217f2f07d99",
+      "start": "A",
+      "status": "OK",
+      "task": "sort"
+    },
+    {
+      "after": "A",
+      "arm": "target_a",
+      "assessments": [
+        {
+          "after_correct": true,
+          "before_correct": true,
+          "target": "A"
+        }
+      ],
+      "block": "gpt-6.2-astra_sort_A",
+      "choice": "keep",
+      "elapsed_seconds": 7.622615125030279,
+      "model": "gpt-6.2-astra",
+      "native_response_sha256": "d98050caa926ac17f2f24ccd92cad85f0c380091e200b39aa4cb499b0e7b1afb",
+      "prompt_sha256": "d6d4fc73a6fb6854e8b01d10a1ae275eb73aaa0e95c4936790486cdfd7251ace",
+      "start": "A",
+      "status": "OK",
+      "task": "sort"
+    }
+  ],
+  "summary": {
+    "blocks": 12,
+    "modes": {
+      "none": {
+        "assessed_preservation": 12,
+        "assessed_repair": 12,
+        "correct_preservation": 10,
+        "correct_repair": 2,
+        "scheduled_calls": 12,
+        "scheduled_preservation": 12,
+        "scheduled_repair": 12,
+        "valid_calls": 12
+      },
+      "revealing": {
+        "assessed_preservation": 12,
+        "assessed_repair": 12,
+        "correct_preservation": 12,
+        "correct_repair": 12,
+        "scheduled_calls": 24,
+        "scheduled_preservation": 12,
+        "scheduled_repair": 12,
+        "valid_calls": 24
+      },
+      "shared": {
+        "assessed_preservation": 12,
+        "assessed_repair": 12,
+        "correct_preservation": 9,
+        "correct_repair": 3,
+        "scheduled_calls": 12,
+        "scheduled_preservation": 12,
+        "scheduled_repair": 12,
+        "valid_calls": 12
+      }
+    },
+    "primary": {
+      "always_keep": 0,
+      "always_switch": 0,
+      "both_correct": 12,
+      "both_wrong": 0,
+      "missing_could_succeed": 0,
+      "missing_known_failure": 0
+    },
+    "primary_bounds": [
+      12,
+      12
+    ]
+  }
+}

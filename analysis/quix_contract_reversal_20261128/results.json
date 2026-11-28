@@ -1,0 +1,967 @@
+{
+  "cli_version": "codex-cli 0.169.0",
+  "eligible_for_main_analysis": false,
+  "frozen_at_utc": "2026-11-28T16:53:15.189795+00:00",
+  "plan_sha256": "205ecdddfacc1d1890ece67ca7d6de71fc4708cf5df4df9303cd50cf6e1b46e9",
+  "rows": [
+    {
+      "action": "keep",
+      "arm": "concealed",
+      "block": "gpt-6.2-astra_max_sublist_sum_faulty",
+      "elapsed_seconds": 9.24294583289884,
+      "expression": "max_ending_here + x",
+      "implements": "alternative",
+      "model": "gpt-6.2-astra",
+      "native_response_sha256": "0340ebc23ba14fcb52c79d16c2c1d6001b5702850ed4062ce8d54d9bb6275573",
+      "passed_counts": {
+        "alternative": 121,
+        "upstream": 89
+      },
+      "prompt_sha256": "d312da7acd325d6cb853b028e85277946f66cf268f561ea61d3ceb57bdc7ad9e",
+      "start": "faulty",
+      "status": "OK",
+      "task": "max_sublist_sum",
+      "wave": 1
+    },
+    {
+      "action": "keep",
+      "arm": "alternative",
+      "block": "gpt-6.2-astra_max_sublist_sum_faulty",
+      "elapsed_seconds": 9.50413683312945,
+      "expression": "max_ending_here + x",
+      "implements": "alternative",
+      "model": "gpt-6.2-astra",
+      "native_response_sha256": "23dbba41f9e634860c2892271485986abd69a0c50335e9db0b52889a40330611",
+      "passed_counts": {
+        "alternative": 121,
+        "upstream": 89
+      },
+      "prompt_sha256": "90d3037368252f8b993fd1331ca58470801eec4849700f77d2cd127dc39bad95",
+      "start": "faulty",
+      "status": "OK",
+      "task": "max_sublist_sum",
+      "wave": 1
+    },
+    {
+      "action": "replace",
+      "arm": "upstream",
+      "block": "gpt-6.2-astra_max_sublist_sum_faulty",
+      "elapsed_seconds": 6.805303625063971,
+      "expression": "max(0, max_ending_here + x)",
+      "implements": "upstream",
+      "model": "gpt-6.2-astra",
+      "native_response_sha256": "d3ff3bde65be93e691417bf86990e73fc076e9c86667eb7ea53aeea4dc2650f2",
+      "passed_counts": {
+        "alternative": 89,
+        "upstream": 121
+      },
+      "prompt_sha256": "5cb7608c5ff40a14611413a410d1e94316a68cfd6d5e2fb41068dd675762adb0",
+      "start": "faulty",
+      "status": "OK",
+      "task": "max_sublist_sum",
+      "wave": 1
+    },
+    {
+      "action": "keep",
+      "arm": "upstream",
+      "block": "gpt-6.2-astra_quicksort_working",
+      "elapsed_seconds": 8.356332583818585,
+      "expression": "x >= pivot",
+      "implements": "upstream",
+      "model": "gpt-6.2-astra",
+      "native_response_sha256": "261e67cfcc98c190fddcb438ffee5f608d5f8d17ca9a2edacbaf9344d783a7b8",
+      "passed_counts": {
+        "alternative": 16,
+        "upstream": 121
+      },
+      "prompt_sha256": "93f5551b1faee25b7beada402a280e59e2b50e6de028d1f993204a52351d32ef",
+      "start": "working",
+      "status": "OK",
+      "task": "quicksort",
+      "wave": 1
+    },
+    {
+      "action": "replace",
+      "arm": "alternative",
+      "block": "gpt-6.2-astra_quicksort_working",
+      "elapsed_seconds": 7.12593516591005,
+      "expression": "x > pivot",
+      "implements": "alternative",
+      "model": "gpt-6.2-astra",
+      "native_response_sha256": "51a3202c49b79c79791d0aeae85723ecacc71bc310095ff8660fd0d121d73ddd",
+      "passed_counts": {
+        "alternative": 121,
+        "upstream": 16
+      },
+      "prompt_sha256": "e674d850c9312529873625a7090333188ca0992b7c41aa117e0fa9ff75eb8bd7",
+      "start": "working",
+      "status": "OK",
+      "task": "quicksort",
+      "wave": 1
+    },
+    {
+      "action": "keep",
+      "arm": "concealed",
+      "block": "gpt-6.2-astra_quicksort_working",
+      "elapsed_seconds": 6.155000166967511,
+      "expression": "x >= pivot",
+      "implements": "upstream",
+      "model": "gpt-6.2-astra",
+      "native_response_sha256": "de2f8780ad4e34c16c80e852b4c70b566dd853a2cbcaa5fbd585ea2353268cc6",
+      "passed_counts": {
+        "alternative": 16,
+        "upstream": 121
+      },
+      "prompt_sha256": "4134424fee2cc087d98006d450619214d4d90c87fe7e8e2f82ced449300a05a2",
+      "start": "working",
+      "status": "OK",
+      "task": "quicksort",
+      "wave": 1
+    },
+    {
+      "action": "replace",
+      "arm": "upstream",
+      "block": "gpt-6-luna_knapsack_working",
+      "elapsed_seconds": 6.371112166903913,
+      "expression": "weight < j",
+      "implements": "alternative",
+      "model": "gpt-6-luna",
+      "native_response_sha256": "d4905bd2d577b4f57901f472f7a5a63440c9c46d7712a4d220a391569c502567",
+      "passed_counts": {
+        "alternative": 240,
+        "upstream": 123
+      },
+      "prompt_sha256": "5c731d564e10ea7a82f090e6c2a7e38ad69dc3300b3aecea7eb1e9531e81a437",
+      "start": "working",
+      "status": "OK",
+      "task": "knapsack",
+      "wave": 1
+    },
+    {
+      "action": "replace",
+      "arm": "alternative",
+      "block": "gpt-6-luna_knapsack_working",
+      "elapsed_seconds": 6.342097208136693,
+      "expression": "weight < j",
+      "implements": "alternative",
+      "model": "gpt-6-luna",
+      "native_response_sha256": "296748f898cb75a3235e1bcb762ef4cc0785018509c9563a217fca3a8e616319",
+      "passed_counts": {
+        "alternative": 240,
+        "upstream": 123
+      },
+      "prompt_sha256": "71efef97a0718867ce2b782b966434c899ad9439efd82b22b65d654301d1445f",
+      "start": "working",
+      "status": "OK",
+      "task": "knapsack",
+      "wave": 1
+    },
+    {
+      "action": "replace",
+      "arm": "concealed",
+      "block": "gpt-6-luna_knapsack_working",
+      "elapsed_seconds": 5.9196995419915766,
+      "expression": "weight < j",
+      "implements": "alternative",
+      "model": "gpt-6-luna",
+      "native_response_sha256": "2a38ca2245043c83a885f6660ccf20f4aa2b5c413a1f0070e90908a79a3912b5",
+      "passed_counts": {
+        "alternative": 240,
+        "upstream": 123
+      },
+      "prompt_sha256": "0c268e814abad8f484cbe5b626d8c56c9695f4f1f0a07d639d4678d73db14b48",
+      "start": "working",
+      "status": "OK",
+      "task": "knapsack",
+      "wave": 1
+    },
+    {
+      "action": "replace",
+      "arm": "upstream",
+      "block": "gpt-6-luna_is_valid_parenthesization_faulty",
+      "elapsed_seconds": 5.327287374995649,
+      "expression": "depth == 0",
+      "implements": "upstream",
+      "model": "gpt-6-luna",
+      "native_response_sha256": "861b048a38b61d2bb917dd6d10e4f5afc00132804747cdae8fa8a2d0ab8321d3",
+      "passed_counts": {
+        "alternative": 44,
+        "upstream": 63
+      },
+      "prompt_sha256": "f67dac931164b8cff45539662f82980655c81a9b152fbaec7c8299044e81548c",
+      "start": "faulty",
+      "status": "OK",
+      "task": "is_valid_parenthesization",
+      "wave": 1
+    },
+    {
+      "action": "replace",
+      "arm": "alternative",
+      "block": "gpt-6-luna_is_valid_parenthesization_faulty",
+      "elapsed_seconds": 8.685984166804701,
+      "expression": "depth >= 0",
+      "implements": "alternative",
+      "model": "gpt-6-luna",
+      "native_response_sha256": "36c5df023ada309c8e962a75c5e4cbdc01f67921df6e296d89fd16792657db45",
+      "passed_counts": {
+        "alternative": 63,
+        "upstream": 44
+      },
+      "prompt_sha256": "44a2ba16a8438a093ca1b767ca13fe6c2a53158b4b2df26b3b1d53f0bdf566c4",
+      "start": "faulty",
+      "status": "OK",
+      "task": "is_valid_parenthesization",
+      "wave": 1
+    },
+    {
+      "action": "keep",
+      "arm": "concealed",
+      "block": "gpt-6-luna_is_valid_parenthesization_faulty",
+      "elapsed_seconds": 5.675069084158167,
+      "expression": "True",
+      "implements": "alternative",
+      "model": "gpt-6-luna",
+      "native_response_sha256": "8dcd312448d69c6e01ceeba4e2f2042a384aae8ccaeff116aa74110664145caa",
+      "passed_counts": {
+        "alternative": 63,
+        "upstream": 44
+      },
+      "prompt_sha256": "bd9d0259c5bc543190cc36f0c85b65de21931932d6ef4f0cf7fb45f1dcb47faf",
+      "start": "faulty",
+      "status": "OK",
+      "task": "is_valid_parenthesization",
+      "wave": 1
+    },
+    {
+      "action": "replace",
+      "arm": "alternative",
+      "block": "gpt-6.2-astra_max_sublist_sum_working",
+      "elapsed_seconds": 8.737824707990512,
+      "expression": "max_ending_here + x",
+      "implements": "alternative",
+      "model": "gpt-6.2-astra",
+      "native_response_sha256": "fbf5d8443c861b1670ca34b45e464ed569eb2c8b57d1ece69d66938e31f5ef23",
+      "passed_counts": {
+        "alternative": 121,
+        "upstream": 89
+      },
+      "prompt_sha256": "a931148be8e71314a0ee9726704124784f002406fd7a59a014bace4c38433da6",
+      "start": "working",
+      "status": "OK",
+      "task": "max_sublist_sum",
+      "wave": 2
+    },
+    {
+      "action": "keep",
+      "arm": "concealed",
+      "block": "gpt-6.2-astra_max_sublist_sum_working",
+      "elapsed_seconds": 7.0700987910386175,
+      "expression": "max(0, max_ending_here + x)",
+      "implements": "upstream",
+      "model": "gpt-6.2-astra",
+      "native_response_sha256": "e93b334f0441f3a2dad34b96eb86cd3edec764d9fd388054ec2060991992e6c0",
+      "passed_counts": {
+        "alternative": 89,
+        "upstream": 121
+      },
+      "prompt_sha256": "836c1217c240da58cef9bf19a798c991fcf8c235ceb170c977fcd26e74babb10",
+      "start": "working",
+      "status": "OK",
+      "task": "max_sublist_sum",
+      "wave": 2
+    },
+    {
+      "action": "keep",
+      "arm": "upstream",
+      "block": "gpt-6.2-astra_max_sublist_sum_working",
+      "elapsed_seconds": 6.401938874972984,
+      "expression": "max(0, max_ending_here + x)",
+      "implements": "upstream",
+      "model": "gpt-6.2-astra",
+      "native_response_sha256": "08e2107f0eea34bea9ce78562ef8d1957e64494d8ace90713b91d8bcaa0d1f3d",
+      "passed_counts": {
+        "alternative": 89,
+        "upstream": 121
+      },
+      "prompt_sha256": "42d2741b442e78f312566375a69b3fe65dc52c572b22c347978daa1d2df151a9",
+      "start": "working",
+      "status": "OK",
+      "task": "max_sublist_sum",
+      "wave": 2
+    },
+    {
+      "action": "keep",
+      "arm": "concealed",
+      "block": "gpt-6-luna_quicksort_faulty",
+      "elapsed_seconds": 5.9411855831276625,
+      "expression": "x > pivot",
+      "implements": "alternative",
+      "model": "gpt-6-luna",
+      "native_response_sha256": "fb2007b869cc14ec7f7fb09155c0ee8c9a205645e18db5daaf45510db8ff640e",
+      "passed_counts": {
+        "alternative": 121,
+        "upstream": 16
+      },
+      "prompt_sha256": "11b8a22f03f2ecf35d684aa7bad3421998cab7177ae33be1d7bdaab208e67707",
+      "start": "faulty",
+      "status": "OK",
+      "task": "quicksort",
+      "wave": 2
+    },
+    {
+      "action": "replace",
+      "arm": "alternative",
+      "block": "gpt-6-luna_quicksort_faulty",
+      "elapsed_seconds": 5.608078916091472,
+      "expression": "x >= pivot",
+      "implements": "upstream",
+      "model": "gpt-6-luna",
+      "native_response_sha256": "4a8f4b2fb23b1ddd38f4cddefe2cc7350c977485a33a0ac5133b9684ffbabc7f",
+      "passed_counts": {
+        "alternative": 16,
+        "upstream": 121
+      },
+      "prompt_sha256": "309abb3d9a1f393aef8362279e256c494f54c47155f4e1532aae828ad1eabe8b",
+      "start": "faulty",
+      "status": "OK",
+      "task": "quicksort",
+      "wave": 2
+    },
+    {
+      "action": "replace",
+      "arm": "upstream",
+      "block": "gpt-6-luna_quicksort_faulty",
+      "elapsed_seconds": 6.25555841694586,
+      "expression": "x >= pivot",
+      "implements": "upstream",
+      "model": "gpt-6-luna",
+      "native_response_sha256": "7fe9c74ef44c9f1e673dde546b134110b27f0ac0b814365d9eed95b581a12e50",
+      "passed_counts": {
+        "alternative": 16,
+        "upstream": 121
+      },
+      "prompt_sha256": "6f3d59d2b2ed413f5c5e39f416ce01d0a43d375dedd67dbab833389bb7f4d6a7",
+      "start": "faulty",
+      "status": "OK",
+      "task": "quicksort",
+      "wave": 2
+    },
+    {
+      "action": "replace",
+      "arm": "upstream",
+      "block": "gpt-6.2-astra_knapsack_faulty",
+      "elapsed_seconds": 7.280851959018037,
+      "expression": "weight <= j",
+      "implements": "upstream",
+      "model": "gpt-6.2-astra",
+      "native_response_sha256": "8fd3034d789fdce3593462979f9f1deb38e18894e7010b67de4e8b5c5560f1f0",
+      "passed_counts": {
+        "alternative": 123,
+        "upstream": 240
+      },
+      "prompt_sha256": "a1c0f4b6569cabb818712204d758e822034c31ea2d69940cc7dda59585c2da2b",
+      "start": "faulty",
+      "status": "OK",
+      "task": "knapsack",
+      "wave": 2
+    },
+    {
+      "action": "keep",
+      "arm": "alternative",
+      "block": "gpt-6.2-astra_knapsack_faulty",
+      "elapsed_seconds": 6.622565874829888,
+      "expression": "weight < j",
+      "implements": "alternative",
+      "model": "gpt-6.2-astra",
+      "native_response_sha256": "70853855e3836af93a88f086d4a01f83a4755c2369ce92b7741d77e39b6f6ba6",
+      "passed_counts": {
+        "alternative": 240,
+        "upstream": 123
+      },
+      "prompt_sha256": "062c0b789f1440746b46938f2866ec756e573424a34dc3c14650f5b182470253",
+      "start": "faulty",
+      "status": "OK",
+      "task": "knapsack",
+      "wave": 2
+    },
+    {
+      "action": "keep",
+      "arm": "concealed",
+      "block": "gpt-6.2-astra_knapsack_faulty",
+      "elapsed_seconds": 12.36519558285363,
+      "expression": "weight < j",
+      "implements": "alternative",
+      "model": "gpt-6.2-astra",
+      "native_response_sha256": "e22ef39729ef29f4848dc73127d75fc6f6b268157eb81058cdd2e2d4618ec5b1",
+      "passed_counts": {
+        "alternative": 240,
+        "upstream": 123
+      },
+      "prompt_sha256": "7431282b0727d8616ba87f4e53fe27a07753669ef837529d27d4f82a548e657b",
+      "start": "faulty",
+      "status": "OK",
+      "task": "knapsack",
+      "wave": 2
+    },
+    {
+      "action": "replace",
+      "arm": "upstream",
+      "block": "gpt-6-luna_is_valid_parenthesization_working",
+      "elapsed_seconds": 6.430794334039092,
+      "expression": "depth >= 0",
+      "implements": "alternative",
+      "model": "gpt-6-luna",
+      "native_response_sha256": "d6834c3f755b2c810abdc9e8db2b9e5a717e28d89b37724e6cff2f8dbe0b0fd4",
+      "passed_counts": {
+        "alternative": 63,
+        "upstream": 44
+      },
+      "prompt_sha256": "c5da4fb5beee8aea9a6c8dbbf40af1b0380b376bccdcf545066c4b0aef3624d4",
+      "start": "working",
+      "status": "OK",
+      "task": "is_valid_parenthesization",
+      "wave": 2
+    },
+    {
+      "action": "replace",
+      "arm": "concealed",
+      "block": "gpt-6-luna_is_valid_parenthesization_working",
+      "elapsed_seconds": 5.794335249811411,
+      "expression": "depth >= 0",
+      "implements": "alternative",
+      "model": "gpt-6-luna",
+      "native_response_sha256": "96f7882d6b219157382ddbdfccec52f88d0828939071ddc6a052615677faa4e4",
+      "passed_counts": {
+        "alternative": 63,
+        "upstream": 44
+      },
+      "prompt_sha256": "1b35c45466ae4df4c478aac783ae6e0f8969a71a17a98aaf380472b5f263b0ec",
+      "start": "working",
+      "status": "OK",
+      "task": "is_valid_parenthesization",
+      "wave": 2
+    },
+    {
+      "action": "replace",
+      "arm": "alternative",
+      "block": "gpt-6-luna_is_valid_parenthesization_working",
+      "elapsed_seconds": 5.84780141687952,
+      "expression": "depth >= 0",
+      "implements": "alternative",
+      "model": "gpt-6-luna",
+      "native_response_sha256": "91a4196cac2b7390064c6d197a2db3153eadc6a0268f1dc792d51d586043dc6b",
+      "passed_counts": {
+        "alternative": 63,
+        "upstream": 44
+      },
+      "prompt_sha256": "7b80c92eacb9a54934a71c97201d31ad3bcb03c1d807c0c777dd5ea0ecfb8b28",
+      "start": "working",
+      "status": "OK",
+      "task": "is_valid_parenthesization",
+      "wave": 2
+    },
+    {
+      "action": "keep",
+      "arm": "alternative",
+      "block": "gpt-6-luna_max_sublist_sum_faulty",
+      "elapsed_seconds": 5.789833499817178,
+      "expression": "max_ending_here + x",
+      "implements": "alternative",
+      "model": "gpt-6-luna",
+      "native_response_sha256": "aca54b8d2f577e43d2ae73519450ebb007a16575274dc24e24234813001f9b0c",
+      "passed_counts": {
+        "alternative": 121,
+        "upstream": 89
+      },
+      "prompt_sha256": "37a1a7d0514f4ae99ac243df8443a7bccf2f4743f15ba204bd430daa74d4c6cd",
+      "start": "faulty",
+      "status": "OK",
+      "task": "max_sublist_sum",
+      "wave": 3
+    },
+    {
+      "action": "keep",
+      "arm": "upstream",
+      "block": "gpt-6-luna_max_sublist_sum_faulty",
+      "elapsed_seconds": 5.877960792044178,
+      "expression": "max_ending_here + x",
+      "implements": "alternative",
+      "model": "gpt-6-luna",
+      "native_response_sha256": "3c8985302e47e5eb21110c312e41e33f21eb74f63467ffab4072e9596c4ce237",
+      "passed_counts": {
+        "alternative": 121,
+        "upstream": 89
+      },
+      "prompt_sha256": "e41dc1d520bacc3e192ae9315d9af4f0e1b0a7c1c6585e4dbba0671dbe0579c5",
+      "start": "faulty",
+      "status": "OK",
+      "task": "max_sublist_sum",
+      "wave": 3
+    },
+    {
+      "action": "keep",
+      "arm": "concealed",
+      "block": "gpt-6-luna_max_sublist_sum_faulty",
+      "elapsed_seconds": 5.399000166915357,
+      "expression": "max_ending_here + x",
+      "implements": "alternative",
+      "model": "gpt-6-luna",
+      "native_response_sha256": "36ce2d5d8e2891ecb9cef565341ff833496c8f96af9c5196bf01b43333252696",
+      "passed_counts": {
+        "alternative": 121,
+        "upstream": 89
+      },
+      "prompt_sha256": "d117bf1504a371f8746916fda62454031eab9894e6b614d31f17455872534197",
+      "start": "faulty",
+      "status": "OK",
+      "task": "max_sublist_sum",
+      "wave": 3
+    },
+    {
+      "action": "keep",
+      "arm": "concealed",
+      "block": "gpt-6.2-astra_is_valid_parenthesization_faulty",
+      "elapsed_seconds": 7.825401708018035,
+      "expression": "True",
+      "implements": "alternative",
+      "model": "gpt-6.2-astra",
+      "native_response_sha256": "48c8e4071423c60b7981c7725f765a2522db40ebf507d90c70e0a38492fde56f",
+      "passed_counts": {
+        "alternative": 63,
+        "upstream": 44
+      },
+      "prompt_sha256": "75bd369893fac403f23be10db19b2a5e90b5a397c02cf97b202be82868734897",
+      "start": "faulty",
+      "status": "OK",
+      "task": "is_valid_parenthesization",
+      "wave": 3
+    },
+    {
+      "action": "keep",
+      "arm": "alternative",
+      "block": "gpt-6.2-astra_is_valid_parenthesization_faulty",
+      "elapsed_seconds": 6.712239125045016,
+      "expression": "True",
+      "implements": "alternative",
+      "model": "gpt-6.2-astra",
+      "native_response_sha256": "76ef0a4f2ed3fa870b1180ee6894c83988222f057157c519af84bee93b48f72c",
+      "passed_counts": {
+        "alternative": 63,
+        "upstream": 44
+      },
+      "prompt_sha256": "e87f7cd956f9565d2530343e6d1c688a258428f89341344151fe159a6cd5a9dd",
+      "start": "faulty",
+      "status": "OK",
+      "task": "is_valid_parenthesization",
+      "wave": 3
+    },
+    {
+      "action": "replace",
+      "arm": "upstream",
+      "block": "gpt-6.2-astra_is_valid_parenthesization_faulty",
+      "elapsed_seconds": 7.249679375207052,
+      "expression": "depth == 0",
+      "implements": "upstream",
+      "model": "gpt-6.2-astra",
+      "native_response_sha256": "798b8c99dc70f70219e30be51e3aad260ee4c3b235e8274fccdf1b3f6ae6d440",
+      "passed_counts": {
+        "alternative": 44,
+        "upstream": 63
+      },
+      "prompt_sha256": "de14065617ebd6d4f7615eef3bf79b7134b18cee3df031aae0c0dab306b517fc",
+      "start": "faulty",
+      "status": "OK",
+      "task": "is_valid_parenthesization",
+      "wave": 3
+    },
+    {
+      "action": "keep",
+      "arm": "upstream",
+      "block": "gpt-6-luna_quicksort_working",
+      "elapsed_seconds": 6.613957207882777,
+      "expression": "x >= pivot",
+      "implements": "upstream",
+      "model": "gpt-6-luna",
+      "native_response_sha256": "6296ec5ecb90046133efe19a44e89c02c861274e5cbbc4d2dca9a00942f696a0",
+      "passed_counts": {
+        "alternative": 16,
+        "upstream": 121
+      },
+      "prompt_sha256": "f6e3858f574d5de41b020756b5c458658b96de00adb6e6c15fd721c0a3552898",
+      "start": "working",
+      "status": "OK",
+      "task": "quicksort",
+      "wave": 3
+    },
+    {
+      "action": "replace",
+      "arm": "alternative",
+      "block": "gpt-6-luna_quicksort_working",
+      "elapsed_seconds": 5.919325374998152,
+      "expression": "x > pivot",
+      "implements": "alternative",
+      "model": "gpt-6-luna",
+      "native_response_sha256": "1d6634971d62fb3c7c476173952fbe81e4e2cdb3261a8f175c8ac59ea1c30fac",
+      "passed_counts": {
+        "alternative": 121,
+        "upstream": 16
+      },
+      "prompt_sha256": "cf777c2edf68135eef3765b4bb2f788fae2cd8c558bd673f78850d5b2122a805",
+      "start": "working",
+      "status": "OK",
+      "task": "quicksort",
+      "wave": 3
+    },
+    {
+      "action": "keep",
+      "arm": "concealed",
+      "block": "gpt-6-luna_quicksort_working",
+      "elapsed_seconds": 5.246341250138357,
+      "expression": "x >= pivot",
+      "implements": "upstream",
+      "model": "gpt-6-luna",
+      "native_response_sha256": "4ab39da3307c360e102000bc09b065390d0d527940a30c9a4a0d292b75029dcf",
+      "passed_counts": {
+        "alternative": 16,
+        "upstream": 121
+      },
+      "prompt_sha256": "66715106ac8298283b7a09f0ee44692702f2448d40c8463b6c17352af5dab82a",
+      "start": "working",
+      "status": "OK",
+      "task": "quicksort",
+      "wave": 3
+    },
+    {
+      "action": "replace",
+      "arm": "alternative",
+      "block": "gpt-6.2-astra_knapsack_working",
+      "elapsed_seconds": 7.391912666847929,
+      "expression": "weight < j",
+      "implements": "alternative",
+      "model": "gpt-6.2-astra",
+      "native_response_sha256": "9c4228e33683d7e250d247fce4a3a204a2669ced8383ba7096e2d07db995936f",
+      "passed_counts": {
+        "alternative": 240,
+        "upstream": 123
+      },
+      "prompt_sha256": "6b331a9756ab024d7dbb634e795792e3a64dc5edffbc9988fcfb17d9c792d49a",
+      "start": "working",
+      "status": "OK",
+      "task": "knapsack",
+      "wave": 3
+    },
+    {
+      "action": "keep",
+      "arm": "concealed",
+      "block": "gpt-6.2-astra_knapsack_working",
+      "elapsed_seconds": 7.41852629208006,
+      "expression": "weight <= j",
+      "implements": "upstream",
+      "model": "gpt-6.2-astra",
+      "native_response_sha256": "69cbf83444934b885569d3200f0beadeec1de811521779a13b237c1b4e7ef655",
+      "passed_counts": {
+        "alternative": 123,
+        "upstream": 240
+      },
+      "prompt_sha256": "4209996b4debe743b6f6c05760219d6ade9bc97b1b5e060c18cc1cc147564411",
+      "start": "working",
+      "status": "OK",
+      "task": "knapsack",
+      "wave": 3
+    },
+    {
+      "action": "keep",
+      "arm": "upstream",
+      "block": "gpt-6.2-astra_knapsack_working",
+      "elapsed_seconds": 6.911718749906868,
+      "expression": "weight <= j",
+      "implements": "upstream",
+      "model": "gpt-6.2-astra",
+      "native_response_sha256": "921c3e7b39cafb38c91c55544dce314650500cb85473a6c91be32d3c4d132d7f",
+      "passed_counts": {
+        "alternative": 123,
+        "upstream": 240
+      },
+      "prompt_sha256": "10cd21fd1123ab5f9c8700271a4f112503307b71e7d864644ebf961a45c08fa7",
+      "start": "working",
+      "status": "OK",
+      "task": "knapsack",
+      "wave": 3
+    },
+    {
+      "action": "keep",
+      "arm": "upstream",
+      "block": "gpt-6.2-astra_is_valid_parenthesization_working",
+      "elapsed_seconds": 7.252880499931052,
+      "expression": "depth == 0",
+      "implements": "upstream",
+      "model": "gpt-6.2-astra",
+      "native_response_sha256": "f0ebdb29e2ae7950144b25bcb83a584110e53f1b898ce4e8570dc627a23ac868",
+      "passed_counts": {
+        "alternative": 44,
+        "upstream": 63
+      },
+      "prompt_sha256": "fc4935aa56b5fb35626820ebfbd4104305dae6a9b481aea211a4905fda9cb7be",
+      "start": "working",
+      "status": "OK",
+      "task": "is_valid_parenthesization",
+      "wave": 4
+    },
+    {
+      "action": "keep",
+      "arm": "concealed",
+      "block": "gpt-6.2-astra_is_valid_parenthesization_working",
+      "elapsed_seconds": 6.956852999981493,
+      "expression": "depth == 0",
+      "implements": "upstream",
+      "model": "gpt-6.2-astra",
+      "native_response_sha256": "68572b33aa62e15bce3ac6cead1b340d46df0a440287a06c8c56932b0fcc26cf",
+      "passed_counts": {
+        "alternative": 44,
+        "upstream": 63
+      },
+      "prompt_sha256": "f027dbf10e411c177c7840928c5468b108a7984000533aa2ac304f05b627e013",
+      "start": "working",
+      "status": "OK",
+      "task": "is_valid_parenthesization",
+      "wave": 4
+    },
+    {
+      "action": "replace",
+      "arm": "alternative",
+      "block": "gpt-6.2-astra_is_valid_parenthesization_working",
+      "elapsed_seconds": 6.461818875046447,
+      "expression": "depth >= 0",
+      "implements": "alternative",
+      "model": "gpt-6.2-astra",
+      "native_response_sha256": "42e7962277075d037b6eb96cfe33cace9a1ed220a981491fc85c00e40d7017ef",
+      "passed_counts": {
+        "alternative": 63,
+        "upstream": 44
+      },
+      "prompt_sha256": "be8d30f0df97daf994b4995b048b95e3d1aeb9e638b11ce2f9acd750669f2188",
+      "start": "working",
+      "status": "OK",
+      "task": "is_valid_parenthesization",
+      "wave": 4
+    },
+    {
+      "action": "replace",
+      "arm": "concealed",
+      "block": "gpt-6-luna_knapsack_faulty",
+      "elapsed_seconds": 5.432012249948457,
+      "expression": "weight <= j",
+      "implements": "upstream",
+      "model": "gpt-6-luna",
+      "native_response_sha256": "0699347569bb951030e8acd6dce0eb80e94130f70dae8f72de87e1b86faafda4",
+      "passed_counts": {
+        "alternative": 123,
+        "upstream": 240
+      },
+      "prompt_sha256": "0bfc637a965033bc3cdde4f62721c283aa72fd540b7f5f87322dfaa22172b9ac",
+      "start": "faulty",
+      "status": "OK",
+      "task": "knapsack",
+      "wave": 4
+    },
+    {
+      "action": "replace",
+      "arm": "upstream",
+      "block": "gpt-6-luna_knapsack_faulty",
+      "elapsed_seconds": 5.364074124954641,
+      "expression": "weight <= j",
+      "implements": "upstream",
+      "model": "gpt-6-luna",
+      "native_response_sha256": "e502c98515d7ca008fe5f6c8b4c0b33c681f1879f391eb11ab0d64b8bdd548f6",
+      "passed_counts": {
+        "alternative": 123,
+        "upstream": 240
+      },
+      "prompt_sha256": "e2dfc17b5a7a30bdb9a65124f837c647c15e733f0ae3283d7f10fc14ee1f3e57",
+      "start": "faulty",
+      "status": "OK",
+      "task": "knapsack",
+      "wave": 4
+    },
+    {
+      "action": "replace",
+      "arm": "alternative",
+      "block": "gpt-6-luna_knapsack_faulty",
+      "elapsed_seconds": 5.190907917218283,
+      "expression": "weight <= j",
+      "implements": "upstream",
+      "model": "gpt-6-luna",
+      "native_response_sha256": "47f9bceb6127845e331165d1c549fb1b2b6079e26427f9702e7a0afd9402f563",
+      "passed_counts": {
+        "alternative": 123,
+        "upstream": 240
+      },
+      "prompt_sha256": "08efe4efe27d243456250b65007d09da5be9c42967b0f1af138033ef4b86fe6b",
+      "start": "faulty",
+      "status": "OK",
+      "task": "knapsack",
+      "wave": 4
+    },
+    {
+      "action": "keep",
+      "arm": "concealed",
+      "block": "gpt-6-luna_max_sublist_sum_working",
+      "elapsed_seconds": 8.746250208001584,
+      "expression": "max(0, max_ending_here + x)",
+      "implements": "upstream",
+      "model": "gpt-6-luna",
+      "native_response_sha256": "ad2c28a5194c8f77ea80b06996504ca5ffc97064b62f68a8032b91e47695ef5a",
+      "passed_counts": {
+        "alternative": 89,
+        "upstream": 121
+      },
+      "prompt_sha256": "2c4b5b8362ceb4f20c3f805c431a310db13a2eba2fae0101efe184ab21657ea7",
+      "start": "working",
+      "status": "OK",
+      "task": "max_sublist_sum",
+      "wave": 4
+    },
+    {
+      "action": "keep",
+      "arm": "upstream",
+      "block": "gpt-6-luna_max_sublist_sum_working",
+      "elapsed_seconds": 6.695006666937843,
+      "expression": "max(0, max_ending_here + x)",
+      "implements": "upstream",
+      "model": "gpt-6-luna",
+      "native_response_sha256": "4f2843ce0e48692d2f69ec9a94de459ebd057dd943031b8ec414f0c23ada13b3",
+      "passed_counts": {
+        "alternative": 89,
+        "upstream": 121
+      },
+      "prompt_sha256": "29bdd2a46fd1fb8137d650b3517898e54969e33c60e9f132cc427ce39a76468a",
+      "start": "working",
+      "status": "OK",
+      "task": "max_sublist_sum",
+      "wave": 4
+    },
+    {
+      "action": "replace",
+      "arm": "alternative",
+      "block": "gpt-6-luna_max_sublist_sum_working",
+      "elapsed_seconds": 5.578812417108566,
+      "expression": "max(0, max_ending_here + x)",
+      "implements": "upstream",
+      "model": "gpt-6-luna",
+      "native_response_sha256": "2294eb85a5e01be7e62b5ec12f0b684d63202ad3c99600ad9142b9d0cdf1c8ea",
+      "passed_counts": {
+        "alternative": 89,
+        "upstream": 121
+      },
+      "prompt_sha256": "973d4260cbefdcf3d87226c31a71e2a4063665f39c8ddbb21cdfae2f5658fa74",
+      "start": "working",
+      "status": "OK",
+      "task": "max_sublist_sum",
+      "wave": 4
+    },
+    {
+      "action": "keep",
+      "arm": "concealed",
+      "block": "gpt-6.2-astra_quicksort_faulty",
+      "elapsed_seconds": 6.753709458047524,
+      "expression": "x > pivot",
+      "implements": "alternative",
+      "model": "gpt-6.2-astra",
+      "native_response_sha256": "60ae81629b3039d6f54bede267d31ee473535774fc76f6a6cf65e948edcdcf19",
+      "passed_counts": {
+        "alternative": 121,
+        "upstream": 16
+      },
+      "prompt_sha256": "c8d42c445841e573af85757740202afae9be4f8324d71f4abe5a04ed5a4efe2b",
+      "start": "faulty",
+      "status": "OK",
+      "task": "quicksort",
+      "wave": 4
+    },
+    {
+      "action": "replace",
+      "arm": "upstream",
+      "block": "gpt-6.2-astra_quicksort_faulty",
+      "elapsed_seconds": 7.120065042050555,
+      "expression": "x >= pivot",
+      "implements": "upstream",
+      "model": "gpt-6.2-astra",
+      "native_response_sha256": "bc0bf384b25a5a2f5afee7dc4ba57a5178c33ba444b08870a1e26fd90e782364",
+      "passed_counts": {
+        "alternative": 16,
+        "upstream": 121
+      },
+      "prompt_sha256": "5064f026c66a9a8e37fdc2eff3f997cf51a5ec4fbdc2dcb6497f01b878d65472",
+      "start": "faulty",
+      "status": "OK",
+      "task": "quicksort",
+      "wave": 4
+    },
+    {
+      "action": "keep",
+      "arm": "alternative",
+      "block": "gpt-6.2-astra_quicksort_faulty",
+      "elapsed_seconds": 6.485748665872961,
+      "expression": "x > pivot",
+      "implements": "alternative",
+      "model": "gpt-6.2-astra",
+      "native_response_sha256": "b2153e066e425e4a67f6c20176a866e74a3e64c2c249e6b5d2387370d6547181",
+      "passed_counts": {
+        "alternative": 121,
+        "upstream": 16
+      },
+      "prompt_sha256": "9083c52581868bb277d8ca1bd03c66746a189842e59e3b9a6fc14642ef296324",
+      "start": "faulty",
+      "status": "OK",
+      "task": "quicksort",
+      "wave": 4
+    }
+  ],
+  "summary": {
+    "arms": {
+      "alternative": {
+        "alternative": 13,
+        "keep": 5,
+        "replace": 11,
+        "scheduled": 16,
+        "success_preserve": 6,
+        "success_repair": 7,
+        "total_preserve": 8,
+        "total_repair": 8,
+        "upstream": 3,
+        "usable": 16
+      },
+      "concealed": {
+        "alternative": 9,
+        "keep": 13,
+        "replace": 3,
+        "scheduled": 16,
+        "success_preserve": 13,
+        "success_repair": 3,
+        "total_preserve": 16,
+        "total_repair": 16,
+        "upstream": 7,
+        "usable": 16
+      },
+      "upstream": {
+        "alternative": 3,
+        "keep": 7,
+        "replace": 9,
+        "scheduled": 16,
+        "success_preserve": 6,
+        "success_repair": 7,
+        "total_preserve": 8,
+        "total_repair": 8,
+        "upstream": 13,
+        "usable": 16
+      }
+    },
+    "blocks": 16,
+    "primary": {
+      "always_alternative": 3,
+      "always_upstream": 3,
+      "both_follow_target": 10,
+      "complete": 16
+    }
+  }
+}

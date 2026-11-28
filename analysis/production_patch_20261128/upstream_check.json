@@ -1,0 +1,22 @@
+{
+  "matplotlib": {
+    "faulty": {
+      "inputs": 99,
+      "outputs_sha256": "686e4db7c0a6fa095348f204f628056dce1351994b63f05617168ced7604e44b"
+    },
+    "working": {
+      "inputs": 99,
+      "outputs_sha256": "969655a3f7673a77a948a4b2b56282a519a924c00e286f45c9ef83b83137625a"
+    }
+  },
+  "tqdm": {
+    "faulty": {
+      "inputs": 48,
+      "outputs_sha256": "2b01542c3f2391267ebea962d9abb9731887170337ec99ddfd15dc2dba61a91b"
+    },
+    "working": {
+      "inputs": 48,
+      "outputs_sha256": "6d691df5279401a217c870400e75b3a8b9af0b6fe77fd8c024ab5e33cb14f8b9"
+    }
+  }
+}

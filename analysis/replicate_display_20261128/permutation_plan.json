@@ -1,0 +1,9 @@
+{
+  "registered_locally_utc": "2026-11-28T17:18:35.594861+00:00",
+  "complete_event_files_present": 23,
+  "sha256": {
+    "docs/CPYTHON_DUPLICATE_PERMUTATION_20261128.md": "5371a120fc54be00f5e9aebd8544dce12148c50eeb62eafbe8d780b01bd37f2d",
+    "analysis/replicate_display_permutation.py": "04dffe830bd26e56efa893516e3ad753cb9c29c7c80edf2b0e66dbab6846490b",
+    "analysis/replicate_display_20261128/plan.json": "b4d32ec91526ede67d05384d31620cd4b393aa8f68a953250bf7ff6b5272d2d9"
+  }
+}

@@ -1,0 +1,487 @@
+{
+  "grading": "All six previously fixed project-specific functional checks",
+  "projects": {
+    "cpython": {
+      "inputs": {
+        "revealing": "{20: 'cobalt', 3: 'amber'}",
+        "shared": "{3: 'amber', 7: 'cobalt'}"
+      },
+      "parent_commit": "6a01fc5d4114ac56105ecbfb4ae3cbe043818449",
+      "reference_outputs": {
+        "revealing": "{3: 'amber', 20: 'cobalt'}",
+        "shared": "{3: 'amber', 7: 'cobalt'}"
+      },
+      "reference_variant": "p7",
+      "variants": {
+        "p2": {
+          "checks": [
+            {
+              "bindings_preserved": false,
+              "comparable_keys_sorted": true,
+              "passed": false,
+              "probe": "signed_integer_keys",
+              "rendered": "{-4: 'oak', 2: 'elm', 12: 'ash'}"
+            },
+            {
+              "bindings_preserved": false,
+              "comparable_keys_sorted": true,
+              "passed": false,
+              "probe": "comparable_tuple_keys",
+              "rendered": "{(2, 1): 'east', (20, 1): 'west'}"
+            },
+            {
+              "bindings_preserved": false,
+              "comparable_keys_sorted": null,
+              "passed": false,
+              "probe": "incomparable_tuple_keys",
+              "rendered": "{(None,): 'sun', (3,): 'rain'}"
+            },
+            {
+              "bindings_preserved": false,
+              "comparable_keys_sorted": true,
+              "passed": false,
+              "probe": "string_keys",
+              "rendered": "{'a': [3], 'z': [4]}"
+            },
+            {
+              "bindings_preserved": false,
+              "comparable_keys_sorted": true,
+              "passed": false,
+              "probe": "nested_binding",
+              "rendered": "{'a': {2: 'j', 5: 'k'}}"
+            },
+            {
+              "bindings_preserved": true,
+              "comparable_keys_sorted": true,
+              "passed": true,
+              "probe": "empty_mapping",
+              "rendered": "{}"
+            }
+          ],
+          "correct": false,
+          "outputs": {
+            "revealing": "{3: 'cobalt', 20: 'amber'}",
+            "shared": "{3: 'amber', 7: 'cobalt'}"
+          },
+          "snippet": "items = zip(sorted(object, key=_safe_key), object.values())"
+        },
+        "p3": {
+          "checks": [
+            {
+              "bindings_preserved": true,
+              "comparable_keys_sorted": false,
+              "passed": false,
+              "probe": "signed_integer_keys",
+              "rendered": "{-4: 'elm', 12: 'oak', 2: 'ash'}"
+            },
+            {
+              "bindings_preserved": true,
+              "comparable_keys_sorted": true,
+              "passed": true,
+              "probe": "comparable_tuple_keys",
+              "rendered": "{(2, 1): 'west', (20, 1): 'east'}"
+            },
+            {
+              "bindings_preserved": true,
+              "comparable_keys_sorted": null,
+              "passed": true,
+              "probe": "incomparable_tuple_keys",
+              "rendered": "{(3,): 'sun', (None,): 'rain'}"
+            },
+            {
+              "bindings_preserved": true,
+              "comparable_keys_sorted": true,
+              "passed": true,
+              "probe": "string_keys",
+              "rendered": "{'a': [4], 'z': [3]}"
+            },
+            {
+              "bindings_preserved": true,
+              "comparable_keys_sorted": true,
+              "passed": true,
+              "probe": "nested_binding",
+              "rendered": "{'a': {2: 'k', 5: 'j'}}"
+            },
+            {
+              "bindings_preserved": true,
+              "comparable_keys_sorted": true,
+              "passed": true,
+              "probe": "empty_mapping",
+              "rendered": "{}"
+            }
+          ],
+          "correct": false,
+          "outputs": {
+            "revealing": "{20: 'cobalt', 3: 'amber'}",
+            "shared": "{3: 'amber', 7: 'cobalt'}"
+          },
+          "snippet": "items = sorted(object.items(), key=lambda entry: repr(entry[0]))"
+        },
+        "p5": {
+          "checks": [
+            {
+              "bindings_preserved": true,
+              "comparable_keys_sorted": true,
+              "passed": true,
+              "probe": "signed_integer_keys",
+              "rendered": "{-4: 'elm', 2: 'ash', 12: 'oak'}"
+            },
+            {
+              "bindings_preserved": true,
+              "comparable_keys_sorted": true,
+              "passed": true,
+              "probe": "comparable_tuple_keys",
+              "rendered": "{(2, 1): 'west', (20, 1): 'east'}"
+            },
+            {
+              "bindings_preserved": true,
+              "comparable_keys_sorted": null,
+              "passed": true,
+              "probe": "incomparable_tuple_keys",
+              "rendered": "{(3,): 'sun', (None,): 'rain'}"
+            },
+            {
+              "bindings_preserved": true,
+              "comparable_keys_sorted": true,
+              "passed": true,
+              "probe": "string_keys",
+              "rendered": "{'a': [4], 'z': [3]}"
+            },
+            {
+              "bindings_preserved": true,
+              "comparable_keys_sorted": true,
+              "passed": true,
+              "probe": "nested_binding",
+              "rendered": "{'a': {2: 'k', 5: 'j'}}"
+            },
+            {
+              "bindings_preserved": true,
+              "comparable_keys_sorted": true,
+              "passed": true,
+              "probe": "empty_mapping",
+              "rendered": "{}"
+            }
+          ],
+          "correct": true,
+          "outputs": {
+            "revealing": "{3: 'amber', 20: 'cobalt'}",
+            "shared": "{3: 'amber', 7: 'cobalt'}"
+          },
+          "snippet": "try:\n    items = sorted(object.items(), key=lambda entry: entry[0])\nexcept TypeError:\n    items = sorted(object.items(), key=lambda entry: repr(entry[0]))"
+        },
+        "p7": {
+          "checks": [
+            {
+              "bindings_preserved": true,
+              "comparable_keys_sorted": true,
+              "passed": true,
+              "probe": "signed_integer_keys",
+              "rendered": "{-4: 'elm', 2: 'ash', 12: 'oak'}"
+            },
+            {
+              "bindings_preserved": true,
+              "comparable_keys_sorted": true,
+              "passed": true,
+              "probe": "comparable_tuple_keys",
+              "rendered": "{(2, 1): 'west', (20, 1): 'east'}"
+            },
+            {
+              "bindings_preserved": true,
+              "comparable_keys_sorted": null,
+              "passed": true,
+              "probe": "incomparable_tuple_keys",
+              "rendered": "{(None,): 'rain', (3,): 'sun'}"
+            },
+            {
+              "bindings_preserved": true,
+              "comparable_keys_sorted": true,
+              "passed": true,
+              "probe": "string_keys",
+              "rendered": "{'a': [4], 'z': [3]}"
+            },
+            {
+              "bindings_preserved": true,
+              "comparable_keys_sorted": true,
+              "passed": true,
+              "probe": "nested_binding",
+              "rendered": "{'a': {2: 'k', 5: 'j'}}"
+            },
+            {
+              "bindings_preserved": true,
+              "comparable_keys_sorted": true,
+              "passed": true,
+              "probe": "empty_mapping",
+              "rendered": "{}"
+            }
+          ],
+          "correct": true,
+          "outputs": {
+            "revealing": "{3: 'amber', 20: 'cobalt'}",
+            "shared": "{3: 'amber', 7: 'cobalt'}"
+          },
+          "snippet": "items = sorted(object.items(), key=_safe_tuple)"
+        }
+      }
+    },
+    "dateutil": {
+      "inputs": {
+        "revealing": "2025-02-16T11:34:52-03:20",
+        "shared": "2025-02-16T11:34:52+03:20"
+      },
+      "parent_commit": "8c367ffa58ae456843528ebf913dd526ad614145",
+      "reference_outputs": {
+        "revealing": "wall time 2025-02-16T11:34:52, UTC offset -12000 seconds",
+        "shared": "wall time 2025-02-16T11:34:52, UTC offset 12000 seconds"
+      },
+      "reference_variant": "k3",
+      "variants": {
+        "k3": {
+          "checks": [
+            {
+              "actual": {
+                "offset_seconds": -18000,
+                "wall": "2020-11-01T01:37:12"
+              },
+              "expected": {
+                "offset_seconds": -18000,
+                "wall": "2020-11-01T01:37:12"
+              },
+              "input": "2020-11-01T01:37:12-05:00",
+              "pass": true
+            },
+            {
+              "actual": {
+                "offset_seconds": -14400,
+                "wall": "2023-11-05T01:14:38"
+              },
+              "expected": {
+                "offset_seconds": -14400,
+                "wall": "2023-11-05T01:14:38"
+              },
+              "input": "2023-11-05T01:14:38-04:00",
+              "pass": true
+            },
+            {
+              "actual": {
+                "offset_seconds": -12600,
+                "wall": "2023-11-05T01:21:43"
+              },
+              "expected": {
+                "offset_seconds": -12600,
+                "wall": "2023-11-05T01:21:43"
+              },
+              "input": "2023-11-05T01:21:43-03:30",
+              "pass": true
+            },
+            {
+              "actual": {
+                "offset_seconds": 20700,
+                "wall": "2021-07-02T13:09:10"
+              },
+              "expected": {
+                "offset_seconds": 20700,
+                "wall": "2021-07-02T13:09:10"
+              },
+              "input": "2021-07-02T13:09:10+05:45",
+              "pass": true
+            },
+            {
+              "actual": {
+                "offset_seconds": 0,
+                "wall": "2022-03-03T17:08:09"
+              },
+              "expected": {
+                "offset_seconds": 0,
+                "wall": "2022-03-03T17:08:09"
+              },
+              "input": "2022-03-03T17:08:09Z",
+              "pass": true
+            },
+            {
+              "actual": {
+                "offset_seconds": null,
+                "wall": "2024-08-09T06:05:04"
+              },
+              "expected": {
+                "offset_seconds": null,
+                "wall": "2024-08-09T06:05:04"
+              },
+              "input": "2024-08-09T06:05:04",
+              "pass": true
+            }
+          ],
+          "correct": true,
+          "outputs": {
+            "revealing": "wall time 2025-02-16T11:34:52, UTC offset -12000 seconds",
+            "shared": "wall time 2025-02-16T11:34:52, UTC offset 12000 seconds"
+          },
+          "snippet": "return tz.tzoffset(None, mult * (hours * 60 + minutes) * 60)"
+        },
+        "p7": {
+          "checks": [
+            {
+              "actual": {
+                "offset_seconds": 18000,
+                "wall": "2020-11-01T01:37:12"
+              },
+              "expected": {
+                "offset_seconds": -18000,
+                "wall": "2020-11-01T01:37:12"
+              },
+              "input": "2020-11-01T01:37:12-05:00",
+              "pass": false
+            },
+            {
+              "actual": {
+                "offset_seconds": 14400,
+                "wall": "2023-11-05T01:14:38"
+              },
+              "expected": {
+                "offset_seconds": -14400,
+                "wall": "2023-11-05T01:14:38"
+              },
+              "input": "2023-11-05T01:14:38-04:00",
+              "pass": false
+            },
+            {
+              "actual": {
+                "offset_seconds": 9000,
+                "wall": "2023-11-05T01:21:43"
+              },
+              "expected": {
+                "offset_seconds": -12600,
+                "wall": "2023-11-05T01:21:43"
+              },
+              "input": "2023-11-05T01:21:43-03:30",
+              "pass": false
+            },
+            {
+              "actual": {
+                "offset_seconds": 20700,
+                "wall": "2021-07-02T13:09:10"
+              },
+              "expected": {
+                "offset_seconds": 20700,
+                "wall": "2021-07-02T13:09:10"
+              },
+              "input": "2021-07-02T13:09:10+05:45",
+              "pass": true
+            },
+            {
+              "actual": {
+                "offset_seconds": 0,
+                "wall": "2022-03-03T17:08:09"
+              },
+              "expected": {
+                "offset_seconds": 0,
+                "wall": "2022-03-03T17:08:09"
+              },
+              "input": "2022-03-03T17:08:09Z",
+              "pass": true
+            },
+            {
+              "actual": {
+                "offset_seconds": null,
+                "wall": "2024-08-09T06:05:04"
+              },
+              "expected": {
+                "offset_seconds": null,
+                "wall": "2024-08-09T06:05:04"
+              },
+              "input": "2024-08-09T06:05:04",
+              "pass": true
+            }
+          ],
+          "correct": false,
+          "outputs": {
+            "revealing": "wall time 2025-02-16T11:34:52, UTC offset 9600 seconds",
+            "shared": "wall time 2025-02-16T11:34:52, UTC offset 12000 seconds"
+          },
+          "snippet": "return tz.tzoffset(None, (hours * 60 + mult * minutes) * 60)"
+        },
+        "t9": {
+          "checks": [
+            {
+              "actual": {
+                "offset_seconds": -18000,
+                "wall": "2020-11-01T01:37:12"
+              },
+              "expected": {
+                "offset_seconds": -18000,
+                "wall": "2020-11-01T01:37:12"
+              },
+              "input": "2020-11-01T01:37:12-05:00",
+              "pass": true
+            },
+            {
+              "actual": {
+                "offset_seconds": -14400,
+                "wall": "2023-11-05T01:14:38"
+              },
+              "expected": {
+                "offset_seconds": -14400,
+                "wall": "2023-11-05T01:14:38"
+              },
+              "input": "2023-11-05T01:14:38-04:00",
+              "pass": true
+            },
+            {
+              "actual": {
+                "offset_seconds": -9000,
+                "wall": "2023-11-05T01:21:43"
+              },
+              "expected": {
+                "offset_seconds": -12600,
+                "wall": "2023-11-05T01:21:43"
+              },
+              "input": "2023-11-05T01:21:43-03:30",
+              "pass": false
+            },
+            {
+              "actual": {
+                "offset_seconds": 20700,
+                "wall": "2021-07-02T13:09:10"
+              },
+              "expected": {
+                "offset_seconds": 20700,
+                "wall": "2021-07-02T13:09:10"
+              },
+              "input": "2021-07-02T13:09:10+05:45",
+              "pass": true
+            },
+            {
+              "actual": {
+                "offset_seconds": 0,
+                "wall": "2022-03-03T17:08:09"
+              },
+              "expected": {
+                "offset_seconds": 0,
+                "wall": "2022-03-03T17:08:09"
+              },
+              "input": "2022-03-03T17:08:09Z",
+              "pass": true
+            },
+            {
+              "actual": {
+                "offset_seconds": null,
+                "wall": "2024-08-09T06:05:04"
+              },
+              "expected": {
+                "offset_seconds": null,
+                "wall": "2024-08-09T06:05:04"
+              },
+              "input": "2024-08-09T06:05:04",
+              "pass": true
+            }
+          ],
+          "correct": false,
+          "outputs": {
+            "revealing": "wall time 2025-02-16T11:34:52, UTC offset -9600 seconds",
+            "shared": "wall time 2025-02-16T11:34:52, UTC offset 12000 seconds"
+          },
+          "snippet": "return tz.tzoffset(None, (mult * hours * 60 + minutes) * 60)"
+        }
+      }
+    }
+  }
+}

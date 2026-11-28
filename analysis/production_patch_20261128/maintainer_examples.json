@@ -1,0 +1,2150 @@
+{
+  "rows": [
+    {
+      "arm": "none",
+      "block": "gpt-6-luna_tqdm_working",
+      "held_out_all_pass": true,
+      "held_out_passed": 45,
+      "held_out_total": 45,
+      "maintainer_example": {
+        "expected": [
+          [
+            42,
+            0
+          ],
+          [
+            43,
+            1
+          ],
+          [
+            44,
+            2
+          ],
+          [
+            45,
+            3
+          ],
+          [
+            46,
+            4
+          ],
+          [
+            47,
+            5
+          ],
+          [
+            48,
+            6
+          ],
+          [
+            49,
+            7
+          ],
+          [
+            50,
+            8
+          ]
+        ],
+        "input": [
+          [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          42
+        ],
+        "matches": true,
+        "observed": [
+          [
+            42,
+            0
+          ],
+          [
+            43,
+            1
+          ],
+          [
+            44,
+            2
+          ],
+          [
+            45,
+            3
+          ],
+          [
+            46,
+            4
+          ],
+          [
+            47,
+            5
+          ],
+          [
+            48,
+            6
+          ],
+          [
+            49,
+            7
+          ],
+          [
+            50,
+            8
+          ]
+        ],
+        "outcome": "returned"
+      },
+      "model": "gpt-6-luna",
+      "shown_probe": null,
+      "start": "working",
+      "status": "OK",
+      "task": "tqdm"
+    },
+    {
+      "arm": "revealing",
+      "block": "gpt-6-luna_tqdm_working",
+      "held_out_all_pass": true,
+      "held_out_passed": 45,
+      "held_out_total": 45,
+      "maintainer_example": {
+        "expected": [
+          [
+            42,
+            0
+          ],
+          [
+            43,
+            1
+          ],
+          [
+            44,
+            2
+          ],
+          [
+            45,
+            3
+          ],
+          [
+            46,
+            4
+          ],
+          [
+            47,
+            5
+          ],
+          [
+            48,
+            6
+          ],
+          [
+            49,
+            7
+          ],
+          [
+            50,
+            8
+          ]
+        ],
+        "input": [
+          [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          42
+        ],
+        "matches": true,
+        "observed": [
+          [
+            42,
+            0
+          ],
+          [
+            43,
+            1
+          ],
+          [
+            44,
+            2
+          ],
+          [
+            45,
+            3
+          ],
+          [
+            46,
+            4
+          ],
+          [
+            47,
+            5
+          ],
+          [
+            48,
+            6
+          ],
+          [
+            49,
+            7
+          ],
+          [
+            50,
+            8
+          ]
+        ],
+        "outcome": "returned"
+      },
+      "model": "gpt-6-luna",
+      "shown_probe": {
+        "expected": [
+          [
+            7,
+            "fig"
+          ],
+          [
+            8,
+            "kiwi"
+          ]
+        ],
+        "input": [
+          [
+            "fig",
+            "kiwi"
+          ],
+          7
+        ],
+        "matches": true,
+        "observed": [
+          [
+            7,
+            "fig"
+          ],
+          [
+            8,
+            "kiwi"
+          ]
+        ],
+        "outcome": "returned",
+        "start_observed": [
+          [
+            7,
+            "fig"
+          ],
+          [
+            8,
+            "kiwi"
+          ]
+        ]
+      },
+      "start": "working",
+      "status": "OK",
+      "task": "tqdm"
+    },
+    {
+      "arm": "shared",
+      "block": "gpt-6-luna_tqdm_working",
+      "held_out_all_pass": true,
+      "held_out_passed": 45,
+      "held_out_total": 45,
+      "maintainer_example": {
+        "expected": [
+          [
+            42,
+            0
+          ],
+          [
+            43,
+            1
+          ],
+          [
+            44,
+            2
+          ],
+          [
+            45,
+            3
+          ],
+          [
+            46,
+            4
+          ],
+          [
+            47,
+            5
+          ],
+          [
+            48,
+            6
+          ],
+          [
+            49,
+            7
+          ],
+          [
+            50,
+            8
+          ]
+        ],
+        "input": [
+          [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          42
+        ],
+        "matches": true,
+        "observed": [
+          [
+            42,
+            0
+          ],
+          [
+            43,
+            1
+          ],
+          [
+            44,
+            2
+          ],
+          [
+            45,
+            3
+          ],
+          [
+            46,
+            4
+          ],
+          [
+            47,
+            5
+          ],
+          [
+            48,
+            6
+          ],
+          [
+            49,
+            7
+          ],
+          [
+            50,
+            8
+          ]
+        ],
+        "outcome": "returned"
+      },
+      "model": "gpt-6-luna",
+      "shown_probe": {
+        "expected": [
+          [
+            0,
+            "fig"
+          ],
+          [
+            1,
+            "kiwi"
+          ]
+        ],
+        "input": [
+          [
+            "fig",
+            "kiwi"
+          ],
+          0
+        ],
+        "matches": true,
+        "observed": [
+          [
+            0,
+            "fig"
+          ],
+          [
+            1,
+            "kiwi"
+          ]
+        ],
+        "outcome": "returned",
+        "start_observed": [
+          [
+            0,
+            "fig"
+          ],
+          [
+            1,
+            "kiwi"
+          ]
+        ]
+      },
+      "start": "working",
+      "status": "OK",
+      "task": "tqdm"
+    },
+    {
+      "arm": "shared",
+      "block": "gpt-6.2-astra_matplotlib_working",
+      "held_out_all_pass": true,
+      "held_out_passed": 96,
+      "held_out_total": 96,
+      "maintainer_example": {
+        "expected": [
+          1,
+          0
+        ],
+        "input": [
+          1,
+          0,
+          0.3,
+          0.7
+        ],
+        "matches": true,
+        "observed": [
+          1,
+          0
+        ],
+        "outcome": "returned"
+      },
+      "model": "gpt-6.2-astra",
+      "shown_probe": {
+        "expected": [
+          10,
+          0
+        ],
+        "input": [
+          8,
+          2,
+          0,
+          10
+        ],
+        "matches": true,
+        "observed": [
+          10,
+          0
+        ],
+        "outcome": "returned",
+        "start_observed": [
+          10,
+          0
+        ]
+      },
+      "start": "working",
+      "status": "OK",
+      "task": "matplotlib"
+    },
+    {
+      "arm": "revealing",
+      "block": "gpt-6.2-astra_matplotlib_working",
+      "held_out_all_pass": true,
+      "held_out_passed": 96,
+      "held_out_total": 96,
+      "maintainer_example": {
+        "expected": [
+          1,
+          0
+        ],
+        "input": [
+          1,
+          0,
+          0.3,
+          0.7
+        ],
+        "matches": true,
+        "observed": [
+          1,
+          0
+        ],
+        "outcome": "returned"
+      },
+      "model": "gpt-6.2-astra",
+      "shown_probe": {
+        "expected": [
+          8,
+          2
+        ],
+        "input": [
+          8,
+          2,
+          3,
+          7
+        ],
+        "matches": true,
+        "observed": [
+          8,
+          2
+        ],
+        "outcome": "returned",
+        "start_observed": [
+          8,
+          2
+        ]
+      },
+      "start": "working",
+      "status": "OK",
+      "task": "matplotlib"
+    },
+    {
+      "arm": "none",
+      "block": "gpt-6.2-astra_matplotlib_working",
+      "held_out_all_pass": true,
+      "held_out_passed": 96,
+      "held_out_total": 96,
+      "maintainer_example": {
+        "expected": [
+          1,
+          0
+        ],
+        "input": [
+          1,
+          0,
+          0.3,
+          0.7
+        ],
+        "matches": true,
+        "observed": [
+          1,
+          0
+        ],
+        "outcome": "returned"
+      },
+      "model": "gpt-6.2-astra",
+      "shown_probe": null,
+      "start": "working",
+      "status": "OK",
+      "task": "matplotlib"
+    },
+    {
+      "arm": "shared",
+      "block": "gpt-6.2-astra_tqdm_faulty",
+      "held_out_all_pass": true,
+      "held_out_passed": 45,
+      "held_out_total": 45,
+      "maintainer_example": {
+        "expected": [
+          [
+            42,
+            0
+          ],
+          [
+            43,
+            1
+          ],
+          [
+            44,
+            2
+          ],
+          [
+            45,
+            3
+          ],
+          [
+            46,
+            4
+          ],
+          [
+            47,
+            5
+          ],
+          [
+            48,
+            6
+          ],
+          [
+            49,
+            7
+          ],
+          [
+            50,
+            8
+          ]
+        ],
+        "input": [
+          [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          42
+        ],
+        "matches": true,
+        "observed": [
+          [
+            42,
+            0
+          ],
+          [
+            43,
+            1
+          ],
+          [
+            44,
+            2
+          ],
+          [
+            45,
+            3
+          ],
+          [
+            46,
+            4
+          ],
+          [
+            47,
+            5
+          ],
+          [
+            48,
+            6
+          ],
+          [
+            49,
+            7
+          ],
+          [
+            50,
+            8
+          ]
+        ],
+        "outcome": "returned"
+      },
+      "model": "gpt-6.2-astra",
+      "shown_probe": {
+        "expected": [
+          [
+            0,
+            "fig"
+          ],
+          [
+            1,
+            "kiwi"
+          ]
+        ],
+        "input": [
+          [
+            "fig",
+            "kiwi"
+          ],
+          0
+        ],
+        "matches": true,
+        "observed": [
+          [
+            0,
+            "fig"
+          ],
+          [
+            1,
+            "kiwi"
+          ]
+        ],
+        "outcome": "returned",
+        "start_observed": [
+          [
+            0,
+            "fig"
+          ],
+          [
+            1,
+            "kiwi"
+          ]
+        ]
+      },
+      "start": "faulty",
+      "status": "OK",
+      "task": "tqdm"
+    },
+    {
+      "arm": "none",
+      "block": "gpt-6.2-astra_tqdm_faulty",
+      "held_out_all_pass": true,
+      "held_out_passed": 45,
+      "held_out_total": 45,
+      "maintainer_example": {
+        "expected": [
+          [
+            42,
+            0
+          ],
+          [
+            43,
+            1
+          ],
+          [
+            44,
+            2
+          ],
+          [
+            45,
+            3
+          ],
+          [
+            46,
+            4
+          ],
+          [
+            47,
+            5
+          ],
+          [
+            48,
+            6
+          ],
+          [
+            49,
+            7
+          ],
+          [
+            50,
+            8
+          ]
+        ],
+        "input": [
+          [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          42
+        ],
+        "matches": true,
+        "observed": [
+          [
+            42,
+            0
+          ],
+          [
+            43,
+            1
+          ],
+          [
+            44,
+            2
+          ],
+          [
+            45,
+            3
+          ],
+          [
+            46,
+            4
+          ],
+          [
+            47,
+            5
+          ],
+          [
+            48,
+            6
+          ],
+          [
+            49,
+            7
+          ],
+          [
+            50,
+            8
+          ]
+        ],
+        "outcome": "returned"
+      },
+      "model": "gpt-6.2-astra",
+      "shown_probe": null,
+      "start": "faulty",
+      "status": "OK",
+      "task": "tqdm"
+    },
+    {
+      "arm": "revealing",
+      "block": "gpt-6.2-astra_tqdm_faulty",
+      "held_out_all_pass": true,
+      "held_out_passed": 45,
+      "held_out_total": 45,
+      "maintainer_example": {
+        "expected": [
+          [
+            42,
+            0
+          ],
+          [
+            43,
+            1
+          ],
+          [
+            44,
+            2
+          ],
+          [
+            45,
+            3
+          ],
+          [
+            46,
+            4
+          ],
+          [
+            47,
+            5
+          ],
+          [
+            48,
+            6
+          ],
+          [
+            49,
+            7
+          ],
+          [
+            50,
+            8
+          ]
+        ],
+        "input": [
+          [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          42
+        ],
+        "matches": true,
+        "observed": [
+          [
+            42,
+            0
+          ],
+          [
+            43,
+            1
+          ],
+          [
+            44,
+            2
+          ],
+          [
+            45,
+            3
+          ],
+          [
+            46,
+            4
+          ],
+          [
+            47,
+            5
+          ],
+          [
+            48,
+            6
+          ],
+          [
+            49,
+            7
+          ],
+          [
+            50,
+            8
+          ]
+        ],
+        "outcome": "returned"
+      },
+      "model": "gpt-6.2-astra",
+      "shown_probe": {
+        "expected": [
+          [
+            7,
+            "fig"
+          ],
+          [
+            8,
+            "kiwi"
+          ]
+        ],
+        "input": [
+          [
+            "fig",
+            "kiwi"
+          ],
+          7
+        ],
+        "matches": true,
+        "observed": [
+          [
+            7,
+            "fig"
+          ],
+          [
+            8,
+            "kiwi"
+          ]
+        ],
+        "outcome": "returned",
+        "start_observed": [
+          [
+            0,
+            "fig"
+          ],
+          [
+            1,
+            "kiwi"
+          ]
+        ]
+      },
+      "start": "faulty",
+      "status": "OK",
+      "task": "tqdm"
+    },
+    {
+      "arm": "shared",
+      "block": "gpt-6-luna_matplotlib_faulty",
+      "held_out_all_pass": true,
+      "held_out_passed": 96,
+      "held_out_total": 96,
+      "maintainer_example": {
+        "expected": [
+          1,
+          0
+        ],
+        "input": [
+          1,
+          0,
+          0.3,
+          0.7
+        ],
+        "matches": true,
+        "observed": [
+          1,
+          0
+        ],
+        "outcome": "returned"
+      },
+      "model": "gpt-6-luna",
+      "shown_probe": {
+        "expected": [
+          10,
+          0
+        ],
+        "input": [
+          8,
+          2,
+          0,
+          10
+        ],
+        "matches": true,
+        "observed": [
+          10,
+          0
+        ],
+        "outcome": "returned",
+        "start_observed": [
+          10,
+          0
+        ]
+      },
+      "start": "faulty",
+      "status": "OK",
+      "task": "matplotlib"
+    },
+    {
+      "arm": "none",
+      "block": "gpt-6-luna_matplotlib_faulty",
+      "held_out_all_pass": false,
+      "held_out_passed": 58,
+      "held_out_total": 96,
+      "maintainer_example": {
+        "expected": [
+          1,
+          0
+        ],
+        "input": [
+          1,
+          0,
+          0.3,
+          0.7
+        ],
+        "matches": false,
+        "observed": [
+          0.7,
+          0.3
+        ],
+        "outcome": "returned"
+      },
+      "model": "gpt-6-luna",
+      "shown_probe": null,
+      "start": "faulty",
+      "status": "OK",
+      "task": "matplotlib"
+    },
+    {
+      "arm": "revealing",
+      "block": "gpt-6-luna_matplotlib_faulty",
+      "held_out_all_pass": false,
+      "held_out_passed": 58,
+      "held_out_total": 96,
+      "maintainer_example": {
+        "expected": [
+          1,
+          0
+        ],
+        "input": [
+          1,
+          0,
+          0.3,
+          0.7
+        ],
+        "matches": false,
+        "observed": [
+          0.7,
+          0.3
+        ],
+        "outcome": "returned"
+      },
+      "model": "gpt-6-luna",
+      "shown_probe": {
+        "expected": [
+          8,
+          2
+        ],
+        "input": [
+          8,
+          2,
+          3,
+          7
+        ],
+        "matches": false,
+        "observed": [
+          7,
+          3
+        ],
+        "outcome": "returned",
+        "start_observed": [
+          7,
+          3
+        ]
+      },
+      "start": "faulty",
+      "status": "OK",
+      "task": "matplotlib"
+    },
+    {
+      "arm": "revealing",
+      "block": "gpt-6-luna_tqdm_faulty",
+      "held_out_all_pass": true,
+      "held_out_passed": 45,
+      "held_out_total": 45,
+      "maintainer_example": {
+        "expected": [
+          [
+            42,
+            0
+          ],
+          [
+            43,
+            1
+          ],
+          [
+            44,
+            2
+          ],
+          [
+            45,
+            3
+          ],
+          [
+            46,
+            4
+          ],
+          [
+            47,
+            5
+          ],
+          [
+            48,
+            6
+          ],
+          [
+            49,
+            7
+          ],
+          [
+            50,
+            8
+          ]
+        ],
+        "input": [
+          [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          42
+        ],
+        "matches": true,
+        "observed": [
+          [
+            42,
+            0
+          ],
+          [
+            43,
+            1
+          ],
+          [
+            44,
+            2
+          ],
+          [
+            45,
+            3
+          ],
+          [
+            46,
+            4
+          ],
+          [
+            47,
+            5
+          ],
+          [
+            48,
+            6
+          ],
+          [
+            49,
+            7
+          ],
+          [
+            50,
+            8
+          ]
+        ],
+        "outcome": "returned"
+      },
+      "model": "gpt-6-luna",
+      "shown_probe": {
+        "expected": [
+          [
+            7,
+            "fig"
+          ],
+          [
+            8,
+            "kiwi"
+          ]
+        ],
+        "input": [
+          [
+            "fig",
+            "kiwi"
+          ],
+          7
+        ],
+        "matches": true,
+        "observed": [
+          [
+            7,
+            "fig"
+          ],
+          [
+            8,
+            "kiwi"
+          ]
+        ],
+        "outcome": "returned",
+        "start_observed": [
+          [
+            0,
+            "fig"
+          ],
+          [
+            1,
+            "kiwi"
+          ]
+        ]
+      },
+      "start": "faulty",
+      "status": "OK",
+      "task": "tqdm"
+    },
+    {
+      "arm": "shared",
+      "block": "gpt-6-luna_tqdm_faulty",
+      "held_out_all_pass": true,
+      "held_out_passed": 45,
+      "held_out_total": 45,
+      "maintainer_example": {
+        "expected": [
+          [
+            42,
+            0
+          ],
+          [
+            43,
+            1
+          ],
+          [
+            44,
+            2
+          ],
+          [
+            45,
+            3
+          ],
+          [
+            46,
+            4
+          ],
+          [
+            47,
+            5
+          ],
+          [
+            48,
+            6
+          ],
+          [
+            49,
+            7
+          ],
+          [
+            50,
+            8
+          ]
+        ],
+        "input": [
+          [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          42
+        ],
+        "matches": true,
+        "observed": [
+          [
+            42,
+            0
+          ],
+          [
+            43,
+            1
+          ],
+          [
+            44,
+            2
+          ],
+          [
+            45,
+            3
+          ],
+          [
+            46,
+            4
+          ],
+          [
+            47,
+            5
+          ],
+          [
+            48,
+            6
+          ],
+          [
+            49,
+            7
+          ],
+          [
+            50,
+            8
+          ]
+        ],
+        "outcome": "returned"
+      },
+      "model": "gpt-6-luna",
+      "shown_probe": {
+        "expected": [
+          [
+            0,
+            "fig"
+          ],
+          [
+            1,
+            "kiwi"
+          ]
+        ],
+        "input": [
+          [
+            "fig",
+            "kiwi"
+          ],
+          0
+        ],
+        "matches": true,
+        "observed": [
+          [
+            0,
+            "fig"
+          ],
+          [
+            1,
+            "kiwi"
+          ]
+        ],
+        "outcome": "returned",
+        "start_observed": [
+          [
+            0,
+            "fig"
+          ],
+          [
+            1,
+            "kiwi"
+          ]
+        ]
+      },
+      "start": "faulty",
+      "status": "OK",
+      "task": "tqdm"
+    },
+    {
+      "arm": "none",
+      "block": "gpt-6-luna_tqdm_faulty",
+      "held_out_all_pass": true,
+      "held_out_passed": 45,
+      "held_out_total": 45,
+      "maintainer_example": {
+        "expected": [
+          [
+            42,
+            0
+          ],
+          [
+            43,
+            1
+          ],
+          [
+            44,
+            2
+          ],
+          [
+            45,
+            3
+          ],
+          [
+            46,
+            4
+          ],
+          [
+            47,
+            5
+          ],
+          [
+            48,
+            6
+          ],
+          [
+            49,
+            7
+          ],
+          [
+            50,
+            8
+          ]
+        ],
+        "input": [
+          [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          42
+        ],
+        "matches": true,
+        "observed": [
+          [
+            42,
+            0
+          ],
+          [
+            43,
+            1
+          ],
+          [
+            44,
+            2
+          ],
+          [
+            45,
+            3
+          ],
+          [
+            46,
+            4
+          ],
+          [
+            47,
+            5
+          ],
+          [
+            48,
+            6
+          ],
+          [
+            49,
+            7
+          ],
+          [
+            50,
+            8
+          ]
+        ],
+        "outcome": "returned"
+      },
+      "model": "gpt-6-luna",
+      "shown_probe": null,
+      "start": "faulty",
+      "status": "OK",
+      "task": "tqdm"
+    },
+    {
+      "arm": "revealing",
+      "block": "gpt-6-luna_matplotlib_working",
+      "held_out_all_pass": false,
+      "held_out_passed": 62,
+      "held_out_total": 96,
+      "maintainer_example": {
+        "expected": [
+          1,
+          0
+        ],
+        "input": [
+          1,
+          0,
+          0.3,
+          0.7
+        ],
+        "matches": true,
+        "observed": [
+          1,
+          0
+        ],
+        "outcome": "returned"
+      },
+      "model": "gpt-6-luna",
+      "shown_probe": {
+        "expected": [
+          8,
+          2
+        ],
+        "input": [
+          8,
+          2,
+          3,
+          7
+        ],
+        "matches": true,
+        "observed": [
+          8,
+          2
+        ],
+        "outcome": "returned",
+        "start_observed": [
+          8,
+          2
+        ]
+      },
+      "start": "working",
+      "status": "OK",
+      "task": "matplotlib"
+    },
+    {
+      "arm": "none",
+      "block": "gpt-6-luna_matplotlib_working",
+      "held_out_all_pass": true,
+      "held_out_passed": 96,
+      "held_out_total": 96,
+      "maintainer_example": {
+        "expected": [
+          1,
+          0
+        ],
+        "input": [
+          1,
+          0,
+          0.3,
+          0.7
+        ],
+        "matches": true,
+        "observed": [
+          1,
+          0
+        ],
+        "outcome": "returned"
+      },
+      "model": "gpt-6-luna",
+      "shown_probe": null,
+      "start": "working",
+      "status": "OK",
+      "task": "matplotlib"
+    },
+    {
+      "arm": "shared",
+      "block": "gpt-6-luna_matplotlib_working",
+      "held_out_all_pass": true,
+      "held_out_passed": 96,
+      "held_out_total": 96,
+      "maintainer_example": {
+        "expected": [
+          1,
+          0
+        ],
+        "input": [
+          1,
+          0,
+          0.3,
+          0.7
+        ],
+        "matches": true,
+        "observed": [
+          1,
+          0
+        ],
+        "outcome": "returned"
+      },
+      "model": "gpt-6-luna",
+      "shown_probe": {
+        "expected": [
+          10,
+          0
+        ],
+        "input": [
+          8,
+          2,
+          0,
+          10
+        ],
+        "matches": true,
+        "observed": [
+          10,
+          0
+        ],
+        "outcome": "returned",
+        "start_observed": [
+          10,
+          0
+        ]
+      },
+      "start": "working",
+      "status": "OK",
+      "task": "matplotlib"
+    },
+    {
+      "arm": "shared",
+      "block": "gpt-6.2-astra_matplotlib_faulty",
+      "held_out_all_pass": true,
+      "held_out_passed": 96,
+      "held_out_total": 96,
+      "maintainer_example": {
+        "expected": [
+          1,
+          0
+        ],
+        "input": [
+          1,
+          0,
+          0.3,
+          0.7
+        ],
+        "matches": true,
+        "observed": [
+          1,
+          0
+        ],
+        "outcome": "returned"
+      },
+      "model": "gpt-6.2-astra",
+      "shown_probe": {
+        "expected": [
+          10,
+          0
+        ],
+        "input": [
+          8,
+          2,
+          0,
+          10
+        ],
+        "matches": true,
+        "observed": [
+          10,
+          0
+        ],
+        "outcome": "returned",
+        "start_observed": [
+          10,
+          0
+        ]
+      },
+      "start": "faulty",
+      "status": "OK",
+      "task": "matplotlib"
+    },
+    {
+      "arm": "none",
+      "block": "gpt-6.2-astra_matplotlib_faulty",
+      "held_out_all_pass": true,
+      "held_out_passed": 96,
+      "held_out_total": 96,
+      "maintainer_example": {
+        "expected": [
+          1,
+          0
+        ],
+        "input": [
+          1,
+          0,
+          0.3,
+          0.7
+        ],
+        "matches": true,
+        "observed": [
+          1,
+          0
+        ],
+        "outcome": "returned"
+      },
+      "model": "gpt-6.2-astra",
+      "shown_probe": null,
+      "start": "faulty",
+      "status": "OK",
+      "task": "matplotlib"
+    },
+    {
+      "arm": "revealing",
+      "block": "gpt-6.2-astra_matplotlib_faulty",
+      "held_out_all_pass": true,
+      "held_out_passed": 96,
+      "held_out_total": 96,
+      "maintainer_example": {
+        "expected": [
+          1,
+          0
+        ],
+        "input": [
+          1,
+          0,
+          0.3,
+          0.7
+        ],
+        "matches": true,
+        "observed": [
+          1,
+          0
+        ],
+        "outcome": "returned"
+      },
+      "model": "gpt-6.2-astra",
+      "shown_probe": {
+        "expected": [
+          8,
+          2
+        ],
+        "input": [
+          8,
+          2,
+          3,
+          7
+        ],
+        "matches": true,
+        "observed": [
+          8,
+          2
+        ],
+        "outcome": "returned",
+        "start_observed": [
+          7,
+          3
+        ]
+      },
+      "start": "faulty",
+      "status": "OK",
+      "task": "matplotlib"
+    },
+    {
+      "arm": "revealing",
+      "block": "gpt-6.2-astra_tqdm_working",
+      "held_out_all_pass": true,
+      "held_out_passed": 45,
+      "held_out_total": 45,
+      "maintainer_example": {
+        "expected": [
+          [
+            42,
+            0
+          ],
+          [
+            43,
+            1
+          ],
+          [
+            44,
+            2
+          ],
+          [
+            45,
+            3
+          ],
+          [
+            46,
+            4
+          ],
+          [
+            47,
+            5
+          ],
+          [
+            48,
+            6
+          ],
+          [
+            49,
+            7
+          ],
+          [
+            50,
+            8
+          ]
+        ],
+        "input": [
+          [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          42
+        ],
+        "matches": true,
+        "observed": [
+          [
+            42,
+            0
+          ],
+          [
+            43,
+            1
+          ],
+          [
+            44,
+            2
+          ],
+          [
+            45,
+            3
+          ],
+          [
+            46,
+            4
+          ],
+          [
+            47,
+            5
+          ],
+          [
+            48,
+            6
+          ],
+          [
+            49,
+            7
+          ],
+          [
+            50,
+            8
+          ]
+        ],
+        "outcome": "returned"
+      },
+      "model": "gpt-6.2-astra",
+      "shown_probe": {
+        "expected": [
+          [
+            7,
+            "fig"
+          ],
+          [
+            8,
+            "kiwi"
+          ]
+        ],
+        "input": [
+          [
+            "fig",
+            "kiwi"
+          ],
+          7
+        ],
+        "matches": true,
+        "observed": [
+          [
+            7,
+            "fig"
+          ],
+          [
+            8,
+            "kiwi"
+          ]
+        ],
+        "outcome": "returned",
+        "start_observed": [
+          [
+            7,
+            "fig"
+          ],
+          [
+            8,
+            "kiwi"
+          ]
+        ]
+      },
+      "start": "working",
+      "status": "OK",
+      "task": "tqdm"
+    },
+    {
+      "arm": "none",
+      "block": "gpt-6.2-astra_tqdm_working",
+      "held_out_all_pass": true,
+      "held_out_passed": 45,
+      "held_out_total": 45,
+      "maintainer_example": {
+        "expected": [
+          [
+            42,
+            0
+          ],
+          [
+            43,
+            1
+          ],
+          [
+            44,
+            2
+          ],
+          [
+            45,
+            3
+          ],
+          [
+            46,
+            4
+          ],
+          [
+            47,
+            5
+          ],
+          [
+            48,
+            6
+          ],
+          [
+            49,
+            7
+          ],
+          [
+            50,
+            8
+          ]
+        ],
+        "input": [
+          [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          42
+        ],
+        "matches": true,
+        "observed": [
+          [
+            42,
+            0
+          ],
+          [
+            43,
+            1
+          ],
+          [
+            44,
+            2
+          ],
+          [
+            45,
+            3
+          ],
+          [
+            46,
+            4
+          ],
+          [
+            47,
+            5
+          ],
+          [
+            48,
+            6
+          ],
+          [
+            49,
+            7
+          ],
+          [
+            50,
+            8
+          ]
+        ],
+        "outcome": "returned"
+      },
+      "model": "gpt-6.2-astra",
+      "shown_probe": null,
+      "start": "working",
+      "status": "OK",
+      "task": "tqdm"
+    },
+    {
+      "arm": "shared",
+      "block": "gpt-6.2-astra_tqdm_working",
+      "held_out_all_pass": true,
+      "held_out_passed": 45,
+      "held_out_total": 45,
+      "maintainer_example": {
+        "expected": [
+          [
+            42,
+            0
+          ],
+          [
+            43,
+            1
+          ],
+          [
+            44,
+            2
+          ],
+          [
+            45,
+            3
+          ],
+          [
+            46,
+            4
+          ],
+          [
+            47,
+            5
+          ],
+          [
+            48,
+            6
+          ],
+          [
+            49,
+            7
+          ],
+          [
+            50,
+            8
+          ]
+        ],
+        "input": [
+          [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          42
+        ],
+        "matches": true,
+        "observed": [
+          [
+            42,
+            0
+          ],
+          [
+            43,
+            1
+          ],
+          [
+            44,
+            2
+          ],
+          [
+            45,
+            3
+          ],
+          [
+            46,
+            4
+          ],
+          [
+            47,
+            5
+          ],
+          [
+            48,
+            6
+          ],
+          [
+            49,
+            7
+          ],
+          [
+            50,
+            8
+          ]
+        ],
+        "outcome": "returned"
+      },
+      "model": "gpt-6.2-astra",
+      "shown_probe": {
+        "expected": [
+          [
+            0,
+            "fig"
+          ],
+          [
+            1,
+            "kiwi"
+          ]
+        ],
+        "input": [
+          [
+            "fig",
+            "kiwi"
+          ],
+          0
+        ],
+        "matches": true,
+        "observed": [
+          [
+            0,
+            "fig"
+          ],
+          [
+            1,
+            "kiwi"
+          ]
+        ],
+        "outcome": "returned",
+        "start_observed": [
+          [
+            0,
+            "fig"
+          ],
+          [
+            1,
+            "kiwi"
+          ]
+        ]
+      },
+      "start": "working",
+      "status": "OK",
+      "task": "tqdm"
+    }
+  ],
+  "scope": "The affected behavior is replayed with the calibrated axis or iterator fixture. For Matplotlib the historical assertion observes axis limits. For tqdm it observes the index/value sequence for nine items starting at 42. The broader tqdm endpoint also checks progress-wrapper forwarding. This replay does not invoke either project's full test suite.",
+  "source_sha256": {
+    "calibration.json": "6d597f6758c47109e726c8e425d8e056e35419fa410a2284b188e5633e89ac16",
+    "results.json": "a51315960c781770b294bd8708944ec288d7d66ff6d4cbd360f27fd6a5c3466f",
+    "sources.json": "85a9950af6031e977102c47590911ee8ba7f3263b91eb59d026d5989151f279d"
+  },
+  "status": "post-hoc source-linked comparison",
+  "summary": {
+    "matches_maintainer": 22,
+    "matches_maintainer_but_fails_held_out": 1,
+    "passes_all_held_out": 21,
+    "scheduled": 24,
+    "scored": 24
+  },
+  "upstream_tests": {
+    "matplotlib": {
+      "commit": "407a9fe71a4c0a8ba4914b8f54f21d32d6dd2d74",
+      "path": "lib/matplotlib/tests/test_axes.py",
+      "url": "https://github.com/matplotlib/matplotlib/commit/407a9fe71a4c0a8ba4914b8f54f21d32d6dd2d74"
+    },
+    "tqdm": {
+      "commit": "c0dcf39b046d1b4ff6de14ac99ad9a1b10487512",
+      "path": "tqdm/tests/tests_contrib.py",
+      "url": "https://github.com/tqdm/tqdm/commit/c0dcf39b046d1b4ff6de14ac99ad9a1b10487512"
+    }
+  }
+}

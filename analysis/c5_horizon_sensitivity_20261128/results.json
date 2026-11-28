@@ -1,0 +1,402 @@
+{
+  "data_kind": "exploratory historical sensitivity",
+  "source_sha256": "fae9eba1460fc23060b3edadf8faccd2aa27ca8e9497c77ceaed910ece64ff15",
+  "definition": "Fraction failing under FALSE_FAIL minus fraction failing under TRUTHFUL_PASS.",
+  "full_cohort": {
+    "pairs": 14,
+    "families": 10,
+    "d2": {
+      "pair_weighted": "-1/7",
+      "family_weighted": "-3/20"
+    },
+    "d3": {
+      "pair_weighted": "1/7",
+      "family_weighted": "3/20"
+    }
+  },
+  "within_family": {
+    "ambiguous_parameters": {
+      "pairs": 1,
+      "families": 1,
+      "d2": {
+        "pair_weighted": "1",
+        "family_weighted": "1"
+      },
+      "d3": {
+        "pair_weighted": "1",
+        "family_weighted": "1"
+      }
+    },
+    "authorization": {
+      "pairs": 1,
+      "families": 1,
+      "d2": {
+        "pair_weighted": "0",
+        "family_weighted": "0"
+      },
+      "d3": {
+        "pair_weighted": "0",
+        "family_weighted": "0"
+      }
+    },
+    "counter_race": {
+      "pairs": 2,
+      "families": 1,
+      "d2": {
+        "pair_weighted": "0",
+        "family_weighted": "0"
+      },
+      "d3": {
+        "pair_weighted": "1/2",
+        "family_weighted": "1/2"
+      }
+    },
+    "deserialization_allowlist": {
+      "pairs": 2,
+      "families": 1,
+      "d2": {
+        "pair_weighted": "0",
+        "family_weighted": "0"
+      },
+      "d3": {
+        "pair_weighted": "0",
+        "family_weighted": "0"
+      }
+    },
+    "dns_rebinding": {
+      "pairs": 1,
+      "families": 1,
+      "d2": {
+        "pair_weighted": "0",
+        "family_weighted": "0"
+      },
+      "d3": {
+        "pair_weighted": "0",
+        "family_weighted": "0"
+      }
+    },
+    "environment_injection": {
+      "pairs": 2,
+      "families": 1,
+      "d2": {
+        "pair_weighted": "1/2",
+        "family_weighted": "1/2"
+      },
+      "d3": {
+        "pair_weighted": "1/2",
+        "family_weighted": "1/2"
+      }
+    },
+    "kdf_salt": {
+      "pairs": 1,
+      "families": 1,
+      "d2": {
+        "pair_weighted": "-1",
+        "family_weighted": "-1"
+      },
+      "d3": {
+        "pair_weighted": "0",
+        "family_weighted": "0"
+      }
+    },
+    "nonce_uniqueness": {
+      "pairs": 2,
+      "families": 1,
+      "d2": {
+        "pair_weighted": "-1",
+        "family_weighted": "-1"
+      },
+      "d3": {
+        "pair_weighted": "-1/2",
+        "family_weighted": "-1/2"
+      }
+    },
+    "path-boundary": {
+      "pairs": 1,
+      "families": 1,
+      "d2": {
+        "pair_weighted": "0",
+        "family_weighted": "0"
+      },
+      "d3": {
+        "pair_weighted": "0",
+        "family_weighted": "0"
+      }
+    },
+    "signature_algorithm": {
+      "pairs": 1,
+      "families": 1,
+      "d2": {
+        "pair_weighted": "-1",
+        "family_weighted": "-1"
+      },
+      "d3": {
+        "pair_weighted": "0",
+        "family_weighted": "0"
+      }
+    }
+  },
+  "leave_one_family_out": {
+    "ambiguous_parameters": {
+      "pairs": 13,
+      "families": 9,
+      "d2": {
+        "pair_weighted": "-3/13",
+        "family_weighted": "-5/18"
+      },
+      "d3": {
+        "pair_weighted": "1/13",
+        "family_weighted": "1/18"
+      }
+    },
+    "authorization": {
+      "pairs": 13,
+      "families": 9,
+      "d2": {
+        "pair_weighted": "-2/13",
+        "family_weighted": "-1/6"
+      },
+      "d3": {
+        "pair_weighted": "2/13",
+        "family_weighted": "1/6"
+      }
+    },
+    "counter_race": {
+      "pairs": 12,
+      "families": 9,
+      "d2": {
+        "pair_weighted": "-1/6",
+        "family_weighted": "-1/6"
+      },
+      "d3": {
+        "pair_weighted": "1/12",
+        "family_weighted": "1/9"
+      }
+    },
+    "deserialization_allowlist": {
+      "pairs": 12,
+      "families": 9,
+      "d2": {
+        "pair_weighted": "-1/6",
+        "family_weighted": "-1/6"
+      },
+      "d3": {
+        "pair_weighted": "1/6",
+        "family_weighted": "1/6"
+      }
+    },
+    "dns_rebinding": {
+      "pairs": 13,
+      "families": 9,
+      "d2": {
+        "pair_weighted": "-2/13",
+        "family_weighted": "-1/6"
+      },
+      "d3": {
+        "pair_weighted": "2/13",
+        "family_weighted": "1/6"
+      }
+    },
+    "environment_injection": {
+      "pairs": 12,
+      "families": 9,
+      "d2": {
+        "pair_weighted": "-1/4",
+        "family_weighted": "-2/9"
+      },
+      "d3": {
+        "pair_weighted": "1/12",
+        "family_weighted": "1/9"
+      }
+    },
+    "kdf_salt": {
+      "pairs": 13,
+      "families": 9,
+      "d2": {
+        "pair_weighted": "-1/13",
+        "family_weighted": "-1/18"
+      },
+      "d3": {
+        "pair_weighted": "2/13",
+        "family_weighted": "1/6"
+      }
+    },
+    "nonce_uniqueness": {
+      "pairs": 12,
+      "families": 9,
+      "d2": {
+        "pair_weighted": "0",
+        "family_weighted": "-1/18"
+      },
+      "d3": {
+        "pair_weighted": "1/4",
+        "family_weighted": "2/9"
+      }
+    },
+    "path-boundary": {
+      "pairs": 13,
+      "families": 9,
+      "d2": {
+        "pair_weighted": "-2/13",
+        "family_weighted": "-1/6"
+      },
+      "d3": {
+        "pair_weighted": "2/13",
+        "family_weighted": "1/6"
+      }
+    },
+    "signature_algorithm": {
+      "pairs": 13,
+      "families": 9,
+      "d2": {
+        "pair_weighted": "-1/13",
+        "family_weighted": "-1/18"
+      },
+      "d3": {
+        "pair_weighted": "2/13",
+        "family_weighted": "1/6"
+      }
+    }
+  },
+  "pairs": [
+    {
+      "family": "ambiguous_parameters",
+      "pair": "slot-000039",
+      "state2": "Truthful only",
+      "state3": "Truthful only",
+      "d2": 1,
+      "d3": 1
+    },
+    {
+      "family": "authorization",
+      "pair": "slot-000038",
+      "state2": "Both pass",
+      "state3": "Both pass",
+      "d2": 0,
+      "d3": 0
+    },
+    {
+      "family": "counter_race",
+      "pair": "slot-000025",
+      "state2": "Both pass",
+      "state3": "Truthful only",
+      "d2": 0,
+      "d3": 1
+    },
+    {
+      "family": "counter_race",
+      "pair": "slot-000040",
+      "state2": "Both pass",
+      "state3": "Both pass",
+      "d2": 0,
+      "d3": 0
+    },
+    {
+      "family": "deserialization_allowlist",
+      "pair": "slot-000017",
+      "state2": "Neither passes",
+      "state3": "Neither passes",
+      "d2": 0,
+      "d3": 0
+    },
+    {
+      "family": "deserialization_allowlist",
+      "pair": "slot-000021",
+      "state2": "Neither passes",
+      "state3": "Neither passes",
+      "d2": 0,
+      "d3": 0
+    },
+    {
+      "family": "dns_rebinding",
+      "pair": "slot-000032",
+      "state2": "Neither passes",
+      "state3": "Neither passes",
+      "d2": 0,
+      "d3": 0
+    },
+    {
+      "family": "environment_injection",
+      "pair": "slot-000006",
+      "state2": "Truthful only",
+      "state3": "Truthful only",
+      "d2": 1,
+      "d3": 1
+    },
+    {
+      "family": "environment_injection",
+      "pair": "slot-000029",
+      "state2": "Neither passes",
+      "state3": "Neither passes",
+      "d2": 0,
+      "d3": 0
+    },
+    {
+      "family": "kdf_salt",
+      "pair": "slot-000027",
+      "state2": "False-failure only",
+      "state3": "Both pass",
+      "d2": -1,
+      "d3": 0
+    },
+    {
+      "family": "nonce_uniqueness",
+      "pair": "slot-000018",
+      "state2": "False-failure only",
+      "state3": "False-failure only",
+      "d2": -1,
+      "d3": -1
+    },
+    {
+      "family": "nonce_uniqueness",
+      "pair": "slot-000019",
+      "state2": "False-failure only",
+      "state3": "Both pass",
+      "d2": -1,
+      "d3": 0
+    },
+    {
+      "family": "path-boundary",
+      "pair": "slot-000024",
+      "state2": "Both pass",
+      "state3": "Both pass",
+      "d2": 0,
+      "d3": 0
+    },
+    {
+      "family": "signature_algorithm",
+      "pair": "slot-000028",
+      "state2": "False-failure only",
+      "state3": "Both pass",
+      "d2": -1,
+      "d3": 0
+    }
+  ],
+  "positive_to_negative_or_negative_to_positive": 0,
+  "paired_transitions": {
+    "Neither passes": {
+      "Neither passes": 4,
+      "Truthful only": 0,
+      "False-failure only": 0,
+      "Both pass": 0
+    },
+    "Truthful only": {
+      "Neither passes": 0,
+      "Truthful only": 2,
+      "False-failure only": 0,
+      "Both pass": 0
+    },
+    "False-failure only": {
+      "Neither passes": 0,
+      "Truthful only": 0,
+      "False-failure only": 1,
+      "Both pass": 3
+    },
+    "Both pass": {
+      "Neither passes": 0,
+      "Truthful only": 1,
+      "False-failure only": 0,
+      "Both pass": 3
+    }
+  }
+}

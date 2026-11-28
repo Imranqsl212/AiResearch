@@ -1,0 +1,394 @@
+{
+  "protocol_sha256": "33f66b54d087213975f1776a33779212ce27a866e0d19d50e3186b024c509d15",
+  "selection_sha256": "7b8e1869d1101c0851935686c20e1003f78922bf75840cab17c702d4aa9e23e2",
+  "rows": [
+    {
+      "series": "A",
+      "instance_id": "django__django-15569",
+      "available": true,
+      "trace_url": "https://swe-bench-submissions.s3.amazonaws.com/verified/20240402_sweagent_claude3opus/trajs/django__django-15569.traj",
+      "trace_sha256": "6a60ec1ef39d0f5a50c2f24f4eecac9a3c72b13fee2570276b1dd2b4b3aebfe7",
+      "commands": {
+        "3031ac689070f3270e405c7dcd9724328c1b6f63b8cff5eb111c55dcad1d3298": [
+          {
+            "invocation": "/trajectory/18/action",
+            "observation": "/trajectory/18/observation",
+            "output_sha256": "2c2eaa0d89a54ddbbf3460c9aadb289267b67add394c9fd6138cc627b31e391b",
+            "verdict": "fail",
+            "process_exit": null
+          }
+        ],
+        "98c7d3db924c4ac8d658968a473e22f5ca0938525c100c6f2460751b156c5047": [
+          {
+            "invocation": "/trajectory/7/action",
+            "observation": "/trajectory/7/observation",
+            "output_sha256": "38d04d3f56e61f90d155ca09e7080bf2765365b875032af0eff060044c7fa307",
+            "verdict": "fail",
+            "process_exit": null
+          }
+        ],
+        "d4a49d177f8942db3b132c1f64f4907c060d00057e234e585c30f6527cd60474": [
+          {
+            "invocation": "/trajectory/9/action",
+            "observation": "/trajectory/9/observation",
+            "output_sha256": "93f6fbfb8b85af5c849252a672d88ed31d29345ab18ca06de061d1da55e611b6",
+            "verdict": null,
+            "process_exit": null
+          }
+        ]
+      },
+      "benchmark_resolved": true
+    },
+    {
+      "series": "A",
+      "instance_id": "matplotlib__matplotlib-25479",
+      "available": true,
+      "trace_url": "https://swe-bench-submissions.s3.amazonaws.com/verified/20240402_sweagent_claude3opus/trajs/matplotlib__matplotlib-25479.traj",
+      "trace_sha256": "5c78747f54f5fb11c7cbe8569b94173bc80585a5a53cfe12f00d78511d40384f",
+      "commands": {
+        "2eccdc166b9ff70e999fe5cf9b99c69563f20efcc3f507f5659577a97e58d2a8": [
+          {
+            "invocation": "/trajectory/2/action",
+            "observation": "/trajectory/2/observation",
+            "output_sha256": "4dfa7af88295281195fded1e4747cdc3982f7fdbb31ac7304c400a3a5974bbc1",
+            "verdict": null,
+            "process_exit": null
+          },
+          {
+            "invocation": "/trajectory/10/action",
+            "observation": "/trajectory/10/observation",
+            "output_sha256": "ee26fadd9fe9eb01fc516a62646703c46a03504276f27406b8059794c48c009b",
+            "verdict": null,
+            "process_exit": null
+          },
+          {
+            "invocation": "/trajectory/13/action",
+            "observation": "/trajectory/13/observation",
+            "output_sha256": "17ae589fd66d306d51453aa96b51e49819ec8e73fc66825ccb485bd92352de7e",
+            "verdict": null,
+            "process_exit": null
+          },
+          {
+            "invocation": "/trajectory/15/action",
+            "observation": "/trajectory/15/observation",
+            "output_sha256": "ee26fadd9fe9eb01fc516a62646703c46a03504276f27406b8059794c48c009b",
+            "verdict": null,
+            "process_exit": null
+          }
+        ]
+      },
+      "benchmark_resolved": false
+    },
+    {
+      "series": "A",
+      "instance_id": "astropy__astropy-8872",
+      "available": true,
+      "trace_url": "https://swe-bench-submissions.s3.amazonaws.com/verified/20240402_sweagent_claude3opus/trajs/astropy__astropy-8872.traj",
+      "trace_sha256": "3d7afe1f8b1e75acaf210ef3696bed4772d2b988d729008b05b9369c507906ef",
+      "commands": {
+        "651e6474bf7d9ec8c8f712a9a1d3163ebd1f908cb67d0cb30c6c88ad2d93c0a8": [
+          {
+            "invocation": "/trajectory/2/action",
+            "observation": "/trajectory/2/observation",
+            "output_sha256": "371ad3ca3b8dc3d2bc3d59f54a59ee2678d301d719300cfc100a8225ff251409",
+            "verdict": null,
+            "process_exit": null
+          },
+          {
+            "invocation": "/trajectory/4/action",
+            "observation": "/trajectory/4/observation",
+            "output_sha256": "ee7afe30c3ef49343eb711d1f718b8400faa956dd0fbc8777eccacd73d3b9bf1",
+            "verdict": null,
+            "process_exit": null
+          },
+          {
+            "invocation": "/trajectory/13/action",
+            "observation": "/trajectory/13/observation",
+            "output_sha256": "ee7afe30c3ef49343eb711d1f718b8400faa956dd0fbc8777eccacd73d3b9bf1",
+            "verdict": null,
+            "process_exit": null
+          },
+          {
+            "invocation": "/trajectory/15/action",
+            "observation": "/trajectory/15/observation",
+            "output_sha256": "ee7afe30c3ef49343eb711d1f718b8400faa956dd0fbc8777eccacd73d3b9bf1",
+            "verdict": null,
+            "process_exit": null
+          },
+          {
+            "invocation": "/trajectory/17/action",
+            "observation": "/trajectory/17/observation",
+            "output_sha256": "a313b3e122341854d71e00a17eed1de698b839f355d56ebfbfe3793cca326287",
+            "verdict": null,
+            "process_exit": null
+          }
+        ]
+      },
+      "benchmark_resolved": false
+    },
+    {
+      "series": "A",
+      "instance_id": "django__django-16899",
+      "available": true,
+      "trace_url": "https://swe-bench-submissions.s3.amazonaws.com/verified/20240402_sweagent_claude3opus/trajs/django__django-16899.traj",
+      "trace_sha256": "c84d56fd6f9376543da894f67f61256e1ac64267e09166957e32d216d190ecb2",
+      "commands": {},
+      "benchmark_resolved": false
+    },
+    {
+      "series": "A",
+      "instance_id": "django__django-13406",
+      "available": true,
+      "trace_url": "https://swe-bench-submissions.s3.amazonaws.com/verified/20240402_sweagent_claude3opus/trajs/django__django-13406.traj",
+      "trace_sha256": "cf9c1f08c710d9b0e5d499c7fff4fbd7b46258548673969b92ad61338c941133",
+      "commands": {
+        "24041311a3b2764cffab55c0fc48fffcdb1668a271c51ae5e1bfef40a49032a2": [
+          {
+            "invocation": "/trajectory/16/action",
+            "observation": "/trajectory/16/observation",
+            "output_sha256": "ba91ca072d4e8b42cc84832ec4e603db4e2640d86c1839f738a15cf465eec44c",
+            "verdict": null,
+            "process_exit": null
+          }
+        ],
+        "651e6474bf7d9ec8c8f712a9a1d3163ebd1f908cb67d0cb30c6c88ad2d93c0a8": [
+          {
+            "invocation": "/trajectory/2/action",
+            "observation": "/trajectory/2/observation",
+            "output_sha256": "21fecda4701d40e35f747d9390de1ffe7b73b219db28f697edb952d120b6abc5",
+            "verdict": null,
+            "process_exit": null
+          }
+        ],
+        "6a2452b607a8da8c02aaa23c98261fb654bb4dad1b92b8897d70e0e75e31cae1": [
+          {
+            "invocation": "/trajectory/15/action",
+            "observation": "/trajectory/15/observation",
+            "output_sha256": "1e9320fae69c26717a43083b974413921db9d3f92b2be0e520908fecee0b232f",
+            "verdict": null,
+            "process_exit": null
+          }
+        ],
+        "eec4a604e7a26a6ac9eea24eb9590ec8fbb4cb913312e4fcc16d3a324d999ab9": [
+          {
+            "invocation": "/trajectory/19/action",
+            "observation": "/trajectory/19/observation",
+            "output_sha256": "481d89971b6373221810a7cebf77853a0f08f4b56e08b6252a99e609f93fe741",
+            "verdict": null,
+            "process_exit": null
+          }
+        ],
+        "f24b46a80a6de5fec9996cff6a5c440f82ddef2d7d1e18169c56dea956abe6b2": [
+          {
+            "invocation": "/trajectory/3/action",
+            "observation": "/trajectory/3/observation",
+            "output_sha256": "e666617b63e1a1ce108b2efb77611558d1bf4fc5f696903387d011f7371e33ad",
+            "verdict": null,
+            "process_exit": null
+          },
+          {
+            "invocation": "/trajectory/6/action",
+            "observation": "/trajectory/6/observation",
+            "output_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "verdict": null,
+            "process_exit": null
+          }
+        ]
+      },
+      "benchmark_resolved": false
+    },
+    {
+      "series": "A",
+      "instance_id": "sphinx-doc__sphinx-9281",
+      "available": true,
+      "trace_url": "https://swe-bench-submissions.s3.amazonaws.com/verified/20240402_sweagent_claude3opus/trajs/sphinx-doc__sphinx-9281.traj",
+      "trace_sha256": "8f8710939d66533caa47fda6001f6dd855255748d94bae04dc8b6b9e0adf330b",
+      "commands": {},
+      "benchmark_resolved": false
+    },
+    {
+      "series": "A",
+      "instance_id": "django__django-13449",
+      "available": false,
+      "trace_url": "https://swe-bench-submissions.s3.amazonaws.com/verified/20240402_sweagent_claude3opus/trajs/django__django-13449.traj",
+      "trace_sha256": null,
+      "commands": null,
+      "benchmark_resolved": false
+    },
+    {
+      "series": "A",
+      "instance_id": "django__django-11880",
+      "available": false,
+      "trace_url": "https://swe-bench-submissions.s3.amazonaws.com/verified/20240402_sweagent_claude3opus/trajs/django__django-11880.traj",
+      "trace_sha256": null,
+      "commands": null,
+      "benchmark_resolved": false
+    },
+    {
+      "series": "A",
+      "instance_id": "sphinx-doc__sphinx-8035",
+      "available": true,
+      "trace_url": "https://swe-bench-submissions.s3.amazonaws.com/verified/20240402_sweagent_claude3opus/trajs/sphinx-doc__sphinx-8035.traj",
+      "trace_sha256": "7be976d8847b9069624174e95c24ade34f2112755e31885e27a5418569c441d8",
+      "commands": {},
+      "benchmark_resolved": false
+    },
+    {
+      "series": "A",
+      "instance_id": "django__django-11964",
+      "available": true,
+      "trace_url": "https://swe-bench-submissions.s3.amazonaws.com/verified/20240402_sweagent_claude3opus/trajs/django__django-11964.traj",
+      "trace_sha256": "4554023e4b45682216aedd6a56fcd49902bef4203e7462f00d2b1b3f366d5790",
+      "commands": {
+        "651e6474bf7d9ec8c8f712a9a1d3163ebd1f908cb67d0cb30c6c88ad2d93c0a8": [
+          {
+            "invocation": "/trajectory/3/action",
+            "observation": "/trajectory/3/observation",
+            "output_sha256": "f8e70d65aa356743c8d42fc790287614c228e008d62f5bf8b9e03ef79340b14a",
+            "verdict": null,
+            "process_exit": null
+          },
+          {
+            "invocation": "/trajectory/12/action",
+            "observation": "/trajectory/12/observation",
+            "output_sha256": "e1049e5c6bb74ad6f55e414023ebec0450ea0f9ef5e6efd40152b7c3ec831c7c",
+            "verdict": null,
+            "process_exit": null
+          },
+          {
+            "invocation": "/trajectory/14/action",
+            "observation": "/trajectory/14/observation",
+            "output_sha256": "e1049e5c6bb74ad6f55e414023ebec0450ea0f9ef5e6efd40152b7c3ec831c7c",
+            "verdict": null,
+            "process_exit": null
+          },
+          {
+            "invocation": "/trajectory/16/action",
+            "observation": "/trajectory/16/observation",
+            "output_sha256": "3807c93a4a7146341e8be8781910b1d65f71a29a7e00c5de39f57a43eb6377e1",
+            "verdict": null,
+            "process_exit": null
+          },
+          {
+            "invocation": "/trajectory/18/action",
+            "observation": "/trajectory/18/observation",
+            "output_sha256": "0906d25ed86f8e629c7abb866308217d847239cd122464a0349563a00af5bcaf",
+            "verdict": null,
+            "process_exit": null
+          }
+        ]
+      },
+      "benchmark_resolved": false
+    },
+    {
+      "series": "B",
+      "instance_id": "django__django-15569",
+      "available": true,
+      "trace_url": "https://swe-bench-submissions.s3.amazonaws.com/verified/20241029_OpenHands-CodeAct-2.1-sonnet-20241022/trajs/django__django-15569.json",
+      "trace_sha256": "e3c298c568ca8f84f8bfc2767295dd2daf11fbe17de9e95b0b8c07375191555e",
+      "commands": {},
+      "benchmark_resolved": true
+    },
+    {
+      "series": "B",
+      "instance_id": "matplotlib__matplotlib-25479",
+      "available": true,
+      "trace_url": "https://swe-bench-submissions.s3.amazonaws.com/verified/20241029_OpenHands-CodeAct-2.1-sonnet-20241022/trajs/matplotlib__matplotlib-25479.json",
+      "trace_sha256": "d2d5c57a515c4e16d709f058d1e71161b9dab539aa788fe50ec1869c8aadac48",
+      "commands": {},
+      "benchmark_resolved": false
+    },
+    {
+      "series": "B",
+      "instance_id": "astropy__astropy-8872",
+      "available": true,
+      "trace_url": "https://swe-bench-submissions.s3.amazonaws.com/verified/20241029_OpenHands-CodeAct-2.1-sonnet-20241022/trajs/astropy__astropy-8872.json",
+      "trace_sha256": "21dc1f4a90632ce49bc999304885f637392f5597cfdc517ee9c3145e35a82399",
+      "commands": {},
+      "benchmark_resolved": false
+    },
+    {
+      "series": "B",
+      "instance_id": "django__django-16899",
+      "available": true,
+      "trace_url": "https://swe-bench-submissions.s3.amazonaws.com/verified/20241029_OpenHands-CodeAct-2.1-sonnet-20241022/trajs/django__django-16899.json",
+      "trace_sha256": "12893bf7dbdf3fdf939e7a197a0b54cdbbcda2b2a2c0aea0e4fd6138374efe4c",
+      "commands": {},
+      "benchmark_resolved": true
+    },
+    {
+      "series": "B",
+      "instance_id": "django__django-13406",
+      "available": true,
+      "trace_url": "https://swe-bench-submissions.s3.amazonaws.com/verified/20241029_OpenHands-CodeAct-2.1-sonnet-20241022/trajs/django__django-13406.json",
+      "trace_sha256": "675d15d5b3a8acb2034eaaffe951e3f2bc13a32d7b8cf992bc7b7d74cc905881",
+      "commands": {},
+      "benchmark_resolved": true
+    },
+    {
+      "series": "B",
+      "instance_id": "sphinx-doc__sphinx-9281",
+      "available": true,
+      "trace_url": "https://swe-bench-submissions.s3.amazonaws.com/verified/20241029_OpenHands-CodeAct-2.1-sonnet-20241022/trajs/sphinx-doc__sphinx-9281.json",
+      "trace_sha256": "a0a7ea08a3adb06f871db87ae301d399d1bd800126508091167c7c0c3e9e023a",
+      "commands": {
+        "dbe5c7a365599b747b5f8953c483b808c1a025f5243d0711cc23b231e3751661": [
+          {
+            "invocation": "/6/tool_calls/0",
+            "observation": "/7/content",
+            "output_sha256": "e406830d2d7839e171a7e14042d554efe3065e6fea7d04b2695a1b709f79d572",
+            "verdict": null,
+            "process_exit": 0
+          }
+        ]
+      },
+      "benchmark_resolved": false
+    },
+    {
+      "series": "B",
+      "instance_id": "django__django-13449",
+      "available": true,
+      "trace_url": "https://swe-bench-submissions.s3.amazonaws.com/verified/20241029_OpenHands-CodeAct-2.1-sonnet-20241022/trajs/django__django-13449.json",
+      "trace_sha256": "a37c0116f330c8747d0601859f16db1b09a820e1fdbd6eefac11be2fc0aa5e89",
+      "commands": {},
+      "benchmark_resolved": false
+    },
+    {
+      "series": "B",
+      "instance_id": "django__django-11880",
+      "available": true,
+      "trace_url": "https://swe-bench-submissions.s3.amazonaws.com/verified/20241029_OpenHands-CodeAct-2.1-sonnet-20241022/trajs/django__django-11880.json",
+      "trace_sha256": "ecd425d242900ec46dde28048d7ee8045ab607a6c5e0e08822df8dc9aad602f7",
+      "commands": {},
+      "benchmark_resolved": true
+    },
+    {
+      "series": "B",
+      "instance_id": "sphinx-doc__sphinx-8035",
+      "available": true,
+      "trace_url": "https://swe-bench-submissions.s3.amazonaws.com/verified/20241029_OpenHands-CodeAct-2.1-sonnet-20241022/trajs/sphinx-doc__sphinx-8035.json",
+      "trace_sha256": "f577bc68ed38cf53648897902b1b9c970a83b818a1d6c133dc3dde7db00df9d5",
+      "commands": {},
+      "benchmark_resolved": false
+    },
+    {
+      "series": "B",
+      "instance_id": "django__django-11964",
+      "available": true,
+      "trace_url": "https://swe-bench-submissions.s3.amazonaws.com/verified/20241029_OpenHands-CodeAct-2.1-sonnet-20241022/trajs/django__django-11964.json",
+      "trace_sha256": "b8aee212d6e2ec8ba01753bd39da196b3e0f52999e55dc6f747c61251c703a7f",
+      "commands": {
+        "487dd3afb74832824757dc7eaf8d99daa817cc973b0e84b7d70f8091bcf40d31": [
+          {
+            "invocation": "/6/tool_calls/0",
+            "observation": "/7/content",
+            "output_sha256": "86562400d7d4c7b1a0839e18b867b233d34ef848e65be00b0877a5f5fe4297b5",
+            "verdict": null,
+            "process_exit": 1
+          }
+        ]
+      },
+      "benchmark_resolved": false
+    }
+  ]
+}

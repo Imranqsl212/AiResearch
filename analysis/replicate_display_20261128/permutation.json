@@ -1,0 +1,34 @@
+{
+  "plan_sha256": "5371a120fc54be00f5e9aebd8544dce12148c50eeb62eafbe8d780b01bd37f2d",
+  "results_sha256": "5673db5d49d1a677531e83ba09ae2980cd80c62163f4e16e734532f51d2477ad",
+  "endpoints": {
+    "source": {
+      "complete": 14,
+      "observed_quarters": 1,
+      "histogram": {
+        "-5": 23219011584,
+        "-2": 11609505792,
+        "1": 23219011584,
+        "4": 11609505792,
+        "7": 5804752896,
+        "10": 2902376448
+      },
+      "tail": 43535646720,
+      "assignments": 78364164096,
+      "upper_tail": "5/9",
+      "holm": "1"
+    },
+    "function": {
+      "complete": 14,
+      "observed_quarters": -2,
+      "histogram": {
+        "-2": 52242776064,
+        "4": 26121388032
+      },
+      "tail": 78364164096,
+      "assignments": 78364164096,
+      "upper_tail": "1",
+      "holm": "1"
+    }
+  }
+}

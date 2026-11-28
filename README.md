@@ -1,14 +1,26 @@
-# What Is One More Step Worth After a False Alarm?
+# When Should a Model Put the Bug Back?
 
-An agent produces a correct repair, then receives a false failure. Does one more decision help it recover—or give it another chance to lose a working solution? The C5 manuscript reconstructs selected historical trajectories and proposes a new verdict × announced-budget experiment. The confirmatory model study has **zero collected episodes**.
+Changing one trusted target answer elicited patches satisfying both opposing requirements in 10/16 complete QuixBugs pairs. On a historical Matplotlib fix, the test that exposed the original defect passed a new regression. A test both historical versions passed exposed the new failure. The follow-up ledgers contain 364 usable hosted decisions out of 888 assigned. The 138 earlier one-decision controls and the original pilots retain their separate denominators. All of these are exploratory.
 
-[Manuscript](paper/c5/manuscript.md) · [PDF](paper/c5/checker_feedback.pdf) · [Anonymous PDF](paper/c5/checker_feedback_anonymous.pdf) · [Data and schema](data/c5/README.md) · [New statistical protocol](docs/C5_BUDGET_STATISTICAL_PROTOCOL_20261124.md) · [Study status](docs/C5_STUDY_STATUS.md)
+[Manuscript](paper/c5/manuscript.md) · [PDF](paper/c5/checker_feedback.pdf) · [Anonymous PDF](paper/c5/checker_feedback_anonymous.pdf) · [Offline evidence packet](paper/c5/feedback_evidence.zip) · [Blinded reviewer packet](paper/c5/feedback_evidence_anonymous.zip) · [Data and schema](data/c5/README.md) · [New statistical protocol](docs/C5_BUDGET_STATISTICAL_PROTOCOL_20261124.md) · [Study status](docs/C5_STUDY_STATUS.md)
+
+## Main experiments
+
+The [contract reversals on unchanged benchmark code](analysis/quix_contract_reversal_20261128/comparison.md) and [official QuixBugs test replay](analysis/quix_upstream_tests_20261128/comparison.md) support Figure 1. The [identical-value comparison](analysis/output_provenance_20261128/comparison.md) and [actual versus required output](analysis/feedback_factorial_20261128/comparison.md) distinguish the provenance of evidence from its contents. The [maintenance repairs](analysis/production_patch_20261128/comparison.md) and [component-level outcomes](analysis/production_patch_20261128/components.md) reconstruct the Matplotlib regression in Figure 2. [CPython identical-prompt repeats](analysis/replicate_display_20261128/comparison.md) quantify ordinary variation between fresh sessions. The [rule-omission follow-up](analysis/quix_rule_omission_20261128/comparison.md) repeats the target reversal without the two descriptions, and the [Matplotlib replication](analysis/matplotlib_replication_20261128/comparison.md) separates the original observation from fresh identical-prompt decisions. The [headless Matplotlib replay](analysis/matplotlib_axis_integration_20261128/comparison.md) runs the maintainer’s original test and records the actual axis limits across 96 further inputs. Each study records missing calls and starts that already worked.
+
+## Earlier matched comparisons
+
+| Comparison | Observed choices |
+| --- | --- |
+| [All 16 archived first edits in CPython](analysis/pprint_display_20261128/comparison.md) | With no new output, 2/4 faulty states recovered. With keys 3 and 7 or keys 3 and 20, 4/4 recovered. Both displays added the same two recoveries. Every arm preserved 12/12 working states. |
+| [All seven starting implementations across dateutil and CPython](analysis/cross_project_display_20261128/comparison.md) | Each condition repaired 8/8 faulty model–source combinations. Revealing output and no output produced identical final sources in 14/14 blocks. A shared positive-offset display preceded the only regression, in a working dateutil parser. |
+| [Trusted examples for three ambiguous specifications](analysis/reference_example_20261128/comparison.md) | Both models chose the correct implementation for both opposing target outputs in all 12 matched blocks. The 48 native choices yield 72 target assessments because a response to a prompt shared across two hidden targets is scored twice. |
 
 ## The observed reversal
 
 ![Failing candidates after decisions one, two and three: truthful PASS 4, 8, 5; false FAIL 1, 6, 7. Each arm contains 14 continuations.](paper/c5/figures/observed_horizon.png)
 
-In 14 selected pairs, the counts of branches holding a failing candidate were **4/1, 8/6 and 5/7** after successive decisions, shown as truthful PASS / false FAIL. Three truthful branches recovered on the last decision. All six false-failure branches entering that decision with a failing candidate inspected it and retained it. Both conditions had eight entries into failure across the trajectory. [Source-bound prefix audit](analysis/c5_budget_prefix_audit_20261124/audit.json)
+In 14 selected pairs, the counts of branches holding a failing candidate were **4/1, 8/6 and 5/7** after successive decisions, shown as truthful PASS / false FAIL. Three truthful branches recovered on the last decision. All six false-failure branches entering that decision with a failing candidate inspected it and retained it. Both conditions had eight entries into failure across the trajectory. From decision two to three the aggregate ranking reversed, yet the sole passing arm switched sides in 0/14 matched pairs. Three pairs gained a second passing branch and one lost a passing branch. [Paired transitions and family sensitivity](analysis/c5_horizon_sensitivity_20261128/comparison.md) · [Source-bound prefix audit](analysis/c5_budget_prefix_audit_20261124/audit.json)
 
 These are descriptive observations from one local model under persistent false feedback. Every branch knew the same three-decision limit. The second point on the graph is not an experiment with an announced two-decision budget. Later one-shot cohorts have separate denominators in the [manuscript](paper/c5/manuscript.md).
 
@@ -50,6 +62,7 @@ Independent review, actual preregistration and a compute budget remain outstandi
 ## Reproduce without models
 
 ```sh
+python3 -B -m paper.c5.verify_feedback
 python3 -B -m analysis.c5_public_trajectories
 python3 -B data/c5/check_release.py
 python3 -B -m analysis.c5_budget_prefix_audit_20261124 --output-directory analysis/c5_budget_prefix_audit_20261124 --check

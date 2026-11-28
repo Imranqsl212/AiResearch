@@ -1,0 +1,1662 @@
+{
+  "blocks": [
+    {
+      "calls": [
+        {
+          "arm": "required",
+          "id": "explicit_required_A",
+          "prompt_sha256": "2c194a4ce28c83652c876f048fc82313f9a90cba7288b36bb83a94a4d4fe6611",
+          "targets": [
+            "A"
+          ],
+          "wording": "explicit"
+        },
+        {
+          "arm": "actual",
+          "id": "hidden_actual_AB",
+          "prompt_sha256": "b2b766a043411ad8ec9f3ec99fb4847ae1f9ad1971f774e6f6f5fb360f54c924",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "wording": "hidden"
+        },
+        {
+          "arm": "none",
+          "id": "hidden_none_AB",
+          "prompt_sha256": "3cadac142dd44e29af35a5d3df14a088a1a06af49dede9e285caf06cdaca8413",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "wording": "hidden"
+        },
+        {
+          "arm": "actual",
+          "id": "explicit_actual_A",
+          "prompt_sha256": "5ad43019660d4efebb223dfbb5c006fb7a75e192726489e057e70fea85b57725",
+          "targets": [
+            "A"
+          ],
+          "wording": "explicit"
+        },
+        {
+          "arm": "required",
+          "id": "hidden_required_B",
+          "prompt_sha256": "c2abee8ed29aefd034c45e1077c4c75b44bc77a5bc3c12b7fd27a50a90abbd47",
+          "targets": [
+            "B"
+          ],
+          "wording": "hidden"
+        },
+        {
+          "arm": "both",
+          "id": "hidden_both_B",
+          "prompt_sha256": "719dd3c3483eaba820a4d9c53687de622592a8dd239af943f9408283dc895e47",
+          "targets": [
+            "B"
+          ],
+          "wording": "hidden"
+        },
+        {
+          "arm": "none",
+          "id": "explicit_none_B",
+          "prompt_sha256": "cfb07d81c19f0b890820b9445e5057da281b07e200ee5f6d63c2ba2534c6f1ae",
+          "targets": [
+            "B"
+          ],
+          "wording": "explicit"
+        },
+        {
+          "arm": "actual",
+          "id": "explicit_actual_B",
+          "prompt_sha256": "379798c72b2ae6a0d4b771bfd7ef2c2e88334c8b3959c1ba8344983c68274b9b",
+          "targets": [
+            "B"
+          ],
+          "wording": "explicit"
+        },
+        {
+          "arm": "both",
+          "id": "explicit_both_A",
+          "prompt_sha256": "a93bee6251657c21bc28e4a4c525884a80397bd4935ad19128c673936efe0726",
+          "targets": [
+            "A"
+          ],
+          "wording": "explicit"
+        },
+        {
+          "arm": "required",
+          "id": "explicit_required_B",
+          "prompt_sha256": "cd48842a0690556e573f5f04aba2ab350d1da9dea6399b3706a7c05489b66ca9",
+          "targets": [
+            "B"
+          ],
+          "wording": "explicit"
+        },
+        {
+          "arm": "both",
+          "id": "explicit_both_B",
+          "prompt_sha256": "01ba4de4f2d17a6183d45783f3519e2a34cf97dd2bf4d84a81cec49fa4e5dfa4",
+          "targets": [
+            "B"
+          ],
+          "wording": "explicit"
+        },
+        {
+          "arm": "both",
+          "id": "hidden_both_A",
+          "prompt_sha256": "78590e60d4560dd5a2ed021432fc7d8108ee78c52f1084d2c881f3d16bd4356f",
+          "targets": [
+            "A"
+          ],
+          "wording": "hidden"
+        },
+        {
+          "arm": "required",
+          "id": "hidden_required_A",
+          "prompt_sha256": "a04b25f7be6f89fff952849eae3e11f79b91b7479b0bd40801bc4517e3f25ec2",
+          "targets": [
+            "A"
+          ],
+          "wording": "hidden"
+        },
+        {
+          "arm": "none",
+          "id": "explicit_none_A",
+          "prompt_sha256": "8fa48383719b126aec66e3e3658d7a6b03714301ac2fc70d989e9fc859862fd3",
+          "targets": [
+            "A"
+          ],
+          "wording": "explicit"
+        }
+      ],
+      "id": "gpt-6.2-astra_round_A",
+      "model": "gpt-6.2-astra",
+      "start": "A",
+      "task": "round",
+      "wave": 1
+    },
+    {
+      "calls": [
+        {
+          "arm": "actual",
+          "id": "explicit_actual_B",
+          "prompt_sha256": "0b8178d0daff331c2acb5a172f552ca8de0abcc133857da9157df7ef2b7e0555",
+          "targets": [
+            "B"
+          ],
+          "wording": "explicit"
+        },
+        {
+          "arm": "none",
+          "id": "hidden_none_AB",
+          "prompt_sha256": "e22f8b16a04127cf65d7f7474f258b5d8936f1137b2bf5f863ab50229c024a25",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "wording": "hidden"
+        },
+        {
+          "arm": "required",
+          "id": "explicit_required_A",
+          "prompt_sha256": "f1c7b374c1a08012800c3407f506815507033c2ae1e7b5816704734c5590f61e",
+          "targets": [
+            "A"
+          ],
+          "wording": "explicit"
+        },
+        {
+          "arm": "both",
+          "id": "hidden_both_B",
+          "prompt_sha256": "ee1d4d21bc9aca566677f13089f5fba722fd33ae3315cc6cfe684ab584fb88f7",
+          "targets": [
+            "B"
+          ],
+          "wording": "hidden"
+        },
+        {
+          "arm": "actual",
+          "id": "explicit_actual_A",
+          "prompt_sha256": "b201013c4e9fca43e2bcdd9a28c04019a9ae50c1130b73f9d4b03e53ac6785d2",
+          "targets": [
+            "A"
+          ],
+          "wording": "explicit"
+        },
+        {
+          "arm": "both",
+          "id": "explicit_both_B",
+          "prompt_sha256": "6155d6dd27b273eeaa7b7df97641a7cd825463a40b306065bcd7e615a2b0410d",
+          "targets": [
+            "B"
+          ],
+          "wording": "explicit"
+        },
+        {
+          "arm": "required",
+          "id": "explicit_required_B",
+          "prompt_sha256": "dff76874b993b1ff2ae1f39f0ac823f01a5bd268101d60cd42e27d28543b8a76",
+          "targets": [
+            "B"
+          ],
+          "wording": "explicit"
+        },
+        {
+          "arm": "none",
+          "id": "explicit_none_A",
+          "prompt_sha256": "1e19016a3595a6963db6071ff3555a9d401727f0bb1ce8dda20e8a02e254ff1e",
+          "targets": [
+            "A"
+          ],
+          "wording": "explicit"
+        },
+        {
+          "arm": "required",
+          "id": "hidden_required_A",
+          "prompt_sha256": "40409569726e405c2e0840db1bb9ac6d0ace084e33d99d6f8913c24ff609aaa8",
+          "targets": [
+            "A"
+          ],
+          "wording": "hidden"
+        },
+        {
+          "arm": "required",
+          "id": "hidden_required_B",
+          "prompt_sha256": "7a06ad8a2de2ef970e7dbfd376cadfcc3e4cb7f2a2c384fcd53a88c6d30c6028",
+          "targets": [
+            "B"
+          ],
+          "wording": "hidden"
+        },
+        {
+          "arm": "none",
+          "id": "explicit_none_B",
+          "prompt_sha256": "0693ac3b6da5d9510319616b801a9c4e073ea0e55aaea2904875feb191324a99",
+          "targets": [
+            "B"
+          ],
+          "wording": "explicit"
+        },
+        {
+          "arm": "both",
+          "id": "hidden_both_A",
+          "prompt_sha256": "0d20aef241970c289f4166c249dd55963d147c0aab5e72fd832246eff2e5fea5",
+          "targets": [
+            "A"
+          ],
+          "wording": "hidden"
+        },
+        {
+          "arm": "both",
+          "id": "explicit_both_A",
+          "prompt_sha256": "6812598a12ed964026be1e12c813297de31a0868580328857dcf5ed9354ad616",
+          "targets": [
+            "A"
+          ],
+          "wording": "explicit"
+        },
+        {
+          "arm": "actual",
+          "id": "hidden_actual_AB",
+          "prompt_sha256": "24cf0a00d205cf14a1017d891e2a145df1a454b7a5a7182cc20912e04e70a461",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "wording": "hidden"
+        }
+      ],
+      "id": "gpt-6-luna_round_B",
+      "model": "gpt-6-luna",
+      "start": "B",
+      "task": "round",
+      "wave": 1
+    },
+    {
+      "calls": [
+        {
+          "arm": "required",
+          "id": "hidden_required_A",
+          "prompt_sha256": "e6cb56100e7201c6f42bbfa32e70ed9de4261bd1c7a31b07794e9a0ab502d0ea",
+          "targets": [
+            "A"
+          ],
+          "wording": "hidden"
+        },
+        {
+          "arm": "required",
+          "id": "explicit_required_B",
+          "prompt_sha256": "d6abd767eca78c0d368383a8c7d61f06ae03875f80a360b24be1b4c7a6a07953",
+          "targets": [
+            "B"
+          ],
+          "wording": "explicit"
+        },
+        {
+          "arm": "actual",
+          "id": "explicit_actual_B",
+          "prompt_sha256": "9602722ce36ae6465791485c78166e9307e25be917ad056cc0509d5b367ea58f",
+          "targets": [
+            "B"
+          ],
+          "wording": "explicit"
+        },
+        {
+          "arm": "actual",
+          "id": "hidden_actual_AB",
+          "prompt_sha256": "d1a1bf7e95a60aac467451f8fbcf4f1355210b82b9fe8f57e3a9291455fdf5d4",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "wording": "hidden"
+        },
+        {
+          "arm": "both",
+          "id": "explicit_both_B",
+          "prompt_sha256": "b1a8fe385cbf1092e58c3ae13c12fcba0d024493a01f172496a6fdc07c4d8105",
+          "targets": [
+            "B"
+          ],
+          "wording": "explicit"
+        },
+        {
+          "arm": "actual",
+          "id": "explicit_actual_A",
+          "prompt_sha256": "11b47ca24a2d70f150deb7190ecd0d68ce9362e5860a56cba22f68165ec328c3",
+          "targets": [
+            "A"
+          ],
+          "wording": "explicit"
+        },
+        {
+          "arm": "both",
+          "id": "hidden_both_B",
+          "prompt_sha256": "be2954c41e5defe0a03a67c554dc4a5eed099c0c72a736dd10a95976c4e14490",
+          "targets": [
+            "B"
+          ],
+          "wording": "hidden"
+        },
+        {
+          "arm": "none",
+          "id": "hidden_none_AB",
+          "prompt_sha256": "1878f99b59534aaeb8864754e46b969ac0b65bee3866722424ed3f90d72a98c0",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "wording": "hidden"
+        },
+        {
+          "arm": "none",
+          "id": "explicit_none_B",
+          "prompt_sha256": "003ed93583dc2713c5be2142358ea43b79f920a3bb3678e020216261f8b4ffb9",
+          "targets": [
+            "B"
+          ],
+          "wording": "explicit"
+        },
+        {
+          "arm": "both",
+          "id": "hidden_both_A",
+          "prompt_sha256": "723f95b65710997d5deffcbbca8356b826d89b837bf75986e324cf31ae927a86",
+          "targets": [
+            "A"
+          ],
+          "wording": "hidden"
+        },
+        {
+          "arm": "none",
+          "id": "explicit_none_A",
+          "prompt_sha256": "2ffff2b767d4308642f8229860438ea7117b4fd828bd9538f61ee0e930ceaefc",
+          "targets": [
+            "A"
+          ],
+          "wording": "explicit"
+        },
+        {
+          "arm": "required",
+          "id": "explicit_required_A",
+          "prompt_sha256": "3863ba9bcdd234d4f536bf5d9b60651af075240979b8c4e5e9d8c932e3003870",
+          "targets": [
+            "A"
+          ],
+          "wording": "explicit"
+        },
+        {
+          "arm": "required",
+          "id": "hidden_required_B",
+          "prompt_sha256": "a64c293b2a0fabe6ed3247407a7d8827a1d7c8bdf530506150b415509d6f6b07",
+          "targets": [
+            "B"
+          ],
+          "wording": "hidden"
+        },
+        {
+          "arm": "both",
+          "id": "explicit_both_A",
+          "prompt_sha256": "e97793b0180668bb41cc4991842b3d3e33c18647ce3efb0d32fb9041dbe710b5",
+          "targets": [
+            "A"
+          ],
+          "wording": "explicit"
+        }
+      ],
+      "id": "gpt-6-luna_sort_B",
+      "model": "gpt-6-luna",
+      "start": "B",
+      "task": "sort",
+      "wave": 1
+    },
+    {
+      "calls": [
+        {
+          "arm": "required",
+          "id": "hidden_required_A",
+          "prompt_sha256": "d841d5c813e4cceef5c67bc2a2f2fd866615a0482a992a21c6e55d39063ebcd5",
+          "targets": [
+            "A"
+          ],
+          "wording": "hidden"
+        },
+        {
+          "arm": "none",
+          "id": "explicit_none_B",
+          "prompt_sha256": "7be7850b4d6126c4bfddf9a303a63d2824f45fdd2a7eb9f658f311ce44076b53",
+          "targets": [
+            "B"
+          ],
+          "wording": "explicit"
+        },
+        {
+          "arm": "actual",
+          "id": "explicit_actual_A",
+          "prompt_sha256": "f2ac7ecc4d98c43d4b21848e4062ca26aefeebd58b7af247e58ec0d32350250f",
+          "targets": [
+            "A"
+          ],
+          "wording": "explicit"
+        },
+        {
+          "arm": "both",
+          "id": "explicit_both_B",
+          "prompt_sha256": "9c79330a2d6f18cffb2a3a69f0212f3c206a721c5cf9a7e8f4b200a4d4dbc06b",
+          "targets": [
+            "B"
+          ],
+          "wording": "explicit"
+        },
+        {
+          "arm": "none",
+          "id": "hidden_none_AB",
+          "prompt_sha256": "2e58850ffe00b63160c05ff2b8e519d02047eccadc8a9c62e5c4606e9e58c737",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "wording": "hidden"
+        },
+        {
+          "arm": "both",
+          "id": "hidden_both_A",
+          "prompt_sha256": "e83480064fe57da198fc939a19c4824182b2c8b8e055d5b38b64ca481641e987",
+          "targets": [
+            "A"
+          ],
+          "wording": "hidden"
+        },
+        {
+          "arm": "both",
+          "id": "explicit_both_A",
+          "prompt_sha256": "bedc361ca942e12bce83c51e46a41aefd12dcde8b96b9a0a78c01bdda971c8e8",
+          "targets": [
+            "A"
+          ],
+          "wording": "explicit"
+        },
+        {
+          "arm": "required",
+          "id": "explicit_required_A",
+          "prompt_sha256": "d759c05d2c1a468324d37b8a80f591fd3dfa31ed3e754419e118a857f084cf78",
+          "targets": [
+            "A"
+          ],
+          "wording": "explicit"
+        },
+        {
+          "arm": "actual",
+          "id": "hidden_actual_AB",
+          "prompt_sha256": "3776bbc00a15ce1215594a89c6b940751964213599a2f9f67a61b1bb676c57f3",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "wording": "hidden"
+        },
+        {
+          "arm": "actual",
+          "id": "explicit_actual_B",
+          "prompt_sha256": "41c29216ae48571026afa6557fcd26065943a6bbded5c357ab4c8c1462e29b81",
+          "targets": [
+            "B"
+          ],
+          "wording": "explicit"
+        },
+        {
+          "arm": "required",
+          "id": "explicit_required_B",
+          "prompt_sha256": "6805a0124901fd0919096354fec69c6fdec0f4cc0d927b8e4f175ed67b02f6a3",
+          "targets": [
+            "B"
+          ],
+          "wording": "explicit"
+        },
+        {
+          "arm": "none",
+          "id": "explicit_none_A",
+          "prompt_sha256": "7c92e79a921d023520791c6767130bc9c57df6b2d08236d3da022803007ab917",
+          "targets": [
+            "A"
+          ],
+          "wording": "explicit"
+        },
+        {
+          "arm": "both",
+          "id": "hidden_both_B",
+          "prompt_sha256": "59a6d5d6b7876725564b10553722edc7f2d9751a5bf7a60e62992d8a9bd2793a",
+          "targets": [
+            "B"
+          ],
+          "wording": "hidden"
+        },
+        {
+          "arm": "required",
+          "id": "hidden_required_B",
+          "prompt_sha256": "28631705c2d51a066a8b36da99a98770c1fba1501e6fd35cb5d3f95ed0feb395",
+          "targets": [
+            "B"
+          ],
+          "wording": "hidden"
+        }
+      ],
+      "id": "gpt-6.2-astra_sort_A",
+      "model": "gpt-6.2-astra",
+      "start": "A",
+      "task": "sort",
+      "wave": 1
+    },
+    {
+      "calls": [
+        {
+          "arm": "none",
+          "id": "explicit_none_A",
+          "prompt_sha256": "04c19b131bfa2b8d1a1907afb6eeda1005d103be9607bb9f8b1523cea127a8cb",
+          "targets": [
+            "A"
+          ],
+          "wording": "explicit"
+        },
+        {
+          "arm": "both",
+          "id": "explicit_both_A",
+          "prompt_sha256": "afe42adb83b826a8fc6cd911531e085daa19094b803544c990ecd8f3393f1ca1",
+          "targets": [
+            "A"
+          ],
+          "wording": "explicit"
+        },
+        {
+          "arm": "actual",
+          "id": "explicit_actual_A",
+          "prompt_sha256": "8e5c64abaa0faa7670702b3b8d555813db58dce0dca550e2a69148b439c79763",
+          "targets": [
+            "A"
+          ],
+          "wording": "explicit"
+        },
+        {
+          "arm": "both",
+          "id": "explicit_both_B",
+          "prompt_sha256": "1a5c868bee860741d2ec9778b91260517c45a013838d4b7b1f73fe5c495c651f",
+          "targets": [
+            "B"
+          ],
+          "wording": "explicit"
+        },
+        {
+          "arm": "both",
+          "id": "hidden_both_A",
+          "prompt_sha256": "31cf27d6fb00a58dbdbe3cfb06a00212f835fed2c4a1612e42f3534bdd7a4316",
+          "targets": [
+            "A"
+          ],
+          "wording": "hidden"
+        },
+        {
+          "arm": "none",
+          "id": "explicit_none_B",
+          "prompt_sha256": "3d1808a0e4fa59561f8666d745086a67bb6ad9f98a00f209809c5e54ceb43ced",
+          "targets": [
+            "B"
+          ],
+          "wording": "explicit"
+        },
+        {
+          "arm": "actual",
+          "id": "hidden_actual_AB",
+          "prompt_sha256": "f4c0fb844c2a50eb77428b3c0984627856aca80da398e70eecbe0d174309281b",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "wording": "hidden"
+        },
+        {
+          "arm": "required",
+          "id": "hidden_required_B",
+          "prompt_sha256": "30ac14550e0826ec276f32dbd3d8fe6e451cc8aacfede663f955a694e682034e",
+          "targets": [
+            "B"
+          ],
+          "wording": "hidden"
+        },
+        {
+          "arm": "none",
+          "id": "hidden_none_AB",
+          "prompt_sha256": "83910105222a23bfff2656894565f25c9b50ade181bb0dbbf2603e836507c779",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "wording": "hidden"
+        },
+        {
+          "arm": "required",
+          "id": "explicit_required_A",
+          "prompt_sha256": "2902eebc61085277fefd6b76f4cad91309056ba9ed1c87b6bb8eb4d4ea01a9a2",
+          "targets": [
+            "A"
+          ],
+          "wording": "explicit"
+        },
+        {
+          "arm": "actual",
+          "id": "explicit_actual_B",
+          "prompt_sha256": "d0049336d885de8f7c07d359827a783b13c880f2de32288645997b051476b4c3",
+          "targets": [
+            "B"
+          ],
+          "wording": "explicit"
+        },
+        {
+          "arm": "required",
+          "id": "hidden_required_A",
+          "prompt_sha256": "d3af3332e83960a993055a1120636a0fba790234175c0c503b5225dc63ab7300",
+          "targets": [
+            "A"
+          ],
+          "wording": "hidden"
+        },
+        {
+          "arm": "both",
+          "id": "hidden_both_B",
+          "prompt_sha256": "414f181c64dee6784ef1127d10b0c163ab7747ebc3ddcb3e9ac728033c046b30",
+          "targets": [
+            "B"
+          ],
+          "wording": "hidden"
+        },
+        {
+          "arm": "required",
+          "id": "explicit_required_B",
+          "prompt_sha256": "7caf095c88a331d3458498caa03718f58a01e251e8d536623fe74cf26861628a",
+          "targets": [
+            "B"
+          ],
+          "wording": "explicit"
+        }
+      ],
+      "id": "gpt-6-luna_argmax_A",
+      "model": "gpt-6-luna",
+      "start": "A",
+      "task": "argmax",
+      "wave": 1
+    },
+    {
+      "calls": [
+        {
+          "arm": "actual",
+          "id": "hidden_actual_AB",
+          "prompt_sha256": "7eafbb139ebd645242814fec3007b5ae4041f181318b1c316c1f94ca8a664139",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "wording": "hidden"
+        },
+        {
+          "arm": "none",
+          "id": "explicit_none_B",
+          "prompt_sha256": "ba7d9baad84e0cc3e7e904de5a4eb8b09a40e6a365cb564fd6ed76049a4fff58",
+          "targets": [
+            "B"
+          ],
+          "wording": "explicit"
+        },
+        {
+          "arm": "both",
+          "id": "explicit_both_B",
+          "prompt_sha256": "cea7e37d05bb27021d35f2047d831f0bf7d346e32f8480a44d3022f31914a365",
+          "targets": [
+            "B"
+          ],
+          "wording": "explicit"
+        },
+        {
+          "arm": "both",
+          "id": "hidden_both_A",
+          "prompt_sha256": "8f111b341744f7a15d1ceabc49594429780d3c11b1a486bc40cbdb354b9e0db3",
+          "targets": [
+            "A"
+          ],
+          "wording": "hidden"
+        },
+        {
+          "arm": "both",
+          "id": "explicit_both_A",
+          "prompt_sha256": "375fa3b8000dc2ea4484f111e691a579bc5b56c0d433cecdc61dab0632c61d79",
+          "targets": [
+            "A"
+          ],
+          "wording": "explicit"
+        },
+        {
+          "arm": "required",
+          "id": "explicit_required_B",
+          "prompt_sha256": "6f8602e74888e64d647cd132e968594c3a7a227707c463ba0bd817f873b770d0",
+          "targets": [
+            "B"
+          ],
+          "wording": "explicit"
+        },
+        {
+          "arm": "both",
+          "id": "hidden_both_B",
+          "prompt_sha256": "df7602c0af3c05bd8f5ae85f6c79a78bca9033b76e005f6066ad9413ed1a73a9",
+          "targets": [
+            "B"
+          ],
+          "wording": "hidden"
+        },
+        {
+          "arm": "none",
+          "id": "hidden_none_AB",
+          "prompt_sha256": "409f1255752177dafa9525af0f7f0fe90b747bbe20a16afa3015139abac5bf69",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "wording": "hidden"
+        },
+        {
+          "arm": "required",
+          "id": "hidden_required_A",
+          "prompt_sha256": "490cf9766af9d27426be0411d03ad82c02a9f08e6e762d1dce265bb47efb72dc",
+          "targets": [
+            "A"
+          ],
+          "wording": "hidden"
+        },
+        {
+          "arm": "actual",
+          "id": "explicit_actual_B",
+          "prompt_sha256": "e421ab45291c63fba6a6a82b7ea626d9d5b9eb2f63995dceca25785caf6ed21e",
+          "targets": [
+            "B"
+          ],
+          "wording": "explicit"
+        },
+        {
+          "arm": "required",
+          "id": "hidden_required_B",
+          "prompt_sha256": "f0236a1e2753e30d39d13c48f9eb8ff1a02984425fdab63747f6e9d3875dc9c2",
+          "targets": [
+            "B"
+          ],
+          "wording": "hidden"
+        },
+        {
+          "arm": "required",
+          "id": "explicit_required_A",
+          "prompt_sha256": "6eb1b5fb9b49e2db2f7313ddf92103621e773ce40b80ce3c8d39e5cfbdbe5218",
+          "targets": [
+            "A"
+          ],
+          "wording": "explicit"
+        },
+        {
+          "arm": "actual",
+          "id": "explicit_actual_A",
+          "prompt_sha256": "2b6f90e7c3d42e4c8ec04cfa9f281bc40528c00e9e777cca74a25bb70319a1e7",
+          "targets": [
+            "A"
+          ],
+          "wording": "explicit"
+        },
+        {
+          "arm": "none",
+          "id": "explicit_none_A",
+          "prompt_sha256": "f9f90440752008a7be16dbb3f953127e7fe5b1db184e400f8d76fbce0be4f1c4",
+          "targets": [
+            "A"
+          ],
+          "wording": "explicit"
+        }
+      ],
+      "id": "gpt-6.2-astra_argmax_B",
+      "model": "gpt-6.2-astra",
+      "start": "B",
+      "task": "argmax",
+      "wave": 1
+    },
+    {
+      "calls": [
+        {
+          "arm": "required",
+          "id": "hidden_required_B",
+          "prompt_sha256": "a64c293b2a0fabe6ed3247407a7d8827a1d7c8bdf530506150b415509d6f6b07",
+          "targets": [
+            "B"
+          ],
+          "wording": "hidden"
+        },
+        {
+          "arm": "required",
+          "id": "explicit_required_A",
+          "prompt_sha256": "3863ba9bcdd234d4f536bf5d9b60651af075240979b8c4e5e9d8c932e3003870",
+          "targets": [
+            "A"
+          ],
+          "wording": "explicit"
+        },
+        {
+          "arm": "actual",
+          "id": "explicit_actual_A",
+          "prompt_sha256": "11b47ca24a2d70f150deb7190ecd0d68ce9362e5860a56cba22f68165ec328c3",
+          "targets": [
+            "A"
+          ],
+          "wording": "explicit"
+        },
+        {
+          "arm": "required",
+          "id": "hidden_required_A",
+          "prompt_sha256": "e6cb56100e7201c6f42bbfa32e70ed9de4261bd1c7a31b07794e9a0ab502d0ea",
+          "targets": [
+            "A"
+          ],
+          "wording": "hidden"
+        },
+        {
+          "arm": "actual",
+          "id": "explicit_actual_B",
+          "prompt_sha256": "9602722ce36ae6465791485c78166e9307e25be917ad056cc0509d5b367ea58f",
+          "targets": [
+            "B"
+          ],
+          "wording": "explicit"
+        },
+        {
+          "arm": "required",
+          "id": "explicit_required_B",
+          "prompt_sha256": "d6abd767eca78c0d368383a8c7d61f06ae03875f80a360b24be1b4c7a6a07953",
+          "targets": [
+            "B"
+          ],
+          "wording": "explicit"
+        },
+        {
+          "arm": "none",
+          "id": "hidden_none_AB",
+          "prompt_sha256": "1878f99b59534aaeb8864754e46b969ac0b65bee3866722424ed3f90d72a98c0",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "wording": "hidden"
+        },
+        {
+          "arm": "none",
+          "id": "explicit_none_A",
+          "prompt_sha256": "2ffff2b767d4308642f8229860438ea7117b4fd828bd9538f61ee0e930ceaefc",
+          "targets": [
+            "A"
+          ],
+          "wording": "explicit"
+        },
+        {
+          "arm": "both",
+          "id": "explicit_both_A",
+          "prompt_sha256": "e97793b0180668bb41cc4991842b3d3e33c18647ce3efb0d32fb9041dbe710b5",
+          "targets": [
+            "A"
+          ],
+          "wording": "explicit"
+        },
+        {
+          "arm": "both",
+          "id": "explicit_both_B",
+          "prompt_sha256": "b1a8fe385cbf1092e58c3ae13c12fcba0d024493a01f172496a6fdc07c4d8105",
+          "targets": [
+            "B"
+          ],
+          "wording": "explicit"
+        },
+        {
+          "arm": "both",
+          "id": "hidden_both_A",
+          "prompt_sha256": "723f95b65710997d5deffcbbca8356b826d89b837bf75986e324cf31ae927a86",
+          "targets": [
+            "A"
+          ],
+          "wording": "hidden"
+        },
+        {
+          "arm": "actual",
+          "id": "hidden_actual_AB",
+          "prompt_sha256": "d1a1bf7e95a60aac467451f8fbcf4f1355210b82b9fe8f57e3a9291455fdf5d4",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "wording": "hidden"
+        },
+        {
+          "arm": "none",
+          "id": "explicit_none_B",
+          "prompt_sha256": "003ed93583dc2713c5be2142358ea43b79f920a3bb3678e020216261f8b4ffb9",
+          "targets": [
+            "B"
+          ],
+          "wording": "explicit"
+        },
+        {
+          "arm": "both",
+          "id": "hidden_both_B",
+          "prompt_sha256": "be2954c41e5defe0a03a67c554dc4a5eed099c0c72a736dd10a95976c4e14490",
+          "targets": [
+            "B"
+          ],
+          "wording": "hidden"
+        }
+      ],
+      "id": "gpt-6.2-astra_sort_B",
+      "model": "gpt-6.2-astra",
+      "start": "B",
+      "task": "sort",
+      "wave": 2
+    },
+    {
+      "calls": [
+        {
+          "arm": "both",
+          "id": "hidden_both_B",
+          "prompt_sha256": "59a6d5d6b7876725564b10553722edc7f2d9751a5bf7a60e62992d8a9bd2793a",
+          "targets": [
+            "B"
+          ],
+          "wording": "hidden"
+        },
+        {
+          "arm": "both",
+          "id": "explicit_both_B",
+          "prompt_sha256": "9c79330a2d6f18cffb2a3a69f0212f3c206a721c5cf9a7e8f4b200a4d4dbc06b",
+          "targets": [
+            "B"
+          ],
+          "wording": "explicit"
+        },
+        {
+          "arm": "none",
+          "id": "explicit_none_A",
+          "prompt_sha256": "7c92e79a921d023520791c6767130bc9c57df6b2d08236d3da022803007ab917",
+          "targets": [
+            "A"
+          ],
+          "wording": "explicit"
+        },
+        {
+          "arm": "required",
+          "id": "hidden_required_A",
+          "prompt_sha256": "d841d5c813e4cceef5c67bc2a2f2fd866615a0482a992a21c6e55d39063ebcd5",
+          "targets": [
+            "A"
+          ],
+          "wording": "hidden"
+        },
+        {
+          "arm": "actual",
+          "id": "explicit_actual_A",
+          "prompt_sha256": "f2ac7ecc4d98c43d4b21848e4062ca26aefeebd58b7af247e58ec0d32350250f",
+          "targets": [
+            "A"
+          ],
+          "wording": "explicit"
+        },
+        {
+          "arm": "actual",
+          "id": "hidden_actual_AB",
+          "prompt_sha256": "3776bbc00a15ce1215594a89c6b940751964213599a2f9f67a61b1bb676c57f3",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "wording": "hidden"
+        },
+        {
+          "arm": "required",
+          "id": "explicit_required_A",
+          "prompt_sha256": "d759c05d2c1a468324d37b8a80f591fd3dfa31ed3e754419e118a857f084cf78",
+          "targets": [
+            "A"
+          ],
+          "wording": "explicit"
+        },
+        {
+          "arm": "none",
+          "id": "explicit_none_B",
+          "prompt_sha256": "7be7850b4d6126c4bfddf9a303a63d2824f45fdd2a7eb9f658f311ce44076b53",
+          "targets": [
+            "B"
+          ],
+          "wording": "explicit"
+        },
+        {
+          "arm": "both",
+          "id": "hidden_both_A",
+          "prompt_sha256": "e83480064fe57da198fc939a19c4824182b2c8b8e055d5b38b64ca481641e987",
+          "targets": [
+            "A"
+          ],
+          "wording": "hidden"
+        },
+        {
+          "arm": "both",
+          "id": "explicit_both_A",
+          "prompt_sha256": "bedc361ca942e12bce83c51e46a41aefd12dcde8b96b9a0a78c01bdda971c8e8",
+          "targets": [
+            "A"
+          ],
+          "wording": "explicit"
+        },
+        {
+          "arm": "actual",
+          "id": "explicit_actual_B",
+          "prompt_sha256": "41c29216ae48571026afa6557fcd26065943a6bbded5c357ab4c8c1462e29b81",
+          "targets": [
+            "B"
+          ],
+          "wording": "explicit"
+        },
+        {
+          "arm": "none",
+          "id": "hidden_none_AB",
+          "prompt_sha256": "2e58850ffe00b63160c05ff2b8e519d02047eccadc8a9c62e5c4606e9e58c737",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "wording": "hidden"
+        },
+        {
+          "arm": "required",
+          "id": "explicit_required_B",
+          "prompt_sha256": "6805a0124901fd0919096354fec69c6fdec0f4cc0d927b8e4f175ed67b02f6a3",
+          "targets": [
+            "B"
+          ],
+          "wording": "explicit"
+        },
+        {
+          "arm": "required",
+          "id": "hidden_required_B",
+          "prompt_sha256": "28631705c2d51a066a8b36da99a98770c1fba1501e6fd35cb5d3f95ed0feb395",
+          "targets": [
+            "B"
+          ],
+          "wording": "hidden"
+        }
+      ],
+      "id": "gpt-6-luna_sort_A",
+      "model": "gpt-6-luna",
+      "start": "A",
+      "task": "sort",
+      "wave": 2
+    },
+    {
+      "calls": [
+        {
+          "arm": "required",
+          "id": "hidden_required_B",
+          "prompt_sha256": "c2abee8ed29aefd034c45e1077c4c75b44bc77a5bc3c12b7fd27a50a90abbd47",
+          "targets": [
+            "B"
+          ],
+          "wording": "hidden"
+        },
+        {
+          "arm": "required",
+          "id": "explicit_required_B",
+          "prompt_sha256": "cd48842a0690556e573f5f04aba2ab350d1da9dea6399b3706a7c05489b66ca9",
+          "targets": [
+            "B"
+          ],
+          "wording": "explicit"
+        },
+        {
+          "arm": "actual",
+          "id": "explicit_actual_A",
+          "prompt_sha256": "5ad43019660d4efebb223dfbb5c006fb7a75e192726489e057e70fea85b57725",
+          "targets": [
+            "A"
+          ],
+          "wording": "explicit"
+        },
+        {
+          "arm": "both",
+          "id": "explicit_both_B",
+          "prompt_sha256": "01ba4de4f2d17a6183d45783f3519e2a34cf97dd2bf4d84a81cec49fa4e5dfa4",
+          "targets": [
+            "B"
+          ],
+          "wording": "explicit"
+        },
+        {
+          "arm": "actual",
+          "id": "explicit_actual_B",
+          "prompt_sha256": "379798c72b2ae6a0d4b771bfd7ef2c2e88334c8b3959c1ba8344983c68274b9b",
+          "targets": [
+            "B"
+          ],
+          "wording": "explicit"
+        },
+        {
+          "arm": "required",
+          "id": "explicit_required_A",
+          "prompt_sha256": "2c194a4ce28c83652c876f048fc82313f9a90cba7288b36bb83a94a4d4fe6611",
+          "targets": [
+            "A"
+          ],
+          "wording": "explicit"
+        },
+        {
+          "arm": "none",
+          "id": "hidden_none_AB",
+          "prompt_sha256": "3cadac142dd44e29af35a5d3df14a088a1a06af49dede9e285caf06cdaca8413",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "wording": "hidden"
+        },
+        {
+          "arm": "none",
+          "id": "explicit_none_A",
+          "prompt_sha256": "8fa48383719b126aec66e3e3658d7a6b03714301ac2fc70d989e9fc859862fd3",
+          "targets": [
+            "A"
+          ],
+          "wording": "explicit"
+        },
+        {
+          "arm": "both",
+          "id": "hidden_both_A",
+          "prompt_sha256": "78590e60d4560dd5a2ed021432fc7d8108ee78c52f1084d2c881f3d16bd4356f",
+          "targets": [
+            "A"
+          ],
+          "wording": "hidden"
+        },
+        {
+          "arm": "both",
+          "id": "hidden_both_B",
+          "prompt_sha256": "719dd3c3483eaba820a4d9c53687de622592a8dd239af943f9408283dc895e47",
+          "targets": [
+            "B"
+          ],
+          "wording": "hidden"
+        },
+        {
+          "arm": "none",
+          "id": "explicit_none_B",
+          "prompt_sha256": "cfb07d81c19f0b890820b9445e5057da281b07e200ee5f6d63c2ba2534c6f1ae",
+          "targets": [
+            "B"
+          ],
+          "wording": "explicit"
+        },
+        {
+          "arm": "required",
+          "id": "hidden_required_A",
+          "prompt_sha256": "a04b25f7be6f89fff952849eae3e11f79b91b7479b0bd40801bc4517e3f25ec2",
+          "targets": [
+            "A"
+          ],
+          "wording": "hidden"
+        },
+        {
+          "arm": "both",
+          "id": "explicit_both_A",
+          "prompt_sha256": "a93bee6251657c21bc28e4a4c525884a80397bd4935ad19128c673936efe0726",
+          "targets": [
+            "A"
+          ],
+          "wording": "explicit"
+        },
+        {
+          "arm": "actual",
+          "id": "hidden_actual_AB",
+          "prompt_sha256": "b2b766a043411ad8ec9f3ec99fb4847ae1f9ad1971f774e6f6f5fb360f54c924",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "wording": "hidden"
+        }
+      ],
+      "id": "gpt-6-luna_round_A",
+      "model": "gpt-6-luna",
+      "start": "A",
+      "task": "round",
+      "wave": 2
+    },
+    {
+      "calls": [
+        {
+          "arm": "none",
+          "id": "explicit_none_A",
+          "prompt_sha256": "1e19016a3595a6963db6071ff3555a9d401727f0bb1ce8dda20e8a02e254ff1e",
+          "targets": [
+            "A"
+          ],
+          "wording": "explicit"
+        },
+        {
+          "arm": "required",
+          "id": "explicit_required_A",
+          "prompt_sha256": "f1c7b374c1a08012800c3407f506815507033c2ae1e7b5816704734c5590f61e",
+          "targets": [
+            "A"
+          ],
+          "wording": "explicit"
+        },
+        {
+          "arm": "both",
+          "id": "hidden_both_A",
+          "prompt_sha256": "0d20aef241970c289f4166c249dd55963d147c0aab5e72fd832246eff2e5fea5",
+          "targets": [
+            "A"
+          ],
+          "wording": "hidden"
+        },
+        {
+          "arm": "none",
+          "id": "hidden_none_AB",
+          "prompt_sha256": "e22f8b16a04127cf65d7f7474f258b5d8936f1137b2bf5f863ab50229c024a25",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "wording": "hidden"
+        },
+        {
+          "arm": "actual",
+          "id": "explicit_actual_A",
+          "prompt_sha256": "b201013c4e9fca43e2bcdd9a28c04019a9ae50c1130b73f9d4b03e53ac6785d2",
+          "targets": [
+            "A"
+          ],
+          "wording": "explicit"
+        },
+        {
+          "arm": "none",
+          "id": "explicit_none_B",
+          "prompt_sha256": "0693ac3b6da5d9510319616b801a9c4e073ea0e55aaea2904875feb191324a99",
+          "targets": [
+            "B"
+          ],
+          "wording": "explicit"
+        },
+        {
+          "arm": "required",
+          "id": "hidden_required_A",
+          "prompt_sha256": "40409569726e405c2e0840db1bb9ac6d0ace084e33d99d6f8913c24ff609aaa8",
+          "targets": [
+            "A"
+          ],
+          "wording": "hidden"
+        },
+        {
+          "arm": "required",
+          "id": "explicit_required_B",
+          "prompt_sha256": "dff76874b993b1ff2ae1f39f0ac823f01a5bd268101d60cd42e27d28543b8a76",
+          "targets": [
+            "B"
+          ],
+          "wording": "explicit"
+        },
+        {
+          "arm": "required",
+          "id": "hidden_required_B",
+          "prompt_sha256": "7a06ad8a2de2ef970e7dbfd376cadfcc3e4cb7f2a2c384fcd53a88c6d30c6028",
+          "targets": [
+            "B"
+          ],
+          "wording": "hidden"
+        },
+        {
+          "arm": "both",
+          "id": "hidden_both_B",
+          "prompt_sha256": "ee1d4d21bc9aca566677f13089f5fba722fd33ae3315cc6cfe684ab584fb88f7",
+          "targets": [
+            "B"
+          ],
+          "wording": "hidden"
+        },
+        {
+          "arm": "actual",
+          "id": "hidden_actual_AB",
+          "prompt_sha256": "24cf0a00d205cf14a1017d891e2a145df1a454b7a5a7182cc20912e04e70a461",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "wording": "hidden"
+        },
+        {
+          "arm": "actual",
+          "id": "explicit_actual_B",
+          "prompt_sha256": "0b8178d0daff331c2acb5a172f552ca8de0abcc133857da9157df7ef2b7e0555",
+          "targets": [
+            "B"
+          ],
+          "wording": "explicit"
+        },
+        {
+          "arm": "both",
+          "id": "explicit_both_B",
+          "prompt_sha256": "6155d6dd27b273eeaa7b7df97641a7cd825463a40b306065bcd7e615a2b0410d",
+          "targets": [
+            "B"
+          ],
+          "wording": "explicit"
+        },
+        {
+          "arm": "both",
+          "id": "explicit_both_A",
+          "prompt_sha256": "6812598a12ed964026be1e12c813297de31a0868580328857dcf5ed9354ad616",
+          "targets": [
+            "A"
+          ],
+          "wording": "explicit"
+        }
+      ],
+      "id": "gpt-6.2-astra_round_B",
+      "model": "gpt-6.2-astra",
+      "start": "B",
+      "task": "round",
+      "wave": 2
+    },
+    {
+      "calls": [
+        {
+          "arm": "both",
+          "id": "hidden_both_B",
+          "prompt_sha256": "df7602c0af3c05bd8f5ae85f6c79a78bca9033b76e005f6066ad9413ed1a73a9",
+          "targets": [
+            "B"
+          ],
+          "wording": "hidden"
+        },
+        {
+          "arm": "required",
+          "id": "hidden_required_A",
+          "prompt_sha256": "490cf9766af9d27426be0411d03ad82c02a9f08e6e762d1dce265bb47efb72dc",
+          "targets": [
+            "A"
+          ],
+          "wording": "hidden"
+        },
+        {
+          "arm": "none",
+          "id": "hidden_none_AB",
+          "prompt_sha256": "409f1255752177dafa9525af0f7f0fe90b747bbe20a16afa3015139abac5bf69",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "wording": "hidden"
+        },
+        {
+          "arm": "both",
+          "id": "hidden_both_A",
+          "prompt_sha256": "8f111b341744f7a15d1ceabc49594429780d3c11b1a486bc40cbdb354b9e0db3",
+          "targets": [
+            "A"
+          ],
+          "wording": "hidden"
+        },
+        {
+          "arm": "none",
+          "id": "explicit_none_A",
+          "prompt_sha256": "f9f90440752008a7be16dbb3f953127e7fe5b1db184e400f8d76fbce0be4f1c4",
+          "targets": [
+            "A"
+          ],
+          "wording": "explicit"
+        },
+        {
+          "arm": "actual",
+          "id": "explicit_actual_A",
+          "prompt_sha256": "2b6f90e7c3d42e4c8ec04cfa9f281bc40528c00e9e777cca74a25bb70319a1e7",
+          "targets": [
+            "A"
+          ],
+          "wording": "explicit"
+        },
+        {
+          "arm": "required",
+          "id": "explicit_required_B",
+          "prompt_sha256": "6f8602e74888e64d647cd132e968594c3a7a227707c463ba0bd817f873b770d0",
+          "targets": [
+            "B"
+          ],
+          "wording": "explicit"
+        },
+        {
+          "arm": "both",
+          "id": "explicit_both_B",
+          "prompt_sha256": "cea7e37d05bb27021d35f2047d831f0bf7d346e32f8480a44d3022f31914a365",
+          "targets": [
+            "B"
+          ],
+          "wording": "explicit"
+        },
+        {
+          "arm": "actual",
+          "id": "explicit_actual_B",
+          "prompt_sha256": "e421ab45291c63fba6a6a82b7ea626d9d5b9eb2f63995dceca25785caf6ed21e",
+          "targets": [
+            "B"
+          ],
+          "wording": "explicit"
+        },
+        {
+          "arm": "required",
+          "id": "explicit_required_A",
+          "prompt_sha256": "6eb1b5fb9b49e2db2f7313ddf92103621e773ce40b80ce3c8d39e5cfbdbe5218",
+          "targets": [
+            "A"
+          ],
+          "wording": "explicit"
+        },
+        {
+          "arm": "actual",
+          "id": "hidden_actual_AB",
+          "prompt_sha256": "7eafbb139ebd645242814fec3007b5ae4041f181318b1c316c1f94ca8a664139",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "wording": "hidden"
+        },
+        {
+          "arm": "none",
+          "id": "explicit_none_B",
+          "prompt_sha256": "ba7d9baad84e0cc3e7e904de5a4eb8b09a40e6a365cb564fd6ed76049a4fff58",
+          "targets": [
+            "B"
+          ],
+          "wording": "explicit"
+        },
+        {
+          "arm": "both",
+          "id": "explicit_both_A",
+          "prompt_sha256": "375fa3b8000dc2ea4484f111e691a579bc5b56c0d433cecdc61dab0632c61d79",
+          "targets": [
+            "A"
+          ],
+          "wording": "explicit"
+        },
+        {
+          "arm": "required",
+          "id": "hidden_required_B",
+          "prompt_sha256": "f0236a1e2753e30d39d13c48f9eb8ff1a02984425fdab63747f6e9d3875dc9c2",
+          "targets": [
+            "B"
+          ],
+          "wording": "hidden"
+        }
+      ],
+      "id": "gpt-6-luna_argmax_B",
+      "model": "gpt-6-luna",
+      "start": "B",
+      "task": "argmax",
+      "wave": 2
+    },
+    {
+      "calls": [
+        {
+          "arm": "none",
+          "id": "hidden_none_AB",
+          "prompt_sha256": "83910105222a23bfff2656894565f25c9b50ade181bb0dbbf2603e836507c779",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "wording": "hidden"
+        },
+        {
+          "arm": "actual",
+          "id": "hidden_actual_AB",
+          "prompt_sha256": "f4c0fb844c2a50eb77428b3c0984627856aca80da398e70eecbe0d174309281b",
+          "targets": [
+            "A",
+            "B"
+          ],
+          "wording": "hidden"
+        },
+        {
+          "arm": "both",
+          "id": "hidden_both_B",
+          "prompt_sha256": "414f181c64dee6784ef1127d10b0c163ab7747ebc3ddcb3e9ac728033c046b30",
+          "targets": [
+            "B"
+          ],
+          "wording": "hidden"
+        },
+        {
+          "arm": "none",
+          "id": "explicit_none_B",
+          "prompt_sha256": "3d1808a0e4fa59561f8666d745086a67bb6ad9f98a00f209809c5e54ceb43ced",
+          "targets": [
+            "B"
+          ],
+          "wording": "explicit"
+        },
+        {
+          "arm": "required",
+          "id": "explicit_required_A",
+          "prompt_sha256": "2902eebc61085277fefd6b76f4cad91309056ba9ed1c87b6bb8eb4d4ea01a9a2",
+          "targets": [
+            "A"
+          ],
+          "wording": "explicit"
+        },
+        {
+          "arm": "actual",
+          "id": "explicit_actual_A",
+          "prompt_sha256": "8e5c64abaa0faa7670702b3b8d555813db58dce0dca550e2a69148b439c79763",
+          "targets": [
+            "A"
+          ],
+          "wording": "explicit"
+        },
+        {
+          "arm": "both",
+          "id": "hidden_both_A",
+          "prompt_sha256": "31cf27d6fb00a58dbdbe3cfb06a00212f835fed2c4a1612e42f3534bdd7a4316",
+          "targets": [
+            "A"
+          ],
+          "wording": "hidden"
+        },
+        {
+          "arm": "required",
+          "id": "explicit_required_B",
+          "prompt_sha256": "7caf095c88a331d3458498caa03718f58a01e251e8d536623fe74cf26861628a",
+          "targets": [
+            "B"
+          ],
+          "wording": "explicit"
+        },
+        {
+          "arm": "none",
+          "id": "explicit_none_A",
+          "prompt_sha256": "04c19b131bfa2b8d1a1907afb6eeda1005d103be9607bb9f8b1523cea127a8cb",
+          "targets": [
+            "A"
+          ],
+          "wording": "explicit"
+        },
+        {
+          "arm": "both",
+          "id": "explicit_both_B",
+          "prompt_sha256": "1a5c868bee860741d2ec9778b91260517c45a013838d4b7b1f73fe5c495c651f",
+          "targets": [
+            "B"
+          ],
+          "wording": "explicit"
+        },
+        {
+          "arm": "required",
+          "id": "hidden_required_A",
+          "prompt_sha256": "d3af3332e83960a993055a1120636a0fba790234175c0c503b5225dc63ab7300",
+          "targets": [
+            "A"
+          ],
+          "wording": "hidden"
+        },
+        {
+          "arm": "required",
+          "id": "hidden_required_B",
+          "prompt_sha256": "30ac14550e0826ec276f32dbd3d8fe6e451cc8aacfede663f955a694e682034e",
+          "targets": [
+            "B"
+          ],
+          "wording": "hidden"
+        },
+        {
+          "arm": "actual",
+          "id": "explicit_actual_B",
+          "prompt_sha256": "d0049336d885de8f7c07d359827a783b13c880f2de32288645997b051476b4c3",
+          "targets": [
+            "B"
+          ],
+          "wording": "explicit"
+        },
+        {
+          "arm": "both",
+          "id": "explicit_both_A",
+          "prompt_sha256": "afe42adb83b826a8fc6cd911531e085daa19094b803544c990ecd8f3393f1ca1",
+          "targets": [
+            "A"
+          ],
+          "wording": "explicit"
+        }
+      ],
+      "id": "gpt-6.2-astra_argmax_A",
+      "model": "gpt-6.2-astra",
+      "start": "A",
+      "task": "argmax",
+      "wave": 2
+    }
+  ],
+  "calibration_sha256": "7973ec05a09021f5aded48779fa66ef143c15349099156659befaae33a3ae5e6",
+  "design": "docs/FEEDBACK_FACTORIAL_20261128.md",
+  "effort": "low",
+  "eligible_for_main_analysis": false,
+  "seed": 2026112803,
+  "source_sha256": {
+    "docs/FEEDBACK_FACTORIAL_20261128.md": "ffacac7bf499fff7c658d15f685d0f81734d997217a5c43f8f59bcdf6cd06bf3",
+    "experiments/c5_cli_pilot.py": "2f4809ea243fe0f913dabe343050caf03273c77a46d8f70b7dd186ef93dabbba",
+    "experiments/c5_codex_effort.py": "90e7e315693ea039ad9b9a698efd0925f4b1c83f846245132a9d6acc4fcbdbcf",
+    "experiments/c5_evidence_challenge.py": "fae76c3366dc96670912095a2684d959c4811d3c0edc7b14a636fea147b49cc7",
+    "experiments/checker_timing_pilot.py": "48f52b1ad3139ecda58a3cc01760550cad4f47873d65a16c1da78cddfd0ccda3",
+    "experiments/feedback_factorial.py": "4441f15ebfce665c0fb43da2ca203a0c95ea4e5183b7e9e9402c9cca784d36dc",
+    "experiments/reference_example_control.py": "bc51de14b5804d0dfe4ad9c70cff3b14c446137f34d59808b2a3a67921daf8f8"
+  }
+}

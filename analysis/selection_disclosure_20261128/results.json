@@ -1,0 +1,585 @@
+{
+  "auth_mode": "CHATGPT",
+  "cli_version": "codex-cli 0.169.0",
+  "eligible_for_main_analysis": false,
+  "frozen_at_utc": "2026-11-28T17:17:08.086338+00:00",
+  "plan_sha256": "83bab7c00d491da1530fdcb3000e8dcbc4b6e2f856861f13769e40ce72087ed6",
+  "rows": [
+    {
+      "after": null,
+      "assessments": [],
+      "block": "gpt-6.2-astra_quotient_A",
+      "call_id": "disclosed_A",
+      "choice": null,
+      "label": "disclosed",
+      "model": "gpt-6.2-astra",
+      "prompt_sha256": "d5355dd7a8fabc4c3ca3f559e3a4a8b5e6c834b839f9b722f6edd1927d02d9bf",
+      "start": "A",
+      "status": "UNSTARTED",
+      "targets": [
+        "A",
+        "B"
+      ],
+      "task": "quotient",
+      "value_contract": "A"
+    },
+    {
+      "after": null,
+      "assessments": [],
+      "block": "gpt-6.2-astra_quotient_A",
+      "call_id": "anonymous_B",
+      "choice": null,
+      "label": "anonymous",
+      "model": "gpt-6.2-astra",
+      "prompt_sha256": "9d83c962db696f1f3c8ee95520c51c147c1c5351167b8e09921dc261ebcbe84f",
+      "start": "A",
+      "status": "UNSTARTED",
+      "targets": [
+        "A",
+        "B"
+      ],
+      "task": "quotient",
+      "value_contract": "B"
+    },
+    {
+      "after": null,
+      "assessments": [],
+      "block": "gpt-6.2-astra_quotient_A",
+      "call_id": "disclosed_B",
+      "choice": null,
+      "label": "disclosed",
+      "model": "gpt-6.2-astra",
+      "prompt_sha256": "6cd8d69f59483e42624efe45dd4fe257d29fc350168162da9b714b7cf247391a",
+      "start": "A",
+      "status": "UNSTARTED",
+      "targets": [
+        "A",
+        "B"
+      ],
+      "task": "quotient",
+      "value_contract": "B"
+    },
+    {
+      "after": null,
+      "assessments": [],
+      "block": "gpt-6.2-astra_quotient_A",
+      "call_id": "anonymous_A",
+      "choice": null,
+      "label": "anonymous",
+      "model": "gpt-6.2-astra",
+      "prompt_sha256": "850d1fb9d89ff81dad96e39c8bf07d91a130c93badbdd583197d03740aa630ee",
+      "start": "A",
+      "status": "UNSTARTED",
+      "targets": [
+        "A",
+        "B"
+      ],
+      "task": "quotient",
+      "value_contract": "A"
+    },
+    {
+      "after": null,
+      "assessments": [],
+      "block": "gpt-6.2-astra_range_B",
+      "call_id": "anonymous_B",
+      "choice": null,
+      "label": "anonymous",
+      "model": "gpt-6.2-astra",
+      "prompt_sha256": "ba582659f1ec961a69a72c86dd58850c66587a5613f24df11c67491474f618bf",
+      "start": "B",
+      "status": "UNSTARTED",
+      "targets": [
+        "A",
+        "B"
+      ],
+      "task": "range",
+      "value_contract": "B"
+    },
+    {
+      "after": null,
+      "assessments": [],
+      "block": "gpt-6.2-astra_range_B",
+      "call_id": "disclosed_A",
+      "choice": null,
+      "label": "disclosed",
+      "model": "gpt-6.2-astra",
+      "prompt_sha256": "bb0e7c3463a6401fa20f423e04ebe587a5a7c3561bf22a2e4449f529536162bd",
+      "start": "B",
+      "status": "UNSTARTED",
+      "targets": [
+        "A",
+        "B"
+      ],
+      "task": "range",
+      "value_contract": "A"
+    },
+    {
+      "after": null,
+      "assessments": [],
+      "block": "gpt-6.2-astra_range_B",
+      "call_id": "disclosed_B",
+      "choice": null,
+      "label": "disclosed",
+      "model": "gpt-6.2-astra",
+      "prompt_sha256": "8ba1f20b8d65c27a1adbce5e43eb9cebf498e7e698672419772d1a5e32b2e5be",
+      "start": "B",
+      "status": "UNSTARTED",
+      "targets": [
+        "A",
+        "B"
+      ],
+      "task": "range",
+      "value_contract": "B"
+    },
+    {
+      "after": null,
+      "assessments": [],
+      "block": "gpt-6.2-astra_range_B",
+      "call_id": "anonymous_A",
+      "choice": null,
+      "label": "anonymous",
+      "model": "gpt-6.2-astra",
+      "prompt_sha256": "0627fa9e5488a51fe4ca3c15cc16ca5dff241043a91348a9c0c2d95ff93d9492",
+      "start": "B",
+      "status": "UNSTARTED",
+      "targets": [
+        "A",
+        "B"
+      ],
+      "task": "range",
+      "value_contract": "A"
+    },
+    {
+      "after": null,
+      "assessments": [],
+      "block": "gpt-6.1-terra_flatten_A",
+      "call_id": "anonymous_A",
+      "choice": null,
+      "label": "anonymous",
+      "model": "gpt-6.1-terra",
+      "prompt_sha256": "4bbfd9fda7efc3d6365f43e5d2478e25c880fab41b820490ae16239bc198284b",
+      "start": "A",
+      "status": "UNSTARTED",
+      "targets": [
+        "A",
+        "B"
+      ],
+      "task": "flatten",
+      "value_contract": "A"
+    },
+    {
+      "after": null,
+      "assessments": [],
+      "block": "gpt-6.1-terra_flatten_A",
+      "call_id": "disclosed_A",
+      "choice": null,
+      "label": "disclosed",
+      "model": "gpt-6.1-terra",
+      "prompt_sha256": "216e16391881396fb59104ac574c5d1dc8b414d13045ee8a8fc0bc7f47445c02",
+      "start": "A",
+      "status": "UNSTARTED",
+      "targets": [
+        "A",
+        "B"
+      ],
+      "task": "flatten",
+      "value_contract": "A"
+    },
+    {
+      "after": null,
+      "assessments": [],
+      "block": "gpt-6.1-terra_flatten_A",
+      "call_id": "disclosed_B",
+      "choice": null,
+      "label": "disclosed",
+      "model": "gpt-6.1-terra",
+      "prompt_sha256": "73a08e757c3bcfca21b652304d7349e526f90495e157489463a77a777661e5de",
+      "start": "A",
+      "status": "UNSTARTED",
+      "targets": [
+        "A",
+        "B"
+      ],
+      "task": "flatten",
+      "value_contract": "B"
+    },
+    {
+      "after": null,
+      "assessments": [],
+      "block": "gpt-6.1-terra_flatten_A",
+      "call_id": "anonymous_B",
+      "choice": null,
+      "label": "anonymous",
+      "model": "gpt-6.1-terra",
+      "prompt_sha256": "d5fd69c7e9a65d55c103e407febedf595140eca747fad059542ab6ffd271ae2b",
+      "start": "A",
+      "status": "UNSTARTED",
+      "targets": [
+        "A",
+        "B"
+      ],
+      "task": "flatten",
+      "value_contract": "B"
+    },
+    {
+      "after": null,
+      "assessments": [],
+      "block": "gpt-6.2-sol_distance_B",
+      "call_id": "anonymous_B",
+      "choice": null,
+      "label": "anonymous",
+      "model": "gpt-6.2-sol",
+      "prompt_sha256": "2caf7ec4a488c038500f95de8876345675e0bd6e9bd5869bd740b94816964b61",
+      "start": "B",
+      "status": "UNSTARTED",
+      "targets": [
+        "A",
+        "B"
+      ],
+      "task": "distance",
+      "value_contract": "B"
+    },
+    {
+      "after": null,
+      "assessments": [],
+      "block": "gpt-6.2-sol_distance_B",
+      "call_id": "anonymous_A",
+      "choice": null,
+      "label": "anonymous",
+      "model": "gpt-6.2-sol",
+      "prompt_sha256": "696add2141ec60b01f8008ae62ffb4a83f085dc0d62e348c54056841f64bf27d",
+      "start": "B",
+      "status": "UNSTARTED",
+      "targets": [
+        "A",
+        "B"
+      ],
+      "task": "distance",
+      "value_contract": "A"
+    },
+    {
+      "after": null,
+      "assessments": [],
+      "block": "gpt-6.2-sol_distance_B",
+      "call_id": "disclosed_A",
+      "choice": null,
+      "label": "disclosed",
+      "model": "gpt-6.2-sol",
+      "prompt_sha256": "8a668defa3e2a0a089470e7088de9174dc6affbed1d03293786042eb6ee79e1b",
+      "start": "B",
+      "status": "UNSTARTED",
+      "targets": [
+        "A",
+        "B"
+      ],
+      "task": "distance",
+      "value_contract": "A"
+    },
+    {
+      "after": null,
+      "assessments": [],
+      "block": "gpt-6.2-sol_distance_B",
+      "call_id": "disclosed_B",
+      "choice": null,
+      "label": "disclosed",
+      "model": "gpt-6.2-sol",
+      "prompt_sha256": "0d1b0aba30c31c3ac5d7876030d2630eefd08b54aad6cc9680b64bfb16400c2e",
+      "start": "B",
+      "status": "UNSTARTED",
+      "targets": [
+        "A",
+        "B"
+      ],
+      "task": "distance",
+      "value_contract": "B"
+    },
+    {
+      "after": null,
+      "assessments": [],
+      "block": "gpt-6.2-sol_dedup_A",
+      "call_id": "disclosed_A",
+      "choice": null,
+      "label": "disclosed",
+      "model": "gpt-6.2-sol",
+      "prompt_sha256": "393d2bcd8f7a787976e658bab2173f43ab77d03087eae94dd58ed88e51ab8e24",
+      "start": "A",
+      "status": "UNSTARTED",
+      "targets": [
+        "A",
+        "B"
+      ],
+      "task": "dedup",
+      "value_contract": "A"
+    },
+    {
+      "after": null,
+      "assessments": [],
+      "block": "gpt-6.2-sol_dedup_A",
+      "call_id": "disclosed_B",
+      "choice": null,
+      "label": "disclosed",
+      "model": "gpt-6.2-sol",
+      "prompt_sha256": "76260d9ccda39141f059a73c9ffb7d2ad4fb66f1e5a983b5b3cb8f6458c2a578",
+      "start": "A",
+      "status": "UNSTARTED",
+      "targets": [
+        "A",
+        "B"
+      ],
+      "task": "dedup",
+      "value_contract": "B"
+    },
+    {
+      "after": null,
+      "assessments": [],
+      "block": "gpt-6.2-sol_dedup_A",
+      "call_id": "anonymous_A",
+      "choice": null,
+      "label": "anonymous",
+      "model": "gpt-6.2-sol",
+      "prompt_sha256": "bb2f6618db52c677f73f5013c90b675965cbf12e79dca5f930d87b9767e43f2d",
+      "start": "A",
+      "status": "UNSTARTED",
+      "targets": [
+        "A",
+        "B"
+      ],
+      "task": "dedup",
+      "value_contract": "A"
+    },
+    {
+      "after": null,
+      "assessments": [],
+      "block": "gpt-6.2-sol_dedup_A",
+      "call_id": "anonymous_B",
+      "choice": null,
+      "label": "anonymous",
+      "model": "gpt-6.2-sol",
+      "prompt_sha256": "3742ef68f50101046b9ea7e334b0aa9f1446ca1487c07fcad8a25972540c2ab9",
+      "start": "A",
+      "status": "UNSTARTED",
+      "targets": [
+        "A",
+        "B"
+      ],
+      "task": "dedup",
+      "value_contract": "B"
+    },
+    {
+      "after": null,
+      "assessments": [],
+      "block": "gpt-6-luna_moving_sum_A",
+      "call_id": "disclosed_A",
+      "choice": null,
+      "label": "disclosed",
+      "model": "gpt-6-luna",
+      "prompt_sha256": "e16cce333726d3d7e00e882fcbe06f7c2aa7fd27a8dc7e866cbbf73074a7b5bf",
+      "start": "A",
+      "status": "UNSTARTED",
+      "targets": [
+        "A",
+        "B"
+      ],
+      "task": "moving_sum",
+      "value_contract": "A"
+    },
+    {
+      "after": null,
+      "assessments": [],
+      "block": "gpt-6-luna_moving_sum_A",
+      "call_id": "disclosed_B",
+      "choice": null,
+      "label": "disclosed",
+      "model": "gpt-6-luna",
+      "prompt_sha256": "06fa85ad0e2ef1728d18224492a49681a1f1a72af547b515eb1ab9d4f79677bb",
+      "start": "A",
+      "status": "UNSTARTED",
+      "targets": [
+        "A",
+        "B"
+      ],
+      "task": "moving_sum",
+      "value_contract": "B"
+    },
+    {
+      "after": null,
+      "assessments": [],
+      "block": "gpt-6-luna_moving_sum_A",
+      "call_id": "anonymous_B",
+      "choice": null,
+      "label": "anonymous",
+      "model": "gpt-6-luna",
+      "prompt_sha256": "43021a3b231d6e7ee68acc5847c773dd0bb1bcada029a640a0283890e9520c39",
+      "start": "A",
+      "status": "UNSTARTED",
+      "targets": [
+        "A",
+        "B"
+      ],
+      "task": "moving_sum",
+      "value_contract": "B"
+    },
+    {
+      "after": null,
+      "assessments": [],
+      "block": "gpt-6-luna_moving_sum_A",
+      "call_id": "anonymous_A",
+      "choice": null,
+      "label": "anonymous",
+      "model": "gpt-6-luna",
+      "prompt_sha256": "2e8722b336e94886ee075cc264505019c70896fe482982fb1a923ffad5d83e5d",
+      "start": "A",
+      "status": "UNSTARTED",
+      "targets": [
+        "A",
+        "B"
+      ],
+      "task": "moving_sum",
+      "value_contract": "A"
+    },
+    {
+      "after": null,
+      "assessments": [],
+      "block": "gpt-6-luna_fields_B",
+      "call_id": "anonymous_B",
+      "choice": null,
+      "label": "anonymous",
+      "model": "gpt-6-luna",
+      "prompt_sha256": "d0efc34ba322278d1c8945bc71cb02458dbceee9499cd4d71b2ee8ed2213bc0e",
+      "start": "B",
+      "status": "UNSTARTED",
+      "targets": [
+        "A",
+        "B"
+      ],
+      "task": "fields",
+      "value_contract": "B"
+    },
+    {
+      "after": null,
+      "assessments": [],
+      "block": "gpt-6-luna_fields_B",
+      "call_id": "disclosed_B",
+      "choice": null,
+      "label": "disclosed",
+      "model": "gpt-6-luna",
+      "prompt_sha256": "df1e4ef53cd5af23edf03c6965c856595e85cd003a4ad0ef1701523d793ea2c0",
+      "start": "B",
+      "status": "UNSTARTED",
+      "targets": [
+        "A",
+        "B"
+      ],
+      "task": "fields",
+      "value_contract": "B"
+    },
+    {
+      "after": null,
+      "assessments": [],
+      "block": "gpt-6-luna_fields_B",
+      "call_id": "anonymous_A",
+      "choice": null,
+      "label": "anonymous",
+      "model": "gpt-6-luna",
+      "prompt_sha256": "77faca49f748816fb9de761fcd62a28907c591a28148daaddb4b1bb3bb5f5e72",
+      "start": "B",
+      "status": "UNSTARTED",
+      "targets": [
+        "A",
+        "B"
+      ],
+      "task": "fields",
+      "value_contract": "A"
+    },
+    {
+      "after": null,
+      "assessments": [],
+      "block": "gpt-6-luna_fields_B",
+      "call_id": "disclosed_A",
+      "choice": null,
+      "label": "disclosed",
+      "model": "gpt-6-luna",
+      "prompt_sha256": "e9c5c3dc74d7074b5fd8cef37f1c2a5436df7b8618db5de26df97afe6eafd4ee",
+      "start": "B",
+      "status": "UNSTARTED",
+      "targets": [
+        "A",
+        "B"
+      ],
+      "task": "fields",
+      "value_contract": "A"
+    },
+    {
+      "after": null,
+      "assessments": [],
+      "block": "gpt-6.1-terra_calendar_B",
+      "call_id": "disclosed_B",
+      "choice": null,
+      "label": "disclosed",
+      "model": "gpt-6.1-terra",
+      "prompt_sha256": "1c90995ef5556512df2caa9ffab0ba1cf36e9aa9d358c5aa337bc6663b0fa60c",
+      "start": "B",
+      "status": "UNSTARTED",
+      "targets": [
+        "A",
+        "B"
+      ],
+      "task": "calendar",
+      "value_contract": "B"
+    },
+    {
+      "after": null,
+      "assessments": [],
+      "block": "gpt-6.1-terra_calendar_B",
+      "call_id": "disclosed_A",
+      "choice": null,
+      "label": "disclosed",
+      "model": "gpt-6.1-terra",
+      "prompt_sha256": "76646623adf484e58d9c0bea0e7c2863ce846fdbbb11ddeece2761b00bd421c6",
+      "start": "B",
+      "status": "UNSTARTED",
+      "targets": [
+        "A",
+        "B"
+      ],
+      "task": "calendar",
+      "value_contract": "A"
+    },
+    {
+      "after": null,
+      "assessments": [],
+      "block": "gpt-6.1-terra_calendar_B",
+      "call_id": "anonymous_B",
+      "choice": null,
+      "label": "anonymous",
+      "model": "gpt-6.1-terra",
+      "prompt_sha256": "4dc9fae01f9876e0deec61ed70a4c732c8ddaadaaa615805c84fe6a3eb9bdbfc",
+      "start": "B",
+      "status": "UNSTARTED",
+      "targets": [
+        "A",
+        "B"
+      ],
+      "task": "calendar",
+      "value_contract": "B"
+    },
+    {
+      "after": null,
+      "assessments": [],
+      "block": "gpt-6.1-terra_calendar_B",
+      "call_id": "anonymous_A",
+      "choice": null,
+      "label": "anonymous",
+      "model": "gpt-6.1-terra",
+      "prompt_sha256": "83b595fbc24b28f8b3fe3050e467f4a40400bf1226b7020140717091b6aa304e",
+      "start": "B",
+      "status": "UNSTARTED",
+      "targets": [
+        "A",
+        "B"
+      ],
+      "task": "calendar",
+      "value_contract": "A"
+    }
+  ]
+}

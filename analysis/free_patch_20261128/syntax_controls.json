@@ -1,0 +1,39 @@
+{
+  "status": "post-hoc scoring control",
+  "selection": "After observing syntax agreement among model replacements, the authors composed one equivalent expression with a different AST for each task. These four expressions are scorer controls and are not sampled model responses.",
+  "calibration_sha256": "172766c106de1bc187bcc29aeb851c5bcc3bae07c018e558240c2eb2cfa2f079",
+  "rows": [
+    {
+      "task": "is_valid_parenthesization",
+      "upstream_expression": "depth == 0",
+      "alternate_expression": "0 == depth",
+      "different_ast": true,
+      "passed": 63,
+      "held_out": 63
+    },
+    {
+      "task": "knapsack",
+      "upstream_expression": "weight <= j",
+      "alternate_expression": "j >= weight",
+      "different_ast": true,
+      "passed": 240,
+      "held_out": 240
+    },
+    {
+      "task": "max_sublist_sum",
+      "upstream_expression": "max(0, max_ending_here + x)",
+      "alternate_expression": "max(x + max_ending_here, 0)",
+      "different_ast": true,
+      "passed": 121,
+      "held_out": 121
+    },
+    {
+      "task": "quicksort",
+      "upstream_expression": "x >= pivot",
+      "alternate_expression": "pivot <= x",
+      "different_ast": true,
+      "passed": 121,
+      "held_out": 121
+    }
+  ]
+}
